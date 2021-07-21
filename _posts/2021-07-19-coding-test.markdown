@@ -1,0 +1,120 @@
+---
+layout: posts
+title:  "신규 아이디 추천"
+date:   2021-07-19 01:37:30 +0800
+categories: CodingTest Programmers
+tags: 코딩테스트 프로그래머스
+---
+입력 받은 아이디를 체크하여 규칙에 맞게 추천하는 프로그램 개발
+7단계의 규칙을 적용해야 하는데 그 내용은 아래와 같다.
+
+---
+
+- 1단계 new_id의 모든 대문자를 대응되는 소문자로 치환합니다.
+- 2단계 new_id에서 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.)를 제외한 모든 문자를 제거합니다.
+- 3단계 new_id에서 마침표(.)가 2번 이상 연속된 부분을 하나의 마침표(.)로 치환합니다.
+- 4단계 new_id에서 마침표(.)가 처음이나 끝에 위치한다면 제거합니다.
+- 5단계 new_id가 빈 문자열이라면, new_id에 "a"를 대입합니다.
+- 6단계 new_id의 길이가 16자 이상이면, new_id의 첫 15개의 문자를 제외한 나머지 문자들을 모두 제거합니다.
+만약 제거 후 마침표(.)가 new_id의 끝에 위치한다면 끝에 위치한 마침표(.) 문자를 제거합니다.
+- 7단계 new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다.
+
+---
+- String Method, 정규식에 대한 이해가 있다면 쉽게 풀 수 있다.
+- Optional을 이용하여 풀어보았다.
+
+```java
+public String solution(String new_id) {
+
+    /**
+     * Optional을 사용하기 위해 Optional.ofNullable로 감싼다.
+     * 그럴일은 없겠지만 NPE를 회피하기위해서.. ofNullable를 선택한다.
+     */
+    return Optional.ofNullable(new_id)
+
+    /**
+     * Optional map 메소드는 mapper 함수의 반환값을 Optional 객체로 감싼다.
+     * 1단계 new_id의 모든 대문자를 대응되는 소문자로 치환합니다.
+     * String의 toLowerCase 메소드를 통해 문자열 소문자로 치환!
+     */
+    .map(String::toLowerCase)
+
+    /**
+     * 2단계 new_id에서 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.)를 제외한 모든 문자를 제거합니다.
+     * 이 경우 replaceAll을 사용하는게 좋다.
+     * ^의 경우 문자열의 시작이지만 []안에 들어간 ^s는 Not의 의미를 갖는다.
+     * a-z는 소문자, \d는 숫자, -_.s는 특수 문자
+     * *는 없거나 또는 1개 이상
+     */
+    .map(str -> str.replaceAll("[^a-z\\d\\-_.]*", ""))
+
+    /**
+     * 3단계 new_id에서 마침표(.)가 2번 이상 연속된 부분을 하나의 마침표(.)로 치환합니다.
+     * 2단계와 마찬가지로 replaceAll 사용
+     * (.)는 마침표, {2,}는 2회 이상
+     */
+    .map(str -> str.replaceAll("\\.{2,}", "."))
+
+    /**
+     * 4단계 new_id에서 마침표(.)가 처음이나 끝에 위치한다면 제거합니다.
+     * 2단계와 마찬가지로 replaceAll 사용
+     * 2단계와 다르게 ^가 [.] 바깥에 위치하니 문자열의 시작
+     * |는 or의 의미, [.]$는 문자열의 끝이 (.)로 끝남
+     */
+    .map(str -> str.replaceAll("^[.]|[.]$", ""))
+
+    /**
+     * 5단계 new_id가 빈 문자열이라면, new_id에 "a"를 대입합니다.
+     * String의 isBlank()를 이용하면 단숨에 해결, 빈 값 여부를 체크한다.
+     */
+    .map(str -> str.isBlank() ? "a" : str)
+
+    /**
+     * 6단계 new_id의 길이가 16자 이상이면, new_id의 첫 15개의 문자를 제외한 나머지 문자들을 모두 제거합니다.
+     * 만약 제거 후 마침표(.)가 new_id의 끝에 위치한다면 끝에 위치한 마침표(.) 문자를 제거합니다.
+     * simple if문을 넣어 16자 이상이면 substring, 그외에는 그대로 return
+     */
+    .map(str -> str.length() >= 16 ? str.substring(0, 15) : str)
+
+    /**
+     * 그리고 마침표 [.]$로 끝나면 변환
+     */
+    .map(str -> str.replaceAll("[.]$", ""))
+
+    /**
+     * 7단계 new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다.
+     * 6단계와 마찬가지로 simple if문 추가
+     * 마지막 문자를 파싱 후 반복해서 3자리를 만들어야한다.
+     * for문을 이용화면 너무 코드가 지저분해지고.. 이럴떄 repeat 메소드를 이용하면 편하다.
+     * str.repeat(N)는 str을 N번 반복하여 concat한 값을 return한다.
+     */
+    .map(str -> str.length() <= 2 ? str + str.substring(str.length() - 1)
+    .repeat(3 - str.length()) : str)
+
+    /**
+     * optinal은 get()으로 끝 마무리 지으면 뭔가 찝찝하다. 인텔리제이를 사용하고 있으면 경고 문구가 노출된다.
+     * 기본적으로 Optional.orElseThrow로 값이 없을 경우 에러를 생성하는 형태를 선호하나 코딩테스트에 맞게 깔끔하게 할려면 Stream으로 변환한다.
+     */
+    .stream()
+    .collect(Collectors.joining());
+}
+```
+주석을 뺀 코드도 따로 공개한다.
+
+```java
+public String solution(String new_id) {
+
+    return Optional.ofNullable(new_id)
+    .map(String::toLowerCase)
+    .map(str -> str.replaceAll("[^a-z\\d\\-_.]*", ""))
+    .map(str -> str.replaceAll("\\.{2,}", "."))
+    .map(str -> str.replaceAll("^[.]|[.]$", ""))
+    .map(str -> str.isBlank() ? "a" : str)
+    .map(str -> str.length() >= 16 ? str.substring(0, 15) : str)
+    .map(str -> str.replaceAll("[.]$", ""))
+    .map(str -> str.length() <= 2 ? str + str.substring(str.length() - 1)
+    .repeat(3 - str.length()) : str)
+    .stream()
+    .collect(Collectors.joining());
+}
+```
