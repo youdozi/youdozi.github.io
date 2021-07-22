@@ -1,6 +1,6 @@
 ---
 layout: posts
-title:  "내적"
+title:  "코딩테스트 - 프로그래머스 - 내적"
 date:   2021-07-22 07:40:30 +0900
 categories: CodingTest Programmers
 tags: 코딩테스트 프로그래머스

@@ -1,6 +1,6 @@
 ---
 layout: posts
-title:  "Mock Http Status Test"
+title:  "유틸리티 - Mock Http Status Test"
 date:   2021-07-20 07:40:30 +0900
 categories: Util HttpStatusCodeTest
 tags: mock http-status-code
