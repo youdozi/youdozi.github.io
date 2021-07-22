@@ -40,7 +40,7 @@ public static int solution(String s) {
     /**
      * 그 외에는 데이터 추가(push())
      */
-    else stack.push(character);
+      else stack.push(character);
     }
 
     /**

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://youdozi.github.io/sitemap.xml
