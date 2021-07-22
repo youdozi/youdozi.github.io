@@ -1,7 +1,7 @@
 ---
 layout: posts
 title:  "신규 아이디 추천"
-date:   2021-07-19 01:37:30 +0800
+date:   2021-07-19 01:37:30 +0900
 categories: CodingTest Programmers
 tags: 코딩테스트 프로그래머스
 ---
