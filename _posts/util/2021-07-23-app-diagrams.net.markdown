@@ -6,8 +6,8 @@ categories:
     - Util 
     - Uml
 tags: 
-    - Util
-    - Uml
+    - util
+    - uml
     - 다이어그램
 ---
 
