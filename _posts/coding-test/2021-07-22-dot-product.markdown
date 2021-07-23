@@ -2,9 +2,12 @@
 layout: posts
 title:  "[코딩테스트] 프로그래머스 - 내적(JAVA)"
 date:   2021-07-22 07:40:30 +0900
-categories: CodingTest Programmers
-tags: [코딩테스트, 프로그래머스]
-comments: true
+categories: 
+    - CodingTest 
+    - Programmers
+tags: 
+    - 코딩테스트
+    - 프로그래머스
 ---
 문제 설명
 

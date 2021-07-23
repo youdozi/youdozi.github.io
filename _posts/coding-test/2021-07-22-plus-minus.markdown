@@ -3,7 +3,8 @@ layout: posts
 title:  "[코딩테스트] 프로그래머스 - 음양 더하기(JAVA)"
 date:   2021-07-22 12:40:30 +0900
 categories: 
-    - CodingTest Programmers
+    - CodingTest 
+    - Programmers
 tags:
     - 코딩테스트
     - 프로그래머스
