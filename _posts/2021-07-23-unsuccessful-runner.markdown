@@ -3,7 +3,8 @@ layout: posts
 title:  "[코딩테스트] 프로그래머스 - 완주하지 못한 선수(JAVA)"
 date:   2021-07-23 01:40:30 +0900
 categories: CodingTest Programmers
-tags: 코딩테스트 프로그래머스
+tags: [코딩테스트, 프로그래머스]
+comments: true
 ---
 문제 설명
 

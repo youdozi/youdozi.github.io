@@ -3,7 +3,8 @@ layout: posts
 title:  "[Gradle] Gradle Spring BootMultiple Vue Build"
 date:   2021-07-23 03:00:00 +0900 
 categories: Gradle SpringBoot Vue Build
-tags: Gradle Vue Build SpringBoot
+tags: [Gradle, Vue, Build, SpringBoot]
+comments: true
 ---
 
 구글 검색을 해보면 Spring Boot Gradle + 하나의 vueJS Project Build만 나와있는 경우가 많다.
