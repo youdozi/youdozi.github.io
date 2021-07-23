@@ -1,0 +1,56 @@
+---
+layout: posts
+title:  "[코딩테스트] 프로그래머스 - 숫자 문자열과 영단어(JAVA)"
+date:   2021-07-23 01:40:30 +0900
+categories: CodingTest Programmers
+tags: 코딩테스트 프로그래머스
+---
+문제 설명
+
+네오와 프로도가 숫자놀이를 하고 있습니다. 네오가 프로도에게 숫자를 건넬 때 일부 자릿수를 영단어로 바꾼 카드를 건네주면 프로도는 원래 숫자를 찾는 게임입니다.
+
+다음은 숫자의 일부 자릿수를 영단어로 바꾸는 예시입니다.
+
+1478 → "one4seveneight"
+
+234567 → "23four5six7"
+
+10203 → "1zerotwozero3"
+
+이렇게 숫자의 일부 자릿수가 영단어로 바뀌어졌거나, 혹은 바뀌지 않고 그대로인 문자열 s가 매개변수로 주어집니다. s가 의미하는 원래 숫자를 return 하도록 solution 함수를 완성해주세요.
+
+---
+제한사항
+- 1 ≤ s의 길이 ≤ 50
+- s가 "zero" 또는 "0"으로 시작하는 경우는 주어지지 않습니다.
+- return 값이 1 이상 2,000,000,000 이하의 정수가 되는 올바른 입력만 s로 주어집니다.
+
+---
+
+- 프로그래머스 level 1단계 문제
+- 정통적인 for loop를 이용하는게 정신건강 상 좋다.
+- 뭔가 아쉽긴 한 문제...
+
+
+```java
+public int solution(String s){
+
+    /**
+     * 미리 숫자 & 영단어를 array로 선언해놓자
+     */
+    String[] strArray = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
+    "nine"};
+    String[] numArray = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+
+    /**
+     * strArray for loop를 돌면서 s.replaceAll 메소드 실행
+     */
+    for (int i = 0; i < strArray.length; i++) {
+      s = s.replaceAll(strArray[i], numArray[i]);
+    }
+
+    /**
+     * String -> Integer 변환
+     */
+    return Integer.parseInt(s);
+```
