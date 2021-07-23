@@ -5,11 +5,10 @@ date:   2021-07-23 03:00:00 +0900
 categories: Gradle SpringBoot Vue Build
 tags: Gradle Vue Build SpringBoot
 ---
-Gradle에 여러개의 Vue Project Build하는 방법에 대해 알아보자.
 
-구글링을 통하면 하나의 Vue Project Build만 나와있는 경우가 많다.
+구글 검색을 해보면 Spring Boot Gradle + 하나의 vueJS Project Build만 나와있는 경우가 많다.
 
-그럼 아래 가이드를 따라해보자!
+조금 더 응용하여 Spring Boot Gradl + 여러개의 vueJS 빌드하는 방법에 대해 공유하고자 한다.
 
 ---
 Vue 프로젝트 구조 .
