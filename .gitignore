@@ -123,3 +123,4 @@ gradle-app.setting
 gradlew
 gradlew.bat
 **/gradle/
+.idea/workspace.xml
