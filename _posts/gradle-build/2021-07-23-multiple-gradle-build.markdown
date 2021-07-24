@@ -24,8 +24,12 @@ Vue 프로젝트 구조 .
     * [project1](./frontend/project1)
     * [project2](./frontend/project2)
     * [project3](./frontend/project3)
+* [build.gradle](.build.gradle)
+* [gradlew](.gradlew)
+
 
 ---
+build.gradle 수정!!
 
 ```groovy
 plugins {
