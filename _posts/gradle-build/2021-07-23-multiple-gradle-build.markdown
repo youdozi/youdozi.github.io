@@ -13,9 +13,9 @@ tags:
   - SpringBoot
 ---
 
-구글 검색을 해보면 Spring Boot Gradle + 하나의 vueJS Project Build만 나와있는 경우가 많다.
+구글 검색을 해보면 Spring Boot Gradle + 하나의 vueJS Project Build만 나와있는 경우가 많습니다.
 
-조금 더 응용하여 Spring Boot Gradl + 여러개의 vueJS 빌드하는 방법에 대해 공유하고자 한다.
+조금 더 응용하여 Spring Boot Gradle + 여러개의 vueJS 빌드하는 방법에 대해 공유하고자 합니다.
 
 ---
 Vue 프로젝트 구조 .
@@ -35,27 +35,27 @@ build.gradle 수정!!
 plugins {
     /**
      * https://github.com/node-gradle/gradle-node-plugin 
-     * nodeJS 빌드를 gradle에서 해준다. 계속 유지보수중이라 사용하기 좋음
+     * nodeJS 빌드를 gradle에서 해줍니다. 계속 유지보수중이라 사용하기 좋아요!
      */
     id 'com.github.node-gradle.node' version '3.1.0'
 }
 
 node {
-    // nodeJS 버전을 지정한다.
+    // nodeJS 버전을 지정합니다.
     version = '14.17.0'
-    // true일 경우 위에 지정한 node version으로 다운로드 받아서 실행한다.
+    // true일 경우 위에 지정한 node version으로 다운로드 받아서 실행합니다.
     // 따로 설치하지 않을려면 download = true로 진행
-    // false일 경우 global로 설치된 nodeJS가 있어야한다.
+    // false일 경우 global로 설치된 nodeJS가 있어야 합니다.
     download = true
   
     // nodeJS 프로젝트 location 지정
-    // default로 하나의 프로젝트를 지정하도록 함
+    // default로 하나의 프로젝트를 지정하도록 합니다.
     nodeProjectDir = file("${projectDir}/frontend/project1")
 }
 
 /**
- * dependsOn: setUp이 걸려있는 task는 먼저 dependsOn을 실행 후 해당 task를 실행한다.
- * task setup은 vueJS 프로젝트에 필요한 package를 install 한다.
+ * dependsOn: setUp이 걸려있는 task는 먼저 dependsOn을 실행 후 해당 task를 실행합니다.
+ * task setup은 vueJS 프로젝트에 필요한 package를 install 합니다.
  */
 task setUp(type: NpmTask) {
     description = "install nodeJS packages"
@@ -63,8 +63,8 @@ task setUp(type: NpmTask) {
 }
 
 /**
- * 빌드 대상 vueJS project를 각각 task로 설정한다.
- * workingDir로 각각의 프로젝트 root 폴더를 바라볼 수 있도록 한다.
+ * 빌드 대상 vueJS project를 각각 task로 설정합니다.
+ * workingDir로 각각의 프로젝트 root 폴더를 바라볼 수 있도록 합니다.
  */
 task project1Build(type: NpmTask, dependsOn: setUp) {
     description = "Build Project1"
@@ -85,7 +85,7 @@ task project3Build(type: NpmTask, dependsOn: setUp) {
 }
 
 /**
- * frontend 하위 dir을 돌면서 위 project build task를 실행한다.
+ * frontend 하위 dir을 돌면서 위 project build task를 실행합니다.
  */
 new File("${project.projectDir}/frontend").eachDir { projectName ->
   processResources.dependsOn "${projectName}Build"
@@ -94,7 +94,7 @@ new File("${project.projectDir}/frontend").eachDir { projectName ->
 
 빌드 결과!! 
 
-아래 순으로 Task가 진행되는것을 볼 수 있다.
+아래 순으로 Task가 진행되는것을 볼 수 있습니다!
 - Task :nodeSetup
 - Task :setUp
 - Task :project1Build
@@ -327,4 +327,4 @@ BUILD SUCCESSFUL in 34s
 
 gradle build 성공!!
 
-위 코드를 조금만 응용하면 선택한 vueJS project만 build하는것도 가능하다!!
+위 코드를 조금만 응용하면 선택한 vueJS project만 build 하는 것도 가능합니다!!

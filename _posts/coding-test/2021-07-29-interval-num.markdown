@@ -22,10 +22,11 @@ tags:
 
 ---
 
-- IntStream.range()를 이용하여 풀었다.
-- mapToLong을 이용하면 int -> long으로 간편하게 return 할 수 있다.
-- x를 int로 변환하면 테스트 케이스에서 걸리는 부분이 발생한다.
-  - long casting으로 해결 가능.
+풀이 
+- IntStream.range()를 이용하여 풀었습니다.
+- mapToLong을 이용하면 int -> long으로 간편하게 return 할 수 있습니다.
+- x를 int로 변환하면 테스트 케이스에서 걸리는 부분이 발생합니다.
+  - long casting으로 해결 가능!!
 
 
 ```java

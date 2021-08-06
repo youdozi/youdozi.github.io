@@ -31,10 +31,10 @@ tags:
 - 스테이지에 도달한 유저가 없는 경우 해당 스테이지의 실패율은 0 으로 정의한다.
 
 ---
-
-- 해쉬를 이용하면 좀 더 편하게 풀 수 있다.
-- Stream을 이용하면 기존보다 훨씬 좋은 가독성을 가질 수 있다.
-- 실패율 계산하는 코드는 메소드를 따로 뺴내서 호출하도록 하였다.
+풀이
+- 해쉬를 이용하면 좀 더 편하게 풀 수 있습니다.
+- Stream을 이용하면 기존보다 훨씬 좋은 가독성을 가질 수 있습니다.
+- 실패율 계산하는 코드는 메소드를 따로 뺴내서 호출하도록 하였습니다.
 
 
 ```java
@@ -42,9 +42,9 @@ public int[] solution(int N, int[] stages) {
 
     /**
      * IntStream을 이용하여 loop 시작
-     * boxed() 메소드는 int -> Integer로 랩핑한다. mapToObj()와 같은 기능을 한다.
+     * boxed() 메소드는 int -> Integer로 랩핑한다. mapToObj()와 같은 기능을 합니다.
      * Collectors.toMap(i -> i, i -> calcPercentage(i, stages))
-     * calcPercentage를 따로 메소드로 분리하였다.
+     * calcPercentage를 따로 메소드로 분리하였습니다.
      */
     Map<Integer, Double> resultMap = IntStream.rangeClosed(1, N)
         .boxed()
@@ -53,7 +53,7 @@ public int[] solution(int N, int[] stages) {
 
     /**
      * Map.entrySet().stream() 호출
-     * Map.Entry를 이용하여 sort한다. value 기준으로 내림차순으로..
+     * Map.Entry를 이용하여 sort. value 기준으로 내림차순으로..
      */
     return resultMap.entrySet().stream()
         .sorted(Map.Entry.<Integer, Double>comparingByValue().reversed())
@@ -63,9 +63,9 @@ public int[] solution(int N, int[] stages) {
 }
 
 /**
- * index i, stages를 인자값으로 받아 total, current 값을 Stream으로 계산한다.
- * 퍼센테이지를 구하는 코드니 double 로 형변환 한다.
- * current 가 0일 경우 그대로 return 해야 테스트 케이스에 걸리지 않는다.
+ * index i, stages를 인자값으로 받아 total, current 값을 Stream으로 계산합니다.
+ * 퍼센테이지를 구하는 코드니 double 로 형변환 합니다.
+ * current 가 0일 경우 그대로 return 해야 테스트 케이스에 걸리지 않습니다.
  */
 private Double calcPercentage(Integer i, int[] stages){
     long total = Arrays.stream(stages).filter(stage->stage>=i).count();

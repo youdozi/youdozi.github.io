@@ -36,9 +36,10 @@ tags:
 
 ---
 
-- Stream distinct()는 중복을 제거, count()는 중복 제거된 수량을 계산한다.
-- 최대값을 구하기 위해 nums의 length에 2를 나눈 값으로 비교한다.
-- Math.min(a, b)는 두 값을 비교하여 작은 값을 리턴한다.
+풀이 
+- Stream distinct()는 중복을 제거, count()는 중복 제거된 수량을 계산합니다.
+- 최대값을 구하기 위해 nums의 length에 2를 나눈 값으로 비교합니다.
+- Math.min(a, b)는 두 값을 비교하여 작은 값을 리턴합니다.
 
 
 ```java

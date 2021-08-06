@@ -23,7 +23,8 @@ b aa baa → bb aa → aa → 의 순서로 문자열을 모두 제거할 수 �
 - 문자열은 모두 소문자로 이루어져 있습니다.
 
 ---
-- 처음에는 Array로 접근할려고 했으나 Stack으로 손쉽게 처리 가능
+풀이
+- 처음에는 Array로 접근할려고 했으나 Stack으로 손쉽게 처리 가능합니다.
 
 
 ```java
@@ -31,7 +32,7 @@ public static int solution(String s) {
     Stack<Character> stack = new Stack<>();
 
     /**
-     * toCharArray는 String을 쪼개 char로 변환한다.
+     * toCharArray는 String을 쪼개 char로 변환합니다.
      */
     for(Character character : s.toCharArray()){
 

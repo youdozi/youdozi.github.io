@@ -23,9 +23,9 @@ tags:
 - 참가자 중에는 동명이인이 있을 수 있습니다.
 
 ---
-
-- 프로그래머스 처음으로 봤던 문제 -> 처음에는 너무 이상하게 풀어서 다시 풀었다.
-- 참여한 사람과 counting을 key value map으로 구현
+풀이
+- 프로그래머스 처음으로 봤던 문제 -> 처음에는 너무 이상하게 풀어서 다시 풀었습니다.
+- 참여한 사람과 counting을 key value map으로 구현..
 - 완주하지 못한 사람들을 loop로 돌면서 위에서 생성한 map의 counting -1 계산
 - map에서 counting > 0 filter를 걸어 return
 
@@ -34,22 +34,22 @@ tags:
 public String solution(String[] participant, String[] completion) {
 
     /**
-     * 참여한 사람들과 기본적인 count를 걸어 Map으로 생성한다.
+     * 참여한 사람들과 기본적인 count를 걸어 Map으로 생성합니다.
      */
     Map<String, Long> participantMap = Arrays.stream(participant)
       .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
     /**
-     * 완주한 사람들을 stream.foreach로 돈다. 
-     * participantMap.computeIfPresent을 이용한다.
-     * key가 있으면 key value를 새롭게 맵핑할 수 있다.
+     * 완주한 사람들을 stream.foreach로 돌도록 합니다.
+     * participantMap.computeIfPresent을 이용합니다.
+     * key가 있으면 key value를 새롭게 맵핑할 수 있습니다.
      * 여기서는 value(counting) -1 계산 로직 추가
      */
     Arrays.stream(completion)
       .forEach(item -> participantMap.computeIfPresent(item, (k, v) -> v - 1));
 
     /**
-     * participantMap stream을 이용하여 count > 0 으로 filtering 한다.
+     * participantMap stream을 이용하여 count > 0 으로 filtering 합니다.
      */
     return participantMap.entrySet().stream()
         .filter(v -> v.getValue() > 0)
