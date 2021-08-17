@@ -63,18 +63,16 @@ public int solution(int cacheSize, String[] cities) {
         .map(city -> {
     
             if (cache.remove(city)) {
-            cache.addFirst(city);
-            return 1;
-            
-            } else {
+              cache.addFirst(city);
+              return 1;
+            } 
               
             if (cache.size() == cacheSize) {
-            cache.pollLast();
+              cache.pollLast();
             }
             
             cache.addFirst(city);
             return 5;
-        }
         })
         .reduce(0, Integer::sum);
     }
