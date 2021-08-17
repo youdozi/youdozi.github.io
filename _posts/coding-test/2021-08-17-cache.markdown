@@ -53,7 +53,7 @@ cities는 도시 이름으로 이뤄진 문자열 배열로, 최대 도시 수�
 ```java
 public int solution(int cacheSize, String[] cities) {
     if(cacheSize == 0){
-    return 5 * cities.length;
+      return 5 * cities.length;
     }
 
     LinkedList<String> cache = new LinkedList<>();
