@@ -27,3 +27,9 @@ querydsl을 대체할 수 있는 라이브러리는 무엇이 있을까요?
 
 ### JOOQ
 [https://www.jooq.org/](https://www.jooq.org/)  
+
+### JDBI
+[https://jdbi.org/](https://jdbi.org/)
+
+### DOMA
+[https://doma.readthedocs.io/](https://doma.readthedocs.io/)
