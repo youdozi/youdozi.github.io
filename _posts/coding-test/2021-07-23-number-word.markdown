@@ -1,9 +1,13 @@
 ---
 layout: posts
 title:  "[코딩테스트] 프로그래머스 - 숫자 문자열과 영단어(JAVA)"
-date:   2021-07-23 02:00:00 +0900
-categories: CodingTest Programmers
-tags: 코딩테스트 프로그래머스
+date:   2021-07-23 01:40:30 +0900
+categories: 
+    - CodingTest 
+    - Programmers
+tags: 
+    - 코딩테스트
+    - 프로그래머스
 ---
 문제 설명
 
@@ -26,9 +30,9 @@ tags: 코딩테스트 프로그래머스
 - return 값이 1 이상 2,000,000,000 이하의 정수가 되는 올바른 입력만 s로 주어집니다.
 
 ---
-
+풀이
 - 프로그래머스 level 1단계 문제
-- 정통적인 for loop를 이용하는게 정신건강 상 좋다.
+- 정통적인 for loop를 이용하는게 정신건강 상 좋습니다..
 - 뭔가 아쉽긴 한 문제...
 
 
@@ -36,7 +40,7 @@ tags: 코딩테스트 프로그래머스
 public int solution(String s){
 
     /**
-     * 미리 숫자 & 영단어를 array로 선언해놓자
+     * 미리 숫자 & 영단어를 array로 선언하도록 합니다.
      */
     String[] strArray = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
     "nine"};

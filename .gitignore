@@ -122,5 +122,6 @@ gradle-app.setting
 
 gradlew
 gradlew.bat
-**/gradle/
+gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
 .idea/workspace.xml

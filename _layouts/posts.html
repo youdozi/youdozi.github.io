@@ -4,6 +4,22 @@ layout: archive
 
 {{ content }}
 
+{% if page.tags %}
+  {% for tag in page.tags %}
+    <a href="/tags/#{{ tag }}" class="btn btn--primary">{{ tag }}</a>
+  {% endfor %}
+{% endif %}
+
+<div>
+  <script src="https://utteranc.es/client.js"
+          repo="youdozi/youdozi.github.io"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
+
 <ul class="taxonomy__index">
   {% assign postsInYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
   {% for year in postsInYear %}
