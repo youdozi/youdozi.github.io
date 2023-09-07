@@ -3,13 +3,11 @@ layout: posts
 title:  "[Gradle] Gradle Spring BootMultiple Vue Build"
 date:   2021-07-23 03:00:00 +0900 
 categories: 
-  - Gradle 
-  - SpringBoot 
-  - Vue
+  - springboot 
 tags:
-  - Gradle 
-  - Vue
-  - Build
+  - gradle 
+  - vue
+  - build
   - SpringBoot
 ---
 

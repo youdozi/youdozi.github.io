@@ -3,8 +3,7 @@ layout: posts
 title:  "[linux] Parse yaml"
 date:   2021-07-27 00:00:00 +0900
 categories: 
-    - Linux 
-    - Bash
+    - linux 
 tags: 
     - linux
     - bash

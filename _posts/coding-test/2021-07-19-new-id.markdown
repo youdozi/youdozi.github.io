@@ -3,8 +3,7 @@ layout: posts
 title:  "[코딩테스트] 프로그래머스 - 신규 아이디 추천(JAVA)"
 date:   2021-07-19 01:37:30 +0900
 categories: 
-    - CodingTest 
-    - Programmers
+    - coding-test 
 tags:
     - 코딩테스트
     - 프로그래머스

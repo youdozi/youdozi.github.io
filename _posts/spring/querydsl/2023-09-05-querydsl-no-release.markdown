@@ -3,10 +3,7 @@ layout: posts
 title:  "[querydsl] querydsl No release for a long time"
 date:   2023-09-05 00:00:00 +0900 
 categories: 
-  - querydsl
-  - springboot3
-  - jpa
-  - jooq
+  - springboot
 tags:
   - querydsl
   - springboot3

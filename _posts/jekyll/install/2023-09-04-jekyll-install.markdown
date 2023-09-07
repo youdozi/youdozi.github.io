@@ -4,10 +4,10 @@ title:  "[jekyll] jekyll install"
 date:   2023-09-04 00:00:00 +0900 
 categories: 
   - jekyll
-  - tech-blog
 tags:
   - jekyll
-  - tech-blog
+  - blog
+  - github.io
 ---
 ### 개요
 오랫동안 방치했던 블로그를 다시 열면서  

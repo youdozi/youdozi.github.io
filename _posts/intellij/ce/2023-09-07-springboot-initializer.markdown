@@ -4,7 +4,6 @@ title:  "[springboot] springboot initializer"
 date:   2023-09-07 00:00:00 +0900 
 categories: 
   - springboot
-  - springboot initializer
 tags:
   - springboot
   - springboot initializer

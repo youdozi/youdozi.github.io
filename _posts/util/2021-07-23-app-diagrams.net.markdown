@@ -3,8 +3,7 @@ layout: posts
 title:  "[유틸리티] UML 다이어그램 작성 툴"
 date:   2021-07-23 10:00:00 +0900
 categories: 
-    - Util 
-    - Uml
+    - util 
 tags: 
     - util
     - uml

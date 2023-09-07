@@ -3,8 +3,7 @@ layout: posts
 title:  "[유틸리티] GitHub Source Search"
 date:   2021-08-05 10:00:00 +0900
 categories: 
-    - Util 
-    - Search
+    - util 
 tags: 
     - util
     - github

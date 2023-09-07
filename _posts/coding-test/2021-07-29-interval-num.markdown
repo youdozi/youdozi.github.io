@@ -3,8 +3,7 @@ layout: posts
 title:  "[코딩테스트] 프로그래머스 - x만큼 간격이 있는 n개의 숫자(JAVA)"
 date:   2021-07-29 01:00:00 +0900
 categories: 
-    - CodingTest 
-    - Programmers
+    - coding-test 
 tags: 
     - 코딩테스트
     - 프로그래머스
