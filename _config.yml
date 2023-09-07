@@ -103,7 +103,7 @@ analytics:
 author:
   name             : "최의선"
   avatar           : "/assets/img/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Java, Kotlin, DevOps, AngularJS Developer"
+  bio              : "Java Developer"
   location         : "Seoul,Korea"
   email            : "youdozi@gmail.com"
   links:
