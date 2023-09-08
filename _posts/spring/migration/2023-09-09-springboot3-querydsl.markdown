@@ -47,7 +47,7 @@ clean {
 
 위 build.gradle 설정까지 마쳤으면 gradle clean -> build task를 실행해봅시다.
 
-![springboot_querydsl_build.png](..%2F..%2F..%2Fassets%2Fimg%2Fspringboot%2Fspringboot_querydsl_build.png)
+![springboot_querydsl_build.png](/assets/img/springboot/springboot_querydsl_build.png)
 
 정상적으로 빌드가 완료되었습니다.
 이제 즐거운 개발 시간 되시길 바랍니다~!
