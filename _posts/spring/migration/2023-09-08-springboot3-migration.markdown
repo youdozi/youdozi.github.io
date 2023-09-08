@@ -38,8 +38,9 @@ migration문서에는 나와 있지 않는 서드파티 라이브러리 문제�
 이 부분을 공유할까 합니다.
 
 ### QueryDSL
-JPA와 영혼의 찰떡 궁합이었던 querydsl은 2021년 릴리즈를 마지막으로  
+JPA와 영혼의 단짝이었던 querydsl은 2021년 릴리즈를 마지막으로  
 javax -> jakarta 패키징 변경, hibernate 6 지원에 대한 어마어마한 이슈를  
 우리에게 선물하였습니다.  
 querydsl github 이슈 등록 건수도 어마어마하고 관리는 계속 할 수 있나 싶었습니다.  
-서론이 길었네요. 우선 springboot3에서 가동할 수 있도록 수정해 보겠습니다.
+해당 적용 부분은 아래 링크를 통해 확인할 수 있습니다.  
+[springboot3 querydsl 적용](https://youdozi.github.io/springboot/springboot3-querydsl/)
