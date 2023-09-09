@@ -50,7 +50,7 @@ clean {
 
 위 build.gradle 설정까지 마쳤으면 gradle clean -> build task를 실행해봅시다.
 
-![springboot_querydsl_build.png](/assets/img/springboot/springboot_querydsl_build.png)
+![springboot_querydsl_build.png](/assets/img/springboot/querydsl/springboot_querydsl_build.png)
 
 정상적으로 빌드가 완료되었습니다.
 이제 즐거운 개발 시간 되시길 바랍니다~!
@@ -66,7 +66,7 @@ tasks.withType(JavaCompile) {
 
 intellij를 사용하시면 위 코드 작성시 노란색 밑줄이 나올겁니다.
 
-![springboot_querydsl_gradle_warning.png](/assets/img/springboot/springboot_querydsl_gradle_warning.png)
+![springboot_querydsl_gradle_warning.png](/assets/img/springboot/querydsl/springboot_querydsl_gradle_warning.png)
 
 intellij의 가이드대로 `Add 'configureEash'`를 추가해서 아래 코드처럼 변경합니다.
 
