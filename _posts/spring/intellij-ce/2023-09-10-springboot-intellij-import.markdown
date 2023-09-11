@@ -40,7 +40,7 @@ intellij에서 springboot를 가동할 수 있는 방법은 3가지가 있습니
 
 여기서는 `RUN/DEBUG configurations`로 springboot를 가동하는 방법에 대해 나누고자 합니다.  
 우선 우측 상단을 보시면 ultimate 버전에서 항상 봐왔던 RUN 기능이 비활성화 된 것을 확인할 수 있습니다.    
-intellij-ce에서는 사용자가 직접 RUN/DEBUG configurations를 설정해줘야 합니다.  
+그렇죠. intellij-ce에서는 사용자가 직접 `RUN/DEBUG configurations`를 설정해줘야 합니다.  
 그럼 `RUN/DEBUG configurations`를 적용해 보도록 하겠습니다.  
 
 ### RUN/DEBUG configurations
