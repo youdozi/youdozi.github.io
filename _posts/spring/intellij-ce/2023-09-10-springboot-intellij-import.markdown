@@ -1,12 +1,12 @@
 ---
 layout: posts 
-title:  "[springboot] springboot intellij-ce import"
+title:  "[springboot] springboot intellij-community import"
 date:   2023-09-10 00:00:00 +0900 
 categories: 
   - springboot
 tags:
   - springboot
-  - intellij ce
+  - intellij community
   - project import
   - RUN/DEBUG configurations
 ---
