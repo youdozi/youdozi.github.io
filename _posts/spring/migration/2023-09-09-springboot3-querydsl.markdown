@@ -55,7 +55,7 @@ clean {
 정상적으로 빌드가 완료되었습니다.
 이제 즐거운 개발 시간 되시길 바랍니다~!
 
-### 번외
+### 번외 1
 
 springboot3 queryDSL 마이그레이션 관련 블로그를 서치해보면 아래와 같이 task 코드가 적용된 경우가 많습니다.
 ```groovy
@@ -75,6 +75,8 @@ tasks.withType(JavaCompile).configureEach {
     options.getGeneratedSourceOutputDirectory().set(file(generated))
 }
 ```
+
+### 번외 2
 
 아래 코드는 deprecated 메소드 사용된 유형입니다.
 
