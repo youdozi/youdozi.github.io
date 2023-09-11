@@ -13,7 +13,7 @@ tags:
 ### 개요
 지난번 spring-initializer를 통해 프로젝트를 생성하여 파일로 다운로드 받았습니다.
 
-[참고 - springboot-initializer](http://localhost:4000/springboot/springboot-initializer/)
+[참고 - springboot-initializer](/springboot/springboot-initializer/)
 
 이제 intellij-ce에서 spring-initializer를 통해 생성된 프로젝트를 import하고 가동해보도록 하겠습니다.
 
