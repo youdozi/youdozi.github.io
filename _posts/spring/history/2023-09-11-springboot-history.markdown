@@ -26,8 +26,15 @@ springboot란 spring framework를 좀 더 쉽게 개발/배포할려는 목적�
 
 이후 2014년 4월에 최초의 springboot 1.0이 release 되었습니다.  
 그 후 아래와 같이 마이너 버전이 계속 해서 release 되었지요.  
-* Spring boot 1.1 (2014년 6월) - 향상된 템플릿 지원, gemfire 지원, elasticsearch 및 apache solr에 대한 자동 구성.
-* Spring boot 1.2 (2015년 3월) - servlet 3.1/tomcat 8/jetty 9로 업그레이드, spring 4.1 업그레이드, 배너/jms/SpringBootApplication 주석 지원.
-* Spring boot 1.3 (2016년 12월) - spring 4.2 업그레이드, 새로운 spring-boot-devtools, 캐싱 기술(ehcache, hazelcast, redis, guava 및 infinispan)을 위한 자동 구성 및 완전히 실행 가능한 jar 지원.
-* Spring 부트 1.4 (2017년 1월) - Spring 4.3 업그레이드, Couchbase/neo4j 지원, 시작 실패 분석 및 RestTemplateBuilder.
-* Spring boot 1.5 (2017년 2월) - kafka/ldap 지원, 타사 라이브러리 업그레이드, CRaSH 지원 중단 및 Actuator 로거 엔드포인트를 통해 즉시 애플리케이션 로그 수준을 수정합니다.
+* spring boot 1.1 (2014년 6월) - 향상된 템플릿 지원, gemfire 지원, elasticsearch 및 apache solr에 대한 자동 구성.
+* spring boot 1.2 (2015년 3월) - servlet 3.1/tomcat 8/jetty 9로 업그레이드, spring 4.1 업그레이드, 배너/jms/SpringBootApplication 주석 지원.
+* spring boot 1.3 (2016년 12월) - spring 4.2 업그레이드, 새로운 spring-boot-devtools, 캐싱 기술(ehcache, hazelcast, redis, guava 및 infinispan)을 위한 자동 구성 및 완전히 실행 가능한 jar 지원.
+* spring boot 1.4 (2017년 1월) - Spring 4.3 업그레이드, Couchbase/neo4j 지원, 시작 실패 분석 및 RestTemplateBuilder.
+* spring boot 1.5 (2017년 2월) - kafka/ldap 지원, 타사 라이브러리 업그레이드, CRaSH 지원 중단 및 Actuator 로거 엔드포인트를 통해 즉시 애플리케이션 로그 수준을 수정합니다.
+
+그리고 2014년 6월 `spring-boot-starter`의 버전을 지정하지 않아도 자동으로 springboot 버전에 맞는 의존성을 가져올 수 있게 해주는
+`spring io`가 출시 되었습니다.  
+maven or gradle 사용시 종속성 라이브러리 버전 관리에 상당히 애먹을꺼라 생각됩니다.  
+
+
+
