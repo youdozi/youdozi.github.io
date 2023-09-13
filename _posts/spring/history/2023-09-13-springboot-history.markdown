@@ -1,7 +1,7 @@
 ---
 layout: posts 
-title:  "[springboot] springboot work internally"
-date:   2023-09-11 00:00:00 +0900 
+title:  "[springboot] springboot history"
+date:   2023-09-13 00:00:00 +0900 
 categories: 
   - springboot
 tags:
@@ -41,7 +41,7 @@ springboot란 spring framework를 좀 더 쉽게 개발/배포할려는 목적�
 spring 1.5 출시 이후 2018년 3월 드디어 springboot 2.0이 release 되었습니다.
 release note를 보면 아래와 같은 특징을 가지고 있습니다.
 * spring framework 5 지원
-* java 8 이상에서 작동 및 java 9 지원
+* java 8 이상에서 작동 및 java 10 지원
 * 반응형 웹(spring webflux) 지원
 * kotlin 지원
 * Junit 5 지원
@@ -50,23 +50,30 @@ release note를 보면 아래와 같은 특징을 가지고 있습니다.
 * 기본 연결 pool tomcat에서 hikariCP로 변경
 
 또한 아래와 같은 마이너 버전도 계속 해서 release 되었습니다.
-* spring boot 2.1 (2018년 10월) - java 11 지원, spring 5.1/tomcat 9/undertow 2/micrometer 1.1 업그레이드 
+* spring boot 2.1 (2018년 10월) - java 11/12 지원, spring 5.1/tomcat 9/undertow 2/micrometer 1.1 업그레이드 
 * spring boot 2.2 (2019년 10월) - java 13, Rsocket 지원, 지연 시작 기능 추가, spring 5.2 업그레이드
-* spring boot 2.3 (2020년 5월) - java 14, docker 빌드 지원, graceful-shutdown/r2dbc 추가, spring 5.3 업그레이드
-* spring boot 2.4 (2020년 11월) - java 15, docker 배포 지원, application.yml 기능 개선, startup endpoint 추가, spring 5.4 업그레이드
-* spring boot 2.5 (2021년 5월) - java 16, gradle 7 지원, 향상된 docker 이미지 구축, spring 5.5 업그레이드
-* spring boot 2.6 (2021년 11월) - `SameSite` servlet 세션 쿠기 지원, spring mvc `WebClientTest` 테스트 지원 
-* spring boot 2.7 (2022년 5월) - GraphQL용 자동 구성, 빌드팩 `podman` 지원, Cache2k 지
+* spring boot 2.3 (2020년 5월) - java 14/15, docker 빌드 지원, graceful-shutdown/r2dbc 추가, spring 5.3 업그레이드
+* spring boot 2.4 (2020년 11월) - java 15/16, docker 배포 지원, application.yml 기능 개선, startup endpoint 추가, spring 5.4 업그레이드
+* spring boot 2.5 (2021년 5월) - java 17/18, gradle 7 지원, 향상된 docker 이미지 구축, spring 5.5 업그레이드
+* spring boot 2.6 (2021년 11월) - java 19 지원, `SameSite` servlet 세션 쿠기 지원, spring mvc `WebClientTest` 테스트 지원 
+* spring boot 2.7 (2022년 5월) - java 20 지원, GraphQL용 자동 구성, 빌드팩 `podman` 지원, Cache2k 지
 
 ### springboot 3.x
 
-2022년 11월 springboot2에서 많은 부분이 업그레이드된 springboot3가 발표됩니다.  
+2022년 11월 springboot2에서 많은 부분이 업그레이드된 springboot3가 발표됩니다.
 * spring framework 6 지원
-* java 17 이상에서 작동 및 java 19 지원
+* java 17 이상에서 작동 및 java 20 지원
 * GraalVm 네이티브 빌드 추가
 * java EE -> jakarta EE API 이전
 * log4j 개선
 * 프로메테우스 지원
 
+마이너 버전
+* spring boot 3.1 (2023년 5월) - Testcontainer/docker-compose 지원, spring authorization server 자동 구성, spring 6.1 지원
+
+특히 spring framework 6.2부터 가상스레드를 지원할 예정이며 이 버전을 지원하는 springboot는 3.2로 예상됩니다.  
+가상스레드는 별도의 포스트를 통해 정리해 보겠습니다.
+
 ### 참고
-[quickprogrammingtips](https://www.quickprogrammingtips.com/spring-boot/history-of-spring-framework-and-spring-boot.html)
+[https://www.quickprogrammingtips.com/spring-boot/history-of-spring-framework-and-spring-boot.html](https://www.quickprogrammingtips.com/spring-boot/history-of-spring-framework-and-spring-boot.html)  
+[https://endoflife.date/](https://endoflife.date/)
