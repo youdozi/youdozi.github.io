@@ -32,7 +32,6 @@ _site
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
-.idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
@@ -49,6 +48,13 @@ _site
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+.idea/**/vcs.xml
+.idea/**/modules.xml
+.idea/**/misc.xml
+.idea/**/jpa-buddy.xml
+.idea/**/checkstyle-idea.xml
+.idea/**/aws.xml
+.idea/**/workspace.xml
 
 # Gradle
 .idea/**/gradle.xml
@@ -97,12 +103,6 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
-# Android studio 3.1+ serialized cache file
-.idea/caches/build_file_checksums.ser
-
-.idea/*.xml
-.idea/workspace.xml
-
 ### Gradle template
 .gradle
 **/build/
@@ -124,3 +124,5 @@ gradlew
 gradlew.bat
 gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
+
+*.iml
