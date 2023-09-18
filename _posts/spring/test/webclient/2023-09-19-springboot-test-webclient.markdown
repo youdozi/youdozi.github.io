@@ -236,7 +236,7 @@ class MockWebServerTests {
         });
 
     StepVerifier.create(respone)
-        .expectErrorMatches(throwable -> throwable instanceof ConnectException &&
+        .expectErrorMatches(throwable -> throwable instanceof RuntimeException &&
             throwable.getMessage().contains("500 Internal Server Error") &&
             throwable.getMessage().contains("Unknown failure"))
         .verify();
@@ -253,6 +253,7 @@ class MockWebServerTests {
 * `isNotSupportedContentType` 메소드를 통해 `content-type`에 `text/html`이 포함 여부를 체크합니다.
 
 `StepVerifier`를 통해 테스트 결과를 검증합니다.
+* `RuntimeException` 여부 및 `throwable.getMessage()`에 에러 관련 메시지가 있는지 확인 합니다.
 
 ![test_result.png](/assets%2Fimg%2Fspringboot%2Ftest%2Fwebclient%2Ftest_result.png)  
 
