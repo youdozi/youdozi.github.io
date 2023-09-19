@@ -33,7 +33,7 @@ tags:
 풀이
 - 해쉬를 이용하면 좀 더 편하게 풀 수 있습니다.
 - Stream을 이용하면 기존보다 훨씬 좋은 가독성을 가질 수 있습니다.
-- 실패율 계산하는 코드는 메소드를 따로 뺴내서 호출하도록 하였습니다.
+- 실패율 계산하는 코드는 메서드를 따로 뺴내서 호출하도록 하였습니다.
 
 
 ```java
@@ -41,9 +41,9 @@ public int[] solution(int N, int[] stages) {
 
     /**
      * IntStream을 이용하여 loop 시작
-     * boxed() 메소드는 int -> Integer로 랩핑한다. mapToObj()와 같은 기능을 합니다.
+     * boxed() 메서드는 int -> Integer로 랩핑한다. mapToObj()와 같은 기능을 합니다.
      * Collectors.toMap(i -> i, i -> calcPercentage(i, stages))
-     * calcPercentage를 따로 메소드로 분리하였습니다.
+     * calcPercentage를 따로 메서드로 분리하였습니다.
      */
     Map<Integer, Double> resultMap = IntStream.rangeClosed(1, N)
         .boxed()

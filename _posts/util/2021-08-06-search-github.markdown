@@ -37,7 +37,7 @@ sourcegraph의 대표적인 기능을 한번 알아볼까요?
 보자면 아래와 같은 상세 검색 조건을 지정할 수 있습니다.
 
 ```
-- if, 정규식 등의 메소드 호출
+- if, 정규식 등의 메서드 호출
 - repository 지정, file 검색, language 지정
 - diff, commit
 - 기간 검색, author, branch
