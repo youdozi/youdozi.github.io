@@ -7,98 +7,54 @@ categories:
 tags: 
     - linux
     - bash
-    - shellscript
+    - shell script
     - function
 ---
 ## 개요
-업무상으로 shellscript를 만져야 할 상황이 가끔 있습니다.  
+intellij에서 shell script 코드를 작성할 때 이런 warning 메시지를 보여주더군요.  
 
-
-
----
-
-프로젝트 구조 .
-
-* [src](./src)
-    * [main](./src/main)
-        * [resources](./src/main/resources)
-            * [application.yml](./src/main/resources/application.yml)
-* [util.sh](.util.sh)
-* [usage.sh](.usage.sh)
-
-
----
-
-application.yml 파일의 내용은 아래와 같습니다.
-
-```yaml
-server:
-  port: 8080
+```shell
+function keyword is non-standard. Delete it.
 ```
 
-먼저 util.sh 을 작성해봅시다.
+문제가 되는 shell script 코드는 아래와 같습니다.
 
-참고 : https://gist.github.com/pkuczynski/8665367#gistcomment-2347639
 ```shell
-#!/bin/bash
-
-# application.yml parse util
-# '-' 하이픈은 강제 스테이크 케이스로 변경, 하위 property는 상위 property에 '_'로 연결됩니다.
-# 예: server.port -> server_port
-function parse_yaml() {
-
-  local prefix=$2
-  local s='[[:space:]]*'
-  local w='[a-zA-Z0-9_\-]*'
-  local fs=$(echo @ | tr @ '\034')
-
-  sed "h;s/^[^:]*//;x;s/:.*$//;y/-/_/;G;s/\n//" $1 |
-    sed -ne "s|^\($s\)\($w\)$s:$s\"\(.*\)\"$s\$|\1$fs\2$fs\3|p" \
-      -e "s|^\($s\)\($w\)$s:$s\(.*\)$s\$|\1$fs\2$fs\3|p" |
-    awk -F$fs '{
-    indent = length($1)/2;
-    vname[indent] = $2;
-
-    for (i in vname) {if (i > indent) {delete vname[i]}}
-    if (length($3) > 0) {
-        vn=""; for (i=0; i<indent; i++) {vn=(vn)(vname[i])("_")}
-        printf("%s%s%s=\"%s\"\n", "'$prefix'",vn, $2, $3);
-    }
-  }'
+#!/bin/sh
+function hello() {
+  echo "Hello World"
 }
-
 ```
 
-usage.sh을 작성해봅시다.. 로직은 아래와 같습니다.
-- util.sh을 import하고 절대 경로 확인 
-- application.yml을 파싱 후 환경 변수 등록
-- echo 출력
+위 코드에서 function 키워드를 삭제하라고 안내해주고 있습니다.  
+올바른 코드는 무엇일까요?
 
 ```shell
-#!/bin/bash
-
-source ./util.sh
-
-ROOT_DIR=$(
-cd "$(dirname "$0")"
-pwd -P
-)
-
-eval $(parse_yaml ${ROOT_DIR}/src/main/resources/application.yml)
-
-echo "server_port: ${server_port}"
+#!/bin/sh
+hello() {
+  echo "Hello World"
+}
 ```
 
-이제 shell에서 직접 실행해보겠습니다.
+아주 심플하죠? function 키워드만 삭제하면 됩니다.  
+왜 이런 warning 메시지가 표시될까요?
 
-입력
-```shell
-~ sh usage.sh
+아래 `ShellCheck` 링크에 그 해답이 있습니다.
+
+[https://www.shellcheck.net/wiki/SC2112](https://www.shellcheck.net/wiki/SC2112)
+
+```text
+function is a non-standard keyword that can be used to declare functions in Bash and Ksh.
+
+In POSIX sh and dash, a function is instead declared without the function keyword as in the correct example.
 ```
+간단하게 해석하자면 아래와 같습니다.
 
-출력
-```shell
-~ server_port: 8080
+```text
+"function"은 Bash와 Ksh에서 함수를 선언하는 데 사용할 수 있는 비표준 키워드입니다.
+
+반면에 POSIX sh와 dash에서는 함수를 선언할 때 "function" 키워드 없이 아래와 같이 선언됩니다.
 ```
-
-${server_port} 환경 변수에 application.yml의 server.port 값이 적용된 것을 확인할 수 있습니다!!
+error 메시지는 아니기 때문에 지키지 않아도 무방합니다.  
+다만 `ShellCheck`도 정적 분석 도구에 일부분 이기 때문에 하나의 룰로 정한다면  
+더 좋은 코드가 완성 되지 않을까 합니다.
