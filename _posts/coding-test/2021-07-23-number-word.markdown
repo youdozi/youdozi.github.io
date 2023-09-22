@@ -46,7 +46,7 @@ public int solution(String s){
     String[] numArray = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
     /**
-     * strArray for loop를 돌면서 s.replaceAll 메소드 실행
+     * strArray for loop를 돌면서 s.replaceAll 메서드 실행
      */
     for (int i = 0; i < strArray.length; i++) {
       s = s.replaceAll(strArray[i], numArray[i]);

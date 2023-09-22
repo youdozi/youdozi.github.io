@@ -78,7 +78,7 @@ tasks.withType(JavaCompile).configureEach {
 
 ### 번외 2
 
-아래 코드는 deprecated 메소드 사용된 유형입니다.
+아래 코드는 deprecated 메서드 사용된 유형입니다.
 
 ```groovy
 tasks.withType(JavaCompile) {
@@ -87,7 +87,7 @@ tasks.withType(JavaCompile) {
 ```
 
 위 코드 중 `annotationProcessorGeneratedSourcesDirectory`가 deprecated 되었다고 표시되며  
-gradle 9버전에서 삭제될 메소드입니다. `getGeneratedSourceOutputDirectory().set(file(generated))`  
+gradle 9버전에서 삭제될 메서드입니다. `getGeneratedSourceOutputDirectory().set(file(generated))`  
 으로 변경하면 문제 없으니 수정하도록 합니다.
 
 ### 참고

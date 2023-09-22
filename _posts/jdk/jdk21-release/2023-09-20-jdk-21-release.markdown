@@ -1,0 +1,49 @@
+---
+layout: posts
+title: "[openjdk] jdk21 release"
+date: 2023-09-20 00:00:00 +0900
+categories:
+  - jdk
+tags:
+  - jdk21
+  - openjdk
+---
+
+## 개요
+
+2023년 9월 19일. 드디어 jdk 21이 release 되었습니다.
+jdk 17 lts 이후 2년 만에 만나 보는 lts이기 때문에 반갑기 그지 없습니디.
+
+## 특징
+* JEP 430 - 문자열 템플릿 (Preview)
+* JEP 431 -	순차 컬렉션
+* JEP 439 -	세대별 ZGC
+* JEP 440 -	레코드 패턴
+* JEP 441 -	스위치 패턴 매칭
+* JEP 442 -	외부 함수 및 메모리 API (Third Preview)
+* JEP 443 -	명명 되지 않은 패턴 및 변수 (Preview)
+* JEP 444 -	가상 스레드
+* JEP 445 -	명명 되지 않은 클래스 및 인스턴스 Main 메서드 (Preview)
+* JEP 446 -	범위 값 (Preview)
+* JEP 448 -	벡터 API (Sixth Incubator)
+* JEP 449 -	제거를 위해 windows 32비트 x86 포트 중단 
+* JEP 451 -	에이전트의 동적 로드를 허용 되지 않도록 준비
+* JEP 452 -	키 캡슐화 매커니즘
+* JEP 453 -	구조적 동시성 (Preview)
+
+2023년 9월 23일 기준으로 아래 공급사에서 jdk 21 버전이 출시되었습니다.
+
+### zulu
+[https://www.azul.com/downloads/?package=jdk#zulu](https://www.azul.com/downloads/?package=jdk#zulu)
+
+### corretto
+[https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html](https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html)
+
+### oracle
+[https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
+* oracle은 `NFTC`([참고](https://www.java.com/freeuselicense))라는 oracle 무료 약관에 따라 다음 LTS 출시 1년 후까지 무료 업데이트, 무료 배포가 가능합니다.
+* 이후 부터는 `OTN` ([참고](https://www.java.com/otnlicense)) 라이선스로 변경되어 제한된 무료, 그 이상은 수수료를 받는 정책을 가지고 있습니다.
+
+adoptium은 약 1주 정도 걸릴꺼라 예상됩니다. 
+
+다음 시간에 jdk21의 꽃이라 할 수 있는 가상 스레드에 대해서 나눠보도록 하겠습니다.

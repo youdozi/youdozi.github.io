@@ -37,9 +37,9 @@ public String solution(String new_id) {
     return Optional.ofNullable(new_id)
 
     /**
-     * Optional map 메소드는 mapper 함수의 반환값을 Optional 객체로 감쌉니다.
+     * Optional map 메서드는 mapper 함수의 반환값을 Optional 객체로 감쌉니다.
      * 1단계 new_id의 모든 대문자를 대응되는 소문자로 치환합니다.
-     * String의 toLowerCase 메소드를 통해 문자열 소문자로 치환!
+     * String의 toLowerCase 메서드를 통해 문자열 소문자로 치환!
      */
     .map(String::toLowerCase)
 
@@ -89,7 +89,7 @@ public String solution(String new_id) {
      * 7단계 new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다.
      * 6단계와 마찬가지로 simple if문 추가
      * 마지막 문자를 파싱 후 반복해서 3자리를 만들어야 합니다.
-     * for문을 이용화면 너무 코드가 지저분해지고.. 이럴떄 repeat 메소드를 이용하면 편합니다.
+     * for문을 이용화면 너무 코드가 지저분해지고.. 이럴떄 repeat 메서드를 이용하면 편합니다.
      * str.repeat(N)는 str을 N번 반복하여 concat한 값을 return 합니다.
      */
     .map(str -> str.length() <= 2 ? str + str.substring(str.length() - 1)

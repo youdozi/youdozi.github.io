@@ -34,7 +34,7 @@ spring context를 전부 다 사용할 수 있는 장점이 있습니다. 하지
 * 외부(DB, API) 연동시 직접 연동 -> DB `CUD` 이벤트일 경우 `@Transactional` 어노테이션을 이용하여 롤백하면 되지만 DB 부담이 큼
 
 물론 `@SpringBootTest` 뿐만 아니라 `mockito`를 이용한 테스트도 사용합니다.  
-다만..`webclient`의 메소드 체이닝을 전부 다 `mockito`로 구현 하기엔 많은 번거로움이 있습니다.  
+다만..`webclient`의 메서드 체이닝을 전부 다 `mockito`로 구현 하기엔 많은 번거로움이 있습니다.  
 여기서는 `mockito`와 좀 더 개선된 `webclient` 테스트 환경을 제공해 주는 `MockWebServer`에 대해 이야기 해 보도록 하겠습니다.
 
 ## mocking 방법
@@ -43,7 +43,7 @@ spring context를 전부 다 사용할 수 있는 장점이 있습니다. 하지
 
 ## mockito
 일반적으로 `mockito`를 많이 사용하죠.  
-메소드 호출에 대한 응답 값을 미리 정의할 수 있기 때문에 선호하는 라이브러리입니다.
+메서드 호출에 대한 응답 값을 미리 정의할 수 있기 때문에 선호하는 라이브러리입니다.
 
 ### EmployeeRepository
 ```java
@@ -95,10 +95,10 @@ public class EmployeeRepositoryTest {
 
 }
 ```
-* `webclient` 메소드 체이닝마다 when/thenReturn mocking 데이터를 적용합니다.
+* `webclient` 메서드 체이닝마다 when/thenReturn mocking 데이터를 적용합니다.
 
 위 테스트 코드를 보면 알겠지만 상당히 복잡합니다.
-메소드 체이닝마다 mocking 데이터를 삽입해야 하기 때문에 코드가 늘어나죠.  
+메서드 체이닝마다 mocking 데이터를 삽입해야 하기 때문에 코드가 늘어나죠.  
 그 이유는 `webclient`가 `fluent interface`로 설계되었기 때문입니다.  
 
 [참고 - fluent interface](https://ko.wikipedia.org/wiki/%ED%94%8C%EB%A3%A8%EC%96%B8%ED%8A%B8_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4)
@@ -198,7 +198,7 @@ class MockWebServerTests {
 ```
 * BeforeAll, AfterAll 단계에서 mockwebserver 시작/종료를 담당합니다.
 * BeforeEach 단계에서 endpoint를 지정합니다.
-* getErrorHtmlResponse 메소드에서 실제 webclient를 연동하는 테스트를 진행합니다.
+* getErrorHtmlResponse 메서드에서 실제 webclient를 연동하는 테스트를 진행합니다.
 
 단락별로 나눠서 보도록 하겠습니다.
 ```java
@@ -250,7 +250,7 @@ class MockWebServerTests {
     }
 ```
 `webclient` exchangeToMono 체이닝 단계에서 `content-type`에 따른 분기 처리합니다.
-* `isNotSupportedContentType` 메소드를 통해 `content-type`에 `text/html`이 포함 여부를 체크합니다.
+* `isNotSupportedContentType` 메서드를 통해 `content-type`에 `text/html`이 포함 여부를 체크합니다.
 
 `StepVerifier`를 통해 테스트 결과를 검증합니다.
 * `RuntimeException` 여부 및 `throwable.getMessage()`에 에러 관련 메시지가 있는지 확인 합니다.
