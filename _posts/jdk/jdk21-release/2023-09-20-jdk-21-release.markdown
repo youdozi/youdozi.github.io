@@ -7,7 +7,6 @@ categories:
 tags:
   - jdk21
   - openjdk
-  - release
 ---
 
 ## 개요
