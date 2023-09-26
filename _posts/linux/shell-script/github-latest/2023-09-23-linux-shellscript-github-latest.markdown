@@ -132,7 +132,7 @@ curl 이후 pipe를 통해 jq로 응답값을 전달합니다.
 ```shell
 jq '{("tag_name"): .tag_name, ("download_url"): .assets[].browser_download_url}'
 ```
-tag_name, assets[].browser_download_url를 파싱하여 한쌍의 json으로 노출될 수 있도록 평탄화해주는 작업을 합니다.
+tag_name, assets[].browser_download_url를 파싱하여 한쌍의 json으로 노출될 수 있도록 평탄화해주는 작업을 합니다.  
 jq에서도 pipe를 통해 값을 이후로 전달할 수 있습니다!
 
 ```shell
@@ -145,6 +145,7 @@ jq select 함수를 이용하여 필터링 합니다.
 * linux x64 hotspot
 * beta 제외
 * tar.gz로 끝나는 확장자
+
 이 3가지 유형을 contains, not contains, 정규식등의 예제가 각각 보여줍니다.
 이제 결과물을 보자면?
 ```json
