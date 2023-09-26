@@ -114,9 +114,8 @@ response
 ```
 방대한 데이터가 오기 때문에 앞 부분만 잘랐습니다.  
 크게 부모 release object -> 자식 assets array 구조로 나눠져 있는 것을 볼 수 있습니다.  
-여기서 tag_name, assets[].browser_download_url 만 있으면 될 것 같네요.
-하지만 tag_name은 부모, browser_download_url는 자식 array에 있으니  
-평탄화 해서 이쁘게 처리 해보겠습니다.
+여기서 tag_name, assets[].browser_download_url 만 있으면 될 것 같네요.  
+하지만 tag_name은 부모, browser_download_url는 자식 array에 있으니 평탄화 해서 이쁘게 처리 해보겠습니다.
 
 ```shell
 curl -L -H "Authorization: Bearer ${ACCESS_TOKEN}" \
