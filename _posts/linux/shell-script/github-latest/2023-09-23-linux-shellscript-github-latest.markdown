@@ -1,6 +1,6 @@
 ---
 layout: posts
-title:  "[linux] github latest release"
+title:  "[linux] curl과 jq를 이용한 github api 조회"
 date:   2023-09-27 00:00:00 +0900
 categories: 
     - linux 
