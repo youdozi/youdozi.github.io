@@ -5,7 +5,7 @@ date: 2023-10-27 00:00:00 +0900
 categories:
   - spring
 tags:
-  - spring batch
+  - spring batch 5
   - migration
 ---
 
@@ -19,7 +19,7 @@ spring boot3가 release되면서 spring batch 5로 업그레이드 되었습니�
 spring batch 5는 jdk 17이 최소 사양인 spring framework 6 기반으로 합니다.  
 
 ### jakarta 패키지
-javax 패키지는 전부 다 jakarta로 변경해야 한다.
+javax 패키지는 전부 다 jakarta로 변경해야 합니다.
 
 ### DB 스키마 업데이트
 oracle과 sql-server인 경우는 sequence 관련 업데이트가 있습니다.  
