@@ -101,7 +101,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "최의선"
+  name             : "유도지"
   avatar           : "/assets/img/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Java Developer"
   location         : "Seoul,Korea"
