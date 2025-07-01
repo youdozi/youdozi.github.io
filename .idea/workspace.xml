@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bda65dd6-7d21-42ef-8c48-c6b69bc51c2a" name="Default Changelist" comment="" />
+    <list default="true" id="bda65dd6-7d21-42ef-8c48-c6b69bc51c2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/_sass/insta.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +105,7 @@
       <updated>1626622947979</updated>
       <workItem from="1626622950774" duration="22061000" />
       <workItem from="1747237517328" duration="7620000" />
-      <workItem from="1751384220073" duration="2365000" />
+      <workItem from="1751384220073" duration="2980000" />
     </task>
     <servers />
   </component>
