@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="bda65dd6-7d21-42ef-8c48-c6b69bc51c2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/head/custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/head/custom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/insta.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/insta.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/crawler/seoul-cafe/2025-07-02-9-2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/crawler/seoul-cafe/2025-07-02-instagram-post-5.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/crawler/서울카페/2025-07-03-33-2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/crawler/서울카페/2025-07-03-9-4.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/crawler/서울카페/2025-07-03-instagram-post-1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/crawler/서울카페/2025-07-03-instagram-post-3.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/crawler/서울카페/2025-07-03-instagram-post-5.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +111,7 @@
       <updated>1626622947979</updated>
       <workItem from="1626622950774" duration="22061000" />
       <workItem from="1747237517328" duration="7620000" />
-      <workItem from="1751384220073" duration="5034000" />
+      <workItem from="1751384220073" duration="6601000" />
     </task>
     <servers />
   </component>
