@@ -6,7 +6,6 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partialsx
-@import "insta";
 
 .utterances {
   max-width: 100% !important;
