@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Cloudflare Blog</title>
+    <item>
+      <title>Cloudflare improves Kubernetes ingress debugging with trace correlation</title>
+      <link>https://blog.cloudflare.com/kubernetes-ingress-trace-correlation/</link>
+      <pubDate>Fri, 13 Mar 2026 02:30:00 GMT</pubDate>
+      <description>Trace correlation shortens incident response by tying ingress hops to application telemetry and error budgets.</description>
+    </item>
+  </channel>
+</rss>

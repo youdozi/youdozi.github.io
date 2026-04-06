@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>InfoQ</title>
+    <item>
+      <title>Spring Boot 3.5 Improves Native Image Startup and Observability Defaults</title>
+      <link>https://www.infoq.com/news/2026/03/spring-boot-35-native-observability/</link>
+      <pubDate>Fri, 13 Mar 2026 12:00:00 GMT</pubDate>
+      <description>The release focuses on GraalVM startup, operational telemetry, and safer defaults for production deployments.</description>
+    </item>
+    <item>
+      <title>PostgreSQL Teams Standardize Query Plans with New Analytics Tooling</title>
+      <link>https://www.infoq.com/news/2026/03/postgresql-query-analytics-tooling/</link>
+      <pubDate>Wed, 11 Mar 2026 08:00:00 GMT</pubDate>
+      <description>Engineering teams are tightening database observability by comparing query plans and latency regressions across environments.</description>
+    </item>
+  </channel>
+</rss>

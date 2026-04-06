@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Jekyll Pipeline Thumbnail</title>
+  <desc id="desc">GitHub Actions로 Jekyll 블로그 자동 발행 파이프라인 구축기 대표 이미지</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" rx="32" />
+  <rect x="72" y="72" width="1056" height="486" rx="24" fill="#0b1220" opacity="0.65" />
+  <text x="90" y="170" fill="#93c5fd" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="28" font-weight="700">JEKYLL · GITHUB ACTIONS · AUTOMATION</text>
+  <text x="90" y="270" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="62" font-weight="800">Jekyll 블로그</text>
+  <text x="90" y="350" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="62" font-weight="800">자동 발행 파이프라인</text>
+  <text x="90" y="430" fill="#bfdbfe" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="34" font-weight="600">수집 → 생성 → 검증 → 빌드 → Git push</text>
+  <text x="90" y="505" fill="#cbd5e1" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="24">youdozi.github.io</text>
+</svg>

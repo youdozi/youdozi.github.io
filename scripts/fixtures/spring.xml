@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Spring Blog</title>
+  <entry>
+    <title>Spring Security tightens OAuth defaults for service-to-service traffic</title>
+    <link href="https://spring.io/blog/2026/03/15/spring-security-oauth-defaults"/>
+    <updated>2026-03-15T04:00:00Z</updated>
+    <summary>New OAuth guidance reduces accidental over-permissioning in backend integrations and service accounts.</summary>
+  </entry>
+</feed>

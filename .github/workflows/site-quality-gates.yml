@@ -1,0 +1,78 @@
+name: Site Quality Gates
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+  schedule:
+    - cron: "0 23 * * 0"
+  workflow_dispatch:
+
+jobs:
+  build-and-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build
+
+      - name: Upload built site artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build-output
+          path: _site
+          if-no-files-found: error
+
+      - name: Proof HTML
+        uses: anishathalye/proof-html@v2
+        with:
+          directory: ./_site
+          check_html: true
+          check_favicon: true
+          check_opengraph: true
+          enforce_https: true
+
+  bundler-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Install bundler-audit
+        run: gem install bundler-audit --no-document
+
+      - name: Run bundler audit
+        shell: bash
+        run: |
+          set -o pipefail
+          bundle-audit check --update | tee bundler-audit-report.txt
+
+      - name: Upload bundler audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundler-audit-report
+          path: bundler-audit-report.txt
+          if-no-files-found: error

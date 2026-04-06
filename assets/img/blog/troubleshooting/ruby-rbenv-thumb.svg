@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Ruby rbenv Troubleshooting Thumbnail</title>
+  <desc id="desc">Ruby rbenv Jekyll build troubleshooting representative image</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#3f0d12" />
+      <stop offset="100%" stop-color="#a71d31" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" rx="32" />
+  <rect x="72" y="72" width="1056" height="486" rx="24" fill="#111827" opacity="0.72" />
+  <text x="90" y="170" fill="#fca5a5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="28" font-weight="700">RUBY · RBENV · JEKYLL · TROUBLESHOOTING</text>
+  <text x="90" y="270" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="58" font-weight="800">Jekyll 빌드가</text>
+  <text x="90" y="345" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="58" font-weight="800">깨졌을 때 해결 과정</text>
+  <text x="90" y="430" fill="#fecaca" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="34" font-weight="600">rbenv 경로 · native gem · CLT · SDK 복구</text>
+  <text x="90" y="505" fill="#e5e7eb" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="24">youdozi.github.io</text>
+</svg>
