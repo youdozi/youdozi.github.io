@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>JetBrains Blog</title>
+    <item>
+      <title>IntelliJ IDEA adds AI-assisted refactoring for Spring services</title>
+      <link>https://blog.jetbrains.com/idea/2026/03/ai-refactoring-spring-services/</link>
+      <pubDate>Sun, 15 Mar 2026 06:00:00 GMT</pubDate>
+      <description>The updated workflow combines inspection results with guided refactoring to reduce manual service cleanup.</description>
+    </item>
+  </channel>
+</rss>

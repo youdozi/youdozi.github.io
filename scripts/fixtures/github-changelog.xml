@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>GitHub Changelog</title>
+    <item>
+      <title>GitHub Actions now supports larger hosted runners for Java builds</title>
+      <link>https://github.blog/changelog/2026-03-14-actions-larger-runners-for-java-builds/</link>
+      <pubDate>Sat, 14 Mar 2026 03:00:00 GMT</pubDate>
+      <description>Teams building large Gradle and Maven projects can reduce queue time with larger runners and updated caching guidance.</description>
+    </item>
+    <item>
+      <title>Code search adds repository-level filters for monorepos</title>
+      <link>https://github.blog/changelog/2026-03-12-code-search-repository-filters/</link>
+      <pubDate>Thu, 12 Mar 2026 05:00:00 GMT</pubDate>
+      <description>Repository filters make it easier to navigate backend and frontend boundaries inside large monorepos.</description>
+    </item>
+  </channel>
+</rss>
