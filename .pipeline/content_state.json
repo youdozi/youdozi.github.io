@@ -1,8 +1,14 @@
 {
   "seen_links": [
+    "https://blog.cloudflare.com/organizations-beta/",
     "https://blog.jetbrains.com/idea/2026/03/ai-refactoring-spring-services/",
+    "https://blog.jetbrains.com/idea/2026/04/java-annotated-monthly-april-2026/",
     "https://github.blog/changelog/2026-03-14-actions-larger-runners-for-java-builds/",
     "https://spring.io/blog/2026/03/15/spring-security-oauth-defaults",
-    "https://www.infoq.com/news/2026/03/spring-boot-35-native-observability/"
+    "https://www.infoq.com/news/2026/03/spring-boot-35-native-observability/",
+    "https://www.infoq.com/news/2026/04/ai-coding-language-benchmark/",
+    "https://www.infoq.com/news/2026/04/java-news-roundup-mar30-2026/",
+    "https://www.infoq.com/news/2026/04/pinterest-spark-oom-reduction/",
+    "https://www.infoq.com/presentations/duolingo-eks-kubernetes/"
   ]
 }
