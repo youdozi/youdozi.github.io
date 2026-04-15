@@ -3,6 +3,7 @@
     "https://blog.cloudflare.com/500-tbps-of-capacity/",
     "https://blog.cloudflare.com/cf-cli-local-explorer/",
     "https://blog.cloudflare.com/improved-developer-security/",
+    "https://blog.cloudflare.com/introducing-agent-lee/",
     "https://blog.cloudflare.com/managed-oauth-for-access/",
     "https://blog.cloudflare.com/mesh/",
     "https://blog.cloudflare.com/organizations-beta/",
@@ -27,15 +28,19 @@
     "https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent",
     "https://github.blog/changelog/2026-04-14-deployment-context-in-repository-properties-and-alerts",
     "https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
+    "https://github.blog/changelog/2026-04-15-codeql-2-25-2-adds-kotlin-2-3-20-support-and-other-updates",
+    "https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties",
     "https://spring.io/blog/2026/03/15/spring-security-oauth-defaults",
     "https://www.infoq.com/articles/ai-agent-transport-layer/",
     "https://www.infoq.com/articles/building-hierarchical-agentic-rag-systems/",
+    "https://www.infoq.com/articles/lambda-extension-deferred-flush/",
     "https://www.infoq.com/news/2026/03/spring-boot-35-native-observability/",
     "https://www.infoq.com/news/2026/04/aaif-mcp-summit/",
     "https://www.infoq.com/news/2026/04/ai-coding-language-benchmark/",
     "https://www.infoq.com/news/2026/04/anthropic-claude-mythos/",
     "https://www.infoq.com/news/2026/04/aspire-13-2-release/",
     "https://www.infoq.com/news/2026/04/aws-sustainability-console/",
+    "https://www.infoq.com/news/2026/04/claude-code-linux-vulnerability/",
     "https://www.infoq.com/news/2026/04/claude-code-source-leak/",
     "https://www.infoq.com/news/2026/04/cloudflare-ai-caching-strategies/",
     "https://www.infoq.com/news/2026/04/cloudflare-emdash-wordpress/",
@@ -57,6 +62,7 @@
     "https://www.infoq.com/presentations/graph-neural-networks/",
     "https://www.infoq.com/presentations/hashtable-modern-hardware/",
     "https://www.infoq.com/presentations/latency-techniques/",
-    "https://www.infoq.com/presentations/local-first-build-software/"
+    "https://www.infoq.com/presentations/local-first-build-software/",
+    "https://www.infoq.com/presentations/open-source-dependencies/"
   ]
 }
