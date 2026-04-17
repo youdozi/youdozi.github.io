@@ -1,11 +1,13 @@
 {
   "seen_links": [
     "https://blog.cloudflare.com/500-tbps-of-capacity/",
+    "https://blog.cloudflare.com/agent-readiness/",
     "https://blog.cloudflare.com/cf-cli-local-explorer/",
     "https://blog.cloudflare.com/improved-developer-security/",
     "https://blog.cloudflare.com/introducing-agent-lee/",
     "https://blog.cloudflare.com/managed-oauth-for-access/",
     "https://blog.cloudflare.com/mesh/",
+    "https://blog.cloudflare.com/network-performance-agents-week/",
     "https://blog.cloudflare.com/organizations-beta/",
     "https://blog.cloudflare.com/post-quantum-roadmap/",
     "https://blog.cloudflare.com/welcome-to-agents-week/",
@@ -35,12 +37,14 @@
     "https://spring.io/blog/2026/03/15/spring-security-oauth-defaults",
     "https://www.infoq.com/articles/ai-agent-transport-layer/",
     "https://www.infoq.com/articles/building-hierarchical-agentic-rag-systems/",
+    "https://www.infoq.com/articles/lakehouse-sql-identifier-rules/",
     "https://www.infoq.com/articles/lambda-extension-deferred-flush/",
     "https://www.infoq.com/news/2026/03/spring-boot-35-native-observability/",
     "https://www.infoq.com/news/2026/04/aaif-mcp-summit/",
     "https://www.infoq.com/news/2026/04/ai-coding-language-benchmark/",
     "https://www.infoq.com/news/2026/04/anthropic-claude-mythos/",
     "https://www.infoq.com/news/2026/04/aspire-13-2-release/",
+    "https://www.infoq.com/news/2026/04/aws-agent-registry-preview/",
     "https://www.infoq.com/news/2026/04/aws-s3-files/",
     "https://www.infoq.com/news/2026/04/aws-sustainability-console/",
     "https://www.infoq.com/news/2026/04/claude-code-linux-vulnerability/",
@@ -57,6 +61,7 @@
     "https://www.infoq.com/news/2026/04/istio-ai-multicluster/",
     "https://www.infoq.com/news/2026/04/java-news-roundup-apr06-2026/",
     "https://www.infoq.com/news/2026/04/java-news-roundup-mar30-2026/",
+    "https://www.infoq.com/news/2026/04/kubernetes-secure-workloads/",
     "https://www.infoq.com/news/2026/04/pinterest-spark-oom-reduction/",
     "https://www.infoq.com/news/2026/04/platform-product-deliver-value/",
     "https://www.infoq.com/news/2026/04/rowhammer-attacks-nvidia/",
@@ -69,6 +74,7 @@
     "https://www.infoq.com/presentations/hashtable-modern-hardware/",
     "https://www.infoq.com/presentations/latency-techniques/",
     "https://www.infoq.com/presentations/local-first-build-software/",
-    "https://www.infoq.com/presentations/open-source-dependencies/"
+    "https://www.infoq.com/presentations/open-source-dependencies/",
+    "https://www.infoq.com/presentations/optimize-performance-cx-platform/"
   ]
 }
