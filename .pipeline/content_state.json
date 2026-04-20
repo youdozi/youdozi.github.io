@@ -2,6 +2,7 @@
   "seen_links": [
     "https://blog.cloudflare.com/500-tbps-of-capacity/",
     "https://blog.cloudflare.com/agent-readiness/",
+    "https://blog.cloudflare.com/agents-week-in-review/",
     "https://blog.cloudflare.com/ai-redirects/",
     "https://blog.cloudflare.com/cf-cli-local-explorer/",
     "https://blog.cloudflare.com/flagship/",
@@ -42,6 +43,7 @@
     "https://spring.io/blog/2026/03/15/spring-security-oauth-defaults",
     "https://www.infoq.com/articles/ai-agent-transport-layer/",
     "https://www.infoq.com/articles/building-hierarchical-agentic-rag-systems/",
+    "https://www.infoq.com/articles/building-trpc-api-typescript/",
     "https://www.infoq.com/articles/lakehouse-sql-identifier-rules/",
     "https://www.infoq.com/articles/lambda-extension-deferred-flush/",
     "https://www.infoq.com/news/2026/03/spring-boot-35-native-observability/",
@@ -67,14 +69,17 @@
     "https://www.infoq.com/news/2026/04/effect-v4-beta/",
     "https://www.infoq.com/news/2026/04/etsy-vitess-sharding-migration/",
     "https://www.infoq.com/news/2026/04/github-copilot-cli-ga/",
+    "https://www.infoq.com/news/2026/04/google-adk-1-0-new-architecture/",
     "https://www.infoq.com/news/2026/04/google-cloud-postgresql/",
     "https://www.infoq.com/news/2026/04/istio-ai-multicluster/",
     "https://www.infoq.com/news/2026/04/java-news-roundup-apr06-2026/",
+    "https://www.infoq.com/news/2026/04/java-news-roundup-apr13-2026/",
     "https://www.infoq.com/news/2026/04/java-news-roundup-mar30-2026/",
     "https://www.infoq.com/news/2026/04/kubernetes-secure-workloads/",
     "https://www.infoq.com/news/2026/04/meta-jit-testing-ai-detection/",
     "https://www.infoq.com/news/2026/04/pinterest-spark-oom-reduction/",
     "https://www.infoq.com/news/2026/04/platform-product-deliver-value/",
+    "https://www.infoq.com/news/2026/04/pretext-js-120fps-text-layout/",
     "https://www.infoq.com/news/2026/04/pulumi-bun-support/",
     "https://www.infoq.com/news/2026/04/rowhammer-attacks-nvidia/",
     "https://www.infoq.com/news/2026/04/safari-scrollend-support/",
@@ -87,6 +92,7 @@
     "https://www.infoq.com/presentations/latency-techniques/",
     "https://www.infoq.com/presentations/local-first-build-software/",
     "https://www.infoq.com/presentations/open-source-dependencies/",
-    "https://www.infoq.com/presentations/optimize-performance-cx-platform/"
+    "https://www.infoq.com/presentations/optimize-performance-cx-platform/",
+    "https://www.infoq.com/presentations/patterns-payment-system/"
   ]
 }
