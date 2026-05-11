@@ -32,6 +32,7 @@
     "https://blog.jetbrains.com/qodana/2026/04/reduce-software-bugs-and-money-spent/",
     "https://blog.jetbrains.com/qodana/2026/04/take-control-of-ai-code-quality-in-ci-live-demo/",
     "https://blog.jetbrains.com/rust/2026/05/01/faster-rust-tests-with-cargo-nextest/",
+    "https://blog.jetbrains.com/teamcity/2026/05/cve-2026-44413/",
     "https://github.blog/changelog/2026-03-14-actions-larger-runners-for-java-builds/",
     "https://github.blog/changelog/2026-04-06-npm-trusted-publishing-now-supports-circleci",
     "https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace",
@@ -96,6 +97,7 @@
     "https://www.infoq.com/articles/dpop-key-storage-unsolved-problem/",
     "https://www.infoq.com/articles/lakehouse-sql-identifier-rules/",
     "https://www.infoq.com/articles/lambda-extension-deferred-flush/",
+    "https://www.infoq.com/articles/local-first-ai-inference-cloud/",
     "https://www.infoq.com/articles/mcp-java-architectural-strategy-llm-integrations/",
     "https://www.infoq.com/articles/micro-batch-streaming-lessons-learned/",
     "https://www.infoq.com/articles/orchestrating-agentic-multimodal-ai-pipelines-apache-camel/",
@@ -170,11 +172,13 @@
     "https://www.infoq.com/news/2026/04/yelp-cassandra-upgrade/",
     "https://www.infoq.com/news/2026/05/aurora-serverless-v4/",
     "https://www.infoq.com/news/2026/05/broadcom-velero-cncf/",
+    "https://www.infoq.com/news/2026/05/cangjie-effect-handlers-adt/",
     "https://www.infoq.com/news/2026/05/clawrunr/",
     "https://www.infoq.com/news/2026/05/cloudflare-artifacts-ai-agents/",
     "https://www.infoq.com/news/2026/05/cloudflare-dynamic-workflows/",
     "https://www.infoq.com/news/2026/05/cloudflare-llm-infrastructure/",
     "https://www.infoq.com/news/2026/05/cloudflare-security-dashboard/",
+    "https://www.infoq.com/news/2026/05/coder-agents-self-hosted-ai/",
     "https://www.infoq.com/news/2026/05/confluent-kafka-header-schema-id/",
     "https://www.infoq.com/news/2026/05/doordash-copilot-swift-testing/",
     "https://www.infoq.com/news/2026/05/ducklake-sql-catalog/",
@@ -192,6 +196,7 @@
     "https://www.infoq.com/news/2026/05/stenberg-curl-verification-trust/",
     "https://www.infoq.com/news/2026/05/vitest-4-1-ai-agents/",
     "https://www.infoq.com/news/2026/05/wordpress-plugins-supply-chain/",
+    "https://www.infoq.com/podcasts/java-ee-quarkus-llm/",
     "https://www.infoq.com/podcasts/java-performance-quest/",
     "https://www.infoq.com/podcasts/leveraging-quarkus-build-static-sites/",
     "https://www.infoq.com/podcasts/some-developers-thrive-while-others-struggle/",
@@ -213,6 +218,7 @@
     "https://www.infoq.com/presentations/open-source-dependencies/",
     "https://www.infoq.com/presentations/optimize-performance-cx-platform/",
     "https://www.infoq.com/presentations/patterns-payment-system/",
-    "https://www.infoq.com/presentations/strategy-workload-hardware/"
+    "https://www.infoq.com/presentations/strategy-workload-hardware/",
+    "https://www.infoq.com/presentations/streaming-application-aws-infrastructure/"
   ]
 }
