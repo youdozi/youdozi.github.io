@@ -167,6 +167,7 @@
     "https://github.blog/changelog/2026-06-17-auto-mode-in-copilot-chat-available-for-all-users",
     "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access",
     "https://github.blog/changelog/2026-06-17-secret-scanning-updates-june-2026",
+    "https://github.blog/changelog/2026-06-18-copilot-authored-pull-requests-now-included-in-author-searches",
     "https://spring.io/blog/2026/03/15/spring-security-oauth-defaults",
     "https://spring.io/blog/2026/04/21/spring-authorization-server-1-5-7-available-now",
     "https://spring.io/blog/2026/04/21/spring-security-releases",
@@ -185,6 +186,7 @@
     "https://spring.io/blog/2026/06/10/spring-for-apache-pulsar-1-2-18-and-2-0-6-are-now-available",
     "https://spring.io/blog/2026/06/12/spring-ai-1-1-8-1-0-9-avaialble-now",
     "https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now",
+    "https://spring.io/blog/2026/06/18/a-bootiful-podcast-dashaun-carter",
     "https://www.infoq.com/articles/adaptive-hedged-requests-p99-latency/",
     "https://www.infoq.com/articles/ai-agent-transport-layer/",
     "https://www.infoq.com/articles/ai-code-guardian/",
@@ -362,6 +364,7 @@
     "https://www.infoq.com/news/2026/06/ai-agent-identity-uber-auth0/",
     "https://www.infoq.com/news/2026/06/angular-agent-skills/",
     "https://www.infoq.com/news/2026/06/arrowjs-v1-agentic/",
+    "https://www.infoq.com/news/2026/06/athena-security-coalition/",
     "https://www.infoq.com/news/2026/06/aws-api-gateway-auth-bypass/",
     "https://www.infoq.com/news/2026/06/aws-opensearch-serverless/",
     "https://www.infoq.com/news/2026/06/aws-random-graph-data-center/",
@@ -383,6 +386,8 @@
     "https://www.infoq.com/news/2026/06/java-news-roundup-jun01-2026/",
     "https://www.infoq.com/news/2026/06/java-news-roundup-jun08-2026/",
     "https://www.infoq.com/news/2026/06/java-news-roundup-may25-2026/",
+    "https://www.infoq.com/news/2026/06/ky-2-revamp-axios/",
+    "https://www.infoq.com/news/2026/06/netflix-camera-file-processing/",
     "https://www.infoq.com/news/2026/06/netflix-microservices-realtime/",
     "https://www.infoq.com/news/2026/06/nextjs-6-2/",
     "https://www.infoq.com/news/2026/06/nodejs-release-changes/",
@@ -441,6 +446,7 @@
     "https://www.infoq.com/presentations/realtime-gpu-workloads/",
     "https://www.infoq.com/presentations/refactoring-ai-agents/",
     "https://www.infoq.com/presentations/strategy-workload-hardware/",
-    "https://www.infoq.com/presentations/streaming-application-aws-infrastructure/"
+    "https://www.infoq.com/presentations/streaming-application-aws-infrastructure/",
+    "https://www.infoq.com/presentations/write-ahead-intent-log/"
   ]
 }
