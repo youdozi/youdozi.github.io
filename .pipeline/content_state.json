@@ -266,6 +266,8 @@
     "https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update",
     "https://github.blog/changelog/2026-07-30-github-models-is-now-retired",
     "https://github.blog/changelog/2026-07-30-limit-remote-control-to-managed-devices",
+    "https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview",
+    "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated",
     "https://spring.io/blog/2026/03/15/spring-security-oauth-defaults",
     "https://spring.io/blog/2026/04/21/spring-authorization-server-1-5-7-available-now",
     "https://spring.io/blog/2026/04/21/spring-security-releases",
@@ -325,6 +327,7 @@
     "https://www.infoq.com/articles/tradeoffs-event-driven-design/",
     "https://www.infoq.com/articles/understanding-ml-model-poisoning/",
     "https://www.infoq.com/articles/vector-search-hybrid-retrieval-rag/",
+    "https://www.infoq.com/articles/virtual-threads-after-jdk24/",
     "https://www.infoq.com/minibooks/agentic-ai-architecture/",
     "https://www.infoq.com/minibooks/architecting-autonomy/",
     "https://www.infoq.com/news/2026/03/spring-boot-35-native-observability/",
@@ -581,6 +584,7 @@
     "https://www.infoq.com/news/2026/07/datadog-ai-production-migration/",
     "https://www.infoq.com/news/2026/07/dolt-version-control/",
     "https://www.infoq.com/news/2026/07/doordash-ai-ask-assistant/",
+    "https://www.infoq.com/news/2026/07/dropbox-mcp-ai-code-review/",
     "https://www.infoq.com/news/2026/07/durable-document-schema/",
     "https://www.infoq.com/news/2026/07/eks-version-rollback/",
     "https://www.infoq.com/news/2026/07/expedia-ai-observability-star/",
@@ -624,6 +628,7 @@
     "https://www.infoq.com/news/2026/07/slack-agentic-e2e-testing-ui/",
     "https://www.infoq.com/news/2026/07/stripe-ai-agents-benchmark/",
     "https://www.infoq.com/news/2026/07/tanstack-table-v9-beta/",
+    "https://www.infoq.com/news/2026/07/terraform-policy-as-code/",
     "https://www.infoq.com/news/2026/07/uber-opensearch-zone-failure/",
     "https://www.infoq.com/news/2026/07/wordpress-7-ai/",
     "https://www.infoq.com/podcasts/chasing-efficient-java-development/",
@@ -699,6 +704,7 @@
     "https://www.infoq.com/presentations/service-level-prioritized-load-shedding/",
     "https://www.infoq.com/presentations/strategy-workload-hardware/",
     "https://www.infoq.com/presentations/streaming-application-aws-infrastructure/",
+    "https://www.infoq.com/presentations/tech-hype-cycles-architectural-tradeoffs/",
     "https://www.infoq.com/presentations/write-ahead-intent-log/"
   ]
 }
