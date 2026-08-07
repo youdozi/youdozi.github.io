@@ -8,6 +8,7 @@
     "https://blog.cloudflare.com/agents-week-welcome/",
     "https://blog.cloudflare.com/ai-gateway-spend-limits/",
     "https://blog.cloudflare.com/ai-redirects/",
+    "https://blog.cloudflare.com/ai-search-easier/",
     "https://blog.cloudflare.com/bgp-origin-attribute/",
     "https://blog.cloudflare.com/building-for-the-future/",
     "https://blog.cloudflare.com/casb-anthropic-integration/",
@@ -29,6 +30,7 @@
     "https://blog.cloudflare.com/introducing-agent-memory/",
     "https://blog.cloudflare.com/introducing-cache-response-rules/",
     "https://blog.cloudflare.com/iran-internet-partially-restored-may-2026/",
+    "https://blog.cloudflare.com/kitesurf/",
     "https://blog.cloudflare.com/managed-oauth-for-access/",
     "https://blog.cloudflare.com/mcp-portal-writeguard-private-beta/",
     "https://blog.cloudflare.com/mesh/",
@@ -285,6 +287,7 @@
     "https://github.blog/changelog/2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent",
     "https://github.blog/changelog/2026-08-03-migrate-from-gitlab-to-github-with-github-enterprise-importer",
     "https://github.blog/changelog/2026-08-04-retiring-the-copilot-billing-preview-app",
+    "https://github.blog/changelog/2026-08-06-kimi-k3-is-now-available-in-github-copilot",
     "https://spring.io/blog/2026/03/15/spring-security-oauth-defaults",
     "https://spring.io/blog/2026/04/21/spring-authorization-server-1-5-7-available-now",
     "https://spring.io/blog/2026/04/21/spring-security-releases",
@@ -653,9 +656,11 @@
     "https://www.infoq.com/news/2026/08/aws-builder-sandbox/",
     "https://www.infoq.com/news/2026/08/choosing-between-subagent-skills/",
     "https://www.infoq.com/news/2026/08/cloudflare-meerkat-consensus/",
+    "https://www.infoq.com/news/2026/08/cosmosescape-master-key/",
     "https://www.infoq.com/news/2026/08/hubspot-jita-rule-engine/",
     "https://www.infoq.com/news/2026/08/java-news-roundup-jul27-2026/",
     "https://www.infoq.com/news/2026/08/openai-huggingface-breach/",
+    "https://www.infoq.com/news/2026/08/pod-deployment-unit-ai-agents/",
     "https://www.infoq.com/news/2026/08/ponytail-agent-skill-benchmark/",
     "https://www.infoq.com/news/2026/08/vault-kubernetes-key-management/",
     "https://www.infoq.com/podcasts/chasing-efficient-java-development/",
@@ -735,6 +740,7 @@
     "https://www.infoq.com/presentations/strategy-workload-hardware/",
     "https://www.infoq.com/presentations/streaming-application-aws-infrastructure/",
     "https://www.infoq.com/presentations/tech-hype-cycles-architectural-tradeoffs/",
+    "https://www.infoq.com/presentations/valkey-architecture-patterns/",
     "https://www.infoq.com/presentations/write-ahead-intent-log/"
   ]
 }
