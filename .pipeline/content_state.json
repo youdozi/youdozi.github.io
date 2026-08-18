@@ -311,6 +311,7 @@
     "https://github.blog/changelog/2026-08-13-license-data-quality-improvements",
     "https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot",
     "https://github.blog/changelog/2026-08-14-multiple-redirect-uris-and-token-refresh-for-oauth-apps",
+    "https://github.blog/changelog/2026-08-18-credential-revocation-and-deauthorization-by-token-type",
     "https://spring.io/blog/2026/03/15/spring-security-oauth-defaults",
     "https://spring.io/blog/2026/04/21/spring-authorization-server-1-5-7-available-now",
     "https://spring.io/blog/2026/04/21/spring-security-releases",
@@ -694,8 +695,10 @@
     "https://www.infoq.com/news/2026/08/cloudflare-meerkat-consensus/",
     "https://www.infoq.com/news/2026/08/cloudflare-precursor-detection/",
     "https://www.infoq.com/news/2026/08/cloudflare-webmcp/",
+    "https://www.infoq.com/news/2026/08/cloudflare-writeguard-mcp-safety/",
     "https://www.infoq.com/news/2026/08/cosmosescape-master-key/",
     "https://www.infoq.com/news/2026/08/database-remediation-graph/",
+    "https://www.infoq.com/news/2026/08/eu-ai-content-watermark/",
     "https://www.infoq.com/news/2026/08/github-npm-actions-defaults/",
     "https://www.infoq.com/news/2026/08/grab-ai-analytics-agents/",
     "https://www.infoq.com/news/2026/08/grafana-mcp-server-telemetry/",
@@ -711,6 +714,7 @@
     "https://www.infoq.com/news/2026/08/mcp-stateless-gateway/",
     "https://www.infoq.com/news/2026/08/meta-muse-glimmer/",
     "https://www.infoq.com/news/2026/08/netflix-kueue-kubernetes-batch/",
+    "https://www.infoq.com/news/2026/08/netflix-oci-agent/",
     "https://www.infoq.com/news/2026/08/netflix-service-topology/",
     "https://www.infoq.com/news/2026/08/npm-12-released/",
     "https://www.infoq.com/news/2026/08/npm-stage-available/",
@@ -749,6 +753,7 @@
     "https://www.infoq.com/presentations/ai-first-practices/",
     "https://www.infoq.com/presentations/ai-framework-data-infrastructure/",
     "https://www.infoq.com/presentations/ai-gateway-scalability/",
+    "https://www.infoq.com/presentations/ai-hardware-tokenomics/",
     "https://www.infoq.com/presentations/ai-infrastructure-scaling-architecture/",
     "https://www.infoq.com/presentations/ai-large-scale-engineering-systems/",
     "https://www.infoq.com/presentations/ai-lead-interview/",
@@ -807,6 +812,7 @@
     "https://www.infoq.com/presentations/streaming-application-aws-infrastructure/",
     "https://www.infoq.com/presentations/tech-hype-cycles-architectural-tradeoffs/",
     "https://www.infoq.com/presentations/valkey-architecture-patterns/",
+    "https://www.infoq.com/presentations/working-across-teams/",
     "https://www.infoq.com/presentations/write-ahead-intent-log/"
   ]
 }
