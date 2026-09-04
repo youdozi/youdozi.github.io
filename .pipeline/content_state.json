@@ -348,6 +348,9 @@
     "https://github.blog/changelog/2026-09-03-github-actions-early-september-2026-updates",
     "https://github.blog/changelog/2026-09-03-multiple-trusted-publishing-configurations-for-npm",
     "https://github.blog/changelog/2026-09-03-upcoming-deprecation-of-selected-github-copilot-models",
+    "https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31",
+    "https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot",
+    "https://github.blog/changelog/2026-09-04-new-api-endpoint-provides-privacy-safe-star-history-data",
     "https://spring.io/blog/2026/03/15/spring-security-oauth-defaults",
     "https://spring.io/blog/2026/04/21/spring-authorization-server-1-5-7-available-now",
     "https://spring.io/blog/2026/04/21/spring-security-releases",
@@ -806,8 +809,10 @@
     "https://www.infoq.com/news/2026/08/vercel-v0-api/",
     "https://www.infoq.com/news/2026/08/vite-plus-beta/",
     "https://www.infoq.com/news/2026/08/workers-inbound-tcp-grpc/",
+    "https://www.infoq.com/news/2026/09/airbnb-server-driven-login/",
     "https://www.infoq.com/news/2026/09/cloudflare-optional-oauth-scopes/",
     "https://www.infoq.com/news/2026/09/cohere-multimodal-parse/",
+    "https://www.infoq.com/news/2026/09/jquery-20-years/",
     "https://www.infoq.com/news/2026/09/openai-gpt-live/",
     "https://www.infoq.com/news/2026/09/openclaw-2-release/",
     "https://www.infoq.com/news/2026/09/spotify-gisting-llm-performance/",
@@ -908,6 +913,7 @@
     "https://www.infoq.com/presentations/streaming-application-aws-infrastructure/",
     "https://www.infoq.com/presentations/tech-hype-cycles-architectural-tradeoffs/",
     "https://www.infoq.com/presentations/valkey-architecture-patterns/",
+    "https://www.infoq.com/presentations/vortex-columnar-file-format-gpu-streaming/",
     "https://www.infoq.com/presentations/working-across-teams/",
     "https://www.infoq.com/presentations/write-ahead-intent-log/"
   ]
