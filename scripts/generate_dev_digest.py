@@ -4,10 +4,12 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import os
 import re
 import ssl
+import sys
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
@@ -21,7 +23,6 @@ import xml.etree.ElementTree as ET
 KST = timezone(timedelta(hours=9))
 UTC = timezone.utc
 
-ALLOWED_QUERY_PREFIXES = ("id", "p", "q", "v")
 TRACKING_QUERY_PREFIXES = (
     "utm_",
     "fbclid",
@@ -53,12 +54,12 @@ class FeedSource:
 
 
 TOPIC_KEYWORDS = {
-    "ai": ["ai", "llm", "gpt", "agent", "rag", "inference"],
+    "ai": ["ai", "llm", "gpt", "agent", "rag", "inference", "copilot"],
     "java": ["java", "jdk", "jvm", "spring", "gradle"],
-    "cloud": ["kubernetes", "docker", "cloud", "aws", "gcp", "azure"],
+    "cloud": ["kubernetes", "docker", "cloud", "aws", "gcp", "azure", "cloudflare", "container", "istio"],
     "web": ["react", "next.js", "node", "typescript", "frontend", "backend"],
     "data": ["postgres", "mysql", "redis", "kafka", "data", "analytics"],
-    "security": ["security", "cve", "auth", "oauth", "vulnerability"],
+    "security": ["security", "cve", "auth", "oauth", "vulnerability", "exfiltration", "exposure", "tls", "certificate"],
 }
 
 QUALITY_SOURCES = [
@@ -95,12 +96,12 @@ QUALITY_SOURCES = [
 ]
 
 SUMMARY_RULES = {
-    "security": "보안 영향이 있을 수 있어 팀 기준 점검 항목으로 정리할 가치가 있습니다.",
-    "cloud": "인프라 운영비나 배포 안정성에 바로 영향을 줄 수 있는 주제입니다.",
-    "java": "JVM/Spring 기반 프로젝트의 코드/런타임 의사결정에 연결되는 내용입니다.",
-    "ai": "개발 생산성 자동화나 서비스 기능 고도화에 적용 가능한 흐름입니다.",
-    "web": "프론트엔드/백엔드 생산성 및 사용자 경험에 직접적인 개선 여지가 있습니다.",
-    "data": "데이터 처리량, 조회 성능, 운영 관측성 개선에 참고할 만한 주제입니다.",
+    "security": "적용 제품과 영향받는 버전, 수정 또는 완화 조치를 원문에서 확인하세요.",
+    "cloud": "배포·운영 구성의 변경점과 호환성, 비용 조건을 원문에서 확인하세요.",
+    "java": "지원하는 JDK/Spring 버전과 업그레이드 시 호환성·마이그레이션 사항을 확인하세요.",
+    "ai": "모델·도구의 지원 범위와 평가 결과, 사용 제약을 원문에서 확인하세요.",
+    "web": "사용 중인 프레임워크 버전과 API 변경, 마이그레이션 필요 여부를 확인하세요.",
+    "data": "적용 데이터 시스템과 성능 측정 조건, 운영상 제한 사항을 확인하세요.",
 }
 
 
@@ -129,7 +130,15 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Directory containing local RSS/Atom fixture files for offline validation",
     )
-    return parser.parse_args()
+    parser.add_argument("--ai", action="store_true", help="Require Gemini Korean summaries and source evidence checks")
+    parser.add_argument("--min-score", type=int, default=6)
+    parser.add_argument("--max-per-source", type=int, default=3)
+    parser.add_argument("--check-links", action="store_true", help="Require selected article URLs to respond with HTML over HTTPS")
+    parser.add_argument("--github-output", help="Append generated/post_path outputs to this GitHub Actions output file")
+    args = parser.parse_args()
+    if min(args.max_items, args.days_back, args.max_per_source) < 1 or args.min_score < 0:
+        parser.error("item/day/source limits must be positive; min-score must be non-negative")
+    return args
 
 
 def normalize_url(raw: str) -> str:
@@ -139,8 +148,7 @@ def normalize_url(raw: str) -> str:
         key_lower = key.lower()
         if key_lower.startswith(TRACKING_QUERY_PREFIXES):
             continue
-        if key_lower.startswith(ALLOWED_QUERY_PREFIXES):
-            kept_query.append((key, value))
+        kept_query.append((key, value))
     query = urlencode(kept_query)
     clean = parsed._replace(fragment="", query=query)
     return urlunparse(clean)
@@ -149,6 +157,11 @@ def normalize_url(raw: str) -> str:
 def parse_datetime(text: str) -> Optional[datetime]:
     if not text:
         return None
+    try:
+        dt = datetime.fromisoformat(text.strip().replace("Z", "+00:00"))
+        return dt.replace(tzinfo=UTC) if dt.tzinfo is None else dt.astimezone(UTC)
+    except ValueError:
+        pass
     candidates = [
         "%Y-%m-%dT%H:%M:%S%z",
         "%Y-%m-%dT%H:%M:%SZ",
@@ -174,20 +187,35 @@ def parse_datetime(text: str) -> Optional[datetime]:
 
 
 def sanitize_text(value: str, max_length: int = 420) -> str:
-    text = re.sub(r"<[^>]+>", " ", value or "")
+    text = re.sub(r"<[^>]+>", " ", html.unescape(value or ""))
     text = re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r"\s*The post .*? appeared first on .*?$", "", text, flags=re.I).strip()
+    text = re.sub(r"\s+By [A-Z][\w’'-]+(?:[ ,]+[A-Z][\w’'-]+)+\.?$", "", text).strip()
     if len(text) <= max_length:
         return text
-    return text[: max_length - 1].rstrip() + "…"
+    # Preserve complete sentences; reject an excerpt if its first sentence is too long.
+    prefix = text[:max_length]
+    endings = list(re.finditer(r"[.!?](?=\s|$)", prefix))
+    return prefix[:endings[-1].end()] if endings else ""
+
+
+def keyword_matches(text: str, keyword: str) -> bool:
+    return re.search(r"(?<!\w)" + re.escape(keyword) + r"s?(?!\w)", text.lower()) is not None
 
 
 def collect_topic_tags(title: str, summary: str) -> List[str]:
     corpus = f"{title} {summary}".lower()
-    tags: List[str] = []
-    for tag, keywords in TOPIC_KEYWORDS.items():
-        if any(keyword in corpus for keyword in keywords):
-            tags.append(tag)
-    return tags
+    return [tag for tag, keywords in TOPIC_KEYWORDS.items()
+            if any(keyword_matches(corpus, keyword) for keyword in keywords)]
+
+
+def summary_is_complete(summary: str) -> bool:
+    return (80 <= len(summary) <= 420
+            and not summary.rstrip().endswith(("…", "..."))
+            and re.search(r"[.!?。]$", summary) is not None)
+
+
+PROMOTIONAL_TITLE = re.compile(r"\b(interns?|hiring|careers?|webinars?|sponsored|giveaway)\b", re.I)
 
 
 def score_item(
@@ -206,7 +234,7 @@ def score_item(
 
     text = f"{title} {summary}".lower()
     for keywords in TOPIC_KEYWORDS.values():
-        if any(token in text for token in keywords):
+        if any(keyword_matches(text, token) for token in keywords):
             score += 1
 
     if len(summary) >= 120:
@@ -223,17 +251,19 @@ def read_state(path: Path) -> Dict[str, List[str]]:
         return {"seen_links": []}
     try:
         raw = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
-        return {"seen_links": []}
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"invalid deduplication state: {path}") from exc
+    if not isinstance(raw, dict):
+        raise ValueError(f"invalid deduplication state: {path}")
     seen_links = raw.get("seen_links", [])
     if not isinstance(seen_links, list):
-        seen_links = []
+        raise ValueError(f"invalid seen_links list: {path}")
     return {"seen_links": [str(item) for item in seen_links]}
 
 
 def write_state(path: Path, seen_links: Iterable[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    payload = {"seen_links": sorted(set(seen_links))[-2000:]}
+    payload = {"seen_links": sorted(set(seen_links))}
     path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
@@ -272,7 +302,8 @@ def parse_feed(xml_text: str, source_name: str, source_weight: int) -> List[Feed
         title = sanitize_text(
             entry.findtext("atom:title", default="", namespaces=atom_ns), max_length=180
         )
-        link_node = entry.find("atom:link", atom_ns)
+        link_node = next((node for node in entry.findall("atom:link", atom_ns)
+                          if node.attrib.get("rel", "alternate") == "alternate"), None)
         link = link_node.attrib.get("href", "") if link_node is not None else ""
         published = entry.findtext(
             "atom:published", "", namespaces=atom_ns
@@ -324,24 +355,33 @@ def load_feed(source: FeedSource, fixtures_dir: Optional[Path]) -> str:
 
 
 def select_items(
-    candidates: List[FeedItem], seen_links: set[str], days_back: int, max_items: int
+    candidates: List[FeedItem], seen_links: set[str], days_back: int, max_items: int,
+    min_score: int = 6, max_per_source: int = 3,
 ) -> List[FeedItem]:
+    from validate_dev_digest import allowed_article_url
+
     now = datetime.now(UTC)
     cutoff = now - timedelta(days=days_back)
-
-    dedup_title = set()
+    dedup_title: set[str] = set()
+    dedup_links = set(seen_links)
+    source_counts: Dict[str, int] = {}
     selected: List[FeedItem] = []
-    for item in sorted(
-        candidates, key=lambda x: (x.score, x.published_at), reverse=True
-    ):
-        if item.published_at < cutoff:
+    for item in sorted(candidates, key=lambda x: (x.score, x.published_at), reverse=True):
+        if not cutoff <= item.published_at <= now:
             continue
-        if item.link in seen_links:
+        if (item.score < min_score or not item.topic_tags
+                or not summary_is_complete(item.summary)
+                or PROMOTIONAL_TITLE.search(item.title)
+                or not allowed_article_url(item.source_name, item.link)):
             continue
-        title_key = re.sub(r"[^a-z0-9]+", "", item.title.lower())[:80]
+        if item.link in dedup_links or source_counts.get(item.source_name, 0) >= max_per_source:
+            continue
+        title_key = re.sub(r"[^\w]+", "", item.title.casefold())
         if title_key in dedup_title:
             continue
         dedup_title.add(title_key)
+        dedup_links.add(item.link)
+        source_counts[item.source_name] = source_counts.get(item.source_name, 0) + 1
         selected.append(item)
         if len(selected) >= max_items:
             break
@@ -349,17 +389,37 @@ def select_items(
 
 
 def topic_message(item: FeedItem) -> str:
-    for tag in item.topic_tags:
-        if tag in SUMMARY_RULES:
+    # Prefer the headline topic, then security, before broad supporting keywords.
+    tags = collect_topic_tags(item.title, "") or item.topic_tags
+    for tag in ("security", "java", "cloud", "data", "web", "ai"):
+        if tag in tags:
             return SUMMARY_RULES[tag]
-    return "팀 기술 스택 관점에서 변화 포인트를 빠르게 파악하기 좋은 업데이트입니다."
+    return "원문에서 적용 대상과 제한 사항을 확인하세요."
 
 
-def build_markdown(today_kst: datetime, items: List[FeedItem], tags: List[str]) -> str:
+def seen_post_links(posts_dir: Path, excluding: Path) -> set[str]:
+    links: set[str] = set()
+    for post in posts_dir.glob("*-dev-digest.markdown"):
+        if post == excluding:
+            continue
+        text = post.read_text(encoding="utf-8")
+        links.update(normalize_url(link) for link in re.findall(r"^- 링크: \[([^\]]+)\]", text, re.M))
+    return links
+
+
+def emit_outputs(args: argparse.Namespace, generated: bool, path: Path) -> None:
+    if args.github_output:
+        with Path(args.github_output).open("a", encoding="utf-8") as output:
+            output.write(f"generated={str(generated).lower()}\n")
+            if generated:
+                output.write(f"post_path={path.relative_to(Path(args.repo_root).resolve()).as_posix()}\n")
+
+
+def build_markdown(today_kst: datetime, items: List[FeedItem], tags: List[str], ai_results: dict | None = None) -> str:
     lines = [
         "---",
         "layout: posts",
-        'title: "[dev] 주간 기술 아티클 다이제스트"',
+        f'title: "[dev] {today_kst.strftime("%Y-%m-%d")} 개발 뉴스 다이제스트"',
         f"date: {today_kst.strftime('%Y-%m-%d %H:%M:%S')} +0900",
         "categories:",
         "  - dev",
@@ -376,9 +436,10 @@ def build_markdown(today_kst: datetime, items: List[FeedItem], tags: List[str]) 
             "",
             "## 이번 다이제스트 기준",
             "",
-            "- 공식 기술 블로그/검증된 매체 RSS 중심으로 수집",
-            "- 최신성(최근 7일), 기술 밀도, 중복 여부 기준으로 선별",
-            "- 원문 전체 복제 없이 핵심 포인트 + 출처 링크만 정리",
+            "- 공식 기술 블로그와 기술 매체 RSS에서 수집",
+            "- 최신성, 기술 키워드, 최소 점수, 출처별 최대 개수와 중복 여부로 선별",
+            ("- 한국어 AI 요약의 인용 근거와 원문 문맥을 대조했습니다. 사실의 진위를 보장하지 않습니다." if ai_results
+             else "- RSS 제공 설명을 정리해 싣습니다. 번역 및 원문 사실 검증은 수행하지 않습니다."),
             "",
             "## 핵심 아티클",
             "",
@@ -393,8 +454,10 @@ def build_markdown(today_kst: datetime, items: List[FeedItem], tags: List[str]) 
                 f"- 출처: {item.source_name}",
                 f"- 발행일: {item.published_at.astimezone(KST).strftime('%Y-%m-%d %H:%M')} (KST)",
                 f"- 링크: [{item.link}]({item.link})",
-                f"- 한줄 요약: {item.summary or '원문 요약이 짧아 제목/메타데이터 중심으로 선별했습니다.'}",
-                f"- 왜 중요한가: {topic_message(item)}",
+                (f"- 한국어 AI 요약: {ai_results[item.link]['summary_ko']}" if ai_results
+                 else f"- 출처 제공 설명: {item.summary}"),
+                *(["- 검증 범위: 원문 인용·문맥 일치 확인 (AI 검증, 사실 보증 아님)"] if ai_results else []),
+                f"- 확인할 점: {topic_message(item)}",
                 "",
             ]
         )
@@ -407,7 +470,7 @@ def build_markdown(today_kst: datetime, items: List[FeedItem], tags: List[str]) 
             "2. 다음 스프린트에서 적용 가능한 변경점(버전, 아키텍처, 운영지표)을 추려 액션 아이템으로 분리합니다.",
             "",
             "---",
-            "이 글은 자동 파이프라인으로 생성되며, 품질 기준을 통과한 항목만 게시됩니다.",
+            "이 글은 자동 수집됩니다. 분류와 확인할 점은 규칙 기반 안내이며, 세부 사실과 적용 여부는 원문에서 확인하세요.",
         ]
     )
     return "\n".join(lines) + "\n"
@@ -426,17 +489,23 @@ def main() -> int:
 
     if target_post.exists() and not args.force:
         print(f"[skip] Digest already exists: {target_post}")
+        emit_outputs(args, False, target_post)
         return 0
 
     state = read_state(state_path)
-    seen_links = set(state["seen_links"])
+    seen_links = {normalize_url(link) for link in state["seen_links"]}
+    historical_links = seen_post_links(posts_dir, target_post)
+    seen_links.update(historical_links)
 
     candidates: List[FeedItem] = []
+    successful_sources = 0
     for source in QUALITY_SOURCES:
         try:
             xml_text = load_feed(source, fixtures_dir)
             feed_items = parse_feed(xml_text, source.name, int(source.weight))
             candidates.extend(feed_items)
+            if feed_items:
+                successful_sources += 1
             if fixtures_dir is not None:
                 print(f"[ok] {source.name}: {len(feed_items)} items (fixture)")
             else:
@@ -444,18 +513,42 @@ def main() -> int:
         except Exception as exc:
             print(f"[warn] failed to fetch {source.name} ({source.url}): {exc}")
 
+    if successful_sources == 0:
+        print("[error] No feed returned usable items.", file=sys.stderr)
+        return 1
     selected = select_items(
-        candidates, seen_links, days_back=args.days_back, max_items=args.max_items
+        candidates, seen_links, days_back=args.days_back, max_items=args.max_items,
+        min_score=args.min_score, max_per_source=args.max_per_source,
     )
     if not selected:
-        print("[skip] No new high-quality items matched the thresholds.")
+        print("[skip] No new items matched the quality thresholds.")
+        emit_outputs(args, False, target_post)
         return 0
 
+    ai_results = None
+    if args.ai:
+        from ai_dev_digest import AIError, enrich_items
+        try:
+            selected, ai_results = enrich_items(selected)
+        except AIError as exc:
+            print(f"[error] {exc}", file=sys.stderr)
+            return 1
+        if not selected:
+            print("[error] All articles were withheld by AI/source verification.", file=sys.stderr)
+            return 1
     selected_tags = sorted({tag for item in selected for tag in item.topic_tags})
     if not selected_tags:
         selected_tags = ["dev", "news"]
 
-    markdown = build_markdown(today_kst, selected, selected_tags)
+    markdown = build_markdown(today_kst, selected, selected_tags, ai_results)
+    from validate_dev_digest import validate_text
+    errors = validate_text(markdown, target_post, min_items=1,
+                           days_back=args.days_back, check_links=args.check_links,
+                           seen_links=historical_links)
+    if errors:
+        for error in errors:
+            print(f"[error] {error}", file=sys.stderr)
+        return 1
     print(f"[info] selected {len(selected)} items")
 
     if args.dry_run:
@@ -468,8 +561,12 @@ def main() -> int:
         target_post.write_text(markdown, encoding="utf-8")
         seen_links.update(item.link for item in selected)
         write_state(state_path, seen_links)
+        if ai_results:
+            audit_path = repo_root / ".pipeline" / f"{today_kst.strftime('%Y-%m-%d')}-ai-audit.json"
+            audit_path.write_text(json.dumps(ai_results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"[done] wrote {target_post}")
         print(f"[done] updated {state_path}")
+        emit_outputs(args, True, target_post)
 
     return 0
 
