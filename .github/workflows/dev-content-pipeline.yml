@@ -4,54 +4,73 @@ on:
   schedule:
     - cron: "0 22 * * *"
   workflow_dispatch:
+  pull_request:
+    paths:
+      - "scripts/*dev_digest*.py"
+      - "scripts/fixtures/**"
+      - ".github/workflows/dev-content-pipeline.yml"
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: dev-content-pipeline-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test digest quality gates
+        run: python3 -m unittest discover -s scripts -p 'test_dev_digest.py' -v
+
   generate-digest:
+    if: github.event_name != 'pull_request'
+    needs: test
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
+      - name: Generate and validate today's digest
+        id: digest
+        run: python3 scripts/generate_dev_digest.py --max-items 6 --check-links --github-output "$GITHUB_OUTPUT"
+      - name: Validate the generated file
+        if: steps.digest.outputs.generated == 'true'
+        env:
+          POST_PATH: ${{ steps.digest.outputs.post_path }}
+        run: python3 scripts/validate_dev_digest.py "$POST_PATH" --min-items 1
       - name: Setup Ruby
+        if: steps.digest.outputs.generated == 'true'
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.2"
           bundler-cache: true
-
-      - name: Generate digest post
-        run: python3 scripts/generate_dev_digest.py --max-items 6
-
-      - name: Validate generated digest
-        run: |
-          latest_post="$(find _posts/dev/digest -name '*-dev-digest.markdown' | sort | tail -n 1)"
-          if [ -z "$latest_post" ]; then
-            echo "No digest file found to validate."
-            exit 1
-          fi
-          python3 scripts/validate_dev_digest.py "$latest_post" --min-items 1
-
       - name: Build site
+        if: steps.digest.outputs.generated == 'true'
         env:
           JEKYLL_ENV: production
         run: bundle exec jekyll build
-
       - name: Commit and push changes
+        if: steps.digest.outputs.generated == 'true'
+        env:
+          POST_PATH: ${{ steps.digest.outputs.post_path }}
         run: |
-          git add _posts .pipeline
+          git add -- "$POST_PATH" .pipeline/content_state.json
           if git diff --cached --quiet; then
-            echo "No new digest generated."
+            echo "No changes to commit."
             exit 0
           fi
-
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "chore: add automated dev digest"
           git push
