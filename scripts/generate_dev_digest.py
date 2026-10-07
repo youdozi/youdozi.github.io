@@ -189,6 +189,7 @@ def sanitize_text(value: str, max_length: int = 420) -> str:
     text = re.sub(r"<[^>]+>", " ", html.unescape(value or ""))
     text = re.sub(r"\s+", " ", text).strip()
     text = re.sub(r"\s*The post .*? appeared first on .*?$", "", text, flags=re.I).strip()
+    text = re.sub(r"\s+By [A-Z][\w’'-]+(?:[ ,]+[A-Z][\w’'-]+)+\.?$", "", text).strip()
     if len(text) <= max_length:
         return text
     # Preserve complete sentences; reject an excerpt if its first sentence is too long.

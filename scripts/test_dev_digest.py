@@ -69,6 +69,10 @@ class ParsingTests(unittest.TestCase):
         text = g.sanitize_text("<p>Release &amp; migration.</p> The post Example appeared first on The GitHub Blog .")
         self.assertEqual("Release & migration.", text)
 
+    def test_infoq_author_credit_does_not_reject_complete_description(self):
+        self.assertEqual(DESCRIPTION, g.sanitize_text(DESCRIPTION + " By Susan Chang"))
+        self.assertTrue(g.summary_is_complete(g.sanitize_text(DESCRIPTION + " By Siddharth Kodwani, Swaroop Chitlur")))
+
     def test_truncated_description_is_not_accepted(self):
         self.assertFalse(g.summary_is_complete(DESCRIPTION + "&#8230;"))
         self.assertFalse(g.summary_is_complete(DESCRIPTION + "…"))
