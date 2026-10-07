@@ -129,7 +129,10 @@ def validate_text(text: str, path: Path, min_items: int = 1, *, days_back: int =
                 errors.append(f"{label}: duplicate field {key}")
             fields[key] = value.strip()
         # Read older posts too, but enforce the same per-article checks.
-        summary = fields.get("출처 제공 설명", fields.get("한줄 요약", ""))
+        summary = fields.get("한국어 AI 요약", fields.get("출처 제공 설명", fields.get("한줄 요약", "")))
+        if "한국어 AI 요약" in fields:
+            if not re.search(r"[가-힣]", summary) or fields.get("검증 범위") != "원문 인용·문맥 일치 확인 (AI 검증, 사실 보증 아님)":
+                errors.append(f"{label}: Korean AI summary must declare its verification scope")
         reason = fields.get("확인할 점", fields.get("왜 중요한가", ""))
         if not summary_is_complete(summary):
             errors.append(f"{label}: description must be 80–420 characters and end as a complete sentence")

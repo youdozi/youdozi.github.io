@@ -130,6 +130,7 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Directory containing local RSS/Atom fixture files for offline validation",
     )
+    parser.add_argument("--ai", action="store_true", help="Require Gemini Korean summaries and source evidence checks")
     parser.add_argument("--min-score", type=int, default=6)
     parser.add_argument("--max-per-source", type=int, default=3)
     parser.add_argument("--check-links", action="store_true", help="Require selected article URLs to respond with HTML over HTTPS")
@@ -414,7 +415,7 @@ def emit_outputs(args: argparse.Namespace, generated: bool, path: Path) -> None:
                 output.write(f"post_path={path.relative_to(Path(args.repo_root).resolve()).as_posix()}\n")
 
 
-def build_markdown(today_kst: datetime, items: List[FeedItem], tags: List[str]) -> str:
+def build_markdown(today_kst: datetime, items: List[FeedItem], tags: List[str], ai_results: dict | None = None) -> str:
     lines = [
         "---",
         "layout: posts",
@@ -437,7 +438,8 @@ def build_markdown(today_kst: datetime, items: List[FeedItem], tags: List[str]) 
             "",
             "- 공식 기술 블로그와 기술 매체 RSS에서 수집",
             "- 최신성, 기술 키워드, 최소 점수, 출처별 최대 개수와 중복 여부로 선별",
-            "- RSS 제공 설명을 정리해 싣습니다. 번역 및 원문 사실 검증은 수행하지 않습니다.",
+            ("- 한국어 AI 요약의 인용 근거와 원문 문맥을 대조했습니다. 사실의 진위를 보장하지 않습니다." if ai_results
+             else "- RSS 제공 설명을 정리해 싣습니다. 번역 및 원문 사실 검증은 수행하지 않습니다."),
             "",
             "## 핵심 아티클",
             "",
@@ -452,7 +454,9 @@ def build_markdown(today_kst: datetime, items: List[FeedItem], tags: List[str]) 
                 f"- 출처: {item.source_name}",
                 f"- 발행일: {item.published_at.astimezone(KST).strftime('%Y-%m-%d %H:%M')} (KST)",
                 f"- 링크: [{item.link}]({item.link})",
-                f"- 출처 제공 설명: {item.summary}",
+                (f"- 한국어 AI 요약: {ai_results[item.link]['summary_ko']}" if ai_results
+                 else f"- 출처 제공 설명: {item.summary}"),
+                *(["- 검증 범위: 원문 인용·문맥 일치 확인 (AI 검증, 사실 보증 아님)"] if ai_results else []),
                 f"- 확인할 점: {topic_message(item)}",
                 "",
             ]
@@ -521,11 +525,22 @@ def main() -> int:
         emit_outputs(args, False, target_post)
         return 0
 
+    ai_results = None
+    if args.ai:
+        from ai_dev_digest import AIError, enrich_items
+        try:
+            selected, ai_results = enrich_items(selected)
+        except AIError as exc:
+            print(f"[error] {exc}", file=sys.stderr)
+            return 1
+        if not selected:
+            print("[error] All articles were withheld by AI/source verification.", file=sys.stderr)
+            return 1
     selected_tags = sorted({tag for item in selected for tag in item.topic_tags})
     if not selected_tags:
         selected_tags = ["dev", "news"]
 
-    markdown = build_markdown(today_kst, selected, selected_tags)
+    markdown = build_markdown(today_kst, selected, selected_tags, ai_results)
     from validate_dev_digest import validate_text
     errors = validate_text(markdown, target_post, min_items=1,
                            days_back=args.days_back, check_links=args.check_links,
@@ -546,6 +561,9 @@ def main() -> int:
         target_post.write_text(markdown, encoding="utf-8")
         seen_links.update(item.link for item in selected)
         write_state(state_path, seen_links)
+        if ai_results:
+            audit_path = repo_root / ".pipeline" / f"{today_kst.strftime('%Y-%m-%d')}-ai-audit.json"
+            audit_path.write_text(json.dumps(ai_results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"[done] wrote {target_post}")
         print(f"[done] updated {state_path}")
         emit_outputs(args, True, target_post)
