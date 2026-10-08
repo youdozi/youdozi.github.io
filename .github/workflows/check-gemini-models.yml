@@ -1,0 +1,51 @@
+name: Check Gemini supported models
+on:
+  push:
+    branches: [codex/check-gemini-models]
+    paths: [.github/workflows/check-gemini-models.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  list-models:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: List models using the registered key
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, sys, urllib.request, urllib.parse, urllib.error
+          key = os.environ.get("GEMINI_API_KEY", "").strip()
+          if not key:
+              sys.exit("[error] GEMINI_API_KEY is missing")
+          token = ""
+          models = []
+          for page in range(10):
+              query = {"pageSize": 1000}
+              if token:
+                  query["pageToken"] = token
+              url = "https://generativelanguage.googleapis.com/v1beta/models?" + urllib.parse.urlencode(query)
+              request = urllib.request.Request(url, headers={"x-goog-api-key": key})
+              try:
+                  with urllib.request.urlopen(request, timeout=30) as response:
+                      data = json.loads(response.read(2000000))
+              except urllib.error.HTTPError as exc:
+                  sys.exit("[error] models.list HTTP " + str(exc.code))
+              except Exception:
+                  sys.exit("[error] models.list request failed")
+              models.extend(data.get("models", []))
+              token = data.get("nextPageToken", "")
+              if not token:
+                  break
+          else:
+              sys.exit("[error] pagination limit reached")
+          print("[ok] models.list authenticated; model count:", len(models))
+          for model in sorted(models, key=lambda item: item.get("name", "")):
+              name = model.get("name", "")
+              methods = model.get("supportedGenerationMethods", [])
+              if re.fullmatch(r"models/[A-Za-z0-9._/-]+", name):
+                  safe = [method for method in methods if re.fullmatch(r"[A-Za-z0-9_]+", method)]
+                  print("[model] " + name + " | " + ", ".join(safe))
+          PY
