@@ -52,6 +52,7 @@ jobs:
         id: digest
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.5-flash-lite' }}
           PREVIEW: ${{ github.event_name == 'workflow_dispatch' && inputs.preview }}
         run: |
           args=(--ai --check-links --github-output "$GITHUB_OUTPUT")
