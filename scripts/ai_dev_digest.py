@@ -11,7 +11,7 @@ from urllib.error import HTTPError
 from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
 
-MODEL = "gemini-2.5-flash-lite"
+DEFAULT_MODEL = "gemini-3.5-flash-lite"
 MAX_BODY = 18000
 MAX_DOWNLOAD = 2_000_000
 PRIMARY_HOSTS = {
@@ -145,6 +145,9 @@ class Gemini:
         self.key = os.getenv("GEMINI_API_KEY", "").strip()
         if not self.key:
             raise AIError("GEMINI_API_KEY secret is missing")
+        self.model = os.getenv("GEMINI_MODEL", "").strip() or DEFAULT_MODEL
+        if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}", self.model):
+            raise AIError("GEMINI_MODEL must be a model ID without the models/ prefix")
         self.calls = 0
 
     def generate(self, instruction: str, data: dict, schema: dict) -> dict:
@@ -157,7 +160,7 @@ class Gemini:
             "generationConfig": {"temperature": 0, "maxOutputTokens": 2048,
                                  "responseMimeType": "application/json", "responseSchema": schema},
         }
-        request = Request(f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent",
+        request = Request(f"https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent",
                           data=json.dumps(payload).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": self.key}, method="POST")
         try:
             with urlopen(request, timeout=60) as response:
@@ -171,7 +174,15 @@ class Gemini:
                 raise AIError("AI returned invalid JSON structure")
             return result
         except HTTPError as exc:
-            raise AIError(f"Gemini HTTP {exc.code}; publication withheld (no paid fallback or retries)") from None
+            status = ""
+            try:
+                error = json.loads(exc.read(65536)).get("error", {})
+                value = error.get("status", "")
+                if value in {"INVALID_ARGUMENT", "NOT_FOUND", "PERMISSION_DENIED", "UNAUTHENTICATED", "RESOURCE_EXHAUSTED", "FAILED_PRECONDITION", "UNAVAILABLE", "INTERNAL"}:
+                    status = f" ({value})"
+            except Exception:
+                pass
+            raise AIError(f"Gemini HTTP {exc.code}{status}; publication withheld (no paid fallback or retries)") from None
         except AIError:
             raise
         except Exception:
@@ -254,7 +265,7 @@ def summarize_item(item, client: Gemini) -> dict:
     if type(review.get("requires_official")) is not bool:
         raise ArticleUnavailable("AI review omitted official-source decision")
     verify_claims(claims, documents, sensitive or review["requires_official"])
-    return {"summary_ko": summary, "model": MODEL, "claims": claims,
+    return {"summary_ko": summary, "model": client.model, "claims": claims,
             "documents": [{"url": d.url, "sha256": hashlib.sha256(d.body.encode()).hexdigest()} for d in documents],
             "verification": "source_consistency_checked"}
 

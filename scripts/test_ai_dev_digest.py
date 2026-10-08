@@ -85,10 +85,12 @@ class EvidenceTests(unittest.TestCase):
 
     def test_accepted_summary_has_hashes_and_checked_scope(self):
         client = MagicMock()
+        client.model = "gemini-3.5-flash-lite"
         client.generate.side_effect = [{"claims": self.claims}, {"supported": True, "requires_official": True, "claims": [{"index": 0, "supported": True}, {"index": 1, "supported": True}]}]
         with patch.object(ai, "fetch_document", return_value=self.docs[0]):
             result = ai.summarize_item(item(), client)
         self.assertEqual("source_consistency_checked", result["verification"])
+        self.assertEqual(client.model, result["model"])
         self.assertEqual(64, len(result["documents"][0]["sha256"]))
         self.assertNotIn("body", result["documents"][0])
         article = item()
@@ -107,6 +109,31 @@ class EvidenceTests(unittest.TestCase):
 
 
 class APITests(unittest.TestCase):
+    def test_model_configuration_controls_request_endpoint(self):
+        for configured, expected in [("", ai.DEFAULT_MODEL), ("  gemini-3.5-flash  ", "gemini-3.5-flash")]:
+            with self.subTest(model=configured), patch.dict(os.environ, {"GEMINI_API_KEY": "test", "GEMINI_MODEL": configured}), patch.object(ai, "urlopen", side_effect=HTTPError("https://api.test", 404, "not found", None, None)) as request:
+                client = ai.Gemini()
+                with self.assertRaises(ai.AIError):
+                    client.generate("summarize", {}, ai.CLAIM_SCHEMA)
+                self.assertEqual(expected, client.model)
+                self.assertEqual(f"https://generativelanguage.googleapis.com/v1beta/models/{expected}:generateContent", request.call_args[0][0].full_url)
+
+    def test_invalid_model_rejected_without_network(self):
+        for model in ["models/gemini-3.5-flash-lite", "../other", "gemini?key=secret"]:
+            with self.subTest(model=model), patch.dict(os.environ, {"GEMINI_API_KEY": "test", "GEMINI_MODEL": model}), patch.object(ai, "urlopen") as request:
+                with self.assertRaises(ai.AIError):
+                    ai.Gemini()
+                request.assert_not_called()
+
+    def test_http_error_reports_status_without_response_message(self):
+        payload = json.dumps({"error": {"status": "NOT_FOUND", "message": "test-secret-not-real"}}).encode()
+        error = HTTPError("https://api.test", 404, "error", None, io.BytesIO(payload))
+        with patch.dict(os.environ, {"GEMINI_API_KEY": "test-secret-not-real"}), patch.object(ai, "urlopen", side_effect=error):
+            with self.assertRaises(ai.AIError) as raised:
+                ai.Gemini().generate("summarize", {}, ai.CLAIM_SCHEMA)
+        self.assertIn("404 (NOT_FOUND)", str(raised.exception))
+        self.assertNotIn("test-secret-not-real", str(raised.exception))
+
     def test_missing_key_fails_without_network(self):
         with patch.dict(os.environ, {"GEMINI_API_KEY": ""}):
             with self.assertRaises(ai.AIError):
