@@ -1,0 +1,45 @@
+{
+  "https://blog.cloudflare.com/birthday-week-2026-wrap-up/": {
+    "summary_ko": "클라우드플레어는 16번째 생일을 맞이하여 공개한 46개 발표의 일환으로 오픈소스 자바스크립트 도구 체인을 지원하는 VoidZero의 참여와 비정형 데이터를 처리하는 오픈 서버리스 데이터 플랫폼인 Cloudflare Basin의 정식 출시(GA) 등을 공개했다. 또한 클라우드플레어는 AI 검색 기능인 AI Search의 정식 출시(GA)와 함께, HTTP 402 기반의 에이전트 결제를 지원하는 Monetization Gateway 베타 서비스 등을 발표했다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "클라우드플레어는 16번째 생일을 맞이하여 공개한 46개 발표의 일환으로 오픈소스 자바스크립트 도구 체인을 지원하는 VoidZero의 참여와 비정형 데이터를 처리하는 오픈 서버리스 데이터 플랫폼인 Cloudflare Basin의 정식 출시(GA) 등을 공개했다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "We shipped 46 announcements this week."
+          },
+          {
+            "document_id": 0,
+            "quote": "Four months of VoidZero at Cloudflare: making the open-source JavaScript toolchain faster for all humans and agents"
+          },
+          {
+            "document_id": 0,
+            "quote": "Introducing Cloudflare Basin: an open, serverless data platform, now generally available"
+          }
+        ]
+      },
+      {
+        "text_ko": "또한 클라우드플레어는 AI 검색 기능인 AI Search의 정식 출시(GA)와 함께, HTTP 402 기반의 에이전트 결제를 지원하는 Monetization Gateway 베타 서비스 등을 발표했다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "AI Search is now generally available"
+          },
+          {
+            "document_id": 0,
+            "quote": "Monetization Gateway beta: charge AI agents for consumption with HTTP 402"
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://blog.cloudflare.com/birthday-week-2026-wrap-up/",
+        "sha256": "8e8ce206d4fe5ce1b5685174865001763146b4192cb7148e027802037e2b530f"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  }
+}
