@@ -1,0 +1,81 @@
+{
+  "https://www.infoq.com/news/2026/10/github-copilot-rust-migration/": {
+    "summary_ko": "GitHub은 AI 보조 재작성을 통해 GitHub Copilot CLI, Copilot 앱, Copilot SDK의 백엔드 런타임을 TypeScript와 Node.js에서 Rust로 이전했습니다. GitHub은 Rust 런타임을 프로세스 내에 임베드했을 때 클라이언트 시작, 세션 생성, 단일 턴 시나리오의 측정 시간이 기존 5.25초에서 292밀리초로 단축되었다고 보고했습니다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "GitHub은 AI 보조 재작성을 통해 GitHub Copilot CLI, Copilot 앱, Copilot SDK의 백엔드 런타임을 TypeScript와 Node.js에서 Rust로 이전했습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "GitHub has migrated the runtime behind GitHub Copilot CLI, the Copilot app, and Copilot SDK from TypeScript and Node.js to Rust, replacing more than 800,000 lines of production code through an AI-assisted rewrite."
+          }
+        ]
+      },
+      {
+        "text_ko": "GitHub은 Rust 런타임을 프로세스 내에 임베드했을 때 클라이언트 시작, 세션 생성, 단일 턴 시나리오의 측정 시간이 기존 5.25초에서 292밀리초로 단축되었다고 보고했습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "GitHub reports that a measured client startup, session creation, and single-turn scenario fell from 5.25 seconds with the previous runtime to 292 milliseconds when the Rust runtime was embedded in process."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.infoq.com/news/2026/10/github-copilot-rust-migration/",
+        "sha256": "724b54ffbe568e57bb2656bc60c10c4a261f00a671e82a1945a9ddf800137e16"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  },
+  "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/": {
+    "summary_ko": "클라우드플레어는 텍스트와 이미지 외에 오디오와 비디오 입력을 지원하는 오픈 웨이트 결정 모델인 Clef-omni를 공개했습니다. Clef-flash는 가격이 100만 입력 토큰당 0.09달러에서 0.038달러로 인하되었으며, 호스팅 버전의 컨텍스트 윈도우가 24k로 축소되었습니다. Clef 모델은 서빙 인프라 레이어의 최적화와 SGLang 도입을 통해 더 빠른 속도를 제공하며 가중치는 변경되지 않았습니다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "클라우드플레어는 텍스트와 이미지 외에 오디오와 비디오 입력을 지원하는 오픈 웨이트 결정 모델인 Clef-omni를 공개했습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Today, we’re releasing Clef-omni, which takes in audio and video input alongside text and image."
+          }
+        ]
+      },
+      {
+        "text_ko": "Clef-flash는 가격이 100만 입력 토큰당 0.09달러에서 0.038달러로 인하되었으며, 호스팅 버전의 컨텍스트 윈도우가 24k로 축소되었습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Clef-flash – originally $0.09 per M input tokens, now $0.038 per M input tokens"
+          },
+          {
+            "document_id": 0,
+            "quote": "The hosted version of Clef-flash now has a context window of 24k, instead of 64k as previously advertised."
+          }
+        ]
+      },
+      {
+        "text_ko": "Clef 모델은 서빙 인프라 레이어의 최적화와 SGLang 도입을 통해 더 빠른 속도를 제공하며 가중치는 변경되지 않았습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "No new model weights are released because most of the optimizations we made are at the serving infrastructure layer, not materially to the model weights or architecture."
+          },
+          {
+            "document_id": 0,
+            "quote": "One of the optimizations we made was to move to SGLang for serving the model."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/",
+        "sha256": "05d2dfffebabdbee5efc2f28fa461b7d80db8a3018df8bf079fb53a8c467564d"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  }
+}
