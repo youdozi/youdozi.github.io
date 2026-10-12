@@ -1,0 +1,115 @@
+{
+  "https://www.infoq.com/news/2026/10/cloudflare-traces-open-beta/": {
+    "summary_ko": "클라우드프레어는 프락시 계층의 요청 경로를 오픈텔레메트리 스팬으로 확장하는 클라우드프레어 트레이스를 오픈 베타로 공개했다. 클라우드프레어는 2026년 12월 1일부터 스팬 기준 과금을 폐지하고 데이터 수집량과 보관 기간에 기반한 새로운 가격 정책을 적용한다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "클라우드프레어는 프락시 계층의 요청 경로를 오픈텔레메트리 스팬으로 확장하는 클라우드프레어 트레이스를 오픈 베타로 공개했다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Cloudflare has recently made Traces available in open beta , extending automatic tracing from Workers to the rest of the request path."
+          },
+          {
+            "document_id": 1,
+            "quote": "Today, we’re introducing Cloudflare Traces in open beta, extending automatic tracing beyond Workers to the rest of the request path."
+          }
+        ]
+      },
+      {
+        "text_ko": "클라우드프레어는 2026년 12월 1일부터 스팬 기준 과금을 폐지하고 데이터 수집량과 보관 기간에 기반한 새로운 가격 정책을 적용한다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Cloudflare now replaces that model on December 1, 2026, charging instead for data ingested and retention."
+          },
+          {
+            "document_id": 1,
+            "quote": "New pricing will take effect across Cloudflare Tracing (and Workers Tracing!) starting December 1, 2026."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.infoq.com/news/2026/10/cloudflare-traces-open-beta/",
+        "sha256": "7beb6e7c184bc2218bc974e46dc0881d9641fe7793961572ef881d9b95b28fde"
+      },
+      {
+        "url": "https://blog.cloudflare.com/cloudflare-tracing/",
+        "sha256": "3ef1199bb691273e1e6454344c10d33f86204e0318b9039fba439ffb8ce0b4cc"
+      },
+      {
+        "url": "https://blog.cloudflare.com/workers-tracing-now-in-open-beta/",
+        "sha256": "ff3a8e265d714049c428e90e6e830f5e9a745b825af15593192809fcca24b76e"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  },
+  "https://blog.cloudflare.com/workers-on-demand-profiling/": {
+    "summary_ko": "클라우드플레어는 Workers 및 Durable Objects에 대한 온디맨드 CPU 및 메모리 프로파일링 지원을 발표했습니다. 메모리 프로파일러는 프로파일링 창 내에서 발생한 할당만 보여준다는 한계가 있습니다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "클라우드플레어는 Workers 및 Durable Objects에 대한 온디맨드 CPU 및 메모리 프로파일링 지원을 발표했습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Today we are happy to announce support for CPU and memory profiling of Workers and Durable Objects."
+          }
+        ]
+      },
+      {
+        "text_ko": "메모리 프로파일러는 프로파일링 창 내에서 발생한 할당만 보여준다는 한계가 있습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "The memory profiler can only show you allocations that occurred during the profiling window."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+        "sha256": "6f916933b64fe743bacbc0bf722f4c7c6db3399c77091d79921f110b64363e47"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  },
+  "https://blog.cloudflare.com/deno-joins-cloudflare/": {
+    "summary_ko": "데노 팀은 클라우드플레어에 합류하여 workerd와 celld를 병합하고 자가 호스팅 워커 및 듀라블 오브젝트를 간소화할 예정입니다. 라이언 달과 버트 벨더는 클라우드플레어에서 workerd 자가 호스팅을 지원하는 새로운 노력을 이끌 예정입니다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "데노 팀은 클라우드플레어에 합류하여 workerd와 celld를 병합하고 자가 호스팅 워커 및 듀라블 오브젝트를 간소화할 예정입니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "The Deno team is joining Cloudflare to radically simplify self-hosting Workers and Durable Objects so developers can use the same primitives in more places."
+          },
+          {
+            "document_id": 0,
+            "quote": "The Deno team is joining Cloudflare, and we're merging workerd and celld!"
+          }
+        ]
+      },
+      {
+        "text_ko": "라이언 달과 버트 벨더는 클라우드플레어에서 workerd 자가 호스팅을 지원하는 새로운 노력을 이끌 예정입니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Ryan and Bert will be leading a new effort to make workerd self-hosting a first-class supported way to build and run apps using the Workers programming model."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://blog.cloudflare.com/deno-joins-cloudflare/",
+        "sha256": "909a51d5d5aed9dbc83547b8bb2156a4b0e40fcfbfbc418c1e9cd6172eccb99c"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  }
+}
