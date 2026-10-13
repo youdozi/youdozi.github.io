@@ -1,0 +1,85 @@
+{
+  "https://www.infoq.com/articles/liquid-clustering-lakehouse-layout/": {
+    "summary_ko": "델타 레이크 벤치마크 결과 액체 클러스터링은 포인트 룩업에서 파티션된 기준선보다 49퍼센트 빠른 1.003초의 최저 지연 시간을 기록했습니다. 날짜 컬럼이 보조 또는 삼차 클러스터링 키로 설정되면 ZOrder는 단순 날짜 파티션 테이블보다 시간 범위 쿼리 성능이 78퍼센트 더 저하됩니다. 쿼리 술어가 안정적인 필터 컬럼 세트와 정확히 일치할 때 ZOrder는 최적의 파일 프루닝을 달성하며 액체 클러스터링은 거의 다섯 배 더 느릴 수 있습니다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "델타 레이크 벤치마크 결과 액체 클러스터링은 포인트 룩업에서 파티션된 기준선보다 49퍼센트 빠른 1.003초의 최저 지연 시간을 기록했습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Liquid Clustering achieved the lowest latency at 1.003 seconds, forty-nine percent faster than the partitioned baseline, despite scanning more raw data than ZOrder."
+          }
+        ]
+      },
+      {
+        "text_ko": "날짜 컬럼이 보조 또는 삼차 클러스터링 키로 설정되면 ZOrder는 단순 날짜 파티션 테이블보다 시간 범위 쿼리 성능이 78퍼센트 더 저하됩니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "When a date column sits as a secondary or tertiary key in a ZOrder clustering expression, time-range queries perform significantly worse than a simple date-partitioned table, seventy-eight percent slower in this benchmark."
+          }
+        ]
+      },
+      {
+        "text_ko": "쿼리 술어가 안정적인 필터 컬럼 세트와 정확히 일치할 때 ZOrder는 최적의 파일 프루닝을 달성하며 액체 클러스터링은 거의 다섯 배 더 느릴 수 있습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "When a query predicate precisely matches a stable set of filter columns, ZOrder’s file pruning is close to optimal and Liquid Clustering can be nearly five times slower while scanning ten times more data."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.infoq.com/articles/liquid-clustering-lakehouse-layout/",
+        "sha256": "f080fac3280df75870f1934de0ada0207f9d9687314f398599eb364b687fc796"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  },
+  "https://blog.cloudflare.com/radar-redesign/": {
+    "summary_ko": "2020년에 출시된 클라우드플레어 레이더(Radar)는 글로벌 인터넷 트렌드에 대한 실시간 가시성을 제공하며, 네트워크 운영자와 학술 연구원 같은 기술적 전문 사용자를 주요 대상으로 삼아왔습니다. 새로운 레이더 홈페이즈는 사용자가 익숙한 지도를 시각적 기준으로 활용하여 트래픽과 장애 정보를 상단에 배치하고, 벤토 박스 차트 위젯을 탭 기반 흐름으로 개편하여 복잡한 데이터를 보다 체계적으로 탐색할 수 있도록 개선되었습니다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "2020년에 출시된 클라우드플레어 레이더(Radar)는 글로벌 인터넷 트렌드에 대한 실시간 가시성을 제공하며, 네트워크 운영자와 학술 연구원 같은 기술적 전문 사용자를 주요 대상으로 삼아왔습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Since launching in 2020 , Radar has found a natural audience amongst expert users with technical backgrounds, such as network operators and academic researchers who rely on Radar data to observe industry trends and global events."
+          },
+          {
+            "document_id": 0,
+            "quote": "Radar provides a real-time view into global Internet trends, powered by Cloudflare’s global network."
+          }
+        ]
+      },
+      {
+        "text_ko": "새로운 레이더 홈페이즈는 사용자가 익숙한 지도를 시각적 기준으로 활용하여 트래픽과 장애 정보를 상단에 배치하고, 벤토 박스 차트 위젯을 탭 기반 흐름으로 개편하여 복잡한 데이터를 보다 체계적으로 탐색할 수 있도록 개선되었습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "The new and improved Radar uses a visual reference that users of all backgrounds will have a familiarity with — a map."
+          },
+          {
+            "document_id": 0,
+            "quote": "The top section focuses on traffic and outages."
+          },
+          {
+            "document_id": 0,
+            "quote": "Below the map, we turned the old bento box chart widgets into a tabbed flow that helps users move through the data more deliberately."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://blog.cloudflare.com/radar-redesign/",
+        "sha256": "6c13f8da3e62f7f5e874433fd4189d344adffa994b34f30fc50ed5a61fed1b5f"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  }
+}
