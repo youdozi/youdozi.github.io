@@ -1,0 +1,42 @@
+{
+  "https://www.infoq.com/news/2026/10/qcon-ai-newyork-2026-sessionsv2/": {
+    "summary_ko": "QCon AI New York 2026 컨퍼런스는 12월 15일부터 16일까지 The Westin Jersey City Newport에서 개최됩니다. Nancy Wang은 'When Software Becomes a User: Identity and Authorization for Agents in Production' 세션을 통해 프로덕션 환경의 에이전트를 위한 대안적 권한 부여 솔루션을 제공합니다. Ronak Nathani는 'Inside LinkedIn's Kubernetes Ops Agent: Skills, Tools, and Guardrails' 세션에서 50만 개 이상의 노드와 500만 개 이상의 파드에서 작동하는 운영 에이전트를 상세히 설명합니다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "QCon AI New York 2026 컨퍼런스는 12월 15일부터 16일까지 The Westin Jersey City Newport에서 개최됩니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "The conference takes place December 15-16 at The Westin Jersey City Newport, about five minutes by PATH train from the World Trade Center."
+          }
+        ]
+      },
+      {
+        "text_ko": "Nancy Wang은 'When Software Becomes a User: Identity and Authorization for Agents in Production' 세션을 통해 프로덕션 환경의 에이전트를 위한 대안적 권한 부여 솔루션을 제공합니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Nancy Wang, who founded and scaled AWS Data Protection, provides alternative solutions in When Software Becomes a User: Identity and Authorization for Agents in Production ."
+          }
+        ]
+      },
+      {
+        "text_ko": "Ronak Nathani는 'Inside LinkedIn's Kubernetes Ops Agent: Skills, Tools, and Guardrails' 세션에서 50만 개 이상의 노드와 500만 개 이상의 파드에서 작동하는 운영 에이전트를 상세히 설명합니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "He presents Inside LinkedIn's Kubernetes Ops Agent: Skills, Tools, and Guardrails , detailing an operations agent working across 500,000+ nodes and 5M+ pods."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.infoq.com/news/2026/10/qcon-ai-newyork-2026-sessionsv2/",
+        "sha256": "1fd581869a0924e3578724bbf77d1eb3193674be112004725e1392c9d00f7bc1"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  }
+}
