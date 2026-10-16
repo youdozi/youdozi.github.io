@@ -1,0 +1,37 @@
+{
+  "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web/": {
+    "summary_ko": "클라우드플레어와 오픈AI는 2026년 7월에 AI 검색 신호 활용을 위한 연구 파일럿을 시작했으며, 초기 결과에 따르면 이 파일럿을 통해 오픈AI의 검색 색인에 수억 개의 새로운 웹페이지가 추가되었다. 오픈AI는 클라우드플레어의 네트워크 신호를 활용해 발견된 페이지의 관련성과 유용성을 독자적으로 평가하고 순위를 매긴다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "클라우드플레어와 오픈AI는 2026년 7월에 AI 검색 신호 활용을 위한 연구 파일럿을 시작했으며, 초기 결과에 따르면 이 파일럿을 통해 오픈AI의 검색 색인에 수억 개의 새로운 웹페이지가 추가되었다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Cloudflare and OpenAI launched a research pilot in July 2026 with those interests in mind."
+          },
+          {
+            "document_id": 0,
+            "quote": "This joint pilot, which used a participating cohort of ~1% of Cloudflare’s total network, has enabled OpenAI to discover and index hundreds of millions of new web pages"
+          }
+        ]
+      },
+      {
+        "text_ko": "오픈AI는 클라우드플레어의 네트워크 신호를 활용해 발견된 페이지의 관련성과 유용성을 독자적으로 평가하고 순위를 매긴다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "OpenAI then independently evaluates and ranks how those pages appear based on how relevant and helpful they are."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web/",
+        "sha256": "c63c9fef8304e9df7440a84d48e09dd856ad72e0106b3e7a4adad915b03cbf5b"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  }
+}
