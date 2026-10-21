@@ -1,0 +1,33 @@
+{
+  "https://blog.cloudflare.com/emudhra-certificate-compromise/": {
+    "summary_ko": "2026년 10월 19일 17시(UTC)경 클라우드플레어는 8개의 eMudhra 중간 인증서와 연관된 개인 키가 유출된 사실을 인지했습니다. 클라우드플레어는 Cloudflare One Clients와 Cloudflare Tunnel(cloudflared)에 대한 업데이트를 각각 발표했습니다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "2026년 10월 19일 17시(UTC)경 클라우드플레어는 8개의 eMudhra 중간 인증서와 연관된 개인 키가 유출된 사실을 인지했습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "On October 19, 2026, at approximately 17:00 UTC, Cloudflare became aware that private keys associated with eight eMudhra intermediate certificates were compromised."
+          }
+        ]
+      },
+      {
+        "text_ko": "클라우드플레어는 Cloudflare One Clients와 Cloudflare Tunnel(cloudflared)에 대한 업데이트를 각각 발표했습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "We have released updates for the Cloudflare One Clients, also known as WARP or the 1.1.1.1 app, and Cloudflare Tunnel, also known as cloudflared."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+        "sha256": "16d6462efa431d4feb7bebc6d57696e33b6aed98b7fe8d65159cd687d1488abf"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  }
+}
