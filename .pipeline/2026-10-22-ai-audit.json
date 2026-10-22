@@ -1,0 +1,64 @@
+{
+  "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/": {
+    "summary_ko": "Calif.io, Wiz, OpenAI, Quarkslab 등은 CVE-2026-109618 및 CVE-2026-109619로 추적되는 php2shell 취약점을 공개했으며 이는 PHP 5.4 이상을 실행하는 모든 웹 서버에 영향을 미칩니다. 클라우드플레어는 2026년 10월 21일 오전 3시 2분(UTC)부터 무료 및 유료 WAF를 사용하는 고객이 php2shell에 대해 기본적으로 보호받도록 조치했습니다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "Calif.io, Wiz, OpenAI, Quarkslab 등은 CVE-2026-109618 및 CVE-2026-109619로 추적되는 php2shell 취약점을 공개했으며 이는 PHP 5.4 이상을 실행하는 모든 웹 서버에 영향을 미칩니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Today, Calif.io, Wiz, OpenAI and Quarkslab disclosed two vulnerabilities in PHP, tracked as CVE-2026-109618 and CVE-2026-109619 and known as php2shell . The vulnerabilities affect all web servers running PHP 5.4 or later"
+          }
+        ]
+      },
+      {
+        "text_ko": "클라우드플레어는 2026년 10월 21일 오전 3시 2분(UTC)부터 무료 및 유료 WAF를 사용하는 고객이 php2shell에 대해 기본적으로 보호받도록 조치했습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Starting on October 21 3:02 am UTC, Cloudflare customers using our free or paid WAF were protected by default against php2shell."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+        "sha256": "422f6d8b6775364b9d9dca9bc3ba62f7b6c463468676e1f81d2b2c7566811c73"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  },
+  "https://www.infoq.com/news/2026/10/netflix-workload-attestation-aws/": {
+    "summary_ko": "넷플릭스는 아마존 EMR의 아파치 스파크 작업이 AWS 실행 신동을 단기 내부 워크로드 신원으로 교환할 수 있는 워크로드 증명 메커니즘을 개발했습니다. 이 접근 방식은 AWS IAM과 넷플릭스의 내부 Metatron PKI를 연결하여 관리형 컴퓨팅 워크로드가 수동 자격 증명 주입 없이 내부 서비스에 인증할 수 있도록 합니다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "넷플릭스는 아마존 EMR의 아파치 스파크 작업이 AWS 실행 신동을 단기 내부 워크로드 신원으로 교환할 수 있는 워크로드 증명 메커니즘을 개발했습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Netflix has developed a workload attestation mechanism that allows Apache Spark jobs running on Amazon EMR to exchange their AWS execution identity for a short-lived internal workload identity."
+          }
+        ]
+      },
+      {
+        "text_ko": "이 접근 방식은 AWS IAM과 넷플릭스의 내부 Metatron PKI를 연결하여 관리형 컴퓨팅 워크로드가 수동 자격 증명 주입 없이 내부 서비스에 인증할 수 있도록 합니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "The approach bridges AWS IAM with Netflix’s internal Metatron PKI, allowing managed compute workloads to authenticate to internal services without manually injecting credentials."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.infoq.com/news/2026/10/netflix-workload-attestation-aws/",
+        "sha256": "a64382ac9a8832d9d35096c4b0dd89362c5d23da84903f1a24d1ba6b49d675c2"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  }
+}
