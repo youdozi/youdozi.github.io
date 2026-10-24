@@ -281,10 +281,10 @@
       "editions": {
         "en": {
           "title": "Google’s Data Agent Kit Reaches General Availability",
-          "summary": "Google has generally made its Data Agent Kit available, following a preview period over the summer. The kit installs into coding agents that Google does not own and operates without extra licensing cost. With the general availability release, the company added support for BigQuery Graph, Bigtable, and Managed Service for Apache Spark.",
+          "summary": "Google announced general availability of Data Agent Kit on October 1, 2026, after its preview period. The kit works with third-party coding agents and has no additional kit fee, but the Google Cloud services used by an agent are billed at standard rates. With the general availability release, the company added support for BigQuery Graph, Bigtable, and Managed Service for Apache Spark.",
           "claims": [
             {
-              "text": "Google has generally made its Data Agent Kit available, following a preview period over the summer.",
+              "text": "Google announced general availability of Data Agent Kit on October 1, 2026, after its preview period.",
               "evidence": [
                 {
                   "document_id": 0,
@@ -293,11 +293,15 @@
                 {
                   "document_id": 1,
                   "quote": "Today, Google Cloud Data Agent Kit is generally available."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "October 1, 2026 Arun Nair Product Manager, Google"
                 }
               ]
             },
             {
-              "text": "The kit installs into coding agents that Google does not own and operates without extra licensing cost.",
+              "text": "The kit works with third-party coding agents and has no additional kit fee, but the Google Cloud services used by an agent are billed at standard rates.",
               "evidence": [
                 {
                   "document_id": 0,
@@ -325,11 +329,11 @@
           ]
         },
         "ko": {
-          "title": "구글 데이터 에이전트 킷 정식 출시",
-          "summary": "구글은 여름 동안 진행된 미리보기 기간을 거쳐 데이터 에이전트 킷을 정식 출시했습니다. 이 킷은 구글이 소유하지 않은 코딩 에이전트에 설치되며 추가 라이선스 비용 없이 무료로 제공됩니다. 정식 버전 출시와 함께 빅쿼리 그래프, 빅테이블, 아파치 스파크용 매니지드 서비스에 대한 지원이 추가되었습니다.",
+          "title": "Google Data Agent Kit 정식 출시: 키트 비용과 클라우드 사용료 구분",
+          "summary": "Google은 미리보기 기간을 거쳐 2026년 10월 1일 Data Agent Kit의 정식 출시(GA)를 발표했습니다. 타사 코딩 에이전트에서도 사용할 수 있으며 키트 자체의 추가 비용은 없지만, 에이전트가 사용하는 Google Cloud 서비스에는 표준 요금이 적용됩니다. 정식 버전 출시와 함께 빅쿼리 그래프, 빅테이블, 아파치 스파크용 매니지드 서비스에 대한 지원이 추가되었습니다.",
           "claims": [
             {
-              "text": "구글은 여름 동안 진행된 미리보기 기간을 거쳐 데이터 에이전트 킷을 정식 출시했습니다.",
+              "text": "Google은 미리보기 기간을 거쳐 2026년 10월 1일 Data Agent Kit의 정식 출시(GA)를 발표했습니다.",
               "evidence": [
                 {
                   "document_id": 0,
@@ -338,11 +342,15 @@
                 {
                   "document_id": 1,
                   "quote": "Today, Google Cloud Data Agent Kit is generally available."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "October 1, 2026 Arun Nair Product Manager, Google"
                 }
               ]
             },
             {
-              "text": "이 킷은 구글이 소유하지 않은 코딩 에이전트에 설치되며 추가 라이선스 비용 없이 무료로 제공됩니다.",
+              "text": "타사 코딩 에이전트에서도 사용할 수 있으며 키트 자체의 추가 비용은 없지만, 에이전트가 사용하는 Google Cloud 서비스에는 표준 요금이 적용됩니다.",
               "evidence": [
                 {
                   "document_id": 0,
@@ -398,66 +406,90 @@
       ],
       "editions": {
         "en": {
-          "title": "Cloudflare Reclaims 100 TB of RAM by Optimizing Consistent Hashing",
-          "summary": "Cloudflare reduced the memory footprint of its internal load-balancing service by more than 100 TB by optimizing consistent hashing. The team applied statistical analysis to reduce the number of hashes per backend by about 90 percent while preserving accuracy. The new implementation was rolled out gradually alongside the existing ring to limit cache churn and origin traffic spikes.",
+          "title": "Cloudflare Reports Over 100 TB in Fleet-Wide RAM Savings from Consistent Hashing Changes",
+          "summary": "Cloudflare reports that optimizing consistent hashing in its Pingora Backend Router reclaimed more than 100 TB of RAM across its global deployment, rather than on one server. For its workload, the team reduced hashes per backend by about 90% based on distribution and collision analysis. The old and new rings ran alongside each other during a staged, data-center-scoped rollout to control cache churn and origin traffic.",
           "claims": [
             {
-              "text": "Cloudflare reduced the memory footprint of its internal load-balancing service by more than 100 TB by optimizing consistent hashing.",
+              "text": "Cloudflare reports that optimizing consistent hashing in its Pingora Backend Router reclaimed more than 100 TB of RAM across its global deployment, rather than on one server.",
               "evidence": [
                 {
                   "document_id": 0,
                   "quote": "Cloudflare recently documented how it reduced the memory footprint of its internal load-balancing service by more than 100 TB by optimizing the Rust implementation of consistent hashing in pingora-ketama."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "100TB of RAM globally"
                 }
               ]
             },
             {
-              "text": "The team applied statistical analysis to reduce the number of hashes per backend by about 90 percent while preserving accuracy.",
+              "text": "For its workload, the team reduced hashes per backend by about 90% based on distribution and collision analysis.",
               "evidence": [
                 {
                   "document_id": 0,
                   "quote": "The changes compacted hash-ring entries and used statistical analysis of hash distribution and collision rates to reduce the number of hashes per backend by about 90% while preserving load-balancing accuracy."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "decrease the number of hashes we were generating for each server by 90%"
                 }
               ]
             },
             {
-              "text": "The new implementation was rolled out gradually alongside the existing ring to limit cache churn and origin traffic spikes.",
+              "text": "The old and new rings ran alongside each other during a staged, data-center-scoped rollout to control cache churn and origin traffic.",
               "evidence": [
                 {
                   "document_id": 0,
                   "quote": "The new implementation was rolled out gradually alongside the existing ring to limit cache churn and origin traffic spikes."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "progressively larger groups of data centers"
                 }
               ]
             }
           ]
         },
         "ko": {
-          "title": "클라우드플레어, 일관된 해싱 최적화로 100 TB의 RAM 회수",
-          "summary": "클라우드플레어는 일관된 해싱을 최적화하여 내부 부하 분산 서비스의 메모리 사용량을 100 TB 이상 줄였습니다. 연구팀은 통계적 분석을 적용하여 부하 분산 정확도를 유지하면서 백엔드당 해시 수를 약 90퍼센트 줄였습니다. 캐시 변동과 오리진 트래픽 급증을 제한하기 위해 새로운 구현은 기존 링과 함께 점진적으로 배포되었습니다.",
+          "title": "Cloudflare, 일관성 해싱 최적화로 전 세계 메모리 100TB 이상 절감",
+          "summary": "Cloudflare는 Pingora Backend Router의 일관성 해싱을 최적화해 전 세계 배포 전체에서 메모리를 100TB 이상 절감했다고 밝혔습니다. 단일 서버의 절감량은 아닙니다. 자사 워크로드의 분포와 충돌을 분석해 백엔드당 해시 수를 약 90% 줄였습니다. 캐시 재배치와 오리진 트래픽을 통제하기 위해 기존 링과 새 링을 함께 운영하며 데이터센터별로 점진 전환했습니다.",
           "claims": [
             {
-              "text": "클라우드플레어는 일관된 해싱을 최적화하여 내부 부하 분산 서비스의 메모리 사용량을 100 TB 이상 줄였습니다.",
+              "text": "Cloudflare는 Pingora Backend Router의 일관성 해싱을 최적화해 전 세계 배포 전체에서 메모리를 100TB 이상 절감했다고 밝혔습니다. 단일 서버의 절감량은 아닙니다.",
               "evidence": [
                 {
                   "document_id": 0,
                   "quote": "Cloudflare recently documented how it reduced the memory footprint of its internal load-balancing service by more than 100 TB by optimizing the Rust implementation of consistent hashing in pingora-ketama."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "100TB of RAM globally"
                 }
               ]
             },
             {
-              "text": "연구팀은 통계적 분석을 적용하여 부하 분산 정확도를 유지하면서 백엔드당 해시 수를 약 90퍼센트 줄였습니다.",
+              "text": "자사 워크로드의 분포와 충돌을 분석해 백엔드당 해시 수를 약 90% 줄였습니다.",
               "evidence": [
                 {
                   "document_id": 0,
                   "quote": "The changes compacted hash-ring entries and used statistical analysis of hash distribution and collision rates to reduce the number of hashes per backend by about 90% while preserving load-balancing accuracy."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "decrease the number of hashes we were generating for each server by 90%"
                 }
               ]
             },
             {
-              "text": "캐시 변동과 오리진 트래픽 급증을 제한하기 위해 새로운 구현은 기존 링과 함께 점진적으로 배포되었습니다.",
+              "text": "캐시 재배치와 오리진 트래픽을 통제하기 위해 기존 링과 새 링을 함께 운영하며 데이터센터별로 점진 전환했습니다.",
               "evidence": [
                 {
                   "document_id": 0,
                   "quote": "The new implementation was rolled out gradually alongside the existing ring to limit cache churn and origin traffic spikes."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "progressively larger groups of data centers"
                 }
               ]
             }
@@ -470,6 +502,10 @@
         {
           "url": "https://www.infoq.com/news/2026/10/cloudflare-hashing-optimization/",
           "sha256": "3c68615a4e4f3905ed293ebec0e23a8e99951a99eff43ac4a97019680956ec77"
+        },
+        {
+          "url": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/",
+          "sha256": "e4a6bb3c5f0272adbc6071edd4f4f221a6717bbe5ea27d81822466b2e8e44900"
         }
       ]
     }
