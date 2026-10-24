@@ -67,3 +67,9 @@ Python 테스트는 기존 수집·선별 검증과 새로운 두 언어 근거 
 ## 이전 구현
 
 `scripts/generate_dev_digest.py`와 `validate_dev_digest.py`는 기존 Markdown 아카이브의 수집·선별·검증 함수와 회귀 테스트를 유지하기 위해 남겼습니다. 새 npm 명령과 Actions는 `scripts/generate_digest.py`를 사용합니다. 기존 Ruby 빌드 스크립트는 운영 경로에서 사용하지 않습니다.
+
+## 검토 알림
+
+검사 성공 후 Draft PR을 열면 `Digest Review Notification`이 저장소 소유자 `@youdozi`를 댓글에서 멘션합니다. GitHub Mobile의 멘션 푸시와 휴대폰의 GitHub 알림을 허용하면 해당 알림으로 PR을 열 수 있습니다. 이메일 수신은 GitHub 개인 알림 설정에 따릅니다. 실제 휴대폰 수신 여부는 기기 설정에 따라 달라지며 Actions 성공은 GitHub 댓글 생성 성공을 의미합니다.
+
+동일 PR에는 봇의 알림 표시를 확인해 한 번만 전송합니다. 검토 대기 중 매일 반복 알림은 보내지 않습니다. 이미 열린 초안에 최초 알림을 보내려면 Actions → Digest Review Notification → Run workflow에서 `main`과 PR 번호를 지정합니다. 같은 저장소의 열린 `content/digest-review-*` Draft PR만 허용하며, 이 작업에는 병합·배포 권한이 없습니다.
