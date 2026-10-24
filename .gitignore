@@ -134,3 +134,9 @@ public/google*.html
 public/naver*.html
 __pycache__/
 *.pyc
+
+# Local Google OAuth credentials
+client_secret*.json
+credentials.json
+token.json
+.venv-search-console/

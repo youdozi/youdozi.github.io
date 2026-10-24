@@ -91,3 +91,28 @@ npm run preview
 - `.pipeline/archive-evidence-review.json`: 기존 AI 감사 로그의 인용문 존재 대조 결과. 인용문 존재와 주장 타당성은 구분합니다.
 
 변경 요약과 미확인 항목은 [CONTENT_REVIEW.md](CONTENT_REVIEW.md)를 참조하세요.
+
+## Search Console 사이트맵 제출
+
+`python3 scripts/search_console.py`는 `https://youdozi.github.io/` 속성의 접근 권한을 확인하고 사이트맵을 API로 제출한 다음 처리 상태를 조회합니다. 일반 API 키나 Gemini API 키는 사용할 수 없습니다. 매 배포마다 재제출하는 자동화는 추가하지 않았습니다.
+
+최초 연결:
+
+1. [Google Cloud Console](https://console.cloud.google.com/)에서 사용할 프로젝트를 선택하고 **Google Search Console API**를 활성화합니다.
+2. **Google Auth Platform**에서 앱의 동의 화면을 설정합니다. 외부 앱이 테스트 상태라면 Search Console을 사용하는 본인 Google 계정을 테스트 사용자로 추가합니다.
+3. OAuth 클라이언트를 **데스크톱 앱** 유형으로 만들고 JSON을 저장소 밖에 저장합니다. 예: `~/.config/youdozi-search-console/oauth-client.json`.
+4. 해당 Google 계정이 Search Console의 정확한 `https://youdozi.github.io/` URL-prefix 속성에 접근할 수 있는지 확인합니다. 아직 소유권을 확인하지 않았다면 기존 HTML 확인 파일을 사용합니다.
+5. 아래 명령을 실행하고 열린 브라우저에서 로그인·동의합니다.
+
+```sh
+python3 -m venv .venv-search-console
+.venv-search-console/bin/pip install -r scripts/requirements-search-console.txt
+.venv-search-console/bin/python scripts/search_console.py \
+  --client "$HOME/.config/youdozi-search-console/oauth-client.json"
+```
+
+인증에는 `https://www.googleapis.com/auth/webmasters` 범위를 사용합니다. 토큰은 기본적으로 저장소 밖 `~/.config/youdozi-search-console/token.json`에 파일 권한 `0600`으로 저장합니다. 이후 같은 명령을 `--client` 없이 실행할 수 있고, `--status`를 붙이면 재제출 없이 상태만 조회합니다. 동의 화면이 테스트 상태인 앱은 재인증이 필요할 수 있습니다. 이미 발급된 접근 토큰을 쓰는 경우 `SEARCH_CONSOLE_ACCESS_TOKEN` 환경 변수도 지원합니다. 비밀키나 토큰을 커밋하거나 채팅에 붙이지 마세요.
+
+제출 성공은 즉시 수집·색인되었다는 뜻이 아닙니다. `isPending`, `lastDownloaded`, `errors`와 Search Console 색인 보고서를 함께 확인하세요.
+
+공식 문서: [사이트맵 제출 API](https://developers.google.com/webmaster-tools/v1/sitemaps/submit), [데스크톱 OAuth 인증](https://developers.google.com/identity/protocols/oauth2/native-app).
