@@ -29,7 +29,7 @@ def generated_claims():
 
 
 def review():
-    return {lang: {"supported": True, "requires_official": True, "claims": [{"index": i, "supported": True} for i in range(2)]} for lang in ("en", "ko")}
+    return {lang: {"supported": True, "requires_official": True, "title_supported":True, "equivalent":True, "conditions_complete":True, "claims": [{"index": i, "supported": True} for i in range(2)]} for lang in ("en", "ko")}
 
 
 def article():
@@ -78,6 +78,29 @@ class BilingualTests(unittest.TestCase):
     def test_wrong_review_indices_block_publication(self):
         verdict=review();verdict['en']['claims'][1]['index']=0
         with self.assertRaises(ai.ArticleUnavailable): self.summarize(verdict=verdict)
+
+    def test_title_and_semantic_checks_fail_closed(self):
+        for key in ('title_supported','equivalent','conditions_complete'):
+            for value in (False,None):
+                with self.subTest(key=key,value=value):
+                    verdict=review();verdict['ko'][key]=value
+                    with self.assertRaises(ai.ArticleUnavailable):self.summarize(verdict=verdict)
+
+    def test_title_comparison_absent_from_claims_is_withheld_before_second_call(self):
+        generated=generated_claims();generated['en']['title']='Spring Security is 100x faster'
+        with self.assertRaisesRegex(ai.ArticleUnavailable,'title numbers'):self.summarize(generated=generated)
+
+    def test_component_omission_is_withheld(self):
+        generated=generated_claims();generated['ko']['claims'][0]['text_ko']=generated['ko']['claims'][0]['text_ko'].replace('OAuth','인증')
+        with self.assertRaisesRegex(ai.ArticleUnavailable,'protected terms'):self.summarize(generated=generated)
+
+    def test_benchmark_secondary_source_without_primary_is_withheld_before_ai(self):
+        for title in ('Serverless queries 100x more data','Backend costs fall 50%','Database latency benchmark'):
+            client=MagicMock()
+            current=item(title=title,source='InfoQ')
+            with self.subTest(title=title),patch.object(ai,'fetch_document',return_value=ai.Document(current.link,BODY,[])):
+                with self.assertRaisesRegex(ai.ArticleUnavailable,'primary reference'):bilingual.summarize_item(current,client)
+                client.generate.assert_not_called()
 
 
 class PublicationTests(unittest.TestCase):
