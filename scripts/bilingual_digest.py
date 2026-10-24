@@ -40,8 +40,14 @@ def summarize_item(item, client):
     sensitive = bool(ai.SENSITIVE.search(item.title + " " + item.summary) or BENCHMARK.search(item.title + ' ' + item.summary))
     if sensitive and urlparse(original.url).hostname not in ai.PRIMARY_HOSTS:
         seen = set()
-        for link in original.links:
-            if link in seen or not ai.safe_source_url(link, ai.PRIMARY_HOSTS) or len(urlparse(link).path.strip("/")) < 8:
+        # Release notes explain version/compatibility facts; an earlier issue link
+        # must not consume their slot in the bounded primary-document budget.
+        def reference_priority(link):
+            path = urlparse(link).path
+            return 0 if '/releases/tag/' in path else 2 if re.search(r'/(issues|pull)/', path) else 1
+        references = [link for link in original.links if ai.safe_source_url(link, ai.PRIMARY_HOSTS)]
+        for link in sorted(references, key=reference_priority):
+            if link in seen or len(urlparse(link).path.strip("/")) < 8:
                 continue
             seen.add(link)
             try:
@@ -52,7 +58,9 @@ def summarize_item(item, client):
                 break
         if len(documents) == 1:
             raise ai.ArticleUnavailable("sensitive report lacks an accessible primary reference")
-    data = {"title": item.title, "documents": [{"document_id": i, "url": d.url, "body": d.body} for i, d in enumerate(documents)]}
+    primary_ids = [i for i,d in enumerate(documents) if urlparse(d.url).hostname in ai.PRIMARY_HOSTS]
+    data = {"title": item.title, "primary_document_ids":primary_ids, "require_primary_quotes":sensitive,
+            "documents": [{"document_id": i, "url": d.url, "body": d.body} for i, d in enumerate(documents)]}
     generated = client.generate(
         "Summarize this article in English (en) and Korean (ko), including a faithfully translated title for each edition. Each edition needs 2–3 complete factual sentences, one claim per sentence. "
         "Use text_en for English (80–800 characters total) and text_ko for Korean (80–420 characters total). "
@@ -60,7 +68,8 @@ def summarize_item(item, client):
         "Titles may state only facts also explained by the verified claims. Omit promotional comparisons such as 100x from titles unless the claims explain the exact comparison and its conditions. "
         "Each claim needs 1–3 exact source quotes, 20–240 characters each. Both editions must convey the same facts. "
         "Preserve numerical/version/date/preview/GA details and limitations. Attribute vendor benchmark claims. No advice. "
-        "For security, release/version and deprecation news, support every claim with a primary-source quote. "
+        "When require_primary_quotes is true, EVERY claim in BOTH editions must include an exact quote from a primary_document_ids document. "
+        "This includes security, release/version, deprecation, performance and cost reports. Omit facts that have no primary support, even when document 0 mentions them. "
         "Include review with zero-based claim-index arrays keyChange, affectedAudience and conditions. "
         "keyChange must reference the main change. affectedAudience references explicitly supported affected users or systems. "
         "conditions references supported adoption requirements, costs, preview status or limitations. "

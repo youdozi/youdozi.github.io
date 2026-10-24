@@ -102,6 +102,27 @@ class BilingualTests(unittest.TestCase):
                 with self.assertRaisesRegex(ai.ArticleUnavailable,'primary reference'):bilingual.summarize_item(current,client)
                 client.generate.assert_not_called()
 
+    def test_release_reference_precedes_issue_and_primary_contract_is_explicit(self):
+        current=item(title='Agent release with compatibility requirements',source='InfoQ')
+        repo='https://github.com/vendor/agent'
+        issue=repo+'/issues/197'
+        release=repo+'/releases/tag/v0.0.13'
+        original=ai.Document(current.link,BODY,[repo,issue,release])
+        generated=generated_claims()
+        for lang in ('en','ko'):
+            for claim in generated[lang]['claims']:
+                for evidence in claim['evidence']:evidence['document_id']=1
+        client=MagicMock();client.model='test';client.generate.side_effect=[generated,review()]
+        def fetch(url,hosts):return original if url==current.link else ai.Document(url,BODY,[])
+        with patch.object(ai,'fetch_document',side_effect=fetch) as fetched:
+            result=bilingual.summarize_item(current,client)
+        self.assertEqual([current.link,release,repo],[call.args[0] for call in fetched.call_args_list])
+        self.assertEqual(3,len(result['documents']))
+        payload=client.generate.call_args_list[0].args[1]
+        self.assertEqual([1,2],payload['primary_document_ids'])
+        self.assertTrue(payload['require_primary_quotes'])
+        self.assertIn('EVERY claim in BOTH editions',client.generate.call_args_list[0].args[0])
+
 
 class PublicationTests(unittest.TestCase):
     def run_pipeline(self, root, extra=None, enrich=None, link_error=None):
@@ -118,6 +139,23 @@ class PublicationTests(unittest.TestCase):
             self.assertEqual([],generator.validate_digest(json.loads(files[0].read_text())))
             self.assertEqual(0,self.run_pipeline(root))
             self.assertTrue((root/'output').read_text().endswith('generated=false\n'))
+
+    def test_feed_excerpt_is_not_treated_as_a_publishable_summary(self):
+        for excerpt in ('','Official release notes continue…'):
+            with self.subTest(excerpt=excerpt),tempfile.TemporaryDirectory() as tmp:
+                candidate=item(title='Spring Boot runtime release',summary=excerpt)
+                def enrich(selected):
+                    self.assertEqual([candidate.link],[i.link for i in selected])
+                    return [article()]
+                with patch.object(legacy,'parse_feed',return_value=[candidate]):
+                    self.assertEqual(0,self.run_pipeline(Path(tmp),enrich=enrich))
+
+    def test_missing_feed_summary_cannot_bypass_actual_article_review(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            candidate=item(title='Spring Boot runtime release',summary='')
+            with patch.object(legacy,'parse_feed',return_value=[candidate]):
+                self.assertEqual(1,self.run_pipeline(Path(tmp),enrich=lambda _: []))
+            self.assertFalse((Path(tmp)/'src').exists())
 
     def existing(self, root, count=1):
         now=datetime.now(legacy.KST)
