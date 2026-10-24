@@ -1,6 +1,7 @@
 import { z } from 'astro/zod';
 import policy from './digest-policy.json' with { type: 'json' };
 import editorialPolicy from './editorial-policy.json' with { type: 'json' };
+import {validBilingualEditions} from './bilingual-quality.ts';
 const nonempty = z.string().refine(value => value.trim().length > 0, 'Text cannot be empty');
 const timestamp = z.union([
   z.date(),
@@ -38,6 +39,7 @@ export const digestSchema = z.object({
     model: nonempty, verification: z.literal('source_consistency_checked'),
     documents: z.array(z.object({ url: httpsUrl, sha256: z.string().regex(/^[0-9a-f]{64}$/) })).min(1),
   }).superRefine((article, ctx) => {
+    if(article.selection && !validBilingualEditions(article.editions)) ctx.addIssue({code:'custom',message:'Title or bilingual facts differ from verified claims'});
     const hosts = (policy.sourceHosts as Record<string, string[]>)[article.source] || [];
     let hostname = ''; try {hostname = new URL(article.url).hostname;} catch {}
     if (!hosts.includes(hostname)) ctx.addIssue({code:'custom',message:'Article source URL is not approved'});

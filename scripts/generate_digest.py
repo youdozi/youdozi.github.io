@@ -12,6 +12,7 @@ import generate_dev_digest as legacy
 from ai_dev_digest import AIError
 from bilingual_digest import enrich_items
 from editorial_digest import selection_profile, validate_article_editorial
+from bilingual_quality import validate_editions
 from validate_dev_digest import DIGEST_POLICY as POLICY, allowed_article_url, check_article_link
 
 
@@ -75,6 +76,8 @@ def validate_digest(data, *, now=None, days_back=POLICY["daysBack"], check_links
                         if type(i) is not int or not 0 <= i < len(documents) or not POLICY["minQuote"] <= len(evidence["quote"]) <= POLICY["maxQuote"]:
                             errors.append("invalid evidence reference")
             errors.extend(validate_article_editorial(article))
+            if article.get('selection'):
+                errors.extend(validate_editions(article['editions']))
             if check_links:
                 error = check_article_link(article["source"], url)
                 if error:
