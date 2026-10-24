@@ -1,0 +1,22 @@
+{
+  "numberPattern": "[0-9]+(?:,[0-9]{3})*(?:\\.[0-9]+)*",
+  "numberWords": {"one":"1","two":"2","three":"3","four":"4","five":"5","six":"6","seven":"7","eight":"8","nine":"9","ten":"10","eleven":"11","twelve":"12"},
+  "terms": {
+    "AWS": "AWS|Amazon Web Services",
+    "S3": "(?:Amazon )?S3",
+    "Lambda": "(?:AWS )?Lambda|람다",
+    "Athena": "(?:Amazon )?Athena|아테나",
+    "DynamoDB": "(?:Amazon )?DynamoDB",
+    "Node.js": "Node\\.js",
+    "Spring Security": "Spring Security|스프링 시큐리티",
+    "Spring Boot": "Spring Boot|스프링 부트",
+    "OAuth": "OAuth",
+    "Kubernetes": "Kubernetes|쿠버네티스",
+    "Docker": "Docker|도커",
+    "PostgreSQL": "PostgreSQL|Postgres|포스트그레SQL",
+    "Redis": "Redis|레디스",
+    "Kafka": "Kafka|카프카",
+    "bcftools": "bcftools",
+    "htslib": "htslib"
+  }
+}

@@ -6,6 +6,8 @@ from urllib.parse import urlparse
 import ai_dev_digest as ai
 from validate_dev_digest import SOURCE_HOSTS
 from editorial_digest import selection_profile, empty_editorial, validate_review_map, SECTIONS
+from bilingual_quality import validate_editions
+import re
 
 
 def paired_schema(schema):
@@ -23,12 +25,19 @@ english = CLAIM_SCHEMA["properties"]["en"]["properties"]["claims"]["items"]
 english["properties"]["text_en"] = english["properties"].pop("text_ko")
 english["required"] = ["text_en", "evidence"]
 REVIEW_SCHEMA = paired_schema(ai.REVIEW_SCHEMA)
+for schema in REVIEW_SCHEMA['properties'].values():
+    for key in ('title_supported', 'equivalent', 'conditions_complete'):
+        schema['properties'][key] = {'type':'BOOLEAN'}
+        schema['required'].append(key)
+
+# Performance/cost claims need context from the primary report, too.
+BENCHMARK = re.compile(r'\b(benchmark\w*|\d+(?:\.\d+)?\s*(?:x\b|%|times\b)|faster\b|cost\w*|latency\b|throughput\b)', re.I)
 
 
 def summarize_item(item, client):
     original = ai.fetch_document(item.link, SOURCE_HOSTS[item.source_name])
     documents = [original]
-    sensitive = bool(ai.SENSITIVE.search(item.title + " " + item.summary))
+    sensitive = bool(ai.SENSITIVE.search(item.title + " " + item.summary) or BENCHMARK.search(item.title + ' ' + item.summary))
     if sensitive and urlparse(original.url).hostname not in ai.PRIMARY_HOSTS:
         seen = set()
         for link in original.links:
@@ -47,6 +56,8 @@ def summarize_item(item, client):
     generated = client.generate(
         "Summarize this article in English (en) and Korean (ko), including a faithfully translated title for each edition. Each edition needs 2–3 complete factual sentences, one claim per sentence. "
         "Use text_en for English (80–800 characters total) and text_ko for Korean (80–420 characters total). "
+        "Use the same ordered claims and review indices in both editions. Keep every product/component name, number and version in both editions; use Arabic digits for measurements. "
+        "Titles may state only facts also explained by the verified claims. Omit promotional comparisons such as 100x from titles unless the claims explain the exact comparison and its conditions. "
         "Each claim needs 1–3 exact source quotes, 20–240 characters each. Both editions must convey the same facts. "
         "Preserve numerical/version/date/preview/GA details and limitations. Attribute vendor benchmark claims. No advice. "
         "For security, release/version and deprecation news, support every claim with a primary-source quote. "
@@ -54,6 +65,7 @@ def summarize_item(item, client):
         "keyChange must reference the main change. affectedAudience references explicitly supported affected users or systems. "
         "conditions references supported adoption requirements, costs, preview status or limitations. "
         "Use empty arrays for affectedAudience or conditions if those facts are absent; never invent them. "
+        "When the documents describe operational limitations or benchmark conditions relevant to the summary, include them in a claim and reference it in conditions, ahead of incidental implementation details. "
         "Do not generate editorial opinions or claim that we tested anything. "
         "Document 0 is the article; other documents must concern the same event.", data, CLAIM_SCHEMA)
     summaries = {}
@@ -71,17 +83,27 @@ def summarize_item(item, client):
         if not validate_review_map(edition.get("review"), claims[language] if isinstance(claims[language], list) else []):
             raise ai.ArticleUnavailable("review section references are invalid")
         summaries[language] = ai.verify_claims(claims[language], documents, sensitive, language)
+    edition_data = {language: {'title':titles[language], 'claims':[{'text':c[f'text_{language}']} for c in claims[language]], 'review':generated[language]['review']} for language in ('en','ko')}
+    errors = validate_editions(edition_data)
+    if errors:
+        raise ai.ArticleUnavailable('; '.join(errors))
     review = client.generate(
         "Independently check the translated titles and EVERY claim in BOTH language editions against the source documents and each other. "
         "Reject invented facts, numerical/version/date/status changes, lost conditions, unqualified benchmarks, unrelated references, "
         "contradictions and mistranslations. Return a verdict for each zero-based claim index in each edition. "
         "Also reject review section references that misclassify claims or imply absent audience, costs, constraints or testing. "
-        "supported is true only if every claim is entailed and both editions agree. requires_official is true for security, release/version or deprecation claims.",
+        "Return title_supported only if every title assertion is supported by the documents AND explained in the summary, including comparison baselines and conditions. "
+        "Return equivalent only if both editions preserve all material facts, component names, quantities and qualifications in matching claim order. "
+        "Return conditions_complete only if material operational limitations, adoption requirements and benchmark conditions in the documents are preserved in claims and conditions references; it may be true without conditions only when none are relevant. "
+        "supported is true only if every claim is entailed and both editions agree. requires_official is true for security, release/version, deprecation, performance comparisons or cost claims.",
         {**data, "editions": generated}, REVIEW_SCHEMA)
     for language in ("en", "ko"):
         verdict = review.get(language)
         if not isinstance(verdict, dict) or verdict.get("supported") is not True or type(verdict.get("requires_official")) is not bool:
             raise ai.ArticleUnavailable("language pair did not pass independent review")
+        for key in ('title_supported', 'equivalent', 'conditions_complete'):
+            if verdict.get(key) is not True:
+                raise ai.ArticleUnavailable(f'{language} independent review rejected or omitted {key}')
         verdicts = verdict.get("claims")
         if (not isinstance(verdicts, list) or len(verdicts) != len(claims[language])
                 or any(not isinstance(v, dict) or type(v.get("index")) is not int or v["index"] != i or v.get("supported") is not True for i, v in enumerate(verdicts))):
@@ -106,7 +128,7 @@ def enrich_items(items):
         try:
             enriched = summarize_item(item, client)
         except ai.ArticleUnavailable as exc:
-            print(f"[withheld] {item.source_name}: {exc}")
+            print(f"[withheld] {item.source_name} {item.link}: {exc}")
             continue
         accepted.append({"id": hashlib.sha256(item.link.encode()).hexdigest()[:16], "source": item.source_name,
             "url": item.link, "publishedAt": item.published_at.isoformat(), "tags": item.topic_tags, **enriched, "selection": selection, "editorial": empty_editorial()})

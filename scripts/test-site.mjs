@@ -186,6 +186,10 @@ test('generation and browser schemas agree on malformed saved content', async ()
     for(const lang of ['en','ko'])a.editions[lang].review={keyChange:[0],affectedAudience:[],conditions:[1]};
   }
   change('valid_editorial',withEditorial);
+  change('invalid_title_comparison',d=>{withEditorial(d);d.articles[0].editions.en.title+=' 100x faster';});
+  change('invalid_bilingual_component',d=>{withEditorial(d);const e=d.articles[0].editions.ko;e.claims[0].text=e.claims[0].text.replaceAll('Node.js','런타임');e.summary=e.claims.map(c=>c.text).join(' ');});
+  change('invalid_bilingual_number',d=>{withEditorial(d);const e=d.articles[0].editions.ko;e.claims[1].text=e.claims[1].text.replace('5개','9개');e.summary=e.claims.map(c=>c.text).join(' ');});
+  change('invalid_bilingual_sections',d=>{withEditorial(d);d.articles[0].editions.ko.review.conditions=[];});
   change('invalid_review_reference',d=>{withEditorial(d);d.articles[0].editions.en.review.conditions=[99];});
   change('unproven_experiment',d=>{withEditorial(d);d.articles[0].editorial.experiment.status='tested';});
   change('invalid_selection_reason',d=>{withEditorial(d);d.articles[0].selection.reasons.push('constructor');});
