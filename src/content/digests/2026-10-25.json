@@ -12,37 +12,45 @@
       ],
       "editions": {
         "en": {
-          "title": "CSIRO Uses Serverless Architecture to Query 100x More Genomic Variants on AWS",
-          "summary": "CSIRO developed Serverless Beacon (sBeacon), a serverless architecture utilizing Amazon S3, AWS Lambda, Amazon Athena, and Amazon DynamoDB to query genomic variant data without central copying. The Variant Querying Module uses bcftools and htslib to retrieve specific portions of compressed VCF files stored in Amazon S3 via HTTP byte range requests. CSIRO evaluated the system using chromosome 1 from the 1000 Genomes Project, onboarding the 1.1 GB compressed VCF file in 18 seconds.",
+          "title": "CSIRO's sBeacon: Serverless Genomic Queries and Operational Limits on AWS",
+          "summary": "CSIRO's sBeacon uses Amazon S3, AWS Lambda, Amazon Athena and Amazon DynamoDB to query genomic data while leaving the genomic files in their original storage. In CSIRO's chromosome 1 benchmark with 2504 individuals, sBeacon onboarded a 1.1 GB compressed VCF dataset in 18 seconds. AWS reports that whole-genome range queries time out at API Gateway, and throttled Lambda calls can lose results on HTTP 429 unless the application handles them.",
           "claims": [
             {
-              "text": "CSIRO developed Serverless Beacon (sBeacon), a serverless architecture utilizing Amazon S3, AWS Lambda, Amazon Athena, and Amazon DynamoDB to query genomic variant data without central copying.",
+              "text": "CSIRO's sBeacon uses Amazon S3, AWS Lambda, Amazon Athena and Amazon DynamoDB to query genomic data while leaving the genomic files in their original storage.",
               "evidence": [
                 {
-                  "document_id": 0,
-                  "quote": "CSIRO has developed Serverless Beacon (sBeacon) , a serverless architecture for querying genomic variant data without copying large genomic datasets into a central database."
+                  "document_id": 1,
+                  "quote": "sBeacon is a production-ready implementation of this standard, built using AWS services: Amazon Simple Storage Service (Amazon S3) , AWS Lambda , Amazon DynamoDB , and Amazon Athena ."
                 },
                 {
-                  "document_id": 0,
-                  "quote": "The system uses Amazon S3, AWS Lambda, Amazon Athena, and Amazon DynamoDB to provide an implementation of the Global Alliance for Genomics and Health (GA4GH) Beacon standard"
+                  "document_id": 1,
+                  "quote": "Note that genomic data is not copied out of its original location but rather is referenced when needed."
                 }
               ]
             },
             {
-              "text": "The Variant Querying Module uses bcftools and htslib to retrieve specific portions of compressed VCF files stored in Amazon S3 via HTTP byte range requests.",
+              "text": "In CSIRO's chromosome 1 benchmark with 2504 individuals, sBeacon onboarded a 1.1 GB compressed VCF dataset in 18 seconds.",
               "evidence": [
                 {
-                  "document_id": 0,
-                  "quote": "The Variant Querying Module uses bcftools and its htslib library to retrieve specific portions of VCF files through HTTP byte range requests."
+                  "document_id": 1,
+                  "quote": "This multi-sample VCF is approximately 1.1 GB compressed, with data stored in Amazon S3."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "sBeacon can ingest chromosome 1 from the 2504 individuals in 18 seconds, for less than 1 cent (USD 0.00052)."
                 }
               ]
             },
             {
-              "text": "CSIRO evaluated the system using chromosome 1 from the 1000 Genomes Project, onboarding the 1.1 GB compressed VCF file in 18 seconds.",
+              "text": "AWS reports that whole-genome range queries time out at API Gateway, and throttled Lambda calls can lose results on HTTP 429 unless the application handles them.",
               "evidence": [
                 {
-                  "document_id": 0,
-                  "quote": "CSIRO evaluated the architecture using chromosome 1 from the 1000 Genomes Project, containing 2,504 samples in a 1.1 GB compressed VCF file. The dataset was onboarded in 18 seconds."
+                  "document_id": 1,
+                  "quote": "However, if you accidentally attempt to run a range query of the entire genome, the architecture times out at the Amazon API Gateway level."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "Similarly, because synchronous Lambda invoke does not automatically retry on throttle, a 429 response from a performQuery invocation means the result is silently lost unless the application handles it explicitly."
                 }
               ]
             }
@@ -52,37 +60,52 @@
               0
             ],
             "affectedAudience": [],
-            "conditions": []
+            "conditions": [
+              1,
+              2
+            ]
           }
         },
         "ko": {
-          "title": "CSIRO, AWS에서 서버리스 아키텍처를 사용하여 100배 더 많은 게놈 변이 조회",
-          "summary": "CSIRO는 중앙 데이터베이스로 복사하지 않고 게놈 변이 데이터를 조회할 수 있는 서버리스 아키텍처인 Serverless Beacon(sBeacon)을 개발했다. 변이 조회 모듈은 bcftools와 htslib 라이브러리를 사용하여 HTTP 바이트 범위 요청을 통해 Amazon S3에 저장된 압축된 VCF 파일의 특정 부분을 가져온다. CSIRO는 1000 Genomes 프로젝트의 1번 염색체를 사용하여 시스템을 평가했으며, 1.1 GB 압축 VCF 파일을 18초 만에 온보딩했다.",
+          "title": "CSIRO sBeacon: AWS 서버리스 유전체 조회와 운영 제약",
+          "summary": "CSIRO의 sBeacon은 Amazon S3, AWS Lambda, Amazon Athena, Amazon DynamoDB를 사용해 유전체 파일을 원래 저장소에 둔 채 데이터를 조회한다. CSIRO의 2504명 대상 1번 염색체 벤치마크에서 sBeacon은 1.1 GB 압축 VCF 데이터셋을 18초에 등록했다. AWS 설명에 따르면 전체 유전체 범위 조회는 API Gateway에서 시간 초과가 발생하며, Lambda 호출의 HTTP 429를 애플리케이션이 처리하지 않으면 결과가 유실될 수 있다.",
           "claims": [
             {
-              "text": "CSIRO는 중앙 데이터베이스로 복사하지 않고 게놈 변이 데이터를 조회할 수 있는 서버리스 아키텍처인 Serverless Beacon(sBeacon)을 개발했다.",
+              "text": "CSIRO의 sBeacon은 Amazon S3, AWS Lambda, Amazon Athena, Amazon DynamoDB를 사용해 유전체 파일을 원래 저장소에 둔 채 데이터를 조회한다.",
               "evidence": [
                 {
-                  "document_id": 0,
-                  "quote": "CSIRO has developed Serverless Beacon (sBeacon) , a serverless architecture for querying genomic variant data without copying large genomic datasets into a central database."
+                  "document_id": 1,
+                  "quote": "sBeacon is a production-ready implementation of this standard, built using AWS services: Amazon Simple Storage Service (Amazon S3) , AWS Lambda , Amazon DynamoDB , and Amazon Athena ."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "Note that genomic data is not copied out of its original location but rather is referenced when needed."
                 }
               ]
             },
             {
-              "text": "변이 조회 모듈은 bcftools와 htslib 라이브러리를 사용하여 HTTP 바이트 범위 요청을 통해 Amazon S3에 저장된 압축된 VCF 파일의 특정 부분을 가져온다.",
+              "text": "CSIRO의 2504명 대상 1번 염색체 벤치마크에서 sBeacon은 1.1 GB 압축 VCF 데이터셋을 18초에 등록했다.",
               "evidence": [
                 {
-                  "document_id": 0,
-                  "quote": "The Variant Querying Module uses bcftools and its htslib library to retrieve specific portions of VCF files through HTTP byte range requests."
+                  "document_id": 1,
+                  "quote": "This multi-sample VCF is approximately 1.1 GB compressed, with data stored in Amazon S3."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "sBeacon can ingest chromosome 1 from the 2504 individuals in 18 seconds, for less than 1 cent (USD 0.00052)."
                 }
               ]
             },
             {
-              "text": "CSIRO는 1000 Genomes 프로젝트의 1번 염색체를 사용하여 시스템을 평가했으며, 1.1 GB 압축 VCF 파일을 18초 만에 온보딩했다.",
+              "text": "AWS 설명에 따르면 전체 유전체 범위 조회는 API Gateway에서 시간 초과가 발생하며, Lambda 호출의 HTTP 429를 애플리케이션이 처리하지 않으면 결과가 유실될 수 있다.",
               "evidence": [
                 {
-                  "document_id": 0,
-                  "quote": "CSIRO evaluated the architecture using chromosome 1 from the 1000 Genomes Project, containing 2,504 samples in a 1.1 GB compressed VCF file. The dataset was onboarded in 18 seconds."
+                  "document_id": 1,
+                  "quote": "However, if you accidentally attempt to run a range query of the entire genome, the architecture times out at the Amazon API Gateway level."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "Similarly, because synchronous Lambda invoke does not automatically retry on throttle, a 429 response from a performQuery invocation means the result is silently lost unless the application handles it explicitly."
                 }
               ]
             }
@@ -92,7 +115,10 @@
               0
             ],
             "affectedAudience": [],
-            "conditions": []
+            "conditions": [
+              1,
+              2
+            ]
           }
         }
       },
@@ -102,6 +128,10 @@
         {
           "url": "https://www.infoq.com/news/2026/10/csiro-serverless-genomic-variant/",
           "sha256": "5ce0d4c215cf49097fd890786d7f84339d311efe094beb99606fb4fa7906e0a9"
+        },
+        {
+          "url": "https://aws.amazon.com/blogs/architecture/how-csiro-built-scalable-cost-optimized-genomic-variant-querying-on-aws/",
+          "sha256": "a4ee9c61f7c996394167415d77725e10ee72465a94ce1af6b12d33b3efb06d3b"
         }
       ],
       "selection": {
@@ -132,5 +162,6 @@
         }
       }
     }
-  ]
+  ],
+  "updatedAt": "2026-10-24T15:19:15.655170+00:00"
 }
