@@ -215,3 +215,16 @@ test('RSS exposes every added article and update time without changing publicati
   const feed=renderFeed([post(unsafe)],'en',new URL('https://youdozi.github.io/'),'Blog');
   assert.ok(!feed.includes('<img'));assert.ok(feed.includes('&amp;lt;img'));
 });
+
+test('main protection requires Actions checks and PRs without granting bots a bypass', async () => {
+  const protection=JSON.parse(await readFile('.github/main-protection.json','utf8'));
+  const reviews=JSON.parse(await readFile('.github/main-review-ruleset.json','utf8'));
+  assert.equal(protection.enforce_admins,true);
+  assert.equal(protection.required_status_checks.strict,true);
+  assert.deepEqual(protection.required_status_checks.checks,[{context:'build / build',app_id:15368}]);
+  assert.ok(protection.required_pull_request_reviews);
+  assert.equal(protection.allow_force_pushes,false);assert.equal(protection.allow_deletions,false);
+  assert.equal(reviews.rules[0].parameters.required_approving_review_count,1);
+  assert.equal(reviews.rules[0].parameters.dismiss_stale_reviews_on_push,true);
+  assert.deepEqual(reviews.bypass_actors,[{actor_type:'RepositoryRole',actor_id:5,bypass_mode:'pull_request'}]);
+});
