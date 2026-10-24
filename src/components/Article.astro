@@ -2,6 +2,7 @@
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import EntryList from './EntryList.astro';
+import DigestSection from './DigestSection.astro';
 import { entries, text, alternateLinks, formatDate, taxonomyUrl, type Entry } from '../lib/content';
 interface Props { entry: Entry; }
 const { entry } = Astro.props;
@@ -31,7 +32,7 @@ const related = all.filter(e => e.language === lang && e.translationKey !== entr
     {entry.post?.data.reviewedAt && <aside class="notice"><strong>{entry.reviewStatus === 'example' ? '예제 데이터 — 실제 뉴스로 취급하지 마세요.' : `${lang === 'en' ? 'Reviewed and updated' : '검토·보강'}: ${entry.post.data.reviewedAt}`}</strong><br/>{entry.post.data.reviewScope}</aside>}
     <div class="prose">
       {Content && <Content />}
-      {entry.digest && <><aside class="notice">{text[lang].scope}</aside>{entry.digest.data.articles.map((article, index) => <section class="digest-article"><div class="entry-meta"><span>{article.source}</span><time datetime={article.publishedAt.toISOString()}>{formatDate(article.publishedAt, lang)}</time></div><h2>{index+1}. {article.editions[lang].title}</h2><p>{article.editions[lang].summary}</p><a class="source-link" href={article.url} rel="noopener noreferrer">{text[lang].source} ↗</a><details><summary>{lang === 'en' ? 'Source evidence' : '원문 인용 근거'}</summary>{article.editions[lang].claims.map(claim => <div><p>{claim.text}</p>{claim.evidence.map(e => <blockquote><p>{e.quote}</p><a href={article.documents[e.document_id].url}>{lang === 'en' ? 'Evidence source' : '인용 출처'} ↗</a></blockquote>)}</div>)}</details></section>)}</>}
+      {entry.digest && <><aside class="notice">{text[lang].scope}</aside>{entry.digest.data.articles.map((article, index) => <DigestSection article={article} index={index} lang={lang} />)}</>}
     </div>
     <footer class="article-footer"><div class="chips">{entry.tags.map(tag => <a href={taxonomyUrl(lang, 'tags', tag)}>#{tag}</a>)}</div></footer>
     <div class="comments"><h2>{lang === 'en' ? 'Discussion' : '댓글'}</h2><script is:inline src="https://utteranc.es/client.js" {...{ repo: 'youdozi/youdozi.github.io', 'issue-term': entry.legacyUrl || entry.translationKey, theme: 'github-light' }} crossorigin="anonymous" async></script></div>

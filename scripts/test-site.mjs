@@ -113,6 +113,13 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.match(sample,/noindex,follow/);assert.match(sample,/예제 데이터/);
     const sitemap=await readFile('dist/sitemap.xml','utf8');
     assert.ok(!sitemap.includes('/ko/digest/2026-03-16/'));
+    const reviewShell=await readFile('dist/review/index.html','utf8');
+    assert.match(reviewShell,/noindex,follow/);
+    assert.ok(!sitemap.includes('/review/'));
+    assert.ok(!reviewShell.includes('Spring Security OAuth scope update'));
+    assert.ok(!reviewShell.includes('Literal {{ 7 | times: 7 }}'));
+    assert.ok(!reviewShell.includes('utteranc.es'));
+
     const englishArticle=await readFile('dist/en/posts/2023-09-19-springboot-test-webclient/index.html','utf8');
     assert.match(englishArticle,/<html lang="en">/);
     assert.match(englishArticle,/rel="canonical" href="https:\/\/youdozi.github.io\/en\/posts\/2023-09-19-springboot-test-webclient\/"/);
@@ -151,6 +158,7 @@ test('draft notification mentions the owner once and rejects non-review PRs', as
   const process={env:{PR_NUMBER:'20'}};
   await run(github,context,core,process);
   assert.equal(sent.length,1);assert.equal(sent[0].issue_number,20);
+  assert.match(sent[0].body,/https:\/\/youdozi.github.io\/review\/\?pr=20/);
   assert.match(sent[0].body,/@youdozi/);assert.match(sent[0].body,/아직 사이트에는 게시되지/);
   comments=[{user:{login:'github-actions[bot]'},body:sent[0].body}];
   await run(github,context,core,process);assert.equal(sent.length,1);

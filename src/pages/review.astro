@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import DigestSection from '../components/DigestSection.astro';
+import type { DigestArticle } from '../lib/digest-schema';
+const placeholder: DigestArticle = {id:'', source:'', url:'https://github.com/youdozi/youdozi.github.io', publishedAt:new Date(0), tags:[], editions:{en:{title:'',summary:'',claims:[]},ko:{title:'',summary:'',claims:[]}}, model:'',verification:'source_consistency_checked',documents:[]};
+---
+<Base lang="ko" title="초안 검토" description="게시 전 영문·한국어 초안을 원문 근거와 함께 검토합니다." canonical="/review/" noindex>
+  <section class="page-heading review-heading"><span class="eyebrow">Editorial review</span><h1>게시 전 초안 검토</h1><p>두 언어의 제목·요약과 원문 근거를 확인한 뒤 GitHub에서 수정·병합하세요.</p></section>
+  <aside class="notice"><strong>미게시 초안</strong><br/>이 화면에서 읽는 것만으로 게시되지 않습니다. PR을 병합해야 사이트에 반영됩니다.</aside>
+  <form id="review-form" class="review-form"><label for="pr-number">PR 번호</label><input id="pr-number" name="pr" type="number" min="1" required inputmode="numeric"/><button type="submit">초안 불러오기</button></form>
+  <p id="review-status" role="status" aria-live="polite">알림이나 PR 본문의 미리보기 링크로 들어오거나, 검토할 PR 번호를 입력하세요.</p>
+  <section id="review-result" hidden>
+    <div class="review-actions"><a id="review-pr" class="button" target="_blank" rel="noopener noreferrer">GitHub에서 수정·승인 ↗</a><a id="review-version" target="_blank" rel="noopener noreferrer"></a></div>
+    <p id="review-meta" class="review-meta"></p>
+    <div class="review-toolbar" role="group" aria-label="표시할 언어"><button type="button" data-view="both" aria-pressed="true">나란히 비교</button><button type="button" data-view="ko" aria-pressed="false">한국어</button><button type="button" data-view="en" aria-pressed="false">English</button><label><input id="show-evidence" type="checkbox"/> 근거 모두 펼치기</label></div>
+    <div id="review-columns" class="review-columns" data-mode="both">
+      <article class="review-edition" data-lang="en" lang="en"><header><span class="eyebrow">English edition</span><h2>영문 초안</h2></header><div class="prose" id="review-en"></div></article>
+      <article class="review-edition" data-lang="ko" lang="ko"><header><span class="eyebrow">한국어</span><h2>한국어 초안</h2></header><div class="prose" id="review-ko"></div></article>
+    </div>
+  </section>
+  <template id="review-template-en"><DigestSection article={placeholder} index={0} lang="en" /></template>
+  <template id="review-template-ko"><DigestSection article={placeholder} index={0} lang="ko" /></template>
+  <noscript><p>미리보기를 불러오려면 JavaScript를 허용하세요. 원본은 GitHub PR에서 확인할 수 있습니다.</p></noscript>
+</Base>
+<script>
+  import '../scripts/review';
+</script>
+<style>
+  .review-heading{padding-bottom:16px}.review-form{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:24px 0}.review-form input{width:100px;border:1px solid var(--line);padding:10px;background:white;border-radius:4px}button{cursor:pointer;padding:10px 14px;background:white;border:1px solid var(--line);border-radius:4px;color:var(--accent)}button[aria-pressed="true"]{background:var(--accent);color:white}button:disabled{opacity:.6;cursor:wait}.review-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.review-meta,#review-status{font-size:14px;color:var(--muted);line-height:1.8;overflow-wrap:anywhere}.review-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:25px 0}.review-toolbar label{font-size:13px;padding:10px}.review-columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px}.review-edition{min-width:0}.review-edition>header{border-bottom:1px solid var(--line);padding:18px 0}.review-edition>header h2{font-size:21px}.review-columns[data-mode="ko"] [data-lang="en"],.review-columns[data-mode="en"] [data-lang="ko"]{display:none}.review-columns:not([data-mode="both"]){grid-template-columns:minmax(0,780px);justify-content:center}@media(max-width:800px){.review-columns{grid-template-columns:minmax(0,1fr);gap:30px}.review-toolbar{gap:8px}.review-actions{gap:12px}}
+</style>

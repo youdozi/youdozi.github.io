@@ -39,14 +39,17 @@ jobs:
             if (pr.state !== 'open' || !pr.draft || pr.base.ref !== 'main' || pr.head.repo?.full_name !== repository || !pr.head.ref.startsWith('content/digest-review-')) {
               throw new Error('Only an open digest review draft can be notified');
             }
+            const preview = `https://youdozi.github.io/review/?pr=${number}`;
             const marker = '<!-- digest-review-ready -->';
             const comments = await github.paginate(github.rest.issues.listComments, {...context.repo, issue_number: number, per_page: 100});
-            if (comments.some(comment => comment.user?.login === 'github-actions[bot]' && comment.body?.includes(marker))) {
+            const existing = comments.find(comment => comment.user?.login === 'github-actions[bot]' && comment.body?.includes(marker));
+            if (existing) {
+              if (!existing.body.includes(preview)) await github.rest.issues.updateComment({...context.repo, comment_id: existing.id, body: `${existing.body}\n\n[영문·한국어 미리보기 열기](${preview})`});
               core.info('Review notification already sent; skipping duplicate');
               return;
             }
             await github.rest.issues.createComment({
               ...context.repo, issue_number: number,
-              body: `${marker}\n@${context.repo.owner} 검토할 글 후보가 준비되었습니다.\n\n영문·한국어 요약과 원문 근거를 PR 본문에서 확인해 주세요. 아직 사이트에는 게시되지 않았습니다.\n\n검토·수정 후 **Ready for review → Merge pull request**를 누르면 게시됩니다. 게시하지 않으려면 PR을 닫아 주세요.\n\n${pr.html_url}`
+              body: `${marker}\n@${context.repo.owner} 검토할 글 후보가 준비되었습니다.\n\n아래 미리보기에서 영문·한국어 글과 원문 근거를 확인해 주세요. 아직 사이트에는 게시되지 않았습니다.\n\n검토·수정 후 **Ready for review → Merge pull request**를 누르면 게시됩니다. 게시하지 않으려면 PR을 닫아 주세요.\n\n[영문·한국어 미리보기 열기](${preview})\n\nGitHub PR: ${pr.html_url}`
             });
             await core.summary.addRaw(`검토 멘션 전송 완료: ${pr.html_url}`).write();
