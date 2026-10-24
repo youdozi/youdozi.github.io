@@ -1,0 +1,41 @@
+{
+  "https://blog.cloudflare.com/full-transaction-waf/": {
+    "summary_ko": "클라우드플레어는 요청과 응답을 함께 평가하여 익스플로잇 증거를 식별하는 전체 트랜잭션 탐지 및 응답 규칙 기능을 모든 고객에게 정식 출시(GA)했습니다. 새로운 관리형 보호 기능은 최근 공개된 php2shell 취약점을 해결하기 위해 설계되었으며, 응답 커스텀 규칙을 통해 고객은 요청 및 응답 속성을 결합할 수 있습니다.",
+    "model": "gemini-3.5-flash-lite",
+    "claims": [
+      {
+        "text_ko": "클라우드플레어는 요청과 응답을 함께 평가하여 익스플로잇 증거를 식별하는 전체 트랜잭션 탐지 및 응답 규칙 기능을 모든 고객에게 정식 출시(GA)했습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Today, we are expanding our web application firewall (WAF) by adding two new capabilities: full transaction detections and response rules."
+          },
+          {
+            "document_id": 0,
+            "quote": "And the best part? We are making these new capabilities generally available to all Cloudflare customers, including Free plans."
+          }
+        ]
+      },
+      {
+        "text_ko": "새로운 관리형 보호 기능은 최근 공개된 php2shell 취약점을 해결하기 위해 설계되었으며, 응답 커스텀 규칙을 통해 고객은 요청 및 응답 속성을 결합할 수 있습니다.",
+        "evidence": [
+          {
+            "document_id": 0,
+            "quote": "Our first managed protections using this capability address the recently disclosed php2shell vulnerability."
+          },
+          {
+            "document_id": 0,
+            "quote": "Security teams can now combine request and response properties with detection results to decide which responses to block."
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://blog.cloudflare.com/full-transaction-waf/",
+        "sha256": "2aca568767d8399228f2680f56fbe6c13d44d95242f827c46026cc73aaf82a2a"
+      }
+    ],
+    "verification": "source_consistency_checked"
+  }
+}
