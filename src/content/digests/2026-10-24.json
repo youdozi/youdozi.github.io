@@ -35,6 +35,10 @@
                 {
                   "document_id": 0,
                   "quote": "The service is currently available in five regions: Northern Virginia, Ohio, Oregon, Tokyo, and Ireland."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "Today, Lambda Web Functions supports the Node.js runtime."
                 }
               ]
             }
@@ -63,6 +67,10 @@
                 {
                   "document_id": 0,
                   "quote": "The service is currently available in five regions: Northern Virginia, Ohio, Oregon, Tokyo, and Ireland."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "Today, Lambda Web Functions supports the Node.js runtime."
                 }
               ]
             }
@@ -75,6 +83,10 @@
         {
           "url": "https://www.infoq.com/news/2026/10/aws-lambda-web-functions/",
           "sha256": "d6a961670b73ef01b623d823f2c5a4c59c8a903ee88ce0790543d122f2a07f15"
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-web-functions/",
+          "sha256": "0a4195ab47c71539821abda8bd294fd8528d8ad75f38f427aed94ec79459a440"
         }
       ]
     },
@@ -121,11 +133,11 @@
           ]
         },
         "ko": {
-          "title": "지리적으로 제한된 키 관리에 포스트 퀀텀 암호화 도입하기",
-          "summary": "클라우드플레어는 데이터 로컬라이제이션 스위트를 지원하기 위해 포스트 퀀텀 지역 제한 키 관리자를 클로즈드 베타로 출시했으며, 2027년 1분기에 정식 출시할 예정이다. 이 시스템은 NIST 표준인 포스트 퀀텀 암호화와 전통적 요소를 결합한 하이브리드 ML-KEM-768 및 X25519 보호 체계를 사용한다.",
+          "title": "Cloudflare, 양자 내성 GeoKey Manager 비공개 베타 공개",
+          "summary": "Cloudflare는 데이터 현지화 제품군을 지원하는 양자 내성 GeoKey Manager를 비공개 베타로 공개했으며, 정식 출시는 2027년 1분기로 계획하고 있습니다. 키 보호에는 NIST 표준인 ML-KEM-768과 기존 방식인 X25519를 결합한 하이브리드 구성을 사용합니다.",
           "claims": [
             {
-              "text": "클라우드플레어는 데이터 로컬라이제이션 스위트를 지원하기 위해 포스트 퀀텀 지역 제한 키 관리자를 클로즈드 베타로 출시했으며, 2027년 1분기에 정식 출시할 예정이다.",
+              "text": "Cloudflare는 데이터 현지화 제품군을 지원하는 양자 내성 GeoKey Manager를 비공개 베타로 공개했으며, 정식 출시는 2027년 1분기로 계획하고 있습니다.",
               "evidence": [
                 {
                   "document_id": 0,
@@ -138,7 +150,7 @@
               ]
             },
             {
-              "text": "이 시스템은 NIST 표준인 포스트 퀀텀 암호화와 전통적 요소를 결합한 하이브리드 ML-KEM-768 및 X25519 보호 체계를 사용한다.",
+              "text": "키 보호에는 NIST 표준인 ML-KEM-768과 기존 방식인 X25519를 결합한 하이브리드 구성을 사용합니다.",
               "evidence": [
                 {
                   "document_id": 0,
@@ -174,7 +186,7 @@
       "editions": {
         "en": {
           "title": "How Commerce.com and Cloudflare are getting storefronts ready for AI agents",
-          "summary": "Cloudflare launched an edge implementation of WebMCP in beta during August to help AI agents interact with online storefronts reliably. Commerce.com uses Cloudflare to run nearly 100,000 domains and integrated WebMCP alongside its server-side Model Context Protocol.",
+          "summary": "Cloudflare launched an edge implementation of WebMCP in beta during August to help AI agents interact with online storefronts reliably. Commerce.com uses Cloudflare to run nearly 100,000 domains and integrated WebMCP alongside its server-side Model Context Protocol. WebMCP remains an experimental browser proposal in early preview rather than a stable, broadly available browser standard.",
           "claims": [
             {
               "text": "Cloudflare launched an edge implementation of WebMCP in beta during August to help AI agents interact with online storefronts reliably.",
@@ -197,12 +209,21 @@
                   "quote": "WebMCP also works side by side with our server-side MCP , and together they cover the different ways people shop with agents."
                 }
               ]
+            },
+            {
+              "text": "WebMCP remains an experimental browser proposal in early preview rather than a stable, broadly available browser standard.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "WebMCP is still an experimental proposed browser standard in early preview"
+                }
+              ]
             }
           ]
         },
         "ko": {
           "title": "Commerce.com과 클라우드플레어가 스토어프론트를 AI 에이전트에 맞게 준비하는 방법",
-          "summary": "클라우드플레어는 인공지능 에이전트가 온라인 상점과 안정적으로 상호작용할 수 있도록 8월에 WebMCP의 엣지 구현을 베타 버전으로 출시했습니다. 커머스닷컴은 거의 10만 개의 도메인을 운영하기 위해 클라우드플레어를 사용하며, 서버 측 모델 컨텍스트 프로토콜과 함께 WebMCP를 통합했습니다.",
+          "summary": "클라우드플레어는 인공지능 에이전트가 온라인 상점과 안정적으로 상호작용할 수 있도록 8월에 WebMCP의 엣지 구현을 베타 버전으로 출시했습니다. 커머스닷컴은 거의 10만 개의 도메인을 운영하기 위해 클라우드플레어를 사용하며, 서버 측 모델 컨텍스트 프로토콜과 함께 WebMCP를 통합했습니다. WebMCP는 아직 초기 프리뷰 단계의 실험적 브라우저 표준 제안이므로, 안정화되어 널리 제공되는 표준으로 해석해서는 안 됩니다.",
           "claims": [
             {
               "text": "클라우드플레어는 인공지능 에이전트가 온라인 상점과 안정적으로 상호작용할 수 있도록 8월에 WebMCP의 엣지 구현을 베타 버전으로 출시했습니다.",
@@ -223,6 +244,15 @@
                 {
                   "document_id": 0,
                   "quote": "WebMCP also works side by side with our server-side MCP , and together they cover the different ways people shop with agents."
+                }
+              ]
+            },
+            {
+              "text": "WebMCP는 아직 초기 프리뷰 단계의 실험적 브라우저 표준 제안이므로, 안정화되어 널리 제공되는 표준으로 해석해서는 안 됩니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "WebMCP is still an experimental proposed browser standard in early preview"
                 }
               ]
             }
