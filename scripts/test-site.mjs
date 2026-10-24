@@ -179,6 +179,16 @@ test('generation and browser schemas agree on malformed saved content', async ()
   const original=JSON.parse(await readFile('src/content/digests/2026-10-24.json','utf8'));
   const cases={valid:original};
   function change(name,mutate){const data=structuredClone(original);mutate(data);cases[name]=data;}
+  function withEditorial(data){
+    const a=data.articles[0];
+    a.selection={audience:'java-spring-backend',method:'keyword-rules-v1',relevance:'direct',priority:'normal',reasons:['jvm-spring']};
+    a.editorial={opinion:{en:'',ko:''},experiment:{status:'not_tested',reportUrl:null,environment:{en:'',ko:''},result:{en:'',ko:''}}};
+    for(const lang of ['en','ko'])a.editions[lang].review={keyChange:[0],affectedAudience:[],conditions:[1]};
+  }
+  change('valid_editorial',withEditorial);
+  change('invalid_review_reference',d=>{withEditorial(d);d.articles[0].editions.en.review.conditions=[99];});
+  change('unproven_experiment',d=>{withEditorial(d);d.articles[0].editorial.experiment.status='tested';});
+  change('invalid_selection_reason',d=>{withEditorial(d);d.articles[0].selection.reasons.push('constructor');});
   change('source',d=>d.articles[0].url='https://unapproved.example/news');
   change('future',d=>d.articles[0].publishedAt='2099-01-01T00:00:00+00:00');
   change('ko_length',d=>{const e=d.articles[0].editions.ko;e.claims[0].text='가'.repeat(300);e.claims[1].text='나'.repeat(200);e.summary=e.claims.map(c=>c.text).join(' ');});
@@ -190,7 +200,7 @@ test('generation and browser schemas agree on malformed saved content', async ()
   assert.equal(response.status,0,response.stderr);
   const expected=JSON.parse(response.stdout);
   for(const [name,data] of Object.entries(cases)){
-    assert.equal(expected[name],name==='valid',name);
+    assert.equal(expected[name],name.startsWith('valid'),name);
     assert.equal(digestSchema.safeParse(data).success,expected[name],name);
   }
   const pkg=JSON.parse(await readFile('package.json','utf8'));

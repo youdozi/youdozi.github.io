@@ -11,6 +11,7 @@ from pathlib import Path
 import generate_dev_digest as legacy
 from ai_dev_digest import AIError
 from bilingual_digest import enrich_items
+from editorial_digest import selection_profile, validate_article_editorial
 from validate_dev_digest import DIGEST_POLICY as POLICY, allowed_article_url, check_article_link
 
 
@@ -73,6 +74,7 @@ def validate_digest(data, *, now=None, days_back=POLICY["daysBack"], check_links
                         i = evidence["document_id"]
                         if type(i) is not int or not 0 <= i < len(documents) or not POLICY["minQuote"] <= len(evidence["quote"]) <= POLICY["maxQuote"]:
                             errors.append("invalid evidence reference")
+            errors.extend(validate_article_editorial(article))
             if check_links:
                 error = check_article_link(article["source"], url)
                 if error:
@@ -155,8 +157,11 @@ def main():
         counts = {}
         for article in retained:
             counts[article["source"]] = counts.get(article["source"], 0) + 1
+        profiles = {item.link: selection_profile(item) for item in candidates}
+        candidates = [item for item in candidates if profiles[item.link] is not None]
         selected = legacy.select_items(candidates, seen, args.days_back, capacity,
-                                       args.min_score, args.max_per_source, initial_source_counts=counts)
+                                       args.min_score, args.max_per_source, initial_source_counts=counts,
+                                       ranking_key=lambda item: (profiles[item.link]['priority'] == 'review-soon', profiles[item.link]['relevance'] == 'direct', item.score, item.published_at))
         if not selected:
             print("[skip] No new eligible articles"); output(False); return 0
         articles = enrich_items(selected)

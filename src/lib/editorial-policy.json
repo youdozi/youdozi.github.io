@@ -1,0 +1,21 @@
+{
+  "audience": {"id":"java-spring-backend","en":"Java and Spring backend developers","ko":"Java·Spring 백엔드 개발자"},
+  "method": "keyword-rules-v1",
+  "reasons": {
+    "jvm-spring": {"en":"Java, JVM or Spring development","ko":"Java·JVM·Spring 개발과 직접 관련","pattern":"\\b(java|jdk|jvm|spring|webflux|reactor|gradle|maven|kotlin)\\b"},
+    "backend-operations": {"en":"Backend infrastructure, data or operation","ko":"백엔드 인프라·데이터·운영과 관련","pattern":"\\b(backend|server|database|postgres(?:ql)?|mysql|redis|kafka|kubernetes|docker|lambda|load.balanc\\w*|consistent.hash\\w*|observability|opentelemetry|http|api|storage)\\b"},
+    "developer-tooling": {"en":"Tools used in development and testing","ko":"개발·테스트 도구와 관련","pattern":"\\b(coding.agent|developer.tool\\w*|mcp|webmcp|intellij|ci/cd|github.actions|unit.test\\w*|integration.test\\w*)\\b"},
+    "backend-security": {"en":"Backend authentication or security","ko":"백엔드 인증·보안과 관련","pattern":"\\b(tls|oauth|jwt|cve-\\d+|authentication|key.management|cryptograph\\w*)\\b"}
+  },
+  "priorities": {
+    "review-soon":{"en":"Review soon","ko":"우선 검토"},
+    "normal":{"en":"Normal review","ko":"일반 검토"}
+  },
+  "priorityPattern":"\\b(cve-\\d+|critical.vulnerability|end.of.life|breaking.change|support.ends)\\b",
+  "promotionalPattern":"\\b(sponsored|webinar|register.now|limited.time|discount|buy.now)\\b",
+  "sections": {
+    "keyChange":{"en":"Key change","ko":"핵심 변경"},
+    "affectedAudience":{"en":"Affected audience · source evidence","ko":"영향을 받는 대상 · 원문 근거"},
+    "conditions":{"en":"Conditions, cost and limitations","ko":"도입 조건·비용·제약"}
+  }
+}

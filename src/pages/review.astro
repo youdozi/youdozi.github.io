@@ -25,8 +25,8 @@ const placeholder: DigestArticle = {id:'', source:'', url:'https://github.com/yo
       <article class="review-edition" data-lang="ko" lang="ko"><header><span class="eyebrow">한국어</span><h2>한국어 초안</h2></header><div class="prose" id="review-ko"></div></article>
     </div>
   </section>
-  <template id="review-template-en"><DigestSection article={placeholder} index={0} lang="en" /></template>
-  <template id="review-template-ko"><DigestSection article={placeholder} index={0} lang="ko" /></template>
+  <template id="review-template-en"><DigestSection article={placeholder} index={0} lang="en" reviewMode /></template>
+  <template id="review-template-ko"><DigestSection article={placeholder} index={0} lang="ko" reviewMode /></template>
   <noscript><p>미리보기를 불러오려면 JavaScript를 허용하세요. 원본은 GitHub PR에서 확인할 수 있습니다.</p></noscript>
 </Base>
 <script>

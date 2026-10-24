@@ -1,3 +1,4 @@
+import {candidateReviewRows} from '../lib/editorial';
 import { digestSchema, type DigestData } from '../lib/digest-schema';
 const repository = 'youdozi/youdozi.github.io';
 const github = `https://api.github.com/repos/${repository}`;
@@ -29,6 +30,14 @@ function render(data: DigestData) {
       element(section,'[data-title]').textContent=`${index+1}. ${article.editions[lang].title}`;
       element(section,'[data-summary]').textContent=article.editions[lang].summary;
       element<HTMLAnchorElement>(section,'[data-source-link]').href=article.url;
+      const panel=element<HTMLElement>(section,'[data-candidate-review]');
+      panel.hidden=!(article.selection || article.editorial || article.editions[lang].review);
+      const fields=element(section,'[data-review-fields]');fields.replaceChildren();
+      if(!panel.hidden)for(const row of candidateReviewRows(article,lang)){
+        const group=document.createElement('div');group.dataset.kind=row.kind;
+        const label=document.createElement('dt');label.textContent=row.label;
+        const value=document.createElement('dd');value.textContent=row.value;group.append(label,value);fields.append(group);
+      }
       const claims=element(section,'[data-claims]');claims.replaceChildren();
       for (const claim of article.editions[lang].claims) {
         const group=document.createElement('div');const text=document.createElement('p');text.textContent=claim.text;group.append(text);

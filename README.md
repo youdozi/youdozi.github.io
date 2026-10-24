@@ -119,3 +119,5 @@ python3 -m venv .venv-search-console
 공식 문서: [사이트맵 제출 API](https://developers.google.com/webmaster-tools/v1/sitemaps/submit), [데스크톱 OAuth 인증](https://developers.google.com/identity/protocols/oauth2/native-app).
 
 게시 JSON의 공통 검증, 당일 추가 후보 선택, RSS 갱신 및 `main` 보호 규칙은 [PIPELINE.md](PIPELINE.md)의 운영 항목을 참조하세요.
+
+새 후보의 검토 카드에는 백엔드 관련성·선정 이유·원문 근거로 구성한 변경/대상/조건·사용자 편집 의견·직접 실험 여부를 표시합니다. 작성 필드와 검증 조건은 [PIPELINE.md](PIPELINE.md)의 후보 선정과 편집 형식 항목을 참조하세요.
