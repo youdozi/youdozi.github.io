@@ -61,9 +61,9 @@ npm run preview
 2. GitHub 저장소 **Settings → Pages → Build and deployment → Source → GitHub Actions**를 선택합니다.
 3. 기존 `GEMINI_API_KEY` Actions Secret을 유지합니다. 선택적으로 `GEMINI_MODEL` Actions Variable을 지정합니다.
 4. `Site Quality Gates and Pages`의 빌드·검증·배포 성공을 확인합니다.
-5. 수동 `Dev Content Pipeline`에서 먼저 `preview=true`로 AI 연결을 확인하고, 실제 게시에는 `preview=false`를 선택합니다.
+5. 수동 `Dev Content Pipeline`에서 먼저 `preview=true`로 AI 연결을 확인하고, 검토용 Draft PR 생성에는 `preview=false`를 선택합니다. 이 실행만으로 게시되지는 않습니다.
 
-`develop`과 PR에서는 검사만 실행합니다. `main` push와 수동 사이트 워크플로는 검증된 `dist/`를 Pages에 배포합니다. 정기 생성 워크플로는 빌드가 통과한 JSON만 커밋하고, 재사용 워크플로에 그 커밋 SHA를 넘겨 직접 배포합니다. 봇 커밋이 다른 push 워크플로를 실행한다고 가정하지 않습니다.
+`develop`과 PR에서는 검사만 실행합니다. `main` push와 수동 사이트 워크플로는 검증된 `dist/`를 Pages에 배포합니다. 정기 생성 워크플로는 검증된 JSON과 중복 방지 상태를 `content/digest-review-*` 브랜치에만 커밋하고, 재사용 워크플로로 배포 없이 검사한 뒤 Draft PR을 만듭니다. 사용자가 PR을 검토·수정하고 **Ready for review → Merge pull request**로 `main`에 병합해야 게시됩니다. 자동 병합은 하지 않으며 검토 대기 PR이 있으면 다음 생성은 건너뜁니다.
 
 ## 기존 URL과 아카이브
 

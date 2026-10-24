@@ -6,61 +6,20 @@ on:
   pull_request:
     branches: [main, develop]
   workflow_dispatch:
-  workflow_call:
-    inputs:
-      ref:
-        description: Exact content commit to build
-        required: true
-        type: string
-      publish:
-        required: false
-        type: boolean
-        default: false
 
 permissions:
   contents: read
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ inputs.ref || github.sha }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: npm
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - run: npm ci
-      - name: Python collection and bilingual evidence tests
-        run: npm run test:python
-      - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-      - name: Compile and execute published algorithm examples
-        run: npm run test:articles
-      - name: Migration regression tests
-        run: npm test
-      - name: Check Astro types and content schemas
-        run: npm run check
-      - name: Build and check generated pages, assets and internal links
-        run: npm run build
-      - uses: actions/upload-artifact@v4
-        with:
-          name: site-build-output
-          path: dist
-      - uses: actions/upload-pages-artifact@v3
-        if: inputs.publish || (github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch'))
-        with:
-          path: dist
+    uses: ./.github/workflows/site-checks.yml
+    with:
+      ref: ${{ github.sha }}
+      pages_artifact: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}
 
   deploy:
     needs: build
-    if: inputs.publish || (github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch'))
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     permissions:
       pages: write

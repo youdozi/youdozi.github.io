@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       preview:
-        description: '게시 없이 새 후보 최대 2개로 영문·한국어 생성과 검증 확인'
+        description: '초안 PR 없이 새 후보 최대 2개로 영문·한국어 생성과 검증 확인'
         type: boolean
         default: true
 
@@ -14,33 +14,55 @@ permissions:
   contents: read
 
 concurrency:
-  group: dev-content-pipeline-${{ github.ref }}
+  group: dev-content-review
   cancel-in-progress: false
 
 jobs:
   generate:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: read
     outputs:
       generated: ${{ steps.digest.outputs.generated }}
       commit_sha: ${{ steps.commit.outputs.sha }}
+      branch: ${{ steps.commit.outputs.branch }}
+      digest_path: ${{ steps.digest.outputs.digest_path }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Pause generation while a digest awaits human review
+        id: pending
+        uses: actions/github-script@v7
         with:
+          script: |
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              ...context.repo, state: 'open', base: 'main', per_page: 100
+            });
+            const pending = pulls.find(pr => pr.head.repo?.full_name === `${context.repo.owner}/${context.repo.repo}` && pr.head.ref.startsWith('content/digest-review-'));
+            core.setOutput('exists', Boolean(pending));
+            if (pending) await core.summary.addRaw(`검토 대기 중: ${pending.html_url}\n\n추가 초안 생성은 병합 또는 닫기 후 재개됩니다.`).write();
+      - uses: actions/checkout@v4
+        if: steps.pending.outputs.exists != 'true'
+        with:
+          ref: main
           fetch-depth: 0
       - uses: actions/setup-python@v5
+        if: steps.pending.outputs.exists != 'true'
         with:
           python-version: '3.11'
       - uses: actions/setup-node@v4
+        if: steps.pending.outputs.exists != 'true'
         with:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+        if: steps.pending.outputs.exists != 'true'
       - name: Test publication gates
+        if: steps.pending.outputs.exists != 'true'
         run: npm run test:python
-      - name: Generate verified bilingual JSON
+      - name: Generate bilingual candidate for review
         id: digest
+        if: steps.pending.outputs.exists != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.5-flash-lite' }}
@@ -51,32 +73,65 @@ jobs:
             args+=(--dry-run --force --max-items 2)
           fi
           python3 scripts/generate_digest.py "${args[@]}"
-      - name: Validate and build before committing content
+      - name: Validate and build candidate before committing
         if: steps.digest.outputs.generated == 'true'
         run: |
           npm run check
           npm run build
-      - name: Commit verified content
+      - name: Commit candidate to a review branch only
         id: commit
         if: steps.digest.outputs.generated == 'true'
         env:
           DIGEST_PATH: ${{ steps.digest.outputs.digest_path }}
         run: |
+          branch="content/digest-review-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git switch -c "$branch"
           git add -- "$DIGEST_PATH" .pipeline/content_state.json
-          if ! git diff --cached --quiet; then
-            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'chore: add bilingual dev digest'
-            git push
-          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'content: prepare bilingual digest for human review'
+          git push origin "HEAD:refs/heads/$branch"
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
 
-  publish:
+  validate:
     needs: generate
-    if: needs.generate.outputs.generated == 'true' && github.ref == 'refs/heads/main'
+    if: needs.generate.outputs.generated == 'true'
     permissions:
       contents: read
-      pages: write
-      id-token: write
-    uses: ./.github/workflows/site-quality-gates.yml
+    uses: ./.github/workflows/site-checks.yml
     with:
       ref: ${{ needs.generate.outputs.commit_sha }}
-      publish: true
+
+  review:
+    needs: [generate, validate]
+    if: needs.generate.outputs.generated == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.generate.outputs.commit_sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Render bilingual summaries and evidence for the reviewer
+        env:
+          DIGEST_PATH: ${{ needs.generate.outputs.digest_path }}
+        run: python3 scripts/render_digest_review.py "$DIGEST_PATH" --output /tmp/digest-review.md
+      - name: Open a draft PR without merging or publishing
+        uses: actions/github-script@v7
+        env:
+          REVIEW_BRANCH: ${{ needs.generate.outputs.branch }}
+        with:
+          script: |
+            const fs = require('node:fs');
+            const body = fs.readFileSync('/tmp/digest-review.md', 'utf8');
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const {data: pr} = await github.rest.pulls.create({
+              ...context.repo, base: 'main', head: process.env.REVIEW_BRANCH,
+              title: '검토 요청: 영문·한국어 개발 뉴스 초안',
+              body: `${body}\n\n자동 검사: ${runUrl}`, draft: true
+            });
+            await core.summary.addRaw(`초안 PR: ${pr.html_url}\n\n아직 게시되지 않았습니다. 사람이 검토 후 Ready for review → Merge 해야 배포됩니다.`).write();

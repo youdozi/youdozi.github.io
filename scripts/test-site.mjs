@@ -41,14 +41,46 @@ test('migration converts prose attributes and image spaces while preserving code
   assert.equal(post.metadata.publishedAt,'2025-12-31T15:00:00.000Z');
 });
 
-test('workflow YAML parses and automated publication builds the exact generated commit', async () => {
+test('automation creates a draft review PR and reusable validation cannot deploy', async () => {
   const pipeline = YAML.parse(await readFile('.github/workflows/dev-content-pipeline.yml','utf8'));
-  assert.equal(pipeline.jobs.publish.uses,'./.github/workflows/site-quality-gates.yml');
-  assert.equal(pipeline.jobs.publish.with.ref,'${{ needs.generate.outputs.commit_sha }}');
+  assert.equal(pipeline.jobs.publish, undefined);
+  assert.equal(pipeline.jobs.generate.if, "github.ref == 'refs/heads/main'");
+  assert.equal(pipeline.jobs.validate.uses,'./.github/workflows/site-checks.yml');
+  assert.equal(pipeline.jobs.validate.with.ref,'${{ needs.generate.outputs.commit_sha }}');
+  assert.deepEqual(pipeline.jobs.review.needs,['generate','validate']);
+  assert.equal(pipeline.jobs.generate.permissions['pages'], undefined);
+  assert.equal(pipeline.jobs.review.permissions['pages'], undefined);
+  const commit = pipeline.jobs.generate.steps.find(step=>step.id==='commit').run;
+  assert.match(commit,/git push origin "HEAD:refs\/heads\/\$branch"/);
+  assert.ok(!/git push[^\n]*main/.test(commit));
+  const review = pipeline.jobs.review.steps.at(-1).with.script;
+  assert.match(review,/draft: true/);
+  assert.ok(!/pulls\.merge|enableAutoMerge|auto_merge/.test(review));
+  const pending = pipeline.jobs.generate.steps.find(step=>step.id==='pending').with.script;
+  const output = {};
+  const AsyncFunction = Object.getPrototypeOf(async function(){}).constructor;
+  const runPending = new AsyncFunction('github','context','core',pending);
+  const context = {repo:{owner:'youdozi',repo:'youdozi.github.io'}};
+  const github = {rest:{pulls:{list(){}}},paginate:async()=>[{html_url:'review-url',head:{repo:{full_name:'youdozi/youdozi.github.io'},ref:'content/digest-review-1'}}]};
+  const core = {setOutput:(key,value)=>output[key]=value,summary:{addRaw(){return this;},async write(){}}};
+  await runPending(github,context,core);
+  assert.equal(output.exists,true);
+  github.paginate=async()=>[];
+  await runPending(github,context,core);
+  assert.equal(output.exists,false);
+  assert.equal(pipeline.jobs.generate.steps.find(step=>step.id==='digest').if, "steps.pending.outputs.exists != 'true'");
   const site = YAML.parse(await readFile('.github/workflows/site-quality-gates.yml','utf8'));
-  assert.ok(site.on.workflow_call);
-  assert.equal(site.jobs.build.steps[0].with.ref,'${{ inputs.ref || github.sha }}');
+  assert.equal(site.on.workflow_call,undefined);
+  assert.equal(site.jobs.build.uses,'./.github/workflows/site-checks.yml');
+  assert.match(site.jobs.deploy.if,/github.ref == 'refs\/heads\/main'/);
+  assert.match(site.jobs.deploy.if,/github.event_name == 'push'/);
   assert.ok(site.jobs.deploy.steps.some(s=>s.uses==='actions/deploy-pages@v4'));
+  const checks = YAML.parse(await readFile('.github/workflows/site-checks.yml','utf8'));
+  assert.deepEqual(Object.keys(checks.jobs),['build']);
+  assert.deepEqual(checks.permissions,{contents:'read'});
+  assert.equal(checks.jobs.build.steps[0].with.ref,'${{ inputs.ref }}');
+  assert.equal(checks.on.workflow_call.inputs.pages_artifact.default,false);
+
 });
 
 test('Astro renders paired editions, reciprocal language links, and escapes source titles', async () => {

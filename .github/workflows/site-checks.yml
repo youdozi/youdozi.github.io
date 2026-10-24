@@ -1,0 +1,54 @@
+name: Reusable Site Checks
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        required: true
+        type: string
+      pages_artifact:
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: npm ci
+      - name: Python collection and bilingual evidence tests
+        run: npm run test:python
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Compile and execute published algorithm examples
+        run: npm run test:articles
+      - name: Migration regression tests
+        run: npm test
+      - name: Check Astro types and content schemas
+        run: npm run check
+      - name: Build and check generated pages, assets and internal links
+        run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site-build-output
+          path: dist
+      - uses: actions/upload-pages-artifact@v3
+        if: inputs.pages_artifact
+        with:
+          path: dist
+
