@@ -161,7 +161,342 @@
           }
         }
       }
+    },
+    {
+      "id": "8a1e170fd64369f7",
+      "source": "Spring Blog",
+      "url": "https://spring.io/blog/2026/10/23/spring-ai-2-1-0-RC1-available-now",
+      "publishedAt": "2026-10-23T00:00:00+00:00",
+      "tags": [
+        "ai",
+        "java"
+      ],
+      "editions": {
+        "en": {
+          "title": "Spring AI 2.1.0-RC1 and 2.0.2 Available Now",
+          "summary": "Spring AI 2.1.0-RC1 and 2.0.2 are released, introducing session memory ported from the Spring AI Session project. The release adds tool call confirmation capabilities and extends pre-computed embeddings support with search by query vector.",
+          "claims": [
+            {
+              "text": "Spring AI 2.1.0-RC1 and 2.0.2 are released, introducing session memory ported from the Spring AI Session project.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring AI 2.1.0-RC1 and 2.0.2 have been released and are now available from Maven Central!"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Spring AI now includes a session memory , ported from the community Spring AI Session project."
+                }
+              ]
+            },
+            {
+              "text": "The release adds tool call confirmation capabilities and extends pre-computed embeddings support with search by query vector.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "It also adds tool call confirmation, and extends the pre-computed embeddings support with search by query vector."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0,
+              1
+            ],
+            "affectedAudience": [],
+            "conditions": []
+          }
+        },
+        "ko": {
+          "title": "Spring AI 2.1.0-RC1 및 2.0.2 출시",
+          "summary": "Spring AI 2.1.0-RC1 및 2.0.2가 출시되었으며, Spring AI Session 프로젝트에서 이식된 세션 메모리가 추가되었습니다. 이번 릴리스는 도구 호출 확인 기능을 추가하고 쿼리 벡터 검색을 통한 사전 계산된 임베딩 지원을 확장합니다.",
+          "claims": [
+            {
+              "text": "Spring AI 2.1.0-RC1 및 2.0.2가 출시되었으며, Spring AI Session 프로젝트에서 이식된 세션 메모리가 추가되었습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring AI 2.1.0-RC1 and 2.0.2 have been released and are now available from Maven Central!"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Spring AI now includes a session memory , ported from the community Spring AI Session project."
+                }
+              ]
+            },
+            {
+              "text": "이번 릴리스는 도구 호출 확인 기능을 추가하고 쿼리 벡터 검색을 통한 사전 계산된 임베딩 지원을 확장합니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "It also adds tool call confirmation, and extends the pre-computed embeddings support with search by query vector."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0,
+              1
+            ],
+            "affectedAudience": [],
+            "conditions": []
+          }
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://spring.io/blog/2026/10/23/spring-ai-2-1-0-RC1-available-now/",
+          "sha256": "5356e89c810dead4e928309c5dd9806e093685bd22a5c051eaa5a9158d465200"
+        }
+      ],
+      "selection": {
+        "audience": "java-spring-backend",
+        "method": "keyword-rules-v1",
+        "relevance": "direct",
+        "priority": "normal",
+        "reasons": [
+          "jvm-spring"
+        ]
+      },
+      "editorial": {
+        "opinion": {
+          "en": "",
+          "ko": ""
+        },
+        "experiment": {
+          "status": "not_tested",
+          "reportUrl": null,
+          "environment": {
+            "en": "",
+            "ko": ""
+          },
+          "result": {
+            "en": "",
+            "ko": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "2926d893ff84038b",
+      "source": "Spring Blog",
+      "url": "https://spring.io/blog/2026/10/23/spring-boot-4-0-9-available-now",
+      "publishedAt": "2026-10-23T00:00:00+00:00",
+      "tags": [
+        "java"
+      ],
+      "editions": {
+        "en": {
+          "title": "Spring Boot 4.0.9 available now",
+          "summary": "Spring Boot 4.0.9 has been released and is now available from Maven Central. This release includes 99 bug fixes, documentation improvements, and dependency upgrades.",
+          "claims": [
+            {
+              "text": "Spring Boot 4.0.9 has been released and is now available from Maven Central.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Boot 4.0.9 has been released and is now available from Maven Central."
+                }
+              ]
+            },
+            {
+              "text": "This release includes 99 bug fixes, documentation improvements, and dependency upgrades.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "This release includes 99 bug fixes, documentation improvements, and dependency upgrades ."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0
+            ],
+            "affectedAudience": [],
+            "conditions": []
+          }
+        },
+        "ko": {
+          "title": "Spring Boot 4.0.9 출시",
+          "summary": "Spring Boot 4.0.9 버전이 출시되어 현재 Maven Central에서 이용할 수 있습니다. 이번 릴리스에는 99개의 버그 수정, 문서 개선 및 종속성 업그레이드가 포함되어 있습니다.",
+          "claims": [
+            {
+              "text": "Spring Boot 4.0.9 버전이 출시되어 현재 Maven Central에서 이용할 수 있습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Boot 4.0.9 has been released and is now available from Maven Central."
+                }
+              ]
+            },
+            {
+              "text": "이번 릴리스에는 99개의 버그 수정, 문서 개선 및 종속성 업그레이드가 포함되어 있습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "This release includes 99 bug fixes, documentation improvements, and dependency upgrades ."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0
+            ],
+            "affectedAudience": [],
+            "conditions": []
+          }
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://spring.io/blog/2026/10/23/spring-boot-4-0-9-available-now/",
+          "sha256": "2922f68f818a3cc2e6a0e5ae66293525fd000d748e05b72851f2145ecfa61352"
+        }
+      ],
+      "selection": {
+        "audience": "java-spring-backend",
+        "method": "keyword-rules-v1",
+        "relevance": "direct",
+        "priority": "normal",
+        "reasons": [
+          "jvm-spring"
+        ]
+      },
+      "editorial": {
+        "opinion": {
+          "en": "",
+          "ko": ""
+        },
+        "experiment": {
+          "status": "not_tested",
+          "reportUrl": null,
+          "environment": {
+            "en": "",
+            "ko": ""
+          },
+          "result": {
+            "en": "",
+            "ko": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "464939e0173a6eb9",
+      "source": "Spring Blog",
+      "url": "https://spring.io/blog/2026/10/23/spring-boot-4-1-2-available-now",
+      "publishedAt": "2026-10-23T00:00:00+00:00",
+      "tags": [
+        "java"
+      ],
+      "editions": {
+        "en": {
+          "title": "Spring Boot 4.1.2 available now",
+          "summary": "Spring Boot 4.1.2 has been released and is now available from Maven Central. The release includes 126 bug fixes, documentation improvements, and dependency upgrades.",
+          "claims": [
+            {
+              "text": "Spring Boot 4.1.2 has been released and is now available from Maven Central.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Boot 4.1.2 has been released and is now available from Maven Central."
+                }
+              ]
+            },
+            {
+              "text": "The release includes 126 bug fixes, documentation improvements, and dependency upgrades.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "This release includes 126 bug fixes, documentation improvements, and dependency upgrades ."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0
+            ],
+            "affectedAudience": [],
+            "conditions": []
+          }
+        },
+        "ko": {
+          "title": "스프링 부트 4.1.2 출시",
+          "summary": "스프링 부트 4.1.2 버전이 출시되어 현재 메이븐 중앙 저장소에서 이용할 수 있습니다. 이번 릴리스에는 126건의 버그 수정, 문서 개선 및 종속성 업그레이드가 포함되어 있습니다.",
+          "claims": [
+            {
+              "text": "스프링 부트 4.1.2 버전이 출시되어 현재 메이븐 중앙 저장소에서 이용할 수 있습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Boot 4.1.2 has been released and is now available from Maven Central."
+                }
+              ]
+            },
+            {
+              "text": "이번 릴리스에는 126건의 버그 수정, 문서 개선 및 종속성 업그레이드가 포함되어 있습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "This release includes 126 bug fixes, documentation improvements, and dependency upgrades ."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0
+            ],
+            "affectedAudience": [],
+            "conditions": []
+          }
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://spring.io/blog/2026/10/23/spring-boot-4-1-2-available-now/",
+          "sha256": "12b5bad1942af6f1fc0ec1b94d3163df5e549e733c8a89538bff4ff178551ee9"
+        }
+      ],
+      "selection": {
+        "audience": "java-spring-backend",
+        "method": "keyword-rules-v1",
+        "relevance": "direct",
+        "priority": "normal",
+        "reasons": [
+          "jvm-spring"
+        ]
+      },
+      "editorial": {
+        "opinion": {
+          "en": "",
+          "ko": ""
+        },
+        "experiment": {
+          "status": "not_tested",
+          "reportUrl": null,
+          "environment": {
+            "en": "",
+            "ko": ""
+          },
+          "result": {
+            "en": "",
+            "ko": ""
+          }
+        }
+      }
     }
   ],
-  "updatedAt": "2026-10-24T15:19:15.655170+00:00"
+  "updatedAt": "2026-10-25T08:07:35.533969+09:00"
 }
