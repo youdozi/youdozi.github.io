@@ -43,6 +43,7 @@ test('migration converts prose attributes and image spaces while preserving code
 
 test('automation creates a draft review PR and reusable validation cannot deploy', async () => {
   const pipeline = YAML.parse(await readFile('.github/workflows/dev-content-pipeline.yml','utf8'));
+  assert.equal(pipeline.on.workflow_dispatch.inputs.preview.default,false);
   assert.equal(pipeline.jobs.publish, undefined);
   assert.equal(pipeline.jobs.generate.if, "github.ref == 'refs/heads/main'");
   assert.equal(pipeline.jobs.validate.uses,'./.github/workflows/site-checks.yml');
@@ -115,6 +116,8 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.ok(!sitemap.includes('/ko/digest/2026-03-16/'));
     const reviewShell=await readFile('dist/review/index.html','utf8');
     assert.match(reviewShell,/noindex,follow/);
+    assert.match(reviewShell,/id="generate-draft"[^>]*href="https:\/\/github.com\/youdozi\/youdozi.github.io\/actions\/workflows\/dev-content-pipeline.yml"/);
+
     assert.ok(!sitemap.includes('/review/'));
     assert.ok(!reviewShell.includes('Spring Security OAuth scope update'));
     assert.ok(!reviewShell.includes('Literal {{ 7 | times: 7 }}'));

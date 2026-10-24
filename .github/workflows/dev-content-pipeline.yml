@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       preview:
-        description: '초안 PR 없이 새 후보 최대 2개로 영문·한국어 생성과 검증 확인'
+        description: '검증만 실행 (체크 해제하면 검토용 Draft PR 생성, 자동 게시 안 함)'
         type: boolean
-        default: true
+        default: false
 
 permissions:
   contents: read

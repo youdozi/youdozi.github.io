@@ -45,7 +45,7 @@ python3 scripts/generate_digest.py --check-links
 
 ## Actions와 배포
 
-매일 한국 시간 07:00(`0 22 * * *`, UTC)에 실행합니다. 수동 실행의 `preview=true`가 기본이며 `--dry-run --force --max-items 2`로 AI 연결을 검사합니다. 검토용 Draft PR 생성에는 `preview=false`를 사용합니다. 어느 모드도 자동 게시하지 않습니다.
+매일 한국 시간 07:00(`0 22 * * *`, UTC)에 실행합니다. 수동 실행도 기본값 `preview=false`로 검토용 Draft PR을 생성합니다. ‘검증만 실행’을 체크해 `preview=true`로 실행하면 `--dry-run --force --max-items 2`로 AI 연결만 검사하고 PR은 만들지 않습니다. 어느 모드도 자동 게시하지 않습니다.
 
 생성 후 Astro 타입·스키마 검사와 빌드·내부 링크 검사가 모두 통과하면 JSON과 중복 방지 상태를 `content/digest-review-*` 브랜치에 커밋합니다. 재사용 사이트 워크플로에 정확한 생성 커밋 SHA를 넘겨 전체 검사를 수행하되 배포하지 않습니다. 검사 성공 후에만 Draft PR을 엽니다. PR 본문에는 두 언어의 제목·요약, 문장별 인용 근거, 원문 링크와 검토 체크리스트가 표시됩니다. 생성 브랜치는 공개 저장소에서 볼 수 있지만 운영 사이트·RSS·사이트맵에는 포함되지 않습니다.
 
@@ -80,3 +80,17 @@ Python 테스트는 기존 수집·선별 검증과 새로운 두 언어 근거 
 `https://youdozi.github.io/review/?pr=PR번호`에서 확인합니다. 운영 배포에는 후보 본문을 넣지 않고 빈 검토 화면만 배포하며, 브라우저가 공개 GitHub API에서 해당 PR의 커밋 SHA로 고정한 JSON을 읽습니다. 실제 게시 글과 같은 본문 컴포넌트·스타일·스키마를 사용합니다. GitHub에서 수정하면 다시 불러와야 하며 확인 중인 버전 링크로 원본 JSON을 볼 수 있습니다. 읽는 도중 PR이 바뀌면 다시 불러오도록 안내합니다.
 
 이 페이지에는 `noindex,follow`를 지정하고 사이트맵·RSS·게시 목록에는 넣지 않습니다. 인증된 비공개 공간은 아닙니다. 초안은 기존 공개 저장소에서 읽으며 조회에 토큰을 사용하지 않습니다. 공개 API의 호출 한도·네트워크 오류 시 GitHub PR로 확인할 수 있습니다. 검토 화면에서 병합·게시를 수행하지 않으며 최종 승인은 GitHub PR에서 합니다.
+
+
+## 수동 후보 생성
+
+검토 화면 `/review/`의 **GitHub에서 후보 생성 실행**을 누르거나 [Dev Content Pipeline](https://github.com/youdozi/youdozi.github.io/actions/workflows/dev-content-pipeline.yml)을 엽니다. GitHub에서 로그인한 상태로 **Run workflow → main**을 선택하고 ‘검증만 실행’을 체크하지 않은 채 실행합니다. 저장소의 Actions 실행 권한이 필요합니다. 초안 생성 완료 후 검토 PR과 멘션 알림을 확인하세요. 후보가 없거나 기존 검토 PR이 열려 있으면 실행 요약·로그에 건너뛴 이유가 나옵니다.
+
+GitHub CLI를 인증해 둔 환경에서는 다음 명령으로 같은 작업을 호출할 수 있습니다.
+
+```sh
+gh workflow run dev-content-pipeline.yml \
+  --repo youdozi/youdozi.github.io --ref main
+```
+
+정기 실행과 수동 실행은 같은 동시 실행 제어·중복 방지·사람의 검토·병합 절차를 사용합니다. 호출만으로 사이트에 게시되지 않습니다.
