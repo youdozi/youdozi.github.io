@@ -1,13 +1,17 @@
 ---
 import { text, formatDate, type Language } from '../lib/content';
+import CandidateReview from './CandidateReview.astro';
+import {experimentLabel} from '../lib/editorial';
 import type { DigestArticle } from '../lib/digest-schema';
-interface Props { article: DigestArticle; index: number; lang: Language; }
+interface Props { article: DigestArticle; index: number; lang: Language; reviewMode?:boolean; }
 const { article, index, lang } = Astro.props;
 ---
 <section class="digest-article">
   <div class="entry-meta"><span data-source>{article.source}</span><time data-date datetime={article.publishedAt.toISOString()}>{formatDate(article.publishedAt, lang)}</time></div>
   <h2 data-title>{index+1}. {article.editions[lang].title}</h2>
   <p data-summary>{article.editions[lang].summary}</p>
+  {Astro.props.reviewMode && <CandidateReview article={article} lang={lang} />}
+  {!Astro.props.reviewMode && article.editorial && <aside class="notice"><p>{experimentLabel(article,lang)}</p>{article.editorial.experiment.status==='tested' && <a href={article.editorial.experiment.reportUrl!}>{lang==='ko'?'실험 환경·결과 보기':'Experiment environment and results'} ↗</a>}{article.editorial.opinion[lang] && <p>{lang==='ko'?'편집 의견':'Editorial opinion'}: {article.editorial.opinion[lang]}</p>}</aside>}
   <a class="source-link" data-source-link href={article.url} rel="noopener noreferrer">{text[lang].source} ↗</a>
   <details><summary>{lang === 'en' ? 'Source evidence' : '원문 인용 근거'}</summary><div data-claims>{article.editions[lang].claims.map(claim => <div><p>{claim.text}</p>{claim.evidence.map(e => <blockquote><p>{e.quote}</p><a href={article.documents[e.document_id].url} rel="noopener noreferrer">{lang === 'en' ? 'Evidence source' : '인용 출처'} ↗</a></blockquote>)}</div>)}</div></details>
 </section>

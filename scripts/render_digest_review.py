@@ -5,6 +5,7 @@ import html
 import json
 from pathlib import Path
 import re
+from editorial_digest import POLICY
 
 
 def text(value):
@@ -35,15 +36,33 @@ def render(data):
     for number, article in enumerate(data['articles'], 1):
         lines += ['', '---', '', f'### {number}. {text(article["editions"]["ko"]["title"])}', '',
                   f'출처: {text(article["source"])} · 기사 날짜: {text(article["publishedAt"])}', '', link(article['url'])]
+        if article.get('selection'):
+            selection=article['selection']
+            lines += ['', '**선정 이유 · 키워드 기반 자동 제안**', '',
+                      '- 추천 독자: '+POLICY['audience']['ko'],
+                      '- 관련성: '+('직접 관련' if selection['relevance']=='direct' else '간접 관련'),
+                      '- 선정 근거: '+', '.join(POLICY['reasons'][reason]['ko'] for reason in selection['reasons']),
+                      '- 검토 우선순위: '+POLICY['priorities'][selection['priority']]['ko']+' (도입 권고 아님)']
         for lang, label in [('en', 'English'), ('ko', '한국어')]:
             edition = article['editions'][lang]
-            lines += ['', f'**{label}: {text(edition["title"])}**', '', text(edition['summary']), '', '<details>', f'<summary>{label} 문장별 원문 근거</summary>', '']
+            lines += ['', f'**{label}: {text(edition["title"])}**', '', text(edition['summary']), '']
+            if 'review' in edition:
+                for key, labels in POLICY['sections'].items():
+                    indices=edition['review'][key]
+                    value=' / '.join(edition['claims'][index]['text']+f' (근거 문장 {index+1})' for index in indices) if indices else '요약 근거에 정리되지 않음 — 원문 확인·검토 필요'
+                    lines += [f'**{labels[lang]}**: {text(value)}', '']
+            lines += ['<details>', f'<summary>{label} 문장별 원문 근거</summary>', '']
             for claim in edition['claims']:
                 lines += [f'- 주장: {text(claim["text"])}']
                 for evidence in claim['evidence']:
                     document = article['documents'][evidence['document_id']]
                     lines += [f'  - 인용: “{text(evidence["quote"])}”', f'  - 근거 문서: {link(document["url"])}']
             lines += ['', '</details>']
+        if article.get('editorial'):
+            editorial=article['editorial'];experiment=editorial['experiment']
+            lines += ['', '**편집 의견 · 사용자 작성**', '', text(editorial['opinion']['ko']) or '미작성 — 게시 가치와 적용 판단을 사용자가 검토합니다.', '', '**직접 실험 여부**', '', '직접 실험 미수행' if experiment['status']=='not_tested' else '직접 실험 · 기록 첨부']
+            if experiment['status']=='tested':
+                lines += [text(experiment['environment']['ko']), text(experiment['result']['ko']), link(experiment['reportUrl'])]
     result = '\n'.join(lines) + '\n'
     if len(result) > 60000:
         raise ValueError('Review exceeds the PR body budget')

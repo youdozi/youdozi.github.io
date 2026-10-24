@@ -25,7 +25,7 @@ EN_CLAIMS = [
 
 
 def generated_claims():
-    return {"en": {"title": "Spring Security OAuth scope update", "claims": copy.deepcopy(EN_CLAIMS)}, "ko": {"title": "Spring Security OAuth 범위 업데이트", "claims": copy.deepcopy(CLAIMS)}}
+    return {"en": {"review":{"keyChange":[0],"affectedAudience":[0],"conditions":[1]}, "title": "Spring Security OAuth scope update", "claims": copy.deepcopy(EN_CLAIMS)}, "ko": {"review":{"keyChange":[0],"affectedAudience":[0],"conditions":[1]}, "title": "Spring Security OAuth 범위 업데이트", "claims": copy.deepcopy(CLAIMS)}}
 
 
 def review():

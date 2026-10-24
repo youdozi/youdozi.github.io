@@ -1,0 +1,15 @@
+---
+import {candidateReviewRows} from '../lib/editorial';
+import type {DigestArticle} from '../lib/digest-schema';
+interface Props {article:DigestArticle;lang:'en'|'ko';}
+const {article,lang}=Astro.props;
+const hasMetadata=Boolean(article.selection || article.editorial || article.editions[lang].review);
+---
+<aside class="candidate-review" data-candidate-review hidden={!hasMetadata}>
+  <h3>{lang==='ko'?'후보 검토 카드':'Candidate review card'}</h3>
+  <p>{lang==='ko'?'선정 이유는 키워드 기반 제안입니다. 사실 항목은 검증된 요약 문장을 참조하며, 편집 의견과 실험 기록은 사용자가 작성합니다.':'Selection is a keyword-based suggestion. Factual sections refer to checked summary claims; opinions and experiment records belong to the reviewer.'}</p>
+  <dl data-review-fields>{hasMetadata && candidateReviewRows(article,lang).map(row=><div data-kind={row.kind}><dt>{row.label}</dt><dd>{row.value}</dd></div>)}</dl>
+</aside>
+<style>
+.candidate-review{background:#eef1e8;border:1px solid var(--line);border-radius:6px;padding:18px 20px;margin:24px 0}.candidate-review h3{font-size:19px;margin:0 0 10px}.candidate-review>p{font-size:12px;color:var(--muted);line-height:1.8}.candidate-review :global(dl){margin-bottom:0}.candidate-review :global(dl>div){border-top:1px solid var(--line);padding:12px 0}.candidate-review :global(dt){font-weight:650;font-size:12px;color:var(--accent)}.candidate-review :global(dd){margin:6px 0 0;font-size:13px;line-height:1.8;white-space:pre-line;overflow-wrap:anywhere}.candidate-review :global([data-kind="missing"] dd){color:var(--muted)}
+</style>

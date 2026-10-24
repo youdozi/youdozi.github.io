@@ -349,7 +349,7 @@ def load_feed(source: FeedSource, fixtures_dir: Optional[Path]) -> str:
 
 def select_items(
     candidates: List[FeedItem], seen_links: set[str], days_back: int, max_items: int,
-    min_score: int = 6, max_per_source: int = 3, *, initial_source_counts: Dict[str, int] | None = None,
+    min_score: int = 6, max_per_source: int = 3, *, initial_source_counts: Dict[str, int] | None = None, ranking_key=None,
 ) -> List[FeedItem]:
     from validate_dev_digest import allowed_article_url
 
@@ -359,7 +359,7 @@ def select_items(
     dedup_links = set(seen_links)
     source_counts: Dict[str, int] = dict(initial_source_counts or {})
     selected: List[FeedItem] = []
-    for item in sorted(candidates, key=lambda x: (x.score, x.published_at), reverse=True):
+    for item in sorted(candidates, key=ranking_key or (lambda x: (x.score, x.published_at)), reverse=True):
         if not cutoff <= item.published_at <= now:
             continue
         if (item.score < min_score or not item.topic_tags

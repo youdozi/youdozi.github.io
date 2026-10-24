@@ -5,6 +5,7 @@ import hashlib
 from urllib.parse import urlparse
 import ai_dev_digest as ai
 from validate_dev_digest import SOURCE_HOSTS
+from editorial_digest import selection_profile, empty_editorial, validate_review_map, SECTIONS
 
 
 def paired_schema(schema):
@@ -15,6 +16,9 @@ CLAIM_SCHEMA = paired_schema(ai.CLAIM_SCHEMA)
 for schema in CLAIM_SCHEMA["properties"].values():
     schema["properties"]["title"] = {"type": "STRING"}
     schema["required"].append("title")
+    schema["properties"]["review"] = {"type":"OBJECT", "properties": {
+        key: {"type":"ARRAY", "items":{"type":"INTEGER"}} for key in SECTIONS}, "required":list(SECTIONS)}
+    schema["required"].append("review")
 english = CLAIM_SCHEMA["properties"]["en"]["properties"]["claims"]["items"]
 english["properties"]["text_en"] = english["properties"].pop("text_ko")
 english["required"] = ["text_en", "evidence"]
@@ -46,6 +50,11 @@ def summarize_item(item, client):
         "Each claim needs 1–3 exact source quotes, 20–240 characters each. Both editions must convey the same facts. "
         "Preserve numerical/version/date/preview/GA details and limitations. Attribute vendor benchmark claims. No advice. "
         "For security, release/version and deprecation news, support every claim with a primary-source quote. "
+        "Include review with zero-based claim-index arrays keyChange, affectedAudience and conditions. "
+        "keyChange must reference the main change. affectedAudience references explicitly supported affected users or systems. "
+        "conditions references supported adoption requirements, costs, preview status or limitations. "
+        "Use empty arrays for affectedAudience or conditions if those facts are absent; never invent them. "
+        "Do not generate editorial opinions or claim that we tested anything. "
         "Document 0 is the article; other documents must concern the same event.", data, CLAIM_SCHEMA)
     summaries = {}
     claims = {}
@@ -59,11 +68,14 @@ def summarize_item(item, client):
             raise ai.ArticleUnavailable("invalid translated title")
         titles[language] = title
         claims[language] = edition.get("claims")
+        if not validate_review_map(edition.get("review"), claims[language] if isinstance(claims[language], list) else []):
+            raise ai.ArticleUnavailable("review section references are invalid")
         summaries[language] = ai.verify_claims(claims[language], documents, sensitive, language)
     review = client.generate(
         "Independently check the translated titles and EVERY claim in BOTH language editions against the source documents and each other. "
         "Reject invented facts, numerical/version/date/status changes, lost conditions, unqualified benchmarks, unrelated references, "
         "contradictions and mistranslations. Return a verdict for each zero-based claim index in each edition. "
+        "Also reject review section references that misclassify claims or imply absent audience, costs, constraints or testing. "
         "supported is true only if every claim is entailed and both editions agree. requires_official is true for security, release/version or deprecation claims.",
         {**data, "editions": generated}, REVIEW_SCHEMA)
     for language in ("en", "ko"):
@@ -77,7 +89,7 @@ def summarize_item(item, client):
         ai.verify_claims(claims[language], documents, sensitive or verdict["requires_official"], language)
     return {
         "editions": {language: {"title": titles[language], "summary": summaries[language],
-            "claims": [{"text": c[f"text_{language}"], "evidence": c["evidence"]} for c in claims[language]]} for language in ("en", "ko")},
+            "claims": [{"text": c[f"text_{language}"], "evidence": c["evidence"]} for c in claims[language]], "review": generated[language]["review"]} for language in ("en", "ko")},
         "model": client.model, "verification": "source_consistency_checked",
         "documents": [{"url": d.url, "sha256": hashlib.sha256(d.body.encode()).hexdigest()} for d in documents],
     }
@@ -87,11 +99,15 @@ def enrich_items(items):
     client = ai.Gemini()
     accepted = []
     for item in items:
+        selection = selection_profile(item)
+        if selection is None:
+            print(f"[withheld] {item.source_name}: outside the backend editorial scope")
+            continue
         try:
             enriched = summarize_item(item, client)
         except ai.ArticleUnavailable as exc:
             print(f"[withheld] {item.source_name}: {exc}")
             continue
         accepted.append({"id": hashlib.sha256(item.link.encode()).hexdigest()[:16], "source": item.source_name,
-            "url": item.link, "publishedAt": item.published_at.isoformat(), "tags": item.topic_tags, **enriched})
+            "url": item.link, "publishedAt": item.published_at.isoformat(), "tags": item.topic_tags, **enriched, "selection": selection, "editorial": empty_editorial()})
     return accepted
