@@ -112,6 +112,7 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
+      actions: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -142,6 +143,10 @@ jobs:
             const preview = `https://youdozi.github.io/review/?pr=${pr.number}`;
             await github.rest.pulls.update({...context.repo, pull_number: pr.number,
               body: `**[영문·한국어 미리보기 열기](${preview})**\n\n${body}\n\n자동 검사: ${runUrl}`});
+            if (!process.env.REVIEW_BRANCH.startsWith('content/digest-review-')) throw new Error('Unexpected review branch');
+            await github.rest.actions.createWorkflowDispatch({
+              ...context.repo, workflow_id: 'site-quality-gates.yml', ref: process.env.REVIEW_BRANCH
+            });
             core.setOutput('number', pr.number);
             await core.summary.addRaw(`초안 PR: ${pr.html_url}\n\n아직 게시되지 않았습니다. 사람이 검토 후 Ready for review → Merge 해야 배포됩니다.`).write();
 

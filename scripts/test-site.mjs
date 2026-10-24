@@ -56,6 +56,9 @@ test('automation creates a draft review PR and reusable validation cannot deploy
   assert.ok(!/git push[^\n]*main/.test(commit));
   const review = pipeline.jobs.review.steps.at(-1).with.script;
   assert.match(review,/draft: true/);
+  assert.match(review,/createWorkflowDispatch/);
+  assert.match(review,/workflow_id: 'site-quality-gates.yml', ref: process.env.REVIEW_BRANCH/);
+  assert.equal(pipeline.jobs.review.permissions.actions,'write');
   assert.ok(!/pulls\.merge|enableAutoMerge|auto_merge/.test(review));
   const pending = pipeline.jobs.generate.steps.find(step=>step.id==='pending').with.script;
   const output = {};
