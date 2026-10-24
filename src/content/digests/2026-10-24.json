@@ -1,0 +1,242 @@
+{
+  "date": "2026-10-24",
+  "publishedAt": "2026-10-24T16:52:37.737234+09:00",
+  "articles": [
+    {
+      "id": "8c17438e18017540",
+      "source": "InfoQ",
+      "url": "https://www.infoq.com/news/2026/10/aws-lambda-web-functions/",
+      "publishedAt": "2026-10-23T12:49:00+00:00",
+      "tags": [
+        "cloud",
+        "web"
+      ],
+      "editions": {
+        "en": {
+          "title": "AWS Introduces Lambda Web Functions for Node.js Applications",
+          "summary": "AWS recently introduced Lambda Web Functions, allowing developers to run Node.js web applications using frameworks such as Express and Hono directly on Lambda, with support for concurrent requests and response streaming. Lambda Web Functions currently support only Node.js, while other languages remain available through traditional Lambda functions, and the service is currently available in five regions.",
+          "claims": [
+            {
+              "text": "AWS recently introduced Lambda Web Functions, allowing developers to run Node.js web applications using frameworks such as Express and Hono directly on Lambda, with support for concurrent requests and response streaming.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "AWS recently introduced Lambda Web Functions , allowing developers to run Node.js web applications using frameworks such as Express and Hono directly on Lambda, with support for concurrent requests and response streaming."
+                }
+              ]
+            },
+            {
+              "text": "Lambda Web Functions currently support only Node.js, while other languages remain available through traditional Lambda functions, and the service is currently available in five regions.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Lambda Web Functions currently support only Node.js; other languages, including Python, Java, and .NET, remain available through traditional Lambda functions."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "The service is currently available in five regions: Northern Virginia, Ohio, Oregon, Tokyo, and Ireland."
+                }
+              ]
+            }
+          ]
+        },
+        "ko": {
+          "title": "AWS, Node.js 애플리케이션을 위한 람다 웹 함수(Lambda Web Functions) 도입",
+          "summary": "AWS는 최근 Lambda Web Functions를 도입하여 개발자가 Express 및 Hono 같은 프레임워크를 사용하는 Node.js 웹 애플리케이션을 람다에서 직접 실행할 수 있도록 지원하며 동시 요청 및 응답 스트리밍을 제공합니다. Lambda Web Functions는 현재 Node.js만 지원하며 다른 언어는 기존 람다 함수를 통해 사용할 수 있고 이 서비스는 현재 5개 리전에서 제공됩니다.",
+          "claims": [
+            {
+              "text": "AWS는 최근 Lambda Web Functions를 도입하여 개발자가 Express 및 Hono 같은 프레임워크를 사용하는 Node.js 웹 애플리케이션을 람다에서 직접 실행할 수 있도록 지원하며 동시 요청 및 응답 스트리밍을 제공합니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "AWS recently introduced Lambda Web Functions , allowing developers to run Node.js web applications using frameworks such as Express and Hono directly on Lambda, with support for concurrent requests and response streaming."
+                }
+              ]
+            },
+            {
+              "text": "Lambda Web Functions는 현재 Node.js만 지원하며 다른 언어는 기존 람다 함수를 통해 사용할 수 있고 이 서비스는 현재 5개 리전에서 제공됩니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Lambda Web Functions currently support only Node.js; other languages, including Python, Java, and .NET, remain available through traditional Lambda functions."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "The service is currently available in five regions: Northern Virginia, Ohio, Oregon, Tokyo, and Ireland."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://www.infoq.com/news/2026/10/aws-lambda-web-functions/",
+          "sha256": "d6a961670b73ef01b623d823f2c5a4c59c8a903ee88ce0790543d122f2a07f15"
+        }
+      ]
+    },
+    {
+      "id": "70bdd870b2ac82df",
+      "source": "Cloudflare Blog",
+      "url": "https://blog.cloudflare.com/post-quantum-geo-key-manager/",
+      "publishedAt": "2026-10-23T18:06:56+00:00",
+      "tags": [
+        "cloud",
+        "data"
+      ],
+      "editions": {
+        "en": {
+          "title": "Bringing post-quantum cryptography to geographically fenced key management",
+          "summary": "Cloudflare launched a post-quantum geographically restricted key manager in closed beta to support its Data Localization Suite, with general availability planned for Q1 2027. The system utilizes a hybrid ML-KEM-768 and X25519 protection scheme, combining NIST-standard post-quantum cryptography with classical components.",
+          "claims": [
+            {
+              "text": "Cloudflare launched a post-quantum geographically restricted key manager in closed beta to support its Data Localization Suite, with general availability planned for Q1 2027.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Today, Cloudflare is launching a post-quantum geographically restricted key manager in support of our Data Localization Suite (DLS) in closed beta."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "While general availability (GA) is planned for Q1 2027, today’s launch is an important milestone on our journey to support our customers’ data sovereignty goals"
+                }
+              ]
+            },
+            {
+              "text": "The system utilizes a hybrid ML-KEM-768 and X25519 protection scheme, combining NIST-standard post-quantum cryptography with classical components.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Cloudflare therefore uses hybrid ML-KEM-768 and X25519 protection with two kinds of keys, out of which ML-KEM-768 is a NIST standard that also opens doors to highly sensitive customers."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Its key-encapsulation mechanism (KEM) combines ML-KEM-768 with X25519 , while HKDF -SHA-256 provides key derivation and AES-256-GCM provides authenticated encryption."
+                }
+              ]
+            }
+          ]
+        },
+        "ko": {
+          "title": "지리적으로 제한된 키 관리에 포스트 퀀텀 암호화 도입하기",
+          "summary": "클라우드플레어는 데이터 로컬라이제이션 스위트를 지원하기 위해 포스트 퀀텀 지역 제한 키 관리자를 클로즈드 베타로 출시했으며, 2027년 1분기에 정식 출시할 예정이다. 이 시스템은 NIST 표준인 포스트 퀀텀 암호화와 전통적 요소를 결합한 하이브리드 ML-KEM-768 및 X25519 보호 체계를 사용한다.",
+          "claims": [
+            {
+              "text": "클라우드플레어는 데이터 로컬라이제이션 스위트를 지원하기 위해 포스트 퀀텀 지역 제한 키 관리자를 클로즈드 베타로 출시했으며, 2027년 1분기에 정식 출시할 예정이다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Today, Cloudflare is launching a post-quantum geographically restricted key manager in support of our Data Localization Suite (DLS) in closed beta."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "While general availability (GA) is planned for Q1 2027, today’s launch is an important milestone on our journey to support our customers’ data sovereignty goals"
+                }
+              ]
+            },
+            {
+              "text": "이 시스템은 NIST 표준인 포스트 퀀텀 암호화와 전통적 요소를 결합한 하이브리드 ML-KEM-768 및 X25519 보호 체계를 사용한다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Cloudflare therefore uses hybrid ML-KEM-768 and X25519 protection with two kinds of keys, out of which ML-KEM-768 is a NIST standard that also opens doors to highly sensitive customers."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Its key-encapsulation mechanism (KEM) combines ML-KEM-768 with X25519 , while HKDF -SHA-256 provides key derivation and AES-256-GCM provides authenticated encryption."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/post-quantum-geo-key-manager/",
+          "sha256": "a042b80c23d7a15a5089fcd6a13436b3cf0294583c1099f41d580ed69eec288d"
+        }
+      ]
+    },
+    {
+      "id": "1c5f83daf4c5b5dc",
+      "source": "Cloudflare Blog",
+      "url": "https://blog.cloudflare.com/webmcp-commerce/",
+      "publishedAt": "2026-10-21T13:00:00+00:00",
+      "tags": [
+        "ai",
+        "cloud"
+      ],
+      "editions": {
+        "en": {
+          "title": "How Commerce.com and Cloudflare are getting storefronts ready for AI agents",
+          "summary": "Cloudflare launched an edge implementation of WebMCP in beta during August to help AI agents interact with online storefronts reliably. Commerce.com uses Cloudflare to run nearly 100,000 domains and integrated WebMCP alongside its server-side Model Context Protocol.",
+          "claims": [
+            {
+              "text": "Cloudflare launched an edge implementation of WebMCP in beta during August to help AI agents interact with online storefronts reliably.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "In August, we launched edge implementation of WebMCP in beta."
+                }
+              ]
+            },
+            {
+              "text": "Commerce.com uses Cloudflare to run nearly 100,000 domains and integrated WebMCP alongside its server-side Model Context Protocol.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Commerce.com , a flexible commerce platform built for the age of AI, already uses Cloudflare to run their almost 100,000 domains."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "WebMCP also works side by side with our server-side MCP , and together they cover the different ways people shop with agents."
+                }
+              ]
+            }
+          ]
+        },
+        "ko": {
+          "title": "Commerce.com과 클라우드플레어가 스토어프론트를 AI 에이전트에 맞게 준비하는 방법",
+          "summary": "클라우드플레어는 인공지능 에이전트가 온라인 상점과 안정적으로 상호작용할 수 있도록 8월에 WebMCP의 엣지 구현을 베타 버전으로 출시했습니다. 커머스닷컴은 거의 10만 개의 도메인을 운영하기 위해 클라우드플레어를 사용하며, 서버 측 모델 컨텍스트 프로토콜과 함께 WebMCP를 통합했습니다.",
+          "claims": [
+            {
+              "text": "클라우드플레어는 인공지능 에이전트가 온라인 상점과 안정적으로 상호작용할 수 있도록 8월에 WebMCP의 엣지 구현을 베타 버전으로 출시했습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "In August, we launched edge implementation of WebMCP in beta."
+                }
+              ]
+            },
+            {
+              "text": "커머스닷컴은 거의 10만 개의 도메인을 운영하기 위해 클라우드플레어를 사용하며, 서버 측 모델 컨텍스트 프로토콜과 함께 WebMCP를 통합했습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Commerce.com , a flexible commerce platform built for the age of AI, already uses Cloudflare to run their almost 100,000 domains."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "WebMCP also works side by side with our server-side MCP , and together they cover the different ways people shop with agents."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/webmcp-commerce/",
+          "sha256": "a1f9eb00ead34d8280fa099cb3eca1ccc633a24c9639fd122e0922d414a804fb"
+        }
+      ]
+    }
+  ]
+}
