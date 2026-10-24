@@ -267,6 +267,248 @@
           "sha256": "a1f9eb00ead34d8280fa099cb3eca1ccc633a24c9639fd122e0922d414a804fb"
         }
       ]
+    },
+    {
+      "id": "94159d569cd7348b",
+      "source": "InfoQ",
+      "url": "https://www.infoq.com/news/2026/10/data-agent-kit-ga/",
+      "publishedAt": "2026-10-24T08:34:00+00:00",
+      "tags": [
+        "ai",
+        "cloud",
+        "data"
+      ],
+      "editions": {
+        "en": {
+          "title": "Google’s Data Agent Kit Reaches General Availability",
+          "summary": "Google announced general availability of Data Agent Kit on October 1, 2026, after its preview period. The kit works with third-party coding agents and has no additional kit fee, but the Google Cloud services used by an agent are billed at standard rates. With the general availability release, the company added support for BigQuery Graph, Bigtable, and Managed Service for Apache Spark.",
+          "claims": [
+            {
+              "text": "Google announced general availability of Data Agent Kit on October 1, 2026, after its preview period.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Google recently made Data Agent Kit generally available , moving it out of the preview it ran through the summer."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "Today, Google Cloud Data Agent Kit is generally available."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "October 1, 2026 Arun Nair Product Manager, Google"
+                }
+              ]
+            },
+            {
+              "text": "The kit works with third-party coding agents and has no additional kit fee, but the Google Cloud services used by an agent are billed at standard rates.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "It is free, it is open source, and it installs into coding agents Google does not own."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "Data Agent Kit is included at no additional cost; you pay standard pricing only for the Google Cloud services your agent uses."
+                }
+              ]
+            },
+            {
+              "text": "With the general availability release, the company added support for BigQuery Graph, Bigtable, and Managed Service for Apache Spark.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "With the GA release, the company adds BigQuery Graph, Bigtable, and Managed Service for Apache Spark."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "With GA, we are adding support for BigQuery Graph , Bigtable , and Managed Service for Apache Spark access to your open Lakehouse"
+                }
+              ]
+            }
+          ]
+        },
+        "ko": {
+          "title": "Google Data Agent Kit 정식 출시: 키트 비용과 클라우드 사용료 구분",
+          "summary": "Google은 미리보기 기간을 거쳐 2026년 10월 1일 Data Agent Kit의 정식 출시(GA)를 발표했습니다. 타사 코딩 에이전트에서도 사용할 수 있으며 키트 자체의 추가 비용은 없지만, 에이전트가 사용하는 Google Cloud 서비스에는 표준 요금이 적용됩니다. 정식 버전 출시와 함께 빅쿼리 그래프, 빅테이블, 아파치 스파크용 매니지드 서비스에 대한 지원이 추가되었습니다.",
+          "claims": [
+            {
+              "text": "Google은 미리보기 기간을 거쳐 2026년 10월 1일 Data Agent Kit의 정식 출시(GA)를 발표했습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Google recently made Data Agent Kit generally available , moving it out of the preview it ran through the summer."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "Today, Google Cloud Data Agent Kit is generally available."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "October 1, 2026 Arun Nair Product Manager, Google"
+                }
+              ]
+            },
+            {
+              "text": "타사 코딩 에이전트에서도 사용할 수 있으며 키트 자체의 추가 비용은 없지만, 에이전트가 사용하는 Google Cloud 서비스에는 표준 요금이 적용됩니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "It is free, it is open source, and it installs into coding agents Google does not own."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "Data Agent Kit is included at no additional cost; you pay standard pricing only for the Google Cloud services your agent uses."
+                }
+              ]
+            },
+            {
+              "text": "정식 버전 출시와 함께 빅쿼리 그래프, 빅테이블, 아파치 스파크용 매니지드 서비스에 대한 지원이 추가되었습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "With the GA release, the company adds BigQuery Graph, Bigtable, and Managed Service for Apache Spark."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "With GA, we are adding support for BigQuery Graph , Bigtable , and Managed Service for Apache Spark access to your open Lakehouse"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://www.infoq.com/news/2026/10/data-agent-kit-ga/",
+          "sha256": "244ebdc3935da5281fba3ca373150f7445a8e44ac474adc2bb216fdf78e78cd7"
+        },
+        {
+          "url": "https://cloud.google.com/blog/topics/developers-practitioners/data-agent-kit-is-now-ga-bring-google-data-cloud-to-any-coding-agent/",
+          "sha256": "1c456ab6f3fa3628e664614c1ba7bd173c91f24e483f13bfab1447d30d1059c4"
+        },
+        {
+          "url": "https://github.com/GoogleCloudPlatform/data-agent-kit-plugin",
+          "sha256": "215443f2d1639c18ee4bcc14c42b3b6633f8204451573dd00a3da14473a1210c"
+        }
+      ]
+    },
+    {
+      "id": "d21e3f302d516680",
+      "source": "InfoQ",
+      "url": "https://www.infoq.com/news/2026/10/cloudflare-hashing-optimization/",
+      "publishedAt": "2026-10-24T08:10:00+00:00",
+      "tags": [
+        "cloud",
+        "web"
+      ],
+      "editions": {
+        "en": {
+          "title": "Cloudflare Reports Over 100 TB in Fleet-Wide RAM Savings from Consistent Hashing Changes",
+          "summary": "Cloudflare reports that optimizing consistent hashing in its Pingora Backend Router reclaimed more than 100 TB of RAM across its global deployment, rather than on one server. For its workload, the team reduced hashes per backend by about 90% based on distribution and collision analysis. The old and new rings ran alongside each other during a staged, data-center-scoped rollout to control cache churn and origin traffic.",
+          "claims": [
+            {
+              "text": "Cloudflare reports that optimizing consistent hashing in its Pingora Backend Router reclaimed more than 100 TB of RAM across its global deployment, rather than on one server.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Cloudflare recently documented how it reduced the memory footprint of its internal load-balancing service by more than 100 TB by optimizing the Rust implementation of consistent hashing in pingora-ketama."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "100TB of RAM globally"
+                }
+              ]
+            },
+            {
+              "text": "For its workload, the team reduced hashes per backend by about 90% based on distribution and collision analysis.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The changes compacted hash-ring entries and used statistical analysis of hash distribution and collision rates to reduce the number of hashes per backend by about 90% while preserving load-balancing accuracy."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "decrease the number of hashes we were generating for each server by 90%"
+                }
+              ]
+            },
+            {
+              "text": "The old and new rings ran alongside each other during a staged, data-center-scoped rollout to control cache churn and origin traffic.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The new implementation was rolled out gradually alongside the existing ring to limit cache churn and origin traffic spikes."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "progressively larger groups of data centers"
+                }
+              ]
+            }
+          ]
+        },
+        "ko": {
+          "title": "Cloudflare, 일관성 해싱 최적화로 전 세계 메모리 100TB 이상 절감",
+          "summary": "Cloudflare는 Pingora Backend Router의 일관성 해싱을 최적화해 전 세계 배포 전체에서 메모리를 100TB 이상 절감했다고 밝혔습니다. 단일 서버의 절감량은 아닙니다. 자사 워크로드의 분포와 충돌을 분석해 백엔드당 해시 수를 약 90% 줄였습니다. 캐시 재배치와 오리진 트래픽을 통제하기 위해 기존 링과 새 링을 함께 운영하며 데이터센터별로 점진 전환했습니다.",
+          "claims": [
+            {
+              "text": "Cloudflare는 Pingora Backend Router의 일관성 해싱을 최적화해 전 세계 배포 전체에서 메모리를 100TB 이상 절감했다고 밝혔습니다. 단일 서버의 절감량은 아닙니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Cloudflare recently documented how it reduced the memory footprint of its internal load-balancing service by more than 100 TB by optimizing the Rust implementation of consistent hashing in pingora-ketama."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "100TB of RAM globally"
+                }
+              ]
+            },
+            {
+              "text": "자사 워크로드의 분포와 충돌을 분석해 백엔드당 해시 수를 약 90% 줄였습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The changes compacted hash-ring entries and used statistical analysis of hash distribution and collision rates to reduce the number of hashes per backend by about 90% while preserving load-balancing accuracy."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "decrease the number of hashes we were generating for each server by 90%"
+                }
+              ]
+            },
+            {
+              "text": "캐시 재배치와 오리진 트래픽을 통제하기 위해 기존 링과 새 링을 함께 운영하며 데이터센터별로 점진 전환했습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The new implementation was rolled out gradually alongside the existing ring to limit cache churn and origin traffic spikes."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "progressively larger groups of data centers"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://www.infoq.com/news/2026/10/cloudflare-hashing-optimization/",
+          "sha256": "3c68615a4e4f3905ed293ebec0e23a8e99951a99eff43ac4a97019680956ec77"
+        },
+        {
+          "url": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/",
+          "sha256": "e4a6bb3c5f0272adbc6071edd4f4f221a6717bbe5ea27d81822466b2e8e44900"
+        }
+      ]
     }
-  ]
+  ],
+  "updatedAt": "2026-10-24T18:14:38.186155+09:00"
 }
