@@ -1,0 +1,55 @@
+name: Digest Review Notification
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: '알림을 보낼 검토용 Draft PR 번호'
+        required: true
+        type: number
+  workflow_call:
+    inputs:
+      pr_number:
+        required: true
+        type: number
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: digest-review-notification-${{ inputs.pr_number }}
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify reviewer once when the draft is ready
+        uses: actions/github-script@v7
+        env:
+          PR_NUMBER: ${{ inputs.pr_number }}
+        with:
+          script: |
+            const number = Number(process.env.PR_NUMBER);
+            if (!Number.isSafeInteger(number) || number < 1) throw new Error('Invalid PR number');
+            const {data: pr} = await github.rest.pulls.get({...context.repo, pull_number: number});
+            const repository = `${context.repo.owner}/${context.repo.repo}`;
+            if (pr.state !== 'open' || !pr.draft || pr.base.ref !== 'main' || pr.head.repo?.full_name !== repository || !pr.head.ref.startsWith('content/digest-review-')) {
+              throw new Error('Only an open digest review draft can be notified');
+            }
+            const preview = `https://youdozi.github.io/review/?pr=${number}`;
+            const marker = '<!-- digest-review-ready -->';
+            const comments = await github.paginate(github.rest.issues.listComments, {...context.repo, issue_number: number, per_page: 100});
+            const existing = comments.find(comment => comment.user?.login === 'github-actions[bot]' && comment.body?.includes(marker));
+            if (existing) {
+              if (!existing.body.includes(preview)) await github.rest.issues.updateComment({...context.repo, comment_id: existing.id, body: `${existing.body}\n\n[영문·한국어 미리보기 열기](${preview})`});
+              core.info('Review notification already sent; skipping duplicate');
+              return;
+            }
+            await github.rest.issues.createComment({
+              ...context.repo, issue_number: number,
+              body: `${marker}\n@${context.repo.owner} 검토할 글 후보가 준비되었습니다.\n\n아래 미리보기에서 영문·한국어 글과 원문 근거를 확인해 주세요. 아직 사이트에는 게시되지 않았습니다.\n\n검토·수정 후 **Ready for review → Merge pull request**를 누르면 게시됩니다. 게시하지 않으려면 PR을 닫아 주세요.\n\n[영문·한국어 미리보기 열기](${preview})\n\nGitHub PR: ${pr.html_url}`
+            });
+            await core.summary.addRaw(`검토 멘션 전송 완료: ${pr.html_url}`).write();

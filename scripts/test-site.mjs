@@ -43,6 +43,7 @@ test('migration converts prose attributes and image spaces while preserving code
 
 test('automation creates a draft review PR and reusable validation cannot deploy', async () => {
   const pipeline = YAML.parse(await readFile('.github/workflows/dev-content-pipeline.yml','utf8'));
+  assert.equal(pipeline.on.workflow_dispatch.inputs.preview.default,false);
   assert.equal(pipeline.jobs.publish, undefined);
   assert.equal(pipeline.jobs.generate.if, "github.ref == 'refs/heads/main'");
   assert.equal(pipeline.jobs.validate.uses,'./.github/workflows/site-checks.yml');
@@ -113,6 +114,15 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.match(sample,/noindex,follow/);assert.match(sample,/예제 데이터/);
     const sitemap=await readFile('dist/sitemap.xml','utf8');
     assert.ok(!sitemap.includes('/ko/digest/2026-03-16/'));
+    const reviewShell=await readFile('dist/review/index.html','utf8');
+    assert.match(reviewShell,/noindex,follow/);
+    assert.match(reviewShell,/id="generate-draft"[^>]*href="https:\/\/github.com\/youdozi\/youdozi.github.io\/actions\/workflows\/dev-content-pipeline.yml"/);
+
+    assert.ok(!sitemap.includes('/review/'));
+    assert.ok(!reviewShell.includes('Spring Security OAuth scope update'));
+    assert.ok(!reviewShell.includes('Literal {{ 7 | times: 7 }}'));
+    assert.ok(!reviewShell.includes('utteranc.es'));
+
     const englishArticle=await readFile('dist/en/posts/2023-09-19-springboot-test-webclient/index.html','utf8');
     assert.match(englishArticle,/<html lang="en">/);
     assert.match(englishArticle,/rel="canonical" href="https:\/\/youdozi.github.io\/en\/posts\/2023-09-19-springboot-test-webclient\/"/);
@@ -133,4 +143,29 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
   } finally {
     await unlink(fixture);
   }
+});
+
+test('draft notification mentions the owner once and rejects non-review PRs', async () => {
+  const notification=YAML.parse(await readFile('.github/workflows/digest-review-notification.yml','utf8'));
+  const pipeline=YAML.parse(await readFile('.github/workflows/dev-content-pipeline.yml','utf8'));
+  assert.equal(pipeline.jobs.notify.needs,'review');
+  assert.equal(pipeline.jobs.notify.uses,'./.github/workflows/digest-review-notification.yml');
+  assert.equal(notification.permissions.pages,undefined);
+  assert.equal(notification.jobs.notify.if,"github.ref == 'refs/heads/main'");
+  const run = new (Object.getPrototypeOf(async function(){}).constructor)('github','context','core','process',notification.jobs.notify.steps[0].with.script);
+  const pr={state:'open',draft:true,base:{ref:'main'},head:{repo:{full_name:'youdozi/youdozi.github.io'},ref:'content/digest-review-123'},html_url:'https://github.com/youdozi/youdozi.github.io/pull/20'};
+  let comments=[];const sent=[];
+  const github={rest:{pulls:{get:async()=>({data:pr})},issues:{listComments(){},createComment:async(data)=>sent.push(data)}},paginate:async()=>comments};
+  const context={repo:{owner:'youdozi',repo:'youdozi.github.io'}};
+  const core={info(){},summary:{addRaw(){return this},async write(){}}};
+  const process={env:{PR_NUMBER:'20'}};
+  await run(github,context,core,process);
+  assert.equal(sent.length,1);assert.equal(sent[0].issue_number,20);
+  assert.match(sent[0].body,/https:\/\/youdozi.github.io\/review\/\?pr=20/);
+  assert.match(sent[0].body,/@youdozi/);assert.match(sent[0].body,/아직 사이트에는 게시되지/);
+  comments=[{user:{login:'github-actions[bot]'},body:sent[0].body}];
+  await run(github,context,core,process);assert.equal(sent.length,1);
+  comments=[];pr.draft=false;
+  await assert.rejects(run(github,context,core,process),/Only an open digest review draft/);
+  assert.equal(sent.length,1);
 });

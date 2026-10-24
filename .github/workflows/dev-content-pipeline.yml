@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       preview:
-        description: '초안 PR 없이 새 후보 최대 2개로 영문·한국어 생성과 검증 확인'
+        description: '검증만 실행 (체크 해제하면 검토용 Draft PR 생성, 자동 게시 안 함)'
         type: boolean
-        default: true
+        default: false
 
 permissions:
   contents: read
@@ -102,6 +102,8 @@ jobs:
       ref: ${{ needs.generate.outputs.commit_sha }}
 
   review:
+    outputs:
+      pr_number: ${{ steps.pr.outputs.number }}
     needs: [generate, validate]
     if: needs.generate.outputs.generated == 'true'
     runs-on: ubuntu-latest
@@ -121,6 +123,7 @@ jobs:
           DIGEST_PATH: ${{ needs.generate.outputs.digest_path }}
         run: python3 scripts/render_digest_review.py "$DIGEST_PATH" --output /tmp/digest-review.md
       - name: Open a draft PR without merging or publishing
+        id: pr
         uses: actions/github-script@v7
         env:
           REVIEW_BRANCH: ${{ needs.generate.outputs.branch }}
@@ -134,4 +137,18 @@ jobs:
               title: '검토 요청: 영문·한국어 개발 뉴스 초안',
               body: `${body}\n\n자동 검사: ${runUrl}`, draft: true
             });
+            const preview = `https://youdozi.github.io/review/?pr=${pr.number}`;
+            await github.rest.pulls.update({...context.repo, pull_number: pr.number,
+              body: `**[영문·한국어 미리보기 열기](${preview})**\n\n${body}\n\n자동 검사: ${runUrl}`});
+            core.setOutput('number', pr.number);
             await core.summary.addRaw(`초안 PR: ${pr.html_url}\n\n아직 게시되지 않았습니다. 사람이 검토 후 Ready for review → Merge 해야 배포됩니다.`).write();
+
+  notify:
+    needs: review
+    if: needs.review.outputs.pr_number != ''
+    permissions:
+      contents: read
+      pull-requests: write
+    uses: ./.github/workflows/digest-review-notification.yml
+    with:
+      pr_number: ${{ fromJSON(needs.review.outputs.pr_number) }}

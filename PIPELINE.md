@@ -45,7 +45,7 @@ python3 scripts/generate_digest.py --check-links
 
 ## Actions와 배포
 
-매일 한국 시간 07:00(`0 22 * * *`, UTC)에 실행합니다. 수동 실행의 `preview=true`가 기본이며 `--dry-run --force --max-items 2`로 AI 연결을 검사합니다. 검토용 Draft PR 생성에는 `preview=false`를 사용합니다. 어느 모드도 자동 게시하지 않습니다.
+매일 한국 시간 07:00(`0 22 * * *`, UTC)에 실행합니다. 수동 실행도 기본값 `preview=false`로 검토용 Draft PR을 생성합니다. ‘검증만 실행’을 체크해 `preview=true`로 실행하면 `--dry-run --force --max-items 2`로 AI 연결만 검사하고 PR은 만들지 않습니다. 어느 모드도 자동 게시하지 않습니다.
 
 생성 후 Astro 타입·스키마 검사와 빌드·내부 링크 검사가 모두 통과하면 JSON과 중복 방지 상태를 `content/digest-review-*` 브랜치에 커밋합니다. 재사용 사이트 워크플로에 정확한 생성 커밋 SHA를 넘겨 전체 검사를 수행하되 배포하지 않습니다. 검사 성공 후에만 Draft PR을 엽니다. PR 본문에는 두 언어의 제목·요약, 문장별 인용 근거, 원문 링크와 검토 체크리스트가 표시됩니다. 생성 브랜치는 공개 저장소에서 볼 수 있지만 운영 사이트·RSS·사이트맵에는 포함되지 않습니다.
 
@@ -54,7 +54,7 @@ python3 scripts/generate_digest.py --check-links
 1. GitHub의 Pull requests에서 `검토 요청: 영문·한국어 개발 뉴스 초안` Draft PR을 엽니다.
 2. 원문을 직접 확인하고 수치·날짜·출시 상태·과장·번역 일치를 검토합니다. 자동 검사 성공은 사람의 확인을 대신하지 않습니다.
 3. 수정이 필요하면 Files changed에서 `src/content/digests/YYYY-MM-DD.json`을 수정합니다. 각 언어의 `summary`는 해당 `claims[].text`를 공백으로 연결한 값과 같아야 합니다. 주장 변경 시 인용 근거도 함께 검토합니다. 최초 PR 본문은 자동 갱신되지 않으므로 수정 후에는 Files changed가 기준입니다.
-4. 화면으로 확인하려면 PR 브랜치를 체크아웃하고 `npm ci`, `npm run dev`로 해당 날짜의 `/en/digest/YYYY-MM-DD/`와 `/ko/digest/YYYY-MM-DD/`를 확인합니다. Actions의 `site-build-output` 산출물도 내려받을 수 있습니다.
+4. PR 본문 또는 알림의 **영문·한국어 미리보기 열기** 링크를 누릅니다. PC에서는 나란히 비교하고, 휴대폰에서는 한국어/English를 선택할 수 있습니다. 원문 근거를 펼치고 원문 링크로 맥락을 확인합니다. 수정 후에는 초안 불러오기를 다시 눌러 최신 버전을 확인합니다.
 5. 검사 결과와 내용을 확인한 뒤 **Ready for review → Merge pull request**를 누릅니다. 병합이 게시 승인입니다. 사람이 병합한 `main` push에서 사이트 검사와 Pages 배포가 실행됩니다. 봇은 PR을 승인하거나 병합하지 않습니다.
 6. 게시하지 않으려면 PR을 닫습니다. 미병합 초안의 콘텐츠와 중복 방지 상태는 운영 브랜치에 반영되지 않습니다.
 
@@ -67,3 +67,30 @@ Python 테스트는 기존 수집·선별 검증과 새로운 두 언어 근거 
 ## 이전 구현
 
 `scripts/generate_dev_digest.py`와 `validate_dev_digest.py`는 기존 Markdown 아카이브의 수집·선별·검증 함수와 회귀 테스트를 유지하기 위해 남겼습니다. 새 npm 명령과 Actions는 `scripts/generate_digest.py`를 사용합니다. 기존 Ruby 빌드 스크립트는 운영 경로에서 사용하지 않습니다.
+
+## 검토 알림
+
+검사 성공 후 Draft PR을 열면 `Digest Review Notification`이 저장소 소유자 `@youdozi`를 댓글에서 멘션합니다. GitHub Mobile의 멘션 푸시와 휴대폰의 GitHub 알림을 허용하면 해당 알림으로 PR을 열 수 있습니다. 이메일 수신은 GitHub 개인 알림 설정에 따릅니다. 실제 휴대폰 수신 여부는 기기 설정에 따라 달라지며 Actions 성공은 GitHub 댓글 생성 성공을 의미합니다.
+
+동일 PR에는 봇의 알림 표시를 확인해 한 번만 전송합니다. 검토 대기 중 매일 반복 알림은 보내지 않습니다. 이미 열린 초안에 최초 알림을 보내려면 Actions → Digest Review Notification → Run workflow에서 `main`과 PR 번호를 지정합니다. 같은 저장소의 열린 `content/digest-review-*` Draft PR만 허용하며, 이 작업에는 병합·배포 권한이 없습니다.
+
+
+## 브라우저 검토 화면
+
+`https://youdozi.github.io/review/?pr=PR번호`에서 확인합니다. 운영 배포에는 후보 본문을 넣지 않고 빈 검토 화면만 배포하며, 브라우저가 공개 GitHub API에서 해당 PR의 커밋 SHA로 고정한 JSON을 읽습니다. 실제 게시 글과 같은 본문 컴포넌트·스타일·스키마를 사용합니다. GitHub에서 수정하면 다시 불러와야 하며 확인 중인 버전 링크로 원본 JSON을 볼 수 있습니다. 읽는 도중 PR이 바뀌면 다시 불러오도록 안내합니다.
+
+이 페이지에는 `noindex,follow`를 지정하고 사이트맵·RSS·게시 목록에는 넣지 않습니다. 인증된 비공개 공간은 아닙니다. 초안은 기존 공개 저장소에서 읽으며 조회에 토큰을 사용하지 않습니다. 공개 API의 호출 한도·네트워크 오류 시 GitHub PR로 확인할 수 있습니다. 검토 화면에서 병합·게시를 수행하지 않으며 최종 승인은 GitHub PR에서 합니다.
+
+
+## 수동 후보 생성
+
+검토 화면 `/review/`의 **GitHub에서 후보 생성 실행**을 누르거나 [Dev Content Pipeline](https://github.com/youdozi/youdozi.github.io/actions/workflows/dev-content-pipeline.yml)을 엽니다. GitHub에서 로그인한 상태로 **Run workflow → main**을 선택하고 ‘검증만 실행’을 체크하지 않은 채 실행합니다. 저장소의 Actions 실행 권한이 필요합니다. 초안 생성 완료 후 검토 PR과 멘션 알림을 확인하세요. 후보가 없거나 기존 검토 PR이 열려 있으면 실행 요약·로그에 건너뛴 이유가 나옵니다.
+
+GitHub CLI를 인증해 둔 환경에서는 다음 명령으로 같은 작업을 호출할 수 있습니다.
+
+```sh
+gh workflow run dev-content-pipeline.yml \
+  --repo youdozi/youdozi.github.io --ref main
+```
+
+정기 실행과 수동 실행은 같은 동시 실행 제어·중복 방지·사람의 검토·병합 절차를 사용합니다. 호출만으로 사이트에 게시되지 않습니다.
