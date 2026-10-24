@@ -169,3 +169,49 @@ test('draft notification mentions the owner once and rejects non-review PRs', as
   await assert.rejects(run(github,context,core,process),/Only an open digest review draft/);
   assert.equal(sent.length,1);
 });
+
+test('generation and browser schemas agree on malformed saved content', async () => {
+  const { spawnSync } = await import('node:child_process');
+  const { digestSchema } = await import('../src/lib/digest-schema.ts');
+  const original=JSON.parse(await readFile('src/content/digests/2026-10-24.json','utf8'));
+  const cases={valid:original};
+  function change(name,mutate){const data=structuredClone(original);mutate(data);cases[name]=data;}
+  change('source',d=>d.articles[0].url='https://unapproved.example/news');
+  change('future',d=>d.articles[0].publishedAt='2099-01-01T00:00:00+00:00');
+  change('ko_length',d=>{const e=d.articles[0].editions.ko;e.claims[0].text='가'.repeat(300);e.claims[1].text='나'.repeat(200);e.summary=e.claims.map(c=>c.text).join(' ');});
+  change('evidence',d=>d.articles[0].editions.en.claims[0].evidence[0].quote='short');
+  change('duplicate',d=>d.articles[1].url=d.articles[0].url);
+  change('tracking_duplicate',d=>{d.articles[1].source=d.articles[0].source;d.articles[1].url=d.articles[0].url+'?utm_source=test#fragment';});
+  change('update_date',d=>d.updatedAt='2000-01-01T00:00:00+09:00');
+  const response=spawnSync('python3',['-B','-c',"import json,sys;sys.path.insert(0,'scripts');from generate_digest import validate_digest;print(json.dumps({k:not bool(validate_digest(v)) for k,v in json.load(sys.stdin).items()}))"],{input:JSON.stringify(cases),encoding:'utf8'});
+  assert.equal(response.status,0,response.stderr);
+  const expected=JSON.parse(response.stdout);
+  for(const [name,data] of Object.entries(cases)){
+    assert.equal(expected[name],name==='valid',name);
+    assert.equal(digestSchema.safeParse(data).success,expected[name],name);
+  }
+  const pkg=JSON.parse(await readFile('package.json','utf8'));
+  assert.ok(pkg.scripts.check.startsWith('npm run check:digests &&'));
+  assert.ok(pkg.scripts.build.startsWith('npm run check:digests &&'));
+});
+
+test('RSS exposes every added article and update time without changing publication identity', async () => {
+  const { digestSchema } = await import('../src/lib/digest-schema.ts');
+  const { renderFeed } = await import('../src/lib/feed.ts');
+  const data=digestSchema.parse(JSON.parse(await readFile('src/content/digests/2026-10-24.json','utf8')));
+  const prior={...data,updatedAt:undefined,articles:data.articles.slice(0,3)};
+  const post=d=>({title:`Dev digest · ${d.date}`,url:`/en/digest/${d.date}/`,description:d.articles[0].editions.en.summary,publishedAt:d.publishedAt,updatedAt:d.updatedAt,digest:{data:d}});
+  for(const lang of ['en','ko']){
+    const before=renderFeed([post(prior)],lang,new URL('https://youdozi.github.io/'),'Blog');
+    const after=renderFeed([post(data)],lang,new URL('https://youdozi.github.io/'),'Blog');
+    assert.notEqual(before,after);
+    assert.equal(before.match(/<guid[^>]*>.*?<\/guid>/)[0],after.match(/<guid[^>]*>.*?<\/guid>/)[0]);
+    assert.equal(before.match(/<pubDate>.*?<\/pubDate>/)[0],after.match(/<pubDate>.*?<\/pubDate>/)[0]);
+    assert.ok(after.includes(data.updatedAt.toISOString()));
+    assert.match(after,/<lastBuildDate>/);assert.match(after,/<content:encoded>/);
+    for(const article of data.articles)assert.ok(after.includes(article.editions[lang].title.replaceAll('&','&amp;').replaceAll("'",'&apos;')));
+  }
+  const unsafe=structuredClone(data);unsafe.articles[0].editions.en.title='<img src=x onerror=alert(1)> &';
+  const feed=renderFeed([post(unsafe)],'en',new URL('https://youdozi.github.io/'),'Blog');
+  assert.ok(!feed.includes('<img'));assert.ok(feed.includes('&amp;lt;img'));
+});

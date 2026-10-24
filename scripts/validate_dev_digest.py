@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -11,13 +12,9 @@ from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 KST = timezone(timedelta(hours=9))
-SOURCE_HOSTS = {
-    "GitHub Changelog": {"github.blog"},
-    "InfoQ": {"www.infoq.com", "infoq.com"},
-    "JetBrains Blog": {"blog.jetbrains.com"},
-    "Spring Blog": {"spring.io"},
-    "Cloudflare Blog": {"blog.cloudflare.com"},
-}
+DIGEST_POLICY = json.loads((Path(__file__).resolve().parents[1] / 'src/lib/digest-policy.json').read_text())
+SOURCE_HOSTS = {source: set(hosts) for source, hosts in DIGEST_POLICY['sourceHosts'].items()}
+
 REQUIRED_SECTIONS = ["## 이번 다이제스트 기준", "## 핵심 아티클", "## 활용 가이드"]
 
 

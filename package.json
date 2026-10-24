@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "check": "astro check",
-    "build": "node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py",
+    "check": "npm run check:digests && astro check",
+    "build": "npm run check:digests && node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py",
     "preview": "astro preview",
     "test": "node --test scripts/test-site.mjs",
     "test:python": "python3 -m unittest discover -s scripts -p 'test*.py' -v",
@@ -17,7 +17,8 @@
     "generate:digest:dry": "python3 scripts/generate_digest.py --dry-run",
     "migrate:jekyll": "node scripts/migrate-jekyll.mjs",
     "test:articles": "python3 -B scripts/check_article_examples.py",
-    "audit:archive": "python3 -B scripts/audit_archive.py"
+    "audit:archive": "python3 -B scripts/audit_archive.py",
+    "check:digests": "python3 -B scripts/check_digests.py"
   },
   "dependencies": {
     "astro": "7.4.2",
