@@ -35,6 +35,13 @@ class ExtractionTests(unittest.TestCase):
         parser = ai.ArticleParser();parser.feed(f"<div>{BODY}</div>")
         self.assertEqual("", parser.extract())
 
+    def test_spring_markdown_body_excludes_post_heading_sidebar_and_columns(self):
+        parser=ai.ArticleParser()
+        parser.feed(f'<div class="main blog" id="main"><nav>MENU</nav><div class="columns content pt-5"><div class="blog-post mb-4">HEADING</div><div class="markdown"><p>{BODY}</p><a href="/release">Release notes</a></div><div class="blog-sidebar">SIDEBAR</div></div></div><article class="column">Related post</article><footer>FOOTER</footer>')
+        self.assertEqual(BODY.strip()+' Release notes',parser.extract())
+        # The link label is source text, while surrounding columns are not.
+        self.assertEqual(['/release'],parser.links)
+
     def test_fetch_rejects_unapproved_url_without_request(self):
         with patch.object(ai, "urlopen") as request:
             with self.assertRaises(ai.ArticleUnavailable):

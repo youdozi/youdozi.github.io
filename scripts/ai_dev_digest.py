@@ -58,7 +58,7 @@ class ArticleParser(HTMLParser):
         parent = self.stack[-1] if self.stack else (False, False, None)
         hidden = parent[0] or tag in {"script", "style", "nav", "footer", "header", "aside", "form"}
         marker = attrs.get("class", "") + " " + attrs.get("id", "")
-        article = tag in {"article", "main"} or bool(re.search(r"(?:article|post|entry|blog)[_-](?:body|content|text)|blog--post", marker, re.I))
+        article = tag in {"article", "main"} or bool(re.search(r"(?:article|post|entry|blog)[_-](?:body|content|text)|blog--post|(?:^|\s)markdown(?:\s|$)", marker, re.I))
         block = parent[2]
         if article and not hidden and (block is None or tag != "main"):
             block = len(self.blocks)
