@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-25",
+  "publishedAt": "2026-10-25T00:06:35.491173+09:00",
+  "articles": [
+    {
+      "id": "965781ab8524cba0",
+      "source": "InfoQ",
+      "url": "https://www.infoq.com/news/2026/10/csiro-serverless-genomic-variant/",
+      "publishedAt": "2026-10-23T14:30:00+00:00",
+      "tags": [
+        "cloud"
+      ],
+      "editions": {
+        "en": {
+          "title": "CSIRO Uses Serverless Architecture to Query 100x More Genomic Variants on AWS",
+          "summary": "CSIRO developed Serverless Beacon (sBeacon), a serverless architecture utilizing Amazon S3, AWS Lambda, Amazon Athena, and Amazon DynamoDB to query genomic variant data without central copying. The Variant Querying Module uses bcftools and htslib to retrieve specific portions of compressed VCF files stored in Amazon S3 via HTTP byte range requests. CSIRO evaluated the system using chromosome 1 from the 1000 Genomes Project, onboarding the 1.1 GB compressed VCF file in 18 seconds.",
+          "claims": [
+            {
+              "text": "CSIRO developed Serverless Beacon (sBeacon), a serverless architecture utilizing Amazon S3, AWS Lambda, Amazon Athena, and Amazon DynamoDB to query genomic variant data without central copying.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "CSIRO has developed Serverless Beacon (sBeacon) , a serverless architecture for querying genomic variant data without copying large genomic datasets into a central database."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "The system uses Amazon S3, AWS Lambda, Amazon Athena, and Amazon DynamoDB to provide an implementation of the Global Alliance for Genomics and Health (GA4GH) Beacon standard"
+                }
+              ]
+            },
+            {
+              "text": "The Variant Querying Module uses bcftools and htslib to retrieve specific portions of compressed VCF files stored in Amazon S3 via HTTP byte range requests.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The Variant Querying Module uses bcftools and its htslib library to retrieve specific portions of VCF files through HTTP byte range requests."
+                }
+              ]
+            },
+            {
+              "text": "CSIRO evaluated the system using chromosome 1 from the 1000 Genomes Project, onboarding the 1.1 GB compressed VCF file in 18 seconds.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "CSIRO evaluated the architecture using chromosome 1 from the 1000 Genomes Project, containing 2,504 samples in a 1.1 GB compressed VCF file. The dataset was onboarded in 18 seconds."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0
+            ],
+            "affectedAudience": [],
+            "conditions": []
+          }
+        },
+        "ko": {
+          "title": "CSIRO, AWS에서 서버리스 아키텍처를 사용하여 100배 더 많은 게놈 변이 조회",
+          "summary": "CSIRO는 중앙 데이터베이스로 복사하지 않고 게놈 변이 데이터를 조회할 수 있는 서버리스 아키텍처인 Serverless Beacon(sBeacon)을 개발했다. 변이 조회 모듈은 bcftools와 htslib 라이브러리를 사용하여 HTTP 바이트 범위 요청을 통해 Amazon S3에 저장된 압축된 VCF 파일의 특정 부분을 가져온다. CSIRO는 1000 Genomes 프로젝트의 1번 염색체를 사용하여 시스템을 평가했으며, 1.1 GB 압축 VCF 파일을 18초 만에 온보딩했다.",
+          "claims": [
+            {
+              "text": "CSIRO는 중앙 데이터베이스로 복사하지 않고 게놈 변이 데이터를 조회할 수 있는 서버리스 아키텍처인 Serverless Beacon(sBeacon)을 개발했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "CSIRO has developed Serverless Beacon (sBeacon) , a serverless architecture for querying genomic variant data without copying large genomic datasets into a central database."
+                }
+              ]
+            },
+            {
+              "text": "변이 조회 모듈은 bcftools와 htslib 라이브러리를 사용하여 HTTP 바이트 범위 요청을 통해 Amazon S3에 저장된 압축된 VCF 파일의 특정 부분을 가져온다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The Variant Querying Module uses bcftools and its htslib library to retrieve specific portions of VCF files through HTTP byte range requests."
+                }
+              ]
+            },
+            {
+              "text": "CSIRO는 1000 Genomes 프로젝트의 1번 염색체를 사용하여 시스템을 평가했으며, 1.1 GB 압축 VCF 파일을 18초 만에 온보딩했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "CSIRO evaluated the architecture using chromosome 1 from the 1000 Genomes Project, containing 2,504 samples in a 1.1 GB compressed VCF file. The dataset was onboarded in 18 seconds."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0
+            ],
+            "affectedAudience": [],
+            "conditions": []
+          }
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://www.infoq.com/news/2026/10/csiro-serverless-genomic-variant/",
+          "sha256": "5ce0d4c215cf49097fd890786d7f84339d311efe094beb99606fb4fa7906e0a9"
+        }
+      ],
+      "selection": {
+        "audience": "java-spring-backend",
+        "method": "keyword-rules-v1",
+        "relevance": "adjacent",
+        "priority": "normal",
+        "reasons": [
+          "backend-operations"
+        ]
+      },
+      "editorial": {
+        "opinion": {
+          "en": "",
+          "ko": ""
+        },
+        "experiment": {
+          "status": "not_tested",
+          "reportUrl": null,
+          "environment": {
+            "en": "",
+            "ko": ""
+          },
+          "result": {
+            "en": "",
+            "ko": ""
+          }
+        }
+      }
+    }
+  ]
+}
