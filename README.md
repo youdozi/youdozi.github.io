@@ -47,6 +47,7 @@ tags: [java, spring]
 ```sh
 npm run test:python
 npm run test:articles
+npm run check:digests
 npm test
 npm run check
 npm run build
@@ -116,3 +117,5 @@ python3 -m venv .venv-search-console
 제출 성공은 즉시 수집·색인되었다는 뜻이 아닙니다. `isPending`, `lastDownloaded`, `errors`와 Search Console 색인 보고서를 함께 확인하세요.
 
 공식 문서: [사이트맵 제출 API](https://developers.google.com/webmaster-tools/v1/sitemaps/submit), [데스크톱 OAuth 인증](https://developers.google.com/identity/protocols/oauth2/native-app).
+
+게시 JSON의 공통 검증, 당일 추가 후보 선택, RSS 갱신 및 `main` 보호 규칙은 [PIPELINE.md](PIPELINE.md)의 운영 항목을 참조하세요.

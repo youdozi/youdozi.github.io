@@ -4,16 +4,17 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 import generate_dev_digest as legacy
 from ai_dev_digest import AIError
 from bilingual_digest import enrich_items
-from validate_dev_digest import allowed_article_url, check_article_link
+from validate_dev_digest import DIGEST_POLICY as POLICY, allowed_article_url, check_article_link
 
 
-def validate_digest(data, *, now=None, days_back=7, check_links=False, seen_links=None):
+def validate_digest(data, *, now=None, days_back=POLICY["daysBack"], check_links=False, seen_links=None):
     errors = []
     now = now or datetime.now(legacy.KST)
     try:
@@ -24,11 +25,13 @@ def validate_digest(data, *, now=None, days_back=7, check_links=False, seen_link
         if collected.tzinfo is None or collected < published or collected > now or collected.astimezone(legacy.KST).date().isoformat() != data["date"]:
             errors.append("invalid digest update date")
         articles = data["articles"]
-        if not isinstance(articles, list) or not 1 <= len(articles) <= 6:
+        if not isinstance(articles, list) or not POLICY["minArticles"] <= len(articles) <= POLICY["maxArticles"]:
             return errors + ["digest must contain 1–6 articles"]
         seen = set(seen_links or set())
         ids = set()
         for article in articles:
+            if not isinstance(article["id"], str) or not article["id"].strip() or not isinstance(article["tags"], list) or any(not isinstance(tag, str) for tag in article["tags"]):
+                errors.append("invalid article ID or tags")
             url = article["url"]
             normalized = legacy.normalize_url(url)
             if normalized in seen or article["id"] in ids:
@@ -39,32 +42,42 @@ def validate_digest(data, *, now=None, days_back=7, check_links=False, seen_link
             date = datetime.fromisoformat(article["publishedAt"])
             if date.tzinfo is None or not collected - timedelta(days=days_back) <= date <= collected:
                 errors.append("article is future or outside the freshness window")
-            if article["verification"] != "source_consistency_checked" or not article["model"]:
+            if article["verification"] != "source_consistency_checked" or not isinstance(article["model"], str) or not article["model"].strip():
                 errors.append("article verification is missing")
             documents = article["documents"]
-            if not documents:
-                errors.append("source documents are missing")
+            if not isinstance(documents, list) or not documents:
+                return errors + ["source documents are missing"]
+            from urllib.parse import urlparse
+            for document in documents:
+                doc_url = urlparse(document["url"])
+                if (doc_url.scheme != "https" or not doc_url.hostname or doc_url.port not in (None,443)
+                        or doc_url.username or doc_url.password or re.search(r"[\s<>\\]", document["url"])
+                        or not re.fullmatch(r"[0-9a-f]{64}", document["sha256"])):
+                    errors.append("invalid source document URL or hash")
             for language in ("en", "ko"):
                 edition = article["editions"][language]
                 claims = edition["claims"]
-                if not edition["title"] or not isinstance(claims, list) or not 2 <= len(claims) <= 3:
+                if (not isinstance(edition["title"], str) or not edition["title"].strip() or not 1 <= len(edition["title"]) <= POLICY["maxTitle"]
+                        or not isinstance(claims, list) or not POLICY["minClaims"] <= len(claims) <= POLICY["maxClaims"]):
                     errors.append("language title or claims missing")
                 if edition["summary"] != " ".join(c["text"] for c in claims):
                     errors.append("summary contains unchecked text")
-                if not 80 <= len(edition["summary"]) <= (420 if language == "ko" else 800):
+                if not POLICY["minSummary"] <= len(edition["summary"]) <= POLICY["maxSummary"][language]:
                     errors.append("summary length is outside the language budget")
                 for claim in claims:
-                    if not claim["evidence"]:
+                    if not isinstance(claim["text"], str) or not claim["text"].strip():
+                        errors.append("claim text is missing")
+                    if not isinstance(claim["evidence"], list) or not claim["evidence"]:
                         errors.append("claim evidence missing")
                     for evidence in claim["evidence"]:
                         i = evidence["document_id"]
-                        if type(i) is not int or not 0 <= i < len(documents) or not 20 <= len(evidence["quote"]) <= 240:
+                        if type(i) is not int or not 0 <= i < len(documents) or not POLICY["minQuote"] <= len(evidence["quote"]) <= POLICY["maxQuote"]:
                             errors.append("invalid evidence reference")
             if check_links:
                 error = check_article_link(article["source"], url)
                 if error:
                     errors.append(error)
-    except (KeyError, TypeError, ValueError, AttributeError):
+    except (KeyError, TypeError, ValueError, AttributeError, OverflowError):
         errors.append("invalid bilingual digest structure")
     return errors
 
@@ -87,10 +100,10 @@ def main():
     mode.add_argument("--force", action="store_true")
     mode.add_argument("--append", action="store_true", help="Preserve today's reviewed articles and propose additional items up to six total")
     parser.add_argument("--check-links", action="store_true")
-    parser.add_argument("--max-items", type=int, default=6)
-    parser.add_argument("--days-back", type=int, default=7)
+    parser.add_argument("--max-items", type=int, default=POLICY["maxArticles"])
+    parser.add_argument("--days-back", type=int, default=POLICY["daysBack"])
     parser.add_argument("--min-score", type=int, default=6)
-    parser.add_argument("--max-per-source", type=int, default=3)
+    parser.add_argument("--max-per-source", type=int, default=POLICY["maxPerSource"])
     parser.add_argument("--github-output")
     parser.add_argument("--fixtures-dir")
     args = parser.parse_args()
@@ -139,16 +152,11 @@ def main():
                 print(f"[warn] {source.name}: feed unavailable")
         if not success:
             raise ValueError("No feed returned usable items")
-        selected = legacy.select_items(candidates, seen, args.days_back, capacity, args.min_score, args.max_per_source)
         counts = {}
         for article in retained:
             counts[article["source"]] = counts.get(article["source"], 0) + 1
-        eligible = []
-        for candidate in selected:
-            if counts.get(candidate.source_name, 0) < args.max_per_source:
-                eligible.append(candidate)
-                counts[candidate.source_name] = counts.get(candidate.source_name, 0) + 1
-        selected = eligible
+        selected = legacy.select_items(candidates, seen, args.days_back, capacity,
+                                       args.min_score, args.max_per_source, initial_source_counts=counts)
         if not selected:
             print("[skip] No new eligible articles"); output(False); return 0
         articles = enrich_items(selected)

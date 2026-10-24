@@ -142,6 +142,24 @@ class PublicationTests(unittest.TestCase):
             self.assertEqual(0,self.run_pipeline(root,['--append'],enrich=fail))
             self.assertEqual(before,target.read_bytes())
 
+    def test_append_fills_remaining_slot_from_another_source(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);target,data=self.existing(root,5)
+            for index,old in enumerate(data['articles']):
+                old['source']='InfoQ' if index<3 else 'Cloudflare Blog'
+                host='www.infoq.com' if index<3 else 'blog.cloudflare.com'
+                old['url']=f'https://{host}/old-{index}'
+            target.write_text(json.dumps(data))
+            candidates=[item(title='Java release update',source='InfoQ',link='https://www.infoq.com/news/new',score=12),item(title='Rust performance update',source='Cloudflare Blog',link='https://blog.cloudflare.com/new',score=8)]
+            def enrich(selected):
+                self.assertEqual(['Cloudflare Blog'],[i.source_name for i in selected])
+                new=article();new['source']='Cloudflare Blog';new['url']='https://blog.cloudflare.com/new';return [new]
+            with patch.object(legacy,'parse_feed',return_value=candidates):
+                self.assertEqual(0,self.run_pipeline(root,['--append'],enrich=enrich))
+            updated=json.loads(target.read_text())
+            self.assertEqual(6,len(updated['articles']))
+            self.assertEqual(data['articles'],updated['articles'][:5])
+
     def test_preview_validates_without_writing_content_or_state(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)

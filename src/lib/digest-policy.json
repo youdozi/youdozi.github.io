@@ -1,0 +1,43 @@
+{
+  "sourceHosts": {
+    "GitHub Changelog": [
+      "github.blog"
+    ],
+    "InfoQ": [
+      "www.infoq.com",
+      "infoq.com"
+    ],
+    "JetBrains Blog": [
+      "blog.jetbrains.com"
+    ],
+    "Spring Blog": [
+      "spring.io"
+    ],
+    "Cloudflare Blog": [
+      "blog.cloudflare.com"
+    ]
+  },
+  "daysBack": 7,
+  "minArticles": 1,
+  "maxArticles": 6,
+  "maxPerSource": 3,
+  "minSummary": 80,
+  "maxSummary": {
+    "en": 800,
+    "ko": 420
+  },
+  "minClaims": 2,
+  "maxClaims": 3,
+  "minQuote": 20,
+  "maxQuote": 240,
+  "maxTitle": 240,
+  "trackingQueryPrefixes": [
+    "utm_",
+    "fbclid",
+    "gclid",
+    "ref",
+    "source",
+    "mkt_",
+    "mc_"
+  ]
+}
