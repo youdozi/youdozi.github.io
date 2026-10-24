@@ -350,6 +350,7 @@ def load_feed(source: FeedSource, fixtures_dir: Optional[Path]) -> str:
 def select_items(
     candidates: List[FeedItem], seen_links: set[str], days_back: int, max_items: int,
     min_score: int = 6, max_per_source: int = 3, *, initial_source_counts: Dict[str, int] | None = None, ranking_key=None,
+    require_complete_summary: bool = True,
 ) -> List[FeedItem]:
     from validate_dev_digest import allowed_article_url
 
@@ -363,7 +364,7 @@ def select_items(
         if not cutoff <= item.published_at <= now:
             continue
         if (item.score < min_score or not item.topic_tags
-                or not summary_is_complete(item.summary)
+                or (require_complete_summary and not summary_is_complete(item.summary))
                 or PROMOTIONAL_TITLE.search(item.title)
                 or not allowed_article_url(item.source_name, item.link)):
             continue

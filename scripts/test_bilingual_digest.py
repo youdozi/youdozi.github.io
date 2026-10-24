@@ -140,6 +140,23 @@ class PublicationTests(unittest.TestCase):
             self.assertEqual(0,self.run_pipeline(root))
             self.assertTrue((root/'output').read_text().endswith('generated=false\n'))
 
+    def test_feed_excerpt_is_not_treated_as_a_publishable_summary(self):
+        for excerpt in ('','Official release notes continue…'):
+            with self.subTest(excerpt=excerpt),tempfile.TemporaryDirectory() as tmp:
+                candidate=item(title='Spring Boot runtime release',summary=excerpt)
+                def enrich(selected):
+                    self.assertEqual([candidate.link],[i.link for i in selected])
+                    return [article()]
+                with patch.object(legacy,'parse_feed',return_value=[candidate]):
+                    self.assertEqual(0,self.run_pipeline(Path(tmp),enrich=enrich))
+
+    def test_missing_feed_summary_cannot_bypass_actual_article_review(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            candidate=item(title='Spring Boot runtime release',summary='')
+            with patch.object(legacy,'parse_feed',return_value=[candidate]):
+                self.assertEqual(1,self.run_pipeline(Path(tmp),enrich=lambda _: []))
+            self.assertFalse((Path(tmp)/'src').exists())
+
     def existing(self, root, count=1):
         now=datetime.now(legacy.KST)
         articles=[]

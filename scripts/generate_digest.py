@@ -164,6 +164,7 @@ def main():
         candidates = [item for item in candidates if profiles[item.link] is not None]
         selected = legacy.select_items(candidates, seen, args.days_back, capacity,
                                        args.min_score, args.max_per_source, initial_source_counts=counts,
+                                       require_complete_summary=False,
                                        ranking_key=lambda item: (profiles[item.link]['priority'] == 'review-soon', profiles[item.link]['relevance'] == 'direct', item.score, item.published_at))
         if not selected:
             print("[skip] No new eligible articles"); output(False); return 0
