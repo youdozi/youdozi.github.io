@@ -71,6 +71,8 @@ jobs:
           args=(--check-links --github-output "$GITHUB_OUTPUT")
           if [ "$PREVIEW" = 'true' ]; then
             args+=(--dry-run --force --max-items 2)
+          elif [ "$GITHUB_EVENT_NAME" = 'workflow_dispatch' ]; then
+            args+=(--append)
           fi
           python3 scripts/generate_digest.py "${args[@]}"
       - name: Validate and build candidate before committing

@@ -96,6 +96,52 @@ class PublicationTests(unittest.TestCase):
             self.assertEqual(0,self.run_pipeline(root))
             self.assertTrue((root/'output').read_text().endswith('generated=false\n'))
 
+    def existing(self, root, count=1):
+        now=datetime.now(legacy.KST)
+        articles=[]
+        for index in range(count):
+            old=article();old['id']=f'old-{index}';old['url']=f'https://spring.io/old-{index}'
+            articles.append(old)
+        target=root/'src/content/digests'/f'{now.date().isoformat()}.json'
+        target.parent.mkdir(parents=True)
+        data={'date':now.date().isoformat(),'publishedAt':now.isoformat(),'articles':articles}
+        target.write_text(json.dumps(data));return target,data
+
+    def test_append_preserves_reviewed_content_and_publication_time(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);target,original=self.existing(root)
+            self.assertEqual(0,self.run_pipeline(root,['--append']))
+            updated=json.loads(target.read_text())
+            self.assertEqual(original['articles'],updated['articles'][:1])
+            self.assertEqual(original['publishedAt'],updated['publishedAt'])
+            self.assertIn('updatedAt',updated)
+            self.assertEqual(2,len(updated['articles']))
+            self.assertEqual([],generator.validate_digest(updated))
+            state=json.loads((root/'.pipeline/content_state.json').read_text())
+            self.assertIn(original['articles'][0]['url'],state['seen_links'])
+            self.assertIn('https://spring.io/article',state['seen_links'])
+
+    def test_full_daily_digest_skips_ai_calls(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);target,_=self.existing(root,6);before=target.read_bytes()
+            def fail(_):raise AssertionError('AI must not run')
+            self.assertEqual(0,self.run_pipeline(root,['--append'],enrich=fail))
+            self.assertEqual(before,target.read_bytes())
+            self.assertFalse((root/'.pipeline').exists())
+
+    def test_failed_append_keeps_published_content_unchanged(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);target,_=self.existing(root);before=target.read_bytes()
+            self.assertEqual(1,self.run_pipeline(root,['--append','--check-links'],link_error='HTTP 404'))
+            self.assertEqual(before,target.read_bytes());self.assertFalse((root/'.pipeline').exists())
+
+    def test_append_respects_existing_source_limit(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);target,_=self.existing(root,3);before=target.read_bytes()
+            def fail(_):raise AssertionError('Source quota already full')
+            self.assertEqual(0,self.run_pipeline(root,['--append'],enrich=fail))
+            self.assertEqual(before,target.read_bytes())
+
     def test_preview_validates_without_writing_content_or_state(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)

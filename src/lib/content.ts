@@ -29,7 +29,7 @@ export async function entries(includeExamples = false): Promise<Entry[]> {
       const d = digest.data;
       if (d.publishedAt > new Date()) continue;
       for (const language of languages) {
-        result.push({ title: language === 'en' ? `Dev digest · ${d.date}` : `개발 다이제스트 · ${d.date}`, language, translationKey: `digest-${d.date}`, slug: d.date, kind: 'digest', publishedAt: d.publishedAt, categories: ['dev', 'digest'], tags: [...new Set(d.articles.flatMap(a => a.tags))], description: d.articles[0].editions[language].summary, url: `/${language}/digest/${d.date}/`, digest });
+        result.push({ title: language === 'en' ? `Dev digest · ${d.date}` : `개발 다이제스트 · ${d.date}`, language, translationKey: `digest-${d.date}`, slug: d.date, kind: 'digest', publishedAt: d.publishedAt, updatedAt: d.updatedAt, categories: ['dev', 'digest'], tags: [...new Set(d.articles.flatMap(a => a.tags))], description: d.articles[0].editions[language].summary, url: `/${language}/digest/${d.date}/`, digest });
       }
     }
     const urls = new Set<string>();
