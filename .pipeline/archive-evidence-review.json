@@ -1,0 +1,143 @@
+{
+  "checked_at": "2026-10-24",
+  "scope": "Existing AI evidence logs compared to currently retrievable article text; quote presence alone is not fact verification",
+  "articles": [
+    {
+      "audit": "2026-10-09-ai-audit.json",
+      "url": "https://blog.cloudflare.com/birthday-week-2026-wrap-up/",
+      "quotes": 5,
+      "checked_quotes": 5,
+      "matched_quotes": 5,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-10-ai-audit.json",
+      "url": "https://www.infoq.com/news/2026/10/github-copilot-rust-migration/",
+      "quotes": 2,
+      "checked_quotes": 2,
+      "matched_quotes": 2,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-10-ai-audit.json",
+      "url": "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/",
+      "quotes": 5,
+      "checked_quotes": 5,
+      "matched_quotes": 5,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-12-ai-audit.json",
+      "url": "https://www.infoq.com/news/2026/10/cloudflare-traces-open-beta/",
+      "quotes": 4,
+      "checked_quotes": 4,
+      "matched_quotes": 4,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-12-ai-audit.json",
+      "url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+      "quotes": 2,
+      "checked_quotes": 2,
+      "matched_quotes": 2,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-12-ai-audit.json",
+      "url": "https://blog.cloudflare.com/deno-joins-cloudflare/",
+      "quotes": 3,
+      "checked_quotes": 3,
+      "matched_quotes": 3,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-13-ai-audit.json",
+      "url": "https://www.infoq.com/articles/liquid-clustering-lakehouse-layout/",
+      "quotes": 3,
+      "checked_quotes": 3,
+      "matched_quotes": 3,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-13-ai-audit.json",
+      "url": "https://blog.cloudflare.com/radar-redesign/",
+      "quotes": 5,
+      "checked_quotes": 5,
+      "matched_quotes": 5,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-14-ai-audit.json",
+      "url": "https://www.infoq.com/news/2026/10/qcon-ai-newyork-2026-sessionsv2/",
+      "quotes": 3,
+      "checked_quotes": 3,
+      "matched_quotes": 3,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-16-ai-audit.json",
+      "url": "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web/",
+      "quotes": 3,
+      "checked_quotes": 3,
+      "matched_quotes": 3,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-20-ai-audit.json",
+      "url": "https://www.infoq.com/news/2026/10/buildkite-ci-secrets-agentic/",
+      "quotes": 2,
+      "checked_quotes": 2,
+      "matched_quotes": 2,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-20-ai-audit.json",
+      "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+      "quotes": 2,
+      "checked_quotes": 2,
+      "matched_quotes": 2,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-20-ai-audit.json",
+      "url": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
+      "quotes": 3,
+      "checked_quotes": 3,
+      "matched_quotes": 3,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-21-ai-audit.json",
+      "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+      "quotes": 2,
+      "checked_quotes": 2,
+      "matched_quotes": 2,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-22-ai-audit.json",
+      "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+      "quotes": 2,
+      "checked_quotes": 2,
+      "matched_quotes": 1,
+      "scope": "quote presence only; no new semantic or factual verification",
+      "manual_follow_up": "Source changed the opening date wording from Today to October 21. Adjacent text still supports the historical claim; original audit is retained. PHP 2026-10-23 advisory and WAF field-name limitation were added to the article."
+    },
+    {
+      "audit": "2026-10-22-ai-audit.json",
+      "url": "https://www.infoq.com/news/2026/10/netflix-workload-attestation-aws/",
+      "quotes": 2,
+      "checked_quotes": 2,
+      "matched_quotes": 2,
+      "scope": "quote presence only; no new semantic or factual verification"
+    },
+    {
+      "audit": "2026-10-24-ai-audit.json",
+      "url": "https://blog.cloudflare.com/full-transaction-waf/",
+      "quotes": 4,
+      "checked_quotes": 4,
+      "matched_quotes": 4,
+      "scope": "quote presence only; no new semantic or factual verification"
+    }
+  ]
+}

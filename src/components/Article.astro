@@ -1,0 +1,40 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import EntryList from './EntryList.astro';
+import { entries, text, alternateLinks, formatDate, taxonomyUrl, type Entry } from '../lib/content';
+interface Props { entry: Entry; }
+const { entry } = Astro.props;
+const lang = entry.language;
+const all = await entries();
+const rendered = entry.post ? await render(entry.post) : undefined;
+const Content = rendered?.Content;
+const canonical = new URL(entry.url, Astro.site).href;
+const articleData: Record<string, unknown>[] = entry.reviewStatus === 'example' ? [] : [
+  { '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': `${canonical}#article`, mainEntityOfPage: canonical, url: canonical,
+    headline: entry.title, description: entry.description, inLanguage: lang, datePublished: entry.publishedAt.toISOString(), dateModified: (entry.updatedAt || entry.publishedAt).toISOString(),
+    author: { '@type': 'Person', name: 'youdozi', url: 'https://github.com/youdozi' },
+    publisher: { '@type': 'Person', name: 'youdozi', url: 'https://github.com/youdozi' },
+    ...(entry.post?.data.image ? { image: new URL(entry.post.data.image, Astro.site).href } : {}) },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: text[lang].home, item: new URL(`/${lang}/`, Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: text[lang][entry.kind === 'digest' ? 'digest' : 'posts'], item: new URL(`/${lang}/${entry.kind === 'digest' ? 'digest' : 'posts'}/`, Astro.site).href },
+    { '@type': 'ListItem', position: 3, name: entry.title, item: canonical },
+  ] },
+];
+const related = all.filter(e => e.language === lang && e.translationKey !== entry.translationKey && e.kind === entry.kind).slice(0,3);
+---
+<Base title={entry.title} description={entry.description} lang={lang} structuredData={articleData} noindex={entry.reviewStatus === 'example'} alternates={alternateLinks(entry, all)}>
+  <article class="article">
+    <header class="article-heading"><a class="eyebrow" href={`/${lang}/${entry.kind === 'digest' ? 'digest' : 'posts'}/`}>← {text[lang][entry.kind === 'digest' ? 'digest' : 'posts']}</a><h1>{entry.title}</h1><div class="entry-meta"><time datetime={entry.publishedAt.toISOString()}>{formatDate(entry.publishedAt, lang)}</time><span>youdozi</span></div></header>
+    {entry.post && entry.kind === 'digest' && <aside class="notice">{text[lang].old}</aside>}
+    {entry.post?.data.reviewedAt && <aside class="notice"><strong>{entry.reviewStatus === 'example' ? '예제 데이터 — 실제 뉴스로 취급하지 마세요.' : `${lang === 'en' ? 'Reviewed and updated' : '검토·보강'}: ${entry.post.data.reviewedAt}`}</strong><br/>{entry.post.data.reviewScope}</aside>}
+    <div class="prose">
+      {Content && <Content />}
+      {entry.digest && <><aside class="notice">{text[lang].scope}</aside>{entry.digest.data.articles.map((article, index) => <section class="digest-article"><div class="entry-meta"><span>{article.source}</span><time datetime={article.publishedAt.toISOString()}>{formatDate(article.publishedAt, lang)}</time></div><h2>{index+1}. {article.editions[lang].title}</h2><p>{article.editions[lang].summary}</p><a class="source-link" href={article.url} rel="noopener noreferrer">{text[lang].source} ↗</a><details><summary>{lang === 'en' ? 'Source evidence' : '원문 인용 근거'}</summary>{article.editions[lang].claims.map(claim => <div><p>{claim.text}</p>{claim.evidence.map(e => <blockquote><p>{e.quote}</p><a href={article.documents[e.document_id].url}>{lang === 'en' ? 'Evidence source' : '인용 출처'} ↗</a></blockquote>)}</div>)}</details></section>)}</>}
+    </div>
+    <footer class="article-footer"><div class="chips">{entry.tags.map(tag => <a href={taxonomyUrl(lang, 'tags', tag)}>#{tag}</a>)}</div></footer>
+    <div class="comments"><h2>{lang === 'en' ? 'Discussion' : '댓글'}</h2><script is:inline src="https://utteranc.es/client.js" {...{ repo: 'youdozi/youdozi.github.io', 'issue-term': entry.legacyUrl || entry.translationKey, theme: 'github-light' }} crossorigin="anonymous" async></script></div>
+  </article>
+  {related.length > 0 && <section class="related"><h2>{text[lang].related}</h2><EntryList items={related} lang={lang} /></section>}
+</Base>

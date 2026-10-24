@@ -1,0 +1,8 @@
+---
+import Listing from '../../components/Listing.astro';
+import { entries, languages, text, type Language } from '../../lib/content';
+export function getStaticPaths() { return languages.map(lang => ({ params: { lang } })); }
+const lang = Astro.params.lang as Language;
+const all = (await entries()).filter(e => e.language === lang);
+---
+<Listing items={all} lang={lang} title={lang === 'en' ? 'Java, Spring & Software Notes' : text[lang].recent} root={`/${lang}/`} alternates={languages.map(language => ({ language, url: `/${language}/` }))} />

@@ -1,0 +1,93 @@
+# youdozi's memory
+
+Astro로 생성하고 GitHub Pages에 배포하는 기술 블로그입니다. 영문을 기본 언어로 사용하며 한국어 아카이브를 함께 제공합니다. Python RSS 수집·근거 검증을 유지하고 새 다이제스트는 두 언어의 구조화된 JSON으로 발행합니다.
+
+## 로컬 실행
+
+Node 24와 Python 3.11 이상을 사용합니다. 게시된 Java 예제 검증에는 JDK 17 이상도 필요합니다.
+
+```sh
+nvm use
+npm ci
+npm run dev
+```
+
+- 영문 홈: http://localhost:4321/en/
+- 한국어 홈: http://localhost:4321/ko/
+- `/`는 `/en/`으로 이동합니다.
+
+기존 글 230개는 한국어로 보존했습니다. 이 중 테스트 데이터로 확인된 1편은 실제 뉴스 목록·검색·RSS에서 제외하고 예제 페이지로 남겼습니다. 핵심 개발 글 3편에 영문판을 추가했으며, 영문 다이제스트는 새 생성 파이프라인의 첫 성공부터 제공됩니다. 번역되지 않은 한국어 글을 영문 페이지로 복제하지 않습니다.
+
+## 콘텐츠 작성
+
+- 기존/수동 작성 글: `src/content/posts/{en,ko}/*.md`
+- 새 자동 다이제스트: `src/content/digests/YYYY-MM-DD.json`
+- 두 언어의 동일한 글은 `translationKey`를 공유합니다.
+- 주소는 `routeSlug`로 결정합니다. Astro의 예약된 `slug` 필드는 사용하지 않습니다.
+- 일반 글은 `/{lang}/posts/{routeSlug}/`, 다이제스트는 `/{lang}/digest/YYYY-MM-DD/`입니다.
+- `publishedAt`에는 시간대를 포함한 ISO 8601 문자열을 지정합니다. 미래 글은 게시 목록에서 제외됩니다.
+
+```yaml
+---
+title: "Example article"
+language: "en"
+translationKey: "example-article"
+routeSlug: "example-article"
+kind: "post"
+publishedAt: "2026-10-24T09:00:00+09:00"
+categories: [java]
+tags: [java, spring]
+---
+```
+
+컬렉션 스키마는 `src/content.config.ts`에 있습니다. 같은 언어의 URL과 번역 키 중복은 빌드 오류입니다. 다른 언어의 동일 글이 있을 때 언어 전환과 `hreflang`으로 연결하며, 없으면 해당 언어 홈으로 안내합니다.
+
+## 검증
+
+```sh
+npm run test:python
+npm run test:articles
+npm test
+npm run check
+npm run build
+npm run preview
+```
+
+`npm test`는 이관 무결성과 실제 Astro의 두 언어 렌더링을 검사합니다. 렌더링 테스트는 임시 fixture를 생성했다가 제거하므로 테스트 후 공개 산출물은 `npm run build`로 다시 생성하세요. `npm run build`는 이미지와 검색엔진 소유권 파일을 `public/`에 준비하고, 전체 페이지·내부 링크·이미지·앵커·기존 글 수를 검사합니다. 외부 사이트 접속 검사는 하지 않습니다. 전체 게시글을 개별 글 하단에 반복하지 않고 관련 글 최대 3개만 표시합니다.
+
+## 배포 전환
+
+1. 이 변경을 검토하고 기본 게시 브랜치 `main`에 반영합니다.
+2. GitHub 저장소 **Settings → Pages → Build and deployment → Source → GitHub Actions**를 선택합니다.
+3. 기존 `GEMINI_API_KEY` Actions Secret을 유지합니다. 선택적으로 `GEMINI_MODEL` Actions Variable을 지정합니다.
+4. `Site Quality Gates and Pages`의 빌드·검증·배포 성공을 확인합니다.
+5. 수동 `Dev Content Pipeline`에서 먼저 `preview=true`로 AI 연결을 확인하고, 실제 게시에는 `preview=false`를 선택합니다.
+
+`develop`과 PR에서는 검사만 실행합니다. `main` push와 수동 사이트 워크플로는 검증된 `dist/`를 Pages에 배포합니다. 정기 생성 워크플로는 빌드가 통과한 JSON만 커밋하고, 재사용 워크플로에 그 커밋 SHA를 넘겨 직접 배포합니다. 봇 커밋이 다른 push 워크플로를 실행한다고 가정하지 않습니다.
+
+## 기존 URL과 아카이브
+
+- 기존 일반 글 주소에 정적 이동 페이지를 생성합니다.
+- 충돌하던 `/dev/digest/dev-digest/`는 `/ko/digest/`로 연결합니다. 서로 다른 195개 글은 날짜별 새 URL을 갖습니다.
+- 기존 `/feed.xml`은 한국어 RSS를 유지합니다. 새 RSS는 `/en/feed.xml`, `/ko/feed.xml`입니다.
+- 기존 이미지 주소 `/assets/img/...`와 검색엔진 소유권 파일을 유지합니다.
+- 기존 글의 Utterances 댓글은 원래 pathname을 명시해 연결합니다. 새 다이제스트는 공통 번역 키로 두 언어의 댓글을 공유합니다. 실제 이슈 연결은 배포 후 확인해야 합니다.
+- 기존 Google Analytics 측정 ID를 유지하며 운영 도메인에서만 로드합니다.
+- GitHub Pages의 정적 이동 페이지는 meta refresh이며 HTTP 301은 아닙니다. 기존 taxonomy 앵커의 세부 선택은 새 카테고리/태그 목록에서 다시 해야 합니다.
+
+`_posts/`, `_layouts/`, `_includes/`, `_sass/`, `_config.yml`, `Gemfile` 등은 이관 원본과 이전 구현 확인용으로 남겨두었습니다. 현재 작성 대상은 `src/content/`이며, Astro 배포에는 원본 디렉터리가 포함되지 않습니다. `npm run migrate:jekyll`은 최초 이관용이고 기존 이관 파일을 덮어쓰지 않습니다. 빌드에는 Ruby가 필요하지 않습니다.
+
+자동화의 검증 범위와 호출 예산은 [PIPELINE.md](PIPELINE.md)를 참조하세요.
+
+## 기존 글 내용 검토
+
+2026-10-24에 일반 글 35편을 정정·보강하고 다이제스트 195편의 원문 접근 및 수집 설명을 점검했습니다. 각 글에는 검토 날짜와 범위를 표시하며, 이관 원본의 본문 해시로 변경 전 기록을 추적합니다. 전체 뉴스의 주장 1,125건을 모두 독립적으로 사실 검증했다는 의미는 아닙니다.
+
+- `npm run test:articles`: 게시된 Java 풀이 11개를 직접 컴파일하고 경계값·무작위 입력을 검사합니다.
+- `python3 scripts/check_webclient_example.py`: 본문 WebClient 테스트 3개를 추출해 실행합니다. Gradle 8.x와 JDK 17, 최초 의존성 다운로드가 필요합니다.
+- `npm run audit:archive`: curl의 기본 TLS 검증으로 원문 응답과 기술 문서 참고 링크를 다시 확인합니다. 네트워크 작업이며 기본 빌드에서는 실행하지 않습니다.
+- `.pipeline/archive-editorial-review.json`: 글별 보강 범위와 남아 있는 한계.
+- `.pipeline/archive-source-review.json`: 원문 URL 응답·최종 주소·페이지 제목·본문 해시. HTTP 200은 사실 검증 표시가 아닙니다.
+- `.pipeline/archive-evidence-review.json`: 기존 AI 감사 로그의 인용문 존재 대조 결과. 인용문 존재와 주장 타당성은 구분합니다.
+
+변경 요약과 미확인 항목은 [CONTENT_REVIEW.md](CONTENT_REVIEW.md)를 참조하세요.

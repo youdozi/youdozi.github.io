@@ -15,7 +15,6 @@ Gemfile.lock
 # Node.js and NPM
 node_modules
 npm-debug.log*
-package-lock.json
 codekit-config.json
 
 # macOS
@@ -126,3 +125,12 @@ gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
 
 *.iml
+
+# Astro and Python
+dist/
+.astro/
+public/assets/
+public/google*.html
+public/naver*.html
+__pycache__/
+*.pyc

@@ -1,0 +1,2372 @@
+{
+  "reviewed_at": "2026-10-24",
+  "post_count": 230,
+  "technical_posts_revised": 35,
+  "digest_posts_reviewed": 195,
+  "rss_descriptions_cleaned": 971,
+  "source_http_counts": {
+    "reachable": 1061,
+    "unverified_response": 60,
+    "not_found": 4
+  },
+  "limitations": [
+    "URL availability does not verify claims",
+    "1125 news claims were not all independently fact-checked",
+    "Unretrievable sources remain unresolved",
+    "One fixture-derived digest retained as an unlisted noindex example"
+  ],
+  "posts": [
+    {
+      "file": "src/content/posts/ko/2021-07-19-new-id.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "문제 조건 대조 및 Java 예제 실행 검증",
+      "sources": [
+        "https://school.programmers.co.kr/learn/courses/30/lessons/72410"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-20-http-status-test.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes",
+        "https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-testing.html"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-20-pair-delete.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "문제 조건 대조 및 Java 예제 실행 검증",
+      "sources": [
+        "https://school.programmers.co.kr/learn/courses/30/lessons/12973"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-22-dot-product.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "문제 조건 대조 및 Java 예제 실행 검증",
+      "sources": [
+        "https://school.programmers.co.kr/learn/courses/30/lessons/70128"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-22-plus-minus.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "문제 조건 대조 및 Java 예제 실행 검증",
+      "sources": [
+        "https://school.programmers.co.kr/learn/courses/30/lessons/76501"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-23-app-diagrams.net.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://www.drawio.com/docs/manual/editor/save-file-formats/"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-23-multiple-gradle-build.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://github.com/node-gradle/gradle-node-plugin/blob/main/README.md",
+        "https://docs.gradle.org/current/userguide/lazy_configuration.html"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-23-number-word.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "문제 조건 대조 및 Java 예제 실행 검증",
+      "sources": [
+        "https://school.programmers.co.kr/learn/courses/30/lessons/81301"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-23-unsuccessful-runner.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "문제 조건 대조 및 Java 예제 실행 검증",
+      "sources": [
+        "https://school.programmers.co.kr/learn/courses/30/lessons/42576"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-24-fail-percentage.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "문제 조건 대조 및 Java 예제 실행 검증",
+      "sources": [
+        "https://school.programmers.co.kr/learn/courses/30/lessons/42889"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-27-parse-yaml.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "YAML 처리 범위 및 eval·부모 셸 환경변수 설명 정정",
+      "sources": [
+        "https://mikefarah.gitbook.io/yq/",
+        "https://mikefarah.gitbook.io/yq/usage/shellvariables",
+        "https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-29-interval-num.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "문제 조건 대조 및 Java 예제 실행 검증",
+      "sources": [
+        "https://school.programmers.co.kr/learn/courses/30/lessons/12954"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-07-29-ponkemon.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "문제 조건 대조 및 Java 예제 실행 검증",
+      "sources": [
+        "https://school.programmers.co.kr/learn/courses/30/lessons/1845"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-08-06-search-github.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://sourcegraph.com/docs/getting-started",
+        "https://sourcegraph.com/docs/code-search/queries"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2021-08-17-cache.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "문제 조건 대조 및 Java 예제 실행 검증",
+      "sources": [
+        "https://school.programmers.co.kr/learn/courses/30/lessons/17680"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-04-jekyll-install.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://jekyllrb.com/docs/installation/macos/",
+        "https://bundler.io/guides/using_bundler_in_applications.html"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-05-querydsl-no-release.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_1_0",
+        "https://docs.spring.io/spring-data/jpa/reference/jpa/specifications.html",
+        "https://www.jooq.org/doc/latest/manual/",
+        "https://jdbi.org/",
+        "https://doma.readthedocs.io/"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-07-springboot-initializer.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://start.spring.io/",
+        "https://docs.spring.io/initializr/docs/current/reference/html/"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-08-springboot3-migration.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide",
+        "https://spring.io/blog/2023/09/09/all-together-now-spring-boot-3-2-graalvm-native-images-java-21-and-virtual"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-09-springboot3-querydsl.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_1_0",
+        "https://docs.gradle.org/current/userguide/lazy_configuration.html"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-10-springboot-intellij-import.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://www.jetbrains.com/help/idea/running-applications.html",
+        "https://docs.gradle.org/current/userguide/compatibility.html"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-13-springboot-history.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 릴리스 공지·의존성 목록 대조 및 잘못된 연표 정정",
+      "sources": [
+        "https://spring.io/blog/2014/12/11/spring-boot-1-2-0-released/",
+        "https://spring.io/blog/2015/11/16/spring-boot-1-3-0-released/",
+        "https://spring.io/blog/2016/07/28/spring-boot-1-4-released/",
+        "https://spring.io/blog/2018/03/01/spring-boot-2-0-goes-ga/",
+        "https://spring.io/blog/2022/11/24/spring-boot-3-0-goes-ga/",
+        "https://spring.io/blog/2023/05/18/spring-boot-3-1-0-available-now/",
+        "https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.2-Release-Notes",
+        "https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/reference/html/dependency-versions.html",
+        "https://docs.spring.io/spring-boot/docs/2.4.0/reference/html/dependency-versions.html",
+        "https://docs.spring.io/spring-boot/docs/3.1.0/reference/html/dependency-versions.html"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-15-springboot-intellij-lombok.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://projectlombok.org/setup/gradle",
+        "https://www.jetbrains.com/help/idea/annotation-processors-support.html"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-19-springboot-test-webclient.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 WebClient 문서 대조 및 HTTP 상태·미디어 타입 테스트 재작성",
+      "sources": [
+        "https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-testing.html",
+        "https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-exchange.html",
+        "https://github.com/square/okhttp/tree/parent-4.12.0/mockwebserver"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-20-jdk-21-release.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://openjdk.org/projects/jdk/21/",
+        "https://inside.java/2024/06/20/newscast-71/",
+        "https://www.oracle.com/java/technologies/java-se-support-roadmap.html"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-20-linux-shellscript-function-error.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://www.shellcheck.net/wiki/SC2112"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-23-jdk-21-string-templates.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://inside.java/2024/06/20/newscast-71/",
+        "https://openjdk.org/jeps/430",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/text/MessageFormat.html"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-23-linux-shellscript-github-latest.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
+        "https://docs.github.com/en/rest/releases/releases#get-the-latest-release"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-09-28-jenkins-docker-install.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://www.jenkins.io/doc/book/installing/docker/",
+        "https://github.com/jenkinsci/docker/blob/master/README.md"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-10-10-temurin-jdk21-delay.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://adoptium.net/news/2023/09/temurin21-delay",
+        "https://github.com/adoptium/temurin21-binaries/releases"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-10-27-springbatch5-migration.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "공식 문서 대조 및 예제 코드 검토",
+      "sources": [
+        "https://github.com/spring-projects/spring-batch/wiki/Spring-Batch-5.0-Migration-Guide"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2023-11-17-linux-shellscript-version-compare.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "정수 구간 비교의 범위 명시 및 오버플로·구간 길이 오류 수정",
+      "sources": [
+        "https://docs.python.org/3/library/itertools.html#itertools.zip_longest",
+        "https://semver.org/"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "현재 저장소 구현 및 공식 배포 문서 대조",
+      "sources": [
+        "https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site",
+        "https://docs.astro.build/en/guides/deploy/github/"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "현재 저장소 구현 및 공식 배포 문서 대조",
+      "sources": [
+        "https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site",
+        "https://docs.astro.build/en/guides/deploy/github/"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "kind": "post",
+      "status": "revised",
+      "scope": "현재 저장소 구현 및 공식 배포 문서 대조",
+      "sources": [
+        "https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site",
+        "https://docs.astro.build/en/guides/deploy/github/"
+      ]
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-03-16.md",
+      "kind": "digest",
+      "status": "example",
+      "scope": "저장소 RSS fixture와 동일한 예제 데이터. 실제 뉴스로 검증되지 않아 목록·검색·RSS에서 제외.",
+      "source_counts": {
+        "not_found": 3,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 0
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-07.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-08.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-09.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-10.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-11.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-12.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-13.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-14.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-15.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 3
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-16.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-17.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-18.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-19.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-20.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 2
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-21.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-22.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-23.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-24.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-25.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-26.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-27.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 3
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-28.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-29.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-04-30.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-01.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-02.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-03.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-04.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-05.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-06.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-07.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-08.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "unverified_response": 1,
+        "reachable": 5
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-09.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-10.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-11.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-12.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-13.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-14.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-15.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-16.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-17.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-18.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 4,
+        "unverified_response": 2
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-19.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-20.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-21.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-22.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-23.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-24.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-25.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-26.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-27.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-28.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-29.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-30.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 4,
+        "unverified_response": 2
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-05-31.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-01.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-02.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-03.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-04.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 4,
+        "unverified_response": 2
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-05.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-06.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-07.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-08.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-09.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-10.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 3
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-11.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-12.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-13.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-14.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-15.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-16.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-17.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-18.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-19.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-20.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-21.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "not_found": 1,
+        "reachable": 4,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-22.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-23.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-24.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-25.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-26.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-27.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-28.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 4,
+        "unverified_response": 2
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-29.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-06-30.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-01.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-02.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-03.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-04.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-05.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-06.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 3,
+        "unverified_response": 3
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-07.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-08.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-09.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-10.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-11.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-12.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-13.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-14.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-15.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-16.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-17.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-18.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-19.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 4,
+        "unverified_response": 2
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-20.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-21.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-22.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-23.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-24.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-25.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-26.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-27.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-28.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 4,
+        "unverified_response": 2
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-29.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-30.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-07-31.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-01.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-02.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-03.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 4,
+        "unverified_response": 2
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-04.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-05.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-06.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 2
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-07.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-08.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-09.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-10.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 3
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-11.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-12.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-13.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-14.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-15.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-16.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-17.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-18.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-19.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-20.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 4,
+        "unverified_response": 2
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-21.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-22.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-23.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-24.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-25.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-26.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-27.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-28.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-29.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-30.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-08-31.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-01.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-02.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-03.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 4,
+        "unverified_response": 2
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-04.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-05.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-06.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-07.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-08.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-09.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-10.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-11.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-12.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-13.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-14.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-15.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-16.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-17.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-18.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-19.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-20.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-21.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-22.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-23.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-24.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 5,
+        "unverified_response": 1
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-25.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-26.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-27.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-28.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-29.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 3
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-09-30.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 3
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-01.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-02.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 2
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-03.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-04.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-05.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 4
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-06.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 5
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-07.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 6
+      },
+      "cleaned_descriptions": 6
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-09.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 1
+      },
+      "cleaned_descriptions": 0
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-10.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 2
+      },
+      "cleaned_descriptions": 0
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-12.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 3
+      },
+      "cleaned_descriptions": 0
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-13.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 2
+      },
+      "cleaned_descriptions": 0
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-14.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 1
+      },
+      "cleaned_descriptions": 0
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-16.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 1
+      },
+      "cleaned_descriptions": 0
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-20.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 3
+      },
+      "cleaned_descriptions": 0
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-21.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 1
+      },
+      "cleaned_descriptions": 0
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-22.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 2
+      },
+      "cleaned_descriptions": 0
+    },
+    {
+      "file": "src/content/posts/ko/digest-2026-10-24.md",
+      "kind": "digest",
+      "status": "source-audited",
+      "scope": "원문 URL 응답 확인 및 수집 설명 정리. 기사별 주장 전체의 사실 검증은 아님.",
+      "source_counts": {
+        "reachable": 1
+      },
+      "cleaned_descriptions": 0
+    }
+  ]
+}

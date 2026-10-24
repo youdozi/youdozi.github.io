@@ -1,0 +1,58 @@
+---
+import { SITE, text, type Language } from '../lib/content';
+import '../styles/global.css';
+interface Props { title: string; description?: string; lang: Language; alternates?: { language: Language; url: string }[]; canonical?: string; noindex?: boolean; structuredData?: Record<string, unknown>[]; }
+const { title, description = text[Astro.props.lang].about, lang, alternates = [], canonical = Astro.url.pathname, noindex = false } = Astro.props;
+const siteData = { '@context': 'https://schema.org', '@type': 'WebSite', '@id': new URL('/#website', Astro.site).href, url: new URL('/', Astro.site).href, name: SITE, inLanguage: ['en', 'ko'] };
+const jsonLd = [siteData, ...(Astro.props.structuredData || [])];
+const serializedJsonLd = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
+const t = text[lang];
+const other = lang === 'en' ? 'ko' : 'en';
+const counterpart = alternates.find(a => a.language === other);
+const isArticle = /^\/(en|ko)\/posts\/[^/]+\/$/.test(Astro.url.pathname) || /^\/(en|ko)\/digest\/\d/.test(Astro.url.pathname);
+const switchUrl = counterpart?.url || `/${other}/`;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
+    <title>{title === SITE ? SITE : `${title} · ${SITE}`}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(canonical, Astro.site)} />
+    {alternates.map(a => <link rel="alternate" hreflang={a.language} href={new URL(a.url, Astro.site)} />)}
+    {alternates.some(a => a.language === 'en') && <link rel="alternate" hreflang="x-default" href={new URL(alternates.find(a => a.language === 'en')!.url, Astro.site)} />}
+    <meta property="og:type" content={isArticle ? 'article' : 'website'} /><meta property="og:title" content={title} />
+    <meta property="og:description" content={description} /><meta property="og:url" content={new URL(canonical, Astro.site)} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'ko_KR'} />
+    <meta name="twitter:card" content="summary" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} />
+    <script type="application/ld+json" set:html={serializedJsonLd} />
+    <meta property="og:image" content={new URL('/assets/img/profile.jpg', Astro.site)} />
+    {noindex && <meta name="robots" content="noindex,follow" />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {import.meta.env.PROD && <script is:inline>
+      if (location.hostname === 'youdozi.github.io') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XZVJ0K06M9');
+        const analytics = document.createElement('script');
+        analytics.async = true;
+        analytics.src = 'https://www.googletagmanager.com/gtag/js?id=G-XZVJ0K06M9';
+        document.head.append(analytics);
+      }
+    </script>}
+    <link rel="alternate" type="application/rss+xml" title={`${SITE} (${lang})`} href={`/${lang}/feed.xml`} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{lang === 'en' ? 'Skip to content' : '본문으로 건너뛰기'}</a>
+    <header class="site-header shell">
+      <a class="brand" href={`/${lang}/`}><span class="brand-mark" aria-hidden="true">y.</span><span>{SITE}</span></a>
+      <nav aria-label={lang === 'en' ? 'Main navigation' : '주 메뉴'}>
+        <a href={`/${lang}/posts/`}>{t.posts}</a><a href={`/${lang}/digest/`}>{t.digest}</a><a href={`/${lang}/search/`}>{t.search}</a>
+        <a class="language" href={switchUrl} lang={other} title={isArticle && !counterpart ? t.notTranslated : undefined}>{other === 'ko' ? '한국어' : 'English'} <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main" class="shell"><slot /></main>
+    <footer class="site-footer shell"><div><a class="brand" href={`/${lang}/`}>{SITE}</a><p>{t.footer}</p></div><div class="footer-links"><a href={`/${lang}/categories/`}>{t.categories}</a><a href={`/${lang}/tags/`}>{t.tags}</a><a href={`/${lang}/feed.xml`}>RSS</a><a href="https://github.com/youdozi">GitHub ↗</a></div></footer>
+  </body>
+</html>

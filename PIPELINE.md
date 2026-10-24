@@ -1,67 +1,56 @@
-# Dev Content Pipeline
+# Bilingual Dev Content Pipeline
 
-개발 RSS에서 뉴스를 선별하고, `--ai` 모드에서는 기사 본문으로 한국어 요약을 만든 뒤 원문 근거와 문맥을 대조합니다. 기본 로컬 실행은 RSS 설명 모드이며 Actions는 AI 모드를 사용합니다. 주제 분류와 `확인할 점`은 규칙 기반 안내입니다. 원문 일치 확인은 모든 사실의 진위 보증과 다릅니다.
-
-## 동작과 게시 조건
-
-1. GitHub Changelog, InfoQ, JetBrains, Spring, Cloudflare RSS/Atom 수집.
-2. 최근 7일의 미래가 아닌 기사에서 기술 키워드와 점수로 선별.
-3. 기본 최소 점수 6, 출처당 최대 3개, 전체 최대 6개. 조건을 충족하는 기사가 적으면 적은 수로 발행하고, 없으면 건너뜁니다.
-4. 설명은 RSS에서 HTML·엔티티·블로그 안내 문구를 정리합니다. 80~420자이며 완성된 문장이어야 합니다. 긴 설명은 완성된 문장까지 줄이고, 불완전한 설명·채용/인턴/웨비나 등 홍보성 제목은 제외합니다.
-5. 같은 실행 안의 제목/URL 중복과 과거 게시 URL 재사용을 차단합니다. `.pipeline/content_state.json`과 기존 게시글을 모두 확인합니다. 손상된 상태 파일은 실패 처리합니다.
-6. 각 기사에 출처·설명·발행일·링크·확인할 점이 있는지 검사합니다. URL은 HTTPS와 출처별 승인 호스트를 사용하고 표시 URL과 대상 URL이 같아야 합니다.
-7. Actions에서는 `--check-links`로 원문 URL의 HTTP 200, HTML 응답, 최종 출처 호스트를 확인합니다. 네트워크 오류·403·404 등으로 확인할 수 없으면 발행을 중단합니다. HTTP 200만으로 기사의 사실이나 소프트 404를 보장하지는 않습니다.
-8. 검증 후 오늘의 글과 상태를 저장하고 Jekyll 빌드 성공 후 해당 두 파일만 커밋합니다.
-
-전체 소스가 실패하거나 사용 가능한 항목을 하나도 반환하지 않으면 실패합니다. 일부 소스 실패는 경고로 남기고 나머지 소스를 처리합니다. 오늘 글이 이미 있거나 새로운 적격 기사가 없으면 정상적으로 건너뛰며 과거 글을 대신 검증하지 않습니다.
+개발 RSS에서 기사를 선별하고 영문·한국어 요약과 인용 근거를 검증한 후 Astro용 JSON을 생성합니다. 원문 일치 확인은 기사 자체의 사실 보증과 다릅니다.
 
 ## 실행
 
-```bash
-python3 -m unittest discover -s scripts -p 'test*dev_digest.py' -v
-python3 scripts/generate_dev_digest.py --dry-run
-python3 scripts/generate_dev_digest.py --max-items 6 --check-links --ai
-python3 scripts/validate_dev_digest.py _posts/dev/digest/YYYY-MM-DD-dev-digest.markdown --check-links
-bash scripts/jekyll-build.sh
+```sh
+python3 scripts/generate_digest.py --dry-run --check-links --max-items 2
+python3 scripts/generate_digest.py --check-links
 ```
 
-생성기 옵션:
+`GEMINI_API_KEY`는 환경 변수로 전달합니다. 키를 명령 인자나 파일에 넣지 않습니다. 기본 모델은 기존 `gemini-3.5-flash-lite`를 유지하며 `GEMINI_MODEL`로 변경할 수 있습니다. 모델 접근 권한과 API 프로젝트의 과금 여부는 별도로 관리해야 합니다. 자동 모델 변경과 재시도는 없습니다.
+
+## 수집과 게시 조건
+
+1. GitHub Changelog, InfoQ, JetBrains, Spring, Cloudflare RSS/Atom을 수집합니다.
+2. 최근 7일, 미래가 아닌 기사 중 점수 6 이상, 출처당 최대 3개, 전체 최대 6개를 선별합니다. 기존 RSS 완성 문장 필터를 유지합니다.
+3. 중복 URL은 `.pipeline/content_state.json`, 원본 `_posts/dev/digest/`, 신규 JSON 이력을 모두 확인합니다. 손상된 이력은 실행 실패입니다.
+4. HTTPS 승인 호스트에서 본문을 추출합니다. 문서당 다운로드 2MB, 본문 400~18,000자 제한을 유지합니다. 원문 접근 실패나 길이 초과는 기사 보류입니다. RSS 요약으로 대체하지 않습니다.
+5. 기사당 첫 AI 호출에서 영문·한국어 제목과 각 언어 2~3개 문장 및 원문 인용 근거를 생성합니다. 원문은 비신뢰 데이터로 취급합니다.
+6. 각 인용문의 실제 존재, 문서 ID, 한국어 여부, 완성 문장, 요약 길이를 검사합니다. 한국어 총 80~420자, 영어 총 80~800자입니다.
+7. 두 번째 호출에서 두 언어의 제목·주장·번역 일치·수치·날짜·출시 상태·벤치마크 조건을 함께 대조합니다. 보안·릴리스·지원 종료 주장은 공식 출처 인용을 요구합니다.
+8. 한 언어라도 검증에 실패하면 해당 기사의 두 버전을 함께 보류합니다. 검증된 기사 쌍만 발행하므로 두 언어의 기사 구성이 같습니다. 모든 기사가 보류되면 실행 실패입니다.
+9. `--check-links`는 원문 URL의 HTTP 200, HTML, 최종 승인 호스트를 검사합니다. 실패하면 저장·커밋하지 않습니다.
+10. 검증된 `src/content/digests/YYYY-MM-DD.json`과 상태를 저장합니다. JSON에는 요약·짧은 인용문·출처 URL·본문 SHA-256·모델·검증 상태를 포함하고 본문 전체나 API 키를 포함하지 않습니다.
+
+기사당 최대 2회, 실행당 최대 12회 AI 호출입니다. preview 최대 2개는 최대 4회입니다. JSON은 Astro 컴포넌트에서 텍스트로 출력하며 외부 문자열을 Markdown/Liquid/HTML 템플릿으로 실행하지 않습니다. 인용문은 사용자가 원문 근거를 확인할 수 있도록 펼침 영역에 표시합니다.
+
+동일 모델의 별도 호출에도 공통 오류가 남을 수 있으므로 검증 상태는 `source_consistency_checked`입니다. “사실 검증 완료”라고 표시하지 않습니다.
+
+## 옵션
 
 - `--repo-root`: 저장소 루트. 기본 `.`
-- `--days-back`: 최신성 범위. 기본 7일.
-- `--max-items`: 전체 최대 기사 수. 기본 6.
+- `--dry-run`: 검증 결과 출력. 콘텐츠·상태 저장 없음. AI 호출 비용은 발생할 수 있습니다.
+- `--force`: 오늘 JSON이 있어도 새 미게시 후보로 덮어쓰기. 사용한 URL은 상태에 남습니다.
+- `--max-items`: 1~6. 기본 6.
+- `--days-back`: 최신성 범위. 기본 7.
 - `--min-score`: 최소 점수. 기본 6.
-- `--max-per-source`: 출처당 최대 기사 수. 기본 3.
-- `--dry-run`: 저장 없이 후보 글 출력.
-- `--force`: 오늘 글이 있어도 새 미게시 후보로 덮어쓰기. 기존 게시 URL은 상태에 남습니다.
-- `--state-file`: 상태 파일 위치. 기본 `.pipeline/content_state.json`.
-- `--fixtures-dir`: 오프라인 RSS/Atom 파일 사용. 기존 fixture 날짜는 고정되어 있어 현재 날짜의 생성 예시로는 제외될 수 있습니다. 자동 테스트는 실행 시점 기준 날짜를 사용합니다.
-- `--check-links`: 선택된 원문 링크 접속 검사.
-- `--github-output`: `generated=true/false`와 생성한 `post_path`를 GitHub Actions 출력 파일에 기록.
+- `--max-per-source`: 출처당 최대 개수. 기본 3.
+- `--fixtures-dir`: 로컬 RSS/Atom fixture 사용. AI 호출은 여전히 필요하며 오프라인 테스트에서는 mock으로 대체합니다.
+- `--check-links`: 실제 원문 링크 접속 검사.
+- `--github-output`: `generated`와 실제 생성한 `digest_path` 출력.
 
-`PIPELINE_INSECURE_SSL=true`는 로컬 RSS 수집 인증서 문제를 임시 우회하는 기존 옵션입니다. Actions는 기본 TLS 검증을 사용하며 원문 링크 검사는 이 옵션을 사용하지 않습니다.
+오늘 파일이 있거나 적합한 새 기사가 없으면 정상적으로 건너뜁니다. preview와 건너뛰기는 `generated=false`를 출력합니다. API 인증·한도·네트워크·JSON 오류는 실행 전체 실패입니다. 일부 RSS 실패는 경고, 전체 RSS 실패는 실행 실패입니다.
 
-## GitHub Actions
+## Actions와 배포
 
-매일 한국 시간 07:00 예약(`0 22 * * *`, UTC)과 수동 실행을 지원합니다. 실제 시작은 GitHub 예약 상황에 따라 늦어질 수 있습니다.
+매일 한국 시간 07:00(`0 22 * * *`, UTC)에 실행합니다. 수동 실행의 `preview=true`가 기본이며 `--dry-run --force --max-items 2`로 AI 연결을 검사합니다. 실제 게시에는 `preview=false`를 사용합니다.
 
-파이프라인 파일을 변경하는 PR에서는 오프라인 테스트만 실행합니다. 정기/수동 실행은 테스트 성공 후 생성·링크 검증·빌드·커밋을 수행합니다. 같은 ref의 실행은 순서대로 처리합니다. 기본 권한은 읽기이며 생성 job만 contents 쓰기를 허용합니다.
+생성 후 Astro 타입·스키마 검사와 빌드·내부 링크 검사가 모두 통과해야 JSON과 상태를 커밋합니다. `main`에서는 재사용 사이트 워크플로에 생성 커밋 SHA를 전달해 빌드·검증·Pages 배포를 직접 수행합니다. preview에서는 커밋이나 배포가 없습니다. `main` 이외 브랜치에서는 생성할 수 있지만 운영 배포는 하지 않습니다.
 
-기존 게시글을 일괄 수정하지 않습니다. 새 기준은 앞으로 생성하는 글에 적용되며, 오래된 글을 새 검증기로 수동 검사하면 과거에 허용됐던 설명/날짜/형식 문제를 발견할 수 있습니다.
+Python 테스트는 기존 수집·선별 검증과 새로운 두 언어 근거 검증·보류·저장 실패·중복 방지 조건을 오프라인으로 검사합니다. 실제 API 연결과 GitHub Pages 배포는 GitHub 환경에서 별도로 확인합니다.
 
-## 한국어 AI 요약과 근거 검증
+## 이전 구현
 
-GitHub Repository Actions Secret `GEMINI_API_KEY`를 등록합니다. API 키를 파일·명령 인자·로그에 저장하지 않습니다. 키는 생성 단계의 환경 변수로만 전달하며 PR 테스트에는 전달하지 않습니다.
-
-- 기본 모델은 `gemini-3.5-flash-lite`입니다. Repository Settings → Secrets and variables → Actions → Variables에서 `GEMINI_MODEL`을 설정하면 해당 모델 ID를 사용합니다(`models/` 접두사 제외). 변수 없이도 기본 모델로 실행됩니다. 로컬에서는 같은 이름의 환경 변수로 지정합니다. 자동 모델 전환과 재시도는 없습니다. 실행당 최대 12회 호출합니다. API의 무료 티어 프로젝트인지 AI Studio에서 별도로 확인해야 합니다. **프로젝트가 유료이면 같은 모델도 과금될 수 있으며, 코드가 Google 결제 티어를 강제하지는 않습니다.** Pro 구독은 이 API 결제와 별개입니다.
-- 기사 HTML은 HTTPS 승인 호스트에서만 수집합니다. 2MB 다운로드, 본문 18,000자, 문서당 최소 400자 제한을 적용합니다. `article/main` 또는 알려진 본문 영역을 추출하고 메뉴·광고성 주변 요소를 제외합니다. 본문 접근 실패/403/추출 실패/길이 초과는 해당 기사 보류이며 RSS 요약으로 대체하지 않습니다.
-- 요약 호출에서 한국어 2~3문장과 각 문장의 원문 인용 근거를 JSON으로 받습니다. 문장을 합쳐 최종 요약으로 사용하므로 검증하지 않은 별도 요약 문장이 들어가지 않습니다.
-- 인용문 존재·길이·문서 ID·한국어 여부·템플릿/마크다운 삽입을 코드로 검사합니다. 별도 호출은 문맥, 버전·수치·날짜·프리뷰/정식 출시, 벤치마크 조건과 출처 충돌을 대조합니다.
-- 보안·릴리스·버전·지원 종료 뉴스는 승인된 공급자 공식 페이지 또는 기사의 연결된 공식 문서 후보(최대 2개) 근거를 각 문장에 요구합니다. 연결 문서가 다른 제품/이벤트면 AI 검증에서 보류해야 합니다. 공식 문서 후보 호스트 승인만으로 진위나 해당 저장소의 소유권이 보장되지는 않습니다.
-- API 인증/한도/네트워크/출력 형식 오류는 실행 전체 실패입니다. 원문 근거 부족·검증 실패는 기사별 보류이며 모두 보류되면 실행 실패입니다. 보류한 URL은 사용 완료 상태에 넣지 않습니다.
-- 새 글은 `한국어 AI 요약`과 `검증 범위`를 표시합니다. `.pipeline/YYYY-MM-DD-ai-audit.json`에 요약·짧은 인용문·출처 URL·본문 SHA-256·모델·검증 범위를 저장합니다. 원문 전체나 API 키는 저장하지 않습니다.
-- 동일 모델의 별도 호출 검증에도 공통 오류가 남을 수 있습니다. 따라서 상태 명칭은 `source_consistency_checked`이며 “사실 검증 완료”로 표시하지 않습니다.
-
-## 게시 없는 연결 확인
-
-PR 병합 후 Actions → Dev Content Pipeline → Run workflow에서 `preview=true`(기본)를 선택하면 오늘 글이 있어도 새 미게시 후보 최대 2개로 AI 연결을 검사합니다. 이 실행은 `--dry-run --force`를 사용하고 글·상태·감사 파일을 저장하거나 커밋하지 않습니다. 호출량은 최대 4회이며 해당 API 프로젝트의 요금 정책이 적용됩니다. 후보가 없으면 AI 호출 없이 건너뛸 수 있습니다. 실제 게시 수동 실행은 `preview=false`를 선택합니다. 정기 실행은 AI 게시 모드를 사용합니다.
+`scripts/generate_dev_digest.py`와 `validate_dev_digest.py`는 기존 Markdown 아카이브의 수집·선별·검증 함수와 회귀 테스트를 유지하기 위해 남겼습니다. 새 npm 명령과 Actions는 `scripts/generate_digest.py`를 사용합니다. 기존 Ruby 빌드 스크립트는 운영 경로에서 사용하지 않습니다.

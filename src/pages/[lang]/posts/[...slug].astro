@@ -1,0 +1,6 @@
+---
+import Article from '../../../components/Article.astro';
+import { entries } from '../../../lib/content';
+export async function getStaticPaths() { return (await entries(true)).filter(e => e.kind === 'post').map(entry => ({ params: { lang: entry.language, slug: entry.slug }, props: { entry } })); }
+---
+<Article entry={Astro.props.entry} />
