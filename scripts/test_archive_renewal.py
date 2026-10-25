@@ -147,5 +147,20 @@ class ArchiveRenewalTests(unittest.TestCase):
             record=next(r for r in self.manifest['items'] if r['id']==entry['id'])
             self.assertEqual(record['status']=='published',(ROOT/'src/content/renewals'/(entry['id']+'.json')).exists())
 
+    def test_third_batch_separates_later_corrections_and_withholds_unsupported_metrics(self):
+        batch=archive.read(ROOT/archive.DIRECTORY/'batches/batch-003.json')
+        correction=next(e for e in batch['entries'] if e['id']=='3e483be55bb45ecb')
+        for lang in ('en','ko'):
+            self.assertEqual(2,len(correction['editions'][lang]['followUp']))
+            self.assertIn('2026-06-05',correction['editions'][lang]['followUp'][0]['text'])
+            self.assertNotIn('2026-06-05',' '.join(c['text'] for c in correction['editions'][lang]['claims']))
+        held=next(e for e in batch['entries'] if e['id']=='3379bf11367ca9d1')
+        self.assertEqual('unverifiable_proposal',held['outcome'])
+        self.assertEqual([],held['documents'])
+        for entry in batch['entries']:
+            self.assertIsNone(entry['editionPublishedAt']['en'])
+            record=next(r for r in self.manifest['items'] if r['id']==entry['id'])
+            self.assertEqual(record['status']=='published',(ROOT/'src/content/renewals'/(entry['id']+'.json')).exists())
+
 
 if __name__=='__main__':unittest.main()
