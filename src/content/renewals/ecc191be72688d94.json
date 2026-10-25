@@ -1,0 +1,95 @@
+{
+  "id": "ecc191be72688d94",
+  "archiveDate": "2026-05-31",
+  "originalPagePublishedAt": "2026-05-30T22:54:05.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-30T22:54:05.000Z",
+    "en": "2026-10-25T06:31:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Review repository context, model access, data boundaries and finding validation before adoption. The vendor’s internal detection-rate and false-positive benchmarks were not independently reproduced in this renewal.",
+    "ko": "도입 전 저장소 맥락·모델 접근·데이터 경계·발견 사항 검증을 검토할 것을 제안합니다. 공급업체의 내부 탐지율·오탐 벤치마크를 이번 리뉴얼에서 독립적으로 재현하지 않았습니다."
+  },
+  "documents": [
+    {
+      "url": "https://newsroom.arm.com/blog/arm-metis-agentic-ai-security",
+      "role": "primary",
+      "sha256": "d06a7e6e06cfe514b217e12235152adaf9f8d767e7f3cb39d302e37915f5f211",
+      "fetchedAt": "2026-10-25T06:13:58+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Arm Metis: open-source framework and repository context",
+      "claims": [
+        {
+          "text": "Arm announced that its product security team developed and open-sourced Metis as an agentic security framework.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "developed and open-sourced Metis"
+            }
+          ]
+        },
+        {
+          "text": "The announcement describes a retrieval-augmented generation architecture that combines language models with project-specific knowledge for security analysis.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "combines large language models (LLMs) with project-specific knowledge"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Arm Metis의 오픈소스 프레임워크와 저장소 맥락",
+      "claims": [
+        {
+          "text": "Arm은 자사 제품 보안 팀이 에이전트 보안 프레임워크 Metis를 개발하고 오픈소스로 공개했다고 발표했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "developed and open-sourced Metis"
+            }
+          ]
+        },
+        {
+          "text": "발표는 언어 모델과 프로젝트별 지식을 결합해 보안을 분석하는 검색 증강 생성 아키텍처를 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "combines large language models (LLMs) with project-specific knowledge"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-31-arm-metis-repository-context",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/05/arm-metis-agentic-security/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-05-31T04:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-31.md",
+  "batchId": "batch-004",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T06:20:52+00:00",
+  "updatedAt": "2026-10-25T06:31:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 33,
+    "approvedAt": "2026-10-25T06:31:18+00:00",
+    "basis": "Codex conversation: user explicitly instructed 다음 pr 적용 for review PR 33."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

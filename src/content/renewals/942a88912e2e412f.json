@@ -1,0 +1,95 @@
+{
+  "id": "942a88912e2e412f",
+  "archiveDate": "2026-05-13",
+  "originalPagePublishedAt": "2026-05-12T22:54:52.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-12T22:54:52.000Z",
+    "en": "2026-10-25T06:31:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Compare ingestion rate, dimension cardinality, retention and query patterns on representative data. The reported numerical savings are not reproduced in this brief, and the author’s proposal should not be generalized to every time-series engine.",
+    "ko": "대표 데이터로 유입량·차원 카디널리티·보존 기간·질의 패턴을 비교할 것을 제안합니다. 원문의 수치상 절감 결과를 이 원고에서 재현하지 않았으며 저자의 제안을 모든 시계열 엔진에 일반화하면 안 됩니다."
+  },
+  "documents": [
+    {
+      "url": "https://www.infoq.com/articles/time-series-storage-design/",
+      "role": "primary",
+      "sha256": "9451ff15f036459dd48474be371e4dcd5778ed74a25df89c0b333f383929ee1d",
+      "fetchedAt": "2026-10-25T06:13:58+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Time-series design: series identity and cardinality trade-offs",
+      "claims": [
+        {
+          "text": "The article author proposes storing repeated series dimensions in a separate metadata table and referencing them with a compact identifier. This describes a design proposal rather than a guaranteed storage saving.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "referencing it by a compact ID"
+            }
+          ]
+        },
+        {
+          "text": "The author cautions against using high-cardinality fields such as request IDs and session tokens as series identity, because the benefit depends on repeated samples sharing an identity.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "High-cardinality fields like request IDs and session tokens"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "시계열 설계의 시리즈 식별자와 카디널리티 절충",
+      "claims": [
+        {
+          "text": "기사 작성자는 반복되는 시리즈 차원을 별도 메타데이터 테이블에 저장하고 작은 식별자로 참조하는 설계를 제안한다. 설계 제안이며 저장 공간 절감을 보장하는 수치가 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "referencing it by a compact ID"
+            }
+          ]
+        },
+        {
+          "text": "작성자는 요청 ID나 세션 토큰처럼 카디널리티가 높은 필드를 시리즈 식별자로 사용하지 않도록 주의를 준다. 같은 식별자를 공유하는 반복 샘플이 있어야 이점이 생긴다는 조건이다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "High-cardinality fields like request IDs and session tokens"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-13-time-series-identity-and-cardinality",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/articles/time-series-storage-design/",
+  "articleNumber": 4,
+  "sourcePublishedAt": "2026-05-12T18:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-13.md",
+  "batchId": "batch-004",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T06:20:52+00:00",
+  "updatedAt": "2026-10-25T06:31:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 33,
+    "approvedAt": "2026-10-25T06:31:18+00:00",
+    "basis": "Codex conversation: user explicitly instructed 다음 pr 적용 for review PR 33."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

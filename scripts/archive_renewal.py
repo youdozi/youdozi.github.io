@@ -145,9 +145,12 @@ def validate_manifest(data, root=None):
 def fetch_document(url):
     if not https(url):raise ValueError('unsafe source URL')
     result=subprocess.run(['curl','--fail','--silent','--show-error','--location','--proto','=https','--proto-redir','=https',
-        '--max-redirs','5','--max-time','25','--max-filesize','2500000','--write-out','\n%{url_effective}',url],text=True,capture_output=True,timeout=30)
+        '--max-redirs','5','--max-time','25','--max-filesize','2500000','--write-out','\n%{json}',url],text=True,capture_output=True,timeout=30)
     if result.returncode:raise ValueError(f'source unavailable (curl {result.returncode})')
-    markup,final_url=result.stdout.rsplit('\n',1)
+    markup,metadata=result.stdout.rsplit('\n',1)
+    metadata=json.loads(metadata);final_url=metadata['url_effective']
+    if metadata.get('http_code')!=200:raise ValueError(f'source returned HTTP {metadata.get("http_code")}; expected HTTP 200 HTML')
+    if 'html' not in str(metadata.get('content_type') or '').lower():raise ValueError('source did not return HTML')
     if not https(final_url) or urlsplit(final_url).hostname!=urlsplit(url).hostname:raise ValueError('source redirected to a different publisher')
     parser=ArticleParser();parser.feed(markup);body=parser.extract()
     if len(body)<100:raise ValueError('article body unavailable')
@@ -235,7 +238,11 @@ def check(root, *, check_sources=False):
     for path in sorted((directory/'batches').glob('*.json')):
         batch=read(path);documents=None
         if check_sources:
-            documents={d['url']:fetch_document(d['url']) for e in batch['entries'] for d in e['documents']}
+            documents={}
+            for url in dict.fromkeys(d['url'] for e in batch['entries'] for d in e['documents']):
+                try:documents[url]=fetch_document(url)
+                except (ValueError,OSError,subprocess.TimeoutExpired) as exc:
+                    raise ValueError(f'{path.name}: {url}: {exc}') from exc
         errors.extend(f'{path.name}: {error}' for error in validate_batch(batch,manifest,documents=documents))
         for entry in batch['entries']:
             if entry['id'] in ownership:errors.append('an article is assigned to multiple active batches')

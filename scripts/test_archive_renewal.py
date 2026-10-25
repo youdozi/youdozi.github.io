@@ -4,6 +4,8 @@ import hashlib
 from pathlib import Path
 import tempfile
 import shutil
+import subprocess
+import json
 import unittest
 from unittest.mock import patch
 
@@ -161,6 +163,39 @@ class ArchiveRenewalTests(unittest.TestCase):
             self.assertIsNone(entry['editionPublishedAt']['en'])
             record=next(r for r in self.manifest['items'] if r['id']==entry['id'])
             self.assertEqual(record['status']=='published',(ROOT/'src/content/renewals'/(entry['id']+'.json')).exists())
+
+    def test_fourth_batch_preserves_billing_units_and_evidence_holds(self):
+        batch=archive.read(ROOT/archive.DIRECTORY/'batches/batch-004.json')
+        models=next(e for e in batch['entries'] if e['id']=='973739bcb859e5ab')
+        for lang in ('en','ko'):
+            self.assertIn('0.33x',models['editions'][lang]['claims'][1]['text'])
+        for identity in ('6fdbbab10590a5bb','b3c34e4e6a5fa797','58aa7f1d316e9d36'):
+            entry=next(e for e in batch['entries'] if e['id']==identity)
+            self.assertEqual('unverifiable_proposal',entry['outcome'])
+            self.assertEqual([],entry['documents'])
+            for lang in ('en','ko'):self.assertEqual([],entry['editions'][lang]['claims'])
+        for entry in batch['entries']:
+            self.assertIsNone(entry['editionPublishedAt']['en'])
+            record=next(r for r in self.manifest['items'] if r['id']==entry['id'])
+            self.assertEqual(record['status']=='published',(ROOT/'src/content/renewals'/(entry['id']+'.json')).exists())
+
+    def test_archive_fetch_requires_successful_html_not_a_202_challenge(self):
+        url='https://blog.jetbrains.com/article/'
+        body='<article><p>'+('Verified article text. '*10)+'</p></article>'
+        for status,content_type,valid in [(200,'text/html; charset=utf-8',True),(202,'text/html',False),(200,'application/json',False),(200,None,False)]:
+            response=subprocess.CompletedProcess([],0,body+'\n'+json.dumps({'url_effective':url,'http_code':status,'content_type':content_type}),'')
+            with self.subTest(status=status,content_type=content_type),patch.object(archive.subprocess,'run',return_value=response):
+                if valid:self.assertIn('Verified article text.',archive.fetch_document(url))
+                else:
+                    with self.assertRaises(ValueError):archive.fetch_document(url)
+
+    def test_failed_source_check_names_batch_and_source(self):
+        path=sorted((ROOT/archive.DIRECTORY/'batches').glob('*.json'))[0]
+        batch=archive.read(path)
+        first_url=next(d['url'] for e in batch['entries'] for d in e['documents'])
+        with patch.object(archive,'fetch_document',side_effect=ValueError('source returned HTTP 202')):
+            with self.assertRaises(ValueError) as caught:archive.check(ROOT,check_sources=True)
+        for value in (path.name,first_url,'HTTP 202'):self.assertIn(value,str(caught.exception))
 
 
 if __name__=='__main__':unittest.main()

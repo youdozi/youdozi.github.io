@@ -1,0 +1,95 @@
+{
+  "id": "fecc68bc1f0f9da3",
+  "archiveDate": "2026-05-15",
+  "originalPagePublishedAt": "2026-05-14T22:52:30.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-14T22:52:30.000Z",
+    "en": "2026-10-25T06:31:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Check control-plane version, operating system, container runtime and workload configuration separately. Review migration and compatibility conditions before replacing admission webhooks or enabling user namespaces.",
+    "ko": "제어 영역 버전·운영체제·컨테이너 런타임·워크로드 설정을 각각 확인할 것을 제안합니다. 승인 웹훅을 대체하거나 사용자 네임스페이스를 활성화하기 전에 전환·호환 조건을 검토해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/",
+      "role": "primary",
+      "sha256": "aa869a55e08d50fe2607386e5cdad6c17a34897feeff17e70e80d522b4ff4539",
+      "fetchedAt": "2026-10-25T06:13:58+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Kubernetes 1.36: stable admission mutation and pod user namespaces",
+      "claims": [
+        {
+          "text": "The Kubernetes 1.36 release team describes MutatingAdmissionPolicies as graduating to Stable. This is a feature maturity statement for that release.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "graduation of MutatingAdmissionPolicies to Stable."
+            }
+          ]
+        },
+        {
+          "text": "The same release describes user namespace support for pods as graduating to Stable; it does not establish that every existing cluster is configured to use it.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "support for User Namespaces graduates to Stable."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Kubernetes 1.36의 안정 단계 승인 변형 정책과 파드 사용자 네임스페이스",
+      "claims": [
+        {
+          "text": "Kubernetes 1.36 릴리스 팀은 MutatingAdmissionPolicies가 Stable 단계로 승격됐다고 설명했다. 해당 릴리스의 기능 성숙도에 대한 설명이다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "graduation of MutatingAdmissionPolicies to Stable."
+            }
+          ]
+        },
+        {
+          "text": "같은 릴리스는 파드의 사용자 네임스페이스 지원도 Stable 단계로 승격됐다고 설명했다. 기존 모든 클러스터에서 이미 사용하도록 설정됐다는 뜻은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "support for User Namespaces graduates to Stable."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-15-kubernetes-1-36-admission-and-user-namespaces",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/05/kubernetes-1-36-released/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-05-14T17:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-15.md",
+  "batchId": "batch-004",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T06:20:52+00:00",
+  "updatedAt": "2026-10-25T06:31:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 33,
+    "approvedAt": "2026-10-25T06:31:18+00:00",
+    "basis": "Codex conversation: user explicitly instructed 다음 pr 적용 for review PR 33."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
