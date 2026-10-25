@@ -3718,7 +3718,7 @@
       "priority": "risk",
       "status": "blocked",
       "batchId": "batch-004",
-      "reviewPullRequest": null
+      "reviewPullRequest": 33
     },
     {
       "id": "7c1353e4bf6d1cb4",
@@ -3780,9 +3780,9 @@
       "originalTitle": "Article: Time-Series Storage: Design Choices That Shape Cost and Performance",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-004",
-      "reviewPullRequest": null
+      "reviewPullRequest": 33
     },
     {
       "id": "37c287eb6f7a9106",
@@ -3924,9 +3924,9 @@
       "originalTitle": "Kubernetes v1.36: Security Defaults Tighten as AI Workload Support Matures",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-004",
-      "reviewPullRequest": null
+      "reviewPullRequest": 33
     },
     {
       "id": "3272715656a0ec19",
@@ -4084,9 +4084,9 @@
       "originalTitle": "Grok Code Fast 1 deprecated",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-004",
-      "reviewPullRequest": null
+      "reviewPullRequest": 33
     },
     {
       "id": "9d36bc33b19e556d",
@@ -4324,9 +4324,9 @@
       "originalTitle": "Copilot cloud agent: Fast, cost-efficient models for simple tasks",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-004",
-      "reviewPullRequest": null
+      "reviewPullRequest": 33
     },
     {
       "id": "7464c36f8daae9d3",
@@ -4406,7 +4406,7 @@
       "priority": "risk",
       "status": "blocked",
       "batchId": "batch-004",
-      "reviewPullRequest": null
+      "reviewPullRequest": 33
     },
     {
       "id": "2f2d6ab37c3afa82",
@@ -4966,7 +4966,7 @@
       "priority": "risk",
       "status": "blocked",
       "batchId": "batch-004",
-      "reviewPullRequest": null
+      "reviewPullRequest": 33
     },
     {
       "id": "83ab4a79561d1f7c",
@@ -4996,9 +4996,9 @@
       "originalTitle": "Microsoft Introduces MDASH for Large-Scale AI Vulnerability Research",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-004",
-      "reviewPullRequest": null
+      "reviewPullRequest": 33
     },
     {
       "id": "e81e82b71dd8171a",
@@ -5268,9 +5268,9 @@
       "originalTitle": "Hard budget limits now available for GitHub Advanced Security",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-004",
-      "reviewPullRequest": null
+      "reviewPullRequest": 33
     },
     {
       "id": "0f6c77546e58fefc",
@@ -5460,9 +5460,9 @@
       "originalTitle": "Arm Open-Sources Metis, an AI Security Framework Outperforming Traditional SAST Tools",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-004",
-      "reviewPullRequest": null
+      "reviewPullRequest": 33
     },
     {
       "id": "8805404315cfd139",
