@@ -1,0 +1,95 @@
+{
+  "id": "5fe80662057aa753",
+  "archiveDate": "2026-05-29",
+  "originalPagePublishedAt": "2026-05-28T23:09:36.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-28T23:09:36.000Z",
+    "en": "2026-10-25T06:31:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Monitor both remaining license capacity and repositories missing security coverage. Test onboarding and escalation procedures so a budget limit does not silently leave new repositories outside the intended controls.",
+    "ko": "남은 라이선스 용량과 보안 적용이 누락된 저장소를 함께 관측할 것을 제안합니다. 한도로 인해 새 저장소가 의도한 통제에서 조용히 빠지지 않도록 온보딩·대응 절차를 점검해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-05-28-hard-budget-limits-now-available-for-github-advanced-security",
+      "role": "primary",
+      "sha256": "951fab5ead2000ded47600766935462120c8912975bbf4554362ab801d2b34ef",
+      "fetchedAt": "2026-10-25T06:13:57+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "GitHub Advanced Security hard budgets can block new coverage",
+      "claims": [
+        {
+          "text": "GitHub announced hard license-budget limits for Advanced Security that enterprise administrators and billing managers can configure. This is a product license control, not a cap on every enterprise expense.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Enterprise administrators and billing managers"
+            }
+          ]
+        },
+        {
+          "text": "When the threshold is reached, the notice says additional license usage is blocked and Advanced Security is not enabled on new repositories until capacity is freed or the budget is increased.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "additional license usage is blocked"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "새 보안 적용을 차단할 수 있는 GitHub Advanced Security 강제 예산",
+      "claims": [
+        {
+          "text": "GitHub는 엔터프라이즈 관리자와 청구 관리자가 설정하는 Advanced Security의 강제 라이선스 예산 한도를 발표했다. 제품 라이선스 통제이며 기업의 모든 지출을 제한하는 기능은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Enterprise administrators and billing managers"
+            }
+          ]
+        },
+        {
+          "text": "한도에 도달하면 추가 라이선스 사용이 차단되며 사용량을 줄이거나 예산을 늘릴 때까지 새 저장소에 Advanced Security를 활성화하지 않는다고 공지는 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "additional license usage is blocked"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-29-github-advanced-security-hard-budget-limits",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-05-28-hard-budget-limits-now-available-for-github-advanced-security",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-05-29T06:59:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-29.md",
+  "batchId": "batch-004",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T06:20:52+00:00",
+  "updatedAt": "2026-10-25T06:31:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 33,
+    "approvedAt": "2026-10-25T06:31:18+00:00",
+    "basis": "Codex conversation: user explicitly instructed 다음 pr 적용 for review PR 33."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

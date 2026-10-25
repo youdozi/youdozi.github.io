@@ -1,0 +1,95 @@
+{
+  "id": "09e0d0ec5ed64f8a",
+  "archiveDate": "2026-05-16",
+  "originalPagePublishedAt": "2026-05-15T22:50:15.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-15T22:50:15.000Z",
+    "en": "2026-10-25T06:31:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Link this completion notice to the earlier scheduled-retirement item when reviewing the archive. Confirm actual product availability and administrative policies before changing a workflow; the announcement does not describe every provider API.",
+    "ko": "아카이브를 검토할 때 이 완료 공지를 이전의 종료 예정 항목과 연결할 것을 제안합니다. 워크플로 변경 전 실제 제품 제공 범위와 관리자 정책을 확인해야 하며 모든 제공자 API를 설명하는 공지는 아닙니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
+      "role": "primary",
+      "sha256": "78da312020271107712887f63d91bc4cf46e4057706566ae8c8e83d964882e5f",
+      "fetchedAt": "2026-10-25T06:13:57+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "GitHub reports Grok Code Fast 1 retirement in Copilot",
+      "claims": [
+        {
+          "text": "GitHub reported that Grok Code Fast 1 was deprecated across its Copilot experiences on 2026-05-15. This is the product vendor’s completion notice, distinct from the earlier planned date.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Grok Code Fast 1 2026-05-15"
+            }
+          ]
+        },
+        {
+          "text": "The notice says Copilot Enterprise administrators may need to enable alternative models through their model policies.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "enable access to alternative models through their model policies"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "GitHub가 보고한 Copilot의 Grok Code Fast 1 종료",
+      "claims": [
+        {
+          "text": "GitHub는 2026-05-15에 Copilot의 각 경험에서 Grok Code Fast 1을 종료했다고 보고했다. 앞서 예정 날짜를 공지한 기사와 구분되는 제품 공급업체의 완료 공지다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Grok Code Fast 1 2026-05-15"
+            }
+          ]
+        },
+        {
+          "text": "공지는 Copilot Enterprise 관리자가 모델 정책을 통해 대체 모델을 활성화해야 할 수 있다고 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "enable access to alternative models through their model policies"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-16-copilot-grok-code-fast-retirement-confirmation",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
+  "articleNumber": 5,
+  "sourcePublishedAt": "2026-05-16T02:58:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-16.md",
+  "batchId": "batch-004",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T06:20:52+00:00",
+  "updatedAt": "2026-10-25T06:31:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 33,
+    "approvedAt": "2026-10-25T06:31:18+00:00",
+    "basis": "Codex conversation: user explicitly instructed 다음 pr 적용 for review PR 33."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

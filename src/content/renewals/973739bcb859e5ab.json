@@ -1,0 +1,95 @@
+{
+  "id": "973739bcb859e5ab",
+  "archiveDate": "2026-05-19",
+  "originalPagePublishedAt": "2026-05-18T22:54:56.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-18T22:54:56.000Z",
+    "en": "2026-10-25T06:31:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Evaluate representative tasks for correctness, retries and review effort alongside usage charges. Verify the current product model list and policies instead of treating this historical multiplier as a current price quotation.",
+    "ko": "사용량 요금과 함께 대표 과제의 정확성·재시도·검토 노력을 평가할 것을 제안합니다. 이 과거 배수를 현재 가격표로 보지 말고 제품의 현재 모델 목록과 정책을 확인해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
+      "role": "primary",
+      "sha256": "6c0897c2e50276c6bf482f443e96e13337f2aa3b8c32bc64a5816739980452e9",
+      "fetchedAt": "2026-10-25T06:13:58+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Copilot cloud agent model options and usage multipliers",
+      "claims": [
+        {
+          "text": "GitHub added Claude Haiku 4.5 and GPT-5.4-mini as Copilot cloud agent model options. The notice frames them as options for simpler changes, not universal replacements for complex work.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Claude Haiku 4.5 (0.33x multiplier) GPT-5.4-mini"
+            }
+          ]
+        },
+        {
+          "text": "The notice lists a 0.33x multiplier for each added model. A usage multiplier is not a measured guarantee of runtime, code quality or total project cost.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GPT-5.4-mini (0.33x multiplier)"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Copilot 클라우드 에이전트의 모델 선택지와 사용량 배수",
+      "claims": [
+        {
+          "text": "GitHub는 Copilot 클라우드 에이전트의 모델 선택지에 Claude Haiku 4.5와 GPT-5.4-mini를 추가했다. 공지는 이를 단순한 변경을 위한 선택지로 설명하며 복잡한 작업의 보편적인 대체재로 제시하지 않는다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Claude Haiku 4.5 (0.33x multiplier) GPT-5.4-mini"
+            }
+          ]
+        },
+        {
+          "text": "공지는 추가한 각 모델의 배수를 0.33x로 표시했다. 사용량 배수는 실행 시간·코드 품질·전체 프로젝트 비용을 측정해 보장한 값이 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GPT-5.4-mini (0.33x multiplier)"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-19-copilot-cloud-agent-model-multipliers",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
+  "articleNumber": 2,
+  "sourcePublishedAt": "2026-05-19T06:15:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-19.md",
+  "batchId": "batch-004",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T06:20:52+00:00",
+  "updatedAt": "2026-10-25T06:31:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 33,
+    "approvedAt": "2026-10-25T06:31:18+00:00",
+    "basis": "Codex conversation: user explicitly instructed 다음 pr 적용 for review PR 33."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
