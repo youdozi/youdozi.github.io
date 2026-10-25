@@ -1,0 +1,118 @@
+{
+  "id": "9d263cda22c982a1",
+  "archiveDate": "2026-06-16",
+  "originalPagePublishedAt": "2026-06-15T22:40:31.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-15T22:40:31.000Z",
+    "en": "2026-10-25T12:23:59+00:00"
+  },
+  "experimentStatus": "not_tested",
+  "outcome": "renewed_draft",
+  "documents": [
+    {
+      "url": "https://spring.io/blog/2026/06/10/spring-boot-4",
+      "role": "primary",
+      "sha256": "53df6e38bfe8d39b5a85d746c9424df48feb49c15c8e1da1d3d03366d7d68d0e",
+      "fetchedAt": "2026-10-25T12:10:37+00:00",
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now",
+      "role": "primary",
+      "sha256": "e7b46d8a86bf2bbf8dce4cba62be977bae1218a9cf7ec64691e2115b7348a50a",
+      "fetchedAt": "2026-10-25T12:10:37+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "reviewFocus": {
+    "en": "Check migration notes, dependency alignment and regression behavior. Other projects and individual CVEs mentioned in the original roundup have not been validated by this scoped summary.",
+    "ko": "전환 지침·의존성 정합성·회귀 동작을 확인할 것을 제안합니다. 원래 종합 기사에 등장하는 다른 프로젝트와 개별 CVE를 이 제한된 원고에서 검증했다는 뜻은 아닙니다."
+  },
+  "editions": {
+    "en": {
+      "title": "Spring release roundup: selected platform and AI baselines",
+      "claims": [
+        {
+          "text": "The Spring Boot team announced 4.1.0 availability from Maven Central and says it includes fixes from Spring Boot 4.0.7. This summary covers that platform release rather than every project in the original roundup.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "It also includes all of the bug fixes, documentation improvements and security fixes from Spring Boot 4.0.7"
+            },
+            {
+              "document_id": 0,
+              "quote": "Spring Boot 4.1.0 has been released and is now available from Maven Central."
+            }
+          ]
+        },
+        {
+          "text": "The Spring AI team announced 2.0.0 availability from Maven Central. Its documented baseline is Spring Boot 4.0 / 4.1 with Spring Framework 7.0, so applications should review compatibility before upgrading.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "Spring AI 2.0 has been designed to be used with Spring Boot 4.0 / 4.1 and Spring Framework 7.0"
+            },
+            {
+              "document_id": 1,
+              "quote": "Spring AI 2.0.0 has been released and is now available from Maven Central!"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Spring 릴리스 종합 소식 중 플랫폼과 AI 기반 버전 검토",
+      "claims": [
+        {
+          "text": "Spring Boot 팀은 4.1.0의 Maven Central 제공을 공지하고 Spring Boot 4.0.7의 수정 사항도 포함한다고 설명한다. 원래 종합 기사 전체가 아니라 해당 플랫폼 릴리스 범위를 정리한 원고다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "It also includes all of the bug fixes, documentation improvements and security fixes from Spring Boot 4.0.7"
+            },
+            {
+              "document_id": 0,
+              "quote": "Spring Boot 4.1.0 has been released and is now available from Maven Central."
+            }
+          ]
+        },
+        {
+          "text": "Spring AI 팀은 2.0.0의 Maven Central 제공을 공지했다. 문서상 기반 버전은 Spring Boot 4.0 / 4.1 및 Spring Framework 7.0이므로 애플리케이션은 업그레이드 전 호환성을 검토해야 한다.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "Spring AI 2.0 has been designed to be used with Spring Boot 4.0 / 4.1 and Spring Framework 7.0"
+            },
+            {
+              "document_id": 1,
+              "quote": "Spring AI 2.0.0 has been released and is now available from Maven Central!"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-06-16-spring-boot-and-ai-platform-baselines",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/06/spring-news-roundup-jun08-2026/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-06-15T23:15:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-06-16.md",
+  "batchId": "batch-005",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:13:57+00:00",
+  "updatedAt": "2026-10-25T12:23:59+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 34,
+    "approvedAt": "2026-10-25T12:23:59+00:00",
+    "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

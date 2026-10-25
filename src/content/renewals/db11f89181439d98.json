@@ -1,0 +1,103 @@
+{
+  "id": "db11f89181439d98",
+  "archiveDate": "2026-06-13",
+  "originalPagePublishedAt": "2026-06-12T22:31:07.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-12T22:31:07.000Z",
+    "en": "2026-10-25T12:23:59+00:00"
+  },
+  "experimentStatus": "not_tested",
+  "outcome": "renewed_draft",
+  "documents": [
+    {
+      "url": "https://blog.cloudflare.com/scaling-security-scans/",
+      "role": "primary",
+      "sha256": "8ff83301eb88b1e81a65a76d7a75acbfc46b79649cc09d79266f8905c0643754",
+      "fetchedAt": "2026-10-25T12:09:53+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "reviewFocus": {
+    "en": "This is a scoped review of the documented architecture, not independent reproduction of the headline’s throughput increase. Compare workload, memory, restart behavior and scheduling latency before adopting these patterns.",
+    "ko": "제목의 처리량 증가를 독립 재현한 결과가 아니라 문서에 설명된 구조에 한정한 검토입니다. 도입 전 작업 특성·메모리·재시작 동작·일정 지연을 비교할 것을 제안합니다."
+  },
+  "editions": {
+    "en": {
+      "title": "Security Insights: batch processing and adaptive scan scheduling",
+      "claims": [
+        {
+          "text": "Cloudflare describes changing checkers to consume messages in batches and process each message in a separate goroutine. It explicitly notes the trade-offs of redoing work after a mid-batch crash and slightly higher memory use.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "The trade-offs are that we’d have more work to re-do if our process crashed midway through a batch, and our memory usage would be slightly increased."
+            },
+            {
+              "document_id": 0,
+              "quote": "We changed our checkers to consume messages in batches , processing each message in a separate goroutine."
+            }
+          ]
+        },
+        {
+          "text": "The engineering account also describes an adaptive scheduling limit recalculated from account and zone totals and required scanning frequencies, rather than keeping an unchanged rate as the workload grows.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "based on the total number of accounts and zones we have, and our scanning frequencies."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Security Insights의 배치 처리와 적응형 스캔 일정",
+      "claims": [
+        {
+          "text": "Cloudflare는 검사기가 메시지를 배치로 가져와 각각 별도 goroutine에서 처리하도록 바꿨다고 설명한다. 배치 도중 중단되면 작업을 다시 수행해야 하고 메모리 사용량이 다소 증가하는 절충도 명시한다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "The trade-offs are that we’d have more work to re-do if our process crashed midway through a batch, and our memory usage would be slightly increased."
+            },
+            {
+              "document_id": 0,
+              "quote": "We changed our checkers to consume messages in batches , processing each message in a separate goroutine."
+            }
+          ]
+        },
+        {
+          "text": "기술 설명은 계정·영역 수와 필요한 스캔 빈도에 따라 일정 처리율 제한을 다시 계산하는 적응형 방식도 소개한다. 작업량이 증가해도 처리율을 고정하는 방식과 구분된다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "based on the total number of accounts and zones we have, and our scanning frequencies."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-06-13-security-insights-batching-and-adaptive-scheduling",
+  "source": "Cloudflare Blog",
+  "url": "https://blog.cloudflare.com/scaling-security-scans/",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-06-12T22:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-06-13.md",
+  "batchId": "batch-005",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:13:57+00:00",
+  "updatedAt": "2026-10-25T12:23:59+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 34,
+    "approvedAt": "2026-10-25T12:23:59+00:00",
+    "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
