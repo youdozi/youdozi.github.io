@@ -3716,8 +3716,8 @@
       "originalTitle": "Article: Local-First AI Inference: A Cloud Architecture Pattern for Cost-Effective Document Processing",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "blocked",
+      "batchId": "batch-004",
       "reviewPullRequest": null
     },
     {
@@ -3780,8 +3780,8 @@
       "originalTitle": "Article: Time-Series Storage: Design Choices That Shape Cost and Performance",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-004",
       "reviewPullRequest": null
     },
     {
@@ -3924,8 +3924,8 @@
       "originalTitle": "Kubernetes v1.36: Security Defaults Tighten as AI Workload Support Matures",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-004",
       "reviewPullRequest": null
     },
     {
@@ -4084,8 +4084,8 @@
       "originalTitle": "Grok Code Fast 1 deprecated",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-004",
       "reviewPullRequest": null
     },
     {
@@ -4324,8 +4324,8 @@
       "originalTitle": "Copilot cloud agent: Fast, cost-efficient models for simple tasks",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-004",
       "reviewPullRequest": null
     },
     {
@@ -4404,8 +4404,8 @@
       "originalTitle": "Article: Kernel-Level Ground Truth: Why eBPF is Replacing User-Space Agents for Security Observability",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "blocked",
+      "batchId": "batch-004",
       "reviewPullRequest": null
     },
     {
@@ -4964,8 +4964,8 @@
       "originalTitle": "Rider 2026.2 EAP 3: Cost-effective Agentic Test Coverage, Code Change Previews, GameDev Templates, and NuGet Improvements",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-004",
       "reviewPullRequest": null
     },
     {
@@ -4996,8 +4996,8 @@
       "originalTitle": "Microsoft Introduces MDASH for Large-Scale AI Vulnerability Research",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-004",
       "reviewPullRequest": null
     },
     {
@@ -5268,8 +5268,8 @@
       "originalTitle": "Hard budget limits now available for GitHub Advanced Security",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-004",
       "reviewPullRequest": null
     },
     {
@@ -5460,8 +5460,8 @@
       "originalTitle": "Arm Open-Sources Metis, an AI Security Framework Outperforming Traditional SAST Tools",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-004",
       "reviewPullRequest": null
     },
     {

@@ -118,6 +118,8 @@ python3 -B scripts/publish_archive.py \
 
 `batch-003`은 10건 중 승인 후 게시한 보강 원고 9건과 평가 산출물 대조 대기 1건으로 구성합니다. 모델 종료 원고는 GitHub Copilot의 범위에 한정하고, 최초 공지와 나중의 날짜·제품 예외 정정을 `claims`와 `followUp`으로 분리합니다. TeamCity 원고는 공식 JetBrains 보안 권고에서 인증 후 조건·영향 버전·클라우드 예외를 대조하며, 해당 공식 호스트를 공통 출처 정책에 추가합니다. CodeGuardian의 탐지·도입 수치는 원문 접속만으로 승인하지 않고 평가 산출물을 확보할 때까지 보류합니다. 검토 스냅샷의 영문 발행일은 `null`로 보존하고, 승인한 9건의 공개 복사본에만 이번 공개 시각을 기록합니다.
 
+`batch-004`는 보강 초안 8건과 근거 보류 2건으로 구성한 미게시 배치입니다. Kubernetes의 Stable 단계와 실제 클러스터 사용 조건, Copilot 사용량 배수와 측정 성능, Rider EAP와 안정 릴리스, MDASH 비공개 미리보기와 일반 공개를 구분합니다. GHAS 강제 예산은 추가 라이선스와 새 저장소의 보안 적용을 막을 수 있다는 조건을 명시합니다. 원저자의 시계열 설계 제안은 해당 저술 기사 URL만 개별 근거로 허용하며, 실험 수치나 전체 InfoQ 도메인을 승인하는 의미는 아닙니다. 공식 Kubernetes·Microsoft·Arm 호스트를 공통 정책에 추가합니다. 로컬 추론의 비용·정확도 수치는 평가 산출물을 대조할 때까지, eBPF 기사는 공식 근거 본문을 재현 가능하게 수집할 때까지 보류합니다.
+
 ## 이전 구현
 
 `scripts/generate_dev_digest.py`와 `validate_dev_digest.py`는 기존 Markdown 아카이브의 수집·선별·검증 함수와 회귀 테스트를 유지하기 위해 남겼습니다. 새 npm 명령과 Actions는 `scripts/generate_digest.py`를 사용합니다. 기존 Ruby 빌드 스크립트는 운영 경로에서 사용하지 않습니다.

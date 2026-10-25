@@ -162,5 +162,20 @@ class ArchiveRenewalTests(unittest.TestCase):
             record=next(r for r in self.manifest['items'] if r['id']==entry['id'])
             self.assertEqual(record['status']=='published',(ROOT/'src/content/renewals'/(entry['id']+'.json')).exists())
 
+    def test_fourth_batch_preserves_billing_units_and_evidence_holds(self):
+        batch=archive.read(ROOT/archive.DIRECTORY/'batches/batch-004.json')
+        models=next(e for e in batch['entries'] if e['id']=='973739bcb859e5ab')
+        for lang in ('en','ko'):
+            self.assertIn('0.33x',models['editions'][lang]['claims'][1]['text'])
+        for identity in ('6fdbbab10590a5bb','b3c34e4e6a5fa797'):
+            entry=next(e for e in batch['entries'] if e['id']==identity)
+            self.assertEqual('unverifiable_proposal',entry['outcome'])
+            self.assertEqual([],entry['documents'])
+            for lang in ('en','ko'):self.assertEqual([],entry['editions'][lang]['claims'])
+        for entry in batch['entries']:
+            self.assertIsNone(entry['editionPublishedAt']['en'])
+            record=next(r for r in self.manifest['items'] if r['id']==entry['id'])
+            self.assertEqual(record['status']=='published',(ROOT/'src/content/renewals'/(entry['id']+'.json')).exists())
+
 
 if __name__=='__main__':unittest.main()

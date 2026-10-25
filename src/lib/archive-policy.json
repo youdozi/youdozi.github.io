@@ -8,15 +8,19 @@
     "docs.aws.amazon.com",
     "docs.spring.io",
     "github.blog",
+    "kubernetes.io",
     "netflixtechblog.com",
+    "newsroom.arm.com",
     "openjdk.org",
     "php.net",
     "spring.io",
     "www.cncf.io",
+    "www.microsoft.com",
     "www.oracle.com",
     "www.php.net"
   ],
   "primaryUrls": [
-    "https://dev.to/mame/which-programming-language-is-best-for-claude-code-508a"
+    "https://dev.to/mame/which-programming-language-is-best-for-claude-code-508a",
+    "https://www.infoq.com/articles/time-series-storage-design/"
   ]
 }
