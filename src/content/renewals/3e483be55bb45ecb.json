@@ -1,0 +1,133 @@
+{
+  "id": "3e483be55bb45ecb",
+  "archiveDate": "2026-05-02",
+  "originalPagePublishedAt": "2026-05-01T22:43:15.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-01T22:43:15.000Z",
+    "en": "2026-10-25T06:06:33+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Use the corrected dates and product exception when auditing historical model choices. Confirm current availability in the relevant product rather than treating this archive as a current model recommendation.",
+    "ko": "과거 모델 선택을 감사할 때 정정된 날짜와 제품 예외를 사용할 것을 제안합니다. 이 아카이브를 현재 모델 추천으로 해석하지 말고 해당 제품에서 현재 제공 범위를 확인해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex",
+      "role": "primary",
+      "sha256": "5705285bf661f3e71f89e3cf6b361705e9e4f1e9e075ff817be1816239a6b11b",
+      "fetchedAt": "2026-10-25T05:43:18+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "GitHub Copilot: GPT-5.2 and GPT-5.2-Codex retirement corrections",
+      "claims": [
+        {
+          "text": "GitHub published a Copilot retirement notice covering GPT-5.2 and GPT-5.2-Codex. This is a Copilot product notice, not a statement about every provider API.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GPT-5.2 6-05-2026 GPT-5.5 GPT-5.2-Codex"
+            }
+          ]
+        },
+        {
+          "text": "The notice says Copilot Enterprise administrators may need to enable alternative models through their model policies.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "their model policies"
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "A later editor note moved the planned retirement from 2026-06-01 to 2026-06-05.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "from June 1, 2026 to June 5, 2026."
+            }
+          ]
+        },
+        {
+          "text": "Another correction identifies GPT-5.2, rather than GPT-5.2-Codex, as the exception for Copilot Code Review.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GPT-5.2 instead of GPT-5.2-Codex"
+            }
+          ]
+        }
+      ]
+    },
+    "ko": {
+      "title": "GitHub Copilot의 GPT-5.2·GPT-5.2-Codex 종료 정정",
+      "claims": [
+        {
+          "text": "GitHub는 GPT-5.2와 GPT-5.2-Codex를 대상으로 Copilot 지원 종료 공지를 게시했다. Copilot 제품의 공지이며 모든 제공자 API의 상태를 설명하는 것은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GPT-5.2 6-05-2026 GPT-5.5 GPT-5.2-Codex"
+            }
+          ]
+        },
+        {
+          "text": "공지는 Copilot Enterprise 관리자가 모델 정책에서 대체 모델을 활성화해야 할 수 있다고 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "their model policies"
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "후속 편집자 주석은 예정된 종료일을 2026-06-01에서 2026-06-05로 변경했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "from June 1, 2026 to June 5, 2026."
+            }
+          ]
+        },
+        {
+          "text": "다른 정정은 Copilot Code Review의 예외가 GPT-5.2-Codex가 아니라 GPT-5.2임을 명시했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GPT-5.2 instead of GPT-5.2-Codex"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-02-copilot-gpt-retirement-date-corrections",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex",
+  "articleNumber": 6,
+  "sourcePublishedAt": "2026-05-02T06:30:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-02.md",
+  "batchId": "batch-003",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:45:08+00:00",
+  "updatedAt": "2026-10-25T06:06:33+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 32,
+    "approvedAt": "2026-10-25T06:06:33+00:00",
+    "basis": "Codex conversation: after publication of batch 002 and presentation of review PR 32, user instructed 다음 단계 진행; the publication step was announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

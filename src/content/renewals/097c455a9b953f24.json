@@ -1,0 +1,95 @@
+{
+  "id": "097c455a9b953f24",
+  "archiveDate": "2026-05-06",
+  "originalPagePublishedAt": "2026-05-05T22:51:14.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-05T22:51:14.000Z",
+    "en": "2026-10-25T06:06:33+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Model only the vulnerability kinds and paths the sanitizer actually protects. Test positive and negative examples so an overly broad barrier does not hide real taint flows; this draft does not claim a measured reduction in false positives.",
+    "ko": "정제 함수가 실제로 보호하는 취약점 종류와 경로만 모델링할 것을 제안합니다. 과도한 차단 모델이 실제 오염 흐름을 숨기지 않도록 정상·취약 예제를 함께 테스트해야 합니다. 오탐 감소를 직접 측정했다는 의미는 아닙니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-04-21-codeql-now-supports-sanitizers-and-validators-in-models-as-data/",
+      "role": "primary",
+      "sha256": "fd25eb45bff751dbf747e5a38c4ef10fa0e274a6c1ae420e3092340682f4e7a6",
+      "fetchedAt": "2026-10-25T05:43:19+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "CodeQL models-as-data add custom sanitizers and validators",
+      "claims": [
+        {
+          "text": "GitHub describes declarative sanitizers and validators in CodeQL YAML data extensions, using barrierModel and barrierGuardModel.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "two new extensible predicates: barrierModel"
+            }
+          ]
+        },
+        {
+          "text": "The announcement lists availability starting with CodeQL 2.25.2. This is the minimum version in that historical announcement, not a current upgrade recommendation.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "available starting with CodeQL 2.25.2"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "사용자 정의 정제·검증을 추가한 CodeQL 데이터 모델",
+      "claims": [
+        {
+          "text": "GitHub는 CodeQL YAML 데이터 확장에서 barrierModel과 barrierGuardModel로 정제·검증 함수를 선언하는 기능을 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "two new extensible predicates: barrierModel"
+            }
+          ]
+        },
+        {
+          "text": "발표는 CodeQL 2.25.2부터 기능을 제공한다고 명시했다. 당시 공지의 최소 버전이며 현재 업그레이드 권고는 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "available starting with CodeQL 2.25.2"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-06-codeql-sanitizer-and-validator-models",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/05/github-codeql-security-modeling/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-05-05T21:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-06.md",
+  "batchId": "batch-003",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:45:08+00:00",
+  "updatedAt": "2026-10-25T06:06:33+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 32,
+    "approvedAt": "2026-10-25T06:06:33+00:00",
+    "basis": "Codex conversation: after publication of batch 002 and presentation of review PR 32, user instructed 다음 단계 진행; the publication step was announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
