@@ -1,0 +1,95 @@
+{
+  "id": "68e2ee5d21f7dc1b",
+  "archiveDate": "2026-10-20",
+  "originalPagePublishedAt": "2026-10-20T00:52:09.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-10-20T00:52:09.000Z",
+    "en": "2026-10-25T05:21:13+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Compare cost only alongside review quality, workload mix and the evaluation period. Reproduce measurements on representative changes before selecting models or reducing effort; this draft contains no local benchmark.",
+    "ko": "비용 비교 시 리뷰 품질·워크로드 구성·평가 기간을 함께 확인할 것을 제안합니다. 모델이나 추론 강도를 바꾸기 전에 대표 변경 사항으로 측정을 재현해야 합니다. 이 초안에는 자체 벤치마크가 없습니다."
+  },
+  "documents": [
+    {
+      "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+      "role": "primary",
+      "sha256": "57f11440fdeb0800e3807ec9391fa8fb15b69fdcbc1541a68982255ab1cf6460",
+      "fetchedAt": "2026-10-25T04:35:23+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Cloudflare reports lower inference costs for its internal reviewer",
+      "claims": [
+        {
+          "text": "Cloudflare reports its internal code reviewer averaged $0.77 per review, down 68% against a $2.43 baseline from its most expensive weeks. These are its workload results, not guaranteed savings for other teams.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "$0.77, down 68% from the $2.43"
+            }
+          ]
+        },
+        {
+          "text": "The company attributes about 40% of the savings to reviewer-code changes and optimizations, with the remainder coming from model and effort choices.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "About 40% of the savings came from changes and optimizations to the reviewer's code"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Cloudflare 내부 리뷰어의 추론 비용 절감 사례",
+      "claims": [
+        {
+          "text": "Cloudflare는 내부 코드 리뷰어의 평균 비용이 리뷰당 $0.77로, 비용이 가장 높았던 기간의 $2.43 기준선 대비 68% 줄었다고 보고했다. 자사 워크로드의 결과이며 다른 팀의 절감을 보장하지 않는다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "$0.77, down 68% from the $2.43"
+            }
+          ]
+        },
+        {
+          "text": "회사는 절감액의 약 40%를 리뷰어 코드 변경·최적화에, 나머지를 모델과 추론 강도 선택에 기인한다고 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "About 40% of the savings came from changes and optimizations to the reviewer's code"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-10-20-cloudflare-inference-cost-optimization",
+  "source": "Cloudflare Blog",
+  "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+  "articleNumber": 2,
+  "sourcePublishedAt": "2026-10-20T04:12:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-10-20.md",
+  "batchId": "pilot-001",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T04:35:23+00:00",
+  "updatedAt": "2026-10-25T05:21:13+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 30,
+    "approvedAt": "2026-10-25T05:21:13+00:00",
+    "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

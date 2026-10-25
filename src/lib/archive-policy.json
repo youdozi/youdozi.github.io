@@ -1,0 +1,17 @@
+{
+  "primaryHosts": [
+    "aws.amazon.com",
+    "blog.cloudflare.com",
+    "buildkite.com",
+    "developers.cloudflare.com",
+    "docs.aws.amazon.com",
+    "docs.spring.io",
+    "github.blog",
+    "netflixtechblog.com",
+    "openjdk.org",
+    "php.net",
+    "spring.io",
+    "www.oracle.com",
+    "www.php.net"
+  ]
+}

@@ -18,7 +18,8 @@
     "migrate:jekyll": "node scripts/migrate-jekyll.mjs",
     "test:articles": "python3 -B scripts/check_article_examples.py",
     "audit:archive": "python3 -B scripts/audit_archive.py",
-    "check:digests": "python3 -B scripts/check_digests.py"
+    "check:digests": "python3 -B scripts/check_digests.py && npm run check:archive",
+    "check:archive": "python3 -B scripts/archive_renewal.py check"
   },
   "dependencies": {
     "astro": "7.4.2",
