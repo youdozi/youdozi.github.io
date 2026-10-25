@@ -8945,9 +8945,9 @@
       "originalTitle": "Cost centers now support AI credit pools",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-007",
-      "reviewPullRequest": null
+      "reviewPullRequest": 36
     },
     {
       "id": "393078c072140b41",
@@ -9121,9 +9121,9 @@
       "originalTitle": "Upcoming deprecation of Gemini 2.5 Pro and Gemini 3 Flash",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-007",
-      "reviewPullRequest": null
+      "reviewPullRequest": 36
     },
     {
       "id": "0f7ebc0a9c975130",
@@ -9283,7 +9283,7 @@
       "priority": "risk",
       "status": "blocked",
       "batchId": "batch-007",
-      "reviewPullRequest": null
+      "reviewPullRequest": 36
     },
     {
       "id": "170494b1ad546945",
@@ -9331,7 +9331,7 @@
       "priority": "risk",
       "status": "blocked",
       "batchId": "batch-007",
-      "reviewPullRequest": null
+      "reviewPullRequest": 36
     },
     {
       "id": "7fde2c7311756207",
@@ -9393,9 +9393,9 @@
       "originalTitle": "Per-user budgets for cost centers in the billing UI",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-007",
-      "reviewPullRequest": null
+      "reviewPullRequest": 36
     },
     {
       "id": "15a838f74acad072",
@@ -9473,9 +9473,9 @@
       "originalTitle": "Innersource security advisories are generally available",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-007",
-      "reviewPullRequest": null
+      "reviewPullRequest": 36
     },
     {
       "id": "d123262315e62321",
@@ -9489,9 +9489,9 @@
       "originalTitle": "npm install-time security and GAT bypass2fa deprecation",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-007",
-      "reviewPullRequest": null
+      "reviewPullRequest": 36
     },
     {
       "id": "5197af1e202a1fc2",
@@ -9779,7 +9779,7 @@
       "priority": "risk",
       "status": "blocked",
       "batchId": "batch-007",
-      "reviewPullRequest": null
+      "reviewPullRequest": 36
     },
     {
       "id": "2f1a325d883e73ed",
@@ -10033,9 +10033,9 @@
       "originalTitle": "Code scanning shows AI security detections on pull requests",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-007",
-      "reviewPullRequest": null
+      "reviewPullRequest": 36
     },
     {
       "id": "fe469724f5828fb0",
@@ -10049,9 +10049,9 @@
       "originalTitle": "Security reviews now available in the GitHub Copilot app",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-007",
-      "reviewPullRequest": null
+      "reviewPullRequest": 36
     },
     {
       "id": "a090972f2e8a3777",
