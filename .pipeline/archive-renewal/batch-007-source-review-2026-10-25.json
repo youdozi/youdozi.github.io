@@ -183,5 +183,72 @@
     "bodyHashesMatch": true,
     "exactQuotesMatch": true,
     "scope": "Only the seven ready entries; three held nested drafts are not approved source evidence."
+  },
+  "publicationRecheck": {
+    "checkedAt": "2026-10-25T17:03:04+00:00",
+    "readyArticles": 7,
+    "documents": 10,
+    "bodyHashesMatch": true,
+    "exactQuotesMatch": true,
+    "transport": "Task-scoped CURL_HOME curl config containing ipv4, after default connections timed out. Same HTTPS URLs; HTTP 200 HTML, full extracted-body hash and exact-quote guards unchanged. No repository collector changes.",
+    "priorDefaultConnectionAttempt": [
+      {
+        "url": "https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:32+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:32+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:55+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+        "result": "source unavailable (curl 28)",
+        "checkedAt": "2026-10-25T17:01:57+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+        "result": "source unavailable (curl 28)",
+        "checkedAt": "2026-10-25T17:01:57+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/",
+        "result": "source unavailable (curl 28)",
+        "checkedAt": "2026-10-25T17:01:57+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-08-innersource-security-advisories-are-generally-available",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:33+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:56+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:56+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+        "result": "source unavailable (curl 28)",
+        "checkedAt": "2026-10-25T17:02:21+00:00"
+      }
+    ],
+    "heldArticlesRemainUnpublished": 3
   }
 }

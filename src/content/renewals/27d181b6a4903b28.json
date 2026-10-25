@@ -1,0 +1,198 @@
+{
+  "id": "27d181b6a4903b28",
+  "archiveDate": "2026-07-15",
+  "originalPagePublishedAt": "2026-07-14T22:20:18.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-07-14T22:20:18.000Z",
+    "en": "2026-10-25T17:03:04+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Use the later notice for current eligibility and billing interpretation, while retaining the preview conditions as history. Advisory findings need a human response and do not replace required checks or comprehensive security validation.",
+    "ko": "현재 이용 자격·과금 해석에는 후속 공지를 사용하고 미리보기 조건은 과거 정보로 보존할 것을 제안합니다. 권고성 발견에는 사람의 대응이 필요하며 필수 검사나 종합 보안 검증을 대체하지 않습니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
+      "role": "primary",
+      "sha256": "dde70cd3f4eabf355cf1dd653effb5f8fc4e166c7b7d9a5fe67bc3ec82a4dc60",
+      "fetchedAt": "2026-10-25T12:55:22+00:00",
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+      "role": "primary",
+      "sha256": "cdc7a03d58d56a3a619605a4a0bae55ee8ee7cb1e759c3ba1ca74664035e3b62",
+      "fetchedAt": "2026-10-25T12:56:38+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "AI code scanning: preview conditions and later general availability",
+      "claims": [
+        {
+          "text": "At preview launch, GitHub described AI detections on pull requests as extending language and framework coverage beyond CodeQL. Enterprise permission, organization enablement and repository CodeQL default analysis were required even though a separate AI engine performed the analysis.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "AI security detections must be allowed by your Enterprise policy and enabled at the organization level."
+            },
+            {
+              "document_id": 0,
+              "quote": "While CodeQL is not the tool performing the AI analysis, the AI detection engine relies on it to function."
+            }
+          ]
+        },
+        {
+          "text": "The preview findings were informational and did not block merges. The announcement required a Copilot license and consumed organization AI credits during public preview, so the original feature was neither an automatic approval gate nor an unconditional free service.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "These findings are informational and won’t block pull request merges."
+            },
+            {
+              "document_id": 0,
+              "quote": "During public preview, AI security detections require a GitHub Copilot license and draw down your organization’s AI credits."
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "GitHub’s 2026-10-15 notice announces AI Scan general availability. It says a Copilot license is not required; private and internal organization repositories still require GitHub Code Security or Advanced Security. These conditions differ from the preview announcement.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "Code scanning AI Scan for pull requests is now generally available."
+            },
+            {
+              "document_id": 1,
+              "quote": "A GitHub Copilot license is not required."
+            },
+            {
+              "document_id": 1,
+              "quote": "For private and internal organization-owned repositories, GitHub Code Security or GitHub Advanced Security is required."
+            }
+          ]
+        },
+        {
+          "text": "The later notice retains advisory-only findings and says AI Scan cannot block merges through rulesets. It does not run on fork pull requests or pull requests created by Dependabot.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "They do not fail the code scanning check and cannot block pull request merges through ruleset requirements."
+            },
+            {
+              "document_id": 1,
+              "quote": "AI Scan does not run on pull requests from forks or pull requests created by Dependabot."
+            }
+          ]
+        },
+        {
+          "text": "The later billing model consumes Code Security AI Credits, displayed under Advanced Security in enterprise AI usage. The absence of a Copilot-license requirement does not mean scanning has no usage charge.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "AI Scan for pull requests consumes Code Security AI Credits."
+            }
+          ]
+        }
+      ]
+    },
+    "ko": {
+      "title": "AI 코드 스캔의 미리보기 조건과 후속 정식 제공",
+      "claims": [
+        {
+          "text": "미리보기 출시 당시 GitHub은 PR의 AI 탐지가 CodeQL 밖의 언어·프레임워크로 검사 범위를 넓힌다고 설명했다. 별도 AI 엔진이 분석하지만 기업 정책 허용·조직 활성화·저장소 CodeQL 기본 분석이 필요했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "AI security detections must be allowed by your Enterprise policy and enabled at the organization level."
+            },
+            {
+              "document_id": 0,
+              "quote": "While CodeQL is not the tool performing the AI analysis, the AI detection engine relies on it to function."
+            }
+          ]
+        },
+        {
+          "text": "미리보기 발견 사항은 정보 제공용으로 병합을 막지 않았다. 공지는 공개 미리보기 중 Copilot 라이선스와 조직 AI 크레딧을 요구했으므로 자동 승인 관문이나 조건 없는 무료 서비스로 해석하면 안 된다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "These findings are informational and won’t block pull request merges."
+            },
+            {
+              "document_id": 0,
+              "quote": "During public preview, AI security detections require a GitHub Copilot license and draw down your organization’s AI credits."
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "GitHub의 2026-10-15 공지는 AI Scan 정식 제공을 알린다. Copilot 라이선스는 필요하지 않지만 조직의 비공개·내부 저장소에는 GitHub Code Security 또는 Advanced Security가 필요하다고 설명한다. 미리보기 공지와 조건이 다르다.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "Code scanning AI Scan for pull requests is now generally available."
+            },
+            {
+              "document_id": 1,
+              "quote": "A GitHub Copilot license is not required."
+            },
+            {
+              "document_id": 1,
+              "quote": "For private and internal organization-owned repositories, GitHub Code Security or GitHub Advanced Security is required."
+            }
+          ]
+        },
+        {
+          "text": "후속 공지에서도 발견 사항은 권고용이며 AI Scan이 규칙 집합을 통해 병합을 막지 못한다고 설명한다. 포크 PR과 Dependabot이 만든 PR에서는 실행되지 않는다.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "They do not fail the code scanning check and cannot block pull request merges through ruleset requirements."
+            },
+            {
+              "document_id": 1,
+              "quote": "AI Scan does not run on pull requests from forks or pull requests created by Dependabot."
+            }
+          ]
+        },
+        {
+          "text": "후속 과금 모델은 Code Security AI Credits를 사용하며 기업 AI 사용량의 Advanced Security 제품으로 표시한다. Copilot 라이선스가 필요 없다는 설명을 사용량 요금도 없다는 뜻으로 해석하면 안 된다.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "AI Scan for pull requests consumes Code Security AI Credits."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-07-15-ai-code-scanning-preview-and-general-availability",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-07-15T04:12:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-07-15.md",
+  "batchId": "batch-007",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T13:02:37+00:00",
+  "updatedAt": "2026-10-25T17:03:04+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 36,
+    "approvedAt": "2026-10-25T17:03:04+00:00",
+    "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

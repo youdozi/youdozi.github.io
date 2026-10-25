@@ -1,0 +1,111 @@
+{
+  "id": "6ad4fb7dea8c6f87",
+  "archiveDate": "2026-07-08",
+  "originalPagePublishedAt": "2026-07-07T22:24:07.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-07-07T22:24:07.000Z",
+    "en": "2026-10-25T17:03:04+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Inspect effective membership, budget behavior and overage settings together with enterprise billing policy. UI availability does not by itself demonstrate that all AI spending is blocked or that savings have been measured.",
+    "ko": "실제 구성원·예산 동작·초과 사용 설정을 기업 과금 정책과 함께 확인할 것을 제안합니다. 화면 제공만으로 모든 AI 지출이 차단되거나 절감 효과가 측정되었다는 뜻은 아닙니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+      "role": "primary",
+      "sha256": "901c4092ad4bc4707f0b00c2b77e1a82c5056934a0be55abf818304443680a6c",
+      "fetchedAt": "2026-10-25T12:55:18+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Cost-center user budgets: billing UI and membership scope",
+      "claims": [
+        {
+          "text": "GitHub announced that Enterprise Cloud administrators could create cost-center user-level budgets in the billing UI, exposing controls previously available through the REST API. This describes a management interface expansion.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "This feature is available for GitHub Enterprise Cloud."
+            },
+            {
+              "document_id": 0,
+              "quote": "This gives you the same per-user AI credit budget controls that were previously only available through the REST API."
+            }
+          ]
+        },
+        {
+          "text": "The configured per-user budget applies to the cost center’s enterprise teams or individual users and follows membership changes automatically. This is a shared budget setting applied per member, not a separately negotiated limit for every person.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "set one per-user budget for that cost center, and have it automatically apply to everyone in it."
+            },
+            {
+              "document_id": 0,
+              "quote": "As membership changes, budget coverage stays in sync"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "비용 센터 사용자 예산의 결제 화면·구성원 범위",
+      "claims": [
+        {
+          "text": "GitHub은 Enterprise Cloud 관리자가 결제 화면에서 비용 센터 사용자별 예산을 만들 수 있다고 공지했다. 기존 REST API 통제를 화면으로 제공하는 관리 인터페이스 확장이다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "This feature is available for GitHub Enterprise Cloud."
+            },
+            {
+              "document_id": 0,
+              "quote": "This gives you the same per-user AI credit budget controls that were previously only available through the REST API."
+            }
+          ]
+        },
+        {
+          "text": "설정한 사용자별 예산은 비용 센터의 기업 팀·개별 사용자에게 적용되며 구성원 변경을 자동 반영한다. 구성원마다 적용하는 공통 예산 설정이며 사람마다 별도로 정한 한도를 의미하지 않는다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "set one per-user budget for that cost center, and have it automatically apply to everyone in it."
+            },
+            {
+              "document_id": 0,
+              "quote": "As membership changes, budget coverage stays in sync"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-07-08-cost-center-user-budgets-and-membership",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-07-08T02:09:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-07-08.md",
+  "batchId": "batch-007",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T13:02:37+00:00",
+  "updatedAt": "2026-10-25T17:03:04+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 36,
+    "approvedAt": "2026-10-25T17:03:04+00:00",
+    "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
