@@ -1,0 +1,146 @@
+{
+  "id": "d92a8a6927fa76ff",
+  "archiveDate": "2026-07-05",
+  "originalPagePublishedAt": "2026-07-04T22:18:27.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-07-04T22:18:27.000Z",
+    "en": "2026-10-25T17:03:04+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Confirm the specific Copilot experience, organization policy and currently supported models. The later completion notice changes a suggested alternative; do not keep presenting the initial suggestion as the final migration guidance.",
+    "ko": "사용하는 Copilot 환경·조직 정책·현재 지원 모델을 확인할 것을 제안합니다. 후속 완료 공지에서 권장 대안이 바뀌므로 최초 제안을 최종 전환 지침처럼 유지하면 안 됩니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+      "role": "primary",
+      "sha256": "05b82d61fccd67568c95a4b5304822edc871706ab941593099f04346ac393d49",
+      "fetchedAt": "2026-10-25T12:55:19+00:00",
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/",
+      "role": "primary",
+      "sha256": "57f0dccf8c4d55c4ee042d7eacec64bc38524dbf8aee6e360a426aabf89353a1",
+      "fetchedAt": "2026-10-25T12:56:37+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Copilot Gemini retirement: planned and completed notices",
+      "claims": [
+        {
+          "text": "The original GitHub notice scheduled Gemini 2.5 Pro and Gemini 3 Flash retirement across Copilot experiences for 2026-07-31. This is a Copilot-product notice and does not establish retirement of the same models from other providers or APIs.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "We will deprecate Gemini 2.5 Pro and Gemini 3 Flash across all GitHub Copilot experiences"
+            },
+            {
+              "document_id": 0,
+              "quote": "code completions) on July 31st, 2026:"
+            }
+          ]
+        },
+        {
+          "text": "The planned alternatives were Gemini 3.1 Pro and Gemini 3.5 Flash. The notice also warned that enterprise model policies might need to permit the alternatives before users could select them.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Gemini 2.5 Pro 7-31-2026 Gemini 3.1 Pro Gemini 3 Flash 7-31-2026 Gemini 3.5 Flash"
+            },
+            {
+              "document_id": 0,
+              "quote": "Copilot Enterprise administrators may need to enable access to the alternative models through their model policies"
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "GitHub’s 2026-07-31 follow-up reports the Copilot deprecation as completed. Its alternative table lists Gemini 3.1 Pro (Preview) and Gemini 3.6 Flash, replacing the earlier Gemini 3.5 Flash suggestion. These are that notice’s alternatives, not a claim of unchanged availability today.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "we have deprecated the following models across all GitHub Copilot experiences"
+            },
+            {
+              "document_id": 1,
+              "quote": "Gemini 2.5 Pro 2026-07-31 Gemini 3.1 Pro (Preview) Gemini 3 Flash 2026-07-31 Gemini 3.6 Flash"
+            }
+          ]
+        }
+      ]
+    },
+    "ko": {
+      "title": "Copilot Gemini 모델 종료의 예정 공지와 완료 공지",
+      "claims": [
+        {
+          "text": "최초 GitHub 공지는 Copilot 사용 환경에서 Gemini 2.5 Pro·Gemini 3 Flash를 2026-07-31 종료할 예정이라고 안내했다. Copilot 제품에 대한 공지이며 다른 공급자나 API의 동일 모델 종료까지 확정하지 않는다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "We will deprecate Gemini 2.5 Pro and Gemini 3 Flash across all GitHub Copilot experiences"
+            },
+            {
+              "document_id": 0,
+              "quote": "code completions) on July 31st, 2026:"
+            }
+          ]
+        },
+        {
+          "text": "당시 제시한 대안은 Gemini 3.1 Pro·Gemini 3.5 Flash였다. 사용자가 대안을 선택하려면 기업 모델 정책에서 접근을 허용해야 할 수 있다는 조건도 명시했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Gemini 2.5 Pro 7-31-2026 Gemini 3.1 Pro Gemini 3 Flash 7-31-2026 Gemini 3.5 Flash"
+            },
+            {
+              "document_id": 0,
+              "quote": "Copilot Enterprise administrators may need to enable access to the alternative models through their model policies"
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "GitHub의 2026-07-31 후속 공지는 Copilot 지원 종료가 완료되었다고 알린다. 대안 표는 Gemini 3.1 Pro(미리보기)·Gemini 3.6 Flash를 제시해 앞선 Gemini 3.5 Flash 권고를 변경했다. 후속 공지의 대안이며 현재도 제공 상태가 같다는 뜻은 아니다.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "we have deprecated the following models across all GitHub Copilot experiences"
+            },
+            {
+              "document_id": 1,
+              "quote": "Gemini 2.5 Pro 2026-07-31 Gemini 3.1 Pro (Preview) Gemini 3 Flash 2026-07-31 Gemini 3.6 Flash"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-07-05-copilot-gemini-retirement-and-alternatives",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+  "articleNumber": 4,
+  "sourcePublishedAt": "2026-07-03T08:07:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-07-05.md",
+  "batchId": "batch-007",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T13:02:37+00:00",
+  "updatedAt": "2026-10-25T17:03:04+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 36,
+    "approvedAt": "2026-10-25T17:03:04+00:00",
+    "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

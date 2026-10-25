@@ -1,0 +1,254 @@
+{
+  "batchId": "batch-007",
+  "checkedAt": "2026-10-25T13:00:45+00:00",
+  "method": "Bounded HTTP 200 HTML extraction, source body hashes and exact quote comparison; editorial review without exploitation, deployment, savings measurement, independent course endorsement or human publication approval.",
+  "sourceFetches": [
+    {
+      "url": "https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:55:18+00:00",
+      "sha256": "9fe24f2ed5e5f724950a0e05253134c91c2f33066036e16a647d2156d597f6a3",
+      "characters": 2029,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:55:19+00:00",
+      "sha256": "05b82d61fccd67568c95a4b5304822edc871706ab941593099f04346ac393d49",
+      "characters": 1230,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/podcasts/new-blueprint-cloud-security/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:55:20+00:00",
+      "sha256": "769431864c15cd0afe84aa9fbb30a11ca3760fbeecf748a42713ccf9c8b22ce9",
+      "characters": 38466,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/07/online-cohort-ai-security/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:55:20+00:00",
+      "sha256": "48ad17a4b3c96ddaf2623c798d52597e4a3157fbe20d543192a0bb1e091fb00d",
+      "characters": 4663,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:55:18+00:00",
+      "sha256": "901c4092ad4bc4707f0b00c2b77e1a82c5056934a0be55abf818304443680a6c",
+      "characters": 712,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:55:19+00:00",
+      "sha256": "dd2952678f4cd7c8e595b38a649b4dee2592b68df1318bea551ef9a8a7f77156",
+      "characters": 2784,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-08-innersource-security-advisories-are-generally-available",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:55:19+00:00",
+      "sha256": "577d872d44f492b78d7f2c139aa226a5c33a095a1d41c7a46f6de62d86483dc0",
+      "characters": 825,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/articles/multi-region-latency-cost-tradeoffs/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:55:22+00:00",
+      "sha256": "b3f59fd93e5d0007575b7de886cb0991f402d159f7288687881eec8eb9d969ef",
+      "characters": 22201,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:55:22+00:00",
+      "sha256": "dde70cd3f4eabf355cf1dd653effb5f8fc4e166c7b7d9a5fe67bc3ec82a4dc60",
+      "characters": 2394,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:55:22+00:00",
+      "sha256": "f5f22fb1b7bb07ea87f259dd0905fdfb2ce0ee56699e627fa998c78089e1e80f",
+      "characters": 1371,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:56:37+00:00",
+      "sha256": "57f0dccf8c4d55c4ee042d7eacec64bc38524dbf8aee6e360a426aabf89353a1",
+      "characters": 1186,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:56:37+00:00",
+      "sha256": "207cf450161f64abe7e9f2b69efda083db2e31bb5c5a5a0d7cda2db8cce6404e",
+      "characters": 1433,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:56:38+00:00",
+      "sha256": "cdc7a03d58d56a3a619605a4a0bae55ee8ee7cb1e759c3ba1ca74664035e3b62",
+      "characters": 1650,
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "newPrimaryUrls": [],
+  "limitations": [
+    "Planned model alternatives and the later retirement notice differ; neither asserts present-day model availability.",
+    "npm management restrictions and future publishing restrictions are separate phases; the follow-up is not evidence of completed publishing restrictions.",
+    "AI Scan licensing and billing changed between preview and general availability. Advisory findings do not establish a merge gate.",
+    "Architecture percentages and podcast security/performance claims are not independently replicated.",
+    "The provider course announcement is historical program information, not an endorsement or a verified current enrollment/price offer.",
+    "No fresh whole-archive online source audit is claimed; previously recorded JetBrains HTTP 202 limitations remain.",
+    "The multi-region publisher can reorder Related Topics in the extracted footer. A metadata-only difference was inspected and the full hash explicitly refreshed; future source checks may require another review.",
+    "All three newly collected InfoQ sources are held because full extracted-body hashes were not consistently repeatable. Their URL exceptions were not added to the primary-source policy; drafts remain nested research only."
+  ],
+  "explicitSourceRefresh": {
+    "url": "https://www.infoq.com/articles/multi-region-latency-cost-tradeoffs/",
+    "previous": {
+      "url": "https://www.infoq.com/articles/multi-region-latency-cost-tradeoffs/",
+      "role": "primary",
+      "sha256": "b3f59fd93e5d0007575b7de886cb0991f402d159f7288687881eec8eb9d969ef",
+      "fetchedAt": "2026-10-25T12:55:22+00:00",
+      "extractorVersion": "article-parser-v1"
+    },
+    "refreshed": {
+      "url": "https://www.infoq.com/articles/multi-region-latency-cost-tradeoffs/",
+      "role": "primary",
+      "sha256": "e32acdb62eef32d47044ddbcd99e358bcd563438b738e22bcf357d69d0e5f203",
+      "fetchedAt": "2026-10-25T13:02:00+00:00",
+      "extractorVersion": "article-parser-v1"
+    },
+    "reviewedAt": "2026-10-25T13:02:37+00:00",
+    "difference": "Only the order of Architecture, Cloud and Availability in the extracted Related Topics footer changed. The article text and all quoted passages were unchanged. Full-body hashing remains enforced; future publication must re-fetch again."
+  },
+  "heldIds": [
+    "7c3a8ce4dcd53d2b",
+    "d17b2ae1f047cf94",
+    "e467e85426c883ef"
+  ],
+  "repeatedCollectionFailures": {
+    "documents": 13,
+    "errors": [
+      {
+        "id": "d17b2ae1f047cf94",
+        "errors": [
+          "source content changed; review quotes and refresh provenance explicitly"
+        ]
+      },
+      {
+        "id": "e467e85426c883ef",
+        "errors": [
+          "source content changed; review quotes and refresh provenance explicitly"
+        ]
+      }
+    ]
+  },
+  "instabilityInspection": [
+    {
+      "id": "d17b2ae1f047cf94",
+      "url": "https://www.infoq.com/podcasts/new-blueprint-cloud-security/",
+      "checkedAt": "2026-10-25T13:03:30+00:00",
+      "sha256": "769431864c15cd0afe84aa9fbb30a11ca3760fbeecf748a42713ccf9c8b22ce9",
+      "differences": []
+    },
+    {
+      "id": "e467e85426c883ef",
+      "url": "https://www.infoq.com/news/2026/07/online-cohort-ai-security/",
+      "checkedAt": "2026-10-25T13:03:20+00:00",
+      "sha256": "48ad17a4b3c96ddaf2623c798d52597e4a3157fbe20d543192a0bb1e091fb00d",
+      "differences": []
+    }
+  ],
+  "draftEvidenceRecheck": {
+    "checkedAt": "2026-10-25T13:04:14+00:00",
+    "readyArticles": 7,
+    "documents": 10,
+    "bodyHashesMatch": true,
+    "exactQuotesMatch": true,
+    "scope": "Only the seven ready entries; three held nested drafts are not approved source evidence."
+  },
+  "publicationRecheck": {
+    "checkedAt": "2026-10-25T17:03:04+00:00",
+    "readyArticles": 7,
+    "documents": 10,
+    "bodyHashesMatch": true,
+    "exactQuotesMatch": true,
+    "transport": "Task-scoped CURL_HOME curl config containing ipv4, after default connections timed out. Same HTTPS URLs; HTTP 200 HTML, full extracted-body hash and exact-quote guards unchanged. No repository collector changes.",
+    "priorDefaultConnectionAttempt": [
+      {
+        "url": "https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:32+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:32+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:55+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+        "result": "source unavailable (curl 28)",
+        "checkedAt": "2026-10-25T17:01:57+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+        "result": "source unavailable (curl 28)",
+        "checkedAt": "2026-10-25T17:01:57+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/",
+        "result": "source unavailable (curl 28)",
+        "checkedAt": "2026-10-25T17:01:57+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-08-innersource-security-advisories-are-generally-available",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:33+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:56+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+        "result": "ok",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T17:01:56+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+        "result": "source unavailable (curl 28)",
+        "checkedAt": "2026-10-25T17:02:21+00:00"
+      }
+    ],
+    "heldArticlesRemainUnpublished": 3
+  }
+}

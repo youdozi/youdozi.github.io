@@ -1,0 +1,137 @@
+{
+  "id": "0a337adda878feca",
+  "archiveDate": "2026-07-03",
+  "originalPagePublishedAt": "2026-07-02T22:22:44.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-07-02T22:22:44.000Z",
+    "en": "2026-10-25T17:03:04+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Review included-credit allocation, overage policy and metered budgets together. Confirm current API and UI availability before changing controls; this source review does not measure actual savings.",
+    "ko": "포함 크레딧 배분·초과 사용 정책·종량제 예산을 함께 검토할 것을 제안합니다. 통제 설정을 바꾸기 전 현재 API·화면 제공 여부를 확인해야 하며 실제 절감액을 측정한 원고가 아닙니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps",
+      "role": "primary",
+      "sha256": "9fe24f2ed5e5f724950a0e05253134c91c2f33066036e16a647d2156d597f6a3",
+      "fetchedAt": "2026-10-25T12:55:18+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Copilot credit pools: included usage and additional spending",
+      "claims": [
+        {
+          "text": "GitHub announced cost-center AI credit pools for Copilot Business and Enterprise on Enterprise Cloud. At announcement time, configuration was available through the REST API, while settings-UI management was still planned.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "This is available through the REST API today. Management in the cost center settings UI is coming soon."
+            },
+            {
+              "document_id": 0,
+              "quote": "This is available for Copilot Business and Copilot Enterprise on GitHub Enterprise Cloud"
+            }
+          ]
+        },
+        {
+          "text": "The pool cap limits a cost center’s draw from enterprise-wide included credits; a cost-center budget governs metered charges after the included pool is exhausted. These controls cover different spending phases and can be combined.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "An AI credit pool is separate from a cost center budget."
+            },
+            {
+              "document_id": 0,
+              "quote": "A cost center budget governs the metered phase, capping charges after the pool is exhausted."
+            }
+          ]
+        },
+        {
+          "text": "GitHub calculates the pool limit from assigned licenses. At the cap, enterprises can block further included usage or allow additional spend when overages are permitted, so the pool is not automatically a hard cap on all charges.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GitHub calculates the pool limit automatically from the licenses assigned to that cost center"
+            },
+            {
+              "document_id": 0,
+              "quote": "block further included usage or let it continue as additional spend if your enterprise allows overages."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Copilot 크레딧 풀의 포함 사용량과 추가 지출 구분",
+      "claims": [
+        {
+          "text": "GitHub은 Enterprise Cloud의 Copilot Business·Enterprise를 위한 비용 센터 AI 크레딧 풀을 발표했다. 공지 시점에는 REST API로 설정할 수 있었으며 설정 화면 관리는 향후 계획이었다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "This is available through the REST API today. Management in the cost center settings UI is coming soon."
+            },
+            {
+              "document_id": 0,
+              "quote": "This is available for Copilot Business and Copilot Enterprise on GitHub Enterprise Cloud"
+            }
+          ]
+        },
+        {
+          "text": "풀 한도는 비용 센터가 기업 전체의 포함 크레딧에서 가져가는 양을 제한하고, 비용 센터 예산은 포함 풀이 소진된 후 종량제 요금을 다룬다. 서로 다른 지출 단계를 통제하며 함께 사용할 수 있다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "An AI credit pool is separate from a cost center budget."
+            },
+            {
+              "document_id": 0,
+              "quote": "A cost center budget governs the metered phase, capping charges after the pool is exhausted."
+            }
+          ]
+        },
+        {
+          "text": "GitHub은 할당된 라이선스로 풀 한도를 계산한다. 한도에 도달하면 포함 사용을 막거나 초과 사용이 허용된 기업에서는 추가 지출로 이어지도록 선택할 수 있으므로 전체 요금의 절대 상한으로 해석하면 안 된다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GitHub calculates the pool limit automatically from the licenses assigned to that cost center"
+            },
+            {
+              "document_id": 0,
+              "quote": "block further included usage or let it continue as additional spend if your enterprise allows overages."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-07-03-copilot-credit-pools-and-additional-spending",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps",
+  "articleNumber": 5,
+  "sourcePublishedAt": "2026-07-03T01:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-07-03.md",
+  "batchId": "batch-007",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T13:02:37+00:00",
+  "updatedAt": "2026-10-25T17:03:04+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 36,
+    "approvedAt": "2026-10-25T17:03:04+00:00",
+    "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

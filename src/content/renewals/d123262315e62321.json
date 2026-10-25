@@ -1,0 +1,180 @@
+{
+  "id": "d123262315e62321",
+  "archiveDate": "2026-07-09",
+  "originalPagePublishedAt": "2026-07-08T22:21:33.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-07-08T22:21:33.000Z",
+    "en": "2026-10-25T17:03:04+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Test native builds and dependency sources before upgrading, and review script allowlists rather than enabling everything. Verify current publishing support for your CI provider; a schedule announcement is not proof that every registry action has already changed.",
+    "ko": "업그레이드 전 네이티브 빌드·의존성 출처를 검증하고 전체 허용 대신 스크립트 허용 목록을 검토할 것을 제안합니다. CI 제공자의 현재 게시 지원을 확인해야 하며 일정 공지만으로 모든 레지스트리 동작의 변경 완료를 단정하면 안 됩니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+      "role": "primary",
+      "sha256": "dd2952678f4cd7c8e595b38a649b4dee2592b68df1318bea551ef9a8a7f77156",
+      "fetchedAt": "2026-10-25T12:55:19+00:00",
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/",
+      "role": "primary",
+      "sha256": "207cf450161f64abe7e9f2b69efda083db2e31bb5c5a5a0d7cda2db8cce6404e",
+      "fetchedAt": "2026-10-25T12:56:37+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "npm installation defaults and staged token restrictions",
+      "claims": [
+        {
+          "text": "The npm 12 announcement makes dependency lifecycle scripts and implicit node-gyp builds opt-in, and defaults Git and remote-URL dependency resolution to none unless explicitly allowed. These are installation defaults, not a guarantee that installed code is harmless.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Dependency lifecycle scripts (i.e., preinstall , install , postinstall ) and implicit node-gyp builds no longer run unless explicitly allowed."
+            },
+            {
+              "document_id": 0,
+              "quote": "--allow-git defaults to none"
+            },
+            {
+              "document_id": 0,
+              "quote": "--allow-remote defaults to none"
+            }
+          ]
+        },
+        {
+          "text": "The same notice planned removal of sensitive management actions from npm 2FA-bypass tokens for early 2026-08. It separately targeted direct-publish restrictions for around 2027-01, with trusted publishing or human-approved staged publishing as migration paths.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "We expect this change to take effect in early August 2026."
+            },
+            {
+              "document_id": 0,
+              "quote": "We expect this change to take effect around January 2027."
+            },
+            {
+              "document_id": 0,
+              "quote": "move automated publishing to trusted publishing (OIDC) or staged publishing with a human approval step"
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "The 2026-07-31 follow-up says npm 2FA-bypass granular access tokens can no longer perform sensitive management actions and requires an interactive 2FA challenge. It explicitly excludes GitHub personal access tokens, GitHub App tokens and GITHUB_TOKEN from that change.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "npm granular access tokens (GATs) configured to bypass 2FA can no longer perform sensitive account, org, and package management actions."
+            },
+            {
+              "document_id": 1,
+              "quote": "This does not affect GitHub personal access tokens, GitHub App tokens, or GITHUB_TOKEN in Actions."
+            }
+          ]
+        },
+        {
+          "text": "That follow-up still describes removal of direct publishing as a target for 2027-01. It does not report that later publishing restriction as completed.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "We are targeting January 2027 for this update."
+            }
+          ]
+        }
+      ]
+    },
+    "ko": {
+      "title": "npm 설치 기본값과 단계별 토큰 제한",
+      "claims": [
+        {
+          "text": "npm 12 공지는 의존성 생명주기 스크립트·암묵적 node-gyp 빌드를 명시적 허용 대상으로 바꾸고, Git·원격 URL 의존성 해석도 허용하지 않는 기본값으로 설명한다. 설치 기본값이며 설치 코드가 무해하다는 보장은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Dependency lifecycle scripts (i.e., preinstall , install , postinstall ) and implicit node-gyp builds no longer run unless explicitly allowed."
+            },
+            {
+              "document_id": 0,
+              "quote": "--allow-git defaults to none"
+            },
+            {
+              "document_id": 0,
+              "quote": "--allow-remote defaults to none"
+            }
+          ]
+        },
+        {
+          "text": "같은 공지는 npm 2FA 우회 토큰의 민감한 관리 작업 제한을 2026-08 초로 예고했다. 직접 게시 제한은 별도 단계로 2027-01 무렵을 목표로 제시하며 신뢰 기반 게시·사람이 승인하는 단계적 게시로 전환하도록 안내했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "We expect this change to take effect in early August 2026."
+            },
+            {
+              "document_id": 0,
+              "quote": "We expect this change to take effect around January 2027."
+            },
+            {
+              "document_id": 0,
+              "quote": "move automated publishing to trusted publishing (OIDC) or staged publishing with a human approval step"
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "2026-07-31 후속 공지는 npm 2FA 우회 granular access token의 민감한 관리 작업을 제한하고 대화형 2FA 확인을 요구한다고 알린다. GitHub 개인 액세스 토큰·GitHub App 토큰·GITHUB_TOKEN은 해당 변경에서 명시적으로 제외한다.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "npm granular access tokens (GATs) configured to bypass 2FA can no longer perform sensitive account, org, and package management actions."
+            },
+            {
+              "document_id": 1,
+              "quote": "This does not affect GitHub personal access tokens, GitHub App tokens, or GITHUB_TOKEN in Actions."
+            }
+          ]
+        },
+        {
+          "text": "해당 후속 공지도 직접 게시 제거는 2027-01 목표로 설명한다. 후속 게시 제한이 완료되었다고 알린 것은 아니다.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "We are targeting January 2027 for this update."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-07-09-npm-installation-defaults-and-token-restrictions",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-07-09T00:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-07-09.md",
+  "batchId": "batch-007",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T13:02:37+00:00",
+  "updatedAt": "2026-10-25T17:03:04+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 36,
+    "approvedAt": "2026-10-25T17:03:04+00:00",
+    "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

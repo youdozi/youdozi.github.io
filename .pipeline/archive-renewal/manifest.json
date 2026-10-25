@@ -8945,9 +8945,20 @@
       "originalTitle": "Cost centers now support AI credit pools",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-007",
+      "reviewPullRequest": 36,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 36,
+        "approvedAt": "2026-10-25T17:03:04+00:00",
+        "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/0a337adda878feca.json",
+        "slug": "2026-07-03-copilot-credit-pools-and-additional-spending",
+        "englishPublishedAt": "2026-10-25T17:03:04+00:00"
+      }
     },
     {
       "id": "393078c072140b41",
@@ -9121,9 +9132,20 @@
       "originalTitle": "Upcoming deprecation of Gemini 2.5 Pro and Gemini 3 Flash",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-007",
+      "reviewPullRequest": 36,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 36,
+        "approvedAt": "2026-10-25T17:03:04+00:00",
+        "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/d92a8a6927fa76ff.json",
+        "slug": "2026-07-05-copilot-gemini-retirement-and-alternatives",
+        "englishPublishedAt": "2026-10-25T17:03:04+00:00"
+      }
     },
     {
       "id": "0f7ebc0a9c975130",
@@ -9281,9 +9303,9 @@
       "originalTitle": "InfoQ Opens AI Security & Privacy Engineering Cohort for Regulated Industries",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "blocked",
+      "batchId": "batch-007",
+      "reviewPullRequest": 36
     },
     {
       "id": "170494b1ad546945",
@@ -9329,9 +9351,9 @@
       "originalTitle": "Podcast: Spite-Driven Engineering: A New Blueprint for Cloud Security in the AI Native Era",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "blocked",
+      "batchId": "batch-007",
+      "reviewPullRequest": 36
     },
     {
       "id": "7fde2c7311756207",
@@ -9393,9 +9415,20 @@
       "originalTitle": "Per-user budgets for cost centers in the billing UI",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-007",
+      "reviewPullRequest": 36,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 36,
+        "approvedAt": "2026-10-25T17:03:04+00:00",
+        "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/6ad4fb7dea8c6f87.json",
+        "slug": "2026-07-08-cost-center-user-budgets-and-membership",
+        "englishPublishedAt": "2026-10-25T17:03:04+00:00"
+      }
     },
     {
       "id": "15a838f74acad072",
@@ -9473,9 +9506,20 @@
       "originalTitle": "Innersource security advisories are generally available",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-007",
+      "reviewPullRequest": 36,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 36,
+        "approvedAt": "2026-10-25T17:03:04+00:00",
+        "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/e458b053b5a9f878.json",
+        "slug": "2026-07-09-innersource-advisories-and-remediation",
+        "englishPublishedAt": "2026-10-25T17:03:04+00:00"
+      }
     },
     {
       "id": "d123262315e62321",
@@ -9489,9 +9533,20 @@
       "originalTitle": "npm install-time security and GAT bypass2fa deprecation",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-007",
+      "reviewPullRequest": 36,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 36,
+        "approvedAt": "2026-10-25T17:03:04+00:00",
+        "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/d123262315e62321.json",
+        "slug": "2026-07-09-npm-installation-defaults-and-token-restrictions",
+        "englishPublishedAt": "2026-10-25T17:03:04+00:00"
+      }
     },
     {
       "id": "5197af1e202a1fc2",
@@ -9777,9 +9832,9 @@
       "originalTitle": "Article: Trade-Offs in Multi-Region Architectures: Latency vs. Cost",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "blocked",
+      "batchId": "batch-007",
+      "reviewPullRequest": 36
     },
     {
       "id": "2f1a325d883e73ed",
@@ -10033,9 +10088,20 @@
       "originalTitle": "Code scanning shows AI security detections on pull requests",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-007",
+      "reviewPullRequest": 36,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 36,
+        "approvedAt": "2026-10-25T17:03:04+00:00",
+        "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/27d181b6a4903b28.json",
+        "slug": "2026-07-15-ai-code-scanning-preview-and-general-availability",
+        "englishPublishedAt": "2026-10-25T17:03:04+00:00"
+      }
     },
     {
       "id": "fe469724f5828fb0",
@@ -10049,9 +10115,20 @@
       "originalTitle": "Security reviews now available in the GitHub Copilot app",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-007",
+      "reviewPullRequest": 36,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 36,
+        "approvedAt": "2026-10-25T17:03:04+00:00",
+        "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/fe469724f5828fb0.json",
+        "slug": "2026-07-15-copilot-app-security-review-preview",
+        "englishPublishedAt": "2026-10-25T17:03:04+00:00"
+      }
     },
     {
       "id": "a090972f2e8a3777",

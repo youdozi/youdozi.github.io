@@ -1,0 +1,111 @@
+{
+  "id": "e458b053b5a9f878",
+  "archiveDate": "2026-07-09",
+  "originalPagePublishedAt": "2026-07-08T22:21:33.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-07-08T22:21:33.000Z",
+    "en": "2026-10-25T17:03:04+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Verify enterprise ownership, component identity and dependency matching before rollout. An advisory or generated pull request does not itself deploy a fix; preserve review, testing and release controls.",
+    "ko": "적용 전 기업 소유 범위·구성요소 식별·의존성 연결을 확인할 것을 제안합니다. 권고나 생성된 PR 자체가 수정을 배포하지는 않으므로 검토·테스트·릴리스 통제를 유지해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-07-08-innersource-security-advisories-are-generally-available",
+      "role": "primary",
+      "sha256": "577d872d44f492b78d7f2c139aa226a5c33a095a1d41c7a46f6de62d86483dc0",
+      "fetchedAt": "2026-10-25T12:55:19+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Innersource advisories: enterprise visibility and dependency remediation",
+      "claims": [
+        {
+          "text": "GitHub announced generally available internal security advisories for Advanced Security enterprise customers. Unlike public open-source advisories, their visibility is restricted to repositories owned by that enterprise.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GitHub Advanced Security enterprise customers can now publish internal security advisories."
+            },
+            {
+              "document_id": 0,
+              "quote": "their visibility is restricted to repositories owned by the enterprise."
+            }
+          ]
+        },
+        {
+          "text": "The REST API supports creating, updating and withdrawing innersource vulnerabilities. After an advisory is created, Dependabot can notify internal repositories using the component and open an upgrade pull request when a fixed version is needed.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "including operations to create, update, or withdraw vulnerabilities."
+            },
+            {
+              "document_id": 0,
+              "quote": "Dependabot will open a pull request to upgrade a vulnerable version of the component to one with a fix."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Innersource 보안 권고의 기업 내부 공개 범위와 의존성 수정",
+      "claims": [
+        {
+          "text": "GitHub은 Advanced Security 기업 고객을 위한 내부 보안 권고의 정식 제공을 공지했다. 공개 오픈소스 권고와 달리 해당 기업 소유 저장소로 공개 범위가 제한된다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GitHub Advanced Security enterprise customers can now publish internal security advisories."
+            },
+            {
+              "document_id": 0,
+              "quote": "their visibility is restricted to repositories owned by the enterprise."
+            }
+          ]
+        },
+        {
+          "text": "REST API는 내부 취약점의 생성·갱신·철회를 지원한다. 권고를 생성하면 Dependabot은 해당 구성요소를 사용하는 내부 저장소에 알리고 수정 버전으로 올려야 할 때 업그레이드 PR을 열 수 있다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "including operations to create, update, or withdraw vulnerabilities."
+            },
+            {
+              "document_id": 0,
+              "quote": "Dependabot will open a pull request to upgrade a vulnerable version of the component to one with a fix."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-07-09-innersource-advisories-and-remediation",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-07-08-innersource-security-advisories-are-generally-available",
+  "articleNumber": 2,
+  "sourcePublishedAt": "2026-07-09T06:30:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-07-09.md",
+  "batchId": "batch-007",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T13:02:37+00:00",
+  "updatedAt": "2026-10-25T17:03:04+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 36,
+    "approvedAt": "2026-10-25T17:03:04+00:00",
+    "basis": "Codex conversation: user explicitly instructed 게시해줘 for Draft PR 36; publish the seven reviewed drafts while preserving the three source reproducibility holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
