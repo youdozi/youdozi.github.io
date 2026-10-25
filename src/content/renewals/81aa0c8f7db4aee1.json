@@ -1,0 +1,119 @@
+{
+  "id": "81aa0c8f7db4aee1",
+  "archiveDate": "2026-06-29",
+  "originalPagePublishedAt": "2026-06-28T22:22:07.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-28T22:22:07.000Z",
+    "en": "2026-10-25T12:40:05+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Confirm current availability, quotas, permission scope and billing before enabling workflows. Cost investigation and ticket creation should not be generalized into permission to modify production resources autonomously.",
+    "ko": "현재 제공 여부·할당량·권한 범위·과금을 확인한 후 작업 흐름을 활성화할 것을 제안합니다. 비용 조사·티켓 생성 기능을 운영 자원을 자율 변경할 권한으로 일반화하면 안 됩니다."
+  },
+  "documents": [
+    {
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/",
+      "role": "primary",
+      "sha256": "a514d9c1fae1da4a9d49244d7531493cf13eeeefd7d1e395655b78096d2e805d",
+      "fetchedAt": "2026-10-25T12:29:28+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "AWS FinOps Agent preview: investigation scope and regional limits",
+      "claims": [
+        {
+          "text": "AWS announced a FinOps Agent preview that answers cost questions, surfaces optimization recommendations, investigates cost anomalies and schedules recurring workflows. It can route findings through Jira or Slack; those capabilities do not establish measured savings.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "answers cost questions, surfaces optimization opportunities, automatically investigates cost anomalies, and runs recurring FinOps workflows on a schedule you define."
+            },
+            {
+              "document_id": 0,
+              "quote": "can open Jira tickets on your behalf."
+            }
+          ]
+        },
+        {
+          "text": "The announcement locates the preview in US East (N. Virginia), with cost data covering AWS Regions except GovCloud and China. It offers the service at no additional charge during preview; that is not a permanent price or an unlimited-use commitment.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "AWS FinOps Agent (preview) is available in the US East (N. Virginia) Region"
+            },
+            {
+              "document_id": 0,
+              "quote": "except AWS GovCloud (US) Regions and AWS China (Beijing and Ningxia) Regions."
+            },
+            {
+              "document_id": 0,
+              "quote": "AWS FinOps Agent is offered at no additional charge during the preview."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "AWS FinOps Agent 미리보기의 조사 기능과 리전 범위",
+      "claims": [
+        {
+          "text": "AWS는 비용 질의·최적화 권고·비용 이상 조사·반복 작업 일정을 지원하는 FinOps Agent 미리보기를 발표했다. Jira·Slack으로 결과를 전달할 수 있지만 해당 기능이 실측 비용 절감을 입증하지는 않는다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "answers cost questions, surfaces optimization opportunities, automatically investigates cost anomalies, and runs recurring FinOps workflows on a schedule you define."
+            },
+            {
+              "document_id": 0,
+              "quote": "can open Jira tickets on your behalf."
+            }
+          ]
+        },
+        {
+          "text": "공지는 미리보기를 US East (N. Virginia)에서 제공하며 비용 데이터 범위에서 AWS GovCloud·China 리전을 제외한다고 설명한다. 미리보기 중 추가 요금이 없다는 안내이며 영구 가격이나 무제한 사용 약속은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "AWS FinOps Agent (preview) is available in the US East (N. Virginia) Region"
+            },
+            {
+              "document_id": 0,
+              "quote": "except AWS GovCloud (US) Regions and AWS China (Beijing and Ningxia) Regions."
+            },
+            {
+              "document_id": 0,
+              "quote": "AWS FinOps Agent is offered at no additional charge during the preview."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-06-29-aws-finops-agent-preview-scope",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/06/aws-finops-agent/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-06-28T14:55:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-06-29.md",
+  "batchId": "batch-006",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:34:04+00:00",
+  "updatedAt": "2026-10-25T12:40:05+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 35,
+    "approvedAt": "2026-10-25T12:40:05+00:00",
+    "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

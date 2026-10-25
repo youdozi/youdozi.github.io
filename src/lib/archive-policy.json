@@ -25,6 +25,15 @@
     "https://www.x41-dsec.de/lab/advisories/x41-2026-002-starlette/",
     "https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr",
     "https://www.docker.com/blog/docker-joins-the-athena-coalition-a-cross-industry-collaboration-for-supply-chain-security/",
-    "https://www.chainguard.dev/athena"
+    "https://www.chainguard.dev/athena",
+    "https://docs.gitlab.com/releases/19/gitlab-19-0-released/",
+    "https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/",
+    "https://github.com/microsoft/mxc",
+    "https://www.atlassian.com/licensing/data-center-end-of-life",
+    "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+    "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
+    "https://www.infoq.com/articles/security-ai-threat-evolution/",
+    "https://devblogs.microsoft.com/devops/copilot-autofix-for-github-advanced-security-for-azure-devops/",
+    "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning-autofix?view=azure-devops"
   ]
 }

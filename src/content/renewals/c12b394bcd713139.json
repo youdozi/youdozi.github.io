@@ -1,0 +1,119 @@
+{
+  "id": "c12b394bcd713139",
+  "archiveDate": "2026-07-01",
+  "originalPagePublishedAt": "2026-06-30T22:27:16.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-30T22:27:16.000Z",
+    "en": "2026-10-25T12:40:05+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Audit queries and compliance exports that rely on older closed alerts. Verify actual archive access and rollout status in the relevant account; do not apply this notice to every alert type or infer permanent retention after account or repository deletion.",
+    "ko": "오래된 종료 경고에 의존하는 질의·감사 자료 내보내기를 점검할 것을 제안합니다. 해당 계정에서 실제 아카이브 접근과 적용 상태를 확인해야 하며 모든 경고 유형으로 확대하거나 계정·저장소 삭제 후에도 영구 보존된다고 추론하면 안 됩니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+      "role": "primary",
+      "sha256": "a53b2a847e0f7cc86798a1c352dd26a28bbdacb6d96132d87592f4f19d5abf72",
+      "fetchedAt": "2026-10-25T12:28:43+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Closed Dependabot alerts: announced retention and archive access",
+      "claims": [
+        {
+          "text": "GitHub’s notice scheduled a retention change for 2026-09-25, beginning with closed Dependabot security alerts on github.com and Enterprise Cloud. It explicitly excludes Enterprise Server; the announcement alone does not verify completion of the rollout.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Starting September 25, 2026, GitHub will introduce a data retention policy for closed Dependabot security alerts."
+            },
+            {
+              "document_id": 0,
+              "quote": "It does not apply to GitHub Enterprise Server (GHES)."
+            }
+          ]
+        },
+        {
+          "text": "Under the announced policy, open alerts remain accessible regardless of age, while closed alerts remain in the UI and API for 2 years after closure. Older closed alerts move to downloadable CSV archives for authorized administrators and security managers rather than remaining in API results.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Open alerts stay fully accessible in the UI and API, regardless of age."
+            },
+            {
+              "document_id": 0,
+              "quote": "Closed alerts stay fully accessible in the UI and API for two years after they are closed."
+            },
+            {
+              "document_id": 0,
+              "quote": "Enterprise, organization, and repository administrators and security managers can download them as a CSV"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "종료된 Dependabot 경고의 보존·아카이브 접근 공지",
+      "claims": [
+        {
+          "text": "GitHub 공지는 2026-09-25부터 github.com·Enterprise Cloud의 종료된 Dependabot 보안 경고에 보존 정책을 적용할 예정이라고 설명했다. Enterprise Server는 명시적으로 제외되며 공지만으로 적용 완료를 확인한 것은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Starting September 25, 2026, GitHub will introduce a data retention policy for closed Dependabot security alerts."
+            },
+            {
+              "document_id": 0,
+              "quote": "It does not apply to GitHub Enterprise Server (GHES)."
+            }
+          ]
+        },
+        {
+          "text": "공개된 정책에서 열린 경고는 경과 기간과 관계없이 접근 가능하지만 종료된 경고는 종료 후 2년 동안 UI·API에 남는다. 더 오래된 종료 경고는 API 결과에 계속 남는 대신 권한 있는 관리자·보안 담당자가 내려받는 CSV 아카이브로 이동한다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Open alerts stay fully accessible in the UI and API, regardless of age."
+            },
+            {
+              "document_id": 0,
+              "quote": "Closed alerts stay fully accessible in the UI and API for two years after they are closed."
+            },
+            {
+              "document_id": 0,
+              "quote": "Enterprise, organization, and repository administrators and security managers can download them as a CSV"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-07-01-dependabot-alert-retention-and-archives",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-06-30T22:24:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-07-01.md",
+  "batchId": "batch-006",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:34:04+00:00",
+  "updatedAt": "2026-10-25T12:40:05+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 35,
+    "approvedAt": "2026-10-25T12:40:05+00:00",
+    "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

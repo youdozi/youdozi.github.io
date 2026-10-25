@@ -1,0 +1,1159 @@
+{
+  "schemaVersion": 1,
+  "batchId": "batch-006",
+  "mode": "historical",
+  "state": "draft",
+  "reviewMethod": "editorial-source-context-review",
+  "method": "Editorial source-context review; no Gemini verifier, hands-on product experiment or human publication approval. Speaker transcripts and panel contributions are attributed accounts or advice, not independently reproduced outcomes. Current policy and preview changes are separated as follow-up.",
+  "reviewedAt": "2026-10-25T12:34:04+00:00",
+  "entries": [
+    {
+      "id": "4380abffaf1a31e0",
+      "archiveDate": "2026-06-20",
+      "originalPagePublishedAt": "2026-06-19T22:20:25.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-19T22:20:25.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "This scoped brief covers selected release conditions, not every agentic workflow, billing change or platform requirement. Check the applicable offering, plan, database migration and beta support policy before deployment.",
+        "ko": "선별한 릴리스 조건을 다룬 원고이며 모든 에이전트 기능·과금 변경·플랫폼 요구사항을 검증한 것은 아닙니다. 배포 전 제공 형태·요금제·데이터베이스 전환·베타 지원 정책을 확인할 것을 제안합니다."
+      },
+      "documents": [
+        {
+          "url": "https://docs.gitlab.com/releases/19/gitlab-19-0-released/",
+          "role": "primary",
+          "sha256": "ba32bb188eaa9bae40224993ad50d565cd0ba5f1935776fc4e822ae0379a61ba",
+          "fetchedAt": "2026-10-25T12:29:29+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "GitLab 19.0: secret beta, dependency scanning and upgrade prerequisites",
+          "claims": [
+            {
+              "text": "In GitLab 19.0, Secrets Manager is an open beta for Premium and Ultimate customers on GitLab.com and Self-Managed. The release notes warn that the beta might not be ready for production use.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The GitLab Secrets Manager is now available in open beta for Premium and Ultimate customers on GitLab.com and GitLab Self-Managed."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "might not be ready for production use."
+                }
+              ]
+            },
+            {
+              "text": "SBOM-based dependency scanning is generally available in the Ultimate tier across GitLab.com, Self-Managed and Dedicated. Its availability and tier differ from the Secrets Manager beta.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Dependency scanning by using SBOM generally available Tier: Ultimate Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated"
+                }
+              ]
+            },
+            {
+              "text": "For Self-Managed upgrades to GitLab 19.0, PostgreSQL 17 is the minimum supported version. The notes instruct users of packaged PostgreSQL 16 to upgrade the database before installing the release.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The minimum supported version of PostgreSQL is now version 17."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "If you use the packaged PostgreSQL 16, upgrade the packaged PostgreSQL server before installing GitLab 19.0."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "GitLab 19.0의 비밀정보 베타·의존성 검사·업그레이드 조건",
+          "claims": [
+            {
+              "text": "GitLab 19.0의 Secrets Manager는 GitLab.com과 Self-Managed의 Premium·Ultimate 고객을 위한 공개 베타다. 릴리스 문서는 베타가 운영 환경에 적합하지 않을 수 있다고 경고한다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The GitLab Secrets Manager is now available in open beta for Premium and Ultimate customers on GitLab.com and GitLab Self-Managed."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "might not be ready for production use."
+                }
+              ]
+            },
+            {
+              "text": "SBOM 기반 의존성 검사는 GitLab.com·Self-Managed·Dedicated의 Ultimate 등급에서 정식 제공된다. Secrets Manager 베타와 제공 단계·등급이 다르다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Dependency scanning by using SBOM generally available Tier: Ultimate Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated"
+                }
+              ]
+            },
+            {
+              "text": "Self-Managed를 GitLab 19.0으로 올릴 때 최소 지원 데이터베이스 버전은 PostgreSQL 17이다. 문서는 패키지에 포함된 PostgreSQL 16 사용자가 릴리스 설치 전에 데이터베이스를 업그레이드하도록 안내한다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The minimum supported version of PostgreSQL is now version 17."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "If you use the packaged PostgreSQL 16, upgrade the packaged PostgreSQL server before installing GitLab 19.0."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "ce26c7555a2bf537",
+      "archiveDate": "2026-06-20",
+      "originalPagePublishedAt": "2026-06-19T22:20:25.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-19T22:20:25.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Verify the actual backend, operating-system support, filesystem access and network behavior in a representative environment. This is a source-context review without sandbox-escape or containment testing.",
+        "ko": "실제 백엔드·운영체제 지원·파일 접근·네트워크 동작을 대표 환경에서 확인할 것을 제안합니다. 원문 맥락 검토이며 샌드박스 탈출이나 격리 성능 실험을 수행하지 않았습니다."
+      },
+      "documents": [
+        {
+          "url": "https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/",
+          "role": "primary",
+          "sha256": "25142da25f027f4e3ef2e3c8f3b327a8fe5c2df2b96b11ae7f277ddbe81d07e2",
+          "fetchedAt": "2026-10-25T12:29:29+00:00",
+          "extractorVersion": "article-parser-v1"
+        },
+        {
+          "url": "https://github.com/microsoft/mxc",
+          "role": "primary",
+          "sha256": "f26bee259c07f3b9f8b22e0cc2ad0b1e6cccdf289a304d178601aae25953490d",
+          "fetchedAt": "2026-10-25T12:30:34+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Windows agent containment: early preview and audit-mode limits",
+          "claims": [
+            {
+              "text": "Microsoft introduced the MXC SDK as an early preview: a policy-driven execution layer for agents on Windows and WSL. An SDK announcement is not independent evidence that arbitrary agent workloads are safe.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "an early preview of the Microsoft Execution Containers (MXC) SDK"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "a cross-platform, policy-driven execution layer for agents on Windows and WSL."
+                }
+              ]
+            },
+            {
+              "text": "The announcement describes multiple isolation constructs behind a shared policy model. It labels Linux-container support and MXC cloud integration as future work, so those plans should not be presented as delivered features at announcement time.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Linux containers Will bring the containment model to Linux-first agent toolchains via WSL."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "With the future addition of MXC integration"
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "At review time, the MXC repository warns that --audit disables all sandbox security for the analyzed workload and must never be used to run untrusted code. Policy-authoring audit mode is not a containment guarantee.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "Warning: --audit turns off all sandbox security for the workload being analyzed. Never use it to run untrusted code."
+                }
+              ]
+            }
+          ]
+        },
+        "ko": {
+          "title": "Windows 에이전트 격리의 초기 미리보기와 감사 모드 주의점",
+          "claims": [
+            {
+              "text": "Microsoft는 MXC SDK를 Windows·WSL 에이전트를 위한 정책 기반 실행 계층의 초기 미리보기로 소개했다. SDK 발표만으로 임의의 에이전트 작업이 안전하다는 독립 근거가 되지는 않는다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "an early preview of the Microsoft Execution Containers (MXC) SDK"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "a cross-platform, policy-driven execution layer for agents on Windows and WSL."
+                }
+              ]
+            },
+            {
+              "text": "공지는 공통 정책 모델 뒤에서 여러 격리 방식을 사용하는 구성을 설명한다. Linux 컨테이너 지원과 MXC 클라우드 연동은 향후 작업으로 소개하므로 발표 시점에 이미 제공한 기능처럼 서술하면 안 된다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Linux containers Will bring the containment model to Linux-first agent toolchains via WSL."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "With the future addition of MXC integration"
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "검토 시점의 MXC 저장소는 --audit가 분석 대상 작업의 샌드박스 보안을 모두 끄므로 신뢰하지 않는 코드를 실행하는 데 절대 사용하지 말라고 경고한다. 정책 작성을 위한 감사 모드는 격리 보장을 의미하지 않는다.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "Warning: --audit turns off all sandbox security for the workload being analyzed. Never use it to run untrusted code."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "208408ea8c501409",
+      "archiveDate": "2026-06-21",
+      "originalPagePublishedAt": "2026-06-20T22:25:51.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-20T22:25:51.000Z",
+        "en": null
+      },
+      "outcome": "unverifiable_proposal",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Do not choose a migration deadline solely from the old article. Confirm current product-specific terms with Atlassian, then evaluate pipeline parity, rollback, credentials and commercial conditions.",
+        "ko": "과거 글만으로 전환 마감일을 정하지 말고 Atlassian의 현재 제품별 조건을 확인할 것을 제안합니다. 이후 파이프라인 동등성·되돌리기·인증정보·상업적 조건을 평가해야 합니다."
+      },
+      "documents": [],
+      "editions": {
+        "en": {
+          "title": "Bamboo migration planning and the current support exception",
+          "claims": [],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Bamboo 전환 검토와 현재 지원 종료 예외",
+          "claims": [],
+          "followUp": []
+        }
+      },
+      "research": {
+        "previousDraft": {
+          "id": "208408ea8c501409",
+          "archiveDate": "2026-06-21",
+          "originalPagePublishedAt": "2026-06-20T22:25:51.000Z",
+          "editionPublishedAt": {
+            "ko": "2026-06-20T22:25:51.000Z",
+            "en": null
+          },
+          "outcome": "renewed_draft",
+          "experimentStatus": "not_tested",
+          "reviewFocus": {
+            "en": "Do not choose a migration deadline solely from the old article. Confirm current product-specific terms with Atlassian, then evaluate pipeline parity, rollback, credentials and commercial conditions.",
+            "ko": "과거 글만으로 전환 마감일을 정하지 말고 Atlassian의 현재 제품별 조건을 확인할 것을 제안합니다. 이후 파이프라인 동등성·되돌리기·인증정보·상업적 조건을 평가해야 합니다."
+          },
+          "documents": [
+            {
+              "url": "https://blog.jetbrains.com/teamcity/2026/06/bamboo-end-of-life/",
+              "role": "primary",
+              "sha256": "1b3acd9c20362153e90c4ec867171d2012ce67919cfb5b98035389dd9a3b6453",
+              "fetchedAt": "2026-10-25T12:28:42+00:00",
+              "extractorVersion": "article-parser-v1"
+            },
+            {
+              "url": "https://www.atlassian.com/licensing/data-center-end-of-life",
+              "role": "primary",
+              "sha256": "2dfb478b61e1765ea765c40b6839d2160c68415b53364267becbad023edcdf6f",
+              "fetchedAt": "2026-10-25T12:29:29+00:00",
+              "extractorVersion": "article-parser-v1"
+            }
+          ],
+          "editions": {
+            "en": {
+              "title": "Bamboo migration planning and the current support exception",
+              "claims": [
+                {
+                  "text": "The JetBrains migration article recommends auditing build plans, agents, deployment projects, artifact retention, credentials and integrations before choosing a replacement CI/CD platform. This is migration advice from a competing vendor.",
+                  "evidence": [
+                    {
+                      "document_id": 0,
+                      "quote": "Before evaluating alternatives, spend time auditing your current Bamboo installation."
+                    }
+                  ]
+                },
+                {
+                  "text": "The author cautions that recreating existing configuration unchanged can carry historical technical debt into the replacement. The customer build-speed example is not independently reproduced in this brief.",
+                  "evidence": [
+                    {
+                      "document_id": 0,
+                      "quote": "we would also migrate a lot of historical pain"
+                    }
+                  ]
+                }
+              ],
+              "followUp": [
+                {
+                  "text": "At review time, Atlassian explicitly says Bitbucket and Bamboo Data Center will not reach end of life in 2029 and describes a Bitbucket Hybrid License for existing customers. The old article’s blanket Bamboo retirement framing must not be treated as current policy.",
+                  "evidence": [
+                    {
+                      "document_id": 1,
+                      "quote": "Bitbucket and Bamboo Data Center will not end of life and will continue beyond the Data Center end of life in 2029."
+                    },
+                    {
+                      "document_id": 1,
+                      "quote": "existing Bitbucket and Bamboo Data Center customers will gain access to a Bitbucket Hybrid License"
+                    }
+                  ]
+                }
+              ]
+            },
+            "ko": {
+              "title": "Bamboo 전환 검토와 현재 지원 종료 예외",
+              "claims": [
+                {
+                  "text": "JetBrains의 전환 글은 대체 CI/CD 플랫폼을 고르기 전에 빌드 계획·에이전트·배포 프로젝트·아티팩트 보존·인증정보·연동을 조사하도록 권한다. 경쟁 제품 공급자가 제시한 전환 조언이다.",
+                  "evidence": [
+                    {
+                      "document_id": 0,
+                      "quote": "Before evaluating alternatives, spend time auditing your current Bamboo installation."
+                    }
+                  ]
+                },
+                {
+                  "text": "작성자는 기존 설정을 그대로 재현하면 과거 기술 부채까지 새 환경으로 옮길 수 있다고 경고한다. 고객 사례의 빌드 속도 수치는 이 원고에서 독립 재현하지 않았다.",
+                  "evidence": [
+                    {
+                      "document_id": 0,
+                      "quote": "we would also migrate a lot of historical pain"
+                    }
+                  ]
+                }
+              ],
+              "followUp": [
+                {
+                  "text": "검토 시점의 Atlassian은 Bitbucket·Bamboo Data Center가 2029년에 지원 종료되지 않는다고 명시하고 기존 고객을 위한 Bitbucket Hybrid License를 설명한다. 과거 글의 일괄적인 Bamboo 종료 설명을 현재 정책으로 취급하면 안 된다.",
+                  "evidence": [
+                    {
+                      "document_id": 1,
+                      "quote": "Bitbucket and Bamboo Data Center will not end of life and will continue beyond the Data Center end of life in 2029."
+                    },
+                    {
+                      "document_id": 1,
+                      "quote": "existing Bitbucket and Bamboo Data Center customers will gain access to a Bitbucket Hybrid License"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "publicationRecheckFailures": [
+          {
+            "url": "https://blog.jetbrains.com/teamcity/2026/06/bamboo-end-of-life/",
+            "result": "source returned HTTP 202; expected HTTP 200 HTML",
+            "checkedAt": "2026-10-25T12:39:26+00:00"
+          }
+        ]
+      },
+      "reason": {
+        "en": "The original primary source was collected and its quotes matched during draft preparation. At the final publication recheck it returned HTTP 202 instead of HTTP 200 HTML, so a repeatable source-body check is unavailable. The reviewed draft is preserved under research.previousDraft and publication is held. This is a collection limitation, not a finding that the source is false or deleted.",
+        "ko": "초안 작성 시 원문을 수집하고 인용문을 대조했지만 게시 직전 재점검에서 HTTP 200 HTML 대신 HTTP 202를 받아 본문 재대조를 수행할 수 없습니다. 검토 초안은 research.previousDraft에 보존하고 게시를 보류합니다. 수집 한계이며 원문 내용이 거짓이거나 삭제됐다는 판정은 아닙니다."
+      },
+      "attemptedSourceUrls": [
+        "https://blog.jetbrains.com/teamcity/2026/06/bamboo-end-of-life/",
+        "https://www.atlassian.com/licensing/data-center-end-of-life"
+      ]
+    },
+    {
+      "id": "a8e012a42f1daa66",
+      "archiveDate": "2026-06-22",
+      "originalPagePublishedAt": "2026-06-21T22:26:05.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-21T22:26:05.000Z",
+        "en": null
+      },
+      "outcome": "unverifiable_proposal",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Identify Server versus Cloud and the exact build before selecting an upgrade. Verify backups, supported upgrade paths and post-upgrade behavior; no exploitation or patch-effectiveness experiment was performed.",
+        "ko": "Server·Cloud 구분과 정확한 빌드를 확인한 뒤 업그레이드를 선택할 것을 제안합니다. 백업·지원 전환 경로·업그레이드 후 동작을 확인해야 하며 공격이나 패치 효과 실험은 수행하지 않았습니다."
+      },
+      "documents": [],
+      "editions": {
+        "en": {
+          "title": "YouTrack security update: fixed builds and Cloud scope",
+          "claims": [],
+          "followUp": []
+        },
+        "ko": {
+          "title": "YouTrack 보안 업데이트의 수정 빌드와 Cloud 적용 범위",
+          "claims": [],
+          "followUp": []
+        }
+      },
+      "research": {
+        "previousDraft": {
+          "id": "a8e012a42f1daa66",
+          "archiveDate": "2026-06-22",
+          "originalPagePublishedAt": "2026-06-21T22:26:05.000Z",
+          "editionPublishedAt": {
+            "ko": "2026-06-21T22:26:05.000Z",
+            "en": null
+          },
+          "outcome": "renewed_draft",
+          "experimentStatus": "not_tested",
+          "reviewFocus": {
+            "en": "Identify Server versus Cloud and the exact build before selecting an upgrade. Verify backups, supported upgrade paths and post-upgrade behavior; no exploitation or patch-effectiveness experiment was performed.",
+            "ko": "Server·Cloud 구분과 정확한 빌드를 확인한 뒤 업그레이드를 선택할 것을 제안합니다. 백업·지원 전환 경로·업그레이드 후 동작을 확인해야 하며 공격이나 패치 효과 실험은 수행하지 않았습니다."
+          },
+          "documents": [
+            {
+              "url": "https://blog.jetbrains.com/youtrack/2026/06/youtrack-security-update-youtrack-server-upgrade-required/",
+              "role": "primary",
+              "sha256": "afd4c9836a4a70a24effe1ec05f3723624136fcac88e01aba3b04a052ea5ab70",
+              "fetchedAt": "2026-10-25T12:28:42+00:00",
+              "extractorVersion": "article-parser-v1"
+            }
+          ],
+          "editions": {
+            "en": {
+              "title": "YouTrack security update: fixed builds and Cloud scope",
+              "claims": [
+                {
+                  "text": "JetBrains identifies token-forgery account takeover as CVE-2026-56141, email-verification bypass as CVE-2026-56142, and an additional Server account-takeover issue through direct database access as CVE-2026-50242. Server was affected by all of these issues.",
+                  "evidence": [
+                    {
+                      "document_id": 0,
+                      "quote": "An admin account takeover was possible through authentication token forgery (CVE-2026-56141)."
+                    },
+                    {
+                      "document_id": 0,
+                      "quote": "It was possible to bypass the email verification flow entirely (CVE-2026-56142)."
+                    },
+                    {
+                      "document_id": 0,
+                      "quote": "YouTrack Server was affected by both issues listed above. In addition, an admin account takeover was possible via direct database access (CVE-2026-50242)."
+                    }
+                  ]
+                },
+                {
+                  "text": "The notice lists these fixed Server build mappings: 2026.1 → 2026.1.13757; 2025.3 → 2025.3.148033; 2025.2 → 2025.2.148048; 2025.1 → 2025.1.148120; 2024.3 → 2024.3.148430; 2024.2 → 2024.2.148429. Earlier installations should upgrade to a supported fixed line.",
+                  "evidence": [
+                    {
+                      "document_id": 0,
+                      "quote": "2026.1.13757 for 2026.1 installations 2025.3.148033 for 2025.3 installations 2025.2.148048 for 2025.2 installations"
+                    },
+                    {
+                      "document_id": 0,
+                      "quote": "2025.1.148120 for 2025.1 installations 2024.3.148430 for 2024.3 installations 2024.2.148429 for 2024.2 installations"
+                    }
+                  ]
+                },
+                {
+                  "text": "The notice says YouTrack Cloud was already patched and required no user action. JetBrains reported finding no exploitation evidence outside test environments; that statement is not proof that exploitation was impossible.",
+                  "evidence": [
+                    {
+                      "document_id": 0,
+                      "quote": "YouTrack Cloud has already been patched and no action is required."
+                    },
+                    {
+                      "document_id": 0,
+                      "quote": "We have found no evidence that any of these vulnerabilities were exploited outside of testing environments."
+                    }
+                  ]
+                }
+              ],
+              "followUp": []
+            },
+            "ko": {
+              "title": "YouTrack 보안 업데이트의 수정 빌드와 Cloud 적용 범위",
+              "claims": [
+                {
+                  "text": "JetBrains는 토큰 위조를 통한 계정 탈취를 CVE-2026-56141, 이메일 검증 우회를 CVE-2026-56142, 직접 데이터베이스 접근을 통한 추가 Server 계정 탈취를 CVE-2026-50242로 설명한다. Server는 이 문제들 모두의 영향을 받았다.",
+                  "evidence": [
+                    {
+                      "document_id": 0,
+                      "quote": "An admin account takeover was possible through authentication token forgery (CVE-2026-56141)."
+                    },
+                    {
+                      "document_id": 0,
+                      "quote": "It was possible to bypass the email verification flow entirely (CVE-2026-56142)."
+                    },
+                    {
+                      "document_id": 0,
+                      "quote": "YouTrack Server was affected by both issues listed above. In addition, an admin account takeover was possible via direct database access (CVE-2026-50242)."
+                    }
+                  ]
+                },
+                {
+                  "text": "공지는 수정 Server 빌드를 다음과 같이 제시한다: 2026.1 → 2026.1.13757; 2025.3 → 2025.3.148033; 2025.2 → 2025.2.148048; 2025.1 → 2025.1.148120; 2024.3 → 2024.3.148430; 2024.2 → 2024.2.148429. 더 오래된 설치는 지원되는 수정 계열로 업그레이드해야 한다.",
+                  "evidence": [
+                    {
+                      "document_id": 0,
+                      "quote": "2026.1.13757 for 2026.1 installations 2025.3.148033 for 2025.3 installations 2025.2.148048 for 2025.2 installations"
+                    },
+                    {
+                      "document_id": 0,
+                      "quote": "2025.1.148120 for 2025.1 installations 2024.3.148430 for 2024.3 installations 2024.2.148429 for 2024.2 installations"
+                    }
+                  ]
+                },
+                {
+                  "text": "공지는 YouTrack Cloud가 이미 패치되어 사용자 조치가 필요하지 않다고 설명한다. JetBrains가 테스트 환경 밖의 악용 증거를 발견하지 못했다는 설명은 악용이 불가능했다는 증명이 아니다.",
+                  "evidence": [
+                    {
+                      "document_id": 0,
+                      "quote": "YouTrack Cloud has already been patched and no action is required."
+                    },
+                    {
+                      "document_id": 0,
+                      "quote": "We have found no evidence that any of these vulnerabilities were exploited outside of testing environments."
+                    }
+                  ]
+                }
+              ],
+              "followUp": []
+            }
+          }
+        },
+        "publicationRecheckFailures": [
+          {
+            "url": "https://blog.jetbrains.com/youtrack/2026/06/youtrack-security-update-youtrack-server-upgrade-required/",
+            "result": "source returned HTTP 202; expected HTTP 200 HTML",
+            "checkedAt": "2026-10-25T12:39:26+00:00"
+          }
+        ]
+      },
+      "reason": {
+        "en": "The original primary source was collected and its quotes matched during draft preparation. At the final publication recheck it returned HTTP 202 instead of HTTP 200 HTML, so a repeatable source-body check is unavailable. The reviewed draft is preserved under research.previousDraft and publication is held. This is a collection limitation, not a finding that the source is false or deleted.",
+        "ko": "초안 작성 시 원문을 수집하고 인용문을 대조했지만 게시 직전 재점검에서 HTTP 200 HTML 대신 HTTP 202를 받아 본문 재대조를 수행할 수 없습니다. 검토 초안은 research.previousDraft에 보존하고 게시를 보류합니다. 수집 한계이며 원문 내용이 거짓이거나 삭제됐다는 판정은 아닙니다."
+      },
+      "attemptedSourceUrls": [
+        "https://blog.jetbrains.com/youtrack/2026/06/youtrack-security-update-youtrack-server-upgrade-required/"
+      ]
+    },
+    {
+      "id": "c505a5c997b12684",
+      "archiveDate": "2026-06-23",
+      "originalPagePublishedAt": "2026-06-22T22:33:54.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-22T22:33:54.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Treat the transcript as primary evidence of what the speaker reported, not independent replication. Evaluate schema ownership, buffering limits, delivery failures, privacy requirements and migration parity for your own workload.",
+        "ko": "대본은 발표자가 보고한 내용을 확인하는 직접 근거이며 독립 재현은 아닙니다. 자체 환경의 스키마 책임·버퍼 한계·전송 실패·개인정보 요구사항·전환 동등성을 평가할 것을 제안합니다."
+      },
+      "documents": [
+        {
+          "url": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+          "role": "primary",
+          "sha256": "5b73c2d87e29fce0aae4c9403162e2b488e3cde46e318b4b24ce5143457137fe",
+          "fetchedAt": "2026-10-25T12:28:41+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Tracking-service case study: event schemas and non-blocking delivery",
+          "claims": [
+            {
+              "text": "In the published transcript, Alina Krasavina describes Delivery Hero’s internal tracking service using mobile and frontend SDKs, an ingestion API, real-time consumers and BigQuery storage. This is the speaker’s implementation account.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "we have a mobile SDK, and a frontend SDK, in TypeScript, to collect the data and to send to our API."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "our data storage, which is BigQuery"
+                }
+              ]
+            },
+            {
+              "text": "The speaker says code-generated event models exposed schema problems during application compilation, while a device queue and background batched sending supported non-blocking delivery. The reported cost and capture-rate figures are excluded from this scoped summary.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "we introduced code generated event models"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "you have an error on compilation time"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "it reads from the queue, takes a batch of some events, and is sending to our API."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "추적 서비스 사례의 이벤트 스키마와 비차단 전송",
+          "claims": [
+            {
+              "text": "공개된 발표 대본에서 Alina Krasavina는 모바일·프런트엔드 SDK, 수집 API, 실시간 소비자, BigQuery 저장소를 사용하는 Delivery Hero의 내부 추적 서비스를 설명한다. 발표자가 소개한 구현 사례다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "we have a mobile SDK, and a frontend SDK, in TypeScript, to collect the data and to send to our API."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "our data storage, which is BigQuery"
+                }
+              ]
+            },
+            {
+              "text": "발표자는 코드 생성 이벤트 모델로 애플리케이션 컴파일 중 스키마 문제를 드러내고, 기기 큐와 백그라운드 배치 전송으로 비차단 전송을 지원했다고 설명한다. 발표의 비용·수집률 수치는 이 제한된 요약에서 제외한다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "we introduced code generated event models"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "you have an error on compilation time"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "it reads from the queue, takes a batch of some events, and is sending to our API."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "7067e48d153e8525",
+      "archiveDate": "2026-06-27",
+      "originalPagePublishedAt": "2026-06-26T22:26:19.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-26T22:26:19.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "The linked official blog could not be collected; this narrower draft uses the project’s release artifact. Review upgrade notes, certificates, trust roots and the target version’s integrity settings before rollout. It is not a claim that the candidate remains the newest version.",
+        "ko": "연결된 공식 블로그를 수집하지 못해 프로젝트의 릴리스 자료에 범위를 한정했습니다. 적용 전 전환 지침·인증서·신뢰 루트·대상 버전의 무결성 설정을 확인할 것을 제안합니다. 릴리스 후보가 현재 최신 버전이라는 뜻은 아닙니다."
+      },
+      "documents": [
+        {
+          "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
+          "role": "primary",
+          "sha256": "a98c121ff18684b6c843e2149caa64f98cbefeb37aeed2b57420d8b83396e57e",
+          "fetchedAt": "2026-10-25T12:30:36+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Argo CD release candidate: internal mTLS and source-integrity configuration",
+          "claims": [
+            {
+              "text": "The official Argo CD v3.5.0-rc1 page labels this artifact a pre-release and lists mTLS support in the repo-server. That supports describing a release-candidate capability, not claiming that every installation has mTLS enforced.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "v3.5.0-rc1 Pre-release"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "feat: adds mTLS support in repo-server"
+                }
+              ]
+            },
+            {
+              "text": "The same changelog lists CLI support for Source Integrity configuration and an exposed ApplicationSet UI. This brief does not assert that signature verification first appeared in this release or that earlier internal traffic was always unencrypted.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "feat(cli): Add support for Source Integrity configuration"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "feat: expose Appset UI and fix pie chart summary"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Argo CD 릴리스 후보의 내부 mTLS와 소스 무결성 설정",
+          "claims": [
+            {
+              "text": "공식 Argo CD v3.5.0-rc1 페이지는 해당 배포물을 사전 릴리스로 표시하고 repo-server의 mTLS 지원을 변경 목록에 적는다. 릴리스 후보 기능을 설명하는 근거이며 모든 설치에 mTLS가 강제되었다는 뜻은 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "v3.5.0-rc1 Pre-release"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "feat: adds mTLS support in repo-server"
+                }
+              ]
+            },
+            {
+              "text": "같은 변경 목록은 CLI의 Source Integrity 설정 지원과 ApplicationSet UI 노출을 제시한다. 이 원고는 서명 검증이 해당 릴리스에서 처음 생겼다거나 이전 내부 통신이 항상 평문이었다고 단정하지 않는다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "feat(cli): Add support for Source Integrity configuration"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "feat: expose Appset UI and fix pie chart summary"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "81aa0c8f7db4aee1",
+      "archiveDate": "2026-06-29",
+      "originalPagePublishedAt": "2026-06-28T22:22:07.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-28T22:22:07.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Confirm current availability, quotas, permission scope and billing before enabling workflows. Cost investigation and ticket creation should not be generalized into permission to modify production resources autonomously.",
+        "ko": "현재 제공 여부·할당량·권한 범위·과금을 확인한 후 작업 흐름을 활성화할 것을 제안합니다. 비용 조사·티켓 생성 기능을 운영 자원을 자율 변경할 권한으로 일반화하면 안 됩니다."
+      },
+      "documents": [
+        {
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/",
+          "role": "primary",
+          "sha256": "a514d9c1fae1da4a9d49244d7531493cf13eeeefd7d1e395655b78096d2e805d",
+          "fetchedAt": "2026-10-25T12:29:28+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "AWS FinOps Agent preview: investigation scope and regional limits",
+          "claims": [
+            {
+              "text": "AWS announced a FinOps Agent preview that answers cost questions, surfaces optimization recommendations, investigates cost anomalies and schedules recurring workflows. It can route findings through Jira or Slack; those capabilities do not establish measured savings.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "answers cost questions, surfaces optimization opportunities, automatically investigates cost anomalies, and runs recurring FinOps workflows on a schedule you define."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "can open Jira tickets on your behalf."
+                }
+              ]
+            },
+            {
+              "text": "The announcement locates the preview in US East (N. Virginia), with cost data covering AWS Regions except GovCloud and China. It offers the service at no additional charge during preview; that is not a permanent price or an unlimited-use commitment.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "AWS FinOps Agent (preview) is available in the US East (N. Virginia) Region"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "except AWS GovCloud (US) Regions and AWS China (Beijing and Ningxia) Regions."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "AWS FinOps Agent is offered at no additional charge during the preview."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "AWS FinOps Agent 미리보기의 조사 기능과 리전 범위",
+          "claims": [
+            {
+              "text": "AWS는 비용 질의·최적화 권고·비용 이상 조사·반복 작업 일정을 지원하는 FinOps Agent 미리보기를 발표했다. Jira·Slack으로 결과를 전달할 수 있지만 해당 기능이 실측 비용 절감을 입증하지는 않는다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "answers cost questions, surfaces optimization opportunities, automatically investigates cost anomalies, and runs recurring FinOps workflows on a schedule you define."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "can open Jira tickets on your behalf."
+                }
+              ]
+            },
+            {
+              "text": "공지는 미리보기를 US East (N. Virginia)에서 제공하며 비용 데이터 범위에서 AWS GovCloud·China 리전을 제외한다고 설명한다. 미리보기 중 추가 요금이 없다는 안내이며 영구 가격이나 무제한 사용 약속은 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "AWS FinOps Agent (preview) is available in the US East (N. Virginia) Region"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "except AWS GovCloud (US) Regions and AWS China (Beijing and Ningxia) Regions."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "AWS FinOps Agent is offered at no additional charge during the preview."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "eea31f00e6ce7be1",
+      "archiveDate": "2026-06-30",
+      "originalPagePublishedAt": "2026-06-29T22:23:43.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-29T22:23:43.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "This selected panel summary does not represent every participant’s views or establish universal attack frequency. Define a threat model, approval boundaries, logs and repeatable tests before adopting the recommendations.",
+        "ko": "선별한 패널 발언의 요약이며 모든 참여자의 견해나 보편적인 공격 빈도를 확정한 것은 아닙니다. 제안을 도입하기 전에 위협 모델·승인 경계·로그·반복 가능한 검증을 정의할 것을 제안합니다."
+      },
+      "documents": [
+        {
+          "url": "https://www.infoq.com/articles/security-ai-threat-evolution/",
+          "role": "primary",
+          "sha256": "2ea2f511941f31f218e9266c06bb4166ed0f9dfed81a106c8cd64a4a59ed0003",
+          "fetchedAt": "2026-10-25T12:28:44+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "AI-security panel: attributed advice on identity and adversarial testing",
+          "claims": [
+            {
+              "text": "In the panel, Elham Arshad recommends treating agents as identities with their own profiles, permissions, credentials and lifecycles, with narrowly scoped capabilities and policy checks for sensitive actions. These are the participant’s recommendations.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Each agent needs its own profile, permissions, credentials, and lifecycle"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "agents only get the narrow capabilities they absolutely need, and every sensitive action is checked against policy."
+                }
+              ]
+            },
+            {
+              "text": "Vijay Dilwale argues that defenders should test prompt injection, retrieval abuse and tool access by deliberately manipulating inputs and observing behavior as context or permissions change. This is expert advice, not a benchmark proving a control’s effectiveness.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "It requires breaking the system on purpose, experimenting with prompts, seeding malicious content into retrieval sources, and observing how behavior changes when context or permissions shift."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "AI 보안 패널의 신원 관리·적대적 검증 제안",
+          "claims": [
+            {
+              "text": "패널에서 Elham Arshad는 에이전트를 자체 프로필·권한·인증정보·수명주기를 지닌 신원으로 취급하고, 기능을 좁게 부여하며 민감한 행동을 정책으로 검사하도록 권한다. 참여자가 제시한 권고다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Each agent needs its own profile, permissions, credentials, and lifecycle"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "agents only get the narrow capabilities they absolutely need, and every sensitive action is checked against policy."
+                }
+              ]
+            },
+            {
+              "text": "Vijay Dilwale는 입력을 의도적으로 조작하고 맥락·권한 변화에 따른 동작을 관찰하며 프롬프트 주입·검색 악용·도구 접근을 검증해야 한다고 주장한다. 전문가 조언이며 특정 통제의 효과를 입증한 벤치마크가 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "It requires breaking the system on purpose, experimenting with prompts, seeding malicious content into retrieval sources, and observing how behavior changes when context or permissions shift."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "52ee7abbb037f678",
+      "archiveDate": "2026-07-01",
+      "originalPagePublishedAt": "2026-06-30T22:27:16.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-30T22:27:16.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Check enrollment, supported alert types and the linked Azure subscription before enabling generation. Validate fixes manually and through tests; generating a suggestion does not itself remediate an alert.",
+        "ko": "참여 승인·지원 경고 유형·연결된 Azure 구독을 확인한 후 수정 생성을 활성화할 것을 제안합니다. 수정은 직접 검토하고 테스트해야 하며 제안 생성만으로 경고가 해결되지는 않습니다."
+      },
+      "documents": [
+        {
+          "url": "https://devblogs.microsoft.com/devops/copilot-autofix-for-github-advanced-security-for-azure-devops/",
+          "role": "primary",
+          "sha256": "7d7961422d68477a659b88152ed6797e95f7d70e3404ba9787b06a6e6932444e",
+          "fetchedAt": "2026-10-25T12:29:29+00:00",
+          "extractorVersion": "article-parser-v1"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning-autofix?view=azure-devops",
+          "role": "primary",
+          "sha256": "e96ea32d4e81d768eb7e5be0143c7ea8db7008cf03ec727c173cbba8f0877366",
+          "fetchedAt": "2026-10-25T12:29:29+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Azure DevOps Autofix: preview phases, review gates and billing",
+          "claims": [
+            {
+              "text": "Microsoft’s launch post describes Copilot Autofix for GitHub Advanced Security for Azure DevOps as a limited private preview with enrollment processed in waves. The launch post and later documentation must not be collapsed into an unchanged availability claim.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Copilot Autofix is available today in limited private preview for GitHub Advanced Security for Azure DevOps."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Enablement is processed in waves"
+                }
+              ]
+            },
+            {
+              "text": "The launch workflow generates a suggested change from supported CodeQL alerts and opens a pull request. Existing review and build gates still run, and the alert resolves after merge and the next CodeQL scan.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Your usual review and build gates run on the pull request. Once it merges and the next CodeQL scan completes, the alert resolves on its own."
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "At review time, the official guide labels the feature a limited public preview and says Microsoft is not accepting additional users. This is a later documented state, not evidence that the original private-preview wording was false.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "This feature is in limited public preview. Microsoft isn't currently accepting additional users for the preview."
+                }
+              ]
+            },
+            {
+              "text": "The current guide says fix generation consumes AI credits billed through the linked Azure subscription, and GitHub Copilot budgets and user limits do not govern that Azure DevOps meter. License inclusion should not be read as free fix generation.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "Generating a fix consumes AI credits from your organization's Azure billing meter."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "GitHub Copilot budget settings and user limits configured on GitHub don't apply to Copilot Autofix meter spend in Azure DevOps."
+                }
+              ]
+            }
+          ]
+        },
+        "ko": {
+          "title": "Azure DevOps Autofix의 미리보기 단계·검토·과금",
+          "claims": [
+            {
+              "text": "Microsoft의 출시 글은 Azure DevOps용 GitHub Advanced Security의 Copilot Autofix를 순차적으로 참여를 허용하는 제한된 비공개 미리보기로 설명한다. 출시 글과 후속 문서를 변하지 않은 제공 상태로 합쳐 서술하면 안 된다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Copilot Autofix is available today in limited private preview for GitHub Advanced Security for Azure DevOps."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Enablement is processed in waves"
+                }
+              ]
+            },
+            {
+              "text": "출시 글의 작업 흐름은 지원되는 CodeQL 경고에서 수정 제안을 만들고 PR을 연다. 기존 검토·빌드 검사는 계속 실행되며 병합 후 다음 CodeQL 스캔이 완료되어야 경고가 해소된다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Your usual review and build gates run on the pull request. Once it merges and the next CodeQL scan completes, the alert resolves on its own."
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "검토 시점의 공식 지침은 기능을 제한된 공개 미리보기로 표시하고 추가 사용자를 받지 않는다고 설명한다. 후속 문서의 상태이며 최초 비공개 미리보기 표현이 거짓이었다는 근거는 아니다.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "This feature is in limited public preview. Microsoft isn't currently accepting additional users for the preview."
+                }
+              ]
+            },
+            {
+              "text": "현재 지침은 수정 생성이 연결된 Azure 구독에서 과금되는 AI 크레딧을 사용하고, GitHub Copilot 예산·사용자 제한이 해당 Azure DevOps 과금에 적용되지 않는다고 설명한다. 라이선스에 포함된다는 설명을 무료 수정 생성으로 해석하면 안 된다.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "Generating a fix consumes AI credits from your organization's Azure billing meter."
+                },
+                {
+                  "document_id": 1,
+                  "quote": "GitHub Copilot budget settings and user limits configured on GitHub don't apply to Copilot Autofix meter spend in Azure DevOps."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c12b394bcd713139",
+      "archiveDate": "2026-07-01",
+      "originalPagePublishedAt": "2026-06-30T22:27:16.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-30T22:27:16.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Audit queries and compliance exports that rely on older closed alerts. Verify actual archive access and rollout status in the relevant account; do not apply this notice to every alert type or infer permanent retention after account or repository deletion.",
+        "ko": "오래된 종료 경고에 의존하는 질의·감사 자료 내보내기를 점검할 것을 제안합니다. 해당 계정에서 실제 아카이브 접근과 적용 상태를 확인해야 하며 모든 경고 유형으로 확대하거나 계정·저장소 삭제 후에도 영구 보존된다고 추론하면 안 됩니다."
+      },
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+          "role": "primary",
+          "sha256": "a53b2a847e0f7cc86798a1c352dd26a28bbdacb6d96132d87592f4f19d5abf72",
+          "fetchedAt": "2026-10-25T12:28:43+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Closed Dependabot alerts: announced retention and archive access",
+          "claims": [
+            {
+              "text": "GitHub’s notice scheduled a retention change for 2026-09-25, beginning with closed Dependabot security alerts on github.com and Enterprise Cloud. It explicitly excludes Enterprise Server; the announcement alone does not verify completion of the rollout.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Starting September 25, 2026, GitHub will introduce a data retention policy for closed Dependabot security alerts."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "It does not apply to GitHub Enterprise Server (GHES)."
+                }
+              ]
+            },
+            {
+              "text": "Under the announced policy, open alerts remain accessible regardless of age, while closed alerts remain in the UI and API for 2 years after closure. Older closed alerts move to downloadable CSV archives for authorized administrators and security managers rather than remaining in API results.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Open alerts stay fully accessible in the UI and API, regardless of age."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Closed alerts stay fully accessible in the UI and API for two years after they are closed."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Enterprise, organization, and repository administrators and security managers can download them as a CSV"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "종료된 Dependabot 경고의 보존·아카이브 접근 공지",
+          "claims": [
+            {
+              "text": "GitHub 공지는 2026-09-25부터 github.com·Enterprise Cloud의 종료된 Dependabot 보안 경고에 보존 정책을 적용할 예정이라고 설명했다. Enterprise Server는 명시적으로 제외되며 공지만으로 적용 완료를 확인한 것은 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Starting September 25, 2026, GitHub will introduce a data retention policy for closed Dependabot security alerts."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "It does not apply to GitHub Enterprise Server (GHES)."
+                }
+              ]
+            },
+            {
+              "text": "공개된 정책에서 열린 경고는 경과 기간과 관계없이 접근 가능하지만 종료된 경고는 종료 후 2년 동안 UI·API에 남는다. 더 오래된 종료 경고는 API 결과에 계속 남는 대신 권한 있는 관리자·보안 담당자가 내려받는 CSV 아카이브로 이동한다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Open alerts stay fully accessible in the UI and API, regardless of age."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Closed alerts stay fully accessible in the UI and API for two years after they are closed."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Enterprise, organization, and repository administrators and security managers can download them as a CSV"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    }
+  ]
+}

@@ -133,12 +133,14 @@ class ArchiveRenewalTests(unittest.TestCase):
         self.assertFalse(any((ROOT/'public').rglob('pilot-001.json')))
         self.assertEqual([],archive.check(ROOT))
 
-    def test_shared_author_host_is_approved_for_exact_source_only(self):
+    def test_primary_url_exceptions_do_not_approve_other_pages_on_same_host(self):
         cases=[('batch-002','d9492522fb4514ef',0,'https://dev.to/another-author/unreviewed-post'),
             ('batch-005','9aee971925826c50',0,'https://www.x41-dsec.de/unreviewed-advisory/'),
             ('batch-005','9aee971925826c50',1,'https://github.com/unreviewed/project/security/advisories/other'),
             ('batch-005','92303a0e5010240e',0,'https://www.docker.com/blog/unreviewed-post/'),
-            ('batch-005','92303a0e5010240e',1,'https://www.chainguard.dev/unreviewed-program')]
+            ('batch-005','92303a0e5010240e',1,'https://www.chainguard.dev/unreviewed-program'),
+            ('batch-006','4380abffaf1a31e0',0,'https://docs.gitlab.com/unreviewed-release/'),
+            ('batch-006','c505a5c997b12684',0,'https://www.infoq.com/presentations/unreviewed-talk/')]
         for name,identity,index,url in cases:
             with self.subTest(url=url):
                 batch=archive.read(ROOT/archive.DIRECTORY/'batches'/(name+'.json'))

@@ -7609,9 +7609,20 @@
       "originalTitle": "Windows Platform Security and the Race to Secure AI Agents",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-006",
+      "reviewPullRequest": 35,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 35,
+        "approvedAt": "2026-10-25T12:40:05+00:00",
+        "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+      },
+      "publication": {
+        "file": "src/content/renewals/ce26c7555a2bf537.json",
+        "slug": "2026-06-20-windows-agent-containment-and-audit-mode",
+        "englishPublishedAt": "2026-10-25T12:40:05+00:00"
+      }
     },
     {
       "id": "4380abffaf1a31e0",
@@ -7625,9 +7636,20 @@
       "originalTitle": "GitLab 19.0 Embeds Agentic AI in Secrets, Merge Requests, and Supply Chain Security",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-006",
+      "reviewPullRequest": 35,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 35,
+        "approvedAt": "2026-10-25T12:40:05+00:00",
+        "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+      },
+      "publication": {
+        "file": "src/content/renewals/4380abffaf1a31e0.json",
+        "slug": "2026-06-20-gitlab-security-features-and-upgrade-prerequisites",
+        "englishPublishedAt": "2026-10-25T12:40:05+00:00"
+      }
     },
     {
       "id": "b629f2768e466c45",
@@ -7721,9 +7743,9 @@
       "originalTitle": "Bamboo End of Life: How to Prepare and Choose the Right CI/CD Replacement",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "blocked",
+      "batchId": "batch-006",
+      "reviewPullRequest": 35
     },
     {
       "id": "f2223753d6fdae0a",
@@ -7817,9 +7839,9 @@
       "originalTitle": "YouTrack Security Update: Upgrade Required for YouTrack Server",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "blocked",
+      "batchId": "batch-006",
+      "reviewPullRequest": 35
     },
     {
       "id": "58b9b75ec72b2ff7",
@@ -7865,9 +7887,20 @@
       "originalTitle": "Presentation: Challenging Google Analytics: Building a Scalable, Cost-Effective User Tracking Service",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-006",
+      "reviewPullRequest": 35,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 35,
+        "approvedAt": "2026-10-25T12:40:05+00:00",
+        "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+      },
+      "publication": {
+        "file": "src/content/renewals/c505a5c997b12684.json",
+        "slug": "2026-06-23-tracking-service-schemas-and-delivery",
+        "englishPublishedAt": "2026-10-25T12:40:05+00:00"
+      }
     },
     {
       "id": "8b8a8879aa9a8370",
@@ -8217,9 +8250,20 @@
       "originalTitle": "Argo CD 3.5 Tightens Supply Chain Security with Internal mTLS and Source Integrity",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-006",
+      "reviewPullRequest": 35,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 35,
+        "approvedAt": "2026-10-25T12:40:05+00:00",
+        "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+      },
+      "publication": {
+        "file": "src/content/renewals/7067e48d153e8525.json",
+        "slug": "2026-06-27-argo-cd-release-candidate-security-configuration",
+        "englishPublishedAt": "2026-10-25T12:40:05+00:00"
+      }
     },
     {
       "id": "f23c98563c9b3d10",
@@ -8409,9 +8453,20 @@
       "originalTitle": "AWS Previews FinOps Agent for Cost Analysis and Optimization",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-006",
+      "reviewPullRequest": 35,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 35,
+        "approvedAt": "2026-10-25T12:40:05+00:00",
+        "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+      },
+      "publication": {
+        "file": "src/content/renewals/81aa0c8f7db4aee1.json",
+        "slug": "2026-06-29-aws-finops-agent-preview-scope",
+        "englishPublishedAt": "2026-10-25T12:40:05+00:00"
+      }
     },
     {
       "id": "ef77491099117953",
@@ -8521,9 +8576,20 @@
       "originalTitle": "Article: Virtual panel: Security in the Machine Age: Expert Insights on AI Threat Evolution",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-006",
+      "reviewPullRequest": 35,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 35,
+        "approvedAt": "2026-10-25T12:40:05+00:00",
+        "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+      },
+      "publication": {
+        "file": "src/content/renewals/eea31f00e6ce7be1.json",
+        "slug": "2026-06-30-ai-security-panel-identity-and-testing",
+        "englishPublishedAt": "2026-10-25T12:40:05+00:00"
+      }
     },
     {
       "id": "c20e5ff45dd6c40c",
@@ -8601,9 +8667,20 @@
       "originalTitle": "Upcoming cloud data retention policy for closed security alerts",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-006",
+      "reviewPullRequest": 35,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 35,
+        "approvedAt": "2026-10-25T12:40:05+00:00",
+        "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+      },
+      "publication": {
+        "file": "src/content/renewals/c12b394bcd713139.json",
+        "slug": "2026-07-01-dependabot-alert-retention-and-archives",
+        "englishPublishedAt": "2026-10-25T12:40:05+00:00"
+      }
     },
     {
       "id": "52ee7abbb037f678",
@@ -8617,9 +8694,20 @@
       "originalTitle": "Microsoft Brings AI-Powered Vulnerability Remediation to Azure DevOps with Copilot Autofix",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-006",
+      "reviewPullRequest": 35,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 35,
+        "approvedAt": "2026-10-25T12:40:05+00:00",
+        "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+      },
+      "publication": {
+        "file": "src/content/renewals/52ee7abbb037f678.json",
+        "slug": "2026-07-01-azure-devops-autofix-preview-and-billing",
+        "englishPublishedAt": "2026-10-25T12:40:05+00:00"
+      }
     },
     {
       "id": "9960969469b8d803",
