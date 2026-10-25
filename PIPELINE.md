@@ -65,6 +65,35 @@ preview에서는 커밋·PR·배포가 없습니다. `main` 이외 브랜치에�
 
 Python 테스트는 기존 수집·선별 검증과 새로운 두 언어 근거 검증·보류·저장 실패·중복 방지 조건을 오프라인으로 검사합니다. 실제 API 연결과 GitHub Pages 배포는 GitHub 환경에서 별도로 확인합니다.
 
+## 과거 뉴스 리뉴얼 · 검토 전용
+
+과거 Markdown 다이제스트의 모든 기사 항목은 `.pipeline/archive-renewal/manifest.json`에서 추적합니다. 원문 URL의 정규화 값으로 만든 안정적인 ID에 원본 파일·기사 번호·뉴스 기준일·한국어 최초 발행 시각·원문 발행 시각을 연결합니다. 원문 발행 시각이 없는 경우 추정하지 않고 `null`을 유지합니다. 예제 4건과 새 JSON에 의해 목록에서 가려진 기존 기사도 추적 대상에 포함합니다.
+
+```sh
+python3 -B scripts/archive_renewal.py sync
+python3 -B scripts/archive_renewal.py status
+python3 -B scripts/archive_renewal.py next --max-items 10
+npm run check:archive
+python3 -B scripts/archive_renewal.py check --check-sources
+python3 -B scripts/archive_renewal.py render \
+  --batch .pipeline/archive-renewal/batches/pilot-001.json \
+  --output /tmp/archive-renewal-review.txt
+```
+
+`sync`는 원본과 목록을 대조하면서 기존 진행 상태를 보존합니다. 원본 기록 삭제·날짜 변경은 실패하며, 사라진 기사를 조용히 누락시키지 않습니다. `next`는 미배정 `pending` 항목을 보안·비용·지원 종료 등 위험 관련 제목, 백엔드 관련 제목, 일반 제목 순서로 최대 15건 제안합니다. 같은 순위에서는 오래된 뉴스부터 제안합니다. 제목 키워드 분류이므로 검토자가 배치 구성과 실제 우선순위를 조정해야 합니다. `status`는 실제 게시·원문 확인 불가 종결·예제 제외를 별도로 집계하고, 보류 항목을 완료에 포함하지 않습니다.
+
+검토 배치는 `.pipeline/archive-renewal/batches/`에 저장합니다. 각 기사의 `claims`는 당시 사실, `followUp`은 이번 검토 시점에 추가로 확인한 사실입니다. 후속 확인이 비어 있어도 현재까지 변경이 없다는 뜻은 아닙니다. 보강 범위를 축소한 경우 그 한계를 검토 초점에 명시하고, 원래 항목 전체의 검증 완료로 처리하지 않습니다. `reviewFocus`는 편집 제안이며 사용자 작성 의견이나 직접 적용 결과가 아닙니다.
+
+이번 방식은 공식 출처의 문장과 맥락을 대조해 만든 편집 초안이며, Gemini 검증을 호출한 것으로 표시하지 않습니다. 근거에는 원문 URL·짧은 인용·추출 본문 해시·수집 시각만 저장하고 전체 원문은 저장하지 않습니다. 오프라인 CI는 구조·날짜·한영 수치와 보호 용어·공식 출처 근거 연결·배치 배정을 검사합니다. `--check-sources`를 지정하면 HTTPS로 원문을 다시 수집하여 본문 해시와 인용을 대조합니다. 원문 변경·수집 실패 시에는 검토자가 맥락을 다시 확인한 뒤 근거와 검토 시각을 갱신해야 합니다. 해시·인용 일치도 의미상 사실 검증이나 사람의 승인을 보증하지는 않습니다.
+
+기존 뉴스 기준일과 한국어 최초 발행 시각은 보존하며, 미게시 영문판의 `editionPublishedAt.en`은 반드시 `null`입니다. 검토 시각을 영문 최초 발행 시각으로 소급하지 않습니다. 과거 뉴스는 전용 검증기를 사용하므로 신규 뉴스의 7일 최신성·같은 날짜 발행 조건은 그대로 유지됩니다.
+
+상태는 `pending → researching → draft_ready → awaiting_review`로 진행하며 수집·근거 실패는 `blocked`로 남깁니다. 승인 또는 종결 상태에는 검토자·PR 번호·승인 시각 기록이 필요합니다. `unverifiable_proposal`은 처리 방침을 검토하는 초안이고, `unverifiable_archived`와 다릅니다. 원문을 확인하지 못한 초안에 검증된 사실을 채워 넣거나 자동으로 완료 처리하지 않습니다.
+
+첫 배치 `pilot-001`은 한영 보강 초안 8건과 보류 2건입니다. 보류 사유는 Netflix 공식 원문 수집 실패와 기존 InfoQ 원문 HTTP 404입니다. Spring 종합 기사는 Boot 기능으로 범위를 좁힌 초안이므로 종합 기사 전체를 검증한 것으로 보지 않습니다. 1,125건 중 예제 4건을 제외한 실제 항목은 1,121건이며 이 단계에서 리뉴얼 게시 완료는 0건입니다.
+
+검토자는 Draft PR 본문의 한영 원고와 근거를 확인하고, 수정 사항은 배치 JSON에 반영합니다. PR 본문은 `render`를 다시 실행해 갱신합니다. 기존 `/review/?pr=...` 화면과 뉴스 후보 푸시 알림은 이 전용 배치를 지원하지 않습니다. 이 데이터는 Astro 콘텐츠 로더·RSS·사이트맵에서 읽지 않으며, 이 PR을 병합해도 과거 기사는 변경·게시되지 않습니다. 실제 게시 변환·영문 경로·canonical과 hreflang·리다이렉트 검증은 시범 원고 승인 후 별도 구현·검토 단계입니다. 자동 예약 리뉴얼도 아직 추가하지 않았습니다.
+
 ## 이전 구현
 
 `scripts/generate_dev_digest.py`와 `validate_dev_digest.py`는 기존 Markdown 아카이브의 수집·선별·검증 함수와 회귀 테스트를 유지하기 위해 남겼습니다. 새 npm 명령과 Actions는 `scripts/generate_digest.py`를 사용합니다. 기존 Ruby 빌드 스크립트는 운영 경로에서 사용하지 않습니다.

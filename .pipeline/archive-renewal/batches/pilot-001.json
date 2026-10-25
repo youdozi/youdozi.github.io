@@ -1,0 +1,744 @@
+{
+  "schemaVersion": 1,
+  "batchId": "pilot-001",
+  "mode": "historical",
+  "state": "draft",
+  "method": "Editorial source-context review; no Gemini verifier call and no hands-on product experiment. Human approval is pending.",
+  "reviewedAt": "2026-10-25T04:35:23+00:00",
+  "entries": [
+    {
+      "id": "4a59615041b968ae",
+      "archiveDate": "2026-10-22",
+      "originalPagePublishedAt": "2026-10-22T00:20:42.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-10-22T00:20:42.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Review the deployed PHP build and distribution backports separately from WAF coverage. Check upload-progress configuration before treating the later mitigation as applicable. These are review suggestions; no application was tested.",
+        "ko": "배포된 PHP 빌드와 배포판의 백포트 여부를 WAF 보호와 별도로 확인할 것을 제안합니다. 후속 완화책을 적용하기 전 업로드 진행 설정을 점검해야 합니다. 실제 애플리케이션을 실험한 결과가 아닙니다."
+      },
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+          "role": "primary",
+          "sha256": "4c6739af8f3c568150822a20b84657a4fd0e1d22af9702842ce307442f499e5d",
+          "fetchedAt": "2026-10-25T04:35:23+00:00",
+          "extractorVersion": "article-parser-v1"
+        },
+        {
+          "url": "https://www.php.net/archive/2026.php",
+          "role": "primary",
+          "sha256": "309a7911e3c6d186f132fa45b29c88f6b121c22812fe38daf061fd424678985b",
+          "fetchedAt": "2026-10-25T04:35:23+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "PHP patches remain necessary alongside Cloudflare WAF protections",
+          "claims": [
+            {
+              "text": "The PHP project lists 8.5.12, 8.4.27, 8.3.36 and 8.2.35 as fixes for the critical remote-code-execution vulnerabilities disclosed at the time.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fix two critical vulnerabilities"
+                }
+              ]
+            },
+            {
+              "text": "Cloudflare says customers should patch PHP even when its WAF provides an additional defensive layer.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Customers should patch their PHP repos"
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "In its later update, Cloudflare limits protection against the related upload-progress issue to the default field name; changing session.upload_progress.name falls outside that WAF rule.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Customers who have changed session.upload_progress.name are not covered by the WAF rule."
+                }
+              ]
+            }
+          ]
+        },
+        "ko": {
+          "title": "Cloudflare WAF 보호와 함께 필요한 PHP 패치",
+          "claims": [
+            {
+              "text": "PHP 프로젝트는 당시 공개된 치명적 원격 코드 실행 취약점의 수정 버전으로 8.5.12, 8.4.27, 8.3.36, 8.2.35를 명시했다.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fix two critical vulnerabilities"
+                }
+              ]
+            },
+            {
+              "text": "Cloudflare는 WAF가 추가 방어 계층을 제공하더라도 PHP를 패치해야 한다고 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Customers should patch their PHP repos"
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "Cloudflare의 후속 업데이트는 관련 업로드 진행 문제에 대한 보호를 기본 필드 이름에 한정했다. session.upload_progress.name을 변경한 경우 해당 WAF 규칙의 보호 대상이 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Customers who have changed session.upload_progress.name are not covered by the WAF rule."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c78cf468160e1a45",
+      "archiveDate": "2026-10-21",
+      "originalPagePublishedAt": "2026-10-21T00:19:16.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-10-21T00:19:16.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Trace which HTTP library, runtime and trust store each application actually uses. A successful browser request is not sufficient evidence that every application path is protected; validate the relevant clients without disabling verification.",
+        "ko": "애플리케이션별 HTTP 라이브러리·런타임·신뢰 저장소 경로 확인을 제안합니다. 브라우저 요청 성공만으로 모든 애플리케이션 경로의 보호를 입증할 수 없으므로 검증을 끄지 않고 해당 클라이언트를 점검해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+          "role": "primary",
+          "sha256": "d54ae5fc0725b51388e9a99369e6225f90e2d552292b77f25dc780ad316bfd21",
+          "fetchedAt": "2026-10-25T04:35:23+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "eMudhra incident: audit application trust as well as client updates",
+          "claims": [
+            {
+              "text": "Cloudflare instructed Tunnel customers to upgrade cloudflared to 2026.10.2 and redeploy fixed container images where applicable. This is the version in the incident notice, not a claim about the latest version.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Upgrade to 2026.10.2 ."
+                }
+              ]
+            },
+            {
+              "text": "The notice warns that updating an SDK alone may leave the underlying certificate-verification policy unchanged.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Updating the SDK alone may not change the underlying policy."
+                }
+              ]
+            },
+            {
+              "text": "Cloudflare warns against resolving certificate errors by disabling verification.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "not resolve these errors by disabling verification"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "eMudhra 사고: 클라이언트 업데이트와 애플리케이션 신뢰 설정 점검",
+          "claims": [
+            {
+              "text": "Cloudflare는 Tunnel 고객에게 cloudflared를 2026.10.2로 올리고 컨테이너 사용 시 수정 이미지를 재배포하도록 안내했다. 이는 사고 공지의 버전이며 최신 버전이라는 의미는 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Upgrade to 2026.10.2 ."
+                }
+              ]
+            },
+            {
+              "text": "공지에 따르면 SDK만 업데이트해서는 하위 인증서 검증 정책이 바뀌지 않을 수 있다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Updating the SDK alone may not change the underlying policy."
+                }
+              ]
+            },
+            {
+              "text": "Cloudflare는 인증서 오류를 해결하려고 검증을 끄지 말라고 경고했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "not resolve these errors by disabling verification"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "72477d086944244f",
+      "archiveDate": "2026-10-20",
+      "originalPagePublishedAt": "2026-10-20T00:52:09.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-10-20T00:52:09.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Inventory every exposed listener and alternate origin route. Review patch status, authentication policy and origin restrictions as separate controls; this draft does not claim that a DNS change or WAF alone closes the exposure.",
+        "ko": "노출된 리스너와 대체 원본 경로를 목록화할 것을 제안합니다. 패치 상태·인증 정책·원본 접근 제한을 각각 점검해야 합니다. DNS 변경이나 WAF만으로 노출을 해소했다고 판단할 근거는 없습니다."
+      },
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
+          "role": "primary",
+          "sha256": "3627d660d7001472e4a5987f0a3b8011ae0f1e041deb6888d9bd17d8e4dc0035",
+          "fetchedAt": "2026-10-25T04:35:23+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "NetScaler protection requires patching and origin controls",
+          "claims": [
+            {
+              "text": "Cloudflare starts its NetScaler guidance by telling affected customers to patch their gateway before considering additional protective layers.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "If you’re a NetScaler customer and you haven’t patched your instance"
+                }
+              ]
+            },
+            {
+              "text": "The article warns that direct access to the original address or an alternate hostname can bypass the front-end Access controls.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "they can avoid the controls placed in front of it."
+                }
+              ]
+            },
+            {
+              "text": "Protection of the web authentication path does not automatically cover DTLS-enabled gateway listeners.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "including DTLS-enabled listeners."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "NetScaler 보호에 필요한 패치와 원본 서버 통제",
+          "claims": [
+            {
+              "text": "Cloudflare는 NetScaler 안내에서 추가 보호 계층을 검토하기에 앞서 영향을 받는 게이트웨이를 패치하라고 강조했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "If you’re a NetScaler customer and you haven’t patched your instance"
+                }
+              ]
+            },
+            {
+              "text": "기사는 원본 주소나 대체 호스트 이름에 직접 접근하면 앞단의 Access 통제를 우회할 수 있다고 경고했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "they can avoid the controls placed in front of it."
+                }
+              ]
+            },
+            {
+              "text": "웹 인증 경로 보호가 DTLS 활성화 게이트웨이 리스너까지 자동으로 보호하는 것은 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "including DTLS-enabled listeners."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "59c87ea544e0e5db",
+      "archiveDate": "2026-10-24",
+      "originalPagePublishedAt": "2026-10-24T00:10:10.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-10-24T00:10:10.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Distinguish managed detections from customer-authored response rules when evaluating coverage. This preserved item had disappeared from the legacy listing after a newer digest replaced the page; renewal still requires explicit review.",
+        "ko": "보호 범위를 평가할 때 관리형 탐지와 고객 작성 응답 규칙을 구분할 것을 제안합니다. 이 보존 항목은 새 다이제스트가 기존 페이지를 대체하며 목록에서 가려졌지만, 리뉴얼 시에도 별도 검토가 필요합니다."
+      },
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/full-transaction-waf/",
+          "role": "primary",
+          "sha256": "2aca568767d8399228f2680f56fbe6c13d44d95242f827c46026cc73aaf82a2a",
+          "fetchedAt": "2026-10-25T04:35:23+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Cloudflare WAF response rules: actions and body limits",
+          "claims": [
+            {
+              "text": "Cloudflare WAF lets customers create up to three custom response rules supporting Log and Block actions.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "up to three custom response rules supporting Log and Block actions"
+                }
+              ]
+            },
+            {
+              "text": "The announcement explicitly says custom rules on the response body are not yet available.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Creating rules on the response body is not yet available."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Cloudflare WAF 응답 규칙의 동작과 본문 제약",
+          "claims": [
+            {
+              "text": "Cloudflare WAF는 고객이 Log와 Block 동작을 지원하는 사용자 정의 응답 규칙을 최대 3개 만들 수 있다고 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "up to three custom response rules supporting Log and Block actions"
+                }
+              ]
+            },
+            {
+              "text": "발표는 응답 본문에 대한 사용자 정의 규칙이 아직 제공되지 않는다고 명시했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Creating rules on the response body is not yet available."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "50b97c32c1d2c027",
+      "archiveDate": "2026-10-20",
+      "originalPagePublishedAt": "2026-10-20T00:52:09.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-10-20T00:52:09.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Review secret exposure at individual steps and permissions granted to CI agents. Schema validation is a narrow check; execution behavior, plugins and permission boundaries still need separate review.",
+        "ko": "단계별 비밀값 노출과 CI 에이전트 권한을 점검할 것을 제안합니다. 스키마 검증은 제한된 검사이므로 실행 동작·플러그인·권한 경계는 별도로 검토해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://buildkite.com/resources/blog/what-shipped-at-buildkite-september-27-october-3-2026/",
+          "role": "primary",
+          "sha256": "b9c85b0abea511489655427aca39310c4ef8b14bfea2030c3861e8155b50d381",
+          "fetchedAt": "2026-10-25T04:35:23+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Buildkite scopes pipeline secrets and adds pipeline validation tools",
+          "claims": [
+            {
+              "text": "Buildkite describes pipeline secrets as cluster secrets restricted to the current pipeline, with additional access conditions available.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Pipeline secrets are cluster secrets restricted to the current pipeline"
+                }
+              ]
+            },
+            {
+              "text": "Its MCP server adds validate_pipeline to check pipeline YAML against the official schema before upload.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "validate_pipeline to check pipeline YAML against the official schema before upload"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Buildkite의 파이프라인 범위 비밀값과 검증 도구",
+          "claims": [
+            {
+              "text": "Buildkite는 파이프라인 비밀값을 현재 파이프라인으로 접근을 제한한 클러스터 비밀값으로 설명하며 추가 접근 조건도 제공한다고 안내했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Pipeline secrets are cluster secrets restricted to the current pipeline"
+                }
+              ]
+            },
+            {
+              "text": "MCP 서버에는 업로드 전에 파이프라인 YAML을 공식 스키마와 대조하는 validate_pipeline이 추가됐다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "validate_pipeline to check pipeline YAML against the official schema before upload"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "68e2ee5d21f7dc1b",
+      "archiveDate": "2026-10-20",
+      "originalPagePublishedAt": "2026-10-20T00:52:09.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-10-20T00:52:09.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Compare cost only alongside review quality, workload mix and the evaluation period. Reproduce measurements on representative changes before selecting models or reducing effort; this draft contains no local benchmark.",
+        "ko": "비용 비교 시 리뷰 품질·워크로드 구성·평가 기간을 함께 확인할 것을 제안합니다. 모델이나 추론 강도를 바꾸기 전에 대표 변경 사항으로 측정을 재현해야 합니다. 이 초안에는 자체 벤치마크가 없습니다."
+      },
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+          "role": "primary",
+          "sha256": "57f11440fdeb0800e3807ec9391fa8fb15b69fdcbc1541a68982255ab1cf6460",
+          "fetchedAt": "2026-10-25T04:35:23+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Cloudflare reports lower inference costs for its internal reviewer",
+          "claims": [
+            {
+              "text": "Cloudflare reports its internal code reviewer averaged $0.77 per review, down 68% against a $2.43 baseline from its most expensive weeks. These are its workload results, not guaranteed savings for other teams.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "$0.77, down 68% from the $2.43"
+                }
+              ]
+            },
+            {
+              "text": "The company attributes about 40% of the savings to reviewer-code changes and optimizations, with the remainder coming from model and effort choices.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "About 40% of the savings came from changes and optimizations to the reviewer's code"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Cloudflare 내부 리뷰어의 추론 비용 절감 사례",
+          "claims": [
+            {
+              "text": "Cloudflare는 내부 코드 리뷰어의 평균 비용이 리뷰당 $0.77로, 비용이 가장 높았던 기간의 $2.43 기준선 대비 68% 줄었다고 보고했다. 자사 워크로드의 결과이며 다른 팀의 절감을 보장하지 않는다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "$0.77, down 68% from the $2.43"
+                }
+              ]
+            },
+            {
+              "text": "회사는 절감액의 약 40%를 리뷰어 코드 변경·최적화에, 나머지를 모델과 추론 강도 선택에 기인한다고 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "About 40% of the savings came from changes and optimizations to the reviewer's code"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "38bfcb4310c98b8d",
+      "archiveDate": "2026-10-12",
+      "originalPagePublishedAt": "2026-10-12T00:53:41.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-10-12T00:53:41.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Check that the requested version and isolate are active at the selected location, and compare behavior with and without profiling under representative traffic. Resource allocation samples and retained memory are different questions.",
+        "ko": "선택한 위치에서 요청 버전과 isolate가 활성 상태인지 확인하고 대표 트래픽으로 프로파일링 유무를 비교할 것을 제안합니다. 할당 샘플과 실제 유지 메모리는 구분해서 해석해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+          "role": "primary",
+          "sha256": "6f916933b64fe743bacbc0bf722f4c7c6db3399c77091d79921f110b64363e47",
+          "fetchedAt": "2026-10-25T04:35:23+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Workers and Durable Objects gain on-demand resource profiles",
+          "claims": [
+            {
+              "text": "Cloudflare announced CPU and memory profiling for Workers and Durable Objects, with on-demand collection and downloadable profiles described in the article.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "support for CPU and memory profiling of Workers and Durable Objects"
+                }
+              ]
+            },
+            {
+              "text": "For CPU profiling, the implementation starts a V8 profiler with a one millisecond sampling interval. That sampling detail is not evidence of zero production overhead.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "begin sampling at a one millisecond interval."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Workers와 Durable Objects의 온디맨드 리소스 프로파일",
+          "claims": [
+            {
+              "text": "Cloudflare는 Workers와 Durable Objects의 CPU·메모리 프로파일링을 발표하고 온디맨드 수집과 프로파일 다운로드를 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "support for CPU and memory profiling of Workers and Durable Objects"
+                }
+              ]
+            },
+            {
+              "text": "CPU 프로파일링 구현은 V8 프로파일러를 1밀리초 샘플링 간격으로 시작한다. 이 샘플링 설정은 운영 오버헤드가 없다는 증거는 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "begin sampling at a one millisecond interval."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "568305543e6754fa",
+      "archiveDate": "2026-09-30",
+      "originalPagePublishedAt": "2026-09-30T00:57:05.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-09-30T00:57:05.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Keep the original roundup date and describe these as milestone features. Before approving the entire original item, separately verify the Framework, Data, Security and Integration releases; this narrower draft does not verify those sections.",
+        "ko": "기존 종합 기사 날짜를 유지하고 마일스톤 기능으로 표현할 것을 제안합니다. 원래 항목 전체를 승인하기 전 Framework·Data·Security·Integration 릴리스를 각각 확인해야 합니다. 이 축소 초안은 그 부분까지 검증한 것이 아닙니다."
+      },
+      "documents": [
+        {
+          "url": "https://spring.io/blog/2026/09/25/spring-boot-4-2-0-M2-available-now",
+          "role": "primary",
+          "sha256": "b48086b1e69e80de70775145818e67b61e4efece28ba53f55358075a1d439ead",
+          "fetchedAt": "2026-10-25T04:35:23+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Spring Boot milestone: LDAP and telemetry changes",
+          "claims": [
+            {
+              "text": "The Spring Boot 4.2.0-M2 milestone adds SSL bundle support for LDAP, including LDAPS for the embedded server. This draft verifies the Boot portion of the older roundup.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Boot 4.2.0-M2 has been released"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "SSL bundle support for LDAP"
+                }
+              ]
+            },
+            {
+              "text": "The same milestone adds OpenTelemetry semantic-convention support alongside shared OTLP endpoint, header and compression configuration.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "OpenTelemetry's semantic conventions, alongside common OTLP endpoint, header, and compression configuration."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Spring Boot 마일스톤의 LDAP와 텔레메트리 변경",
+          "claims": [
+            {
+              "text": "Spring Boot 4.2.0-M2 마일스톤에는 LDAP의 SSL 번들 지원과 내장 서버의 LDAPS 지원이 포함됐다. 이 초안은 기존 종합 기사 중 Boot 부분을 검증한 것이다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Boot 4.2.0-M2 has been released"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "SSL bundle support for LDAP"
+                }
+              ]
+            },
+            {
+              "text": "같은 마일스톤은 OpenTelemetry 의미 규약과 공통 OTLP 엔드포인트·헤더·압축 설정 지원을 추가했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "OpenTelemetry's semantic conventions, alongside common OTLP endpoint, header, and compression configuration."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "fe2cf5f72fabe2f4",
+      "archiveDate": "2026-10-22",
+      "originalPagePublishedAt": "2026-10-22T00:20:42.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-10-22T00:20:42.000Z",
+        "en": null
+      },
+      "outcome": "unverifiable_proposal",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Choose a documented disposition; an unavailable source is not a completed renewal.",
+        "ko": "처리 방침과 근거를 기록해야 합니다. 원문 미확인은 리뉴얼 완료가 아닙니다."
+      },
+      "reason": {
+        "en": "The official Netflix article was readable in browser research, but the current collector failed to retrieve its body. Exact quote and content-hash verification is incomplete, so no verified claims are supplied. Retry collection or explicitly record another reproducible evidence method before renewal.",
+        "ko": "Netflix 공식 기사는 브라우저 조사에서 읽을 수 있었지만 현재 수집기가 본문을 가져오지 못했습니다. 인용·본문 해시 대조가 불완전하므로 검증된 주장을 작성하지 않았습니다. 재수집하거나 재현 가능한 다른 근거 수집 방식을 명시한 뒤 리뉴얼해야 합니다."
+      },
+      "documents": [],
+      "editions": {
+        "en": {
+          "title": "Netflix workload attestation: reproducible source collection pending",
+          "claims": [],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Netflix 워크로드 증명: 재현 가능한 원문 수집 대기",
+          "claims": [],
+          "followUp": []
+        }
+      },
+      "attemptedSourceUrls": [
+        "https://netflixtechblog.com/trading-a-cloud-identity-for-your-own-workload-attestation-on-managed-compute-516d5a29b252"
+      ]
+    },
+    {
+      "id": "b629f2768e466c45",
+      "archiveDate": "2026-06-21",
+      "originalPagePublishedAt": "2026-06-20T22:25:51.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-20T22:25:51.000Z",
+        "en": null
+      },
+      "outcome": "unverifiable_proposal",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Choose a documented disposition; an unavailable source is not a completed renewal.",
+        "ko": "처리 방침과 근거를 기록해야 합니다. 원문 미확인은 리뉴얼 완료가 아닙니다."
+      },
+      "reason": {
+        "en": "The original InfoQ URL returns HTTP 404. The existing headline and summary cannot substitute for source evidence. Hold this item and ask the reviewer to decide between recovery from a verifiable archive and an explicitly labelled unavailable-source disposition.",
+        "ko": "기존 InfoQ URL이 HTTP 404를 반환합니다. 저장된 제목·요약을 원문 근거로 대체할 수 없습니다. 항목을 보류하고 검증 가능한 아카이브 복구 또는 원문 확인 불가 표시 중 처리 방침을 검토해야 합니다."
+      },
+      "documents": [],
+      "editions": {
+        "en": {
+          "title": "Bedrock data-sharing story: source unavailable",
+          "claims": [],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Bedrock 데이터 공유 기사: 원문 확인 불가",
+          "claims": [],
+          "followUp": []
+        }
+      },
+      "attemptedSourceUrls": [
+        "https://www.infoq.com/news/2026/06/bedrock-fable-5-data-sharing/"
+      ]
+    }
+  ],
+  "reviewMethod": "editorial-source-context-review"
+}
