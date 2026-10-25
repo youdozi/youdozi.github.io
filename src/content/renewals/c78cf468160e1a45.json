@@ -1,0 +1,113 @@
+{
+  "id": "c78cf468160e1a45",
+  "archiveDate": "2026-10-21",
+  "originalPagePublishedAt": "2026-10-21T00:19:16.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-10-21T00:19:16.000Z",
+    "en": "2026-10-25T05:21:13+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Trace which HTTP library, runtime and trust store each application actually uses. A successful browser request is not sufficient evidence that every application path is protected; validate the relevant clients without disabling verification.",
+    "ko": "애플리케이션별 HTTP 라이브러리·런타임·신뢰 저장소 경로 확인을 제안합니다. 브라우저 요청 성공만으로 모든 애플리케이션 경로의 보호를 입증할 수 없으므로 검증을 끄지 않고 해당 클라이언트를 점검해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+      "role": "primary",
+      "sha256": "d54ae5fc0725b51388e9a99369e6225f90e2d552292b77f25dc780ad316bfd21",
+      "fetchedAt": "2026-10-25T04:35:23+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "eMudhra incident: audit application trust as well as client updates",
+      "claims": [
+        {
+          "text": "Cloudflare instructed Tunnel customers to upgrade cloudflared to 2026.10.2 and redeploy fixed container images where applicable. This is the version in the incident notice, not a claim about the latest version.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Upgrade to 2026.10.2 ."
+            }
+          ]
+        },
+        {
+          "text": "The notice warns that updating an SDK alone may leave the underlying certificate-verification policy unchanged.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Updating the SDK alone may not change the underlying policy."
+            }
+          ]
+        },
+        {
+          "text": "Cloudflare warns against resolving certificate errors by disabling verification.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "not resolve these errors by disabling verification"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "eMudhra 사고: 클라이언트 업데이트와 애플리케이션 신뢰 설정 점검",
+      "claims": [
+        {
+          "text": "Cloudflare는 Tunnel 고객에게 cloudflared를 2026.10.2로 올리고 컨테이너 사용 시 수정 이미지를 재배포하도록 안내했다. 이는 사고 공지의 버전이며 최신 버전이라는 의미는 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Upgrade to 2026.10.2 ."
+            }
+          ]
+        },
+        {
+          "text": "공지에 따르면 SDK만 업데이트해서는 하위 인증서 검증 정책이 바뀌지 않을 수 있다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Updating the SDK alone may not change the underlying policy."
+            }
+          ]
+        },
+        {
+          "text": "Cloudflare는 인증서 오류를 해결하려고 검증을 끄지 말라고 경고했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "not resolve these errors by disabling verification"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-10-21-emudhra-certificate-trust-review",
+  "source": "Cloudflare Blog",
+  "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-10-21T07:20:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-10-21.md",
+  "batchId": "pilot-001",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T04:35:23+00:00",
+  "updatedAt": "2026-10-25T05:21:13+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 30,
+    "approvedAt": "2026-10-25T05:21:13+00:00",
+    "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

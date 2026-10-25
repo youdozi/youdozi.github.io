@@ -8,6 +8,7 @@ export type Entry = {
   publishedAt: Date; updatedAt?: Date; categories: string[]; tags: string[]; description: string; url: string;
   reviewStatus?: 'revised' | 'source-audited' | 'example';
   legacyUrl?: string; legacySource?: string; post?: CollectionEntry<'posts'>; digest?: CollectionEntry<'digests'>;
+  renewal?: CollectionEntry<'renewals'>;
 };
 export const text = {
   en: { home: 'Home', posts: 'Writing', digest: 'Dev digest', categories: 'Categories', tags: 'Topics', search: 'Search', all: 'All writing', read: 'Read article', recent: 'Latest entries', empty: 'No entries in English yet.', archive: 'Explore the Korean archive', language: 'Language', about: 'Practical notes on Java, Spring, testing, and software engineering, with working examples and source references.', scope: 'AI summaries checked against source quotations and context. This is not a guarantee of factual accuracy.', source: 'Read source', published: 'Published', related: 'More to read', results: 'Search articles', searchHint: 'Search titles, topics, and article text', noResults: 'No matching articles.', footer: 'A developer’s working memory.', digestDescription: 'Development news and source links.', overview: 'Writing & development news', old: 'This entry is part of the original archive. The source descriptions may be in English.', notTranslated: 'English translation is not available for this entry.' },
@@ -30,6 +31,16 @@ export async function entries(includeExamples = false): Promise<Entry[]> {
       if (d.publishedAt > new Date()) continue;
       for (const language of languages) {
         result.push({ title: language === 'en' ? `Dev digest · ${d.date}` : `개발 다이제스트 · ${d.date}`, language, translationKey: `digest-${d.date}`, slug: d.date, kind: 'digest', publishedAt: d.publishedAt, updatedAt: d.updatedAt, categories: ['dev', 'digest'], tags: [...new Set(d.articles.flatMap(a => a.tags))], description: d.articles[0].editions[language].summary, url: `/${language}/digest/${d.date}/`, digest });
+      }
+    }
+    for (const renewal of await getCollection('renewals')) {
+      const d=renewal.data;
+      for (const language of languages) {
+        const edition=d.editions[language];
+        result.push({title:edition.title,language,translationKey:`renewal-${d.id}`,slug:d.slug,kind:'digest',
+          publishedAt:new Date(d.editionPublishedAt[language]),updatedAt:new Date(d.updatedAt),
+          categories:['dev','digest'],tags:d.tags,description:edition.claims[0].text,
+          url:`/${language}/digest/${d.slug}/`,renewal});
       }
     }
     const urls = new Set<string>();

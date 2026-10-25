@@ -1,0 +1,113 @@
+{
+  "id": "72477d086944244f",
+  "archiveDate": "2026-10-20",
+  "originalPagePublishedAt": "2026-10-20T00:52:09.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-10-20T00:52:09.000Z",
+    "en": "2026-10-25T05:21:13+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Inventory every exposed listener and alternate origin route. Review patch status, authentication policy and origin restrictions as separate controls; this draft does not claim that a DNS change or WAF alone closes the exposure.",
+    "ko": "노출된 리스너와 대체 원본 경로를 목록화할 것을 제안합니다. 패치 상태·인증 정책·원본 접근 제한을 각각 점검해야 합니다. DNS 변경이나 WAF만으로 노출을 해소했다고 판단할 근거는 없습니다."
+  },
+  "documents": [
+    {
+      "url": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
+      "role": "primary",
+      "sha256": "3627d660d7001472e4a5987f0a3b8011ae0f1e041deb6888d9bd17d8e4dc0035",
+      "fetchedAt": "2026-10-25T04:35:23+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "NetScaler protection requires patching and origin controls",
+      "claims": [
+        {
+          "text": "Cloudflare starts its NetScaler guidance by telling affected customers to patch their gateway before considering additional protective layers.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "If you’re a NetScaler customer and you haven’t patched your instance"
+            }
+          ]
+        },
+        {
+          "text": "The article warns that direct access to the original address or an alternate hostname can bypass the front-end Access controls.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "they can avoid the controls placed in front of it."
+            }
+          ]
+        },
+        {
+          "text": "Protection of the web authentication path does not automatically cover DTLS-enabled gateway listeners.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "including DTLS-enabled listeners."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "NetScaler 보호에 필요한 패치와 원본 서버 통제",
+      "claims": [
+        {
+          "text": "Cloudflare는 NetScaler 안내에서 추가 보호 계층을 검토하기에 앞서 영향을 받는 게이트웨이를 패치하라고 강조했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "If you’re a NetScaler customer and you haven’t patched your instance"
+            }
+          ]
+        },
+        {
+          "text": "기사는 원본 주소나 대체 호스트 이름에 직접 접근하면 앞단의 Access 통제를 우회할 수 있다고 경고했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "they can avoid the controls placed in front of it."
+            }
+          ]
+        },
+        {
+          "text": "웹 인증 경로 보호가 DTLS 활성화 게이트웨이 리스너까지 자동으로 보호하는 것은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "including DTLS-enabled listeners."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-10-20-netscaler-patching-and-origin-controls",
+  "source": "Cloudflare Blog",
+  "url": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-10-19T22:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-10-20.md",
+  "batchId": "pilot-001",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T04:35:23+00:00",
+  "updatedAt": "2026-10-25T05:21:13+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 30,
+    "approvedAt": "2026-10-25T05:21:13+00:00",
+    "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "59c87ea544e0e5db",
+  "archiveDate": "2026-10-24",
+  "originalPagePublishedAt": "2026-10-24T00:10:10.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-10-24T00:10:10.000Z",
+    "en": "2026-10-25T05:21:13+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Distinguish managed detections from customer-authored response rules when evaluating coverage. This preserved item had disappeared from the legacy listing after a newer digest replaced the page; renewal still requires explicit review.",
+    "ko": "보호 범위를 평가할 때 관리형 탐지와 고객 작성 응답 규칙을 구분할 것을 제안합니다. 이 보존 항목은 새 다이제스트가 기존 페이지를 대체하며 목록에서 가려졌지만, 리뉴얼 시에도 별도 검토가 필요합니다."
+  },
+  "documents": [
+    {
+      "url": "https://blog.cloudflare.com/full-transaction-waf/",
+      "role": "primary",
+      "sha256": "2aca568767d8399228f2680f56fbe6c13d44d95242f827c46026cc73aaf82a2a",
+      "fetchedAt": "2026-10-25T04:35:23+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Cloudflare WAF response rules: actions and body limits",
+      "claims": [
+        {
+          "text": "Cloudflare WAF lets customers create up to three custom response rules supporting Log and Block actions.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "up to three custom response rules supporting Log and Block actions"
+            }
+          ]
+        },
+        {
+          "text": "The announcement explicitly says custom rules on the response body are not yet available.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Creating rules on the response body is not yet available."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Cloudflare WAF 응답 규칙의 동작과 본문 제약",
+      "claims": [
+        {
+          "text": "Cloudflare WAF는 고객이 Log와 Block 동작을 지원하는 사용자 정의 응답 규칙을 최대 3개 만들 수 있다고 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "up to three custom response rules supporting Log and Block actions"
+            }
+          ]
+        },
+        {
+          "text": "발표는 응답 본문에 대한 사용자 정의 규칙이 아직 제공되지 않는다고 명시했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Creating rules on the response body is not yet available."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-10-24-cloudflare-waf-response-rule-limits",
+  "source": "Cloudflare Blog",
+  "url": "https://blog.cloudflare.com/full-transaction-waf/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-10-21T23:10:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-10-24.md",
+  "batchId": "pilot-001",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T04:35:23+00:00",
+  "updatedAt": "2026-10-25T05:21:13+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 30,
+    "approvedAt": "2026-10-25T05:21:13+00:00",
+    "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

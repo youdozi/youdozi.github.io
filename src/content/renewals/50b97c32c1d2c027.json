@@ -1,0 +1,95 @@
+{
+  "id": "50b97c32c1d2c027",
+  "archiveDate": "2026-10-20",
+  "originalPagePublishedAt": "2026-10-20T00:52:09.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-10-20T00:52:09.000Z",
+    "en": "2026-10-25T05:21:13+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Review secret exposure at individual steps and permissions granted to CI agents. Schema validation is a narrow check; execution behavior, plugins and permission boundaries still need separate review.",
+    "ko": "단계별 비밀값 노출과 CI 에이전트 권한을 점검할 것을 제안합니다. 스키마 검증은 제한된 검사이므로 실행 동작·플러그인·권한 경계는 별도로 검토해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://buildkite.com/resources/blog/what-shipped-at-buildkite-september-27-october-3-2026/",
+      "role": "primary",
+      "sha256": "b9c85b0abea511489655427aca39310c4ef8b14bfea2030c3861e8155b50d381",
+      "fetchedAt": "2026-10-25T04:35:23+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Buildkite scopes pipeline secrets and adds pipeline validation tools",
+      "claims": [
+        {
+          "text": "Buildkite describes pipeline secrets as cluster secrets restricted to the current pipeline, with additional access conditions available.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Pipeline secrets are cluster secrets restricted to the current pipeline"
+            }
+          ]
+        },
+        {
+          "text": "Its MCP server adds validate_pipeline to check pipeline YAML against the official schema before upload.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "validate_pipeline to check pipeline YAML against the official schema before upload"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Buildkite의 파이프라인 범위 비밀값과 검증 도구",
+      "claims": [
+        {
+          "text": "Buildkite는 파이프라인 비밀값을 현재 파이프라인으로 접근을 제한한 클러스터 비밀값으로 설명하며 추가 접근 조건도 제공한다고 안내했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Pipeline secrets are cluster secrets restricted to the current pipeline"
+            }
+          ]
+        },
+        {
+          "text": "MCP 서버에는 업로드 전에 파이프라인 YAML을 공식 스키마와 대조하는 validate_pipeline이 추가됐다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "validate_pipeline to check pipeline YAML against the official schema before upload"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-10-20-buildkite-scoped-secrets-and-validation",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/10/buildkite-ci-secrets-agentic/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-10-19T18:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-10-20.md",
+  "batchId": "pilot-001",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T04:35:23+00:00",
+  "updatedAt": "2026-10-25T05:21:13+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 30,
+    "approvedAt": "2026-10-25T05:21:13+00:00",
+    "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

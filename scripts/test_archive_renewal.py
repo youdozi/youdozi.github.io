@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 import hashlib
 from pathlib import Path
 import tempfile
+import shutil
 import unittest
 from unittest.mock import patch
 
@@ -105,6 +106,7 @@ class ArchiveRenewalTests(unittest.TestCase):
             value=copy.deepcopy(self.manifest)
             archive.write(directory/'manifest.json',value)
             archive.write(directory/'batches/pilot-001.json',self.batch)
+            if (ROOT/'src/content/renewals').exists():shutil.copytree(ROOT/'src/content/renewals',root/'src/content/renewals')
             with patch.object(archive,'source_records',return_value=archive.source_records(ROOT)):
                 self.assertEqual([],archive.check(root))
                 next(r for r in value['items'] if r['batchId'])['batchId']=None

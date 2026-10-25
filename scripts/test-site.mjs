@@ -137,6 +137,34 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.ok(graph.some(item=>item['@type']==='BreadcrumbList'));
 
 
+    const renewals=await readdir('src/content/renewals');
+    assert.equal(renewals.length,8);
+    for(const file of renewals){
+      const article=JSON.parse(await readFile(`src/content/renewals/${file}`,'utf8'));
+      for(const lang of ['en','ko']){
+        const url=`https://youdozi.github.io/${lang}/digest/${article.slug}/`;
+        const html=await readFile(`dist/${lang}/digest/${article.slug}/index.html`,'utf8');
+        assert.ok(html.includes(`rel="canonical" href="${url}"`));
+        for(const language of ['en','ko'])assert.ok(html.includes(`hreflang="${language}" href="https://youdozi.github.io/${language}/digest/${article.slug}/"`));
+        assert.ok(html.includes(`hreflang="x-default" href="https://youdozi.github.io/en/digest/${article.slug}/"`));
+        assert.ok(html.includes(`data-archive-date="${article.archiveDate}"`));
+        assert.ok(!html.includes('noindex,follow'));
+        const data=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]).find(item=>item['@type']==='BlogPosting');
+        assert.equal(data.datePublished,new Date(article.editionPublishedAt[lang]).toISOString());
+        assert.equal(data.dateModified,new Date(article.updatedAt).toISOString());
+        assert.equal(data.inLanguage,lang);assert.equal(data.temporalCoverage,article.archiveDate);
+        assert.ok(sitemap.includes(`<loc>${url}</loc>`));
+        const feed=await readFile(`dist/${lang}/feed.xml`,'utf8');
+        assert.ok(feed.includes(url));assert.ok(feed.includes(new Date(article.editionPublishedAt[lang]).toUTCString()));
+        const index=lang==='en'?englishIndex:koreanIndex;
+        assert.ok(index.some(e=>e.url===`/${lang}/digest/${article.slug}/` && e.content.includes(article.editions[lang].claims[0].text)));
+      }
+    }
+    const revisedLegacy=await readFile('dist/ko/digest/2026-10-20/index.html','utf8');
+    assert.ok(revisedLegacy.includes('정정 요약'));
+    assert.ok(!revisedLegacy.includes('32사'));
+    assert.ok(!sitemap.includes('pilot-001'));
+
     const tags=await readFile('dist/ko/tags/index.html','utf8');
     const upper=tags.match(/href="([^"]+)"[^>]*>SpringBoot /)?.[1];
     const lower=tags.match(/href="([^"]+)"[^>]*>springboot /)?.[1];

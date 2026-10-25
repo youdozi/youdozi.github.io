@@ -1,0 +1,95 @@
+{
+  "id": "38bfcb4310c98b8d",
+  "archiveDate": "2026-10-12",
+  "originalPagePublishedAt": "2026-10-12T00:53:41.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-10-12T00:53:41.000Z",
+    "en": "2026-10-25T05:21:13+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Check that the requested version and isolate are active at the selected location, and compare behavior with and without profiling under representative traffic. Resource allocation samples and retained memory are different questions.",
+    "ko": "선택한 위치에서 요청 버전과 isolate가 활성 상태인지 확인하고 대표 트래픽으로 프로파일링 유무를 비교할 것을 제안합니다. 할당 샘플과 실제 유지 메모리는 구분해서 해석해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+      "role": "primary",
+      "sha256": "6f916933b64fe743bacbc0bf722f4c7c6db3399c77091d79921f110b64363e47",
+      "fetchedAt": "2026-10-25T04:35:23+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Workers and Durable Objects gain on-demand resource profiles",
+      "claims": [
+        {
+          "text": "Cloudflare announced CPU and memory profiling for Workers and Durable Objects, with on-demand collection and downloadable profiles described in the article.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "support for CPU and memory profiling of Workers and Durable Objects"
+            }
+          ]
+        },
+        {
+          "text": "For CPU profiling, the implementation starts a V8 profiler with a one millisecond sampling interval. That sampling detail is not evidence of zero production overhead.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "begin sampling at a one millisecond interval."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Workers와 Durable Objects의 온디맨드 리소스 프로파일",
+      "claims": [
+        {
+          "text": "Cloudflare는 Workers와 Durable Objects의 CPU·메모리 프로파일링을 발표하고 온디맨드 수집과 프로파일 다운로드를 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "support for CPU and memory profiling of Workers and Durable Objects"
+            }
+          ]
+        },
+        {
+          "text": "CPU 프로파일링 구현은 V8 프로파일러를 1밀리초 샘플링 간격으로 시작한다. 이 샘플링 설정은 운영 오버헤드가 없다는 증거는 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "begin sampling at a one millisecond interval."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-10-12-workers-on-demand-profiling",
+  "source": "Cloudflare Blog",
+  "url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+  "articleNumber": 2,
+  "sourcePublishedAt": "2026-10-09T22:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-10-12.md",
+  "batchId": "pilot-001",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T04:35:23+00:00",
+  "updatedAt": "2026-10-25T05:21:13+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 30,
+    "approvedAt": "2026-10-25T05:21:13+00:00",
+    "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

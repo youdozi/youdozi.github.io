@@ -21,9 +21,7 @@ DIRECTORY = Path('.pipeline/archive-renewal')
 STATUSES = {'pending', 'researching', 'draft_ready', 'awaiting_review', 'blocked',
             'approved', 'published', 'merged_duplicate', 'unverifiable_archived', 'excluded_example'}
 TERMINAL = {'published', 'merged_duplicate', 'unverifiable_archived', 'excluded_example'}
-PRIMARY_HOSTS = {'blog.cloudflare.com', 'developers.cloudflare.com', 'www.php.net', 'php.net',
-                 'spring.io', 'docs.spring.io', 'buildkite.com', 'netflixtechblog.com',
-                 'aws.amazon.com', 'docs.aws.amazon.com', 'openjdk.org', 'www.oracle.com'}
+PRIMARY_HOSTS = set(json.loads((Path(__file__).resolve().parents[1]/'src/lib/archive-policy.json').read_text())['primaryHosts'])
 RISK = re.compile(r'\b(cve|vulnerabil\w*|security|compromis\w*|exposure|deprecat\w*|end.of.life|cost|pricing|benchmark|\d+%)\b', re.I)
 BACKEND = re.compile(r'\b(java|jdk|jvm|spring|database|postgres\w*|kafka|redis|backend|observability|attestation|ci)\b', re.I)
 
@@ -105,7 +103,7 @@ def sync_manifest(root, existing=None):
         immutable = ('sourceFile','articleNumber','archiveDate','originalPagePublishedAt','sourcePublishedAt','url')
         if old and any(old.get(k) != record[k] for k in immutable):
             raise ValueError(f'{record["id"]}: original provenance changed')
-        state = {k:old[k] for k in ('status','batchId','reviewPullRequest','approval') if old and k in old}
+        state = {k:old[k] for k in ('status','batchId','reviewPullRequest','approval','publication') if old and k in old}
         record.update(state or {'status':'excluded_example' if record['visibility']=='example' else 'pending','batchId':None,'reviewPullRequest':None})
         items.append(record)
     return {'schemaVersion':1, 'scope':'Every preserved historical news item, including examples and superseded articles', 'items':items}
@@ -243,6 +241,8 @@ def check(root, *, check_sources=False):
     for record in manifest['items']:
         if record.get('batchId') and ownership.get(record['id'])!=record['batchId']:errors.append('manifest batch assignment is missing or mismatched')
         if record['id'] in ownership and record.get('batchId')!=ownership[record['id']]:errors.append('batch entry has no matching manifest assignment')
+    from publish_archive import check_publications
+    errors.extend(check_publications(root,manifest))
     return errors
 
 

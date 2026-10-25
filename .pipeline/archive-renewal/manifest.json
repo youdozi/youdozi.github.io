@@ -16974,9 +16974,20 @@
       "originalTitle": "Spring News Roundup: Second Milestone Releases of Boot, Framework, Data, Security, Integration",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "pilot-001",
-      "reviewPullRequest": 30
+      "reviewPullRequest": 30,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 30,
+        "approvedAt": "2026-10-25T05:21:13+00:00",
+        "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+      },
+      "publication": {
+        "file": "src/content/renewals/568305543e6754fa.json",
+        "slug": "2026-09-30-spring-boot-milestone-ldap-and-telemetry",
+        "englishPublishedAt": "2026-10-25T05:21:13+00:00"
+      }
     },
     {
       "id": "335ec66d418b5d84",
@@ -17806,9 +17817,20 @@
       "originalTitle": "Introducing on-demand CPU and memory profiling with flamegraphs for Workers and Durable Objects",
       "visibility": "listed",
       "priority": "general",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "pilot-001",
-      "reviewPullRequest": 30
+      "reviewPullRequest": 30,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 30,
+        "approvedAt": "2026-10-25T05:21:13+00:00",
+        "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+      },
+      "publication": {
+        "file": "src/content/renewals/38bfcb4310c98b8d.json",
+        "slug": "2026-10-12-workers-on-demand-profiling",
+        "englishPublishedAt": "2026-10-25T05:21:13+00:00"
+      }
     },
     {
       "id": "3854715ee3f870a4",
@@ -17902,9 +17924,20 @@
       "originalTitle": "Buildkite Adds Scoped Secrets and New Agentic CI Tools",
       "visibility": "listed",
       "priority": "backend",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "pilot-001",
-      "reviewPullRequest": 30
+      "reviewPullRequest": 30,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 30,
+        "approvedAt": "2026-10-25T05:21:13+00:00",
+        "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+      },
+      "publication": {
+        "file": "src/content/renewals/50b97c32c1d2c027.json",
+        "slug": "2026-10-20-buildkite-scoped-secrets-and-validation",
+        "englishPublishedAt": "2026-10-25T05:21:13+00:00"
+      }
     },
     {
       "id": "68e2ee5d21f7dc1b",
@@ -17918,9 +17951,20 @@
       "originalTitle": "Cutting our inference bill by 68% by being obsessive about optimization",
       "visibility": "listed",
       "priority": "general",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "pilot-001",
-      "reviewPullRequest": 30
+      "reviewPullRequest": 30,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 30,
+        "approvedAt": "2026-10-25T05:21:13+00:00",
+        "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+      },
+      "publication": {
+        "file": "src/content/renewals/68e2ee5d21f7dc1b.json",
+        "slug": "2026-10-20-cloudflare-inference-cost-optimization",
+        "englishPublishedAt": "2026-10-25T05:21:13+00:00"
+      }
     },
     {
       "id": "72477d086944244f",
@@ -17934,9 +17978,20 @@
       "originalTitle": "Beyond the patch: Protecting your NetScaler gateway against future vulnerabilities",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "pilot-001",
-      "reviewPullRequest": 30
+      "reviewPullRequest": 30,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 30,
+        "approvedAt": "2026-10-25T05:21:13+00:00",
+        "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+      },
+      "publication": {
+        "file": "src/content/renewals/72477d086944244f.json",
+        "slug": "2026-10-20-netscaler-patching-and-origin-controls",
+        "englishPublishedAt": "2026-10-25T05:21:13+00:00"
+      }
     },
     {
       "id": "c78cf468160e1a45",
@@ -17950,9 +18005,20 @@
       "originalTitle": "8 eMudhra certificates are compromised. Here's what you need to know",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "pilot-001",
-      "reviewPullRequest": 30
+      "reviewPullRequest": 30,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 30,
+        "approvedAt": "2026-10-25T05:21:13+00:00",
+        "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+      },
+      "publication": {
+        "file": "src/content/renewals/c78cf468160e1a45.json",
+        "slug": "2026-10-21-emudhra-certificate-trust-review",
+        "englishPublishedAt": "2026-10-25T05:21:13+00:00"
+      }
     },
     {
       "id": "4a59615041b968ae",
@@ -17966,9 +18032,20 @@
       "originalTitle": "Cloudflare deploys protections against php2shell vulnerability",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "pilot-001",
-      "reviewPullRequest": 30
+      "reviewPullRequest": 30,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 30,
+        "approvedAt": "2026-10-25T05:21:13+00:00",
+        "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+      },
+      "publication": {
+        "file": "src/content/renewals/4a59615041b968ae.json",
+        "slug": "2026-10-22-php-patching-and-waf-protection",
+        "englishPublishedAt": "2026-10-25T05:21:13+00:00"
+      }
     },
     {
       "id": "fe2cf5f72fabe2f4",
@@ -17998,9 +18075,20 @@
       "originalTitle": "Introducing full transaction detection for Cloudflare WAF",
       "visibility": "superseded",
       "priority": "general",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "pilot-001",
-      "reviewPullRequest": 30
+      "reviewPullRequest": 30,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 30,
+        "approvedAt": "2026-10-25T05:21:13+00:00",
+        "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+      },
+      "publication": {
+        "file": "src/content/renewals/59c87ea544e0e5db.json",
+        "slug": "2026-10-24-cloudflare-waf-response-rule-limits",
+        "englishPublishedAt": "2026-10-25T05:21:13+00:00"
+      }
     }
   ]
 }

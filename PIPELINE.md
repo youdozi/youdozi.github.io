@@ -90,9 +90,29 @@ python3 -B scripts/archive_renewal.py render \
 
 상태는 `pending → researching → draft_ready → awaiting_review`로 진행하며 수집·근거 실패는 `blocked`로 남깁니다. 승인 또는 종결 상태에는 검토자·PR 번호·승인 시각 기록이 필요합니다. `unverifiable_proposal`은 처리 방침을 검토하는 초안이고, `unverifiable_archived`와 다릅니다. 원문을 확인하지 못한 초안에 검증된 사실을 채워 넣거나 자동으로 완료 처리하지 않습니다.
 
-첫 배치 `pilot-001`은 한영 보강 초안 8건과 보류 2건입니다. 보류 사유는 Netflix 공식 원문 수집 실패와 기존 InfoQ 원문 HTTP 404입니다. Spring 종합 기사는 Boot 기능으로 범위를 좁힌 초안이므로 종합 기사 전체를 검증한 것으로 보지 않습니다. 1,125건 중 예제 4건을 제외한 실제 항목은 1,121건이며 이 단계에서 리뉴얼 게시 완료는 0건입니다.
+첫 배치 `pilot-001`은 한영 보강 초안 8건과 보류 2건입니다. 보류 사유는 Netflix 공식 원문 수집 실패와 기존 InfoQ 원문 HTTP 404입니다. Spring 종합 기사는 Boot 기능으로 범위를 좁힌 초안이므로 종합 기사 전체를 검증한 것으로 보지 않습니다. 1,125건 중 예제 4건을 제외한 실제 항목은 1,121건이며 게시된 항목 수는 `status` 명령으로 확인합니다. 보류 2건은 게시 변환 대상에서 제외합니다.
 
-검토자는 Draft PR 본문의 한영 원고와 근거를 확인하고, 수정 사항은 배치 JSON에 반영합니다. PR 본문은 `render`를 다시 실행해 갱신합니다. 기존 `/review/?pr=...` 화면과 뉴스 후보 푸시 알림은 이 전용 배치를 지원하지 않습니다. 이 데이터는 Astro 콘텐츠 로더·RSS·사이트맵에서 읽지 않으며, 이 PR을 병합해도 과거 기사는 변경·게시되지 않습니다. 실제 게시 변환·영문 경로·canonical과 hreflang·리다이렉트 검증은 시범 원고 승인 후 별도 구현·검토 단계입니다. 자동 예약 리뉴얼도 아직 추가하지 않았습니다.
+검토자는 Draft PR 본문의 한영 원고와 근거를 확인하고, 수정 사항은 배치 JSON에 반영합니다. PR 본문은 `render`를 다시 실행해 갱신합니다. 기존 `/review/?pr=...` 화면과 뉴스 후보 푸시 알림은 이 전용 배치를 지원하지 않습니다. 검토 배치 자체는 Astro 콘텐츠 로더·RSS·사이트맵에서 읽지 않습니다. 자동 예약 리뉴얼도 아직 추가하지 않았습니다.
+
+### 승인된 과거 원고 게시
+
+사용자가 게시를 명시적으로 승인한 뒤에만 다음 변환을 실행합니다. `--slugs`에는 승인한 `renewed_draft` 항목 ID와 `YYYY-MM-DD-description` 형식의 경로 이름을 정확하게 매핑한 JSON 파일을 전달합니다. 게시 명령이 승인 자체를 대신하지 않습니다.
+
+```sh
+python3 -B scripts/publish_archive.py \
+  --batch .pipeline/archive-renewal/batches/pilot-001.json \
+  --slugs /tmp/archive-approved-slugs.json \
+  --reviewed-by youdozi --approval-pr 30 \
+  --approval-basis '사용자가 검토 원고 게시를 명시적으로 승인한 대화 또는 PR 링크'
+```
+
+변환 전에 원문을 다시 수집하여 해시와 인용을 대조합니다. 전체 검증·출력 계산 후 `.pipeline` 검토본에서 승인된 항목만 `src/content/renewals/<ID>.json`으로 복사하며, 실패 시 파일과 상태를 되돌립니다. 기존 공개 ID·경로를 덮어쓰지 않습니다. `unverifiable_proposal`은 게시할 수 없습니다.
+
+승인된 기사에는 `/en/digest/YYYY-MM-DD-description/`와 `/ko/digest/YYYY-MM-DD-description/` 경로가 생깁니다. 한국어 날짜는 원래 항목의 발행일, 영문 최초 발행일은 이번 공개 준비 시각, `dateModified`는 보강 시각입니다. 뉴스 기준일을 페이지와 RSS에 명시하여 과거 보도를 오늘의 새 뉴스로 소개하지 않습니다. 두 언어의 self-canonical·상호 hreflang·영문 x-default·BlogPosting·출처 citation과 사이트맵 lastmod를 생성합니다. 검색·태그·RSS에도 승인된 두 언어 원고를 포함합니다.
+
+기존 한국어 다이제스트는 해당 기사 블록만 교체하고 최초 발행일·원래 제목·링크·기사 번호·다른 기사 블록을 보존합니다. 원본 `_posts`와 최초 본문 해시는 보존합니다. 새 JSON이 목록을 대체한 날짜의 이전 파일도 보강하되, 현재 날짜별 JSON과 충돌하는 경로를 만들지 않습니다. 기존 다이제스트 URL과 리다이렉트는 유지합니다.
+
+`npm run check:archive`는 공개 원고와 검토 배치의 문장·근거가 같은지, manifest의 승인·게시 정보가 공개 파일과 연결되어 있는지까지 검사합니다. PR의 공개 파일 및 `published` 상태는 병합 후 배포할 승인 결과물이며, 운영 공개 완료는 반드시 main 배포 성공과 실제 URL 응답으로 확인합니다. 이후 원고 수정은 새 검토와 갱신 절차가 필요합니다. 다음 미승인 배치는 별도 Draft PR로 유지합니다.
 
 ## 이전 구현
 

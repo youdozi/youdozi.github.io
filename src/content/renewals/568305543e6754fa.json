@@ -1,0 +1,103 @@
+{
+  "id": "568305543e6754fa",
+  "archiveDate": "2026-09-30",
+  "originalPagePublishedAt": "2026-09-30T00:57:05.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-09-30T00:57:05.000Z",
+    "en": "2026-10-25T05:21:13+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Keep the original roundup date and describe these as milestone features. Before approving the entire original item, separately verify the Framework, Data, Security and Integration releases; this narrower draft does not verify those sections.",
+    "ko": "기존 종합 기사 날짜를 유지하고 마일스톤 기능으로 표현할 것을 제안합니다. 원래 항목 전체를 승인하기 전 Framework·Data·Security·Integration 릴리스를 각각 확인해야 합니다. 이 축소 초안은 그 부분까지 검증한 것이 아닙니다."
+  },
+  "documents": [
+    {
+      "url": "https://spring.io/blog/2026/09/25/spring-boot-4-2-0-M2-available-now",
+      "role": "primary",
+      "sha256": "b48086b1e69e80de70775145818e67b61e4efece28ba53f55358075a1d439ead",
+      "fetchedAt": "2026-10-25T04:35:23+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Spring Boot milestone: LDAP and telemetry changes",
+      "claims": [
+        {
+          "text": "The Spring Boot 4.2.0-M2 milestone adds SSL bundle support for LDAP, including LDAPS for the embedded server. This draft verifies the Boot portion of the older roundup.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Spring Boot 4.2.0-M2 has been released"
+            },
+            {
+              "document_id": 0,
+              "quote": "SSL bundle support for LDAP"
+            }
+          ]
+        },
+        {
+          "text": "The same milestone adds OpenTelemetry semantic-convention support alongside shared OTLP endpoint, header and compression configuration.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "OpenTelemetry's semantic conventions, alongside common OTLP endpoint, header, and compression configuration."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Spring Boot 마일스톤의 LDAP와 텔레메트리 변경",
+      "claims": [
+        {
+          "text": "Spring Boot 4.2.0-M2 마일스톤에는 LDAP의 SSL 번들 지원과 내장 서버의 LDAPS 지원이 포함됐다. 이 초안은 기존 종합 기사 중 Boot 부분을 검증한 것이다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Spring Boot 4.2.0-M2 has been released"
+            },
+            {
+              "document_id": 0,
+              "quote": "SSL bundle support for LDAP"
+            }
+          ]
+        },
+        {
+          "text": "같은 마일스톤은 OpenTelemetry 의미 규약과 공통 OTLP 엔드포인트·헤더·압축 설정 지원을 추가했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "OpenTelemetry's semantic conventions, alongside common OTLP endpoint, header, and compression configuration."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-09-30-spring-boot-milestone-ldap-and-telemetry",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/09/spring-news-roundup-sep21-2026/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-09-29T21:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-09-30.md",
+  "batchId": "pilot-001",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T04:35:23+00:00",
+  "updatedAt": "2026-10-25T05:21:13+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 30,
+    "approvedAt": "2026-10-25T05:21:13+00:00",
+    "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

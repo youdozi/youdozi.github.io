@@ -3,6 +3,7 @@ import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import EntryList from './EntryList.astro';
 import DigestSection from './DigestSection.astro';
+import ArchiveRenewal from './ArchiveRenewal.astro';
 import { entries, text, alternateLinks, formatDate, taxonomyUrl, type Entry } from '../lib/content';
 interface Props { entry: Entry; }
 const { entry } = Astro.props;
@@ -16,6 +17,7 @@ const articleData: Record<string, unknown>[] = entry.reviewStatus === 'example' 
     headline: entry.title, description: entry.description, inLanguage: lang, datePublished: entry.publishedAt.toISOString(), dateModified: (entry.updatedAt || entry.publishedAt).toISOString(),
     author: { '@type': 'Person', name: 'youdozi', url: 'https://github.com/youdozi' },
     publisher: { '@type': 'Person', name: 'youdozi', url: 'https://github.com/youdozi' },
+    ...(entry.renewal ? {isBasedOn:entry.renewal.data.url,citation:entry.renewal.data.documents.map(d=>d.url),temporalCoverage:entry.renewal.data.archiveDate} : {}),
     ...(entry.post?.data.image ? { image: new URL(entry.post.data.image, Astro.site).href } : {}) },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: text[lang].home, item: new URL(`/${lang}/`, Astro.site).href },
@@ -32,6 +34,7 @@ const related = all.filter(e => e.language === lang && e.translationKey !== entr
     {entry.post?.data.reviewedAt && <aside class="notice"><strong>{entry.reviewStatus === 'example' ? '예제 데이터 — 실제 뉴스로 취급하지 마세요.' : `${lang === 'en' ? 'Reviewed and updated' : '검토·보강'}: ${entry.post.data.reviewedAt}`}</strong><br/>{entry.post.data.reviewScope}</aside>}
     <div class="prose">
       {Content && <Content />}
+      {entry.renewal && <ArchiveRenewal article={entry.renewal.data} lang={lang} />}
       {entry.digest && <><aside class="notice">{text[lang].scope}</aside>{entry.digest.data.articles.map((article, index) => <DigestSection article={article} index={index} lang={lang} />)}</>}
     </div>
     <footer class="article-footer"><div class="chips">{entry.tags.map(tag => <a href={taxonomyUrl(lang, 'tags', tag)}>#{tag}</a>)}</div></footer>

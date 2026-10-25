@@ -1,0 +1,122 @@
+{
+  "id": "4a59615041b968ae",
+  "archiveDate": "2026-10-22",
+  "originalPagePublishedAt": "2026-10-22T00:20:42.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-10-22T00:20:42.000Z",
+    "en": "2026-10-25T05:21:13+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Review the deployed PHP build and distribution backports separately from WAF coverage. Check upload-progress configuration before treating the later mitigation as applicable. These are review suggestions; no application was tested.",
+    "ko": "배포된 PHP 빌드와 배포판의 백포트 여부를 WAF 보호와 별도로 확인할 것을 제안합니다. 후속 완화책을 적용하기 전 업로드 진행 설정을 점검해야 합니다. 실제 애플리케이션을 실험한 결과가 아닙니다."
+  },
+  "documents": [
+    {
+      "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+      "role": "primary",
+      "sha256": "4c6739af8f3c568150822a20b84657a4fd0e1d22af9702842ce307442f499e5d",
+      "fetchedAt": "2026-10-25T04:35:23+00:00",
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.php.net/archive/2026.php",
+      "role": "primary",
+      "sha256": "309a7911e3c6d186f132fa45b29c88f6b121c22812fe38daf061fd424678985b",
+      "fetchedAt": "2026-10-25T04:35:23+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "PHP patches remain necessary alongside Cloudflare WAF protections",
+      "claims": [
+        {
+          "text": "The PHP project lists 8.5.12, 8.4.27, 8.3.36 and 8.2.35 as fixes for the critical remote-code-execution vulnerabilities disclosed at the time.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fix two critical vulnerabilities"
+            }
+          ]
+        },
+        {
+          "text": "Cloudflare says customers should patch PHP even when its WAF provides an additional defensive layer.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Customers should patch their PHP repos"
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "In its later update, Cloudflare limits protection against the related upload-progress issue to the default field name; changing session.upload_progress.name falls outside that WAF rule.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Customers who have changed session.upload_progress.name are not covered by the WAF rule."
+            }
+          ]
+        }
+      ]
+    },
+    "ko": {
+      "title": "Cloudflare WAF 보호와 함께 필요한 PHP 패치",
+      "claims": [
+        {
+          "text": "PHP 프로젝트는 당시 공개된 치명적 원격 코드 실행 취약점의 수정 버전으로 8.5.12, 8.4.27, 8.3.36, 8.2.35를 명시했다.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fix two critical vulnerabilities"
+            }
+          ]
+        },
+        {
+          "text": "Cloudflare는 WAF가 추가 방어 계층을 제공하더라도 PHP를 패치해야 한다고 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Customers should patch their PHP repos"
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "Cloudflare의 후속 업데이트는 관련 업로드 진행 문제에 대한 보호를 기본 필드 이름에 한정했다. session.upload_progress.name을 변경한 경우 해당 WAF 규칙의 보호 대상이 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Customers who have changed session.upload_progress.name are not covered by the WAF rule."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-10-22-php-patching-and-waf-protection",
+  "source": "Cloudflare Blog",
+  "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-10-21T22:56:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-10-22.md",
+  "batchId": "pilot-001",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T04:35:23+00:00",
+  "updatedAt": "2026-10-25T05:21:13+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 30,
+    "approvedAt": "2026-10-25T05:21:13+00:00",
+    "basis": "Explicit user instruction to publish the reviewed pilot in the Codex conversation."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
