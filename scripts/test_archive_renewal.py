@@ -134,11 +134,18 @@ class ArchiveRenewalTests(unittest.TestCase):
         self.assertEqual([],archive.check(ROOT))
 
     def test_shared_author_host_is_approved_for_exact_source_only(self):
-        batch=archive.read(ROOT/archive.DIRECTORY/'batches/batch-002.json')
-        self.assertEqual([],archive.validate_batch(batch,self.manifest))
-        entry=next(e for e in batch['entries'] if e['id']=='d9492522fb4514ef')
-        entry['documents'][0]['url']='https://dev.to/another-author/unreviewed-post'
-        self.assertIn('unapproved primary publisher',archive.validate_batch(batch,self.manifest))
+        cases=[('batch-002','d9492522fb4514ef',0,'https://dev.to/another-author/unreviewed-post'),
+            ('batch-005','9aee971925826c50',0,'https://www.x41-dsec.de/unreviewed-advisory/'),
+            ('batch-005','9aee971925826c50',1,'https://github.com/unreviewed/project/security/advisories/other'),
+            ('batch-005','92303a0e5010240e',0,'https://www.docker.com/blog/unreviewed-post/'),
+            ('batch-005','92303a0e5010240e',1,'https://www.chainguard.dev/unreviewed-program')]
+        for name,identity,index,url in cases:
+            with self.subTest(url=url):
+                batch=archive.read(ROOT/archive.DIRECTORY/'batches'/(name+'.json'))
+                self.assertEqual([],archive.validate_batch(batch,self.manifest))
+                entry=next(e for e in batch['entries'] if e['id']==identity)
+                entry['documents'][index]['url']=url
+                self.assertIn('unapproved primary publisher',archive.validate_batch(batch,self.manifest))
 
     def test_batch_snapshots_remain_unpublished_and_only_approved_copies_are_public(self):
         batch=archive.read(ROOT/archive.DIRECTORY/'batches/batch-002.json')

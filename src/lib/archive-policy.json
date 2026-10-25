@@ -21,6 +21,10 @@
   ],
   "primaryUrls": [
     "https://dev.to/mame/which-programming-language-is-best-for-claude-code-508a",
-    "https://www.infoq.com/articles/time-series-storage-design/"
+    "https://www.infoq.com/articles/time-series-storage-design/",
+    "https://www.x41-dsec.de/lab/advisories/x41-2026-002-starlette/",
+    "https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr",
+    "https://www.docker.com/blog/docker-joins-the-athena-coalition-a-cross-industry-collaboration-for-supply-chain-security/",
+    "https://www.chainguard.dev/athena"
   ]
 }

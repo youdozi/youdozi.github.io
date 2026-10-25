@@ -1,0 +1,145 @@
+{
+  "batchId": "batch-005",
+  "checkedAt": "2026-10-25T12:13:57+00:00",
+  "method": "Bounded HTTP 200 HTML collection and exact extracted-body hash / quote comparison; editorial review without hands-on exploitation or performance experiments.",
+  "sourceFetches": [
+    {
+      "url": "https://spring.io/blog/2026/06/01/spring_and_security_in_the_times_of_ai",
+      "fetchedAt": "2026-10-25T12:09:53+00:00",
+      "sha256": "a6b32c3c2b8e734db5753a79bbba8d38dfe52b0c6231128a56c5927f6573b2f4",
+      "characters": 7345,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/06/badhost-ai-systems-vulnerability/",
+      "fetchedAt": "2026-10-25T12:09:54+00:00",
+      "sha256": "bdb558f8d68a7fa1fa59d8afba1b60e507ef609015ccb3b0fc635186d326d38c",
+      "characters": 5124,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+      "fetchedAt": "2026-10-25T12:09:54+00:00",
+      "sha256": "add78f965d5c2126791b6eee473e76e2aa87d82b186b8b9c1546b14e79ba53dc",
+      "characters": 1227,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "fetchedAt": "2026-10-25T12:09:54+00:00",
+      "sha256": "0d27a35e2385ea6f2554d908392e17371ad671f8ae50314e1c4a206e9f443ef2",
+      "characters": 1658,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://spring.io/blog/2026/06/09/spring-authorization-server-releases-2026-06",
+      "fetchedAt": "2026-10-25T12:09:53+00:00",
+      "sha256": "8bffe7519c3350ce81f599ff4c0b3f9b5596397ab353e68af407ff6c618158c4",
+      "characters": 825,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+      "fetchedAt": "2026-10-25T12:09:53+00:00",
+      "sha256": "a32b167225ee468fdc455ecf572249a72311ab486b0abcf3c712025a8de96a58",
+      "characters": 1459,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://blog.cloudflare.com/scaling-security-scans/",
+      "fetchedAt": "2026-10-25T12:09:53+00:00",
+      "sha256": "8ff83301eb88b1e81a65a76d7a75acbfc46b79649cc09d79266f8905c0643754",
+      "characters": 13080,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/06/spring-news-roundup-jun08-2026/",
+      "fetchedAt": "2026-10-25T12:09:54+00:00",
+      "sha256": "e58ea39bc71c39ad17fd6eaf7d2f0ff7d93651d5b62021cf078cd8f3fb135694",
+      "characters": 9308,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://spring.io/blog/2026/06/18/a-bootiful-podcast-dashaun-carter",
+      "fetchedAt": "2026-10-25T12:09:54+00:00",
+      "sha256": "8f5c889b712e4173724a9d753a1c4fecd1e6b2a39ab7e25871a745b19367322e",
+      "characters": 172,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/06/athena-security-coalition/",
+      "fetchedAt": "2026-10-25T12:09:55+00:00",
+      "sha256": "80fcc8b89c57dbfe944d03e69b9b111091f9baad6e12fb029490bb76038fefb7",
+      "characters": 7095,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.x41-dsec.de/lab/advisories/x41-2026-002-starlette/",
+      "fetchedAt": "2026-10-25T12:10:38+00:00",
+      "sha256": "414994bc3bddd4ee867c821fc1a8b944739c9b927c89b4bf2746658c7f1a3084",
+      "characters": 4771,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://spring.io/security/cve-2026-41008",
+      "fetchedAt": "2026-10-25T12:10:37+00:00",
+      "sha256": "482e268c2e9b937e2393e0aad463b0b7c6faaea5ac36e1804ad1c2300b2e0833",
+      "characters": 309,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://spring.io/blog/2026/06/10/spring-boot-4",
+      "fetchedAt": "2026-10-25T12:10:37+00:00",
+      "sha256": "53df6e38bfe8d39b5a85d746c9424df48feb49c15c8e1da1d3d03366d7d68d0e",
+      "characters": 1150,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now",
+      "fetchedAt": "2026-10-25T12:10:37+00:00",
+      "sha256": "e7b46d8a86bf2bbf8dce4cba62be977bae1218a9cf7ec64691e2115b7348a50a",
+      "characters": 9498,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.chainguard.dev/athena",
+      "fetchedAt": "2026-10-25T12:10:37+00:00",
+      "sha256": "22e6c1170341781bd742f95075a6c72a1747405c7a81714cfe0f1bb57d2a8a29",
+      "characters": 5671,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.docker.com/blog/docker-joins-the-athena-coalition-a-cross-industry-collaboration-for-supply-chain-security/",
+      "fetchedAt": "2026-10-25T12:10:37+00:00",
+      "sha256": "5a48bbda5b20dc2b887bee0b913a3c72866fd647a62e713095c9ae8dc2369d68",
+      "characters": 4444,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.com/advisories/GHSA-86qp-5c8j-p5mr",
+      "fetchedAt": "2026-10-25T12:11:41+00:00",
+      "sha256": "67e6b2ff9d9c39faae6f8dd924f32de40e4f5e5c29556191c558837c0bbb90d3",
+      "characters": 6569,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr",
+      "fetchedAt": "2026-10-25T12:11:50+00:00",
+      "sha256": "3f5c496a595b58d172b5f636d39b68902e006e8e3b88e9232cb0ed8b2564f011",
+      "characters": 3782,
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "limitations": [
+    "The Authorization Server release-to-advisory version mapping remains unresolved. The article extractor omits the linked advisory version table.",
+    "Podcast audio was not transcribed.",
+    "Cloudflare throughput and Athena outcome metrics are excluded from the scoped drafts rather than independently validated.",
+    "Existing TeamCity source remains subject to the previously recorded HTTP 202 limitation; this report does not claim a fresh full-archive online recheck."
+  ],
+  "draftEvidenceRecheck": {
+    "checkedAt": "2026-10-25T12:15:16+00:00",
+    "documents": 11,
+    "bodyHashesMatch": true,
+    "exactQuotesMatch": true
+  }
+}

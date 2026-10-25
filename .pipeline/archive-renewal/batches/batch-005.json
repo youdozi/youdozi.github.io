@@ -1,0 +1,823 @@
+{
+  "schemaVersion": 1,
+  "batchId": "batch-005",
+  "mode": "historical",
+  "state": "draft",
+  "reviewMethod": "editorial-source-context-review",
+  "method": "Editorial source-context review; no Gemini verifier, hands-on product experiment or human publication approval. Limited summaries explicitly identify excluded metrics and unreviewed roundup sections.",
+  "reviewedAt": "2026-10-25T12:13:57+00:00",
+  "entries": [
+    {
+      "id": "2b6f4abe346a373d",
+      "archiveDate": "2026-06-02",
+      "originalPagePublishedAt": "2026-06-01T23:23:13.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-01T23:23:13.000Z",
+        "en": null
+      },
+      "experimentStatus": "not_tested",
+      "outcome": "renewed_draft",
+      "documents": [
+        {
+          "url": "https://spring.io/blog/2026/06/01/spring_and_security_in_the_times_of_ai",
+          "role": "primary",
+          "sha256": "a6b32c3c2b8e734db5753a79bbba8d38dfe52b0c6231128a56c5927f6573b2f4",
+          "fetchedAt": "2026-10-25T12:09:53+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "reviewFocus": {
+        "en": "Map actual application dependencies to individual advisories and supported release lines. This brief does not independently reproduce the vendor’s report statistics or establish that every application is exploitable.",
+        "ko": "실제 애플리케이션 의존성을 개별 보안 권고 및 지원 버전 계열과 대조할 것을 제안합니다. 공급자의 제보 통계를 독립 재현하거나 모든 애플리케이션의 악용 가능성을 확정한 원고가 아닙니다."
+      },
+      "editions": {
+        "en": {
+          "title": "Spring portfolio: security-report triage and patching",
+          "claims": [
+            {
+              "text": "Spring warned that the majority of portfolio projects would require upgrades for the scheduled security patches and recommended applying the latest patches. This was a release-train notice, not an affected-version matrix for every application.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The majority of projects within the Spring portfolio will require upgrades for newly released security patches."
+                }
+              ]
+            },
+            {
+              "text": "The team explicitly distinguishes incoming security reports from issued CVEs: reports can include duplicates or invalid findings and require maintainer triage. Report volume alone does not establish vulnerability severity.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "not every security report results in a new CVE being issued."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "duplicates or invalid findings that get filtered out"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Spring 보안 제보와 확정 취약점을 구분해야 하는 이유",
+          "claims": [
+            {
+              "text": "Spring은 예정된 보안 패치를 위해 대다수 프로젝트의 업그레이드가 필요할 것이라며 최신 패치 적용을 권고했다. 개별 애플리케이션의 영향 버전 표가 아니라 릴리스 일정과 패치 적용에 관한 공지다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The majority of projects within the Spring portfolio will require upgrades for newly released security patches."
+                }
+              ]
+            },
+            {
+              "text": "팀은 접수된 보안 제보와 발급된 CVE를 명확히 구분한다. 제보에는 중복이나 유효하지 않은 발견이 포함될 수 있어 유지보수자의 분류가 필요하며, 제보 수만으로 취약점 심각도를 판단할 수 없다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "not every security report results in a new CVE being issued."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "duplicates or invalid findings that get filtered out"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "9aee971925826c50",
+      "archiveDate": "2026-06-02",
+      "originalPagePublishedAt": "2026-06-01T23:23:13.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-01T23:23:13.000Z",
+        "en": null
+      },
+      "experimentStatus": "not_tested",
+      "outcome": "renewed_draft",
+      "documents": [
+        {
+          "url": "https://www.x41-dsec.de/lab/advisories/x41-2026-002-starlette/",
+          "role": "primary",
+          "sha256": "414994bc3bddd4ee867c821fc1a8b944739c9b927c89b4bf2746658c7f1a3084",
+          "fetchedAt": "2026-10-25T12:10:38+00:00",
+          "extractorVersion": "article-parser-v1"
+        },
+        {
+          "url": "https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr",
+          "role": "primary",
+          "sha256": "3f5c496a595b58d172b5f636d39b68902e006e8e3b88e9232cb0ed8b2564f011",
+          "fetchedAt": "2026-10-25T12:11:50+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "reviewFocus": {
+        "en": "Inspect authorization middleware, resolved dependencies and forwarded-header trust. Merely having a proxy is insufficient; test the real ingress configuration. No exploit experiment was performed for this draft.",
+        "ko": "인가 미들웨어·실제 의존성·전달 헤더 신뢰 설정을 확인할 것을 제안합니다. 프록시 존재만으로 보호를 단정할 수 없으므로 실제 진입 경로 설정을 검토해야 합니다. 이 초안에서 공격 실험을 수행하지 않았습니다."
+      },
+      "editions": {
+        "en": {
+          "title": "BadHost: Starlette path-based authorization and proxy conditions",
+          "claims": [
+            {
+              "text": "The researchers explain that Starlette reconstructed a URL from an unvalidated Host header while routing used the actual request path. Authorization based on the reconstructed path could therefore disagree with the routed endpoint.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "routing in Starlette is based on the actual request path."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "does not perform any validation of the Host header value."
+                }
+              ]
+            },
+            {
+              "text": "The researcher advisory lists affected Starlette versions as >= 0.8.3 and < 1.0.1, and identifies 1.0.1 as patched. Applicability still depends on the application’s path-based security decisions.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Confirmed Affected Versions: starlette >= 0.8.3, < 1.0.1 Confirmed Patched Versions: starlette 1.0.1"
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "At review time, the maintainer advisory says a proxy or load balancer mitigates this only if it rejects or normalizes malformed Host headers before forwarding and the application does not trust attacker-controlled host headers elsewhere.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "mitigated only if that proxy rejects or normalizes the malformed Host header before forwarding"
+                }
+              ]
+            }
+          ]
+        },
+        "ko": {
+          "title": "BadHost의 Starlette 경로 기반 인가 문제와 프록시 조건",
+          "claims": [
+            {
+              "text": "연구진은 Starlette가 검증하지 않은 Host 헤더로 URL을 재구성하는 반면 라우팅은 실제 요청 경로를 사용한다고 설명한다. 재구성한 경로를 기준으로 인가하면 실제로 실행되는 엔드포인트와 판단이 어긋날 수 있다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "routing in Starlette is based on the actual request path."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "does not perform any validation of the Host header value."
+                }
+              ]
+            },
+            {
+              "text": "연구진 권고는 Starlette 영향 버전을 >= 0.8.3 및 < 1.0.1로, 수정 버전을 1.0.1로 제시한다. 실제 영향 여부는 애플리케이션이 경로에 근거해 보안 판단을 하는지와 함께 확인해야 한다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Confirmed Affected Versions: starlette >= 0.8.3, < 1.0.1 Confirmed Patched Versions: starlette 1.0.1"
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "검토 시점의 유지보수자 권고는 프록시나 로드밸런서가 잘못된 Host 헤더를 전달 전에 거부·정규화하고 애플리케이션이 다른 경로에서도 공격자 제어 호스트 헤더를 신뢰하지 않는 조건에서만 완화를 설명한다.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "mitigated only if that proxy rejects or normalizes the malformed Host header before forwarding"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "28ede0247b95214f",
+      "archiveDate": "2026-06-07",
+      "originalPagePublishedAt": "2026-06-06T22:58:08.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-06T22:58:08.000Z",
+        "en": null
+      },
+      "experimentStatus": "not_tested",
+      "outcome": "renewed_draft",
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+          "role": "primary",
+          "sha256": "add78f965d5c2126791b6eee473e76e2aa87d82b186b8b9c1546b14e79ba53dc",
+          "fetchedAt": "2026-10-25T12:09:54+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "reviewFocus": {
+        "en": "Check the specific Copilot product and organization policy before migrating. These are the historical notice’s exceptions and alternatives, not a claim that its model availability remains unchanged today.",
+        "ko": "전환 전 사용하는 Copilot 제품과 조직 정책을 확인할 것을 제안합니다. 당시 공지의 예외와 대안을 정리했으며, 해당 모델 제공 상태가 현재까지 같다는 뜻은 아닙니다."
+      },
+      "editions": {
+        "en": {
+          "title": "Copilot model retirement: scope, alternatives and code-review exception",
+          "claims": [
+            {
+              "text": "GitHub announced GPT-5.2 and GPT-5.2-Codex deprecation on 2026-06-05 across most Copilot experiences, while explicitly retaining GPT-5.2 for Copilot code review in that announcement. This does not establish retirement across other providers or APIs.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Note that GPT-5.2 is still available as part of Copilot code review."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "As of today, June 5, 2026, we have deprecated the following models across most GitHub Copilot experiences"
+                }
+              ]
+            },
+            {
+              "text": "The announcement suggests GPT-5.5 for GPT-5.2 and GPT-5.3-Codex for GPT-5.2-Codex. Enterprise administrators may need to enable alternatives through model policies before users can select them.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Copilot Enterprise administrators may need to enable access to alternative models through their model policies in Copilot settings."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "GPT-5.2 2026-06-05 GPT-5.5 GPT-5.2-Codex 2026-06-05 GPT-5.3-Codex"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Copilot 모델 종료 범위와 대안, 코드 리뷰 예외",
+          "claims": [
+            {
+              "text": "GitHub은 2026-06-05 대부분의 Copilot 사용 환경에서 GPT-5.2 및 GPT-5.2-Codex 지원 종료를 공지했지만, 같은 공지에서 Copilot 코드 리뷰에는 GPT-5.2가 계속 제공된다고 명시했다. 다른 공급자나 API의 종료까지 의미하지 않는다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Note that GPT-5.2 is still available as part of Copilot code review."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "As of today, June 5, 2026, we have deprecated the following models across most GitHub Copilot experiences"
+                }
+              ]
+            },
+            {
+              "text": "공지는 GPT-5.2의 대안으로 GPT-5.5를, GPT-5.2-Codex의 대안으로 GPT-5.3-Codex를 제시한다. 기업 관리자는 사용자가 대안을 선택할 수 있도록 모델 정책에서 접근을 허용해야 할 수 있다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Copilot Enterprise administrators may need to enable access to alternative models through their model policies in Copilot settings."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "GPT-5.2 2026-06-05 GPT-5.5 GPT-5.2-Codex 2026-06-05 GPT-5.3-Codex"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "3f90329447f77e33",
+      "archiveDate": "2026-06-10",
+      "originalPagePublishedAt": "2026-06-09T22:31:22.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-09T22:31:22.000Z",
+        "en": null
+      },
+      "experimentStatus": "not_tested",
+      "outcome": "renewed_draft",
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+          "role": "primary",
+          "sha256": "0d27a35e2385ea6f2554d908392e17371ad671f8ae50314e1c4a206e9f443ef2",
+          "fetchedAt": "2026-10-25T12:09:54+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "reviewFocus": {
+        "en": "Confirm supported agent integration and effective repository settings; keep human review and independent checks for security-sensitive changes. No detection-rate or remediation-success benchmark was reproduced.",
+        "ko": "지원되는 에이전트 연동과 실제 저장소 설정을 확인하고, 보안상 민감한 변경에는 사람의 검토와 별도 검사를 유지할 것을 제안합니다. 탐지율이나 수정 성공률 벤치마크를 재현하지 않았습니다."
+      },
+      "editions": {
+        "en": {
+          "title": "Third-party coding-agent security validation on GitHub",
+          "claims": [
+            {
+              "text": "GitHub announced generally available security validation for supported third-party coding agents working in repositories. It describes CodeQL analysis, checks of newly introduced dependencies against the GitHub Advisory Database, and secret scanning.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "GitHub now automatically analyzes it for potential security vulnerabilities using CodeQL"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "checks newly introduced dependencies against the GitHub Advisory Database, and uses GitHub secret scanning"
+                }
+              ]
+            },
+            {
+              "text": "The validations are enabled by default, follow repository Copilot validation-tool settings, and do not require a GitHub Advanced Security license. If issues are found, the agent attempts remediation before finalizing the pull request; success is not guaranteed.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Security validation doesn’t require a GitHub Advanced Security license."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "These security validations are on by default and follow your repository’s Copilot settings for which validation tools to use."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "the agent attempts to resolve them before finalizing the pull request."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "GitHub의 외부 코딩 에이전트 보안 검증 범위",
+          "claims": [
+            {
+              "text": "GitHub은 저장소에서 작업하는 지원 대상 외부 코딩 에이전트에 대한 보안 검증을 정식 제공한다고 공지했다. CodeQL 분석, GitHub Advisory Database를 이용한 신규 의존성 검사, 비밀정보 검사를 설명한다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "GitHub now automatically analyzes it for potential security vulnerabilities using CodeQL"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "checks newly introduced dependencies against the GitHub Advisory Database, and uses GitHub secret scanning"
+                }
+              ]
+            },
+            {
+              "text": "검증은 기본 활성화되며 저장소의 Copilot 검증 도구 설정을 따르고 GitHub Advanced Security 라이선스를 요구하지 않는다. 문제가 발견되면 에이전트가 PR을 마무리하기 전에 해결을 시도하지만 성공을 보장하는 의미는 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Security validation doesn’t require a GitHub Advanced Security license."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "These security validations are on by default and follow your repository’s Copilot settings for which validation tools to use."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "the agent attempts to resolve them before finalizing the pull request."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "bfa76ad691456d2a",
+      "archiveDate": "2026-06-10",
+      "originalPagePublishedAt": "2026-06-09T22:31:22.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-09T22:31:22.000Z",
+        "en": null
+      },
+      "experimentStatus": "not_tested",
+      "outcome": "unverifiable_proposal",
+      "documents": [],
+      "reason": {
+        "en": "The release announcement associates Authorization Server 1.5.8 with CVE-2026-41008, while the linked advisory currently lists Spring Security 7.0.0–7.0.5 and fixes 7.0.6 / 7.0.5.1. The bounded article extractor captures the vulnerability description but omits the advisory version table. Cross-product affected and patched versions cannot be inferred from these differing lists; obtain a consistent maintainer advisory or changelog mapping before approval. This is an unresolved evidence gap, not a finding that the release announcement is false.",
+        "ko": "릴리스 공지는 Authorization Server 1.5.8을 CVE-2026-41008과 연결하지만, 연결된 현재 권고는 Spring Security 7.0.0–7.0.5와 수정 버전 7.0.6 / 7.0.5.1을 표기합니다. 제한된 본문 추출기는 취약점 설명만 수집하고 권고의 버전 표는 포함하지 못합니다. 서로 다른 목록으로 제품 간 영향·수정 버전을 추론하지 않고, 유지보수자 권고나 변경 이력에서 일관된 연결 근거를 확보한 후 승인해야 합니다. 미해결 근거 공백이며 릴리스 공지가 거짓이라는 판정은 아닙니다."
+      },
+      "attemptedSourceUrls": [
+        "https://spring.io/blog/2026/06/09/spring-authorization-server-releases-2026-06",
+        "https://spring.io/security/cve-2026-41008"
+      ],
+      "reviewFocus": {
+        "en": "Resolve the recorded evidence gap before approving a substantive factual renewal.",
+        "ko": "기록된 근거 공백을 해소한 후 실질적인 사실 보강 원고를 승인해야 합니다."
+      },
+      "editions": {
+        "en": {
+          "title": "Authorization Server patch mapping requires advisory reconciliation",
+          "claims": [],
+          "followUp": []
+        },
+        "ko": {
+          "title": "보안 권고와 수정 버전 연결을 재확인해야 하는 Authorization Server",
+          "claims": [],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "c4a7f428da738696",
+      "archiveDate": "2026-06-11",
+      "originalPagePublishedAt": "2026-06-10T22:36:33.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-10T22:36:33.000Z",
+        "en": null
+      },
+      "experimentStatus": "not_tested",
+      "outcome": "renewed_draft",
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+          "role": "primary",
+          "sha256": "a32b167225ee468fdc455ecf572249a72311ab486b0abcf3c712025a8de96a58",
+          "fetchedAt": "2026-10-25T12:09:53+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "reviewFocus": {
+        "en": "Check feature availability in the installed CLI and inspect findings manually. Preserve deterministic security checks and avoid treating a clean preview scan as a security certification.",
+        "ko": "설치한 CLI의 기능 제공 여부를 확인하고 발견 사항을 직접 검토할 것을 제안합니다. 기존 보안 검사를 유지하며 미리보기 검사에서 발견이 없다는 결과를 보안 인증처럼 취급하면 안 됩니다."
+      },
+      "editions": {
+        "en": {
+          "title": "Copilot CLI security review remains an experimental preview",
+          "claims": [
+            {
+              "text": "GitHub introduced the /security-review command for local code changes as an experimental public-preview feature. Users must enable experimental mode to try the command.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The new /security-review slash command is shipping as an experimental feature in public preview"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "turn on experimental mode in Copilot CLI"
+                }
+              ]
+            },
+            {
+              "text": "The announcement describes a Copilot-driven scan that does not rely on GitHub code scanning, Dependabot or secret scanning. It complements those tools with on-demand review before committing; it is not evidence that all vulnerabilities will be detected.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "This is a Copilot-driven scan that doesn’t rely on GitHub code scanning, Dependabot, or GitHub secret scanning."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "실험적 미리보기로 제공된 Copilot CLI 보안 리뷰",
+          "claims": [
+            {
+              "text": "GitHub은 로컬 코드 변경을 검토하는 /security-review 명령을 실험적 공개 미리보기 기능으로 소개했다. 사용하려면 실험 모드를 활성화해야 한다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The new /security-review slash command is shipping as an experimental feature in public preview"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "turn on experimental mode in Copilot CLI"
+                }
+              ]
+            },
+            {
+              "text": "공지는 GitHub 코드 스캔·Dependabot·비밀정보 검사에 의존하지 않는 Copilot 기반 스캔으로 설명한다. 커밋 전 필요할 때 실행하는 검토로 기존 도구를 보완하며 모든 취약점의 탐지를 입증하지는 않는다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "This is a Copilot-driven scan that doesn’t rely on GitHub code scanning, Dependabot, or GitHub secret scanning."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "db11f89181439d98",
+      "archiveDate": "2026-06-13",
+      "originalPagePublishedAt": "2026-06-12T22:31:07.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-12T22:31:07.000Z",
+        "en": null
+      },
+      "experimentStatus": "not_tested",
+      "outcome": "renewed_draft",
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/scaling-security-scans/",
+          "role": "primary",
+          "sha256": "8ff83301eb88b1e81a65a76d7a75acbfc46b79649cc09d79266f8905c0643754",
+          "fetchedAt": "2026-10-25T12:09:53+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "reviewFocus": {
+        "en": "This is a scoped review of the documented architecture, not independent reproduction of the headline’s throughput increase. Compare workload, memory, restart behavior and scheduling latency before adopting these patterns.",
+        "ko": "제목의 처리량 증가를 독립 재현한 결과가 아니라 문서에 설명된 구조에 한정한 검토입니다. 도입 전 작업 특성·메모리·재시작 동작·일정 지연을 비교할 것을 제안합니다."
+      },
+      "editions": {
+        "en": {
+          "title": "Security Insights: batch processing and adaptive scan scheduling",
+          "claims": [
+            {
+              "text": "Cloudflare describes changing checkers to consume messages in batches and process each message in a separate goroutine. It explicitly notes the trade-offs of redoing work after a mid-batch crash and slightly higher memory use.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The trade-offs are that we’d have more work to re-do if our process crashed midway through a batch, and our memory usage would be slightly increased."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "We changed our checkers to consume messages in batches , processing each message in a separate goroutine."
+                }
+              ]
+            },
+            {
+              "text": "The engineering account also describes an adaptive scheduling limit recalculated from account and zone totals and required scanning frequencies, rather than keeping an unchanged rate as the workload grows.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "based on the total number of accounts and zones we have, and our scanning frequencies."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Security Insights의 배치 처리와 적응형 스캔 일정",
+          "claims": [
+            {
+              "text": "Cloudflare는 검사기가 메시지를 배치로 가져와 각각 별도 goroutine에서 처리하도록 바꿨다고 설명한다. 배치 도중 중단되면 작업을 다시 수행해야 하고 메모리 사용량이 다소 증가하는 절충도 명시한다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The trade-offs are that we’d have more work to re-do if our process crashed midway through a batch, and our memory usage would be slightly increased."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "We changed our checkers to consume messages in batches , processing each message in a separate goroutine."
+                }
+              ]
+            },
+            {
+              "text": "기술 설명은 계정·영역 수와 필요한 스캔 빈도에 따라 일정 처리율 제한을 다시 계산하는 적응형 방식도 소개한다. 작업량이 증가해도 처리율을 고정하는 방식과 구분된다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "based on the total number of accounts and zones we have, and our scanning frequencies."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "9d263cda22c982a1",
+      "archiveDate": "2026-06-16",
+      "originalPagePublishedAt": "2026-06-15T22:40:31.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-15T22:40:31.000Z",
+        "en": null
+      },
+      "experimentStatus": "not_tested",
+      "outcome": "renewed_draft",
+      "documents": [
+        {
+          "url": "https://spring.io/blog/2026/06/10/spring-boot-4",
+          "role": "primary",
+          "sha256": "53df6e38bfe8d39b5a85d746c9424df48feb49c15c8e1da1d3d03366d7d68d0e",
+          "fetchedAt": "2026-10-25T12:10:37+00:00",
+          "extractorVersion": "article-parser-v1"
+        },
+        {
+          "url": "https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now",
+          "role": "primary",
+          "sha256": "e7b46d8a86bf2bbf8dce4cba62be977bae1218a9cf7ec64691e2115b7348a50a",
+          "fetchedAt": "2026-10-25T12:10:37+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "reviewFocus": {
+        "en": "Check migration notes, dependency alignment and regression behavior. Other projects and individual CVEs mentioned in the original roundup have not been validated by this scoped summary.",
+        "ko": "전환 지침·의존성 정합성·회귀 동작을 확인할 것을 제안합니다. 원래 종합 기사에 등장하는 다른 프로젝트와 개별 CVE를 이 제한된 원고에서 검증했다는 뜻은 아닙니다."
+      },
+      "editions": {
+        "en": {
+          "title": "Spring release roundup: selected platform and AI baselines",
+          "claims": [
+            {
+              "text": "The Spring Boot team announced 4.1.0 availability from Maven Central and says it includes fixes from Spring Boot 4.0.7. This summary covers that platform release rather than every project in the original roundup.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "It also includes all of the bug fixes, documentation improvements and security fixes from Spring Boot 4.0.7"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Spring Boot 4.1.0 has been released and is now available from Maven Central."
+                }
+              ]
+            },
+            {
+              "text": "The Spring AI team announced 2.0.0 availability from Maven Central. Its documented baseline is Spring Boot 4.0 / 4.1 with Spring Framework 7.0, so applications should review compatibility before upgrading.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "Spring AI 2.0 has been designed to be used with Spring Boot 4.0 / 4.1 and Spring Framework 7.0"
+                },
+                {
+                  "document_id": 1,
+                  "quote": "Spring AI 2.0.0 has been released and is now available from Maven Central!"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Spring 릴리스 종합 소식 중 플랫폼과 AI 기반 버전 검토",
+          "claims": [
+            {
+              "text": "Spring Boot 팀은 4.1.0의 Maven Central 제공을 공지하고 Spring Boot 4.0.7의 수정 사항도 포함한다고 설명한다. 원래 종합 기사 전체가 아니라 해당 플랫폼 릴리스 범위를 정리한 원고다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "It also includes all of the bug fixes, documentation improvements and security fixes from Spring Boot 4.0.7"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Spring Boot 4.1.0 has been released and is now available from Maven Central."
+                }
+              ]
+            },
+            {
+              "text": "Spring AI 팀은 2.0.0의 Maven Central 제공을 공지했다. 문서상 기반 버전은 Spring Boot 4.0 / 4.1 및 Spring Framework 7.0이므로 애플리케이션은 업그레이드 전 호환성을 검토해야 한다.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "Spring AI 2.0 has been designed to be used with Spring Boot 4.0 / 4.1 and Spring Framework 7.0"
+                },
+                {
+                  "document_id": 1,
+                  "quote": "Spring AI 2.0.0 has been released and is now available from Maven Central!"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "47a1c846d8b4633f",
+      "archiveDate": "2026-06-19",
+      "originalPagePublishedAt": "2026-06-18T22:38:39.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-18T22:38:39.000Z",
+        "en": null
+      },
+      "experimentStatus": "not_tested",
+      "outcome": "unverifiable_proposal",
+      "documents": [],
+      "reason": {
+        "en": "The accessible official article contains only an introduction naming patching, Spring Boot 4.1 and security as discussion topics. No attributable transcript was collected. Topic names do not substantiate specific patch recommendations, affected versions or claims about AI-driven security, so a substantive renewal is withheld until the recording is transcribed and checked.",
+        "ko": "접근 가능한 공식 글은 패치 적용·Spring Boot 4.1·보안을 대화 주제로 소개하는 짧은 문장만 포함합니다. 발언자를 확인할 수 있는 대본은 수집하지 못했습니다. 주제명만으로 구체적인 패치 권고·영향 버전·AI 보안 주장을 뒷받침할 수 없어 녹음을 전사하고 대조할 때까지 실질적인 보강 원고를 보류합니다."
+      },
+      "attemptedSourceUrls": [
+        "https://spring.io/blog/2026/06/18/a-bootiful-podcast-dashaun-carter"
+      ],
+      "reviewFocus": {
+        "en": "Resolve the recorded evidence gap before approving a substantive factual renewal.",
+        "ko": "기록된 근거 공백을 해소한 후 실질적인 사실 보강 원고를 승인해야 합니다."
+      },
+      "editions": {
+        "en": {
+          "title": "Podcast security guidance awaits an attributable transcript",
+          "claims": [],
+          "followUp": []
+        },
+        "ko": {
+          "title": "발언 근거가 필요한 팟캐스트 보안 지침",
+          "claims": [],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "92303a0e5010240e",
+      "archiveDate": "2026-06-19",
+      "originalPagePublishedAt": "2026-06-18T22:38:39.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-06-18T22:38:39.000Z",
+        "en": null
+      },
+      "experimentStatus": "not_tested",
+      "outcome": "renewed_draft",
+      "documents": [
+        {
+          "url": "https://www.docker.com/blog/docker-joins-the-athena-coalition-a-cross-industry-collaboration-for-supply-chain-security/",
+          "role": "primary",
+          "sha256": "5a48bbda5b20dc2b887bee0b913a3c72866fd647a62e713095c9ae8dc2369d68",
+          "fetchedAt": "2026-10-25T12:10:37+00:00",
+          "extractorVersion": "article-parser-v1"
+        },
+        {
+          "url": "https://www.chainguard.dev/athena",
+          "role": "primary",
+          "sha256": "22e6c1170341781bd742f95075a6c72a1747405c7a81714cfe0f1bb57d2a8a29",
+          "fetchedAt": "2026-10-25T12:10:37+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "reviewFocus": {
+        "en": "Assess participation rules, embargo governance and upstream maintainer coordination. Launch metrics and claims of universal protection are not independently substantiated here; current program terms must not be presented as unchanged launch-day facts.",
+        "ko": "참여 규칙·비공개 기간 관리·상위 프로젝트 유지보수자와의 조율을 확인할 것을 제안합니다. 출범 당시 수치나 보편적인 보호 주장을 독립 입증하지 않았으며 현재 운영 조건을 출범 당시부터 변하지 않은 사실로 소개하면 안 됩니다."
+      },
+      "editions": {
+        "en": {
+          "title": "Athena coalition: coordinated remediation and disclosure conditions",
+          "claims": [
+            {
+              "text": "Docker announced that it was joining Athena as a founding participant and described the coalition as coordinated defense of open-source software. This is a participant’s description of the initiative.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Docker is a founding participant."
+                }
+              ]
+            },
+            {
+              "text": "Docker describes organizations sharing findings and coordinating responses before vulnerabilities become public. This establishes the stated collaboration model, not independently verified coverage or remediation success.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "share findings and coordinate responses before vulnerabilities become public."
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "At review time, Chainguard’s program page describes private hardened versions available to members through Chainguard Libraries before disclosure for 30 days. This is the program’s stated access condition, not a promise of immediate public patch availability.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "available to members through Chainguard Libraries before disclosure for 30 days."
+                }
+              ]
+            }
+          ]
+        },
+        "ko": {
+          "title": "Athena 연합의 공동 대응과 공개 조건",
+          "claims": [
+            {
+              "text": "Docker는 Athena 창립 참여자로 합류한다고 발표하고 오픈소스 소프트웨어의 공동 방어를 위한 연합으로 설명했다. 참여 기업이 소개한 이니셔티브의 성격을 정리한 것이다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Docker is a founding participant."
+                }
+              ]
+            },
+            {
+              "text": "Docker는 참여 조직들이 취약점 공개 전에 발견 사항을 공유하고 대응을 조율한다고 설명한다. 명시된 협력 모델을 확인한 것이며 보호 범위나 수정 성공을 독립 검증한 결과는 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "share findings and coordinate responses before vulnerabilities become public."
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "검토 시점의 Chainguard 프로그램 페이지는 공개 전 30일 동안 회원에게 Chainguard Libraries를 통해 제공하는 비공개 강화 버전을 설명한다. 프로그램이 명시한 접근 조건이며 패치가 즉시 일반 공개된다는 약속은 아니다.",
+              "evidence": [
+                {
+                  "document_id": 1,
+                  "quote": "available to members through Chainguard Libraries before disclosure for 30 days."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

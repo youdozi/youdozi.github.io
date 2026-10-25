@@ -5761,8 +5761,8 @@
       "originalTitle": "BadHost Vulnerability Exposes AI Agents, Evaluators, and LLM Gateways",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-005",
       "reviewPullRequest": null
     },
     {
@@ -5793,8 +5793,8 @@
       "originalTitle": "Spring and Security In The Times Of AI",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-005",
       "reviewPullRequest": null
     },
     {
@@ -6257,8 +6257,8 @@
       "originalTitle": "GPT-5.2 and GPT-5.2-Codex deprecated",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-005",
       "reviewPullRequest": null
     },
     {
@@ -6529,8 +6529,8 @@
       "originalTitle": "Security validation for third-party coding agents",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-005",
       "reviewPullRequest": null
     },
     {
@@ -6561,8 +6561,8 @@
       "originalTitle": "Spring Authorization Server 2026.06 Releases - Contains CVE Fixes",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "blocked",
+      "batchId": "batch-005",
       "reviewPullRequest": null
     },
     {
@@ -6641,8 +6641,8 @@
       "originalTitle": "Dedicated security review command now available in Copilot CLI",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-005",
       "reviewPullRequest": null
     },
     {
@@ -6817,8 +6817,8 @@
       "originalTitle": "Scaling Security Insights: how we achieved a 10x increase in global scanning capacity",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-005",
       "reviewPullRequest": null
     },
     {
@@ -7073,8 +7073,8 @@
       "originalTitle": "Spring News Roundup: Point Releases of Boot, Security, Integration, Modulith and Spring AI 2.0",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-005",
       "reviewPullRequest": null
     },
     {
@@ -7393,8 +7393,8 @@
       "originalTitle": "Athena Coalition Brings Coordinated Defence to Open Source Security",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-005",
       "reviewPullRequest": null
     },
     {
@@ -7441,8 +7441,8 @@
       "originalTitle": "A Bootiful Podcast: DaShaun Carter on patching, Spring Boot 4.1, and security in the world of AI",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "blocked",
+      "batchId": "batch-005",
       "reviewPullRequest": null
     },
     {
