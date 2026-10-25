@@ -5761,9 +5761,9 @@
       "originalTitle": "BadHost Vulnerability Exposes AI Agents, Evaluators, and LLM Gateways",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-005",
-      "reviewPullRequest": null
+      "reviewPullRequest": 34
     },
     {
       "id": "6258be1a46a34c09",
@@ -5793,9 +5793,9 @@
       "originalTitle": "Spring and Security In The Times Of AI",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-005",
-      "reviewPullRequest": null
+      "reviewPullRequest": 34
     },
     {
       "id": "cb1ad32748247de0",
@@ -6257,9 +6257,9 @@
       "originalTitle": "GPT-5.2 and GPT-5.2-Codex deprecated",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-005",
-      "reviewPullRequest": null
+      "reviewPullRequest": 34
     },
     {
       "id": "528b8498bf5a21e1",
@@ -6529,9 +6529,9 @@
       "originalTitle": "Security validation for third-party coding agents",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-005",
-      "reviewPullRequest": null
+      "reviewPullRequest": 34
     },
     {
       "id": "40c9d5be4e003efa",
@@ -6563,7 +6563,7 @@
       "priority": "risk",
       "status": "blocked",
       "batchId": "batch-005",
-      "reviewPullRequest": null
+      "reviewPullRequest": 34
     },
     {
       "id": "c2d7a73e8273e634",
@@ -6641,9 +6641,9 @@
       "originalTitle": "Dedicated security review command now available in Copilot CLI",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-005",
-      "reviewPullRequest": null
+      "reviewPullRequest": 34
     },
     {
       "id": "395b3ba91a570528",
@@ -6817,9 +6817,9 @@
       "originalTitle": "Scaling Security Insights: how we achieved a 10x increase in global scanning capacity",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-005",
-      "reviewPullRequest": null
+      "reviewPullRequest": 34
     },
     {
       "id": "1222620440dc53da",
@@ -7073,9 +7073,9 @@
       "originalTitle": "Spring News Roundup: Point Releases of Boot, Security, Integration, Modulith and Spring AI 2.0",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-005",
-      "reviewPullRequest": null
+      "reviewPullRequest": 34
     },
     {
       "id": "e5b78b2ff5bbbfd5",
@@ -7393,9 +7393,9 @@
       "originalTitle": "Athena Coalition Brings Coordinated Defence to Open Source Security",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-005",
-      "reviewPullRequest": null
+      "reviewPullRequest": 34
     },
     {
       "id": "f38e57801196e167",
@@ -7443,7 +7443,7 @@
       "priority": "risk",
       "status": "blocked",
       "batchId": "batch-005",
-      "reviewPullRequest": null
+      "reviewPullRequest": 34
     },
     {
       "id": "a1faaf764fcc9a95",
