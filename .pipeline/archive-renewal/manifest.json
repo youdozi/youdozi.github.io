@@ -8945,8 +8945,8 @@
       "originalTitle": "Cost centers now support AI credit pools",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-007",
       "reviewPullRequest": null
     },
     {
@@ -9121,8 +9121,8 @@
       "originalTitle": "Upcoming deprecation of Gemini 2.5 Pro and Gemini 3 Flash",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-007",
       "reviewPullRequest": null
     },
     {
@@ -9281,8 +9281,8 @@
       "originalTitle": "InfoQ Opens AI Security & Privacy Engineering Cohort for Regulated Industries",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "blocked",
+      "batchId": "batch-007",
       "reviewPullRequest": null
     },
     {
@@ -9329,8 +9329,8 @@
       "originalTitle": "Podcast: Spite-Driven Engineering: A New Blueprint for Cloud Security in the AI Native Era",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "blocked",
+      "batchId": "batch-007",
       "reviewPullRequest": null
     },
     {
@@ -9393,8 +9393,8 @@
       "originalTitle": "Per-user budgets for cost centers in the billing UI",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-007",
       "reviewPullRequest": null
     },
     {
@@ -9473,8 +9473,8 @@
       "originalTitle": "Innersource security advisories are generally available",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-007",
       "reviewPullRequest": null
     },
     {
@@ -9489,8 +9489,8 @@
       "originalTitle": "npm install-time security and GAT bypass2fa deprecation",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-007",
       "reviewPullRequest": null
     },
     {
@@ -9777,8 +9777,8 @@
       "originalTitle": "Article: Trade-Offs in Multi-Region Architectures: Latency vs. Cost",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "blocked",
+      "batchId": "batch-007",
       "reviewPullRequest": null
     },
     {
@@ -10033,8 +10033,8 @@
       "originalTitle": "Code scanning shows AI security detections on pull requests",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-007",
       "reviewPullRequest": null
     },
     {
@@ -10049,8 +10049,8 @@
       "originalTitle": "Security reviews now available in the GitHub Copilot app",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-007",
       "reviewPullRequest": null
     },
     {
