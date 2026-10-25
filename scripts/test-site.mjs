@@ -138,7 +138,8 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
 
 
     const renewals=await readdir('src/content/renewals');
-    assert.equal(renewals.length,8);
+    const manifest=JSON.parse(await readFile('.pipeline/archive-renewal/manifest.json','utf8'));
+    assert.deepEqual(renewals.map(f=>f.replace(/\.json$/,'')).sort(),manifest.items.filter(r=>r.status==='published').map(r=>r.id).sort());
     for(const file of renewals){
       const article=JSON.parse(await readFile(`src/content/renewals/${file}`,'utf8'));
       for(const lang of ['en','ko']){
@@ -155,7 +156,15 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
         assert.equal(data.inLanguage,lang);assert.equal(data.temporalCoverage,article.archiveDate);
         assert.ok(sitemap.includes(`<loc>${url}</loc>`));
         const feed=await readFile(`dist/${lang}/feed.xml`,'utf8');
-        assert.ok(feed.includes(url));assert.ok(feed.includes(new Date(article.editionPublishedAt[lang]).toUTCString()));
+        const feedItems=feed.match(/<item>[\s\S]*?<\/item>/g)||[];
+        assert.ok(feedItems.length<=30);
+        const cutoff=Math.min(...feedItems.map(item=>Date.parse(item.match(/<atom:updated>(.*?)<\/atom:updated>/)[1])));
+        const feedItem=feedItems.find(item=>item.includes(`<guid isPermaLink="true">${url}</guid>`));
+        if(feedItems.length<30 || Date.parse(article.updatedAt)>cutoff)assert.ok(feedItem,`latest renewal omitted from RSS: ${url}`);
+        if(feedItem){
+          assert.ok(feedItem.includes(`<pubDate>${new Date(article.editionPublishedAt[lang]).toUTCString()}</pubDate>`));
+          assert.ok(feedItem.includes(`<atom:updated>${new Date(article.updatedAt).toISOString()}</atom:updated>`));
+        }
         const index=lang==='en'?englishIndex:koreanIndex;
         assert.ok(index.some(e=>e.url===`/${lang}/digest/${article.slug}/` && e.content.includes(article.editions[lang].claims[0].text)));
       }

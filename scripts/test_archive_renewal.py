@@ -138,13 +138,14 @@ class ArchiveRenewalTests(unittest.TestCase):
         entry['documents'][0]['url']='https://dev.to/another-author/unreviewed-post'
         self.assertIn('unapproved primary publisher',archive.validate_batch(batch,self.manifest))
 
-    def test_next_batch_stays_outside_public_collection(self):
+    def test_batch_snapshots_remain_unpublished_and_only_approved_copies_are_public(self):
         batch=archive.read(ROOT/archive.DIRECTORY/'batches/batch-002.json')
         self.assertEqual(9,sum(e['outcome']=='renewed_draft' for e in batch['entries']))
         self.assertEqual(1,sum(e['outcome']=='unverifiable_proposal' for e in batch['entries']))
         for entry in batch['entries']:
             self.assertIsNone(entry['editionPublishedAt']['en'])
-            self.assertFalse((ROOT/'src/content/renewals'/(entry['id']+'.json')).exists())
+            record=next(r for r in self.manifest['items'] if r['id']==entry['id'])
+            self.assertEqual(record['status']=='published',(ROOT/'src/content/renewals'/(entry['id']+'.json')).exists())
 
 
 if __name__=='__main__':unittest.main()

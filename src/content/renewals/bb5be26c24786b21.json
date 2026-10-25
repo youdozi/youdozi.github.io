@@ -1,0 +1,95 @@
+{
+  "id": "bb5be26c24786b21",
+  "archiveDate": "2026-04-11",
+  "originalPagePublishedAt": "2026-04-10T22:31:35.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-04-10T22:31:35.000Z",
+    "en": "2026-10-25T05:38:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Review eligibility, data handling and dependency coverage before connecting a repository. Measure actionable findings and false positives in the project rather than assuming benefit from tool adoption alone.",
+    "ko": "저장소를 연결하기 전에 이용 자격·데이터 처리·의존성 분석 범위를 검토할 것을 제안합니다. 도구 도입만으로 효과를 가정하기보다 프로젝트에서 조치 가능한 발견 사항과 오탐을 측정해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://www.cncf.io/blog/2026/03/23/kusari-and-cncf-advancing-software-supply-chain-security-for-cloud-native-projects/",
+      "role": "primary",
+      "sha256": "614d9771d554306905973d41fe00b731d76fca37a882a073515c18a2042969d7",
+      "fetchedAt": "2026-10-25T05:29:14+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "CNCF and Kusari offer supply-chain tooling to project maintainers",
+      "claims": [
+        {
+          "text": "The CNCF-hosted announcement says CNCF projects receive free access to Kusari Inspector, described as an AI code-review and dependency-management tool.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "provide CNCF projects with free access to Kusari Inspector"
+            }
+          ]
+        },
+        {
+          "text": "The announcement lists GUAC, in-toto/Witness and OpenVEX among projects adopting the tool. This is a reported adoption list, not independent evidence that all vulnerabilities were removed.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GUAC, in-toto/Witness, OpenVEX"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "프로젝트 유지보수자를 위한 CNCF·Kusari 공급망 도구",
+      "claims": [
+        {
+          "text": "CNCF에 게시된 발표는 CNCF 프로젝트에 AI 코드 리뷰·의존성 관리 도구 Kusari Inspector를 무료 제공한다고 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "provide CNCF projects with free access to Kusari Inspector"
+            }
+          ]
+        },
+        {
+          "text": "발표는 도구를 도입하는 프로젝트로 GUAC, in-toto/Witness, OpenVEX 등을 열거했다. 보고된 도입 목록이며 모든 취약점이 제거됐다는 독립적 증거는 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GUAC, in-toto/Witness, OpenVEX"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-04-11-cncf-kusari-supply-chain-review",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/04/cncf-kusari-security/",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-04-10T21:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-04-11.md",
+  "batchId": "batch-002",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:29:15+00:00",
+  "updatedAt": "2026-10-25T05:38:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 31,
+    "approvedAt": "2026-10-25T05:38:18+00:00",
+    "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

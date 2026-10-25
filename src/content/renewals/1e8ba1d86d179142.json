@@ -1,0 +1,95 @@
+{
+  "id": "1e8ba1d86d179142",
+  "archiveDate": "2026-04-10",
+  "originalPagePublishedAt": "2026-04-09T22:36:03.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-04-09T22:36:03.000Z",
+    "en": "2026-10-25T05:38:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Review the suggested actions and the permissions needed to perform them. Keep explanation, suggested remediation and verified fixes distinct when recording assessment outcomes.",
+    "ko": "제안된 조치와 실행에 필요한 권한을 검토할 것을 제안합니다. 평가 결과를 기록할 때 설명·수정 제안·검증된 해결을 구분해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available",
+      "role": "primary",
+      "sha256": "20762465f121df602010b572c657f80899ce35b1afa97e086d79888c3daefa60",
+      "fetchedAt": "2026-10-25T05:29:14+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Copilot adds contextual help to GitHub risk-assessment results",
+      "claims": [
+        {
+          "text": "GitHub lets organization admins and security managers open Copilot directly from secret or Code Security risk-assessment results.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Organization admins and security managers"
+            }
+          ]
+        },
+        {
+          "text": "The notice describes contextual explanations and guided next steps. It does not establish that Copilot has automatically remediated the underlying issues.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "get contextual explanations and guided next steps."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "GitHub 위험 평가 결과에 연결된 Copilot 맥락 안내",
+      "claims": [
+        {
+          "text": "GitHub는 조직 관리자와 보안 관리자가 비밀값 또는 Code Security 위험 평가 결과에서 Copilot을 바로 열 수 있도록 했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Organization admins and security managers"
+            }
+          ]
+        },
+        {
+          "text": "공지는 맥락 설명과 후속 단계 안내를 제공한다고 설명했다. Copilot이 실제 문제를 자동으로 해결했다는 근거는 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "get contextual explanations and guided next steps."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-04-10-copilot-risk-assessment-context",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-04-10T04:33:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-04-10.md",
+  "batchId": "batch-002",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:29:15+00:00",
+  "updatedAt": "2026-10-25T05:38:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 31,
+    "approvedAt": "2026-10-25T05:38:18+00:00",
+    "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

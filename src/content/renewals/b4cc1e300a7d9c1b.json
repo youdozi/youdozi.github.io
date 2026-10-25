@@ -1,0 +1,95 @@
+{
+  "id": "b4cc1e300a7d9c1b",
+  "archiveDate": "2026-04-09",
+  "originalPagePublishedAt": "2026-04-08T22:34:02.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-04-08T22:34:02.000Z",
+    "en": "2026-10-25T05:38:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Check assessment scope and repository coverage before interpreting the report as a complete security audit. Suggested fixes still require code review and appropriate tests.",
+    "ko": "보고서를 완전한 보안 감사로 해석하기 전에 평가 범위와 저장소 포함 범위를 확인할 것을 제안합니다. 제안된 수정에도 코드 검토와 적절한 테스트가 필요합니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations",
+      "role": "primary",
+      "sha256": "5b4a8dd899deeefc3af74dd34056e4c1ea7f113299f91516598d1119e1f02e1e",
+      "fetchedAt": "2026-10-25T05:29:14+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "GitHub organization assessments summarize code-security risks",
+      "claims": [
+        {
+          "text": "GitHub announced a free Code Security risk assessment that organization admins and security managers can run for their organization.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "run a free Code Security risk assessment"
+            }
+          ]
+        },
+        {
+          "text": "The assessment summarizes vulnerabilities by severity, rule type and programming language, helping readers prioritize the reported findings.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "summarizes vulnerabilities by severity, rule type, and programming language."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "조직의 코드 보안 위험을 요약하는 GitHub 평가",
+      "claims": [
+        {
+          "text": "GitHub는 조직 관리자와 보안 관리자가 조직을 대상으로 실행할 수 있는 무료 Code Security 위험 평가를 발표했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "run a free Code Security risk assessment"
+            }
+          ]
+        },
+        {
+          "text": "평가는 취약점을 심각도·규칙 유형·프로그래밍 언어별로 요약해 보고된 발견 사항의 우선순위 판단을 돕는다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "summarizes vulnerabilities by severity, rule type, and programming language."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-04-09-github-code-security-risk-assessment",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations",
+  "articleNumber": 4,
+  "sourcePublishedAt": "2026-04-09T01:52:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-04-09.md",
+  "batchId": "batch-002",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:29:15+00:00",
+  "updatedAt": "2026-10-25T05:38:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 31,
+    "approvedAt": "2026-10-25T05:38:18+00:00",
+    "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

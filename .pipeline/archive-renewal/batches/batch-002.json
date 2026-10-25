@@ -692,17 +692,18 @@
       "outcome": "unverifiable_proposal",
       "experimentStatus": "not_tested",
       "reviewFocus": {
-        "en": "Complete the official patch and impact-scope review before approving security claims.",
-        "ko": "보안 주장을 승인하기 전에 공식 패치와 영향 범위 대조를 완료해야 합니다."
+        "en": "Map the official fix to the deployed distribution kernel and NFS configuration before making an affected-version or remediation claim.",
+        "ko": "영향 버전이나 조치 완료를 주장하기 전에 공식 수정을 배포판 커널·NFS 구성에 대조해야 합니다."
       },
       "reason": {
-        "en": "The InfoQ article and a researcher-interview report are available. This batch has not completed comparison against the official kernel fix and affected configurations. Claims about exploitation or affected versions are therefore withheld; the item remains open.",
-        "ko": "InfoQ 기사와 연구자 인터뷰 보도는 읽을 수 있습니다. 이 배치에서는 공식 커널 수정과 영향받는 구성의 대조를 완료하지 못했습니다. 악용 가능성·영향 버전에 관한 주장은 작성하지 않았으며 미완료 상태로 유지합니다."
+        "en": "The stable-maintainer commit is now available through its GitHub mirror and confirms a bounds check in the NFSv4.0 LOCK replay cache. Kernel.org returned HTTP 403. Distribution-specific fixed versions, backports and deployed NFS configuration have not been verified, so the item remains unpublished.",
+        "ko": "안정 커널 유지보수자의 GitHub 미러에서 수정 커밋을 수집했고 NFSv4.0 LOCK 재전송 캐시의 길이 검사를 확인했습니다. Kernel.org 주소는 HTTP 403을 반환했습니다. 배포판별 수정 버전·백포트와 실제 NFS 구성을 검증하지 못했으므로 계속 미게시 상태로 유지합니다."
       },
       "attemptedSourceUrls": [
         "https://www.infoq.com/news/2026/04/claude-code-linux-vulnerability/",
         "https://mtlynch.io/claude-code-found-linux-vulnerability/",
-        "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=5133b61aaf437e5f25b1b396b14242a6bb0508e2"
+        "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=5133b61aaf437e5f25b1b396b14242a6bb0508e2",
+        "https://github.com/gregkh/linux/commit/5133b61aaf437e5f25b1b396b14242a6bb0508e2"
       ],
       "documents": [],
       "editions": {
@@ -716,6 +717,12 @@
           "claims": [],
           "followUp": []
         }
+      },
+      "research": {
+        "checkedAt": "2026-10-25T05:38:17+00:00",
+        "url": "https://github.com/gregkh/linux/commit/5133b61aaf437e5f25b1b396b14242a6bb0508e2",
+        "sha256": "c0e1a4b5d36779c0b4ded0fbc9e6c31b75bcbf0c38d943de201fd1c04cbb8ff7",
+        "finding": "Official fix checks the encoded response length before caching; distribution and deployment applicability remains unverified."
       }
     }
   ]

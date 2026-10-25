@@ -94,9 +94,20 @@
       "originalTitle": "Dynamic Languages Faster and Cheaper in 13-Language Claude Code Benchmark",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "batch-002",
-      "reviewPullRequest": 31
+      "reviewPullRequest": 31,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 31,
+        "approvedAt": "2026-10-25T05:38:18+00:00",
+        "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+      },
+      "publication": {
+        "file": "src/content/renewals/d9492522fb4514ef.json",
+        "slug": "2026-04-07-claude-code-language-benchmark-conditions",
+        "englishPublishedAt": "2026-10-25T05:38:18+00:00"
+      }
     },
     {
       "id": "5098dccb7e805502",
@@ -174,9 +185,20 @@
       "originalTitle": "Prioritize security alerts with runtime context from Dynatrace",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "batch-002",
-      "reviewPullRequest": 31
+      "reviewPullRequest": 31,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 31,
+        "approvedAt": "2026-10-25T05:38:18+00:00",
+        "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+      },
+      "publication": {
+        "file": "src/content/renewals/87db18d4899cc26c.json",
+        "slug": "2026-04-08-dynatrace-github-runtime-alert-context",
+        "englishPublishedAt": "2026-10-25T05:38:18+00:00"
+      }
     },
     {
       "id": "6b74de910df337b1",
@@ -254,9 +276,20 @@
       "originalTitle": "Cloudflare targets 2029 for full post-quantum security",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "batch-002",
-      "reviewPullRequest": 31
+      "reviewPullRequest": 31,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 31,
+        "approvedAt": "2026-10-25T05:38:18+00:00",
+        "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+      },
+      "publication": {
+        "file": "src/content/renewals/fb47d93f2cc47316.json",
+        "slug": "2026-04-08-cloudflare-post-quantum-authentication-roadmap",
+        "englishPublishedAt": "2026-10-25T05:38:18+00:00"
+      }
     },
     {
       "id": "42c6d64f3e97f4d8",
@@ -318,9 +351,20 @@
       "originalTitle": "Code Security risk assessment available for organizations",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "batch-002",
-      "reviewPullRequest": 31
+      "reviewPullRequest": 31,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 31,
+        "approvedAt": "2026-10-25T05:38:18+00:00",
+        "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+      },
+      "publication": {
+        "file": "src/content/renewals/b4cc1e300a7d9c1b.json",
+        "slug": "2026-04-09-github-code-security-risk-assessment",
+        "englishPublishedAt": "2026-10-25T05:38:18+00:00"
+      }
     },
     {
       "id": "7989108be13e8e4f",
@@ -398,9 +442,20 @@
       "originalTitle": "Ask Copilot in security assessments now available",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "batch-002",
-      "reviewPullRequest": 31
+      "reviewPullRequest": 31,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 31,
+        "approvedAt": "2026-10-25T05:38:18+00:00",
+        "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+      },
+      "publication": {
+        "file": "src/content/renewals/1e8ba1d86d179142.json",
+        "slug": "2026-04-10-copilot-risk-assessment-context",
+        "englishPublishedAt": "2026-10-25T05:38:18+00:00"
+      }
     },
     {
       "id": "ac63f3964c3ab580",
@@ -494,9 +549,20 @@
       "originalTitle": "CNCF and Kusari Partner to Strengthen Software Supply Chain Security Across Cloud-Native Projects",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "batch-002",
-      "reviewPullRequest": 31
+      "reviewPullRequest": 31,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 31,
+        "approvedAt": "2026-10-25T05:38:18+00:00",
+        "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+      },
+      "publication": {
+        "file": "src/content/renewals/bb5be26c24786b21.json",
+        "slug": "2026-04-11-cncf-kusari-supply-chain-review",
+        "englishPublishedAt": "2026-10-25T05:38:18+00:00"
+      }
     },
     {
       "id": "24f5421c54176c2e",
@@ -1598,9 +1664,20 @@
       "originalTitle": "Spring Security 2026.04 Releases - Contains CVE Fixes",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "batch-002",
-      "reviewPullRequest": 31
+      "reviewPullRequest": 31,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 31,
+        "approvedAt": "2026-10-25T05:38:18+00:00",
+        "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+      },
+      "publication": {
+        "file": "src/content/renewals/ad44e1abd30ad1f2.json",
+        "slug": "2026-04-22-spring-security-releases-and-support",
+        "englishPublishedAt": "2026-10-25T05:38:18+00:00"
+      }
     },
     {
       "id": "e858b2ec6331d84e",
@@ -1614,9 +1691,20 @@
       "originalTitle": "Cloudflare Outlines MCP Architecture as Enterprises Confront Security and Governance Risks",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "batch-002",
-      "reviewPullRequest": 31
+      "reviewPullRequest": 31,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 31,
+        "approvedAt": "2026-10-25T05:38:18+00:00",
+        "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+      },
+      "publication": {
+        "file": "src/content/renewals/e858b2ec6331d84e.json",
+        "slug": "2026-04-23-cloudflare-mcp-identity-and-governance",
+        "englishPublishedAt": "2026-10-25T05:38:18+00:00"
+      }
     },
     {
       "id": "9fee9a9301550380",
@@ -2126,9 +2214,20 @@
       "originalTitle": "Spring News Roundup: First Release Candidates of Boot, Security, Integration, Modulith, AMQP",
       "visibility": "listed",
       "priority": "risk",
-      "status": "awaiting_review",
+      "status": "published",
       "batchId": "batch-002",
-      "reviewPullRequest": 31
+      "reviewPullRequest": 31,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 31,
+        "approvedAt": "2026-10-25T05:38:18+00:00",
+        "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+      },
+      "publication": {
+        "file": "src/content/renewals/f05ff63990b375e2.json",
+        "slug": "2026-04-28-spring-boot-client-network-and-telemetry",
+        "englishPublishedAt": "2026-10-25T05:38:18+00:00"
+      }
     },
     {
       "id": "c77edb9af95a4c45",

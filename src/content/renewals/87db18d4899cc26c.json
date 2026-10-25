@@ -1,0 +1,95 @@
+{
+  "id": "87db18d4899cc26c",
+  "archiveDate": "2026-04-08",
+  "originalPagePublishedAt": "2026-04-07T22:33:12.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-04-07T22:33:12.000Z",
+    "en": "2026-10-25T05:38:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Review repository-to-container mapping and runtime coverage before treating a filtered alert list as a complete inventory. Confirm current integration and plan requirements separately.",
+    "ko": "필터링한 경고 목록을 전체 위험 목록으로 보기 전에 저장소와 컨테이너 매핑·런타임 관측 범위를 점검할 것을 제안합니다. 현재 연동 조건과 요금제 요건은 별도로 확인해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace",
+      "role": "primary",
+      "sha256": "8741e85b658d325aa26423ccbe64ad276239c33898e2ab9bb4eb9f3f23cd47f6",
+      "fetchedAt": "2026-10-25T05:29:15+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Dynatrace runtime context helps prioritize GitHub alerts",
+      "claims": [
+        {
+          "text": "The April GitHub notice describes Dynatrace runtime context for prioritizing security alerts by deployed artifacts and runtime risk in Kubernetes.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "deployed artifacts and runtime risk in your Kubernetes environment."
+            }
+          ]
+        },
+        {
+          "text": "The notice lists the feature as generally available for GitHub Enterprise Cloud customers. That historical availability statement is not a claim that every GitHub plan includes it.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "generally available for GitHub Enterprise Cloud customers."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Dynatrace 런타임 맥락을 활용한 GitHub 경고 우선순위",
+      "claims": [
+        {
+          "text": "GitHub의 당시 공지는 Kubernetes의 배포 산출물과 런타임 위험을 기준으로 보안 경고 우선순위를 정하는 Dynatrace 런타임 맥락 기능을 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "deployed artifacts and runtime risk in your Kubernetes environment."
+            }
+          ]
+        },
+        {
+          "text": "공지는 GitHub Enterprise Cloud 고객에게 해당 기능을 정식 제공한다고 명시했다. 당시 제공 범위이며 모든 GitHub 요금제에 포함된다는 뜻은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "generally available for GitHub Enterprise Cloud customers."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-04-08-dynatrace-github-runtime-alert-context",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-04-08T00:15:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-04-08.md",
+  "batchId": "batch-002",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:29:15+00:00",
+  "updatedAt": "2026-10-25T05:38:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 31,
+    "approvedAt": "2026-10-25T05:38:18+00:00",
+    "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

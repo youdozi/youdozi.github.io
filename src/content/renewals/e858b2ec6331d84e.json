@@ -1,0 +1,95 @@
+{
+  "id": "e858b2ec6331d84e",
+  "archiveDate": "2026-04-23",
+  "originalPagePublishedAt": "2026-04-22T22:41:51.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-04-22T22:41:51.000Z",
+    "en": "2026-10-25T05:38:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Separate identity verification from tool authorization and data-access policy. Review credential scope, write permissions and audit visibility for each connected server; a shared portal does not itself prove least-privilege operation.",
+    "ko": "신원 검증과 도구 권한·데이터 접근 정책을 구분할 것을 제안합니다. 연결 서버별 인증 정보 범위·쓰기 권한·감사 가시성을 점검해야 하며 포털 통합만으로 최소 권한 운영이 입증되지는 않습니다."
+  },
+  "documents": [
+    {
+      "url": "https://blog.cloudflare.com/enterprise-mcp/",
+      "role": "primary",
+      "sha256": "46f97e3a895d004dffee19fd14b5b6a6299af58990f6f1c212419eb580e6a469",
+      "fetchedAt": "2026-10-25T05:29:14+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Cloudflare describes identity and governance boundaries for MCP",
+      "claims": [
+        {
+          "text": "Cloudflare describes an MCP server template that uses Cloudflare Access as its OAuth provider. This concerns its reference architecture rather than a universal MCP requirement.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Cloudflare Access as the OAuth provider."
+            }
+          ]
+        },
+        {
+          "text": "The article says MCP server portals centralize logging, policy enforcement and data-loss prevention controls.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "centralized logging, consistent policy enforcement and data loss prevention"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Cloudflare가 설명한 MCP의 신원·거버넌스 경계",
+      "claims": [
+        {
+          "text": "Cloudflare는 Cloudflare Access를 OAuth 제공자로 사용하는 MCP 서버 템플릿을 설명했다. 자사의 참조 아키텍처에 관한 내용이며 MCP의 보편적 필수 요건은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Cloudflare Access as the OAuth provider."
+            }
+          ]
+        },
+        {
+          "text": "기사는 MCP 서버 포털이 로깅·정책 집행·데이터 유출 방지 통제를 중앙화한다고 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "centralized logging, consistent policy enforcement and data loss prevention"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-04-23-cloudflare-mcp-identity-and-governance",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/04/cloudflare-mcp/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-04-22T16:38:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-04-23.md",
+  "batchId": "batch-002",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:29:15+00:00",
+  "updatedAt": "2026-10-25T05:38:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 31,
+    "approvedAt": "2026-10-25T05:38:18+00:00",
+    "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
