@@ -1,0 +1,95 @@
+{
+  "id": "d9492522fb4514ef",
+  "archiveDate": "2026-04-07",
+  "originalPagePublishedAt": "2026-04-06T22:30:25.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-04-06T22:30:25.000Z",
+    "en": "2026-10-25T05:38:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Compare prompts, test coverage, tool permissions, repetitions and model configuration before using the result to choose a production language. The reported rankings were not independently reproduced here.",
+    "ko": "운영 언어 선택에 활용하기 전에 프롬프트·테스트 범위·도구 권한·반복 횟수·모델 설정을 비교할 것을 제안합니다. 보고된 순위를 이곳에서 독립적으로 재현하지 않았습니다."
+  },
+  "documents": [
+    {
+      "url": "https://dev.to/mame/which-programming-language-is-best-for-claude-code-508a",
+      "role": "primary",
+      "sha256": "aa1685013bba3d62d5a5dc7216f4f36eae95cab10abe1e7a47e82f2776d99e30",
+      "fetchedAt": "2026-10-25T05:29:14+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "A coding-language benchmark measures a simplified Git task",
+      "claims": [
+        {
+          "text": "The benchmark author asked Claude Code to implement a simplified Git in 13 languages. The experiment measures this task rather than general language suitability.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "simplified version of Git in 13 languages."
+            }
+          ]
+        },
+        {
+          "text": "The author reports 20 runs per language using Claude Opus 4.6 with high effort. Reported cost and speed depend on this model and task setup.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Each language was run 20 times. The model was Claude Opus 4.6 (high effort)."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "간소화한 Git 과제로 비교한 코딩 언어 벤치마크",
+      "claims": [
+        {
+          "text": "벤치마크 작성자는 Claude Code에 13개 언어로 간소화한 Git을 구현하게 했다. 이 실험은 해당 과제를 측정한 것이며 언어의 보편적인 적합도를 입증하지 않는다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "simplified version of Git in 13 languages."
+            }
+          ]
+        },
+        {
+          "text": "작성자는 언어별로 Claude Opus 4.6의 high effort 설정으로 20회 실행했다고 보고했다. 제시된 비용과 속도는 이 모델과 과제 설정에 종속된다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Each language was run 20 times. The model was Claude Opus 4.6 (high effort)."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-04-07-claude-code-language-benchmark-conditions",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/04/ai-coding-language-benchmark/",
+  "articleNumber": 2,
+  "sourcePublishedAt": "2026-04-06T13:01:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-04-07.md",
+  "batchId": "batch-002",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:29:15+00:00",
+  "updatedAt": "2026-10-25T05:38:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 31,
+    "approvedAt": "2026-10-25T05:38:18+00:00",
+    "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

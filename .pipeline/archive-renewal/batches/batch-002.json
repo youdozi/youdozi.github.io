@@ -1,0 +1,729 @@
+{
+  "schemaVersion": 1,
+  "batchId": "batch-002",
+  "mode": "historical",
+  "state": "draft",
+  "reviewMethod": "editorial-source-context-review",
+  "method": "Editorial source-context review; no Gemini verifier call, product experiment or human publication approval.",
+  "reviewedAt": "2026-10-25T05:29:15+00:00",
+  "entries": [
+    {
+      "id": "d9492522fb4514ef",
+      "archiveDate": "2026-04-07",
+      "originalPagePublishedAt": "2026-04-06T22:30:25.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-04-06T22:30:25.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Compare prompts, test coverage, tool permissions, repetitions and model configuration before using the result to choose a production language. The reported rankings were not independently reproduced here.",
+        "ko": "운영 언어 선택에 활용하기 전에 프롬프트·테스트 범위·도구 권한·반복 횟수·모델 설정을 비교할 것을 제안합니다. 보고된 순위를 이곳에서 독립적으로 재현하지 않았습니다."
+      },
+      "documents": [
+        {
+          "url": "https://dev.to/mame/which-programming-language-is-best-for-claude-code-508a",
+          "role": "primary",
+          "sha256": "aa1685013bba3d62d5a5dc7216f4f36eae95cab10abe1e7a47e82f2776d99e30",
+          "fetchedAt": "2026-10-25T05:29:14+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "A coding-language benchmark measures a simplified Git task",
+          "claims": [
+            {
+              "text": "The benchmark author asked Claude Code to implement a simplified Git in 13 languages. The experiment measures this task rather than general language suitability.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "simplified version of Git in 13 languages."
+                }
+              ]
+            },
+            {
+              "text": "The author reports 20 runs per language using Claude Opus 4.6 with high effort. Reported cost and speed depend on this model and task setup.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Each language was run 20 times. The model was Claude Opus 4.6 (high effort)."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "간소화한 Git 과제로 비교한 코딩 언어 벤치마크",
+          "claims": [
+            {
+              "text": "벤치마크 작성자는 Claude Code에 13개 언어로 간소화한 Git을 구현하게 했다. 이 실험은 해당 과제를 측정한 것이며 언어의 보편적인 적합도를 입증하지 않는다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "simplified version of Git in 13 languages."
+                }
+              ]
+            },
+            {
+              "text": "작성자는 언어별로 Claude Opus 4.6의 high effort 설정으로 20회 실행했다고 보고했다. 제시된 비용과 속도는 이 모델과 과제 설정에 종속된다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Each language was run 20 times. The model was Claude Opus 4.6 (high effort)."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "87db18d4899cc26c",
+      "archiveDate": "2026-04-08",
+      "originalPagePublishedAt": "2026-04-07T22:33:12.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-04-07T22:33:12.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Review repository-to-container mapping and runtime coverage before treating a filtered alert list as a complete inventory. Confirm current integration and plan requirements separately.",
+        "ko": "필터링한 경고 목록을 전체 위험 목록으로 보기 전에 저장소와 컨테이너 매핑·런타임 관측 범위를 점검할 것을 제안합니다. 현재 연동 조건과 요금제 요건은 별도로 확인해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace",
+          "role": "primary",
+          "sha256": "8741e85b658d325aa26423ccbe64ad276239c33898e2ab9bb4eb9f3f23cd47f6",
+          "fetchedAt": "2026-10-25T05:29:15+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Dynatrace runtime context helps prioritize GitHub alerts",
+          "claims": [
+            {
+              "text": "The April GitHub notice describes Dynatrace runtime context for prioritizing security alerts by deployed artifacts and runtime risk in Kubernetes.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "deployed artifacts and runtime risk in your Kubernetes environment."
+                }
+              ]
+            },
+            {
+              "text": "The notice lists the feature as generally available for GitHub Enterprise Cloud customers. That historical availability statement is not a claim that every GitHub plan includes it.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "generally available for GitHub Enterprise Cloud customers."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Dynatrace 런타임 맥락을 활용한 GitHub 경고 우선순위",
+          "claims": [
+            {
+              "text": "GitHub의 당시 공지는 Kubernetes의 배포 산출물과 런타임 위험을 기준으로 보안 경고 우선순위를 정하는 Dynatrace 런타임 맥락 기능을 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "deployed artifacts and runtime risk in your Kubernetes environment."
+                }
+              ]
+            },
+            {
+              "text": "공지는 GitHub Enterprise Cloud 고객에게 해당 기능을 정식 제공한다고 명시했다. 당시 제공 범위이며 모든 GitHub 요금제에 포함된다는 뜻은 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "generally available for GitHub Enterprise Cloud customers."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "fb47d93f2cc47316",
+      "archiveDate": "2026-04-08",
+      "originalPagePublishedAt": "2026-04-07T22:33:12.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-04-07T22:33:12.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Inventory key exchange, certificates and signing dependencies separately. Confirm the current product-specific roadmap before scheduling changes; the historical date is not a migration guarantee for every deployment.",
+        "ko": "키 교환·인증서·서명 의존성을 별도로 목록화할 것을 제안합니다. 변경 일정을 잡기 전에 현재 제품별 로드맵을 확인해야 하며, 당시 목표 날짜는 모든 배포 환경의 전환을 보장하지 않습니다."
+      },
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/post-quantum-roadmap/",
+          "role": "primary",
+          "sha256": "190912a31dd65877bdca962707d0e52d5dd3bbcbfa321f8238d04a90776e79b9",
+          "fetchedAt": "2026-10-25T05:29:14+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Cloudflare roadmap includes post-quantum authentication",
+          "claims": [
+            {
+              "text": "Cloudflare announced a target of 2029 for full post-quantum security, explicitly including authentication. This is a roadmap target rather than a completed migration.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "target 2029 to be fully post-quantum"
+                }
+              ]
+            },
+            {
+              "text": "The announcement distinguishes post-quantum encryption from authentication and says the work is incomplete until authentication is upgraded.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "work is not done until authentication is also upgraded."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "양자 내성 인증을 포함한 Cloudflare 로드맵",
+          "claims": [
+            {
+              "text": "Cloudflare는 인증을 포함한 전체 양자 내성 보안의 목표 시점을 2029년으로 발표했다. 완료된 전환이 아니라 로드맵상의 목표다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "target 2029 to be fully post-quantum"
+                }
+              ]
+            },
+            {
+              "text": "발표는 양자 내성 암호화와 인증을 구분하며 인증을 업그레이드하기 전에는 작업이 끝나지 않는다고 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "work is not done until authentication is also upgraded."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "b4cc1e300a7d9c1b",
+      "archiveDate": "2026-04-09",
+      "originalPagePublishedAt": "2026-04-08T22:34:02.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-04-08T22:34:02.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Check assessment scope and repository coverage before interpreting the report as a complete security audit. Suggested fixes still require code review and appropriate tests.",
+        "ko": "보고서를 완전한 보안 감사로 해석하기 전에 평가 범위와 저장소 포함 범위를 확인할 것을 제안합니다. 제안된 수정에도 코드 검토와 적절한 테스트가 필요합니다."
+      },
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations",
+          "role": "primary",
+          "sha256": "5b4a8dd899deeefc3af74dd34056e4c1ea7f113299f91516598d1119e1f02e1e",
+          "fetchedAt": "2026-10-25T05:29:14+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "GitHub organization assessments summarize code-security risks",
+          "claims": [
+            {
+              "text": "GitHub announced a free Code Security risk assessment that organization admins and security managers can run for their organization.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "run a free Code Security risk assessment"
+                }
+              ]
+            },
+            {
+              "text": "The assessment summarizes vulnerabilities by severity, rule type and programming language, helping readers prioritize the reported findings.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "summarizes vulnerabilities by severity, rule type, and programming language."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "조직의 코드 보안 위험을 요약하는 GitHub 평가",
+          "claims": [
+            {
+              "text": "GitHub는 조직 관리자와 보안 관리자가 조직을 대상으로 실행할 수 있는 무료 Code Security 위험 평가를 발표했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "run a free Code Security risk assessment"
+                }
+              ]
+            },
+            {
+              "text": "평가는 취약점을 심각도·규칙 유형·프로그래밍 언어별로 요약해 보고된 발견 사항의 우선순위 판단을 돕는다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "summarizes vulnerabilities by severity, rule type, and programming language."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "1e8ba1d86d179142",
+      "archiveDate": "2026-04-10",
+      "originalPagePublishedAt": "2026-04-09T22:36:03.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-04-09T22:36:03.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Review the suggested actions and the permissions needed to perform them. Keep explanation, suggested remediation and verified fixes distinct when recording assessment outcomes.",
+        "ko": "제안된 조치와 실행에 필요한 권한을 검토할 것을 제안합니다. 평가 결과를 기록할 때 설명·수정 제안·검증된 해결을 구분해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available",
+          "role": "primary",
+          "sha256": "20762465f121df602010b572c657f80899ce35b1afa97e086d79888c3daefa60",
+          "fetchedAt": "2026-10-25T05:29:14+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Copilot adds contextual help to GitHub risk-assessment results",
+          "claims": [
+            {
+              "text": "GitHub lets organization admins and security managers open Copilot directly from secret or Code Security risk-assessment results.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Organization admins and security managers"
+                }
+              ]
+            },
+            {
+              "text": "The notice describes contextual explanations and guided next steps. It does not establish that Copilot has automatically remediated the underlying issues.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "get contextual explanations and guided next steps."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "GitHub 위험 평가 결과에 연결된 Copilot 맥락 안내",
+          "claims": [
+            {
+              "text": "GitHub는 조직 관리자와 보안 관리자가 비밀값 또는 Code Security 위험 평가 결과에서 Copilot을 바로 열 수 있도록 했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Organization admins and security managers"
+                }
+              ]
+            },
+            {
+              "text": "공지는 맥락 설명과 후속 단계 안내를 제공한다고 설명했다. Copilot이 실제 문제를 자동으로 해결했다는 근거는 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "get contextual explanations and guided next steps."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "bb5be26c24786b21",
+      "archiveDate": "2026-04-11",
+      "originalPagePublishedAt": "2026-04-10T22:31:35.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-04-10T22:31:35.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Review eligibility, data handling and dependency coverage before connecting a repository. Measure actionable findings and false positives in the project rather than assuming benefit from tool adoption alone.",
+        "ko": "저장소를 연결하기 전에 이용 자격·데이터 처리·의존성 분석 범위를 검토할 것을 제안합니다. 도구 도입만으로 효과를 가정하기보다 프로젝트에서 조치 가능한 발견 사항과 오탐을 측정해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://www.cncf.io/blog/2026/03/23/kusari-and-cncf-advancing-software-supply-chain-security-for-cloud-native-projects/",
+          "role": "primary",
+          "sha256": "614d9771d554306905973d41fe00b731d76fca37a882a073515c18a2042969d7",
+          "fetchedAt": "2026-10-25T05:29:14+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "CNCF and Kusari offer supply-chain tooling to project maintainers",
+          "claims": [
+            {
+              "text": "The CNCF-hosted announcement says CNCF projects receive free access to Kusari Inspector, described as an AI code-review and dependency-management tool.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "provide CNCF projects with free access to Kusari Inspector"
+                }
+              ]
+            },
+            {
+              "text": "The announcement lists GUAC, in-toto/Witness and OpenVEX among projects adopting the tool. This is a reported adoption list, not independent evidence that all vulnerabilities were removed.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "GUAC, in-toto/Witness, OpenVEX"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "프로젝트 유지보수자를 위한 CNCF·Kusari 공급망 도구",
+          "claims": [
+            {
+              "text": "CNCF에 게시된 발표는 CNCF 프로젝트에 AI 코드 리뷰·의존성 관리 도구 Kusari Inspector를 무료 제공한다고 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "provide CNCF projects with free access to Kusari Inspector"
+                }
+              ]
+            },
+            {
+              "text": "발표는 도구를 도입하는 프로젝트로 GUAC, in-toto/Witness, OpenVEX 등을 열거했다. 보고된 도입 목록이며 모든 취약점이 제거됐다는 독립적 증거는 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "GUAC, in-toto/Witness, OpenVEX"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "ad44e1abd30ad1f2",
+      "archiveDate": "2026-04-22",
+      "originalPagePublishedAt": "2026-04-21T22:33:39.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-04-21T22:33:39.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Match deployed dependencies to each official advisory and supported release line. Do not select a historical version merely because it appears in this archive, and distinguish a release candidate from a stable release.",
+        "ko": "배포 의존성을 각 공식 권고와 지원 릴리스 계열에 대조할 것을 제안합니다. 아카이브에 등장한다는 이유로 과거 버전을 선택하면 안 되며 릴리스 후보와 안정 버전을 구분해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://spring.io/blog/2026/04/21/spring-security-releases",
+          "role": "primary",
+          "sha256": "ef4c2dea7c7547fb81b2f3cde23d8eb5200785a95967c8ec016af4f63bf2e6f5",
+          "fetchedAt": "2026-10-25T05:29:14+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Spring Security releases and support boundaries in the April notice",
+          "claims": [
+            {
+              "text": "The April notice announces Spring Security 6.5.10, 7.0.5 and 7.1.0-RC1 and links the security advisories addressed by the releases. These are historical release versions.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Security 6.5.10 , 7.0.5 , and 7.1.0-RC1 ."
+                }
+              ]
+            },
+            {
+              "text": "It states that open-source support for the Spring Security 5.7.x, 5.8.x, 6.3.x and 6.4.x generations had ended. Commercial support is a separate scope.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Security 5.7.x, 5.8.x, 6.3.x, and 6.4.x generations has ended"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "당시 Spring Security 릴리스와 지원 범위",
+          "claims": [
+            {
+              "text": "당시 공지는 Spring Security 6.5.10, 7.0.5, 7.1.0-RC1을 발표하고 해당 릴리스가 대응하는 보안 권고를 연결했다. 과거 릴리스 버전이다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Security 6.5.10 , 7.0.5 , and 7.1.0-RC1 ."
+                }
+              ]
+            },
+            {
+              "text": "공지는 Spring Security 5.7.x, 5.8.x, 6.3.x, 6.4.x 계열의 오픈소스 지원이 종료됐다고 설명했다. 상용 지원은 별도의 범위다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Security 5.7.x, 5.8.x, 6.3.x, and 6.4.x generations has ended"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "e858b2ec6331d84e",
+      "archiveDate": "2026-04-23",
+      "originalPagePublishedAt": "2026-04-22T22:41:51.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-04-22T22:41:51.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Separate identity verification from tool authorization and data-access policy. Review credential scope, write permissions and audit visibility for each connected server; a shared portal does not itself prove least-privilege operation.",
+        "ko": "신원 검증과 도구 권한·데이터 접근 정책을 구분할 것을 제안합니다. 연결 서버별 인증 정보 범위·쓰기 권한·감사 가시성을 점검해야 하며 포털 통합만으로 최소 권한 운영이 입증되지는 않습니다."
+      },
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/enterprise-mcp/",
+          "role": "primary",
+          "sha256": "46f97e3a895d004dffee19fd14b5b6a6299af58990f6f1c212419eb580e6a469",
+          "fetchedAt": "2026-10-25T05:29:14+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Cloudflare describes identity and governance boundaries for MCP",
+          "claims": [
+            {
+              "text": "Cloudflare describes an MCP server template that uses Cloudflare Access as its OAuth provider. This concerns its reference architecture rather than a universal MCP requirement.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Cloudflare Access as the OAuth provider."
+                }
+              ]
+            },
+            {
+              "text": "The article says MCP server portals centralize logging, policy enforcement and data-loss prevention controls.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "centralized logging, consistent policy enforcement and data loss prevention"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Cloudflare가 설명한 MCP의 신원·거버넌스 경계",
+          "claims": [
+            {
+              "text": "Cloudflare는 Cloudflare Access를 OAuth 제공자로 사용하는 MCP 서버 템플릿을 설명했다. 자사의 참조 아키텍처에 관한 내용이며 MCP의 보편적 필수 요건은 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Cloudflare Access as the OAuth provider."
+                }
+              ]
+            },
+            {
+              "text": "기사는 MCP 서버 포털이 로깅·정책 집행·데이터 유출 방지 통제를 중앙화한다고 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "centralized logging, consistent policy enforcement and data loss prevention"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "f05ff63990b375e2",
+      "archiveDate": "2026-04-28",
+      "originalPagePublishedAt": "2026-04-27T22:44:08.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-04-27T22:44:08.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Verify the other projects in the roundup separately before marking the entire original item complete. Review release-candidate status, address-filter configuration and observability settings against the versions actually deployed.",
+        "ko": "원래 종합 항목 전체를 완료 처리하기 전에 다른 프로젝트의 릴리스를 별도로 확인할 것을 제안합니다. 실제 배포 버전을 기준으로 릴리스 후보 상태·주소 필터 설정·관측 설정을 검토해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://spring.io/blog/2026/04/23/spring-boot-4-1-0-RC1-available-now",
+          "role": "primary",
+          "sha256": "318cc9eb5ddb109b64b13aa37b6d3c7d2a20bd10f8a2569735271eb78c03c1f9",
+          "fetchedAt": "2026-10-25T05:29:14+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Spring Boot release candidate adds client-network and telemetry controls",
+          "claims": [
+            {
+              "text": "The Spring Boot 4.1.0-RC1 announcement lists HTTP client SSRF mitigation with InetAddressFilter. This draft covers only the Boot portion of the older roundup.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Boot 4.1.0-RC1 has been released"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "HTTP Client SSRF Mitigation with InetAddressFilter"
+                }
+              ]
+            },
+            {
+              "text": "The same release candidate lists support for OpenTelemetry SDK environment variables.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Support for OpenTelemetry SDK environment variables"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "클라이언트 네트워크·텔레메트리 제어를 추가한 Spring Boot 릴리스 후보",
+          "claims": [
+            {
+              "text": "Spring Boot 4.1.0-RC1 발표는 InetAddressFilter를 통한 HTTP 클라이언트 SSRF 완화를 열거했다. 이 초안은 기존 종합 기사 중 Boot 부분만 다룬다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring Boot 4.1.0-RC1 has been released"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "HTTP Client SSRF Mitigation with InetAddressFilter"
+                }
+              ]
+            },
+            {
+              "text": "같은 릴리스 후보는 OpenTelemetry SDK 환경 변수 지원을 명시했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Support for OpenTelemetry SDK environment variables"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "40bff8c5e1524fb5",
+      "archiveDate": "2026-04-16",
+      "originalPagePublishedAt": "2026-04-15T22:37:09.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-04-15T22:37:09.000Z",
+        "en": null
+      },
+      "outcome": "unverifiable_proposal",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Map the official fix to the deployed distribution kernel and NFS configuration before making an affected-version or remediation claim.",
+        "ko": "영향 버전이나 조치 완료를 주장하기 전에 공식 수정을 배포판 커널·NFS 구성에 대조해야 합니다."
+      },
+      "reason": {
+        "en": "The stable-maintainer commit is now available through its GitHub mirror and confirms a bounds check in the NFSv4.0 LOCK replay cache. Kernel.org returned HTTP 403. Distribution-specific fixed versions, backports and deployed NFS configuration have not been verified, so the item remains unpublished.",
+        "ko": "안정 커널 유지보수자의 GitHub 미러에서 수정 커밋을 수집했고 NFSv4.0 LOCK 재전송 캐시의 길이 검사를 확인했습니다. Kernel.org 주소는 HTTP 403을 반환했습니다. 배포판별 수정 버전·백포트와 실제 NFS 구성을 검증하지 못했으므로 계속 미게시 상태로 유지합니다."
+      },
+      "attemptedSourceUrls": [
+        "https://www.infoq.com/news/2026/04/claude-code-linux-vulnerability/",
+        "https://mtlynch.io/claude-code-found-linux-vulnerability/",
+        "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=5133b61aaf437e5f25b1b396b14242a6bb0508e2",
+        "https://github.com/gregkh/linux/commit/5133b61aaf437e5f25b1b396b14242a6bb0508e2"
+      ],
+      "documents": [],
+      "editions": {
+        "en": {
+          "title": "Linux vulnerability report awaits official patch review",
+          "claims": [],
+          "followUp": []
+        },
+        "ko": {
+          "title": "공식 패치 대조가 필요한 Linux 취약점 보도",
+          "claims": [],
+          "followUp": []
+        }
+      },
+      "research": {
+        "checkedAt": "2026-10-25T05:38:17+00:00",
+        "url": "https://github.com/gregkh/linux/commit/5133b61aaf437e5f25b1b396b14242a6bb0508e2",
+        "sha256": "c0e1a4b5d36779c0b4ded0fbc9e6c31b75bcbf0c38d943de201fd1c04cbb8ff7",
+        "finding": "Official fix checks the encoded response length before caching; distribution and deployment applicability remains unverified."
+      }
+    }
+  ]
+}

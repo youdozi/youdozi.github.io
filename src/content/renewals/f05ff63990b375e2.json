@@ -1,0 +1,103 @@
+{
+  "id": "f05ff63990b375e2",
+  "archiveDate": "2026-04-28",
+  "originalPagePublishedAt": "2026-04-27T22:44:08.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-04-27T22:44:08.000Z",
+    "en": "2026-10-25T05:38:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Verify the other projects in the roundup separately before marking the entire original item complete. Review release-candidate status, address-filter configuration and observability settings against the versions actually deployed.",
+    "ko": "원래 종합 항목 전체를 완료 처리하기 전에 다른 프로젝트의 릴리스를 별도로 확인할 것을 제안합니다. 실제 배포 버전을 기준으로 릴리스 후보 상태·주소 필터 설정·관측 설정을 검토해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://spring.io/blog/2026/04/23/spring-boot-4-1-0-RC1-available-now",
+      "role": "primary",
+      "sha256": "318cc9eb5ddb109b64b13aa37b6d3c7d2a20bd10f8a2569735271eb78c03c1f9",
+      "fetchedAt": "2026-10-25T05:29:14+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Spring Boot release candidate adds client-network and telemetry controls",
+      "claims": [
+        {
+          "text": "The Spring Boot 4.1.0-RC1 announcement lists HTTP client SSRF mitigation with InetAddressFilter. This draft covers only the Boot portion of the older roundup.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Spring Boot 4.1.0-RC1 has been released"
+            },
+            {
+              "document_id": 0,
+              "quote": "HTTP Client SSRF Mitigation with InetAddressFilter"
+            }
+          ]
+        },
+        {
+          "text": "The same release candidate lists support for OpenTelemetry SDK environment variables.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Support for OpenTelemetry SDK environment variables"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "클라이언트 네트워크·텔레메트리 제어를 추가한 Spring Boot 릴리스 후보",
+      "claims": [
+        {
+          "text": "Spring Boot 4.1.0-RC1 발표는 InetAddressFilter를 통한 HTTP 클라이언트 SSRF 완화를 열거했다. 이 초안은 기존 종합 기사 중 Boot 부분만 다룬다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Spring Boot 4.1.0-RC1 has been released"
+            },
+            {
+              "document_id": 0,
+              "quote": "HTTP Client SSRF Mitigation with InetAddressFilter"
+            }
+          ]
+        },
+        {
+          "text": "같은 릴리스 후보는 OpenTelemetry SDK 환경 변수 지원을 명시했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Support for OpenTelemetry SDK environment variables"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-04-28-spring-boot-client-network-and-telemetry",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/04/spring-news-roundup-apr20-2026/",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-04-27T11:30:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-04-28.md",
+  "batchId": "batch-002",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:29:15+00:00",
+  "updatedAt": "2026-10-25T05:38:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 31,
+    "approvedAt": "2026-10-25T05:38:18+00:00",
+    "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "fb47d93f2cc47316",
+  "archiveDate": "2026-04-08",
+  "originalPagePublishedAt": "2026-04-07T22:33:12.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-04-07T22:33:12.000Z",
+    "en": "2026-10-25T05:38:18+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Inventory key exchange, certificates and signing dependencies separately. Confirm the current product-specific roadmap before scheduling changes; the historical date is not a migration guarantee for every deployment.",
+    "ko": "키 교환·인증서·서명 의존성을 별도로 목록화할 것을 제안합니다. 변경 일정을 잡기 전에 현재 제품별 로드맵을 확인해야 하며, 당시 목표 날짜는 모든 배포 환경의 전환을 보장하지 않습니다."
+  },
+  "documents": [
+    {
+      "url": "https://blog.cloudflare.com/post-quantum-roadmap/",
+      "role": "primary",
+      "sha256": "190912a31dd65877bdca962707d0e52d5dd3bbcbfa321f8238d04a90776e79b9",
+      "fetchedAt": "2026-10-25T05:29:14+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Cloudflare roadmap includes post-quantum authentication",
+      "claims": [
+        {
+          "text": "Cloudflare announced a target of 2029 for full post-quantum security, explicitly including authentication. This is a roadmap target rather than a completed migration.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "target 2029 to be fully post-quantum"
+            }
+          ]
+        },
+        {
+          "text": "The announcement distinguishes post-quantum encryption from authentication and says the work is incomplete until authentication is upgraded.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "work is not done until authentication is also upgraded."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "양자 내성 인증을 포함한 Cloudflare 로드맵",
+      "claims": [
+        {
+          "text": "Cloudflare는 인증을 포함한 전체 양자 내성 보안의 목표 시점을 2029년으로 발표했다. 완료된 전환이 아니라 로드맵상의 목표다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "target 2029 to be fully post-quantum"
+            }
+          ]
+        },
+        {
+          "text": "발표는 양자 내성 암호화와 인증을 구분하며 인증을 업그레이드하기 전에는 작업이 끝나지 않는다고 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "work is not done until authentication is also upgraded."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-04-08-cloudflare-post-quantum-authentication-roadmap",
+  "source": "Cloudflare Blog",
+  "url": "https://blog.cloudflare.com/post-quantum-roadmap/",
+  "articleNumber": 6,
+  "sourcePublishedAt": "2026-04-08T06:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-04-08.md",
+  "batchId": "batch-002",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:29:15+00:00",
+  "updatedAt": "2026-10-25T05:38:18+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 31,
+    "approvedAt": "2026-10-25T05:38:18+00:00",
+    "basis": "Codex conversation: after publication of batch 001 and presentation of review PR 31, user instructed 다음 단계 진행; publication step announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

@@ -32,6 +32,6 @@ export const renewalSchema=z.object({
     }
   }
   if(value.documents.some(d=>new Date(d.fetchedAt)>new Date(value.reviewedAt)))fail('Source collection follows review');
-  if(value.documents.some(d=>d.role==='primary' && !archivePolicy.primaryHosts.includes(new URL(d.url).hostname)))fail('Unapproved primary publisher');
+  if(value.documents.some(d=>d.role==='primary' && !archivePolicy.primaryHosts.includes(new URL(d.url).hostname) && !archivePolicy.primaryUrls.includes(d.url)))fail('Unapproved primary publisher');
 });
 export type RenewalData=z.infer<typeof renewalSchema>;
