@@ -1,0 +1,103 @@
+{
+  "id": "2b6f4abe346a373d",
+  "archiveDate": "2026-06-02",
+  "originalPagePublishedAt": "2026-06-01T23:23:13.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-01T23:23:13.000Z",
+    "en": "2026-10-25T12:23:59+00:00"
+  },
+  "experimentStatus": "not_tested",
+  "outcome": "renewed_draft",
+  "documents": [
+    {
+      "url": "https://spring.io/blog/2026/06/01/spring_and_security_in_the_times_of_ai",
+      "role": "primary",
+      "sha256": "a6b32c3c2b8e734db5753a79bbba8d38dfe52b0c6231128a56c5927f6573b2f4",
+      "fetchedAt": "2026-10-25T12:09:53+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "reviewFocus": {
+    "en": "Map actual application dependencies to individual advisories and supported release lines. This brief does not independently reproduce the vendor’s report statistics or establish that every application is exploitable.",
+    "ko": "실제 애플리케이션 의존성을 개별 보안 권고 및 지원 버전 계열과 대조할 것을 제안합니다. 공급자의 제보 통계를 독립 재현하거나 모든 애플리케이션의 악용 가능성을 확정한 원고가 아닙니다."
+  },
+  "editions": {
+    "en": {
+      "title": "Spring portfolio: security-report triage and patching",
+      "claims": [
+        {
+          "text": "Spring warned that the majority of portfolio projects would require upgrades for the scheduled security patches and recommended applying the latest patches. This was a release-train notice, not an affected-version matrix for every application.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "The majority of projects within the Spring portfolio will require upgrades for newly released security patches."
+            }
+          ]
+        },
+        {
+          "text": "The team explicitly distinguishes incoming security reports from issued CVEs: reports can include duplicates or invalid findings and require maintainer triage. Report volume alone does not establish vulnerability severity.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "not every security report results in a new CVE being issued."
+            },
+            {
+              "document_id": 0,
+              "quote": "duplicates or invalid findings that get filtered out"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Spring 보안 제보와 확정 취약점을 구분해야 하는 이유",
+      "claims": [
+        {
+          "text": "Spring은 예정된 보안 패치를 위해 대다수 프로젝트의 업그레이드가 필요할 것이라며 최신 패치 적용을 권고했다. 개별 애플리케이션의 영향 버전 표가 아니라 릴리스 일정과 패치 적용에 관한 공지다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "The majority of projects within the Spring portfolio will require upgrades for newly released security patches."
+            }
+          ]
+        },
+        {
+          "text": "팀은 접수된 보안 제보와 발급된 CVE를 명확히 구분한다. 제보에는 중복이나 유효하지 않은 발견이 포함될 수 있어 유지보수자의 분류가 필요하며, 제보 수만으로 취약점 심각도를 판단할 수 없다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "not every security report results in a new CVE being issued."
+            },
+            {
+              "document_id": 0,
+              "quote": "duplicates or invalid findings that get filtered out"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-06-02-spring-security-report-triage",
+  "source": "Spring Blog",
+  "url": "https://spring.io/blog/2026/06/01/spring_and_security_in_the_times_of_ai",
+  "articleNumber": 5,
+  "sourcePublishedAt": "2026-06-01T09:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-06-02.md",
+  "batchId": "batch-005",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:13:57+00:00",
+  "updatedAt": "2026-10-25T12:23:59+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 34,
+    "approvedAt": "2026-10-25T12:23:59+00:00",
+    "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

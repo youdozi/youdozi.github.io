@@ -1,0 +1,119 @@
+{
+  "id": "3f90329447f77e33",
+  "archiveDate": "2026-06-10",
+  "originalPagePublishedAt": "2026-06-09T22:31:22.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-09T22:31:22.000Z",
+    "en": "2026-10-25T12:23:59+00:00"
+  },
+  "experimentStatus": "not_tested",
+  "outcome": "renewed_draft",
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "role": "primary",
+      "sha256": "0d27a35e2385ea6f2554d908392e17371ad671f8ae50314e1c4a206e9f443ef2",
+      "fetchedAt": "2026-10-25T12:09:54+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "reviewFocus": {
+    "en": "Confirm supported agent integration and effective repository settings; keep human review and independent checks for security-sensitive changes. No detection-rate or remediation-success benchmark was reproduced.",
+    "ko": "지원되는 에이전트 연동과 실제 저장소 설정을 확인하고, 보안상 민감한 변경에는 사람의 검토와 별도 검사를 유지할 것을 제안합니다. 탐지율이나 수정 성공률 벤치마크를 재현하지 않았습니다."
+  },
+  "editions": {
+    "en": {
+      "title": "Third-party coding-agent security validation on GitHub",
+      "claims": [
+        {
+          "text": "GitHub announced generally available security validation for supported third-party coding agents working in repositories. It describes CodeQL analysis, checks of newly introduced dependencies against the GitHub Advisory Database, and secret scanning.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GitHub now automatically analyzes it for potential security vulnerabilities using CodeQL"
+            },
+            {
+              "document_id": 0,
+              "quote": "checks newly introduced dependencies against the GitHub Advisory Database, and uses GitHub secret scanning"
+            }
+          ]
+        },
+        {
+          "text": "The validations are enabled by default, follow repository Copilot validation-tool settings, and do not require a GitHub Advanced Security license. If issues are found, the agent attempts remediation before finalizing the pull request; success is not guaranteed.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Security validation doesn’t require a GitHub Advanced Security license."
+            },
+            {
+              "document_id": 0,
+              "quote": "These security validations are on by default and follow your repository’s Copilot settings for which validation tools to use."
+            },
+            {
+              "document_id": 0,
+              "quote": "the agent attempts to resolve them before finalizing the pull request."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "GitHub의 외부 코딩 에이전트 보안 검증 범위",
+      "claims": [
+        {
+          "text": "GitHub은 저장소에서 작업하는 지원 대상 외부 코딩 에이전트에 대한 보안 검증을 정식 제공한다고 공지했다. CodeQL 분석, GitHub Advisory Database를 이용한 신규 의존성 검사, 비밀정보 검사를 설명한다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GitHub now automatically analyzes it for potential security vulnerabilities using CodeQL"
+            },
+            {
+              "document_id": 0,
+              "quote": "checks newly introduced dependencies against the GitHub Advisory Database, and uses GitHub secret scanning"
+            }
+          ]
+        },
+        {
+          "text": "검증은 기본 활성화되며 저장소의 Copilot 검증 도구 설정을 따르고 GitHub Advanced Security 라이선스를 요구하지 않는다. 문제가 발견되면 에이전트가 PR을 마무리하기 전에 해결을 시도하지만 성공을 보장하는 의미는 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Security validation doesn’t require a GitHub Advanced Security license."
+            },
+            {
+              "document_id": 0,
+              "quote": "These security validations are on by default and follow your repository’s Copilot settings for which validation tools to use."
+            },
+            {
+              "document_id": 0,
+              "quote": "the agent attempts to resolve them before finalizing the pull request."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-06-10-third-party-coding-agent-security-validation",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-06-09T16:12:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-06-10.md",
+  "batchId": "batch-005",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:13:57+00:00",
+  "updatedAt": "2026-10-25T12:23:59+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 34,
+    "approvedAt": "2026-10-25T12:23:59+00:00",
+    "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "92303a0e5010240e",
+  "archiveDate": "2026-06-19",
+  "originalPagePublishedAt": "2026-06-18T22:38:39.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-18T22:38:39.000Z",
+    "en": "2026-10-25T12:23:59+00:00"
+  },
+  "experimentStatus": "not_tested",
+  "outcome": "renewed_draft",
+  "documents": [
+    {
+      "url": "https://www.docker.com/blog/docker-joins-the-athena-coalition-a-cross-industry-collaboration-for-supply-chain-security/",
+      "role": "primary",
+      "sha256": "5a48bbda5b20dc2b887bee0b913a3c72866fd647a62e713095c9ae8dc2369d68",
+      "fetchedAt": "2026-10-25T12:10:37+00:00",
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.chainguard.dev/athena",
+      "role": "primary",
+      "sha256": "22e6c1170341781bd742f95075a6c72a1747405c7a81714cfe0f1bb57d2a8a29",
+      "fetchedAt": "2026-10-25T12:10:37+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "reviewFocus": {
+    "en": "Assess participation rules, embargo governance and upstream maintainer coordination. Launch metrics and claims of universal protection are not independently substantiated here; current program terms must not be presented as unchanged launch-day facts.",
+    "ko": "참여 규칙·비공개 기간 관리·상위 프로젝트 유지보수자와의 조율을 확인할 것을 제안합니다. 출범 당시 수치나 보편적인 보호 주장을 독립 입증하지 않았으며 현재 운영 조건을 출범 당시부터 변하지 않은 사실로 소개하면 안 됩니다."
+  },
+  "editions": {
+    "en": {
+      "title": "Athena coalition: coordinated remediation and disclosure conditions",
+      "claims": [
+        {
+          "text": "Docker announced that it was joining Athena as a founding participant and described the coalition as coordinated defense of open-source software. This is a participant’s description of the initiative.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Docker is a founding participant."
+            }
+          ]
+        },
+        {
+          "text": "Docker describes organizations sharing findings and coordinating responses before vulnerabilities become public. This establishes the stated collaboration model, not independently verified coverage or remediation success.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "share findings and coordinate responses before vulnerabilities become public."
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "At review time, Chainguard’s program page describes private hardened versions available to members through Chainguard Libraries before disclosure for 30 days. This is the program’s stated access condition, not a promise of immediate public patch availability.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "available to members through Chainguard Libraries before disclosure for 30 days."
+            }
+          ]
+        }
+      ]
+    },
+    "ko": {
+      "title": "Athena 연합의 공동 대응과 공개 조건",
+      "claims": [
+        {
+          "text": "Docker는 Athena 창립 참여자로 합류한다고 발표하고 오픈소스 소프트웨어의 공동 방어를 위한 연합으로 설명했다. 참여 기업이 소개한 이니셔티브의 성격을 정리한 것이다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Docker is a founding participant."
+            }
+          ]
+        },
+        {
+          "text": "Docker는 참여 조직들이 취약점 공개 전에 발견 사항을 공유하고 대응을 조율한다고 설명한다. 명시된 협력 모델을 확인한 것이며 보호 범위나 수정 성공을 독립 검증한 결과는 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "share findings and coordinate responses before vulnerabilities become public."
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "검토 시점의 Chainguard 프로그램 페이지는 공개 전 30일 동안 회원에게 Chainguard Libraries를 통해 제공하는 비공개 강화 버전을 설명한다. 프로그램이 명시한 접근 조건이며 패치가 즉시 일반 공개된다는 약속은 아니다.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "available to members through Chainguard Libraries before disclosure for 30 days."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-06-19-athena-coalition-and-disclosure-conditions",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/06/athena-security-coalition/",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-06-18T17:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-06-19.md",
+  "batchId": "batch-005",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:13:57+00:00",
+  "updatedAt": "2026-10-25T12:23:59+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 34,
+    "approvedAt": "2026-10-25T12:23:59+00:00",
+    "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

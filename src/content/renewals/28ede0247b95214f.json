@@ -1,0 +1,111 @@
+{
+  "id": "28ede0247b95214f",
+  "archiveDate": "2026-06-07",
+  "originalPagePublishedAt": "2026-06-06T22:58:08.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-06T22:58:08.000Z",
+    "en": "2026-10-25T12:23:59+00:00"
+  },
+  "experimentStatus": "not_tested",
+  "outcome": "renewed_draft",
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+      "role": "primary",
+      "sha256": "add78f965d5c2126791b6eee473e76e2aa87d82b186b8b9c1546b14e79ba53dc",
+      "fetchedAt": "2026-10-25T12:09:54+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "reviewFocus": {
+    "en": "Check the specific Copilot product and organization policy before migrating. These are the historical notice’s exceptions and alternatives, not a claim that its model availability remains unchanged today.",
+    "ko": "전환 전 사용하는 Copilot 제품과 조직 정책을 확인할 것을 제안합니다. 당시 공지의 예외와 대안을 정리했으며, 해당 모델 제공 상태가 현재까지 같다는 뜻은 아닙니다."
+  },
+  "editions": {
+    "en": {
+      "title": "Copilot model retirement: scope, alternatives and code-review exception",
+      "claims": [
+        {
+          "text": "GitHub announced GPT-5.2 and GPT-5.2-Codex deprecation on 2026-06-05 across most Copilot experiences, while explicitly retaining GPT-5.2 for Copilot code review in that announcement. This does not establish retirement across other providers or APIs.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Note that GPT-5.2 is still available as part of Copilot code review."
+            },
+            {
+              "document_id": 0,
+              "quote": "As of today, June 5, 2026, we have deprecated the following models across most GitHub Copilot experiences"
+            }
+          ]
+        },
+        {
+          "text": "The announcement suggests GPT-5.5 for GPT-5.2 and GPT-5.3-Codex for GPT-5.2-Codex. Enterprise administrators may need to enable alternatives through model policies before users can select them.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Copilot Enterprise administrators may need to enable access to alternative models through their model policies in Copilot settings."
+            },
+            {
+              "document_id": 0,
+              "quote": "GPT-5.2 2026-06-05 GPT-5.5 GPT-5.2-Codex 2026-06-05 GPT-5.3-Codex"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Copilot 모델 종료 범위와 대안, 코드 리뷰 예외",
+      "claims": [
+        {
+          "text": "GitHub은 2026-06-05 대부분의 Copilot 사용 환경에서 GPT-5.2 및 GPT-5.2-Codex 지원 종료를 공지했지만, 같은 공지에서 Copilot 코드 리뷰에는 GPT-5.2가 계속 제공된다고 명시했다. 다른 공급자나 API의 종료까지 의미하지 않는다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Note that GPT-5.2 is still available as part of Copilot code review."
+            },
+            {
+              "document_id": 0,
+              "quote": "As of today, June 5, 2026, we have deprecated the following models across most GitHub Copilot experiences"
+            }
+          ]
+        },
+        {
+          "text": "공지는 GPT-5.2의 대안으로 GPT-5.5를, GPT-5.2-Codex의 대안으로 GPT-5.3-Codex를 제시한다. 기업 관리자는 사용자가 대안을 선택할 수 있도록 모델 정책에서 접근을 허용해야 할 수 있다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Copilot Enterprise administrators may need to enable access to alternative models through their model policies in Copilot settings."
+            },
+            {
+              "document_id": 0,
+              "quote": "GPT-5.2 2026-06-05 GPT-5.5 GPT-5.2-Codex 2026-06-05 GPT-5.3-Codex"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-06-07-copilot-model-retirement-and-code-review-exception",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+  "articleNumber": 4,
+  "sourcePublishedAt": "2026-06-06T07:32:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-06-07.md",
+  "batchId": "batch-005",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:13:57+00:00",
+  "updatedAt": "2026-10-25T12:23:59+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 34,
+    "approvedAt": "2026-10-25T12:23:59+00:00",
+    "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

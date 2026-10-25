@@ -5761,9 +5761,20 @@
       "originalTitle": "BadHost Vulnerability Exposes AI Agents, Evaluators, and LLM Gateways",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-005",
+      "reviewPullRequest": 34,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 34,
+        "approvedAt": "2026-10-25T12:23:59+00:00",
+        "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/9aee971925826c50.json",
+        "slug": "2026-06-02-badhost-starlette-authorization-and-proxy-conditions",
+        "englishPublishedAt": "2026-10-25T12:23:59+00:00"
+      }
     },
     {
       "id": "6258be1a46a34c09",
@@ -5793,9 +5804,20 @@
       "originalTitle": "Spring and Security In The Times Of AI",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-005",
+      "reviewPullRequest": 34,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 34,
+        "approvedAt": "2026-10-25T12:23:59+00:00",
+        "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/2b6f4abe346a373d.json",
+        "slug": "2026-06-02-spring-security-report-triage",
+        "englishPublishedAt": "2026-10-25T12:23:59+00:00"
+      }
     },
     {
       "id": "cb1ad32748247de0",
@@ -6257,9 +6279,20 @@
       "originalTitle": "GPT-5.2 and GPT-5.2-Codex deprecated",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-005",
+      "reviewPullRequest": 34,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 34,
+        "approvedAt": "2026-10-25T12:23:59+00:00",
+        "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/28ede0247b95214f.json",
+        "slug": "2026-06-07-copilot-model-retirement-and-code-review-exception",
+        "englishPublishedAt": "2026-10-25T12:23:59+00:00"
+      }
     },
     {
       "id": "528b8498bf5a21e1",
@@ -6529,9 +6562,20 @@
       "originalTitle": "Security validation for third-party coding agents",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-005",
+      "reviewPullRequest": 34,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 34,
+        "approvedAt": "2026-10-25T12:23:59+00:00",
+        "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/3f90329447f77e33.json",
+        "slug": "2026-06-10-third-party-coding-agent-security-validation",
+        "englishPublishedAt": "2026-10-25T12:23:59+00:00"
+      }
     },
     {
       "id": "40c9d5be4e003efa",
@@ -6561,9 +6605,9 @@
       "originalTitle": "Spring Authorization Server 2026.06 Releases - Contains CVE Fixes",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "blocked",
+      "batchId": "batch-005",
+      "reviewPullRequest": 34
     },
     {
       "id": "c2d7a73e8273e634",
@@ -6641,9 +6685,20 @@
       "originalTitle": "Dedicated security review command now available in Copilot CLI",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-005",
+      "reviewPullRequest": 34,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 34,
+        "approvedAt": "2026-10-25T12:23:59+00:00",
+        "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/c4a7f428da738696.json",
+        "slug": "2026-06-11-copilot-cli-security-review-preview",
+        "englishPublishedAt": "2026-10-25T12:23:59+00:00"
+      }
     },
     {
       "id": "395b3ba91a570528",
@@ -6817,9 +6872,20 @@
       "originalTitle": "Scaling Security Insights: how we achieved a 10x increase in global scanning capacity",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-005",
+      "reviewPullRequest": 34,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 34,
+        "approvedAt": "2026-10-25T12:23:59+00:00",
+        "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/db11f89181439d98.json",
+        "slug": "2026-06-13-security-insights-batching-and-adaptive-scheduling",
+        "englishPublishedAt": "2026-10-25T12:23:59+00:00"
+      }
     },
     {
       "id": "1222620440dc53da",
@@ -7073,9 +7139,20 @@
       "originalTitle": "Spring News Roundup: Point Releases of Boot, Security, Integration, Modulith and Spring AI 2.0",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-005",
+      "reviewPullRequest": 34,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 34,
+        "approvedAt": "2026-10-25T12:23:59+00:00",
+        "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/9d263cda22c982a1.json",
+        "slug": "2026-06-16-spring-boot-and-ai-platform-baselines",
+        "englishPublishedAt": "2026-10-25T12:23:59+00:00"
+      }
     },
     {
       "id": "e5b78b2ff5bbbfd5",
@@ -7393,9 +7470,20 @@
       "originalTitle": "Athena Coalition Brings Coordinated Defence to Open Source Security",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "published",
+      "batchId": "batch-005",
+      "reviewPullRequest": 34,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 34,
+        "approvedAt": "2026-10-25T12:23:59+00:00",
+        "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+      },
+      "publication": {
+        "file": "src/content/renewals/92303a0e5010240e.json",
+        "slug": "2026-06-19-athena-coalition-and-disclosure-conditions",
+        "englishPublishedAt": "2026-10-25T12:23:59+00:00"
+      }
     },
     {
       "id": "f38e57801196e167",
@@ -7441,9 +7529,9 @@
       "originalTitle": "A Bootiful Podcast: DaShaun Carter on patching, Spring Boot 4.1, and security in the world of AI",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
-      "reviewPullRequest": null
+      "status": "blocked",
+      "batchId": "batch-005",
+      "reviewPullRequest": 34
     },
     {
       "id": "a1faaf764fcc9a95",

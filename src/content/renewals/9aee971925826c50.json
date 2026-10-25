@@ -1,0 +1,130 @@
+{
+  "id": "9aee971925826c50",
+  "archiveDate": "2026-06-02",
+  "originalPagePublishedAt": "2026-06-01T23:23:13.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-01T23:23:13.000Z",
+    "en": "2026-10-25T12:23:59+00:00"
+  },
+  "experimentStatus": "not_tested",
+  "outcome": "renewed_draft",
+  "documents": [
+    {
+      "url": "https://www.x41-dsec.de/lab/advisories/x41-2026-002-starlette/",
+      "role": "primary",
+      "sha256": "414994bc3bddd4ee867c821fc1a8b944739c9b927c89b4bf2746658c7f1a3084",
+      "fetchedAt": "2026-10-25T12:10:38+00:00",
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr",
+      "role": "primary",
+      "sha256": "3f5c496a595b58d172b5f636d39b68902e006e8e3b88e9232cb0ed8b2564f011",
+      "fetchedAt": "2026-10-25T12:11:50+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "reviewFocus": {
+    "en": "Inspect authorization middleware, resolved dependencies and forwarded-header trust. Merely having a proxy is insufficient; test the real ingress configuration. No exploit experiment was performed for this draft.",
+    "ko": "인가 미들웨어·실제 의존성·전달 헤더 신뢰 설정을 확인할 것을 제안합니다. 프록시 존재만으로 보호를 단정할 수 없으므로 실제 진입 경로 설정을 검토해야 합니다. 이 초안에서 공격 실험을 수행하지 않았습니다."
+  },
+  "editions": {
+    "en": {
+      "title": "BadHost: Starlette path-based authorization and proxy conditions",
+      "claims": [
+        {
+          "text": "The researchers explain that Starlette reconstructed a URL from an unvalidated Host header while routing used the actual request path. Authorization based on the reconstructed path could therefore disagree with the routed endpoint.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "routing in Starlette is based on the actual request path."
+            },
+            {
+              "document_id": 0,
+              "quote": "does not perform any validation of the Host header value."
+            }
+          ]
+        },
+        {
+          "text": "The researcher advisory lists affected Starlette versions as >= 0.8.3 and < 1.0.1, and identifies 1.0.1 as patched. Applicability still depends on the application’s path-based security decisions.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Confirmed Affected Versions: starlette >= 0.8.3, < 1.0.1 Confirmed Patched Versions: starlette 1.0.1"
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "At review time, the maintainer advisory says a proxy or load balancer mitigates this only if it rejects or normalizes malformed Host headers before forwarding and the application does not trust attacker-controlled host headers elsewhere.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "mitigated only if that proxy rejects or normalizes the malformed Host header before forwarding"
+            }
+          ]
+        }
+      ]
+    },
+    "ko": {
+      "title": "BadHost의 Starlette 경로 기반 인가 문제와 프록시 조건",
+      "claims": [
+        {
+          "text": "연구진은 Starlette가 검증하지 않은 Host 헤더로 URL을 재구성하는 반면 라우팅은 실제 요청 경로를 사용한다고 설명한다. 재구성한 경로를 기준으로 인가하면 실제로 실행되는 엔드포인트와 판단이 어긋날 수 있다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "routing in Starlette is based on the actual request path."
+            },
+            {
+              "document_id": 0,
+              "quote": "does not perform any validation of the Host header value."
+            }
+          ]
+        },
+        {
+          "text": "연구진 권고는 Starlette 영향 버전을 >= 0.8.3 및 < 1.0.1로, 수정 버전을 1.0.1로 제시한다. 실제 영향 여부는 애플리케이션이 경로에 근거해 보안 판단을 하는지와 함께 확인해야 한다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Confirmed Affected Versions: starlette >= 0.8.3, < 1.0.1 Confirmed Patched Versions: starlette 1.0.1"
+            }
+          ]
+        }
+      ],
+      "followUp": [
+        {
+          "text": "검토 시점의 유지보수자 권고는 프록시나 로드밸런서가 잘못된 Host 헤더를 전달 전에 거부·정규화하고 애플리케이션이 다른 경로에서도 공격자 제어 호스트 헤더를 신뢰하지 않는 조건에서만 완화를 설명한다.",
+          "evidence": [
+            {
+              "document_id": 1,
+              "quote": "mitigated only if that proxy rejects or normalizes the malformed Host header before forwarding"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-06-02-badhost-starlette-authorization-and-proxy-conditions",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/06/badhost-ai-systems-vulnerability/",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-06-01T23:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-06-02.md",
+  "batchId": "batch-005",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:13:57+00:00",
+  "updatedAt": "2026-10-25T12:23:59+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 34,
+    "approvedAt": "2026-10-25T12:23:59+00:00",
+    "basis": "Codex conversation: user instructed 진행해줘 after reviewing the completion report for Draft PR 34; proceed with publication of eight reviewed drafts while retaining two holds."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
