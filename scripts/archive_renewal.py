@@ -21,7 +21,9 @@ DIRECTORY = Path('.pipeline/archive-renewal')
 STATUSES = {'pending', 'researching', 'draft_ready', 'awaiting_review', 'blocked',
             'approved', 'published', 'merged_duplicate', 'unverifiable_archived', 'excluded_example'}
 TERMINAL = {'published', 'merged_duplicate', 'unverifiable_archived', 'excluded_example'}
-PRIMARY_HOSTS = set(json.loads((Path(__file__).resolve().parents[1]/'src/lib/archive-policy.json').read_text())['primaryHosts'])
+ARCHIVE_POLICY = json.loads((Path(__file__).resolve().parents[1]/'src/lib/archive-policy.json').read_text())
+PRIMARY_HOSTS = set(ARCHIVE_POLICY['primaryHosts'])
+PRIMARY_URLS = set(ARCHIVE_POLICY.get('primaryUrls',[]))
 RISK = re.compile(r'\b(cve|vulnerabil\w*|security|compromis\w*|exposure|deprecat\w*|end.of.life|cost|pricing|benchmark|\d+%)\b', re.I)
 BACKEND = re.compile(r'\b(java|jdk|jvm|spring|database|postgres\w*|kafka|redis|backend|observability|attestation|ci)\b', re.I)
 
@@ -197,7 +199,7 @@ def validate_batch(batch, manifest, *, now=None, documents=None):
                 if not https(d['url']) or not re.fullmatch('[0-9a-f]{64}',d['sha256']):errors.append('invalid document URL or hash')
                 if timestamp(d['fetchedAt'])>reviewed or d['extractorVersion']!='article-parser-v1':errors.append('invalid source collection provenance')
                 if d['role'] not in {'primary','reporting'}:errors.append('unknown document role')
-                if d['role']=='primary' and urlsplit(d['url']).hostname not in PRIMARY_HOSTS:errors.append('unapproved primary publisher')
+                if d['role']=='primary' and urlsplit(d['url']).hostname not in PRIMARY_HOSTS and d['url'] not in PRIMARY_URLS:errors.append('unapproved primary publisher')
                 if documents is not None and hashlib.sha256(documents[d['url']].encode()).hexdigest()!=d['sha256']:
                     errors.append('source content changed; review quotes and refresh provenance explicitly')
             errors.extend(validate_editions(editions))

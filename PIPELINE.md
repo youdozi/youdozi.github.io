@@ -114,6 +114,8 @@ python3 -B scripts/publish_archive.py \
 
 `npm run check:archive`는 공개 원고와 검토 배치의 문장·근거가 같은지, manifest의 승인·게시 정보가 공개 파일과 연결되어 있는지까지 검사합니다. PR의 공개 파일 및 `published` 상태는 병합 후 배포할 승인 결과물이며, 운영 공개 완료는 반드시 main 배포 성공과 실제 URL 응답으로 확인합니다. 이후 원고 수정은 새 검토와 갱신 절차가 필요합니다. 다음 미승인 배치는 별도 Draft PR로 유지합니다.
 
+후속 `batch-002`는 오래된 위험 관련 항목 10건을 대상으로 보강 초안 9건과 공식 커널 패치·영향 범위 대조 대기 1건을 포함합니다. 모두 미게시 상태이며, 원문을 읽을 수 있다는 이유로 커널 보도의 보안 주장을 검증 완료로 처리하지 않습니다. 원래 종합 기사를 일부만 다루는 초안은 그 범위를 명시합니다. 공식 출처 정책은 `src/lib/archive-policy.json`을 Python과 Astro에서 공유하며, 개인이 작성한 벤치마크의 근거는 검토한 개별 URL만 허용합니다. 해당 게시 플랫폼 전체를 공식 출처로 허용하지 않습니다.
+
 ## 이전 구현
 
 `scripts/generate_dev_digest.py`와 `validate_dev_digest.py`는 기존 Markdown 아카이브의 수집·선별·검증 함수와 회귀 테스트를 유지하기 위해 남겼습니다. 새 npm 명령과 Actions는 `scripts/generate_digest.py`를 사용합니다. 기존 Ruby 빌드 스크립트는 운영 경로에서 사용하지 않습니다.

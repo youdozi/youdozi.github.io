@@ -94,8 +94,8 @@
       "originalTitle": "Dynamic Languages Faster and Cheaper in 13-Language Claude Code Benchmark",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-002",
       "reviewPullRequest": null
     },
     {
@@ -174,8 +174,8 @@
       "originalTitle": "Prioritize security alerts with runtime context from Dynatrace",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-002",
       "reviewPullRequest": null
     },
     {
@@ -254,8 +254,8 @@
       "originalTitle": "Cloudflare targets 2029 for full post-quantum security",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-002",
       "reviewPullRequest": null
     },
     {
@@ -318,8 +318,8 @@
       "originalTitle": "Code Security risk assessment available for organizations",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-002",
       "reviewPullRequest": null
     },
     {
@@ -398,8 +398,8 @@
       "originalTitle": "Ask Copilot in security assessments now available",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-002",
       "reviewPullRequest": null
     },
     {
@@ -494,8 +494,8 @@
       "originalTitle": "CNCF and Kusari Partner to Strengthen Software Supply Chain Security Across Cloud-Native Projects",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-002",
       "reviewPullRequest": null
     },
     {
@@ -990,8 +990,8 @@
       "originalTitle": "Claude Code Used to Find Remotely Exploitable Linux Kernel Vulnerability Hidden for 23 Years",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "blocked",
+      "batchId": "batch-002",
       "reviewPullRequest": null
     },
     {
@@ -1598,8 +1598,8 @@
       "originalTitle": "Spring Security 2026.04 Releases - Contains CVE Fixes",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-002",
       "reviewPullRequest": null
     },
     {
@@ -1614,8 +1614,8 @@
       "originalTitle": "Cloudflare Outlines MCP Architecture as Enterprises Confront Security and Governance Risks",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-002",
       "reviewPullRequest": null
     },
     {
@@ -2126,8 +2126,8 @@
       "originalTitle": "Spring News Roundup: First Release Candidates of Boot, Security, Integration, Modulith, AMQP",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-002",
       "reviewPullRequest": null
     },
     {

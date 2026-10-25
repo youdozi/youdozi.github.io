@@ -105,7 +105,7 @@ class ArchiveRenewalTests(unittest.TestCase):
             root=Path(folder);directory=root/archive.DIRECTORY
             value=copy.deepcopy(self.manifest)
             archive.write(directory/'manifest.json',value)
-            archive.write(directory/'batches/pilot-001.json',self.batch)
+            shutil.copytree(ROOT/archive.DIRECTORY/'batches',directory/'batches')
             if (ROOT/'src/content/renewals').exists():shutil.copytree(ROOT/'src/content/renewals',root/'src/content/renewals')
             with patch.object(archive,'source_records',return_value=archive.source_records(ROOT)):
                 self.assertEqual([],archive.check(root))
@@ -130,6 +130,21 @@ class ArchiveRenewalTests(unittest.TestCase):
         self.assertFalse(any((ROOT/'src/content').rglob('pilot-001.json')))
         self.assertFalse(any((ROOT/'public').rglob('pilot-001.json')))
         self.assertEqual([],archive.check(ROOT))
+
+    def test_shared_author_host_is_approved_for_exact_source_only(self):
+        batch=archive.read(ROOT/archive.DIRECTORY/'batches/batch-002.json')
+        self.assertEqual([],archive.validate_batch(batch,self.manifest))
+        entry=next(e for e in batch['entries'] if e['id']=='d9492522fb4514ef')
+        entry['documents'][0]['url']='https://dev.to/another-author/unreviewed-post'
+        self.assertIn('unapproved primary publisher',archive.validate_batch(batch,self.manifest))
+
+    def test_next_batch_stays_outside_public_collection(self):
+        batch=archive.read(ROOT/archive.DIRECTORY/'batches/batch-002.json')
+        self.assertEqual(9,sum(e['outcome']=='renewed_draft' for e in batch['entries']))
+        self.assertEqual(1,sum(e['outcome']=='unverifiable_proposal' for e in batch['entries']))
+        for entry in batch['entries']:
+            self.assertIsNone(entry['editionPublishedAt']['en'])
+            self.assertFalse((ROOT/'src/content/renewals'/(entry['id']+'.json')).exists())
 
 
 if __name__=='__main__':unittest.main()
