@@ -94,9 +94,9 @@
       "originalTitle": "Dynamic Languages Faster and Cheaper in 13-Language Claude Code Benchmark",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-002",
-      "reviewPullRequest": null
+      "reviewPullRequest": 31
     },
     {
       "id": "5098dccb7e805502",
@@ -174,9 +174,9 @@
       "originalTitle": "Prioritize security alerts with runtime context from Dynatrace",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-002",
-      "reviewPullRequest": null
+      "reviewPullRequest": 31
     },
     {
       "id": "6b74de910df337b1",
@@ -254,9 +254,9 @@
       "originalTitle": "Cloudflare targets 2029 for full post-quantum security",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-002",
-      "reviewPullRequest": null
+      "reviewPullRequest": 31
     },
     {
       "id": "42c6d64f3e97f4d8",
@@ -318,9 +318,9 @@
       "originalTitle": "Code Security risk assessment available for organizations",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-002",
-      "reviewPullRequest": null
+      "reviewPullRequest": 31
     },
     {
       "id": "7989108be13e8e4f",
@@ -398,9 +398,9 @@
       "originalTitle": "Ask Copilot in security assessments now available",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-002",
-      "reviewPullRequest": null
+      "reviewPullRequest": 31
     },
     {
       "id": "ac63f3964c3ab580",
@@ -494,9 +494,9 @@
       "originalTitle": "CNCF and Kusari Partner to Strengthen Software Supply Chain Security Across Cloud-Native Projects",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-002",
-      "reviewPullRequest": null
+      "reviewPullRequest": 31
     },
     {
       "id": "24f5421c54176c2e",
@@ -992,7 +992,7 @@
       "priority": "risk",
       "status": "blocked",
       "batchId": "batch-002",
-      "reviewPullRequest": null
+      "reviewPullRequest": 31
     },
     {
       "id": "f5cbd8be5aacc366",
@@ -1598,9 +1598,9 @@
       "originalTitle": "Spring Security 2026.04 Releases - Contains CVE Fixes",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-002",
-      "reviewPullRequest": null
+      "reviewPullRequest": 31
     },
     {
       "id": "e858b2ec6331d84e",
@@ -1614,9 +1614,9 @@
       "originalTitle": "Cloudflare Outlines MCP Architecture as Enterprises Confront Security and Governance Risks",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-002",
-      "reviewPullRequest": null
+      "reviewPullRequest": 31
     },
     {
       "id": "9fee9a9301550380",
@@ -2126,9 +2126,9 @@
       "originalTitle": "Spring News Roundup: First Release Candidates of Boot, Security, Integration, Modulith, AMQP",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-002",
-      "reviewPullRequest": null
+      "reviewPullRequest": 31
     },
     {
       "id": "c77edb9af95a4c45",
