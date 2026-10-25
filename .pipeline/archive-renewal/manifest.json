@@ -7609,9 +7609,9 @@
       "originalTitle": "Windows Platform Security and the Race to Secure AI Agents",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-006",
-      "reviewPullRequest": null
+      "reviewPullRequest": 35
     },
     {
       "id": "4380abffaf1a31e0",
@@ -7625,9 +7625,9 @@
       "originalTitle": "GitLab 19.0 Embeds Agentic AI in Secrets, Merge Requests, and Supply Chain Security",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-006",
-      "reviewPullRequest": null
+      "reviewPullRequest": 35
     },
     {
       "id": "b629f2768e466c45",
@@ -7721,9 +7721,9 @@
       "originalTitle": "Bamboo End of Life: How to Prepare and Choose the Right CI/CD Replacement",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-006",
-      "reviewPullRequest": null
+      "reviewPullRequest": 35
     },
     {
       "id": "f2223753d6fdae0a",
@@ -7817,9 +7817,9 @@
       "originalTitle": "YouTrack Security Update: Upgrade Required for YouTrack Server",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-006",
-      "reviewPullRequest": null
+      "reviewPullRequest": 35
     },
     {
       "id": "58b9b75ec72b2ff7",
@@ -7865,9 +7865,9 @@
       "originalTitle": "Presentation: Challenging Google Analytics: Building a Scalable, Cost-Effective User Tracking Service",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-006",
-      "reviewPullRequest": null
+      "reviewPullRequest": 35
     },
     {
       "id": "8b8a8879aa9a8370",
@@ -8217,9 +8217,9 @@
       "originalTitle": "Argo CD 3.5 Tightens Supply Chain Security with Internal mTLS and Source Integrity",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-006",
-      "reviewPullRequest": null
+      "reviewPullRequest": 35
     },
     {
       "id": "f23c98563c9b3d10",
@@ -8409,9 +8409,9 @@
       "originalTitle": "AWS Previews FinOps Agent for Cost Analysis and Optimization",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-006",
-      "reviewPullRequest": null
+      "reviewPullRequest": 35
     },
     {
       "id": "ef77491099117953",
@@ -8521,9 +8521,9 @@
       "originalTitle": "Article: Virtual panel: Security in the Machine Age: Expert Insights on AI Threat Evolution",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-006",
-      "reviewPullRequest": null
+      "reviewPullRequest": 35
     },
     {
       "id": "c20e5ff45dd6c40c",
@@ -8601,9 +8601,9 @@
       "originalTitle": "Upcoming cloud data retention policy for closed security alerts",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-006",
-      "reviewPullRequest": null
+      "reviewPullRequest": 35
     },
     {
       "id": "52ee7abbb037f678",
@@ -8617,9 +8617,9 @@
       "originalTitle": "Microsoft Brings AI-Powered Vulnerability Remediation to Azure DevOps with Copilot Autofix",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-006",
-      "reviewPullRequest": null
+      "reviewPullRequest": 35
     },
     {
       "id": "9960969469b8d803",
