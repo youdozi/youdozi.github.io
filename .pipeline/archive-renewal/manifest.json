@@ -2307,7 +2307,7 @@
       "priority": "risk",
       "status": "blocked",
       "batchId": "batch-003",
-      "reviewPullRequest": null
+      "reviewPullRequest": 32
     },
     {
       "id": "4827294e5bd40b79",
@@ -2657,9 +2657,9 @@
       "originalTitle": "Upcoming deprecation of GPT-5.2 and GPT-5.2-Codex",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-003",
-      "reviewPullRequest": null
+      "reviewPullRequest": 32
     },
     {
       "id": "25c2b32f052aeccb",
@@ -2865,9 +2865,9 @@
       "originalTitle": "Cloudflare Processes 10M+ Daily Insights with New Security Overview Dashboard",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-003",
-      "reviewPullRequest": null
+      "reviewPullRequest": 32
     },
     {
       "id": "9f42e7915ba082a5",
@@ -2961,9 +2961,9 @@
       "originalTitle": "GitHub Enhances CodeQL with Declarative Security Modeling for Faster, More Flexible Analysis",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-003",
-      "reviewPullRequest": null
+      "reviewPullRequest": 32
     },
     {
       "id": "fe4886eaf2c7f894",
@@ -3089,9 +3089,9 @@
       "originalTitle": "Search and filter bar for repository security advisories",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-003",
-      "reviewPullRequest": null
+      "reviewPullRequest": 32
     },
     {
       "id": "413920171ffb309d",
@@ -3185,9 +3185,9 @@
       "originalTitle": "How Cloudflare responded to the “Copy Fail” Linux vulnerability",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-003",
-      "reviewPullRequest": null
+      "reviewPullRequest": 32
     },
     {
       "id": "c79cb21e90d25d2e",
@@ -3313,9 +3313,9 @@
       "originalTitle": "Upcoming deprecation of Grok Code Fast 1",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-003",
-      "reviewPullRequest": null
+      "reviewPullRequest": 32
     },
     {
       "id": "9bfbe2a2f460a4a1",
@@ -3409,9 +3409,9 @@
       "originalTitle": "Upcoming deprecation of GPT-4.1",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-003",
-      "reviewPullRequest": null
+      "reviewPullRequest": 32
     },
     {
       "id": "a4153e93500e2756",
@@ -3505,9 +3505,9 @@
       "originalTitle": "Claude Sonnet 4 deprecated",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-003",
-      "reviewPullRequest": null
+      "reviewPullRequest": 32
     },
     {
       "id": "30931581434ea58f",
@@ -3601,9 +3601,9 @@
       "originalTitle": "High-Severity Security Issue Affecting TeamCity On-Premises (CVE-2026-44413) – Update to 2026.1 Now",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "awaiting_review",
       "batchId": "batch-003",
-      "reviewPullRequest": null
+      "reviewPullRequest": 32
     },
     {
       "id": "6fdbbab10590a5bb",
