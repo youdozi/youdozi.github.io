@@ -1,0 +1,95 @@
+{
+  "id": "7ec61f556fb8d2c3",
+  "archiveDate": "2026-05-05",
+  "originalPagePublishedAt": "2026-05-04T22:52:32.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-04T22:52:32.000Z",
+    "en": "2026-10-25T06:06:33+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Review what is actually observed and which controls are enabled before treating a dashboard as proof of protection. Distinguish a live product feature from a roadmap statement and confirm present account-level availability separately.",
+    "ko": "대시보드를 보호의 증거로 보기 전에 실제 관측 범위와 활성화한 통제를 점검할 것을 제안합니다. 현재 기능과 로드맵을 구분하고 계정 단위 제공 여부는 별도로 확인해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://blog.cloudflare.com/security-overview-dashboard/",
+      "role": "primary",
+      "sha256": "3e1f6145babfb0d3bd73a91753aa498f46089a48de10259691fa86726868262a",
+      "fetchedAt": "2026-10-25T05:43:18+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Cloudflare Security Overview separates risk priority from visibility",
+      "claims": [
+        {
+          "text": "Cloudflare describes a Security Overview dashboard that ranks items by criticality and filters insights such as suspicious activity or insecure configuration.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "items are ranked by criticality"
+            }
+          ]
+        },
+        {
+          "text": "At launch, the article describes a domain-level experience and places account-level aggregation on the roadmap. This does not establish that the account-wide view was already released.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "launching at the domain level today"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "위험 우선순위를 구분한 Cloudflare Security Overview",
+      "claims": [
+        {
+          "text": "Cloudflare는 항목을 위험도별로 정렬하고 의심 활동·안전하지 않은 설정 같은 인사이트를 필터링하는 Security Overview 대시보드를 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "items are ranked by criticality"
+            }
+          ]
+        },
+        {
+          "text": "발표 당시 경험은 도메인 단위였으며 계정 단위 통합은 로드맵으로 설명됐다. 계정 전체 보기가 이미 출시됐다는 근거는 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "launching at the domain level today"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-05-cloudflare-security-overview-scope",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/05/cloudflare-security-dashboard/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-05-04T23:33:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-05.md",
+  "batchId": "batch-003",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:45:08+00:00",
+  "updatedAt": "2026-10-25T06:06:33+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 32,
+    "approvedAt": "2026-10-25T06:06:33+00:00",
+    "basis": "Codex conversation: after publication of batch 002 and presentation of review PR 32, user instructed 다음 단계 진행; the publication step was announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

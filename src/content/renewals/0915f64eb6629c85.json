@@ -1,0 +1,95 @@
+{
+  "id": "0915f64eb6629c85",
+  "archiveDate": "2026-05-09",
+  "originalPagePublishedAt": "2026-05-08T22:51:31.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-08T22:51:31.000Z",
+    "en": "2026-10-25T06:06:33+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Inventory product-specific model names and admin policy dependencies before changing workflows. Verify present availability and evaluate an alternative on representative tasks rather than adopting historical suggested models automatically.",
+    "ko": "워크플로를 바꾸기 전에 제품별 모델 이름과 관리자 정책 의존성을 목록화할 것을 제안합니다. 현재 제공 범위를 확인하고 대표 과제로 대안을 평가해야 하며 과거의 추천 모델을 자동으로 선택해서는 안 됩니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1",
+      "role": "primary",
+      "sha256": "14bc26c22b51085ad5ac49d07e87fcd0453db382a85ae86a658481611624f427",
+      "fetchedAt": "2026-10-25T05:43:19+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Grok Code Fast 1 retirement notice specifies Copilot scope",
+      "claims": [
+        {
+          "text": "GitHub announced the planned retirement of Grok Code Fast 1 from Copilot on 2026-05-15. This records the announced schedule rather than independently verifying the completed shutdown.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Grok Code Fast 1 2026-05-15"
+            }
+          ]
+        },
+        {
+          "text": "The notice says the date was accelerated because of the model provider deprecation.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "accelerated due to the model provider deprecation"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Copilot 범위를 명시한 Grok Code Fast 1 종료 공지",
+      "claims": [
+        {
+          "text": "GitHub는 Copilot에서 Grok Code Fast 1을 2026-05-15 종료할 예정이라고 공지했다. 공지된 일정을 기록한 것이며 종료 완료를 독립적으로 확인한 것은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Grok Code Fast 1 2026-05-15"
+            }
+          ]
+        },
+        {
+          "text": "공지는 모델 제공자의 지원 종료 때문에 날짜를 앞당겼다고 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "accelerated due to the model provider deprecation"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-09-copilot-grok-code-fast-retirement",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1",
+  "articleNumber": 5,
+  "sourcePublishedAt": "2026-05-09T05:21:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-09.md",
+  "batchId": "batch-003",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:45:08+00:00",
+  "updatedAt": "2026-10-25T06:06:33+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 32,
+    "approvedAt": "2026-10-25T06:06:33+00:00",
+    "basis": "Codex conversation: after publication of batch 002 and presentation of review PR 32, user instructed 다음 단계 진행; the publication step was announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

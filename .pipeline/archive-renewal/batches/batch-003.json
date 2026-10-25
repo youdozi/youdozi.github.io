@@ -1,0 +1,777 @@
+{
+  "schemaVersion": 1,
+  "batchId": "batch-003",
+  "mode": "historical",
+  "state": "draft",
+  "reviewMethod": "editorial-source-context-review",
+  "method": "Editorial source-context review; no Gemini call, no local product experiment and no human publication approval.",
+  "reviewedAt": "2026-10-25T05:45:08+00:00",
+  "entries": [
+    {
+      "id": "3e483be55bb45ecb",
+      "archiveDate": "2026-05-02",
+      "originalPagePublishedAt": "2026-05-01T22:43:15.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-05-01T22:43:15.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Use the corrected dates and product exception when auditing historical model choices. Confirm current availability in the relevant product rather than treating this archive as a current model recommendation.",
+        "ko": "과거 모델 선택을 감사할 때 정정된 날짜와 제품 예외를 사용할 것을 제안합니다. 이 아카이브를 현재 모델 추천으로 해석하지 말고 해당 제품에서 현재 제공 범위를 확인해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex",
+          "role": "primary",
+          "sha256": "5705285bf661f3e71f89e3cf6b361705e9e4f1e9e075ff817be1816239a6b11b",
+          "fetchedAt": "2026-10-25T05:43:18+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "GitHub Copilot: GPT-5.2 and GPT-5.2-Codex retirement corrections",
+          "claims": [
+            {
+              "text": "GitHub published a Copilot retirement notice covering GPT-5.2 and GPT-5.2-Codex. This is a Copilot product notice, not a statement about every provider API.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "GPT-5.2 6-05-2026 GPT-5.5 GPT-5.2-Codex"
+                }
+              ]
+            },
+            {
+              "text": "The notice says Copilot Enterprise administrators may need to enable alternative models through their model policies.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "their model policies"
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "A later editor note moved the planned retirement from 2026-06-01 to 2026-06-05.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "from June 1, 2026 to June 5, 2026."
+                }
+              ]
+            },
+            {
+              "text": "Another correction identifies GPT-5.2, rather than GPT-5.2-Codex, as the exception for Copilot Code Review.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "GPT-5.2 instead of GPT-5.2-Codex"
+                }
+              ]
+            }
+          ]
+        },
+        "ko": {
+          "title": "GitHub Copilot의 GPT-5.2·GPT-5.2-Codex 종료 정정",
+          "claims": [
+            {
+              "text": "GitHub는 GPT-5.2와 GPT-5.2-Codex를 대상으로 Copilot 지원 종료 공지를 게시했다. Copilot 제품의 공지이며 모든 제공자 API의 상태를 설명하는 것은 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "GPT-5.2 6-05-2026 GPT-5.5 GPT-5.2-Codex"
+                }
+              ]
+            },
+            {
+              "text": "공지는 Copilot Enterprise 관리자가 모델 정책에서 대체 모델을 활성화해야 할 수 있다고 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "their model policies"
+                }
+              ]
+            }
+          ],
+          "followUp": [
+            {
+              "text": "후속 편집자 주석은 예정된 종료일을 2026-06-01에서 2026-06-05로 변경했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "from June 1, 2026 to June 5, 2026."
+                }
+              ]
+            },
+            {
+              "text": "다른 정정은 Copilot Code Review의 예외가 GPT-5.2-Codex가 아니라 GPT-5.2임을 명시했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "GPT-5.2 instead of GPT-5.2-Codex"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "7ec61f556fb8d2c3",
+      "archiveDate": "2026-05-05",
+      "originalPagePublishedAt": "2026-05-04T22:52:32.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-05-04T22:52:32.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Review what is actually observed and which controls are enabled before treating a dashboard as proof of protection. Distinguish a live product feature from a roadmap statement and confirm present account-level availability separately.",
+        "ko": "대시보드를 보호의 증거로 보기 전에 실제 관측 범위와 활성화한 통제를 점검할 것을 제안합니다. 현재 기능과 로드맵을 구분하고 계정 단위 제공 여부는 별도로 확인해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/security-overview-dashboard/",
+          "role": "primary",
+          "sha256": "3e1f6145babfb0d3bd73a91753aa498f46089a48de10259691fa86726868262a",
+          "fetchedAt": "2026-10-25T05:43:18+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Cloudflare Security Overview separates risk priority from visibility",
+          "claims": [
+            {
+              "text": "Cloudflare describes a Security Overview dashboard that ranks items by criticality and filters insights such as suspicious activity or insecure configuration.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "items are ranked by criticality"
+                }
+              ]
+            },
+            {
+              "text": "At launch, the article describes a domain-level experience and places account-level aggregation on the roadmap. This does not establish that the account-wide view was already released.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "launching at the domain level today"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "위험 우선순위를 구분한 Cloudflare Security Overview",
+          "claims": [
+            {
+              "text": "Cloudflare는 항목을 위험도별로 정렬하고 의심 활동·안전하지 않은 설정 같은 인사이트를 필터링하는 Security Overview 대시보드를 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "items are ranked by criticality"
+                }
+              ]
+            },
+            {
+              "text": "발표 당시 경험은 도메인 단위였으며 계정 단위 통합은 로드맵으로 설명됐다. 계정 전체 보기가 이미 출시됐다는 근거는 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "launching at the domain level today"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "097c455a9b953f24",
+      "archiveDate": "2026-05-06",
+      "originalPagePublishedAt": "2026-05-05T22:51:14.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-05-05T22:51:14.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Model only the vulnerability kinds and paths the sanitizer actually protects. Test positive and negative examples so an overly broad barrier does not hide real taint flows; this draft does not claim a measured reduction in false positives.",
+        "ko": "정제 함수가 실제로 보호하는 취약점 종류와 경로만 모델링할 것을 제안합니다. 과도한 차단 모델이 실제 오염 흐름을 숨기지 않도록 정상·취약 예제를 함께 테스트해야 합니다. 오탐 감소를 직접 측정했다는 의미는 아닙니다."
+      },
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-04-21-codeql-now-supports-sanitizers-and-validators-in-models-as-data/",
+          "role": "primary",
+          "sha256": "fd25eb45bff751dbf747e5a38c4ef10fa0e274a6c1ae420e3092340682f4e7a6",
+          "fetchedAt": "2026-10-25T05:43:19+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "CodeQL models-as-data add custom sanitizers and validators",
+          "claims": [
+            {
+              "text": "GitHub describes declarative sanitizers and validators in CodeQL YAML data extensions, using barrierModel and barrierGuardModel.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "two new extensible predicates: barrierModel"
+                }
+              ]
+            },
+            {
+              "text": "The announcement lists availability starting with CodeQL 2.25.2. This is the minimum version in that historical announcement, not a current upgrade recommendation.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "available starting with CodeQL 2.25.2"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "사용자 정의 정제·검증을 추가한 CodeQL 데이터 모델",
+          "claims": [
+            {
+              "text": "GitHub는 CodeQL YAML 데이터 확장에서 barrierModel과 barrierGuardModel로 정제·검증 함수를 선언하는 기능을 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "two new extensible predicates: barrierModel"
+                }
+              ]
+            },
+            {
+              "text": "발표는 CodeQL 2.25.2부터 기능을 제공한다고 명시했다. 당시 공지의 최소 버전이며 현재 업그레이드 권고는 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "available starting with CodeQL 2.25.2"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "1c1c9e6c82aad3a4",
+      "archiveDate": "2026-05-07",
+      "originalPagePublishedAt": "2026-05-06T22:43:36.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-05-06T22:43:36.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Check whether the view contains draft, incoming and published advisories needed for the review. A smaller filtered result set should not be interpreted as fewer underlying vulnerabilities.",
+        "ko": "검토에 필요한 초안·접수·공개 권고가 해당 보기에 포함되는지 확인할 것을 제안합니다. 필터 결과가 줄었다는 이유로 실제 취약점이 줄었다고 해석해서는 안 됩니다."
+      },
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-05-06-search-and-filter-bar-for-repository-security-advisories",
+          "role": "primary",
+          "sha256": "3d6b7cf427a3a2d51904316b70ea0216ac523162c3ab35dbc9dc476119d8901c",
+          "fetchedAt": "2026-10-25T05:43:19+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "GitHub repository advisories gain search and filters",
+          "claims": [
+            {
+              "text": "GitHub added search and filtering for security advisories directly in a repository Security tab.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "search and filter security advisories directly"
+                }
+              ]
+            },
+            {
+              "text": "The notice lists sort, package, ecosystems and severity among the supported search or filtering keywords.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "sort , package , ecosystems , severity"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "검색과 필터를 추가한 GitHub 저장소 보안 권고",
+          "claims": [
+            {
+              "text": "GitHub는 저장소 Security 탭의 보안 권고에 검색과 필터를 추가했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "search and filter security advisories directly"
+                }
+              ]
+            },
+            {
+              "text": "공지는 검색·필터 키워드로 sort, package, ecosystems, severity를 열거했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "sort , package , ecosystems , severity"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "46983b9e8a1cf49c",
+      "archiveDate": "2026-05-08",
+      "originalPagePublishedAt": "2026-05-07T22:56:02.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-05-07T22:56:02.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Compare exposure, telemetry, temporary mitigation and verified patch rollout separately. Use distribution-specific advisories for affected versions and do not treat a vendor case study as proof that another fleet is protected.",
+        "ko": "노출·관측·임시 완화·검증된 패치 배포를 각각 비교할 것을 제안합니다. 영향 버전은 배포판 권고에서 확인해야 하며 공급업체의 사례만으로 다른 인프라의 보호가 입증되지는 않습니다."
+      },
+      "documents": [
+        {
+          "url": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+          "role": "primary",
+          "sha256": "ba53be1aadff9df0cfe93ebcebe04d32815008af85da1595c47905e827b79845",
+          "fetchedAt": "2026-10-25T05:43:18+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Cloudflare reports its operational response to Copy Fail",
+          "claims": [
+            {
+              "text": "For Copy Fail (CVE-2026-31431), Cloudflare describes testing a patched kernel in staging before resuming its fleet reboot process.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Copy Fail\" ( CVE-2026-31431 )"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "test the patched kernel in our staging datacenters"
+                }
+              ]
+            },
+            {
+              "text": "Cloudflare reports no impact to its own environment during the incident. That company-specific statement does not establish the safety of other Linux deployments.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "no impact to the Cloudflare environment"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Cloudflare가 보고한 Copy Fail 운영 대응",
+          "claims": [
+            {
+              "text": "Cloudflare는 Copy Fail(CVE-2026-31431) 대응에서 수정 커널을 스테이징에서 테스트한 뒤 전체 인프라 재부팅 절차를 재개했다고 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Copy Fail\" ( CVE-2026-31431 )"
+                },
+                {
+                  "document_id": 0,
+                  "quote": "test the patched kernel in our staging datacenters"
+                }
+              ]
+            },
+            {
+              "text": "Cloudflare는 사고 당시 자사 환경에 영향이 없었다고 보고했다. 회사 자체의 설명이며 다른 Linux 배포 환경의 안전을 입증하지 않는다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "no impact to the Cloudflare environment"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "0915f64eb6629c85",
+      "archiveDate": "2026-05-09",
+      "originalPagePublishedAt": "2026-05-08T22:51:31.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-05-08T22:51:31.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Inventory product-specific model names and admin policy dependencies before changing workflows. Verify present availability and evaluate an alternative on representative tasks rather than adopting historical suggested models automatically.",
+        "ko": "워크플로를 바꾸기 전에 제품별 모델 이름과 관리자 정책 의존성을 목록화할 것을 제안합니다. 현재 제공 범위를 확인하고 대표 과제로 대안을 평가해야 하며 과거의 추천 모델을 자동으로 선택해서는 안 됩니다."
+      },
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1",
+          "role": "primary",
+          "sha256": "14bc26c22b51085ad5ac49d07e87fcd0453db382a85ae86a658481611624f427",
+          "fetchedAt": "2026-10-25T05:43:19+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Grok Code Fast 1 retirement notice specifies Copilot scope",
+          "claims": [
+            {
+              "text": "GitHub announced the planned retirement of Grok Code Fast 1 from Copilot on 2026-05-15. This records the announced schedule rather than independently verifying the completed shutdown.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Grok Code Fast 1 2026-05-15"
+                }
+              ]
+            },
+            {
+              "text": "The notice says the date was accelerated because of the model provider deprecation.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "accelerated due to the model provider deprecation"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Copilot 범위를 명시한 Grok Code Fast 1 종료 공지",
+          "claims": [
+            {
+              "text": "GitHub는 Copilot에서 Grok Code Fast 1을 2026-05-15 종료할 예정이라고 공지했다. 공지된 일정을 기록한 것이며 종료 완료를 독립적으로 확인한 것은 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Grok Code Fast 1 2026-05-15"
+                }
+              ]
+            },
+            {
+              "text": "공지는 모델 제공자의 지원 종료 때문에 날짜를 앞당겼다고 설명했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "accelerated due to the model provider deprecation"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "be1017688a0667ca",
+      "archiveDate": "2026-05-10",
+      "originalPagePublishedAt": "2026-05-09T22:36:50.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-05-09T22:36:50.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Confirm which Copilot experience and policy a workflow uses. Treat the scheduled date as historical evidence and check actual current model availability before updating configuration.",
+        "ko": "워크플로가 사용하는 Copilot 경험과 정책을 확인할 것을 제안합니다. 예정 날짜는 과거 기록으로 해석하고 설정 변경 전에 현재 실제 모델 제공 여부를 확인해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+          "role": "primary",
+          "sha256": "87322d317c1ac0a296615e7f823ff3aa603fc4b9674aee6ba175d1bbe39db0f5",
+          "fetchedAt": "2026-10-25T05:43:18+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "GitHub GPT-4.1 retirement notice applies to Copilot",
+          "claims": [
+            {
+              "text": "GitHub announced the planned retirement of GPT-4.1 from Copilot on 2026-06-01. This does not describe availability through every external API.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "GPT-4.1 2026-06-01 GPT-5.5"
+                }
+              ]
+            },
+            {
+              "text": "Copilot Enterprise administrators may need to enable access to replacement models through model policies, according to the notice.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "enable access to alternative models through their model policies"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Copilot 제품에 한정된 GitHub GPT-4.1 종료 공지",
+          "claims": [
+            {
+              "text": "GitHub는 Copilot에서 GPT-4.1을 2026-06-01 종료할 예정이라고 공지했다. 모든 외부 API의 제공 범위를 설명하는 것은 아니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "GPT-4.1 2026-06-01 GPT-5.5"
+                }
+              ]
+            },
+            {
+              "text": "공지에 따르면 Copilot Enterprise 관리자는 모델 정책에서 대체 모델 접근을 활성화해야 할 수 있다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "enable access to alternative models through their model policies"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "9efda109fcdd4210",
+      "archiveDate": "2026-05-11",
+      "originalPagePublishedAt": "2026-05-10T22:40:37.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-05-10T22:40:37.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Separate product retirement, provider retirement and local fallback behavior. Test permissions and workflow behavior on supported choices instead of treating an old replacement recommendation as current guidance.",
+        "ko": "제품의 종료·제공자의 종료·로컬 대체 동작을 구분할 것을 제안합니다. 오래된 대체 모델 추천을 현재 지침으로 받아들이기보다 지원되는 선택지에서 권한과 워크플로 동작을 점검해야 합니다."
+      },
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+          "role": "primary",
+          "sha256": "f7090baabb33fcbac879cadc263cbf8d561d599a69e26d34b12965dee181571b",
+          "fetchedAt": "2026-10-25T05:43:18+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "Claude Sonnet 4 retirement announcement applies to Copilot",
+          "claims": [
+            {
+              "text": "GitHub stated that Claude Sonnet 4 was deprecated across its Copilot experiences on 2026-05-06. The statement concerns Copilot rather than every Anthropic distribution channel.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Claude Sonnet 4 2026-05-06"
+                }
+              ]
+            },
+            {
+              "text": "The announcement directs Copilot Enterprise administrators to check model policies when enabling alternatives.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "enable access to alternative models through their model policies"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "Copilot에 적용된 Claude Sonnet 4 종료 발표",
+          "claims": [
+            {
+              "text": "GitHub는 Copilot의 각 경험에서 Claude Sonnet 4를 2026-05-06 종료했다고 밝혔다. Copilot에 관한 설명이며 Anthropic의 모든 유통 경로를 뜻하지 않는다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Claude Sonnet 4 2026-05-06"
+                }
+              ]
+            },
+            {
+              "text": "발표는 Copilot Enterprise 관리자가 대안을 활성화할 때 모델 정책을 확인하도록 안내했다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "enable access to alternative models through their model policies"
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "6944923e55b6bbd0",
+      "archiveDate": "2026-05-12",
+      "originalPagePublishedAt": "2026-05-11T22:49:14.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-05-11T22:49:14.000Z",
+        "en": null
+      },
+      "outcome": "renewed_draft",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Match deployment type and installed version to the vendor advisory. Confirm a supported patched release or applicable patch plugin and its activation requirements; the archive is not a recommendation to install an old version.",
+        "ko": "배포 유형과 설치 버전을 공급업체 권고에 대조할 것을 제안합니다. 지원되는 수정 릴리스 또는 적용 가능한 패치 플러그인과 활성화 조건을 확인해야 하며 이 아카이브는 오래된 버전 설치 권고가 아닙니다."
+      },
+      "documents": [
+        {
+          "url": "https://blog.jetbrains.com/teamcity/2026/05/cve-2026-44413/",
+          "role": "primary",
+          "sha256": "108b732a7c684ea0f5a408db20e5dcb213a4dc8249edfd7b53b33ce885ccdc30",
+          "fetchedAt": "2026-10-25T05:43:18+00:00",
+          "extractorVersion": "article-parser-v1"
+        }
+      ],
+      "editions": {
+        "en": {
+          "title": "TeamCity advisory separates on-premises and cloud exposure",
+          "claims": [
+            {
+              "text": "JetBrains describes CVE-2026-44413 as a post-authentication TeamCity On-Premises issue affecting versions through 2025.11.4 and fixed in 2026.1. These are the versions in the historical advisory.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "assigned the CVE identifier CVE-2026-44413."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "versions through 2025.11.4."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "fixed in version 2026.1."
+                }
+              ]
+            },
+            {
+              "text": "The vendor states that TeamCity Cloud is not affected and requires no action for this issue.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "TeamCity Cloud is not affected and requires no action."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        },
+        "ko": {
+          "title": "온프레미스와 클라우드 범위를 구분한 TeamCity 권고",
+          "claims": [
+            {
+              "text": "JetBrains는 CVE-2026-44413을 인증 후 발생하는 TeamCity On-Premises 문제로 설명하며 2025.11.4까지 영향을 받고 2026.1에서 수정됐다고 명시했다. 과거 권고에 기록된 버전이다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "assigned the CVE identifier CVE-2026-44413."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "versions through 2025.11.4."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "fixed in version 2026.1."
+                }
+              ]
+            },
+            {
+              "text": "공급업체는 TeamCity Cloud가 이 문제의 영향을 받지 않으며 별도 조치가 필요 없다고 밝혔다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "TeamCity Cloud is not affected and requires no action."
+                }
+              ]
+            }
+          ],
+          "followUp": []
+        }
+      }
+    },
+    {
+      "id": "3379bf11367ca9d1",
+      "archiveDate": "2026-04-29",
+      "originalPagePublishedAt": "2026-04-28T22:51:41.000Z",
+      "editionPublishedAt": {
+        "ko": "2026-04-28T22:51:41.000Z",
+        "en": null
+      },
+      "outcome": "unverifiable_proposal",
+      "experimentStatus": "not_tested",
+      "reviewFocus": {
+        "en": "Locate the evaluation artifacts and reproduce the measurement definition before approving performance or vulnerability-detection claims.",
+        "ko": "성능·취약점 탐지 수치를 승인하기 전에 평가 산출물을 확보하고 측정 정의를 재현해야 합니다."
+      },
+      "reason": {
+        "en": "The article is available, but its reported precision, adoption and vulnerability findings lack linked experiment artifacts sufficient for this renewal. The links collected point to background projects rather than the reported evaluation. These numerical claims remain unverified and no renewed factual summary is supplied.",
+        "ko": "원문은 읽을 수 있지만 정밀도·도입률·취약점 발견 수치에 대해 이번 리뉴얼에서 대조할 평가 산출물을 확보하지 못했습니다. 수집한 링크는 배경 프로젝트를 가리키며 보고된 평가 자체의 자료는 아닙니다. 수치 주장을 검증 완료로 처리하지 않고 보강 사실 요약을 보류합니다."
+      },
+      "attemptedSourceUrls": [
+        "https://www.infoq.com/articles/ai-code-guardian/",
+        "https://modelcontextprotocol.io/",
+        "https://owasp.org/www-project-webgoat/",
+        "https://github.com/digininja/DVWA"
+      ],
+      "documents": [],
+      "editions": {
+        "en": {
+          "title": "CodeGuardian evaluation claims await supporting artifacts",
+          "claims": [],
+          "followUp": []
+        },
+        "ko": {
+          "title": "평가 산출물 대조가 필요한 CodeGuardian 수치 주장",
+          "claims": [],
+          "followUp": []
+        }
+      }
+    }
+  ]
+}

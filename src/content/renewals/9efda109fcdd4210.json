@@ -1,0 +1,95 @@
+{
+  "id": "9efda109fcdd4210",
+  "archiveDate": "2026-05-11",
+  "originalPagePublishedAt": "2026-05-10T22:40:37.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-10T22:40:37.000Z",
+    "en": "2026-10-25T06:06:33+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Separate product retirement, provider retirement and local fallback behavior. Test permissions and workflow behavior on supported choices instead of treating an old replacement recommendation as current guidance.",
+    "ko": "제품의 종료·제공자의 종료·로컬 대체 동작을 구분할 것을 제안합니다. 오래된 대체 모델 추천을 현재 지침으로 받아들이기보다 지원되는 선택지에서 권한과 워크플로 동작을 점검해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+      "role": "primary",
+      "sha256": "f7090baabb33fcbac879cadc263cbf8d561d599a69e26d34b12965dee181571b",
+      "fetchedAt": "2026-10-25T05:43:18+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Claude Sonnet 4 retirement announcement applies to Copilot",
+      "claims": [
+        {
+          "text": "GitHub stated that Claude Sonnet 4 was deprecated across its Copilot experiences on 2026-05-06. The statement concerns Copilot rather than every Anthropic distribution channel.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Claude Sonnet 4 2026-05-06"
+            }
+          ]
+        },
+        {
+          "text": "The announcement directs Copilot Enterprise administrators to check model policies when enabling alternatives.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "enable access to alternative models through their model policies"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Copilot에 적용된 Claude Sonnet 4 종료 발표",
+      "claims": [
+        {
+          "text": "GitHub는 Copilot의 각 경험에서 Claude Sonnet 4를 2026-05-06 종료했다고 밝혔다. Copilot에 관한 설명이며 Anthropic의 모든 유통 경로를 뜻하지 않는다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Claude Sonnet 4 2026-05-06"
+            }
+          ]
+        },
+        {
+          "text": "발표는 Copilot Enterprise 관리자가 대안을 활성화할 때 모델 정책을 확인하도록 안내했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "enable access to alternative models through their model policies"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-11-copilot-claude-sonnet-4-retirement",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+  "articleNumber": 5,
+  "sourcePublishedAt": "2026-05-08T07:30:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-11.md",
+  "batchId": "batch-003",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:45:08+00:00",
+  "updatedAt": "2026-10-25T06:06:33+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 32,
+    "approvedAt": "2026-10-25T06:06:33+00:00",
+    "basis": "Codex conversation: after publication of batch 002 and presentation of review PR 32, user instructed 다음 단계 진행; the publication step was announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

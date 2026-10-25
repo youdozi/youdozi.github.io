@@ -1,0 +1,95 @@
+{
+  "id": "be1017688a0667ca",
+  "archiveDate": "2026-05-10",
+  "originalPagePublishedAt": "2026-05-09T22:36:50.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-09T22:36:50.000Z",
+    "en": "2026-10-25T06:06:33+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Confirm which Copilot experience and policy a workflow uses. Treat the scheduled date as historical evidence and check actual current model availability before updating configuration.",
+    "ko": "워크플로가 사용하는 Copilot 경험과 정책을 확인할 것을 제안합니다. 예정 날짜는 과거 기록으로 해석하고 설정 변경 전에 현재 실제 모델 제공 여부를 확인해야 합니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+      "role": "primary",
+      "sha256": "87322d317c1ac0a296615e7f823ff3aa603fc4b9674aee6ba175d1bbe39db0f5",
+      "fetchedAt": "2026-10-25T05:43:18+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "GitHub GPT-4.1 retirement notice applies to Copilot",
+      "claims": [
+        {
+          "text": "GitHub announced the planned retirement of GPT-4.1 from Copilot on 2026-06-01. This does not describe availability through every external API.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GPT-4.1 2026-06-01 GPT-5.5"
+            }
+          ]
+        },
+        {
+          "text": "Copilot Enterprise administrators may need to enable access to replacement models through model policies, according to the notice.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "enable access to alternative models through their model policies"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Copilot 제품에 한정된 GitHub GPT-4.1 종료 공지",
+      "claims": [
+        {
+          "text": "GitHub는 Copilot에서 GPT-4.1을 2026-06-01 종료할 예정이라고 공지했다. 모든 외부 API의 제공 범위를 설명하는 것은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "GPT-4.1 2026-06-01 GPT-5.5"
+            }
+          ]
+        },
+        {
+          "text": "공지에 따르면 Copilot Enterprise 관리자는 모델 정책에서 대체 모델 접근을 활성화해야 할 수 있다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "enable access to alternative models through their model policies"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-10-copilot-gpt-4-1-retirement",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+  "articleNumber": 5,
+  "sourcePublishedAt": "2026-05-08T09:22:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-10.md",
+  "batchId": "batch-003",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:45:08+00:00",
+  "updatedAt": "2026-10-25T06:06:33+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 32,
+    "approvedAt": "2026-10-25T06:06:33+00:00",
+    "basis": "Codex conversation: after publication of batch 002 and presentation of review PR 32, user instructed 다음 단계 진행; the publication step was announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "1c1c9e6c82aad3a4",
+  "archiveDate": "2026-05-07",
+  "originalPagePublishedAt": "2026-05-06T22:43:36.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-06T22:43:36.000Z",
+    "en": "2026-10-25T06:06:33+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Check whether the view contains draft, incoming and published advisories needed for the review. A smaller filtered result set should not be interpreted as fewer underlying vulnerabilities.",
+    "ko": "검토에 필요한 초안·접수·공개 권고가 해당 보기에 포함되는지 확인할 것을 제안합니다. 필터 결과가 줄었다는 이유로 실제 취약점이 줄었다고 해석해서는 안 됩니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-05-06-search-and-filter-bar-for-repository-security-advisories",
+      "role": "primary",
+      "sha256": "3d6b7cf427a3a2d51904316b70ea0216ac523162c3ab35dbc9dc476119d8901c",
+      "fetchedAt": "2026-10-25T05:43:19+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "GitHub repository advisories gain search and filters",
+      "claims": [
+        {
+          "text": "GitHub added search and filtering for security advisories directly in a repository Security tab.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "search and filter security advisories directly"
+            }
+          ]
+        },
+        {
+          "text": "The notice lists sort, package, ecosystems and severity among the supported search or filtering keywords.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "sort , package , ecosystems , severity"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "검색과 필터를 추가한 GitHub 저장소 보안 권고",
+      "claims": [
+        {
+          "text": "GitHub는 저장소 Security 탭의 보안 권고에 검색과 필터를 추가했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "search and filter security advisories directly"
+            }
+          ]
+        },
+        {
+          "text": "공지는 검색·필터 키워드로 sort, package, ecosystems, severity를 열거했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "sort , package , ecosystems , severity"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-07-github-security-advisory-search",
+  "source": "GitHub Changelog",
+  "url": "https://github.blog/changelog/2026-05-06-search-and-filter-bar-for-repository-security-advisories",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-05-07T00:35:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-07.md",
+  "batchId": "batch-003",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:45:08+00:00",
+  "updatedAt": "2026-10-25T06:06:33+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 32,
+    "approvedAt": "2026-10-25T06:06:33+00:00",
+    "basis": "Codex conversation: after publication of batch 002 and presentation of review PR 32, user instructed 다음 단계 진행; the publication step was announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

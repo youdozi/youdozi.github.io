@@ -2,6 +2,7 @@
   "primaryHosts": [
     "aws.amazon.com",
     "blog.cloudflare.com",
+    "blog.jetbrains.com",
     "buildkite.com",
     "developers.cloudflare.com",
     "docs.aws.amazon.com",

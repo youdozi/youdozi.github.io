@@ -1,0 +1,103 @@
+{
+  "id": "46983b9e8a1cf49c",
+  "archiveDate": "2026-05-08",
+  "originalPagePublishedAt": "2026-05-07T22:56:02.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-07T22:56:02.000Z",
+    "en": "2026-10-25T06:06:33+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Compare exposure, telemetry, temporary mitigation and verified patch rollout separately. Use distribution-specific advisories for affected versions and do not treat a vendor case study as proof that another fleet is protected.",
+    "ko": "노출·관측·임시 완화·검증된 패치 배포를 각각 비교할 것을 제안합니다. 영향 버전은 배포판 권고에서 확인해야 하며 공급업체의 사례만으로 다른 인프라의 보호가 입증되지는 않습니다."
+  },
+  "documents": [
+    {
+      "url": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+      "role": "primary",
+      "sha256": "ba53be1aadff9df0cfe93ebcebe04d32815008af85da1595c47905e827b79845",
+      "fetchedAt": "2026-10-25T05:43:18+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Cloudflare reports its operational response to Copy Fail",
+      "claims": [
+        {
+          "text": "For Copy Fail (CVE-2026-31431), Cloudflare describes testing a patched kernel in staging before resuming its fleet reboot process.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Copy Fail\" ( CVE-2026-31431 )"
+            },
+            {
+              "document_id": 0,
+              "quote": "test the patched kernel in our staging datacenters"
+            }
+          ]
+        },
+        {
+          "text": "Cloudflare reports no impact to its own environment during the incident. That company-specific statement does not establish the safety of other Linux deployments.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "no impact to the Cloudflare environment"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Cloudflare가 보고한 Copy Fail 운영 대응",
+      "claims": [
+        {
+          "text": "Cloudflare는 Copy Fail(CVE-2026-31431) 대응에서 수정 커널을 스테이징에서 테스트한 뒤 전체 인프라 재부팅 절차를 재개했다고 설명했다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Copy Fail\" ( CVE-2026-31431 )"
+            },
+            {
+              "document_id": 0,
+              "quote": "test the patched kernel in our staging datacenters"
+            }
+          ]
+        },
+        {
+          "text": "Cloudflare는 사고 당시 자사 환경에 영향이 없었다고 보고했다. 회사 자체의 설명이며 다른 Linux 배포 환경의 안전을 입증하지 않는다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "no impact to the Cloudflare environment"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-08-cloudflare-copy-fail-response",
+  "source": "Cloudflare Blog",
+  "url": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-05-07T22:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-08.md",
+  "batchId": "batch-003",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:45:08+00:00",
+  "updatedAt": "2026-10-25T06:06:33+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 32,
+    "approvedAt": "2026-10-25T06:06:33+00:00",
+    "basis": "Codex conversation: after publication of batch 002 and presentation of review PR 32, user instructed 다음 단계 진행; the publication step was announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

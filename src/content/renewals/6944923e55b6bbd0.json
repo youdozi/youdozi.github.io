@@ -1,0 +1,111 @@
+{
+  "id": "6944923e55b6bbd0",
+  "archiveDate": "2026-05-12",
+  "originalPagePublishedAt": "2026-05-11T22:49:14.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-05-11T22:49:14.000Z",
+    "en": "2026-10-25T06:06:33+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Match deployment type and installed version to the vendor advisory. Confirm a supported patched release or applicable patch plugin and its activation requirements; the archive is not a recommendation to install an old version.",
+    "ko": "배포 유형과 설치 버전을 공급업체 권고에 대조할 것을 제안합니다. 지원되는 수정 릴리스 또는 적용 가능한 패치 플러그인과 활성화 조건을 확인해야 하며 이 아카이브는 오래된 버전 설치 권고가 아닙니다."
+  },
+  "documents": [
+    {
+      "url": "https://blog.jetbrains.com/teamcity/2026/05/cve-2026-44413/",
+      "role": "primary",
+      "sha256": "108b732a7c684ea0f5a408db20e5dcb213a4dc8249edfd7b53b33ce885ccdc30",
+      "fetchedAt": "2026-10-25T05:43:18+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "TeamCity advisory separates on-premises and cloud exposure",
+      "claims": [
+        {
+          "text": "JetBrains describes CVE-2026-44413 as a post-authentication TeamCity On-Premises issue affecting versions through 2025.11.4 and fixed in 2026.1. These are the versions in the historical advisory.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "assigned the CVE identifier CVE-2026-44413."
+            },
+            {
+              "document_id": 0,
+              "quote": "versions through 2025.11.4."
+            },
+            {
+              "document_id": 0,
+              "quote": "fixed in version 2026.1."
+            }
+          ]
+        },
+        {
+          "text": "The vendor states that TeamCity Cloud is not affected and requires no action for this issue.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "TeamCity Cloud is not affected and requires no action."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "온프레미스와 클라우드 범위를 구분한 TeamCity 권고",
+      "claims": [
+        {
+          "text": "JetBrains는 CVE-2026-44413을 인증 후 발생하는 TeamCity On-Premises 문제로 설명하며 2025.11.4까지 영향을 받고 2026.1에서 수정됐다고 명시했다. 과거 권고에 기록된 버전이다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "assigned the CVE identifier CVE-2026-44413."
+            },
+            {
+              "document_id": 0,
+              "quote": "versions through 2025.11.4."
+            },
+            {
+              "document_id": 0,
+              "quote": "fixed in version 2026.1."
+            }
+          ]
+        },
+        {
+          "text": "공급업체는 TeamCity Cloud가 이 문제의 영향을 받지 않으며 별도 조치가 필요 없다고 밝혔다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "TeamCity Cloud is not affected and requires no action."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-05-12-teamcity-on-premises-security-advisory",
+  "source": "JetBrains Blog",
+  "url": "https://blog.jetbrains.com/teamcity/2026/05/cve-2026-44413/",
+  "articleNumber": 5,
+  "sourcePublishedAt": "2026-05-12T01:14:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-05-12.md",
+  "batchId": "batch-003",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T05:45:08+00:00",
+  "updatedAt": "2026-10-25T06:06:33+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 32,
+    "approvedAt": "2026-10-25T06:06:33+00:00",
+    "basis": "Codex conversation: after publication of batch 002 and presentation of review PR 32, user instructed 다음 단계 진행; the publication step was announced before execution."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
