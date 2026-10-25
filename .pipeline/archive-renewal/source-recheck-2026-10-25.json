@@ -1,0 +1,181 @@
+{
+  "checkedAt": "2026-10-25T06:20:52+00:00",
+  "scope": "Current source availability and extracted-body hash checks. Availability failures do not invalidate earlier captured evidence and are not a factual verdict.",
+  "sources": [
+    {
+      "url": "https://www.infoq.com/articles/time-series-storage-design/",
+      "status": "match",
+      "length": 24712
+    },
+    {
+      "url": "https://kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/",
+      "status": "match",
+      "length": 41025
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
+      "status": "match",
+      "length": 1138
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
+      "status": "match",
+      "length": 595
+    },
+    {
+      "url": "https://blog.jetbrains.com/dotnet/2026/05/22/rider-2026-2-eap-3-cost-effective-agentic-test-coverage-code-change-previews-gamedev-templates-and-nuget-improvements/",
+      "status": "unavailable",
+      "error": "source returned HTTP 202; expected HTTP 200 HTML"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/12/defense-at-ai-speed-microsofts-new-multi-model-agentic-security-system-tops-leading-industry-benchmark/?v=1",
+      "status": "match",
+      "length": 24828
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-28-hard-budget-limits-now-available-for-github-advanced-security",
+      "status": "match",
+      "length": 1997
+    },
+    {
+      "url": "https://newsroom.arm.com/blog/arm-metis-agentic-ai-security",
+      "status": "match",
+      "length": 10648
+    },
+    {
+      "url": "https://dev.to/mame/which-programming-language-is-best-for-claude-code-508a",
+      "status": "match",
+      "length": 10027
+    },
+    {
+      "url": "https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace",
+      "status": "match",
+      "length": 1268
+    },
+    {
+      "url": "https://blog.cloudflare.com/post-quantum-roadmap/",
+      "status": "match",
+      "length": 13499
+    },
+    {
+      "url": "https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations",
+      "status": "match",
+      "length": 829
+    },
+    {
+      "url": "https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available",
+      "status": "match",
+      "length": 334
+    },
+    {
+      "url": "https://www.cncf.io/blog/2026/03/23/kusari-and-cncf-advancing-software-supply-chain-security-for-cloud-native-projects/",
+      "status": "match",
+      "length": 5022
+    },
+    {
+      "url": "https://spring.io/blog/2026/04/21/spring-security-releases",
+      "status": "match",
+      "length": 1593
+    },
+    {
+      "url": "https://blog.cloudflare.com/enterprise-mcp/",
+      "status": "match",
+      "length": 17207
+    },
+    {
+      "url": "https://spring.io/blog/2026/04/23/spring-boot-4-1-0-RC1-available-now",
+      "status": "match",
+      "length": 872
+    },
+    {
+      "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+      "status": "match",
+      "length": 9279
+    },
+    {
+      "url": "https://www.php.net/archive/2026.php",
+      "status": "match",
+      "length": 3693
+    },
+    {
+      "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+      "status": "match",
+      "length": 6292
+    },
+    {
+      "url": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
+      "status": "match",
+      "length": 13164
+    },
+    {
+      "url": "https://blog.cloudflare.com/full-transaction-waf/",
+      "status": "match",
+      "length": 10573
+    },
+    {
+      "url": "https://buildkite.com/resources/blog/what-shipped-at-buildkite-september-27-october-3-2026/",
+      "status": "match",
+      "length": 10312
+    },
+    {
+      "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+      "status": "match",
+      "length": 17685
+    },
+    {
+      "url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+      "status": "match",
+      "length": 11233
+    },
+    {
+      "url": "https://spring.io/blog/2026/09/25/spring-boot-4-2-0-M2-available-now",
+      "status": "match",
+      "length": 930
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex",
+      "status": "match",
+      "length": 1496
+    },
+    {
+      "url": "https://blog.cloudflare.com/security-overview-dashboard/",
+      "status": "match",
+      "length": 14158
+    },
+    {
+      "url": "https://github.blog/changelog/2026-04-21-codeql-now-supports-sanitizers-and-validators-in-models-as-data/",
+      "status": "match",
+      "length": 1993
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-06-search-and-filter-bar-for-repository-security-advisories",
+      "status": "match",
+      "length": 666
+    },
+    {
+      "url": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+      "status": "match",
+      "length": 16655
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1",
+      "status": "match",
+      "length": 1259
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+      "status": "match",
+      "length": 1140
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+      "status": "match",
+      "length": 1123
+    },
+    {
+      "url": "https://blog.jetbrains.com/teamcity/2026/05/cve-2026-44413/",
+      "status": "unavailable",
+      "error": "source returned HTTP 202; expected HTTP 200 HTML"
+    }
+  ]
+}

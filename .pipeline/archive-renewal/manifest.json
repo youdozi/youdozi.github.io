@@ -4964,7 +4964,7 @@
       "originalTitle": "Rider 2026.2 EAP 3: Cost-effective Agentic Test Coverage, Code Change Previews, GameDev Templates, and NuGet Improvements",
       "visibility": "listed",
       "priority": "risk",
-      "status": "draft_ready",
+      "status": "blocked",
       "batchId": "batch-004",
       "reviewPullRequest": null
     },
