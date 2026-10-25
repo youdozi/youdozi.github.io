@@ -1,0 +1,193 @@
+{
+  "batchId": "batch-006",
+  "checkedAt": "2026-10-25T12:34:04+00:00",
+  "method": "Bounded HTTP 200 HTML collection with extracted-body identities and exact quotes; editorial review without exploitation, deployment, performance or human approval.",
+  "sourceFetches": [
+    {
+      "url": "https://www.infoq.com/news/2026/06/gitlab-19-agentic-ai/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:28:41+00:00",
+      "sha256": "48eed3c6527a5e85b1bb95e3bbb5bcfb7f5a796837ab7858fe22bbb9852991fc",
+      "characters": 4913,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/06/windows-security-agents/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:28:41+00:00",
+      "sha256": "a101dcca644faac13a096b73e6f12b87fc37a18ffe4cfe187e90d8ffded64fe5",
+      "characters": 7370,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://blog.jetbrains.com/teamcity/2026/06/bamboo-end-of-life/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:28:42+00:00",
+      "sha256": "1b3acd9c20362153e90c4ec867171d2012ce67919cfb5b98035389dd9a3b6453",
+      "characters": 12574,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://blog.jetbrains.com/youtrack/2026/06/youtrack-security-update-youtrack-server-upgrade-required/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:28:42+00:00",
+      "sha256": "afd4c9836a4a70a24effe1ec05f3723624136fcac88e01aba3b04a052ea5ab70",
+      "characters": 6733,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:28:41+00:00",
+      "sha256": "5b73c2d87e29fce0aae4c9403162e2b488e3cde46e318b4b24ce5143457137fe",
+      "characters": 27690,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/06/argocd-supply-chain-security/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:28:43+00:00",
+      "sha256": "dd8f56b7cfd6de488aabff1e486e26277829a6d283251e80d8e67884ae2ec9a0",
+      "characters": 6429,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/06/aws-finops-agent/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:28:44+00:00",
+      "sha256": "e1a0f36b0713fa5fae1d206dc19b43fe52a3c15508b3d1a141b3af644d55a6d7",
+      "characters": 4508,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/articles/security-ai-threat-evolution/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:28:44+00:00",
+      "sha256": "2ea2f511941f31f218e9266c06bb4166ed0f9dfed81a106c8cd64a4a59ed0003",
+      "characters": 42622,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/06/azuredevops-copilot-autofix/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:28:44+00:00",
+      "sha256": "71c75ba60a293572072210d5be19eabc68473eb2dcec06eb6ad503ba25260aee",
+      "characters": 7080,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:28:43+00:00",
+      "sha256": "a53b2a847e0f7cc86798a1c352dd26a28bbdacb6d96132d87592f4f19d5abf72",
+      "characters": 2213,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://docs.gitlab.com/releases/19/gitlab-19-0-released/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:29:29+00:00",
+      "sha256": "ba32bb188eaa9bae40224993ad50d565cd0ba5f1935776fc4e822ae0379a61ba",
+      "characters": 28820,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://about.gitlab.com/blog/secrets-manager-in-public-beta/",
+      "result": "article body unavailable"
+    },
+    {
+      "url": "https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:29:29+00:00",
+      "sha256": "25142da25f027f4e3ef2e3c8f3b327a8fe5c2df2b96b11ae7f277ddbe81d07e2",
+      "characters": 12520,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://www.atlassian.com/licensing/data-center-end-of-life",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:29:29+00:00",
+      "sha256": "2dfb478b61e1765ea765c40b6839d2160c68415b53364267becbad023edcdf6f",
+      "characters": 37952,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://blog.argoproj.io/argo-cd-v3-5-release-candidate-02b1fbf7b419",
+      "result": "source unavailable (curl 56)"
+    },
+    {
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:29:28+00:00",
+      "sha256": "a514d9c1fae1da4a9d49244d7531493cf13eeeefd7d1e395655b78096d2e805d",
+      "characters": 1326,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:29:29+00:00",
+      "sha256": "0ae803e3ebef170afccbcf9debadbb23d662e7718dadaeb9e04a72f6b7623fbd",
+      "characters": 11576,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/devops/copilot-autofix-for-github-advanced-security-for-azure-devops/",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:29:29+00:00",
+      "sha256": "7d7961422d68477a659b88152ed6797e95f7d70e3404ba9787b06a6e6932444e",
+      "characters": 5040,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning-autofix?view=azure-devops",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:29:29+00:00",
+      "sha256": "e96ea32d4e81d768eb7e5be0143c7ea8db7008cf03ec727c173cbba8f0877366",
+      "characters": 20740,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:30:36+00:00",
+      "sha256": "a98c121ff18684b6c843e2149caa64f98cbefeb37aeed2b57420d8b83396e57e",
+      "characters": 63331,
+      "extractorVersion": "article-parser-v1"
+    },
+    {
+      "url": "https://github.com/microsoft/mxc",
+      "result": "ok",
+      "fetchedAt": "2026-10-25T12:30:34+00:00",
+      "sha256": "f26bee259c07f3b9f8b22e0cc2ad0b1e6cccdf289a304d178601aae25953490d",
+      "characters": 6236,
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "newPrimaryUrls": [
+    "https://docs.gitlab.com/releases/19/gitlab-19-0-released/",
+    "https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/",
+    "https://github.com/microsoft/mxc",
+    "https://www.atlassian.com/licensing/data-center-end-of-life",
+    "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+    "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
+    "https://www.infoq.com/articles/security-ai-threat-evolution/",
+    "https://devblogs.microsoft.com/devops/copilot-autofix-for-github-advanced-security-for-azure-devops/",
+    "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning-autofix?view=azure-devops"
+  ],
+  "limitations": [
+    "The GitLab Secrets Manager standalone blog did not yield a body; the scoped draft uses official release notes instead.",
+    "The linked Argo project blog could not be collected; the scoped draft uses the official release-candidate artifact.",
+    "Atlassian currently exempts Bamboo and Bitbucket from the 2029 end-of-life plan. No date of that policy change is inferred.",
+    "Azure DevOps launch and current guide describe different preview phases. No date of transition or universal current enrollment is inferred.",
+    "Tracking-service performance and cost figures are not independently replicated; the panel is explicitly attributed advice.",
+    "Retirement/retention announcement does not establish actual account-level rollout completion.",
+    "This report does not claim a fresh whole-archive online source check; the previously recorded TeamCity HTTP 202 limitation remains."
+  ],
+  "draftEvidenceRecheck": {
+    "checkedAt": "2026-10-25T12:34:53+00:00",
+    "documents": 13,
+    "bodyHashesMatch": true,
+    "exactQuotesMatch": true
+  }
+}

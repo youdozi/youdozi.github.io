@@ -7609,8 +7609,8 @@
       "originalTitle": "Windows Platform Security and the Race to Secure AI Agents",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-006",
       "reviewPullRequest": null
     },
     {
@@ -7625,8 +7625,8 @@
       "originalTitle": "GitLab 19.0 Embeds Agentic AI in Secrets, Merge Requests, and Supply Chain Security",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-006",
       "reviewPullRequest": null
     },
     {
@@ -7721,8 +7721,8 @@
       "originalTitle": "Bamboo End of Life: How to Prepare and Choose the Right CI/CD Replacement",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-006",
       "reviewPullRequest": null
     },
     {
@@ -7817,8 +7817,8 @@
       "originalTitle": "YouTrack Security Update: Upgrade Required for YouTrack Server",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-006",
       "reviewPullRequest": null
     },
     {
@@ -7865,8 +7865,8 @@
       "originalTitle": "Presentation: Challenging Google Analytics: Building a Scalable, Cost-Effective User Tracking Service",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-006",
       "reviewPullRequest": null
     },
     {
@@ -8217,8 +8217,8 @@
       "originalTitle": "Argo CD 3.5 Tightens Supply Chain Security with Internal mTLS and Source Integrity",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-006",
       "reviewPullRequest": null
     },
     {
@@ -8409,8 +8409,8 @@
       "originalTitle": "AWS Previews FinOps Agent for Cost Analysis and Optimization",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-006",
       "reviewPullRequest": null
     },
     {
@@ -8521,8 +8521,8 @@
       "originalTitle": "Article: Virtual panel: Security in the Machine Age: Expert Insights on AI Threat Evolution",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-006",
       "reviewPullRequest": null
     },
     {
@@ -8601,8 +8601,8 @@
       "originalTitle": "Upcoming cloud data retention policy for closed security alerts",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-006",
       "reviewPullRequest": null
     },
     {
@@ -8617,8 +8617,8 @@
       "originalTitle": "Microsoft Brings AI-Powered Vulnerability Remediation to Azure DevOps with Copilot Autofix",
       "visibility": "listed",
       "priority": "risk",
-      "status": "pending",
-      "batchId": null,
+      "status": "draft_ready",
+      "batchId": "batch-006",
       "reviewPullRequest": null
     },
     {
