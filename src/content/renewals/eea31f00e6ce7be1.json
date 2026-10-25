@@ -1,0 +1,103 @@
+{
+  "id": "eea31f00e6ce7be1",
+  "archiveDate": "2026-06-30",
+  "originalPagePublishedAt": "2026-06-29T22:23:43.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-29T22:23:43.000Z",
+    "en": "2026-10-25T12:40:05+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "This selected panel summary does not represent every participant’s views or establish universal attack frequency. Define a threat model, approval boundaries, logs and repeatable tests before adopting the recommendations.",
+    "ko": "선별한 패널 발언의 요약이며 모든 참여자의 견해나 보편적인 공격 빈도를 확정한 것은 아닙니다. 제안을 도입하기 전에 위협 모델·승인 경계·로그·반복 가능한 검증을 정의할 것을 제안합니다."
+  },
+  "documents": [
+    {
+      "url": "https://www.infoq.com/articles/security-ai-threat-evolution/",
+      "role": "primary",
+      "sha256": "2ea2f511941f31f218e9266c06bb4166ed0f9dfed81a106c8cd64a4a59ed0003",
+      "fetchedAt": "2026-10-25T12:28:44+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "AI-security panel: attributed advice on identity and adversarial testing",
+      "claims": [
+        {
+          "text": "In the panel, Elham Arshad recommends treating agents as identities with their own profiles, permissions, credentials and lifecycles, with narrowly scoped capabilities and policy checks for sensitive actions. These are the participant’s recommendations.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Each agent needs its own profile, permissions, credentials, and lifecycle"
+            },
+            {
+              "document_id": 0,
+              "quote": "agents only get the narrow capabilities they absolutely need, and every sensitive action is checked against policy."
+            }
+          ]
+        },
+        {
+          "text": "Vijay Dilwale argues that defenders should test prompt injection, retrieval abuse and tool access by deliberately manipulating inputs and observing behavior as context or permissions change. This is expert advice, not a benchmark proving a control’s effectiveness.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "It requires breaking the system on purpose, experimenting with prompts, seeding malicious content into retrieval sources, and observing how behavior changes when context or permissions shift."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "AI 보안 패널의 신원 관리·적대적 검증 제안",
+      "claims": [
+        {
+          "text": "패널에서 Elham Arshad는 에이전트를 자체 프로필·권한·인증정보·수명주기를 지닌 신원으로 취급하고, 기능을 좁게 부여하며 민감한 행동을 정책으로 검사하도록 권한다. 참여자가 제시한 권고다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Each agent needs its own profile, permissions, credentials, and lifecycle"
+            },
+            {
+              "document_id": 0,
+              "quote": "agents only get the narrow capabilities they absolutely need, and every sensitive action is checked against policy."
+            }
+          ]
+        },
+        {
+          "text": "Vijay Dilwale는 입력을 의도적으로 조작하고 맥락·권한 변화에 따른 동작을 관찰하며 프롬프트 주입·검색 악용·도구 접근을 검증해야 한다고 주장한다. 전문가 조언이며 특정 통제의 효과를 입증한 벤치마크가 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "It requires breaking the system on purpose, experimenting with prompts, seeding malicious content into retrieval sources, and observing how behavior changes when context or permissions shift."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-06-30-ai-security-panel-identity-and-testing",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/articles/security-ai-threat-evolution/",
+  "articleNumber": 2,
+  "sourcePublishedAt": "2026-06-29T20:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-06-30.md",
+  "batchId": "batch-006",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:34:04+00:00",
+  "updatedAt": "2026-10-25T12:40:05+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 35,
+    "approvedAt": "2026-10-25T12:40:05+00:00",
+    "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

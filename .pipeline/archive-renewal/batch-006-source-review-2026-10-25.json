@@ -189,5 +189,114 @@
     "documents": 13,
     "bodyHashesMatch": true,
     "exactQuotesMatch": true
+  },
+  "publicationRecheck": {
+    "documents": 13,
+    "matchingBodyHashes": 11,
+    "failures": [
+      {
+        "url": "https://blog.jetbrains.com/teamcity/2026/06/bamboo-end-of-life/",
+        "result": "source returned HTTP 202; expected HTTP 200 HTML",
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      },
+      {
+        "url": "https://blog.jetbrains.com/youtrack/2026/06/youtrack-security-update-youtrack-server-upgrade-required/",
+        "result": "source returned HTTP 202; expected HTTP 200 HTML",
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      }
+    ],
+    "heldIds": [
+      "208408ea8c501409",
+      "a8e012a42f1daa66"
+    ],
+    "results": [
+      {
+        "url": "https://docs.gitlab.com/releases/19/gitlab-19-0-released/",
+        "result": "ok",
+        "sha256": "ba32bb188eaa9bae40224993ad50d565cd0ba5f1935776fc4e822ae0379a61ba",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      },
+      {
+        "url": "https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/",
+        "result": "ok",
+        "sha256": "25142da25f027f4e3ef2e3c8f3b327a8fe5c2df2b96b11ae7f277ddbe81d07e2",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      },
+      {
+        "url": "https://github.com/microsoft/mxc",
+        "result": "ok",
+        "sha256": "f26bee259c07f3b9f8b22e0cc2ad0b1e6cccdf289a304d178601aae25953490d",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      },
+      {
+        "url": "https://blog.jetbrains.com/teamcity/2026/06/bamboo-end-of-life/",
+        "result": "source returned HTTP 202; expected HTTP 200 HTML",
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      },
+      {
+        "url": "https://www.atlassian.com/licensing/data-center-end-of-life",
+        "result": "ok",
+        "sha256": "2dfb478b61e1765ea765c40b6839d2160c68415b53364267becbad023edcdf6f",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      },
+      {
+        "url": "https://blog.jetbrains.com/youtrack/2026/06/youtrack-security-update-youtrack-server-upgrade-required/",
+        "result": "source returned HTTP 202; expected HTTP 200 HTML",
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      },
+      {
+        "url": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+        "result": "ok",
+        "sha256": "5b73c2d87e29fce0aae4c9403162e2b488e3cde46e318b4b24ce5143457137fe",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T12:39:27+00:00"
+      },
+      {
+        "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
+        "result": "ok",
+        "sha256": "a98c121ff18684b6c843e2149caa64f98cbefeb37aeed2b57420d8b83396e57e",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T12:39:27+00:00"
+      },
+      {
+        "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/",
+        "result": "ok",
+        "sha256": "a514d9c1fae1da4a9d49244d7531493cf13eeeefd7d1e395655b78096d2e805d",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      },
+      {
+        "url": "https://www.infoq.com/articles/security-ai-threat-evolution/",
+        "result": "ok",
+        "sha256": "2ea2f511941f31f218e9266c06bb4166ed0f9dfed81a106c8cd64a4a59ed0003",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T12:39:27+00:00"
+      },
+      {
+        "url": "https://devblogs.microsoft.com/devops/copilot-autofix-for-github-advanced-security-for-azure-devops/",
+        "result": "ok",
+        "sha256": "7d7961422d68477a659b88152ed6797e95f7d70e3404ba9787b06a6e6932444e",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning-autofix?view=azure-devops",
+        "result": "ok",
+        "sha256": "e96ea32d4e81d768eb7e5be0143c7ea8db7008cf03ec727c173cbba8f0877366",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+        "result": "ok",
+        "sha256": "a53b2a847e0f7cc86798a1c352dd26a28bbdacb6d96132d87592f4f19d5abf72",
+        "hashMatches": true,
+        "checkedAt": "2026-10-25T12:39:26+00:00"
+      }
+    ]
   }
 }

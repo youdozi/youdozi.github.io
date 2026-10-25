@@ -1,0 +1,119 @@
+{
+  "id": "c505a5c997b12684",
+  "archiveDate": "2026-06-23",
+  "originalPagePublishedAt": "2026-06-22T22:33:54.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-22T22:33:54.000Z",
+    "en": "2026-10-25T12:40:05+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Treat the transcript as primary evidence of what the speaker reported, not independent replication. Evaluate schema ownership, buffering limits, delivery failures, privacy requirements and migration parity for your own workload.",
+    "ko": "대본은 발표자가 보고한 내용을 확인하는 직접 근거이며 독립 재현은 아닙니다. 자체 환경의 스키마 책임·버퍼 한계·전송 실패·개인정보 요구사항·전환 동등성을 평가할 것을 제안합니다."
+  },
+  "documents": [
+    {
+      "url": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+      "role": "primary",
+      "sha256": "5b73c2d87e29fce0aae4c9403162e2b488e3cde46e318b4b24ce5143457137fe",
+      "fetchedAt": "2026-10-25T12:28:41+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Tracking-service case study: event schemas and non-blocking delivery",
+      "claims": [
+        {
+          "text": "In the published transcript, Alina Krasavina describes Delivery Hero’s internal tracking service using mobile and frontend SDKs, an ingestion API, real-time consumers and BigQuery storage. This is the speaker’s implementation account.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "we have a mobile SDK, and a frontend SDK, in TypeScript, to collect the data and to send to our API."
+            },
+            {
+              "document_id": 0,
+              "quote": "our data storage, which is BigQuery"
+            }
+          ]
+        },
+        {
+          "text": "The speaker says code-generated event models exposed schema problems during application compilation, while a device queue and background batched sending supported non-blocking delivery. The reported cost and capture-rate figures are excluded from this scoped summary.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "we introduced code generated event models"
+            },
+            {
+              "document_id": 0,
+              "quote": "you have an error on compilation time"
+            },
+            {
+              "document_id": 0,
+              "quote": "it reads from the queue, takes a batch of some events, and is sending to our API."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "추적 서비스 사례의 이벤트 스키마와 비차단 전송",
+      "claims": [
+        {
+          "text": "공개된 발표 대본에서 Alina Krasavina는 모바일·프런트엔드 SDK, 수집 API, 실시간 소비자, BigQuery 저장소를 사용하는 Delivery Hero의 내부 추적 서비스를 설명한다. 발표자가 소개한 구현 사례다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "we have a mobile SDK, and a frontend SDK, in TypeScript, to collect the data and to send to our API."
+            },
+            {
+              "document_id": 0,
+              "quote": "our data storage, which is BigQuery"
+            }
+          ]
+        },
+        {
+          "text": "발표자는 코드 생성 이벤트 모델로 애플리케이션 컴파일 중 스키마 문제를 드러내고, 기기 큐와 백그라운드 배치 전송으로 비차단 전송을 지원했다고 설명한다. 발표의 비용·수집률 수치는 이 제한된 요약에서 제외한다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "we introduced code generated event models"
+            },
+            {
+              "document_id": 0,
+              "quote": "you have an error on compilation time"
+            },
+            {
+              "document_id": 0,
+              "quote": "it reads from the queue, takes a batch of some events, and is sending to our API."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-06-23-tracking-service-schemas-and-delivery",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-06-23T00:07:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-06-23.md",
+  "batchId": "batch-006",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:34:04+00:00",
+  "updatedAt": "2026-10-25T12:40:05+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 35,
+    "approvedAt": "2026-10-25T12:40:05+00:00",
+    "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

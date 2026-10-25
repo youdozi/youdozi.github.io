@@ -1,0 +1,111 @@
+{
+  "id": "7067e48d153e8525",
+  "archiveDate": "2026-06-27",
+  "originalPagePublishedAt": "2026-06-26T22:26:19.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-06-26T22:26:19.000Z",
+    "en": "2026-10-25T12:40:05+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "The linked official blog could not be collected; this narrower draft uses the project’s release artifact. Review upgrade notes, certificates, trust roots and the target version’s integrity settings before rollout. It is not a claim that the candidate remains the newest version.",
+    "ko": "연결된 공식 블로그를 수집하지 못해 프로젝트의 릴리스 자료에 범위를 한정했습니다. 적용 전 전환 지침·인증서·신뢰 루트·대상 버전의 무결성 설정을 확인할 것을 제안합니다. 릴리스 후보가 현재 최신 버전이라는 뜻은 아닙니다."
+  },
+  "documents": [
+    {
+      "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
+      "role": "primary",
+      "sha256": "a98c121ff18684b6c843e2149caa64f98cbefeb37aeed2b57420d8b83396e57e",
+      "fetchedAt": "2026-10-25T12:30:36+00:00",
+      "extractorVersion": "article-parser-v1"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Argo CD release candidate: internal mTLS and source-integrity configuration",
+      "claims": [
+        {
+          "text": "The official Argo CD v3.5.0-rc1 page labels this artifact a pre-release and lists mTLS support in the repo-server. That supports describing a release-candidate capability, not claiming that every installation has mTLS enforced.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "v3.5.0-rc1 Pre-release"
+            },
+            {
+              "document_id": 0,
+              "quote": "feat: adds mTLS support in repo-server"
+            }
+          ]
+        },
+        {
+          "text": "The same changelog lists CLI support for Source Integrity configuration and an exposed ApplicationSet UI. This brief does not assert that signature verification first appeared in this release or that earlier internal traffic was always unencrypted.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "feat(cli): Add support for Source Integrity configuration"
+            },
+            {
+              "document_id": 0,
+              "quote": "feat: expose Appset UI and fix pie chart summary"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "Argo CD 릴리스 후보의 내부 mTLS와 소스 무결성 설정",
+      "claims": [
+        {
+          "text": "공식 Argo CD v3.5.0-rc1 페이지는 해당 배포물을 사전 릴리스로 표시하고 repo-server의 mTLS 지원을 변경 목록에 적는다. 릴리스 후보 기능을 설명하는 근거이며 모든 설치에 mTLS가 강제되었다는 뜻은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "v3.5.0-rc1 Pre-release"
+            },
+            {
+              "document_id": 0,
+              "quote": "feat: adds mTLS support in repo-server"
+            }
+          ]
+        },
+        {
+          "text": "같은 변경 목록은 CLI의 Source Integrity 설정 지원과 ApplicationSet UI 노출을 제시한다. 이 원고는 서명 검증이 해당 릴리스에서 처음 생겼다거나 이전 내부 통신이 항상 평문이었다고 단정하지 않는다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "feat(cli): Add support for Source Integrity configuration"
+            },
+            {
+              "document_id": 0,
+              "quote": "feat: expose Appset UI and fix pie chart summary"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-06-27-argo-cd-release-candidate-security-configuration",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/06/argocd-supply-chain-security/",
+  "articleNumber": 1,
+  "sourcePublishedAt": "2026-06-26T21:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-06-27.md",
+  "batchId": "batch-006",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-25T12:34:04+00:00",
+  "updatedAt": "2026-10-25T12:40:05+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 35,
+    "approvedAt": "2026-10-25T12:40:05+00:00",
+    "basis": "Codex conversation: user instructed pr 진행 for Draft PR 35. Publish the eight source-rechecked drafts; retain Bamboo and YouTrack as unpublished holds after HTTP 202 responses during final source checks."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
