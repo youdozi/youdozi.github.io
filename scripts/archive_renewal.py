@@ -11,7 +11,8 @@ import re
 import subprocess
 from urllib.parse import urlsplit
 
-from ai_dev_digest import ArticleParser, compact
+from ai_dev_digest import compact
+from archive_sources import fetch_document, EXTRACTOR_VERSIONS, body_for, https
 from audit_archive import inventory
 from bilingual_quality import validate_editions
 from generate_dev_digest import KST, normalize_url
@@ -49,14 +50,6 @@ def timestamp(value):
     if date.tzinfo is None:
         raise ValueError('timestamp needs a timezone')
     return date
-
-
-def https(value):
-    try:
-        u = urlsplit(value)
-        return u.scheme == 'https' and bool(u.hostname) and not u.username and not u.password and u.port in (None, 443) and not re.search(r'[\s<>\\]', value)
-    except (TypeError, ValueError):
-        return False
 
 
 def source_records(root):
@@ -142,21 +135,6 @@ def validate_manifest(data, root=None):
     return errors
 
 
-def fetch_document(url):
-    if not https(url):raise ValueError('unsafe source URL')
-    result=subprocess.run(['curl','--fail','--silent','--show-error','--location','--proto','=https','--proto-redir','=https',
-        '--max-redirs','5','--max-time','25','--max-filesize','2500000','--write-out','\n%{json}',url],text=True,capture_output=True,timeout=30)
-    if result.returncode:raise ValueError(f'source unavailable (curl {result.returncode})')
-    markup,metadata=result.stdout.rsplit('\n',1)
-    metadata=json.loads(metadata);final_url=metadata['url_effective']
-    if metadata.get('http_code')!=200:raise ValueError(f'source returned HTTP {metadata.get("http_code")}; expected HTTP 200 HTML')
-    if 'html' not in str(metadata.get('content_type') or '').lower():raise ValueError('source did not return HTML')
-    if not https(final_url) or urlsplit(final_url).hostname!=urlsplit(url).hostname:raise ValueError('source redirected to a different publisher')
-    parser=ArticleParser();parser.feed(markup);body=parser.extract()
-    if len(body)<100:raise ValueError('article body unavailable')
-    return body
-
-
 def validate_batch(batch, manifest, *, now=None, documents=None):
     """documents optionally maps URLs to freshly extracted bodies for exact checks.
 
@@ -200,10 +178,10 @@ def validate_batch(batch, manifest, *, now=None, documents=None):
             if not 1<=len(docs)<=4:errors.append('renewed article requires 1–4 source documents')
             for d in docs:
                 if not https(d['url']) or not re.fullmatch('[0-9a-f]{64}',d['sha256']):errors.append('invalid document URL or hash')
-                if timestamp(d['fetchedAt'])>reviewed or d['extractorVersion']!='article-parser-v1':errors.append('invalid source collection provenance')
+                if timestamp(d['fetchedAt'])>reviewed or d['extractorVersion'] not in EXTRACTOR_VERSIONS:errors.append('invalid source collection provenance')
                 if d['role'] not in {'primary','reporting'}:errors.append('unknown document role')
                 if d['role']=='primary' and urlsplit(d['url']).hostname not in PRIMARY_HOSTS and d['url'] not in PRIMARY_URLS:errors.append('unapproved primary publisher')
-                if documents is not None and hashlib.sha256(documents[d['url']].encode()).hexdigest()!=d['sha256']:
+                if documents is not None and hashlib.sha256(body_for(documents,d).encode()).hexdigest()!=d['sha256']:
                     errors.append('source content changed; review quotes and refresh provenance explicitly')
             errors.extend(validate_editions(editions))
             follow={l:{'title':'','claims':editions[l]['followUp']} for l in ('en','ko')}
@@ -223,7 +201,7 @@ def validate_batch(batch, manifest, *, now=None, documents=None):
                         document=docs[e['document_id']]
                         primary |= document['role']=='primary'
                         if not isinstance(e['quote'],str) or not 20<=len(e['quote'])<=240:errors.append('invalid archive quote')
-                        elif documents is not None and compact(e['quote']) not in compact(documents[document['url']]):errors.append('archive quote absent from source')
+                        elif documents is not None and compact(e['quote']) not in compact(body_for(documents,document)):errors.append('archive quote absent from source')
                     if not primary:errors.append('archive claim needs primary-source evidence')
     except (KeyError, TypeError, ValueError, AttributeError, OverflowError):
         errors.append('invalid historical batch structure or provenance')
@@ -239,8 +217,8 @@ def check(root, *, check_sources=False):
         batch=read(path);documents=None
         if check_sources:
             documents={}
-            for url in dict.fromkeys(d['url'] for e in batch['entries'] for d in e['documents']):
-                try:documents[url]=fetch_document(url)
+            for url,version in dict.fromkeys((d['url'],d['extractorVersion']) for e in batch['entries'] for d in e['documents']):
+                try:documents[(url,version)]=fetch_document(url,version)
                 except (ValueError,OSError,subprocess.TimeoutExpired) as exc:
                     raise ValueError(f'{path.name}: {url}: {exc}') from exc
         errors.extend(f'{path.name}: {error}' for error in validate_batch(batch,manifest,documents=documents))

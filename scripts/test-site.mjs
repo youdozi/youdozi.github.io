@@ -282,3 +282,17 @@ test('main protection requires Actions checks and PRs without granting bots a by
   assert.equal(reviews.rules[0].parameters.dismiss_stale_reviews_on_push,true);
   assert.deepEqual(reviews.bypass_actors,[{actor_type:'RepositoryRole',actor_id:5,bypass_mode:'pull_request'}]);
 });
+
+
+test('archive schema accepts explicit legacy and stable extractor versions only', async () => {
+  const {renewalSchema} = await import('../src/lib/renewal-schema.ts');
+  const files = await readdir('src/content/renewals');
+  const original = JSON.parse(await readFile(`src/content/renewals/${files[0]}`, 'utf8'));
+  for (const version of ['article-parser-v1', 'article-parser-v2']) {
+    const value = structuredClone(original);
+    value.documents[0].extractorVersion = version;
+    assert.equal(renewalSchema.safeParse(value).success, true);
+  }
+  original.documents[0].extractorVersion = 'unknown-extractor';
+  assert.equal(renewalSchema.safeParse(original).success, false);
+});
