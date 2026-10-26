@@ -121,3 +121,34 @@ python3 -m venv .venv-search-console
 게시 JSON의 공통 검증, 당일 추가 후보 선택, RSS 갱신 및 `main` 보호 규칙은 [PIPELINE.md](PIPELINE.md)의 운영 항목을 참조하세요.
 
 새 후보의 검토 카드에는 백엔드 관련성·선정 이유·원문 근거로 구성한 변경/대상/조건·사용자 편집 의견·직접 실험 여부를 표시합니다. 작성 필드와 검증 조건은 [PIPELINE.md](PIPELINE.md)의 후보 선정과 편집 형식 항목을 참조하세요.
+
+## 검색 채널 확장과 IndexNow
+
+검색엔진 등록은 서비스별 계정에서 진행합니다. 현재 사이트 주소는 `https://youdozi.github.io/`이며, Google Search Console의 기존 속성을 유지합니다.
+
+- **Bing Webmaster Tools:** [도구](https://www.bing.com/webmasters/)에 로그인하고 `Google Search Console에서 가져오기`를 선택합니다. 해당 Google 계정에 대한 접근을 허용하고 `https://youdozi.github.io/`를 가져온 다음 사이트맵 등록 상태를 확인합니다. [공식 안내](https://www2.bing.com/webmasters/help/add-and-verify-site-12184f8b)
+- **네이버 서치어드바이저:** [웹마스터 도구](https://searchadvisor.naver.com/console/board)에서 사이트를 선택하거나 추가하고 소유권을 확인합니다. 기존 `naver49bf2f26385c94a6a19f523f90c40d00.html`은 Astro에서도 같은 주소로 배포됩니다. 현재 로그인한 계정에 해당하는 확인 파일인지 확인한 뒤 `요청 → 사이트맵 제출`에 `https://youdozi.github.io/sitemap.xml`을 제출합니다. 한국어 RSS 주소는 `https://youdozi.github.io/ko/feed.xml`입니다. [공식 안내](https://searchadvisor.naver.com/guide/request-feed)
+
+### 공개 변경 알림
+
+IndexNow는 Bing·네이버 등 지원 검색엔진에 URL 변경을 알리는 별도 기능입니다. 도구 계정 등록이나 Google Search Console 제출을 대신하지 않습니다. HTTP 200/202 응답은 알림 수신이며 크롤링·색인·검색 순위를 보장하지 않습니다. [프로토콜](https://www.indexnow.org/documentation), [지원 엔드포인트 및 동작](https://www.indexnow.org/faq)
+
+- `main`의 Pages 배포가 성공한 뒤에만 실행합니다. PR·`develop`·비공개 번역 초안은 전송하지 않습니다.
+- 배포에 사용한 빌드 산출물의 사이트맵에 포함된 언어별 공개 경로만 읽습니다. 각 HTML의 자기 참조 canonical, `main`, noindex 및 리디렉션 여부를 확인합니다.
+- 페이지 제목·설명·`main` 내용을 해시로 비교해 추가·수정된 URL과 이전에 알렸으나 삭제된 URL을 보냅니다. 헤더·푸터만 바뀐 경우는 변경으로 세지 않습니다.
+- `public/indexnow-key.txt`는 프로토콜상 공개되는 소유권 확인 파일이며 배포 후 일치 여부를 먼저 확인합니다. Google OAuth JSON·토큰과는 별개이며 Google 인증 정보를 Actions에 올리지 않습니다.
+- 알림이 수락된 뒤에만 상태를 갱신하고 Actions 캐시에 보관합니다. 제출 실패 시 기존 상태를 유지하여 다음 배포에서 다시 감지합니다. 캐시가 없거나 만료되면 현재 공개 URL 전체를 초기 목록으로 알립니다.
+- 알림 준비·전송·캐시 저장 오류는 이미 성공한 Pages 배포를 취소하지 않습니다. Actions의 IndexNow 단계에서 결과를 확인합니다. 알림 실패 또는 건너뜀을 정상 제출로 해석하지 않습니다.
+- 자동 알림을 다시 시도하려면 `Site Quality Gates and Pages` 워크플로의 `Run workflow`에서 **main**을 선택합니다. 품질 검사와 재배포를 거쳐 같은 절차로 재시도합니다.
+
+로컬 미리보기는 네트워크 호출이나 상태 저장을 하지 않습니다.
+
+```sh
+npm run build
+npm run preview:indexnow
+
+# 배포된 키와 공개 상태가 준비됐을 때 명시적으로 제출
+python3 -B scripts/indexnow.py --submit
+```
+
+로컬 상태 파일 `.pipeline/indexnow-state.json`은 커밋하지 않습니다. 로컬 제출과 Actions는 각자 마지막 수락 상태를 관리하므로, 새 환경에서 처음 제출하면 공개 목록 전체를 다시 알릴 수 있습니다. 한 번에 최대 10,000 URL을 허용하며 초과하면 제출 전에 실패합니다.

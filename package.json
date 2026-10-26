@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "check": "npm run check:digests && astro check",
-    "build": "npm run check:digests && node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py",
+    "build": "npm run check:digests && node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py && python3 -B scripts/indexnow.py",
     "preview": "astro preview",
     "test": "node --test scripts/test-site.mjs scripts/test-translations.mjs",
     "test:python": "python3 -m unittest discover -s scripts -p 'test*.py' -v",
@@ -21,7 +21,8 @@
     "check:digests": "python3 -B scripts/check_digests.py && npm run check:archive && npm run check:translations",
     "check:archive": "python3 -B scripts/archive_renewal.py check",
     "check:translations": "node scripts/translations.mjs check",
-    "prepare:translations": "node scripts/translations.mjs prepare"
+    "prepare:translations": "node scripts/translations.mjs prepare",
+    "preview:indexnow": "python3 -B scripts/indexnow.py"
   },
   "dependencies": {
     "astro": "7.4.2",
