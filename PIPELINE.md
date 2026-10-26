@@ -223,7 +223,7 @@ RSS에는 다이제스트의 모든 기사 제목·요약·원문 링크를 포�
 ### 제목·양언어 사실·제약 검증
 
 - 생성 단계와 `selection`이 있는 새 형식의 저장 JSON에서 양언어의 문장 수·순서별 수치·주요 제품명·검토 분류를 대조합니다. 제목의 수치와 주요 제품명은 검증된 본문에도 있어야 합니다. Python 게시 검사와 브라우저 미리보기는 `src/lib/bilingual-quality-policy.json`을 공유합니다. 기존 형식의 게시글은 소급 차단하지 않습니다.
-- 두 언어에서 주요 제품명을 유지하고 수치는 아라비아 숫자로 작성하세요. 쉼표가 있는 수치, 영어 one–twelve와 정책에 등록된 한국어 제품명은 정규화합니다. 이 검사는 보수적이므로 같은 의미의 다른 표기도 검토·수정이 필요할 수 있습니다. 단위 환산이나 모든 번역 표현을 판정하는 검사가 아닙니다.
+- 두 언어에서 주요 제품명을 유지하고 수치는 아라비아 숫자로 작성하세요. 쉼표가 있는 수치, 영어 one–twelve와 정책에 등록된 한국어 제품명은 정규화합니다. JavaScript의 영어 숫자 단어 대조는 Unicode 문자·숫자·밑줄 경계를 사용해 Python 검사와 맞춥니다. 독일어 Aktivitäten 내부의 ten을 숫자 10으로 오인하지 않으며, 독립된 ten과 실제 숫자·버전 대조는 유지합니다. 이 검사는 보수적이므로 같은 의미의 다른 표기도 검토·수정이 필요할 수 있습니다. 단위 환산이나 모든 번역 표현을 판정하는 검사가 아닙니다.
 - 두 번째 AI 호출은 `title_supported`, `equivalent`, `conditions_complete`를 각 언어에서 명시적으로 통과시켜야 합니다. 제목 비교의 기준·조건, 양언어의 의미와 구성 요소, 중요한 운영 제약을 확인하며 누락된 판정도 보류합니다. 수치가 일치해도 부정 표현이나 단위·맥락이 다를 수 있으므로 이 판정과 사람의 검토가 필요합니다.
 - 성능 비교·비용 후보도 공식 자료를 요구합니다. 접근 가능한 공식 자료가 없거나 원문이 입력 예산을 넘으면 보류하며, 본문을 잘라서 요약하거나 재시도하지 않습니다. 기존 호출·입력 예산을 유지합니다.
 - 제외 로그에는 출처·기사 URL·실패한 검증을 표시합니다. 전체 원문과 비밀 키는 로그에 저장하지 않습니다.
@@ -238,7 +238,7 @@ RSS에는 다이제스트의 모든 기사 제목·요약·원문 링크를 포�
 
 2026-10-26 확정 범위는 최근 보강 글 59건의 중국어 간체(`zh-CN`)·일본어(`ja`)·독일어(`de`)·프랑스어(`fr`)·러시아어(`ru`) 번역입니다. 영어가 기본 언어이며 루트 주소와 `x-default`는 영어를 유지합니다. 기존 신규 뉴스 수집기는 영어·한국어 초안만 생성합니다. 이 작업은 승인된 보강본의 다국어판을 별도로 준비하는 경로입니다.
 
-초기 목록은 `.pipeline/translations/queue-2026-10-26.json`에 영어 기준본 59건과 번역 작업 295건을 기록합니다. 현재 진행 현황은 `.pipeline/translations/queue-2026-10-26-progress-006.json`에 저장했으며, 26건의 5개 언어 초안 130편을 작성했고 165편은 번역 대기입니다. [파일럿 검토 문서](.pipeline/translations/reviews/pilot-001.md), [두 번째 배치](.pipeline/translations/reviews/renewals-002.md), [세 번째 배치](.pipeline/translations/reviews/renewals-003.md), [네 번째 배치](.pipeline/translations/reviews/renewals-004.md), [다섯 번째 배치](.pipeline/translations/reviews/renewals-005.md), [여섯 번째 배치](.pipeline/translations/reviews/renewals-006.md)에 영어 기준본과 원문 인용을 함께 표시합니다. 추가 번역 API 없이 코딩 에이전트가 직접 번역하며, API 키나 새 외부 서비스를 요구하지 않습니다.
+초기 목록은 `.pipeline/translations/queue-2026-10-26.json`에 영어 기준본 59건과 번역 작업 295건을 기록합니다. 현재 진행 현황은 `.pipeline/translations/queue-2026-10-26-progress-007.json`에 저장했으며, 31건의 5개 언어 초안 155편을 작성했고 140편은 번역 대기입니다. [파일럿 검토 문서](.pipeline/translations/reviews/pilot-001.md), [두 번째 배치](.pipeline/translations/reviews/renewals-002.md), [세 번째 배치](.pipeline/translations/reviews/renewals-003.md), [네 번째 배치](.pipeline/translations/reviews/renewals-004.md), [다섯 번째 배치](.pipeline/translations/reviews/renewals-005.md), [여섯 번째 배치](.pipeline/translations/reviews/renewals-006.md), [일곱 번째 배치](.pipeline/translations/reviews/renewals-007.md)에 영어 기준본과 원문 인용을 함께 표시합니다. 추가 번역 API 없이 코딩 에이전트가 직접 번역하며, API 키나 새 외부 서비스를 요구하지 않습니다.
 
 - 초안과 검토 문서는 `.pipeline/translations/`에만 보관합니다. 공개 디렉터리나 검색/RSS/사이트맵에 넣지 않습니다.
 - 번역의 기준은 원문 인용 근거가 연결된 승인 영어 보강본입니다. 주장 순서·개수, 후속 확인, 제한 조건과 편집 제안을 유지합니다. 영어 보강본의 파일 해시를 고정하여 수정된 기준본을 재검토 없이 게시하지 못하게 합니다.
@@ -270,7 +270,7 @@ node scripts/translations.mjs publish \
   --approval-basis '<해당 배치에 대한 명시적 승인 기록>'
 ```
 
-남은 33건도 소규모 배치로 직접 번역하며 같은 검사를 반복합니다. 승인된 글에 대해서만 다섯 언어를 순차 공개하며, 실제 Google 색인 여부는 공개 후 Search Console에서 확인합니다. 다국어 SEO 태그의 검증은 색인이나 검색 순위 보장이 아닙니다.
+남은 28건도 소규모 배치로 직접 번역하며 같은 검사를 반복합니다. 승인된 글에 대해서만 다섯 언어를 순차 공개하며, 실제 Google 색인 여부는 공개 후 Search Console에서 확인합니다. 다국어 SEO 태그의 검증은 색인이나 검색 순위 보장이 아닙니다.
 
 
 ### `tech-blog-writing` 적용

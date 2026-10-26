@@ -276,7 +276,7 @@ GitLab 19.0 : bêta de gestion des secrets, analyse des dépendances et prérequ
 
 GitLab 19.0: бета управления секретами, сканирование зависимостей и условия обновления
 
-1. В GitLab 19.0 Secrets Manager доступен как открытая бета для клиентов Premium и Ultimate на GitLab.com и Self-Managed. Примечания к выпуску предупреждают, что бета может быть ещё не готова к использованию в рабочей среде.
+1. В GitLab 19.0 Secrets Manager доступен как открытая бета для клиентов Premium и Ultimate на GitLab.com и Self-Managed. Примечания к выпуску предупреждают, что бета может быть ещё не готова к использованию в производственной среде.
 
 2. Сканирование зависимостей на основе SBOM общедоступно в тарифе Ultimate для GitLab.com, Self-Managed и Dedicated. Условия доступности и тариф отличаются от беты Secrets Manager.
 
