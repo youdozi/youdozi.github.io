@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T14:38:52.223010+00:00",
+  "skill": "tech-blog-writing",
+  "additionalSkills": [
+    "translate"
+  ],
+  "reviewMethod": "independent-ai-session-and-targeted-recheck",
+  "reviewSession": "batch013_review",
+  "writingConversationProvidedToReviewer": false,
+  "previousVerdictsProvidedAtInitialReview": false,
+  "scope": {
+    "editions": 15,
+    "sources": 3,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "title",
+      "claims",
+      "followUp",
+      "reviewFocus"
+    ],
+    "audience": "software developers",
+    "type": "full translations of concise historical-news briefs",
+    "steps": [
+      "Read all target prose first",
+      "Compare every field with approved English and embedded evidence",
+      "Writer applies four findings across six fields",
+      "Reviewer rechecks only the six changed fields"
+    ]
+  },
+  "initialBatchSha256": {
+    ".pipeline/translations/batches/renewals-013.json": "95f16ce52bb7560163bb6c84f57fff7d0c427abdf3f219d8a6bd88ff63eb8112"
+  },
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/renewals-013.json": "e70180e5f7d010642e9575936d0cf8bd7a43029cfe7d474be1edeb4a1b8c83b5"
+  },
+  "sourceSha256": {
+    "src/content/renewals/fb47d93f2cc47316.json": "faff7a3fb3e3669e2d391012661d2825859f2db1a61e44011b0ab61623c97c02",
+    "src/content/renewals/fe469724f5828fb0.json": "e7ed00186abcdf5d88f2717c8b08b1bffa654f181c4c216eade0ceeb176ed1fc",
+    "src/content/renewals/fecc68bc1f0f9da3.json": "072f89fad175fbc75fe474e42dd2891a458672d756b3f52d65f25350cabb89ff"
+  },
+  "findings": [
+    {
+      "renewalId": "fe469724f5828fb0",
+      "language": "ja",
+      "fields": [
+        "edition.claims[0]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "조치로 이어지는 구체적 제안이라는 뜻을 자연스럽게 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "fecc68bc1f0f9da3",
+      "language": "de",
+      "fields": [
+        "edition.claims[0]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "Stable 단계 도달을 자연스럽게 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "fecc68bc1f0f9da3",
+      "language": "de",
+      "fields": [
+        "edition.claims[1]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "사용자 네임스페이스 지원의 Stable 상태를 자연스럽게 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "fecc68bc1f0f9da3",
+      "language": "ru",
+      "fields": [
+        "edition.title",
+        "edition.claims[1]",
+        "reviewFocus"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "임의 정의 네임스페이스와 구별하도록 사용자 네임스페이스 용어 명확화",
+      "disposition": "adopted after source comparison",
+      "confidence": "medium-high",
+      "recheck": "resolved"
+    }
+  ],
+  "result": "No unresolved findings within reviewed scope; six changed fields rechecked",
+  "externalSourceRevalidation": false,
+  "nativeSpeakerOrHumanLanguageReview": false,
+  "publicationApprovalGranted": false,
+  "limitations": [
+    "AI review does not guarantee accuracy.",
+    "Approved English and stored evidence were compared; current external facts were not revalidated.",
+    "Publication requires explicit user approval.",
+    "All 295 scoped editions have now been drafted; this report reviews only the final 15."
+  ]
+}
