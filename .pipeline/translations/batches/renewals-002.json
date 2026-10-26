@@ -3,10 +3,11 @@
   "state": "draft",
   "batchId": "renewals-002",
   "sourceLanguage": "en",
-  "reviewRequired": "Human review of meaning, terminology, qualifications and each source quotation before publication.",
+  "reviewRequired": "AI meaning and target-language review; explicit user publication approval remains required.",
   "preparation": {
     "method": "assistant-direct-translation",
-    "externalTranslationApiUsed": false
+    "externalTranslationApiUsed": false,
+    "skill": "tech-blog-writing"
   },
   "translations": [
     {
@@ -167,7 +168,7 @@
         ],
         "followUp": []
       },
-      "reviewFocus": "Моделируйте только те типы уязвимостей и пути, от которых санитайзер действительно защищает. Проверяйте положительные и отрицательные примеры, чтобы чрезмерно широкая граница не скрывала реальные потоки загрязнённых данных; этот черновик не заявляет об измеренном сокращении ложных срабатываний."
+      "reviewFocus": "Моделируйте только те типы уязвимостей и пути, от которых санитайзер действительно защищает. Проверяйте положительные и отрицательные примеры, чтобы чрезмерно широкий барьер не скрывал реальные потоки загрязнённых данных; этот черновик не заявляет об измеренном сокращении ложных срабатываний."
     },
     {
       "schemaVersion": 1,
@@ -178,7 +179,7 @@
       "edition": {
         "title": "GitHub 通报 Grok Code Fast 1 在 Copilot 中的停用",
         "claims": [
-          "GitHub 通报，Grok Code Fast 1 已于 2026-05-15 在其各项 Copilot 体验中弃用。这是产品厂商的完成公告，与此前公布的计划日期不同。",
+          "GitHub 通报，Grok Code Fast 1 已于 2026-05-15 在其各项 Copilot 体验中弃用。这是产品厂商确认完成停用的公告，有别于此前仅公布停用计划日期的公告。",
           "公告称，Copilot Enterprise 管理员可能需要通过模型策略启用替代模型。"
         ],
         "followUp": []
@@ -242,7 +243,7 @@
       "edition": {
         "title": "GitHub сообщает о прекращении использования Grok Code Fast 1 в Copilot",
         "claims": [
-          "GitHub сообщила, что 2026-05-15 модель Grok Code Fast 1 была выведена из использования во всех вариантах работы с Copilot. Это уведомление производителя продукта о завершении, отличающееся от ранее объявленной плановой даты.",
+          "GitHub сообщила, что 2026-05-15 модель Grok Code Fast 1 была выведена из использования во всех вариантах работы с Copilot. Это уведомление поставщика продукта о завершении вывода модели из использования, в отличие от прежнего объявления плановой даты.",
           "В уведомлении указано, что администраторам Copilot Enterprise может потребоваться включить альтернативные модели через политики моделей."
         ],
         "followUp": []
@@ -389,7 +390,7 @@
       "language": "fr",
       "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
       "edition": {
-        "title": "Les avis de sécurité des dépôts GitHub disposent de recherche et de filtres",
+        "title": "GitHub ajoute la recherche et les filtres aux avis de sécurité des dépôts",
         "claims": [
           "GitHub a ajouté la recherche et le filtrage des avis de sécurité directement dans l’onglet Security d’un dépôt.",
           "L’avis mentionne notamment sort, package, ecosystems et severity parmi les mots-clés de recherche ou de filtrage pris en charge."

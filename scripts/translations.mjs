@@ -67,7 +67,7 @@ export async function checkPublished(base=root){
 }
 export async function renderReview(batch,base=root){
   const drafts=await validateBatch(batch,base);
-  const lines=['# 다국어 번역 검토 초안','','게시 전 사람의 의미·용어·조건 검토가 필요합니다. 수치·제품명 검사는 번역 정확성의 보장이 아닙니다.',''];
+  const lines=['# 다국어 번역 검토 초안','','의미·용어·조건 대조와 대상 언어 교정은 AI로 검토합니다. 수치·제품명 검사는 의미 검토를 대체하지 않습니다. 사이트 게시는 사용자의 명시적 승인 후에 진행합니다.',''];
   for(const id of [...new Set(drafts.map(d=>d.renewalId))]){
     const {source}=await sourceFor(id,base);
     lines.push(`## ${source.editions.en.title}`,'',`원문: ${source.url}`,'',`검토 기준: 영어 보강본 ${id}, ${source.updatedAt}`,'','### 영어 기준본','');

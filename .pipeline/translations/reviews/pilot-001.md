@@ -1,6 +1,6 @@
 # 다국어 번역 검토 초안
 
-게시 전 사람의 의미·용어·조건 검토가 필요합니다. 수치·제품명 검사는 번역 정확성의 보장이 아닙니다.
+의미·용어·조건 대조와 대상 언어 교정은 AI로 검토합니다. 수치·제품명 검사는 의미 검토를 대체하지 않습니다. 사이트 게시는 사용자의 명시적 승인 후에 진행합니다.
 
 ## Multi-region design: replication, writes and failover trade-offs
 
@@ -58,7 +58,7 @@ Mehrregionen-Architektur: Abwägungen bei Replikation, Schreibzugriffen und Fail
 
 1. Der Autor vergleicht unabhängig arbeitende Regionen im active-active-Betrieb mit einer Architektur, die Lesezugriffe lokal bedient, entfernte Schreibzugriffe jedoch an eine globale Schreibregion weiterleitet. Dabei sind Replikation, Konfliktbehandlung und die Latenz regionsübergreifender Schreibzugriffe abzuwägen.
 
-2. Für den active-passive-Betrieb beschreibt der Autor eine primäre Region, die den Datenverkehr bedient, und eine sekundäre Region, die kontinuierlich Replikationsdaten empfängt. Der Artikel warnt davor, dass ungeübte Failover-Abläufe im Ernstfall scheitern können, und empfiehlt, gemessenes Failover-Verhalten in die Planung einzubeziehen. Die im Original genannten prozentualen Einsparungen und Schätzungen zur Wiederherstellung der Latenz werden hier ausgelassen.
+2. Für den active-passive-Betrieb beschreibt der Autor eine primäre Region, die den Datenverkehr bedient, und eine sekundäre Region, die kontinuierlich Replikationsdaten empfängt. Der Artikel warnt davor, dass nicht erprobte Failover-Abläufe im Ernstfall scheitern können, und empfiehlt, gemessenes Failover-Verhalten in die Planung einzubeziehen. Die im Original genannten prozentualen Einsparungen und Schätzungen zur Wiederherstellung der Latenz werden hier ausgelassen.
 
 검토 초점: Diese Prüfung beschränkt sich auf die Architekturdiskussion des Autors und stellt kein allgemeingültiges Kostenmodell dar. Vor der Wahl einer regionalen Architektur sollten die geografische Verteilung der Arbeitslast, Konsistenzanforderungen, Wiederherstellungsverhalten und Betriebsaufwand gemessen werden.
 
