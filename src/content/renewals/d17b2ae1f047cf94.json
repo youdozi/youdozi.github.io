@@ -1,0 +1,103 @@
+{
+  "id": "d17b2ae1f047cf94",
+  "archiveDate": "2026-07-07",
+  "originalPagePublishedAt": "2026-07-06T22:26:42.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-07-06T22:26:42.000Z",
+    "en": "2026-10-26T01:34:51+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Use the transcript to assess the speaker’s argument, then validate isolation requirements and failure modes against your own threat model. No sandbox-escape, performance or AI-hardware experiment was performed for this summary.",
+    "ko": "대본으로 발언자의 논지를 확인한 뒤 자체 위협 모델에 따라 격리 요구사항·실패 유형을 검증할 것을 제안합니다. 이 요약에서 샌드박스 탈출·성능·AI 하드웨어 실험을 수행하지 않았습니다."
+  },
+  "documents": [
+    {
+      "url": "https://www.infoq.com/podcasts/new-blueprint-cloud-security/",
+      "role": "primary",
+      "sha256": "75667e94aabe5272a0e8f6f1ac125ea059a991f0b9f7e3fce7dd9c7a4e4ee3da",
+      "fetchedAt": "2026-10-26T01:04:34+00:00",
+      "extractorVersion": "article-parser-v2"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Cloud-security podcast: attributed isolation and learning advice",
+      "claims": [
+        {
+          "text": "In the transcript, Edera co-founder Alex Zenla describes a zone abstraction for isolating workloads inside virtual machines. This is the vendor speaker’s account of the design, not an independently tested security boundary.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "we have this concept called a zone that allows you to run isolated workloads inside of a safe virtual machine."
+            }
+          ]
+        },
+        {
+          "text": "Zenla describes using language models to explain specifications and emphasizes understanding the resulting implementation. The interview’s criticism of existing infrastructure is an attributed engineering viewpoint, not proof that every container or GPU deployment is insecure.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "have Claude explain to me all the information that I need to know"
+            },
+            {
+              "document_id": 0,
+              "quote": "at the end of it, you have to understand what you did."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "클라우드 보안 팟캐스트의 격리·학습에 관한 발언 검토",
+      "claims": [
+        {
+          "text": "대본에서 Edera 공동 창업자 Alex Zenla는 가상머신 안에서 작업을 격리하는 zone 추상화를 설명한다. 공급자 측 발언자가 소개한 설계이며 보안 경계를 독립 실험한 결과는 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "we have this concept called a zone that allows you to run isolated workloads inside of a safe virtual machine."
+            }
+          ]
+        },
+        {
+          "text": "Zenla는 언어 모델로 명세 설명을 듣는 활용 방식을 소개하면서 구현 결과를 이해해야 한다고 강조한다. 인터뷰의 기존 기반 구조 비판은 발언자의 공학적 견해이며 모든 컨테이너·GPU 배포가 안전하지 않다는 증명은 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "have Claude explain to me all the information that I need to know"
+            },
+            {
+              "document_id": 0,
+              "quote": "at the end of it, you have to understand what you did."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-07-07-cloud-security-podcast-isolation-and-learning",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/podcasts/new-blueprint-cloud-security/",
+  "articleNumber": 5,
+  "sourcePublishedAt": "2026-07-06T20:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-07-07.md",
+  "batchId": "recovery-001",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-26T01:34:51+00:00",
+  "updatedAt": "2026-10-26T01:34:51+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 38,
+    "approvedAt": "2026-10-26T01:34:51+00:00",
+    "basis": "Codex conversation: user explicitly instructed 병합/게시해줘 for PR 38, including the three bilingual recovery candidates shown in its review body."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

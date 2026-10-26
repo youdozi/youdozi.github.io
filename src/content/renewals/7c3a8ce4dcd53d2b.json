@@ -1,0 +1,111 @@
+{
+  "id": "7c3a8ce4dcd53d2b",
+  "archiveDate": "2026-07-12",
+  "originalPagePublishedAt": "2026-07-11T22:16:24.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-07-11T22:16:24.000Z",
+    "en": "2026-10-26T01:34:51+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "This is a scoped review of the author’s design discussion, not a universal cost model. Measure workload locality, consistency requirements, recovery behavior and operating effort before choosing a regional architecture.",
+    "ko": "작성자의 설계 논의에 한정한 검토이며 보편적인 비용 모델은 아닙니다. 리전 구조 선택 전 작업의 지역성·일관성 요구·복구 동작·운영 부담을 측정할 것을 제안합니다."
+  },
+  "documents": [
+    {
+      "url": "https://www.infoq.com/articles/multi-region-latency-cost-tradeoffs/",
+      "role": "primary",
+      "sha256": "03bc042970f5db7e6ba8fbfdedf8eefa9aff012d5f4a2960a42c9107ea3f70d4",
+      "fetchedAt": "2026-10-26T01:04:35+00:00",
+      "extractorVersion": "article-parser-v2"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "Multi-region design: replication, writes and failover trade-offs",
+      "claims": [
+        {
+          "text": "The article author contrasts independently serving active-active regions with a design that serves reads locally but proxies remote writes to a global write region. The trade-off includes replication, conflict handling and cross-region write latency.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Users are routed to their nearest region; each region handles both reads and writes."
+            },
+            {
+              "document_id": 0,
+              "quote": "Write requests from non-primary regions are proxied to the global write region before acknowledgment."
+            }
+          ]
+        },
+        {
+          "text": "For active-passive operation, the author describes a primary serving traffic and a continuously replicated secondary. The article warns that unexercised failover paths can fail and recommends using measured failover behavior in planning. Its percentage savings and latency-recovery estimates are excluded here.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "a secondary region receives continuous replication but serves no traffic under normal conditions."
+            },
+            {
+              "document_id": 0,
+              "quote": "Failover paths that are never exercised tend to fail when invoked."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "다중 리전 설계의 복제·쓰기·장애 전환 절충",
+      "claims": [
+        {
+          "text": "작성자는 각 리전이 독립적으로 처리하는 active-active 구성과 로컬 읽기·전역 쓰기 리전으로의 원격 쓰기 전달 구성을 비교한다. 복제·충돌 처리·리전 간 쓰기 지연이 절충 요소다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Users are routed to their nearest region; each region handles both reads and writes."
+            },
+            {
+              "document_id": 0,
+              "quote": "Write requests from non-primary regions are proxied to the global write region before acknowledgment."
+            }
+          ]
+        },
+        {
+          "text": "active-passive 구성은 주 리전이 트래픽을 처리하고 보조 리전이 지속적으로 복제받는 방식으로 설명한다. 글은 시험하지 않은 장애 전환 경로의 실패 위험을 경고하고 계획에 실제 측정한 전환 동작을 반영하도록 권한다. 비율로 제시한 비용 절감·지연 회복 추정치는 이 원고에서 제외한다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "a secondary region receives continuous replication but serves no traffic under normal conditions."
+            },
+            {
+              "document_id": 0,
+              "quote": "Failover paths that are never exercised tend to fail when invoked."
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-07-12-multi-region-replication-and-failover-trade-offs",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/articles/multi-region-latency-cost-tradeoffs/",
+  "articleNumber": 3,
+  "sourcePublishedAt": "2026-07-10T18:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-07-12.md",
+  "batchId": "recovery-001",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-26T01:34:51+00:00",
+  "updatedAt": "2026-10-26T01:34:51+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 38,
+    "approvedAt": "2026-10-26T01:34:51+00:00",
+    "basis": "Codex conversation: user explicitly instructed 병합/게시해줘 for PR 38, including the three bilingual recovery candidates shown in its review body."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}

@@ -34,6 +34,9 @@
     "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
     "https://www.infoq.com/articles/security-ai-threat-evolution/",
     "https://devblogs.microsoft.com/devops/copilot-autofix-for-github-advanced-security-for-azure-devops/",
-    "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning-autofix?view=azure-devops"
+    "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning-autofix?view=azure-devops",
+    "https://www.infoq.com/podcasts/new-blueprint-cloud-security/",
+    "https://www.infoq.com/news/2026/07/online-cohort-ai-security/",
+    "https://www.infoq.com/articles/multi-region-latency-cost-tradeoffs/"
   ]
 }
