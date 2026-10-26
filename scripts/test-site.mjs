@@ -119,6 +119,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       published.push(...created);
     }
     await checkPublished();
+    const approvedTranslations=await Promise.all((await readdir('src/content/translations')).filter(file=>file.endsWith('.json')).map(async file=>JSON.parse(await readFile(`src/content/translations/${file}`,'utf8'))));
 
     const assets=spawnSync(process.execPath,['scripts/prepare-public.mjs'],{encoding:'utf8'});assert.equal(assets.status,0,assets.stderr);
     const build=spawnSync(process.execPath,['node_modules/astro/bin/astro.mjs','build'],{encoding:'utf8',maxBuffer:8*1024*1024});
@@ -222,7 +223,8 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.equal(posting.dateModified,record.updatedAt);
       assert.ok(html.includes(source.editions.en.claims[0].evidence[0].quote));
       const index=JSON.parse(await readFile(`dist/${lang}/search-index.json`,'utf8'));
-      assert.equal(index.length,1);assert.ok(index[0].content.includes(record.edition.claims[0]));
+      assert.equal(index.length,approvedTranslations.filter(t=>t.language===lang).length);
+      assert.ok(index.find(entry=>entry.url===`/${lang}/digest/${source.slug}/`)?.content.includes(record.edition.claims[0]));
       const feed=await readFile(`dist/${lang}/feed.xml`,'utf8');
       assert.ok(feed.includes(`<language>${lang}</language>`));
       assert.ok(feed.includes(record.edition.claims[0].replaceAll('&','&amp;').replaceAll("'",'&apos;')));

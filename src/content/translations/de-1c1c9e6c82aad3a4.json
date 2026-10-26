@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "1c1c9e6c82aad3a4",
+  "language": "de",
+  "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+  "edition": {
+    "title": "GitHub-Sicherheitshinweise in Repositories erhalten Suche und Filter",
+    "claims": [
+      "GitHub ergänzte die Suche und Filterung von Sicherheitshinweisen direkt im Security-Tab eines Repositories.",
+      "Die Mitteilung nennt unter anderem sort, package, ecosystems und severity als unterstützte Such- oder Filterbegriffe."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Prüfen, ob die Ansicht die für die Prüfung benötigten Entwürfe sowie eingegangene und veröffentlichte Sicherheitshinweise enthält. Eine kleinere gefilterte Ergebnismenge bedeutet nicht, dass tatsächlich weniger Schwachstellen bestehen.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

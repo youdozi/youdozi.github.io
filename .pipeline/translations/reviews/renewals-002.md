@@ -128,7 +128,7 @@ CodeQL: Datenbasierte Modelle erhalten eigene Sanitizer und Validatoren
 
 ### Français (fr)
 
-CodeQL : les modèles déclarés comme données ajoutent des nettoyeurs et validateurs personnalisés
+CodeQL : les modèles définis sous forme de données prennent en charge les nettoyeurs et validateurs personnalisés
 
 1. GitHub décrit des nettoyeurs et validateurs déclaratifs dans les extensions de données YAML de CodeQL, à l’aide de barrierModel et barrierGuardModel.
 

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "097c455a9b953f24",
+  "language": "ja",
+  "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+  "edition": {
+    "title": "CodeQL のデータによるモデル定義にカスタムサニタイザーとバリデーターを追加",
+    "claims": [
+      "GitHub は、barrierModel と barrierGuardModel を使い、CodeQL の YAML データ拡張でサニタイザーとバリデーターを宣言的に定義する仕組みを紹介している。",
+      "告知では CodeQL 2.25.2 以降で利用可能としている。これは当時の告知に記載された最低バージョンであり、現在のアップグレード推奨ではない。"
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "サニタイザーが実際に保護する脆弱性の種類と経路だけをモデル化する。正例と負例をテストし、広すぎるバリアが実際の汚染データの流れを隠さないようにする。この草稿は、誤検知の減少を実測したと主張するものではない。",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}
