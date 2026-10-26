@@ -18,7 +18,10 @@ test('translation queue includes every approved source in all five languages wit
   assert.equal(queue.sources.length,sources.length);
   assert.equal(queue.tasks.length,sources.length*5);
   assert.deepEqual(queue.languages,['zh-CN','ja','de','fr','ru']);
-  assert.equal(queue.tasks.filter(t=>t.status==='draft').length,batch.translations.length);
+  const batches=(await readdir('.pipeline/translations/batches')).filter(f=>f.endsWith('.json'));
+  const drafts=(await Promise.all(batches.map(async f=>JSON.parse(await readFile(`.pipeline/translations/batches/${f}`,'utf8')).translations))).flat();
+  assert.equal(queue.tasks.filter(t=>t.status==='draft').length,drafts.length);
+  for(const id of new Set(drafts.map(d=>d.renewalId)))assert.deepEqual(drafts.filter(d=>d.renewalId===id).map(d=>d.language).sort(),[...queue.languages].sort());
   for(const s of queue.sources){
     const bytes=await readFile(`src/content/renewals/${s.renewalId}.json`,'utf8');
     assert.equal(s.sourceSha256,createHash('sha256').update(bytes).digest('hex'));
