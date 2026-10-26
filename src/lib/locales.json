@@ -8,7 +8,8 @@
     "ja",
     "de",
     "fr",
-    "ru"
+    "ru",
+    "es"
   ],
   "locales": {
     "en": {
@@ -45,6 +46,11 @@
       "label": "Русский",
       "dateLocale": "ru-RU",
       "ogLocale": "ru_RU"
+    },
+    "es": {
+      "label": "Español",
+      "dateLocale": "es",
+      "ogLocale": "es_ES"
     }
   }
 }

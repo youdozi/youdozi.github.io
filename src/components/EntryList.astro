@@ -7,6 +7,6 @@ const { items, lang } = Astro.props;
   {items.map(entry => <article class="entry-card">
     <div class="entry-meta"><time datetime={entry.publishedAt.toISOString()}>{formatDate(entry.publishedAt, lang)}</time><span>{entry.kind === 'digest' ? text[lang].digest : text[lang].posts}</span></div>
     <h2><a href={entry.url}>{entry.title}</a></h2><p>{entry.description}</p>
-    <div class="entry-bottom"><span class="topic-text">{entry.tags.slice(0,3).join(' / ')}</span><a href={entry.url} aria-label={`${text[lang].read}: ${entry.title}`}>↗</a></div>
+    <div class="entry-bottom"><span class="topic-text">{entry.tags.filter(tag => tag !== 'archive-renewal').slice(0,3).join(' / ')}</span><a href={entry.url} aria-label={`${text[lang].read}: ${entry.title}`}>↗</a></div>
   </article>)}
 </div>
