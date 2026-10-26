@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T12:58:04.007975+00:00",
+  "skill": "tech-blog-writing",
+  "reviewMethod": "independent-ai-session-and-targeted-recheck",
+  "reviewSession": "batch011_review",
+  "writingConversationProvidedToReviewer": false,
+  "previousVerdictsProvidedAtInitialReview": false,
+  "scope": {
+    "editions": 25,
+    "sources": 5,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "title",
+      "claims",
+      "followUp",
+      "reviewFocus"
+    ],
+    "audience": "software developers",
+    "type": "concise historical-news translations",
+    "steps": [
+      "Read all target-language prose before source comparison",
+      "Compare all fields to approved English edition and stored evidence",
+      "Writer applies six source-supported corrections",
+      "Reviewer rechecks only the six changed fields"
+    ]
+  },
+  "initialBatchSha256": {
+    ".pipeline/translations/batches/renewals-011.json": "0e4843ef538459a2f0ce9a0fb1389378b0f1f1f07d361b948bef3e8406ad2fbb"
+  },
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/renewals-011.json": "f1df78ab178d9167279da5b654944c2c6ded77bf34f4fe6d965fef91924f31ed"
+  },
+  "sourceSha256": {
+    "src/content/renewals/d17b2ae1f047cf94.json": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+    "src/content/renewals/d92a8a6927fa76ff.json": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+    "src/content/renewals/d9492522fb4514ef.json": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+    "src/content/renewals/db11f89181439d98.json": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+    "src/content/renewals/e458b053b5a9f878.json": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3"
+  },
+  "findings": [
+    {
+      "renewalId": "e458b053b5a9f878",
+      "language": "de",
+      "fields": [
+        "reviewFocus"
+      ],
+      "severity": "major",
+      "origin": "independent-review",
+      "resolution": "수정 코드를 제공하는 것과 대상 환경에 실제 배포하는 것을 구별",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "d92a8a6927fa76ff",
+      "language": "fr",
+      "fields": [
+        "edition.title"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "종료 예고와 완료 확인을 자연스러운 제목으로 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "d92a8a6927fa76ff",
+      "language": "ja",
+      "fields": [
+        "edition.claims[0]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "공지 자체가 종료를 계획하는 어색한 주어 연결을 수정하고 공지의 귀속을 유지",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "e458b053b5a9f878",
+      "language": "de",
+      "fields": [
+        "edition.claims[1]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "수정 버전으로 업데이트가 필요한 경우라는 PR 생성 조건을 명확히 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "db11f89181439d98",
+      "language": "ru",
+      "fields": [
+        "edition.claims[1]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "직역 대신 자연스러운 기술 설명 용어를 사용",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "e458b053b5a9f878",
+      "language": "ja",
+      "fields": [
+        "reviewFocus"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "기업 소유권이 기업 자체가 아닌 해당 저장소의 소속을 뜻하도록 명확히 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    }
+  ],
+  "result": "No unresolved major findings in the reviewed scope; six changed fields rechecked",
+  "externalSourceRevalidation": false,
+  "nativeSpeakerOrHumanLanguageReview": false,
+  "publicationApprovalGranted": false,
+  "limitations": [
+    "AI review does not guarantee accuracy.",
+    "Approved English and stored evidence were compared; current external facts were not revalidated.",
+    "Publication requires explicit user approval.",
+    "Remaining 40 translations have not been drafted or reviewed."
+  ]
+}
