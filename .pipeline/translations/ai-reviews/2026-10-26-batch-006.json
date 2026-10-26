@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T09:51:55.983357+00:00",
+  "skill": "tech-blog-writing",
+  "reviewMethod": "independent-ai-session-and-targeted-recheck",
+  "reviewSession": "batch006_review",
+  "writingConversationProvidedToReviewer": false,
+  "previousVerdictsProvidedAtInitialReview": false,
+  "scope": {
+    "editions": 25,
+    "sources": 5,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "title",
+      "claims",
+      "followUp",
+      "reviewFocus"
+    ],
+    "audience": "software developers",
+    "type": "concise historical-news translations",
+    "steps": [
+      "Read target-language prose without source",
+      "Compare to approved English edition and stored evidence",
+      "Writer applies source-supported corrections",
+      "Reviewer rechecks four changed fields"
+    ]
+  },
+  "initialBatchSha256": "898d8e0a33d6a7c3c76a73b90da72f7e16b452d2cee559188074f743d0a76079",
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/renewals-006.json": "aec66cb6d11b28e4bd8178fb647ccf0ffe5cf26f6f3dadfcb4f066651cc8fa61"
+  },
+  "sourceSha256": {
+    "src/content/renewals/68e2ee5d21f7dc1b.json": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+    "src/content/renewals/6944923e55b6bbd0.json": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+    "src/content/renewals/6ad4fb7dea8c6f87.json": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+    "src/content/renewals/7067e48d153e8525.json": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+    "src/content/renewals/72477d086944244f.json": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994"
+  },
+  "findings": [
+    {
+      "renewalId": "68e2ee5d21f7dc1b",
+      "language": "ja",
+      "fields": [
+        "edition.claims[1]",
+        "reviewFocus"
+      ],
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "모델의 reasoning effort를 사람의 노동으로 읽지 않도록 추론 강도로 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "68e2ee5d21f7dc1b",
+      "language": "ru",
+      "fields": [
+        "edition.claims[0]"
+      ],
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "기준 금액 $2.43이 기간 총액이 아닌 리뷰당 비용임을 명시",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "72477d086944244f",
+      "language": "ru",
+      "fields": [
+        "edition.claims[2]"
+      ],
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "자동으로 적용되지 않는다는 부정 범위의 어순을 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    }
+  ],
+  "result": "No unresolved major findings within the independently reviewed scope; four changed fields rechecked",
+  "externalSourceRevalidation": false,
+  "writerTerminologySourceConsultation": {
+    "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+    "purpose": "Disambiguate effort as model reasoning settings rather than staff time",
+    "scope": "Terminology context only; no additional claims introduced or approved English source changed",
+    "providedToReviewerAsGlossary": true
+  },
+  "nativeSpeakerOrHumanLanguageReview": false,
+  "publicationApprovalGranted": false,
+  "limitations": [
+    "AI review does not guarantee accuracy.",
+    "Approved English and stored evidence were compared. Only one official article was consulted for terminology; current external product availability and all other facts were not revalidated.",
+    "Publication requires explicit user approval.",
+    "Remaining 165 translations have not been drafted or reviewed."
+  ]
+}

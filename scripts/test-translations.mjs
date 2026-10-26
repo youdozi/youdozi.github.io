@@ -95,3 +95,25 @@ test('locale metadata and UI cover all supported languages, and review includes 
   for(const draft of batch.translations){assert.ok(review.includes(draft.edition.title));assert.ok(review.includes(draft.edition.claims[0]));}
   assert.ok(review.includes(source.url));
 });
+
+test('number-word checks respect Unicode words and agree with Python without losing real numbers',async()=>{
+  const {numbers}=await import('../src/lib/bilingual-quality.ts');
+  const {spawnSync}=await import('node:child_process');
+  const cases=[
+    ['Aktivitäten, Identitäten und Universitäten',[]],
+    ['ten activities, one region',['1','10']],
+    ['Prioritäten plus 16',['16']],
+    ['one개 und ten한',[]],
+    ['someone, stone, TEN and one',['1','10']],
+    ['one_two ten_X',[]],
+    ['１２one',[]],
+    ['120,000 / 2.43 / CodeQL 2.25.2',['120000','2.25.2','2.43']],
+  ];
+  const python=spawnSync('python3',['-B','-c',"import json,sys;sys.path.insert(0,'scripts');from bilingual_quality import numbers;print(json.dumps([sorted(numbers(t)) for t in json.load(sys.stdin)]))"],{input:JSON.stringify(cases.map(([value])=>value)),encoding:'utf8'});
+  assert.equal(python.status,0,python.stderr);
+  const expected=JSON.parse(python.stdout);
+  for(const [i,[value,wanted]] of cases.entries()){
+    assert.deepEqual(expected[i],wanted,value);
+    assert.deepEqual([...numbers(value)].sort(),wanted,value);
+  }
+});
