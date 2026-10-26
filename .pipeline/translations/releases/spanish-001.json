@@ -1,11 +1,16 @@
 {
   "schemaVersion": 1,
   "releaseId": "spanish-001",
-  "state": "awaiting-publication-approval",
+  "state": "approved-for-publication",
   "batch": ".pipeline/translations/batches/spanish-001.json",
   "batchSha256": "4f35a26e61ba28cc9648268944d81b4d800b1fae86f43a4442ae9b651fb1976e",
   "translationReview": ".pipeline/translations/ai-reviews/2026-10-27-spanish-001.json",
-  "approval": null,
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 51,
+    "approvedAt": "2026-10-26T22:53:32.255Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after the final report linking the six independently reviewed Spanish articles from PR #51 and stating that Spanish publication awaited approval."
+  },
   "scope": {
     "sources": 6,
     "editions": 6,
@@ -20,7 +25,8 @@
       "title": "El aviso de retirada de Grok Code Fast 1 delimita su alcance en Copilot",
       "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
       "url": "https://youdozi.github.io/es/digest/2026-05-09-copilot-grok-code-fast-retirement/",
-      "publicationFile": "src/content/translations/es-0915f64eb6629c85.json"
+      "publicationFile": "src/content/translations/es-0915f64eb6629c85.json",
+      "publicationFileSha256": "c4a0bcc21621c7472e5e91ed1ea0416a2febeb44cac1aaa10520f38b4ede7c45"
     },
     {
       "renewalId": "097c455a9b953f24",
@@ -28,7 +34,8 @@
       "title": "CodeQL incorpora sanitizadores y validadores personalizados a los modelos como datos",
       "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
       "url": "https://youdozi.github.io/es/digest/2026-05-06-codeql-sanitizer-and-validator-models/",
-      "publicationFile": "src/content/translations/es-097c455a9b953f24.json"
+      "publicationFile": "src/content/translations/es-097c455a9b953f24.json",
+      "publicationFileSha256": "153dcddfa3961b1dd097042b987bbc32f4b08f25350e865b8163e60d3a87cc73"
     },
     {
       "renewalId": "09e0d0ec5ed64f8a",
@@ -36,7 +43,8 @@
       "title": "GitHub comunica la retirada de Grok Code Fast 1 de Copilot",
       "sourceSha256": "5c97c6f02a9a1f0f2521a7fb7169e71e10b5dc78aeb94851759c52a1b403fc3c",
       "url": "https://youdozi.github.io/es/digest/2026-05-16-copilot-grok-code-fast-retirement-confirmation/",
-      "publicationFile": "src/content/translations/es-09e0d0ec5ed64f8a.json"
+      "publicationFile": "src/content/translations/es-09e0d0ec5ed64f8a.json",
+      "publicationFileSha256": "4827010ac6b02c4455ed8a1feebe2a6d00195aa6c67cd90398ef4e1b5f32096b"
     },
     {
       "renewalId": "0a337adda878feca",
@@ -44,7 +52,8 @@
       "title": "Fondos de créditos de Copilot: uso incluido y gasto adicional",
       "sourceSha256": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
       "url": "https://youdozi.github.io/es/digest/2026-07-03-copilot-credit-pools-and-additional-spending/",
-      "publicationFile": "src/content/translations/es-0a337adda878feca.json"
+      "publicationFile": "src/content/translations/es-0a337adda878feca.json",
+      "publicationFileSha256": "27cf67f27fbe3349488e405834a1909c3531aeba76ad5f05b68ccb9bb106fdfa"
     },
     {
       "renewalId": "1c1c9e6c82aad3a4",
@@ -52,7 +61,8 @@
       "title": "Los avisos de seguridad de los repositorios de GitHub incorporan búsqueda y filtros",
       "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
       "url": "https://youdozi.github.io/es/digest/2026-05-07-github-security-advisory-search/",
-      "publicationFile": "src/content/translations/es-1c1c9e6c82aad3a4.json"
+      "publicationFile": "src/content/translations/es-1c1c9e6c82aad3a4.json",
+      "publicationFileSha256": "d8c2c4f0c0f9f3dee38861ae21e3b20ac51b08e7e981e45c63b1e81d69def12d"
     },
     {
       "renewalId": "7c3a8ce4dcd53d2b",
@@ -60,13 +70,16 @@
       "title": "Diseño multirregión: compromisos entre replicación, escrituras y conmutación por error",
       "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
       "url": "https://youdozi.github.io/es/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
-      "publicationFile": "src/content/translations/es-7c3a8ce4dcd53d2b.json"
+      "publicationFile": "src/content/translations/es-7c3a8ce4dcd53d2b.json",
+      "publicationFileSha256": "4e6ed5be7462e03bc6f45e43a0e3bb16d90414af6d531f844f3b0468d3a0c5b3"
     }
   ],
   "publicationNotes": [
     "This manifest is a review artifact; no build or publication script consumes it.",
+    "User approved these six Spanish editions in the Codex conversation after reviewing the PR #51 report and linked manuscript.",
     "es is generic Spanish, not a country-specific edition.",
-    "URLs are planned and not yet published.",
-    "Create actual user approval and translation publication timestamps after review; test fixture metadata is not approval."
-  ]
+    "Production availability must be verified after merge and successful deployment.",
+    "Approval and translation publication timestamps are new; source news dates and synthetic fixture metadata are not reused."
+  ],
+  "publicationPreparedAt": "2026-10-26T22:53:32.255Z"
 }

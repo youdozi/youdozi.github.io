@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "097c455a9b953f24",
+  "language": "es",
+  "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+  "edition": {
+    "title": "CodeQL incorpora sanitizadores y validadores personalizados a los modelos como datos",
+    "claims": [
+      "GitHub describe sanitizadores y validadores declarativos en las extensiones de datos YAML de CodeQL mediante barrierModel y barrierGuardModel.",
+      "El anuncio señala que están disponibles a partir de CodeQL 2.25.2. Esta es la versión mínima indicada en aquel anuncio histórico, no una recomendación de actualización actual."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Modele únicamente los tipos de vulnerabilidades y las rutas que el sanitizador protege realmente. Pruebe ejemplos positivos y negativos para evitar que una barrera demasiado amplia oculte flujos reales de datos contaminados; este borrador no afirma haber medido una reducción de los falsos positivos.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T22:53:32.255Z",
+  "publishedAt": "2026-10-26T22:53:32.255Z",
+  "updatedAt": "2026-10-26T22:53:32.255Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 51,
+    "approvedAt": "2026-10-26T22:53:32.255Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after the final report linking the six independently reviewed Spanish articles from PR #51 and stating that Spanish publication awaited approval."
+  }
+}
