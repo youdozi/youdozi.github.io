@@ -1,15 +1,16 @@
 ---
+import labels from '../../lib/archive-ui.json';
 import Base from '../../layouts/Base.astro';
-import { languages, text, type Language } from '../../lib/content';
-export function getStaticPaths() { return languages.map(lang => ({ params: { lang } })); }
+import { publishedLanguages, text, type Language } from '../../lib/content';
+export async function getStaticPaths() { return (await publishedLanguages()).map(lang => ({ params: { lang } })); }
 const lang = Astro.params.lang as Language;
 ---
-<Base title={text[lang].search} lang={lang} noindex alternates={languages.map(language => ({ language, url: `/${language}/search/` }))}>
+<Base title={text[lang].search} lang={lang} noindex alternates={(await publishedLanguages()).map(language => ({ language, url: `/${language}/search/` }))}>
   <section class="page-heading"><span class="eyebrow">{text[lang].overview}</span><h1>{text[lang].results}</h1></section>
   <label class="eyebrow" for="search">{text[lang].searchHint}</label>
   <input id="search" class="search-box" type="search" autocomplete="off" placeholder={text[lang].searchHint} data-lang={lang} />
-  <p id="status" role="status" aria-live="polite" data-empty={text[lang].noResults}></p><div id="results"></div>
-  <noscript>{lang === 'en' ? 'Enable JavaScript to search, or browse the article lists.' : '검색하려면 JavaScript를 활성화하거나 글 목록을 이용하세요.'}</noscript>
+  <p id="status" role="status" aria-live="polite" data-empty={text[lang].noResults} data-error={labels[lang].searchError}></p><div id="results"></div>
+  <noscript>{labels[lang].noScript}</noscript>
 </Base>
 <script>
   const input = document.querySelector<HTMLInputElement>('#search')!;
@@ -35,7 +36,7 @@ const lang = Astro.params.lang as Language;
         const description = document.createElement('p'); description.textContent = item.description;
         heading.append(link); article.append(heading, description); results.append(article);
       }
-    } catch { if (current === version) { index = undefined; status.textContent = input.dataset.lang === 'en' ? 'Search could not load. Please try again.' : '검색 정보를 불러오지 못했습니다. 다시 시도해주세요.'; } }
+    } catch { if (current === version) { index = undefined; status.textContent = status.dataset.error!; } }
   }
   input.addEventListener('input', search);
 </script>

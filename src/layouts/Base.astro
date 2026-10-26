@@ -1,16 +1,15 @@
 ---
-import { SITE, text, type Language } from '../lib/content';
+import { SITE, text, localeInfo, publishedLanguages, type Language } from '../lib/content';
 import '../styles/global.css';
+import labels from '../lib/archive-ui.json';
 interface Props { title: string; description?: string; lang: Language; alternates?: { language: Language; url: string }[]; canonical?: string; noindex?: boolean; structuredData?: Record<string, unknown>[]; }
 const { title, description = text[Astro.props.lang].about, lang, alternates = [], canonical = Astro.url.pathname, noindex = false } = Astro.props;
-const siteData = { '@context': 'https://schema.org', '@type': 'WebSite', '@id': new URL('/#website', Astro.site).href, url: new URL('/', Astro.site).href, name: SITE, inLanguage: ['en', 'ko'] };
+const availableLanguages = await publishedLanguages();
+const siteData = { '@context': 'https://schema.org', '@type': 'WebSite', '@id': new URL('/#website', Astro.site).href, url: new URL('/', Astro.site).href, name: SITE, inLanguage: availableLanguages };
 const jsonLd = [siteData, ...(Astro.props.structuredData || [])];
 const serializedJsonLd = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
 const t = text[lang];
-const other = lang === 'en' ? 'ko' : 'en';
-const counterpart = alternates.find(a => a.language === other);
-const isArticle = /^\/(en|ko)\/posts\/[^/]+\/$/.test(Astro.url.pathname) || /^\/(en|ko)\/digest\/\d/.test(Astro.url.pathname);
-const switchUrl = counterpart?.url || `/${other}/`;
+const isArticle = /^\/[^/]+\/(posts|digest)\/[^/]+\/$/.test(Astro.url.pathname);
 ---
 <!doctype html>
 <html lang={lang}>
@@ -23,7 +22,7 @@ const switchUrl = counterpart?.url || `/${other}/`;
     {alternates.some(a => a.language === 'en') && <link rel="alternate" hreflang="x-default" href={new URL(alternates.find(a => a.language === 'en')!.url, Astro.site)} />}
     <meta property="og:type" content={isArticle ? 'article' : 'website'} /><meta property="og:title" content={title} />
     <meta property="og:description" content={description} /><meta property="og:url" content={new URL(canonical, Astro.site)} />
-    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'ko_KR'} />
+    <meta property="og:locale" content={localeInfo[lang].ogLocale} />
     <meta name="twitter:card" content="summary" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} />
     <script type="application/ld+json" set:html={serializedJsonLd} />
     <meta property="og:image" content={new URL('/assets/img/profile.jpg', Astro.site)} />
@@ -44,12 +43,15 @@ const switchUrl = counterpart?.url || `/${other}/`;
     <link rel="alternate" type="application/rss+xml" title={`${SITE} (${lang})`} href={`/${lang}/feed.xml`} />
   </head>
   <body>
-    <a class="skip-link" href="#main">{lang === 'en' ? 'Skip to content' : '본문으로 건너뛰기'}</a>
+    <a class="skip-link" href="#main">{labels[lang].skip}</a>
     <header class="site-header shell">
       <a class="brand" href={`/${lang}/`}><span class="brand-mark" aria-hidden="true">y.</span><span>{SITE}</span></a>
-      <nav aria-label={lang === 'en' ? 'Main navigation' : '주 메뉴'}>
+      <nav aria-label={labels[lang].navigation}>
         <a href={`/${lang}/posts/`}>{t.posts}</a><a href={`/${lang}/digest/`}>{t.digest}</a><a href={`/${lang}/search/`}>{t.search}</a>
-        <a class="language" href={switchUrl} lang={other} title={isArticle && !counterpart ? t.notTranslated : undefined}>{other === 'ko' ? '한국어' : 'English'} <span aria-hidden="true">↗</span></a>
+        <details class="language language-menu"><summary>{t.language}</summary><ul>{availableLanguages.filter(other=>other!==lang).map(other=>{
+          const counterpart=alternates.find(a=>a.language===other);
+          return <li><a href={counterpart?.url || `/${other}/`} lang={other} title={isArticle && !counterpart ? t.notTranslated : undefined}>{localeInfo[other].label}</a></li>;
+        })}</ul></details>
       </nav>
     </header>
     <main id="main" class="shell"><slot /></main>

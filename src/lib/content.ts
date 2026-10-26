@@ -1,7 +1,12 @@
 import { createHash } from 'node:crypto';
+import {readFile,readdir} from 'node:fs/promises';
+import extraText from './localized-ui.json' with {type:'json'};
+import {nativeLanguages,translationLanguages,localeInfo,type Language,type NativeLanguage} from './locales';
+import {translatedEdition,validateTranslationSource} from './translation-schema';
+export {localeInfo,translationLanguages};
+export type {Language,NativeLanguage};
 import { getCollection, type CollectionEntry } from 'astro:content';
-export const languages = ['en', 'ko'] as const;
-export type Language = typeof languages[number];
+export const languages = nativeLanguages;
 export const SITE = "youdozi's memory";
 export type Entry = {
   title: string; language: Language; translationKey: string; slug: string; kind: 'post' | 'digest';
@@ -9,11 +14,14 @@ export type Entry = {
   reviewStatus?: 'revised' | 'source-audited' | 'example';
   legacyUrl?: string; legacySource?: string; post?: CollectionEntry<'posts'>; digest?: CollectionEntry<'digests'>;
   renewal?: CollectionEntry<'renewals'>;
+  translation?: CollectionEntry<'translations'>;
+  renewalEdition?: CollectionEntry<'renewals'>['data']['editions']['en']; renewalFocus?:string;
 };
-export const text = {
-  en: { home: 'Home', posts: 'Writing', digest: 'Dev digest', categories: 'Categories', tags: 'Topics', search: 'Search', all: 'All writing', read: 'Read article', recent: 'Latest entries', empty: 'No entries in English yet.', archive: 'Explore the Korean archive', language: 'Language', about: 'Practical notes on Java, Spring, testing, and software engineering, with working examples and source references.', scope: 'AI summaries checked against source quotations and context. This is not a guarantee of factual accuracy.', source: 'Read source', published: 'Published', related: 'More to read', results: 'Search articles', searchHint: 'Search titles, topics, and article text', noResults: 'No matching articles.', footer: 'A developer’s working memory.', digestDescription: 'Development news and source links.', overview: 'Writing & development news', old: 'This entry is part of the original archive. The source descriptions may be in English.', notTranslated: 'English translation is not available for this entry.' },
-  ko: { home: '홈', posts: '개발 기록', digest: '개발 다이제스트', categories: '카테고리', tags: '주제', search: '검색', all: '전체 글', read: '글 읽기', recent: '최근 기록', empty: '아직 게시글이 없습니다.', archive: '한국어 아카이브 보기', language: '언어', about: 'Java와 소프트웨어, 개발하며 배운 것들을 기록합니다.', scope: 'AI 요약의 원문 인용과 문맥 일치를 확인했습니다. 사실의 진위를 보장하지 않습니다.', source: '원문 읽기', published: '발행일', related: '함께 읽을 글', results: '게시글 검색', searchHint: '제목, 주제, 본문으로 검색', noResults: '검색 결과가 없습니다.', footer: '개발하며 쌓아가는 기억.', digestDescription: '출처 링크와 함께 모아둔 개발 뉴스입니다.', overview: '개발 기록과 기술 뉴스', old: '기존 아카이브 글입니다. 수집 당시의 영문 설명이 포함될 수 있습니다.', notTranslated: '이 글의 영문 번역은 아직 없습니다.' },
+const baseText = {
+  en: { home: 'Home', posts: 'Writing', digest: 'Dev digest', categories: 'Categories', tags: 'Topics', search: 'Search', all: 'All writing', read: 'Read article', recent: 'Latest entries', empty: 'No entries in English yet.', archive: 'Explore the Korean archive', language: 'Language', about: 'Practical notes on Java, Spring, testing, and software engineering, with working examples and source references.', scope: 'AI summaries checked against source quotations and context. This is not a guarantee of factual accuracy.', source: 'Read source', published: 'Published', related: 'More to read', results: 'Search articles', searchHint: 'Search titles, topics, and article text', noResults: 'No matching articles.', footer: 'A developer’s working memory.', digestDescription: 'Development news and source links.', overview: 'Writing & development news', old: 'This entry is part of the original archive. The source descriptions may be in English.', notTranslated: 'This entry is not available in that language yet.' },
+  ko: { home: '홈', posts: '개발 기록', digest: '개발 다이제스트', categories: '카테고리', tags: '주제', search: '검색', all: '전체 글', read: '글 읽기', recent: '최근 기록', empty: '아직 게시글이 없습니다.', archive: '한국어 아카이브 보기', language: '언어', about: 'Java와 소프트웨어, 개발하며 배운 것들을 기록합니다.', scope: 'AI 요약의 원문 인용과 문맥 일치를 확인했습니다. 사실의 진위를 보장하지 않습니다.', source: '원문 읽기', published: '발행일', related: '함께 읽을 글', results: '게시글 검색', searchHint: '제목, 주제, 본문으로 검색', noResults: '검색 결과가 없습니다.', footer: '개발하며 쌓아가는 기억.', digestDescription: '출처 링크와 함께 모아둔 개발 뉴스입니다.', overview: '개발 기록과 기술 뉴스', old: '기존 아카이브 글입니다. 수집 당시의 영문 설명이 포함될 수 있습니다.', notTranslated: '이 글은 해당 언어로 아직 번역되지 않았습니다.' },
 };
+export const text = {...baseText,...extraText};
 let cache: Promise<Entry[]> | undefined;
 export async function entries(includeExamples = false): Promise<Entry[]> {
   const all = await (cache ??= (async () => {
@@ -40,22 +48,32 @@ export async function entries(includeExamples = false): Promise<Entry[]> {
         result.push({title:edition.title,language,translationKey:`renewal-${d.id}`,slug:d.slug,kind:'digest',
           publishedAt:new Date(d.editionPublishedAt[language]),updatedAt:new Date(d.updatedAt),
           categories:['dev','digest'],tags:d.tags,description:edition.claims[0].text,
-          url:`/${language}/digest/${d.slug}/`,renewal});
+          url:`/${language}/digest/${d.slug}/`,renewal,renewalEdition:edition,renewalFocus:d.reviewFocus[language]});
       }
     }
+    const available=await readdir('src/content/translations');
+    const translations=available.some(name=>name.endsWith('.json')) ? await getCollection('translations') : [];
+    const renewals=new Map((await getCollection('renewals')).map(r=>[r.data.id,r]));
+    for(const translation of translations){
+      const t=translation.data,renewal=renewals.get(t.renewalId);
+      if(!renewal)throw new Error('Translation refers to an unknown approved renewal');
+      validateTranslationSource(t,renewal.data,await readFile(`src/content/renewals/${t.renewalId}.json`,'utf8'));
+      const edition=translatedEdition(t,renewal.data);
+      result.push({title:edition.title,language:t.language,translationKey:`renewal-${t.renewalId}`,slug:renewal.data.slug,kind:'digest',publishedAt:new Date(t.publishedAt),updatedAt:new Date(t.updatedAt),categories:['dev','digest'],tags:renewal.data.tags,description:edition.claims[0].text,url:`/${t.language}/digest/${renewal.data.slug}/`,renewal,translation,renewalEdition:edition,renewalFocus:t.reviewFocus});
+    }
     const urls = new Set<string>();
-    const translations = new Set<string>();
+    const translationKeys = new Set<string>();
     for (const entry of result) {
       const key = `${entry.language}:${entry.translationKey}`;
-      if (urls.has(entry.url) || translations.has(key)) throw new Error(`Duplicate content route or translation: ${entry.url}`);
-      urls.add(entry.url); translations.add(key);
+      if (urls.has(entry.url) || translationKeys.has(key)) throw new Error(`Duplicate content route or translation: ${entry.url}`);
+      urls.add(entry.url); translationKeys.add(key);
     }
     return result.sort((a,b) => b.publishedAt.getTime() - a.publishedAt.getTime());
   })());
   return includeExamples ? all : all.filter(entry => entry.reviewStatus !== 'example');
 }
 export function formatDate(date: Date, lang: Language) {
-  return new Intl.DateTimeFormat(lang === 'en' ? 'en-US' : 'ko-KR', { dateStyle: 'medium', timeZone: 'Asia/Seoul' }).format(date);
+  return new Intl.DateTimeFormat(localeInfo[lang].dateLocale, { dateStyle: 'medium', timeZone: 'Asia/Seoul' }).format(date);
 }
 export function taxonomySlug(value: string) {
   const readable = value.normalize('NFKC').toLocaleLowerCase('en-US').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-|-$/g, '') || 'topic';
@@ -67,4 +85,9 @@ export function taxonomyUrl(lang: Language, kind: 'tags' | 'categories', value: 
 }
 export function alternateLinks(entry: Entry, all: Entry[]) {
   return all.filter(e => e.translationKey === entry.translationKey).map(e => ({ language: e.language, url: e.url }));
+}
+
+export async function publishedLanguages():Promise<Language[]>{
+  const available=new Set((await entries()).map(e=>e.language));
+  return [...nativeLanguages,...translationLanguages.filter(lang=>available.has(lang))];
 }

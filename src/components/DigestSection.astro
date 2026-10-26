@@ -1,9 +1,9 @@
 ---
-import { text, formatDate, type Language } from '../lib/content';
+import { text, formatDate, type NativeLanguage } from '../lib/content';
 import CandidateReview from './CandidateReview.astro';
 import {experimentLabel} from '../lib/editorial';
 import type { DigestArticle } from '../lib/digest-schema';
-interface Props { article: DigestArticle; index: number; lang: Language; reviewMode?:boolean; }
+interface Props { article: DigestArticle; index: number; lang: NativeLanguage; reviewMode?:boolean; }
 const { article, index, lang } = Astro.props;
 ---
 <section class="digest-article">

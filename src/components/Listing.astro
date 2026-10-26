@@ -1,4 +1,5 @@
 ---
+import labels from '../lib/archive-ui.json';
 import Base from '../layouts/Base.astro';
 import EntryList from './EntryList.astro';
 import { text, type Entry, type Language } from '../lib/content';
@@ -8,8 +9,8 @@ const size = 12;
 const total = Math.max(1, Math.ceil(items.length / size));
 const href = (p: number) => p === 1 ? root : `${root}page/${p}/`;
 ---
-<Base title={page > 1 ? `${title} · ${lang === 'en' ? 'Page' : '페이지'} ${page}` : title} description={`${title}. ${items.slice((page-1)*size, page*size).slice(0,3).map(entry => entry.title).join(' · ')}. ${text[lang].about}`.slice(0,240)} lang={lang} noindex={items.length === 0} alternates={alternates}>
+<Base title={page > 1 ? `${title} · ${labels[lang].page} ${page}` : title} description={`${title}. ${items.slice((page-1)*size, page*size).slice(0,3).map(entry => entry.title).join(' · ')}. ${text[lang].about}`.slice(0,240)} lang={lang} noindex={items.length === 0} alternates={alternates}>
   <section class="page-heading"><span class="eyebrow">{text[lang].overview}</span><h1>{title}<span class="count">{items.length}</span></h1><p>{text[lang].about}</p></section>
   {items.length ? <EntryList items={items.slice((page-1)*size, page*size)} lang={lang} /> : <div class="empty"><p>{text[lang].empty}</p><p>{lang === 'en' ? 'New digests will be published in English and Korean. Earlier entries remain in the Korean archive.' : ''}</p><a class="button" href="/ko/">{text[lang].archive} ↗</a></div>}
-  {total > 1 && <nav class="pagination" aria-label={lang === 'en' ? 'Pagination' : '페이지 이동'}>{page > 1 && <a href={href(page-1)}>← {lang === 'en' ? 'Previous' : '이전'}</a>}<span>{page} / {total}</span>{page < total && <a href={href(page+1)}>{lang === 'en' ? 'Next' : '다음'} →</a>}</nav>}
+  {total > 1 && <nav class="pagination" aria-label={labels[lang].pagination}>{page > 1 && <a href={href(page-1)}>← {labels[lang].previous}</a>}<span>{page} / {total}</span>{page < total && <a href={href(page+1)}>{labels[lang].next} →</a>}</nav>}
 </Base>
