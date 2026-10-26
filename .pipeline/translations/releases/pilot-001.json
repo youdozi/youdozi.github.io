@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "pilot-release-001",
+  "state": "awaiting-publication-approval",
+  "batch": ".pipeline/translations/batches/pilot-001.json",
+  "batchSha256": "c87a70d2377c6c96ea504e3dd7d8af850db7d1395a442481d35b1e00d7fdc811",
+  "renewalId": "7c3a8ce4dcd53d2b",
+  "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+  "translationReview": ".pipeline/translations/ai-reviews/2026-10-27-pilot-release-001.json",
+  "approval": null,
+  "scope": {
+    "sources": 1,
+    "editions": 5,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ]
+  },
+  "candidates": [
+    {
+      "language": "zh-CN",
+      "title": "多区域设计：复制、写入与故障转移的权衡",
+      "url": "https://youdozi.github.io/zh-CN/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+      "publicationFile": "src/content/translations/zh-CN-7c3a8ce4dcd53d2b.json"
+    },
+    {
+      "language": "ja",
+      "title": "マルチリージョン設計：レプリケーション・書き込み・フェイルオーバーのトレードオフ",
+      "url": "https://youdozi.github.io/ja/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+      "publicationFile": "src/content/translations/ja-7c3a8ce4dcd53d2b.json"
+    },
+    {
+      "language": "de",
+      "title": "Mehrregionen-Architektur: Abwägungen bei Replikation, Schreibzugriffen und Failover",
+      "url": "https://youdozi.github.io/de/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+      "publicationFile": "src/content/translations/de-7c3a8ce4dcd53d2b.json"
+    },
+    {
+      "language": "fr",
+      "title": "Architecture multirégion : compromis entre réplication, écritures et basculement",
+      "url": "https://youdozi.github.io/fr/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+      "publicationFile": "src/content/translations/fr-7c3a8ce4dcd53d2b.json"
+    },
+    {
+      "language": "ru",
+      "title": "Мультирегиональная архитектура: компромиссы репликации, записи и переключения при сбое",
+      "url": "https://youdozi.github.io/ru/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+      "publicationFile": "src/content/translations/ru-7c3a8ce4dcd53d2b.json"
+    }
+  ],
+  "publicationNotes": [
+    "This manifest is a review artifact; no build or publication script consumes it.",
+    "URLs are planned and not yet published.",
+    "Explicit approval must refer to these five editions and this exact reviewed batch.",
+    "Create approval and publication timestamps only after actual user approval; do not reuse source news dates or test fixture metadata."
+  ]
+}
