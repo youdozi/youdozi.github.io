@@ -308,3 +308,7 @@ node scripts/translations.mjs publish \
 스페인어는 국가를 지정하지 않는 `es`로 지원합니다. [Spanish 첫 배치](.pipeline/translations/batches/spanish-001.json)는 현재 다른 번역 언어로 공개된 원고 6건을 기준으로 하며 전역 `translate` 스킬과 별도 AI 세션의 원문 대조를 거쳤습니다. UI 문구 2곳을 교정·재확인했습니다. [원고 검토](.pipeline/translations/reviews/spanish-001.md)와 [공개 후보 목록](.pipeline/translations/releases/spanish-001.json), [AI 검토 기록](.pipeline/translations/ai-reviews/2026-10-27-spanish-001.json)을 제공합니다. 실제 스페인어 게시 승인은 대기 상태이며 공개 번역 파일은 만들지 않습니다.
 
 스페인어 임시 fixture 6개로 8개 언어의 대응 링크·자기 언어 canonical·Open Graph·검색·RSS·사이트맵을 확인한 뒤 임시 파일을 제거합니다. 원래 5개 번역 언어의 공개 30편은 유지됩니다. 언어 정책 확장으로 전체 준비 목록은 59개 원고 × 6개 언어 354건이며, 기존 초안 295편과 스페인어 6편이 준비되어 있습니다. 나머지 스페인어 53건은 아직 작성하지 않았습니다. 목록은 `.pipeline/translations/queue-2026-10-27-spanish.json`입니다.
+
+### 스페인어 첫 6편 게시
+
+2026-10-27 사용자는 PR #51 완료 보고와 연결된 스페인어 원고 6편을 확인한 뒤 진행을 지시했습니다. 해당 대화와 PR #51을 승인 근거로 기록하고 실제 번역 발행 시각으로 게시 파일 6개를 추가합니다. `.pipeline/translations/releases/spanish-001.json`은 `approved-for-publication`이며 승인 전 AI 검토 기록은 보존합니다. 배포 후 스페인어 홈·글·언어 메뉴·검색·RSS·사이트맵이 활성화됩니다. 누적 공개 번역은 기존 30편과 스페인어 6편을 합한 36편입니다. 다른 5개 번역 언어의 265편은 게시 승인 대기이며 나머지 스페인어 53편은 아직 작성하지 않았습니다.
