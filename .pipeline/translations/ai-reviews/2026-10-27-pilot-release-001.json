@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T15:24:32.649798+00:00",
+  "skill": "translate",
+  "reviewMethod": "independent-ai-session-and-targeted-recheck",
+  "reviewSession": "/root/pilot_release_review",
+  "writingConversationProvidedToReviewer": false,
+  "previousVerdictsProvidedAtInitialReview": false,
+  "scope": {
+    "sources": 1,
+    "editions": 5,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "edition.title",
+      "edition.claims",
+      "edition.followUp",
+      "reviewFocus"
+    ],
+    "type": "complete translations of approved concise English renewal; shared original evidence remains untranslated"
+  },
+  "initialBatchSha256": "8f6d637aff494071675c7741a886c5931b17108f468ddf44b4072ba2a2398229",
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/pilot-001.json": "c87a70d2377c6c96ea504e3dd7d8af850db7d1395a442481d35b1e00d7fdc811"
+  },
+  "sourceSha256": {
+    "src/content/renewals/7c3a8ce4dcd53d2b.json": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66"
+  },
+  "findings": [
+    {
+      "language": "zh-CN",
+      "field": "edition.claims[1]",
+      "severity": "minor-meaning",
+      "finding": "백분율이 지연 회복 추정치까지 수식하는 것으로 읽힐 수 있음",
+      "resolution": "비용 절감 백분율과 지연 회복 추정치를 별도 절로 구분",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "language": "ru",
+      "field": "edition.claims[1]",
+      "severity": "minor-meaning",
+      "finding": "백분율의 수식 범위가 지연 회복 추정치까지 확대됨",
+      "resolution": "значения экономии в процентах и оценки восстановления задержки로 구분",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "language": "ja",
+      "field": "edition.claims[1]",
+      "severity": "style",
+      "finding": "경로를 훈련한다는 표현이 어색함",
+      "resolution": "訓練で試していないフェイルオーバー経路로 교정",
+      "confidence": "medium",
+      "recheck": "resolved"
+    }
+  ],
+  "result": "passed in stated translation scope",
+  "recheckScope": "changed claims[1] strings in zh-CN, ru and ja only; unchanged fields retain initial review",
+  "verification": {
+    "schemaVersion": 1,
+    "method": "existing npm test integration build with temporary synthetic approval records; never deployed",
+    "contentScope": "actual revised pilot batch plus existing bilingual integration fixture",
+    "batchSha256": "c87a70d2377c6c96ea504e3dd7d8af850db7d1395a442481d35b1e00d7fdc811",
+    "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+    "result": "passed",
+    "nodeTests": 15,
+    "seo": [
+      {
+        "language": "en",
+        "url": "https://youdozi.github.io/en/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+        "selfCanonical": true,
+        "htmlLanguage": true,
+        "indexableRobots": true,
+        "reciprocalAlternates": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "xDefault": "https://youdozi.github.io/en/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/"
+      },
+      {
+        "language": "ko",
+        "url": "https://youdozi.github.io/ko/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+        "selfCanonical": true,
+        "htmlLanguage": true,
+        "indexableRobots": true,
+        "reciprocalAlternates": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "xDefault": "https://youdozi.github.io/en/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/"
+      },
+      {
+        "language": "zh-CN",
+        "url": "https://youdozi.github.io/zh-CN/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+        "selfCanonical": true,
+        "htmlLanguage": true,
+        "indexableRobots": true,
+        "reciprocalAlternates": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "xDefault": "https://youdozi.github.io/en/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/"
+      },
+      {
+        "language": "ja",
+        "url": "https://youdozi.github.io/ja/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+        "selfCanonical": true,
+        "htmlLanguage": true,
+        "indexableRobots": true,
+        "reciprocalAlternates": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "xDefault": "https://youdozi.github.io/en/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/"
+      },
+      {
+        "language": "de",
+        "url": "https://youdozi.github.io/de/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+        "selfCanonical": true,
+        "htmlLanguage": true,
+        "indexableRobots": true,
+        "reciprocalAlternates": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "xDefault": "https://youdozi.github.io/en/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/"
+      },
+      {
+        "language": "fr",
+        "url": "https://youdozi.github.io/fr/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+        "selfCanonical": true,
+        "htmlLanguage": true,
+        "indexableRobots": true,
+        "reciprocalAlternates": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "xDefault": "https://youdozi.github.io/en/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/"
+      },
+      {
+        "language": "ru",
+        "url": "https://youdozi.github.io/ru/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+        "selfCanonical": true,
+        "htmlLanguage": true,
+        "indexableRobots": true,
+        "reciprocalAlternates": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "xDefault": "https://youdozi.github.io/en/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/"
+      }
+    ],
+    "otherAssertionsPassed": [
+      "Open Graph locale",
+      "BlogPosting language and translation publication timestamp",
+      "localized search index includes translated claim",
+      "localized RSS language and content",
+      "canonical article URLs in sitemap",
+      "empty writing lists noindex and excluded from sitemap",
+      "shared original source evidence retained",
+      "private draft batch excluded from sitemap"
+    ],
+    "limitations": [
+      "Synthetic approval metadata is a test fixture, not user publication approval.",
+      "No production URLs in new languages are published yet.",
+      "Search-engine indexing, ranking and native-speaker quality are not verified."
+    ]
+  },
+  "productionBuild": {
+    "htmlPages": 740,
+    "canonicalSitemapUrls": 363,
+    "approvedTranslations": 0,
+    "privateTranslationDrafts": 295,
+    "astroCheckErrors": 0,
+    "astroCheckWarnings": 0
+  },
+  "limitations": [
+    "AI review is not human or native-speaker review.",
+    "Current external-source facts and performance claims were not independently validated by the reviewer.",
+    "Temporary build fixtures are not publication approval.",
+    "Production search indexing is unverified until approved translations are deployed."
+  ]
+}

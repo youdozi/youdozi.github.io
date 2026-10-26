@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "7c3a8ce4dcd53d2b",
+  "language": "ja",
+  "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+  "edition": {
+    "title": "マルチリージョン設計：レプリケーション・書き込み・フェイルオーバーのトレードオフ",
+    "claims": [
+      "記事の著者は、各リージョンが独立してリクエストを処理する active-active 構成と、読み取りをローカルで処理し、リモートの書き込みをグローバルな書き込み用リージョンへプロキシする構成を比較している。トレードオフには、レプリケーション、競合処理、リージョン間の書き込み遅延が含まれる。",
+      "active-passive 運用について、著者はプライマリがトラフィックを処理し、セカンダリが継続的にレプリケーションを受ける構成を説明している。記事は、訓練で試していないフェイルオーバー経路が実行時に失敗する可能性を指摘し、実測した切り替え動作を計画に反映するよう勧めている。原文にあるコスト削減率と遅延回復の推定値は、ここでは取り上げていない。"
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "これは著者の設計上の議論に範囲を限定した検討であり、汎用的なコストモデルではない。リージョン構成を選ぶ前に、ワークロードの地域性、整合性の要件、復旧動作、運用負荷を測定する必要がある。",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:29:08.424Z",
+  "publishedAt": "2026-10-26T15:29:08.424Z",
+  "updatedAt": "2026-10-26T15:29:08.424Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 49,
+    "approvedAt": "2026-10-26T15:29:08.424Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 in direct response to PR #49 final review and explicit request for publication approval of this one source in zh-CN, ja, de, fr and ru."
+  }
+}

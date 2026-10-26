@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "7c3a8ce4dcd53d2b",
+  "language": "fr",
+  "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+  "edition": {
+    "title": "Architecture multirégion : compromis entre réplication, écritures et basculement",
+    "claims": [
+      "L’auteur compare des régions qui traitent les requêtes indépendamment en mode active-active à une architecture qui sert les lectures localement mais relaie les écritures distantes vers une région d’écriture globale. Les compromis portent notamment sur la réplication, la gestion des conflits et la latence des écritures entre régions.",
+      "Pour le fonctionnement en mode active-passive, l’auteur décrit une région principale qui traite le trafic et une région secondaire qui reçoit une réplication continue. L’article prévient que des procédures de basculement jamais testées peuvent échouer lors de leur déclenchement et recommande de tenir compte du comportement mesuré du basculement dans la planification. Les estimations de gains en pourcentage et de rétablissement de la latence présentées dans l’original sont exclues ici."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Cette analyse se limite à la discussion de l’auteur sur la conception ; elle ne constitue pas un modèle de coûts universel. Avant de choisir une architecture régionale, il convient de mesurer la répartition géographique de la charge, les exigences de cohérence, le comportement de récupération et l’effort d’exploitation.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:29:08.424Z",
+  "publishedAt": "2026-10-26T15:29:08.424Z",
+  "updatedAt": "2026-10-26T15:29:08.424Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 49,
+    "approvedAt": "2026-10-26T15:29:08.424Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 in direct response to PR #49 final review and explicit request for publication approval of this one source in zh-CN, ja, de, fr and ru."
+  }
+}
