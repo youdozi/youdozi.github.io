@@ -1,0 +1,103 @@
+{
+  "id": "e467e85426c883ef",
+  "archiveDate": "2026-07-07",
+  "originalPagePublishedAt": "2026-07-06T22:26:42.000Z",
+  "editionPublishedAt": {
+    "ko": "2026-07-06T22:26:42.000Z",
+    "en": "2026-10-26T01:34:51+00:00"
+  },
+  "outcome": "renewed_draft",
+  "experimentStatus": "not_tested",
+  "reviewFocus": {
+    "en": "Treat the archived announcement as provider-supplied course information. Verify current schedule, syllabus, price and enrollment directly before purchasing; historical registration dates and prices are deliberately not presented as current offers.",
+    "ko": "과거 공지를 제공자 측 교육 정보로 해석할 것을 제안합니다. 구매 전 현재 일정·교육 내용·가격·모집 여부를 직접 확인해야 하며 과거 등록 일정과 가격을 현재 제안처럼 소개하지 않습니다."
+  },
+  "documents": [
+    {
+      "url": "https://www.infoq.com/news/2026/07/online-cohort-ai-security/",
+      "role": "primary",
+      "sha256": "c95798477da075249e70bbf3371e97e187b35fc30cef0116bd96bb0d77349cee",
+      "fetchedAt": "2026-10-26T01:04:34+00:00",
+      "extractorVersion": "article-parser-v2"
+    }
+  ],
+  "editions": {
+    "en": {
+      "title": "AI-security course announcement: scope and evidence limits",
+      "claims": [
+        {
+          "text": "InfoQ’s own announcement described a 5-week online AI security and privacy cohort for senior engineers and architects in regulated industries, facilitated by Katharine Jarmul. This establishes the provider’s announced format, not an independent endorsement of training quality.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "a five-week online cohort for senior engineers and architects"
+            },
+            {
+              "document_id": 0,
+              "quote": "are facilitated by Katharine Jarmul"
+            }
+          ]
+        },
+        {
+          "text": "The provider described threat modeling, red teaming, controls, observability and governance, with a documented risk assessment and mitigation report as the capstone. These are advertised learning activities rather than evidence that graduates or products meet regulatory requirements.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Each working group produces a documented risk assessment and mitigation report for an AI product architecture as its capstone"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    },
+    "ko": {
+      "title": "AI 보안 교육 과정 공지의 범위와 근거 한계",
+      "claims": [
+        {
+          "text": "InfoQ의 자체 공지는 규제 산업의 숙련 엔지니어·아키텍트를 위한 5주 온라인 AI 보안·개인정보 과정을 Katharine Jarmul이 진행한다고 소개했다. 제공자가 공지한 형식을 확인한 것이며 교육 품질을 독립 추천하는 의미는 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "a five-week online cohort for senior engineers and architects"
+            },
+            {
+              "document_id": 0,
+              "quote": "are facilitated by Katharine Jarmul"
+            }
+          ]
+        },
+        {
+          "text": "제공자는 위협 모델링·레드팀 검증·통제·관측·거버넌스를 다루고 위험 평가·완화 보고서를 최종 과제로 작성한다고 설명했다. 홍보한 학습 활동이며 수료자나 제품이 규제 요건을 충족한다는 증거는 아니다.",
+          "evidence": [
+            {
+              "document_id": 0,
+              "quote": "Each working group produces a documented risk assessment and mitigation report for an AI product architecture as its capstone"
+            }
+          ]
+        }
+      ],
+      "followUp": []
+    }
+  },
+  "schemaVersion": 1,
+  "state": "approved",
+  "slug": "2026-07-07-ai-security-course-announcement-scope",
+  "source": "InfoQ",
+  "url": "https://www.infoq.com/news/2026/07/online-cohort-ai-security/",
+  "articleNumber": 2,
+  "sourcePublishedAt": "2026-07-06T21:00:00+09:00",
+  "sourceFile": "src/content/posts/ko/digest-2026-07-07.md",
+  "batchId": "recovery-001",
+  "reviewMethod": "editorial-source-context-review",
+  "reviewedAt": "2026-10-26T01:34:51+00:00",
+  "updatedAt": "2026-10-26T01:34:51+00:00",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 38,
+    "approvedAt": "2026-10-26T01:34:51+00:00",
+    "basis": "Codex conversation: user explicitly instructed 병합/게시해줘 for PR 38, including the three bilingual recovery candidates shown in its review body."
+  },
+  "tags": [
+    "archive-renewal"
+  ]
+}
