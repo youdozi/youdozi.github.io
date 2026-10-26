@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "state": "draft",
+  "batchId": "renewals-009",
+  "sourceLanguage": "en",
+  "reviewRequired": "AI meaning and target-language review; explicit user publication approval remains required.",
+  "preparation": {
+    "method": "assistant-direct-translation",
+    "externalTranslationApiUsed": false,
+    "skill": "tech-blog-writing"
+  },
+  "translations": [
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "b4cc1e300a7d9c1b",
+      "language": "zh-CN",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "edition": {
+        "title": "GitHub 组织评估汇总代码安全风险",
+        "claims": [
+          "GitHub 宣布推出免费的 Code Security 风险评估，组织管理员和安全经理可以为其组织运行该评估。",
+          "该评估按严重程度、规则类型和编程语言汇总漏洞，帮助读者为报告中的发现确定处理优先级。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "在将报告解读为全面的安全审计之前，应检查评估范围及其覆盖的仓库。建议的修复仍需经过代码审查和适当测试。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "b4cc1e300a7d9c1b",
+      "language": "ja",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "edition": {
+        "title": "GitHub の組織向け評価でコードセキュリティのリスクを把握",
+        "claims": [
+          "GitHub は、組織の管理者とセキュリティマネージャーが自組織向けに実行できる、無料の Code Security リスク評価を発表した。",
+          "この評価は脆弱性を重大度、ルールの種類、プログラミング言語別にまとめ、報告された検出事項への対応の優先順位付けを支援する。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "報告書を包括的なセキュリティ監査と捉える前に、評価範囲と対象リポジトリの網羅性を確認する。提案された修正にも、コードレビューと適切なテストが必要である。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "b4cc1e300a7d9c1b",
+      "language": "de",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "edition": {
+        "title": "GitHub: Organisationsbewertungen fassen Risiken der Codesicherheit zusammen",
+        "claims": [
+          "GitHub hat eine kostenlose Code Security-Risikobewertung angekündigt, die Organisationsadministratoren und Sicherheitsmanager für ihre Organisation durchführen können.",
+          "Die Bewertung fasst Schwachstellen nach Schweregrad, Regeltyp und Programmiersprache zusammen und hilft dabei, die gemeldeten Befunde zu priorisieren."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Umfang der Bewertung und Abdeckung der Repositorys prüfen, bevor der Bericht als vollständiges Sicherheitsaudit interpretiert wird. Vorgeschlagene Korrekturen erfordern weiterhin ein Code-Review und geeignete Tests."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "b4cc1e300a7d9c1b",
+      "language": "fr",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "edition": {
+        "title": "GitHub : les évaluations d’organisation résument les risques de sécurité du code",
+        "claims": [
+          "GitHub a annoncé une évaluation gratuite des risques Code Security que les administrateurs d’organisation et les responsables de la sécurité peuvent exécuter pour leur organisation.",
+          "L’évaluation récapitule les vulnérabilités par gravité, type de règle et langage de programmation, afin d’aider les lecteurs à hiérarchiser les problèmes signalés."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Vérifier le périmètre de l’évaluation et les dépôts couverts avant d’interpréter le rapport comme un audit de sécurité complet. Les correctifs proposés nécessitent toujours une revue de code et des tests appropriés."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "b4cc1e300a7d9c1b",
+      "language": "ru",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "edition": {
+        "title": "GitHub: оценки для организаций обобщают риски безопасности кода",
+        "claims": [
+          "GitHub объявила о бесплатной оценке рисков Code Security, которую администраторы организаций и менеджеры по безопасности могут запускать для своей организации.",
+          "Оценка обобщает уязвимости по серьёзности, типу правила и языку программирования, помогая читателям определять приоритеты по обнаруженным проблемам."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Прежде чем считать отчёт полным аудитом безопасности, проверьте границы оценки и охват репозиториев. Предложенные исправления по-прежнему требуют ревью кода и подходящих тестов."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "bb5be26c24786b21",
+      "language": "zh-CN",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "edition": {
+        "title": "CNCF 与 Kusari 向项目维护者提供供应链工具",
+        "claims": [
+          "CNCF 网站发布的公告称，CNCF 项目可以免费使用 Kusari Inspector；公告将其描述为 AI 代码审查和依赖管理工具。",
+          "公告将 GUAC、in-toto/Witness 和 OpenVEX 列为采用该工具的部分项目。这是一份公告报告的采用名单，并非所有漏洞均已消除的独立证据。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "连接仓库之前，应审查使用资格、数据处理方式和依赖覆盖范围。在项目中衡量可采取行动的发现和误报，不要仅凭采用工具就假定它能带来收益。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "bb5be26c24786b21",
+      "language": "ja",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "edition": {
+        "title": "CNCF と Kusari がプロジェクトメンテナーにサプライチェーンツールを提供",
+        "claims": [
+          "CNCF のサイトに掲載された発表によると、CNCF プロジェクトは Kusari Inspector を無料で利用できる。同ツールは AI によるコードレビューと依存関係管理のツールと説明されている。",
+          "発表では、このツールを採用するプロジェクトの例として GUAC、in-toto/Witness、OpenVEX を挙げている。これは発表に記載された採用リストであり、すべての脆弱性が解消されたことを示す独立した証拠ではない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "リポジトリを接続する前に、利用資格、データの取り扱い、依存関係のカバー範囲を確認する。ツールを採用しただけで効果を想定せず、プロジェクト内で対応可能な検出事項と誤検知を測定する。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "bb5be26c24786b21",
+      "language": "de",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "edition": {
+        "title": "CNCF und Kusari bieten Projektmaintainern Werkzeuge für die Lieferkette",
+        "claims": [
+          "Laut der auf der CNCF-Website veröffentlichten Ankündigung erhalten CNCF-Projekte kostenlosen Zugang zu Kusari Inspector. Das Werkzeug wird als KI-Tool für Code-Reviews und das Abhängigkeitsmanagement beschrieben.",
+          "Die Ankündigung nennt GUAC, in-toto/Witness und OpenVEX unter den Projekten, die das Werkzeug einsetzen. Dies ist eine gemeldete Liste von Nutzern, kein unabhängiger Nachweis dafür, dass alle Schwachstellen beseitigt wurden."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Vor der Anbindung eines Repositorys die Teilnahmeberechtigung, den Umgang mit Daten und die Abdeckung der Abhängigkeiten prüfen. Im Projekt verwertbare Befunde und Fehlalarme messen, statt allein aus dem Werkzeugeinsatz einen Nutzen abzuleiten."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "bb5be26c24786b21",
+      "language": "fr",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "edition": {
+        "title": "CNCF et Kusari proposent des outils de chaîne d’approvisionnement aux mainteneurs",
+        "claims": [
+          "L’annonce publiée sur le site de la CNCF indique que les projets CNCF bénéficient d’un accès gratuit à Kusari Inspector, présenté comme un outil de revue de code par IA et de gestion des dépendances.",
+          "L’annonce cite GUAC, in-toto/Witness et OpenVEX parmi les projets qui adoptent l’outil. Il s’agit d’une liste d’adoptions rapportée par l’annonce, et non d’une preuve indépendante que toutes les vulnérabilités ont été éliminées."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Examiner les critères d’éligibilité, le traitement des données et la couverture des dépendances avant de connecter un dépôt. Mesurer, dans le projet, les signalements pouvant donner lieu à des mesures correctives et les faux positifs, sans présumer d’un bénéfice du seul fait de l’adoption de l’outil."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "bb5be26c24786b21",
+      "language": "ru",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "edition": {
+        "title": "CNCF и Kusari предлагают сопровождающим проектов инструменты для цепочки поставок",
+        "claims": [
+          "В объявлении на сайте CNCF говорится, что проекты CNCF получают бесплатный доступ к Kusari Inspector, описанному как инструмент ревью кода с помощью ИИ и управления зависимостями.",
+          "В объявлении среди проектов, внедряющих инструмент, перечислены GUAC, in-toto/Witness и OpenVEX. Это заявленный список внедрений, а не независимое доказательство устранения всех уязвимостей."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Перед подключением репозитория изучите условия участия, обработку данных и охват зависимостей. Измеряйте в проекте число находок, по которым можно принять меры, и ложных срабатываний, а не предполагайте пользу лишь на основании внедрения инструмента."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "be1017688a0667ca",
+      "language": "zh-CN",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "edition": {
+        "title": "GitHub 的 GPT-4.1 停用预告适用于 Copilot",
+        "claims": [
+          "GitHub 宣布计划于 2026-06-01 在 Copilot 中停用 GPT-4.1。这并不说明该模型在所有外部 API 中的可用性。",
+          "根据公告，Copilot Enterprise 管理员可能需要通过模型政策启用对替代模型的访问。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "确认工作流使用的是哪种 Copilot 使用环境及政策。将计划日期视为历史记录，并在更新配置之前核实模型当前实际的可用性。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "be1017688a0667ca",
+      "language": "ja",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "edition": {
+        "title": "GitHub の GPT-4.1 提供終了予告は Copilot が対象",
+        "claims": [
+          "GitHub は、Copilot での GPT-4.1 の提供を 2026-06-01 に終了する計画を発表した。これは、すべての外部 API を通じた利用可否を説明するものではない。",
+          "告知によると、Copilot Enterprise の管理者は、モデルポリシーを通じて代替モデルへのアクセスを有効にする必要がある場合がある。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "ワークフローが利用する Copilot の環境とポリシーを確認する。予定日は過去の記録として扱い、設定を更新する前に、現在のモデルの実際の利用可否を確認する。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "be1017688a0667ca",
+      "language": "de",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "edition": {
+        "title": "GitHubs Ankündigung zur Einstellung von GPT-4.1 betrifft Copilot",
+        "claims": [
+          "GitHub hat angekündigt, GPT-4.1 planmäßig am 2026-06-01 aus Copilot zu nehmen. Dies beschreibt nicht die Verfügbarkeit über sämtliche externen APIs.",
+          "Laut der Mitteilung müssen Administratoren von Copilot Enterprise möglicherweise über Modellrichtlinien den Zugang zu Ersatzmodellen aktivieren."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Prüfen, welche Copilot-Umgebung und welche Richtlinie ein Arbeitsablauf nutzt. Das geplante Datum als historischen Beleg behandeln und vor Konfigurationsänderungen die tatsächliche aktuelle Modellverfügbarkeit prüfen."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "be1017688a0667ca",
+      "language": "fr",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "edition": {
+        "title": "L’annonce de GitHub sur le retrait de GPT-4.1 concerne Copilot",
+        "claims": [
+          "GitHub a annoncé le retrait prévu de GPT-4.1 de Copilot pour le 2026-06-01. Cette annonce ne décrit pas sa disponibilité via toutes les API externes.",
+          "Selon l’annonce, les administrateurs de Copilot Enterprise peuvent devoir activer l’accès aux modèles de remplacement au moyen des politiques de modèles."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Confirmer l’environnement Copilot et la politique utilisés par le workflow. Traiter la date prévue comme un élément historique et vérifier la disponibilité actuelle réelle des modèles avant de modifier la configuration."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "be1017688a0667ca",
+      "language": "ru",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "edition": {
+        "title": "Объявление GitHub о выводе GPT-4.1 из эксплуатации касается Copilot",
+        "claims": [
+          "GitHub объявила о запланированном на 2026-06-01 выводе GPT-4.1 из Copilot. Это не описывает доступность модели через все внешние API.",
+          "Согласно объявлению, администраторам Copilot Enterprise может потребоваться включить доступ к моделям на замену через политики моделей."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Уточните, какое окружение Copilot и какую политику использует рабочий процесс. Рассматривайте запланированную дату как историческое свидетельство и перед изменением конфигурации проверяйте фактическую доступность моделей на текущий момент."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c12b394bcd713139",
+      "language": "zh-CN",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "edition": {
+        "title": "已关闭的 Dependabot 警报：公告中的保留期限与归档访问",
+        "claims": [
+          "GitHub 的公告将保留政策变更计划定于 2026-09-25，首先适用于 github.com 和 Enterprise Cloud 上已关闭的 Dependabot 安全警报。公告明确排除 Enterprise Server；仅凭该公告无法验证推出过程已经完成。",
+          "根据公布的政策，未关闭的警报无论存在多久都仍可访问，而已关闭的警报在关闭后 2 年内仍可通过 UI 和 API 访问。更早关闭的警报会移至可下载的 CSV 归档，供获授权的管理员和安全经理访问，而不再出现在 API 结果中。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "审查依赖较早关闭警报的查询和合规导出。在相关账户中核实实际归档访问权限及推出状态；不要将本公告套用于所有警报类型，也不要据此推断账户或仓库删除后仍会永久保留数据。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c12b394bcd713139",
+      "language": "ja",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "edition": {
+        "title": "クローズ済み Dependabot アラート：告知された保持期間とアーカイブへのアクセス",
+        "claims": [
+          "GitHub の告知では、保持ポリシーの変更を 2026-09-25 に予定し、github.com と Enterprise Cloud のクローズ済み Dependabot セキュリティアラートから開始するとしている。Enterprise Server は明示的に対象外であり、告知だけでは展開の完了を確認できない。",
+          "告知されたポリシーでは、オープン状態のアラートは経過期間にかかわらずアクセスでき、クローズ済みのアラートはクローズ後 2 年間、UI と API でアクセスできる。それより前にクローズされたアラートは API の結果には残らず、権限のある管理者とセキュリティマネージャーがダウンロードできる CSV アーカイブに移る。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "古いクローズ済みアラートに依存するクエリとコンプライアンス用エクスポートを点検する。該当アカウントで実際のアーカイブへのアクセスと展開状況を確認する。この告知をすべてのアラート種別に適用したり、アカウントやリポジトリの削除後も永久に保持されると推測したりしない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c12b394bcd713139",
+      "language": "de",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "edition": {
+        "title": "Geschlossene Dependabot-Warnungen: Angekündigte Aufbewahrung und Archivzugriff",
+        "claims": [
+          "GitHubs Mitteilung sah eine Änderung der Aufbewahrung für den 2026-09-25 vor, beginnend mit geschlossenen Dependabot-Sicherheitswarnungen auf github.com und Enterprise Cloud. Enterprise Server ist ausdrücklich ausgenommen; die Ankündigung allein bestätigt keinen abgeschlossenen Rollout.",
+          "Nach der angekündigten Richtlinie bleiben offene Warnungen unabhängig von ihrem Alter zugänglich. Geschlossene Warnungen bleiben nach dem Schließen 2 Jahre lang in UI und API verfügbar. Ältere geschlossene Warnungen werden in herunterladbare CSV-Archive für berechtigte Administratoren und Sicherheitsmanager verschoben und erscheinen nicht weiter in API-Ergebnissen."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Abfragen und Compliance-Exporte prüfen, die auf ältere geschlossene Warnungen angewiesen sind. Den tatsächlichen Archivzugriff und Rollout-Status im jeweiligen Konto überprüfen. Die Mitteilung nicht auf jeden Warnungstyp übertragen oder daraus eine dauerhafte Aufbewahrung nach dem Löschen eines Kontos oder Repositorys ableiten."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c12b394bcd713139",
+      "language": "fr",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "edition": {
+        "title": "Alertes Dependabot fermées : conservation annoncée et accès aux archives",
+        "claims": [
+          "L’annonce de GitHub prévoyait un changement de conservation pour le 2026-09-25, en commençant par les alertes de sécurité Dependabot fermées sur github.com et Enterprise Cloud. Elle exclut explicitement Enterprise Server ; l’annonce seule ne permet pas de vérifier que le déploiement est terminé.",
+          "Selon la politique annoncée, les alertes ouvertes restent accessibles quel que soit leur âge, tandis que les alertes fermées restent disponibles dans l’interface et l’API pendant 2 ans après leur fermeture. Les alertes fermées plus anciennes sont transférées vers des archives CSV téléchargeables par les administrateurs et responsables de la sécurité autorisés, au lieu de rester dans les résultats de l’API."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Auditer les requêtes et les exports de conformité qui dépendent d’anciennes alertes fermées. Vérifier l’accès effectif aux archives et l’état du déploiement dans le compte concerné ; ne pas appliquer cette annonce à tous les types d’alertes ni en déduire une conservation permanente après la suppression d’un compte ou d’un dépôt."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c12b394bcd713139",
+      "language": "ru",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "edition": {
+        "title": "Закрытые оповещения Dependabot: объявленные сроки хранения и доступ к архивам",
+        "claims": [
+          "В объявлении GitHub изменение правил хранения было запланировано на 2026-09-25, начиная с закрытых оповещений безопасности Dependabot на github.com и в Enterprise Cloud. Enterprise Server явно исключён; само объявление не подтверждает завершение внедрения.",
+          "Согласно объявленным правилам, открытые оповещения остаются доступными независимо от давности, а закрытые доступны в интерфейсе и API в течение 2 лет после закрытия. Более старые закрытые оповещения перемещаются в скачиваемые CSV-архивы для уполномоченных администраторов и менеджеров по безопасности, а не остаются в результатах API."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Проверьте запросы и выгрузки для соблюдения нормативных требований, которые зависят от старых закрытых оповещений. Уточните фактический доступ к архивам и статус внедрения в соответствующей учётной записи; не распространяйте это объявление на все типы оповещений и не делайте из него вывод о бессрочном хранении после удаления учётной записи или репозитория."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c2532ba4f69bf1ba",
+      "language": "zh-CN",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "edition": {
+        "title": "Microsoft MDASH：多模型扫描与预览状态",
+        "claims": [
+          "Microsoft 将 MDASH 描述为一种多模型智能体扫描框架，可编排由前沿模型和蒸馏模型组成的集成。这是供应商对其架构的描述。",
+          "公告邀请读者申请参加非公开预览，不应将其视为已经面向公众普遍开放。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "区分供应商报告的基准测试结果与独立复现的发现。在将工具用于安全工作流之前，应审查访问条件、源代码处理方式和验证要求。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c2532ba4f69bf1ba",
+      "language": "ja",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "edition": {
+        "title": "Microsoft MDASH：複数モデルによるスキャンとプレビューの状況",
+        "claims": [
+          "Microsoft は MDASH を、最先端モデルと蒸留モデルのアンサンブルを連携させる、複数モデルによるエージェント型スキャン基盤と説明している。これはベンダーによるアーキテクチャの説明である。",
+          "発表では非公開プレビューへの参加を案内しており、一般に公開され利用可能になったと捉えるべきではない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "ベンダーが報告したベンチマーク結果と、独立して再現された結果を区別する。セキュリティワークフローに導入する前に、利用条件、ソースコードの取り扱い、検証要件を確認する。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c2532ba4f69bf1ba",
+      "language": "de",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "edition": {
+        "title": "Microsoft MDASH: Scans mit mehreren Modellen und Preview-Status",
+        "claims": [
+          "Microsoft beschreibt MDASH als agentisches Scan-Framework mit mehreren Modellen, das ein Ensemble aus Frontier-Modellen und destillierten Modellen orchestriert. Dies ist die Architekturbeschreibung des Anbieters.",
+          "Die Ankündigung lädt zur Teilnahme an einer privaten Vorschau ein. Dies sollte nicht als allgemeine öffentliche Verfügbarkeit verstanden werden."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Vom Anbieter gemeldete Benchmark-Ergebnisse von unabhängig reproduzierten Befunden trennen. Vor dem Einsatz in einem Sicherheitsworkflow die Zugangsbedingungen, den Umgang mit Quellcode und die Validierungsanforderungen prüfen."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c2532ba4f69bf1ba",
+      "language": "fr",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "edition": {
+        "title": "Microsoft MDASH : analyse multimodèle et statut de la préversion",
+        "claims": [
+          "Microsoft décrit MDASH comme un cadre d’analyse agentique multimodèle qui orchestre un ensemble de modèles de pointe et de modèles distillés. Il s’agit de la description de l’architecture donnée par le fournisseur.",
+          "L’annonce invite les lecteurs à participer à une préversion privée, ce qui ne doit pas être interprété comme une disponibilité générale et publique."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Distinguer les résultats de benchmark rapportés par le fournisseur des constats reproduits de manière indépendante. Examiner les conditions d’accès, le traitement du code source et les exigences de validation avant d’utiliser l’outil dans un workflow de sécurité."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c2532ba4f69bf1ba",
+      "language": "ru",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "edition": {
+        "title": "Microsoft MDASH: сканирование с несколькими моделями и статус предварительного доступа",
+        "claims": [
+          "Microsoft описывает MDASH как агентную среду сканирования с несколькими моделями, которая координирует ансамбль передовых и дистиллированных моделей. Это описание архитектуры со стороны поставщика.",
+          "Объявление приглашает читателей к участию в закрытой предварительной версии; это не следует считать общедоступностью продукта."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Отделяйте результаты бенчмарков, заявленные поставщиком, от независимо воспроизведённых результатов. Перед использованием инструмента в процессе обеспечения безопасности изучите условия доступа, обработку исходного кода и требования к проверке."
+    }
+  ]
+}
