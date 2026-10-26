@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T12:50:29.304884+00:00",
+  "skill": "tech-blog-writing",
+  "reviewMethod": "independent-ai-session-and-targeted-recheck",
+  "reviewSession": "batch010_review",
+  "writingConversationProvidedToReviewer": false,
+  "previousVerdictsProvidedAtInitialReview": false,
+  "scope": {
+    "editions": 25,
+    "sources": 5,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "title",
+      "claims",
+      "followUp",
+      "reviewFocus"
+    ],
+    "audience": "software developers",
+    "type": "concise historical-news translations",
+    "steps": [
+      "Read all target-language prose before source comparison",
+      "Compare all fields to approved English edition and stored evidence",
+      "Writer applies seven source-supported corrections",
+      "Reviewer rechecks only the seven changed fields"
+    ]
+  },
+  "initialBatchSha256": {
+    ".pipeline/translations/batches/renewals-010.json": "3df9ff45213711b18d53ead0cbbabb5de01b211e982a2c6d88b2f1dde4e61341"
+  },
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/renewals-010.json": "ed916e2d99a18639df33deff041bb9fcf29062b4774a08fdae217909a8c325e7"
+  },
+  "sourceSha256": {
+    "src/content/renewals/c4a7f428da738696.json": "4303bfdd031dceaecc88c1353108da5fb5f0edc333f2624055739913e5674b57",
+    "src/content/renewals/c505a5c997b12684.json": "dc72630c6fb3cfd5d9e466d9e403e31022bcfc4620ab006ad7dcfa586469b9ba",
+    "src/content/renewals/c78cf468160e1a45.json": "0d86ac8ee62c5ab5467eac08d56af5dff3519826c3562b6b635bbeb09ba2bcd0",
+    "src/content/renewals/ce26c7555a2bf537.json": "61eec32d86e9c98f3d522d13df2da1dad6aa6e8a9c38f362e26909cc7d450d3a",
+    "src/content/renewals/d123262315e62321.json": "158dc5be465f07d476dedacb8f6645f21f00df2504671386cbeb63e74f732483"
+  },
+  "findings": [
+    {
+      "renewalId": "c78cf468160e1a45",
+      "language": "de",
+      "fields": [
+        "edition.title"
+      ],
+      "severity": "major",
+      "origin": "independent-review",
+      "resolution": "애플리케이션 자체에 대한 신뢰가 아닌 애플리케이션의 인증서 신뢰 설정임을 명확히 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "c4a7f428da738696",
+      "language": "ja",
+      "fields": [
+        "reviewFocus"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "결정적인 규칙이 아닌 결정론적 검사라는 기술 용어로 수정",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "language": "ja",
+      "fields": [
+        "edition.claims[1]"
+      ],
+      "severity": "major",
+      "origin": "independent-review",
+      "resolution": "점진적 배포와 구별하도록 trusted publishing 및 staged publishing 용어 보존",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "language": "de",
+      "fields": [
+        "edition.claims[1]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "점진적 배포와 구별하도록 Trusted Publishing 및 Staged Publishing 용어 보존",
+      "disposition": "adopted after source comparison",
+      "confidence": "medium-high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "language": "fr",
+      "fields": [
+        "edition.claims[1]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "staged publishing의 승인 대기 조건과 식별 가능한 원어 용어 보존",
+      "disposition": "adopted after source comparison",
+      "confidence": "medium-high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "language": "ru",
+      "fields": [
+        "edition.claims[1]"
+      ],
+      "severity": "major",
+      "origin": "independent-review",
+      "resolution": "staged publishing의 사전 승인 조건과 식별 가능한 원어 용어 보존",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "c505a5c997b12684",
+      "language": "de",
+      "fields": [
+        "edition.claims[1]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "비용 수치와 수집률의 별도 대상을 명확히 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    }
+  ],
+  "result": "No unresolved major findings in the reviewed scope; seven changed fields rechecked",
+  "externalSourceRevalidation": false,
+  "nativeSpeakerOrHumanLanguageReview": false,
+  "publicationApprovalGranted": false,
+  "limitations": [
+    "AI review does not guarantee accuracy.",
+    "Approved English and stored evidence were compared; current external facts were not revalidated.",
+    "Publication requires explicit user approval.",
+    "Remaining 65 translations have not been drafted or reviewed."
+  ]
+}
