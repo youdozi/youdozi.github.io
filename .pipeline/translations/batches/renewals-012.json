@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "state": "draft",
+  "batchId": "renewals-012",
+  "sourceLanguage": "en",
+  "reviewRequired": "AI meaning and target-language review; explicit user publication approval remains required.",
+  "preparation": {
+    "method": "assistant-direct-translation",
+    "externalTranslationApiUsed": false,
+    "skill": "tech-blog-writing"
+  },
+  "translations": [
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e467e85426c883ef",
+      "language": "zh-CN",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "edition": {
+        "title": "AI 安全课程公告：范围与证据限制",
+        "claims": [
+          "InfoQ 自己发布的公告介绍了一项为期 5 周的在线 AI 安全与隐私小组课程，面向受监管行业的高级工程师和架构师，由 Katharine Jarmul 引导。它能说明提供方公布的课程形式，但并非对教学质量的独立认可。",
+          "提供方介绍的内容包括威胁建模、红队测试、控制措施、可观测性和治理，并以形成书面的风险评估与缓解报告作为结课项目。这些是宣传中的学习活动，不能证明学员或产品符合监管要求。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "将归档公告视为提供方提供的课程信息。购买前应直接核实当前日程、课程大纲、价格和报名情况；本文特意未将历史报名日期和价格呈现为当前优惠。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e467e85426c883ef",
+      "language": "ja",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "edition": {
+        "title": "AI セキュリティ講座の告知：対象範囲と根拠の限界",
+        "claims": [
+          "InfoQ 自身の告知では、規制対象業界のシニアエンジニアとアーキテクト向けに、受講者がグループで学ぶ 5 週間のオンライン AI セキュリティ・プライバシー講座を紹介していた。進行役は Katharine Jarmul だった。これは提供者が告知した形式を示すものであり、研修品質を独立して推奨するものではない。",
+          "提供者は、脅威モデリング、レッドチーミング、制御、可観測性、ガバナンスを扱い、リスク評価と緩和策を文書化した報告書を最終課題とすると説明していた。これらは告知された学習活動であり、受講者や製品が規制要件を満たす証拠ではない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "過去の告知は提供者による講座情報として扱う。購入前に現在の日程、シラバス、料金、募集状況を直接確認する。過去の申込日や価格は、現在の募集条件として意図的に掲載していない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e467e85426c883ef",
+      "language": "de",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "edition": {
+        "title": "Ankündigung eines KI-Sicherheitskurses: Umfang und Grenzen der Belege",
+        "claims": [
+          "InfoQs eigene Ankündigung beschrieb einen 5-wöchigen Online-Gruppenkurs zu KI-Sicherheit und Datenschutz für erfahrene Ingenieure und Architekten in regulierten Branchen, moderiert von Katharine Jarmul. Dies belegt das vom Anbieter angekündigte Format, ist aber keine unabhängige Empfehlung der Schulungsqualität.",
+          "Der Anbieter beschrieb Bedrohungsmodellierung, Red Teaming, Kontrollmaßnahmen, Beobachtbarkeit und Governance, mit einem dokumentierten Bericht zur Risikobewertung und -minderung als Abschlussarbeit. Dies sind beworbene Lernaktivitäten, keine Belege dafür, dass Teilnehmende oder Produkte regulatorische Anforderungen erfüllen."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Die archivierte Ankündigung als Kursinformation des Anbieters behandeln. Vor einem Kauf aktuelle Termine, Lehrplan, Preis und Anmeldung direkt überprüfen; historische Anmeldetermine und Preise werden bewusst nicht als aktuelle Angebote dargestellt."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e467e85426c883ef",
+      "language": "fr",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "edition": {
+        "title": "Annonce d’une formation à la sécurité de l’IA : périmètre et limites des preuves",
+        "claims": [
+          "Dans sa propre annonce, InfoQ décrivait une formation en ligne en cohorte de 5 semaines sur la sécurité et la confidentialité de l’IA, destinée aux ingénieurs et architectes expérimentés des secteurs réglementés et animée par Katharine Jarmul. Cela établit le format annoncé par le prestataire, sans constituer une recommandation indépendante de la qualité de la formation.",
+          "Le prestataire présentait la modélisation des menaces, les exercices de red team, les contrôles, l’observabilité et la gouvernance, avec un rapport documenté d’évaluation et d’atténuation des risques comme projet final. Ce sont des activités pédagogiques annoncées, sans prouver que les participants ou les produits satisfont aux exigences réglementaires."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Traiter l’annonce archivée comme une information de formation fournie par le prestataire. Vérifier directement le calendrier, le programme, le prix et les inscriptions actuels avant tout achat ; les anciennes dates d’inscription et les anciens prix ne sont volontairement pas présentés comme des offres actuelles."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e467e85426c883ef",
+      "language": "ru",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "edition": {
+        "title": "Объявление курса по безопасности ИИ: охват и пределы доказательств",
+        "claims": [
+          "В собственном объявлении InfoQ описывала 5-недельный групповой онлайн-курс по безопасности и конфиденциальности ИИ для старших инженеров и архитекторов в регулируемых отраслях под руководством Katharine Jarmul. Это подтверждает объявленный поставщиком формат, но не является независимым подтверждением качества обучения.",
+          "Поставщик описывал моделирование угроз, red teaming, меры контроля, наблюдаемость и управление, с документированным отчётом об оценке и снижении рисков в качестве итогового проекта. Это заявленные учебные занятия, а не доказательство соответствия выпускников или продуктов нормативным требованиям."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Рассматривайте архивное объявление как информацию о курсе от поставщика. Перед покупкой напрямую уточните актуальные расписание, программу, стоимость и условия записи; исторические даты регистрации и цены намеренно не представлены как действующие предложения."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e858b2ec6331d84e",
+      "language": "zh-CN",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "edition": {
+        "title": "Cloudflare 介绍 MCP 的身份与治理边界",
+        "claims": [
+          "Cloudflare 描述了一个使用 Cloudflare Access 作为 OAuth 提供方的 MCP 服务器模板。这针对其参考架构，并非 MCP 的通用要求。",
+          "文章称，MCP 服务器门户将日志记录、策略执行和数据丢失防护控制集中管理。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "区分身份验证、工具授权和数据访问策略。逐一审查所连接服务器的凭据范围、写入权限和审计可见性；共享门户本身不能证明系统按最小权限原则运行。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e858b2ec6331d84e",
+      "language": "ja",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "edition": {
+        "title": "Cloudflare が説明する MCP のアイデンティティとガバナンスの境界",
+        "claims": [
+          "Cloudflare は、Cloudflare Access を OAuth プロバイダーとして使う MCP サーバーテンプレートを説明している。これは同社の参照アーキテクチャに関するものであり、MCP に共通する必須要件ではない。",
+          "記事によると、MCP サーバーポータルはログ記録、ポリシーの適用、データ損失防止の制御を一元化する。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "本人確認、ツールの認可、データアクセスポリシーを区別する。接続する各サーバーについて、認証情報のスコープ、書き込み権限、監査で確認できる範囲を見直す。共通ポータルだけでは最小権限での運用を証明できない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e858b2ec6331d84e",
+      "language": "de",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "edition": {
+        "title": "Cloudflare beschreibt Identitäts- und Governance-Grenzen für MCP",
+        "claims": [
+          "Cloudflare beschreibt eine MCP-Servervorlage, die Cloudflare Access als OAuth-Anbieter verwendet. Dies betrifft die eigene Referenzarchitektur und keine allgemeine MCP-Anforderung.",
+          "Laut dem Artikel zentralisieren MCP-Serverportale die Protokollierung, die Durchsetzung von Richtlinien und Kontrollen zur Verhinderung von Datenverlust."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Identitätsprüfung von Werkzeugautorisierung und Datenzugriffsrichtlinien trennen. Für jeden verbundenen Server den Geltungsbereich der Zugangsdaten, Schreibrechte und die Sichtbarkeit für Audits prüfen; ein gemeinsames Portal allein belegt keinen Betrieb nach dem Prinzip der geringsten Rechte."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e858b2ec6331d84e",
+      "language": "fr",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "edition": {
+        "title": "Cloudflare décrit les limites de l’identité et de la gouvernance pour MCP",
+        "claims": [
+          "Cloudflare décrit un modèle de serveur MCP utilisant Cloudflare Access comme fournisseur OAuth. Il s’agit de son architecture de référence, et non d’une exigence universelle de MCP.",
+          "Selon l’article, les portails de serveurs MCP centralisent la journalisation, l’application des politiques et les contrôles de prévention des pertes de données."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Distinguer la vérification d’identité de l’autorisation des outils et des politiques d’accès aux données. Examiner la portée des informations d’authentification, les droits d’écriture et la visibilité d’audit de chaque serveur connecté ; un portail partagé ne prouve pas en soi un fonctionnement selon le principe du moindre privilège."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e858b2ec6331d84e",
+      "language": "ru",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "edition": {
+        "title": "Cloudflare описывает границы идентификации и управления для MCP",
+        "claims": [
+          "Cloudflare описывает шаблон MCP-сервера, использующий Cloudflare Access как поставщика OAuth. Речь идёт о её эталонной архитектуре, а не об универсальном требовании MCP.",
+          "В статье говорится, что порталы MCP-серверов централизуют журналирование, применение политик и средства предотвращения утечек данных."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Отделяйте проверку личности от авторизации инструментов и политики доступа к данным. Для каждого подключённого сервера проверяйте область действия учётных данных, права записи и видимость для аудита; общий портал сам по себе не доказывает работу по принципу наименьших привилегий."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "ecc191be72688d94",
+      "language": "zh-CN",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "edition": {
+        "title": "Arm Metis：开源框架与仓库上下文",
+        "claims": [
+          "Arm 宣布，其产品安全团队开发并开源了 Metis，将其定位为智能体安全框架。",
+          "公告描述了一种检索增强生成架构，将语言模型与项目专属知识结合，用于安全分析。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "采用前应审查仓库上下文、模型访问、数据边界和发现结果的验证方式。本次内容更新未独立复现供应商内部的检出率与误报基准测试。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "ecc191be72688d94",
+      "language": "ja",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "edition": {
+        "title": "Arm Metis：オープンソースのフレームワークとリポジトリの文脈",
+        "claims": [
+          "Arm は、製品セキュリティチームがエージェント型セキュリティフレームワークとして Metis を開発し、オープンソース化したと発表した。",
+          "発表では、言語モデルとプロジェクト固有の知識を組み合わせてセキュリティ分析に使う、検索拡張生成のアーキテクチャを説明している。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "導入前に、リポジトリの文脈、モデルへのアクセス、データの境界、検出事項の検証方法を確認する。この改訂記事では、ベンダー内部の検出率や誤検知のベンチマークを独立して再現していない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "ecc191be72688d94",
+      "language": "de",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "edition": {
+        "title": "Arm Metis: Open-Source-Framework und Repository-Kontext",
+        "claims": [
+          "Arm kündigte an, dass sein Produktsicherheitsteam Metis als agentisches Sicherheitsframework entwickelt und als Open Source veröffentlicht hat.",
+          "Die Ankündigung beschreibt eine Architektur mit Retrieval-Augmented Generation, die Sprachmodelle mit projektspezifischem Wissen für Sicherheitsanalysen kombiniert."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Vor der Einführung Repository-Kontext, Modellzugriff, Datengrenzen und die Validierung von Befunden prüfen. Die internen Benchmarks des Anbieters zu Erkennungsrate und Fehlalarmen wurden in dieser Überarbeitung nicht unabhängig reproduziert."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "ecc191be72688d94",
+      "language": "fr",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "edition": {
+        "title": "Arm Metis : framework open source et contexte du dépôt",
+        "claims": [
+          "Arm a annoncé que son équipe de sécurité produit avait développé Metis et l’avait publié en open source en tant que framework de sécurité agentique.",
+          "L’annonce décrit une architecture de génération augmentée par récupération qui associe des modèles de langage aux connaissances propres au projet pour l’analyse de sécurité."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Examiner le contexte du dépôt, l’accès aux modèles, les frontières d’accès et de traitement des données et la validation des signalements avant l’adoption. Les benchmarks internes du fournisseur sur le taux de détection et les faux positifs n’ont pas été reproduits indépendamment dans cette mise à jour."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "ecc191be72688d94",
+      "language": "ru",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "edition": {
+        "title": "Arm Metis: фреймворк с открытым исходным кодом и контекст репозитория",
+        "claims": [
+          "Arm объявила, что её команда безопасности продуктов разработала Metis как агентный фреймворк безопасности и открыла его исходный код.",
+          "В объявлении описана архитектура генерации с дополнением поиском, которая объединяет языковые модели со знаниями о конкретном проекте для анализа безопасности."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Перед внедрением изучите контекст репозитория, доступ к моделям, границы данных и проверку находок. Внутренние бенчмарки поставщика по доле обнаружений и ложным срабатываниям в этом обновлении статьи независимо не воспроизводились."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "eea31f00e6ce7be1",
+      "language": "zh-CN",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "edition": {
+        "title": "AI 安全圆桌：参与者关于身份与对抗测试的建议",
+        "claims": [
+          "在圆桌讨论中，Elham Arshad 建议将智能体视为身份主体，各自拥有档案、权限、凭据和生命周期，并将能力范围收窄，对敏感操作执行策略检查。这些是该参与者的建议。",
+          "Vijay Dilwale 主张，防御方应刻意操纵输入，在上下文或权限变化时观察行为，以测试提示注入、检索滥用和工具访问。这是专家建议，并非证明某项控制措施有效的基准测试。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "这篇选取部分发言的圆桌摘要不代表所有参与者的观点，也不能确定普遍适用的攻击频率。采纳建议前，应定义威胁模型、审批边界、日志和可重复测试。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "eea31f00e6ce7be1",
+      "language": "ja",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "edition": {
+        "title": "AI セキュリティのパネル：話者によるアイデンティティと敵対的テストの助言",
+        "claims": [
+          "パネルで Elham Arshad は、エージェントを独自のプロファイル、権限、認証情報、ライフサイクルを持つアイデンティティとして扱い、能力を狭く限定し、セキュリティ上重要な操作にはポリシーチェックを行うことを勧めている。これらは当該参加者の提言である。",
+          "Vijay Dilwale は、防御側が入力を意図的に操作し、コンテキストや権限の変化に伴う動作を観察して、プロンプトインジェクション、検索の悪用、ツールアクセスをテストすべきだと主張している。これは専門家の助言であり、制御の有効性を証明するベンチマークではない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "発言を抜粋したこのパネル要約は、すべての参加者の見解を代表せず、普遍的な攻撃頻度を確定するものでもない。提言を採用する前に、脅威モデル、承認の境界、ログ、再現可能なテストを定義する。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "eea31f00e6ce7be1",
+      "language": "de",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "edition": {
+        "title": "KI-Sicherheitspanel: Empfehlungen der Teilnehmenden zu Identitäten und adversarialen Tests",
+        "claims": [
+          "Im Panel empfiehlt Elham Arshad, Agenten als Identitäten mit eigenen Profilen, Berechtigungen, Zugangsdaten und Lebenszyklen zu behandeln, ihre Fähigkeiten eng zu begrenzen und sensible Aktionen gegen Richtlinien zu prüfen. Dies sind die Empfehlungen der teilnehmenden Person.",
+          "Vijay Dilwale argumentiert, dass Verteidiger Prompt-Injection, Retrieval-Missbrauch und Werkzeugzugriffe testen sollten, indem sie Eingaben gezielt manipulieren und Verhaltensänderungen bei wechselndem Kontext oder geänderten Berechtigungen beobachten. Dies ist fachlicher Rat, kein Benchmark, der die Wirksamkeit einer Kontrollmaßnahme nachweist."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Diese Auswahl aus dem Panel gibt nicht die Ansichten aller Teilnehmenden wieder und belegt keine allgemein gültige Angriffshäufigkeit. Vor der Übernahme der Empfehlungen ein Bedrohungsmodell, Freigabegrenzen, Protokolle und wiederholbare Tests festlegen."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "eea31f00e6ce7be1",
+      "language": "fr",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "edition": {
+        "title": "Table ronde sur la sécurité de l’IA : avis sur l’identité et les tests adversariaux",
+        "claims": [
+          "Dans la table ronde, Elham Arshad recommande de traiter les agents comme des identités dotées de leurs propres profils, autorisations, identifiants et cycles de vie, avec des capacités strictement limitées et des vérifications des politiques pour les actions sensibles. Il s’agit des recommandations d’Elham Arshad.",
+          "Vijay Dilwale estime que les équipes de défense devraient tester l’injection de prompts, l’utilisation abusive des mécanismes de recherche documentaire et l’accès aux outils en manipulant délibérément les entrées et en observant le comportement lorsque le contexte ou les autorisations changent. C’est un avis d’expert, sans constituer un benchmark prouvant l’efficacité d’un contrôle."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Ce résumé de certaines interventions ne représente pas les points de vue de tous les participants et n’établit pas de fréquence d’attaque universelle. Définir un modèle de menace, les limites d’approbation, les journaux et des tests reproductibles avant d’adopter les recommandations."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "eea31f00e6ce7be1",
+      "language": "ru",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "edition": {
+        "title": "Дискуссия о безопасности ИИ: рекомендации участников об идентичности и состязательном тестировании",
+        "claims": [
+          "В дискуссии Elham Arshad рекомендует рассматривать агентов как отдельные идентичности с собственными профилями, разрешениями, учётными данными и жизненными циклами, узко ограниченными возможностями и проверками политик для чувствительных действий. Это рекомендации участника дискуссии.",
+          "Vijay Dilwale утверждает, что защитникам следует тестировать инъекции промптов, злоупотребления поиском и доступ к инструментам, намеренно манипулируя входными данными и наблюдая поведение при изменении контекста или разрешений. Это экспертный совет, а не бенчмарк, доказывающий эффективность меры контроля."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Этот выборочный обзор дискуссии не представляет взгляды всех участников и не устанавливает универсальную частоту атак. Перед принятием рекомендаций определите модель угроз, границы одобрения, журналы и повторяемые тесты."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "f05ff63990b375e2",
+      "language": "zh-CN",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "edition": {
+        "title": "Spring Boot 候选版本新增客户端网络与遥测控制",
+        "claims": [
+          "Spring Boot 4.1.0-RC1 公告列出了使用 InetAddressFilter 缓解 HTTP 客户端 SSRF 的功能。本草稿仅涵盖较早综述中的 Boot 部分。",
+          "同一候选版本还列出了对 OpenTelemetry SDK 环境变量的支持。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "在将原始条目标记为全部完成之前，应单独验证综述中的其他项目。根据实际部署的版本，审查候选发布状态、地址过滤器配置和可观测性设置。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "f05ff63990b375e2",
+      "language": "ja",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "edition": {
+        "title": "Spring Boot のリリース候補にクライアントネットワークとテレメトリーの制御を追加",
+        "claims": [
+          "Spring Boot 4.1.0-RC1 の告知では、InetAddressFilter による HTTP クライアントの SSRF 緩和を挙げている。この草稿は過去の総覧のうち Boot の部分だけを扱う。",
+          "同じリリース候補には、OpenTelemetry SDK の環境変数のサポートも記載されている。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "元の項目全体を完了扱いにする前に、総覧の他のプロジェクトを別途検証する。実際にデプロイしたバージョンに照らし、リリース候補の状態、アドレスフィルターの設定、可観測性の設定を確認する。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "f05ff63990b375e2",
+      "language": "de",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "edition": {
+        "title": "Spring Boot-Release-Candidate ergänzt Kontrollen für Clientnetzwerk und Telemetrie",
+        "claims": [
+          "Die Ankündigung zu Spring Boot 4.1.0-RC1 nennt die SSRF-Abmilderung für HTTP-Clients mit InetAddressFilter. Dieser Entwurf behandelt nur den Boot-Teil des älteren Überblicks.",
+          "Derselbe Release Candidate nennt die Unterstützung für Umgebungsvariablen des OpenTelemetry SDK."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Die anderen Projekte im Überblick separat prüfen, bevor der gesamte ursprüngliche Eintrag als abgeschlossen markiert wird. Den Release-Candidate-Status, die Konfiguration des Adressfilters und die Einstellungen zur Beobachtbarkeit anhand der tatsächlich eingesetzten Versionen prüfen."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "f05ff63990b375e2",
+      "language": "fr",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "edition": {
+        "title": "La version candidate de Spring Boot ajoute des contrôles réseau client et de télémétrie",
+        "claims": [
+          "L’annonce de Spring Boot 4.1.0-RC1 mentionne l’atténuation des SSRF côté client HTTP avec InetAddressFilter. Ce brouillon ne couvre que la partie Boot de l’ancien tour d’horizon.",
+          "La même version candidate mentionne la prise en charge des variables d’environnement du SDK OpenTelemetry."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Vérifier séparément les autres projets du tour d’horizon avant de considérer l’élément d’origine comme entièrement terminé. Examiner le statut de version candidate, la configuration du filtre d’adresses et les paramètres d’observabilité au regard des versions réellement déployées."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "f05ff63990b375e2",
+      "language": "ru",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "edition": {
+        "title": "Релиз-кандидат Spring Boot добавляет средства управления сетью клиентов и телеметрией",
+        "claims": [
+          "В объявлении Spring Boot 4.1.0-RC1 указано смягчение SSRF для HTTP-клиента с помощью InetAddressFilter. Этот черновик охватывает только часть Boot из более ранней подборки.",
+          "Тот же релиз-кандидат включает в список поддержку переменных окружения OpenTelemetry SDK."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Отдельно проверьте остальные проекты подборки, прежде чем отмечать весь исходный материал как завершённый. Сопоставьте статус релиз-кандидата, конфигурацию фильтра адресов и настройки наблюдаемости с фактически развёрнутыми версиями."
+    }
+  ]
+}
