@@ -93,15 +93,32 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
   const result = spawnSync('python3', ['-B', '-c', "import sys,json;sys.path.insert(0,'scripts');from test_bilingual_digest import article;a=article();a['publishedAt']='2000-01-01T00:00:00+09:00';a['editions']['en']['title']='Literal {{ 7 | times: 7 }} <script>alert(1)</script>';print(json.dumps({'date':'2000-01-01','publishedAt':'2000-01-01T01:00:00+09:00','articles':[a]}))"], {encoding:'utf8'});
   assert.equal(result.status,0,result.stderr);
   const fixture='src/content/digests/2000-01-01.json';
-  const {publishBatch}=await import('./translations.mjs');
+  const {publishBatch,checkPublished}=await import('./translations.mjs');
   const batch=JSON.parse(await readFile('.pipeline/translations/batches/pilot-001.json','utf8'));
   const source=JSON.parse(await readFile(`src/content/renewals/${batch.translations[0].renewalId}.json`,'utf8'));
   const translationFiles=[];
+  const existingTranslations=new Map();
 
   try {
     await writeFile(fixture,result.stdout,{flag:'wx'});
-    const published=await publishBatch(batch,{reviewedBy:'Build test fixture',pullRequest:1,basis:'Temporary integration fixture, removed after test'});
-    translationFiles.push(...published.map(t=>`src/content/translations/${t.language}-${t.renewalId}.json`));
+    const published=[],missing=[];
+    for(const draft of batch.translations){
+      const path=`src/content/translations/${draft.language}-${draft.renewalId}.json`;
+      let bytes;
+      try{bytes=await readFile(path,'utf8');}catch(error){if(error.code!=='ENOENT')throw error;}
+      if(bytes===undefined){missing.push(draft);continue;}
+      existingTranslations.set(path,bytes);
+      const record=JSON.parse(bytes);
+      assert.deepEqual(record.edition,draft.edition,'Published pilot must match its reviewed draft');
+      assert.equal(record.reviewFocus,draft.reviewFocus);
+      published.push(record);
+    }
+    if(missing.length){
+      const created=await publishBatch({...batch,translations:missing},{reviewedBy:'Build test fixture',pullRequest:1,basis:'Temporary integration fixture, removed after test'});
+      translationFiles.push(...created.map(t=>`src/content/translations/${t.language}-${t.renewalId}.json`));
+      published.push(...created);
+    }
+    await checkPublished();
 
     const assets=spawnSync(process.execPath,['scripts/prepare-public.mjs'],{encoding:'utf8'});assert.equal(assets.status,0,assets.stderr);
     const build=spawnSync(process.execPath,['node_modules/astro/bin/astro.mjs','build'],{encoding:'utf8',maxBuffer:8*1024*1024});
@@ -224,6 +241,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
   } finally {
     await unlink(fixture);
     await Promise.all(translationFiles.map(file=>unlink(file)));
+    for(const [file,bytes] of existingTranslations)assert.equal(await readFile(file,'utf8'),bytes,'Build tests must preserve real publication records');
   }
 });
 
