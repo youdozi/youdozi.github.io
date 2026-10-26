@@ -145,7 +145,7 @@
       "language": "fr",
       "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
       "edition": {
-        "title": "CodeQL : les modèles déclarés comme données ajoutent des nettoyeurs et validateurs personnalisés",
+        "title": "CodeQL : les modèles définis sous forme de données prennent en charge les nettoyeurs et validateurs personnalisés",
         "claims": [
           "GitHub décrit des nettoyeurs et validateurs déclaratifs dans les extensions de données YAML de CodeQL, à l’aide de barrierModel et barrierGuardModel.",
           "L’annonce indique une disponibilité à partir de CodeQL 2.25.2. Il s’agit de la version minimale mentionnée dans cette annonce historique, et non d’une recommandation actuelle de mise à niveau."
