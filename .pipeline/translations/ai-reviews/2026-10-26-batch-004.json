@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T09:13:52.007443+00:00",
+  "skill": "tech-blog-writing",
+  "reviewMethod": "independent-ai-session-and-targeted-recheck",
+  "reviewSession": "batch004_review",
+  "writingConversationProvidedToReviewer": false,
+  "previousVerdictsProvidedAtInitialReview": false,
+  "scope": {
+    "editions": 25,
+    "sources": 5,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "title",
+      "claims",
+      "followUp",
+      "reviewFocus"
+    ],
+    "audience": "software developers",
+    "type": "concise historical-news translations",
+    "steps": [
+      "Read target-language prose without source",
+      "Compare to approved English edition and embedded evidence",
+      "Writer applies source-supported corrections",
+      "Reviewer rechecks five changed fields"
+    ]
+  },
+  "initialBatchSha256": "c6e61f9f057c4c5c0237dc2ec08d54256cf10a26fb1d305aa745e9cef53d8316",
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/renewals-004.json": "adc8235a0910f032c998abd5aefd51402394cdc8c44900bbf112d8bb94130a9e"
+  },
+  "sourceSha256": {
+    "src/content/renewals/3e483be55bb45ecb.json": "bb76edf97af70128a4eee1582db825b0a114175ed49f9ce5f00ce0a7d1f0c560",
+    "src/content/renewals/3f90329447f77e33.json": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f",
+    "src/content/renewals/4380abffaf1a31e0.json": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+    "src/content/renewals/46983b9e8a1cf49c.json": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974",
+    "src/content/renewals/4a59615041b968ae.json": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4"
+  },
+  "findings": [
+    {
+      "renewalId": "4380abffaf1a31e0",
+      "language": "fr",
+      "fields": [
+        "edition.claims[2]"
+      ],
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "GitLab 설치 전 데이터베이스 업그레이드 순서를 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "4a59615041b968ae",
+      "language": "de",
+      "fields": [
+        "reviewFocus"
+      ],
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "완화책 적용 전이 아닌 적용 가능하다고 판단하기 전의 조건 확인으로 수정",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "4a59615041b968ae",
+      "language": "ru",
+      "fields": [
+        "edition.followUp[0]",
+        "reviewFocus"
+      ],
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "upload-progress의 진행 상황 개념을 명시",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "4a59615041b968ae",
+      "language": "fr",
+      "fields": [
+        "edition.claims[1]"
+      ],
+      "origin": "writer-self-review",
+      "severity": "minor",
+      "resolution": "should 권고를 의무로 강화한 doivent를 devraient로 교정",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    }
+  ],
+  "result": "No unresolved major findings within the independently reviewed scope; corrections rechecked",
+  "externalSourceRevalidation": false,
+  "nativeSpeakerOrHumanLanguageReview": false,
+  "publicationApprovalGranted": false,
+  "limitations": [
+    "AI review does not guarantee accuracy.",
+    "Archived English and stored source evidence were compared; current external product availability was not reverified.",
+    "Publication requires explicit user approval.",
+    "Remaining 215 translations have not been drafted or reviewed."
+  ]
+}
