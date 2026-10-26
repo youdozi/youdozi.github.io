@@ -1,19 +1,12 @@
 ---
 import type {RenewalData} from '../lib/renewal-schema';
 import labels from '../lib/archive-ui.json';
-import {formatDate,type Language} from '../lib/content';
-interface Props {article:RenewalData;lang:Language;edition:RenewalData['editions']['en'];reviewFocus:string;}
-const {article,lang,edition,reviewFocus}=Astro.props;
+import type {Language} from '../lib/content';
+interface Props {article:RenewalData;lang:Language;edition:RenewalData['editions']['en'];}
+const {article,lang,edition}=Astro.props;
 const t=labels[lang];
-const sections=[{name:t.news,claims:edition.claims},{name:t.followUp,claims:edition.followUp}];
+const additionalSources=[...new Set(article.documents.map(document=>document.url))].filter(url=>url!==article.url);
 ---
-<aside class="notice" data-archive-date={article.archiveDate}>
-  <strong>{t.archive}: {article.archiveDate}</strong>
-  <p>{t.notice}</p>
-  <p>{t.reviewed}: <time datetime={article.reviewedAt}>{formatDate(new Date(article.reviewedAt),lang)}</time> · {t.renewed}: <time datetime={article.updatedAt}>{formatDate(new Date(article.updatedAt),lang)}</time></p>
-</aside>
-{sections.map(section=><section class="digest-article"><h2>{section.name}</h2>{section.claims.length ? section.claims.map(c=><p>{c.text}</p>):<p>{t.noFollowUp}</p>}</section>)}
-<section class="digest-article"><h2>{t.reviewFocus}</h2><p>{reviewFocus}</p><p>{t.editorial}</p></section>
-<p><a class="source-link" href={article.url} rel="noopener noreferrer">{t.original} ↗</a></p>
-<details class="digest-article"><summary>{t.evidence}</summary>{[...edition.claims,...edition.followUp].map(c=><section><p>{c.text}</p>{c.evidence.map(e=><blockquote><p>{e.quote}</p><a href={article.documents[e.document_id].url} rel="noopener noreferrer">{t.evidenceSource} ↗</a></blockquote>)}</section>)}</details>
-<p>{t.koreanArchive}: <a href={`/ko/digest/${article.archiveDate}/`}>{article.archiveDate}</a>. {t.context}</p>
+<p class="entry-meta" data-archive-date={article.archiveDate}>{t.newsDate}: <time datetime={article.archiveDate}>{article.archiveDate}</time></p>
+{[...edition.claims,...edition.followUp].map(c=><p>{c.text}</p>)}
+<p><a class="source-link" href={article.url} rel="noopener noreferrer">{t.original} ↗</a>{additionalSources.map(url=><span> · <a href={url} title={url} rel="noopener noreferrer">{new URL(url).hostname} ↗</a></span>)}</p>

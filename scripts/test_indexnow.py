@@ -79,6 +79,15 @@ class IndexNowTests(unittest.TestCase):
             with self.subTest(url=url):
                 with self.assertRaises(ValueError): ix.public_url(url)
 
+    def test_spanish_notifications_follow_the_supported_language_policy(self):
+        policy = json.loads((Path(__file__).resolve().parents[1] / 'src/lib/locales.json').read_text())
+        self.assertEqual(set(ix.LANGUAGES), set(policy['baseLanguages'] + policy['translationLanguages']))
+        url = self.page('/es/digest/example/')
+        self.sitemap([url])
+        calls, fetch = self.transport()
+        self.assertEqual(ix.run(self.dist, self.state, submit=True, fetch=fetch)['httpStatus'], 200)
+        self.assertEqual(json.loads(calls[1].data)['urlList'], [url])
+
     def test_acknowledged_notification_updates_state_and_unchanged_rerun_sends_nothing(self):
         url = self.page(); self.sitemap([url]); calls, fetch = self.transport(status=202)
         result = ix.run(self.dist, self.state, submit=True, fetch=fetch)

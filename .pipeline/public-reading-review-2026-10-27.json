@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-26T16:10:22.360693+00:00",
+  "scope": "public article templates, historical Markdown, RSS and search data; preserve repository source and review tools",
+  "originalDigestFilesWithRepeatedSections": 195,
+  "nativeRenewalArticles": 118,
+  "publishedTranslationArticles": 30,
+  "scannedArticleAndListHtmlFiles": 460,
+  "forbiddenPublicReaderTextMatches": {
+    "기존 아카이브 글입니다.": 0,
+    "검토·보강:": 0,
+    "검토 기록 —": 0,
+    "활용 가이드": 0,
+    "검토 시점 후속 확인": 0,
+    "직접 적용 결과가 아닌 편집 제안": 0,
+    "No additional follow-up fact was established": 0,
+    "Editorial review suggestions;": 0,
+    "Claim-by-claim source evidence": 0
+  },
+  "pythonTestsPassed": 148,
+  "nodeTestsPassed": 18,
+  "astroCheck": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "productionBuild": {
+    "htmlPagesExcludingOwnershipFiles": 815,
+    "canonicalSitemapUrls": 413,
+    "approvedTranslations": 30,
+    "approvedSpanishTranslations": 0
+  },
+  "spanishPreview": {
+    "fixtureOnly": true,
+    "nodeTests": 18,
+    "spanishArticlePages": 6,
+    "canonicalUrlsIncludingBilingualFixture": 425,
+    "forbiddenEditorialMatches": {
+      "기존 아카이브 글입니다.": 0,
+      "검토·보강:": 0,
+      "검토 기록 —": 0,
+      "활용 가이드": 0,
+      "검토 시점 후속 확인": 0,
+      "직접 적용 결과가 아닌 편집 제안": 0,
+      "No additional follow-up fact was established": 0,
+      "Editorial review suggestions;": 0,
+      "Claim-by-claim source evidence": 0
+    }
+  },
+  "browserChecks": [
+    {
+      "path": "/ko/digest/2026-06-19/",
+      "width": 1440,
+      "status": 200,
+      "horizontalOverflow": false,
+      "readerBoilerplateAbsent": true,
+      "screenshot": "/tmp/youdozi-reader-1440-ko.png"
+    },
+    {
+      "path": "/fr/digest/2026-05-06-codeql-sanitizer-and-validator-models/",
+      "width": 1440,
+      "status": 200,
+      "horizontalOverflow": false,
+      "readerBoilerplateAbsent": true,
+      "screenshot": "/tmp/youdozi-reader-1440-fr.png"
+    },
+    {
+      "path": "/ko/digest/2026-06-19/",
+      "width": 390,
+      "status": 200,
+      "horizontalOverflow": false,
+      "readerBoilerplateAbsent": true,
+      "screenshot": "/tmp/youdozi-reader-390-ko.png"
+    },
+    {
+      "path": "/fr/digest/2026-05-06-codeql-sanitizer-and-validator-models/",
+      "width": 390,
+      "status": 200,
+      "horizontalOverflow": false,
+      "readerBoilerplateAbsent": true,
+      "screenshot": "/tmp/youdozi-reader-390-fr.png"
+    }
+  ],
+  "preserved": [
+    "source Markdown and source JSON unchanged",
+    "all 30 existing translation approval records byte-for-byte unchanged",
+    "technical qualifications and follow-up facts",
+    "primary and additional source links",
+    "source news dates and original publication identity",
+    "code blocks and tested experiment links",
+    "candidate review tools and repository audit history"
+  ],
+  "limitations": [
+    "Spanish preview fixtures are synthetic and removed; user publication approval for six Spanish articles is pending.",
+    "Visual checks cover two representative article routes at desktop and mobile widths.",
+    "Country-specific accessibility and search ranking are not tested by the reading-view checks."
+  ]
+}

@@ -12,20 +12,22 @@ const source=JSON.parse(sourceBytes);
 const approval={reviewedBy:'test reviewer',pullRequest:1,basis:'Explicit human approval fixture only'};
 const approved=d=>{const now=new Date().toISOString();return {...d,state:'approved',reviewedAt:now,publishedAt:now,updatedAt:now,approval:{...approval,approvedAt:now}};};
 
-test('translation queue includes every approved source in all five languages with private pilot status',async()=>{
+test('translation queue covers all supported languages and preserves partially prepared batches',async()=>{
   const queue=await prepareQueue();
   const sources=(await readdir('src/content/renewals')).filter(f=>f.endsWith('.json'));
   assert.equal(queue.sources.length,sources.length);
-  assert.equal(queue.tasks.length,sources.length*5);
-  assert.deepEqual(queue.languages,['zh-CN','ja','de','fr','ru']);
+  assert.equal(queue.tasks.length,sources.length*queue.languages.length);
+  assert.deepEqual(queue.languages,['zh-CN','ja','de','fr','ru','es']);
   const batches=(await readdir('.pipeline/translations/batches')).filter(f=>f.endsWith('.json'));
   const drafts=(await Promise.all(batches.map(async f=>JSON.parse(await readFile(`.pipeline/translations/batches/${f}`,'utf8')).translations))).flat();
   assert.equal(queue.tasks.filter(t=>t.status==='draft').length,drafts.length);
-  for(const id of new Set(drafts.map(d=>d.renewalId)))assert.deepEqual(drafts.filter(d=>d.renewalId===id).map(d=>d.language).sort(),[...queue.languages].sort());
+  for(const task of queue.tasks)assert.equal(task.status,drafts.some(d=>d.renewalId===task.renewalId&&d.language===task.language)?'draft':'pending');
+  assert.ok(queue.tasks.some(t=>t.language==='es'&&t.status==='pending'));
+  assert.ok(queue.tasks.some(t=>t.language==='es'&&t.status==='draft'));
   for(const s of queue.sources){
     const bytes=await readFile(`src/content/renewals/${s.renewalId}.json`,'utf8');
     assert.equal(s.sourceSha256,createHash('sha256').update(bytes).digest('hex'));
-    assert.equal(queue.tasks.filter(t=>t.renewalId===s.renewalId).length,5);
+    assert.equal(queue.tasks.filter(t=>t.renewalId===s.renewalId).length,queue.languages.length);
   }
 });
 

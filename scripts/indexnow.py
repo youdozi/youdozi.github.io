@@ -17,7 +17,7 @@ import xml.etree.ElementTree as ET
 SITE = 'https://youdozi.github.io'
 ENDPOINT = 'https://api.indexnow.org/indexnow'
 KEY_PATH = 'indexnow-key.txt'
-LANGUAGES = ('en', 'ko', 'zh-CN', 'ja', 'de', 'fr', 'ru')
+LANGUAGES = ('en', 'ko', 'zh-CN', 'ja', 'de', 'fr', 'ru', 'es')
 
 
 def public_url(value):

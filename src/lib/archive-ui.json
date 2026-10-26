@@ -22,7 +22,8 @@
     "next": "Next",
     "pagination": "Pagination",
     "searchError": "Search could not load. Please try again.",
-    "noScript": "Enable JavaScript to search, or browse the article lists."
+    "noScript": "Enable JavaScript to search, or browse the article lists.",
+    "newsDate": "News date"
   },
   "ko": {
     "archive": "리뉴얼 아카이브 · 원래 뉴스 기준일",
@@ -47,7 +48,8 @@
     "next": "다음",
     "pagination": "페이지 이동",
     "searchError": "검색 정보를 불러오지 못했습니다. 다시 시도해주세요.",
-    "noScript": "검색하려면 JavaScript를 활성화하거나 글 목록을 이용하세요."
+    "noScript": "검색하려면 JavaScript를 활성화하거나 글 목록을 이용하세요.",
+    "newsDate": "소식 기준일"
   },
   "zh-CN": {
     "archive": "更新归档 · 原新闻日期",
@@ -72,7 +74,8 @@
     "next": "下一页",
     "pagination": "分页",
     "searchError": "无法加载搜索，请重试。",
-    "noScript": "请启用 JavaScript 搜索，或浏览文章列表。"
+    "noScript": "请启用 JavaScript 搜索，或浏览文章列表。",
+    "newsDate": "新闻日期"
   },
   "ja": {
     "archive": "更新アーカイブ・元のニュース日付",
@@ -97,7 +100,8 @@
     "next": "次へ",
     "pagination": "ページ移動",
     "searchError": "検索を読み込めませんでした。再試行してください。",
-    "noScript": "検索には JavaScript を有効にするか、記事一覧をご利用ください。"
+    "noScript": "検索には JavaScript を有効にするか、記事一覧をご利用ください。",
+    "newsDate": "ニュースの日付"
   },
   "de": {
     "archive": "Überarbeiteter Archivbeitrag · ursprüngliches Nachrichtendatum",
@@ -122,7 +126,8 @@
     "next": "Weiter",
     "pagination": "Seitennavigation",
     "searchError": "Die Suche konnte nicht geladen werden. Bitte erneut versuchen.",
-    "noScript": "JavaScript für die Suche aktivieren oder die Beitragslisten nutzen."
+    "noScript": "JavaScript für die Suche aktivieren oder die Beitragslisten nutzen.",
+    "newsDate": "Datum der Meldung"
   },
   "fr": {
     "archive": "Archives révisées · date de l’actualité initiale",
@@ -147,7 +152,8 @@
     "next": "Suivant",
     "pagination": "Pagination",
     "searchError": "Impossible de charger la recherche. Veuillez réessayer.",
-    "noScript": "Activez JavaScript pour rechercher ou parcourez les listes d’articles."
+    "noScript": "Activez JavaScript pour rechercher ou parcourez les listes d’articles.",
+    "newsDate": "Date de l’information"
   },
   "ru": {
     "archive": "Обновлённый архив · дата исходной новости",
@@ -172,6 +178,33 @@
     "next": "Далее",
     "pagination": "Переход по страницам",
     "searchError": "Не удалось загрузить поиск. Повторите попытку.",
-    "noScript": "Включите JavaScript для поиска или откройте список статей."
+    "noScript": "Включите JavaScript для поиска или откройте список статей.",
+    "newsDate": "Дата новости"
+  },
+  "es": {
+    "archive": "Archivo actualizado · fecha de la noticia original",
+    "notice": "Este es un resumen de noticias históricas. Las versiones y mediciones corresponden al contexto de la fuente en aquel momento.",
+    "reviewed": "Revisado",
+    "renewed": "Actualizado",
+    "news": "La noticia en aquel momento",
+    "followUp": "Información posterior contrastada durante la revisión",
+    "noFollowUp": "En esta revisión no se confirmó información posterior adicional. Esto no demuestra que no haya habido cambios.",
+    "reviewFocus": "Qué comprobar antes de aplicarlo",
+    "editorial": "Sugerencias de revisión editorial; no se realizó un experimento práctico con el producto.",
+    "original": "Leer la publicación original",
+    "evidence": "Citas de las fuentes por afirmación",
+    "evidenceSource": "Fuente de la cita",
+    "koreanArchive": "Resumen en coreano de la fecha original",
+    "context": "Las citas y su contexto se revisaron editorialmente; esto no constituye una verificación experimental independiente.",
+    "skip": "Ir al contenido",
+    "navigation": "Navegación principal",
+    "discussion": "Comentarios",
+    "page": "Página",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "pagination": "Paginación",
+    "searchError": "No se pudo cargar la búsqueda. Inténtelo de nuevo.",
+    "noScript": "Active JavaScript para buscar o consulte las listas de artículos.",
+    "newsDate": "Fecha de la noticia"
   }
 }

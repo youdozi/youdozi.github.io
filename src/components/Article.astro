@@ -28,18 +28,18 @@ const articleData: Record<string, unknown>[] = entry.reviewStatus === 'example' 
   ] },
 ];
 const related = all.filter(e => e.language === lang && e.translationKey !== entry.translationKey && e.kind === entry.kind).slice(0,3);
+const visibleTags = entry.tags.filter(tag => tag !== 'archive-renewal');
 ---
 <Base title={entry.title} description={entry.description} lang={lang} structuredData={articleData} noindex={entry.reviewStatus === 'example'} alternates={alternateLinks(entry, all)}>
   <article class="article">
     <header class="article-heading"><a class="eyebrow" href={`/${lang}/${entry.kind === 'digest' ? 'digest' : 'posts'}/`}>← {text[lang][entry.kind === 'digest' ? 'digest' : 'posts']}</a><h1>{entry.title}</h1><div class="entry-meta"><time datetime={entry.publishedAt.toISOString()}>{formatDate(entry.publishedAt, lang)}</time><span>youdozi</span></div></header>
-    {entry.post && entry.kind === 'digest' && <aside class="notice">{text[lang].old}</aside>}
-    {entry.post?.data.reviewedAt && <aside class="notice"><strong>{entry.reviewStatus === 'example' ? '예제 데이터 — 실제 뉴스로 취급하지 마세요.' : `${lang === 'en' ? 'Reviewed and updated' : '검토·보강'}: ${entry.post.data.reviewedAt}`}</strong><br/>{entry.post.data.reviewScope}</aside>}
+    {entry.reviewStatus === 'example' && <aside class="notice">예제 데이터 — 실제 뉴스로 취급하지 마세요.</aside>}
     <div class="prose">
       {Content && <Content />}
-      {entry.renewal && <ArchiveRenewal article={entry.renewal.data} lang={lang} edition={entry.renewalEdition!} reviewFocus={entry.renewalFocus!} />}
-      {entry.digest && <><aside class="notice">{text[lang].scope}</aside>{entry.digest.data.articles.map((article, index) => <DigestSection article={article} index={index} lang={lang as NativeLanguage} />)}</>}
+      {entry.renewal && <ArchiveRenewal article={entry.renewal.data} lang={lang} edition={entry.renewalEdition!} />}
+      {entry.digest && entry.digest.data.articles.map((article, index) => <DigestSection article={article} index={index} lang={lang as NativeLanguage} />)}
     </div>
-    <footer class="article-footer"><div class="chips">{entry.tags.map(tag => <a href={taxonomyUrl(lang, 'tags', tag)}>#{tag}</a>)}</div></footer>
+    {visibleTags.length > 0 && <footer class="article-footer"><div class="chips">{visibleTags.map(tag => <a href={taxonomyUrl(lang, 'tags', tag)}>#{tag}</a>)}</div></footer>}
     <div class="comments"><h2>{labels[lang].discussion}</h2><script is:inline src="https://utteranc.es/client.js" {...{ repo: 'youdozi/youdozi.github.io', 'issue-term': entry.legacyUrl || entry.translationKey, theme: 'github-light' }} crossorigin="anonymous" async></script></div>
   </article>
   {related.length > 0 && <section class="related"><h2>{text[lang].related}</h2><EntryList items={related} lang={lang} /></section>}

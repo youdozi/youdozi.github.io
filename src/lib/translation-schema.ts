@@ -6,7 +6,7 @@ const text=z.string().trim().min(1).max(1800).refine(t=>!/<\/?[A-Za-z]/.test(t),
 const timestamp=z.iso.datetime({offset:true}).refine(t=>new Date(t)<=new Date(),'Future timestamp');
 const shared={
   schemaVersion:z.literal(1),renewalId:z.string().regex(/^[0-9a-f]{16}$/),
-  language:z.enum(['zh-CN','ja','de','fr','ru']),sourceSha256:z.string().regex(/^[0-9a-f]{64}$/),
+  language:z.enum(['zh-CN','ja','de','fr','ru','es']),sourceSha256:z.string().regex(/^[0-9a-f]{64}$/),
   edition:z.object({title:text.max(240),claims:z.array(text.max(1200)).min(2).max(3),followUp:z.array(text.max(1200)).max(3)}),
   reviewFocus:text,
 };
@@ -31,7 +31,7 @@ export function validateTranslationSource(data:z.infer<typeof translationDraftSc
     const body=extract(data.edition.claims.join(' '));
     if([...extract(data.edition.title)].some(value=>!body.has(value)))throw new Error('Translation title adds ungrounded numbers or protected terms');
   }
-  const script={"zh-CN":/\p{Script=Han}/u,ja:/[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u,de:/\p{Script=Latin}/u,fr:/\p{Script=Latin}/u,ru:/\p{Script=Cyrillic}/u}[data.language];
+  const script={"zh-CN":/\p{Script=Han}/u,ja:/[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u,de:/\p{Script=Latin}/u,fr:/\p{Script=Latin}/u,ru:/\p{Script=Cyrillic}/u,es:/\p{Script=Latin}/u}[data.language];
   for(const value of [data.edition.title,...data.edition.claims,...data.edition.followUp,data.reviewFocus])if(!script.test(value))throw new Error('Translation lacks expected language script');
 
 }
