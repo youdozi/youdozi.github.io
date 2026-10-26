@@ -298,3 +298,5 @@ node scripts/translations.mjs publish \
 `renewals-002`의 5개 글 × 5개 언어 25편을 [게시 전 검토](.pipeline/translations/reviews/release-002.md)로 준비했습니다. 전역 `translate` 스킬을 적용한 독립 AI 검토와 프랑스어 제목 교정·재확인을 완료하고 [검토 기록](.pipeline/translations/ai-reviews/2026-10-27-release-002.json)에 최종 배치·기준본 해시를 고정합니다. [공개 후보 목록](.pipeline/translations/releases/renewals-002.json)은 승인 대기이며 실제 게시 파일은 추가하지 않습니다.
 
 임시 fixture 25개를 추가한 빌드에서 HTML 815개·canonical URL 413개와 35개 대응 페이지의 SEO·언어별 피드를 확인했습니다. 다수 번역이 있는 경우에도 통합 테스트가 승인 파일 수와 검색 인덱스를 대조하도록 보강했습니다. 임시 파일을 제거한 최종 빌드는 기존 HTML 790개·canonical URL 388개·게시 번역 5개를 유지합니다. 게시 후보 25편의 명시적 승인 후 실제 승인 기록과 발행 시각을 생성합니다.
+
+2026-10-27 사용자는 PR #50의 두 번째 후보 25편에 대해 진행을 승인했습니다. 대화와 PR 번호를 승인 근거로 기록하고 새 번역 발행 시각으로 실제 게시 파일 25개를 준비합니다. 공개 후보 목록의 현재 상태는 `approved-for-publication`이며 승인 전 AI 검토와 임시 빌드 기록은 보존합니다. 이번 배포 후 누적 공개 번역은 6개 글 × 5개 언어 30편이며 나머지 53개 글 × 5개 언어 265편은 게시 승인 대기입니다.

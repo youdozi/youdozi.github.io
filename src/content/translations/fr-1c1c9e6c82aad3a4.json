@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "1c1c9e6c82aad3a4",
+  "language": "fr",
+  "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+  "edition": {
+    "title": "GitHub ajoute la recherche et les filtres aux avis de sécurité des dépôts",
+    "claims": [
+      "GitHub a ajouté la recherche et le filtrage des avis de sécurité directement dans l’onglet Security d’un dépôt.",
+      "L’avis mentionne notamment sort, package, ecosystems et severity parmi les mots-clés de recherche ou de filtrage pris en charge."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Vérifier que la vue contient les brouillons, les avis reçus et les avis publiés nécessaires à l’examen. Un résultat filtré plus restreint ne signifie pas qu’il existe moins de vulnérabilités sous-jacentes.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "1c1c9e6c82aad3a4",
+  "language": "zh-CN",
+  "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+  "edition": {
+    "title": "GitHub 仓库安全公告新增搜索与筛选",
+    "claims": [
+      "GitHub 在仓库的 Security 标签页中直接加入了安全公告搜索和筛选功能。",
+      "公告列出的受支持搜索或筛选关键字包括 sort（排序）、package（软件包）、ecosystems（生态系统）和 severity（严重程度）。"
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "检查该视图是否包含审阅所需的草稿、收到的公告及已发布公告。筛选后结果较少，不应被解读为实际存在的漏洞更少。",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

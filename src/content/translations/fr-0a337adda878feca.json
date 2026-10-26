@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "0a337adda878feca",
+  "language": "fr",
+  "sourceSha256": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+  "edition": {
+    "title": "Pools de crédits Copilot : usage inclus et dépenses supplémentaires",
+    "claims": [
+      "GitHub a annoncé des pools de crédits d’IA par centre de coûts pour Copilot Business et Enterprise sur Enterprise Cloud. Lors de l’annonce, la configuration était disponible via la REST API, tandis que la gestion dans l’interface des paramètres restait prévue.",
+      "Le plafond du pool limite ce qu’un centre de coûts peut prélever sur les crédits inclus partagés à l’échelle de l’entreprise ; son budget régit les frais à l’usage après épuisement du pool inclus. Ces contrôles concernent des phases de dépenses différentes et peuvent être combinés.",
+      "GitHub calcule la limite du pool à partir des licences attribuées. Une fois le plafond atteint, les entreprises peuvent bloquer tout usage inclus supplémentaire ou autoriser des dépenses additionnelles si les dépassements sont permis. Le pool n’impose donc pas automatiquement un plafond strict à l’ensemble des frais."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Examiner ensemble la répartition des crédits inclus, les règles de dépassement et les budgets de facturation à l’usage. Confirmer la disponibilité actuelle de l’API et de l’interface avant toute modification ; cette revue des sources ne mesure pas les économies réellement réalisées.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

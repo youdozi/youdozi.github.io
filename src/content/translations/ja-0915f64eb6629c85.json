@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "0915f64eb6629c85",
+  "language": "ja",
+  "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+  "edition": {
+    "title": "Grok Code Fast 1 の提供終了予告：Copilot での対象範囲",
+    "claims": [
+      "GitHub は、Copilot での Grok Code Fast 1 の提供を 2026-05-15 に終了する予定を発表した。これは発表された予定の記録であり、実際の提供終了を独立に確認したものではない。",
+      "告知によると、モデル提供元による廃止に伴い、終了日が前倒しされた。"
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "ワークフローを変更する前に、製品ごとのモデル名と管理者ポリシーへの依存関係を洗い出す。現在の利用可否を確認し、代表的なタスクで代替モデルを評価する。過去に推奨されたモデルをそのまま採用しない。",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

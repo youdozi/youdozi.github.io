@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "releaseId": "release-002",
-  "state": "awaiting-publication-approval",
+  "state": "approved-for-publication",
   "batch": ".pipeline/translations/batches/renewals-002.json",
   "batchSha256": "a2cab464ac4fb2320062884d5e540eb07b7fcc7fa42cdf1fb77d30b13c9063c7",
   "sourceSha256": {
@@ -12,7 +12,12 @@
     "src/content/renewals/1c1c9e6c82aad3a4.json": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f"
   },
   "translationReview": ".pipeline/translations/ai-reviews/2026-10-27-release-002.json",
-  "approval": null,
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  },
   "scope": {
     "sources": 5,
     "editions": 25,
@@ -30,175 +35,200 @@
       "language": "zh-CN",
       "title": "Grok Code Fast 1 停用公告明确了 Copilot 范围",
       "url": "https://youdozi.github.io/zh-CN/digest/2026-05-09-copilot-grok-code-fast-retirement/",
-      "publicationFile": "src/content/translations/zh-CN-0915f64eb6629c85.json"
+      "publicationFile": "src/content/translations/zh-CN-0915f64eb6629c85.json",
+      "publicationFileSha256": "fb2d2c69d80f0052819099ca63914130a017fb81352d355e85c62ca97b4108c0"
     },
     {
       "renewalId": "0915f64eb6629c85",
       "language": "ja",
       "title": "Grok Code Fast 1 の提供終了予告：Copilot での対象範囲",
       "url": "https://youdozi.github.io/ja/digest/2026-05-09-copilot-grok-code-fast-retirement/",
-      "publicationFile": "src/content/translations/ja-0915f64eb6629c85.json"
+      "publicationFile": "src/content/translations/ja-0915f64eb6629c85.json",
+      "publicationFileSha256": "ccafacccdcd8e56c4232e9ebe2defe20a9ea9b1157b4f89384a322eb9c2299b5"
     },
     {
       "renewalId": "0915f64eb6629c85",
       "language": "de",
       "title": "Ankündigung zur Einstellung von Grok Code Fast 1 grenzt den Copilot-Bereich ab",
       "url": "https://youdozi.github.io/de/digest/2026-05-09-copilot-grok-code-fast-retirement/",
-      "publicationFile": "src/content/translations/de-0915f64eb6629c85.json"
+      "publicationFile": "src/content/translations/de-0915f64eb6629c85.json",
+      "publicationFileSha256": "ad7acd1ed0f01945e8485818fc2bb79152c356e0a81c23d20d5752daf3382480"
     },
     {
       "renewalId": "0915f64eb6629c85",
       "language": "fr",
       "title": "L’annonce du retrait de Grok Code Fast 1 précise le périmètre de Copilot",
       "url": "https://youdozi.github.io/fr/digest/2026-05-09-copilot-grok-code-fast-retirement/",
-      "publicationFile": "src/content/translations/fr-0915f64eb6629c85.json"
+      "publicationFile": "src/content/translations/fr-0915f64eb6629c85.json",
+      "publicationFileSha256": "fa103d89d68430a24df9343f0ac5195a6428a7b232d7411221924dfcdef50806"
     },
     {
       "renewalId": "0915f64eb6629c85",
       "language": "ru",
       "title": "Объявление о прекращении поддержки Grok Code Fast 1 уточняет охват Copilot",
       "url": "https://youdozi.github.io/ru/digest/2026-05-09-copilot-grok-code-fast-retirement/",
-      "publicationFile": "src/content/translations/ru-0915f64eb6629c85.json"
+      "publicationFile": "src/content/translations/ru-0915f64eb6629c85.json",
+      "publicationFileSha256": "03d1df57d115c4bce6c46d7abbd4bf66d6f440bf7119c63118009a7c084603b1"
     },
     {
       "renewalId": "097c455a9b953f24",
       "language": "zh-CN",
       "title": "CodeQL 的数据式建模新增自定义净化器与验证器",
       "url": "https://youdozi.github.io/zh-CN/digest/2026-05-06-codeql-sanitizer-and-validator-models/",
-      "publicationFile": "src/content/translations/zh-CN-097c455a9b953f24.json"
+      "publicationFile": "src/content/translations/zh-CN-097c455a9b953f24.json",
+      "publicationFileSha256": "367a898626a124b298590a9d9811f9f006d3d7e02c41213cb954f0db6a41d3c0"
     },
     {
       "renewalId": "097c455a9b953f24",
       "language": "ja",
       "title": "CodeQL のデータによるモデル定義にカスタムサニタイザーとバリデーターを追加",
       "url": "https://youdozi.github.io/ja/digest/2026-05-06-codeql-sanitizer-and-validator-models/",
-      "publicationFile": "src/content/translations/ja-097c455a9b953f24.json"
+      "publicationFile": "src/content/translations/ja-097c455a9b953f24.json",
+      "publicationFileSha256": "d116db71950b07fd1a33a25adb0b8766a81effbd0d6dd878733f62887817cbd5"
     },
     {
       "renewalId": "097c455a9b953f24",
       "language": "de",
       "title": "CodeQL: Datenbasierte Modelle erhalten eigene Sanitizer und Validatoren",
       "url": "https://youdozi.github.io/de/digest/2026-05-06-codeql-sanitizer-and-validator-models/",
-      "publicationFile": "src/content/translations/de-097c455a9b953f24.json"
+      "publicationFile": "src/content/translations/de-097c455a9b953f24.json",
+      "publicationFileSha256": "3612bfece80b20d300afba10bdae2a41ebf94a5d33992ac2e48b4e1fe7e59e49"
     },
     {
       "renewalId": "097c455a9b953f24",
       "language": "fr",
       "title": "CodeQL : les modèles définis sous forme de données prennent en charge les nettoyeurs et validateurs personnalisés",
       "url": "https://youdozi.github.io/fr/digest/2026-05-06-codeql-sanitizer-and-validator-models/",
-      "publicationFile": "src/content/translations/fr-097c455a9b953f24.json"
+      "publicationFile": "src/content/translations/fr-097c455a9b953f24.json",
+      "publicationFileSha256": "4a73a6f33668e45abd9bcb73ade8b7aa550cb7ce51304dc9c12ce5d75e4f1f47"
     },
     {
       "renewalId": "097c455a9b953f24",
       "language": "ru",
       "title": "CodeQL: модели в виде данных получают пользовательские санитайзеры и валидаторы",
       "url": "https://youdozi.github.io/ru/digest/2026-05-06-codeql-sanitizer-and-validator-models/",
-      "publicationFile": "src/content/translations/ru-097c455a9b953f24.json"
+      "publicationFile": "src/content/translations/ru-097c455a9b953f24.json",
+      "publicationFileSha256": "f7bce8bd7f52b195bf098d731a251e6c416246c3687b271d19f2f5274019b879"
     },
     {
       "renewalId": "09e0d0ec5ed64f8a",
       "language": "zh-CN",
       "title": "GitHub 通报 Grok Code Fast 1 在 Copilot 中的停用",
       "url": "https://youdozi.github.io/zh-CN/digest/2026-05-16-copilot-grok-code-fast-retirement-confirmation/",
-      "publicationFile": "src/content/translations/zh-CN-09e0d0ec5ed64f8a.json"
+      "publicationFile": "src/content/translations/zh-CN-09e0d0ec5ed64f8a.json",
+      "publicationFileSha256": "92cc80b28f3d02898ec25b726a6c5292b43023ef58a1938dec9f90ff6fecfa95"
     },
     {
       "renewalId": "09e0d0ec5ed64f8a",
       "language": "ja",
       "title": "GitHub が Copilot での Grok Code Fast 1 の提供終了を報告",
       "url": "https://youdozi.github.io/ja/digest/2026-05-16-copilot-grok-code-fast-retirement-confirmation/",
-      "publicationFile": "src/content/translations/ja-09e0d0ec5ed64f8a.json"
+      "publicationFile": "src/content/translations/ja-09e0d0ec5ed64f8a.json",
+      "publicationFileSha256": "784814f9d654fbe677b5727c3a105ed79c62c70260b7be0e1ec048d3d194ee97"
     },
     {
       "renewalId": "09e0d0ec5ed64f8a",
       "language": "de",
       "title": "GitHub meldet die Einstellung von Grok Code Fast 1 in Copilot",
       "url": "https://youdozi.github.io/de/digest/2026-05-16-copilot-grok-code-fast-retirement-confirmation/",
-      "publicationFile": "src/content/translations/de-09e0d0ec5ed64f8a.json"
+      "publicationFile": "src/content/translations/de-09e0d0ec5ed64f8a.json",
+      "publicationFileSha256": "6798ee61c4cb85343d01b9efac43a30822bce4e91c4704e69eac2ff3197a919e"
     },
     {
       "renewalId": "09e0d0ec5ed64f8a",
       "language": "fr",
       "title": "GitHub annonce le retrait effectif de Grok Code Fast 1 dans Copilot",
       "url": "https://youdozi.github.io/fr/digest/2026-05-16-copilot-grok-code-fast-retirement-confirmation/",
-      "publicationFile": "src/content/translations/fr-09e0d0ec5ed64f8a.json"
+      "publicationFile": "src/content/translations/fr-09e0d0ec5ed64f8a.json",
+      "publicationFileSha256": "3f3e6946ab7e9922a88d588ce9d24bc1ba365817440bf89e2e14165287662a81"
     },
     {
       "renewalId": "09e0d0ec5ed64f8a",
       "language": "ru",
       "title": "GitHub сообщает о прекращении использования Grok Code Fast 1 в Copilot",
       "url": "https://youdozi.github.io/ru/digest/2026-05-16-copilot-grok-code-fast-retirement-confirmation/",
-      "publicationFile": "src/content/translations/ru-09e0d0ec5ed64f8a.json"
+      "publicationFile": "src/content/translations/ru-09e0d0ec5ed64f8a.json",
+      "publicationFileSha256": "a30025cd8011227d303e337f9e6dca4580872e5e4073cfeeead78161c8812839"
     },
     {
       "renewalId": "0a337adda878feca",
       "language": "zh-CN",
       "title": "Copilot 额度池：内含用量与额外支出",
       "url": "https://youdozi.github.io/zh-CN/digest/2026-07-03-copilot-credit-pools-and-additional-spending/",
-      "publicationFile": "src/content/translations/zh-CN-0a337adda878feca.json"
+      "publicationFile": "src/content/translations/zh-CN-0a337adda878feca.json",
+      "publicationFileSha256": "1e1d865a1d10a499f4d126cab74bdb83fd0aab8e4582d38fb5488aee125ccac1"
     },
     {
       "renewalId": "0a337adda878feca",
       "language": "ja",
       "title": "Copilot のクレジットプール：含まれる利用枠と追加支出",
       "url": "https://youdozi.github.io/ja/digest/2026-07-03-copilot-credit-pools-and-additional-spending/",
-      "publicationFile": "src/content/translations/ja-0a337adda878feca.json"
+      "publicationFile": "src/content/translations/ja-0a337adda878feca.json",
+      "publicationFileSha256": "5ff783e470a00fd67f7b025da5548d93c6775b8abbfe1a7350fbebef1b87c74d"
     },
     {
       "renewalId": "0a337adda878feca",
       "language": "de",
       "title": "Copilot-Creditpools: enthaltene Nutzung und zusätzliche Ausgaben",
       "url": "https://youdozi.github.io/de/digest/2026-07-03-copilot-credit-pools-and-additional-spending/",
-      "publicationFile": "src/content/translations/de-0a337adda878feca.json"
+      "publicationFile": "src/content/translations/de-0a337adda878feca.json",
+      "publicationFileSha256": "f6dbcf530207bd43ba51a09334e7708710fbb67fbc3be913ad48b36cd06ae335"
     },
     {
       "renewalId": "0a337adda878feca",
       "language": "fr",
       "title": "Pools de crédits Copilot : usage inclus et dépenses supplémentaires",
       "url": "https://youdozi.github.io/fr/digest/2026-07-03-copilot-credit-pools-and-additional-spending/",
-      "publicationFile": "src/content/translations/fr-0a337adda878feca.json"
+      "publicationFile": "src/content/translations/fr-0a337adda878feca.json",
+      "publicationFileSha256": "72d5f30d3d16803e004ea19aa0d2afcde7c3c69ff4596215b414f0073e02fad4"
     },
     {
       "renewalId": "0a337adda878feca",
       "language": "ru",
       "title": "Пулы кредитов Copilot: включённое использование и дополнительные расходы",
       "url": "https://youdozi.github.io/ru/digest/2026-07-03-copilot-credit-pools-and-additional-spending/",
-      "publicationFile": "src/content/translations/ru-0a337adda878feca.json"
+      "publicationFile": "src/content/translations/ru-0a337adda878feca.json",
+      "publicationFileSha256": "f38932accd077ac0483151e94fa5a6e2d1e0ed22c4dffa2ae69f28c6782e8b33"
     },
     {
       "renewalId": "1c1c9e6c82aad3a4",
       "language": "zh-CN",
       "title": "GitHub 仓库安全公告新增搜索与筛选",
       "url": "https://youdozi.github.io/zh-CN/digest/2026-05-07-github-security-advisory-search/",
-      "publicationFile": "src/content/translations/zh-CN-1c1c9e6c82aad3a4.json"
+      "publicationFile": "src/content/translations/zh-CN-1c1c9e6c82aad3a4.json",
+      "publicationFileSha256": "fb54d2970d504f04e7efd426048009b87fe5d0486c19fe78516467215acf21a7"
     },
     {
       "renewalId": "1c1c9e6c82aad3a4",
       "language": "ja",
       "title": "GitHub のリポジトリアドバイザリに検索・絞り込み機能",
       "url": "https://youdozi.github.io/ja/digest/2026-05-07-github-security-advisory-search/",
-      "publicationFile": "src/content/translations/ja-1c1c9e6c82aad3a4.json"
+      "publicationFile": "src/content/translations/ja-1c1c9e6c82aad3a4.json",
+      "publicationFileSha256": "ad1db6c8309ad15d25ba1ad42ea163b7e2e2a852e96bec28240d19ef5ef53710"
     },
     {
       "renewalId": "1c1c9e6c82aad3a4",
       "language": "de",
       "title": "GitHub-Sicherheitshinweise in Repositories erhalten Suche und Filter",
       "url": "https://youdozi.github.io/de/digest/2026-05-07-github-security-advisory-search/",
-      "publicationFile": "src/content/translations/de-1c1c9e6c82aad3a4.json"
+      "publicationFile": "src/content/translations/de-1c1c9e6c82aad3a4.json",
+      "publicationFileSha256": "d26eb91443c582ceda2a5b498b2d3be36a3f070cccff0481a703ba1db23e9008"
     },
     {
       "renewalId": "1c1c9e6c82aad3a4",
       "language": "fr",
       "title": "GitHub ajoute la recherche et les filtres aux avis de sécurité des dépôts",
       "url": "https://youdozi.github.io/fr/digest/2026-05-07-github-security-advisory-search/",
-      "publicationFile": "src/content/translations/fr-1c1c9e6c82aad3a4.json"
+      "publicationFile": "src/content/translations/fr-1c1c9e6c82aad3a4.json",
+      "publicationFileSha256": "0f39722cede69bcb37290722e9247b7ac57b9e802b399a80bdf18ee92ecea2f8"
     },
     {
       "renewalId": "1c1c9e6c82aad3a4",
       "language": "ru",
       "title": "В уведомлениях безопасности репозиториев GitHub появились поиск и фильтры",
       "url": "https://youdozi.github.io/ru/digest/2026-05-07-github-security-advisory-search/",
-      "publicationFile": "src/content/translations/ru-1c1c9e6c82aad3a4.json"
+      "publicationFile": "src/content/translations/ru-1c1c9e6c82aad3a4.json",
+      "publicationFileSha256": "549265e0347a4097c0959305ce1d4d77ef6ad77cb633a99bc1f659f77c1e5aad"
     }
   ],
   "preview": {
@@ -209,8 +239,28 @@
   },
   "publicationNotes": [
     "This manifest is a review artifact; no build or publication script consumes it.",
-    "Candidate URLs are planned and not yet published; existing pilot translations remain public.",
-    "User publication approval is pending for these exact 25 editions and reviewed batch.",
-    "Create actual approval and translation publication timestamps only after approval; do not reuse source news dates or test fixture metadata."
-  ]
+    "User approved these 25 editions in the Codex conversation for PR #50.",
+    "Production availability must be verified after merge and successful deployment.",
+    "Approval and translation publication timestamps are new; source news dates and test fixture metadata are not reused."
+  ],
+  "publicationPreparedAt": "2026-10-26T15:42:21.545Z",
+  "publicationVerification": {
+    "checkedAt": "2026-10-26T15:43:01.256509+00:00",
+    "nodeTestsPassed": 15,
+    "astroCheck": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "htmlPagesExcludingOwnershipFiles": 815,
+    "canonicalSitemapUrls": 413,
+    "approvedTranslations": 30,
+    "newlyApprovedTranslations": 25,
+    "remainingUnpublishedEditions": 265,
+    "correspondingArticlePagesVerified": 35,
+    "selfCanonical": true,
+    "reciprocalHreflang": true,
+    "englishXDefault": true,
+    "localizedFeedsAndSearchIndexes": true,
+    "productionDeployment": "pending"
+  }
 }

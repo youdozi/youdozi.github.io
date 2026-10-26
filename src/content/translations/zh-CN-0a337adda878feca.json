@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "0a337adda878feca",
+  "language": "zh-CN",
+  "sourceSha256": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+  "edition": {
+    "title": "Copilot 额度池：内含用量与额外支出",
+    "claims": [
+      "GitHub 宣布在 Enterprise Cloud 上为 Copilot Business 和 Enterprise 提供成本中心 AI 额度池。公告发布时可通过 REST API 配置，而设置界面中的管理功能仍在规划中。",
+      "额度池上限限制成本中心可从企业共享的内含额度中使用多少；成本中心预算则管理内含额度池耗尽后的按量计费费用。这些控制措施针对不同的支出阶段，可结合使用。",
+      "GitHub 根据已分配的许可证计算额度池上限。达到上限时，企业可以阻止继续使用内含额度，也可以在允许超额使用的情况下放行额外支出，因此额度池并不自动构成所有费用的硬性上限。"
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "应一并审查内含额度分配、超额使用策略和按量计费预算。调整控制措施前，确认当前 API 与界面功能的可用性；本次来源审阅未测量实际节省金额。",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

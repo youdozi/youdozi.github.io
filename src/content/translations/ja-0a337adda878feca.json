@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "0a337adda878feca",
+  "language": "ja",
+  "sourceSha256": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+  "edition": {
+    "title": "Copilot のクレジットプール：含まれる利用枠と追加支出",
+    "claims": [
+      "GitHub は、Enterprise Cloud 上の Copilot Business と Enterprise 向けに、コストセンター単位の AI クレジットプールを発表した。発表時点では REST API で設定でき、設定画面での管理は計画段階だった。",
+      "プールの上限は、企業全体で共有する契約に含まれるクレジットから、コストセンターが使える量を制限する。コストセンターの予算は、そのプールを使い切った後の従量課金を管理する。対象となる支出段階が異なるため、両者を組み合わせられる。",
+      "GitHub は割り当て済みライセンスからプール上限を算出する。上限に達すると、企業は契約に含まれるクレジットの追加利用を停止するか、超過利用を許可している場合は追加支出を認められる。そのため、プールが自動的に全料金の厳格な上限になるわけではない。"
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "契約に含まれるクレジットの配分、超過利用ポリシー、従量課金予算をまとめて確認する。設定を変更する前に、現在の API と管理画面の利用可否を確認する。この出典レビューでは実際の削減額を測定していない。",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}
