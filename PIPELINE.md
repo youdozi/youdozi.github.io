@@ -233,3 +233,41 @@ RSS에는 다이제스트의 모든 기사 제목·요약·원문 링크를 포�
 사용자는 PR에서 `editorial.opinion.en`과 `.ko`에 게시 가치나 적용 판단을 작성할 수 있습니다. 실제 실험을 했다면 `editorial.experiment.status`를 `tested`로 바꾸고, HTTPS `reportUrl`과 두 언어의 `environment`·`result`를 모두 입력해야 합니다. 환경에는 버전·실행 조건, 결과에는 관찰한 결과와 한계를 적고 보고서에 재현 근거를 남기세요. 필수 기록이 없으면 빌드와 미리보기에서 차단됩니다. 상태 필드는 보고서 내용을 독립적으로 입증하지 않으므로 사용자 검토가 필요합니다.
 
 새 형식의 기사를 게시하면 사용자가 작성한 편집 의견과 실험 여부도 본문에 표시합니다. 기존 게시글에는 해당 메타데이터를 소급 생성하지 않습니다. 발행 주기와 최종 PR 병합 절차는 유지합니다.
+
+## 다국어 보강본 준비와 승인
+
+2026-10-26 확정 범위는 최근 보강 글 59건의 중국어 간체(`zh-CN`)·일본어(`ja`)·독일어(`de`)·프랑스어(`fr`)·러시아어(`ru`) 번역입니다. 영어가 기본 언어이며 루트 주소와 `x-default`는 영어를 유지합니다. 기존 신규 뉴스 수집기는 영어·한국어 초안만 생성합니다. 이 작업은 승인된 보강본의 다국어판을 별도로 준비하는 경로입니다.
+
+`.pipeline/translations/queue-2026-10-26.json`에 영어 기준본 59건과 번역 작업 295건을 기록했습니다. 첫 파일럿은 다중 리전 설계 글 1건의 5개 언어 초안이며, 290건은 번역 대기입니다. 검토할 원고는 [파일럿 검토 문서](.pipeline/translations/reviews/pilot-001.md)에 영어 기준본과 함께 표시합니다. 이 초안은 사람의 의미·표현 검토를 통과한 번역으로 취급하지 않습니다.
+
+- 초안과 검토 문서는 `.pipeline/translations/`에만 보관합니다. 공개 디렉터리나 검색/RSS/사이트맵에 넣지 않습니다.
+- 번역의 기준은 원문 인용 근거가 연결된 승인 영어 보강본입니다. 주장 순서·개수, 후속 확인, 제한 조건과 편집 제안을 유지합니다. 영어 보강본의 파일 해시를 고정하여 수정된 기준본을 재검토 없이 게시하지 못하게 합니다.
+- 검토자는 각 언어의 자연스러움과 의미, 부정·조건·단위, 제품명·버전·수치, 뉴스 당시와 현재의 구분을 확인합니다. 원문 인용은 번역으로 대체하지 않고 승인 기준본의 근거를 공유합니다. 자동 검사는 숫자·등록 제품명·문장 수·문자 체계의 일부 오류를 잡지만 번역 정확성을 입증하지 않습니다. 수치는 아라비아 숫자, 보호된 제품명은 영어 표기를 유지합니다.
+- 사람이 해당 배치를 승인하면 승인자·PR 번호·승인 근거와 실제 번역 공개 시각을 기록한 `src/content/translations/<language>-<renewalId>.json`을 만듭니다. 과거 뉴스 날짜와 영어·한국어 최초 발행일을 번역 공개일로 재사용하지 않습니다.
+- 승인 번역이 있는 언어만 공개 경로·언어 메뉴·검색 인덱스·RSS를 생성합니다. 실제 대응 글끼리 자기 참조 및 상호 `hreflang`을 연결하고, 언어별 canonical·Open Graph locale·구조화 데이터·사이트맵을 생성합니다. 번역이 없는 글은 다른 언어의 홈으로 안내하고 가짜 번역 페이지를 만들지 않습니다.
+- 초안 검토 PR → 명시적 승인 기록 → 게시 파일 PR → 검사 통과 → 사용자 병합/게시 순서를 따릅니다. `publish` 명령은 로컬 게시 파일만 만들고 병합·배포는 하지 않습니다.
+
+Node는 `.nvmrc`의 버전을 사용합니다. 준비·검토 명령은 유료 번역 API를 호출하지 않습니다.
+
+```sh
+# 새로운 큐 스냅샷 준비 (기존 파일을 덮어쓰지 않음)
+npm run prepare:translations -- --output .pipeline/translations/queue-YYYY-MM-DD.json
+
+# 파일럿과 모든 승인 번역 검사 (일반 check/build에서도 자동 실행)
+npm run check:translations
+node scripts/translations.mjs validate --batch .pipeline/translations/batches/pilot-001.json
+
+# 검토 문서 생성 (출력 파일이 없을 때 실행)
+node scripts/translations.mjs review \
+  --batch .pipeline/translations/batches/pilot-001.json \
+  --output .pipeline/translations/reviews/pilot-001.md
+
+# 아래는 사용자에게 해당 배치의 게시 승인을 받은 후에만 실행
+node scripts/translations.mjs publish \
+  --batch .pipeline/translations/batches/pilot-001.json \
+  --reviewed-by youdozi \
+  --approval-pr <번역을-승인한-PR-번호> \
+  --approval-basis '<해당 배치에 대한 명시적 승인 기록>'
+```
+
+첫 파일럿의 용어·문체 검토 후 남은 58건을 소규모 배치로 번역하고 같은 검사를 반복합니다. 승인된 글에 대해서만 다섯 언어를 순차 공개하며, 실제 Google 색인 여부는 공개 후 Search Console에서 확인합니다. 다국어 SEO 태그의 검증은 색인이나 검색 순위 보장이 아닙니다.

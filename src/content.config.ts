@@ -1,4 +1,5 @@
 import { digestSchema } from './lib/digest-schema';
+import { translationSchema } from './lib/translation-schema';
 import { renewalSchema } from './lib/renewal-schema';
 import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
@@ -23,4 +24,5 @@ const renewals = defineCollection({
   loader: glob({ pattern: '*.json', base: './src/content/renewals' }),
   schema: renewalSchema,
 });
-export const collections = { posts, digests, renewals };
+const translations = defineCollection({loader:glob({pattern:'*.json',base:'./src/content/translations'}),schema:translationSchema});
+export const collections = { posts, digests, renewals, translations };

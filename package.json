@@ -11,15 +11,17 @@
     "check": "npm run check:digests && astro check",
     "build": "npm run check:digests && node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py",
     "preview": "astro preview",
-    "test": "node --test scripts/test-site.mjs",
+    "test": "node --test scripts/test-site.mjs scripts/test-translations.mjs",
     "test:python": "python3 -m unittest discover -s scripts -p 'test*.py' -v",
     "generate:digest": "python3 scripts/generate_digest.py",
     "generate:digest:dry": "python3 scripts/generate_digest.py --dry-run",
     "migrate:jekyll": "node scripts/migrate-jekyll.mjs",
     "test:articles": "python3 -B scripts/check_article_examples.py",
     "audit:archive": "python3 -B scripts/audit_archive.py",
-    "check:digests": "python3 -B scripts/check_digests.py && npm run check:archive",
-    "check:archive": "python3 -B scripts/archive_renewal.py check"
+    "check:digests": "python3 -B scripts/check_digests.py && npm run check:archive && npm run check:translations",
+    "check:archive": "python3 -B scripts/archive_renewal.py check",
+    "check:translations": "node scripts/translations.mjs check",
+    "prepare:translations": "node scripts/translations.mjs prepare"
   },
   "dependencies": {
     "astro": "7.4.2",

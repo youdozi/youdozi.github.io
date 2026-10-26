@@ -93,10 +93,20 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
   const result = spawnSync('python3', ['-B', '-c', "import sys,json;sys.path.insert(0,'scripts');from test_bilingual_digest import article;a=article();a['publishedAt']='2000-01-01T00:00:00+09:00';a['editions']['en']['title']='Literal {{ 7 | times: 7 }} <script>alert(1)</script>';print(json.dumps({'date':'2000-01-01','publishedAt':'2000-01-01T01:00:00+09:00','articles':[a]}))"], {encoding:'utf8'});
   assert.equal(result.status,0,result.stderr);
   const fixture='src/content/digests/2000-01-01.json';
+  const {publishBatch}=await import('./translations.mjs');
+  const batch=JSON.parse(await readFile('.pipeline/translations/batches/pilot-001.json','utf8'));
+  const source=JSON.parse(await readFile(`src/content/renewals/${batch.translations[0].renewalId}.json`,'utf8'));
+  const translationFiles=[];
+
   try {
     await writeFile(fixture,result.stdout,{flag:'wx'});
+    const published=await publishBatch(batch,{reviewedBy:'Build test fixture',pullRequest:1,basis:'Temporary integration fixture, removed after test'});
+    translationFiles.push(...published.map(t=>`src/content/translations/${t.language}-${t.renewalId}.json`));
+
+    const assets=spawnSync(process.execPath,['scripts/prepare-public.mjs'],{encoding:'utf8'});assert.equal(assets.status,0,assets.stderr);
     const build=spawnSync(process.execPath,['node_modules/astro/bin/astro.mjs','build'],{encoding:'utf8',maxBuffer:8*1024*1024});
     assert.equal(build.status,0,build.stderr);
+    const checked=spawnSync('python3',['-B','scripts/check_site.py'],{encoding:'utf8'});assert.equal(checked.status,0,checked.stdout+checked.stderr);
     const en=await readFile('dist/en/digest/2000-01-01/index.html','utf8');
     const ko=await readFile('dist/ko/digest/2000-01-01/index.html','utf8');
     assert.match(en,/<html lang="en">/);assert.match(ko,/<html lang="ko">/);
@@ -130,6 +140,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.match(englishArticle,/<html lang="en">/);
     assert.match(englishArticle,/rel="canonical" href="https:\/\/youdozi.github.io\/en\/posts\/2023-09-19-springboot-test-webclient\/"/);
     assert.match(englishArticle,/hreflang="ko" href="https:\/\/youdozi.github.io\/ko\/posts\/2023-09-19-springboot-test-webclient\/"/);
+    assert.ok(!englishArticle.includes('hreflang="ja"'));assert.ok(englishArticle.includes('href="/ja/"'));
     const graph=JSON.parse(englishArticle.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
     const posting=graph.find(item=>item['@type']==='BlogPosting');
     assert.equal(posting.inLanguage,'en');assert.equal(posting.author.name,'youdozi');
@@ -174,6 +185,36 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.ok(!revisedLegacy.includes('32사'));
     assert.ok(!sitemap.includes('pilot-001'));
 
+    for(const record of published){
+      const lang=record.language,url=`https://youdozi.github.io/${lang}/digest/${source.slug}/`;
+      const html=await readFile(`dist/${lang}/digest/${source.slug}/index.html`,'utf8');
+      assert.ok(html.includes(`<html lang="${lang}">`));
+      const policy=JSON.parse(await readFile('src/lib/locales.json','utf8'));
+      assert.ok(html.includes(`property="og:locale" content="${policy.locales[lang].ogLocale}"`));
+      assert.ok(html.includes(`rel="canonical" href="${url}"`));
+      assert.ok(!html.includes('noindex,follow'));
+      for(const other of ['en','ko',...published.map(t=>t.language)]){
+        const counterpart=await readFile(`dist/${other}/digest/${source.slug}/index.html`,'utf8');
+        assert.ok(html.includes(`hreflang="${other}" href="https://youdozi.github.io/${other}/digest/${source.slug}/"`));
+        assert.ok(counterpart.includes(`hreflang="${lang}" href="${url}"`));
+      }
+      assert.ok(html.includes(`hreflang="x-default" href="https://youdozi.github.io/en/digest/${source.slug}/"`));
+      const graph=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      const posting=graph.find(item=>item['@type']==='BlogPosting');
+      assert.equal(posting.inLanguage,lang);assert.equal(posting.datePublished,record.publishedAt);
+      assert.equal(posting.dateModified,record.updatedAt);
+      assert.ok(html.includes(source.editions.en.claims[0].evidence[0].quote));
+      const index=JSON.parse(await readFile(`dist/${lang}/search-index.json`,'utf8'));
+      assert.equal(index.length,1);assert.ok(index[0].content.includes(record.edition.claims[0]));
+      const feed=await readFile(`dist/${lang}/feed.xml`,'utf8');
+      assert.ok(feed.includes(`<language>${lang}</language>`));
+      assert.ok(feed.includes(record.edition.claims[0].replaceAll('&','&amp;').replaceAll("'",'&apos;')));
+      assert.ok(sitemap.includes(`<loc>${url}</loc>`));
+      assert.ok(!sitemap.includes(`/${lang}/posts/`));
+      assert.ok(!(await readFile(`dist/${lang}/index.html`,'utf8')).includes('noindex,follow'));
+      assert.ok((await readFile(`dist/${lang}/posts/index.html`,'utf8')).includes('noindex,follow'));
+    }
+
     const tags=await readFile('dist/ko/tags/index.html','utf8');
     const upper=tags.match(/href="([^"]+)"[^>]*>SpringBoot /)?.[1];
     const lower=tags.match(/href="([^"]+)"[^>]*>springboot /)?.[1];
@@ -182,6 +223,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
 
   } finally {
     await unlink(fixture);
+    await Promise.all(translationFiles.map(file=>unlink(file)));
   }
 });
 
