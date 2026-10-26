@@ -1,0 +1,4216 @@
+{
+  "schemaVersion": 1,
+  "scope": "approved-renewals",
+  "generatedAt": "2026-10-26T09:49:11.390Z",
+  "sourceCount": 59,
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru"
+  ],
+  "sources": [
+    {
+      "renewalId": "0915f64eb6629c85",
+      "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+      "slug": "2026-05-09-copilot-grok-code-fast-retirement",
+      "sourceUrl": "https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1",
+      "sourceUpdatedAt": "2026-10-25T06:06:33+00:00",
+      "edition": {
+        "title": "Grok Code Fast 1 retirement notice specifies Copilot scope",
+        "claims": [
+          {
+            "text": "GitHub announced the planned retirement of Grok Code Fast 1 from Copilot on 2026-05-15. This records the announced schedule rather than independently verifying the completed shutdown.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Grok Code Fast 1 2026-05-15"
+              }
+            ]
+          },
+          {
+            "text": "The notice says the date was accelerated because of the model provider deprecation.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "accelerated due to the model provider deprecation"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Inventory product-specific model names and admin policy dependencies before changing workflows. Verify present availability and evaluate an alternative on representative tasks rather than adopting historical suggested models automatically."
+    },
+    {
+      "renewalId": "097c455a9b953f24",
+      "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+      "slug": "2026-05-06-codeql-sanitizer-and-validator-models",
+      "sourceUrl": "https://www.infoq.com/news/2026/05/github-codeql-security-modeling/",
+      "sourceUpdatedAt": "2026-10-25T06:06:33+00:00",
+      "edition": {
+        "title": "CodeQL models-as-data add custom sanitizers and validators",
+        "claims": [
+          {
+            "text": "GitHub describes declarative sanitizers and validators in CodeQL YAML data extensions, using barrierModel and barrierGuardModel.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "two new extensible predicates: barrierModel"
+              }
+            ]
+          },
+          {
+            "text": "The announcement lists availability starting with CodeQL 2.25.2. This is the minimum version in that historical announcement, not a current upgrade recommendation.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "available starting with CodeQL 2.25.2"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Model only the vulnerability kinds and paths the sanitizer actually protects. Test positive and negative examples so an overly broad barrier does not hide real taint flows; this draft does not claim a measured reduction in false positives."
+    },
+    {
+      "renewalId": "09e0d0ec5ed64f8a",
+      "sourceSha256": "5c97c6f02a9a1f0f2521a7fb7169e71e10b5dc78aeb94851759c52a1b403fc3c",
+      "slug": "2026-05-16-copilot-grok-code-fast-retirement-confirmation",
+      "sourceUrl": "https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
+      "sourceUpdatedAt": "2026-10-25T06:31:18+00:00",
+      "edition": {
+        "title": "GitHub reports Grok Code Fast 1 retirement in Copilot",
+        "claims": [
+          {
+            "text": "GitHub reported that Grok Code Fast 1 was deprecated across its Copilot experiences on 2026-05-15. This is the product vendor’s completion notice, distinct from the earlier planned date.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Grok Code Fast 1 2026-05-15"
+              }
+            ]
+          },
+          {
+            "text": "The notice says Copilot Enterprise administrators may need to enable alternative models through their model policies.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "enable access to alternative models through their model policies"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Link this completion notice to the earlier scheduled-retirement item when reviewing the archive. Confirm actual product availability and administrative policies before changing a workflow; the announcement does not describe every provider API."
+    },
+    {
+      "renewalId": "0a337adda878feca",
+      "sourceSha256": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+      "slug": "2026-07-03-copilot-credit-pools-and-additional-spending",
+      "sourceUrl": "https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps",
+      "sourceUpdatedAt": "2026-10-25T17:03:04+00:00",
+      "edition": {
+        "title": "Copilot credit pools: included usage and additional spending",
+        "claims": [
+          {
+            "text": "GitHub announced cost-center AI credit pools for Copilot Business and Enterprise on Enterprise Cloud. At announcement time, configuration was available through the REST API, while settings-UI management was still planned.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "This is available through the REST API today. Management in the cost center settings UI is coming soon."
+              },
+              {
+                "document_id": 0,
+                "quote": "This is available for Copilot Business and Copilot Enterprise on GitHub Enterprise Cloud"
+              }
+            ]
+          },
+          {
+            "text": "The pool cap limits a cost center’s draw from enterprise-wide included credits; a cost-center budget governs metered charges after the included pool is exhausted. These controls cover different spending phases and can be combined.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "An AI credit pool is separate from a cost center budget."
+              },
+              {
+                "document_id": 0,
+                "quote": "A cost center budget governs the metered phase, capping charges after the pool is exhausted."
+              }
+            ]
+          },
+          {
+            "text": "GitHub calculates the pool limit from assigned licenses. At the cap, enterprises can block further included usage or allow additional spend when overages are permitted, so the pool is not automatically a hard cap on all charges.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "GitHub calculates the pool limit automatically from the licenses assigned to that cost center"
+              },
+              {
+                "document_id": 0,
+                "quote": "block further included usage or let it continue as additional spend if your enterprise allows overages."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Review included-credit allocation, overage policy and metered budgets together. Confirm current API and UI availability before changing controls; this source review does not measure actual savings."
+    },
+    {
+      "renewalId": "1c1c9e6c82aad3a4",
+      "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+      "slug": "2026-05-07-github-security-advisory-search",
+      "sourceUrl": "https://github.blog/changelog/2026-05-06-search-and-filter-bar-for-repository-security-advisories",
+      "sourceUpdatedAt": "2026-10-25T06:06:33+00:00",
+      "edition": {
+        "title": "GitHub repository advisories gain search and filters",
+        "claims": [
+          {
+            "text": "GitHub added search and filtering for security advisories directly in a repository Security tab.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "search and filter security advisories directly"
+              }
+            ]
+          },
+          {
+            "text": "The notice lists sort, package, ecosystems and severity among the supported search or filtering keywords.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "sort , package , ecosystems , severity"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Check whether the view contains draft, incoming and published advisories needed for the review. A smaller filtered result set should not be interpreted as fewer underlying vulnerabilities."
+    },
+    {
+      "renewalId": "1e8ba1d86d179142",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "slug": "2026-04-10-copilot-risk-assessment-context",
+      "sourceUrl": "https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available",
+      "sourceUpdatedAt": "2026-10-25T05:38:18+00:00",
+      "edition": {
+        "title": "Copilot adds contextual help to GitHub risk-assessment results",
+        "claims": [
+          {
+            "text": "GitHub lets organization admins and security managers open Copilot directly from secret or Code Security risk-assessment results.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Organization admins and security managers"
+              }
+            ]
+          },
+          {
+            "text": "The notice describes contextual explanations and guided next steps. It does not establish that Copilot has automatically remediated the underlying issues.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "get contextual explanations and guided next steps."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Review the suggested actions and the permissions needed to perform them. Keep explanation, suggested remediation and verified fixes distinct when recording assessment outcomes."
+    },
+    {
+      "renewalId": "27d181b6a4903b28",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "slug": "2026-07-15-ai-code-scanning-preview-and-general-availability",
+      "sourceUrl": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
+      "sourceUpdatedAt": "2026-10-25T17:03:04+00:00",
+      "edition": {
+        "title": "AI code scanning: preview conditions and later general availability",
+        "claims": [
+          {
+            "text": "At preview launch, GitHub described AI detections on pull requests as extending language and framework coverage beyond CodeQL. Enterprise permission, organization enablement and repository CodeQL default analysis were required even though a separate AI engine performed the analysis.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "AI security detections must be allowed by your Enterprise policy and enabled at the organization level."
+              },
+              {
+                "document_id": 0,
+                "quote": "While CodeQL is not the tool performing the AI analysis, the AI detection engine relies on it to function."
+              }
+            ]
+          },
+          {
+            "text": "The preview findings were informational and did not block merges. The announcement required a Copilot license and consumed organization AI credits during public preview, so the original feature was neither an automatic approval gate nor an unconditional free service.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "These findings are informational and won’t block pull request merges."
+              },
+              {
+                "document_id": 0,
+                "quote": "During public preview, AI security detections require a GitHub Copilot license and draw down your organization’s AI credits."
+              }
+            ]
+          }
+        ],
+        "followUp": [
+          {
+            "text": "GitHub’s 2026-10-15 notice announces AI Scan general availability. It says a Copilot license is not required; private and internal organization repositories still require GitHub Code Security or Advanced Security. These conditions differ from the preview announcement.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "Code scanning AI Scan for pull requests is now generally available."
+              },
+              {
+                "document_id": 1,
+                "quote": "A GitHub Copilot license is not required."
+              },
+              {
+                "document_id": 1,
+                "quote": "For private and internal organization-owned repositories, GitHub Code Security or GitHub Advanced Security is required."
+              }
+            ]
+          },
+          {
+            "text": "The later notice retains advisory-only findings and says AI Scan cannot block merges through rulesets. It does not run on fork pull requests or pull requests created by Dependabot.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "They do not fail the code scanning check and cannot block pull request merges through ruleset requirements."
+              },
+              {
+                "document_id": 1,
+                "quote": "AI Scan does not run on pull requests from forks or pull requests created by Dependabot."
+              }
+            ]
+          },
+          {
+            "text": "The later billing model consumes Code Security AI Credits, displayed under Advanced Security in enterprise AI usage. The absence of a Copilot-license requirement does not mean scanning has no usage charge.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "AI Scan for pull requests consumes Code Security AI Credits."
+              }
+            ]
+          }
+        ]
+      },
+      "reviewFocus": "Use the later notice for current eligibility and billing interpretation, while retaining the preview conditions as history. Advisory findings need a human response and do not replace required checks or comprehensive security validation."
+    },
+    {
+      "renewalId": "28ede0247b95214f",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "slug": "2026-06-07-copilot-model-retirement-and-code-review-exception",
+      "sourceUrl": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+      "sourceUpdatedAt": "2026-10-25T12:23:59+00:00",
+      "edition": {
+        "title": "Copilot model retirement: scope, alternatives and code-review exception",
+        "claims": [
+          {
+            "text": "GitHub announced GPT-5.2 and GPT-5.2-Codex deprecation on 2026-06-05 across most Copilot experiences, while explicitly retaining GPT-5.2 for Copilot code review in that announcement. This does not establish retirement across other providers or APIs.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Note that GPT-5.2 is still available as part of Copilot code review."
+              },
+              {
+                "document_id": 0,
+                "quote": "As of today, June 5, 2026, we have deprecated the following models across most GitHub Copilot experiences"
+              }
+            ]
+          },
+          {
+            "text": "The announcement suggests GPT-5.5 for GPT-5.2 and GPT-5.3-Codex for GPT-5.2-Codex. Enterprise administrators may need to enable alternatives through model policies before users can select them.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Copilot Enterprise administrators may need to enable access to alternative models through their model policies in Copilot settings."
+              },
+              {
+                "document_id": 0,
+                "quote": "GPT-5.2 2026-06-05 GPT-5.5 GPT-5.2-Codex 2026-06-05 GPT-5.3-Codex"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Check the specific Copilot product and organization policy before migrating. These are the historical notice’s exceptions and alternatives, not a claim that its model availability remains unchanged today."
+    },
+    {
+      "renewalId": "2b6f4abe346a373d",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "slug": "2026-06-02-spring-security-report-triage",
+      "sourceUrl": "https://spring.io/blog/2026/06/01/spring_and_security_in_the_times_of_ai",
+      "sourceUpdatedAt": "2026-10-25T12:23:59+00:00",
+      "edition": {
+        "title": "Spring portfolio: security-report triage and patching",
+        "claims": [
+          {
+            "text": "Spring warned that the majority of portfolio projects would require upgrades for the scheduled security patches and recommended applying the latest patches. This was a release-train notice, not an affected-version matrix for every application.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "The majority of projects within the Spring portfolio will require upgrades for newly released security patches."
+              }
+            ]
+          },
+          {
+            "text": "The team explicitly distinguishes incoming security reports from issued CVEs: reports can include duplicates or invalid findings and require maintainer triage. Report volume alone does not establish vulnerability severity.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "not every security report results in a new CVE being issued."
+              },
+              {
+                "document_id": 0,
+                "quote": "duplicates or invalid findings that get filtered out"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Map actual application dependencies to individual advisories and supported release lines. This brief does not independently reproduce the vendor’s report statistics or establish that every application is exploitable."
+    },
+    {
+      "renewalId": "38bfcb4310c98b8d",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "slug": "2026-10-12-workers-on-demand-profiling",
+      "sourceUrl": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+      "sourceUpdatedAt": "2026-10-25T05:21:13+00:00",
+      "edition": {
+        "title": "Workers and Durable Objects gain on-demand resource profiles",
+        "claims": [
+          {
+            "text": "Cloudflare announced CPU and memory profiling for Workers and Durable Objects, with on-demand collection and downloadable profiles described in the article.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "support for CPU and memory profiling of Workers and Durable Objects"
+              }
+            ]
+          },
+          {
+            "text": "For CPU profiling, the implementation starts a V8 profiler with a one millisecond sampling interval. That sampling detail is not evidence of zero production overhead.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "begin sampling at a one millisecond interval."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Check that the requested version and isolate are active at the selected location, and compare behavior with and without profiling under representative traffic. Resource allocation samples and retained memory are different questions."
+    },
+    {
+      "renewalId": "3e483be55bb45ecb",
+      "sourceSha256": "bb76edf97af70128a4eee1582db825b0a114175ed49f9ce5f00ce0a7d1f0c560",
+      "slug": "2026-05-02-copilot-gpt-retirement-date-corrections",
+      "sourceUrl": "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex",
+      "sourceUpdatedAt": "2026-10-25T06:06:33+00:00",
+      "edition": {
+        "title": "GitHub Copilot: GPT-5.2 and GPT-5.2-Codex retirement corrections",
+        "claims": [
+          {
+            "text": "GitHub published a Copilot retirement notice covering GPT-5.2 and GPT-5.2-Codex. This is a Copilot product notice, not a statement about every provider API.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "GPT-5.2 6-05-2026 GPT-5.5 GPT-5.2-Codex"
+              }
+            ]
+          },
+          {
+            "text": "The notice says Copilot Enterprise administrators may need to enable alternative models through their model policies.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "their model policies"
+              }
+            ]
+          }
+        ],
+        "followUp": [
+          {
+            "text": "A later editor note moved the planned retirement from 2026-06-01 to 2026-06-05.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "from June 1, 2026 to June 5, 2026."
+              }
+            ]
+          },
+          {
+            "text": "Another correction identifies GPT-5.2, rather than GPT-5.2-Codex, as the exception for Copilot Code Review.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "GPT-5.2 instead of GPT-5.2-Codex"
+              }
+            ]
+          }
+        ]
+      },
+      "reviewFocus": "Use the corrected dates and product exception when auditing historical model choices. Confirm current availability in the relevant product rather than treating this archive as a current model recommendation."
+    },
+    {
+      "renewalId": "3f90329447f77e33",
+      "sourceSha256": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f",
+      "slug": "2026-06-10-third-party-coding-agent-security-validation",
+      "sourceUrl": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "sourceUpdatedAt": "2026-10-25T12:23:59+00:00",
+      "edition": {
+        "title": "Third-party coding-agent security validation on GitHub",
+        "claims": [
+          {
+            "text": "GitHub announced generally available security validation for supported third-party coding agents working in repositories. It describes CodeQL analysis, checks of newly introduced dependencies against the GitHub Advisory Database, and secret scanning.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "GitHub now automatically analyzes it for potential security vulnerabilities using CodeQL"
+              },
+              {
+                "document_id": 0,
+                "quote": "checks newly introduced dependencies against the GitHub Advisory Database, and uses GitHub secret scanning"
+              }
+            ]
+          },
+          {
+            "text": "The validations are enabled by default, follow repository Copilot validation-tool settings, and do not require a GitHub Advanced Security license. If issues are found, the agent attempts remediation before finalizing the pull request; success is not guaranteed.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Security validation doesn’t require a GitHub Advanced Security license."
+              },
+              {
+                "document_id": 0,
+                "quote": "These security validations are on by default and follow your repository’s Copilot settings for which validation tools to use."
+              },
+              {
+                "document_id": 0,
+                "quote": "the agent attempts to resolve them before finalizing the pull request."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Confirm supported agent integration and effective repository settings; keep human review and independent checks for security-sensitive changes. No detection-rate or remediation-success benchmark was reproduced."
+    },
+    {
+      "renewalId": "4380abffaf1a31e0",
+      "sourceSha256": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+      "slug": "2026-06-20-gitlab-security-features-and-upgrade-prerequisites",
+      "sourceUrl": "https://www.infoq.com/news/2026/06/gitlab-19-agentic-ai/",
+      "sourceUpdatedAt": "2026-10-25T12:40:05+00:00",
+      "edition": {
+        "title": "GitLab 19.0: secret beta, dependency scanning and upgrade prerequisites",
+        "claims": [
+          {
+            "text": "In GitLab 19.0, Secrets Manager is an open beta for Premium and Ultimate customers on GitLab.com and Self-Managed. The release notes warn that the beta might not be ready for production use.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "The GitLab Secrets Manager is now available in open beta for Premium and Ultimate customers on GitLab.com and GitLab Self-Managed."
+              },
+              {
+                "document_id": 0,
+                "quote": "might not be ready for production use."
+              }
+            ]
+          },
+          {
+            "text": "SBOM-based dependency scanning is generally available in the Ultimate tier across GitLab.com, Self-Managed and Dedicated. Its availability and tier differ from the Secrets Manager beta.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Dependency scanning by using SBOM generally available Tier: Ultimate Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated"
+              }
+            ]
+          },
+          {
+            "text": "For Self-Managed upgrades to GitLab 19.0, PostgreSQL 17 is the minimum supported version. The notes instruct users of packaged PostgreSQL 16 to upgrade the database before installing the release.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "The minimum supported version of PostgreSQL is now version 17."
+              },
+              {
+                "document_id": 0,
+                "quote": "If you use the packaged PostgreSQL 16, upgrade the packaged PostgreSQL server before installing GitLab 19.0."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "This scoped brief covers selected release conditions, not every agentic workflow, billing change or platform requirement. Check the applicable offering, plan, database migration and beta support policy before deployment."
+    },
+    {
+      "renewalId": "46983b9e8a1cf49c",
+      "sourceSha256": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974",
+      "slug": "2026-05-08-cloudflare-copy-fail-response",
+      "sourceUrl": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+      "sourceUpdatedAt": "2026-10-25T06:06:33+00:00",
+      "edition": {
+        "title": "Cloudflare reports its operational response to Copy Fail",
+        "claims": [
+          {
+            "text": "For Copy Fail (CVE-2026-31431), Cloudflare describes testing a patched kernel in staging before resuming its fleet reboot process.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Copy Fail\" ( CVE-2026-31431 )"
+              },
+              {
+                "document_id": 0,
+                "quote": "test the patched kernel in our staging datacenters"
+              }
+            ]
+          },
+          {
+            "text": "Cloudflare reports no impact to its own environment during the incident. That company-specific statement does not establish the safety of other Linux deployments.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "no impact to the Cloudflare environment"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compare exposure, telemetry, temporary mitigation and verified patch rollout separately. Use distribution-specific advisories for affected versions and do not treat a vendor case study as proof that another fleet is protected."
+    },
+    {
+      "renewalId": "4a59615041b968ae",
+      "sourceSha256": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4",
+      "slug": "2026-10-22-php-patching-and-waf-protection",
+      "sourceUrl": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+      "sourceUpdatedAt": "2026-10-25T05:21:13+00:00",
+      "edition": {
+        "title": "PHP patches remain necessary alongside Cloudflare WAF protections",
+        "claims": [
+          {
+            "text": "The PHP project lists 8.5.12, 8.4.27, 8.3.36 and 8.2.35 as fixes for the critical remote-code-execution vulnerabilities disclosed at the time.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fix two critical vulnerabilities"
+              }
+            ]
+          },
+          {
+            "text": "Cloudflare says customers should patch PHP even when its WAF provides an additional defensive layer.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Customers should patch their PHP repos"
+              }
+            ]
+          }
+        ],
+        "followUp": [
+          {
+            "text": "In its later update, Cloudflare limits protection against the related upload-progress issue to the default field name; changing session.upload_progress.name falls outside that WAF rule.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Customers who have changed session.upload_progress.name are not covered by the WAF rule."
+              }
+            ]
+          }
+        ]
+      },
+      "reviewFocus": "Review the deployed PHP build and distribution backports separately from WAF coverage. Check upload-progress configuration before treating the later mitigation as applicable. These are review suggestions; no application was tested."
+    },
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "slug": "2026-10-20-buildkite-scoped-secrets-and-validation",
+      "sourceUrl": "https://www.infoq.com/news/2026/10/buildkite-ci-secrets-agentic/",
+      "sourceUpdatedAt": "2026-10-25T05:21:13+00:00",
+      "edition": {
+        "title": "Buildkite scopes pipeline secrets and adds pipeline validation tools",
+        "claims": [
+          {
+            "text": "Buildkite describes pipeline secrets as cluster secrets restricted to the current pipeline, with additional access conditions available.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Pipeline secrets are cluster secrets restricted to the current pipeline"
+              }
+            ]
+          },
+          {
+            "text": "Its MCP server adds validate_pipeline to check pipeline YAML against the official schema before upload.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "validate_pipeline to check pipeline YAML against the official schema before upload"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Review secret exposure at individual steps and permissions granted to CI agents. Schema validation is a narrow check; execution behavior, plugins and permission boundaries still need separate review."
+    },
+    {
+      "renewalId": "52ee7abbb037f678",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "slug": "2026-07-01-azure-devops-autofix-preview-and-billing",
+      "sourceUrl": "https://www.infoq.com/news/2026/06/azuredevops-copilot-autofix/",
+      "sourceUpdatedAt": "2026-10-25T12:40:05+00:00",
+      "edition": {
+        "title": "Azure DevOps Autofix: preview phases, review gates and billing",
+        "claims": [
+          {
+            "text": "Microsoft’s launch post describes Copilot Autofix for GitHub Advanced Security for Azure DevOps as a limited private preview with enrollment processed in waves. The launch post and later documentation must not be collapsed into an unchanged availability claim.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Copilot Autofix is available today in limited private preview for GitHub Advanced Security for Azure DevOps."
+              },
+              {
+                "document_id": 0,
+                "quote": "Enablement is processed in waves"
+              }
+            ]
+          },
+          {
+            "text": "The launch workflow generates a suggested change from supported CodeQL alerts and opens a pull request. Existing review and build gates still run, and the alert resolves after merge and the next CodeQL scan.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Your usual review and build gates run on the pull request. Once it merges and the next CodeQL scan completes, the alert resolves on its own."
+              }
+            ]
+          }
+        ],
+        "followUp": [
+          {
+            "text": "At review time, the official guide labels the feature a limited public preview and says Microsoft is not accepting additional users. This is a later documented state, not evidence that the original private-preview wording was false.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "This feature is in limited public preview. Microsoft isn't currently accepting additional users for the preview."
+              }
+            ]
+          },
+          {
+            "text": "The current guide says fix generation consumes AI credits billed through the linked Azure subscription, and GitHub Copilot budgets and user limits do not govern that Azure DevOps meter. License inclusion should not be read as free fix generation.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "Generating a fix consumes AI credits from your organization's Azure billing meter."
+              },
+              {
+                "document_id": 1,
+                "quote": "GitHub Copilot budget settings and user limits configured on GitHub don't apply to Copilot Autofix meter spend in Azure DevOps."
+              }
+            ]
+          }
+        ]
+      },
+      "reviewFocus": "Check enrollment, supported alert types and the linked Azure subscription before enabling generation. Validate fixes manually and through tests; generating a suggestion does not itself remediate an alert."
+    },
+    {
+      "renewalId": "568305543e6754fa",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "slug": "2026-09-30-spring-boot-milestone-ldap-and-telemetry",
+      "sourceUrl": "https://www.infoq.com/news/2026/09/spring-news-roundup-sep21-2026/",
+      "sourceUpdatedAt": "2026-10-25T05:21:13+00:00",
+      "edition": {
+        "title": "Spring Boot milestone: LDAP and telemetry changes",
+        "claims": [
+          {
+            "text": "The Spring Boot 4.2.0-M2 milestone adds SSL bundle support for LDAP, including LDAPS for the embedded server. This draft verifies the Boot portion of the older roundup.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Spring Boot 4.2.0-M2 has been released"
+              },
+              {
+                "document_id": 0,
+                "quote": "SSL bundle support for LDAP"
+              }
+            ]
+          },
+          {
+            "text": "The same milestone adds OpenTelemetry semantic-convention support alongside shared OTLP endpoint, header and compression configuration.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "OpenTelemetry's semantic conventions, alongside common OTLP endpoint, header, and compression configuration."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Keep the original roundup date and describe these as milestone features. Before approving the entire original item, separately verify the Framework, Data, Security and Integration releases; this narrower draft does not verify those sections."
+    },
+    {
+      "renewalId": "59c87ea544e0e5db",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "slug": "2026-10-24-cloudflare-waf-response-rule-limits",
+      "sourceUrl": "https://blog.cloudflare.com/full-transaction-waf/",
+      "sourceUpdatedAt": "2026-10-25T05:21:13+00:00",
+      "edition": {
+        "title": "Cloudflare WAF response rules: actions and body limits",
+        "claims": [
+          {
+            "text": "Cloudflare WAF lets customers create up to three custom response rules supporting Log and Block actions.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "up to three custom response rules supporting Log and Block actions"
+              }
+            ]
+          },
+          {
+            "text": "The announcement explicitly says custom rules on the response body are not yet available.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Creating rules on the response body is not yet available."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Distinguish managed detections from customer-authored response rules when evaluating coverage. This preserved item had disappeared from the legacy listing after a newer digest replaced the page; renewal still requires explicit review."
+    },
+    {
+      "renewalId": "5fe80662057aa753",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "slug": "2026-05-29-github-advanced-security-hard-budget-limits",
+      "sourceUrl": "https://github.blog/changelog/2026-05-28-hard-budget-limits-now-available-for-github-advanced-security",
+      "sourceUpdatedAt": "2026-10-25T06:31:18+00:00",
+      "edition": {
+        "title": "GitHub Advanced Security hard budgets can block new coverage",
+        "claims": [
+          {
+            "text": "GitHub announced hard license-budget limits for Advanced Security that enterprise administrators and billing managers can configure. This is a product license control, not a cap on every enterprise expense.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Enterprise administrators and billing managers"
+              }
+            ]
+          },
+          {
+            "text": "When the threshold is reached, the notice says additional license usage is blocked and Advanced Security is not enabled on new repositories until capacity is freed or the budget is increased.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "additional license usage is blocked"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Monitor both remaining license capacity and repositories missing security coverage. Test onboarding and escalation procedures so a budget limit does not silently leave new repositories outside the intended controls."
+    },
+    {
+      "renewalId": "68e2ee5d21f7dc1b",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "slug": "2026-10-20-cloudflare-inference-cost-optimization",
+      "sourceUrl": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+      "sourceUpdatedAt": "2026-10-25T05:21:13+00:00",
+      "edition": {
+        "title": "Cloudflare reports lower inference costs for its internal reviewer",
+        "claims": [
+          {
+            "text": "Cloudflare reports its internal code reviewer averaged $0.77 per review, down 68% against a $2.43 baseline from its most expensive weeks. These are its workload results, not guaranteed savings for other teams.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "$0.77, down 68% from the $2.43"
+              }
+            ]
+          },
+          {
+            "text": "The company attributes about 40% of the savings to reviewer-code changes and optimizations, with the remainder coming from model and effort choices.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "About 40% of the savings came from changes and optimizations to the reviewer's code"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compare cost only alongside review quality, workload mix and the evaluation period. Reproduce measurements on representative changes before selecting models or reducing effort; this draft contains no local benchmark."
+    },
+    {
+      "renewalId": "6944923e55b6bbd0",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "slug": "2026-05-12-teamcity-on-premises-security-advisory",
+      "sourceUrl": "https://blog.jetbrains.com/teamcity/2026/05/cve-2026-44413/",
+      "sourceUpdatedAt": "2026-10-25T06:06:33+00:00",
+      "edition": {
+        "title": "TeamCity advisory separates on-premises and cloud exposure",
+        "claims": [
+          {
+            "text": "JetBrains describes CVE-2026-44413 as a post-authentication TeamCity On-Premises issue affecting versions through 2025.11.4 and fixed in 2026.1. These are the versions in the historical advisory.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "assigned the CVE identifier CVE-2026-44413."
+              },
+              {
+                "document_id": 0,
+                "quote": "versions through 2025.11.4."
+              },
+              {
+                "document_id": 0,
+                "quote": "fixed in version 2026.1."
+              }
+            ]
+          },
+          {
+            "text": "The vendor states that TeamCity Cloud is not affected and requires no action for this issue.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "TeamCity Cloud is not affected and requires no action."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Match deployment type and installed version to the vendor advisory. Confirm a supported patched release or applicable patch plugin and its activation requirements; the archive is not a recommendation to install an old version."
+    },
+    {
+      "renewalId": "6ad4fb7dea8c6f87",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "slug": "2026-07-08-cost-center-user-budgets-and-membership",
+      "sourceUrl": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+      "sourceUpdatedAt": "2026-10-25T17:03:04+00:00",
+      "edition": {
+        "title": "Cost-center user budgets: billing UI and membership scope",
+        "claims": [
+          {
+            "text": "GitHub announced that Enterprise Cloud administrators could create cost-center user-level budgets in the billing UI, exposing controls previously available through the REST API. This describes a management interface expansion.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "This feature is available for GitHub Enterprise Cloud."
+              },
+              {
+                "document_id": 0,
+                "quote": "This gives you the same per-user AI credit budget controls that were previously only available through the REST API."
+              }
+            ]
+          },
+          {
+            "text": "The configured per-user budget applies to the cost center’s enterprise teams or individual users and follows membership changes automatically. This is a shared budget setting applied per member, not a separately negotiated limit for every person.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "set one per-user budget for that cost center, and have it automatically apply to everyone in it."
+              },
+              {
+                "document_id": 0,
+                "quote": "As membership changes, budget coverage stays in sync"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Inspect effective membership, budget behavior and overage settings together with enterprise billing policy. UI availability does not by itself demonstrate that all AI spending is blocked or that savings have been measured."
+    },
+    {
+      "renewalId": "7067e48d153e8525",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "slug": "2026-06-27-argo-cd-release-candidate-security-configuration",
+      "sourceUrl": "https://www.infoq.com/news/2026/06/argocd-supply-chain-security/",
+      "sourceUpdatedAt": "2026-10-25T12:40:05+00:00",
+      "edition": {
+        "title": "Argo CD release candidate: internal mTLS and source-integrity configuration",
+        "claims": [
+          {
+            "text": "The official Argo CD v3.5.0-rc1 page labels this artifact a pre-release and lists mTLS support in the repo-server. That supports describing a release-candidate capability, not claiming that every installation has mTLS enforced.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "v3.5.0-rc1 Pre-release"
+              },
+              {
+                "document_id": 0,
+                "quote": "feat: adds mTLS support in repo-server"
+              }
+            ]
+          },
+          {
+            "text": "The same changelog lists CLI support for Source Integrity configuration and an exposed ApplicationSet UI. This brief does not assert that signature verification first appeared in this release or that earlier internal traffic was always unencrypted.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "feat(cli): Add support for Source Integrity configuration"
+              },
+              {
+                "document_id": 0,
+                "quote": "feat: expose Appset UI and fix pie chart summary"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "The linked official blog could not be collected; this narrower draft uses the project’s release artifact. Review upgrade notes, certificates, trust roots and the target version’s integrity settings before rollout. It is not a claim that the candidate remains the newest version."
+    },
+    {
+      "renewalId": "72477d086944244f",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "slug": "2026-10-20-netscaler-patching-and-origin-controls",
+      "sourceUrl": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
+      "sourceUpdatedAt": "2026-10-25T05:21:13+00:00",
+      "edition": {
+        "title": "NetScaler protection requires patching and origin controls",
+        "claims": [
+          {
+            "text": "Cloudflare starts its NetScaler guidance by telling affected customers to patch their gateway before considering additional protective layers.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "If you’re a NetScaler customer and you haven’t patched your instance"
+              }
+            ]
+          },
+          {
+            "text": "The article warns that direct access to the original address or an alternate hostname can bypass the front-end Access controls.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "they can avoid the controls placed in front of it."
+              }
+            ]
+          },
+          {
+            "text": "Protection of the web authentication path does not automatically cover DTLS-enabled gateway listeners.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "including DTLS-enabled listeners."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Inventory every exposed listener and alternate origin route. Review patch status, authentication policy and origin restrictions as separate controls; this draft does not claim that a DNS change or WAF alone closes the exposure."
+    },
+    {
+      "renewalId": "7c3a8ce4dcd53d2b",
+      "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+      "slug": "2026-07-12-multi-region-replication-and-failover-trade-offs",
+      "sourceUrl": "https://www.infoq.com/articles/multi-region-latency-cost-tradeoffs/",
+      "sourceUpdatedAt": "2026-10-26T01:34:51+00:00",
+      "edition": {
+        "title": "Multi-region design: replication, writes and failover trade-offs",
+        "claims": [
+          {
+            "text": "The article author contrasts independently serving active-active regions with a design that serves reads locally but proxies remote writes to a global write region. The trade-off includes replication, conflict handling and cross-region write latency.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Users are routed to their nearest region; each region handles both reads and writes."
+              },
+              {
+                "document_id": 0,
+                "quote": "Write requests from non-primary regions are proxied to the global write region before acknowledgment."
+              }
+            ]
+          },
+          {
+            "text": "For active-passive operation, the author describes a primary serving traffic and a continuously replicated secondary. The article warns that unexercised failover paths can fail and recommends using measured failover behavior in planning. Its percentage savings and latency-recovery estimates are excluded here.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "a secondary region receives continuous replication but serves no traffic under normal conditions."
+              },
+              {
+                "document_id": 0,
+                "quote": "Failover paths that are never exercised tend to fail when invoked."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "This is a scoped review of the author’s design discussion, not a universal cost model. Measure workload locality, consistency requirements, recovery behavior and operating effort before choosing a regional architecture."
+    },
+    {
+      "renewalId": "7ec61f556fb8d2c3",
+      "sourceSha256": "8c3de756afe00f70b90d7547ce3e3bbbf57a4ad6e92d278edc175a646fb748a3",
+      "slug": "2026-05-05-cloudflare-security-overview-scope",
+      "sourceUrl": "https://www.infoq.com/news/2026/05/cloudflare-security-dashboard/",
+      "sourceUpdatedAt": "2026-10-25T06:06:33+00:00",
+      "edition": {
+        "title": "Cloudflare Security Overview separates risk priority from visibility",
+        "claims": [
+          {
+            "text": "Cloudflare describes a Security Overview dashboard that ranks items by criticality and filters insights such as suspicious activity or insecure configuration.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "items are ranked by criticality"
+              }
+            ]
+          },
+          {
+            "text": "At launch, the article describes a domain-level experience and places account-level aggregation on the roadmap. This does not establish that the account-wide view was already released.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "launching at the domain level today"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Review what is actually observed and which controls are enabled before treating a dashboard as proof of protection. Distinguish a live product feature from a roadmap statement and confirm present account-level availability separately."
+    },
+    {
+      "renewalId": "81aa0c8f7db4aee1",
+      "sourceSha256": "fa9ab1cb21cecf1bed28f4914b155c1571c5a75d67f19879aa04ff16b7d1af59",
+      "slug": "2026-06-29-aws-finops-agent-preview-scope",
+      "sourceUrl": "https://www.infoq.com/news/2026/06/aws-finops-agent/",
+      "sourceUpdatedAt": "2026-10-25T12:40:05+00:00",
+      "edition": {
+        "title": "AWS FinOps Agent preview: investigation scope and regional limits",
+        "claims": [
+          {
+            "text": "AWS announced a FinOps Agent preview that answers cost questions, surfaces optimization recommendations, investigates cost anomalies and schedules recurring workflows. It can route findings through Jira or Slack; those capabilities do not establish measured savings.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "answers cost questions, surfaces optimization opportunities, automatically investigates cost anomalies, and runs recurring FinOps workflows on a schedule you define."
+              },
+              {
+                "document_id": 0,
+                "quote": "can open Jira tickets on your behalf."
+              }
+            ]
+          },
+          {
+            "text": "The announcement locates the preview in US East (N. Virginia), with cost data covering AWS Regions except GovCloud and China. It offers the service at no additional charge during preview; that is not a permanent price or an unlimited-use commitment.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "AWS FinOps Agent (preview) is available in the US East (N. Virginia) Region"
+              },
+              {
+                "document_id": 0,
+                "quote": "except AWS GovCloud (US) Regions and AWS China (Beijing and Ningxia) Regions."
+              },
+              {
+                "document_id": 0,
+                "quote": "AWS FinOps Agent is offered at no additional charge during the preview."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Confirm current availability, quotas, permission scope and billing before enabling workflows. Cost investigation and ticket creation should not be generalized into permission to modify production resources autonomously."
+    },
+    {
+      "renewalId": "87db18d4899cc26c",
+      "sourceSha256": "65fcae80a88f0dd69441d675ad3044294860089a6708cabecaf02cd3639dde07",
+      "slug": "2026-04-08-dynatrace-github-runtime-alert-context",
+      "sourceUrl": "https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace",
+      "sourceUpdatedAt": "2026-10-25T05:38:18+00:00",
+      "edition": {
+        "title": "Dynatrace runtime context helps prioritize GitHub alerts",
+        "claims": [
+          {
+            "text": "The April GitHub notice describes Dynatrace runtime context for prioritizing security alerts by deployed artifacts and runtime risk in Kubernetes.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "deployed artifacts and runtime risk in your Kubernetes environment."
+              }
+            ]
+          },
+          {
+            "text": "The notice lists the feature as generally available for GitHub Enterprise Cloud customers. That historical availability statement is not a claim that every GitHub plan includes it.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "generally available for GitHub Enterprise Cloud customers."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Review repository-to-container mapping and runtime coverage before treating a filtered alert list as a complete inventory. Confirm current integration and plan requirements separately."
+    },
+    {
+      "renewalId": "92303a0e5010240e",
+      "sourceSha256": "62a391116e058b6ebe2c99955ceba44831ad40c1398ca8810647cf33b3b0f72e",
+      "slug": "2026-06-19-athena-coalition-and-disclosure-conditions",
+      "sourceUrl": "https://www.infoq.com/news/2026/06/athena-security-coalition/",
+      "sourceUpdatedAt": "2026-10-25T12:23:59+00:00",
+      "edition": {
+        "title": "Athena coalition: coordinated remediation and disclosure conditions",
+        "claims": [
+          {
+            "text": "Docker announced that it was joining Athena as a founding participant and described the coalition as coordinated defense of open-source software. This is a participant’s description of the initiative.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Docker is a founding participant."
+              }
+            ]
+          },
+          {
+            "text": "Docker describes organizations sharing findings and coordinating responses before vulnerabilities become public. This establishes the stated collaboration model, not independently verified coverage or remediation success.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "share findings and coordinate responses before vulnerabilities become public."
+              }
+            ]
+          }
+        ],
+        "followUp": [
+          {
+            "text": "At review time, Chainguard’s program page describes private hardened versions available to members through Chainguard Libraries before disclosure for 30 days. This is the program’s stated access condition, not a promise of immediate public patch availability.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "available to members through Chainguard Libraries before disclosure for 30 days."
+              }
+            ]
+          }
+        ]
+      },
+      "reviewFocus": "Assess participation rules, embargo governance and upstream maintainer coordination. Launch metrics and claims of universal protection are not independently substantiated here; current program terms must not be presented as unchanged launch-day facts."
+    },
+    {
+      "renewalId": "942a88912e2e412f",
+      "sourceSha256": "52968c158995b66b2f6e177cfddf7ef425d064924805cbb539c3e7b424fe781f",
+      "slug": "2026-05-13-time-series-identity-and-cardinality",
+      "sourceUrl": "https://www.infoq.com/articles/time-series-storage-design/",
+      "sourceUpdatedAt": "2026-10-25T06:31:18+00:00",
+      "edition": {
+        "title": "Time-series design: series identity and cardinality trade-offs",
+        "claims": [
+          {
+            "text": "The article author proposes storing repeated series dimensions in a separate metadata table and referencing them with a compact identifier. This describes a design proposal rather than a guaranteed storage saving.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "referencing it by a compact ID"
+              }
+            ]
+          },
+          {
+            "text": "The author cautions against using high-cardinality fields such as request IDs and session tokens as series identity, because the benefit depends on repeated samples sharing an identity.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "High-cardinality fields like request IDs and session tokens"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compare ingestion rate, dimension cardinality, retention and query patterns on representative data. The reported numerical savings are not reproduced in this brief, and the author’s proposal should not be generalized to every time-series engine."
+    },
+    {
+      "renewalId": "973739bcb859e5ab",
+      "sourceSha256": "a72607be8dbfa0f0469eaa8526bf98d813ae6a7d5b926f7bc02ab5be85ee2ecd",
+      "slug": "2026-05-19-copilot-cloud-agent-model-multipliers",
+      "sourceUrl": "https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
+      "sourceUpdatedAt": "2026-10-25T06:31:18+00:00",
+      "edition": {
+        "title": "Copilot cloud agent model options and usage multipliers",
+        "claims": [
+          {
+            "text": "GitHub added Claude Haiku 4.5 and GPT-5.4-mini as Copilot cloud agent model options. The notice frames them as options for simpler changes, not universal replacements for complex work.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Claude Haiku 4.5 (0.33x multiplier) GPT-5.4-mini"
+              }
+            ]
+          },
+          {
+            "text": "The notice lists a 0.33x multiplier for each added model. A usage multiplier is not a measured guarantee of runtime, code quality or total project cost.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "GPT-5.4-mini (0.33x multiplier)"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Evaluate representative tasks for correctness, retries and review effort alongside usage charges. Verify the current product model list and policies instead of treating this historical multiplier as a current price quotation."
+    },
+    {
+      "renewalId": "9aee971925826c50",
+      "sourceSha256": "14cbf673a6cfbee2d6a53b8bffe1ad520623b9267985970cd67a710d3db42ff7",
+      "slug": "2026-06-02-badhost-starlette-authorization-and-proxy-conditions",
+      "sourceUrl": "https://www.infoq.com/news/2026/06/badhost-ai-systems-vulnerability/",
+      "sourceUpdatedAt": "2026-10-25T12:23:59+00:00",
+      "edition": {
+        "title": "BadHost: Starlette path-based authorization and proxy conditions",
+        "claims": [
+          {
+            "text": "The researchers explain that Starlette reconstructed a URL from an unvalidated Host header while routing used the actual request path. Authorization based on the reconstructed path could therefore disagree with the routed endpoint.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "routing in Starlette is based on the actual request path."
+              },
+              {
+                "document_id": 0,
+                "quote": "does not perform any validation of the Host header value."
+              }
+            ]
+          },
+          {
+            "text": "The researcher advisory lists affected Starlette versions as >= 0.8.3 and < 1.0.1, and identifies 1.0.1 as patched. Applicability still depends on the application’s path-based security decisions.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Confirmed Affected Versions: starlette >= 0.8.3, < 1.0.1 Confirmed Patched Versions: starlette 1.0.1"
+              }
+            ]
+          }
+        ],
+        "followUp": [
+          {
+            "text": "At review time, the maintainer advisory says a proxy or load balancer mitigates this only if it rejects or normalizes malformed Host headers before forwarding and the application does not trust attacker-controlled host headers elsewhere.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "mitigated only if that proxy rejects or normalizes the malformed Host header before forwarding"
+              }
+            ]
+          }
+        ]
+      },
+      "reviewFocus": "Inspect authorization middleware, resolved dependencies and forwarded-header trust. Merely having a proxy is insufficient; test the real ingress configuration. No exploit experiment was performed for this draft."
+    },
+    {
+      "renewalId": "9d263cda22c982a1",
+      "sourceSha256": "fd6362f6ce2cb99651f4eecbc0e56325631954375d3bcb0fd2ade0e1534699d2",
+      "slug": "2026-06-16-spring-boot-and-ai-platform-baselines",
+      "sourceUrl": "https://www.infoq.com/news/2026/06/spring-news-roundup-jun08-2026/",
+      "sourceUpdatedAt": "2026-10-25T12:23:59+00:00",
+      "edition": {
+        "title": "Spring release roundup: selected platform and AI baselines",
+        "claims": [
+          {
+            "text": "The Spring Boot team announced 4.1.0 availability from Maven Central and says it includes fixes from Spring Boot 4.0.7. This summary covers that platform release rather than every project in the original roundup.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "It also includes all of the bug fixes, documentation improvements and security fixes from Spring Boot 4.0.7"
+              },
+              {
+                "document_id": 0,
+                "quote": "Spring Boot 4.1.0 has been released and is now available from Maven Central."
+              }
+            ]
+          },
+          {
+            "text": "The Spring AI team announced 2.0.0 availability from Maven Central. Its documented baseline is Spring Boot 4.0 / 4.1 with Spring Framework 7.0, so applications should review compatibility before upgrading.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "Spring AI 2.0 has been designed to be used with Spring Boot 4.0 / 4.1 and Spring Framework 7.0"
+              },
+              {
+                "document_id": 1,
+                "quote": "Spring AI 2.0.0 has been released and is now available from Maven Central!"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Check migration notes, dependency alignment and regression behavior. Other projects and individual CVEs mentioned in the original roundup have not been validated by this scoped summary."
+    },
+    {
+      "renewalId": "9efda109fcdd4210",
+      "sourceSha256": "e3ecbf6153d7054890c95fd9ced64f57c8637626c45e8d4959786c91fefc1fc2",
+      "slug": "2026-05-11-copilot-claude-sonnet-4-retirement",
+      "sourceUrl": "https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+      "sourceUpdatedAt": "2026-10-25T06:06:33+00:00",
+      "edition": {
+        "title": "Claude Sonnet 4 retirement announcement applies to Copilot",
+        "claims": [
+          {
+            "text": "GitHub stated that Claude Sonnet 4 was deprecated across its Copilot experiences on 2026-05-06. The statement concerns Copilot rather than every Anthropic distribution channel.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Claude Sonnet 4 2026-05-06"
+              }
+            ]
+          },
+          {
+            "text": "The announcement directs Copilot Enterprise administrators to check model policies when enabling alternatives.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "enable access to alternative models through their model policies"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Separate product retirement, provider retirement and local fallback behavior. Test permissions and workflow behavior on supported choices instead of treating an old replacement recommendation as current guidance."
+    },
+    {
+      "renewalId": "ad44e1abd30ad1f2",
+      "sourceSha256": "db88dfaf65d4c8302430160f855c07d6047c4bcecbaed8ea2281fdf275778361",
+      "slug": "2026-04-22-spring-security-releases-and-support",
+      "sourceUrl": "https://spring.io/blog/2026/04/21/spring-security-releases",
+      "sourceUpdatedAt": "2026-10-25T05:38:18+00:00",
+      "edition": {
+        "title": "Spring Security releases and support boundaries in the April notice",
+        "claims": [
+          {
+            "text": "The April notice announces Spring Security 6.5.10, 7.0.5 and 7.1.0-RC1 and links the security advisories addressed by the releases. These are historical release versions.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Spring Security 6.5.10 , 7.0.5 , and 7.1.0-RC1 ."
+              }
+            ]
+          },
+          {
+            "text": "It states that open-source support for the Spring Security 5.7.x, 5.8.x, 6.3.x and 6.4.x generations had ended. Commercial support is a separate scope.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Spring Security 5.7.x, 5.8.x, 6.3.x, and 6.4.x generations has ended"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Match deployed dependencies to each official advisory and supported release line. Do not select a historical version merely because it appears in this archive, and distinguish a release candidate from a stable release."
+    },
+    {
+      "renewalId": "b4cc1e300a7d9c1b",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "slug": "2026-04-09-github-code-security-risk-assessment",
+      "sourceUrl": "https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations",
+      "sourceUpdatedAt": "2026-10-25T05:38:18+00:00",
+      "edition": {
+        "title": "GitHub organization assessments summarize code-security risks",
+        "claims": [
+          {
+            "text": "GitHub announced a free Code Security risk assessment that organization admins and security managers can run for their organization.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "run a free Code Security risk assessment"
+              }
+            ]
+          },
+          {
+            "text": "The assessment summarizes vulnerabilities by severity, rule type and programming language, helping readers prioritize the reported findings.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "summarizes vulnerabilities by severity, rule type, and programming language."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Check assessment scope and repository coverage before interpreting the report as a complete security audit. Suggested fixes still require code review and appropriate tests."
+    },
+    {
+      "renewalId": "bb5be26c24786b21",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "slug": "2026-04-11-cncf-kusari-supply-chain-review",
+      "sourceUrl": "https://www.infoq.com/news/2026/04/cncf-kusari-security/",
+      "sourceUpdatedAt": "2026-10-25T05:38:18+00:00",
+      "edition": {
+        "title": "CNCF and Kusari offer supply-chain tooling to project maintainers",
+        "claims": [
+          {
+            "text": "The CNCF-hosted announcement says CNCF projects receive free access to Kusari Inspector, described as an AI code-review and dependency-management tool.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "provide CNCF projects with free access to Kusari Inspector"
+              }
+            ]
+          },
+          {
+            "text": "The announcement lists GUAC, in-toto/Witness and OpenVEX among projects adopting the tool. This is a reported adoption list, not independent evidence that all vulnerabilities were removed.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "GUAC, in-toto/Witness, OpenVEX"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Review eligibility, data handling and dependency coverage before connecting a repository. Measure actionable findings and false positives in the project rather than assuming benefit from tool adoption alone."
+    },
+    {
+      "renewalId": "be1017688a0667ca",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "slug": "2026-05-10-copilot-gpt-4-1-retirement",
+      "sourceUrl": "https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+      "sourceUpdatedAt": "2026-10-25T06:06:33+00:00",
+      "edition": {
+        "title": "GitHub GPT-4.1 retirement notice applies to Copilot",
+        "claims": [
+          {
+            "text": "GitHub announced the planned retirement of GPT-4.1 from Copilot on 2026-06-01. This does not describe availability through every external API.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "GPT-4.1 2026-06-01 GPT-5.5"
+              }
+            ]
+          },
+          {
+            "text": "Copilot Enterprise administrators may need to enable access to replacement models through model policies, according to the notice.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "enable access to alternative models through their model policies"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Confirm which Copilot experience and policy a workflow uses. Treat the scheduled date as historical evidence and check actual current model availability before updating configuration."
+    },
+    {
+      "renewalId": "c12b394bcd713139",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "slug": "2026-07-01-dependabot-alert-retention-and-archives",
+      "sourceUrl": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+      "sourceUpdatedAt": "2026-10-25T12:40:05+00:00",
+      "edition": {
+        "title": "Closed Dependabot alerts: announced retention and archive access",
+        "claims": [
+          {
+            "text": "GitHub’s notice scheduled a retention change for 2026-09-25, beginning with closed Dependabot security alerts on github.com and Enterprise Cloud. It explicitly excludes Enterprise Server; the announcement alone does not verify completion of the rollout.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Starting September 25, 2026, GitHub will introduce a data retention policy for closed Dependabot security alerts."
+              },
+              {
+                "document_id": 0,
+                "quote": "It does not apply to GitHub Enterprise Server (GHES)."
+              }
+            ]
+          },
+          {
+            "text": "Under the announced policy, open alerts remain accessible regardless of age, while closed alerts remain in the UI and API for 2 years after closure. Older closed alerts move to downloadable CSV archives for authorized administrators and security managers rather than remaining in API results.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Open alerts stay fully accessible in the UI and API, regardless of age."
+              },
+              {
+                "document_id": 0,
+                "quote": "Closed alerts stay fully accessible in the UI and API for two years after they are closed."
+              },
+              {
+                "document_id": 0,
+                "quote": "Enterprise, organization, and repository administrators and security managers can download them as a CSV"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Audit queries and compliance exports that rely on older closed alerts. Verify actual archive access and rollout status in the relevant account; do not apply this notice to every alert type or infer permanent retention after account or repository deletion."
+    },
+    {
+      "renewalId": "c2532ba4f69bf1ba",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "slug": "2026-05-26-microsoft-mdash-preview-and-model-ensemble",
+      "sourceUrl": "https://www.infoq.com/news/2026/05/microsoft-mdash/",
+      "sourceUpdatedAt": "2026-10-25T06:31:18+00:00",
+      "edition": {
+        "title": "Microsoft MDASH: multi-model scanning and preview status",
+        "claims": [
+          {
+            "text": "Microsoft describes MDASH as a multi-model agentic scanning harness that orchestrates an ensemble of frontier and distilled models. This is the vendor’s description of its architecture.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "ensemble of frontier and distilled models"
+              }
+            ]
+          },
+          {
+            "text": "The announcement invites readers to a private preview, which should not be treated as general public availability.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "sign up to join the private preview"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Separate vendor-reported benchmark results from independently reproduced findings. Review access conditions, source-code handling and validation requirements before using the tool in a security workflow."
+    },
+    {
+      "renewalId": "c4a7f428da738696",
+      "sourceSha256": "4303bfdd031dceaecc88c1353108da5fb5f0edc333f2624055739913e5674b57",
+      "slug": "2026-06-11-copilot-cli-security-review-preview",
+      "sourceUrl": "https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+      "sourceUpdatedAt": "2026-10-25T12:23:59+00:00",
+      "edition": {
+        "title": "Copilot CLI security review remains an experimental preview",
+        "claims": [
+          {
+            "text": "GitHub introduced the /security-review command for local code changes as an experimental public-preview feature. Users must enable experimental mode to try the command.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "The new /security-review slash command is shipping as an experimental feature in public preview"
+              },
+              {
+                "document_id": 0,
+                "quote": "turn on experimental mode in Copilot CLI"
+              }
+            ]
+          },
+          {
+            "text": "The announcement describes a Copilot-driven scan that does not rely on GitHub code scanning, Dependabot or secret scanning. It complements those tools with on-demand review before committing; it is not evidence that all vulnerabilities will be detected.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "This is a Copilot-driven scan that doesn’t rely on GitHub code scanning, Dependabot, or GitHub secret scanning."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Check feature availability in the installed CLI and inspect findings manually. Preserve deterministic security checks and avoid treating a clean preview scan as a security certification."
+    },
+    {
+      "renewalId": "c505a5c997b12684",
+      "sourceSha256": "dc72630c6fb3cfd5d9e466d9e403e31022bcfc4620ab006ad7dcfa586469b9ba",
+      "slug": "2026-06-23-tracking-service-schemas-and-delivery",
+      "sourceUrl": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+      "sourceUpdatedAt": "2026-10-25T12:40:05+00:00",
+      "edition": {
+        "title": "Tracking-service case study: event schemas and non-blocking delivery",
+        "claims": [
+          {
+            "text": "In the published transcript, Alina Krasavina describes Delivery Hero’s internal tracking service using mobile and frontend SDKs, an ingestion API, real-time consumers and BigQuery storage. This is the speaker’s implementation account.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "we have a mobile SDK, and a frontend SDK, in TypeScript, to collect the data and to send to our API."
+              },
+              {
+                "document_id": 0,
+                "quote": "our data storage, which is BigQuery"
+              }
+            ]
+          },
+          {
+            "text": "The speaker says code-generated event models exposed schema problems during application compilation, while a device queue and background batched sending supported non-blocking delivery. The reported cost and capture-rate figures are excluded from this scoped summary.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "we introduced code generated event models"
+              },
+              {
+                "document_id": 0,
+                "quote": "you have an error on compilation time"
+              },
+              {
+                "document_id": 0,
+                "quote": "it reads from the queue, takes a batch of some events, and is sending to our API."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Treat the transcript as primary evidence of what the speaker reported, not independent replication. Evaluate schema ownership, buffering limits, delivery failures, privacy requirements and migration parity for your own workload."
+    },
+    {
+      "renewalId": "c78cf468160e1a45",
+      "sourceSha256": "0d86ac8ee62c5ab5467eac08d56af5dff3519826c3562b6b635bbeb09ba2bcd0",
+      "slug": "2026-10-21-emudhra-certificate-trust-review",
+      "sourceUrl": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+      "sourceUpdatedAt": "2026-10-25T05:21:13+00:00",
+      "edition": {
+        "title": "eMudhra incident: audit application trust as well as client updates",
+        "claims": [
+          {
+            "text": "Cloudflare instructed Tunnel customers to upgrade cloudflared to 2026.10.2 and redeploy fixed container images where applicable. This is the version in the incident notice, not a claim about the latest version.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Upgrade to 2026.10.2 ."
+              }
+            ]
+          },
+          {
+            "text": "The notice warns that updating an SDK alone may leave the underlying certificate-verification policy unchanged.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Updating the SDK alone may not change the underlying policy."
+              }
+            ]
+          },
+          {
+            "text": "Cloudflare warns against resolving certificate errors by disabling verification.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "not resolve these errors by disabling verification"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Trace which HTTP library, runtime and trust store each application actually uses. A successful browser request is not sufficient evidence that every application path is protected; validate the relevant clients without disabling verification."
+    },
+    {
+      "renewalId": "ce26c7555a2bf537",
+      "sourceSha256": "61eec32d86e9c98f3d522d13df2da1dad6aa6e8a9c38f362e26909cc7d450d3a",
+      "slug": "2026-06-20-windows-agent-containment-and-audit-mode",
+      "sourceUrl": "https://www.infoq.com/news/2026/06/windows-security-agents/",
+      "sourceUpdatedAt": "2026-10-25T12:40:05+00:00",
+      "edition": {
+        "title": "Windows agent containment: early preview and audit-mode limits",
+        "claims": [
+          {
+            "text": "Microsoft introduced the MXC SDK as an early preview: a policy-driven execution layer for agents on Windows and WSL. An SDK announcement is not independent evidence that arbitrary agent workloads are safe.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "an early preview of the Microsoft Execution Containers (MXC) SDK"
+              },
+              {
+                "document_id": 0,
+                "quote": "a cross-platform, policy-driven execution layer for agents on Windows and WSL."
+              }
+            ]
+          },
+          {
+            "text": "The announcement describes multiple isolation constructs behind a shared policy model. It labels Linux-container support and MXC cloud integration as future work, so those plans should not be presented as delivered features at announcement time.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Linux containers Will bring the containment model to Linux-first agent toolchains via WSL."
+              },
+              {
+                "document_id": 0,
+                "quote": "With the future addition of MXC integration"
+              }
+            ]
+          }
+        ],
+        "followUp": [
+          {
+            "text": "At review time, the MXC repository warns that --audit disables all sandbox security for the analyzed workload and must never be used to run untrusted code. Policy-authoring audit mode is not a containment guarantee.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "Warning: --audit turns off all sandbox security for the workload being analyzed. Never use it to run untrusted code."
+              }
+            ]
+          }
+        ]
+      },
+      "reviewFocus": "Verify the actual backend, operating-system support, filesystem access and network behavior in a representative environment. This is a source-context review without sandbox-escape or containment testing."
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "sourceSha256": "158dc5be465f07d476dedacb8f6645f21f00df2504671386cbeb63e74f732483",
+      "slug": "2026-07-09-npm-installation-defaults-and-token-restrictions",
+      "sourceUrl": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+      "sourceUpdatedAt": "2026-10-25T17:03:04+00:00",
+      "edition": {
+        "title": "npm installation defaults and staged token restrictions",
+        "claims": [
+          {
+            "text": "The npm 12 announcement makes dependency lifecycle scripts and implicit node-gyp builds opt-in, and defaults Git and remote-URL dependency resolution to none unless explicitly allowed. These are installation defaults, not a guarantee that installed code is harmless.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Dependency lifecycle scripts (i.e., preinstall , install , postinstall ) and implicit node-gyp builds no longer run unless explicitly allowed."
+              },
+              {
+                "document_id": 0,
+                "quote": "--allow-git defaults to none"
+              },
+              {
+                "document_id": 0,
+                "quote": "--allow-remote defaults to none"
+              }
+            ]
+          },
+          {
+            "text": "The same notice planned removal of sensitive management actions from npm 2FA-bypass tokens for early 2026-08. It separately targeted direct-publish restrictions for around 2027-01, with trusted publishing or human-approved staged publishing as migration paths.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "We expect this change to take effect in early August 2026."
+              },
+              {
+                "document_id": 0,
+                "quote": "We expect this change to take effect around January 2027."
+              },
+              {
+                "document_id": 0,
+                "quote": "move automated publishing to trusted publishing (OIDC) or staged publishing with a human approval step"
+              }
+            ]
+          }
+        ],
+        "followUp": [
+          {
+            "text": "The 2026-07-31 follow-up says npm 2FA-bypass granular access tokens can no longer perform sensitive management actions and requires an interactive 2FA challenge. It explicitly excludes GitHub personal access tokens, GitHub App tokens and GITHUB_TOKEN from that change.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "npm granular access tokens (GATs) configured to bypass 2FA can no longer perform sensitive account, org, and package management actions."
+              },
+              {
+                "document_id": 1,
+                "quote": "This does not affect GitHub personal access tokens, GitHub App tokens, or GITHUB_TOKEN in Actions."
+              }
+            ]
+          },
+          {
+            "text": "That follow-up still describes removal of direct publishing as a target for 2027-01. It does not report that later publishing restriction as completed.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "We are targeting January 2027 for this update."
+              }
+            ]
+          }
+        ]
+      },
+      "reviewFocus": "Test native builds and dependency sources before upgrading, and review script allowlists rather than enabling everything. Verify current publishing support for your CI provider; a schedule announcement is not proof that every registry action has already changed."
+    },
+    {
+      "renewalId": "d17b2ae1f047cf94",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "slug": "2026-07-07-cloud-security-podcast-isolation-and-learning",
+      "sourceUrl": "https://www.infoq.com/podcasts/new-blueprint-cloud-security/",
+      "sourceUpdatedAt": "2026-10-26T01:34:51+00:00",
+      "edition": {
+        "title": "Cloud-security podcast: attributed isolation and learning advice",
+        "claims": [
+          {
+            "text": "In the transcript, Edera co-founder Alex Zenla describes a zone abstraction for isolating workloads inside virtual machines. This is the vendor speaker’s account of the design, not an independently tested security boundary.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "we have this concept called a zone that allows you to run isolated workloads inside of a safe virtual machine."
+              }
+            ]
+          },
+          {
+            "text": "Zenla describes using language models to explain specifications and emphasizes understanding the resulting implementation. The interview’s criticism of existing infrastructure is an attributed engineering viewpoint, not proof that every container or GPU deployment is insecure.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "have Claude explain to me all the information that I need to know"
+              },
+              {
+                "document_id": 0,
+                "quote": "at the end of it, you have to understand what you did."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Use the transcript to assess the speaker’s argument, then validate isolation requirements and failure modes against your own threat model. No sandbox-escape, performance or AI-hardware experiment was performed for this summary."
+    },
+    {
+      "renewalId": "d92a8a6927fa76ff",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "slug": "2026-07-05-copilot-gemini-retirement-and-alternatives",
+      "sourceUrl": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+      "sourceUpdatedAt": "2026-10-25T17:03:04+00:00",
+      "edition": {
+        "title": "Copilot Gemini retirement: planned and completed notices",
+        "claims": [
+          {
+            "text": "The original GitHub notice scheduled Gemini 2.5 Pro and Gemini 3 Flash retirement across Copilot experiences for 2026-07-31. This is a Copilot-product notice and does not establish retirement of the same models from other providers or APIs.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "We will deprecate Gemini 2.5 Pro and Gemini 3 Flash across all GitHub Copilot experiences"
+              },
+              {
+                "document_id": 0,
+                "quote": "code completions) on July 31st, 2026:"
+              }
+            ]
+          },
+          {
+            "text": "The planned alternatives were Gemini 3.1 Pro and Gemini 3.5 Flash. The notice also warned that enterprise model policies might need to permit the alternatives before users could select them.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Gemini 2.5 Pro 7-31-2026 Gemini 3.1 Pro Gemini 3 Flash 7-31-2026 Gemini 3.5 Flash"
+              },
+              {
+                "document_id": 0,
+                "quote": "Copilot Enterprise administrators may need to enable access to the alternative models through their model policies"
+              }
+            ]
+          }
+        ],
+        "followUp": [
+          {
+            "text": "GitHub’s 2026-07-31 follow-up reports the Copilot deprecation as completed. Its alternative table lists Gemini 3.1 Pro (Preview) and Gemini 3.6 Flash, replacing the earlier Gemini 3.5 Flash suggestion. These are that notice’s alternatives, not a claim of unchanged availability today.",
+            "evidence": [
+              {
+                "document_id": 1,
+                "quote": "we have deprecated the following models across all GitHub Copilot experiences"
+              },
+              {
+                "document_id": 1,
+                "quote": "Gemini 2.5 Pro 2026-07-31 Gemini 3.1 Pro (Preview) Gemini 3 Flash 2026-07-31 Gemini 3.6 Flash"
+              }
+            ]
+          }
+        ]
+      },
+      "reviewFocus": "Confirm the specific Copilot experience, organization policy and currently supported models. The later completion notice changes a suggested alternative; do not keep presenting the initial suggestion as the final migration guidance."
+    },
+    {
+      "renewalId": "d9492522fb4514ef",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "slug": "2026-04-07-claude-code-language-benchmark-conditions",
+      "sourceUrl": "https://www.infoq.com/news/2026/04/ai-coding-language-benchmark/",
+      "sourceUpdatedAt": "2026-10-25T05:38:18+00:00",
+      "edition": {
+        "title": "A coding-language benchmark measures a simplified Git task",
+        "claims": [
+          {
+            "text": "The benchmark author asked Claude Code to implement a simplified Git in 13 languages. The experiment measures this task rather than general language suitability.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "simplified version of Git in 13 languages."
+              }
+            ]
+          },
+          {
+            "text": "The author reports 20 runs per language using Claude Opus 4.6 with high effort. Reported cost and speed depend on this model and task setup.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Each language was run 20 times. The model was Claude Opus 4.6 (high effort)."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compare prompts, test coverage, tool permissions, repetitions and model configuration before using the result to choose a production language. The reported rankings were not independently reproduced here."
+    },
+    {
+      "renewalId": "db11f89181439d98",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "slug": "2026-06-13-security-insights-batching-and-adaptive-scheduling",
+      "sourceUrl": "https://blog.cloudflare.com/scaling-security-scans/",
+      "sourceUpdatedAt": "2026-10-25T12:23:59+00:00",
+      "edition": {
+        "title": "Security Insights: batch processing and adaptive scan scheduling",
+        "claims": [
+          {
+            "text": "Cloudflare describes changing checkers to consume messages in batches and process each message in a separate goroutine. It explicitly notes the trade-offs of redoing work after a mid-batch crash and slightly higher memory use.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "The trade-offs are that we’d have more work to re-do if our process crashed midway through a batch, and our memory usage would be slightly increased."
+              },
+              {
+                "document_id": 0,
+                "quote": "We changed our checkers to consume messages in batches , processing each message in a separate goroutine."
+              }
+            ]
+          },
+          {
+            "text": "The engineering account also describes an adaptive scheduling limit recalculated from account and zone totals and required scanning frequencies, rather than keeping an unchanged rate as the workload grows.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "based on the total number of accounts and zones we have, and our scanning frequencies."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "This is a scoped review of the documented architecture, not independent reproduction of the headline’s throughput increase. Compare workload, memory, restart behavior and scheduling latency before adopting these patterns."
+    },
+    {
+      "renewalId": "e458b053b5a9f878",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "slug": "2026-07-09-innersource-advisories-and-remediation",
+      "sourceUrl": "https://github.blog/changelog/2026-07-08-innersource-security-advisories-are-generally-available",
+      "sourceUpdatedAt": "2026-10-25T17:03:04+00:00",
+      "edition": {
+        "title": "Innersource advisories: enterprise visibility and dependency remediation",
+        "claims": [
+          {
+            "text": "GitHub announced generally available internal security advisories for Advanced Security enterprise customers. Unlike public open-source advisories, their visibility is restricted to repositories owned by that enterprise.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "GitHub Advanced Security enterprise customers can now publish internal security advisories."
+              },
+              {
+                "document_id": 0,
+                "quote": "their visibility is restricted to repositories owned by the enterprise."
+              }
+            ]
+          },
+          {
+            "text": "The REST API supports creating, updating and withdrawing innersource vulnerabilities. After an advisory is created, Dependabot can notify internal repositories using the component and open an upgrade pull request when a fixed version is needed.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "including operations to create, update, or withdraw vulnerabilities."
+              },
+              {
+                "document_id": 0,
+                "quote": "Dependabot will open a pull request to upgrade a vulnerable version of the component to one with a fix."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Verify enterprise ownership, component identity and dependency matching before rollout. An advisory or generated pull request does not itself deploy a fix; preserve review, testing and release controls."
+    },
+    {
+      "renewalId": "e467e85426c883ef",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "slug": "2026-07-07-ai-security-course-announcement-scope",
+      "sourceUrl": "https://www.infoq.com/news/2026/07/online-cohort-ai-security/",
+      "sourceUpdatedAt": "2026-10-26T01:34:51+00:00",
+      "edition": {
+        "title": "AI-security course announcement: scope and evidence limits",
+        "claims": [
+          {
+            "text": "InfoQ’s own announcement described a 5-week online AI security and privacy cohort for senior engineers and architects in regulated industries, facilitated by Katharine Jarmul. This establishes the provider’s announced format, not an independent endorsement of training quality.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "a five-week online cohort for senior engineers and architects"
+              },
+              {
+                "document_id": 0,
+                "quote": "are facilitated by Katharine Jarmul"
+              }
+            ]
+          },
+          {
+            "text": "The provider described threat modeling, red teaming, controls, observability and governance, with a documented risk assessment and mitigation report as the capstone. These are advertised learning activities rather than evidence that graduates or products meet regulatory requirements.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Each working group produces a documented risk assessment and mitigation report for an AI product architecture as its capstone"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Treat the archived announcement as provider-supplied course information. Verify current schedule, syllabus, price and enrollment directly before purchasing; historical registration dates and prices are deliberately not presented as current offers."
+    },
+    {
+      "renewalId": "e858b2ec6331d84e",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "slug": "2026-04-23-cloudflare-mcp-identity-and-governance",
+      "sourceUrl": "https://www.infoq.com/news/2026/04/cloudflare-mcp/",
+      "sourceUpdatedAt": "2026-10-25T05:38:18+00:00",
+      "edition": {
+        "title": "Cloudflare describes identity and governance boundaries for MCP",
+        "claims": [
+          {
+            "text": "Cloudflare describes an MCP server template that uses Cloudflare Access as its OAuth provider. This concerns its reference architecture rather than a universal MCP requirement.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Cloudflare Access as the OAuth provider."
+              }
+            ]
+          },
+          {
+            "text": "The article says MCP server portals centralize logging, policy enforcement and data-loss prevention controls.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "centralized logging, consistent policy enforcement and data loss prevention"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Separate identity verification from tool authorization and data-access policy. Review credential scope, write permissions and audit visibility for each connected server; a shared portal does not itself prove least-privilege operation."
+    },
+    {
+      "renewalId": "ecc191be72688d94",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "slug": "2026-05-31-arm-metis-repository-context",
+      "sourceUrl": "https://www.infoq.com/news/2026/05/arm-metis-agentic-security/",
+      "sourceUpdatedAt": "2026-10-25T06:31:18+00:00",
+      "edition": {
+        "title": "Arm Metis: open-source framework and repository context",
+        "claims": [
+          {
+            "text": "Arm announced that its product security team developed and open-sourced Metis as an agentic security framework.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "developed and open-sourced Metis"
+              }
+            ]
+          },
+          {
+            "text": "The announcement describes a retrieval-augmented generation architecture that combines language models with project-specific knowledge for security analysis.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "combines large language models (LLMs) with project-specific knowledge"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Review repository context, model access, data boundaries and finding validation before adoption. The vendor’s internal detection-rate and false-positive benchmarks were not independently reproduced in this renewal."
+    },
+    {
+      "renewalId": "eea31f00e6ce7be1",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "slug": "2026-06-30-ai-security-panel-identity-and-testing",
+      "sourceUrl": "https://www.infoq.com/articles/security-ai-threat-evolution/",
+      "sourceUpdatedAt": "2026-10-25T12:40:05+00:00",
+      "edition": {
+        "title": "AI-security panel: attributed advice on identity and adversarial testing",
+        "claims": [
+          {
+            "text": "In the panel, Elham Arshad recommends treating agents as identities with their own profiles, permissions, credentials and lifecycles, with narrowly scoped capabilities and policy checks for sensitive actions. These are the participant’s recommendations.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Each agent needs its own profile, permissions, credentials, and lifecycle"
+              },
+              {
+                "document_id": 0,
+                "quote": "agents only get the narrow capabilities they absolutely need, and every sensitive action is checked against policy."
+              }
+            ]
+          },
+          {
+            "text": "Vijay Dilwale argues that defenders should test prompt injection, retrieval abuse and tool access by deliberately manipulating inputs and observing behavior as context or permissions change. This is expert advice, not a benchmark proving a control’s effectiveness.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "It requires breaking the system on purpose, experimenting with prompts, seeding malicious content into retrieval sources, and observing how behavior changes when context or permissions shift."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "This selected panel summary does not represent every participant’s views or establish universal attack frequency. Define a threat model, approval boundaries, logs and repeatable tests before adopting the recommendations."
+    },
+    {
+      "renewalId": "f05ff63990b375e2",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "slug": "2026-04-28-spring-boot-client-network-and-telemetry",
+      "sourceUrl": "https://www.infoq.com/news/2026/04/spring-news-roundup-apr20-2026/",
+      "sourceUpdatedAt": "2026-10-25T05:38:18+00:00",
+      "edition": {
+        "title": "Spring Boot release candidate adds client-network and telemetry controls",
+        "claims": [
+          {
+            "text": "The Spring Boot 4.1.0-RC1 announcement lists HTTP client SSRF mitigation with InetAddressFilter. This draft covers only the Boot portion of the older roundup.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Spring Boot 4.1.0-RC1 has been released"
+              },
+              {
+                "document_id": 0,
+                "quote": "HTTP Client SSRF Mitigation with InetAddressFilter"
+              }
+            ]
+          },
+          {
+            "text": "The same release candidate lists support for OpenTelemetry SDK environment variables.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "Support for OpenTelemetry SDK environment variables"
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Verify the other projects in the roundup separately before marking the entire original item complete. Review release-candidate status, address-filter configuration and observability settings against the versions actually deployed."
+    },
+    {
+      "renewalId": "fb47d93f2cc47316",
+      "sourceSha256": "faff7a3fb3e3669e2d391012661d2825859f2db1a61e44011b0ab61623c97c02",
+      "slug": "2026-04-08-cloudflare-post-quantum-authentication-roadmap",
+      "sourceUrl": "https://blog.cloudflare.com/post-quantum-roadmap/",
+      "sourceUpdatedAt": "2026-10-25T05:38:18+00:00",
+      "edition": {
+        "title": "Cloudflare roadmap includes post-quantum authentication",
+        "claims": [
+          {
+            "text": "Cloudflare announced a target of 2029 for full post-quantum security, explicitly including authentication. This is a roadmap target rather than a completed migration.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "target 2029 to be fully post-quantum"
+              }
+            ]
+          },
+          {
+            "text": "The announcement distinguishes post-quantum encryption from authentication and says the work is incomplete until authentication is upgraded.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "work is not done until authentication is also upgraded."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Inventory key exchange, certificates and signing dependencies separately. Confirm the current product-specific roadmap before scheduling changes; the historical date is not a migration guarantee for every deployment."
+    },
+    {
+      "renewalId": "fe469724f5828fb0",
+      "sourceSha256": "e7ed00186abcdf5d88f2717c8b08b1bffa654f181c4c216eade0ceeb176ed1fc",
+      "slug": "2026-07-15-copilot-app-security-review-preview",
+      "sourceUrl": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+      "sourceUpdatedAt": "2026-10-25T17:03:04+00:00",
+      "edition": {
+        "title": "Copilot app security review: preview scope and review limits",
+        "claims": [
+          {
+            "text": "GitHub introduced the Copilot app /security-review command in public preview for current workstream changes. The announcement described severity- and confidence-scored findings with actionable suggestions, not a proof that every vulnerability would be found.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "The /security-review slash command is shipping in public preview"
+              },
+              {
+                "document_id": 0,
+                "quote": "High-confidence security findings, scored by severity and confidence."
+              }
+            ]
+          },
+          {
+            "text": "The command complements code scanning, Dependabot and secret scanning with an on-demand local-change review. At launch, it was available to Copilot Free, Pro, Business and Enterprise users during public preview; the notice does not establish permanent pricing or continued availability.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "It complements GitHub code scanning, Dependabot, and secret scanning"
+              },
+              {
+                "document_id": 0,
+                "quote": "The command is available to Copilot Free, Pro, Business, and Enterprise users during public preview."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Confirm installed-app support and current plan terms, then validate each suggestion with tests and review. A clean AI review should not be treated as a security certification or a substitute for release controls."
+    },
+    {
+      "renewalId": "fecc68bc1f0f9da3",
+      "sourceSha256": "072f89fad175fbc75fe474e42dd2891a458672d756b3f52d65f25350cabb89ff",
+      "slug": "2026-05-15-kubernetes-1-36-admission-and-user-namespaces",
+      "sourceUrl": "https://www.infoq.com/news/2026/05/kubernetes-1-36-released/",
+      "sourceUpdatedAt": "2026-10-25T06:31:18+00:00",
+      "edition": {
+        "title": "Kubernetes 1.36: stable admission mutation and pod user namespaces",
+        "claims": [
+          {
+            "text": "The Kubernetes 1.36 release team describes MutatingAdmissionPolicies as graduating to Stable. This is a feature maturity statement for that release.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "graduation of MutatingAdmissionPolicies to Stable."
+              }
+            ]
+          },
+          {
+            "text": "The same release describes user namespace support for pods as graduating to Stable; it does not establish that every existing cluster is configured to use it.",
+            "evidence": [
+              {
+                "document_id": 0,
+                "quote": "support for User Namespaces graduates to Stable."
+              }
+            ]
+          }
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Check control-plane version, operating system, container runtime and workload configuration separately. Review migration and compatibility conditions before replacing admission webhooks or enabling user namespaces."
+    }
+  ],
+  "tasks": [
+    {
+      "renewalId": "0915f64eb6629c85",
+      "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "0915f64eb6629c85",
+      "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "0915f64eb6629c85",
+      "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "0915f64eb6629c85",
+      "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "0915f64eb6629c85",
+      "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "097c455a9b953f24",
+      "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "097c455a9b953f24",
+      "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "097c455a9b953f24",
+      "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "097c455a9b953f24",
+      "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "097c455a9b953f24",
+      "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "09e0d0ec5ed64f8a",
+      "sourceSha256": "5c97c6f02a9a1f0f2521a7fb7169e71e10b5dc78aeb94851759c52a1b403fc3c",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "09e0d0ec5ed64f8a",
+      "sourceSha256": "5c97c6f02a9a1f0f2521a7fb7169e71e10b5dc78aeb94851759c52a1b403fc3c",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "09e0d0ec5ed64f8a",
+      "sourceSha256": "5c97c6f02a9a1f0f2521a7fb7169e71e10b5dc78aeb94851759c52a1b403fc3c",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "09e0d0ec5ed64f8a",
+      "sourceSha256": "5c97c6f02a9a1f0f2521a7fb7169e71e10b5dc78aeb94851759c52a1b403fc3c",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "09e0d0ec5ed64f8a",
+      "sourceSha256": "5c97c6f02a9a1f0f2521a7fb7169e71e10b5dc78aeb94851759c52a1b403fc3c",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "0a337adda878feca",
+      "sourceSha256": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "0a337adda878feca",
+      "sourceSha256": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "0a337adda878feca",
+      "sourceSha256": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "0a337adda878feca",
+      "sourceSha256": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "0a337adda878feca",
+      "sourceSha256": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "1c1c9e6c82aad3a4",
+      "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "1c1c9e6c82aad3a4",
+      "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "1c1c9e6c82aad3a4",
+      "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "1c1c9e6c82aad3a4",
+      "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "1c1c9e6c82aad3a4",
+      "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-002.json"
+    },
+    {
+      "renewalId": "1e8ba1d86d179142",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "1e8ba1d86d179142",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "1e8ba1d86d179142",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "1e8ba1d86d179142",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "1e8ba1d86d179142",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "27d181b6a4903b28",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "27d181b6a4903b28",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "27d181b6a4903b28",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "27d181b6a4903b28",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "27d181b6a4903b28",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "28ede0247b95214f",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "28ede0247b95214f",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "28ede0247b95214f",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "28ede0247b95214f",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "28ede0247b95214f",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "2b6f4abe346a373d",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "2b6f4abe346a373d",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "2b6f4abe346a373d",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "2b6f4abe346a373d",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "2b6f4abe346a373d",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "38bfcb4310c98b8d",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "38bfcb4310c98b8d",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "38bfcb4310c98b8d",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "38bfcb4310c98b8d",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "38bfcb4310c98b8d",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-003.json"
+    },
+    {
+      "renewalId": "3e483be55bb45ecb",
+      "sourceSha256": "bb76edf97af70128a4eee1582db825b0a114175ed49f9ce5f00ce0a7d1f0c560",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "3e483be55bb45ecb",
+      "sourceSha256": "bb76edf97af70128a4eee1582db825b0a114175ed49f9ce5f00ce0a7d1f0c560",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "3e483be55bb45ecb",
+      "sourceSha256": "bb76edf97af70128a4eee1582db825b0a114175ed49f9ce5f00ce0a7d1f0c560",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "3e483be55bb45ecb",
+      "sourceSha256": "bb76edf97af70128a4eee1582db825b0a114175ed49f9ce5f00ce0a7d1f0c560",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "3e483be55bb45ecb",
+      "sourceSha256": "bb76edf97af70128a4eee1582db825b0a114175ed49f9ce5f00ce0a7d1f0c560",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "3f90329447f77e33",
+      "sourceSha256": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "3f90329447f77e33",
+      "sourceSha256": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "3f90329447f77e33",
+      "sourceSha256": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "3f90329447f77e33",
+      "sourceSha256": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "3f90329447f77e33",
+      "sourceSha256": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "4380abffaf1a31e0",
+      "sourceSha256": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "4380abffaf1a31e0",
+      "sourceSha256": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "4380abffaf1a31e0",
+      "sourceSha256": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "4380abffaf1a31e0",
+      "sourceSha256": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "4380abffaf1a31e0",
+      "sourceSha256": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "46983b9e8a1cf49c",
+      "sourceSha256": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "46983b9e8a1cf49c",
+      "sourceSha256": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "46983b9e8a1cf49c",
+      "sourceSha256": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "46983b9e8a1cf49c",
+      "sourceSha256": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "46983b9e8a1cf49c",
+      "sourceSha256": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "4a59615041b968ae",
+      "sourceSha256": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "4a59615041b968ae",
+      "sourceSha256": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "4a59615041b968ae",
+      "sourceSha256": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "4a59615041b968ae",
+      "sourceSha256": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "4a59615041b968ae",
+      "sourceSha256": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-004.json"
+    },
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "52ee7abbb037f678",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "52ee7abbb037f678",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "52ee7abbb037f678",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "52ee7abbb037f678",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "52ee7abbb037f678",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "568305543e6754fa",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "568305543e6754fa",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "568305543e6754fa",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "568305543e6754fa",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "568305543e6754fa",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "59c87ea544e0e5db",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "59c87ea544e0e5db",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "59c87ea544e0e5db",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "59c87ea544e0e5db",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "59c87ea544e0e5db",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "5fe80662057aa753",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "5fe80662057aa753",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "5fe80662057aa753",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "5fe80662057aa753",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "5fe80662057aa753",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-005.json"
+    },
+    {
+      "renewalId": "68e2ee5d21f7dc1b",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "68e2ee5d21f7dc1b",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "68e2ee5d21f7dc1b",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "68e2ee5d21f7dc1b",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "68e2ee5d21f7dc1b",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "6944923e55b6bbd0",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "6944923e55b6bbd0",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "6944923e55b6bbd0",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "6944923e55b6bbd0",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "6944923e55b6bbd0",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "6ad4fb7dea8c6f87",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "6ad4fb7dea8c6f87",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "6ad4fb7dea8c6f87",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "6ad4fb7dea8c6f87",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "6ad4fb7dea8c6f87",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "7067e48d153e8525",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "7067e48d153e8525",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "7067e48d153e8525",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "7067e48d153e8525",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "7067e48d153e8525",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "72477d086944244f",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "72477d086944244f",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "72477d086944244f",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "72477d086944244f",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "72477d086944244f",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/renewals-006.json"
+    },
+    {
+      "renewalId": "7c3a8ce4dcd53d2b",
+      "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+      "language": "zh-CN",
+      "status": "draft",
+      "batch": "batches/pilot-001.json"
+    },
+    {
+      "renewalId": "7c3a8ce4dcd53d2b",
+      "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+      "language": "ja",
+      "status": "draft",
+      "batch": "batches/pilot-001.json"
+    },
+    {
+      "renewalId": "7c3a8ce4dcd53d2b",
+      "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+      "language": "de",
+      "status": "draft",
+      "batch": "batches/pilot-001.json"
+    },
+    {
+      "renewalId": "7c3a8ce4dcd53d2b",
+      "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+      "language": "fr",
+      "status": "draft",
+      "batch": "batches/pilot-001.json"
+    },
+    {
+      "renewalId": "7c3a8ce4dcd53d2b",
+      "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+      "language": "ru",
+      "status": "draft",
+      "batch": "batches/pilot-001.json"
+    },
+    {
+      "renewalId": "7ec61f556fb8d2c3",
+      "sourceSha256": "8c3de756afe00f70b90d7547ce3e3bbbf57a4ad6e92d278edc175a646fb748a3",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "7ec61f556fb8d2c3",
+      "sourceSha256": "8c3de756afe00f70b90d7547ce3e3bbbf57a4ad6e92d278edc175a646fb748a3",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "7ec61f556fb8d2c3",
+      "sourceSha256": "8c3de756afe00f70b90d7547ce3e3bbbf57a4ad6e92d278edc175a646fb748a3",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "7ec61f556fb8d2c3",
+      "sourceSha256": "8c3de756afe00f70b90d7547ce3e3bbbf57a4ad6e92d278edc175a646fb748a3",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "7ec61f556fb8d2c3",
+      "sourceSha256": "8c3de756afe00f70b90d7547ce3e3bbbf57a4ad6e92d278edc175a646fb748a3",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "81aa0c8f7db4aee1",
+      "sourceSha256": "fa9ab1cb21cecf1bed28f4914b155c1571c5a75d67f19879aa04ff16b7d1af59",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "81aa0c8f7db4aee1",
+      "sourceSha256": "fa9ab1cb21cecf1bed28f4914b155c1571c5a75d67f19879aa04ff16b7d1af59",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "81aa0c8f7db4aee1",
+      "sourceSha256": "fa9ab1cb21cecf1bed28f4914b155c1571c5a75d67f19879aa04ff16b7d1af59",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "81aa0c8f7db4aee1",
+      "sourceSha256": "fa9ab1cb21cecf1bed28f4914b155c1571c5a75d67f19879aa04ff16b7d1af59",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "81aa0c8f7db4aee1",
+      "sourceSha256": "fa9ab1cb21cecf1bed28f4914b155c1571c5a75d67f19879aa04ff16b7d1af59",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "87db18d4899cc26c",
+      "sourceSha256": "65fcae80a88f0dd69441d675ad3044294860089a6708cabecaf02cd3639dde07",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "87db18d4899cc26c",
+      "sourceSha256": "65fcae80a88f0dd69441d675ad3044294860089a6708cabecaf02cd3639dde07",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "87db18d4899cc26c",
+      "sourceSha256": "65fcae80a88f0dd69441d675ad3044294860089a6708cabecaf02cd3639dde07",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "87db18d4899cc26c",
+      "sourceSha256": "65fcae80a88f0dd69441d675ad3044294860089a6708cabecaf02cd3639dde07",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "87db18d4899cc26c",
+      "sourceSha256": "65fcae80a88f0dd69441d675ad3044294860089a6708cabecaf02cd3639dde07",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "92303a0e5010240e",
+      "sourceSha256": "62a391116e058b6ebe2c99955ceba44831ad40c1398ca8810647cf33b3b0f72e",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "92303a0e5010240e",
+      "sourceSha256": "62a391116e058b6ebe2c99955ceba44831ad40c1398ca8810647cf33b3b0f72e",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "92303a0e5010240e",
+      "sourceSha256": "62a391116e058b6ebe2c99955ceba44831ad40c1398ca8810647cf33b3b0f72e",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "92303a0e5010240e",
+      "sourceSha256": "62a391116e058b6ebe2c99955ceba44831ad40c1398ca8810647cf33b3b0f72e",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "92303a0e5010240e",
+      "sourceSha256": "62a391116e058b6ebe2c99955ceba44831ad40c1398ca8810647cf33b3b0f72e",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "942a88912e2e412f",
+      "sourceSha256": "52968c158995b66b2f6e177cfddf7ef425d064924805cbb539c3e7b424fe781f",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "942a88912e2e412f",
+      "sourceSha256": "52968c158995b66b2f6e177cfddf7ef425d064924805cbb539c3e7b424fe781f",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "942a88912e2e412f",
+      "sourceSha256": "52968c158995b66b2f6e177cfddf7ef425d064924805cbb539c3e7b424fe781f",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "942a88912e2e412f",
+      "sourceSha256": "52968c158995b66b2f6e177cfddf7ef425d064924805cbb539c3e7b424fe781f",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "942a88912e2e412f",
+      "sourceSha256": "52968c158995b66b2f6e177cfddf7ef425d064924805cbb539c3e7b424fe781f",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "973739bcb859e5ab",
+      "sourceSha256": "a72607be8dbfa0f0469eaa8526bf98d813ae6a7d5b926f7bc02ab5be85ee2ecd",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "973739bcb859e5ab",
+      "sourceSha256": "a72607be8dbfa0f0469eaa8526bf98d813ae6a7d5b926f7bc02ab5be85ee2ecd",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "973739bcb859e5ab",
+      "sourceSha256": "a72607be8dbfa0f0469eaa8526bf98d813ae6a7d5b926f7bc02ab5be85ee2ecd",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "973739bcb859e5ab",
+      "sourceSha256": "a72607be8dbfa0f0469eaa8526bf98d813ae6a7d5b926f7bc02ab5be85ee2ecd",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "973739bcb859e5ab",
+      "sourceSha256": "a72607be8dbfa0f0469eaa8526bf98d813ae6a7d5b926f7bc02ab5be85ee2ecd",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9aee971925826c50",
+      "sourceSha256": "14cbf673a6cfbee2d6a53b8bffe1ad520623b9267985970cd67a710d3db42ff7",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9aee971925826c50",
+      "sourceSha256": "14cbf673a6cfbee2d6a53b8bffe1ad520623b9267985970cd67a710d3db42ff7",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9aee971925826c50",
+      "sourceSha256": "14cbf673a6cfbee2d6a53b8bffe1ad520623b9267985970cd67a710d3db42ff7",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9aee971925826c50",
+      "sourceSha256": "14cbf673a6cfbee2d6a53b8bffe1ad520623b9267985970cd67a710d3db42ff7",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9aee971925826c50",
+      "sourceSha256": "14cbf673a6cfbee2d6a53b8bffe1ad520623b9267985970cd67a710d3db42ff7",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9d263cda22c982a1",
+      "sourceSha256": "fd6362f6ce2cb99651f4eecbc0e56325631954375d3bcb0fd2ade0e1534699d2",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9d263cda22c982a1",
+      "sourceSha256": "fd6362f6ce2cb99651f4eecbc0e56325631954375d3bcb0fd2ade0e1534699d2",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9d263cda22c982a1",
+      "sourceSha256": "fd6362f6ce2cb99651f4eecbc0e56325631954375d3bcb0fd2ade0e1534699d2",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9d263cda22c982a1",
+      "sourceSha256": "fd6362f6ce2cb99651f4eecbc0e56325631954375d3bcb0fd2ade0e1534699d2",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9d263cda22c982a1",
+      "sourceSha256": "fd6362f6ce2cb99651f4eecbc0e56325631954375d3bcb0fd2ade0e1534699d2",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9efda109fcdd4210",
+      "sourceSha256": "e3ecbf6153d7054890c95fd9ced64f57c8637626c45e8d4959786c91fefc1fc2",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9efda109fcdd4210",
+      "sourceSha256": "e3ecbf6153d7054890c95fd9ced64f57c8637626c45e8d4959786c91fefc1fc2",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9efda109fcdd4210",
+      "sourceSha256": "e3ecbf6153d7054890c95fd9ced64f57c8637626c45e8d4959786c91fefc1fc2",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9efda109fcdd4210",
+      "sourceSha256": "e3ecbf6153d7054890c95fd9ced64f57c8637626c45e8d4959786c91fefc1fc2",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "9efda109fcdd4210",
+      "sourceSha256": "e3ecbf6153d7054890c95fd9ced64f57c8637626c45e8d4959786c91fefc1fc2",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ad44e1abd30ad1f2",
+      "sourceSha256": "db88dfaf65d4c8302430160f855c07d6047c4bcecbaed8ea2281fdf275778361",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ad44e1abd30ad1f2",
+      "sourceSha256": "db88dfaf65d4c8302430160f855c07d6047c4bcecbaed8ea2281fdf275778361",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ad44e1abd30ad1f2",
+      "sourceSha256": "db88dfaf65d4c8302430160f855c07d6047c4bcecbaed8ea2281fdf275778361",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ad44e1abd30ad1f2",
+      "sourceSha256": "db88dfaf65d4c8302430160f855c07d6047c4bcecbaed8ea2281fdf275778361",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ad44e1abd30ad1f2",
+      "sourceSha256": "db88dfaf65d4c8302430160f855c07d6047c4bcecbaed8ea2281fdf275778361",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "b4cc1e300a7d9c1b",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "b4cc1e300a7d9c1b",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "b4cc1e300a7d9c1b",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "b4cc1e300a7d9c1b",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "b4cc1e300a7d9c1b",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "bb5be26c24786b21",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "bb5be26c24786b21",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "bb5be26c24786b21",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "bb5be26c24786b21",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "bb5be26c24786b21",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "be1017688a0667ca",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "be1017688a0667ca",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "be1017688a0667ca",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "be1017688a0667ca",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "be1017688a0667ca",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c12b394bcd713139",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c12b394bcd713139",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c12b394bcd713139",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c12b394bcd713139",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c12b394bcd713139",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c2532ba4f69bf1ba",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c2532ba4f69bf1ba",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c2532ba4f69bf1ba",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c2532ba4f69bf1ba",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c2532ba4f69bf1ba",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c4a7f428da738696",
+      "sourceSha256": "4303bfdd031dceaecc88c1353108da5fb5f0edc333f2624055739913e5674b57",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c4a7f428da738696",
+      "sourceSha256": "4303bfdd031dceaecc88c1353108da5fb5f0edc333f2624055739913e5674b57",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c4a7f428da738696",
+      "sourceSha256": "4303bfdd031dceaecc88c1353108da5fb5f0edc333f2624055739913e5674b57",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c4a7f428da738696",
+      "sourceSha256": "4303bfdd031dceaecc88c1353108da5fb5f0edc333f2624055739913e5674b57",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c4a7f428da738696",
+      "sourceSha256": "4303bfdd031dceaecc88c1353108da5fb5f0edc333f2624055739913e5674b57",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c505a5c997b12684",
+      "sourceSha256": "dc72630c6fb3cfd5d9e466d9e403e31022bcfc4620ab006ad7dcfa586469b9ba",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c505a5c997b12684",
+      "sourceSha256": "dc72630c6fb3cfd5d9e466d9e403e31022bcfc4620ab006ad7dcfa586469b9ba",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c505a5c997b12684",
+      "sourceSha256": "dc72630c6fb3cfd5d9e466d9e403e31022bcfc4620ab006ad7dcfa586469b9ba",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c505a5c997b12684",
+      "sourceSha256": "dc72630c6fb3cfd5d9e466d9e403e31022bcfc4620ab006ad7dcfa586469b9ba",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c505a5c997b12684",
+      "sourceSha256": "dc72630c6fb3cfd5d9e466d9e403e31022bcfc4620ab006ad7dcfa586469b9ba",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c78cf468160e1a45",
+      "sourceSha256": "0d86ac8ee62c5ab5467eac08d56af5dff3519826c3562b6b635bbeb09ba2bcd0",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c78cf468160e1a45",
+      "sourceSha256": "0d86ac8ee62c5ab5467eac08d56af5dff3519826c3562b6b635bbeb09ba2bcd0",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c78cf468160e1a45",
+      "sourceSha256": "0d86ac8ee62c5ab5467eac08d56af5dff3519826c3562b6b635bbeb09ba2bcd0",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c78cf468160e1a45",
+      "sourceSha256": "0d86ac8ee62c5ab5467eac08d56af5dff3519826c3562b6b635bbeb09ba2bcd0",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "c78cf468160e1a45",
+      "sourceSha256": "0d86ac8ee62c5ab5467eac08d56af5dff3519826c3562b6b635bbeb09ba2bcd0",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ce26c7555a2bf537",
+      "sourceSha256": "61eec32d86e9c98f3d522d13df2da1dad6aa6e8a9c38f362e26909cc7d450d3a",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ce26c7555a2bf537",
+      "sourceSha256": "61eec32d86e9c98f3d522d13df2da1dad6aa6e8a9c38f362e26909cc7d450d3a",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ce26c7555a2bf537",
+      "sourceSha256": "61eec32d86e9c98f3d522d13df2da1dad6aa6e8a9c38f362e26909cc7d450d3a",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ce26c7555a2bf537",
+      "sourceSha256": "61eec32d86e9c98f3d522d13df2da1dad6aa6e8a9c38f362e26909cc7d450d3a",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ce26c7555a2bf537",
+      "sourceSha256": "61eec32d86e9c98f3d522d13df2da1dad6aa6e8a9c38f362e26909cc7d450d3a",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "sourceSha256": "158dc5be465f07d476dedacb8f6645f21f00df2504671386cbeb63e74f732483",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "sourceSha256": "158dc5be465f07d476dedacb8f6645f21f00df2504671386cbeb63e74f732483",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "sourceSha256": "158dc5be465f07d476dedacb8f6645f21f00df2504671386cbeb63e74f732483",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "sourceSha256": "158dc5be465f07d476dedacb8f6645f21f00df2504671386cbeb63e74f732483",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "sourceSha256": "158dc5be465f07d476dedacb8f6645f21f00df2504671386cbeb63e74f732483",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d17b2ae1f047cf94",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d17b2ae1f047cf94",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d17b2ae1f047cf94",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d17b2ae1f047cf94",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d17b2ae1f047cf94",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d92a8a6927fa76ff",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d92a8a6927fa76ff",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d92a8a6927fa76ff",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d92a8a6927fa76ff",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d92a8a6927fa76ff",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d9492522fb4514ef",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d9492522fb4514ef",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d9492522fb4514ef",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d9492522fb4514ef",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "d9492522fb4514ef",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "db11f89181439d98",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "db11f89181439d98",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "db11f89181439d98",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "db11f89181439d98",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "db11f89181439d98",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e458b053b5a9f878",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e458b053b5a9f878",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e458b053b5a9f878",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e458b053b5a9f878",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e458b053b5a9f878",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e467e85426c883ef",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e467e85426c883ef",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e467e85426c883ef",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e467e85426c883ef",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e467e85426c883ef",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e858b2ec6331d84e",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e858b2ec6331d84e",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e858b2ec6331d84e",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e858b2ec6331d84e",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "e858b2ec6331d84e",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ecc191be72688d94",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ecc191be72688d94",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ecc191be72688d94",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ecc191be72688d94",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "ecc191be72688d94",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "eea31f00e6ce7be1",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "eea31f00e6ce7be1",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "eea31f00e6ce7be1",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "eea31f00e6ce7be1",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "eea31f00e6ce7be1",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "f05ff63990b375e2",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "f05ff63990b375e2",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "f05ff63990b375e2",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "f05ff63990b375e2",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "f05ff63990b375e2",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fb47d93f2cc47316",
+      "sourceSha256": "faff7a3fb3e3669e2d391012661d2825859f2db1a61e44011b0ab61623c97c02",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fb47d93f2cc47316",
+      "sourceSha256": "faff7a3fb3e3669e2d391012661d2825859f2db1a61e44011b0ab61623c97c02",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fb47d93f2cc47316",
+      "sourceSha256": "faff7a3fb3e3669e2d391012661d2825859f2db1a61e44011b0ab61623c97c02",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fb47d93f2cc47316",
+      "sourceSha256": "faff7a3fb3e3669e2d391012661d2825859f2db1a61e44011b0ab61623c97c02",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fb47d93f2cc47316",
+      "sourceSha256": "faff7a3fb3e3669e2d391012661d2825859f2db1a61e44011b0ab61623c97c02",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fe469724f5828fb0",
+      "sourceSha256": "e7ed00186abcdf5d88f2717c8b08b1bffa654f181c4c216eade0ceeb176ed1fc",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fe469724f5828fb0",
+      "sourceSha256": "e7ed00186abcdf5d88f2717c8b08b1bffa654f181c4c216eade0ceeb176ed1fc",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fe469724f5828fb0",
+      "sourceSha256": "e7ed00186abcdf5d88f2717c8b08b1bffa654f181c4c216eade0ceeb176ed1fc",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fe469724f5828fb0",
+      "sourceSha256": "e7ed00186abcdf5d88f2717c8b08b1bffa654f181c4c216eade0ceeb176ed1fc",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fe469724f5828fb0",
+      "sourceSha256": "e7ed00186abcdf5d88f2717c8b08b1bffa654f181c4c216eade0ceeb176ed1fc",
+      "language": "ru",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fecc68bc1f0f9da3",
+      "sourceSha256": "072f89fad175fbc75fe474e42dd2891a458672d756b3f52d65f25350cabb89ff",
+      "language": "zh-CN",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fecc68bc1f0f9da3",
+      "sourceSha256": "072f89fad175fbc75fe474e42dd2891a458672d756b3f52d65f25350cabb89ff",
+      "language": "ja",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fecc68bc1f0f9da3",
+      "sourceSha256": "072f89fad175fbc75fe474e42dd2891a458672d756b3f52d65f25350cabb89ff",
+      "language": "de",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fecc68bc1f0f9da3",
+      "sourceSha256": "072f89fad175fbc75fe474e42dd2891a458672d756b3f52d65f25350cabb89ff",
+      "language": "fr",
+      "status": "pending"
+    },
+    {
+      "renewalId": "fecc68bc1f0f9da3",
+      "sourceSha256": "072f89fad175fbc75fe474e42dd2891a458672d756b3f52d65f25350cabb89ff",
+      "language": "ru",
+      "status": "pending"
+    }
+  ]
+}

@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "state": "draft",
+  "batchId": "renewals-006",
+  "sourceLanguage": "en",
+  "reviewRequired": "AI meaning and target-language review; explicit user publication approval remains required.",
+  "preparation": {
+    "method": "assistant-direct-translation",
+    "externalTranslationApiUsed": false,
+    "skill": "tech-blog-writing"
+  },
+  "translations": [
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "68e2ee5d21f7dc1b",
+      "language": "zh-CN",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "edition": {
+        "title": "Cloudflare 报告内部代码审查工具的推理成本下降",
+        "claims": [
+          "Cloudflare 报告，其内部代码审查工具每次审查平均花费 $0.77，相比开销最高的几周所形成的 $2.43 基线下降了 68%。这些是该公司工作负载的结果，并不保证其他团队也能获得同样的节省。",
+          "该公司将约 40% 的节省归因于审查工具自身代码的修改与优化，其余来自模型和推理投入程度的选择。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "比较成本时，应同时考察审查质量、工作负载构成和评估周期。选择模型或降低推理投入前，应在有代表性的变更上复现测量；本草稿不包含本地基准测试。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "68e2ee5d21f7dc1b",
+      "language": "ja",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "edition": {
+        "title": "Cloudflare が社内コードレビューツールの推論コスト低下を報告",
+        "claims": [
+          "Cloudflare は、社内コードレビューツールの平均費用がレビュー当たり $0.77 となり、最も費用が高かった数週間の $2.43 を基準に 68% 減ったと報告している。これは同社のワークロードでの結果であり、他のチームの削減効果を保証するものではない。",
+          "同社は、削減分の約 40% をレビューツール自体のコード変更と最適化に、残りをモデルと推論強度の選択に帰している。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "コストはレビュー品質、ワークロードの構成、評価期間と併せて比較する。モデルの選択や推論強度の引き下げの前に、代表的な変更で測定を再現する。この草稿にはローカルのベンチマークは含まれない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "68e2ee5d21f7dc1b",
+      "language": "de",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "edition": {
+        "title": "Cloudflare meldet geringere Inferenzkosten seines internen Code-Reviewers",
+        "claims": [
+          "Cloudflare berichtet, dass sein interner Code-Reviewer im Mittel $0.77 pro Review kostete, 68% weniger als die Vergleichsbasis von $2.43 aus seinen teuersten Wochen. Dies sind Ergebnisse für die eigene Arbeitslast, keine garantierten Einsparungen für andere Teams.",
+          "Das Unternehmen führt etwa 40% der Einsparungen auf Änderungen und Optimierungen am Code des Reviewers zurück. Der Rest entfällt demnach auf die Wahl der Modelle und des Inferenzaufwands."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Kosten nur zusammen mit Review-Qualität, Zusammensetzung der Arbeitslast und Auswertungszeitraum vergleichen. Vor der Modellwahl oder einer Verringerung des Inferenzaufwands Messungen an repräsentativen Änderungen reproduzieren; dieser Entwurf enthält keinen lokalen Benchmark."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "68e2ee5d21f7dc1b",
+      "language": "fr",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "edition": {
+        "title": "Cloudflare rapporte une baisse des coûts d’inférence de son outil de revue interne",
+        "claims": [
+          "Cloudflare indique que son outil interne de revue de code coûtait en moyenne $0.77 par revue, soit une baisse de 68% par rapport à une référence de $2.43 issue de ses semaines les plus coûteuses. Ces résultats concernent sa charge de travail et ne garantissent pas les mêmes économies pour d’autres équipes.",
+          "L’entreprise attribue environ 40% des économies aux modifications et optimisations du code de l’outil de revue ; le reste provient, selon elle, du choix des modèles et du niveau d’effort d’inférence."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Comparer les coûts avec la qualité des revues, la composition de la charge de travail et la période d’évaluation. Reproduire les mesures sur des modifications représentatives avant de choisir des modèles ou de réduire l’effort d’inférence ; ce brouillon ne contient aucun benchmark local."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "68e2ee5d21f7dc1b",
+      "language": "ru",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "edition": {
+        "title": "Cloudflare сообщает о снижении затрат на инференс внутреннего инструмента ревью",
+        "claims": [
+          "Cloudflare сообщает, что её внутренний инструмент проверки кода обходился в среднем в $0.77 за ревью — на 68% меньше базового уровня $2.43 за ревью в самые затратные недели. Это результаты на нагрузке компании, а не гарантия такой же экономии для других команд.",
+          "Компания связывает около 40% экономии с изменениями и оптимизациями кода самого инструмента ревью, а остальную часть — с выбором моделей и уровня усилий при рассуждении."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Сравнивайте затраты вместе с качеством ревью, составом нагрузки и периодом оценки. Перед выбором моделей или снижением усилий при рассуждении воспроизведите измерения на типичных изменениях; этот черновик не содержит локального бенчмарка."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6944923e55b6bbd0",
+      "language": "zh-CN",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "edition": {
+        "title": "TeamCity 公告区分本地部署与云服务的受影响范围",
+        "claims": [
+          "JetBrains 将 CVE-2026-44413 描述为 TeamCity On-Premises 的身份验证后问题，影响截至 2025.11.4 的版本，并在 2026.1 修复。这些是历史公告中列出的版本。",
+          "厂商表示，TeamCity Cloud 不受影响，无需针对该问题采取行动。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "将部署类型和已安装版本与厂商公告对应。确认仍受支持的修复版本，或适用的补丁插件及其启用要求；本归档并非建议安装旧版本。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6944923e55b6bbd0",
+      "language": "ja",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "edition": {
+        "title": "TeamCity のアドバイザリ：オンプレミスとクラウドの影響を区別",
+        "claims": [
+          "JetBrains は CVE-2026-44413 を TeamCity On-Premises の認証後に生じる問題と説明している。2025.11.4 までのバージョンに影響し、2026.1 で修正されたとしている。これらは当時のアドバイザリに記載されたバージョンである。",
+          "ベンダーは TeamCity Cloud には影響がなく、この問題への対応も不要としている。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "デプロイ形態とインストール済みバージョンをベンダーのアドバイザリと照合する。サポート対象の修正版、または適用できるパッチプラグインと有効化の条件を確認する。このアーカイブは古いバージョンのインストールを勧めるものではない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6944923e55b6bbd0",
+      "language": "de",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "edition": {
+        "title": "TeamCity-Sicherheitshinweis trennt On-Premises- und Cloud-Betroffenheit",
+        "claims": [
+          "JetBrains beschreibt CVE-2026-44413 als Problem nach der Authentifizierung in TeamCity On-Premises. Betroffen sind Versionen bis einschließlich 2025.11.4; behoben wurde es in 2026.1. Dies sind die Versionsangaben des historischen Sicherheitshinweises.",
+          "Laut Anbieter ist TeamCity Cloud nicht betroffen und erfordert für dieses Problem keine Maßnahmen."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Betriebsform und installierte Version mit dem Anbieterhinweis abgleichen. Ein unterstütztes gepatchtes Release oder ein anwendbares Patch-Plugin samt Aktivierungsanforderungen prüfen. Das Archiv empfiehlt nicht die Installation einer alten Version."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6944923e55b6bbd0",
+      "language": "fr",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "edition": {
+        "title": "L’avis TeamCity distingue l’exposition sur site et dans le cloud",
+        "claims": [
+          "JetBrains décrit CVE-2026-44413 comme un problème après authentification dans TeamCity On-Premises, affectant les versions jusqu’à 2025.11.4 incluse et corrigé dans 2026.1. Il s’agit des versions indiquées dans l’avis historique.",
+          "L’éditeur affirme que TeamCity Cloud n’est pas affecté et ne nécessite aucune action pour ce problème."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Faire correspondre le type de déploiement et la version installée à l’avis de l’éditeur. Confirmer une version corrigée encore prise en charge ou un plugin de correctif applicable et ses conditions d’activation ; ces archives ne recommandent pas d’installer une ancienne version."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6944923e55b6bbd0",
+      "language": "ru",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "edition": {
+        "title": "Уведомление TeamCity разделяет риски локальной и облачной поставок",
+        "claims": [
+          "JetBrains описывает CVE-2026-44413 как проблему TeamCity On-Premises после аутентификации, затрагивающую версии вплоть до 2025.11.4 включительно и исправленную в 2026.1. Это версии, указанные в историческом уведомлении.",
+          "Поставщик заявляет, что TeamCity Cloud не затронут и по этой проблеме не требуется никаких действий."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Сопоставьте тип развёртывания и установленную версию с уведомлением поставщика. Подтвердите наличие поддерживаемого исправленного выпуска либо применимого плагина исправлений и условий его активации; архив не рекомендует устанавливать старую версию."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6ad4fb7dea8c6f87",
+      "language": "zh-CN",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "edition": {
+        "title": "成本中心用户预算：计费界面与成员范围",
+        "claims": [
+          "GitHub 宣布，Enterprise Cloud 管理员可在计费界面中创建成本中心的用户级预算，将此前通过 REST API 提供的控制功能加入界面。这描述的是管理界面的扩展。",
+          "配置的每用户预算适用于成本中心的企业团队或个人用户，并自动随成员变动调整。这是对每位成员应用的共享预算设置，而非为每个人单独协商的限额。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "结合企业计费策略，一并检查实际成员范围、预算行为和超额使用设置。仅凭界面可用，并不能证明所有 AI 支出都会被阻止，也不能证明已测得节省。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6ad4fb7dea8c6f87",
+      "language": "ja",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "edition": {
+        "title": "コストセンターのユーザー予算：請求画面とメンバーの適用範囲",
+        "claims": [
+          "GitHub は、Enterprise Cloud の管理者が請求画面でコストセンターのユーザー単位予算を作成できるようになったと発表した。従来 REST API で利用できた制御を画面にも提供する、管理インターフェースの拡張である。",
+          "設定したユーザー単位予算は、コストセンターのエンタープライズチームまたは個別ユーザーに適用され、メンバー変更に自動で追従する。各メンバーに共通の予算設定を適用するもので、個人ごとに別途交渉した上限ではない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "実際に適用されるメンバー、予算の動作、超過利用設定を、企業の請求ポリシーと併せて確認する。画面が利用できるだけでは、すべての AI 支出が止まることや、削減効果を測定済みであることは示せない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6ad4fb7dea8c6f87",
+      "language": "de",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "edition": {
+        "title": "Nutzerbudgets je Kostenstelle: Abrechnungsoberfläche und Mitgliedschaft",
+        "claims": [
+          "GitHub kündigte an, dass Enterprise Cloud-Administratoren nutzerbezogene Kostenstellenbudgets in der Abrechnungsoberfläche anlegen können. Damit werden zuvor über die REST API verfügbare Steuerungsmöglichkeiten in der Oberfläche zugänglich. Es handelt sich um eine Erweiterung der Verwaltungsschnittstelle.",
+          "Das konfigurierte Pro-Nutzer-Budget gilt für die Enterprise-Teams oder einzelnen Nutzer der Kostenstelle und folgt Mitgliedschaftsänderungen automatisch. Dies ist eine gemeinsame Budgeteinstellung, die auf jedes Mitglied angewendet wird, kein für jede Person gesondert ausgehandeltes Limit."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Die tatsächliche Mitgliedschaft, das Budgetverhalten und Überschreitungseinstellungen zusammen mit der Abrechnungsrichtlinie des Unternehmens prüfen. Die Verfügbarkeit einer Oberfläche belegt allein weder, dass sämtliche KI-Ausgaben blockiert werden, noch, dass Einsparungen gemessen wurden."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6ad4fb7dea8c6f87",
+      "language": "fr",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "edition": {
+        "title": "Budgets utilisateurs par centre de coûts : interface de facturation et périmètre des membres",
+        "claims": [
+          "GitHub a annoncé que les administrateurs Enterprise Cloud pouvaient créer des budgets par utilisateur de centre de coûts dans l’interface de facturation. Celle-ci expose des contrôles auparavant disponibles via la REST API. Il s’agit d’une extension de l’interface de gestion.",
+          "Le budget par utilisateur configuré s’applique aux équipes d’entreprise ou aux utilisateurs individuels du centre de coûts et suit automatiquement les changements d’appartenance. C’est un paramètre budgétaire commun appliqué à chaque membre, pas une limite négociée séparément pour chaque personne."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Examiner les membres effectivement concernés, le comportement du budget et les paramètres de dépassement avec la politique de facturation de l’entreprise. La disponibilité de l’interface ne démontre pas, à elle seule, que toutes les dépenses d’IA sont bloquées ou que des économies ont été mesurées."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6ad4fb7dea8c6f87",
+      "language": "ru",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "edition": {
+        "title": "Пользовательские бюджеты центров затрат: интерфейс оплаты и состав участников",
+        "claims": [
+          "GitHub объявила, что администраторы Enterprise Cloud могут создавать пользовательские бюджеты центров затрат в интерфейсе оплаты. В нём появились настройки, ранее доступные через REST API. Это расширение интерфейса управления.",
+          "Настроенный бюджет на пользователя применяется к командам предприятия или отдельным пользователям центра затрат и автоматически учитывает изменения состава участников. Это общая настройка бюджета, применяемая к каждому участнику, а не отдельно согласованный лимит для каждого человека."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Проверяйте фактический состав участников, поведение бюджета и настройки превышения вместе с политикой оплаты предприятия. Само наличие интерфейса не доказывает блокировку всех расходов на AI или наличие измеренной экономии."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "7067e48d153e8525",
+      "language": "zh-CN",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "edition": {
+        "title": "Argo CD 候选版本：内部 mTLS 与来源完整性配置",
+        "claims": [
+          "Argo CD v3.5.0-rc1 官方页面将该构建标为预发布版本，并列出 repo-server 的 mTLS 支持。这能支持对候选版本能力的描述，而不能证明每个安装实例都强制启用了 mTLS。",
+          "同一变更日志列出 CLI 对 Source Integrity 配置的支持，以及开放的 ApplicationSet 界面。本简报并未声称签名验证首次出现在该版本，也未声称此前内部流量始终未加密。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "未能采集所链接的官方博客；本草稿因此缩小范围，使用项目的发布产物作为依据。部署前，应检查升级说明、证书、信任根和目标版本的完整性设置。本草稿并不声称该候选版本仍是最新版。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "7067e48d153e8525",
+      "language": "ja",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "edition": {
+        "title": "Argo CD のリリース候補：内部 mTLS とソース完全性の設定",
+        "claims": [
+          "Argo CD v3.5.0-rc1 の公式ページは、この成果物をプレリリースと明示し、repo-server の mTLS 対応を挙げている。これはリリース候補の機能として説明する根拠であり、すべてのインストールで mTLS が強制されることを示すものではない。",
+          "同じ変更履歴には、Source Integrity 設定の CLI 対応と、利用できるようになった ApplicationSet UI が記載されている。この短報は、署名検証がこのバージョンで初めて導入されたとも、それ以前の内部トラフィックが常に未暗号化だったとも主張していない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "リンク先の公式ブログは取得できなかったため、この草稿は範囲を絞ってプロジェクトのリリース成果物を根拠にしている。展開前に、アップグレードノート、証明書、信頼のルート、対象バージョンの完全性設定を確認する。この候補が現在も最新版だと主張するものではない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "7067e48d153e8525",
+      "language": "de",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "edition": {
+        "title": "Argo-CD-Release-Kandidat: internes mTLS und Source-Integrity-Konfiguration",
+        "claims": [
+          "Die offizielle Seite zu Argo CD v3.5.0-rc1 kennzeichnet das Artefakt als Vorabversion und nennt mTLS-Unterstützung im repo-server. Das belegt eine Fähigkeit des Release-Kandidaten, nicht die Durchsetzung von mTLS in jeder Installation.",
+          "Derselbe Changelog nennt CLI-Unterstützung für die Source Integrity-Konfiguration und eine zugänglich gemachte ApplicationSet-Oberfläche. Dieser Kurzbericht behauptet weder, dass Signaturprüfung erstmals in diesem Release erschien, noch, dass früherer interner Verkehr stets unverschlüsselt war."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Der verlinkte offizielle Blogbeitrag konnte nicht abgerufen werden; dieser enger gefasste Entwurf stützt sich auf das Release-Artefakt des Projekts. Vor dem Rollout Upgrade-Hinweise, Zertifikate, Vertrauensanker und Integritätseinstellungen der Zielversion prüfen. Es wird nicht behauptet, dass dieser Kandidat weiterhin die neueste Version ist."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "7067e48d153e8525",
+      "language": "fr",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "edition": {
+        "title": "Version candidate Argo CD : mTLS interne et configuration de l’intégrité des sources",
+        "claims": [
+          "La page officielle d’Argo CD v3.5.0-rc1 indique qu’il s’agit d’une préversion et mentionne la prise en charge de mTLS dans le repo-server. Cela permet de décrire une capacité de la version candidate, sans affirmer que mTLS est imposé dans chaque installation.",
+          "Le même journal des modifications mentionne la prise en charge de la configuration Source Integrity dans la CLI et l’ouverture de l’interface ApplicationSet. Cette brève n’affirme ni que la vérification des signatures est apparue pour la première fois dans cette version ni que le trafic interne antérieur était toujours non chiffré."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "L’article de blog officiel lié n’a pas pu être collecté ; ce brouillon plus restreint s’appuie sur l’artefact de version du projet. Avant le déploiement, examiner les notes de mise à niveau, les certificats, les racines de confiance et les paramètres d’intégrité de la version cible. Cela ne signifie pas que cette version candidate reste la plus récente."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "7067e48d153e8525",
+      "language": "ru",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "edition": {
+        "title": "Релиз-кандидат Argo CD: внутренний mTLS и настройка целостности источников",
+        "claims": [
+          "Официальная страница Argo CD v3.5.0-rc1 помечает этот артефакт как предварительный выпуск и перечисляет поддержку mTLS в repo-server. Это основание говорить о возможности релиз-кандидата, а не об обязательном включении mTLS в каждой установке.",
+          "Тот же список изменений указывает поддержку настройки Source Integrity в CLI и предоставленный интерфейс ApplicationSet. Обзор не утверждает, что проверка подписей впервые появилась в этом выпуске или что прежний внутренний трафик всегда был незашифрованным."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Указанную официальную запись блога получить не удалось; этот более узкий черновик опирается на артефакт выпуска проекта. Перед развёртыванием проверьте примечания по обновлению, сертификаты, корни доверия и настройки целостности целевой версии. Здесь не утверждается, что этот кандидат по-прежнему является новейшей версией."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "72477d086944244f",
+      "language": "zh-CN",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "edition": {
+        "title": "NetScaler 防护需要补丁与源站访问控制",
+        "claims": [
+          "Cloudflare 在 NetScaler 指南开头要求受影响的客户先为网关安装补丁，再考虑额外防护层。",
+          "文章提醒，直接访问原始地址或备用主机名可能绕过前置 Access 控制。",
+          "对 Web 身份验证路径的保护，并不会自动覆盖启用 DTLS 的网关监听端点。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "清点所有暴露的监听端点与备用源站路径。将补丁状态、身份验证策略和源站限制作为独立控制措施审查；本草稿并不声称仅修改 DNS 或只使用 WAF 就能消除暴露风险。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "72477d086944244f",
+      "language": "ja",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "edition": {
+        "title": "NetScaler の保護にはパッチ適用とオリジン制御が必要",
+        "claims": [
+          "Cloudflare の NetScaler ガイドは、影響を受ける利用者に対し、追加の防御層を検討する前にゲートウェイへパッチを適用するよう、冒頭で求めている。",
+          "記事は、元のアドレスや別のホスト名へ直接アクセスすると、前段の Access 制御を迂回できる可能性があると注意している。",
+          "Web 認証経路の保護が、DTLS を有効にしたゲートウェイのリスナーまで自動的にカバーするわけではない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "公開されているすべてのリスナーと、別経路のオリジンへのアクセスを洗い出す。パッチ適用状況、認証ポリシー、オリジンの制限を別々の制御として確認する。この草稿は、DNS の変更や WAF だけで露出を解消できると主張するものではない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "72477d086944244f",
+      "language": "de",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "edition": {
+        "title": "NetScaler-Schutz erfordert Patches und Kontrollen am Ursprungssystem",
+        "claims": [
+          "Cloudflare beginnt seine NetScaler-Anleitung mit der Aufforderung an betroffene Kunden, ihr Gateway zu patchen, bevor sie zusätzliche Schutzschichten erwägen.",
+          "Der Artikel warnt, dass direkter Zugriff auf die ursprüngliche Adresse oder einen alternativen Hostnamen die vorgeschalteten Access-Kontrollen umgehen kann.",
+          "Der Schutz des Web-Authentifizierungspfads deckt Gateway-Listener mit aktiviertem DTLS nicht automatisch ab."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Alle exponierten Listener und alternativen Zugangswege zum Ursprungssystem erfassen. Patch-Stand, Authentifizierungsrichtlinie und Ursprungsbeschränkungen als getrennte Kontrollen prüfen. Dieser Entwurf behauptet nicht, dass eine DNS-Änderung oder eine WAF allein die Exposition beseitigt."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "72477d086944244f",
+      "language": "fr",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "edition": {
+        "title": "Protéger NetScaler nécessite des correctifs et des contrôles sur l’origine",
+        "claims": [
+          "Cloudflare commence son guide NetScaler en demandant aux clients affectés de corriger leur passerelle avant d’envisager des couches de protection supplémentaires.",
+          "L’article avertit qu’un accès direct à l’adresse d’origine ou à un autre nom d’hôte peut contourner les contrôles Access placés en amont.",
+          "La protection du chemin d’authentification Web ne couvre pas automatiquement les points d’écoute de la passerelle où DTLS est activé."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Inventorier chaque point d’écoute exposé et les autres chemins d’accès à l’origine. Examiner l’état des correctifs, la politique d’authentification et les restrictions sur l’origine comme des contrôles distincts ; ce brouillon n’affirme pas qu’un changement DNS ou un WAF suffit à supprimer l’exposition."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "72477d086944244f",
+      "language": "ru",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "edition": {
+        "title": "Защита NetScaler требует исправлений и контроля доступа к исходному серверу",
+        "claims": [
+          "Cloudflare начинает руководство по NetScaler с рекомендации затронутым клиентам установить исправления на шлюз, прежде чем рассматривать дополнительные уровни защиты.",
+          "Статья предупреждает, что прямое обращение к исходному адресу или альтернативному имени хоста может обойти расположенные перед ним средства контроля Access.",
+          "Защита пути веб-аутентификации не распространяется автоматически на слушающие интерфейсы шлюза с включённым DTLS."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Составьте перечень всех открытых слушающих интерфейсов и альтернативных маршрутов к исходному серверу. Рассматривайте состояние исправлений, политику аутентификации и ограничения доступа к исходному серверу как отдельные меры. Этот черновик не утверждает, что одно изменение DNS или один WAF устраняет открытый доступ."
+    }
+  ]
+}
