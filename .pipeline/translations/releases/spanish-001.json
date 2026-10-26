@@ -81,5 +81,26 @@
     "Production availability must be verified after merge and successful deployment.",
     "Approval and translation publication timestamps are new; source news dates and synthetic fixture metadata are not reused."
   ],
-  "publicationPreparedAt": "2026-10-26T22:53:32.255Z"
+  "publicationPreparedAt": "2026-10-26T22:53:32.255Z",
+  "publicationVerification": {
+    "checkedAt": "2026-10-26T22:55:17.665947+00:00",
+    "nodeTestsPassed": 18,
+    "astroCheck": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "htmlPagesExcludingOwnershipFiles": 830,
+    "canonicalSitemapUrls": 423,
+    "approvedTranslations": 36,
+    "newSpanishArticles": 6,
+    "correspondingArticlePagesVerified": 48,
+    "selfCanonical": true,
+    "reciprocalHreflang": true,
+    "englishXDefault": true,
+    "spanishFeedsAndSearchIndex": true,
+    "spanishListedInOtherLanguageMenus": true,
+    "spanishHomeLocalized": true,
+    "existingPublicationRecordsPreserved": 30,
+    "productionDeployment": "pending"
+  }
 }
