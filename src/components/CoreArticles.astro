@@ -1,0 +1,19 @@
+---
+import {coreArticles} from '../lib/core-articles';
+import type {Entry,Language} from '../lib/content';
+interface Props {lang:Language;all:Entry[];}
+const {lang,all}=Astro.props;
+const items=coreArticles(lang,all);
+---
+{items.length>0&&<section class="core-articles" aria-labelledby="core-articles-heading">
+  <h2 id="core-articles-heading">{lang==='ko'?'코드로 확인하는 기술 가이드':'Practical Guides with Code'}</h2>
+  <p>{lang==='ko'?'셸 입력 검증부터 Java·Spring 실행 예제까지, 해결하려는 문제에서 시작하세요. 각 글에서 재현 환경과 확인 범위를 설명합니다.':'Start with the problem you need to solve, from shell input checks to Java and Spring examples. Each guide records its reproduction environment and limits.'}</p>
+  <ol>{items.map(entry=><li><a href={entry.url}>{entry.title}</a></li>)}</ol>
+</section>}
+<style>
+.core-articles{border-bottom:1px solid var(--line);padding-bottom:32px;margin-bottom:40px}
+h2{font-size:24px;line-height:1.5}p{color:var(--muted);line-height:1.8}
+ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 36px;padding-left:24px;margin-top:24px}
+li{padding-left:4px;line-height:1.7;overflow-wrap:anywhere}a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:800px){ol{grid-template-columns:1fr}}
+</style>

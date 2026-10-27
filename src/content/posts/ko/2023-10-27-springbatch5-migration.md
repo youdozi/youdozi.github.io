@@ -1,5 +1,5 @@
 ---
-title: "Spring Batch 5 이관: 스키마·파라미터·재시작 검증하기"
+title: "Spring Batch 5 마이그레이션: 스키마·Job 파라미터·재시작"
 language: ko
 translationKey: 2023-10-27-springbatch5-migration
 routeSlug: 2023-10-27-springbatch5-migration
@@ -12,7 +12,7 @@ tags:
   - migration
 legacyUrl: /spring/springbatch5-migration/
 legacySource: _posts/spring/migration/2023-10-27-springbatch5-migration.markdown
-updatedAt: 2026-10-27T05:23:47.316+00:00
+updatedAt: 2026-10-27T10:25:23.707+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -23,8 +23,7 @@ reviewSources:
   - https://docs.spring.io/spring-batch/reference/5.2/job/java-config.html
   - https://docs.spring.io/spring-batch/reference/5.2/schema-appendix.html
   - https://docs.spring.io/spring-boot/3.5/how-to/batch.html
-description: Spring Batch 5의 스키마와 파라미터 변경을 구분하고, JobRepository·트랜잭션 매니저를 명시한 H2
-  테스트로 완료·중복 실행·재시작을 확인합니다.
+description: "Spring Batch 5 스키마와 Job 파라미터 이관 조건을 정리합니다. 새 H2 스키마에서 타입별 파라미터·완료 인스턴스·실패 Step 재시작을 확인합니다."
 ---
 Spring Batch 5로 옮길 때는 의존성뿐 아니라 메타데이터 스키마, Job 파라미터의 저장 형식, 실행 컨텍스트와 재시작 정책을 함께 확인해야 합니다. 특히 기존 값이 남아 있는 컬럼을 먼저 삭제하거나 타입 코드만 클래스 이름으로 바꾸는 SQL은 데이터 이관을 완성하지 못합니다.
 
