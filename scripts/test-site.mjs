@@ -181,6 +181,40 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.ok(graph.some(item=>item['@type']==='BreadcrumbList'));
 
 
+    // Check emitted paths rather than assuming the registry is rendered correctly.
+    const guideCounts=[['coding-test',10],['springboot',9],['linux',4],['jdk',3],['util',3]];
+    for(const lang of ['en','ko']){
+      const hubPath=`/${lang}/guides/`;
+      const hub=await readFile(`dist${hubPath}index.html`,'utf8');
+      const hubData=JSON.parse(hub.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      const hubList=hubData.find(x=>x['@type']==='ItemList');
+      assert.deepEqual(hubList.itemListElement.map(x=>x.url),guideCounts.map(([term])=>`https://youdozi.github.io/${lang}/categories/${term}/`));
+      assert.equal(hubList.numberOfItems,5);
+      assert.ok(!hubData.some(x=>x['@type']==='BlogPosting'));
+      for(const [term,count] of guideCounts){
+        const path=`/${lang}/categories/${term}/`;
+        const html=await readFile(`dist${path}index.html`,'utf8');
+        const data=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+        const collection=data.find(x=>x['@type']==='CollectionPage');
+        const list=data.find(x=>x['@type']==='ItemList');
+        assert.equal(list.numberOfItems,count);assert.equal(collection.inLanguage,lang);
+        const groups=html.match(/<div class="algorithm-groups"[^>]*>([\s\S]*?)<\/div>/)[1];
+        const visible=[...groups.matchAll(/href="([^"]+)"/g)].map(m=>'https://youdozi.github.io'+m[1]);
+        assert.deepEqual(visible,list.itemListElement.map(x=>x.url),'Visible order must match schema');
+        assert.ok(html.includes(`href="${hubPath}"`));
+        assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${path}</loc><lastmod>${collection.dateModified}</lastmod>`));
+        for(const item of list.itemListElement){
+          const article=await readFile(`dist${item.url.replace('https://youdozi.github.io','')}index.html`,'utf8');
+          assert.ok(article.includes(`href="${path}"`),'Each linked article returns to its category guide');
+        }
+      }
+      assert.ok(hub.includes(`hreflang="x-default" href="https://youdozi.github.io/en/guides/"`));
+      assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${hubPath}</loc>`));
+    }
+    const japaneseHome=await readFile('dist/ja/index.html','utf8');
+    assert.ok(!japaneseHome.includes('href="/ja/guides/"'),'Do not link to an unavailable guide index');
+
+
     const renewals=await readdir('src/content/renewals');
     const manifest=JSON.parse(await readFile('.pipeline/archive-renewal/manifest.json','utf8'));
     assert.deepEqual(renewals.map(f=>f.replace(/\.json$/,'')).sort(),manifest.items.filter(r=>r.status==='published').map(r=>r.id).sort());

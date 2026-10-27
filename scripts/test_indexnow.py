@@ -53,6 +53,17 @@ class IndexNowTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             ix.build_manifest(self.dist)
 
+    def test_native_guide_indexes_require_real_canonical_sitemap_pages(self):
+        url = self.page('/en/guides/')
+        self.page('/ko/guides/')
+        self.sitemap([url])
+        self.assertEqual(list(ix.build_manifest(self.dist)['pages']), [url])
+        for path in ['/ja/guides/', '/en/guides/private/', '/review/']:
+            with self.subTest(path=path):
+                with self.assertRaises(ValueError): ix.public_url(ix.SITE + path)
+        self.page('/en/guides/', canonical=ix.SITE + '/en/')
+        with self.assertRaises(ValueError): ix.build_manifest(self.dist)
+
     def test_only_sitemap_pages_are_fingerprinted_and_preview_has_no_side_effects(self):
         url = self.page()
         self.page('/ja/digest/unapproved/')
