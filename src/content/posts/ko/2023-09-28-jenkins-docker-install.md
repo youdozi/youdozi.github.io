@@ -15,7 +15,7 @@ tags:
   - testing
 legacyUrl: /jenkins/jenkins-docker-install/
 legacySource: _posts/jenkins/docker-install/2023-09-28-jenkins-docker-install.markdown
-updatedAt: 2026-10-27T07:50:31.083Z
+updatedAt: 2026-10-27T08:56:40.345Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary documentation and disposable-container contracts reviewed; exact image/version and hosted execution evidence recorded separately.

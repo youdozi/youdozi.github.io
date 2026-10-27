@@ -15,7 +15,7 @@ tags:
   - macos
 legacyUrl: /jekyll/jekyll-install/
 legacySource: _posts/jekyll/install/2023-09-04-jekyll-install.markdown
-updatedAt: 2026-10-27T07:26:54.130Z
+updatedAt: 2026-10-27T08:56:40.345Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary documentation checked; isolated legacy bundle render and temporary C++ probe executed. Historical versions and host-specific limits stated.

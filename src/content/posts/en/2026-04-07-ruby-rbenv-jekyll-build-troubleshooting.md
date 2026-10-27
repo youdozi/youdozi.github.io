@@ -3,7 +3,7 @@ language: en
 translationKey: 2026-04-07-ruby-rbenv-jekyll-build-troubleshooting
 routeSlug: 2026-04-07-ruby-rbenv-jekyll-build-troubleshooting
 kind: post
-publishedAt: 2026-10-27T07:26:54.130Z
+publishedAt: 2026-10-27T08:56:40.345Z
 categories:
   - blog
   - troubleshooting
@@ -15,7 +15,7 @@ tags:
   - bundler
   - jekyll
   - macos
-updatedAt: 2026-10-27T07:26:54.130Z
+updatedAt: 2026-10-27T08:56:40.345Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary documentation checked; isolated legacy bundle render and temporary C++ probe executed. Historical versions and host-specific limits stated.

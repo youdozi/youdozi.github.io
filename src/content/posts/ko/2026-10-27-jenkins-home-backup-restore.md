@@ -3,7 +3,7 @@ language: ko
 translationKey: 2026-10-27-jenkins-home-backup-restore
 routeSlug: 2026-10-27-jenkins-home-backup-restore
 kind: post
-publishedAt: 2026-10-27T07:50:31.083Z
+publishedAt: 2026-10-27T08:56:40.345Z
 categories:
   - jenkins
 title: "Jenkins 홈 백업: 정지한 컨트롤러를 새 볼륨에 복구하기"
@@ -14,7 +14,7 @@ tags:
   - containers
   - backup
   - testing
-updatedAt: 2026-10-27T07:50:31.083Z
+updatedAt: 2026-10-27T08:56:40.345Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary documentation and disposable-container contracts reviewed; exact image/version and hosted execution evidence recorded separately.

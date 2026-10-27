@@ -17,7 +17,7 @@ tags:
 legacyUrl: /blog/troubleshooting/ruby-rbenv-jekyll-build-troubleshooting/
 description: 임시 컴파일 예제로 Ruby 실행 실패와 C++ 헤더 문제를 나눠 진단합니다. 재설치 없이 RbConfig와 명령 단위 SDK 플래그를 비교합니다.
 legacySource: _posts/blog/troubleshooting/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.markdown
-updatedAt: 2026-10-27T07:26:54.130Z
+updatedAt: 2026-10-27T08:56:40.345Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary documentation checked; isolated legacy bundle render and temporary C++ probe executed. Historical versions and host-specific limits stated.
