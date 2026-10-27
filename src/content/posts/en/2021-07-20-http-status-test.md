@@ -3,7 +3,7 @@ language: en
 translationKey: 2021-07-20-http-status-test
 routeSlug: 2021-07-20-http-status-test
 kind: post
-publishedAt: 2026-10-27T05:47:47.001Z
+publishedAt: 2026-10-27T07:19:48.249Z
 categories:
   - util
 tags:
@@ -14,7 +14,7 @@ title: Test HTTP Status Codes Locally with a Small Python Server
 description: Run a localhost HTTP fixture for JSON status responses, HTML with
   status 200, and body-free 204. Check headers and bodies independently of
   status codes.
-updatedAt: 2026-10-27T05:47:47.001Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary documentation checked; paired examples and diagram/code

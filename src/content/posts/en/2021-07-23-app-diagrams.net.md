@@ -3,7 +3,7 @@ language: en
 translationKey: 2021-07-23-app-diagrams.net
 routeSlug: 2021-07-23-app-diagrams.net
 kind: post
-publishedAt: 2026-10-27T05:47:47.001Z
+publishedAt: 2026-10-27T07:19:48.249Z
 categories:
   - util
 tags:
@@ -14,7 +14,7 @@ title: Keep Editable draw.io Sources Alongside Shared Diagrams
 description: Create a small uncompressed draw.io XML diagram, keep the .drawio
   source, and distinguish editable diagram data from SVG or PNG used for
   sharing.
-updatedAt: 2026-10-27T05:47:47.001Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary documentation checked; paired examples and diagram/code

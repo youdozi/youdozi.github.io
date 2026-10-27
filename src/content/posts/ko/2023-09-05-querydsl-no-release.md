@@ -14,7 +14,7 @@ tags:
   - jooq
 legacyUrl: /springboot/querydsl-no-release/
 legacySource: _posts/spring/querydsl/2023-09-05-querydsl-no-release.markdown
-updatedAt: 2026-10-27T06:13:10.631Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary contracts checked; paired Querydsl/Specification project

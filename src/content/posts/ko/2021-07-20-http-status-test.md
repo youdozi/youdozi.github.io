@@ -13,7 +13,7 @@ tags:
   - http-status-code
 legacyUrl: /util/http-status-test/
 legacySource: _posts/util/2021-07-20-http-status-test.markdown
-updatedAt: 2026-10-27T05:47:47.001Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary documentation checked; paired examples and diagram/code

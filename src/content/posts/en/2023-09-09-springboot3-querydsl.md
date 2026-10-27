@@ -5,7 +5,7 @@ translationKey: "2023-09-09-springboot3-querydsl"
 routeSlug: "2023-09-09-springboot3-querydsl"
 kind: "post"
 publishedAt: "2026-10-27T02:02:40+00:00"
-updatedAt: 2026-10-27T06:13:10.631Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Official documentation checked; Q-type generation and H2 query tests reproduced."

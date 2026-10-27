@@ -3,7 +3,7 @@ language: en
 translationKey: 2026-04-07-jekyll-quality-gates-proof-html-bundler-audit
 routeSlug: 2026-04-07-jekyll-quality-gates-proof-html-bundler-audit
 kind: post
-publishedAt: 2026-10-27T06:32:55.234Z
+publishedAt: 2026-10-27T07:19:48.249Z
 categories:
   - blog
   - automation
@@ -15,7 +15,7 @@ tags:
   - github-pages
   - quality-gates
   - testing
-updatedAt: 2026-10-27T06:32:55.234Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Current repository workflow contracts checked; paired offline JavaScript examples executed with mocked APIs and bounded deployment-policy tests.

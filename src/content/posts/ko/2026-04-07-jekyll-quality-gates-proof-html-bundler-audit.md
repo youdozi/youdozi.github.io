@@ -17,7 +17,7 @@ tags:
 legacyUrl: /blog/automation/jekyll-quality-gates-proof-html-bundler-audit/
 description: Astro 검증과 GitHub Pages 게시를 구분합니다. 커밋 ref·선행 빌드·배포 조건을 입력 모델 24개와 실패해야 하는 변형 6개로 확인합니다.
 legacySource: _posts/blog/automation/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.markdown
-updatedAt: 2026-10-27T06:32:55.234Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Current repository workflow contracts checked; paired offline JavaScript examples executed with mocked APIs and bounded deployment-policy tests.

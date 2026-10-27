@@ -3,7 +3,7 @@ language: en
 translationKey: 2021-08-06-search-github
 routeSlug: 2021-08-06-search-github
 kind: post
-publishedAt: 2026-10-27T05:47:47.001Z
+publishedAt: 2026-10-27T07:19:48.249Z
 categories:
   - util
 tags:
@@ -15,7 +15,7 @@ title: Search Code with GitHub, Sourcegraph and Local Git
 description: Narrow code searches by repository, language and path, distinguish
   GitHub and Sourcegraph query syntax, and reproduce a fixed-string search with
   local Git.
-updatedAt: 2026-10-27T05:47:47.001Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary documentation checked; paired examples and diagram/code

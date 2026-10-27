@@ -13,7 +13,7 @@ tags:
   - "querydsl"
 legacyUrl: "/springboot/springboot3-querydsl/"
 legacySource: "_posts/spring/migration/2023-09-09-springboot3-querydsl.markdown"
-updatedAt: 2026-10-27T06:13:10.631Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 Gradle Q 타입 생성·H2 조회 테스트 재현"

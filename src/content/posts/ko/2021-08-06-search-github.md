@@ -14,7 +14,7 @@ tags:
   - sourcegraph
 legacyUrl: /util/search-github/
 legacySource: _posts/util/2021-08-06-search-github.markdown
-updatedAt: 2026-10-27T05:47:47.001Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary documentation checked; paired examples and diagram/code

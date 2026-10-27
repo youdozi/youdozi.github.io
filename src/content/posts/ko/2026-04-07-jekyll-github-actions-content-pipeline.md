@@ -17,7 +17,7 @@ tags:
 legacyUrl: /blog/automation/jekyll-github-actions-content-pipeline/
 description: 한영 다이제스트의 생성부터 후보 커밋 검증, Draft PR, 승인 후 게시까지 연결합니다. GitHub 호출을 모의 객체로 바꿔 실제 검토 스크립트를 실행합니다.
 legacySource: _posts/blog/automation/2026-04-07-jekyll-github-actions-content-pipeline.markdown
-updatedAt: 2026-10-27T06:32:55.234Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Current repository workflow contracts checked; paired offline JavaScript examples executed with mocked APIs and bounded deployment-policy tests.

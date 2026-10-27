@@ -3,7 +3,7 @@ language: en
 translationKey: 2023-09-05-querydsl-no-release
 routeSlug: 2023-09-05-querydsl-no-release
 kind: post
-publishedAt: 2026-10-27T06:13:10.631Z
+publishedAt: 2026-10-27T07:19:48.249Z
 categories:
   - springboot
 tags:
@@ -15,7 +15,7 @@ title: "Querydsl and JPA Specifications: Test a Query Before Switching"
 description: Compare Querydsl and JPA Specification predicates on the same H2
   data. Check duplicates, literals, AND/OR, null policy, and string attribute
   failures before changing tools.
-updatedAt: 2026-10-27T06:13:10.631Z
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary contracts checked; paired Querydsl/Specification project
