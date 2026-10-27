@@ -1,0 +1,179 @@
+{
+  "createdAt": "2026-10-27T03:57:40.910169+00:00",
+  "purpose": "Four algorithm topics, eight Korean/English manuscripts, complete importable solutions and executable boundary checks.",
+  "publicationApprovalAtPreparation": null,
+  "topics": [
+    "2021-08-17-cache",
+    "2021-07-22-dot-product",
+    "2021-07-23-number-word",
+    "2021-07-19-new-id"
+  ],
+  "previousPR": {
+    "number": 58,
+    "mergeCommit": "2eda8ad9a203faa771e73f6ffc991a0e43249f32",
+    "deploymentRun": 40446734483,
+    "deploymentVerification": "Tracked separately after the main deployment finishes."
+  },
+  "newEnglishEditions": {
+    "preparedPublishedAt": {
+      "2021-08-17-cache": "2026-10-27T03:54:18.369Z",
+      "2021-07-22-dot-product": "2026-10-27T03:54:18.369Z",
+      "2021-07-23-number-word": "2026-10-27T03:54:18.369Z",
+      "2021-07-19-new-id": "2026-10-27T03:54:18.369Z"
+    },
+    "refreshAllPublicationTimesAfterApproval": true,
+    "policy": "After explicit approval refresh first-English publishedAt/updatedAt before final CI. Preserve Korean original dates and reviewed bodies."
+  },
+  "selectionEvidence": {
+    "legacySearchRows": "Previous Google28day API report contains cache1 and dot-product1 impression; no page row for the other two.",
+    "purpose": "Complete a coherent Java state/numeric/string exercise group, not a claim of established English search demand."
+  },
+  "preserved": [
+    "Korean publishedAt",
+    "translationKey and routeSlug",
+    "legacyUrl and legacySource",
+    "archiveBodySha256"
+  ],
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "sourceVerification": {
+    "problems": [
+      "https://school.programmers.co.kr/learn/courses/30/lessons/17680",
+      "https://school.programmers.co.kr/learn/courses/30/lessons/70128",
+      "https://school.programmers.co.kr/learn/courses/30/lessons/81301",
+      "https://school.programmers.co.kr/learn/courses/30/lessons/72410"
+    ],
+    "javaApi": [
+      "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/LinkedHashMap.html",
+      "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html"
+    ],
+    "checked": "Problem constraints and algorithm/Java contracts checked directly against primary sources; copied problem stories replaced with concise paraphrases."
+  },
+  "review": {
+    "type": "Two-pass self AI review: facts/code/English-Korean meaning, then each edition as a standalone reader article.",
+    "independentSession": false,
+    "humanReview": false,
+    "scope": "Eight titles/descriptions/bodies; five complete bilingual solution classes; original identities; fixture design and final generated HTML.",
+    "findings": [
+      {
+        "severity": "major",
+        "issue": "Original cache explanation relied on list traversal and a stateful stream without a concise access-order demonstration.",
+        "resolution": "Use an imperative access-ordered LinkedHashMap; explain hit refresh, zero capacity and model cost. Use a distinct list-based reference in tests."
+      },
+      {
+        "severity": "major",
+        "issue": "Articles mixed long copied problem text with incomplete method snippets.",
+        "resolution": "Paraphrase constraints and provide complete Solution classes/imports; preserve old method snippets in unaffected articles through backward-compatible extraction."
+      },
+      {
+        "severity": "minor",
+        "issue": "New ID original repeated the same Optional code with extensive comments.",
+        "resolution": "Keep one concise Optional implementation and one distinct loop alternative; compare contract and idempotence under Turkish default locale."
+      },
+      {
+        "severity": "minor",
+        "issue": "New English wording initially suggested both ID implementations call repeat.",
+        "resolution": "Attribute Java11 repeat to Optional implementation; both compile for Java11."
+      },
+      {
+        "severity": "minor",
+        "issue": "Temporary class renaming initially removed public modifier.",
+        "resolution": "Preserve imports and public modifier, changing only class name to match each temporary file."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "reviewedSha256": {
+      "src/content/posts/en/2021-08-17-cache.md": "fb743358f8075c37a00d350320989f8a99c002c6fef179165b6680fd8c835737",
+      "src/content/posts/ko/2021-08-17-cache.md": "14c670b82b94fe303cd03de539bbbccd60d07b4b6e753e35592f6d701a71cc76",
+      "src/content/posts/en/2021-07-22-dot-product.md": "36da7272e1928ee4b1a46cb16869e47e89d59dd0d73171a84a3a66d61c011dd0",
+      "src/content/posts/ko/2021-07-22-dot-product.md": "dcbbbc24b04fe339435e36c6d1c9279641befa430af54f3f3e4862a86facc927",
+      "src/content/posts/en/2021-07-23-number-word.md": "477c143cf85e2b30c321e8e66fad71ba8f83abf7ab2cf9fd126b69625c782a5a",
+      "src/content/posts/ko/2021-07-23-number-word.md": "9a3dff432d44c45a6ae0c80a49436ffcbe67e1a2b0a729069b3aacff0fee0b19",
+      "src/content/posts/en/2021-07-19-new-id.md": "d2ef6c4317602d2e3bbcf07d6cf24ab132bd1d885f10165ada0816de74f40e86",
+      "src/content/posts/ko/2021-07-19-new-id.md": "016c2cc9d0b6e82b985a74d0bfadea131e93cdd78bc7014c336f70e050235e4f",
+      "scripts/check_article_examples.py": "e8d5eb55ba124554bfad1cab831d6d4a1121c86a6f99e980c48904fec96c4805"
+    }
+  },
+  "execution": {
+    "compilerAndRuntime": "JDK17.0.8.1; javac --release11. No separate JDK11 runtime was exercised.",
+    "compiledSolutions": 11,
+    "bilingualPairs": 4,
+    "newCompleteSolutionClasses": 5,
+    "priorAssertionsPreserved": 5508,
+    "cacheSequences": {
+      "alphabet": [
+        "A",
+        "a",
+        "B",
+        "C"
+      ],
+      "lengths": [
+        0,
+        6
+      ],
+      "sequences": 5461,
+      "capacities": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "assertions": 21844,
+      "reference": "ArrayList recency model distinct from published LinkedHashMap"
+    },
+    "idInputs": {
+      "alphabet": [
+        "A",
+        "I",
+        "0",
+        ".",
+        "!",
+        "_",
+        "-"
+      ],
+      "lengths": [
+        1,
+        4
+      ],
+      "inputs": 2800,
+      "assertions": 16800,
+      "checks": [
+        "reference agreement",
+        "two implementations agree",
+        "length bounds",
+        "allowed characters and dots",
+        "idempotence of both implementations"
+      ]
+    },
+    "additionalBoundaryAssertions": 17,
+    "totalAssertions": 44169,
+    "otherChecks": [
+      "100000 city requests with capacity0 and1",
+      "capacity30 with31 unique letter-only city names",
+      "300-character IDs",
+      "positive/negative int dot-product limit",
+      "cast before vs after overflowing multiplication",
+      "maximum word-number result2000000000",
+      "retained version-comparison shell8cases"
+    ],
+    "limits": [
+      "Not a benchmark or concurrency test",
+      "Problem contracts, not universal input validators",
+      "English equality permits running identical code once; not an independent implementation review"
+    ]
+  },
+  "siteValidation": {
+    "nodeTestsPassed": 24,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "astroHints": 0,
+    "htmlPages": 876,
+    "sitemapUrls": 434,
+    "englishListedEntries": 81,
+    "koreanListedEntries": 289,
+    "eightPageAudit": "Passed H1/descriptions/OG/BlogPosting dates, canonical/self and reciprocal en/ko/x-default, RSS/search/sitemap lastmod, complete code and absence of internal editorial banners."
+  },
+  "ci": "Existing mandatory test:articles step now checks paired full classes and expanded regressions; no separate CI job added. Exact PR result tracked separately.",
+  "publication": "Draft review only; no batch content deployed before explicit approval."
+}

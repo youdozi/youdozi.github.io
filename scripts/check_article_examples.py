@@ -13,6 +13,8 @@ CASES = {
     'Failure': '2021-07-24-fail-percentage.md', 'Interval': '2021-07-29-interval-num.md',
     'Pokemon': '2021-07-29-ponkemon.md', 'Cache': '2021-08-17-cache.md',
 }
+BILINGUAL = {'2021-07-19-new-id.md', '2021-07-22-dot-product.md',
+             '2021-07-23-number-word.md', '2021-08-17-cache.md'}
 HARNESS = r'''
 import java.util.*;
 import java.util.stream.*;
@@ -44,9 +46,24 @@ class ArticleExamples {
    return Arrays.stream(order).mapToInt(Integer::intValue).toArray();
  }
  static int cache(int size,String[] cities){
-   LinkedHashMap<String,Boolean> map=new LinkedHashMap<>(16,.75f,true);int cost=0;
-   for(String city:cities){String key=city.toLowerCase(Locale.ROOT);cost+=map.get(key)==null?5:1;map.put(key,true);if(map.size()>size)map.remove(map.keySet().iterator().next());}
+   // Deliberately use a list-based reference, separate from the published map.
+   List<String> entries=new ArrayList<>();int cost=0;
+   for(String city:cities){String key=city.toLowerCase(Locale.ROOT);int old=entries.indexOf(key);cost+=old<0?5:1;if(old>=0)entries.remove(old);entries.add(key);if(entries.size()>size)entries.remove(0);}
    return cost;
+ }
+ static void cacheSequences(String[] values,int position){
+   if(position==values.length){for(int size=0;size<=3;size++)eq(new Cache().solution(size,values),cache(size,values));return;}
+   for(String city:new String[]{"A","a","B","C"}){values[position]=city;cacheSequences(values,position+1);}
+ }
+ static void idSequences(String value,int remaining){
+   if(remaining==0){
+     String actual=new NewId().solution(value),other=new NewIdVersion2().solution(value);
+     eq(actual,newId(value));eq(other,actual);
+     eq(actual.length()>=3&&actual.length()<=15,true);
+     eq(actual.matches("[a-z0-9_-]+(?:[.][a-z0-9_-]+)*"),true);
+     eq(new NewId().solution(actual),actual);eq(new NewIdVersion2().solution(other),other);return;
+   }
+   for(char c:new char[]{'A','I','0','.','!','_','-'})idSequences(value+c,remaining-1);
  }
  public static void main(String[] args){
    Locale.setDefault(Locale.forLanguageTag("tr-TR"));
@@ -86,7 +103,20 @@ class ArticleExamples {
      String[] cities=new String[n];for(int i=0;i<n;i++)cities[i]=(r.nextBoolean()?"CITY":"city")+r.nextInt(5);
      int size=r.nextInt(6);eq(new Cache().solution(size,cities),cache(size,cities));
    }
-   System.out.println("[ok] 11 published Java snippets compiled; "+assertions+" behavioral assertions passed (including Turkish locale, ties, and overflow).");
+   for(int length=0;length<=6;length++)cacheSequences(new String[length],0);
+   for(int length=1;length<=4;length++)idSequences("",length);
+   String[] repeatedCity=new String[100000];Arrays.fill(repeatedCity,"Jeju");
+   eq(new Cache().solution(0,repeatedCity),500000);eq(new Cache().solution(1,repeatedCity),100004);
+   String[] distinctCities=new String[31];for(int i=0;i<31;i++)distinctCities[i]="City"+(char)('A'+i/26)+(char)('A'+i%26);
+   eq(new Cache().solution(30,distinctCities),155);
+   eq(new NewId().solution("A".repeat(300)),"a".repeat(15));eq(new NewIdVersion2().solution("A".repeat(300)),"a".repeat(15));
+   int[] maxA=new int[1000],maxB=new int[1000];Arrays.fill(maxA,1000);Arrays.fill(maxB,1000);
+   eq(new Dot().solution(maxA,maxB),1000000000);Arrays.fill(maxA,-1000);eq(new Dot().solution(maxA,maxB),-1000000000);
+   eq((long)50000*50000,2500000000L);eq((long)(50000*50000),-1794967296L);
+   eq(new Words().solution("two"+"zero".repeat(9)),2000000000);
+   eq(new Words().solution("one4seveneight"),1478);eq(new Words().solution("23four5six7"),234567);eq(new Words().solution("123"),123);
+   for(String input:new String[]{"abcdefghijklmn.op","=.="}){eq(new NewId().solution(input),newId(input));eq(new NewIdVersion2().solution(input),newId(input));}
+   System.out.println("[ok] 11 published Java solutions compiled; "+assertions+" behavioral assertions passed (including Turkish locale, ties, overflow, exhaustive cache/ID cases, and idempotence).");
  }
 }
 '''
@@ -99,14 +129,24 @@ def main():
             blocks=re.findall(r'```java\n([\s\S]*?)\n```',(ARTICLES/file).read_text())
             blocks=[b for b in blocks if 'solution(' in b]
             if not blocks:raise ValueError(f'No solution snippet in {file}')
+            if file in BILINGUAL:
+                english=re.findall(r'```java\n([\s\S]*?)\n```',(Path('src/content/posts/en')/file).read_text())
+                english=[b for b in english if 'solution(' in b]
+                if english!=blocks:raise ValueError(f'English/Korean solutions differ in {file}')
             for i,body in enumerate(blocks):
                 classname=name if i==0 else f'{name}Version{i+1}'
                 path=tmp/f'{classname}.java'
-                path.write_text('import java.util.*;\nimport java.util.Map.Entry;\nimport java.util.function.*;\nimport java.util.stream.*;\nclass '+classname+' {\n'+body+'\n}\n')
+                if re.search(r'\bpublic class Solution\b',body):
+                    # Preserve the article's imports and complete class, changing only
+                    # its name to compile multiple independent solutions together.
+                    path.write_text(re.sub(r'\bpublic class Solution\b','public class '+classname,body,count=1)+'\n')
+                else:
+                    path.write_text('import java.util.*;\nimport java.util.Map.Entry;\nimport java.util.function.*;\nimport java.util.stream.*;\nclass '+classname+' {\n'+body+'\n}\n')
                 sources.append(str(path))
         harness=tmp/'ArticleExamples.java';harness.write_text(HARNESS);sources.append(str(harness))
         subprocess.run(['javac','--release','11','-encoding','UTF-8','-d',str(tmp),*sources],check=True)
         subprocess.run(['java','-cp',str(tmp),'ArticleExamples'],check=True,timeout=30)
+        print('[ok] Four English/Korean article pairs contain identical complete Java solutions.')
         scripts=re.findall(r'```(?:bash|sh)\n([\s\S]*?)\n```',(ARTICLES/'2023-11-17-linux-shellscript-version-compare.md').read_text())
         if not scripts:raise ValueError('No runnable version-comparison shell snippet found')
         script=scripts[0]
