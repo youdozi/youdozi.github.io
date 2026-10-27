@@ -1,5 +1,5 @@
 ---
-title: "Spring Boot 3 Migration: Java 17 and Jakarta Checklist"
+title: "Spring Boot 3 Migration: Java 17, Jakarta and Verification Steps"
 language: "en"
 translationKey: "2023-09-08-springboot3-migration"
 routeSlug: "2023-09-08-springboot3-migration"
@@ -11,73 +11,83 @@ tags:
   - "springboot"
   - "springboot3"
   - "springboot3 migration"
-updatedAt: "2026-10-24T06:00:52.185Z"
-reviewedAt: "2026-10-24"
+updatedAt: "2026-10-27T01:24:58+00:00"
+reviewedAt: "2026-10-27"
 reviewStatus: "revised"
-reviewScope: "English edition based on the reviewed Korean article; technical
-  references and reproduction conditions retained."
+reviewScope: "Official migration documentation checked; diagnostic steps clarified without claiming an application migration."
 reviewSources:
-  - "https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migrat\
-    ion-Guide"
-  - "https://spring.io/blog/2023/09/09/all-together-now-spring-boot-3-2-graalvm\
-    -native-images-java-21-and-virtual"
-description: "A practical Spring Boot 2.7 to 3.0 migration checklist covering
-  Java 17, Jakarta imports, Querydsl compatibility, and virtual-thread version
-  requirements."
+  - "https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide"
+  - "https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html"
+  - "https://spring.io/blog/2023/09/09/all-together-now-spring-boot-3-2-graalvm-native-images-java-21-and-virtual"
+description: "Migrate Spring Boot 2.7 to 3.0 with Java 17, Jakarta dependencies, Gradle checks, property migration and runtime tests. Separate virtual threads from the upgrade."
 ---
-## Scope and baseline
+For a Spring Boot 2.7 application moving to 3.0, separate three checks: the Java 17 baseline, the Java EE to Jakarta namespace change, and library/runtime compatibility. A successful compilation does not establish that database mappings, authorization or configuration still work.
 
-This guide covers the migration from Spring Boot 2.7 to Spring Boot 3.0. Its original publication dates from 2023, and the compatibility notes were reviewed on October 24, 2026. For a new application, choose a currently supported Spring Boot release and review its own system requirements.
+This is a **2.7 to 3.0 migration guide**, preserving the original 2023 topic. It is not a recommendation to deploy Boot 3.0 today. Choose a supported target release for a real upgrade and follow the intervening migration guides. The [official 3.0 guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide) documents this historical step.
 
-Spring Boot 3.0 introduced a Java 17 baseline, Spring Framework 6.0, the transition to Jakarta EE APIs, and integrated support for GraalVM native images. An application that builds successfully can still have runtime incompatibilities in persistence, security, configuration, and third-party libraries.
+## 1. Establish a working 2.7 baseline
 
-## Prepare before changing the major version
+Update an older 2.x application to the latest 2.7.x release before attempting the major-version change. Save a passing test result and record the wrapper, build JVM and dependencies. For a Gradle project with its existing wrapper, start with:
 
-First bring an older Boot 2.x application to a working Boot 2.7 baseline, as recommended by the official migration guide. Record the JDK, Gradle or Maven version, dependency graph, and the tests that exercise the application’s important behavior.
+```sh
+java -version
+./gradlew --version
+./gradlew clean test
+./gradlew dependencies --configuration runtimeClasspath
+```
 
-Run those tests before the upgrade. A passing baseline makes it easier to distinguish an existing failure from a migration regression. Include integration tests for database mappings, authentication, serialization, scheduled work, and outbound HTTP calls.
+Run the same checks after the upgrade. In a multi-project build, run dependency reports on the application module, for example `./gradlew :app:dependencies --configuration runtimeClasspath`. The module name must match your project.
 
-## Change the right javax packages
+A useful baseline exercises persistence, authentication, serialization, scheduled jobs and outbound HTTP calls. For the last boundary, the [WebClient tests with a local MockWebServer](/en/posts/2023-09-19-springboot-test-webclient/) provide a reproducible starting point.
 
-The Jakarta namespace change applies to Java EE APIs such as `javax.persistence` and `javax.servlet`. Their Jakarta counterparts use `jakarta.persistence` and `jakarta.servlet`.
+## 2. Change Java EE imports and dependencies together
 
-Do not perform a blanket replacement of every `javax` import. Java SE APIs such as `javax.sql` and `javax.crypto` retain their names. Check direct and transitive dependencies as well as source imports: an old servlet API pulled in by a library can still cause a mismatch.
+Boot 3.0 requires Java 17 and Spring Framework 6. Java EE packages such as `javax.persistence` and `javax.servlet` move to `jakarta.persistence` and `jakarta.servlet`. Java SE packages such as `javax.sql` and `javax.crypto` keep their names.
 
-## Check the dependency combination
+| Existing use | Migration action |
+| --- | --- |
+| `javax.persistence.Entity` | Use `jakarta.persistence.Entity` and compatible JPA dependencies. |
+| `javax.servlet.Filter` | Use `jakarta.servlet.Filter` and compatible servlet dependencies. |
+| `javax.sql.DataSource` | Keep the Java SE package name. |
+| `javax.crypto.Cipher` | Keep the Java SE package name. |
 
-Use the versions managed by the chosen Spring Boot release as the starting point. When overriding a dependency, check the resulting combination explicitly.
+Inspect the resolved graph as well as imports. For example, `./gradlew dependencyInsight --dependency javax.servlet-api --configuration runtimeClasspath` helps locate a legacy servlet artifact. An empty report does not prove the whole application has migrated: inspect the other libraries and configurations it actually uses. See [Gradle's dependency reports](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html).
 
-For Querydsl JPA, align the JPA and annotation-processor artifacts and select the Jakarta classifier when required by that artifact line. A successful annotation-processing task should produce the expected Q types. Release history has changed since the original post: Querydsl subsequently published version 5.1.0, so the old statement about no releases after 2021 is historical context.
+For Querydsl JPA, align the JPA and annotation-processor artifacts and select their Jakarta variant where required by that artifact line. Confirm that annotation processing generates the expected Q types and that representative queries execute. Gradle's `configureEach` controls task configuration; it cannot convert an incompatible Java EE dependency into a Jakarta dependency.
 
-Do not treat a change to `configureEach` as a Jakarta compatibility fix. It controls Gradle’s lazy task configuration. Main and test annotation-processing tasks also need separate output locations if their defaults are overridden.
+## 3. Check renamed properties and authorization behavior
 
-## Keep virtual threads separate from the Boot 3.0 migration
+For a Boot-managed Gradle project, the official migration guide offers a temporary properties helper:
 
-Virtual-thread support arrived with Spring Boot 3.2 and Spring Framework 6.1 and requires JDK 21 for that feature. It was not a Boot 3.0 baseline feature. Validate the initial namespace and dependency migration before adding a concurrency change.
+```groovy
+dependencies {
+    runtimeOnly 'org.springframework.boot:spring-boot-properties-migrator'
+}
+```
 
-For a supported Boot 3.2 configuration, the property is:
+Start the application in a test environment, read the startup diagnostics and update the affected properties. Remove the helper when the migration is complete. It is not a replacement for reading the target release's configuration changes.
+
+Boot 3.0 also uses Spring Security 6. The migration guide suggests a Spring Security 5.8 transition on Boot 2.7 before moving to 6.0. Test allowed, denied and unauthenticated requests, plus error/forward dispatches where the servlet application uses them; do not use a successful startup as the authorization test.
+
+## 4. Treat virtual threads as a separate change
+
+Boot's virtual-thread setting arrived in **Boot 3.2 with JDK 21**, rather than as a Boot 3.0 feature:
 
 ```properties
 spring.threads.virtual.enabled=true
 ```
 
-Assess application behavior, downstream connection pools, and thread-local assumptions when enabling it. The setting alone does not establish that an application will run faster.
+That is a historical version boundary, not a recommendation to choose Boot 3.2 today. First establish that the namespace and dependency migration works. Then assess virtual threads against the selected release, connection pools and thread-local assumptions. The setting alone proves no performance improvement. [Spring's Boot 3.2 explanation](https://spring.io/blog/2023/09/09/all-together-now-spring-boot-3-2-graalvm-native-images-java-21-and-virtual).
 
-## Verification checklist
+JDK language previews have separate release constraints too. The [String Templates compatibility example](/en/posts/2023-09-23-jdk-21-string-templates/) shows why enabling preview flags is not a general upgrade fix.
 
-1. Compare the command-line JDK with the IDE and build-tool JVM.
-2. Build and run tests using the project’s Gradle or Maven wrapper.
-3. Check generated source files and persistence mappings.
-4. Test authentication and representative HTTP requests.
-5. Review changed configuration properties and third-party integration points.
-6. Test the deployment artifact in a representative environment before rollout.
+## Decide whether the application is ready
 
-Upgrading a major version supports ongoing maintenance, but security depends on the actual dependency versions and configuration you deploy. Follow the migration guide for the exact target version.
+| Check | Evidence to collect |
+| --- | --- |
+| Build and generated code | Passing wrapper build, expected Q types and resolved dependency versions. |
+| Runtime behavior | Passing persistence, authentication and representative HTTP tests. |
+| Configuration | Updated properties and no remaining need for the migration helper. |
+| Deployment | The deployment artifact passes checks in a representative environment. |
 
-## Sources
-
-- [Spring Boot 3.0 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide)
-- [Spring Boot 3.0 GA announcement](https://spring.io/blog/2022/11/24/spring-boot-3-0-goes-ga/)
-- [Spring Boot 3.2, Java 21, and virtual threads](https://spring.io/blog/2023/09/09/all-together-now-spring-boot-3-2-graalvm-native-images-java-21-and-virtual)
-- [Querydsl 5.1.0 release](https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_1_0)
-- [Gradle lazy task configuration](https://docs.gradle.org/current/userguide/lazy_configuration.html)
+The commands are a diagnostic sequence for your project, not the result of a migration performed on your application. Keep the pre-upgrade artifact and configuration available for rollback. Major-version migration supports maintenance, but security still depends on the exact versions and configuration deployed.
