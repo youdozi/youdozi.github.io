@@ -8,12 +8,12 @@ categories:
 tags:
   - java
   - algorithms
-publishedAt: 2026-10-27T04:11:15.275Z
+publishedAt: "2026-10-27T04:21:24+00:00"
 title: Remove Adjacent Duplicate Pairs in Java with an ArrayDeque Stack
 description: Reduce adjacent equal-character pairs with a stack. Explain the
   prefix invariant, cascading removal, million-character boundaries, and time
   and space costs.
-updatedAt: 2026-10-27T04:11:15.275Z
+updatedAt: "2026-10-27T04:21:24+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; complete paired solutions

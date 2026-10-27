@@ -178,5 +178,13 @@
     "eightPageAudit": "Passed H1/descriptions/OG/BlogPosting dates, canonical/self and reciprocal en/ko/x-default, RSS/search/sitemap lastmod, full code and no editorial banners."
   },
   "ci": "Existing mandatory test:articles step now checks eight paired articles and expanded boundaries; exact PR result tracked separately.",
-  "publication": "Draft review only; no new batch content deployed before explicit approval."
+  "publication": "Draft review only; no new batch content deployed before explicit approval.",
+  "publicationApproval": {
+    "approvedAt": "2026-10-27T04:21:24+00:00",
+    "approvedBy": "youdozi",
+    "pullRequest": 60,
+    "basis": "User requested completing PR60 and continuing the next work.",
+    "englishPublicationPreparedAt": "2026-10-27T04:21:24+00:00",
+    "scope": "Publish four reviewed Korean/English pairs; only first-English publication/modified timestamps changed. Korean original dates and all bodies preserved."
+  }
 }

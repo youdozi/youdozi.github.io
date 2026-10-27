@@ -8,12 +8,12 @@ categories:
 tags:
   - java
   - algorithms
-publishedAt: 2026-10-27T04:11:15.275Z
+publishedAt: "2026-10-27T04:21:24+00:00"
 title: "Sort Failure Rates in Java: Denominators, Ties, and Long Products"
 description: Count stopped and reached players, sort exact rates with long
   cross-products, and handle unreachable stages, full completion, and
   stage-number tie-breaking.
-updatedAt: 2026-10-27T04:11:15.275Z
+updatedAt: "2026-10-27T04:21:24+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; complete paired solutions
