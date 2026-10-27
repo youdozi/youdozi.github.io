@@ -1,5 +1,5 @@
 ---
-title: "Get a GitHub Latest Release and Its Asset with curl and jq"
+title: "GitHub Latest Release with curl and jq: Select One Download Asset"
 language: "en"
 translationKey: "2023-09-23-linux-shellscript-github-latest"
 routeSlug: "2023-09-23-linux-shellscript-github-latest"
@@ -7,14 +7,16 @@ kind: "post"
 publishedAt: "2026-10-27T02:36:39+00:00"
 categories: ["linux"]
 tags: ["linux", "bash", "shell script", "jq", "github latest release"]
-updatedAt: 2026-10-27T05:23:47.316+00:00
+updatedAt: 2026-10-27T10:25:23.707+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Primary documentation checked; published runnable example verified."
 reviewSources: ["https://docs.github.com/en/rest/releases/releases#get-the-latest-release", "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api", "https://curl.se/docs/manpage.html", "https://jqlang.org/manual/"]
-description: "Read a GitHub latest release and select one Temurin Linux x64 asset. Fail on HTTP errors, malformed JSON, and missing or ambiguous assets."
+description: "Use curl and jq to select one GitHub release asset by OS, CPU and format. Handle HTTP errors, invalid JSON and missing or duplicate matches."
 ---
-GitHub's `releases/latest` endpoint does not calculate the numerically largest Git tag. Read the latest release's `tag_name` and `assets`, then select exactly one asset for the required OS, CPU and format. The [release API documentation](https://docs.github.com/en/rest/releases/releases#get-the-latest-release) distinguishes ordinary tags, drafts, prereleases and published releases.
+Use `curl` to fetch a GitHub latest release and `jq` to select exactly one download asset for the required OS, CPU and format. The script below stops on HTTP errors, invalid JSON and missing or duplicate matches; it returns metadata without downloading the file.
+
+The `releases/latest` endpoint does not calculate the numerically largest Git tag. The [release API documentation](https://docs.github.com/en/rest/releases/releases#get-the-latest-release) distinguishes ordinary tags, drafts, prereleases and published releases.
 
 This example queries metadata for a Linux x64 HotSpot JDK tar.gz from the public `adoptium/temurin17-binaries` repository. It needs neither a token nor an actual file download. Omitting the repository argument uses this default; an explicitly empty argument is rejected.
 

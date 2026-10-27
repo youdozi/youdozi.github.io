@@ -1,5 +1,5 @@
 ---
-title: "curl·jq로 GitHub 최신 릴리스와 다운로드 자산 조회하기"
+title: "curl·jq로 GitHub 최신 릴리스 조회와 다운로드 자산 선택하기"
 language: "ko"
 translationKey: "2023-09-23-linux-shellscript-github-latest"
 routeSlug: "2023-09-23-linux-shellscript-github-latest"
@@ -16,7 +16,7 @@ tags:
 legacyUrl: "/linux/linux-shellscript-github-latest/"
 legacySource: "_posts/linux/shell-script/github-latest/2023-09-23-linux-shellsc\
   ript-github-latest.markdown"
-updatedAt: 2026-10-27T05:23:47.316+00:00
+updatedAt: 2026-10-27T10:25:23.707+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 원고 실행 예제 검증"
@@ -26,9 +26,11 @@ reviewSources:
   - "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api"
   - "https://curl.se/docs/manpage.html"
   - "https://jqlang.org/manual/"
-description: "GitHub releases/latest 응답에서 Linux x64 Temurin JDK 자산을 하나만 선택합니다. HTTP 오류, 잘못된 JSON과 자산 누락·중복을 실패로 처리하는 예제입니다."
+description: "curl과 jq로 GitHub 최신 릴리스에서 OS·CPU·형식에 맞는 자산 하나를 선택합니다. HTTP 오류·잘못된 JSON·누락·중복을 처리하며 파일은 다운로드하지 않습니다."
 ---
-GitHub의 `releases/latest`는 숫자로 가장 큰 Git 태그를 계산하는 API가 아닙니다. latest 릴리스의 `tag_name`과 `assets`를 읽고, 필요한 OS·CPU·파일 형식에 맞는 자산을 정확히 하나 선택해야 합니다. [공식 릴리스 API](https://docs.github.com/en/rest/releases/releases#get-the-latest-release)는 일반 태그·draft·prerelease와 게시 릴리스를 구분합니다.
+`curl`로 GitHub 최신 릴리스를 조회하고 `jq`로 OS·CPU·파일 형식에 맞는 다운로드 자산을 정확히 하나 선택합니다. 아래 스크립트는 HTTP 오류·잘못된 JSON·자산 누락·중복에서 실패하며, 파일을 다운로드하지 않고 메타데이터를 반환합니다.
+
+`releases/latest`는 숫자로 가장 큰 Git 태그를 계산하는 API가 아닙니다. [공식 릴리스 API](https://docs.github.com/en/rest/releases/releases#get-the-latest-release)는 일반 태그·draft·prerelease와 게시 릴리스를 구분합니다.
 
 아래 예제는 공개 저장소 `adoptium/temurin17-binaries`의 Linux x64 HotSpot JDK tar.gz 메타데이터를 조회합니다. 토큰이나 실제 파일 다운로드는 필요하지 않습니다. 저장소 인자를 생략하면 이 기본값을 사용하고 명시적인 빈 인자는 거부합니다.
 

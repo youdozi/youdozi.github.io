@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "articles": [
+    {
+      "key": "2023-09-23-linux-shellscript-github-latest",
+      "legacyPath": "/linux/linux-shellscript-github-latest/",
+      "focus": true
+    },
+    {
+      "key": "2023-09-20-jdk-21-release",
+      "legacyPath": "/jdk/jdk-21-release/",
+      "focus": true
+    },
+    {
+      "key": "2023-10-10-temurin-jdk21-delay",
+      "legacyPath": "/jdk/temurin-jdk21-delay/",
+      "focus": true
+    },
+    {
+      "key": "2023-10-27-springbatch5-migration",
+      "legacyPath": "/spring/springbatch5-migration/",
+      "focus": true
+    },
+    {
+      "key": "2023-11-17-linux-shellscript-version-compare",
+      "legacyPath": "/linux/linux-shellscript-version-compare/",
+      "focus": false
+    },
+    {
+      "key": "2021-07-27-parse-yaml",
+      "legacyPath": "/linux/parse-yaml/",
+      "focus": false
+    },
+    {
+      "key": "2021-07-23-multiple-gradle-build",
+      "legacyPath": "/springboot/multiple-gradle-build/",
+      "focus": false
+    },
+    {
+      "key": "2023-09-08-springboot3-migration",
+      "legacyPath": "/springboot/springboot3-migration/",
+      "focus": false
+    },
+    {
+      "key": "2023-09-09-springboot3-querydsl",
+      "legacyPath": "/springboot/springboot3-querydsl/",
+      "focus": false
+    },
+    {
+      "key": "2023-09-19-springboot-test-webclient",
+      "legacyPath": "/springboot/springboot-test-webclient/",
+      "focus": false
+    }
+  ]
+}

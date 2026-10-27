@@ -211,7 +211,15 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.ok(hub.includes(`hreflang="x-default" href="https://youdozi.github.io/en/guides/"`));
       assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${hubPath}</loc>`));
     }
+    const coreRegistry=JSON.parse(await readFile('content/seo/core-articles.json','utf8'));
+    for(const lang of ['en','ko']) {
+      const home=await readFile(`dist/${lang}/index.html`,'utf8');
+      const featured=home.match(/<section class="core-articles"[\s\S]*?<\/section>/)?.[0];
+      assert.ok(featured,'Native home exposes the selected practical guides');
+      assert.deepEqual([...featured.matchAll(/href="([^"]+)"/g)].map(m=>m[1]),coreRegistry.articles.map(a=>`/${lang}/posts/${a.key}/`));
+    }
     const japaneseHome=await readFile('dist/ja/index.html','utf8');
+    assert.ok(!japaneseHome.includes('core-articles-heading'));
     assert.ok(!japaneseHome.includes('href="/ja/guides/"'),'Do not link to an unavailable guide index');
 
 

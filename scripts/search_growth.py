@@ -1,0 +1,219 @@
+#!/usr/bin/env python3
+"""Read-only Search Console and live URL baseline for the selected technical guides."""
+import argparse
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timedelta, timezone
+from html.parser import HTMLParser
+import json
+from pathlib import Path
+import re
+from types import SimpleNamespace
+from urllib.parse import quote
+from zoneinfo import ZoneInfo
+
+from search_console import CONFIG, SITE, access_token, private_json
+
+ROOT = Path(__file__).resolve().parents[1]
+REGISTRY = ROOT / 'content/seo/core-articles.json'
+
+
+def targets(registry):
+    articles = registry['articles']
+    if registry.get('version') != 1 or len(articles) != 10:
+        raise ValueError('Expected ten selected topics')
+    result = []
+    for article in articles:
+        key, legacy = article['key'], article['legacyPath']
+        if (not re.fullmatch(r'\d{4}-\d{2}-\d{2}-[a-z0-9.-]+', key)
+                or not re.fullmatch(r'/[a-z0-9-]+/[a-z0-9.-]+/', legacy)
+                or any(part in ('.', '..') for part in legacy.split('/'))):
+            raise ValueError('Invalid article path')
+        for language in ('en', 'ko'):
+            url = SITE + f'{language}/posts/{key}/'
+            result.append({'key': key, 'language': language, 'url': url,
+                           'expectedCanonical': url, 'kind': 'article'})
+        result.append({'key': key, 'language': 'ko', 'url': SITE.rstrip('/') + legacy,
+                       'expectedCanonical': SITE + f'ko/posts/{key}/', 'kind': 'legacy'})
+    if len({r['url'] for r in result}) != 30:
+        raise ValueError('Expected thirty unique URLs')
+    return result
+
+
+def windows(now):
+    # Exclude the most recent three PT calendar days and explicitly request final data.
+    end = now.astimezone(ZoneInfo('America/Los_Angeles')).date() - timedelta(days=3)
+    start = end - timedelta(days=27)
+    return {'current': (str(start), str(end)),
+            'previous': (str(start - timedelta(days=28)), str(start - timedelta(days=1)))}
+
+
+class Signals(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.canonicals, self.robots, self.refresh = [], [], []
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == 'link' and a.get('rel') == 'canonical':
+            self.canonicals.append(a.get('href'))
+        if tag == 'meta':
+            if a.get('name', '').lower() in ('robots', 'googlebot', 'bingbot'):
+                self.robots.append(a.get('content', '').lower())
+            if a.get('http-equiv', '').lower() == 'refresh':
+                self.refresh.append(a.get('content', ''))
+
+
+def live_signals(target, get):
+    response = get(target['url'], timeout=30, allow_redirects=False,
+                   headers={'Cache-Control': 'no-cache'})
+    signals = Signals()
+    signals.feed(response.text)
+    noindex = any(re.search(r'\b(noindex|none)\b', value) for value in signals.robots)
+    refresh = ['0;url=' + target['expectedCanonical'].removeprefix(SITE.rstrip('/'))]
+    if target['kind'] == 'legacy':
+        valid = (response.status_code == 200 and signals.canonicals == [target['expectedCanonical']]
+                 and signals.refresh == refresh)
+    else:
+        valid = (response.status_code == 200 and signals.canonicals == [target['url']]
+                 and not noindex and not signals.refresh)
+    return {'httpStatus': response.status_code, 'canonical': signals.canonicals,
+            'noindex': bool(noindex), 'metaRefresh': signals.refresh,
+            'matchesExpectedStaticRoute': valid,
+            'serverRedirect': response.status_code in (301, 302, 303, 307, 308),
+            'location': response.headers.get('Location')}
+
+
+def google_post(token, url, payload):
+    import requests
+    response = requests.post(url, headers={'Authorization': 'Bearer ' + token},
+                             json=payload, timeout=40, allow_redirects=False)
+    if response.status_code != 200:
+        # Do not echo response bodies, auth headers or request objects.
+        return {'httpStatus': response.status_code, 'error': 'Google API request failed'}
+    return {'httpStatus': 200, 'data': response.json()}
+
+
+def collect(token, selected, now, post=google_post, get=None):
+    if get is None:
+        import requests
+        get = requests.get
+    report = {'checkedAt': now.isoformat(), 'site': SITE,
+              'inspectionBasis': 'Google indexed version; not a live indexing test or indexing request',
+              'searchAnalyticsBasis': 'final web data; PT dates; top rows, not exhaustive; omitted rows are not zero',
+              'windows': windows(now), 'performance': {}, 'urls': []}
+    endpoint = 'https://www.googleapis.com/webmasters/v3/sites/' + quote(SITE, safe='') + '/searchAnalytics/query'
+    wanted = {t['url'] for t in selected}
+    for period, (start, end) in report['windows'].items():
+        params = {'startDate': start, 'endDate': end, 'dataState': 'final', 'type': 'web', 'rowLimit': 25000}
+        output = {}
+        for name, dimensions in [('totals', []), ('pages', ['page']), ('queries', ['page', 'query'])]:
+            if period == 'previous' and name == 'queries':
+                continue
+            response = post(token, endpoint, {**params, 'dimensions': dimensions})
+            if name != 'totals' and response.get('httpStatus') == 200:
+                data = response['data']
+                output[name] = {'httpStatus': 200,
+                                'returnedRowsBeforeSelection': len(data.get('rows', [])),
+                                'rows': [r for r in data.get('rows', []) if r['keys'][0] in wanted]}
+            else:
+                output[name] = response
+        report['performance'][period] = output
+
+    def check(target):
+        result = dict(target)
+        try:
+            result['live'] = live_signals(target, get)
+        except Exception as error:
+            result['live'] = {'error': type(error).__name__}
+        try:
+            response = post(token, 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect',
+                            {'inspectionUrl': target['url'], 'siteUrl': SITE, 'languageCode': 'en-US'})
+            result['inspection'] = {'httpStatus': response['httpStatus'],
+                                    'indexStatus': response.get('data', {}).get('inspectionResult', {}).get('indexStatusResult', {})}
+        except Exception as error:
+            result['inspection'] = {'error': type(error).__name__}
+        return result
+
+    # Bound parallel API requests; never submit a sitemap or request indexing.
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        report['urls'] = list(pool.map(check, selected))
+    report['summary'] = summarize(report)
+    return report
+
+
+def summarize(report):
+    result = {}
+    for kind in ('article', 'legacy'):
+        rows = [r for r in report['urls'] if r['kind'] == kind]
+        successful = [r for r in rows if r['inspection'].get('httpStatus') == 200]
+        result[kind] = {'checked': len(rows),
+                        'liveMatches': sum(bool(r['live'].get('matchesExpectedStaticRoute')) for r in rows),
+                        'inspectionResponses': len(successful),
+                        'googlePass': sum(r['inspection']['indexStatus'].get('verdict') == 'PASS' for r in successful),
+                        'coverageStates': dict(Counter(r['inspection']['indexStatus'].get('coverageState', 'unspecified') for r in successful))}
+    return result
+
+
+def compare(previous, current):
+    before = {r['url']: r for r in previous['urls']}
+    after = {r['url']: r for r in current['urls']}
+    if previous.get('site') != SITE or current.get('site') != SITE or before.keys() != after.keys():
+        raise ValueError('Compare snapshots for the same property and URL set')
+    result = {'previousCheckedAt': previous['checkedAt'], 'currentCheckedAt': current['checkedAt'],
+              'newPass': [], 'noLongerPass': [], 'canonicalChanges': [], 'uncomparableUrls': [],
+              'performanceWindows': {'previousSnapshot': previous['windows']['current'],
+                                     'currentSnapshot': current['windows']['current']},
+              'note': 'Rolling windows can overlap; changes are observations, not causal effects.'}
+    for url, row in after.items():
+        old, new = before[url]['inspection'], row['inspection']
+        if old.get('httpStatus') != 200 or new.get('httpStatus') != 200:
+            result['uncomparableUrls'].append(url)
+            continue
+        old, new = old['indexStatus'], new['indexStatus']
+        if old.get('verdict') != 'PASS' and new.get('verdict') == 'PASS':
+            result['newPass'].append(url)
+        if old.get('verdict') == 'PASS' and new.get('verdict') != 'PASS':
+            result['noLongerPass'].append(url)
+        if old.get('googleCanonical') != new.get('googleCanonical'):
+            result['canonicalChanges'].append({'url': url, 'before': old.get('googleCanonical'),
+                                                'after': new.get('googleCanonical')})
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--live', action='store_true', help='Read Google APIs and public URLs; no indexing submission')
+    parser.add_argument('--output', type=Path, help='Private snapshot path outside the repository')
+    parser.add_argument('--previous', type=Path, help='Compare URL index states with an earlier private snapshot')
+    args = parser.parse_args()
+    try:
+        selected = targets(json.loads(REGISTRY.read_text()))
+        if not args.live:
+            print(json.dumps({'mode': 'preview', 'articles': 20, 'legacyUrls': 10, 'urls': selected}, indent=2))
+            return 0
+        now = datetime.now(timezone.utc)
+        output = (args.output or CONFIG / f'search-growth-{now:%Y%m%dT%H%M%SZ}.json').expanduser().resolve()
+        if output.is_relative_to(ROOT) or output.exists():
+            raise ValueError('Use a new private snapshot outside the repository')
+        previous = json.loads(args.previous.expanduser().read_text()) if args.previous else None
+        if previous is not None:
+            # Validate the selected property and URL set before spending API quota.
+            compare(previous, {'site': SITE, 'checkedAt': now.isoformat(), 'windows': windows(now),
+                               'urls': [{**t, 'inspection': {}} for t in selected]})
+        token = access_token(SimpleNamespace(client=None, token_file=CONFIG / 'token.json'))
+        report = collect(token, selected, now)
+        if previous is not None:
+            report['comparison'] = compare(previous, report)
+        private_json(output, report)
+        print(json.dumps({'snapshot': str(output), 'windows': report['windows'], 'summary': report['summary']}, ensure_ascii=False, indent=2))
+        failed = any(r['inspection'].get('httpStatus') != 200 or not r['live'].get('matchesExpectedStaticRoute') for r in report['urls'])
+        failed |= any(v.get('httpStatus') != 200 for p in report['performance'].values() for v in p.values())
+        return 1 if failed else 0
+    except Exception as error:
+        print(f'Search growth check failed ({type(error).__name__}). Credentials and response bodies are omitted.')
+        return 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

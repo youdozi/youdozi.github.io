@@ -140,6 +140,8 @@ python3 -m venv .venv-search-console
 
 새 후보의 검토 카드에는 백엔드 관련성·선정 이유·원문 근거로 구성한 변경/대상/조건·사용자 편집 의견·직접 실험 여부를 표시합니다. 작성 필드와 검증 조건은 [PIPELINE.md](PIPELINE.md)의 후보 선정과 편집 형식 항목을 참조하세요.
 
+핵심 한영 글20개와 과거 URL10개의 색인·검색 실적을 함께 추적하려면 [검색 성과 확인 절차](docs/search-growth.md)를 따릅니다. `python scripts/search_growth.py`는 목록 미리보기이며 `--live`에서만 읽기 전용 API 조회를 수행합니다. 결과는 저장소 밖 비공개 파일에 보관합니다.
+
 ## 검색 채널 확장과 IndexNow
 
 검색엔진 등록은 서비스별 계정에서 진행합니다. 현재 사이트 주소는 `https://youdozi.github.io/`이며, Google Search Console의 기존 속성을 유지합니다.

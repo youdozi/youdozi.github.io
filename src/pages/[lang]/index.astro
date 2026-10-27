@@ -1,8 +1,12 @@
 ---
 import Listing from '../../components/Listing.astro';
+import CoreArticles from '../../components/CoreArticles.astro';
 import { entries, publishedLanguages, text, type Language } from '../../lib/content';
 export async function getStaticPaths() { return (await publishedLanguages()).map(lang => ({ params: { lang } })); }
 const lang = Astro.params.lang as Language;
 const all = (await entries()).filter(e => e.language === lang);
+const description=lang==='en'?'Java, Spring Boot and shell guides with runnable code, flow diagrams and documented reproduction environments. Explore migration, HTTP tests and input validation.':lang==='ko'?'실행 가능한 코드와 흐름도로 Java·Spring Boot·셸을 설명합니다. 마이그레이션·HTTP 테스트·입력 검증의 재현 환경과 적용 범위를 확인하세요.':undefined;
 ---
-<Listing items={all} lang={lang} title={lang === 'en' ? 'Java, Spring & Software Notes' : text[lang].recent} root={`/${lang}/`} alternates={(await publishedLanguages()).map(language => ({ language, url: `/${language}/` }))} />
+<Listing items={all} lang={lang} title={lang === 'en' ? 'Java, Spring & Software Notes' : text[lang].recent} description={description} root={`/${lang}/`} alternates={(await publishedLanguages()).map(language => ({ language, url: `/${language}/` }))}>
+  <CoreArticles slot="featured" lang={lang} all={all} />
+</Listing>
