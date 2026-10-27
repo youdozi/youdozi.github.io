@@ -16,7 +16,7 @@ npm run dev
 - 한국어 홈: http://localhost:4321/ko/
 - `/`는 `/en/`으로 이동합니다.
 
-기존 글 230개는 한국어로 보존했습니다. 이 중 테스트 데이터로 확인된 1편은 실제 뉴스 목록·검색·RSS에서 제외하고 예제 페이지로 남겼습니다. 핵심 개발 글 4편에 영문판을 추가했으며, 영문·한국어 다이제스트는 원고 검토와 게시 승인 후 공개합니다. 번역되지 않은 한국어 글을 영문 페이지로 복제하지 않습니다.
+기존 글 230개는 한국어로 보존했습니다. 이 중 테스트 데이터로 확인된 1편은 실제 뉴스 목록·검색·RSS에서 제외하고 예제 페이지로 남겼습니다. 핵심 개발 글 8편에 영문판을 추가했으며, 영문·한국어 다이제스트는 원고 검토와 게시 승인 후 공개합니다. 번역되지 않은 한국어 글을 영문 페이지로 복제하지 않습니다.
 
 ## 콘텐츠 작성
 
@@ -63,6 +63,8 @@ npm run preview
 기술 글의 실행 예제는 원고의 코드 블록을 직접 추출합니다. `python3 -B scripts/check_webclient_example.py`는 JDK 17·Gradle 8.4에서 영문·한국어 Java/Gradle 예제의 일치와 HTTP 응답 계약 8개를 검사합니다. `python3 -B scripts/check_string_formatting_examples.py`는 표준 문자열 예제의 출력과 로케일 독립성을 검사하며, 두 검사는 CI에서도 실행합니다. 역사적인 JDK 21 preview는 해당 JDK를 설치한 뒤 `--preview-jdk /path/to/jdk21`을 추가해 별도로 확인합니다.
 
 Querydsl 예제는 `python3 -B scripts/check_querydsl_example.py`로 원고의 다섯 파일을 직접 추출합니다. 한영 코드 일치, 기본 경로의 Q 소스·클래스 생성, H2 조회 테스트 2개를 검사하고 두 번의 `clean test`로 반복 생성도 확인합니다. CI에서는 기존 Gradle 8.4 설정을 사용합니다.
+
+빌드·쉘 자동화 묶음은 `python3 -B scripts/check_shell_automation_examples.py`로 함수·숫자 버전·릴리스 조회의 경계값과 로컬 HTTP 응답을 검사합니다. `python3 -B scripts/check_multi_frontend_example.py`는 Gradle 8.4/JDK 17/Node 24에서 두 Vue 앱을 빌드하고 실행 JAR의 경로·증분 정리·HTTP 제공을 검사합니다. 실제 세부 도구 버전은 로그에 기록합니다. 설치된 Chrome으로 화면 렌더링까지 확인하려면 `--browser`를 추가합니다. CI는 브라우저 실행 없이 두 검사기를 모두 실행합니다.
 
 ## 배포 전환
 
