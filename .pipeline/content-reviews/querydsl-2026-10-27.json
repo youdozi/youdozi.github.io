@@ -88,5 +88,13 @@
       "no internal review banners"
     ]
   },
-  "ci": "The Querydsl extraction checker is configured after the existing Gradle8.4 setup; CI status is tracked in the PR."
+  "ci": "The Querydsl extraction checker is configured after the existing Gradle8.4 setup; CI status is tracked in the PR.",
+  "publicationApproval": {
+    "approvedAt": "2026-10-27T02:02:40+00:00",
+    "approvedBy": "youdozi",
+    "basis": "User requested the next task after PR55 review and asked for larger batches.",
+    "pullRequest": 55,
+    "englishPublicationPreparedAt": "2026-10-27T02:02:40+00:00",
+    "scope": "Publish the reviewed Korean renewal and first English edition; only publication timestamps changed after review."
+  }
 }
