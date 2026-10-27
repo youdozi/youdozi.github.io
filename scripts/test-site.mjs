@@ -169,6 +169,25 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.ok(!reviewShell.includes('Literal {{ 7 | times: 7 }}'));
     assert.ok(!reviewShell.includes('utteranc.es'));
 
+    for(const lang of ['en','ko']) {
+      const path=`/${lang}/about/`;const profile=await readFile(`dist${path}index.html`,'utf8');
+      const schema=JSON.parse(profile.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      const data=schema.find(x=>x['@type']==='ProfilePage');
+      assert.equal(data.mainEntity.name,'youdozi');assert.equal(data.mainEntity.url,'https://youdozi.github.io'+path);
+      assert.equal(data.mainEntity['@id'],'https://youdozi.github.io/#author');
+      assert.ok(profile.includes('rel="me"'));assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${path}</loc><lastmod>${data.dateModified}</lastmod>`));
+      assert.ok(!schema.some(x=>x['@type']==='BlogPosting'));
+      const sample=await readFile(`dist/${lang}/posts/2023-09-19-springboot-test-webclient/index.html`,'utf8');
+      assert.ok(sample.includes(`href="${path}" rel="author"`));
+      const articleSchema=JSON.parse(sample.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      const author=articleSchema.find(x=>x['@type']==='BlogPosting').author;
+      assert.deepEqual(author,data.mainEntity);
+    }
+    for(const lang of ['ja','zh-CN','de','fr','ru','es']){
+      const home=await readFile(`dist/${lang}/index.html`,'utf8');
+      assert.ok(home.includes('href="/en/about/" lang="en"'));
+      assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/about/</loc>`));
+    }
     const englishArticle=await readFile('dist/en/posts/2023-09-19-springboot-test-webclient/index.html','utf8');
     assert.match(englishArticle,/<html lang="en">/);
     assert.match(englishArticle,/rel="canonical" href="https:\/\/youdozi.github.io\/en\/posts\/2023-09-19-springboot-test-webclient\/"/);

@@ -181,13 +181,51 @@ def compare(previous, current):
     return result
 
 
+def format_report(report):
+    """Summarize an existing private snapshot without API calls or query disclosure."""
+    if report.get('site') != SITE:
+        raise ValueError('Expected this site’s private snapshot')
+    summary = summarize(report)
+    lines = [f"조회 시각: {report['checkedAt']}",
+             'Google 저장 색인 상태와 당시 공개 응답입니다. 실시간 색인 검사가 아닙니다.']
+    for kind, label in [('article', '핵심 글'), ('legacy', '과거 주소')]:
+        s = summary[kind]
+        lines.append(f"{label}: {s['checked']}개 중 Google PASS {s['googlePass']}개 / API 응답 {s['inspectionResponses']}개 / 공개 경로 일치 {s['liveMatches']}개")
+    for row in report['urls']:
+        inspection = row['inspection']
+        state = inspection.get('indexStatus', {})
+        status = state.get('coverageState', '상태 미제공') if inspection.get('httpStatus') == 200 else '조회 실패·비교 불가'
+        lines.extend([f"\n{row['url']}", f"  색인: {status}",
+                      f"  Google canonical: {state.get('googleCanonical', '미제공')}",
+                      f"  마지막 크롤링: {state.get('lastCrawlTime', '미제공')}"])
+    for period, label in [('current', '현재 28일'), ('previous', '직전 28일')]:
+        totals = report['performance'][period]['totals']
+        start, end = report['windows'][period]
+        rows = totals.get('data', {}).get('rows', [])
+        if totals.get('httpStatus') == 200 and rows:
+            lines.append(f"\n{label} ({start}~{end}, PT): 사이트 전체 클릭 {rows[0]['clicks']}, 노출 {rows[0]['impressions']}")
+        else:
+            lines.append(f"\n{label} ({start}~{end}, PT): 합계 미제공 또는 조회 실패")
+    comparison = report.get('comparison')
+    if comparison:
+        lines.append(f"\n이전 조회 대비: PASS 전환 {len(comparison['newPass'])}, PASS 해제 {len(comparison['noLongerPass'])}, canonical 변경 {len(comparison['canonicalChanges'])}, 비교 불가 {len(comparison['uncomparableUrls'])}")
+    lines.append('\n미반환 행은 노출 0이 아니며, 겹치는 28일 구간과 변경 전후 차이는 인과효과를 증명하지 않습니다.')
+    return '\n'.join(lines)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--live', action='store_true', help='Read Google APIs and public URLs; no indexing submission')
     parser.add_argument('--output', type=Path, help='Private snapshot path outside the repository')
     parser.add_argument('--previous', type=Path, help='Compare URL index states with an earlier private snapshot')
+    parser.add_argument('--report', type=Path, help='Read an existing private snapshot as text; no network or file writes')
     args = parser.parse_args()
     try:
+        if args.report:
+            if args.live or args.output or args.previous:
+                raise ValueError('Report mode cannot be combined with live collection options')
+            print(format_report(json.loads(args.report.expanduser().read_text())))
+            return 0
         selected = targets(json.loads(REGISTRY.read_text()))
         if not args.live:
             print(json.dumps({'mode': 'preview', 'articles': 20, 'legacyUrls': 10, 'urls': selected}, indent=2))

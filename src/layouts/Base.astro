@@ -4,10 +4,11 @@ import '../styles/global.css';
 import labels from '../lib/archive-ui.json';
 import {entries} from '../lib/content';
 import {guideIndexAlternates,guideIndexCopy} from '../lib/technical-guides';
+import {authorData,authorPath,profileCopy} from '../lib/author';
 interface Props { title: string; description?: string; lang: Language; alternates?: { language: Language; url: string }[]; canonical?: string; noindex?: boolean; structuredData?: Record<string, unknown>[]; }
 const { title, description = text[Astro.props.lang].about, lang, alternates = [], canonical = Astro.url.pathname, noindex = false } = Astro.props;
 const availableLanguages = await publishedLanguages();
-const siteData = { '@context': 'https://schema.org', '@type': 'WebSite', '@id': new URL('/#website', Astro.site).href, url: new URL('/', Astro.site).href, name: SITE, inLanguage: availableLanguages };
+const siteData = { '@context': 'https://schema.org', '@type': 'WebSite', '@id': new URL('/#website', Astro.site).href, url: new URL('/', Astro.site).href, name: SITE, inLanguage: availableLanguages,publisher:authorData(lang) };
 const jsonLd = [siteData, ...(Astro.props.structuredData || [])];
 const serializedJsonLd = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
 const t = text[lang];
@@ -59,6 +60,6 @@ const isArticle = /^\/[^/]+\/(posts|digest)\/[^/]+\/$/.test(Astro.url.pathname);
       </nav>
     </header>
     <main id="main" class="shell"><slot /></main>
-    <footer class="site-footer shell"><div><a class="brand" href={`/${lang}/`}>{SITE}</a><p>{t.footer}</p></div><div class="footer-links"><a href={`/${lang}/categories/`}>{t.categories}</a><a href={`/${lang}/tags/`}>{t.tags}</a><a href={`/${lang}/feed.xml`}>RSS</a><a href="https://github.com/youdozi">GitHub ↗</a></div></footer>
+    <footer class="site-footer shell"><div><a class="brand" href={`/${lang}/`}>{SITE}</a><p>{t.footer}</p></div><div class="footer-links"><a href={authorPath(lang)} lang={lang==='ko'?'ko':'en'}>{profileCopy[lang==='ko'?'ko':'en'].label}</a><a href={`/${lang}/categories/`}>{t.categories}</a><a href={`/${lang}/tags/`}>{t.tags}</a><a href={`/${lang}/feed.xml`}>RSS</a><a href="https://github.com/youdozi">GitHub ↗</a></div></footer>
   </body>
 </html>

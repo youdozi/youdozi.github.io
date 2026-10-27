@@ -31,7 +31,7 @@ def public_url(value):
             or any(p in ('.', '..') for p in path.split('/'))):
         raise ValueError('Expected a canonical URL on the production site')
     pattern = r'/(' + '|'.join(LANGUAGES) + r')/(?:|(?:posts|digest|categories|tags)/|(?:posts|digest|categories)/[^/]+/)'
-    if not re.fullmatch(pattern + r'|/(?:en|ko)/guides/', path):
+    if not re.fullmatch(pattern + r'|/(?:en|ko)/(?:guides|about)/', path):
         raise ValueError('URL is outside published language routes')
     return value
 

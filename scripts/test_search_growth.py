@@ -3,11 +3,44 @@ from datetime import datetime, timezone
 from pathlib import Path
 import unittest
 from copy import deepcopy
+import contextlib
+import io
+import tempfile
+from unittest.mock import patch
 
 import search_growth as growth
 
 
 class SearchGrowthTests(unittest.TestCase):
+    def test_report_cli_does_not_authenticate_collect_or_write(self):
+        with tempfile.TemporaryDirectory() as folder:
+            snapshot = Path(folder) / 'snapshot.json'
+            snapshot.write_text('{}')
+            with patch('sys.argv', ['search_growth.py', '--report', str(snapshot)]), patch.object(growth, 'format_report', return_value='Offline report'), patch.object(growth, 'access_token') as auth, patch.object(growth, 'collect') as collect:
+                with contextlib.redirect_stdout(io.StringIO()) as output:
+                    self.assertEqual(growth.main(), 0)
+                self.assertEqual(output.getvalue().strip(), 'Offline report')
+                auth.assert_not_called(); collect.assert_not_called()
+            self.assertEqual(list(Path(folder).iterdir()), [snapshot])
+            with patch('sys.argv', ['search_growth.py', '--report', str(snapshot), '--live']), patch.object(growth, 'access_token') as auth:
+                with contextlib.redirect_stdout(io.StringIO()): self.assertEqual(growth.main(), 1)
+                auth.assert_not_called()
+
+    def test_text_report_keeps_query_data_private_and_does_not_invent_zeroes(self):
+        report = {'site': growth.SITE, 'checkedAt': '2026-10-27T00:00:00Z',
+                  'urls': [{'url': growth.SITE + 'en/posts/example/', 'kind': 'article', 'live': {'matchesExpectedStaticRoute': True},
+                            'inspection': {'httpStatus': 403}}],
+                  'windows': {'current': ['start', 'end'], 'previous': ['older', 'earlier']},
+                  'performance': {p: {'totals': {'httpStatus': 200, 'data': {}},
+                                     'queries': {'rows': [{'keys': ['private query']}]}} for p in ['current', 'previous']}}
+        text = growth.format_report(report)
+        self.assertIn('조회 실패·비교 불가', text)
+        self.assertIn('합계 미제공 또는 조회 실패', text)
+        self.assertNotIn('private query', text)
+        self.assertNotIn('클릭 0', text)
+        report['site'] = 'https://other.example/'
+        with self.assertRaises(ValueError): growth.format_report(report)
+
     def test_comparison_never_treats_an_api_error_as_loss_of_indexing(self):
         previous = {'site': growth.SITE, 'checkedAt': 'before', 'windows': {'current': ['a', 'b']},
                     'urls': [{'url': growth.SITE + 'one/', 'inspection': {'httpStatus': 200, 'indexStatus': {'verdict': 'PASS'}}},

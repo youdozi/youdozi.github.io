@@ -7,6 +7,7 @@ import EntryList from './EntryList.astro';
 import DigestSection from './DigestSection.astro';
 import ArchiveRenewal from './ArchiveRenewal.astro';
 import { relatedEntries } from '../lib/related';
+import {authorData,authorPath} from '../lib/author';
 import {categoryGuide,additionalArticleGuides} from '../lib/technical-guides';
 import { entries, text, alternateLinks, formatDate, taxonomyUrl, type Entry } from '../lib/content';
 interface Props { entry: Entry; }
@@ -19,8 +20,8 @@ const canonical = new URL(entry.url, Astro.site).href;
 const articleData: Record<string, unknown>[] = entry.reviewStatus === 'example' ? [] : [
   { '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': `${canonical}#article`, mainEntityOfPage: canonical, url: canonical,
     headline: entry.title, description: entry.description, inLanguage: lang, datePublished: entry.publishedAt.toISOString(), dateModified: (entry.updatedAt || entry.publishedAt).toISOString(),
-    author: { '@type': 'Person', name: 'youdozi', url: 'https://github.com/youdozi' },
-    publisher: { '@type': 'Person', name: 'youdozi', url: 'https://github.com/youdozi' },
+    author: authorData(lang),
+    publisher: authorData(lang),
     ...(entry.renewal ? {isBasedOn:entry.renewal.data.url,citation:entry.renewal.data.documents.map(d=>d.url),temporalCoverage:entry.renewal.data.archiveDate} : {}),
     ...(entry.post?.data.image ? { image: new URL(entry.post.data.image, Astro.site).href } : {}) },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -38,7 +39,7 @@ const hasTopics = all.some(candidate => candidate.language === lang && candidate
 ---
 <Base title={entry.title} description={entry.description} lang={lang} structuredData={articleData} noindex={entry.reviewStatus === 'example'} alternates={alternateLinks(entry, all)}>
   <article class="article">
-    <header class="article-heading"><a class="eyebrow" href={`/${lang}/${entry.kind === 'digest' ? 'digest' : 'posts'}/`}>← {text[lang][entry.kind === 'digest' ? 'digest' : 'posts']}</a><h1>{entry.title}</h1><div class="entry-meta"><time datetime={entry.publishedAt.toISOString()}>{formatDate(entry.publishedAt, lang)}</time><span>youdozi</span></div></header>
+    <header class="article-heading"><a class="eyebrow" href={`/${lang}/${entry.kind === 'digest' ? 'digest' : 'posts'}/`}>← {text[lang][entry.kind === 'digest' ? 'digest' : 'posts']}</a><h1>{entry.title}</h1><div class="entry-meta"><time datetime={entry.publishedAt.toISOString()}>{formatDate(entry.publishedAt, lang)}</time><a class="author-link" href={authorPath(lang)} rel="author" lang={lang==='ko'?'ko':'en'}>youdozi</a></div></header>
     {entry.reviewStatus === 'example' && <aside class="notice">예제 데이터 — 실제 뉴스로 취급하지 마세요.</aside>}
     <div class="prose">
       {Content && <Content />}
