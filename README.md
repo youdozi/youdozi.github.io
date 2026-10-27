@@ -187,3 +187,5 @@ Jenkins 예제는 `python3 -B scripts/check_jenkins_examples.py`로 한영 전�
 한영 `/en/guides/`·`/ko/guides/`에서 Java 문제 풀이·Spring Boot·셸 자동화·JDK·개발 도구·게시 절차·Jenkins 복구·Ruby 환경 진단의 8개 학습 안내를 찾을 수 있습니다. 안내는 실제 공개 가능한 글만 연결하며 본문 카테고리 링크로 돌아올 수 있습니다. 가이드 목록·언어 링크·CollectionPage/ItemList·사이트맵은 같은 등록 정보를 사용합니다. 이 안내는 기존 글을 연결하며 코드의 새 실행 결과나 검색 노출 성과를 주장하지 않습니다.
 
 한영 `/en/about/`·`/ko/about/`는 운영 계정·글 작성 원칙·정정 방법을 안내합니다. 글의 작성자 링크와 Person/ProfilePage 식별자를 연결하며, 별도 소개가 없는 언어는 영문 소개로 연결합니다. 소개 문구에는 확인된 정보만 사용하고 소속·경력·자격을 추정해 추가하지 않습니다.
+
+댓글은 독자가 버튼을 누른 뒤 Utterances를 불러옵니다. 기존 `legacyUrl || translationKey` 댓글 식별자와 테마를 유지하고, 로그인 복귀 주소에서는 인증 흐름을 이어서 엽니다. 실패·시간 초과·JavaScript 비활성화 시에는 같은 식별자로 검색하는 GitHub 링크를 제공합니다. 이 변경의 검증 지표는 초기 댓글 스크립트 요청 유무이며 실제 Core Web Vitals 개선 수치를 주장하지 않습니다.

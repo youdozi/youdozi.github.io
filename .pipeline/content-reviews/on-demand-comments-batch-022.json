@@ -1,0 +1,228 @@
+{
+  "createdAt": "2026-10-27T22:36:25.319610+00:00",
+  "baseCommit": "6a99074519dfdbaaa2797be09006afe856ff7298",
+  "branch": "perf/on-demand-comments-batch-022",
+  "purpose": "Avoid the unconditional third-party comment bootstrap on ordinary article visits while preserving existing discussion identity and login returns.",
+  "publication": "Draft only. PR72 remains separately pending and is not included.",
+  "skills": [
+    "translate"
+  ],
+  "scope": {
+    "articleSourcesChanged": 0,
+    "publicArticlesChecked": 423,
+    "commentActionLocales": [
+      "en",
+      "ko",
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru",
+      "es"
+    ],
+    "loadTrigger": "Explicit reader click or an Utterances login-return parameter.",
+    "fallback": "Existing repository issue search using the unchanged legacyUrl/translationKey term."
+  },
+  "review": {
+    "type": "Self AI review of loader state transitions, protocol source, localized action/status strings, keyboard behavior and controlled/real browser checks.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "issue": "The existing async script is fetched even when the reader never opens comments; the provider already lazily loads its frame.",
+        "resolution": "Defer the bootstrap itself. State the measured client-request change without claiming every iframe was previously eager or that field performance improved."
+      },
+      {
+        "issue": "Deferral could interrupt an explicit comment-login return or change the issue mapping.",
+        "resolution": "Automatically open only a nonempty Utterances return parameter; keep the exact legacyUrl || translationKey choice, repository and theme."
+      },
+      {
+        "issue": "Duplicate activation, failures or an untrusted message could complete loading incorrectly.",
+        "resolution": "Guard one activation, accept resize only from the current iframe at the exact provider origin, and expose the GitHub fallback on failure or20-second timeout."
+      },
+      {
+        "issue": "Disabling a focused native button can lose keyboard focus while loading.",
+        "resolution": "Use aria-disabled with the activation guard; transfer focus only if it remains on the initiating button, otherwise preserve the reader’s current focus."
+      },
+      {
+        "issue": "No-JavaScript users need a usable discussion route without a dead button.",
+        "resolution": "Hide the action until initialized and keep a localized GitHub link in the static HTML."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "sha256": {
+      "src/components/Article.astro": "280b314ea5dad006879ff94b6106664449b3bd3a9f3ce1a8f1ae9cdebea70022",
+      "src/components/Comments.astro": "09b742b1c48194d870c3f9d48a51e8f506e456884b5b3ddf3bb8d736cb56f557",
+      "src/scripts/comments.ts": "eff8018c22f7819b2d22618cdab7a727764ee7a2a25293ba496e3a8fce2a6749",
+      "src/lib/comments.ts": "1331b3e8e040992694dc2ff16007ecc99d5869bfc5ccc0efe79ab7505a914c55",
+      "src/lib/comments-ui.json": "8da1dba0b0fb7849e2deb9f8c96e524577aff64fe88459c6515faf6cb05c05d8",
+      "scripts/test-comments.mjs": "9f2e69a47ea745c6f4ece3391f1bf4e57716276d84e1f79ceb9f1416d7320f1f",
+      "scripts/test-site.mjs": "68a3c91a6902b47185a766bc79ace7eb274522f97fae01e48483d83ab15f0ee1"
+    }
+  },
+  "translationReview": {
+    "sourceLocale": "en",
+    "targetLocales": [
+      "ko",
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru",
+      "es"
+    ],
+    "stringsPerLocale": 5,
+    "review": "Two-pass self review of action/progress/completion/failure meaning and natural UI wording. This does not certify the external widget’s own language."
+  },
+  "validation": {
+    "pythonTests": 169,
+    "nodeTests": 45,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 936,
+    "sitemapUrls": 471,
+    "static": {
+      "articlesVerified": 423,
+      "eagerWidgetScripts": 0,
+      "fallbackTermsMatch": true,
+      "result": "passed"
+    },
+    "baseline": {
+      "page": "https://youdozi.github.io/en/posts/2023-09-19-springboot-test-webclient/",
+      "widgetRequests": [
+        "https://utteranc.es/client.js"
+      ],
+      "clientRequests": 1,
+      "interaction": false
+    },
+    "controlledBrowserCases": [
+      {
+        "language": "en",
+        "path": "/en/posts/2023-09-04-jekyll-install/",
+        "beforeClientRequests": 0,
+        "afterClientRequests": 1,
+        "preservedTerm": true,
+        "duplicateClickIgnored": true,
+        "result": "passed"
+      },
+      {
+        "language": "ko",
+        "path": "/ko/posts/2026-10-27-jenkins-home-backup-restore/",
+        "beforeClientRequests": 0,
+        "afterClientRequests": 1,
+        "preservedTerm": true,
+        "duplicateClickIgnored": true,
+        "result": "passed"
+      },
+      {
+        "language": "zh-CN",
+        "path": "/zh-CN/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "beforeClientRequests": 0,
+        "afterClientRequests": 1,
+        "preservedTerm": true,
+        "duplicateClickIgnored": true,
+        "result": "passed"
+      },
+      {
+        "language": "ja",
+        "path": "/ja/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "beforeClientRequests": 0,
+        "afterClientRequests": 1,
+        "preservedTerm": true,
+        "duplicateClickIgnored": true,
+        "result": "passed"
+      },
+      {
+        "language": "de",
+        "path": "/de/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "beforeClientRequests": 0,
+        "afterClientRequests": 1,
+        "preservedTerm": true,
+        "duplicateClickIgnored": true,
+        "result": "passed"
+      },
+      {
+        "language": "fr",
+        "path": "/fr/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "beforeClientRequests": 0,
+        "afterClientRequests": 1,
+        "preservedTerm": true,
+        "duplicateClickIgnored": true,
+        "result": "passed"
+      },
+      {
+        "language": "ru",
+        "path": "/ru/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "beforeClientRequests": 0,
+        "afterClientRequests": 1,
+        "preservedTerm": true,
+        "duplicateClickIgnored": true,
+        "result": "passed"
+      },
+      {
+        "language": "es",
+        "path": "/es/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "beforeClientRequests": 0,
+        "afterClientRequests": 1,
+        "preservedTerm": true,
+        "duplicateClickIgnored": true,
+        "result": "passed"
+      },
+      {
+        "case": "script failure",
+        "result": "passed"
+      },
+      {
+        "case": "20-second timeout (virtualized to80ms)",
+        "result": "passed"
+      },
+      {
+        "case": "origin and frame source guards; reader focus retained",
+        "result": "passed"
+      },
+      {
+        "case": "explicit login callback",
+        "result": "passed"
+      },
+      {
+        "case": "JavaScript disabled",
+        "result": "passed"
+      }
+    ],
+    "realWidget": {
+      "case": "real Utterances read-only smoke",
+      "state": "opened",
+      "frames": 1,
+      "requests": [
+        {
+          "host": "utteranc.es",
+          "path": "/client.js",
+          "method": "GET"
+        },
+        {
+          "host": "utteranc.es",
+          "path": "/utterances.html",
+          "method": "GET"
+        }
+      ],
+      "commentWrites": 0
+    },
+    "screenshotsReviewed": [
+      "KO320px opened state with a controlled comment frame."
+    ],
+    "timeoutNote": "The controlled timeout case shortened only the20-second timer to80ms through a browser test hook; production code retains20seconds."
+  },
+  "sources": [
+    "https://utteranc.es/",
+    "https://github.com/utterance/utterances/blob/master/src/client.ts",
+    "https://github.com/utterance/utterances/blob/master/src/utterances.ts",
+    "https://web.dev/articles/third-party-javascript"
+  ],
+  "limits": [
+    "No Google search/ranking or field Core Web Vitals effect is measured.",
+    "The real smoke check opened the widget without signing in or sending a comment.",
+    "The login-return and failure cases use controlled responses and do not perform a real OAuth login.",
+    "Reader-triggered widget requests still depend on the external service.",
+    "Only action/status strings are localized; the third-party frame UI is unchanged."
+  ]
+}

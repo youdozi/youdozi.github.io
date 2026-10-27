@@ -197,6 +197,11 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     const posting=graph.find(item=>item['@type']==='BlogPosting');
     assert.equal(posting.inLanguage,'en');assert.equal(posting.author.name,'youdozi');
     assert.ok(posting.datePublished && posting.dateModified);
+    assert.ok(englishArticle.includes('<on-demand-comments'));
+    assert.ok(englishArticle.includes('aria-controls="comment-widget"'));
+    assert.ok(!/<script[^>]*src="https:\/\/utteranc\.es\/client\.js"/.test(englishArticle));
+    assert.ok(englishArticle.includes('https://github.com/youdozi/youdozi.github.io/issues?'));
+
     assert.ok(graph.some(item=>item['@type']==='BreadcrumbList'));
 
 
