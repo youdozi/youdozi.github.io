@@ -59,8 +59,8 @@
     "scope": "Eight manuscripts, complete paired source classes, regression fixture scope, original identities and generated HTML.",
     "findings": [
       {
-        "severity": "major",
-        "issue": "Original pair deletion example used boxed Character variables with reference comparison and legacy Stack. ASCII inputs happened to satisfy cache assumptions.",
+        "severity": "minor",
+        "issue": "Original pair deletion compared boxed Character references. Java Character caching makes this valid for the problem's ASCII lowercase inputs, but obscures the intended value comparison.",
         "resolution": "Use ArrayDeque and primitive char comparison; explain the prefix invariant and unboxing, test repeated and alternating million-character inputs."
       },
       {
