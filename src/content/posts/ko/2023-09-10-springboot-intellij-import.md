@@ -1,133 +1,145 @@
 ---
-title: "[springboot] springboot intellij-community import"
-language: "ko"
-translationKey: "2023-09-10-springboot-intellij-import"
-routeSlug: "2023-09-10-springboot-intellij-import"
-kind: "post"
-publishedAt: "2023-09-09T15:00:00.000Z"
+title: IntelliJ에서 Spring Boot Gradle 프로젝트 열고 실행하기
+language: ko
+translationKey: 2023-09-10-springboot-intellij-import
+routeSlug: 2023-09-10-springboot-intellij-import
+kind: post
+publishedAt: 2023-09-09T15:00:00.000Z
 categories:
-  - "springboot"
+  - springboot
 tags:
-  - "springboot"
-  - "intellij community"
-  - "project import"
-  - "RUN/DEBUG configurations"
-legacyUrl: "/springboot/springboot-intellij-import/"
-legacySource: "_posts/spring/intellij-ce/2023-09-10-springboot-intellij-import.markdown"
-updatedAt: "2026-10-24T09:00:00+09:00"
-reviewedAt: "2026-10-24"
-reviewStatus: "revised"
-reviewScope: "공식 문서 대조 및 예제 코드 검토"
-archiveBodySha256: "8cca65e7155f668af7bca85e7798c11f97705d4a53a0063ad582d8756b189d81"
+  - springboot
+  - intellij community
+  - project import
+  - RUN/DEBUG configurations
+legacyUrl: /springboot/springboot-intellij-import/
+legacySource: _posts/spring/intellij-ce/2023-09-10-springboot-intellij-import.markdown
+updatedAt: 2026-10-27T03:26:14.141Z
+reviewedAt: "2026-10-27"
+reviewStatus: revised
+reviewScope: Official documentation checked; CLI/project execution distinguished
+  from IDE UI verification.
+archiveBodySha256: 8cca65e7155f668af7bca85e7798c11f97705d4a53a0063ad582d8756b189d81
 reviewSources:
-  - "https://www.jetbrains.com/help/idea/running-applications.html"
-  - "https://docs.gradle.org/current/userguide/compatibility.html"
+  - https://www.jetbrains.com/help/idea/gradle.html
+  - https://www.jetbrains.com/help/idea/gradle-jvm-selection.html
+  - https://www.jetbrains.com/help/idea/running-applications.html
+  - https://docs.gradle.org/current/userguide/compatibility.html
+description: Spring Boot 프로젝트의 Gradle 동기화·JDK·Application 실행 구성을 확인하고, 실제 HTTP
+  테스트로 IDE 문제와 애플리케이션 문제를 구분합니다.
 ---
-### 개요
-지난번 spring-initializer를 통해 프로젝트를 생성하여 파일로 다운로드 받았습니다.
+IntelliJ에서 Spring Boot 프로젝트를 열 때는 Gradle 동기화가 끝났는지 먼저 확인하고, 터미널의 Wrapper 빌드와 IDE 실행을 비교하세요. 실행 버튼이 없다고 해서 항상 수동 구성부터 만들어야 하는 것은 아닙니다. [일반 Java main 메서드 옆 실행 아이콘](https://www.jetbrains.com/help/idea/running-applications.html)으로도 실행할 수 있습니다.
 
-[참고 - springboot-initializer](/springboot/springboot-initializer/)
+아래는 [Initializr 예제](/ko/posts/2023-09-07-springboot-initializer/)의 Boot 4.1.2·Gradle 9.8.2·Java 17 프로젝트를 이어서 사용합니다. 빌드·HTTP 동작은 로컬에서 실행했고, IDE 메뉴는 JetBrains 공식 문서를 대조했습니다. 특정 IDE 버전의 화면을 직접 조작해 검증했다는 의미는 아닙니다.
 
-이제 intellij-ce에서 spring-initializer를 통해 생성된 프로젝트를 import하고 가동해보도록 하겠습니다.
+## 프로젝트와 JDK 확인
 
-### project import
-먼저 다운로드 받은 프로젝트를 import합니다.
+1. File → Open으로 압축을 푼 프로젝트 루트를 엽니다. `settings.gradle`·`build.gradle`이 있는 디렉터리입니다.
+2. Gradle 프로젝트로 인식되면 동기화를 완료합니다. 의존성을 받지 못하면 동기화 오류부터 해결합니다.
+3. Gradle 배포는 프로젝트의 Wrapper를 사용하고, Gradle JVM과 Project SDK를 확인합니다. 이 예제는 둘 다 JDK 17로 맞춥니다.
+4. 터미널에서 `./gradlew --version`과 `./gradlew test`를 실행해 IDE 밖의 기준 결과를 확보합니다.
 
-![project_import.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/project_import.png)
+[Gradle 통합 문서](https://www.jetbrains.com/help/idea/gradle.html)와 [Gradle JVM 선택 규칙](https://www.jetbrains.com/help/idea/gradle-jvm-selection.html)을 참고하세요. 메뉴 이름은 IDE 버전과 OS에 따라 달라질 수 있습니다. Project SDK, Gradle을 실행하는 JVM, Java toolchain, 실행 구성의 JRE는 같은 개념이 아니며 자동으로 항상 일치하지도 않습니다.
 
-import를 하게 되면 아래와 같이 프로젝트 타입을 선택합니다.  
-이전엔 gradle로 프로젝트를 생성하였으므로 gradle을 선택하고 우측 하단의 `Create` 버튼을 클릭합니다.
+## 엔드포인트와 실제 HTTP 테스트 추가
 
-![project_import_type.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/project_import_type.png)
+기존 네 파일을 유지하고 다음 두 파일을 추가합니다. 컨트롤러를 애플리케이션과 같은 `example.demo` 패키지에 두어 컴포넌트 스캔 범위에 포함합니다.
 
-정상적으로 springboot 프로젝트가 import 되었습니다.
+### `src/main/java/example/demo/GreetingController.java`
 
-![project_import_complete.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/project_import_complete.png)
+```java
+package example.demo;
 
-### run
+import java.util.Map;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-intellij에서 springboot를 가동할 수 있는 방법은 3가지가 있습니다.
-* RUN/DEBUG configurations
-* Service
-* gradle bootRun task  
+@RestController
+public class GreetingController {
+    @GetMapping("/greeting")
+    public Map<String, String> greeting() {
+        return Map.of("message", "Hello, Gradle");
+    }
+}
+```
 
-여기서는 `RUN/DEBUG configurations`로 springboot를 가동하는 방법에 대해 나누고자 합니다.  
-우선 우측 상단을 보시면 ultimate 버전에서 항상 봐왔던 RUN 기능이 비활성화 된 것을 확인할 수 있습니다.    
-그렇죠. intellij-ce에서는 사용자가 직접 `RUN/DEBUG configurations`를 설정해줘야 합니다.  
-그럼 `RUN/DEBUG configurations`를 적용해 보도록 하겠습니다.  
+### `src/test/java/example/demo/GreetingHttpTest.java`
 
-### RUN/DEBUG configurations
-화면 우측 상단을 보시면 아래와 같이 `Current File`과 가동/디버깅, 더보기 아이콘이 보입니다.
+```java
+package example.demo;
 
-![project_not_run_config.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/project_not_run_config.png)
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.time.Duration;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.env.Environment;
 
-`Current File`을 선택하면 아래와 같이 메뉴가 펼쳐집니다.
+import static org.junit.jupiter.api.Assertions.*;
 
-![project_start_run_config.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/project_start_run_config.png)  
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+class GreetingHttpTest {
+    @Autowired Environment environment;
 
-`Edit Configurations` 버튼을 클릭합니다.  
-RUN/DEBUG configurations 설정 팝업 화면이 나오네요.
+    HttpResponse<String> get(String path) throws Exception {
+        String port = environment.getRequiredProperty("local.server.port");
+        var request = HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + path))
+                .timeout(Duration.ofSeconds(10)).GET().build();
+        return HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+    }
 
-![empty_run_config.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/empty_run_config.png)  
+    @Test
+    void greetingReturnsJson() throws Exception {
+        var response = get("/greeting");
+        assertEquals(200, response.statusCode());
+        assertTrue(response.headers().firstValue("content-type").orElse("").contains("application/json"));
+        assertEquals("{\"message\":\"Hello, Gradle\"}", response.body());
+    }
 
-좌측 상단 `+`, 좌측 중앙 `Add new`, 우측 `Add new run configuration...` 버튼을 클릭하면 동일하게 아래 화면이 펼쳐집니다.  
+    @Test
+    void missingPathIsNotAnApplicationStartupFailure() throws Exception {
+        assertEquals(404, get("/missing").statusCode());
+    }
+}
+```
 
-![select_run_config_templete.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/select_run_config_templete.png)
+`./gradlew test`는 기존 컨텍스트 테스트 1개와 HTTP 테스트 2개를 실행합니다. HTTP 테스트는 임의 포트로 실제 서버를 시작해 JSON 응답과 없는 경로의 404를 확인합니다. 포트를 고정한 테스트가 아니므로 로컬 8080 점유와 구분할 수 있습니다.
 
-여기서 `Application`을 선택합니다.
+## Gradle 실행과 Application 실행 비교
 
-![add_run_config.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/add_run_config.png)
+터미널에서 아래 첫 명령으로 서버를 시작하고, 다른 터미널에서 두 번째 명령을 실행합니다.
 
-springboot를 실행하기 위해 몇가지 정보를 더 입력해야 합니다.  
-먼저 `Name`란에 `DemoApplication`이라고 입력합니다.
+```sh
+./gradlew bootRun --args='--server.port=8081'
+```
 
-![add_name.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/add_name.png)
+```sh
+curl --fail --show-error http://localhost:8081/greeting
+```
 
-`Build and run` 하단에 선택된 모듈이 없어 `module not specified`라고 노출된 셀렉트 박스가 보일겁니다.  
-해당 셀렉트 박스를 선택하면 아래와 같이 선택할 수 있는 JDK 버전이 펼쳐집니다.
+```json
+{"message":"Hello, Gradle"}
+```
 
-![add_build_and_run_module.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/add_build_and_run_module.png)
+IDE에서는 `DemoApplication.main()` 옆 실행 아이콘을 먼저 사용합니다. 직접 구성이 필요하면 Run → Edit Configurations에서 Application 유형을 만들고 다음 값을 확인하세요.
 
-여기서는 `corretto-17` 즉 JDK 17버전을 선택합니다.
-이 글의 Spring Boot 3.1 예제는 JDK 17을 기준으로 합니다. 더 높은 JDK를 사용하려면 선택한 Spring Boot와 Gradle 버전의 지원 범위를 함께 확인해야 합니다.
-그리고 오른쪽 `-cp <no module>` 셀렉트 박스를 클릭, `demo.main`을 선택합니다. 
+| 항목 | 예제 값 |
+| --- | --- |
+| Main class | `example.demo.DemoApplication` |
+| Classpath module | 프로젝트의 main 소스 모듈, 예: `demo.main` |
+| JRE | JDK 17 |
+| Program arguments | `--server.port=8081` |
 
-![add_no_module.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/add_no_module.png)
+기존 프로세스가 8081을 사용 중이면 먼저 종료하거나 다른 포트를 선택하세요. Boot 전용 도구 창이나 실행 구성의 제공 범위와 일반 Java Application 실행은 구분해야 합니다.
 
-이제 얼마 안 남았습니다!!  
-바로 밑에 Main class을 입력하는 텍스트 박스가 있고 우측 햄버거 아이콘이 보일겁니다.  
-햄버거 아이콘을 클릭 합니다.
+| 관찰 | 먼저 확인할 것 |
+| --- | --- |
+| Wrapper 빌드도 실패 | JDK·Gradle 호환성, 의존성, 소스 오류 |
+| Wrapper는 통과하고 IDE만 실패 | Gradle 재동기화, 모듈 classpath, 실행 JRE와 인자 |
+| 서버는 시작했지만 `/greeting`이 404 | 컨트롤러 패키지와 매핑 경로 |
+| 포트 사용 중 오류 | 기존 프로세스와 실행 인스턴스 |
 
-![add_main_class.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/add_main_class.png)
-
-아래와 같은 팝업이 노출될겁니다.  
-팝업이 노출되면서 자동으로 springboot main class를 읽어 화면에 보여줄 것 입니다.  
-해당 클래스를 선택합니다.
-
-![choice_main_class.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/choice_main_class.png)
-
-이제 다 끝났습니다.  
-우측 하단 `OK` 버튼을 클릭해 주세요.
-
-![complete_run_config.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/complete_run_config.png)
-
-그럼 `RUN/DEBUG configurations` 팝업이 닫혀지면서 우측 상단에 시작/디버깅 부분이 활성화 된 것을 확인할 수 있습니다.
-
-![final_run_config.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/final_run_config.png)
-
-### springboot run
-
-이제 시작 버튼을 클릭해보죠!
-
-![run_console.png](/assets%2Fimg%2Fspringboot%2Fintellij-ce/import/run_console.png)
-
-정상적으로 springboot가 가동된 것을 확인 할 수 있습니다.
-
-## 검증 및 보강 — 2026-10-24
-
-IDE 실행 버튼이 보이지 않아도 `./gradlew bootRun`으로 빌드 도구 기준 실행을 확인할 수 있습니다. IDE의 Project SDK, Gradle JVM, 실행 구성의 JRE가 서로 다르면 컴파일과 실행 결과가 달라질 수 있습니다. 먼저 `java -version`과 `./gradlew --version`을 비교하고, 프로젝트에 포함된 Gradle Wrapper를 사용하세요. 최신 IDE에서는 main 메서드 옆 실행 아이콘으로 구성을 만들 수 있으므로 수동 설정이 항상 필수라는 뜻은 아닙니다.
-
-### 확인한 자료
-
-- [공식 자료 1](https://www.jetbrains.com/help/idea/running-applications.html)
-- [공식 자료 2](https://docs.gradle.org/current/userguide/compatibility.html)
+컴파일은 통과하지만 IDE가 생성 메서드만 오류로 표시한다면 [Lombok과 annotation processor 점검](/ko/posts/2023-09-15-springboot-intellij-lombok/)을 이어서 확인할 수 있습니다.

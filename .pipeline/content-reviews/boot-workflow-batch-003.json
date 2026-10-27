@@ -1,0 +1,179 @@
+{
+  "createdAt": "2026-10-27T03:30:11.055096+00:00",
+  "purpose": "Four Spring Boot project workflow topics as eight Korean/English manuscripts, using one staged runnable project.",
+  "publicationApprovalAtPreparation": null,
+  "topics": [
+    "2023-09-07-springboot-initializer",
+    "2023-09-10-springboot-intellij-import",
+    "2023-09-15-springboot-intellij-lombok",
+    "2023-09-13-springboot-history"
+  ],
+  "previousPR": {
+    "number": 57,
+    "mergeCommit": "139717b09d1bbda6482d355041d9f7fece1bb4b1",
+    "deploymentRun": 40443793699,
+    "verifiedLiveArticles": 8,
+    "sitemapUrls": 426,
+    "indexNow": {
+      "changedUrls": 27,
+      "httpStatus": 200
+    }
+  },
+  "newEnglishEditions": {
+    "preparedPublishedAt": {
+      "2023-09-07-springboot-initializer": "2026-10-27T03:26:14.141Z",
+      "2023-09-10-springboot-intellij-import": "2026-10-27T03:26:14.141Z",
+      "2023-09-15-springboot-intellij-lombok": "2026-10-27T03:26:14.141Z",
+      "2023-09-13-springboot-history": "2026-10-27T03:26:14.141Z"
+    },
+    "refreshAllPublicationTimesAfterApproval": true,
+    "policy": "After explicit approval refresh the four first English publishedAt/updatedAt timestamps before final CI. Keep Korean original dates and all reviewed bodies."
+  },
+  "selectionEvidence": {
+    "source": "Search Console API, actual-search-status-2026-10-27.json stored outside the repository",
+    "period": "2026-09-29 through 2026-10-26 America/Los_Angeles; October25 onward provisional",
+    "legacyPageImpressions": {
+      "/springboot/springboot-initializer/": 1,
+      "/springboot/springboot-history/": 6,
+      "/springboot/springboot-intellij-lombok/": 2
+    },
+    "importArticle": "No observed page row; included to complete the create/import/compile workflow.",
+    "limits": "Small sample on old addresses, not proof of new English search demand."
+  },
+  "preserved": [
+    "Korean original publishedAt",
+    "translationKey and routeSlug",
+    "legacyUrl and legacySource",
+    "archiveBodySha256"
+  ],
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "initializrVerification": {
+    "checkedAt": "2026-10-27",
+    "metadataDefaultBoot": "4.1.2",
+    "availableBootIds": [
+      "4.2.0-SNAPSHOT",
+      "4.2.0-RC1",
+      "4.1.3-SNAPSHOT",
+      "4.1.2",
+      "4.0.10-SNAPSHOT",
+      "4.0.9"
+    ],
+    "exactArticleUrlHTTP": 200,
+    "selected": {
+      "boot": "4.1.2",
+      "java": "17",
+      "type": "gradle-project",
+      "dependencies": "web",
+      "packageName": "example.demo"
+    },
+    "wrapperDistribution": "Gradle9.8.2",
+    "webOnlyArchiveSha256": "746e53665e5fae3023967179dd3e259ceeebc9646d039cfcffcd8f715eba6081",
+    "generatedFilesSha256": {
+      "demo/build.gradle": "31417d0d3ec4c963befdb68df1cbff572bc0f8658c2dd14e2b490424af742f02",
+      "demo/gradle/wrapper/gradle-wrapper.properties": "70839bbe38c101499b2c65ee26c17365e01daa5bef158aded54c661f966dcdf3",
+      "demo/gradle/wrapper/gradle-wrapper.jar": "3b8a25775a69158b5ad2b1d17a80a88dc7b40a352a73eb27d06c612a7ce68e98",
+      "demo/.gitattributes": "193fbf6c445dea576a6f238c5262320931945a2ea03bae24b161b30856919a09",
+      "demo/.gitignore": "795029e58e368bb91c71cb3adb971491562622d4b1684604f278cdbfb8fec238",
+      "demo/HELP.md": "a1e939b0654eab3ae0ac47e5a514055f84e89a4aab2b05def442513dacdd1f5c",
+      "demo/src/test/java/example/demo/DemoApplicationTests.java": "830e38f8b98742529cb81934acbaf0df8d66a159e7497e0d201e238b89c6010b",
+      "demo/src/main/resources/application.properties": "8a3ddeeeaf68391596f370de6f0409c8f6ca003ed9c07137367ea679dd62cd4c",
+      "demo/src/main/java/example/demo/DemoApplication.java": "225a4b272375fb77edce3ed3778b8e1098b5513849fab65a8d979c7803560901",
+      "demo/gradlew.bat": "f17917f8dbe61182b149273ee78090fec1197442c3f38276af907bfa5190db16",
+      "demo/settings.gradle": "771d271da088677716c9a48f26d8c12a7f94f01574c93fc1a2fa2dee80fcf2fa",
+      "demo/gradlew": "a5a5c199ba02189ae8c46a334223371a20599d9c298ef65e7540ede4a3f72d59"
+    },
+    "localGenerationWithLombokAlsoChecked": true,
+    "limits": "Service availability is time-sensitive. Checker does not call Initializr or claim future availability."
+  },
+  "review": {
+    "type": "Self AI review in two passes: technical/semantic comparison, then standalone reading in each language.",
+    "independentSession": false,
+    "humanReview": false,
+    "ideUiInteractionVerified": false,
+    "scope": "Eight manuscripts and paired project files; official generation metadata, Gradle/IDE/processor documentation, release dates, provenance and public HTML.",
+    "findings": [
+      {
+        "severity": "major",
+        "issue": "Old Initializr screenshots and Boot3.1 setup did not match the current service.",
+        "resolution": "Generate the documented Boot4.1.2 project for real, record service availability and Wrapper, separate generated core files from complete Wrapper files."
+      },
+      {
+        "severity": "major",
+        "issue": "Old IDE tutorial implied manual Application configuration was always required.",
+        "resolution": "Document main-method gutter execution first and compare Wrapper results with run configuration settings."
+      },
+      {
+        "severity": "major",
+        "issue": "Old Lombok tutorial made manual plugin installation and processor checkbox changes universal.",
+        "resolution": "Distinguish IDE support from main/test Gradle processors; cite automatic import behavior and version-dependent plugin support."
+      },
+      {
+        "severity": "minor",
+        "issue": "BOM management could be mistaken for starter dependency inclusion or the Boot plugin alone.",
+        "resolution": "Explain dependency-management plugin/native BOM options and inspect runtime/processor configurations separately."
+      },
+      {
+        "severity": "minor",
+        "issue": "Polling a child log through the same shared file handle could disturb write offsets.",
+        "resolution": "Read startup logs through a separate descriptor; final CI runs this exact checker."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "reviewedSha256": {
+      "src/content/posts/en/2023-09-07-springboot-initializer.md": "9a467455a6837941ec8f1651578b97baf8504b13fb94978582bbf845c0023fdb",
+      "src/content/posts/ko/2023-09-07-springboot-initializer.md": "e8d6790a06b5eb75b41c69f67ba77d450014eac25a04c6ef0aeb39a65dbca39a",
+      "src/content/posts/en/2023-09-10-springboot-intellij-import.md": "051580604a0581c6c5838c2a031840a44161e51fd71a119d87c851f739419c77",
+      "src/content/posts/ko/2023-09-10-springboot-intellij-import.md": "bd32c2b00af2b8ed32ac514593e1a7cc717adf34244f608e5c7c32652f05f506",
+      "src/content/posts/en/2023-09-15-springboot-intellij-lombok.md": "1357fdb9d20f25d1916ab8d080ba41b7b02b760d6849965ec7f4065238e08f85",
+      "src/content/posts/ko/2023-09-15-springboot-intellij-lombok.md": "ff8137a13ac4e3aafac0889d57eb2c4f07f47c6e942f878945ac9174b73ae17d",
+      "src/content/posts/en/2023-09-13-springboot-history.md": "3e53ea3d2a7aafbb07cd5d43a7865b50290fb826c02e309e70b8e03288eea19b",
+      "src/content/posts/ko/2023-09-13-springboot-history.md": "e427472835aa7d45ea8cc4f406cfe7e0257bfba5593f5d59b6f7cb23332be70b",
+      "scripts/check_boot_workflow_examples.py": "26a077cf9fa65fadbfcc54873d9f022bf420de8055615a0724079f01c06537d7"
+    }
+  },
+  "execution": {
+    "jdk": "17.0.8.1",
+    "gradle": "9.8.2",
+    "boot": "4.1.2",
+    "dependencyManagementPlugin": "1.1.7",
+    "frameworkCore": "7.0.10",
+    "lombok": "1.18.48",
+    "stageTestsPassed": [
+      1,
+      3,
+      5
+    ],
+    "uniqueTests": 5,
+    "expectedCompilationFailures": {
+      "mainProcessorRemoved": true,
+      "testProcessorRemoved": true
+    },
+    "restoredTestsPassed": 5,
+    "packagedJarHTTP": [
+      200,
+      404
+    ],
+    "lombokInRuntimeJar": false,
+    "checkerInitializrRequests": 0,
+    "limits": [
+      "CLI and packaged HTTP tested; IDE UI not executed",
+      "Initializr metadata and actual generation checked separately",
+      "Versions pin this reproduction rather than promise future defaults"
+    ]
+  },
+  "siteValidation": {
+    "nodeTestsPassed": 24,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "astroHints": 0,
+    "htmlPages": 870,
+    "sitemapUrls": 430,
+    "englishListedEntries": 77,
+    "koreanListedEntries": 289,
+    "eightPageAudit": "Passed H1/descriptions/OG/schema dates, self/canonical and reciprocal en/ko/x-default, RSS/search/sitemap, code and no editorial banners."
+  },
+  "ci": "New staged project checker configured after existing JDK17 examples; exact PR check result tracked separately.",
+  "publication": "Draft review only; no new batch content deployed before explicit approval."
+}
