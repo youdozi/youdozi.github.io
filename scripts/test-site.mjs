@@ -12,23 +12,31 @@ test('each original post retains its provenance and a unique language route afte
     const source = await readFile(`src/content/posts/ko/${file}`, 'utf8');
     const [, front, body] = source.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
     const data = YAML.parse(front);
-    const original = await readFile(data.legacySource,'utf8');
-    const expected = convertPost(original, data.legacySource);
-    if (data.reviewedAt) {
-      assert.equal(data.archiveBodySha256, createHash('sha256').update(expected.body).digest('hex'), data.legacySource);
-      assert.ok(data.reviewScope && data.reviewSources.length > 0, data.legacySource);
-      assert.ok(body.trim().length > 0);
-    } else assert.equal(body, expected.body, data.legacySource);
-    assert.equal(data.routeSlug, expected.metadata.routeSlug);
+    if (data.legacySource) {
+      const original = await readFile(data.legacySource,'utf8');
+      const expected = convertPost(original, data.legacySource);
+      if (data.reviewedAt) {
+        assert.equal(data.archiveBodySha256, createHash('sha256').update(expected.body).digest('hex'), data.legacySource);
+        assert.ok(data.reviewScope && data.reviewSources.length > 0, data.legacySource);
+        assert.ok(body.trim().length > 0);
+      } else assert.equal(body, expected.body, data.legacySource);
+      assert.equal(data.routeSlug, expected.metadata.routeSlug);
+      assert.ok(!sources.has(data.legacySource)); sources.add(data.legacySource);
+    } else {
+      assert.equal(data.legacyUrl, undefined, 'New posts do not invent legacy routes');
+      assert.equal(data.archiveBodySha256, undefined, 'New posts do not invent archive hashes');
+      assert.ok(body.trim().length > 0 && data.description && data.reviewScope && data.reviewSources.length > 0);
+    }
     assert.equal(data.language, 'ko');
     assert.equal(typeof data.routeSlug, 'string');
     const route = `/ko/${data.kind === 'digest' ? 'digest' : 'posts'}/${data.routeSlug}/`;
     assert.ok(!routes.has(route), `duplicate ${route}`); routes.add(route);
-    assert.ok(!sources.has(data.legacySource)); sources.add(data.legacySource);
     assert.ok(!translations.has(data.translationKey)); translations.add(data.translationKey);
   }
-  async function originals(dir) { return (await Promise.all((await readdir(dir,{withFileTypes:true})).map(e => e.isDirectory() ? originals(`${dir}/${e.name}`) : Promise.resolve(e.name.endsWith('.markdown') ? 1 : 0)))).reduce((a,b)=>a+b,0); }
-  assert.equal(files.length, await originals('_posts'));
+  async function originals(dir) {
+    return (await Promise.all((await readdir(dir,{withFileTypes:true})).map(e => e.isDirectory() ? originals(`${dir}/${e.name}`) : Promise.resolve(e.name.endsWith('.markdown') ? [`${dir}/${e.name}`] : [])))).flat();
+  }
+  assert.deepEqual([...sources].sort(), (await originals('_posts')).sort(), 'Every original source retains exactly one reviewed Korean edition');
 });
 
 test('migration converts prose attributes and image spaces while preserving code', () => {

@@ -1,0 +1,521 @@
+{
+  "createdAt": "2026-10-27T07:54:48.254Z",
+  "purpose": "Replace the screenshot-based Jenkins installation archive and add a paired disposable volume recovery lab.",
+  "baseCommit": "8503456e0db5536f52bf9df0995b52137a355e40",
+  "branch": "content/jenkins-lab-batch-014",
+  "scope": {
+    "topics": 2,
+    "manuscripts": 4,
+    "existingKoreanRevisions": 1,
+    "newEnglishEditions": 2,
+    "newKoreanArticles": 1,
+    "newDiagrams": 4,
+    "registeredTopicsOnThisBranch": 34,
+    "diagramAssetsOnThisBranch": 68
+  },
+  "publicationApprovalAtPreparation": null,
+  "publication": "Draft only; PR66 remains separate and unmerged. This branch is based on published main.",
+  "newEditionDatePolicy": "Refresh publication/update dates of the three new manuscripts on explicit publication approval; retain the original Korean installation date.",
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "provenance": {
+    "file": "src/content/posts/ko/2023-09-28-jenkins-docker-install.md",
+    "publishedAt": "2023-09-27T15:00:00.000Z",
+    "routePreserved": true,
+    "legacyIdentityPreserved": true
+  },
+  "review": {
+    "type": "Two-pass self AI review: compare code to primary container/backup contracts, then inspect paired prose/figures and emitted SEO/browser output.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "issue": "Rolling image tags and copied pull/password logs do not identify a reproducible experiment.",
+        "resolution": "Resolve an image digest once per run, record the actual Jenkins version, compare passwords in memory and never log them."
+      },
+      {
+        "issue": "Container recreation against one volume is not a backup test.",
+        "resolution": "Add a separate stopped-source archive and new-volume restoration exercise."
+      },
+      {
+        "issue": "A single full-home backup would include the controller master key.",
+        "resolution": "Exclude secrets/master.key from the archive, check the member list and copy/apply the key through a separate private temporary location."
+      },
+      {
+        "issue": "Every Korean manuscript was assumed to be a legacy migration.",
+        "resolution": "Allow new posts without invented legacy metadata while comparing the exact set of original source paths to all preserved legacy editions."
+      },
+      {
+        "issue": "Local Docker CLI is available but its engine is stopped.",
+        "resolution": "Do not alter the local engine; locally parse and compare paired files, and require actual disposable Docker execution in hosted CI before completion."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "sha256": {
+      ".github/workflows/site-checks.yml": "96a9a2cc7f46d5fb6da719d00b3ee2c3d6a5f2597750b1c6c3217f556a14033c",
+      "README.md": "44012a176ca71ba6e05a3de2d6405f788dce5bdbaa5aaf82ff2b74978cc97d04",
+      "docs/technical-writing.md": "c7acde000d21ca6db31e96ba508b6e0b2a55936529b1e7abb41af262c8161342",
+      "scripts/build_algorithm_diagrams.py": "a7437faccdffd154c6a6635f5152b06e6ec1df6132fb1d651dc58353c2fd77df",
+      "scripts/test-site.mjs": "ca7598a155168fbc8bab98ac1fec102527639bfc582c6f378fd5949223401cb7",
+      "scripts/test_algorithm_diagrams.py": "1824eff46704eb108373f0799a82968526ea78949a2e42a4a38bd86a42c6f73a",
+      "src/content/posts/ko/2023-09-28-jenkins-docker-install.md": "adf64daf0b3123335ca8fe786893df68faf90f0b389d0a82e0895446aecabbe2",
+      "content/diagrams/jenkins.json": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784",
+      "scripts/check_jenkins_examples.py": "0de6bdf74adf851e6fb0a39dd4a9fa2c8f41a2e871d3fd23b5ad803fec0ffaf1",
+      "src/content/posts/en/2023-09-28-jenkins-docker-install.md": "9749786639b2c4f211d03d3c96499b4ac47c07543cd8109f88ef8aca41b41df7",
+      "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md": "268a67fb55f25363f38bc69a753361884acadd35a6631ae0974bca850ec05af2",
+      "src/content/posts/ko/2026-10-27-jenkins-home-backup-restore.md": "a73b829c297846970be81f026dd19f9d9c3e5699967b2a6c91206cd4f14f40fe"
+    }
+  },
+  "validation": {
+    "localDockerExecution": false,
+    "localReason": "Docker daemon unavailable; not started or configured by this task.",
+    "pairedPythonFilesMatchAndParse": true,
+    "pythonTests": 159,
+    "nodeTests": 32,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 923,
+    "sitemapUrls": 453,
+    "seo": {
+      "articleResults": [
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-28-jenkins-docker-install/",
+          "language": "en",
+          "title": "Jenkins in Docker: Verify Startup and Container Recreation",
+          "htmlSha256": "a0ee52c7130550f16bf2930b9bc9f2f5cf8ed1fe8ab024e92eb3106c10cb13f0",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-28-jenkins-docker-install/",
+          "language": "ko",
+          "title": "Docker Jenkins: 부팅과 컨테이너 재생성 검증하기",
+          "htmlSha256": "178e26eb70600416536968bd5bcbd7291f22d47923fd1fa8b48fc86efafaa0c8",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2026-10-27-jenkins-home-backup-restore/",
+          "language": "en",
+          "title": "Jenkins Home Backup: Restore a Stopped Controller into a New Volume",
+          "htmlSha256": "c541af281b86ee1661364ed52df55e8a6734457aa743ae13d587a88ebd507423",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2026-10-27-jenkins-home-backup-restore/",
+          "language": "ko",
+          "title": "Jenkins 홈 백업: 정지한 컨트롤러를 새 볼륨에 복구하기",
+          "htmlSha256": "a2f2d4e7a7fce8944913000d7d887866939aea936007a6f55a1171691a98a59b",
+          "result": "passed"
+        }
+      ],
+      "sitemapUrls": 453,
+      "result": "passed"
+    },
+    "browser": [
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-en.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-ko.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-en.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-ko.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-en.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-ko.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-http-status-test-en.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-http-status-test-ko.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-app-diagrams.net-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-app-diagrams.net-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-06-search-github-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-06-search-github-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-05-querydsl-no-release-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-05-querydsl-no-release-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-github-actions-content-pipeline-en.svg",
+        "labels": 15,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-github-actions-content-pipeline-ko.svg",
+        "labels": 15,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit-en.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit-ko.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-28-jenkins-docker-install-en.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-28-jenkins-docker-install-ko.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-10-27-jenkins-home-backup-restore-en.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-10-27-jenkins-home-backup-restore-ko.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "lang": "en",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 420
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "ko",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 353.984375
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "en",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 353.984375
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "ko",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 353.984375
+          }
+        ],
+        "result": "passed"
+      }
+    ],
+    "screenshotsReviewed": [
+      "KO controller lab390px",
+      "EN restore lab390px"
+    ],
+    "CI": "Exact-head hosted CI must execute both extracted Python files with Docker. Image digest and real version/result evidence are saved separately after the run."
+  },
+  "limits": [
+    "The labs use fresh data and do not complete the setup wizard, install plugins, run jobs, decrypt credentials or establish production disaster recovery.",
+    "The master key is kept separate in temporary storage; off-host durability/encryption/retention remain outside the example.",
+    "A rolling LTS tag selects the initial artifact; the resolved digest identifies the actual execution.",
+    "An image pull or HTTP response alone does not establish publication or complete setup.",
+    "No new draft manuscripts are deployed."
+  ]
+}
