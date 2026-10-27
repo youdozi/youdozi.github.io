@@ -7,6 +7,7 @@ import EntryList from './EntryList.astro';
 import DigestSection from './DigestSection.astro';
 import ArchiveRenewal from './ArchiveRenewal.astro';
 import { relatedEntries } from '../lib/related';
+import { springCategoryLabel } from '../lib/spring-guide';
 import { algorithmCategoryLabel } from '../lib/algorithm-guide';
 import { entries, text, alternateLinks, formatDate, taxonomyUrl, type Entry } from '../lib/content';
 interface Props { entry: Entry; }
@@ -31,7 +32,8 @@ const articleData: Record<string, unknown>[] = entry.reviewStatus === 'example' 
 ];
 const related = relatedEntries(entry, all);
 const visibleTags = entry.tags.filter(tag => tag !== 'archive-renewal');
-const visibleCategories = entry.categories.filter(category => !['dev', 'digest'].includes(category) && !visibleTags.includes(category));
+const visibleCategories = entry.categories.filter(category => !['dev', 'digest'].includes(category) &&
+  (['springboot', 'coding-test'].includes(category) || !visibleTags.includes(category)));
 const hasTopics = all.some(candidate => candidate.language === lang && candidate.tags.some(tag => tag !== 'archive-renewal'));
 ---
 <Base title={entry.title} description={entry.description} lang={lang} structuredData={articleData} noindex={entry.reviewStatus === 'example'} alternates={alternateLinks(entry, all)}>
@@ -43,7 +45,7 @@ const hasTopics = all.some(candidate => candidate.language === lang && candidate
       {entry.renewal && <ArchiveRenewal article={entry.renewal.data} lang={lang} edition={entry.renewalEdition!} />}
       {entry.digest && entry.digest.data.articles.map((article, index) => <DigestSection article={article} index={index} lang={lang as NativeLanguage} />)}
     </div>
-    {(hasTopics || visibleCategories.length > 0) && <footer class="article-footer"><nav class="chips" aria-label={text[lang].tags}>{hasTopics && <a href={`/${lang}/tags/`}>{text[lang].tags}</a>}{visibleCategories.map(category => <a href={taxonomyUrl(lang, 'categories', category)}>{category === 'coding-test' ? algorithmCategoryLabel(lang) || category : category}</a>)}{visibleTags.map(tag => <a href={taxonomyUrl(lang, 'tags', tag)}>#{tag}</a>)}</nav></footer>}
+    {(hasTopics || visibleCategories.length > 0) && <footer class="article-footer"><nav class="chips" aria-label={text[lang].tags}>{hasTopics && <a href={`/${lang}/tags/`}>{text[lang].tags}</a>}{visibleCategories.map(category => <a href={taxonomyUrl(lang, 'categories', category)}>{category === 'coding-test' ? algorithmCategoryLabel(lang) || category : category === 'springboot' ? springCategoryLabel(lang) || category : category}</a>)}{visibleTags.map(tag => <a href={taxonomyUrl(lang, 'tags', tag)}>#{tag}</a>)}</nav></footer>}
   </article>
   {related.length > 0 && <section class="related"><h2>{text[lang].related}</h2><EntryList items={related} lang={lang} /></section>}
   <div class="article comments"><h2>{labels[lang].discussion}</h2><script is:inline src="https://utteranc.es/client.js" {...{ repo: 'youdozi/youdozi.github.io', 'issue-term': entry.legacyUrl || entry.translationKey, theme: 'github-light' }} crossorigin="anonymous" async></script></div>

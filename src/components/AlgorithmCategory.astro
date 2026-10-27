@@ -1,31 +1,7 @@
 ---
-import Base from '../layouts/Base.astro';
-import EntryList from './EntryList.astro';
-import { algorithmStructuredData, type AlgorithmGuide } from '../lib/algorithm-guide';
+import CategoryGuide from './CategoryGuide.astro';
+import type { AlgorithmGuide } from '../lib/algorithm-guide';
 import type { Language } from '../lib/content';
 interface Props { guide: AlgorithmGuide; alternates: { language: Language; url: string }[]; }
-const { guide, alternates } = Astro.props;
 ---
-<Base title={guide.title} description={guide.description} lang={guide.lang} alternates={alternates} structuredData={algorithmStructuredData(guide, Astro.site!)}>
-  <header class="page-heading"><span class="eyebrow">Java</span><h1>{guide.title}<span class="count">{guide.ordered.length}</span></h1><p>{guide.intro}</p></header>
-  <div class="algorithm-groups">
-    {guide.sections.map(group => <section class="algorithm-group" aria-labelledby={`group-${group.id}`}>
-      <h2 id={`group-${group.id}`}>{group.title}</h2><p>{group.description}</p>
-      <ol start={group.start}>{group.entries.map(entry => <li><a href={entry.url}>{entry.title}</a><p>{entry.description}</p></li>)}</ol>
-    </section>)}
-  </div>
-  {guide.extras.length > 0 && <section class="algorithm-extras"><h2>{guide.extra}</h2><EntryList items={guide.extras} lang={guide.lang} /></section>}
-</Base>
-
-<style>
-  .algorithm-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
-  .algorithm-group{border-top:1px solid var(--line);padding-top:22px;min-width:0}
-  .algorithm-group h2{font-size:22px;line-height:1.5;letter-spacing:-.4px;margin:0 0 14px}
-  .algorithm-group>p{color:var(--muted);font-size:14px;line-height:1.9;margin:0 0 24px}
-  .algorithm-group ol{padding-left:23px;margin:0}
-  .algorithm-group li{padding:0 0 20px 3px;line-height:1.7}
-  .algorithm-group li a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
-  .algorithm-group li p{font-size:13px;color:var(--muted);line-height:1.8;margin:7px 0 0}
-  .algorithm-extras{margin-top:48px}
-  @media(max-width:800px){.algorithm-groups{grid-template-columns:1fr;gap:24px}.algorithm-group li{padding-bottom:16px}}
-</style>
+<CategoryGuide {...Astro.props} />

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2023-09-05-querydsl-no-release",
+      "title": {"en": "Compare query contracts", "ko": "쿼리 계약 비교"},
+      "description": {
+        "en": "The tests seed the same data and compare each implementation with explicit expected lists. A replacement decision needs further application-specific cases.",
+        "ko": "같은 데이터를 넣고 각 구현을 명시적인 기대 목록과 비교합니다. 실제 교체 판단에는 애플리케이션별 추가 사례가 필요합니다."
+      },
+      "codeContract": [{"language": "java", "contains": "class QueryStrategyTest"}, {"language": "java", "contains": "JpaSpecificationExecutor"}],
+      "steps": [
+        {"en": ["Seed five rows in H2", "Include duplicates and null"], "ko": ["H2에 행 5개 입력", "중복·null 포함"], "kind": "process"},
+        {"en": ["Build Querydsl and Criteria filters", "Keep equality and null policy clear"], "ko": ["Querydsl·Criteria 조건 구성", "동등 비교·NULL 정책 구분"], "kind": "process"},
+        {"en": ["Order each result by name", "Compare with the expected list"], "ko": ["각 결과를 이름 순서로 조회", "기대 목록과 각각 비교"], "kind": "process"},
+        {"en": ["Check eight contract scenarios", "Regenerate Q types after clean"], "ko": ["계약 사례 8개 확인", "clean 후 Q 타입 재생성"], "kind": "process"},
+        {"en": ["Then assess your real query shapes", "Tests alone do not decide a switch"], "ko": ["이후 실제 쿼리 형태로 검증 확대", "예제 통과만으로 교체를 결정하지 않음"], "kind": "result"}
+      ]
+    }
+  ]
+}

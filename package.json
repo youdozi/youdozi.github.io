@@ -11,7 +11,7 @@
     "check": "npm run check:digests && astro check",
     "build": "npm run check:digests && node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py && python3 -B scripts/indexnow.py",
     "preview": "astro preview",
-    "test": "node --test scripts/test-site.mjs scripts/test-translations.mjs scripts/test-reader-markdown.mjs scripts/test-related.mjs scripts/test-algorithm-guide.mjs",
+    "test": "node --test scripts/test-site.mjs scripts/test-translations.mjs scripts/test-reader-markdown.mjs scripts/test-related.mjs scripts/test-algorithm-guide.mjs scripts/test-spring-guide.mjs",
     "test:python": "python3 -m unittest discover -s scripts -p 'test*.py' -v",
     "generate:digest": "python3 scripts/generate_digest.py",
     "generate:digest:dry": "python3 scripts/generate_digest.py --dry-run",

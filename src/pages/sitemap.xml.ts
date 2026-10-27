@@ -1,13 +1,17 @@
 import { entries, alternateLinks, publishedLanguages } from '../lib/content';
+import { springCategoryAlternates, springGuide } from '../lib/spring-guide';
 import { algorithmCategoryAlternates, algorithmGuide } from '../lib/algorithm-guide';
 const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 export async function GET({ site }: { site: URL }) {
   const all = await entries();
-  const guideAlternates = algorithmCategoryAlternates(all);
-  const guides = guideAlternates.map(a => {
-    const guide = algorithmGuide(a.language, all)!;
-    return `<url><loc>${new URL(a.url, site)}</loc><lastmod>${guide.updatedAt.toISOString()}</lastmod>${guideAlternates.map(other => `<xhtml:link rel="alternate" hreflang="${other.language}" href="${new URL(other.url,site)}"/>`).join('')}${guideAlternates.some(other => other.language === 'en') ? `<xhtml:link rel="alternate" hreflang="x-default" href="${new URL('/en/categories/coding-test/', site)}"/>` : ''}</url>`;
-  }).join('');
+  const guides = [
+    { alternates: algorithmCategoryAlternates(all), get: algorithmGuide },
+    { alternates: springCategoryAlternates(all), get: springGuide },
+  ].map(({alternates,get}) => alternates.map(a => {
+    const guide = get(a.language, all)!;
+    const english = alternates.find(other => other.language === 'en');
+    return `<url><loc>${escape(new URL(a.url, site).href)}</loc><lastmod>${guide.updatedAt.toISOString()}</lastmod>${alternates.map(other => `<xhtml:link rel="alternate" hreflang="${other.language}" href="${escape(new URL(other.url,site).href)}"/>`).join('')}${english ? `<xhtml:link rel="alternate" hreflang="x-default" href="${escape(new URL(english.url, site).href)}"/>` : ''}</url>`;
+  }).join('')).join('');
   const staticUrls = (await publishedLanguages()).flatMap(lang => ['', 'posts/', 'digest/', 'categories/', 'tags/']
     .filter(section => !section || all.some(e => e.language === lang && (section === 'digest/' ? e.kind === 'digest' : section === 'posts/' ? e.kind === 'post' : section === 'tags/' ? e.tags.some(tag => tag !== 'archive-renewal') : true)))
     .map(section => `/${lang}/${section}`));
