@@ -44,6 +44,7 @@ Save this complete file as `jenkins_lab.py`. It creates its own uniquely named v
 ### `jenkins_lab.py`
 
 ```python
+import http.client
 import json
 import os
 import subprocess
@@ -95,7 +96,7 @@ class DockerLab:
                     self.version = response.headers.get('X-Jenkins')
                     if response.status == 200 and self.version and b'Jenkins' in response.read():
                         return name
-            except (urllib.error.URLError, TimeoutError):
+            except (urllib.error.URLError, TimeoutError, ConnectionError, http.client.HTTPException):
                 pass
             time.sleep(2)
         raise RuntimeError('Jenkins login was not ready within 180 seconds')
@@ -133,7 +134,7 @@ Run with a working Docker daemon:
 python3 jenkins_lab.py
 ```
 
-The two controller starts each wait up to 180 seconds for HTTP200 on `/login`, an `X-Jenkins` header and a body containing `Jenkins`. The test writes a marker and reads the initial password privately, replaces the first container, then checks both values again. A result with `recreated`, `markerPersisted`, `passwordPersisted` and `result: passed` means these selected checks passed. The JSON also records the digest and actual Jenkins version, so an invented pull transcript is unnecessary.
+The two controller starts each wait up to 180 seconds for HTTP200 on `/login`, an `X-Jenkins` header and a body containing `Jenkins`. Connection resets, temporary HTTP failures and incomplete HTTP handshakes are retried within that deadline. The test writes a marker and reads the initial password privately, replaces the first container, then checks both values again. A result with `recreated`, `markerPersisted`, `passwordPersisted` and `result: passed` means these selected checks passed. The JSON also records the digest and actual Jenkins version, so an invented pull transcript is unnecessary.
 
 The lab does not unlock Jenkins, install plugins, create a completed administrator account or run a job. Its readiness check concerns the login HTTP response, not successful onboarding. On a Mac without a running Docker engine, start your chosen engine before running it; a Docker CLI alone cannot execute the lab.
 

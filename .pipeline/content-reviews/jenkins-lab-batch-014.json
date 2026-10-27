@@ -49,6 +49,10 @@
       {
         "issue": "Local Docker CLI is available but its engine is stopped.",
         "resolution": "Do not alter the local engine; locally parse and compare paired files, and require actual disposable Docker execution in hosted CI before completion."
+      },
+      {
+        "issue": "Actual hosted startup reset the HTTP connection before the first response; URLError alone did not catch it.",
+        "resolution": "Retry ConnectionError and HTTPException within the existing deadline. Two source-extracted tests cover reset/refusal/503/disconnection recovery, missing-header timeout and propagation of programming errors."
       }
     ],
     "unresolvedCriticalOrMajorFindings": [],
@@ -59,19 +63,20 @@
       "scripts/build_algorithm_diagrams.py": "a7437faccdffd154c6a6635f5152b06e6ec1df6132fb1d651dc58353c2fd77df",
       "scripts/test-site.mjs": "ca7598a155168fbc8bab98ac1fec102527639bfc582c6f378fd5949223401cb7",
       "scripts/test_algorithm_diagrams.py": "1824eff46704eb108373f0799a82968526ea78949a2e42a4a38bd86a42c6f73a",
-      "src/content/posts/ko/2023-09-28-jenkins-docker-install.md": "adf64daf0b3123335ca8fe786893df68faf90f0b389d0a82e0895446aecabbe2",
+      "src/content/posts/ko/2023-09-28-jenkins-docker-install.md": "8114a1e18830d73757ee9ce304f4b36d1050dbc1c9379b8361bdff796727e58f",
       "content/diagrams/jenkins.json": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784",
       "scripts/check_jenkins_examples.py": "0de6bdf74adf851e6fb0a39dd4a9fa2c8f41a2e871d3fd23b5ad803fec0ffaf1",
-      "src/content/posts/en/2023-09-28-jenkins-docker-install.md": "9749786639b2c4f211d03d3c96499b4ac47c07543cd8109f88ef8aca41b41df7",
+      "src/content/posts/en/2023-09-28-jenkins-docker-install.md": "de501109b9282aa91656db6a640c0f42120e0bed981d8986aaf499af23c3c6c3",
       "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md": "268a67fb55f25363f38bc69a753361884acadd35a6631ae0974bca850ec05af2",
-      "src/content/posts/ko/2026-10-27-jenkins-home-backup-restore.md": "a73b829c297846970be81f026dd19f9d9c3e5699967b2a6c91206cd4f14f40fe"
+      "src/content/posts/ko/2026-10-27-jenkins-home-backup-restore.md": "a73b829c297846970be81f026dd19f9d9c3e5699967b2a6c91206cd4f14f40fe",
+      "scripts/test_jenkins_example_contracts.py": "64b3ed80798ffa30cca53cad330d52082afbeb7491a35c11c1a7a2470110a02f"
     }
   },
   "validation": {
     "localDockerExecution": false,
     "localReason": "Docker daemon unavailable; not started or configured by this task.",
     "pairedPythonFilesMatchAndParse": true,
-    "pythonTests": 159,
+    "pythonTests": 161,
     "nodeTests": 32,
     "astroErrors": 0,
     "astroWarnings": 0,
@@ -83,14 +88,14 @@
           "url": "https://youdozi.github.io/en/posts/2023-09-28-jenkins-docker-install/",
           "language": "en",
           "title": "Jenkins in Docker: Verify Startup and Container Recreation",
-          "htmlSha256": "a0ee52c7130550f16bf2930b9bc9f2f5cf8ed1fe8ab024e92eb3106c10cb13f0",
+          "htmlSha256": "96cc6c9bc909b16a2e0fdde3cac8304bd7ee4e606ad3a0e12a42ea6380ceb5cc",
           "result": "passed"
         },
         {
           "url": "https://youdozi.github.io/ko/posts/2023-09-28-jenkins-docker-install/",
           "language": "ko",
           "title": "Docker Jenkins: 부팅과 컨테이너 재생성 검증하기",
-          "htmlSha256": "178e26eb70600416536968bd5bcbd7291f22d47923fd1fa8b48fc86efafaa0c8",
+          "htmlSha256": "69fc545cd175afaa26b380bb1f2df8993fb3c56523ca90c7136d1240f01fdd56",
           "result": "passed"
         },
         {
@@ -509,7 +514,12 @@
       "KO controller lab390px",
       "EN restore lab390px"
     ],
-    "CI": "Exact-head hosted CI must execute both extracted Python files with Docker. Image digest and real version/result evidence are saved separately after the run."
+    "CI": "Exact-head hosted CI must execute both extracted Python files with Docker. Image digest and real version/result evidence are saved separately after the run.",
+    "initialHostedRun": {
+      "id": 40470039060,
+      "result": "failure",
+      "reason": "ConnectionResetError during startup; corrected and awaiting new exact-head CI"
+    }
   },
   "limits": [
     "The labs use fresh data and do not complete the setup wizard, install plugins, run jobs, decrypt credentials or establish production disaster recovery.",

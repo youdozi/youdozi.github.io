@@ -47,6 +47,7 @@ Python3와 Linux 컨테이너를 실행하는 Docker 엔진이 필요합니다. 
 ### `jenkins_lab.py`
 
 ```python
+import http.client
 import json
 import os
 import subprocess
@@ -98,7 +99,7 @@ class DockerLab:
                     self.version = response.headers.get('X-Jenkins')
                     if response.status == 200 and self.version and b'Jenkins' in response.read():
                         return name
-            except (urllib.error.URLError, TimeoutError):
+            except (urllib.error.URLError, TimeoutError, ConnectionError, http.client.HTTPException):
                 pass
             time.sleep(2)
         raise RuntimeError('Jenkins login was not ready within 180 seconds')
@@ -136,7 +137,7 @@ Docker 데몬을 사용할 수 있는 상태에서 실행합니다.
 python3 jenkins_lab.py
 ```
 
-컨트롤러를 두 번 시작할 때 각각 최대 180초 동안 `/login`의 HTTP200, `X-Jenkins` 헤더, `Jenkins`가 포함된 본문을 기다립니다. 표식 파일을 쓰고 초기 비밀번호를 출력 없이 읽은 뒤 첫 컨테이너를 교체하고 두 값을 다시 비교합니다. `recreated`·`markerPersisted`·`passwordPersisted`가 true이고 `result: passed`라면 선택한 검사를 통과한 것입니다. JSON에는 digest와 실제 Jenkins 버전도 기록하므로 임의의 pull 로그를 붙이지 않아도 됩니다.
+컨트롤러를 두 번 시작할 때 각각 최대 180초 동안 `/login`의 HTTP200, `X-Jenkins` 헤더, `Jenkins`가 포함된 본문을 기다립니다. 시작 중의 연결 재설정·일시적 HTTP 실패·미완성 HTTP 연결은 해당 제한 시간 안에서 재시도합니다. 표식 파일을 쓰고 초기 비밀번호를 출력 없이 읽은 뒤 첫 컨테이너를 교체하고 두 값을 다시 비교합니다. `recreated`·`markerPersisted`·`passwordPersisted`가 true이고 `result: passed`라면 선택한 검사를 통과한 것입니다. JSON에는 digest와 실제 Jenkins 버전도 기록하므로 임의의 pull 로그를 붙이지 않아도 됩니다.
 
 이 실습은 Jenkins 잠금 해제, 플러그인 설치, 관리자 계정 설정 완료나 작업 실행을 하지 않습니다. 준비 상태 검사는 로그인 HTTP 응답을 확인하며 초기 설정 완료를 뜻하지 않습니다. Mac에서 Docker 엔진이 꺼져 있다면 선택한 엔진을 먼저 시작해야 합니다. Docker CLI만으로는 실습을 실행할 수 없습니다.
 
