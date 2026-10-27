@@ -8,12 +8,12 @@ categories:
 tags:
   - java
   - algorithms
-publishedAt: 2026-10-27T04:25:30.219Z
+publishedAt: 2026-10-27T05:10:21.640+00:00
 title: "Generate an x-Spaced Sequence in Java: Promote Before Multiplication"
 description: Build n values from x through x*n with IntStream. Explain why
   mapToLong alone does not prevent int overflow, and check positive, negative,
   and zero steps.
-updatedAt: 2026-10-27T04:56:35.582+00:00
+updatedAt: 2026-10-27T05:10:21.640+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary problem conditions and Java API checked; paired complete
