@@ -5,7 +5,9 @@ export async function getStaticPaths() { return (await publishedLanguages()).fla
 const lang = Astro.params.lang as Language;
 const kind = Astro.params.taxonomy as 'categories' | 'tags';
 const counts = new Map<string,number>();
-for (const entry of (await entries()).filter(e => e.language === lang)) for (const value of entry[kind]) counts.set(value,(counts.get(value)||0)+1);
+for (const entry of (await entries()).filter(e => e.language === lang)) for (const value of entry[kind]) {
+  if (value !== 'archive-renewal') counts.set(value,(counts.get(value)||0)+1);
+}
 ---
 <Base title={text[lang][kind]} lang={lang} alternates={(await publishedLanguages()).map(language => ({ language, url: `/${language}/${kind}/` }))}>
   <section class="page-heading"><span class="eyebrow">{text[lang].overview}</span><h1>{text[lang][kind]}</h1></section>
