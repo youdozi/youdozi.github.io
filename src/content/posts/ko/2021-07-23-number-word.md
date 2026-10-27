@@ -1,82 +1,56 @@
 ---
-title: "[코딩테스트] 프로그래머스 - 숫자 문자열과 영단어(JAVA)"
-language: "ko"
-translationKey: "2021-07-23-number-word"
-routeSlug: "2021-07-23-number-word"
-kind: "post"
-publishedAt: "2021-07-22T16:40:30.000Z"
+title: "Java 숫자 영단어 변환: replace와 replaceAll 구분하기"
+language: ko
+translationKey: 2021-07-23-number-word
+routeSlug: 2021-07-23-number-word
+kind: post
+publishedAt: 2021-07-22T16:40:30.000Z
 categories:
-  - "coding-test"
+  - coding-test
 tags:
-  - "코딩테스트"
-  - "프로그래머스"
-legacyUrl: "/coding-test/number-word/"
-legacySource: "_posts/coding-test/2021-07-23-number-word.markdown"
-updatedAt: "2026-10-24T09:00:00+09:00"
-reviewedAt: "2026-10-24"
-reviewStatus: "revised"
-reviewScope: "문제 조건 대조 및 Java 예제 실행 검증"
-archiveBodySha256: "ba839b771906b77824503f370c411957b63b0618468d62fccd976afe2ee7db7c"
+  - 코딩테스트
+  - 프로그래머스
+legacyUrl: /coding-test/number-word/
+legacySource: _posts/coding-test/2021-07-23-number-word.markdown
+updatedAt: 2026-10-27T03:54:18.369Z
+reviewedAt: "2026-10-27"
+reviewStatus: revised
+reviewScope: Problem conditions and Java APIs checked; paired solutions compiled
+  for Java11 and executed on JDK17.
+archiveBodySha256: ba839b771906b77824503f370c411957b63b0618468d62fccd976afe2ee7db7c
 reviewSources:
-  - "https://school.programmers.co.kr/learn/courses/30/lessons/81301"
+  - https://school.programmers.co.kr/learn/courses/30/lessons/81301
+  - https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html
+description: 숫자와 zero~nine 영단어가 섞인 유효 입력을 String.replace로 정규화합니다. 정규식이 필요 없는 이유와
+  int 변환·복잡도·적용 범위를 설명합니다.
 ---
-문제 설명
+숫자와 영단어가 섞인 유효 입력은 `zero`부터 `nine`까지 고정 문자열을 숫자로 치환한 뒤 정수로 읽으면 됩니다. 찾을 대상이 정규식이 아니므로 `replaceAll` 대신 `String.replace`를 사용할 수 있습니다.
 
-네오와 프로도가 숫자놀이를 하고 있습니다. 네오가 프로도에게 숫자를 건넬 때 일부 자릿수를 영단어로 바꾼 카드를 건네주면 프로도는 원래 숫자를 찾는 게임입니다.
+[문제](https://school.programmers.co.kr/learn/courses/30/lessons/81301)는 소문자 숫자 영단어와 숫자로 구성된 올바른 입력을 보장합니다. 결과는 1~2,000,000,000이고 맨 앞 0은 주어지지 않습니다. 일반적인 영어 수 표현을 해석하는 파서는 아닙니다.
 
-다음은 숫자의 일부 자릿수를 영단어로 바꾸는 예시입니다.
+## 고정된 열 단어 치환
 
-1478 → "one4seveneight"
-
-234567 → "23four5six7"
-
-10203 → "1zerotwozero3"
-
-이렇게 숫자의 일부 자릿수가 영단어로 바뀌어졌거나, 혹은 바뀌지 않고 그대로인 문자열 s가 매개변수로 주어집니다. s가 의미하는 원래 숫자를 return 하도록 solution 함수를 완성해주세요.
-
----
-제한사항
-- 1 ≤ s의 길이 ≤ 50
-- s가 "zero" 또는 "0"으로 시작하는 경우는 주어지지 않습니다.
-- return 값이 1 이상 2,000,000,000 이하의 정수가 되는 올바른 입력만 s로 주어집니다.
-
----
-풀이
-- 프로그래머스 level 1단계 문제
-- 정통적인 for loop를 이용하는게 정신건강 상 좋습니다..
-- 뭔가 아쉽긴 한 문제...
-
+전체 코드를 `Solution.java`에 저장할 수 있습니다. 별도 import가 필요 없으며 Java 11 타깃으로 컴파일·실행했습니다.
 
 ```java
-public int solution(String s){
-
-    /**
-     * 미리 숫자 & 영단어를 array로 선언하도록 합니다.
-     */
-    String[] strArray = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
-    "nine"};
-    String[] numArray = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-
-    /**
-     * strArray for loop를 돌면서 s.replaceAll 메서드 실행
-     */
-    for (int i = 0; i < strArray.length; i++) {
-      s = s.replace(strArray[i], numArray[i]);
+public class Solution {
+    public int solution(String s) {
+        String[] words = {"zero", "one", "two", "three", "four",
+                "five", "six", "seven", "eight", "nine"};
+        for (int digit = 0; digit < words.length; digit++) {
+            s = s.replace(words[digit], Integer.toString(digit));
+        }
+        return Integer.parseInt(s);
     }
-
-    /**
-     * String -> Integer 변환
-     */
-    return Integer.parseInt(s);
 }
 ```
 
-## 검증 및 보강 — 2026-10-24
+[`String.replace(CharSequence, CharSequence)`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)는 일치하는 문자열을 리터럴로 치환합니다. `replaceAll`은 첫 인자를 정규식으로 처리하므로 규칙이 다릅니다. 여기서는 열 단어 어디에도 정규식 문법이 필요하지 않습니다.
 
-숫자 영단어는 정규식이 아닌 고정 문자열이므로 `replaceAll` 대신 `replace`로 충분합니다. 원문 코드에 빠져 있던 메서드 닫는 중괄호도 보완했습니다. `one4seveneight → 1478`, `23four5six7 → 234567`, `123 → 123`을 확인하세요. 치환 대상은 10개로 고정되어 있어 시간은 입력 길이에 선형이고, 각 치환은 새 문자열을 만들 수 있습니다.
+예를 들어 `one4seveneight`는 `1478`, `23four5six7`은 `234567`이 됩니다. 이미 숫자로만 된 `123`도 그대로 정수 123이 됩니다. `two` 뒤에 `zero`가 아홉 번 이어진 입력은 2,000,000,000으로 int 범위 안입니다.
 
-메서드 예제는 `Solution` 클래스 내부에 넣는 형태이며, 사용한 클래스는 추가 import 없이 `java.lang`의 기본 클래스입니다. 필요한 import를 클래스 선언 위에 추가하세요.
+치환 결과의 숫자는 다른 영단어를 새로 만들지 않고, 열 단어 중 다른 단어를 내부에 포함하는 항목도 없으므로 이 순서대로 처리할 수 있습니다. 잘못된 단어·공백·대문자·범위 밖 숫자의 처리는 문제의 보장 범위에 포함되지 않습니다. 예를 들어 임의 입력에서 파싱 실패가 나면 이를 유효한 정수라고 보정해 주는 코드는 아닙니다.
 
-### 확인한 자료
+단어 수가 10개로 고정돼 있어 길이 n에 대해 시간은 O(n)입니다. 문자열은 불변이므로 중간 치환 결과를 만들 수 있고, 추가 공간도 O(n)으로 봅니다. 이 작은 입력에서 다른 파서보다 빠르다는 성능 측정은 하지 않았습니다.
 
-- [공식 자료 1](https://school.programmers.co.kr/learn/courses/30/lessons/81301)
+정규식이 실제로 유용한 문자열 변환은 [신규 아이디 정규화](/ko/posts/2021-07-19-new-id/)와 비교할 수 있습니다.
