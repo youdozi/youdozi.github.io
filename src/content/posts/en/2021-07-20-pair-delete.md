@@ -13,7 +13,7 @@ title: Remove Adjacent Duplicate Pairs in Java with an ArrayDeque Stack
 description: Reduce adjacent equal-character pairs with a stack. Explain the
   prefix invariant, cascading removal, million-character boundaries, and time
   and space costs.
-updatedAt: "2026-10-27T04:21:24+00:00"
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; complete paired solutions
@@ -25,6 +25,12 @@ reviewSources:
 A stack solves adjacent equal-character pair removal in one traversal by retaining the reduced result of the prefix already read. If the next character matches the top, remove the pair; otherwise push it.
 
 The [exercise](https://school.programmers.co.kr/learn/courses/30/lessons/12973) accepts 1–1,000,000 lowercase English letters and returns 1 if everything can be removed, or 0 otherwise. Even total counts for each character are insufficient because removal depends on adjacency.
+
+## Processing flow
+
+![The stack stores the reduced prefix. Each new character removes the equal top or becomes the new top.](/assets/diagrams/2021-07-20-pair-delete-en.svg)
+
+The stack stores the reduced prefix. Each new character removes the equal top or becomes the new top.
 
 ## Retain the reduced prefix
 

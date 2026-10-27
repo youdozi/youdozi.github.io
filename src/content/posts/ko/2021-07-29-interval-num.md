@@ -12,7 +12,7 @@ tags:
   - 프로그래머스
 legacyUrl: /coding-test/interval-num/
 legacySource: _posts/coding-test/2021-07-29-interval-num.markdown
-updatedAt: 2026-10-27T04:25:30.219Z
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary problem conditions and Java API checked; paired complete
@@ -27,6 +27,12 @@ description: x부터 시작해 x 간격의 n개 값을 만드는 Java 풀이입�
 x부터 시작하는 n개 값은 `x × 1`부터 `x × n`까지입니다. 결과가 int 범위를 넘을 수 있으므로 배열의 타입뿐 아니라 **곱셈이 수행되는 타입**도 long이어야 합니다.
 
 [문제 조건](https://school.programmers.co.kr/learn/courses/30/lessons/12954)은 x가 -10,000,000~10,000,000이고 n은 1~1,000입니다. 따라서 마지막 값의 절댓값은 최대 10,000,000,000이어서 long 배열로 반환합니다.
+
+## 처리 흐름
+
+![0부터 시작하는 인덱스를 항 번호로 바꾸고, x를 long으로 승격한 뒤 곱해 순서대로 배열에 담습니다.](/assets/diagrams/2021-07-29-interval-num-ko.svg)
+
+0부터 시작하는 인덱스를 항 번호로 바꾸고, x를 long으로 승격한 뒤 곱해 순서대로 배열에 담습니다.
 
 ## 인덱스를 항 번호로 바꾸기
 

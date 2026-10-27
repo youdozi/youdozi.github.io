@@ -12,7 +12,7 @@ tags:
   - 프로그래머스
 legacyUrl: /coding-test/plus-minus/
 legacySource: _posts/coding-test/2021-07-22-plus-minus.markdown
-updatedAt: 2026-10-27T04:25:30.219Z
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary problem conditions and Java API checked; paired complete
@@ -27,6 +27,12 @@ description: IntStream으로 절댓값 배열과 부호 배열을 연결해 합�
 절댓값과 부호가 따로 주어지면, 같은 인덱스의 부호를 먼저 적용한 뒤 합산합니다. `signs[i]`가 true면 양수, false면 음수이므로 조건식 하나로 실제 값을 복원할 수 있습니다.
 
 [음양 더하기 문제](https://school.programmers.co.kr/learn/courses/30/lessons/76501)는 두 배열의 길이가 같고 길이 1~1,000, 절댓값 1~1,000임을 보장합니다. 부호 배열을 따로 정렬하면 원래 수와의 대응이 깨지므로 입력 순서대로 처리합니다.
+
+## 처리 흐름
+
+![두 배열의 같은 인덱스를 읽고 부호를 적용한 뒤 실제 값을 합산합니다.](/assets/diagrams/2021-07-22-plus-minus-ko.svg)
+
+두 배열의 같은 인덱스를 읽고 부호를 적용한 뒤 실제 값을 합산합니다.
 
 ## 같은 인덱스를 함께 읽기
 

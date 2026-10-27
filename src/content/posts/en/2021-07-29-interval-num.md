@@ -13,7 +13,7 @@ title: "Generate an x-Spaced Sequence in Java: Promote Before Multiplication"
 description: Build n values from x through x*n with IntStream. Explain why
   mapToLong alone does not prevent int overflow, and check positive, negative,
   and zero steps.
-updatedAt: 2026-10-27T04:25:30.219Z
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary problem conditions and Java API checked; paired complete
@@ -25,6 +25,12 @@ reviewSources:
 The n values starting at x are `x × 1` through `x × n`. Because results can exceed int range, both the result array and **the multiplication itself** must use long.
 
 The [exercise](https://school.programmers.co.kr/learn/courses/30/lessons/12954) bounds x from -10,000,000 to 10,000,000 and n from 1 to 1,000. The final value can therefore have magnitude 10,000,000,000, requiring a long array.
+
+## Processing flow
+
+![Turn zero-based indices into term numbers, promote x to long before multiplication, and collect in order.](/assets/diagrams/2021-07-29-interval-num-en.svg)
+
+Turn zero-based indices into term numbers, promote x to long before multiplication, and collect in order.
 
 ## Convert an index to a term number
 

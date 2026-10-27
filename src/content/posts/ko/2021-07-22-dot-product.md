@@ -12,7 +12,7 @@ tags:
   - 프로그래머스
 legacyUrl: /coding-test/dot-product/
 legacySource: _posts/coding-test/2021-07-22-dot-product.markdown
-updatedAt: 2026-10-27T03:54:18.369Z
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; paired solutions compiled
@@ -27,6 +27,12 @@ description: 같은 인덱스의 배열 원소를 곱해 합산하는 Java 풀�
 두 배열의 내적은 같은 인덱스의 원소를 곱한 뒤 모두 더한 값입니다. 배열의 각 원소를 먼저 더하거나 두 배열의 전체 합을 곱하면 다른 계산이 됩니다.
 
 [문제 조건](https://school.programmers.co.kr/learn/courses/30/lessons/70128)은 길이가 같은 정수 배열, 길이 1~1,000, 원소 -1,000~1,000입니다. 이 범위에서는 결과를 `int`로 반환할 수 있습니다.
+
+## 처리 흐름
+
+![같은 인덱스의 두 원소를 곱하고 그 결과를 합산합니다. 문제 범위의 결과는 int에 들어갑니다.](/assets/diagrams/2021-07-22-dot-product-ko.svg)
+
+같은 인덱스의 두 원소를 곱하고 그 결과를 합산합니다. 문제 범위의 결과는 int에 들어갑니다.
 
 ## 인덱스별 곱을 합산
 

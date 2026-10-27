@@ -12,7 +12,7 @@ tags:
   - 프로그래머스
 legacyUrl: /coding-test/unsuccessful-runner/
 legacySource: _posts/coding-test/2021-07-23-unsuccessful-runner.markdown
-updatedAt: 2026-10-27T04:11:15.275Z
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; complete paired solutions
@@ -27,6 +27,12 @@ description: 동명이인이 있는 참가자·완주자 목록의 차이를 Has
 미완주 선수를 찾을 때는 이름이 있는지만 확인하지 말고 이름별 인원수를 세어야 합니다. 참가자 빈도에서 완주자 빈도를 빼면, 문제 조건상 정확히 한 이름의 값만 1로 남습니다.
 
 [문제 조건](https://school.programmers.co.kr/learn/courses/30/lessons/42576)은 참가자가 최대 100,000명이고 완주자는 한 명 적으며, 동명이인이 있을 수 있다는 것입니다. 이름은 길이 1~20의 소문자 영문입니다. 완료 목록은 참가자 목록에서 한 사람을 제외한 올바른 입력을 전제로 합니다.
+
+## 처리 흐름
+
+![참가자의 이름별 인원수를 세고 완주자를 한 명씩 뺀 뒤, 남은 인원수가 1인 이름을 반환합니다.](/assets/diagrams/2021-07-23-unsuccessful-runner-ko.svg)
+
+참가자의 이름별 인원수를 세고 완주자를 한 명씩 뺀 뒤, 남은 인원수가 1인 이름을 반환합니다.
 
 ## 이름별 차이를 저장
 

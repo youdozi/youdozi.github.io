@@ -71,10 +71,10 @@
     ],
     "unresolvedCriticalOrMajorFindings": [],
     "reviewedSha256": {
-      "src/content/posts/en/2021-07-22-plus-minus.md": "769e50827ba1b48eaa4044ea5408d7d0400911eeeeabd1f6978602975564f252",
-      "src/content/posts/ko/2021-07-22-plus-minus.md": "3c3ef89f1f409f6e17b48f9f98febc04cee06af8d430829456078d43a270494c",
-      "src/content/posts/en/2021-07-29-interval-num.md": "a7c9bbe17ac8b762461bc9aca4c98c83d8017817a1a2cbaa7bbd25e9900061fa",
-      "src/content/posts/ko/2021-07-29-interval-num.md": "e3f651a91cbb3b2a441247e148e689241a256b68810f95975aa821e0edfab4c9",
+      "src/content/posts/en/2021-07-22-plus-minus.md": "29816c2ffa3d0258022184af41b875283c966eff30b4fca0b6752ea3401a0117",
+      "src/content/posts/ko/2021-07-22-plus-minus.md": "07fa553fe821701a3f1c69382c33276c94df85aebfa31541d545ad1a3fd82e47",
+      "src/content/posts/en/2021-07-29-interval-num.md": "520e013c8985fe1e7ee4643f83543f82f260061ec2d2078c67f74f52564c34fe",
+      "src/content/posts/ko/2021-07-29-interval-num.md": "686d10bd34ad82fdf78bdc069b789752a8248d547ea3b3f8b9b06ff44a61ca70",
       "src/lib/algorithm-guide.ts": "2d83fca674ee0b82563a7f4b23caaabe7f2f00403a7f1a21e0972f3c4f69652d",
       "src/components/AlgorithmCategory.astro": "6f8b6745e48c054c720bcfe74b2955af602d652801f355a1647ca74bdb7844bc",
       "src/pages/[lang]/[taxonomy]/[term].astro": "ddad9db2ea4ab5b7c0a27510e1d1e9943c6e324ae2f7f740e3e1fe85024c67f5",
@@ -120,28 +120,28 @@
           "url": "https://youdozi.github.io/en/posts/2021-07-22-plus-minus/",
           "language": "en",
           "title": "Sum Signed Values in Java with IntStream",
-          "htmlSha256": "60e7354516c5ecf09118f4e6f6e18dbd855c4ad819763544ad7f669491881afd",
+          "htmlSha256": "25c4321755885aaa9eecf100b923f67902cb9fe668f18dc158710fdc6f19d5c8",
           "result": "passed"
         },
         {
           "url": "https://youdozi.github.io/ko/posts/2021-07-22-plus-minus/",
           "language": "ko",
           "title": "Java 음양 더하기: 인덱스별 부호를 적용해 합산하기",
-          "htmlSha256": "12fb1e9bb48536ee5e6817bca5687b4be7b29e0831e30d7315aa4b2ab75038a6",
+          "htmlSha256": "5581f57f76ccd7d79b7444fe5823f4c8bc6ca3bd86dc4031364fded156c9b363",
           "result": "passed"
         },
         {
           "url": "https://youdozi.github.io/en/posts/2021-07-29-interval-num/",
           "language": "en",
           "title": "Generate an x-Spaced Sequence in Java: Promote Before Multiplication",
-          "htmlSha256": "fab8f01ed53a77ee3b35d13827a89986d7322946ae15983d39fd58353ffebf42",
+          "htmlSha256": "88cbf348bb86dbde99d1fcb054ecb371e8fd59e62205dbb04fe2570d6810606c",
           "result": "passed"
         },
         {
           "url": "https://youdozi.github.io/ko/posts/2021-07-29-interval-num/",
           "language": "ko",
           "title": "Java x 간격 수열 만들기: 곱셈 전에 long으로 변환하기",
-          "htmlSha256": "d9b4f3f8896e170479269aab4bbc21af05b403dc0b1480a0a664a38dcb5cf9a0",
+          "htmlSha256": "d20a2adfa39c0875c0ec9fb857b4484ded2ab84f44b9ad5fecabab761b3aa9e3",
           "result": "passed"
         }
       ],
@@ -172,11 +172,12 @@
         "columns": "354px"
       }
     },
-    "pythonTestsPassed": 149
+    "pythonTestsPassed": 153
   },
   "selectionEvidence": {
     "scope": "Completes all ten existing algorithm topics in both languages and connects their category navigation.",
     "limits": "No measured English keyword demand or ranking improvement claimed."
   },
-  "publication": "Draft review only. New manuscripts and guide changes await explicit approval before merge and deployment."
+  "publication": "Draft review only. New manuscripts and guide changes await explicit approval before merge and deployment.",
+  "followupVisualReview": "java-algorithm-flows-007.json: flow diagrams added; code and original publication identity preserved; reviewed article hashes refreshed."
 }

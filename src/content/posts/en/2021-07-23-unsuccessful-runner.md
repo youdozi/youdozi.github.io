@@ -13,7 +13,7 @@ title: Find the Missing Runner in Java with Name Frequencies
 description: Subtract completion counts from participant counts with HashMap.
   Handle duplicate names without Set subtraction and explain the
   one-missing-runner contract.
-updatedAt: "2026-10-27T04:21:24+00:00"
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; complete paired solutions
@@ -25,6 +25,12 @@ reviewSources:
 To find the missing runner, count people per name rather than checking only whether a name exists. Subtract completion frequencies from participant frequencies; the exercise guarantees that exactly one name remains with count 1.
 
 The [input contract](https://school.programmers.co.kr/learn/courses/30/lessons/42576) allows up to 100,000 participants, one fewer finisher, and duplicate names. Names contain 1–20 lowercase English letters. The completion list is assumed to be a valid participant list with one person removed.
+
+## Processing flow
+
+![Count every participant, subtract every completion, then return the name whose remaining count is one.](/assets/diagrams/2021-07-23-unsuccessful-runner-en.svg)
+
+Count every participant, subtract every completion, then return the name whose remaining count is one.
 
 ## Store the count difference
 

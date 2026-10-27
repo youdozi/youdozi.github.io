@@ -20,6 +20,8 @@ npm run dev
 
 ## 콘텐츠 작성
 
+기술 글의 새 작성·본문 보강에는 **흐름 그림과 대응하는 코드 예제를 함께 포함**합니다. 그림·코드·설명의 순서와 분기를 대조하고, 실제 렌더링·모바일 가독성·코드 실행을 확인합니다. 자세한 기준은 [기술 글 작성 기준](docs/technical-writing.md)과 [저장소 작업 규칙](AGENTS.md)을 따릅니다.
+
 - 기존/수동 작성 글: `src/content/posts/{en,ko}/*.md`
 - 새 자동 다이제스트: `src/content/digests/YYYY-MM-DD.json`
 - 두 언어의 동일한 글은 `translationKey`를 공유합니다.

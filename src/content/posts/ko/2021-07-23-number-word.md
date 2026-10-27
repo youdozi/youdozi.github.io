@@ -12,7 +12,7 @@ tags:
   - 프로그래머스
 legacyUrl: /coding-test/number-word/
 legacySource: _posts/coding-test/2021-07-23-number-word.markdown
-updatedAt: 2026-10-27T03:54:18.369Z
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; paired solutions compiled
@@ -27,6 +27,12 @@ description: 숫자와 zero~nine 영단어가 섞인 유효 입력을 String.rep
 숫자와 영단어가 섞인 유효 입력은 `zero`부터 `nine`까지 고정 문자열을 숫자로 치환한 뒤 정수로 읽으면 됩니다. 찾을 대상이 정규식이 아니므로 `replaceAll` 대신 `String.replace`를 사용할 수 있습니다.
 
 [문제](https://school.programmers.co.kr/learn/courses/30/lessons/81301)는 소문자 숫자 영단어와 숫자로 구성된 올바른 입력을 보장합니다. 결과는 1~2,000,000,000이고 맨 앞 0은 주어지지 않습니다. 일반적인 영어 수 표현을 해석하는 파서는 아닙니다.
+
+## 처리 흐름
+
+![zero부터 nine까지 고정된 영단어를 숫자 문자로 치환하고, 남은 십진수 문자열을 정수로 변환합니다.](/assets/diagrams/2021-07-23-number-word-ko.svg)
+
+zero부터 nine까지 고정된 영단어를 숫자 문자로 치환하고, 남은 십진수 문자열을 정수로 변환합니다.
 
 ## 고정된 열 단어 치환
 

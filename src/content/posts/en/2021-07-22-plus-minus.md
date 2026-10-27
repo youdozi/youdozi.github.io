@@ -13,7 +13,7 @@ title: Sum Signed Values in Java with IntStream
 description: Combine absolute values and matching boolean signs with IntStream.
   Check cancellation, all-negative input, int bounds, and the equal-length array
   contract.
-updatedAt: 2026-10-27T04:25:30.219Z
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Primary problem conditions and Java API checked; paired complete
@@ -25,6 +25,12 @@ reviewSources:
 When magnitudes and signs arrive separately, apply the sign at each matching index before summing. `signs[i]` means positive when true and negative when false, so one conditional expression reconstructs each value.
 
 The [exercise](https://school.programmers.co.kr/learn/courses/30/lessons/76501) guarantees equal array lengths from 1 to 1,000 and magnitudes from 1 to 1,000. Sorting the signs separately would break their association with the original values; process the arrays in their given order.
+
+## Processing flow
+
+![Read the same index in both arrays, apply its sign, then sum the signed values.](/assets/diagrams/2021-07-22-plus-minus-en.svg)
+
+Read the same index in both arrays, apply its sign, then sum the signed values.
 
 ## Read matching indices together
 

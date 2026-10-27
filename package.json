@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "check": "npm run check:digests && astro check",
-    "build": "npm run check:digests && node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py && python3 -B scripts/indexnow.py",
+    "build": "npm run check:digests && node scripts/prepare-public.mjs && python3 -B scripts/build_algorithm_diagrams.py && astro build && python3 -B scripts/check_site.py && python3 -B scripts/indexnow.py",
     "preview": "astro preview",
     "test": "node --test scripts/test-site.mjs scripts/test-translations.mjs scripts/test-reader-markdown.mjs scripts/test-related.mjs scripts/test-algorithm-guide.mjs",
     "test:python": "python3 -m unittest discover -s scripts -p 'test*.py' -v",

@@ -13,7 +13,7 @@ title: "Java Array Dot Product: IntStream and Integer Bounds"
 description: Multiply matching array elements and sum them with IntStream.
   Understand signs, int bounds, and why wider multiplication must promote
   operands before overflow.
-updatedAt: "2026-10-27T04:06:49+00:00"
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; paired solutions compiled
@@ -25,6 +25,12 @@ reviewSources:
 The dot product of two arrays is the sum of products at matching indices. Adding the elements first, or multiplying the two array sums, computes something different.
 
 The [exercise](https://school.programmers.co.kr/learn/courses/30/lessons/70128) supplies equal-length integer arrays of length 1–1,000 with elements from -1,000 to 1,000. Within those bounds, an `int` result is sufficient.
+
+## Processing flow
+
+![Map each shared index to a product and sum those products. The exercise bounds fit int.](/assets/diagrams/2021-07-22-dot-product-en.svg)
+
+Map each shared index to a product and sum those products. The exercise bounds fit int.
 
 ## Sum the products by index
 

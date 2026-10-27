@@ -12,7 +12,7 @@ tags:
   - 프로그래머스
 legacyUrl: /coding-test/fail-percentage/
 legacySource: _posts/coding-test/2021-07-24-fail-percentage.markdown
-updatedAt: 2026-10-27T04:11:15.275Z
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; complete paired solutions
@@ -27,6 +27,12 @@ description: 스테이지별 실패 인원과 도달 인원을 계산하고, lon
 실패율의 분모는 전체 이용자 수가 아니라 해당 스테이지에 도달한 인원입니다. 스테이지별 정지 인원을 세고 남은 도달 인원을 갱신한 뒤, 실패율 내림차순·번호 오름차순으로 정렬해야 합니다.
 
 [문제](https://school.programmers.co.kr/learn/courses/30/lessons/42889)는 스테이지 N≤500, 이용자 M≤200,000을 보장합니다. 입력 값 N+1은 모든 스테이지를 통과한 이용자이며 정렬 대상 스테이지가 아닙니다. 도달자가 없는 스테이지의 실패율은 0입니다.
+
+## 처리 흐름
+
+![멈춘 인원을 빼기 전에 도달 인원을 저장합니다. long 교차곱으로 비율을 비교하고 동률이면 스테이지 번호로 정렬합니다.](/assets/diagrams/2021-07-24-fail-percentage-ko.svg)
+
+멈춘 인원을 빼기 전에 도달 인원을 저장합니다. long 교차곱으로 비율을 비교하고 동률이면 스테이지 번호로 정렬합니다.
 
 ## 빈도와 도달 인원 계산
 
