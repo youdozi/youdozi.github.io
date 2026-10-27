@@ -137,5 +137,13 @@
     "scope": "Own integration review after CI discovery; manuscript and independent-review target hashes unchanged.",
     "sha256": "99d3af0bcf304aa9a8cac3d8c39b245098faae85d5244682740549539f70970f",
     "localValidation": "npm run test:articles and all 43 shell fixture cases passed."
+  },
+  "publicationApproval": {
+    "approvedAt": "2026-10-27T02:36:39+00:00",
+    "approvedBy": "youdozi",
+    "basis": "User requested 진행해줘 after the concrete Draft PR56 review result.",
+    "pullRequest": 56,
+    "englishPublicationPreparedAt": "2026-10-27T02:36:39+00:00",
+    "scope": "Publish four reviewed English/Korean pairs. Only first-English publication and modified timestamps changed after review; Korean dates and all article bodies preserved."
   }
 }

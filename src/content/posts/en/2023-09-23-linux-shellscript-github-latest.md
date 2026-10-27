@@ -4,10 +4,10 @@ language: "en"
 translationKey: "2023-09-23-linux-shellscript-github-latest"
 routeSlug: "2023-09-23-linux-shellscript-github-latest"
 kind: "post"
-publishedAt: "2026-10-27T02:12:24+00:00"
+publishedAt: "2026-10-27T02:36:39+00:00"
 categories: ["linux"]
 tags: ["linux", "bash", "shell script", "jq", "github latest release"]
-updatedAt: "2026-10-27T02:12:24+00:00"
+updatedAt: "2026-10-27T02:36:39+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Primary documentation checked; published runnable example verified."

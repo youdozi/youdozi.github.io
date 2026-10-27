@@ -4,10 +4,10 @@ language: "en"
 translationKey: "2023-11-17-linux-shellscript-version-compare"
 routeSlug: "2023-11-17-linux-shellscript-version-compare"
 kind: "post"
-publishedAt: "2026-10-27T02:12:24+00:00"
+publishedAt: "2026-10-27T02:36:39+00:00"
 categories: ["linux"]
 tags: ["linux", "bash", "shell script", "function"]
-updatedAt: "2026-10-27T02:12:24+00:00"
+updatedAt: "2026-10-27T02:36:39+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Primary documentation checked; published runnable example verified."

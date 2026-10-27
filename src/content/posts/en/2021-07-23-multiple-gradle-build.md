@@ -4,10 +4,10 @@ language: "en"
 translationKey: "2021-07-23-multiple-gradle-build"
 routeSlug: "2021-07-23-multiple-gradle-build"
 kind: "post"
-publishedAt: "2026-10-27T02:14:35+00:00"
+publishedAt: "2026-10-27T02:36:39+00:00"
 categories: ["springboot"]
 tags: ["gradle", "vue", "build", "SpringBoot"]
-updatedAt: "2026-10-27T02:14:35+00:00"
+updatedAt: "2026-10-27T02:36:39+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Primary documentation checked; published runnable example verified."
