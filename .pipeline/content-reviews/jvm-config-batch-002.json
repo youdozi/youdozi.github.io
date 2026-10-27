@@ -161,5 +161,13 @@
     "eightPageAudit": "Passed canonical, reciprocal en/ko and x-default, H1/descriptions/OG/schema dates, RSS, search indexes, sitemap lastmod, reader code and absence of editorial banners."
   },
   "ci": "Both executable checkers configured. Final PR check result tracked separately.",
-  "publication": "Draft review only. No batch changes deployed before explicit approval."
+  "publication": "Draft review only. No batch changes deployed before explicit approval.",
+  "publicationApproval": {
+    "approvedAt": "2026-10-27T03:19:18+00:00",
+    "approvedBy": "youdozi",
+    "pullRequest": 57,
+    "basis": "User explicitly requested PR57 confirmation followed by the next work batch.",
+    "englishPublicationPreparedAt": "2026-10-27T03:19:18+00:00",
+    "scope": "Publish four reviewed Korean/English pairs. Only first-English publication/modified timestamps changed; Korean original dates and all bodies preserved."
+  }
 }

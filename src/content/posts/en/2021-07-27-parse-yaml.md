@@ -10,9 +10,9 @@ tags:
   - bash
   - parse
   - yaml
-publishedAt: 2026-10-27T03:08:04.102Z
+publishedAt: "2026-10-27T03:19:18+00:00"
 title: "Read YAML from Shell: Validate a Port and Run a Command Without eval"
-updatedAt: 2026-10-27T03:08:04.102Z
+updatedAt: "2026-10-27T03:19:18+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from

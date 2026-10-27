@@ -8,9 +8,9 @@ categories:
 tags:
   - spring batch 5
   - migration
-publishedAt: 2026-10-27T03:08:04.102Z
+publishedAt: "2026-10-27T03:19:18+00:00"
 title: "Spring Batch 5 Migration: Schema, Parameters, and Restart Checks"
-updatedAt: 2026-10-27T03:08:04.102Z
+updatedAt: "2026-10-27T03:19:18+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from

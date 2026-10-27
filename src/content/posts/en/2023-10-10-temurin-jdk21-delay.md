@@ -9,9 +9,9 @@ tags:
   - jdk21
   - adoptium
   - temurin
-publishedAt: 2026-10-27T03:08:04.102Z
+publishedAt: "2026-10-27T03:19:18+00:00"
 title: "Temurin 21 Release Delay: History and How to Check JDK Binaries"
-updatedAt: 2026-10-27T03:08:04.102Z
+updatedAt: "2026-10-27T03:19:18+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
