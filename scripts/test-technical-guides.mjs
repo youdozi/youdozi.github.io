@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {categoryGuide,categoryGuideAlternates,technicalGuides,guideIndexAlternates,guideIndexStructuredData,guideTerms} from '../src/lib/technical-guides.ts';
+import {categoryGuide,categoryGuideAlternates,technicalGuides,guideIndexAlternates,guideIndexStructuredData,guideTerms,additionalArticleGuides} from '../src/lib/technical-guides.ts';
 const entry=(key,language='en',category='linux',more={})=>({translationKey:key,language,title:key,slug:key,kind:'post',publishedAt:new Date('2021-01-01Z'),categories:[category],tags:[],description:'Example.',url:`/${language}/posts/${key}/`,...more});
 test('paths and index alternates use actual eligible entries without phantom languages',()=>{
  const items=[entry('2021-07-27-parse-yaml','ko'),entry('future','en','linux',{publishedAt:new Date('2999-01-01Z')}),entry('example','en','jdk',{reviewStatus:'example'}),entry('digest','en','util',{kind:'digest'}),entry('other','en','other')];
@@ -23,7 +23,7 @@ test('existing algorithm and Spring paths remain in the registry with actual cou
  const guides=technicalGuides('en',items);
  assert.deepEqual(guides.map(g=>g.url),['/en/categories/coding-test/','/en/categories/springboot/','/en/categories/jdk/','/en/categories/util/']);
  assert.deepEqual(guides.map(g=>g.ordered.length),[1,1,1,1]);
- assert.equal(guideTerms.length,7);
+ assert.equal(guideTerms.length,8);
 });
 test('index schema preserves the visible path order and locale-specific URLs',()=>{
  const items=[entry('2021-08-06-search-github','ko','util'),entry('2023-09-20-jdk-21-release','ko','jdk')];
@@ -46,4 +46,15 @@ test('publishing and Jenkins paths keep prerequisites before deployment and rest
    assert.equal(guide.url,`/${language}/categories/${term}/`);
   }
  }
+});
+
+test('Ruby guide joins only the named cross-category article and provides a return link',()=>{
+ const key='2026-04-07-ruby-rbenv-jekyll-build-troubleshooting';
+ const source=entry(key,'ko','blog');
+ const installed=entry('2023-09-04-jekyll-install','ko','jekyll');
+ const items=[source,installed,entry('unrelated','ko','blog'),entry(key,'en','blog',{reviewStatus:'example'})];
+ assert.deepEqual(categoryGuide('jekyll','ko',items).ordered.map(e=>e.translationKey),[installed.translationKey,key]);
+ assert.deepEqual(additionalArticleGuides(source,items).map(g=>g.url),['/ko/categories/jekyll/']);
+ assert.deepEqual(additionalArticleGuides(installed,items),[]);
+ assert.equal(categoryGuide('jekyll','en',items),undefined);
 });

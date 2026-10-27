@@ -1,21 +1,22 @@
 {
   "createdAt": "2026-10-27T09:00:26.777187+00:00",
-  "purpose": "Connect reviewed publishing and Jenkins persistence/restore articles to bilingual reading paths.",
+  "purpose": "Connect reviewed publishing, Jenkins recovery and legacy Ruby diagnostics to bilingual reading paths.",
   "baseApprovedHead": "f72dd16b8d9c419e08de5002e160d9154c3f2643",
   "branch": "content/operations-guides-batch-017",
   "publication": "Draft only; approval of PR66/67/68 does not publish this follow-up.",
   "scope": {
     "newPaths": [
       "automation",
-      "jenkins"
+      "jenkins",
+      "jekyll"
     ],
     "languages": [
       "en",
       "ko"
     ],
-    "totalPathsPerLanguage": 7,
-    "linkedArticlesPerLanguage": 33,
-    "newCuratedCategoryPages": 4,
+    "totalPathsPerLanguage": 8,
+    "linkedArticlesPerLanguage": 35,
+    "newCuratedCategoryPages": 6,
     "articleSourcesChanged": 0
   },
   "review": {
@@ -34,34 +35,39 @@
       {
         "issue": "New path registration must stay synchronized with structured data, taxonomy links and sitemap.",
         "resolution": "Shared registry drives all outputs; generated-page tests check inventories, ordering, return links and lastmod equality."
+      },
+      {
+        "issue": "The Ruby troubleshooting article is in a different category from Jekyll setup.",
+        "resolution": "Explicitly include the named article and add a guide return link without changing its original categories or publication date. A regression test excludes unrelated and example entries."
       }
     ],
     "unresolvedCriticalOrMajorFindings": [],
     "sha256": {
-      "README.md": "dab2cfc22b4835f47dd8c2993029adccdeac586d9131cb25f8363833779fcfde",
-      "src/lib/technical-guides.ts": "7fb7595988758690979c75ad3d24d6c7bcb51a9b8ef55d4b1a5aad5a1600b751",
-      "scripts/test-technical-guides.mjs": "a56c965659f71eac95e09608891880969eb449c5f14a664caa88dfe25c071ec9",
-      "scripts/test-site.mjs": "f0cae5e5d1e546721f27f86efa175982d60e5b07bc8a972b68c08c27a2349147"
+      "README.md": "74f54ec15a9ab472a1b9a68b3e19483fc8b00b4959abea9bcc68a4c34e7a8178",
+      "src/lib/technical-guides.ts": "89a09d851aa70e02b650816582adf84d6085a5caecd9518869a5ffa3013479e9",
+      "src/components/Article.astro": "1833c1e7951a88998c0e8718dcec7de0e75bb49067d9ec1970af2d0892736c22",
+      "scripts/test-technical-guides.mjs": "6df18bc85b43695cea021cc2c3e5896db22d7ebcad11ef1d3e19c18c714c15e1",
+      "scripts/test-site.mjs": "72a34992c298be9516c48c20f8262592f27bbc0524e31aefdda6aadccb33ff90"
     }
   },
   "validation": {
-    "nodeTests": 37,
+    "nodeTests": 38,
     "astroErrors": 0,
     "astroWarnings": 0,
     "HTML": 934,
-    "sitemapUrls": 467,
+    "sitemapUrls": 469,
     "seo": {
-      "guidePagesVerified": 16,
-      "articleReturnLinks": 66,
-      "sitemapUrls": 467,
+      "guidePagesVerified": 18,
+      "articleReturnLinks": 70,
+      "sitemapUrls": 469,
       "pages": [
         {
           "url": "https://youdozi.github.io/en/guides/",
-          "items": 7,
+          "items": 8,
           "collectionSchema": true,
           "canonicalAndAlternates": true,
           "sitemapLastmodMatches": true,
-          "sha256": "7d77bac91c3703538914f465cf258f7a0609f001aa6c48f872cda3a74430c8b1",
+          "sha256": "71cb47f4743fd86d0d893d098326eb98e329490eb35de06ee72c4d5448ddbed2",
           "result": "passed"
         },
         {
@@ -128,12 +134,21 @@
           "result": "passed"
         },
         {
-          "url": "https://youdozi.github.io/ko/guides/",
-          "items": 7,
+          "url": "https://youdozi.github.io/en/categories/jekyll/",
+          "items": 2,
           "collectionSchema": true,
           "canonicalAndAlternates": true,
           "sitemapLastmodMatches": true,
-          "sha256": "4d5cd191f13ee9cd7faac4c4c1ffb25a89548ffd57d4b5311b35decc51cac03b",
+          "sha256": "927b28aa7bee0d8a1f2a245c28260f5d3a19b45b69684e2ad93fb94f75bd9e18",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/guides/",
+          "items": 8,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "60394600d694ea005dad38975797765eb1804d77cdd1aeab36d6075ad81bd8da",
           "result": "passed"
         },
         {
@@ -198,20 +213,31 @@
           "sitemapLastmodMatches": true,
           "sha256": "baacab618625d533d1cfa9079cb9079e57efb45d60416311d30b370abc850e9b",
           "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/jekyll/",
+          "items": 2,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "d12c1f50c3eeaee7de94911aedb92b489b440640aa73f1d95fe09550578e990d",
+          "result": "passed"
         }
       ],
       "noUnavailableGuides": true,
       "result": "passed"
     },
-    "browserChecks": 49,
+    "browserChecks": 55,
     "screenshotsReviewed": [
       "KO Jenkins390px",
-      "EN publishing320px"
+      "EN publishing320px",
+      "KO Ruby390px"
     ]
   },
   "limits": [
     "No new article implementation, code execution result or ranking improvement is claimed.",
     "Other language paths are omitted until actual editions exist.",
     "Exact-head CI and production merge evidence are recorded privately after creation."
-  ]
+  ],
+  "baseCommit": "622e51d2e0d9ddef255ec564e5e01122fb1762e6"
 }

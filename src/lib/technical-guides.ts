@@ -3,15 +3,15 @@ import type { CategoryGuide } from './category-guide';
 import { algorithmGuide } from './algorithm-guide.ts';
 import { springGuide } from './spring-guide.ts';
 
-export const guideTerms = ['coding-test', 'springboot', 'linux', 'jdk', 'util', 'automation', 'jenkins'] as const;
+export const guideTerms = ['coding-test', 'springboot', 'linux', 'jdk', 'util', 'automation', 'jenkins', 'jekyll'] as const;
 const updatedAt = new Date('2026-10-27T08:19:59.645138+00:00');
 export const guideIndexCopy = {
   en: { label: 'Guides', title: 'Technical Learning Guides',
-    description: 'Choose a reading path through Java exercises, Spring Boot, shell automation, JDK features, development tools, reviewed publishing and Jenkins recovery, with code and clearly scoped checks.',
+    description: 'Choose a reading path through Java exercises, Spring Boot, shell automation, JDK features, development tools, reviewed publishing, Jenkins recovery and legacy Ruby diagnostics, with code and clearly scoped checks.',
     intro: 'Choose the problem you want to solve. Each path connects available articles with code and recorded checks. Read each article’s environment and limits before reusing an example.',
     home: 'Home', open: 'Explore the guide' },
   ko: { label: '학습 안내', title: '기술 학습 안내',
-    description: 'Java 문제 풀이·Spring Boot·셸 자동화·JDK·개발 도구·검토 후 게시·Jenkins 복구를 읽는 순서로 연결합니다. 코드와 검증 범위를 확인하며 학습하세요.',
+    description: 'Java 문제 풀이·Spring Boot·셸 자동화·JDK·개발 도구·검토 후 게시·Jenkins 복구·과거 Ruby 환경 진단을 읽는 순서로 연결합니다. 코드와 검증 범위를 확인하며 학습하세요.',
     intro: '해결하려는 문제에서 시작하세요. 각 안내는 코드와 확인 범위가 있는 실제 글을 연결합니다. 예제를 적용하기 전에 해당 글의 실행 환경과 한계를 확인하세요.',
     home: '홈', open: '안내 읽기' },
 };
@@ -19,7 +19,26 @@ const common = {
   en: { extra: 'More articles', home: 'Home', categories: 'Categories' },
   ko: { extra: '다른 글', home: '홈', categories: '카테고리' },
 };
+const crossCategoryKeys: Partial<Record<string, readonly string[]>> = {
+  jekyll: ['2026-04-07-ruby-rbenv-jekyll-build-troubleshooting'],
+};
 const paths = {
+  jekyll: {
+    en: {label:'Ruby and Jekyll environment guides',title:'Ruby and Jekyll Guides: Bundle Context and Native Compiler Checks',eyebrow:'Legacy Ruby diagnostics',
+      description:'Identify the selected Ruby and Bundler context, render an isolated legacy Jekyll fixture and separate native compiler checks from gem installation.',
+      intro:'Start with the Ruby executable and declared bundle, then isolate compiler failures. These examples reproduce an unsupported Ruby 3.2.2 environment. A two-page render or standalone C++ probe does not verify a full site or a native gem rebuild.',
+      groups:[
+        {id:'bundle',title:'Check the runtime and bundle',description:'Identify the selected executable and render two pages with the declared legacy bundle.',keys:['2023-09-04-jekyll-install']},
+        {id:'compiler',title:'Isolate compiler failures',description:'Separate Ruby build configuration from the compiler and SDK inputs used by a temporary C++ program.',keys:['2026-04-07-ruby-rbenv-jekyll-build-troubleshooting']},
+      ]},
+    ko: {label:'Ruby·Jekyll 환경 학습 안내',title:'Ruby·Jekyll 학습 안내: 번들 환경과 네이티브 컴파일러 확인',eyebrow:'과거 Ruby 환경 진단',
+      description:'선택된 Ruby와 Bundler 환경을 확인하고 격리된 과거 Jekyll 예제를 렌더링합니다. 네이티브 컴파일러 검사와 gem 설치를 구분합니다.',
+      intro:'Ruby 실행기와 선언한 번들부터 확인한 뒤 컴파일러 실패를 분리합니다. 지원이 종료된 Ruby 3.2.2 환경을 재현하는 예제입니다. 두 페이지 렌더링이나 독립 C++ 검사만으로 전체 사이트 빌드나 네이티브 gem 재빌드를 검증할 수는 없습니다.',
+      groups:[
+        {id:'bundle',title:'실행기와 번들 확인',description:'선택된 실행기를 확인하고 선언한 과거 번들로 두 페이지를 렌더링합니다.',keys:['2023-09-04-jekyll-install']},
+        {id:'compiler',title:'컴파일러 실패 분리',description:'Ruby 빌드 설정과 임시 C++ 프로그램에 사용하는 컴파일러·SDK 입력을 구분합니다.',keys:['2026-04-07-ruby-rbenv-jekyll-build-troubleshooting']},
+      ]},
+  },
   automation: {
     en: {label:'Publishing workflow guides',title:'Publishing Workflow Guides: Draft Review, CI and Deployment',eyebrow:'Reviewed publishing',
       description:'Follow the move from automatic publication to draft PR review, then distinguish passing checks from an authorized production deployment.',
@@ -112,7 +131,7 @@ export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGui
   if(term==='springboot')return springGuide(lang,all);
   if((lang!=='en'&&lang!=='ko')||!Object.hasOwn(paths,term))return undefined;
   const definition=paths[term as keyof typeof paths][lang];
-  const items=all.filter(e=>e.language===lang&&e.kind==='post'&&e.categories.includes(term)&&e.reviewStatus!=='example'&&e.publishedAt.getTime()<=Date.now());
+  const items=all.filter(e=>e.language===lang&&e.kind==='post'&&(e.categories.includes(term)||crossCategoryKeys[term]?.includes(e.translationKey))&&e.reviewStatus!=='example'&&e.publishedAt.getTime()<=Date.now());
   if(!items.length)return undefined;
   const byKey=new Map(items.map(e=>[e.translationKey,e]));let position=1;
   const sections=definition.groups.map(group=>{
@@ -141,4 +160,10 @@ export function guideIndexStructuredData(lang:'en'|'ko',guides:CategoryGuide[],s
     {'@context':'https://schema.org','@type':'ItemList','@id':url+'#paths',numberOfItems:guides.length,itemListElement:guides.map((g,i)=>({'@type':'ListItem',position:i+1,name:g.title,url:new URL(g.url,site).href}))},
     {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:copy.home,item:new URL(`/${lang}/`,site).href},{'@type':'ListItem',position:2,name:copy.label,item:url}]},
   ];
+}
+
+export function additionalArticleGuides(entry:Entry,all:Entry[]) {
+  return technicalGuides(entry.language,all).filter(guide=>
+    !entry.categories.some(term=>guide.url===`/${entry.language}/categories/${term}/`) &&
+    guide.ordered.some(candidate=>candidate.url===entry.url));
 }
