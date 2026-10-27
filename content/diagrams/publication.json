@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2026-04-07-jekyll-github-actions-content-pipeline",
+      "title": {"en": "Candidate to approved publication", "ko": "후보에서 승인된 게시까지"},
+      "description": {"en": "The offline example checks pending-PR selection and mocked review calls. Generation, approval, merge and deployment are separate hosted or editorial steps.", "ko": "오프라인 예제는 대기 PR 선택과 모의 검토 호출을 확인합니다. 생성·승인·병합·배포는 별도의 호스팅 또는 편집 단계입니다."},
+      "codeContract": [{"language": "javascript", "contains": "const runPending"}, {"language": "javascript", "contains": "await runReview"}],
+      "steps": [
+        {"kind": "condition", "en": ["Matching digest PR already open?"], "ko": ["대기 중인 다이제스트 PR이 있는가?"], "branch": {"exit": {"en": "Yes: pause", "ko": "있음: 대기"}, "continue": {"en": "No", "ko": "없음"}}},
+        {"kind": "process", "en": ["Generate bilingual candidate", "Run local checks before commit"], "ko": ["한영 후보 생성", "커밋 전 로컬 검사"]},
+        {"kind": "process", "en": ["Push candidate branch", "Validate its commit SHA"], "ko": ["후보 브랜치에 push", "해당 커밋 SHA 검증"]},
+        {"kind": "process", "en": ["Open Draft PR and preview", "Dispatch checks on review branch"], "ko": ["Draft PR·미리보기 준비", "검토 브랜치 검사 호출"]},
+        {"kind": "process", "en": ["Review facts and language", "Approve, then merge when ready"], "ko": ["사실·언어 검토", "승인 후 준비되면 병합"]},
+        {"kind": "result", "en": ["Main workflow checks and deploys", "Verify the public result"], "ko": ["main 워크플로 검사·배포", "공개 결과 확인"]}
+      ]
+    },
+    {
+      "key": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "title": {"en": "Validation and deployment gates", "ko": "검증과 배포 조건"},
+      "description": {"en": "The offline example checks YAML contracts and a bounded policy model. It does not execute the Actions engine or deploy Pages.", "ko": "오프라인 예제는 YAML 계약과 제한된 정책 모델을 검사합니다. Actions 엔진 실행이나 Pages 배포를 수행하지 않습니다."},
+      "codeContract": [{"language": "javascript", "contains": "function verify(site, checks)"}, {"language": "javascript", "contains": "function allowed(ref, event, build)"}],
+      "steps": [
+        {"kind": "process", "en": ["Check the input commit ref", "Run shared validation"], "ko": ["입력 커밋 ref 체크아웃", "공통 검증 실행"]},
+        {"kind": "condition", "en": ["Build dependency succeeded?"], "ko": ["선행 build가 성공했는가?"], "branch": {"exit": {"en": "No: stop", "ko": "실패: 중단"}, "continue": {"en": "Yes", "ko": "성공"}}},
+        {"kind": "condition", "en": ["Main ref and allowed event?", "push or workflow_dispatch"], "ko": ["main ref·허용 이벤트인가?", "push 또는 workflow_dispatch"], "branch": {"exit": {"en": "No: skip", "ko": "아님: 생략"}, "continue": {"en": "Yes", "ko": "허용"}}},
+        {"kind": "process", "en": ["Deploy the checked Pages artifact", "Hosted step, outside the model"], "ko": ["검사된 Pages 산출물 배포", "모델 밖의 호스팅 단계"]},
+        {"kind": "result", "en": ["Inspect public URLs and sitemap", "Check IndexNow separately"], "ko": ["공개 URL·사이트맵 확인", "IndexNow 결과 별도 확인"]}
+      ]
+    }
+  ]
+}

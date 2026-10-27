@@ -8,6 +8,7 @@ from xml.sax.saxutils import escape
 
 SOURCE = Path('content/diagrams/algorithms.json')
 WORKFLOW_SOURCE = Path('content/diagrams/workflows.json')
+PUBLICATION_SOURCE = Path('content/diagrams/publication.json')
 OUTPUT = Path('public/assets/diagrams')
 LANGUAGES = ('en', 'ko')
 
@@ -49,7 +50,7 @@ def validate(data):
             if not isinstance(contracts, list) or not contracts:
                 raise ValueError('Expected nonempty code requirements')
             for contract in contracts:
-                if (not isinstance(contract, dict) or contract.get('language') not in ('java','sh','groovy','python')
+                if (not isinstance(contract, dict) or contract.get('language') not in ('java','sh','groovy','python','javascript')
                         or not isinstance(contract.get('contains'), str) or not contract['contains'].strip()):
                     raise ValueError('Invalid code language or required snippet')
         loop = item.get('loop')
@@ -113,7 +114,7 @@ def validate_articles(data, posts=Path('src/content/posts')):
                     raise ValueError(f'Missing required {contract["language"]} code: {lang}/{item["key"]}')
 
 
-def load_sources(paths=(SOURCE, WORKFLOW_SOURCE)):
+def load_sources(paths=(SOURCE, WORKFLOW_SOURCE, PUBLICATION_SOURCE)):
     combined = {'version':1, 'diagrams':[]}
     for path in paths:
         combined['diagrams'].extend(validate(json.loads(Path(path).read_text()))['diagrams'])

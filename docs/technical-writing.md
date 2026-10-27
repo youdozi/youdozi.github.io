@@ -11,6 +11,6 @@
 
 그림과 코드가 있다고 기술적 정확성이 검증된 것은 아닙니다. 코드 실행 검사와 별도로 그림·본문·코드의 의미를 검토합니다. 확인하지 않은 실행이나 독립 검토를 완료했다고 기록하지 않습니다. 검토 기록은 `.pipeline/`에 남기고 공개 본문에는 독자를 위한 설명만 담습니다.
 
-그림의 편집 원본은 알고리즘용 `content/diagrams/algorithms.json`과 기술 워크플로용 `content/diagrams/workflows.json`입니다. `python3 scripts/build_algorithm_diagrams.py`로 `public/assets/diagrams/`에 정적 SVG를 생성하며 `npm run build`에서도 실행합니다. 생성 결과는 직접 편집하지 않습니다. 목록에 등록된 한영 글은 그림 링크와 지정한 언어의 코드 블록을 함께 확인합니다. 알고리즘은 전체 `Solution` 클래스, 다른 기술 글은 `codeContract`에 지정한 Java·Gradle·셸·Python 예제의 존재를 검사합니다. 코드가 본문이나 다른 언어의 블록에만 나타나면 통과하지 않습니다. 이 검사는 코드의 존재를 확인하며 실행 검사를 대체하지 않습니다. 현재 한영으로 보강한 26개 주제의 52개 글에 적용하며 나머지 한국어 아카이브 전체를 검증했다는 뜻은 아닙니다.
+그림의 편집 원본은 알고리즘용 `content/diagrams/algorithms.json`과 기술 워크플로용 `content/diagrams/workflows.json`, 게시 절차용 `content/diagrams/publication.json`입니다. `python3 scripts/build_algorithm_diagrams.py`로 `public/assets/diagrams/`에 정적 SVG를 생성하며 `npm run build`에서도 실행합니다. 생성 결과는 직접 편집하지 않습니다. 목록에 등록된 한영 글은 그림 링크와 지정한 언어의 코드 블록을 함께 확인합니다. 알고리즘은 전체 `Solution` 클래스, 다른 기술 글은 `codeContract`에 지정한 Java·Gradle·셸·Python·JavaScript 예제의 존재를 검사합니다. 코드가 본문이나 다른 언어의 블록에만 나타나면 통과하지 않습니다. 이 검사는 코드의 존재를 확인하며 실행 검사를 대체하지 않습니다. 현재 한영으로 보강한 28개 주제의 56개 글에 적용하며 나머지 한국어 아카이브 전체를 검증했다는 뜻은 아닙니다.
 
 뉴스 다이제스트·번역·개요·짧은 문장 수정에서는 요청한 범위와 원문을 우선하며, 그림이나 코드를 채우기 위해 사실을 창작하지 않습니다. 게시 승인은 기존 검토용 PR 절차를 따릅니다.
