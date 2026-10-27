@@ -45,6 +45,8 @@ jobs:
           gradle-version: '8.4'
       - name: Compile and execute published WebClient response contracts
         run: python3 -B scripts/check_webclient_example.py
+      - name: Generate Querydsl Q types and run the published H2 queries twice from clean
+        run: python3 -B scripts/check_querydsl_example.py
       - name: Migration regression tests
         run: npm test
       - name: Check Astro types and content schemas
