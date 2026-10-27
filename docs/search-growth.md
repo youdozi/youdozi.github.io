@@ -10,6 +10,7 @@
 .venv-search-console/bin/python scripts/search_growth.py
 .venv-search-console/bin/python scripts/search_growth.py --live
 .venv-search-console/bin/python scripts/search_growth.py --live --previous ~/.config/youdozi-search-console/이전-스냅샷.json
+.venv-search-console/bin/python scripts/search_growth.py --report ~/.config/youdozi-search-console/이전-스냅샷.json
 ```
 
 `--live`는 핵심 한영 글 20개와 과거 Jekyll 주소 10개를 조회합니다. 공개 URL의 HTTP 응답·canonical·robots·즉시 meta refresh와 Google에 저장된 색인 상태를 별도로 기록합니다. URL Inspection API는 실시간 색인 가능성 검사가 아니며 색인 생성 요청도 하지 않습니다. [공식 API](https://developers.google.com/webmaster-tools/v1/urlInspection.index/inspect)
@@ -19,6 +20,8 @@
 결과는 저장소 밖 `~/.config/youdozi-search-console/search-growth-시각.json`에 권한 600으로 저장합니다. `--output`으로 저장소 밖 새 파일을 지정할 수 있습니다. 이미 있는 파일은 덮어쓰지 않습니다. 검색어·사용자별 실적과 인증 파일은 Git·공개 사이트·CI 산출물에 올리지 않습니다. Google 권한 오류나 조회 실패를 미색인으로 세지 않습니다.
 
 `--previous`는 같은 속성·URL 집합의 이전 스냅샷과 비교해 PASS 전환·PASS 해제·Google canonical 변경을 기록합니다. 한쪽 API가 실패한 URL은 비교 불가로 분리합니다. 주간 조회의 28일 실적 구간은 서로 겹칠 수 있으므로 독립적인 전후 실험으로 해석하지 않습니다.
+
+`--report`는 저장된 결과를 네트워크·인증·파일 쓰기 없이 읽습니다. URL별 색인 상태·Google canonical·마지막 크롤링, 사이트 전체 실적과 저장된 비교 결과를 텍스트로 표시합니다. 검색어 행은 출력하지 않으며 미제공 값을 0으로 바꾸지 않습니다. 조회 시각을 함께 표시하므로 과거 결과를 현재 상태로 해석하지 않습니다. 다른 조회 옵션과 함께 사용할 수 없습니다.
 
 ## 판정과 후속 조치
 

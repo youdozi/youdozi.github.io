@@ -185,3 +185,5 @@ Ruby 아카이브 예제는 `python3 -B scripts/check_ruby_environment_examples.
 Jenkins 예제는 `python3 -B scripts/check_jenkins_examples.py`로 한영 전체 Python 파일을 추출해 실행합니다. 실행 중인 Linux 컨테이너 Docker 엔진이 필요합니다. 이미지를 digest로 고정한 일회용 컨트롤러에서 재생성·정지 백업·master.key 분리·새 볼륨 복구를 검사하고 생성 자원을 삭제합니다. 암호와 백업은 로그나 CI 산출물로 남기지 않습니다. 전체 운영 복구나 작업 실행을 입증하는 검사는 아닙니다.
 
 한영 `/en/guides/`·`/ko/guides/`에서 Java 문제 풀이·Spring Boot·셸 자동화·JDK·개발 도구·게시 절차·Jenkins 복구·Ruby 환경 진단의 8개 학습 안내를 찾을 수 있습니다. 안내는 실제 공개 가능한 글만 연결하며 본문 카테고리 링크로 돌아올 수 있습니다. 가이드 목록·언어 링크·CollectionPage/ItemList·사이트맵은 같은 등록 정보를 사용합니다. 이 안내는 기존 글을 연결하며 코드의 새 실행 결과나 검색 노출 성과를 주장하지 않습니다.
+
+한영 `/en/about/`·`/ko/about/`는 운영 계정·글 작성 원칙·정정 방법을 안내합니다. 글의 작성자 링크와 Person/ProfilePage 식별자를 연결하며, 별도 소개가 없는 언어는 영문 소개로 연결합니다. 소개 문구에는 확인된 정보만 사용하고 소속·경력·자격을 추정해 추가하지 않습니다.

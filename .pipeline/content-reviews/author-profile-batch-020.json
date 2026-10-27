@@ -1,0 +1,94 @@
+{
+  "createdAt": "2026-10-27T11:20:44.677064+00:00",
+  "purpose": "Connect articles to a factual bilingual author profile and make private search snapshots readable offline.",
+  "baseCommit": "0cc980e699c87b8f3f385fc8525d3d8ec68d5199",
+  "branch": "seo/author-profile-batch-020",
+  "publication": "Draft only. Approval of PR69/70 does not approve this new work. Refresh profile modification date if changed on publication.",
+  "scope": {
+    "profilePages": [
+      "/en/about/",
+      "/ko/about/"
+    ],
+    "authorIdentity": "https://youdozi.github.io/#author",
+    "articleSourcesChanged": 0,
+    "fallbackForOtherLanguages": "English profile with an explicit English language attribute.",
+    "searchReport": "Offline existing-snapshot text output; no API calls, authentication or file writes."
+  },
+  "review": {
+    "type": "Self AI review of paired copy, source-supported identity, structured data and generated output; browser screenshots.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "issue": "A richer author page could invent credentials or claim all articles are verified.",
+        "resolution": "Use only the existing account/repository identity and subject scope. Explain AI assistance and scoped checks; add no title, employment, awards or claimed expertise."
+      },
+      {
+        "issue": "Introducing about links in eight languages could create unavailable local pages.",
+        "resolution": "Create only English/Korean routes. Other editions link to the English page and declare its language."
+      },
+      {
+        "issue": "The new footer link can exceed a narrow screen.",
+        "resolution": "Allow footer links to wrap and verify at320/390/1280px."
+      },
+      {
+        "issue": "A readable search report could reveal private queries or turn missing values into zeroes.",
+        "resolution": "Render only URL inspection fields, site totals and transition counts. Omit query rows and distinguish missing data/API errors. Report mode cannot combine with live collection flags."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "sha256": {
+      "src/lib/author.ts": "505510fd16a1af625ba8a8ba40befa6c11d887930c28b068eca523ea90ee4054",
+      "src/pages/[lang]/about.astro": "6be33188cfd8e6e3093d79e2c6db0dfc9ee13551b8a904d4be44d12a2fe6f205",
+      "src/components/Article.astro": "abc8484519feb8a54eb58dd4857ebe3b2694773425f6a63dac53fed0ccca48c7",
+      "src/layouts/Base.astro": "9376231f1f4dae38d2d16849130ca1b2e69f8af96e0a15653e20ef350e494d59",
+      "src/pages/sitemap.xml.ts": "f3f427dbf7e003b71751f9434705ba800bcf5d1beae5cadf1377e3ddb2e82c7d",
+      "src/styles/global.css": "c6e92725fa7e3ad5ab7dc2441c8c3fb64474387a503cafde6a6002e89370cbf4",
+      "scripts/search_growth.py": "4488180e95b22d76dfde399d8bac3f0bb380957b2f7de0e5f79332df0fe2f7f5",
+      "scripts/test_search_growth.py": "7163cbef48467c50e2c61624f71a2a6aecd25e7456e0222c6f0dcadb59a3bd7e",
+      "scripts/test-author.mjs": "914075ab8db90d6e173d27d14b3150d52702e023f58f76dff99cd548ecee6be6",
+      "scripts/test-site.mjs": "d07065652909a2086a5059b69a7958916039b739978227fa529a9167b6b4a9dd",
+      "scripts/test_indexnow.py": "c9163ec11d3d6e36ca42aa8ebdb098eb3c3b67faf8452f52581f225f44a174b5",
+      "scripts/indexnow.py": "caf12da1c28a2f2852f763e280642da5b284d22ad0c6bb4e8dc3700295ef710f"
+    }
+  },
+  "validation": {
+    "pythonTests": 169,
+    "nodeTests": 42,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 936,
+    "sitemapUrls": 471,
+    "seo": {
+      "profilePages": [
+        {
+          "url": "https://youdozi.github.io/en/about/",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/about/",
+          "result": "passed"
+        }
+      ],
+      "articleAuthorLinksVerified": 423,
+      "sitemapUrls": 471,
+      "result": "passed"
+    },
+    "browserChecks": 18,
+    "screenshotsReviewed": [
+      "Korean profile390px",
+      "English profile1280px"
+    ],
+    "offlineReport": "Existing30-URL private baseline rendered without API/authentication/file writes; timestamp retained and query rows omitted."
+  },
+  "sources": [
+    "https://developers.google.com/search/docs/appearance/structured-data/profile-page",
+    "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+  ],
+  "limits": [
+    "Draft pages are not public until approval.",
+    "Schema consistency is locally checked; no Google Rich Results validation or ranking effect is claimed.",
+    "The saved baseline is not a fresh indexing observation.",
+    "No recurring task or automatic publication is configured."
+  ]
+}

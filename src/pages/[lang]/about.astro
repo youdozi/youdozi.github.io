@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import {profileLanguages,profileCopy,profileAlternates,profileStructuredData} from '../../lib/author';
+export function getStaticPaths(){return profileLanguages.map(lang=>({params:{lang}}));}
+const lang=Astro.params.lang as 'en'|'ko';const copy=profileCopy[lang];
+---
+<Base title={copy.title} description={copy.description} lang={lang} alternates={profileAlternates} structuredData={profileStructuredData(lang)}>
+  <article class="profile prose">
+    <h1>{copy.title}</h1><p>{copy.intro}</p>
+    <p><a href="https://github.com/youdozi" rel="me">{copy.github}</a> · <a href="https://github.com/youdozi/youdozi.github.io">{copy.repository}</a></p>
+    <h2>{copy.workTitle}</h2><p>{copy.work}</p><p><a href={`/${lang}/guides/`}>{copy.guides}</a></p>
+    <h2>{copy.processTitle}</h2><p>{copy.process}</p>
+    <h2>{copy.limitsTitle}</h2><p>{copy.limits}</p><p>{copy.corrections}</p>
+  </article>
+</Base>
+<style>.profile{max-width:760px;padding:64px 0}.profile h1{margin-top:0;overflow-wrap:anywhere}</style>
