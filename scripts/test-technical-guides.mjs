@@ -23,7 +23,7 @@ test('existing algorithm and Spring paths remain in the registry with actual cou
  const guides=technicalGuides('en',items);
  assert.deepEqual(guides.map(g=>g.url),['/en/categories/coding-test/','/en/categories/springboot/','/en/categories/jdk/','/en/categories/util/']);
  assert.deepEqual(guides.map(g=>g.ordered.length),[1,1,1,1]);
- assert.equal(guideTerms.length,5);
+ assert.equal(guideTerms.length,7);
 });
 test('index schema preserves the visible path order and locale-specific URLs',()=>{
  const items=[entry('2021-08-06-search-github','ko','util'),entry('2023-09-20-jdk-21-release','ko','jdk')];
@@ -33,4 +33,17 @@ test('index schema preserves the visible path order and locale-specific URLs',()
  assert.deepEqual(data[1].itemListElement.map(x=>[x.position,x.name,x.url]),guides.map((g,i)=>[i+1,g.title,'https://example.org'+g.url]));
  assert.equal(data[2].itemListElement.at(-1).item,'https://example.org/ko/guides/');
  assert.equal(data.some(x=>x['@type']==='BlogPosting'),false);
+});
+
+test('publishing and Jenkins paths keep prerequisites before deployment and restore',()=>{
+ for(const language of ['en','ko']) {
+  const groups=[['automation','2026-04-07-jekyll-github-actions-content-pipeline','2026-04-07-jekyll-quality-gates-proof-html-bundler-audit'],['jenkins','2023-09-28-jenkins-docker-install','2026-10-27-jenkins-home-backup-restore']];
+  for(const [term,first,second] of groups){
+   const entries=[entry(second,language,term),entry('excluded',language,term,{reviewStatus:'example'}),entry(first,language,term),entry('future',language,term,{publishedAt:new Date('2999-01-01Z')})];
+   const guide=categoryGuide(term,language,entries);
+   assert.deepEqual(guide.ordered.map(e=>e.translationKey),[first,second]);
+   assert.deepEqual(guide.sections.map(s=>s.start),[1,2]);
+   assert.equal(guide.url,`/${language}/categories/${term}/`);
+  }
+ }
 });

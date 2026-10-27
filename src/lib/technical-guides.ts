@@ -3,15 +3,15 @@ import type { CategoryGuide } from './category-guide';
 import { algorithmGuide } from './algorithm-guide.ts';
 import { springGuide } from './spring-guide.ts';
 
-export const guideTerms = ['coding-test', 'springboot', 'linux', 'jdk', 'util'] as const;
+export const guideTerms = ['coding-test', 'springboot', 'linux', 'jdk', 'util', 'automation', 'jenkins'] as const;
 const updatedAt = new Date('2026-10-27T08:19:59.645138+00:00');
 export const guideIndexCopy = {
   en: { label: 'Guides', title: 'Technical Learning Guides',
-    description: 'Choose a reading path through Java exercises, Spring Boot, shell automation, JDK features and development tools, with code and clearly scoped checks.',
+    description: 'Choose a reading path through Java exercises, Spring Boot, shell automation, JDK features, development tools, reviewed publishing and Jenkins recovery, with code and clearly scoped checks.',
     intro: 'Choose the problem you want to solve. Each path connects available articles with code and recorded checks. Read each article’s environment and limits before reusing an example.',
     home: 'Home', open: 'Explore the guide' },
   ko: { label: '학습 안내', title: '기술 학습 안내',
-    description: 'Java 문제 풀이·Spring Boot·셸 자동화·JDK 기능·개발 도구를 읽는 순서로 연결합니다. 코드와 검증 범위를 확인하며 학습하세요.',
+    description: 'Java 문제 풀이·Spring Boot·셸 자동화·JDK·개발 도구·검토 후 게시·Jenkins 복구를 읽는 순서로 연결합니다. 코드와 검증 범위를 확인하며 학습하세요.',
     intro: '해결하려는 문제에서 시작하세요. 각 안내는 코드와 확인 범위가 있는 실제 글을 연결합니다. 예제를 적용하기 전에 해당 글의 실행 환경과 한계를 확인하세요.',
     home: '홈', open: '안내 읽기' },
 };
@@ -20,6 +20,38 @@ const common = {
   ko: { extra: '다른 글', home: '홈', categories: '카테고리' },
 };
 const paths = {
+  automation: {
+    en: {label:'Publishing workflow guides',title:'Publishing Workflow Guides: Draft Review, CI and Deployment',eyebrow:'Reviewed publishing',
+      description:'Follow the move from automatic publication to draft PR review, then distinguish passing checks from an authorized production deployment.',
+      intro:'Prepare a candidate as a draft, inspect the changes, and publish after approval. These articles trace this repository’s workflow and executable fixtures; a passing PR check alone does not prove a production deployment or content accuracy.',
+      groups:[
+        {id:'drafts',title:'Prepare a reviewable draft',description:'Follow candidate preparation and the review boundary before publication.',keys:['2026-04-07-jekyll-github-actions-content-pipeline']},
+        {id:'deployment',title:'Separate checks from deployment',description:'Trace reusable checks, event conditions and production deployment evidence.',keys:['2026-04-07-jekyll-quality-gates-proof-html-bundler-audit']},
+      ]},
+    ko: {label:'게시 절차 학습 안내',title:'게시 절차 학습 안내: 초안 검토·CI·배포',eyebrow:'검토 후 게시',
+      description:'자동 게시에서 Draft PR 검토로 전환한 흐름을 확인하고, 검사 통과와 승인된 운영 배포를 구분합니다.',
+      intro:'후보를 초안으로 준비하고 변경 내용을 검토한 뒤 승인 후 게시합니다. 이 저장소의 워크플로와 실행 가능한 모의 예제를 따라갑니다. PR 검사 통과만으로 운영 배포나 본문 정확성이 입증되지는 않습니다.',
+      groups:[
+        {id:'drafts',title:'검토할 초안 준비',description:'후보 준비부터 게시 전 검토 경계까지 확인합니다.',keys:['2026-04-07-jekyll-github-actions-content-pipeline']},
+        {id:'deployment',title:'검사와 배포 구분',description:'재사용 검사·이벤트 조건·운영 배포 근거를 이어 확인합니다.',keys:['2026-04-07-jekyll-quality-gates-proof-html-bundler-audit']},
+      ]},
+  },
+  jenkins: {
+    en: {label:'Jenkins recovery guides',title:'Jenkins Docker Guides: Startup, Persistence and Backup Restore',eyebrow:'Jenkins in Docker',
+      description:'Start a disposable Jenkins controller, verify container recreation, then restore a stopped controller’s home into a new Docker volume.',
+      intro:'Begin with startup and persistent storage before attempting a backup restore. The examples use disposable controllers and compare HTTP readiness, a marker and the initial password. They do not prove production workload recovery or credential decryption.',
+      groups:[
+        {id:'persistence',title:'Verify startup and persistence',description:'Check readiness and preserved state after recreating a container.',keys:['2023-09-28-jenkins-docker-install']},
+        {id:'restore',title:'Restore into a new volume',description:'Stop the source controller, separate master.key from the archive and verify restored state.',keys:['2026-10-27-jenkins-home-backup-restore']},
+      ]},
+    ko: {label:'Jenkins 복구 학습 안내',title:'Jenkins Docker 학습 안내: 시작·영속성·백업 복구',eyebrow:'Docker의 Jenkins',
+      description:'일회용 Jenkins 컨트롤러를 시작하고 컨테이너 재생성 후 상태를 확인합니다. 정지한 컨트롤러의 홈을 새 Docker 볼륨에 복구합니다.',
+      intro:'시작과 영속 저장소부터 확인한 뒤 백업 복구로 넘어갑니다. 일회용 컨트롤러에서 HTTP 준비 상태·표식·초기 암호를 비교합니다. 운영 작업 복구나 자격 증명 복호화를 입증하는 예제는 아닙니다.',
+      groups:[
+        {id:'persistence',title:'시작과 영속성 확인',description:'준비 상태와 컨테이너 재생성 후 보존된 상태를 확인합니다.',keys:['2023-09-28-jenkins-docker-install']},
+        {id:'restore',title:'새 볼륨에 복구',description:'원본 컨트롤러를 정지하고 master.key를 아카이브와 분리한 뒤 복구 상태를 확인합니다.',keys:['2026-10-27-jenkins-home-backup-restore']},
+      ]},
+  },
   linux: {
     en: {label:'Shell automation guides', title:'Shell Automation Guides: Interpreters, YAML and Release Assets', eyebrow:'Shell automation',
       description:'Choose sh or Bash, validate YAML and numeric versions, then select GitHub release assets with explicit input contracts and local tests.',

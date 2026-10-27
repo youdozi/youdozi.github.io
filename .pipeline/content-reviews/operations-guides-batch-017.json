@@ -1,0 +1,217 @@
+{
+  "createdAt": "2026-10-27T09:00:26.777187+00:00",
+  "purpose": "Connect reviewed publishing and Jenkins persistence/restore articles to bilingual reading paths.",
+  "baseApprovedHead": "f72dd16b8d9c419e08de5002e160d9154c3f2643",
+  "branch": "content/operations-guides-batch-017",
+  "publication": "Draft only; approval of PR66/67/68 does not publish this follow-up.",
+  "scope": {
+    "newPaths": [
+      "automation",
+      "jenkins"
+    ],
+    "languages": [
+      "en",
+      "ko"
+    ],
+    "totalPathsPerLanguage": 7,
+    "linkedArticlesPerLanguage": 33,
+    "newCuratedCategoryPages": 4,
+    "articleSourcesChanged": 0
+  },
+  "review": {
+    "type": "Self AI review of registry eligibility, reading order, paired copy and generated HTML/schema, followed by browser screenshots.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "issue": "Passing CI can be confused with authorization or successful deployment.",
+        "resolution": "Publishing guide keeps draft approval, checks and production deployment separate."
+      },
+      {
+        "issue": "Container persistence or marker/password equality could imply complete disaster recovery.",
+        "resolution": "Jenkins guide states the fixture scope and excludes production workload recovery and credential decryption claims."
+      },
+      {
+        "issue": "New path registration must stay synchronized with structured data, taxonomy links and sitemap.",
+        "resolution": "Shared registry drives all outputs; generated-page tests check inventories, ordering, return links and lastmod equality."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "sha256": {
+      "README.md": "dab2cfc22b4835f47dd8c2993029adccdeac586d9131cb25f8363833779fcfde",
+      "src/lib/technical-guides.ts": "7fb7595988758690979c75ad3d24d6c7bcb51a9b8ef55d4b1a5aad5a1600b751",
+      "scripts/test-technical-guides.mjs": "a56c965659f71eac95e09608891880969eb449c5f14a664caa88dfe25c071ec9",
+      "scripts/test-site.mjs": "f0cae5e5d1e546721f27f86efa175982d60e5b07bc8a972b68c08c27a2349147"
+    }
+  },
+  "validation": {
+    "nodeTests": 37,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 934,
+    "sitemapUrls": 467,
+    "seo": {
+      "guidePagesVerified": 16,
+      "articleReturnLinks": 66,
+      "sitemapUrls": 467,
+      "pages": [
+        {
+          "url": "https://youdozi.github.io/en/guides/",
+          "items": 7,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "7d77bac91c3703538914f465cf258f7a0609f001aa6c48f872cda3a74430c8b1",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/coding-test/",
+          "items": 10,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "4158db90a8381d857153ab92337f3114677541bf86e761c7a205774809280971",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/springboot/",
+          "items": 9,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "d1a9b3aeec3ee19640395bcb5ad94b231380d744335f66c362daf602c9cfe2ae",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/linux/",
+          "items": 4,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "91d6ea684d097e8f4aea2957085902359e9b788135236dd40437c1e88712aab2",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/jdk/",
+          "items": 3,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "3b5270b9cffc1e6f63dd989c27f8d1fc91c9cae798357dc5f5b3a5738fee92ec",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/util/",
+          "items": 3,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "55450406fdb1733ae98e0848d86afdae2a41bacabd5ce0b9dc9289860550bcac",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/automation/",
+          "items": 2,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "93d7d9a5edada023cc60b147615627c0eceb3b8af3294eb7dacc519610165083",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/jenkins/",
+          "items": 2,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "427a36a264726408c8b180ed70701686fb931f11cc59dd13a8c7d9559ec46fa8",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/guides/",
+          "items": 7,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "4d5cd191f13ee9cd7faac4c4c1ffb25a89548ffd57d4b5311b35decc51cac03b",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/coding-test/",
+          "items": 10,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "6a590d75c8970f4c2def855a6bcbafc5ddc270a45818952d223f5009b85a5b93",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/springboot/",
+          "items": 9,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "afda33c81b7c7c7c6cdae6df4f0c6610e7be33385a4ffc9d44c8b83dc03bba59",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/linux/",
+          "items": 4,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "85e94f31798f67a4eeead8d4b3fed0a9b17988a51059d3ef6c23e991a9141cfd",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/jdk/",
+          "items": 3,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "9de506c0b6fdbf8d456edc736c4c0366c2817d36b6be0464df119072a001e468",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/util/",
+          "items": 3,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "213269cf56e2d056d74beaa52c6e8b153004d6a3b33d1c1e235a5c64fb1db3e8",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/automation/",
+          "items": 2,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "3f803a67c0b5e98f875b9557624a9f07c439c15782a43bb37c88544923d382ce",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/jenkins/",
+          "items": 2,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "baacab618625d533d1cfa9079cb9079e57efb45d60416311d30b370abc850e9b",
+          "result": "passed"
+        }
+      ],
+      "noUnavailableGuides": true,
+      "result": "passed"
+    },
+    "browserChecks": 49,
+    "screenshotsReviewed": [
+      "KO Jenkins390px",
+      "EN publishing320px"
+    ]
+  },
+  "limits": [
+    "No new article implementation, code execution result or ranking improvement is claimed.",
+    "Other language paths are omitted until actual editions exist.",
+    "Exact-head CI and production merge evidence are recorded privately after creation."
+  ]
+}
