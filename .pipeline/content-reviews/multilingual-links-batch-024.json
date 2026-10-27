@@ -1,0 +1,108 @@
+{
+  "createdAt": "2026-10-27T23:00:43.052912+00:00",
+  "branch": "seo/multilingual-link-validation-batch-024",
+  "publication": "Draft follow-up only. User approved PR72/73; this new change awaits review.",
+  "purpose": "Exclude empty noindex listing pages from multilingual alternate relationships and guard the generated SEO graph.",
+  "initialAudit": {
+    "invalidIndexableAlternateEdges": 12,
+    "sourcePages": [
+      "/en/posts/",
+      "/ko/posts/"
+    ],
+    "targetLanguages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru",
+      "es"
+    ],
+    "issue": "All twelve links targeted existing noindex post listings with no articles."
+  },
+  "scope": {
+    "articleSourcesChanged": 0,
+    "newRoutes": 0,
+    "translatedStringsChanged": 0,
+    "publishedTranslations": 36,
+    "supportedLanguages": 8,
+    "fix": "Post/digest alternates include only languages with actual entries; empty listings emit no hreflang.",
+    "guard": "Build validates generated self-canonical/indexable targets, matching language, unique absolute links, self reference, reciprocal links, existing English x-default policy and sitemap/HTML alternate agreement."
+  },
+  "review": {
+    "type": "Self AI review; not independent or human review",
+    "findings": [
+      {
+        "issue": "An empty translated post index is a real URL but noindex, so route existence alone is insufficient.",
+        "resolution": "Filter using published entries and verify final emitted metadata."
+      },
+      {
+        "issue": "Sitemap does not repeat hreflang for every static page; Google accepts HTML or XML annotation.",
+        "resolution": "Compare annotations where XML provides them; do not require duplicate implementation for every URL."
+      },
+      {
+        "issue": "Noindex search pages and old redirect shells are intentionally not alternate destinations.",
+        "resolution": "Exclude them from eligible targets, retain normal navigation and existing redirects."
+      },
+      {
+        "issue": "Passing static checks is not evidence of Google indexing or higher rank.",
+        "resolution": "State the static scope in CLI output, README and PR."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "sha256": {
+      "scripts/check_seo.py": "5505ac26d75ce7df28aec4f20dce786f7453c8cebdb5fe79e2606fdd61cc10cc",
+      "scripts/test_check_seo.py": "2fb3647aa215dd1d051560accbddb9954511cd5387a0b8261dda0e952d542fcc",
+      "scripts/test-site.mjs": "a1205aabaf6ac7a4d680ec1cd02154bfe496dcf19331122ec5bab3afd11ddf93",
+      "src/components/Listing.astro": "a3d30c5b5eb4bc0528c7425286775e58786087023b821542af0bbe9584340155",
+      "src/pages/[lang]/posts/index.astro": "1bc75853e88bb68ee0d999120c000335070187031b0ca1bbe2a00286773512be",
+      "src/pages/[lang]/digest/index.astro": "66833ae8df1185608ec85816916deab2295fb6f906ba14c931458f4e8a9c9286",
+      "package.json": "c9cc58c325652adc7050a1ad26b9bd93a73324b9587e147486482ae382c050eb",
+      "README.md": "9f1780266bb14b78a3a4d0e23829d8d8c1fd2eb9112c1e67a54adad5ac20e16a"
+    }
+  },
+  "validation": {
+    "pythonTests": 177,
+    "nodeTests": 47,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 936,
+    "sitemapURLs": 471,
+    "indexableSelfCanonicalPages": 813,
+    "HTMLAlternateEdges": 1459,
+    "alternateGroups": 305,
+    "sitemapByLanguage": {
+      "en": 112,
+      "ko": 305,
+      "zh-CN": 9,
+      "ja": 9,
+      "de": 9,
+      "fr": 9,
+      "ru": 9,
+      "es": 9
+    },
+    "mutationTests": "Eight test methods cover noindex/none, refresh, wrong canonical, absent/nonreciprocal targets, wrong/duplicate/missing locale, relative/external/query/fragment URL, x-default policy, XML/HTML disagreement, duplicate/empty sitemap and bad namespace.",
+    "generatedHTMLTest": "All eight post listings; en/ko reciprocal links retained, six empty lists remain noindex without hreflang or sitemap loc."
+  },
+  "sources": [
+    "https://developers.google.com/search/docs/specialty/international/localized-versions",
+    "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap"
+  ],
+  "limits": [
+    "No actual search-engine index or rank claim.",
+    "No new translations or article rewrites.",
+    "Reciprocal metadata does not certify semantic translation equivalence.",
+    "External alternate URLs are prohibited by this site-specific guard, not by a universal hreflang rule."
+  ],
+  "baseCommit": "92e1911068d54ca5658bfa443a7a6be93d0ec06e",
+  "previousPublication": {
+    "PRs": [
+      72,
+      73
+    ],
+    "integratedCI": 40598622473,
+    "integratedConclusion": "success",
+    "mainCommit": "92e1911068d54ca5658bfa443a7a6be93d0ec06e",
+    "productionRun": 40599103830,
+    "productionStatusAtPreparation": "in_progress"
+  }
+}

@@ -4,5 +4,7 @@ import { entries, publishedLanguages, text, type Language } from '../../../lib/c
 export async function getStaticPaths() { return (await publishedLanguages()).map(lang => ({ params: { lang } })); }
 const lang = Astro.params.lang as Language;
 const section = 'digest' as const;
+const all = await entries();
+const alternates = (await publishedLanguages()).filter(language => all.some(entry => entry.language === language && entry.kind === 'digest')).map(language => ({ language, url: `/${language}/${section}/` }));
 ---
-<Listing items={(await entries()).filter(e => e.language === lang && e.kind === 'digest')} lang={lang} title={text[lang][section]} root={`/${lang}/${section}/`} alternates={(await publishedLanguages()).map(language => ({ language, url: `/${language}/${section}/` }))} />
+<Listing items={all.filter(e => e.language === lang && e.kind === 'digest')} lang={lang} title={text[lang][section]} root={`/${lang}/${section}/`} alternates={alternates} />
