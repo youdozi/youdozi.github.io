@@ -53,7 +53,7 @@ Boot 3.0 requires Java 17 and Spring Framework 6. Java EE packages such as `java
 
 Inspect the resolved graph as well as imports. For example, `./gradlew dependencyInsight --dependency javax.servlet-api --configuration runtimeClasspath` helps locate a legacy servlet artifact. An empty report does not prove the whole application has migrated: inspect the other libraries and configurations it actually uses. See [Gradle's dependency reports](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html).
 
-For Querydsl JPA, align the JPA and annotation-processor artifacts and select their Jakarta variant where required by that artifact line. Confirm that annotation processing generates the expected Q types and that representative queries execute. Gradle's `configureEach` controls task configuration; it cannot convert an incompatible Java EE dependency into a Jakarta dependency.
+For Querydsl JPA, [align the JPA and annotation-processor artifacts](/en/posts/2023-09-09-springboot3-querydsl/) and select their Jakarta variant where required by that artifact line. Confirm that annotation processing generates the expected Q types and that representative queries execute. Gradle's `configureEach` controls task configuration; it cannot convert an incompatible Java EE dependency into a Jakarta dependency.
 
 ## 3. Check renamed properties and authorization behavior
 
