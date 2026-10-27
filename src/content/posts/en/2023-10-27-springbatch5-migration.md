@@ -9,8 +9,8 @@ tags:
   - spring batch 5
   - migration
 publishedAt: "2026-10-27T03:19:18+00:00"
-title: "Spring Batch 5 Migration: Schema, Parameters, and Restart Checks"
-updatedAt: 2026-10-27T05:23:47.316+00:00
+title: "Spring Batch 5 Migration Guide: Schema, Job Parameters and Restart"
+updatedAt: 2026-10-27T10:25:23.707+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -20,9 +20,7 @@ reviewSources:
   - https://docs.spring.io/spring-batch/reference/5.2/job/java-config.html
   - https://docs.spring.io/spring-batch/reference/5.2/schema-appendix.html
   - https://docs.spring.io/spring-boot/3.5/how-to/batch.html
-description: Review Spring Batch 5 metadata changes and run H2 tests for typed
-  parameters, completed-instance rejection, and failed-step restart with
-  explicit infrastructure.
+description: "Plan Spring Batch 5 schema and Job parameter migration, then run fresh-schema H2 tests for typed parameters, completed instances and failed-step restart."
 ---
 Migrating to Spring Batch 5 requires checking the metadata schema, persisted Job parameter format, execution contexts, and restart policy alongside dependencies. Dropping populated columns first, or merely replacing type codes with class names, does not complete a data migration.
 

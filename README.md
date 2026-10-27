@@ -140,6 +140,8 @@ python3 -m venv .venv-search-console
 
 새 후보의 검토 카드에는 백엔드 관련성·선정 이유·원문 근거로 구성한 변경/대상/조건·사용자 편집 의견·직접 실험 여부를 표시합니다. 작성 필드와 검증 조건은 [PIPELINE.md](PIPELINE.md)의 후보 선정과 편집 형식 항목을 참조하세요.
 
+핵심 한영 글20개와 과거 URL10개의 색인·검색 실적을 함께 추적하려면 [검색 성과 확인 절차](docs/search-growth.md)를 따릅니다. `python scripts/search_growth.py`는 목록 미리보기이며 `--live`에서만 읽기 전용 API 조회를 수행합니다. 결과는 저장소 밖 비공개 파일에 보관합니다.
+
 ## 검색 채널 확장과 IndexNow
 
 검색엔진 등록은 서비스별 계정에서 진행합니다. 현재 사이트 주소는 `https://youdozi.github.io/`이며, Google Search Console의 기존 속성을 유지합니다.
@@ -182,4 +184,4 @@ python3 -B scripts/indexnow.py --submit
 Ruby 아카이브 예제는 `python3 -B scripts/check_ruby_environment_examples.py`로 한영 전체 파일을 추출해 비교합니다. Ruby3.2.2에서 설치된 gem으로 임시 번들을 해결하고 두 페이지 렌더링·C++17 출력·잘못된 컴파일러의 실패를 확인합니다. CI의 `--install`은 임시 저장소에 과거 번들을 설치합니다. Ruby3.2는 지원 종료된 재현 환경이며 현재 Astro 빌드나 신규 환경 권장 버전이 아닙니다. macOS SDK 플래그 검사는 로컬에서, 기본 C++ 호출은 Linux CI에서 구분해 확인합니다.
 Jenkins 예제는 `python3 -B scripts/check_jenkins_examples.py`로 한영 전체 Python 파일을 추출해 실행합니다. 실행 중인 Linux 컨테이너 Docker 엔진이 필요합니다. 이미지를 digest로 고정한 일회용 컨트롤러에서 재생성·정지 백업·master.key 분리·새 볼륨 복구를 검사하고 생성 자원을 삭제합니다. 암호와 백업은 로그나 CI 산출물로 남기지 않습니다. 전체 운영 복구나 작업 실행을 입증하는 검사는 아닙니다.
 
-한영 `/en/guides/`·`/ko/guides/`에서 Java 문제 풀이·Spring Boot·셸 자동화·JDK·개발 도구 학습 안내를 찾을 수 있습니다. 안내는 실제 공개 가능한 글만 연결하며 본문 카테고리 링크로 돌아올 수 있습니다. 가이드 목록·언어 링크·CollectionPage/ItemList·사이트맵은 같은 등록 정보를 사용합니다. 이 안내는 기존 글을 연결하며 코드의 새 실행 결과나 검색 노출 성과를 주장하지 않습니다.
+한영 `/en/guides/`·`/ko/guides/`에서 Java 문제 풀이·Spring Boot·셸 자동화·JDK·개발 도구·게시 절차·Jenkins 복구·Ruby 환경 진단의 8개 학습 안내를 찾을 수 있습니다. 안내는 실제 공개 가능한 글만 연결하며 본문 카테고리 링크로 돌아올 수 있습니다. 가이드 목록·언어 링크·CollectionPage/ItemList·사이트맵은 같은 등록 정보를 사용합니다. 이 안내는 기존 글을 연결하며 코드의 새 실행 결과나 검색 노출 성과를 주장하지 않습니다.

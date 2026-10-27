@@ -1,0 +1,183 @@
+{
+  "createdAt": "2026-10-27T10:30:28.455183+00:00",
+  "purpose": "Improve discovery of ten paired technical guides, clarify four search-intent topics and establish a read-only index/performance baseline.",
+  "baseCommit": "622e51d2e0d9ddef255ec564e5e01122fb1762e6",
+  "branch": "seo/core-search-growth-batch-018",
+  "publication": "Draft only. No approval to merge PR69 or this SEO batch.",
+  "scope": {
+    "selectedTopics": 10,
+    "coreArticleUrls": 20,
+    "legacyUrls": 10,
+    "homepageLanguages": [
+      "en",
+      "ko"
+    ],
+    "focusTopics": 4,
+    "editedManuscripts": 8,
+    "newArticleSources": 0,
+    "newRoutes": 0
+  },
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "review": {
+    "type": "Two-pass self AI review of paired editorial meaning and generated output; no independent or human review claimed.",
+    "findings": [
+      {
+        "issue": "Search impressions alone do not identify keyword search volume or prove an optimization effect.",
+        "resolution": "Describe the selection as editorial prioritization using prior site impressions; preserve snapshot periods and avoid ranking/CTR improvement claims."
+      },
+      {
+        "issue": "HTTP200, a matching canonical and an accepted API response do not prove Google indexing.",
+        "resolution": "Separate live route checks, Google indexed-version responses, API errors and metadata/refresh signals. Legacy HTTP200 refreshes are not reported as server301 redirects."
+      },
+      {
+        "issue": "A failed API response or an omitted analytics row could be treated as deindexing or zero traffic.",
+        "resolution": "Exclude API failures from state comparisons and retain missing rows as unreturned. Document top-row and anonymization limits."
+      },
+      {
+        "issue": "Historical Temurin news and release-asset metadata could imply current release delay or a verified download.",
+        "resolution": "Lead with present metadata lookup and retain the historical notice and no-download/no-hash boundaries."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "sha256": {
+      "content/seo/core-articles.json": "7f660818e2eb88c033fc6f767bde2fda835e76cc8193e04ad64bc0d12f7c085c",
+      "src/lib/core-articles.ts": "3cdb66004cd5797bbc090d64f0990f9049d4d70dfedb2876eaa608e15e930c16",
+      "src/components/CoreArticles.astro": "2539df56ca2f04a3dc7227ef197b616eaff362792b199d674cb8e2a37648b8e0",
+      "src/components/Listing.astro": "7533002a59e943b6cc29645f5b79045a8d6f1fc8bc9f27b90321786c964cefc3",
+      "src/pages/[lang]/index.astro": "f860414c4662594792694e4dfab0f378e9e6d14758fe0bf04ef126a63ada7b1a",
+      "scripts/search_growth.py": "2f5aa03e082dbe522ab372bd3dd96c4f58e54a762f8fbd4eec34e3b8ab23269d",
+      "scripts/test_search_growth.py": "88cc86440acb7660315a6844e6b376e86b38a6912dcec5eae0e39269a56f8a68",
+      "scripts/test-core-articles.mjs": "02288fe1433d7f2c7e37592ecdb8624b22aec8400d1db4ca7389f5bef857b9c2",
+      "scripts/test-site.mjs": "60b642cbb90242b702479d07f4ccea3fafa51588447e5af0008121a51cfc5e0d",
+      "docs/search-growth.md": "f41a66e7a65cd7a586aa0bbea058b79c0c8081480356fa52352b097c7d2124ad"
+    }
+  },
+  "validation": {
+    "pythonTests": 166,
+    "nodeTests": 38,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 934,
+    "sitemapUrls": 463,
+    "articleSEO": {
+      "articleResults": [
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-20-jdk-21-release/",
+          "language": "en",
+          "title": "Java 21 Features: Virtual Threads, Collections and Preview Boundaries",
+          "htmlSha256": "71485e2a36b61516658a2b8ae69fb1dd65607d71031b36b68d6aea5b10c6f5f5",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-23-linux-shellscript-github-latest/",
+          "language": "en",
+          "title": "GitHub Latest Release with curl and jq: Select One Download Asset",
+          "htmlSha256": "1e3acb69880aace0f56a9ce98b87f802bb1e6b5e56eb2dd60dd866c6427dcbd4",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-10-10-temurin-jdk21-delay/",
+          "language": "en",
+          "title": "Temurin JDK 21: Check Binary Metadata and Understand the 2023 Delay",
+          "htmlSha256": "ea55d282b4b595cab70a2fff1adc8f86094c02718d12380a1439a82c63feb0c3",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-10-27-springbatch5-migration/",
+          "language": "en",
+          "title": "Spring Batch 5 Migration Guide: Schema, Job Parameters and Restart",
+          "htmlSha256": "021a800347cae899a8791365faecd815440c26ba09b52fcd40cbe88b6ce3047e",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-20-jdk-21-release/",
+          "language": "ko",
+          "title": "Java 21 기능: 가상 스레드·순차 컬렉션과 Preview 구분",
+          "htmlSha256": "66fbd598eab280ef6ab1f3c553113ecdc07447fa80ef0086716673b426abaf5f",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-23-linux-shellscript-github-latest/",
+          "language": "ko",
+          "title": "curl·jq로 GitHub 최신 릴리스 조회와 다운로드 자산 선택하기",
+          "htmlSha256": "bbcfbc66fc2d08a67a032af29c8dfa7bfca9b5ac5bedb9058293424c30a7fd99",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-10-10-temurin-jdk21-delay/",
+          "language": "ko",
+          "title": "Temurin JDK 21: 바이너리 메타데이터 확인과 2023년 지연 기록",
+          "htmlSha256": "9dd88ad95e5a3375977ad12913862c012d557b3e0ed35fa7bd3199e9e1ca4dc3",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-10-27-springbatch5-migration/",
+          "language": "ko",
+          "title": "Spring Batch 5 마이그레이션: 스키마·Job 파라미터·재시작",
+          "htmlSha256": "a1a64ad5bf89d08783b75322b112d79d47add5f275bac02450008f59765807c1",
+          "result": "passed"
+        }
+      ],
+      "sitemapUrls": 463,
+      "result": "passed"
+    },
+    "homepageSEO": [
+      {
+        "language": "en",
+        "featuredLinks": 10,
+        "result": "passed"
+      },
+      {
+        "language": "ko",
+        "featuredLinks": 10,
+        "result": "passed"
+      },
+      {
+        "language": "zh-CN",
+        "featuredLinks": 0,
+        "result": "passed"
+      },
+      {
+        "language": "ja",
+        "featuredLinks": 0,
+        "result": "passed"
+      },
+      {
+        "language": "de",
+        "featuredLinks": 0,
+        "result": "passed"
+      },
+      {
+        "language": "fr",
+        "featuredLinks": 0,
+        "result": "passed"
+      },
+      {
+        "language": "ru",
+        "featuredLinks": 0,
+        "result": "passed"
+      },
+      {
+        "language": "es",
+        "featuredLinks": 0,
+        "result": "passed"
+      }
+    ],
+    "browserChecks": 22,
+    "screenshotsReviewed": [
+      "English home1280px",
+      "Korean home390px"
+    ],
+    "codeAndIdentityPreservation": "All fenced examples, publishedAt, routeSlug, legacyUrl, legacySource and archive body hashes match the approved main version."
+  },
+  "privateEvidence": "Live Google inspection/performance baseline is stored outside the repository. No query rows, OAuth files or tokens are included.",
+  "measurementPlan": "Record deployed commit after approval; manually compare weekly index snapshots and review a full post-deployment period after four weeks. No schedule created.",
+  "limits": [
+    "Draft changes are not deployed and have no measured ranking effect.",
+    "Google index inspection is indexed-version data, not a live indexing test or request.",
+    "Homepage selection omits unavailable/future/example entries and other language editions.",
+    "New snapshots do not overwrite old evidence."
+  ]
+}

@@ -182,14 +182,14 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
 
 
     // Check emitted paths rather than assuming the registry is rendered correctly.
-    const guideCounts=[['coding-test',10],['springboot',9],['linux',4],['jdk',3],['util',3]];
+    const guideCounts=[['coding-test',10],['springboot',9],['linux',4],['jdk',3],['util',3],['automation',2],['jenkins',2],['jekyll',2]];
     for(const lang of ['en','ko']){
       const hubPath=`/${lang}/guides/`;
       const hub=await readFile(`dist${hubPath}index.html`,'utf8');
       const hubData=JSON.parse(hub.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
       const hubList=hubData.find(x=>x['@type']==='ItemList');
       assert.deepEqual(hubList.itemListElement.map(x=>x.url),guideCounts.map(([term])=>`https://youdozi.github.io/${lang}/categories/${term}/`));
-      assert.equal(hubList.numberOfItems,5);
+      assert.equal(hubList.numberOfItems,8);
       assert.ok(!hubData.some(x=>x['@type']==='BlogPosting'));
       for(const [term,count] of guideCounts){
         const path=`/${lang}/categories/${term}/`;
@@ -211,7 +211,15 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.ok(hub.includes(`hreflang="x-default" href="https://youdozi.github.io/en/guides/"`));
       assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${hubPath}</loc>`));
     }
+    const coreRegistry=JSON.parse(await readFile('content/seo/core-articles.json','utf8'));
+    for(const lang of ['en','ko']) {
+      const home=await readFile(`dist/${lang}/index.html`,'utf8');
+      const featured=home.match(/<section class="core-articles"[\s\S]*?<\/section>/)?.[0];
+      assert.ok(featured,'Native home exposes the selected practical guides');
+      assert.deepEqual([...featured.matchAll(/href="([^"]+)"/g)].map(m=>m[1]),coreRegistry.articles.map(a=>`/${lang}/posts/${a.key}/`));
+    }
     const japaneseHome=await readFile('dist/ja/index.html','utf8');
+    assert.ok(!japaneseHome.includes('core-articles-heading'));
     assert.ok(!japaneseHome.includes('href="/ja/guides/"'),'Do not link to an unavailable guide index');
 
 

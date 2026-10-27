@@ -1,5 +1,5 @@
 ---
-title: Temurin 21 출시 지연 기록과 현재 JDK 바이너리 확인 방법
+title: "Temurin JDK 21: 바이너리 메타데이터 확인과 2023년 지연 기록"
 language: ko
 translationKey: 2023-10-10-temurin-jdk21-delay
 routeSlug: 2023-10-10-temurin-jdk21-delay
@@ -13,7 +13,7 @@ tags:
   - temurin
 legacyUrl: /jdk/temurin-jdk21-delay/
 legacySource: _posts/jdk/temurin-jdk21-delay/2023-10-10-temurin-jdk21-delay.markdown
-updatedAt: 2026-10-27T05:23:47.316+00:00
+updatedAt: 2026-10-27T10:25:23.707+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -24,9 +24,10 @@ reviewSources:
   - https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21%2B35
   - https://api.github.com/repos/adoptium/temurin21-binaries/releases/tags/jdk-21%2B35
   - https://api.adoptium.net/q/swagger-ui/
-description: 2023년 Temurin 21의 TCK 관련 지연과 공개 시점을 구분하고, Adoptium API에서 플랫폼·JDK
-  유형·체크섬 메타데이터를 확인합니다.
+description: "Adoptium API로 OS·CPU·패키지 유형에 맞는 Temurin JDK 21 메타데이터를 확인합니다. 다운로드 파일 검증과 메타데이터 검사, 2023년 출시 지연을 구분합니다."
 ---
+Temurin JDK 21 바이너리를 찾으려면 Adoptium API에서 필요한 OS·CPU·JVM·패키지 유형을 지정합니다. 아래 예제는 Linux x64 JDK의 메타데이터·체크섬 형식·URL 위치를 확인합니다. 압축 파일을 다운로드하거나 해시하지는 않습니다.
+
 Temurin 21의 2023년 첫 출시 지연은 OpenJDK 21 자체의 출시 지연과 다릅니다. Adoptium은 TCK 계약 검토로 공식 배포가 늦어졌다고 설명했고, 이후 TCK 수령과 실제 릴리스 공개를 별도 단계로 알렸습니다. 지금도 Temurin 21 배포가 지연 중이라는 뜻은 아닙니다.
 
 ## 처리 흐름
