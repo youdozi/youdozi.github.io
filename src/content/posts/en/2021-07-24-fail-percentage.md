@@ -13,7 +13,7 @@ title: "Sort Failure Rates in Java: Denominators, Ties, and Long Products"
 description: Count stopped and reached players, sort exact rates with long
   cross-products, and handle unreachable stages, full completion, and
   stage-number tie-breaking.
-updatedAt: "2026-10-27T04:21:24+00:00"
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; complete paired solutions
@@ -25,6 +25,12 @@ reviewSources:
 A stage's failure-rate denominator is the number of players who reached it, not the total player count. Count where players stopped, update the remaining reached population, then sort by descending rate and ascending stage number.
 
 The [exercise](https://school.programmers.co.kr/learn/courses/30/lessons/42889) bounds stages N at 500 and players M at 200,000. Input N+1 represents players who cleared every stage and is not itself a stage to rank. A stage reached by nobody has failure rate 0.
+
+## Processing flow
+
+![Save reached counts before subtracting stopped players. Compare rates by long cross-products, then break ties by stage number.](/assets/diagrams/2021-07-24-fail-percentage-en.svg)
+
+Save reached counts before subtracting stopped players. Compare rates by long cross-products, then break ties by stage number.
 
 ## Count stopped and reached players
 

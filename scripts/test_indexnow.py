@@ -42,6 +42,17 @@ class IndexNowTests(unittest.TestCase):
             return status, b'', ix.ENDPOINT
         return calls, fetch
 
+    def test_category_guides_are_notified_only_when_canonical_and_in_sitemap(self):
+        url = self.page('/en/categories/coding-test/')
+        self.page('/ko/categories/coding-test/')
+        self.sitemap([url])
+        manifest = ix.build_manifest(self.dist)
+        self.assertEqual(list(manifest['pages']), [url])
+        self.assertEqual(ix.changed_urls(None, manifest), [url])
+        self.page('/en/categories/coding-test/', extra='<meta name="robots" content="noindex">')
+        with self.assertRaises(ValueError):
+            ix.build_manifest(self.dist)
+
     def test_only_sitemap_pages_are_fingerprinted_and_preview_has_no_side_effects(self):
         url = self.page()
         self.page('/ja/digest/unapproved/')

@@ -1,5 +1,7 @@
 ---
 import Listing from '../../../components/Listing.astro';
+import AlgorithmCategory from '../../../components/AlgorithmCategory.astro';
+import { algorithmGuide, algorithmCategoryAlternates } from '../../../lib/algorithm-guide';
 import { entries, publishedLanguages, taxonomySlug, taxonomyUrl, type Language } from '../../../lib/content';
 export async function getStaticPaths() {
   const all = await entries();
@@ -8,5 +10,7 @@ export async function getStaticPaths() {
 const lang = Astro.params.lang as Language;
 const kind = Astro.params.taxonomy as 'categories' | 'tags';
 const term = Astro.props.term as string;
+const all = await entries();
+const guide = kind === 'categories' && term === 'coding-test' ? algorithmGuide(lang, all) : undefined;
 ---
-<Listing items={(await entries()).filter(e => e.language === lang && e[kind].includes(term))} lang={lang} title={term} root={taxonomyUrl(lang,kind,term)} />
+{guide ? <AlgorithmCategory guide={guide} alternates={algorithmCategoryAlternates(all)} /> : <Listing items={all.filter(e => e.language === lang && e[kind].includes(term))} lang={lang} title={term} root={taxonomyUrl(lang,kind,term)} />}

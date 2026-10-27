@@ -12,7 +12,7 @@ tags:
   - 프로그래머스
 legacyUrl: /coding-test/pair-delete/
 legacySource: _posts/coding-test/2021-07-20-pair-delete.markdown
-updatedAt: 2026-10-27T04:11:15.275Z
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; complete paired solutions
@@ -26,6 +26,12 @@ description: 같은 인접 문자 쌍을 스택으로 제거합니다. 접두사
 인접한 같은 문자 두 개를 지우는 문제는, 지금까지 읽은 문자열의 정리 결과를 스택에 남기면 한 번의 순회로 풀 수 있습니다. 새 문자가 맨 위와 같으면 둘을 제거하고, 다르면 새 문자를 쌓습니다.
 
 [문제](https://school.programmers.co.kr/learn/courses/30/lessons/12973)의 입력은 길이 1~1,000,000인 영문 소문자 문자열입니다. 모두 제거할 수 있으면 1, 문자가 남으면 0을 반환합니다. 단순히 각 문자의 총개수가 짝수인지 확인하는 조건만으로는 인접성 규칙을 표현할 수 없습니다.
+
+## 처리 흐름
+
+![스택은 처리한 접두사를 축약한 결과입니다. 다음 문자가 꼭대기와 같으면 제거하고, 다르면 새 꼭대기로 넣습니다.](/assets/diagrams/2021-07-20-pair-delete-ko.svg)
+
+스택은 처리한 접두사를 축약한 결과입니다. 다음 문자가 꼭대기와 같으면 제거하고, 다르면 새 꼭대기로 넣습니다.
 
 ## 접두사의 정리 결과를 보관
 

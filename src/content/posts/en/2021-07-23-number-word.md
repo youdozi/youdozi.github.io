@@ -13,7 +13,7 @@ title: Convert English Digit Words in Java with String.replace
 description: Normalize valid mixtures of digits and zero-to-nine words using
   literal replacement. Distinguish replace from replaceAll and explain integer
   bounds and scope.
-updatedAt: "2026-10-27T04:06:49+00:00"
+updatedAt: 2026-10-27T04:56:35.582+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; paired solutions compiled
@@ -25,6 +25,12 @@ reviewSources:
 For valid input mixing digits with digit words, replace the fixed words `zero` through `nine` with digits, then parse the resulting integer. The search terms are literals, so `String.replace` is sufficient without `replaceAll`.
 
 The [exercise](https://school.programmers.co.kr/learn/courses/30/lessons/81301) guarantees valid lowercase digit words and digits, a result from 1 to 2,000,000,000, and no leading zero. This is not a parser for general English number expressions.
+
+## Processing flow
+
+![Replace the fixed words zero through nine with literal digits, then parse the resulting decimal string.](/assets/diagrams/2021-07-23-number-word-en.svg)
+
+Replace the fixed words zero through nine with literal digits, then parse the resulting decimal string.
 
 ## Replace the ten fixed words
 
