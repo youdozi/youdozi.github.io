@@ -60,6 +60,8 @@ npm run preview
 
 내부 태그를 숨긴 뒤 실제 주제가 없는 언어별 주제 목록은 `noindex,follow`로 유지하고 사이트맵·언어 대체 링크에서 제외합니다. 현재 해당하는 번역 언어 6개의 빈 목록만 제외되며, 모든 글의 사이트맵 항목은 유지됩니다.
 
+기술 글의 실행 예제는 원고의 코드 블록을 직접 추출합니다. `python3 -B scripts/check_webclient_example.py`는 JDK 17·Gradle 8.4에서 영문·한국어 Java/Gradle 예제의 일치와 HTTP 응답 계약 8개를 검사합니다. `python3 -B scripts/check_string_formatting_examples.py`는 표준 문자열 예제의 출력과 로케일 독립성을 검사하며, 두 검사는 CI에서도 실행합니다. 역사적인 JDK 21 preview는 해당 JDK를 설치한 뒤 `--preview-jdk /path/to/jdk21`을 추가해 별도로 확인합니다.
+
 ## 배포 전환
 
 1. 이 변경을 검토하고 기본 게시 브랜치 `main`에 반영합니다.

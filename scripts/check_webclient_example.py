@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from xml.etree import ElementTree
 
 
 def main():
@@ -15,25 +16,25 @@ def main():
     env=os.environ.copy()
     if sys.platform=='darwin':
         env['JAVA_HOME']=subprocess.check_output(['/usr/libexec/java_home','-v','17'],text=True).strip()
-    article=Path('src/content/posts/ko/2023-09-19-springboot-test-webclient.md').read_text()
-    code=re.findall(r'```java\n([\s\S]*?)\n```',article)[0]
+    examples=[]
+    for language in ('en','ko'):
+        article=Path(f'src/content/posts/{language}/2023-09-19-springboot-test-webclient.md').read_text()
+        examples.append((re.findall(r'```java\n([\s\S]*?)\n```',article)[0],
+                         re.findall(r'```groovy\n([\s\S]*?)\n```',article)[0]))
+    if examples[0] != examples[1]:
+        raise SystemExit('English and Korean WebClient code and build files must match.')
+    code,build=examples[0]
     with tempfile.TemporaryDirectory(prefix='youdozi-webclient-') as directory:
         root=Path(directory);(root/'src/test/java').mkdir(parents=True)
         (root/'src/test/java/ExternalApiTest.java').write_text(code)
         (root/'settings.gradle').write_text("rootProject.name = 'article-webclient-regression'\n")
-        (root/'build.gradle').write_text("""plugins { id 'java' }
-repositories { mavenCentral() }
-dependencies {
-    testImplementation platform('org.springframework.boot:spring-boot-dependencies:3.5.7')
-    testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'io.projectreactor:reactor-test'
-    testImplementation 'com.squareup.okhttp3:mockwebserver:4.12.0'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
-test { useJUnitPlatform() }
-""")
+        (root/'build.gradle').write_text(build+'\n')
         subprocess.run(['gradle','-p',directory,'--no-daemon','test'],env=env,check=True,timeout=240)
-        print('[ok] Published WebClient tests passed for JSON 200, HTML 200 and HTML 500.')
+        suites=[ElementTree.parse(path).getroot() for path in (root/'build/test-results/test').glob('TEST-*.xml')]
+        tests=sum(int(suite.get('tests','0')) for suite in suites)
+        unsuccessful=sum(int(suite.get(key,'0')) for suite in suites for key in ('failures','errors','skipped'))
+        if tests != 8 or unsuccessful:
+            raise SystemExit(f'Expected eight passing published tests; got {tests} tests and {unsuccessful} unsuccessful.')
+        print('[ok] Eight WebClient response contracts passed using the exact Java and Gradle blocks in both editions.')
 
 if __name__=='__main__':main()

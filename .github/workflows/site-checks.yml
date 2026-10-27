@@ -37,6 +37,14 @@ jobs:
           java-version: '17'
       - name: Compile and execute published algorithm examples
         run: npm run test:articles
+      - name: Compile and execute published standard string formatting example
+        run: python3 -B scripts/check_string_formatting_examples.py
+      - name: Install the WebClient example's reproduction Gradle version
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.4'
+      - name: Compile and execute published WebClient response contracts
+        run: python3 -B scripts/check_webclient_example.py
       - name: Migration regression tests
         run: npm test
       - name: Check Astro types and content schemas

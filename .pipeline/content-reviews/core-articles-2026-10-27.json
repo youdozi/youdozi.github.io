@@ -1,0 +1,101 @@
+{
+  "createdAt": "2026-10-27T01:27:23.356989+00:00",
+  "purpose": "Pre-publication review of three existing technical articles in English and Korean",
+  "publicationApprovalAtReview": null,
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "selection": {
+    "searchWindow": {
+      "startDate": "2026-09-29",
+      "endDate": "2026-10-26",
+      "dataState": "all",
+      "timezone": "America/Los_Angeles"
+    },
+    "recordedPerformance": "Two impressions, no clicks for the legacy Spring Boot migration URL; no returned query rows for the three candidates. Latest dates may be provisional.",
+    "interpretation": "Insufficient query evidence to validate search demand. Selected for technical relevance and reproducibility, not demonstrated traffic opportunity."
+  },
+  "preserved": [
+    "routeSlug",
+    "translationKey",
+    "publishedAt",
+    "legacyUrl",
+    "legacySource",
+    "archiveBodySha256"
+  ],
+  "independentAIReview": {
+    "session": "core_article_review",
+    "scope": "Read-only review of six articles and two example checkers against primary sources; no execution by reviewer. Not a human or native-speaker review.",
+    "reviewedGitBlobs": {
+      "src/content/posts/en/2023-09-08-springboot3-migration.md": "ec3138598c909f291efea09d9611b34613cd0408",
+      "src/content/posts/ko/2023-09-08-springboot3-migration.md": "6ad8146c20897102805d77eb8b42220239e49277",
+      "src/content/posts/en/2023-09-19-springboot-test-webclient.md": "c55147fc962973175056cff4a09f8f646d9d084d",
+      "src/content/posts/ko/2023-09-19-springboot-test-webclient.md": "c69a48c29d0228d61fe2b16a882813ccc61c6225",
+      "src/content/posts/en/2023-09-23-jdk-21-string-templates.md": "121b7534461fd5e9a32badff6ad4cbd5838c2f66",
+      "src/content/posts/ko/2023-09-23-jdk-21-string-templates.md": "1b4764cf7426ff1cea10b540efca9b0870e3599d"
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "issue": "Default-locale numeric formatting made the fixed output locale-dependent.",
+        "resolution": "Use String.format(Locale.ROOT, ...) and test the standard example under default and ar/EG JVM locales.",
+        "independentRecheck": "resolved"
+      },
+      {
+        "severity": "minor",
+        "issue": "Generic +json suffix acceptance exceeded the application/*+json sample contract.",
+        "resolution": "Require the application media type and add an eighth test rejecting text/example+json.",
+        "independentRecheck": "resolved"
+      },
+      {
+        "severity": "minor",
+        "issue": "Korean reference to the last test became ambiguous after appending a case.",
+        "resolution": "Refer explicitly to the empty JSON body test.",
+        "independentRecheck": "not requested for the single phrase; author confirmed the corrected reference"
+      }
+    ]
+  },
+  "validation": {
+    "webclient": {
+      "testsPassed": 8,
+      "environment": {
+        "jdk": "17.0.8.1",
+        "gradle": "8.4",
+        "bootBom": "3.5.7",
+        "mockWebServer": "4.12.0"
+      },
+      "source": "Exact matching Java and Gradle blocks extracted from both articles"
+    },
+    "strings": {
+      "standardJdks": [
+        "17.0.8.1",
+        "21.0.1"
+      ],
+      "standardLocales": [
+        "default",
+        "ar/EG"
+      ],
+      "previewJdk": "21.0.1",
+      "jdk22And23": "Documented history only; not executed"
+    },
+    "nodeTestsPassed": 24,
+    "astroCheck": "0 errors, 0 warnings, 0 hints",
+    "siteBuild": {
+      "htmlPages": 830,
+      "sitemapUrls": 417,
+      "internalReferences": "passed"
+    },
+    "ciConfigured": [
+      "JDK17 standard formatting example",
+      "Gradle8.4 WebClient response contracts"
+    ]
+  },
+  "finalSha256": {
+    "src/content/posts/en/2023-09-08-springboot3-migration.md": "44e7d7547daaf488d13c4c0ddea2a5a79ef81f7a6e6b4aa837324833b8af87f8",
+    "src/content/posts/ko/2023-09-08-springboot3-migration.md": "bdc9e904d8b75d976aa5bb345dc315aa3b206cd381af0596dd973f7870cdc4c8",
+    "src/content/posts/en/2023-09-19-springboot-test-webclient.md": "b69f7ccf5b342a76598aaf049b0cf271a912cc01e88332ba531e94f06d635b6d",
+    "src/content/posts/ko/2023-09-19-springboot-test-webclient.md": "307af24a6a353938144a8ecbe8ab37f6154edc25ee18af81811a8615dea30fdf",
+    "src/content/posts/en/2023-09-23-jdk-21-string-templates.md": "b3eef5bf18481a2c6631241d7bf6eed6a2f402b1ef7d37fb62f548c06cc3670a",
+    "src/content/posts/ko/2023-09-23-jdk-21-string-templates.md": "bf2d94b6873fc57e52fdfc577d3f35b347fdbececb0555470b7a5800355e5d20"
+  }
+}

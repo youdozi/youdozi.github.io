@@ -1,5 +1,5 @@
 ---
-title: "Testing Spring WebClient with MockWebServer"
+title: "Spring WebClient Tests with MockWebServer and JUnit 5"
 language: "en"
 translationKey: "2023-09-19-springboot-test-webclient"
 routeSlug: "2023-09-19-springboot-test-webclient"
@@ -11,48 +11,44 @@ tags:
   - "springboot"
   - "test"
   - "webclient"
-updatedAt: "2026-10-24T06:00:52.173Z"
-reviewedAt: "2026-10-24"
+updatedAt: "2026-10-27T01:24:58+00:00"
+reviewedAt: "2026-10-27"
 reviewStatus: "revised"
-reviewScope: "English edition based on the reviewed Korean article; technical
-  references and reproduction conditions retained."
+reviewScope: "Official documentation checked; runnable examples and version boundaries clarified."
 reviewSources:
-  - "https://docs.spring.io/spring-framework/reference/web/webflux-webclient/cl\
-    ient-testing.html"
-  - "https://docs.spring.io/spring-framework/reference/web/webflux-webclient/cl\
-    ient-exchange.html"
-  - "https://github.com/square/okhttp/tree/parent-4.12.0/mockwebserver"
-description: "Test JSON and HTML responses with Spring WebClient and
-  MockWebServer. Includes runnable JUnit tests for HTTP 200, HTTP 500, and
-  content-type errors."
+  - "https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html"
+  - "https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-exchange.html"
+description: "Run eight Spring WebClient tests with MockWebServer and JUnit 5: JSON, HTML, HTTP 500, missing Content-Type, malformed JSON and empty bodies."
 ---
-## Test the HTTP boundary
+Use a local MockWebServer to test Spring WebClient's HTTP status, response Content-Type and JSON decoding together. A `200 OK` response containing HTML is a different failure from an HTTP 500 response. Sending `Accept: application/json` does not require the server to return JSON.
 
-An external API can return HTML when your client expects JSON. A response with HTTP 500 and a response with HTTP 200 containing an HTML error page are different failures. Sending `Accept: application/json` expresses a preference; the server can still send another format.
+The test uses a real WebClient over local HTTP, without mocking its fluent method chain. Spring recommends [mock web servers for WebClient tests](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html) because they exercise the client's network behavior.
 
-A local MockWebServer lets a test control the status, headers, and body while exercising the real WebClient. This avoids mocking every method in WebClient's fluent interface and keeps the test independent of an external service.
+## Set up a standalone test project
 
-The revised example below covers three contracts:
+The reproduction environment is JDK 17.0.8.1, Gradle 8.4, Spring Boot **3.5.7 BOM** and MockWebServer **4.12.0**. These pin the example's dependencies; they are not a recommendation of current production versions. This is a plain Java test project, so no running Spring Boot application is needed.
 
-- JSON with HTTP 200 is decoded successfully.
-- HTML with HTTP 200 is rejected as an unexpected response format.
-- HTTP 500 remains an HTTP error, including when its body contains HTML.
-
-## Dependencies and reproduction environment
-
-Use Java 17 or later and a Gradle application with Spring Boot 3.x dependency management. The example was executed with JDK 17, Gradle 8.4, the Spring Boot 3.5.7 BOM, and MockWebServer 4.12.0. These versions describe the reproduction environment; check the supported dependency versions for your production application separately.
+In a new directory, create `settings.gradle` containing `rootProject.name = 'webclient-example'`, and this complete `build.gradle`:
 
 ```groovy
+plugins { id 'java' }
+repositories { mavenCentral() }
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    testImplementation platform('org.springframework.boot:spring-boot-dependencies:3.5.7')
+    testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
     testImplementation 'com.squareup.okhttp3:mockwebserver:4.12.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-tasks.named('test') { useJUnitPlatform() }
+test { useJUnitPlatform() }
 ```
 
-## A complete JUnit test class
+The BOM is explicit so that the Spring and Reactor dependencies have versions even without the Spring Boot Gradle plugin. For an application already managed by Boot, adapt the test dependencies to that application's selected BOM.
+
+## Test eight response contracts
+
+Save this complete class as `src/test/java/ExternalApiTest.java`:
 
 ```java
 import java.io.IOException;
@@ -95,8 +91,9 @@ class ExternalApiTest {
                     return response.createException().flatMap(Mono::error);
                 }
                 boolean json = response.headers().contentType()
-                    .map(type -> MediaType.APPLICATION_JSON.isCompatibleWith(type)
-                        || type.getSubtype().endsWith("+json"))
+                    .map(type -> "application".equals(type.getType())
+                        && ("json".equals(type.getSubtype())
+                            || type.getSubtype().endsWith("+json")))
                     .orElse(false);
                 if (!json) {
                     return response.releaseBody().then(Mono.<Payload>error(
@@ -119,6 +116,7 @@ class ExternalApiTest {
         assertNotNull(request);
         assertEquals("GET", request.getMethod());
         assertEquals("/employee/100", request.getPath());
+        assertEquals("application/json", request.getHeader("Accept"));
     }
 
     @Test
@@ -140,25 +138,92 @@ class ExternalApiTest {
             .expectNextMatches(payload -> payload.message().equals("ok"))
             .expectComplete().verify(Duration.ofSeconds(5));
     }
+
+    @Test
+    void rejectsMissingContentType() {
+        server.enqueue(new MockResponse().setResponseCode(200)
+            .setBody("{\"message\":\"ok\"}"));
+        StepVerifier.create(fetch())
+            .expectErrorMatches(error -> error instanceof IllegalStateException
+                && error.getMessage().equals("Expected JSON response"))
+            .verify(Duration.ofSeconds(5));
+    }
+
+    @Test
+    void rejectsMalformedJson() {
+        server.enqueue(new MockResponse().setResponseCode(200)
+            .setHeader("Content-Type", "application/json").setBody("{broken"));
+        StepVerifier.create(fetch())
+            .expectError(org.springframework.core.codec.DecodingException.class)
+            .verify(Duration.ofSeconds(5));
+    }
+
+    @Test
+    void decodesStructuredJsonSubtype() {
+        server.enqueue(new MockResponse().setResponseCode(200)
+            .setHeader("Content-Type", "application/vnd.example+json")
+            .setBody("{\"message\":\"ok\"}"));
+        StepVerifier.create(fetch())
+            .expectNextMatches(payload -> payload.message().equals("ok"))
+            .expectComplete().verify(Duration.ofSeconds(5));
+    }
+
+    @Test
+    void completesWithoutPayloadForEmptyJsonBody() {
+        server.enqueue(new MockResponse().setResponseCode(200)
+            .setHeader("Content-Type", "application/json"));
+        StepVerifier.create(fetch())
+            .expectComplete().verify(Duration.ofSeconds(5));
+    }
+
+    @Test
+    void rejectsNonApplicationJsonSubtype() {
+        server.enqueue(new MockResponse().setResponseCode(200)
+            .setHeader("Content-Type", "text/example+json")
+            .setBody("{\"message\":\"ok\"}"));
+        StepVerifier.create(fetch())
+            .expectErrorMatches(error -> error instanceof IllegalStateException
+                && error.getMessage().equals("Expected JSON response"))
+            .verify(Duration.ofSeconds(5));
+    }
 }
 ```
 
-## Why these details matter
+Run with JDK 17 selected and Gradle 8.4 installed:
 
-`setBody(html)` sends an HTML document. Serializing that string with Jackson first would wrap it as a JSON string, changing the response you intended to test.
+```sh
+java -version
+gradle --version
+gradle --no-daemon test
+```
 
-The client checks the HTTP status before decoding a successful response. `response.createException()` preserves an HTTP 500 as a `WebClientResponseException.InternalServerError`. A connection failure belongs to the request-failure path, usually represented by `WebClientRequestException`; it should not be confused with an HTTP error returned by a server.
+All eight tests should pass. Open `build/reports/tests/test/index.html` for the per-test result; the Gradle task output need not list each passing test.
 
-For a successful status, the example requires JSON or a structured `+json` subtype. If that contract fails, it releases the response body before reporting an application error. `exchangeToMono` gives the test control over how the response is consumed.
+| Response | Result required by this example |
+| --- | --- |
+| HTTP 200, JSON body | Decode the payload. |
+| HTTP 200, HTML body | Reject the unexpected content type. |
+| HTTP 500, HTML body | Preserve the HTTP error type. |
+| HTTP 200, missing Content-Type | Reject the unspecified response format. |
+| HTTP 200, malformed JSON | Report a decoding error. |
+| HTTP 200, `application/vnd.example+json` | Decode the compatible JSON payload. |
+| HTTP 200, empty JSON body | Complete without emitting a payload. |
+| HTTP 200, `text/example+json` | Reject the non-application media type. |
 
-`verify(Duration.ofSeconds(5))` bounds the test's waiting time. Configure connection and response timeouts separately for the production HTTP client. Additional tests should cover an empty body, malformed JSON, a missing Content-Type, a problem-details response, and timeouts according to your API's contract.
+The empty-body behavior is a deliberate contract in this sample. If your endpoint requires a payload, add `switchIfEmpty(Mono.error(...))` and change that test to expect the application error.
 
-## Run the published example
+## Why status and decoding are checked separately
 
-The three tests passed after extracting this exact class from the Korean article. In this repository, run `python3 scripts/check_webclient_example.py` with Gradle and JDK 17 installed. The verification does not require a running Spring application or a live external API.
+`fetch()` handles error statuses before inspecting the successful-response format. `createException()` preserves an HTTP 500 as `WebClientResponseException.InternalServerError`. A connection failure usually follows the `WebClientRequestException` path instead; it is not an HTTP response from the server.
 
-## Sources
+For a non-error status, the code accepts `application/json` and `application/*+json` media types, then lets the decoder validate the body. An incorrect Content-Type and malformed JSON therefore produce different errors. This is a sample contract, not a complete policy for redirects or every successful status.
 
-- [Spring Framework: testing WebClient](https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-testing.html)
-- [Spring Framework: exchangeToMono and response handling](https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-exchange.html)
-- [OkHttp MockWebServer 4.12.0](https://github.com/square/okhttp/tree/parent-4.12.0/mockwebserver)
+When rejecting a successful response, it releases the body before reporting the application error. With `exchangeToMono`, consume or handle the body within the callback; [Spring's exchange documentation](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-exchange.html) explains that an unconsumed body is released after completion.
+
+`setBody(html)` sends HTML directly. Serializing that string as JSON first would change the response being tested. The recorded-request assertions also check the method, path and `Accept` header actually sent.
+
+`verify(Duration.ofSeconds(5))` bounds each test's wait. It does not configure the production client's connection or response timeouts. Add transport timeout and retry tests according to your API contract; they are not covered by these eight cases.
+
+All eight tests passed in the reproduction environment above. In this repository, `python3 scripts/check_webclient_example.py` repeats that check. For a project crossing the Jakarta boundary, establish the [Spring Boot migration baseline](/en/posts/2023-09-08-springboot3-migration/) before changing client behavior.
+
+MockWebServer API reference: [OkHttp 4.12.0 source and examples](https://github.com/square/okhttp/tree/parent-4.12.0/mockwebserver).
