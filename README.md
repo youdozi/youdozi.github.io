@@ -16,7 +16,7 @@ npm run dev
 - 한국어 홈: http://localhost:4321/ko/
 - `/`는 `/en/`으로 이동합니다.
 
-기존 글 230개는 한국어로 보존했습니다. 이 중 테스트 데이터로 확인된 1편은 실제 뉴스 목록·검색·RSS에서 제외하고 예제 페이지로 남겼습니다. 핵심 개발 글 12편의 영문판이 준비돼 있으며, 새 원고·영문·한국어 다이제스트는 원고 검토와 게시 승인 후 공개합니다. 번역되지 않은 한국어 글을 영문 페이지로 복제하지 않습니다.
+기존 글 230개는 한국어로 보존했습니다. 이 중 테스트 데이터로 확인된 1편은 실제 뉴스 목록·검색·RSS에서 제외하고 예제 페이지로 남겼습니다. 핵심 개발 글 16편의 영문판이 준비돼 있으며, 새 원고·영문·한국어 다이제스트는 원고 검토와 게시 승인 후 공개합니다. 번역되지 않은 한국어 글을 영문 페이지로 복제하지 않습니다.
 
 ## 콘텐츠 작성
 
@@ -67,6 +67,8 @@ Querydsl 예제는 `python3 -B scripts/check_querydsl_example.py`로 원고의 �
 빌드·쉘 자동화 묶음은 `python3 -B scripts/check_shell_automation_examples.py`로 함수·숫자 버전·릴리스 조회의 경계값과 로컬 HTTP 응답을 검사합니다. `python3 -B scripts/check_multi_frontend_example.py`는 Gradle 8.4/JDK 17/Node 24에서 두 Vue 앱을 빌드하고 실행 JAR의 경로·증분 정리·HTTP 제공을 검사합니다. 실제 세부 도구 버전은 로그에 기록합니다. 설치된 Chrome으로 화면 렌더링까지 확인하려면 `--browser`를 추가합니다. CI는 브라우저 실행 없이 두 검사기를 모두 실행합니다.
 
 JVM·설정 묶음은 `python3 -B scripts/check_jvm_runtime_examples.py`로 Batch 5의 새 H2 스키마에서 파라미터 저장·완료 인스턴스 거부·실패 Step 재시작을 확인하고, JDK 21 정식 기능을 Preview 없이 컴파일·실행합니다. Gradle 8.4/JDK 17과 JDK 21이 필요하며 Linux에서는 `JDK17_HOME`·`JDK21_HOME`으로 경로를 구분할 수 있습니다. `--part batch`·`--part jdk`로 나누어 실행할 수도 있습니다. 기존 v4 데이터 이관 검사는 포함하지 않습니다. `scripts/requirements-config-examples.txt`를 전용 가상 환경에 설치한 뒤 `python3 -B scripts/check_config_input_examples.py`로 YAML 입력·자식 프로세스 실행·Temurin 메타데이터 선택을 검사합니다. 이 검사는 외부 API 호출과 JDK 바이너리 다운로드 없이 실행합니다.
+
+Boot 생성·실행·Lombok 묶음은 `python3 -B scripts/check_boot_workflow_examples.py`로 원고 파일을 추출해 기본 컨텍스트 1개 → HTTP 테스트 포함 3개 → Lombok 테스트 포함 5개를 단계별 실행합니다. main/test 프로세서 누락 시 컴파일 실패, 복원 후 통과, BOM 해석 버전, 실행 JAR의 HTTP 응답과 Lombok 런타임 제외도 검사합니다. JDK 17과 설치된 Gradle로 임시 Wrapper를 생성해 Gradle 9.8.2를 사용하며, 이미 설치한 실행 파일은 `--gradle /path/to/gradle`로 지정할 수 있습니다. 최초 배포판·의존성 다운로드가 필요합니다. Initializr 서버 생성은 별도 확인하며 이 검사기는 Initializr API나 IDE UI를 실행하지 않습니다.
 
 ## 배포 전환
 
