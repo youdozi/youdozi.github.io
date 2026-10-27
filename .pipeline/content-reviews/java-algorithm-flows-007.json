@@ -34,7 +34,8 @@
     "output": "public/assets/diagrams/*.svg, generated during npm run build",
     "runtimeDependencies": "No client rendering library, remote diagram service or additional package required.",
     "accessibility": "Localized nonempty Markdown alt, SVG title/desc/role and adjacent prose.",
-    "limits": "Compact processing overview, not a compiler-generated control-flow graph."
+    "limits": "Compact processing overview, not a compiler-generated control-flow graph.",
+    "generatorIntegration": "Shared scripts/prepare-public.mjs; used by normal builds and integration fixtures."
   },
   "review": {
     "type": "Two-pass self AI review of diagram/code semantics and localized standalone text/rendering.",
@@ -56,6 +57,10 @@
       {
         "issue": "Microsecond timestamps compare differently after JavaScript Date serialization.",
         "resolution": "Use millisecond ISO timestamps and recheck all20 BlogPosting/sitemap modification dates."
+      },
+      {
+        "issue": "CI fresh checkout failed because the integration fixture prepared public assets without generating new SVGs.",
+        "resolution": "Generate diagrams in the shared prepare-public.mjs used by both builds and fixtures. Removed generated public SVGs before rerunning all27 Node tests successfully, then rebuilt and re-audited."
       }
     ],
     "unresolvedCriticalOrMajorFindings": [],
@@ -83,10 +88,11 @@
       "AGENTS.md": "57c2d527a57db191507c2451b36dfa410c4c1e0ebb4c1ec670a76fde775e7790",
       "docs/technical-writing.md": "39bcfe5d92449f9f2da1287c222b35569b8de989ad770463f53ef1cdcf4a13a4",
       "README.md": "236a94d180b10a41acc2864657ceebb30052542bcacf16d438f22221674f2c0a",
-      "package.json": "a9fdfc8503a91dcd50441e188441d992dfdf6b14c0364c97901230ba7a4cb685",
+      "package.json": "ac89bae2ab322d8d90f1e009a89203272fbe9928897e6619d6551717bc8541ee",
       "content/diagrams/algorithms.json": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2",
       "scripts/build_algorithm_diagrams.py": "b1040919618112c66f3bd0686fa27b2edf404e5c06b42bd3ff7263f12018755a",
-      "scripts/test_algorithm_diagrams.py": "1f35e5bf5e2833b4f40e29c596b59768dbb5d6bdd300ed8083ead53c22387ff4"
+      "scripts/test_algorithm_diagrams.py": "1f35e5bf5e2833b4f40e29c596b59768dbb5d6bdd300ed8083ead53c22387ff4",
+      "scripts/prepare-public.mjs": "c5b153e91c9ebc536a20ab388c04ea471919759c9c8cf0ac0c8a8e4f9d7da0f6"
     }
   },
   "preserved": {
@@ -111,7 +117,8 @@
     "sitemapUrls": 442,
     "englishListedEntries": 87,
     "koreanListedEntries": 289,
-    "build": "passed; static assets, internal images/links/anchors and IndexNow preview validated"
+    "build": "passed; static assets, internal images/links/anchors and IndexNow preview validated",
+    "cleanAssetIntegrationTest": "27 Node tests passed after deleting generated public SVGs; no stale assets required."
   },
   "seoAudit": {
     "articleResults": [
