@@ -14,7 +14,9 @@ CASES = {
     'Pokemon': '2021-07-29-ponkemon.md', 'Cache': '2021-08-17-cache.md',
 }
 BILINGUAL = {'2021-07-19-new-id.md', '2021-07-22-dot-product.md',
-             '2021-07-23-number-word.md', '2021-08-17-cache.md'}
+             '2021-07-23-number-word.md', '2021-08-17-cache.md',
+             '2021-07-20-pair-delete.md', '2021-07-23-unsuccessful-runner.md',
+             '2021-07-24-fail-percentage.md', '2021-07-29-ponkemon.md'}
 HARNESS = r'''
 import java.util.*;
 import java.util.stream.*;
@@ -64,6 +66,39 @@ class ArticleExamples {
      eq(new NewId().solution(actual),actual);eq(new NewIdVersion2().solution(other),other);return;
    }
    for(char c:new char[]{'A','I','0','.','!','_','-'})idSequences(value+c,remaining-1);
+ }
+ static void pairSequences(String value,int remaining){
+   if(remaining==0){eq(new Pair().solution(value),pair(value));return;}
+   for(char c:new char[]{'a','b','c'})pairSequences(value+c,remaining-1);
+ }
+ static void runnerSequences(String[] names,int position){
+   if(position==names.length){
+     for(int missing=0;missing<names.length;missing++){
+       String[] completion=new String[names.length-1];int target=0;
+       for(int i=names.length-1;i>=0;i--)if(i!=missing)completion[target++]=names[i];
+       eq(new Runner().solution(names.clone(),completion),names[missing]);
+     }
+     return;
+   }
+   for(String name:new String[]{"ana","bob","cam"}){names[position]=name;runnerSequences(names,position+1);}
+ }
+ static void failureSequences(int levels,int[] stages,int position){
+   if(position==stages.length){eq(new Failure().solution(levels,stages.clone()),failure(levels,stages));return;}
+   for(int stage=1;stage<=levels+1;stage++){stages[position]=stage;failureSequences(levels,stages,position+1);}
+ }
+ static int pokemonBySelections(int[] nums){
+   // Fixture IDs are 1..3 and length is at most 8. Enumerate actual position choices.
+   int best=0;
+   for(int mask=0;mask<(1<<nums.length);mask++)if(Integer.bitCount(mask)==nums.length/2){
+     boolean[] seen=new boolean[4];int kinds=0;
+     for(int i=0;i<nums.length;i++)if((mask&(1<<i))!=0&&!seen[nums[i]]){seen[nums[i]]=true;kinds++;}
+     best=Math.max(best,kinds);
+   }
+   return best;
+ }
+ static void pokemonSequences(int[] nums,int position){
+   if(position==nums.length){eq(new Pokemon().solution(nums.clone()),pokemonBySelections(nums));return;}
+   for(int kind=1;kind<=3;kind++){nums[position]=kind;pokemonSequences(nums,position+1);}
  }
  public static void main(String[] args){
    Locale.setDefault(Locale.forLanguageTag("tr-TR"));
@@ -116,7 +151,17 @@ class ArticleExamples {
    eq(new Words().solution("two"+"zero".repeat(9)),2000000000);
    eq(new Words().solution("one4seveneight"),1478);eq(new Words().solution("23four5six7"),234567);eq(new Words().solution("123"),123);
    for(String input:new String[]{"abcdefghijklmn.op","=.="}){eq(new NewId().solution(input),newId(input));eq(new NewIdVersion2().solution(input),newId(input));}
-   System.out.println("[ok] 11 published Java solutions compiled; "+assertions+" behavioral assertions passed (including Turkish locale, ties, overflow, exhaustive cache/ID cases, and idempotence).");
+   for(int length=1;length<=8;length++)pairSequences("",length);
+   for(int length=1;length<=5;length++)runnerSequences(new String[length],0);
+   for(int levels=1;levels<=4;levels++)for(int length=1;length<=5;length++)failureSequences(levels,new int[length],0);
+   for(int length=2;length<=8;length+=2)pokemonSequences(new int[length],0);
+   eq(new Pair().solution("ab".repeat(500000)),0);eq(new Pair().solution("a"),0);eq(new Pair().solution("baabaa"),1);
+   String[] manyRunners=new String[100000];Arrays.fill(manyRunners,"ana");eq(new Runner().solution(manyRunners,Arrays.copyOf(manyRunners,99999)),"ana");
+   int[] manyPlayers=new int[200000];Arrays.fill(manyPlayers,500);int[] lateFirst=new int[500];lateFirst[0]=500;for(int i=1;i<500;i++)lateFirst[i]=i;
+   eq(new Failure().solution(500,manyPlayers),lateFirst);Arrays.fill(manyPlayers,501);eq(new Failure().solution(500,manyPlayers),IntStream.rangeClosed(1,500).toArray());
+   eq(new Failure().solution(3,new int[]{1,1,1}),new int[]{1,2,3});
+   int[] manyTypes=IntStream.rangeClosed(1,10000).toArray();eq(new Pokemon().solution(manyTypes),5000);Arrays.fill(manyTypes,7);eq(new Pokemon().solution(manyTypes),1);
+   System.out.println("[ok] 11 published Java solutions compiled; "+assertions+" behavioral assertions passed (including Turkish locale, ties, overflow, exhaustive small cases, and idempotence).");
  }
 }
 '''
@@ -146,7 +191,7 @@ def main():
         harness=tmp/'ArticleExamples.java';harness.write_text(HARNESS);sources.append(str(harness))
         subprocess.run(['javac','--release','11','-encoding','UTF-8','-d',str(tmp),*sources],check=True)
         subprocess.run(['java','-cp',str(tmp),'ArticleExamples'],check=True,timeout=30)
-        print('[ok] Four English/Korean article pairs contain identical complete Java solutions.')
+        print('[ok] Eight English/Korean article pairs contain identical complete Java solutions.')
         scripts=re.findall(r'```(?:bash|sh)\n([\s\S]*?)\n```',(ARTICLES/'2023-11-17-linux-shellscript-version-compare.md').read_text())
         if not scripts:raise ValueError('No runnable version-comparison shell snippet found')
         script=scripts[0]
