@@ -8,6 +8,7 @@ from xml.sax.saxutils import escape
 
 SOURCE = Path('content/diagrams/algorithms.json')
 WORKFLOW_SOURCE = Path('content/diagrams/workflows.json')
+STRATEGY_SOURCE = Path('content/diagrams/query-strategies.json')
 OUTPUT = Path('public/assets/diagrams')
 LANGUAGES = ('en', 'ko')
 
@@ -117,7 +118,7 @@ def validate_articles(data, posts=Path('src/content/posts')):
                     raise ValueError(f'Missing required {contract["language"]} code: {lang}/{item["key"]}')
 
 
-def load_sources(paths=(SOURCE, WORKFLOW_SOURCE)):
+def load_sources(paths=(SOURCE, WORKFLOW_SOURCE, STRATEGY_SOURCE)):
     combined = {'version':1, 'diagrams':[]}
     for path in paths:
         combined['diagrams'].extend(validate(json.loads(Path(path).read_text()))['diagrams'])

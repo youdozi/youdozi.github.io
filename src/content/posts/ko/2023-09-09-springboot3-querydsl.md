@@ -13,7 +13,7 @@ tags:
   - "querydsl"
 legacyUrl: "/springboot/springboot3-querydsl/"
 legacySource: "_posts/spring/migration/2023-09-09-springboot3-querydsl.markdown"
-updatedAt: 2026-10-27T05:23:47.316+00:00
+updatedAt: 2026-10-27T06:13:10.631Z
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 Gradle Q 타입 생성·H2 조회 테스트 재현"
@@ -114,6 +114,8 @@ public class Employee {
     private Long id;
     private String name;
 
+    public String getName() { return name; }
+
     protected Employee() {}
 
     public Employee(String name) {
@@ -206,3 +208,7 @@ build/reports/tests/test/index.html
 본문은 생성 경로를 바꾸는 `sourceSets`, `JavaCompile`, 별도 `clean` 코드를 추가하지 않습니다. 사용자 지정 경로가 꼭 필요하다면 main·test를 분리해야 합니다. `configureEach`는 태스크의 지연 구성을 제어하며 Jakarta 의존성 호환성을 해결하는 기능은 아닙니다. [Gradle 지연 구성 안내](https://docs.gradle.org/current/userguide/lazy_configuration.html).
 
 JPA 설정 전에 전체 업그레이드 순서를 확인하려면 [Spring Boot 3 마이그레이션](/ko/posts/2023-09-08-springboot3-migration/)을, 외부 API 경계 테스트는 [WebClient와 MockWebServer 예제](/ko/posts/2023-09-19-springboot-test-webclient/)를 참고하세요.
+
+## 쿼리 도구를 바꾸기 전에 비교하기
+
+전체 Employee 클래스에는 저장소 결과를 이름으로 비교하도록 getter를 포함했습니다. 같은 엔티티에 [Querydsl·Specification 비교 예제](/ko/posts/2023-09-05-querydsl-no-release/)의 파일 3개를 추가하면 검사 8개를 더 실행합니다. 위의 기존 테스트 2개도 총 10개 프로젝트에 유지됩니다. 선택한 H2 조건을 비교하며 모든 DB 동작을 검증하는 것은 아닙니다. 주변 설정·테스트 순서는 [Spring Boot 안내](/ko/categories/springboot/)에서 이어집니다.
