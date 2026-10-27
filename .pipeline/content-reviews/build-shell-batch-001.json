@@ -130,5 +130,12 @@
       "No internal review banners in reader HTML"
     ]
   },
-  "ci": "Both new example checkers are configured; CI result tracked in the PR."
+  "ci": "Both new example checkers are configured; CI result tracked in the PR.",
+  "ciIntegrationCorrection": {
+    "issue": "The pre-existing Java/article checker only extracted bash fences and could not read the renewed POSIX sh version-comparison example.",
+    "change": "Accept both bash and sh fences, with an explicit missing-snippet error. Preserve all eight existing shell regressions and the Java behavior checks.",
+    "scope": "Own integration review after CI discovery; manuscript and independent-review target hashes unchanged.",
+    "sha256": "99d3af0bcf304aa9a8cac3d8c39b245098faae85d5244682740549539f70970f",
+    "localValidation": "npm run test:articles and all 43 shell fixture cases passed."
+  }
 }
