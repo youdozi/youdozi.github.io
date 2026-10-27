@@ -1,0 +1,16 @@
+---
+import type {ArticleHeading} from '../lib/article-navigation';
+interface Props {sections:ArticleHeading[];label:string;}
+const {sections,label}=Astro.props;
+---
+{sections.length>0&&<details class="article-toc" open>
+  <summary>{label}</summary>
+  <nav aria-label={label}><ol>{sections.map(section=><li><a href={'#'+encodeURIComponent(section.slug)}>{section.text}</a></li>)}</ol></nav>
+</details>}
+<style>
+.article-toc{border-block:1px solid var(--line);padding:20px 0;margin:0 0 32px}
+summary{font-weight:600;cursor:pointer;font-size:15px}
+ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 32px;padding-left:24px;margin:20px 0 0}
+li{line-height:1.7;overflow-wrap:anywhere;font-size:14px}a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:800px){ol{grid-template-columns:1fr}}
+</style>

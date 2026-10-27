@@ -4,3 +4,5 @@
 
 .language-menu{position:relative;flex-shrink:0}.language-menu summary{cursor:pointer}.language-menu ul{position:absolute;right:0;top:100%;z-index:20;min-width:160px;margin:12px 0 0;padding:8px;list-style:none;background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 24px #0001}.language-menu li a{display:block;padding:10px 14px}.language-menu li a:hover{background:#f6f6f0}
 html:lang(zh-CN) .entry-card h2,html:lang(zh-CN) .article-heading h1,html:lang(ja) .entry-card h2,html:lang(ja) .article-heading h1{word-break:normal}
+
+.entry-meta .publication-date,.entry-meta .modification-date{white-space:nowrap}.entry-meta .modification-date::before{content:none}
