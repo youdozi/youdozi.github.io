@@ -7,6 +7,7 @@ import re
 from xml.sax.saxutils import escape
 
 SOURCE = Path('content/diagrams/algorithms.json')
+WORKFLOW_SOURCE = Path('content/diagrams/workflows.json')
 OUTPUT = Path('public/assets/diagrams')
 LANGUAGES = ('en', 'ko')
 
@@ -33,6 +34,24 @@ def validate(data):
                 lines = step.get(lang)
                 if not isinstance(lines, list) or not 1 <= len(lines) <= 3 or not all(isinstance(line, str) and line.strip() for line in lines):
                     raise ValueError('Each step needs1..3 nonempty localized lines')
+        for step in steps:
+            if 'branch' in step:
+                branch = step['branch']
+                if (step['kind'] != 'condition' or item.get('loop') is not None or not isinstance(branch, dict)
+                        or set(branch) != {'exit','continue'}):
+                    raise ValueError('Exit branches require a condition and no overlapping loop')
+                for labels in branch.values():
+                    if (not isinstance(labels, dict) or set(labels) != set(LANGUAGES)
+                            or not all(isinstance(v,str) and v.strip() and len(v)<=12 for v in labels.values())):
+                        raise ValueError('Expected short localized branch labels')
+        if 'codeContract' in item:
+            contracts = item['codeContract']
+            if not isinstance(contracts, list) or not contracts:
+                raise ValueError('Expected nonempty code requirements')
+            for contract in contracts:
+                if (not isinstance(contract, dict) or contract.get('language') not in ('java','sh','groovy','python')
+                        or not isinstance(contract.get('contains'), str) or not contract['contains'].strip()):
+                    raise ValueError('Invalid code language or required snippet')
         loop = item.get('loop')
         if loop is not None:
             if (type(loop.get('from')) is not int or type(loop.get('to')) is not int
@@ -62,6 +81,13 @@ def render(item, language):
         for n, line in enumerate(step[language]):
             text_y = y + 43 + (n - (len(step[language]) - 1) / 2) * 24 + 6
             parts.append(f'<text x="180" y="{text_y:g}" text-anchor="middle" font-size="16">{escape(line)}</text>')
+        if (branch := step.get('branch')) is not None:
+            parts.append(f'<path d="M 342 {y+43} H 369" fill="none" stroke="#2b6044" stroke-width="2" marker-end="url(#arrow)"/>')
+            parts.append(f'<circle cx="384" cy="{y+43}" r="12" fill="#8c3a32"/>')
+            parts.append(f'<text x="384" y="{y+49}" text-anchor="middle" font-size="19" fill="white">×</text>')
+            parts.append(f'<text x="384" y="{y+76}" text-anchor="middle" font-size="10">{escape(branch["exit"][language])}</text>')
+            if i < len(item['steps'])-1:
+                parts.append(f'<text x="193" y="{y+111}" font-size="12">{escape(branch["continue"][language])}</text>')
         if i < len(item['steps']) - 1:
             parts.append(f'<path d="M 180 {y + 87} V {y + 120}" fill="none" stroke="#2b6044" stroke-width="2" marker-end="url(#arrow)"/>')
     if (loop := item.get('loop')) is not None:
@@ -80,22 +106,33 @@ def validate_articles(data, posts=Path('src/content/posts')):
             image = f'/assets/diagrams/{item["key"]}-{lang}.svg'
             if not re.search(r'!\[[^\]\n]+\]\(' + re.escape(image) + r'\)', article):
                 raise ValueError(f'Missing localized diagram alt/link: {lang}/{item["key"]}')
-            if not re.search(r'```java\n[\s\S]*?public class Solution[\s\S]*?\n```', article):
-                raise ValueError(f'Missing complete Java example: {lang}/{item["key"]}')
+            contracts = item.get('codeContract', [{'language':'java','contains':'public class Solution'}])
+            blocks = re.findall(r'^```([a-z]+)\n([\s\S]*?)^```[ \t]*$', article, re.M)
+            for contract in contracts:
+                if not any(language == contract['language'] and contract['contains'] in code for language,code in blocks):
+                    raise ValueError(f'Missing required {contract["language"]} code: {lang}/{item["key"]}')
+
+
+def load_sources(paths=(SOURCE, WORKFLOW_SOURCE)):
+    combined = {'version':1, 'diagrams':[]}
+    for path in paths:
+        combined['diagrams'].extend(validate(json.loads(Path(path).read_text()))['diagrams'])
+    # Detect duplicate article keys across independently maintained source files.
+    return validate(combined)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true', help='Validate diagram sources and paired articles without writing assets')
     args = parser.parse_args()
-    data = validate(json.loads(SOURCE.read_text()))
+    data = load_sources()
     validate_articles(data)
     if not args.check:
         OUTPUT.mkdir(parents=True, exist_ok=True)
         for item in data['diagrams']:
             for lang in LANGUAGES:
                 (OUTPUT / f'{item["key"]}-{lang}.svg').write_text(render(item, lang))
-    print(f'[ok] {len(data["diagrams"])} paired flow sources and complete code checked; ' + ('no files written.' if args.check else f'{len(data["diagrams"])*2} static SVG diagrams generated.'))
+    print(f'[ok] {len(data["diagrams"])} paired flow sources and code requirements checked; ' + ('no files written.' if args.check else f'{len(data["diagrams"])*2} static SVG diagrams generated.'))
 
 
 if __name__ == '__main__':

@@ -10,7 +10,7 @@ tags:
   - history
 publishedAt: "2026-10-27T03:48:55+00:00"
 title: Spring Boot Release History and Spring Framework Version Mapping
-updatedAt: "2026-10-27T03:48:55+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official documentation checked; CLI/project execution distinguished
@@ -31,6 +31,12 @@ description: Trace key Spring Boot releases from 1.2 to 4.0, distinguish Boot
   project resolves.
 ---
 Spring Boot and Spring Framework are separate projects with different version numbers. Boot adds auto-configuration, dependency management, and executable packaging around Framework. Reading Boot 3.1 as Framework 6.1 is therefore unreliable; inspect the selected Boot release's BOM and resolved dependency graph instead.
+
+## Processing flow
+
+![Resolve actual component versions workflow](/assets/diagrams/2023-09-13-springboot-history-en.svg)
+
+The flow summarizes dependency inspection rather than a release timeline. Boot, Framework and Lombok have separate version identities and dependency configurations.
 
 ## Changes in selected final releases
 

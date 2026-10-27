@@ -11,7 +11,7 @@ tags:
   - "springboot"
   - "springboot3"
   - "springboot3 migration"
-updatedAt: "2026-10-27T01:24:58+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Official migration documentation checked; diagnostic steps clarified without claiming an application migration."
@@ -24,6 +24,12 @@ description: "Migrate Spring Boot 2.7 to 3.0 with Java 17, Jakarta dependencies,
 For a Spring Boot 2.7 application moving to 3.0, separate three checks: the Java 17 baseline, the Java EE to Jakarta namespace change, and library/runtime compatibility. A successful compilation does not establish that database mappings, authorization or configuration still work.
 
 This is a **2.7 to 3.0 migration guide**, preserving the original 2023 topic. It is not a recommendation to deploy Boot 3.0 today. Choose a supported target release for a real upgrade and follow the intervening migration guides. The [official 3.0 guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide) documents this historical step.
+
+## Processing flow
+
+![Boot 3 migration checks workflow](/assets/diagrams/2023-09-08-springboot3-migration-en.svg)
+
+This is the article’s proposed migration check order. The commands inspect the environment; they do not automatically migrate an application or database.
 
 ## 1. Establish a working 2.7 baseline
 

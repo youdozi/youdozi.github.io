@@ -7,7 +7,7 @@ kind: "post"
 publishedAt: "2026-10-27T02:36:39+00:00"
 categories: ["linux"]
 tags: ["linux", "bash", "shell script", "function"]
-updatedAt: "2026-10-27T02:36:39+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Primary documentation checked; published runnable example verified."
@@ -17,6 +17,12 @@ description: "Compare dotted numeric versions without fixed-width packing. Handl
 Do not compare `1.10` and `1.2` as strings or decimal numbers. Compare integer components from left to right and fill missing trailing components with zero; that makes `1.2` equal to `1.2.0`. This example implements that rule for numeric dotted versions only.
 
 It rejects `v1.2`, `1.2-rc1` and `1.2+build`. For [SemVer](https://semver.org/) pre-release precedence, use a parser for that specification. Blindly removing suffixes can change the meaning.
+
+## Processing flow
+
+![Compare dotted numeric versions workflow](/assets/diagrams/2023-11-17-linux-shellscript-version-compare-en.svg)
+
+Validate the numeric-only contract, align missing components with zero and stop at the first differing pair. A less-than result is still a successful comparison.
 
 ## A runnable comparison script
 

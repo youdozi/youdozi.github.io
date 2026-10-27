@@ -15,7 +15,7 @@ tags:
 legacyUrl: "/linux/linux-shellscript-function-error/"
 legacySource: "_posts/linux/shell-script/function-error/2023-09-20-linux-shells\
   cript-function-error.markdown"
-updatedAt: "2026-10-27T02:12:24+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 원고 실행 예제 검증"
@@ -27,6 +27,12 @@ description: "function 키워드 경고를 POSIX sh 함수 문법으로 해결�
 `#!/bin/sh` 스크립트에서는 `function hello()` 대신 `hello() { ...; }` 형태를 사용합니다. Bash 문법이 필요하다면 Bash를 선택하고 그 인터프리터로 실행해야 합니다. `sh script.sh`는 파일의 Bash shebang을 따르는 호출이 아닙니다.
 
 [ShellCheck SC2112](https://www.shellcheck.net/wiki/SC2112)는 `function`이 POSIX sh 문법이 아니라는 점을 지적합니다. `/bin/sh`가 어떤 구현인지에 따라 우연히 동작할 수 있어도 이식성을 보장하지는 않습니다.
+
+## 처리 흐름
+
+![셸 선택과 인자 보존 흐름도](/assets/diagrams/2023-09-20-linux-shellscript-function-error-ko.svg)
+
+명시적으로 실행한 인터프리터가 함수를 파싱합니다. 예제는 인자 1개를 검사하고 따옴표로 공백·와일드카드를 보존합니다.
 
 ## 실행할 셸에 맞는 함수 작성하기
 

@@ -14,7 +14,7 @@ tags:
   - yaml
 legacyUrl: /linux/parse-yaml/
 legacySource: _posts/linux/shell-script/parse-yaml/2021-07-27-parse-yaml.markdown
-updatedAt: 2026-10-27T03:08:04.102Z
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -30,6 +30,12 @@ description: Python과 PyYAML로 YAML 정수 포트를 검증하고, eval 없이
 셸에서 YAML을 읽을 때는 sed/awk로 전체 문법을 흉내 내거나 파싱 결과를 `eval`하지 말고, YAML 파서가 읽은 값의 타입과 범위를 검사한 뒤 필요한 변수만 전달하세요. 이 예제는 Python과 PyYAML로 `server.port` 하나를 읽고, 검증에 성공했을 때만 자식 명령을 실행합니다.
 
 출력 문자열만 검사하면 YAML 정수 `8080`과 문자열 `"8080"`을 구분하기 어렵습니다. 여기서는 **문자열을 숫자로 강제 변환하지 않고**, 파서가 정수로 읽은 1~65535만 허용합니다. Python의 bool은 int의 하위 타입이므로 `isinstance(port, int)` 대신 `type(port) is int`로 불리언을 거부합니다.
+
+## 처리 흐름
+
+![YAML 검증 후 명령 실행 흐름도](/assets/diagrams/2021-07-27-parse-yaml-ko.svg)
+
+정수 포트를 파싱·검증한 뒤 SERVER_PORT를 내보냅니다. 로더 실패 시 대상 명령은 시작하지 않으며 exec는 대상의 종료 상태를 유지합니다.
 
 ## 실행 환경과 입력
 

@@ -67,5 +67,62 @@ class AlgorithmDiagramsTests(unittest.TestCase):
                     self.assertEqual(len(tree.findall('.//{*}path[@stroke-dasharray]')),1)
 
 
+    def test_workflow_contract_requires_code_in_the_declared_fence_language(self):
+        data = {'version':1,'diagrams':[copy.deepcopy(json.loads(diagrams.WORKFLOW_SOURCE.read_text())['diagrams'][0])]}
+        diagrams.validate(data)
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            item=data['diagrams'][0]
+            for lang in diagrams.LANGUAGES:
+                folder=root/lang;folder.mkdir()
+                source=(Path('src/content/posts')/lang/(item['key']+'.md')).read_text()
+                (folder/(item['key']+'.md')).write_text(source)
+            diagrams.validate_articles(data, root)
+            target=root/'en'/(item['key']+'.md')
+            # Marker in prose or a different code language cannot satisfy sh code.
+            source=target.read_text().replace('```sh', '```text')
+            target.write_text(source+'\n./gradlew test\n')
+            with self.assertRaises(ValueError):diagrams.validate_articles(data,root)
+        for contract in [[],[{'language':'html','contains':'anything'}],[{'language':'sh','contains':''}]]:
+            broken=copy.deepcopy(data);broken['diagrams'][0]['codeContract']=contract
+            with self.assertRaises(ValueError):diagrams.validate(broken)
+
+    def test_source_loading_detects_collisions_between_collections(self):
+        with tempfile.TemporaryDirectory() as directory:
+            first=Path(directory)/'first.json';second=Path(directory)/'second.json'
+            first.write_text(json.dumps(self.data));second.write_text(json.dumps(self.data))
+            with self.assertRaises(ValueError):diagrams.load_sources([first,second])
+
+    def test_all_registered_workflows_render_localized_assets_and_keep_algorithm_contracts(self):
+        data=diagrams.load_sources()
+        diagrams.validate_articles(data)
+        self.assertEqual(len(data['diagrams']),len(self.data['diagrams'])+len(json.loads(diagrams.WORKFLOW_SOURCE.read_text())['diagrams']))
+        for item in data['diagrams']:
+            for lang in diagrams.LANGUAGES:
+                tree=ET.fromstring(diagrams.render(item,lang))
+                self.assertEqual(tree.find('{*}title').text,item['title'][lang])
+                self.assertEqual(tree.find('{*}desc').text,item['description'][lang])
+                self.assertFalse(tree.findall('.//{*}script'))
+
+
+    def test_exit_branches_preserve_both_locales_and_reject_overlapping_loops(self):
+        source=json.loads(diagrams.WORKFLOW_SOURCE.read_text())
+        item=copy.deepcopy(next(i for i in source['diagrams'] if any('branch' in s for s in i['steps'])))
+        for lang in diagrams.LANGUAGES:
+            tree=ET.fromstring(diagrams.render(item,lang))
+            branches=[s['branch'] for s in item['steps'] if 'branch' in s]
+            self.assertEqual(len(tree.findall('.//{*}circle')),len(branches))
+            labels=[e.text for e in tree.findall('.//{*}text')]
+            for branch in branches:
+                self.assertIn(branch['exit'][lang],labels)
+                self.assertIn(branch['continue'][lang],labels)
+        broken=copy.deepcopy(item);broken['loop']={'from':2,'to':0,'label':{'en':'Yes','ko':'예'}}
+        with self.assertRaises(ValueError):diagrams.validate({'version':1,'diagrams':[broken]})
+        broken=copy.deepcopy(item)
+        branch=next(s['branch'] for s in broken['steps'] if 'branch' in s)
+        del branch['exit']['ko']
+        with self.assertRaises(ValueError):diagrams.validate({'version':1,'diagrams':[broken]})
+
+
 if __name__ == '__main__':
     unittest.main()

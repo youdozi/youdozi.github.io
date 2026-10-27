@@ -5,7 +5,7 @@ translationKey: "2023-09-09-springboot3-querydsl"
 routeSlug: "2023-09-09-springboot3-querydsl"
 kind: "post"
 publishedAt: "2026-10-27T02:02:40+00:00"
-updatedAt: "2026-10-27T02:02:40+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Official documentation checked; Q-type generation and H2 query tests reproduced."
@@ -17,6 +17,12 @@ description: "Configure Querydsl Jakarta with Spring Boot 3, generate Q types wi
 For Querydsl JPA on Spring Boot 3, align the versions and `jakarta` classifiers of `querydsl-jpa` and `querydsl-apt`, then check both Q-type generation and a real query. Keeping Gradle's default generated-source paths avoids configuring main and test compilation to write to the same directory.
 
 This guide develops the original 2023 Korean example into a runnable configuration. [Querydsl's 5.0 release notes](https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_0_0) document Jakarta classifier support. The versions below pin the reproduction environment; they are not a recommendation of current production dependencies.
+
+## Processing flow
+
+![Generate Q types and query workflow](/assets/diagrams/2023-09-09-springboot3-querydsl-en.svg)
+
+The processor generates QEmployee during main compilation. The H2 test then executes a query with those generated types.
 
 ## Reproduction environment and complete Gradle setup
 

@@ -14,7 +14,7 @@ tags:
   - RUN/DEBUG configurations
 legacyUrl: /springboot/springboot-intellij-import/
 legacySource: _posts/spring/intellij-ce/2023-09-10-springboot-intellij-import.markdown
-updatedAt: 2026-10-27T03:26:14.141Z
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official documentation checked; CLI/project execution distinguished
@@ -31,6 +31,12 @@ description: Spring Boot 프로젝트의 Gradle 동기화·JDK·Application 실�
 IntelliJ에서 Spring Boot 프로젝트를 열 때는 Gradle 동기화가 끝났는지 먼저 확인하고, 터미널의 Wrapper 빌드와 IDE 실행을 비교하세요. 실행 버튼이 없다고 해서 항상 수동 구성부터 만들어야 하는 것은 아닙니다. [일반 Java main 메서드 옆 실행 아이콘](https://www.jetbrains.com/help/idea/running-applications.html)으로도 실행할 수 있습니다.
 
 아래는 [Initializr 예제](/ko/posts/2023-09-07-springboot-initializer/)의 Boot 4.1.2·Gradle 9.8.2·Java 17 프로젝트를 이어서 사용합니다. 빌드·HTTP 동작은 로컬에서 실행했고, IDE 메뉴는 JetBrains 공식 문서를 대조했습니다. 특정 IDE 버전의 화면을 직접 조작해 검증했다는 의미는 아닙니다.
+
+## 처리 흐름
+
+![빌드와 IDE 오류 구분 흐름도](/assets/diagrams/2023-09-10-springboot-intellij-import-ko.svg)
+
+Wrapper 빌드로 프로젝트 오류와 IDE 설정을 구분합니다. HTTP 테스트는 임의 포트, 수동 bootRun은 지정 포트를 사용합니다.
 
 ## 프로젝트와 JDK 확인
 

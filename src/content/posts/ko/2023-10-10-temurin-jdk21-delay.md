@@ -13,7 +13,7 @@ tags:
   - temurin
 legacyUrl: /jdk/temurin-jdk21-delay/
 legacySource: _posts/jdk/temurin-jdk21-delay/2023-10-10-temurin-jdk21-delay.markdown
-updatedAt: 2026-10-27T03:08:04.102Z
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -28,6 +28,12 @@ description: 2023년 Temurin 21의 TCK 관련 지연과 공개 시점을 구분�
   유형·체크섬 메타데이터를 확인합니다.
 ---
 Temurin 21의 2023년 첫 출시 지연은 OpenJDK 21 자체의 출시 지연과 다릅니다. Adoptium은 TCK 계약 검토로 공식 배포가 늦어졌다고 설명했고, 이후 TCK 수령과 실제 릴리스 공개를 별도 단계로 알렸습니다. 지금도 Temurin 21 배포가 지연 중이라는 뜻은 아닙니다.
+
+## 처리 흐름
+
+![바이너리 메타데이터 확인 흐름도](/assets/diagrams/2023-10-10-temurin-jdk21-delay-ko.svg)
+
+설치가 아닌 메타데이터 선택 예제입니다. 플랫폼·Java 주 버전·체크섬 형식·URL 위치를 확인하며 압축 파일을 다운로드하거나 해시하지는 않습니다.
 
 ## 공지와 릴리스 날짜 구분하기
 

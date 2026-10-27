@@ -13,7 +13,7 @@ tags:
   - lombok
 legacyUrl: /springboot/springboot-intellij-lombok/
 legacySource: _posts/spring/intellij-ce/2023-09-15-springboot-intellij-lombok.markdown
-updatedAt: 2026-10-27T03:26:14.141Z
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official documentation checked; CLI/project execution distinguished
@@ -30,6 +30,12 @@ description: Lombok의 compileOnly·annotationProcessor와 테스트 설정을 �
 Lombok 메서드가 보이지 않으면 먼저 `./gradlew clean test`로 빌드도 실패하는지 확인하세요. IDE 플러그인은 편집기의 코드 인식을 돕고, Gradle의 annotation processor 설정은 컴파일 시 코드를 생성합니다. 한쪽 설정이 다른 쪽을 대신하지 않습니다.
 
 여기서는 [Initializr 프로젝트](/ko/posts/2023-09-07-springboot-initializer/)와 [HTTP 예제](/ko/posts/2023-09-10-springboot-intellij-import/)를 이어서 사용합니다. 실행 환경은 Boot 4.1.2·Gradle 9.8.2·JDK 17이며, 실제 BOM에서 선택된 Lombok은 1.18.48입니다. 이 조합의 실행 근거이며 모든 JDK와 Lombok 조합의 호환성 보장은 아닙니다.
+
+## 처리 흐름
+
+![Lombok 컴파일과 IDE 확인 흐름도](/assets/diagrams/2023-09-15-springboot-intellij-lombok-ko.svg)
+
+메인·테스트 컴파일의 생성자와 getter 생성을 각각 확인합니다. Wrapper 테스트가 통과한 뒤 IDE 인식 문제를 다룹니다.
 
 ## Gradle의 컴파일 경로 구성
 

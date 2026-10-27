@@ -12,7 +12,7 @@ tags:
   - yaml
 publishedAt: "2026-10-27T03:19:18+00:00"
 title: "Read YAML from Shell: Validate a Port and Run a Command Without eval"
-updatedAt: "2026-10-27T03:19:18+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -28,6 +28,12 @@ description: Read a typed YAML port with Python and PyYAML, reject invalid
 When reading YAML from shell, use a YAML parser, validate the value's type and range, and pass only the variables you need. Avoid approximating the full grammar with sed/awk or evaluating generated text with `eval`. This example reads one `server.port` value using Python and PyYAML, then starts a child command only after validation succeeds.
 
 Checking only rendered text does not reliably distinguish YAML integer `8080` from string `"8080"`. This loader **does not coerce strings into numbers**: it accepts only a value parsed as an integer between 1 and 65535. Python's bool subclasses int, so `type(port) is int` rejects booleans where `isinstance(port, int)` would not.
+
+## Processing flow
+
+![Validate YAML before exec workflow](/assets/diagrams/2021-07-27-parse-yaml-en.svg)
+
+Parse and validate the integer port before exporting SERVER_PORT. Loader failure prevents the target command from starting; exec preserves the target’s status.
 
 ## Environment and input
 

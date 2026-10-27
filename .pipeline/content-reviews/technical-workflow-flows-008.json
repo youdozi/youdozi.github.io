@@ -1,0 +1,687 @@
+{
+  "createdAt": "2026-10-27T05:29:10.020436+00:00",
+  "purpose": "Add localized workflow figures to the remaining16 already bilingual technical topics, bringing26 topics/52 paired articles under the figure-and-code requirement.",
+  "topics": [
+    "2023-09-07-springboot-initializer",
+    "2023-09-08-springboot3-migration",
+    "2023-09-09-springboot3-querydsl",
+    "2023-09-10-springboot-intellij-import",
+    "2023-09-13-springboot-history",
+    "2023-09-15-springboot-intellij-lombok",
+    "2023-09-19-springboot-test-webclient",
+    "2023-10-27-springbatch5-migration",
+    "2021-07-23-multiple-gradle-build",
+    "2021-07-27-parse-yaml",
+    "2023-09-20-linux-shellscript-function-error",
+    "2023-11-17-linux-shellscript-version-compare",
+    "2023-09-23-linux-shellscript-github-latest",
+    "2023-10-10-temurin-jdk21-delay",
+    "2023-09-20-jdk-21-release",
+    "2023-09-23-jdk-21-string-templates"
+  ],
+  "revisedArticles": 32,
+  "newDiagramAssets": 32,
+  "allRegisteredTopics": 26,
+  "allGeneratedDiagramAssets": 52,
+  "publicationApprovalAtPreparation": null,
+  "publication": "Draft review only; this batch is not published or automatically merged.",
+  "previousPR": {
+    "number": 61,
+    "mergeCommit": "55146143d8bd3ef0041d3e603a90203cbe4c1793",
+    "productionRun": 40454176713,
+    "liveArticles": 20,
+    "liveSVGAssets": 20,
+    "guidePages": 2,
+    "indexNow": {
+      "changedUrls": 32,
+      "httpStatus": 200
+    }
+  },
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "selectionEvidence": {
+    "scope": "Existing English/Korean technical posts without figures; completes the bilingual subset before rewriting unrelated Korean-only archives.",
+    "limits": "No keyword-demand or traffic-gain measurement claimed."
+  },
+  "preserved": [
+    "All32 original publishedAt values, routes and translation keys",
+    "Titles, descriptions and source reference lists",
+    "All fenced code blocks, including dependency versions and historical preview examples",
+    "Korean legacy source identities and original hashes"
+  ],
+  "modifiedAt": "2026-10-27T05:23:47.316+00:00",
+  "implementation": {
+    "source": "content/diagrams/workflows.json",
+    "generator": "Existing build_algorithm_diagrams.py and prepare-public.mjs path, extended to load both collections.",
+    "codeRequirements": "Language-specific fenced snippets; algorithm defaults still require Solution classes. Marker checks validate presence, not behavior.",
+    "branches": "Localized successful continuation labels and separate error termination symbols. Exit branches cannot overlap loop routing.",
+    "publicOutput": "Static SVG only; no new dependency or client-side renderer."
+  },
+  "review": {
+    "type": "Two-pass self AI review: compare each flow with the existing code/article, then inspect standalone localized captions and browser rendering.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "severity": "major",
+        "issue": "A linear sketch could imply error branches continue into successful decoding or exec.",
+        "resolution": "WebClient, YAML, shell-argument and release-fetch failure branches now exit sideways; successful continuation arrows are explicitly labeled."
+      },
+      {
+        "severity": "major",
+        "issue": "Batch restart and binary metadata selection could be read as stronger integration guarantees.",
+        "resolution": "Captions distinguish fresh-schema v5 restart from v4 migration, and checksum syntax/URL validation from hashing an installed archive."
+      },
+      {
+        "severity": "minor",
+        "issue": "A full Solution-class requirement did not describe shell/build examples.",
+        "resolution": "Add codeContract requirements matched to declared fenced languages, preserving the strict algorithm default and checking cross-file key collisions."
+      },
+      {
+        "severity": "minor",
+        "issue": "Release history and String Templates contain historical material alongside reproducible examples.",
+        "resolution": "Figures explicitly show dependency inspection and the standard FormattingExample respectively, without implying a current-version recommendation or fresh preview execution."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "reviewedSha256": {
+      "src/content/posts/en/2023-09-07-springboot-initializer.md": "97a876012a6c3d2dbf40856ed6360dc850f12741aecbd5ee7bd96023fb05275f",
+      "src/content/posts/ko/2023-09-07-springboot-initializer.md": "d6b0368b77eeb84c141866d8266902dac35f5167af8add491af04107f8e8f632",
+      "src/content/posts/en/2023-09-08-springboot3-migration.md": "be1e825f8c3bf3be3b6d059de6c97975af81856cf3e8f36fe0de6b256b43e2ff",
+      "src/content/posts/ko/2023-09-08-springboot3-migration.md": "2da493c9568f32ec613c1b7c793e4d338c92514c3ebff5ebba477ee9c27bcdf6",
+      "src/content/posts/en/2023-09-09-springboot3-querydsl.md": "744935874615ea0757e6ee568e25aa2b244d4556d0cc23995341a6185770f532",
+      "src/content/posts/ko/2023-09-09-springboot3-querydsl.md": "b3253e144d5043d697e7fffc756203edb9dc352542bd8dd40645e01818e45a7e",
+      "src/content/posts/en/2023-09-10-springboot-intellij-import.md": "5b3c970364e92d3672967197986ea67769f45094ca27f6c9f8bfbd0779645bc2",
+      "src/content/posts/ko/2023-09-10-springboot-intellij-import.md": "e1f7bb6a89a18f1f2fcb1dadeed072fbad683d29af7cb5f8243dc352e390e05b",
+      "src/content/posts/en/2023-09-13-springboot-history.md": "8f97cfe96eb4ed1a36dae63a187c6f28960c327ff6cba276c45537a1e7745da2",
+      "src/content/posts/ko/2023-09-13-springboot-history.md": "f48e26bcb9bd727fc10396106d2614239f7cbddbaec38219b761d34270b8bfec",
+      "src/content/posts/en/2023-09-15-springboot-intellij-lombok.md": "9fe45995bdaea610316410d2b79746c008656c5d20256f9de7d66bc47499dda1",
+      "src/content/posts/ko/2023-09-15-springboot-intellij-lombok.md": "a7643fcc3125736cff6635ed6c0e684b88e87b3d6532835f9da25211bd4afb14",
+      "src/content/posts/en/2023-09-19-springboot-test-webclient.md": "ef7cf4e24374dfb396c5a401da0a8bbdda4379fac69420ffc39d0df5b5176fd5",
+      "src/content/posts/ko/2023-09-19-springboot-test-webclient.md": "ac9fe25206caecc3e2d7c543c4a36a592ccab49d332c9419fca4635e1dbd24f5",
+      "src/content/posts/en/2023-10-27-springbatch5-migration.md": "1573f474ff3c8ca8e3237ca5ad21730e35de4e8d50b92ea116560fb3a151c205",
+      "src/content/posts/ko/2023-10-27-springbatch5-migration.md": "d0dadc7736db9675cb2a2fcbab226447d52d3350abc5ed88108799e50fbbcacb",
+      "src/content/posts/en/2021-07-23-multiple-gradle-build.md": "8c56d878b812b739e8388d5e42fa62512ed2c9a12dbff0c122b188cebd049bf2",
+      "src/content/posts/ko/2021-07-23-multiple-gradle-build.md": "16719e95327308392b7fde03f12af913d7802db9120bdf8631e51eb78123f252",
+      "src/content/posts/en/2021-07-27-parse-yaml.md": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c",
+      "src/content/posts/ko/2021-07-27-parse-yaml.md": "4ce35f05fa7ca54457f42bea3e9f07b958ae717925b5f2d2c0e047af0e38f930",
+      "src/content/posts/en/2023-09-20-linux-shellscript-function-error.md": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8",
+      "src/content/posts/ko/2023-09-20-linux-shellscript-function-error.md": "da38905495b97a8682059ec7d0d6f3aab21b09c17b08fa54e32b9b69370e1cc6",
+      "src/content/posts/en/2023-11-17-linux-shellscript-version-compare.md": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc",
+      "src/content/posts/ko/2023-11-17-linux-shellscript-version-compare.md": "afd0c2ed789522d545abb5b6d78cc25d6ca7aa4d04e1b501cd3a5f0ef27f5a39",
+      "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md": "013c41b140f6eec89a90784a68a9e4fb9fc87af2abde6c1f27a524edee6b9893",
+      "src/content/posts/ko/2023-09-23-linux-shellscript-github-latest.md": "8a486019155e2c1baec2386aa0a12d55114c9d3da7c12f10bb9c172397cedc29",
+      "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md": "7369fbd23d2309c064f07614daa9aad308f54fdb4bf11f91588ee24d9b6991b7",
+      "src/content/posts/ko/2023-10-10-temurin-jdk21-delay.md": "6cc45225ec31e327be7514995a5aeffe23b03cc4190cc4fa194cf0538021a745",
+      "src/content/posts/en/2023-09-20-jdk-21-release.md": "058f2358dfee90867fab6664639b21774c425ec5476b2d67a8ad96f9b878789c",
+      "src/content/posts/ko/2023-09-20-jdk-21-release.md": "8f99c2112561efb3d0a31f783c3108f86258f17f511ce71a4410f1a8b025b11e",
+      "src/content/posts/en/2023-09-23-jdk-21-string-templates.md": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b",
+      "src/content/posts/ko/2023-09-23-jdk-21-string-templates.md": "2ad7d3d31a5e72e287f86333b2bee4773e08a753495867506a4b7f94c8e140c8",
+      "content/diagrams/workflows.json": "ad30c2201cd94616e3509e1150637badf8babf64499170883a79d82707595128",
+      "scripts/build_algorithm_diagrams.py": "86d122acea28e8140a4a2e30735ea0e8ad62b0d95b8a39474c9da6058c7c3c7b",
+      "scripts/test_algorithm_diagrams.py": "fd6a49ddb818fe3dd604989a5d239e926ecc5b7fd5b7e8cb769c248e92cbf07a",
+      "docs/technical-writing.md": "a79aaf733ba5602f2685da2431342c61dc4329e51ca4549de65eae6b911e2553",
+      "README.md": "be631f7a2aefc09e8f74769972842e280011a64e3c410930d5e74ee73de283ae"
+    }
+  },
+  "validation": {
+    "pythonTestsPassed": 157,
+    "nodeTestsPassed": 27,
+    "cleanGeneratedAssets": "All52 public SVGs removed, then27 integration/regression tests passed and normal build regenerated assets.",
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "astroHints": 0,
+    "htmlPages": 884,
+    "sitemapUrls": 442,
+    "englishListedEntries": 87,
+    "koreanListedEntries": 289,
+    "sourceCodePreservation": "Compared every fenced block and publication identity with main before review.",
+    "seoAudit": {
+      "articleResults": [
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-07-springboot-initializer/",
+          "language": "en",
+          "title": "Create and Test a Gradle Project with Spring Initializr",
+          "htmlSha256": "afb8b3578834753d5b696b535b70ef2598416375ca7f1476e641e31e768a2cc1",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-07-springboot-initializer/",
+          "language": "ko",
+          "title": "Spring Initializr로 Gradle 프로젝트 만들고 테스트하기",
+          "htmlSha256": "2babdb688b0ebea7521acc366836fcd12626ab18002ee02529c1fe4a4cd7b67b",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-08-springboot3-migration/",
+          "language": "en",
+          "title": "Spring Boot 3 Migration: Java 17, Jakarta and Verification Steps",
+          "htmlSha256": "23c7175754906592b4ca5f1ddc664a75e11db8375624440b0e69872cb5ebc73b",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-08-springboot3-migration/",
+          "language": "ko",
+          "title": "Spring Boot 3 마이그레이션: Java 17·Jakarta 전환과 검증 순서",
+          "htmlSha256": "d7d20ab54214624c07bfbfc98002917b1d952567ad4cc6bcd00d952c0656a79c",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-09-springboot3-querydsl/",
+          "language": "en",
+          "title": "Spring Boot 3 and Querydsl: Jakarta Setup and Q-Type Generation",
+          "htmlSha256": "87fb184bb3529b9be1400cd66da632d6cd9306838035cbc3d3df4bfe4116532d",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-09-springboot3-querydsl/",
+          "language": "ko",
+          "title": "Spring Boot 3 Querydsl 설정: Jakarta 의존성과 Q 타입 생성",
+          "htmlSha256": "6d9621b44208985d2ed47fe34179a9dbcaf89b2886a4df8e753084a9c88c661c",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-10-springboot-intellij-import/",
+          "language": "en",
+          "title": "Open and Run a Spring Boot Gradle Project in IntelliJ IDEA",
+          "htmlSha256": "b87b64f78b6aa7730213fec0666f4e0d7a56b0531c414dda1b2aea483b1a1111",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-10-springboot-intellij-import/",
+          "language": "ko",
+          "title": "IntelliJ에서 Spring Boot Gradle 프로젝트 열고 실행하기",
+          "htmlSha256": "7f1065bb9642113fee61ac630bb98482a8c9e15a9ebc8e896b34d7699f1fbcad",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-13-springboot-history/",
+          "language": "en",
+          "title": "Spring Boot Release History and Spring Framework Version Mapping",
+          "htmlSha256": "456d0cc3a1aee058b018fc03715695e4efacfcc5a020d11491a1a18d15fd107b",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-13-springboot-history/",
+          "language": "ko",
+          "title": "Spring Boot 릴리스 역사와 Spring Framework 버전 관계",
+          "htmlSha256": "67de09eec6b418155ba9b63916077836b3287eb4530b1e4cf7c89481c4818bf6",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-15-springboot-intellij-lombok/",
+          "language": "en",
+          "title": "Fix Lombok in IntelliJ: Separate Gradle Compilation from IDE Support",
+          "htmlSha256": "95ddb1815c854d31793a3ea045f15dd14eb2a994e562886d6a9a1919dd184cfe",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-15-springboot-intellij-lombok/",
+          "language": "ko",
+          "title": "IntelliJ Lombok 오류 해결: Gradle 컴파일과 IDE 인식 구분하기",
+          "htmlSha256": "378e0da4ff88769f20779221cbeb0f8029b90aff31f6608c3d520fbd3e74ebc2",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-19-springboot-test-webclient/",
+          "language": "en",
+          "title": "Spring WebClient Tests with MockWebServer and JUnit 5",
+          "htmlSha256": "4527d22fb35f5b45bd8bd6d557c5f0aff25e4954c30b05d66fc7bf1ca0c1a6fc",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-19-springboot-test-webclient/",
+          "language": "ko",
+          "title": "Spring WebClient 테스트: MockWebServer와 JUnit 5로 응답 검증",
+          "htmlSha256": "8b068ab8f9a44c2bab9837c156667ed4f4626b4f55764bfbd9f5fcb0835d32fe",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-10-27-springbatch5-migration/",
+          "language": "en",
+          "title": "Spring Batch 5 Migration: Schema, Parameters, and Restart Checks",
+          "htmlSha256": "c6b5ab70b63109b54749f2a786ccf75dba8156b0c680f6d756f0a7d53c0b0a93",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-10-27-springbatch5-migration/",
+          "language": "ko",
+          "title": "Spring Batch 5 이관: 스키마·파라미터·재시작 검증하기",
+          "htmlSha256": "8f811cb9886fca63b683e2fe22b7766ef4ec1b671675a1ac8b4d3380cac81348",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2021-07-23-multiple-gradle-build/",
+          "language": "en",
+          "title": "Package Multiple Vue Apps in a Spring Boot JAR with Gradle",
+          "htmlSha256": "8477b77c0fe0c011bbbbd8c86ca311ecfc78aebd55df4c44842f3bac0592986c",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2021-07-23-multiple-gradle-build/",
+          "language": "ko",
+          "title": "Gradle로 여러 Vue 앱을 Spring Boot JAR에 패키징하기",
+          "htmlSha256": "7935e4864cbb07216beed870ead979c88ebe5f5ee34283376269b35f74f168ef",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2021-07-27-parse-yaml/",
+          "language": "en",
+          "title": "Read YAML from Shell: Validate a Port and Run a Command Without eval",
+          "htmlSha256": "c76ae46ab06783f7c6c37f87d9e9bf5ae9f3b71156b8db031847ab8d2cf693ca",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2021-07-27-parse-yaml/",
+          "language": "ko",
+          "title": "셸에서 YAML 읽기: eval 없이 포트 검증하고 프로세스 실행하기",
+          "htmlSha256": "ec2a160aa4b90f72fa58316fce60f3d684a86e654d7b16de7ecd2bb5cb84b483",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-20-linux-shellscript-function-error/",
+          "language": "en",
+          "title": "Fix the Shell function Warning: POSIX sh vs Bash",
+          "htmlSha256": "aabdec68ec6d9e1bbb9461c23f1b827bb3915eed63bd45477adfd276fcf3210f",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-20-linux-shellscript-function-error/",
+          "language": "ko",
+          "title": "셸 함수의 function 경고 해결: POSIX sh와 Bash 실행 구분",
+          "htmlSha256": "d78bedba15eab3786686786b5b6079e236e14361207fe86b46fe795a6798123e",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-11-17-linux-shellscript-version-compare/",
+          "language": "en",
+          "title": "Compare Dotted Numeric Versions in Shell with Python",
+          "htmlSha256": "297f001313fcf5e55847d80d9a1762d341b529ef5bb8d477178b647a56232b94",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-11-17-linux-shellscript-version-compare/",
+          "language": "ko",
+          "title": "셸에서 숫자 버전 비교하기: 1.10·1.2와 긴 구간 처리",
+          "htmlSha256": "b7295d8dc356b57f4bcebb83eda40ff6c8eb11992509c41f1e435334e9e81ef8",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-23-linux-shellscript-github-latest/",
+          "language": "en",
+          "title": "Get a GitHub Latest Release and Its Asset with curl and jq",
+          "htmlSha256": "284bc1408a135d944c51e8179e75203166496189cc460bdefb0da06c86edf8af",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-23-linux-shellscript-github-latest/",
+          "language": "ko",
+          "title": "curl·jq로 GitHub 최신 릴리스와 다운로드 자산 조회하기",
+          "htmlSha256": "438b7978d347c267f2fa7afff96896f32f5c9d4e2367b26b1d6e3ae622eb42ac",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-10-10-temurin-jdk21-delay/",
+          "language": "en",
+          "title": "Temurin 21 Release Delay: History and How to Check JDK Binaries",
+          "htmlSha256": "4650a8d2d46423e1305eb1f7ea282af82f84e9dee1fb13b8108518c7d599598e",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-10-10-temurin-jdk21-delay/",
+          "language": "ko",
+          "title": "Temurin 21 출시 지연 기록과 현재 JDK 바이너리 확인 방법",
+          "htmlSha256": "d0c9abed2f5325c8aad36450942ed6af1a76a68f6b0d726fa3aa3e240237af7c",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-20-jdk-21-release/",
+          "language": "en",
+          "title": "JDK 21 Features: Final APIs, Preview Features, and a Runnable Example",
+          "htmlSha256": "aabecfd97937ae8128bc7f373fa5e38ada335a152b560e8628aba02fda81ac38",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-20-jdk-21-release/",
+          "language": "ko",
+          "title": "JDK 21 기능 정리: 정식 기능과 Preview를 구분하고 실행하기",
+          "htmlSha256": "5206cd8459e4aef962878aa49eb43990144efe28b39e0629d9b1158d533a3cb0",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-23-jdk-21-string-templates/",
+          "language": "en",
+          "title": "Java String Templates: JDK 21 Preview, JDK 23 Removal and Alternatives",
+          "htmlSha256": "cb4bf1b64de10f8634ccb18744310fe113da65955d1fc8098b14ead2f2a5a7bd",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-23-jdk-21-string-templates/",
+          "language": "ko",
+          "title": "Java String Templates: JDK 21 실행과 JDK 23 제거 대응",
+          "htmlSha256": "243b5c07841353437984289f545b6dcc9f6cd3c25386117f9422c167a96b5034",
+          "result": "passed"
+        }
+      ],
+      "sitemapUrls": 442,
+      "result": "passed"
+    },
+    "browserAudit": [
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-en.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-ko.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-en.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-ko.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-en.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-ko.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "lang": "en",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 420
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "ko",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 353.984375
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "en",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 353.984375
+          }
+        ],
+        "result": "passed"
+      }
+    ],
+    "screenshotsReviewed": [
+      "EN WebClient1280px desktop",
+      "KO YAML390px mobile",
+      "EN Lombok390px mobile"
+    ]
+  },
+  "executionScope": {
+    "existingCI": "Mandatory workflow re-executes the published Java, WebClient, Querydsl, shell, multi-frontend, YAML/metadata, Boot/Lombok, Batch and JDK21 final-feature checkers. Exact-head result is recorded separately after CI.",
+    "localThisBatch": "Python/Node regression, type/build/image checks, source-code equality and browser checks. Existing article code was not changed.",
+    "limits": [
+      "Migration diagrams are validation proposals, not an automated production migration.",
+      "IDE UI and the live Initializr service are not newly exercised by this batch.",
+      "Historical String Templates preview runtime is not newly tested by the current CI.",
+      "Code markers and screenshots do not establish semantic correctness or production readiness."
+    ]
+  }
+}
