@@ -245,6 +245,11 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.ok(sitemap.includes(`<loc>${url}</loc>`));
       assert.ok(!sitemap.includes(`/${lang}/posts/`));
       assert.ok(!(await readFile(`dist/${lang}/index.html`,'utf8')).includes('noindex,follow'));
+      const tagsPage=await readFile(`dist/${lang}/tags/index.html`,'utf8');
+      assert.ok(!tagsPage.includes('archive-renewal'));
+      assert.match(tagsPage,/noindex,follow/);
+      assert.ok(!tagsPage.includes('hreflang='));
+      assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/tags/</loc>`));
       assert.ok((await readFile(`dist/${lang}/posts/index.html`,'utf8')).includes('noindex,follow'));
     }
     const esIndex=JSON.parse(await readFile('dist/es/search-index.json','utf8'));
