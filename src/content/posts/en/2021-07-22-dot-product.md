@@ -8,12 +8,12 @@ categories:
 tags:
   - java
   - algorithms
-publishedAt: 2026-10-27T03:54:18.369Z
+publishedAt: "2026-10-27T04:06:49+00:00"
 title: "Java Array Dot Product: IntStream and Integer Bounds"
 description: Multiply matching array elements and sum them with IntStream.
   Understand signs, int bounds, and why wider multiplication must promote
   operands before overflow.
-updatedAt: 2026-10-27T03:54:18.369Z
+updatedAt: "2026-10-27T04:06:49+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Problem conditions and Java APIs checked; paired solutions compiled
