@@ -16,7 +16,8 @@ CASES = {
 BILINGUAL = {'2021-07-19-new-id.md', '2021-07-22-dot-product.md',
              '2021-07-23-number-word.md', '2021-08-17-cache.md',
              '2021-07-20-pair-delete.md', '2021-07-23-unsuccessful-runner.md',
-             '2021-07-24-fail-percentage.md', '2021-07-29-ponkemon.md'}
+             '2021-07-24-fail-percentage.md', '2021-07-29-ponkemon.md',
+             '2021-07-22-plus-minus.md', '2021-07-29-interval-num.md'}
 HARNESS = r'''
 import java.util.*;
 import java.util.stream.*;
@@ -100,6 +101,17 @@ class ArticleExamples {
    if(position==nums.length){eq(new Pokemon().solution(nums.clone()),pokemonBySelections(nums));return;}
    for(int kind=1;kind<=3;kind++){nums[position]=kind;pokemonSequences(nums,position+1);}
  }
+ static void signSequences(int[] values,boolean[] signs,int position,long sum){
+   if(position==values.length){eq(new Signs().solution(values,signs),(int)sum);return;}
+   for(int value=1;value<=3;value++)for(boolean positive:new boolean[]{false,true}){
+     values[position]=value;signs[position]=positive;
+     signSequences(values,signs,position+1,sum+(positive?value:-value));
+   }
+ }
+ static long[] sequenceByAddition(int x,int n){
+   long[] result=new long[n];long value=0;
+   for(int i=0;i<n;i++){value+=x;result[i]=value;}return result;
+ }
  public static void main(String[] args){
    Locale.setDefault(Locale.forLanguageTag("tr-TR"));
    eq(new NewId().solution("...!@BaT#*..y.abcdefghijklm"),"bat.y.abcdefghi");
@@ -161,6 +173,13 @@ class ArticleExamples {
    eq(new Failure().solution(500,manyPlayers),lateFirst);Arrays.fill(manyPlayers,501);eq(new Failure().solution(500,manyPlayers),IntStream.rangeClosed(1,500).toArray());
    eq(new Failure().solution(3,new int[]{1,1,1}),new int[]{1,2,3});
    int[] manyTypes=IntStream.rangeClosed(1,10000).toArray();eq(new Pokemon().solution(manyTypes),5000);Arrays.fill(manyTypes,7);eq(new Pokemon().solution(manyTypes),1);
+   for(int length=1;length<=5;length++)signSequences(new int[length],new boolean[length],0,0);
+   for(int x=-12;x<=12;x++)for(int n=1;n<=20;n++)eq(new Interval().solution(x,n),sequenceByAddition(x,n));
+   int[] magnitudes=new int[1000];Arrays.fill(magnitudes,1000);boolean[] signs=new boolean[1000];
+   eq(new Signs().solution(magnitudes,signs),-1000000);Arrays.fill(signs,true);eq(new Signs().solution(magnitudes,signs),1000000);
+   eq(new Signs().solution(new int[]{4,7,12},new boolean[]{true,false,true}),9);
+   eq(new Signs().solution(new int[]{1,2,3},new boolean[]{false,false,true}),0);
+   for(int x:new int[]{-10000000,0,10000000})eq(new Interval().solution(x,1000),sequenceByAddition(x,1000));
    System.out.println("[ok] 11 published Java solutions compiled; "+assertions+" behavioral assertions passed (including Turkish locale, ties, overflow, exhaustive small cases, and idempotence).");
  }
 }
@@ -191,7 +210,7 @@ def main():
         harness=tmp/'ArticleExamples.java';harness.write_text(HARNESS);sources.append(str(harness))
         subprocess.run(['javac','--release','11','-encoding','UTF-8','-d',str(tmp),*sources],check=True)
         subprocess.run(['java','-cp',str(tmp),'ArticleExamples'],check=True,timeout=30)
-        print('[ok] Eight English/Korean article pairs contain identical complete Java solutions.')
+        print('[ok] Ten English/Korean article pairs contain identical complete Java solutions.')
         scripts=re.findall(r'```(?:bash|sh)\n([\s\S]*?)\n```',(ARTICLES/'2023-11-17-linux-shellscript-version-compare.md').read_text())
         if not scripts:raise ValueError('No runnable version-comparison shell snippet found')
         script=scripts[0]

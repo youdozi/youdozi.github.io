@@ -1,0 +1,182 @@
+{
+  "createdAt": "2026-10-27T04:31:22.459457+00:00",
+  "purpose": "Finish the remaining two algorithm pairs and replace two existing category listings with reader-oriented Java learning guides.",
+  "topics": [
+    "2021-07-22-plus-minus",
+    "2021-07-29-interval-num"
+  ],
+  "manuscripts": 4,
+  "guidePages": [
+    "/en/categories/coding-test/",
+    "/ko/categories/coding-test/"
+  ],
+  "publicationApprovalAtPreparation": null,
+  "previousPR": {
+    "number": 60,
+    "mergeCommit": "91d432343c58e92ba3223954794886c96601a372",
+    "deploymentRun": 40449637910,
+    "deployment": "success",
+    "liveArticlesVerified": 8,
+    "indexNow": {
+      "changedUrls": 27,
+      "httpStatus": 200
+    },
+    "indexing": "Not inferred from notification acceptance."
+  },
+  "newEnglishEditions": {
+    "preparedPublishedAt": "2026-10-27T04:25:30.219Z",
+    "refreshAllPublicationTimesAfterApproval": true,
+    "policy": "Refresh first-English publishedAt/updatedAt after explicit approval, preserving Korean original publication identity and all reviewed bodies."
+  },
+  "preserved": [
+    "Korean publishedAt",
+    "translationKey",
+    "routeSlug",
+    "legacyUrl",
+    "legacySource",
+    "archiveBodySha256"
+  ],
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "sourceVerification": {
+    "problems": [
+      "https://school.programmers.co.kr/learn/courses/30/lessons/76501",
+      "https://school.programmers.co.kr/learn/courses/30/lessons/12954"
+    ],
+    "javaApi": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/IntStream.html",
+    "scope": "Primary input bounds and Java range/mapToLong contracts checked; copied problem stories replaced with concise explanations."
+  },
+  "review": {
+    "type": "Two-pass self AI review: source/code/bilingual meaning, then standalone prose and rendered pages.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "issue": "Sequence return type long alone does not prevent intermediate int overflow.",
+        "resolution": "Promote x before multiplication; compare entire positive/negative bound arrays against iterative addition."
+      },
+      {
+        "issue": "Unstructured coding-test category gave no learning order or descriptive metadata.",
+        "resolution": "Group the actual ten bilingual topics into arrays, strings and collections; retain future extras and omit missing/future/example editions."
+      },
+      {
+        "issue": "IndexNow route validation rejected newly submitted category guide URLs.",
+        "resolution": "Allow category term routes; regression verifies sitemap inclusion and rejects noindex guides."
+      },
+      {
+        "issue": "Static ten-exercise descriptions could overstate partial guide fixtures.",
+        "resolution": "Use count-independent descriptions and derive visible count and ItemList only from eligible entries."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "reviewedSha256": {
+      "src/content/posts/en/2021-07-22-plus-minus.md": "769e50827ba1b48eaa4044ea5408d7d0400911eeeeabd1f6978602975564f252",
+      "src/content/posts/ko/2021-07-22-plus-minus.md": "3c3ef89f1f409f6e17b48f9f98febc04cee06af8d430829456078d43a270494c",
+      "src/content/posts/en/2021-07-29-interval-num.md": "a7c9bbe17ac8b762461bc9aca4c98c83d8017817a1a2cbaa7bbd25e9900061fa",
+      "src/content/posts/ko/2021-07-29-interval-num.md": "e3f651a91cbb3b2a441247e148e689241a256b68810f95975aa821e0edfab4c9",
+      "src/lib/algorithm-guide.ts": "2d83fca674ee0b82563a7f4b23caaabe7f2f00403a7f1a21e0972f3c4f69652d",
+      "src/components/AlgorithmCategory.astro": "6f8b6745e48c054c720bcfe74b2955af602d652801f355a1647ca74bdb7844bc",
+      "src/pages/[lang]/[taxonomy]/[term].astro": "ddad9db2ea4ab5b7c0a27510e1d1e9943c6e324ae2f7f740e3e1fe85024c67f5",
+      "src/pages/sitemap.xml.ts": "5f49603f87f48114c03d24a796087169ff1eb9fc9583bf999dc15a36de1b05ad",
+      "src/components/Article.astro": "3fa31d7db84f9e5142ea2889ad4e21643b1f5359e56cd751716e4637c39be106",
+      "scripts/check_article_examples.py": "5ec403902595f3f3f6d19937909a8682797c16ba6e4310ea58374a1c03686747",
+      "scripts/test-algorithm-guide.mjs": "e99abdcf0c6ce7370839d5af004dc9db870d81d50d2b4f5db8b44c2b9b2e0434",
+      "scripts/indexnow.py": "ddf5e00537f514c618fb63011f8014f0f5ac12c27c2c0a0dfa8ec3f310837774",
+      "scripts/test_indexnow.py": "d85d8dc8d6121e313ae5efa33dccf808575250a708673d011f16090175d4c1f3"
+    }
+  },
+  "execution": {
+    "compilerAndRuntime": "JDK17.0.8.1 with javac --release11; no separate JDK11 runtime test.",
+    "compiledSolutions": 11,
+    "bilingualPairsTotal": 10,
+    "priorAssertionsPreserved": 68733,
+    "signedSumExhaustiveAssertions": 9330,
+    "signedSumInputs": "Lengths1..5, magnitudes1..3, both signs; reference long accumulation.",
+    "sequenceAssertions": 500,
+    "sequenceInputs": "x=-12..12, n=1..20; independent iterative addition reference.",
+    "newBoundaryAssertions": 7,
+    "totalAssertions": 78570,
+    "shellCases": 8,
+    "limits": [
+      "Problem contracts, not general input validators.",
+      "Identical bilingual implementations run once, not independent implementations.",
+      "Not performance or memory benchmarks."
+    ]
+  },
+  "siteValidation": {
+    "nodeTestsPassed": 27,
+    "indexNowTestsPassed": 10,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "astroHints": 0,
+    "htmlPages": 884,
+    "sitemapUrls": 442,
+    "englishListedEntries": 87,
+    "koreanListedEntries": 289,
+    "articleAudit": {
+      "articleResults": [
+        {
+          "url": "https://youdozi.github.io/en/posts/2021-07-22-plus-minus/",
+          "language": "en",
+          "title": "Sum Signed Values in Java with IntStream",
+          "htmlSha256": "60e7354516c5ecf09118f4e6f6e18dbd855c4ad819763544ad7f669491881afd",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2021-07-22-plus-minus/",
+          "language": "ko",
+          "title": "Java 음양 더하기: 인덱스별 부호를 적용해 합산하기",
+          "htmlSha256": "12fb1e9bb48536ee5e6817bca5687b4be7b29e0831e30d7315aa4b2ab75038a6",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2021-07-29-interval-num/",
+          "language": "en",
+          "title": "Generate an x-Spaced Sequence in Java: Promote Before Multiplication",
+          "htmlSha256": "fab8f01ed53a77ee3b35d13827a89986d7322946ae15983d39fd58353ffebf42",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2021-07-29-interval-num/",
+          "language": "ko",
+          "title": "Java x 간격 수열 만들기: 곱셈 전에 long으로 변환하기",
+          "htmlSha256": "d9b4f3f8896e170479269aab4bbc21af05b403dc0b1480a0a664a38dcb5cf9a0",
+          "result": "passed"
+        }
+      ],
+      "sitemapUrls": 442,
+      "result": "passed"
+    },
+    "guideAudit": [
+      {
+        "url": "https://youdozi.github.io/en/categories/coding-test/",
+        "items": 10,
+        "language": "en",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/categories/coding-test/",
+        "items": 10,
+        "language": "ko",
+        "result": "passed"
+      }
+    ],
+    "browser": {
+      "desktop": "Chrome1280x1600 EN screenshot reviewed",
+      "mobile": "Chrome CDP390px KO full-page screenshot reviewed; no horizontal overflow",
+      "mobileMetrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 2545,
+        "columns": "354px"
+      }
+    },
+    "pythonTestsPassed": 149
+  },
+  "selectionEvidence": {
+    "scope": "Completes all ten existing algorithm topics in both languages and connects their category navigation.",
+    "limits": "No measured English keyword demand or ranking improvement claimed."
+  },
+  "publication": "Draft review only. New manuscripts and guide changes await explicit approval before merge and deployment."
+}
