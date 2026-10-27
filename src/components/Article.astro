@@ -8,6 +8,8 @@ import DigestSection from './DigestSection.astro';
 import ArchiveRenewal from './ArchiveRenewal.astro';
 import { relatedEntries } from '../lib/related';
 import {authorData,authorPath} from '../lib/author';
+import ArticleContents from './ArticleContents.astro';
+import {articleSections,articleUi,visibleModified} from '../lib/article-navigation';
 import {categoryGuide,additionalArticleGuides} from '../lib/technical-guides';
 import { entries, text, alternateLinks, formatDate, taxonomyUrl, type Entry } from '../lib/content';
 interface Props { entry: Entry; }
@@ -16,6 +18,8 @@ const lang = entry.language;
 const all = await entries();
 const rendered = entry.post ? await render(entry.post) : undefined;
 const Content = rendered?.Content;
+const sections=articleSections(entry.kind,rendered?.headings);
+const modified=visibleModified(entry);
 const canonical = new URL(entry.url, Astro.site).href;
 const articleData: Record<string, unknown>[] = entry.reviewStatus === 'example' ? [] : [
   { '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': `${canonical}#article`, mainEntityOfPage: canonical, url: canonical,
@@ -39,8 +43,9 @@ const hasTopics = all.some(candidate => candidate.language === lang && candidate
 ---
 <Base title={entry.title} description={entry.description} lang={lang} structuredData={articleData} noindex={entry.reviewStatus === 'example'} alternates={alternateLinks(entry, all)}>
   <article class="article">
-    <header class="article-heading"><a class="eyebrow" href={`/${lang}/${entry.kind === 'digest' ? 'digest' : 'posts'}/`}>← {text[lang][entry.kind === 'digest' ? 'digest' : 'posts']}</a><h1>{entry.title}</h1><div class="entry-meta"><time datetime={entry.publishedAt.toISOString()}>{formatDate(entry.publishedAt, lang)}</time><a class="author-link" href={authorPath(lang)} rel="author" lang={lang==='ko'?'ko':'en'}>youdozi</a></div></header>
+    <header class="article-heading"><a class="eyebrow" href={`/${lang}/${entry.kind === 'digest' ? 'digest' : 'posts'}/`}>← {text[lang][entry.kind === 'digest' ? 'digest' : 'posts']}</a><h1>{entry.title}</h1><div class="entry-meta"><span class="publication-date">{text[lang].published}: <time datetime={entry.publishedAt.toISOString()}>{formatDate(entry.publishedAt, lang)}</time></span>{modified && <span class="modification-date">{articleUi[lang].updated}: <time datetime={modified.toISOString()}>{formatDate(modified,lang)}</time></span>}<a class="author-link" href={authorPath(lang)} rel="author" lang={lang==='ko'?'ko':'en'}>youdozi</a></div></header>
     {entry.reviewStatus === 'example' && <aside class="notice">예제 데이터 — 실제 뉴스로 취급하지 마세요.</aside>}
+    <ArticleContents sections={sections} label={articleUi[lang].toc} />
     <div class="prose">
       {Content && <Content />}
       {entry.renewal && <ArchiveRenewal article={entry.renewal.data} lang={lang} edition={entry.renewalEdition!} />}

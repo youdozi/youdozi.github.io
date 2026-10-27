@@ -158,6 +158,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.ok(!koreanIndex.some(entry=>entry.url==='/ko/digest/2026-03-16/'));
     const sample=await readFile('dist/ko/digest/2026-03-16/index.html','utf8');
     assert.match(sample,/noindex,follow/);assert.match(sample,/예제 데이터/);
+    assert.ok(!sample.includes('<details class="article-toc"'));
     const sitemap=await readFile('dist/sitemap.xml','utf8');
     assert.ok(!sitemap.includes('/ko/digest/2026-03-16/'));
     const reviewShell=await readFile('dist/review/index.html','utf8');
@@ -197,6 +198,13 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     const posting=graph.find(item=>item['@type']==='BlogPosting');
     assert.equal(posting.inLanguage,'en');assert.equal(posting.author.name,'youdozi');
     assert.ok(posting.datePublished && posting.dateModified);
+    const contents=englishArticle.match(/<details class="article-toc"[\s\S]*?<\/details>/)?.[0];
+    assert.ok(contents,'A technical article with four rendered sections exposes contents');
+    assert.deepEqual([...contents.matchAll(/href="#([^"]+)"/g)].map(m=>decodeURIComponent(m[1])),['processing-flow','set-up-a-standalone-test-project','test-eight-response-contracts','why-status-and-decoding-are-checked-separately']);
+    for(const slug of [...contents.matchAll(/href="#([^"]+)"/g)].map(m=>decodeURIComponent(m[1])))assert.ok(englishArticle.includes(`id="${slug}"`));
+    assert.ok(englishArticle.includes(`class="publication-date">Published: <time datetime="${posting.datePublished}"`));
+    assert.ok(englishArticle.includes(`class="modification-date">Updated: <time datetime="${posting.dateModified}"`));
+
     assert.ok(graph.some(item=>item['@type']==='BreadcrumbList'));
 
 

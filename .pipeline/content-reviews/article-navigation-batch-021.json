@@ -1,0 +1,212 @@
+{
+  "createdAt": "2026-10-27T11:58:07.677419+00:00",
+  "purpose": "Help readers navigate long technical articles and distinguish recorded publication and modification dates.",
+  "baseCommit": "6a99074519dfdbaaa2797be09006afe856ff7298",
+  "branch": "seo/article-navigation-batch-021",
+  "publication": "Draft only. User approval applied to PR71, not this follow-up.",
+  "previousPublication": {
+    "PR": 71,
+    "mainCommit": "6a99074519dfdbaaa2797be09006afe856ff7298",
+    "productionRun": 40498950449,
+    "productionConclusion": "success",
+    "liveProfiles": 2,
+    "liveArticleExamples": 8,
+    "sitemapUrls": 471,
+    "indexNow": {
+      "changedUrls": 425,
+      "httpStatus": 200
+    }
+  },
+  "initialAudit": {
+    "redirectPages": 97,
+    "internalLinksThroughRedirects": 0,
+    "decision": "No redirect-link repair was warranted. Scope changed to navigation and visible date clarity."
+  },
+  "scope": {
+    "articleSourcesChanged": 0,
+    "articlesWithContents": 22,
+    "visibleModificationDates": 315,
+    "articleDatesVerified": 423,
+    "localesWithDateLabels": 8,
+    "newRoutes": 0
+  },
+  "review": {
+    "type": "Self AI review of source/metadata alignment, generated HTML, keyboard behavior and screenshots.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "issue": "An independently written contents list can diverge from rendered heading IDs or include removed editorial headings.",
+        "resolution": "Use the renderer’s actual heading metadata, select second-level sections, omit duplicate/empty entries and show contents only from four eligible sections."
+      },
+      {
+        "issue": "Template updates could be mistaken for newly written or revised content.",
+        "resolution": "Preserve every source date. Show the original publication date and only a recorded modification strictly later than publication; labels use the article language."
+      },
+      {
+        "issue": "Wrapping metadata can leave an orphan separator on mobile.",
+        "resolution": "Keep each labeled date together and omit the leading modification separator. Test320/1280px for every contents article and320px news in all eight languages."
+      },
+      {
+        "issue": "A test mistook the CSS selector for an actual contents element.",
+        "resolution": "Assert the details element rather than a class-name substring; digest pages remain without contents."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "sha256": {
+      "src/lib/article-navigation.ts": "534552289a179c754457321b260ab7dc604dfc7172906bd404d3d2ceb1276a0a",
+      "src/components/ArticleContents.astro": "7d37074e5bbe80508d37abca26c074a6f5639d617d6022cb04d3ff8b55fbe11e",
+      "src/components/Article.astro": "f9da5f5e57bacb8e1c32640681b6006adc997df1cedac3a5a490c18545e35528",
+      "src/styles/global.css": "06a4c19230f54504740b067ea34ba139cb28e56ad8b1e091154d0700ebec2e19",
+      "scripts/test-article-navigation.mjs": "29afe30ba3cb5e348a02e5e4bb807a44b4a2d52e412960d0c578186eac6a83d4",
+      "scripts/test-site.mjs": "ac984bdbae5fc380a25b1ea54202a950f4361ec5eab5171c4dbc24cf14f83d25"
+    }
+  },
+  "validation": {
+    "pythonTests": 169,
+    "nodeTests": 44,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 936,
+    "sitemapUrls": 471,
+    "seo": {
+      "articleDatesVerified": 423,
+      "visibleModificationDates": 315,
+      "articlesWithContents": 22,
+      "languagesWithContents": {
+        "ko": 11,
+        "en": 11
+      },
+      "maxSections": 7,
+      "rows": [
+        {
+          "url": "/ko/posts/2023-10-27-springbatch5-migration/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/ko/posts/2023-09-23-jdk-21-string-templates/",
+          "sections": 5,
+          "result": "passed"
+        },
+        {
+          "url": "/ko/posts/2023-09-19-springboot-test-webclient/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/ko/posts/2023-09-15-springboot-intellij-lombok/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/ko/posts/2023-09-13-springboot-history/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/ko/posts/2023-09-10-springboot-intellij-import/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/ko/posts/2023-09-08-springboot3-migration/",
+          "sections": 6,
+          "result": "passed"
+        },
+        {
+          "url": "/ko/posts/2023-09-09-springboot3-querydsl/",
+          "sections": 7,
+          "result": "passed"
+        },
+        {
+          "url": "/ko/posts/2023-09-07-springboot-initializer/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/ko/posts/2021-07-27-parse-yaml/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/ko/posts/2021-07-23-multiple-gradle-build/",
+          "sections": 5,
+          "result": "passed"
+        },
+        {
+          "url": "/en/posts/2023-09-07-springboot-initializer/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/en/posts/2023-09-10-springboot-intellij-import/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/en/posts/2023-09-13-springboot-history/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/en/posts/2023-09-15-springboot-intellij-lombok/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/en/posts/2021-07-27-parse-yaml/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/en/posts/2023-10-27-springbatch5-migration/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/en/posts/2021-07-23-multiple-gradle-build/",
+          "sections": 5,
+          "result": "passed"
+        },
+        {
+          "url": "/en/posts/2023-09-09-springboot3-querydsl/",
+          "sections": 7,
+          "result": "passed"
+        },
+        {
+          "url": "/en/posts/2023-09-23-jdk-21-string-templates/",
+          "sections": 5,
+          "result": "passed"
+        },
+        {
+          "url": "/en/posts/2023-09-19-springboot-test-webclient/",
+          "sections": 4,
+          "result": "passed"
+        },
+        {
+          "url": "/en/posts/2023-09-08-springboot3-migration/",
+          "sections": 6,
+          "result": "passed"
+        }
+      ],
+      "result": "passed"
+    },
+    "browserChecks": 52,
+    "keyboardDisclosure": true,
+    "anchorNavigation": true,
+    "screenshotsReviewed": [
+      "Korean WebClient320px",
+      "English WebClient320px"
+    ]
+  },
+  "sources": [
+    "https://developers.google.com/search/docs/appearance/publication-dates",
+    "https://docs.astro.build/en/guides/content-collections/"
+  ],
+  "limits": [
+    "The follow-up is not deployed and no search ranking effect is claimed.",
+    "Contents is intentionally omitted from digests, short articles and JSON renewals without Markdown heading metadata.",
+    "Dates describe existing recorded article changes, not this template change."
+  ]
+}
