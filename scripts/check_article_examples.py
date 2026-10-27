@@ -107,7 +107,9 @@ def main():
         harness=tmp/'ArticleExamples.java';harness.write_text(HARNESS);sources.append(str(harness))
         subprocess.run(['javac','--release','11','-encoding','UTF-8','-d',str(tmp),*sources],check=True)
         subprocess.run(['java','-cp',str(tmp),'ArticleExamples'],check=True,timeout=30)
-        script=re.findall(r'```bash\n([\s\S]*?)\n```',(ARTICLES/'2023-11-17-linux-shellscript-version-compare.md').read_text())[0]
+        scripts=re.findall(r'```(?:bash|sh)\n([\s\S]*?)\n```',(ARTICLES/'2023-11-17-linux-shellscript-version-compare.md').read_text())
+        if not scripts:raise ValueError('No runnable version-comparison shell snippet found')
+        script=scripts[0]
         file=tmp/'compare.sh';file.write_text(script)
         for a,b,operator in [('1.2','1.2.0','='),('1.1000','2.0','<'),('1.2.3.4.5','1.2.3.4.4','>'),('99999999999999999999','2','>')]:
             result=subprocess.run(['bash',str(file),a,b],capture_output=True,text=True,check=True)
