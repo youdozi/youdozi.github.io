@@ -175,5 +175,13 @@
     "eightPageAudit": "Passed H1/descriptions/OG/schema dates, self/canonical and reciprocal en/ko/x-default, RSS/search/sitemap, code and no editorial banners."
   },
   "ci": "New staged project checker configured after existing JDK17 examples; exact PR check result tracked separately.",
-  "publication": "Draft review only; no new batch content deployed before explicit approval."
+  "publication": "Draft review only; no new batch content deployed before explicit approval.",
+  "publicationApproval": {
+    "approvedAt": "2026-10-27T03:48:55+00:00",
+    "approvedBy": "youdozi",
+    "pullRequest": 58,
+    "basis": "User requested continuing after the concrete PR58 draft and successful validation report.",
+    "englishPublicationPreparedAt": "2026-10-27T03:48:55+00:00",
+    "scope": "Publish the four reviewed Korean/English pairs; only first-English publication/modified timestamps changed. Korean original dates and all bodies preserved."
+  }
 }

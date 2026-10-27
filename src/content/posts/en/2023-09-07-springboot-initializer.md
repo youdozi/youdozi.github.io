@@ -8,9 +8,9 @@ categories:
 tags:
   - springboot
   - springboot initializer
-publishedAt: 2026-10-27T03:26:14.141Z
+publishedAt: "2026-10-27T03:48:55+00:00"
 title: Create and Test a Gradle Project with Spring Initializr
-updatedAt: 2026-10-27T03:26:14.141Z
+updatedAt: "2026-10-27T03:48:55+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official documentation checked; CLI/project execution distinguished
