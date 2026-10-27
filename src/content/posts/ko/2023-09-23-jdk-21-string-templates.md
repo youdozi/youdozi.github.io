@@ -13,7 +13,7 @@ tags:
   - "string templates"
 legacyUrl: "/jdk/jdk-21-string-templates/"
 legacySource: "_posts/jdk/jdk21-string-templates/2023-09-23-jdk-21-string-templates.markdown"
-updatedAt: "2026-10-27T01:24:58+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조, 재현 절차와 버전별 적용 조건 보강"
@@ -27,6 +27,12 @@ reviewSources:
 description: "JDK 21 String Templates의 전체 실행 예제와 preview 옵션, JDK 23에서 STR을 사용할 수 없는 이유, 표준 문자열 API로 교체하는 방법을 정리합니다."
 ---
 String Templates는 JDK 21·22의 미리보기 기능이었고 JDK 23에서 제거됐습니다. JDK 23에 `--enable-preview`를 붙여도 `STR`을 사용할 수 없습니다. 해당 미리보기를 벗어나야 하는 코드는 표준 문자열 API나 출력 형식에 맞는 직렬화기로 바꿔야 합니다. 변경 배경은 [Oracle의 제거 설명](https://inside.java/2024/06/20/newscast-71/)에서 확인할 수 있습니다.
+
+## 처리 흐름
+
+![표준 문자열 포맷 API 사용 흐름도](/assets/diagrams/2023-09-23-jdk-21-string-templates-ko.svg)
+
+과거 preview 예제가 아닌 표준 FormattingExample의 흐름입니다. 세 표현을 비교하고 MessageFormat의 작은따옴표 처리를 확인합니다.
 
 ## 예전 코드는 어느 JDK에서 실행할 수 있을까?
 

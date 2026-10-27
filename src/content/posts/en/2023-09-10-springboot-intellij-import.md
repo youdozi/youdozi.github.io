@@ -12,7 +12,7 @@ tags:
   - RUN/DEBUG configurations
 publishedAt: "2026-10-27T03:48:55+00:00"
 title: Open and Run a Spring Boot Gradle Project in IntelliJ IDEA
-updatedAt: "2026-10-27T03:48:55+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official documentation checked; CLI/project execution distinguished
@@ -29,6 +29,12 @@ description: Check Gradle sync, SDK and run settings in IntelliJ IDEA, then use
 When opening a Spring Boot project in IntelliJ, check Gradle synchronization first and compare the Wrapper build with IDE execution. A missing run button does not always require creating a manual configuration. You can also run a valid Java main method from the [editor gutter icon](https://www.jetbrains.com/help/idea/running-applications.html).
 
 This guide continues the Boot 4.1.2, Gradle 9.8.2, Java 17 [Initializr example](/en/posts/2023-09-07-springboot-initializer/). The build and HTTP behavior ran locally; the IDE steps were checked against JetBrains documentation. This does not claim hands-on UI verification in a particular IDE release.
+
+## Processing flow
+
+![Separate build and IDE failures workflow](/assets/diagrams/2023-09-10-springboot-intellij-import-en.svg)
+
+Use the Wrapper build to distinguish project failures from IDE setup. HTTP tests use a random port; manual bootRun uses the configured port.
 
 ## Check the project and JDK
 

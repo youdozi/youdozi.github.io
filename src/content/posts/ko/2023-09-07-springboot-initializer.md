@@ -12,7 +12,7 @@ tags:
   - springboot initializer
 legacyUrl: /springboot/springboot-initializer/
 legacySource: _posts/spring/initializer/2023-09-07-springboot-initializer.markdown
-updatedAt: 2026-10-27T03:26:14.141Z
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official documentation checked; CLI/project execution distinguished
@@ -30,6 +30,12 @@ description: Spring Initializr에서 Boot·Java·Gradle 설정을 확인하고, 
 Spring Initializr로 프로젝트를 만든 뒤에는 IDE보다 먼저 생성된 Gradle Wrapper로 테스트하세요. 생성 성공, 의존성 다운로드, JDK 호환성, 애플리케이션 실행을 나누어 확인하면 어느 단계에서 막혔는지 찾기 쉽습니다.
 
 이 예제는 2026년 10월 27일 [start.spring.io](https://start.spring.io/)에서 실제로 생성한 Boot 4.1.2·Java 17·Gradle Groovy 프로젝트를 기준으로 합니다. 당시 Wrapper는 Gradle 9.8.2였습니다. 서버의 기본값과 선택 가능한 버전은 바뀌므로 이 조합이 계속 제공된다고 가정하지 마세요.
+
+## 처리 흐름
+
+![생성·설정 확인·테스트 흐름도](/assets/diagrams/2023-09-07-springboot-initializer-ko.svg)
+
+전체 프로젝트를 생성한 뒤 포함된 Wrapper를 실행합니다. 컨텍스트 테스트 통과와 HTTP 애플리케이션 실행은 별도로 확인합니다.
 
 ## 생성할 항목 정하기
 

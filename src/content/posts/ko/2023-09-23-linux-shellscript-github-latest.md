@@ -16,7 +16,7 @@ tags:
 legacyUrl: "/linux/linux-shellscript-github-latest/"
 legacySource: "_posts/linux/shell-script/github-latest/2023-09-23-linux-shellsc\
   ript-github-latest.markdown"
-updatedAt: "2026-10-27T02:12:24+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 원고 실행 예제 검증"
@@ -31,6 +31,12 @@ description: "GitHub releases/latest 응답에서 Linux x64 Temurin JDK 자산�
 GitHub의 `releases/latest`는 숫자로 가장 큰 Git 태그를 계산하는 API가 아닙니다. latest 릴리스의 `tag_name`과 `assets`를 읽고, 필요한 OS·CPU·파일 형식에 맞는 자산을 정확히 하나 선택해야 합니다. [공식 릴리스 API](https://docs.github.com/en/rest/releases/releases#get-the-latest-release)는 일반 태그·draft·prerelease와 게시 릴리스를 구분합니다.
 
 아래 예제는 공개 저장소 `adoptium/temurin17-binaries`의 Linux x64 HotSpot JDK tar.gz 메타데이터를 조회합니다. 토큰이나 실제 파일 다운로드는 필요하지 않습니다. 저장소 인자를 생략하면 이 기본값을 사용하고 명시적인 빈 인자는 거부합니다.
+
+## 처리 흐름
+
+![GitHub 릴리스 자산 1개 선택 흐름도](/assets/diagrams/2023-09-23-linux-shellscript-github-latest-ko.svg)
+
+HTTP 실패는 JSON 파싱 전에 종료합니다. 올바른 릴리스 객체에서 조건에 맞는 자산 1개만 선택하며 URL 선택은 파일 검증이 아닙니다.
 
 ## HTTP 실패와 JSON 선택 실패 분리하기
 

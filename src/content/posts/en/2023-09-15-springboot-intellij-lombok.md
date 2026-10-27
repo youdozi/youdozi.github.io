@@ -11,7 +11,7 @@ tags:
   - lombok
 publishedAt: "2026-10-27T03:48:55+00:00"
 title: "Fix Lombok in IntelliJ: Separate Gradle Compilation from IDE Support"
-updatedAt: "2026-10-27T03:48:55+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official documentation checked; CLI/project execution distinguished
@@ -28,6 +28,12 @@ description: Configure Lombok for main and test annotation processing, verify
 If Lombok methods appear missing, first run `./gradlew clean test` to determine whether the build fails too. IDE support helps the editor recognize generated members; Gradle's annotation processor configuration generates them during compilation. Neither replaces the other.
 
 This example continues the [Initializr project](/en/posts/2023-09-07-springboot-initializer/) and [HTTP example](/en/posts/2023-09-10-springboot-intellij-import/). It uses Boot 4.1.2, Gradle 9.8.2, and JDK 17; the BOM selected Lombok 1.18.48. This records one working combination without guaranteeing compatibility for every JDK/Lombok pairing.
+
+## Processing flow
+
+![Compile Lombok before IDE fixes workflow](/assets/diagrams/2023-09-15-springboot-intellij-lombok-en.svg)
+
+Check generated constructors and getters in main and test compilation separately. Fix IDE recognition after the Wrapper tests pass.
 
 ## Configure Gradle compilation
 

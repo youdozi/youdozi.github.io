@@ -15,7 +15,7 @@ tags:
 legacyUrl: "/linux/linux-shellscript-version-compare/"
 legacySource: "_posts/linux/shell-script/version-compare/2023-11-17-linux-shell\
   script-version-compare.markdown"
-updatedAt: "2026-10-27T02:12:24+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 원고 실행 예제 검증"
@@ -28,6 +28,12 @@ description: "Python 3로 점으로 구분한 숫자 버전을 비교합니다. 
 `1.10`과 `1.2`는 문자열이나 소수로 비교하면 안 됩니다. 점으로 구분한 정수 구간을 왼쪽부터 비교하고, 빠진 뒤쪽 구간은 0으로 채우면 `1.2`와 `1.2.0`을 같게 취급할 수 있습니다. 아래 예제는 이 규칙을 사용하는 숫자 버전 전용입니다.
 
 `v1.2`, `1.2-rc1`, `1.2+build`는 받지 않습니다. [SemVer](https://semver.org/)의 pre-release 우선순위가 필요하면 해당 규격의 파서를 사용해야 합니다. 접미사를 무조건 잘라내면 의미가 달라질 수 있습니다.
+
+## 처리 흐름
+
+![점으로 나눈 숫자 버전 비교 흐름도](/assets/diagrams/2023-11-17-linux-shellscript-version-compare-ko.svg)
+
+숫자 전용 입력을 검사한 뒤 부족한 구간을 0으로 맞추고 처음 다른 구간에서 비교를 결정합니다. 작은 버전이라는 결과도 정상 실행입니다.
 
 ## 실행 가능한 비교 스크립트
 

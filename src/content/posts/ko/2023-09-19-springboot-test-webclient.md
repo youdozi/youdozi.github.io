@@ -13,7 +13,7 @@ tags:
   - "webclient"
 legacyUrl: "/springboot/springboot-test-webclient/"
 legacySource: "_posts/spring/test/webclient/2023-09-19-springboot-test-webclient.markdown"
-updatedAt: "2026-10-27T01:24:58+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조, 재현 절차와 버전별 적용 조건 보강"
@@ -26,6 +26,12 @@ description: "MockWebServer와 JUnit 5로 Spring WebClient의 JSON·HTML·HTTP 5
 로컬 MockWebServer를 사용하면 Spring WebClient의 HTTP 상태·Content-Type·JSON 디코딩을 함께 테스트할 수 있습니다. HTTP 200에 HTML이 들어온 것과 HTTP 500 응답은 서로 다른 실패입니다. `Accept: application/json`을 보내도 서버가 반드시 JSON을 반환하는 것은 아닙니다.
 
 fluent API 체인을 모킹하는 대신 실제 WebClient로 로컬 HTTP 서버에 요청합니다. Spring도 클라이언트의 네트워크 동작을 확인할 수 있는 [모의 웹 서버 테스트](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html)를 안내합니다.
+
+## 처리 흐름
+
+![HTTP 응답 계약 확인 흐름도](/assets/diagrams/2023-09-19-springboot-test-webclient-ko.svg)
+
+클라이언트는 상태 코드 다음에 미디어 타입을 검사하고 거절한 본문을 해제합니다. StepVerifier는 값뿐 아니라 완료·오류 신호도 확인합니다.
 
 ## 독립적인 테스트 프로젝트 만들기
 

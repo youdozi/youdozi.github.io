@@ -13,7 +13,7 @@ tags:
   - "querydsl"
 legacyUrl: "/springboot/springboot3-querydsl/"
 legacySource: "_posts/spring/migration/2023-09-09-springboot3-querydsl.markdown"
-updatedAt: "2026-10-27T01:49:52+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 Gradle Q 타입 생성·H2 조회 테스트 재현"
@@ -29,6 +29,12 @@ description: "Spring Boot 3에서 Querydsl의 Jakarta 의존성을 맞추고 Gra
 Spring Boot 3에서 Querydsl JPA를 사용할 때는 `querydsl-jpa`와 `querydsl-apt`의 버전·`jakarta` classifier를 맞추고, Q 타입 생성과 실제 조회를 함께 확인해야 합니다. 생성 코드는 Gradle 기본 경로에 두면 main·test가 같은 출력 디렉터리를 공유하는 설정을 피할 수 있습니다.
 
 이 글은 기존 2023년 한국어 예제를 실행 가능한 구성으로 정리한 것입니다. [Querydsl 5.0 릴리스 설명](https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_0_0)에 Jakarta classifier 지원이 나와 있습니다. 아래에서 고정한 버전은 재현 환경이며 최신 운영 조합의 권장은 아닙니다.
+
+## 처리 흐름
+
+![Q 타입 생성과 쿼리 실행 흐름도](/assets/diagrams/2023-09-09-springboot3-querydsl-ko.svg)
+
+메인 컴파일의 프로세서가 QEmployee를 생성합니다. 이후 H2 테스트가 생성 타입을 사용한 쿼리를 실행합니다.
 
 ## 실행 환경과 전체 Gradle 설정
 

@@ -12,7 +12,7 @@ tags:
   - migration
 legacyUrl: /spring/springbatch5-migration/
 legacySource: _posts/spring/migration/2023-10-27-springbatch5-migration.markdown
-updatedAt: 2026-10-27T03:08:04.102Z
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -29,6 +29,12 @@ description: Spring Batch 5의 스키마와 파라미터 변경을 구분하고,
 Spring Batch 5로 옮길 때는 의존성뿐 아니라 메타데이터 스키마, Job 파라미터의 저장 형식, 실행 컨텍스트와 재시작 정책을 함께 확인해야 합니다. 특히 기존 값이 남아 있는 컬럼을 먼저 삭제하거나 타입 코드만 클래스 이름으로 바꾸는 SQL은 데이터 이관을 완성하지 못합니다.
 
 이 글은 Batch 5로의 전환을 다룹니다. 현재 최신 주 버전의 도입 안내는 아닙니다. [5.0 공식 이관 가이드](https://github.com/spring-projects/spring-batch/wiki/Spring-Batch-5.0-Migration-Guide)를 기준으로 변경 범위를 정리하고, 아래 예제는 Batch 5 환경에서 실행 동작을 검사합니다.
+
+## 처리 흐름
+
+![v5 실패 인스턴스 재시작 흐름도](/assets/diagrams/2023-10-27-springbatch5-migration-ko.svg)
+
+새 스키마에서 실행한 v5 재시작 테스트 흐름입니다. v4 DB 이관이 아니며 같은 인스턴스의 새 실행은 실패한 Step을 다시 수행합니다.
 
 ## 기존 저장소를 바꾸기 전에
 

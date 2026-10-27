@@ -7,7 +7,7 @@ kind: "post"
 publishedAt: "2026-10-27T02:36:39+00:00"
 categories: ["springboot"]
 tags: ["gradle", "vue", "build", "SpringBoot"]
-updatedAt: "2026-10-27T02:36:39+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Primary documentation checked; published runnable example verified."
@@ -17,6 +17,12 @@ description: "Build Vue apps with separate npm ci tasks, stage assets with Gradl
 To package several Vue apps in a Spring Boot JAR, give each app its own `npm ci` and build task, stage generated files under `build/`, then add them to `bootJar`. Do not share one app's install task across the others or write generated bundles directly into `src/main/resources`.
 
 This runnable example serves two apps at `/project1/index.html` and `/project2/index.html`. Its reproduction environment is JDK17.0.8.1, Gradle8.4, Node24.13.0/npm11.6.2, Boot3.5.7, Vue3.5.44 and Vite8.3.5. These are pinned reproduction versions, not a recommendation of current production dependencies. Check [Vite's runtime requirements](https://vite.dev/guide/) and those of the selected Boot release separately.
+
+## Processing flow
+
+![Build assets into the JAR workflow](/assets/diagrams/2021-07-23-multiple-gradle-build-en.svg)
+
+Each Vue app builds its own output. A Gradle Sync task collects only those outputs, then bootJar places them under separate static paths.
 
 ## Per-app tasks and packaging
 

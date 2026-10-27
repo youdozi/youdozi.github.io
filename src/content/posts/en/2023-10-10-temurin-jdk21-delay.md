@@ -11,7 +11,7 @@ tags:
   - temurin
 publishedAt: "2026-10-27T03:19:18+00:00"
 title: "Temurin 21 Release Delay: History and How to Check JDK Binaries"
-updatedAt: "2026-10-27T03:19:18+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -26,6 +26,12 @@ description: Distinguish the 2023 Temurin 21 TCK delay from release publication,
   Adoptium API.
 ---
 The initial Temurin 21 delay in 2023 was separate from the OpenJDK 21 release. Adoptium attributed the delay to review of the TCK agreement, and later distinguished receiving the TCK from publishing release binaries. This historical delay does not mean Temurin 21 is still awaiting release.
+
+## Processing flow
+
+![Validate binary metadata workflow](/assets/diagrams/2023-10-10-temurin-jdk21-delay-en.svg)
+
+This is the metadata-selection example, not an installation flow. It checks the platform, Java major version, checksum syntax and URL location without downloading or hashing the archive.
 
 ## Separate announcement and publication dates
 

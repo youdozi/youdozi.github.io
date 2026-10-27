@@ -12,7 +12,7 @@ tags:
   - history
 legacyUrl: /springboot/springboot-history/
 legacySource: _posts/spring/history/2023-09-13-springboot-history.markdown
-updatedAt: 2026-10-27T03:26:14.141Z
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official documentation checked; CLI/project execution distinguished
@@ -33,6 +33,12 @@ description: Spring Boot 1.2부터 4.0까지 주요 출시를 공식 공지로 �
   Boot·Framework·starter·BOM의 차이와 실제 의존성 버전 조회 방법을 정리합니다.
 ---
 Spring Boot와 Spring Framework는 버전 번호가 다른 프로젝트입니다. Boot는 Framework 위에서 자동 구성·의존성 관리·실행 패키징을 제공하므로, Boot 3.1을 Framework 6.1로 읽는 식으로 숫자를 대응시키면 안 됩니다. 실제 조합은 해당 Boot 버전의 BOM과 해석된 의존성 그래프로 확인하세요.
+
+## 처리 흐름
+
+![실제 구성요소 버전 확인 흐름도](/assets/diagrams/2023-09-13-springboot-history-ko.svg)
+
+그림은 릴리스 연표가 아닌 의존성 확인 순서입니다. Boot·Framework·Lombok 버전과 의존성 구성은 서로 구분합니다.
 
 ## 주요 정식 릴리스의 변화
 

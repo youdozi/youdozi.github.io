@@ -11,7 +11,7 @@ tags:
   - "springboot"
   - "test"
   - "webclient"
-updatedAt: "2026-10-27T01:24:58+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Official documentation checked; runnable examples and version boundaries clarified."
@@ -23,6 +23,12 @@ description: "Run eight Spring WebClient tests with MockWebServer and JUnit 5: J
 Use a local MockWebServer to test Spring WebClient's HTTP status, response Content-Type and JSON decoding together. A `200 OK` response containing HTML is a different failure from an HTTP 500 response. Sending `Accept: application/json` does not require the server to return JSON.
 
 The test uses a real WebClient over local HTTP, without mocking its fluent method chain. Spring recommends [mock web servers for WebClient tests](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html) because they exercise the client's network behavior.
+
+## Processing flow
+
+![Validate the HTTP response workflow](/assets/diagrams/2023-09-19-springboot-test-webclient-en.svg)
+
+The client checks status before media type, releases rejected bodies and decodes supported JSON. StepVerifier checks completion or error as well as emitted values.
 
 ## Set up a standalone test project
 

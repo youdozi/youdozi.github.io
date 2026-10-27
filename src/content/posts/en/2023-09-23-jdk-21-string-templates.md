@@ -11,7 +11,7 @@ tags:
   - "jdk21"
   - "openjdk"
   - "string templates"
-updatedAt: "2026-10-27T01:24:58+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Official documentation checked; runnable examples and version boundaries clarified."
@@ -24,6 +24,12 @@ reviewSources:
 description: "Run a complete JDK 21 String Templates example, understand its JDK 23 removal, and replace STR with tested Java formatting alternatives."
 ---
 String Templates were preview features in JDK 21 and 22 and were removed in JDK 23. Adding `--enable-preview` to JDK 23 does not restore `STR`. For code that must move beyond those previews, use standard string APIs or a format-specific serializer. [Oracle's removal explanation](https://inside.java/2024/06/20/newscast-71/) describes the change.
+
+## Processing flow
+
+![Use standard formatting APIs workflow](/assets/diagrams/2023-09-23-jdk-21-string-templates-en.svg)
+
+This shows the standard FormattingExample, not the historical preview example. It compares three formatting forms and checks MessageFormat apostrophe quoting.
 
 ## Which JDK can run the old example?
 

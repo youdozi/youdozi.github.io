@@ -14,7 +14,7 @@ tags:
   - "SpringBoot"
 legacyUrl: "/springboot/multiple-gradle-build/"
 legacySource: "_posts/gradle/2021-07-23-multiple-gradle-build.markdown"
-updatedAt: "2026-10-27T02:14:35+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 원고 실행 예제 검증"
@@ -29,6 +29,12 @@ description: "Vue 앱별 npm ci·빌드 태스크를 분리하고 Gradle Sync와
 여러 Vue 앱을 Spring Boot JAR에 넣을 때는 앱별 `npm ci`와 빌드 태스크를 분리하고, 생성 파일을 `build/` 아래에 모은 뒤 `bootJar`에 추가합니다. 한 앱의 설치 태스크를 다른 앱들이 공유하게 하거나 빌드 결과를 `src/main/resources`에 직접 쓰지 않습니다.
 
 이 예제는 두 앱을 `/project1/index.html`, `/project2/index.html`에서 제공하는 실행 가능한 구성을 다룹니다. 재현 환경은 JDK 17.0.8.1, Gradle 8.4, Node 24.13.0/npm 11.6.2, Boot 3.5.7, Vue 3.5.44, Vite 8.3.5입니다. 버전을 고정한 재현 예제이며 현재 운영 조합의 권장은 아닙니다. [Vite 실행 조건](https://vite.dev/guide/)과 선택한 Boot 릴리스의 조건은 별도로 확인하세요.
+
+## 처리 흐름
+
+![프런트 자산을 JAR로 패키징 흐름도](/assets/diagrams/2021-07-23-multiple-gradle-build-ko.svg)
+
+각 Vue 앱의 빌드 결과만 Gradle Sync 작업으로 모읍니다. bootJar가 이를 서로 다른 정적 경로에 포함합니다.
 
 ## 앱별 태스크와 패키징 구성
 

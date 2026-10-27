@@ -13,7 +13,7 @@ tags:
   - "springboot3 migration"
 legacyUrl: "/springboot/springboot3-migration/"
 legacySource: "_posts/spring/migration/2023-09-08-springboot3-migration.markdown"
-updatedAt: "2026-10-27T01:24:58+00:00"
+updatedAt: 2026-10-27T05:23:47.316+00:00
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조, 재현 절차와 버전별 적용 조건 보강"
@@ -27,6 +27,12 @@ description: "Spring Boot 2.7에서 3.0으로 옮길 때 Java 17, Jakarta 의존
 Spring Boot 2.7에서 3.0으로 옮길 때는 Java 17 기준선, Java EE에서 Jakarta로의 패키지 변경, 라이브러리·런타임 호환성을 나눠 확인해야 합니다. 컴파일 성공만으로 DB 매핑·인가·설정이 그대로 동작한다고 판단할 수는 없습니다.
 
 이 글은 2023년에 다룬 **2.7 → 3.0 마이그레이션**의 순서를 정리합니다. 지금 Boot 3.0을 운영에 배포하라는 권장은 아닙니다. 실제 업그레이드에서는 지원 중인 목표 릴리스를 선택하고 중간 버전의 마이그레이션 가이드도 확인하세요. 이 단계의 변경점은 [공식 3.0 가이드](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide)에 나와 있습니다.
+
+## 처리 흐름
+
+![Boot 3 이관 확인 순서 흐름도](/assets/diagrams/2023-09-08-springboot3-migration-ko.svg)
+
+본문에서 제안한 이관 확인 순서입니다. 명령은 환경을 확인하며 애플리케이션이나 데이터베이스를 자동 이관하지 않습니다.
 
 ## 1. 정상 동작하는 2.7 기준선 만들기
 
