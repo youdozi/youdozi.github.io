@@ -1,5 +1,5 @@
 ---
-import labels from '../lib/archive-ui.json';
+import Comments from './Comments.astro';
 import type {NativeLanguage} from '../lib/locales';
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
@@ -54,5 +54,5 @@ const hasTopics = all.some(candidate => candidate.language === lang && candidate
     {(hasTopics || visibleCategories.length > 0) && <footer class="article-footer"><nav class="chips" aria-label={text[lang].tags}>{hasTopics && <a href={`/${lang}/tags/`}>{text[lang].tags}</a>}{visibleCategories.map(category => <a href={taxonomyUrl(lang, 'categories', category)}>{categoryGuide(category,lang,all)?.label || category}</a>)}{additionalGuides.map(guide => <a href={guide.url}>{guide.label}</a>)}{visibleTags.map(tag => <a href={taxonomyUrl(lang, 'tags', tag)}>#{tag}</a>)}</nav></footer>}
   </article>
   {related.length > 0 && <section class="related"><h2>{text[lang].related}</h2><EntryList items={related} lang={lang} /></section>}
-  <div class="article comments"><h2>{labels[lang].discussion}</h2><script is:inline src="https://utteranc.es/client.js" {...{ repo: 'youdozi/youdozi.github.io', 'issue-term': entry.legacyUrl || entry.translationKey, theme: 'github-light' }} crossorigin="anonymous" async></script></div>
+  <Comments entry={entry} />
 </Base>
