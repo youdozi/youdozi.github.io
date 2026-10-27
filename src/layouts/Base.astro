@@ -2,6 +2,8 @@
 import { SITE, text, localeInfo, publishedLanguages, type Language } from '../lib/content';
 import '../styles/global.css';
 import labels from '../lib/archive-ui.json';
+import {entries} from '../lib/content';
+import {guideIndexAlternates,guideIndexCopy} from '../lib/technical-guides';
 interface Props { title: string; description?: string; lang: Language; alternates?: { language: Language; url: string }[]; canonical?: string; noindex?: boolean; structuredData?: Record<string, unknown>[]; }
 const { title, description = text[Astro.props.lang].about, lang, alternates = [], canonical = Astro.url.pathname, noindex = false } = Astro.props;
 const availableLanguages = await publishedLanguages();
@@ -9,6 +11,8 @@ const siteData = { '@context': 'https://schema.org', '@type': 'WebSite', '@id': 
 const jsonLd = [siteData, ...(Astro.props.structuredData || [])];
 const serializedJsonLd = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
 const t = text[lang];
+const guideLink=guideIndexAlternates(await entries()).find(a=>a.language===lang);
+const guideLabel=lang==='en'||lang==='ko'?guideIndexCopy[lang].label:undefined;
 const isArticle = /^\/[^/]+\/(posts|digest)\/[^/]+\/$/.test(Astro.url.pathname);
 ---
 <!doctype html>
@@ -47,7 +51,7 @@ const isArticle = /^\/[^/]+\/(posts|digest)\/[^/]+\/$/.test(Astro.url.pathname);
     <header class="site-header shell">
       <a class="brand" href={`/${lang}/`}><span class="brand-mark" aria-hidden="true">y.</span><span>{SITE}</span></a>
       <nav aria-label={labels[lang].navigation}>
-        <a href={`/${lang}/posts/`}>{t.posts}</a><a href={`/${lang}/digest/`}>{t.digest}</a><a href={`/${lang}/search/`}>{t.search}</a>
+        <a href={`/${lang}/posts/`}>{t.posts}</a>{guideLink && <a href={guideLink.url}>{guideLabel}</a>}<a href={`/${lang}/digest/`}>{t.digest}</a><a href={`/${lang}/search/`}>{t.search}</a>
         <details class="language language-menu"><summary>{t.language}</summary><ul>{availableLanguages.filter(other=>other!==lang).map(other=>{
           const counterpart=alternates.find(a=>a.language===other);
           return <li><a href={counterpart?.url || `/${other}/`} lang={other} title={isArticle && !counterpart ? t.notTranslated : undefined}>{localeInfo[other].label}</a></li>;

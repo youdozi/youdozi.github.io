@@ -1,0 +1,23 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {entries} from '../../../lib/content';
+import {guideIndexAlternates,guideIndexCopy,guideIndexStructuredData,technicalGuides} from '../../../lib/technical-guides';
+export async function getStaticPaths(){return guideIndexAlternates(await entries()).map(a=>({params:{lang:a.language}}));}
+const lang=Astro.params.lang as 'en'|'ko';
+const all=await entries();const guides=technicalGuides(lang,all);const copy=guideIndexCopy[lang];
+---
+<Base title={copy.title} description={copy.description} lang={lang} alternates={guideIndexAlternates(all)} structuredData={guideIndexStructuredData(lang,guides,Astro.site!)}>
+  <header class="page-heading"><span class="eyebrow">{copy.label}</span><h1>{copy.title}<span class="count">{guides.length}</span></h1><p>{copy.intro}</p></header>
+  <div class="guide-paths">
+    {guides.map(guide=><section class="guide-card"><p class="guide-count">{lang==='ko'?`${guide.ordered.length}편`:`${guide.ordered.length} ${guide.ordered.length===1?'article':'articles'}`}</p><h2><a href={guide.url}>{guide.title}</a></h2><p>{guide.description}</p><a class="guide-open" href={guide.url}>{copy.open} →</a></section>)}
+  </div>
+</Base>
+<style>
+.guide-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.guide-card{border-top:1px solid var(--line);padding-top:24px;min-width:0;display:flex;flex-direction:column}
+.guide-card h2{font-size:25px;line-height:1.5;letter-spacing:-.5px;margin:12px 0;overflow-wrap:anywhere}
+.guide-card>p{color:var(--muted);font-size:15px;line-height:1.8;margin:0 0 24px}
+.guide-card .guide-count{font-size:12px;margin-bottom:0}
+.guide-open{align-self:start;margin-top:auto;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:800px){.guide-paths{grid-template-columns:1fr;gap:30px}}
+</style>

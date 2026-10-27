@@ -3,10 +3,12 @@ import Base from '../layouts/Base.astro';
 import EntryList from './EntryList.astro';
 import { categoryStructuredData, type CategoryGuide } from '../lib/category-guide';
 import type { Language } from '../lib/content';
+import {guideIndexCopy} from '../lib/technical-guides';
 interface Props { guide: CategoryGuide; alternates: { language: Language; url: string }[]; }
 const { guide, alternates } = Astro.props;
 ---
 <Base title={guide.title} description={guide.description} lang={guide.lang} alternates={alternates} structuredData={categoryStructuredData(guide, Astro.site!)}>
+  <nav class="guide-parent" aria-label={guideIndexCopy[guide.lang].label}><a href={`/${guide.lang}/guides/`}>← {guideIndexCopy[guide.lang].label}</a></nav>
   <header class="page-heading"><span class="eyebrow">{guide.eyebrow || 'Java'}</span><h1>{guide.title}<span class="count">{guide.ordered.length}</span></h1><p>{guide.intro}</p></header>
   <div class="algorithm-groups">
     {guide.sections.map(group => <section class="algorithm-group" aria-labelledby={`group-${group.id}`}>
@@ -18,6 +20,8 @@ const { guide, alternates } = Astro.props;
 </Base>
 
 <style>
+  .guide-parent{margin-top:32px;font-size:13px;color:var(--accent)}
+  .guide-parent a{text-decoration:underline;text-underline-offset:3px}
   .algorithm-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
   .algorithm-group{border-top:1px solid var(--line);padding-top:22px;min-width:0}
   .algorithm-group h2{font-size:22px;line-height:1.5;letter-spacing:-.4px;margin:0 0 14px}

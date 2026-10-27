@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import {categoryGuide} from '../../../lib/technical-guides';
 import { entries, publishedLanguages, text, taxonomyUrl, type Language } from '../../../lib/content';
 export async function getStaticPaths() { return (await publishedLanguages()).flatMap(lang => ['categories', 'tags'].map(taxonomy => ({ params: { lang, taxonomy } }))); }
 const lang = Astro.params.lang as Language;
@@ -15,6 +16,6 @@ const alternates = counts.size ? (await publishedLanguages())
 ---
 <Base title={text[lang][kind]} lang={lang} noindex={counts.size === 0} alternates={alternates}>
   <section class="page-heading"><span class="eyebrow">{text[lang].overview}</span><h1>{text[lang][kind]}</h1></section>
-  <div class="chips">{[...counts].sort((a,b) => b[1]-a[1]).map(([value,count]) => <a href={taxonomyUrl(lang, kind, value)}>{value} <span class="count">{count}</span></a>)}</div>
+  <div class="chips">{[...counts].sort((a,b) => b[1]-a[1]).map(([value,count]) => <a href={taxonomyUrl(lang, kind, value)}>{kind==='categories'?categoryGuide(value,lang,all)?.label||value:value} <span class="count">{count}</span></a>)}</div>
   {!counts.size && <div class="empty"><p>{text[lang].empty}</p><a href="/ko/">{text[lang].archive} ↗</a></div>}
 </Base>
