@@ -1,0 +1,489 @@
+{
+  "createdAt": "2026-10-27T06:36:19.423044+00:00",
+  "purpose": "Replace outdated Jekyll auto-publication explanations with current Astro candidate review and deployment contracts, with complete executable offline examples.",
+  "branch": "content/publication-workflow-batch-011",
+  "baseCommit": "9fd85b0ccedd8562a1339cf9bda542aed2290eab",
+  "scope": {
+    "topics": 2,
+    "manuscripts": 4,
+    "firstEnglishEditions": 2,
+    "newDiagrams": 4,
+    "registeredTopicsOnThisBranch": 28,
+    "registeredDiagramsOnThisBranch": 56
+  },
+  "publicationApprovalAtPreparation": null,
+  "publication": "Draft review only; no automatic merge or deployment. PR63 and PR64 are open Draft PRs and are separate from this main-based branch.",
+  "newEditionDatePolicy": "First English editions use preparation dates. Refresh publication/update timestamps on explicit publication approval while retaining the Korean publication identities.",
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "provenance": [
+    {
+      "path": "src/content/posts/ko/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "publishedAt": "2026-04-07T12:30:00.000Z",
+      "routePreserved": true,
+      "legacyProvenancePreserved": true
+    },
+    {
+      "path": "src/content/posts/ko/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "publishedAt": "2026-04-07T13:40:00.000Z",
+      "routePreserved": true,
+      "legacyProvenancePreserved": true
+    }
+  ],
+  "review": {
+    "type": "Two-pass self AI review: compare descriptions and fixtures to current workflows and primary docs, then read both editions and inspect browser output.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "issue": "Original articles described the retired Jekyll write/push/publication path as current.",
+        "resolution": "Lead with Astro JSON candidates, commit-specific validation, Draft PR review and separate main deployment; distinguish the earlier Ruby path."
+      },
+      {
+        "issue": "A green build could be mistaken for editorial approval or publication.",
+        "resolution": "Explain branch/event/dependency conditions, expected skipped PR deployment, and checking the main run and actual public pages."
+      },
+      {
+        "issue": "A local policy model could imply Actions-engine or hosted-deployment verification.",
+        "resolution": "Label the24-input policy model and six rejected mutations explicitly; limit pending/review execution to mocks. No external API or deployment is performed."
+      },
+      {
+        "issue": "Old Jekyll thumbnails no longer match current Astro subject matter.",
+        "resolution": "Remove the two stale image metadata overrides so current pages use the shared site image."
+      },
+      {
+        "issue": "Unquoted reviewedAt dates are interpreted as objects by the content parser.",
+        "resolution": "Quote all four review dates and pass the content schema and render regression tests."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "reviewedSha256": {
+      "README.md": "145f2bf382724814c470f5b89149d0ccd53e1cfe588f34fad60facfa8f851d8c",
+      "docs/technical-writing.md": "84ac5a6f7cae69bd9cb6a7549ef33927f0dc76bebdced886c721e61fbbf27c13",
+      "package.json": "33715de55b9330922fd15b6cf1e55168e8d8d4f627d82dd0cc77a9a157a852d2",
+      "scripts/build_algorithm_diagrams.py": "1b1f6ec14cd0ad52f1aa78c37c5b328dc8068128f722c40500f573cb73afc852",
+      "scripts/test_algorithm_diagrams.py": "0cd2f64b51a41354e54356fd374ae8d4cc508c1ff5b3d7155dc7aca49da521d2",
+      "src/content/posts/ko/2026-04-07-jekyll-github-actions-content-pipeline.md": "b3a44315f7164b3c8222ca5ddbc12601ecef9482ad275c53e67a7b1648d36935",
+      "src/content/posts/ko/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md": "b3ce8c675c900e4114cd5f8b80d72533f1d84b1a023bfa4bbd8a91f28f021dcb",
+      "content/diagrams/publication.json": "1ca0823b8611f80f2876eb50905d52d7ad909dc0a52909b73da02bcdad0a5308",
+      "scripts/test-publication-examples.mjs": "4f530d9fdd69d4f82c3e06d9511b598977468dc48ed6febd8bd201942003669c",
+      "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md": "c6bf09afa7435f7f09bb8249285a14dd8103c730421a55b73e5f7adea03c96f8",
+      "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md": "170dfe4735f161a0990912b0b194c7e581b2375e2d41b72600d0dbaf617f32aa",
+      ".github/workflows/dev-content-pipeline.yml": "1eacbc577a1645eb96cddaab8f33afa1b9253c3bc1e140cb6423de0e21341a43",
+      ".github/workflows/site-quality-gates.yml": "c529c830e0defbafd5cbda72b0a279c28d25529c7df44bc4108bee4fc74e7a0d",
+      ".github/workflows/site-checks.yml": "6a7de9df556a0a6e6daea3d27706f4af6bac496dde6e7cc89705d9d338f387c3"
+    }
+  },
+  "validation": {
+    "offlineExamples": {
+      "pairedCodeEqual": true,
+      "pendingPRCases": 5,
+      "mockedReviewSequence": [
+        "create Draft PR",
+        "update preview",
+        "dispatch checks on candidate branch"
+      ],
+      "deploymentPolicyCombinations": 24,
+      "rejectedWorkflowMutations": 6,
+      "realGitHubCalls": 0,
+      "actualDeployment": false,
+      "result": "passed"
+    },
+    "pythonTests": 157,
+    "nodeTests": 29,
+    "astroDiagnostics": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "generatedHTML": 895,
+    "sitemapUrls": 444,
+    "seo": {
+      "articleResults": [
+        {
+          "url": "https://youdozi.github.io/en/posts/2026-04-07-jekyll-github-actions-content-pipeline/",
+          "language": "en",
+          "title": "From Jekyll Auto-Publishing to Astro Draft PR Review",
+          "htmlSha256": "1a51a3c8e6199544e6aa1179e334539a678a31f542ffe439a56c887d089ed290",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2026-04-07-jekyll-github-actions-content-pipeline/",
+          "language": "ko",
+          "title": "Jekyll 자동 게시에서 Astro Draft PR 검토로 전환하기",
+          "htmlSha256": "a54e24e1652185e1ab54141c5f27f022f22137256bbaea18fdc71f4502a6e769",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/",
+          "language": "en",
+          "title": "Astro Quality Gates: Why a Passing PR Does Not Deploy",
+          "htmlSha256": "b46be194ea8176c8ca0c9fb85d2aae7cbfc44b494a9dc87643ea67c523638d71",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/",
+          "language": "ko",
+          "title": "Astro 품질 게이트: PR 검사 성공과 배포 조건 구분하기",
+          "htmlSha256": "69f30ba723f5c316b3d666d937d9f20c448e6cf3cf1f6ad421a4656c69490689",
+          "result": "passed"
+        }
+      ],
+      "sitemapUrls": 444,
+      "result": "passed"
+    },
+    "browser": [
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-en.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-ko.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-en.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-ko.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-en.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-ko.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-github-actions-content-pipeline-en.svg",
+        "labels": 15,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-github-actions-content-pipeline-ko.svg",
+        "labels": 15,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit-en.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit-ko.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "lang": "en",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 420
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "ko",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 353.984375
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "en",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 354
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "ko",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 354
+          }
+        ],
+        "result": "passed"
+      }
+    ],
+    "screenshotsReviewed": [
+      "pipeline KO390px mobile",
+      "quality EN390px mobile"
+    ],
+    "commands": [
+      "npm run test:python",
+      "npm test",
+      "npm run check",
+      "npm run build",
+      "git diff --check"
+    ]
+  },
+  "limits": [
+    "No candidate generation, API request, production deploy or search-engine indexing is initiated by these examples.",
+    "The policy model checks success/failure cases, not cancelled/skipped dependencies or the Actions runtime.",
+    "Workflow assertions are selected contracts, not a full permissions or supply-chain audit.",
+    "Example/schema/link checks do not establish factual accuracy or publication approval.",
+    "Exact-head GitHub CI evidence is recorded separately after the draft PR is created."
+  ]
+}

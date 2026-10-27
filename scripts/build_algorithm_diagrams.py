@@ -8,6 +8,8 @@ from xml.sax.saxutils import escape
 
 SOURCE = Path('content/diagrams/algorithms.json')
 WORKFLOW_SOURCE = Path('content/diagrams/workflows.json')
+STRATEGY_SOURCE = Path('content/diagrams/query-strategies.json')
+PUBLICATION_SOURCE = Path('content/diagrams/publication.json')
 OUTPUT = Path('public/assets/diagrams')
 LANGUAGES = ('en', 'ko')
 
@@ -18,7 +20,7 @@ def validate(data):
     keys = set()
     for item in data['diagrams']:
         key = item.get('key', '')
-        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}-[a-z0-9-]+', key) or key in keys:
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}-[a-z0-9]+(?:[-.][a-z0-9]+)*', key) or key in keys:
             raise ValueError('Expected unique, safe article keys')
         keys.add(key)
         for field in ('title', 'description'):
@@ -38,9 +40,11 @@ def validate(data):
             if 'branch' in step:
                 branch = step['branch']
                 if (step['kind'] != 'condition' or item.get('loop') is not None or not isinstance(branch, dict)
-                        or set(branch) != {'exit','continue'}):
+                        or not {'exit','continue'} <= set(branch) or set(branch) - {'exit','continue','outcome'}
+                        or branch.get('outcome','error') not in ('error','complete')):
                     raise ValueError('Exit branches require a condition and no overlapping loop')
-                for labels in branch.values():
+                for field in ('exit','continue'):
+                    labels = branch[field]
                     if (not isinstance(labels, dict) or set(labels) != set(LANGUAGES)
                             or not all(isinstance(v,str) and v.strip() and len(v)<=12 for v in labels.values())):
                         raise ValueError('Expected short localized branch labels')
@@ -49,7 +53,7 @@ def validate(data):
             if not isinstance(contracts, list) or not contracts:
                 raise ValueError('Expected nonempty code requirements')
             for contract in contracts:
-                if (not isinstance(contract, dict) or contract.get('language') not in ('java','sh','groovy','python')
+                if (not isinstance(contract, dict) or contract.get('language') not in ('java','sh','groovy','python','xml','javascript')
                         or not isinstance(contract.get('contains'), str) or not contract['contains'].strip()):
                     raise ValueError('Invalid code language or required snippet')
         loop = item.get('loop')
@@ -83,8 +87,10 @@ def render(item, language):
             parts.append(f'<text x="180" y="{text_y:g}" text-anchor="middle" font-size="16">{escape(line)}</text>')
         if (branch := step.get('branch')) is not None:
             parts.append(f'<path d="M 342 {y+43} H 369" fill="none" stroke="#2b6044" stroke-width="2" marker-end="url(#arrow)"/>')
-            parts.append(f'<circle cx="384" cy="{y+43}" r="12" fill="#8c3a32"/>')
-            parts.append(f'<text x="384" y="{y+49}" text-anchor="middle" font-size="19" fill="white">×</text>')
+            terminal_color = '#2b6044' if branch.get('outcome') == 'complete' else '#8c3a32'
+            terminal_symbol = '✓' if branch.get('outcome') == 'complete' else '×'
+            parts.append(f'<circle cx="384" cy="{y+43}" r="12" fill="{terminal_color}"/>')
+            parts.append(f'<text x="384" y="{y+49}" text-anchor="middle" font-size="19" fill="white">{terminal_symbol}</text>')
             parts.append(f'<text x="384" y="{y+76}" text-anchor="middle" font-size="10">{escape(branch["exit"][language])}</text>')
             if i < len(item['steps'])-1:
                 parts.append(f'<text x="193" y="{y+111}" font-size="12">{escape(branch["continue"][language])}</text>')
@@ -113,7 +119,7 @@ def validate_articles(data, posts=Path('src/content/posts')):
                     raise ValueError(f'Missing required {contract["language"]} code: {lang}/{item["key"]}')
 
 
-def load_sources(paths=(SOURCE, WORKFLOW_SOURCE)):
+def load_sources(paths=(SOURCE, WORKFLOW_SOURCE, STRATEGY_SOURCE, PUBLICATION_SOURCE)):
     combined = {'version':1, 'diagrams':[]}
     for path in paths:
         combined['diagrams'].extend(validate(json.loads(Path(path).read_text()))['diagrams'])

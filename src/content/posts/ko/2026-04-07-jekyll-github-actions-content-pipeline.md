@@ -1,283 +1,136 @@
 ---
-title: "[blog] Jekyll 블로그 자동 발행 파이프라인 구축기"
-language: "ko"
-translationKey: "2026-04-07-jekyll-github-actions-content-pipeline"
-routeSlug: "2026-04-07-jekyll-github-actions-content-pipeline"
-kind: "post"
-publishedAt: "2026-04-07T12:30:00.000Z"
+title: Jekyll 자동 게시에서 Astro Draft PR 검토로 전환하기
+language: ko
+translationKey: 2026-04-07-jekyll-github-actions-content-pipeline
+routeSlug: 2026-04-07-jekyll-github-actions-content-pipeline
+kind: post
+publishedAt: 2026-04-07T12:30:00.000Z
 categories:
-  - "blog"
-  - "automation"
+  - blog
+  - automation
 tags:
-  - "jekyll"
-  - "github-actions"
-  - "github-pages"
-  - "automation"
-  - "python"
-legacyUrl: "/blog/automation/jekyll-github-actions-content-pipeline/"
-description: "Jekyll 블로그에 RSS 수집, Markdown 생성, 검증, 빌드, 자동 push를 연결한 발행 파이프라인 구축기입니다."
-image: "/assets/img/blog/automation/jekyll-pipeline-thumb.svg"
-legacySource: "_posts/blog/automation/2026-04-07-jekyll-github-actions-content-\
-  pipeline.markdown"
-updatedAt: "2026-10-24T09:00:00+09:00"
-reviewedAt: "2026-10-24"
-reviewStatus: "revised"
-reviewScope: "현재 저장소 구현 및 공식 배포 문서 대조"
-archiveBodySha256: "6f2b0bed1bcc9903e2081684311a559bcfb7aa9bd6aaed66486032a1b24b4d06"
+  - astro
+  - github-actions
+  - github-pages
+  - content-review
+  - automation
+legacyUrl: /blog/automation/jekyll-github-actions-content-pipeline/
+description: 한영 다이제스트의 생성부터 후보 커밋 검증, Draft PR, 승인 후 게시까지 연결합니다. GitHub 호출을 모의 객체로 바꿔 실제 검토 스크립트를 실행합니다.
+legacySource: _posts/blog/automation/2026-04-07-jekyll-github-actions-content-pipeline.markdown
+updatedAt: 2026-10-27T07:19:48.249Z
+reviewedAt: "2026-10-27"
+reviewStatus: revised
+reviewScope: Current repository workflow contracts checked; paired offline JavaScript examples executed with mocked APIs and bounded deployment-policy tests.
+archiveBodySha256: 6f2b0bed1bcc9903e2081684311a559bcfb7aa9bd6aaed66486032a1b24b4d06
 reviewSources:
-  - "https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site"
-  - "https://docs.astro.build/en/guides/deploy/github/"
+  - https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows
+  - https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs
+  - https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-jobs-with-conditions
+  - https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow
+  - https://docs.github.com/en/actions/concepts/security/github_token
+  - https://docs.astro.build/en/guides/deploy/github/
+  - https://github.com/youdozi/youdozi.github.io/blob/main/.github/workflows/dev-content-pipeline.yml
+  - https://github.com/youdozi/youdozi.github.io/blob/main/.github/workflows/site-quality-gates.yml
+  - https://github.com/youdozi/youdozi.github.io/blob/main/.github/workflows/site-checks.yml
 ---
-> **2026-10-24 검토:** 아래 본문은 2026년 4월 Jekyll 환경의 기록입니다. 현재 운영 구조와 다른 부분은 글 하단의 보강 내용을 확인하세요.
+콘텐츠 생성기는 검토할 후보를 준비합니다. 이 저장소에서는 생성과 CI가 성공하면 Draft PR이 만들어지고, 게시에는 별도의 병합과 main 브랜치의 Pages 워크플로가 필요합니다.
 
-## 왜 자동화가 필요했을까
+4월의 Jekyll 파이프라인은 Markdown을 생성해 push했습니다. 현재 사이트는 Astro를 사용하며, 새 한영 다이제스트는 JSON으로 저장하고 검토 전 후보를 `main`에 넣지 않습니다. 남아 있는 `_posts`와 Ruby 도구는 이전 사이트의 자료이며 현재 게시 명령이 아닙니다.
 
-## 시리즈 글 안내
+## 후보 커밋을 따라가기
 
-- 1편. **Jekyll 블로그 자동 발행 파이프라인 구축기**
-- 2편. [Jekyll 빌드가 깨졌을 때: Ruby/rbenv 복구 기록](/blog/troubleshooting/ruby-rbenv-jekyll-build-troubleshooting/)
-- 3편. [Jekyll 블로그에 품질 게이트 붙이기](/blog/automation/jekyll-quality-gates-proof-html-bundler-audit/)
+![후보를 생성하고 해당 커밋을 검사한 뒤 Draft PR을 여는 흐름](/assets/diagrams/2026-04-07-jekyll-github-actions-content-pipeline-ko.svg)
 
-지금 운영 중인 블로그는 GitHub 저장소에 Markdown 파일을 올리고, Jekyll이 정적 사이트로 빌드하는 구조입니다.
+[콘텐츠 워크플로](https://github.com/youdozi/youdozi.github.io/blob/main/.github/workflows/dev-content-pipeline.yml)는 `main`에서만 생성을 실행합니다. 먼저 같은 저장소의 열린 `content/digest-review-` PR을 찾습니다. 대기 중인 PR이 있으면 병합하거나 닫을 때까지 추가 후보 생성을 멈추며, 수동 preview 실행도 이 조건을 따릅니다.
 
-이 방식은 단순하고 안정적이지만, 글을 하나 올릴 때마다 아래 과정을 반복해야 했습니다.
+대기 후보가 없으면 `scripts/generate_digest.py`가 영문·한국어판을 준비합니다. 파일이 생성되면 `npm run check`와 `npm run build`를 통과한 뒤 새 검토 브랜치에 커밋을 push합니다. 공통 검증기는 생성된 커밋 SHA를 검사하고, review 작업은 생성과 검증 작업이 모두 성공해야 실행됩니다. 이는 GitHub의 [작업 의존성 규칙](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs)을 따릅니다.
 
-1. 읽을 만한 개발 글을 찾는다.
-2. 핵심 내용을 정리한다.
-3. Markdown 포스트 형식으로 변환한다.
-4. front matter를 맞춘다.
-5. 빌드가 깨지지 않는지 확인한다.
-6. git push 한다.
+review 작업은 근거를 정리하고 Draft PR을 만든 뒤 미리보기 링크를 추가합니다. 이어 검토 브랜치에서 사이트 워크플로를 명시적으로 호출합니다. 이 브랜치도 검사는 받지만 운영 배포 조건은 충족하지 않습니다. 자동화에서 다른 워크플로를 호출할 때는 [토큰별 이벤트 규칙](https://docs.github.com/en/actions/concepts/security/github_token)도 확인해야 합니다. API 요청이 성공했다는 사실만으로 실행까지 완료됐다고 판단하지 않습니다.
 
-문제는 이 흐름이 한두 번은 괜찮아도, 꾸준히 운영하려면 생각보다 손이 많이 간다는 점입니다.
+## GitHub를 호출하지 않고 검토 로직 실행하기
 
-특히 "좋은 글을 찾는 시간"과 "형식을 맞추는 시간"이 누적되기 시작하면, 정작 중요한 읽기와 정리는 뒤로 밀리기 쉽습니다.
+이 저장소를 체크아웃하고 Node 24에서 `npm ci`를 실행합니다. 다음 전체 코드를 저장소 루트의 `review-contract.mjs`로 저장한 뒤 실행하세요.
 
-그래서 이번에는 단순히 글을 쓰는 블로그가 아니라, **좋은 개발 콘텐츠를 선별해서 가공하고 자동으로 발행하는 파이프라인**으로 바꿔보기로 했습니다.
+```sh
+node review-contract.mjs
+```
 
-한마디로 정리하면, 이번 작업의 목표는 **글쓰기 자동화**가 아니라 **블로그 운영 자동화**였습니다.
+이 검증기는 실제 워크플로 YAML을 읽고 JavaScript 조각 두 개를 로컬 모의 객체로 실행합니다. 대기 PR 조건 5개와 생성·수정·dispatch 호출 순서를 확인하며, 모의 객체에는 병합 기능이 없습니다. 워크플로 YAML 자체의 실행, 실제 다이제스트 생성, API 호출은 하지 않습니다.
 
-## 목표
+### `review-contract.mjs`
 
-이번 자동화의 목표는 아래 4가지였습니다.
+```javascript
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import YAML from 'yaml';
 
-- 고품질 개발 소스를 자동으로 수집할 것
-- 원문을 복제하지 않고 요약/맥락 중심으로 Markdown을 만들 것
-- 잘못된 글 형식이나 빌드 오류를 자동으로 잡을 것
-- 최종적으로 GitHub Actions가 commit/push까지 처리할 것
+const workflow = YAML.parse(readFileSync('.github/workflows/dev-content-pipeline.yml', 'utf8'));
+const { generate, validate, review } = workflow.jobs;
+assert.equal(generate.if, "github.ref == 'refs/heads/main'");
+assert.deepEqual(review.needs, ['generate', 'validate']);
+assert.equal(validate.with.ref, '${{ needs.generate.outputs.commit_sha }}');
+assert.equal(validate.uses, './.github/workflows/site-checks.yml');
+assert.equal(workflow.jobs.publish, undefined);
 
-즉, 단순 크롤링이 아니라 **수집 -> 가공 -> 검증 -> 발행**이 한 번에 이어지는 구조를 만들고 싶었습니다.
+const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
+const pendingScript = generate.steps.find(step => step.id === 'pending').with.script;
+const runPending = new AsyncFunction('github', 'context', 'core', pendingScript);
+const context = { repo: { owner: 'example', repo: 'blog' } };
+const summary = { addRaw() { return this; }, async write() {} };
+const cases = [
+    [[], false],
+    [[{ head: { repo: { full_name: 'example/blog' }, ref: 'content/digest-review-1' }, html_url: 'mock' }], true],
+    [[{ head: { repo: { full_name: 'other/blog' }, ref: 'content/digest-review-1' } }], false],
+    [[{ head: { repo: { full_name: 'example/blog' }, ref: 'content/manual-1' } }], false],
+    [[{ head: { repo: null, ref: 'content/digest-review-1' } }], false],
+];
+for (const [pulls, expected] of cases) {
+    let exists;
+    const github = { rest: { pulls: { list() {} } }, paginate: async () => pulls };
+    const core = { summary, setOutput(key, value) { if (key === 'exists') exists = value; } };
+    await runPending(github, context, core);
+    assert.equal(exists, expected);
+}
 
-## 전체 구조
+const calls = [];
+const github = { rest: {
+    pulls: {
+        async create(payload) { calls.push(['create', payload]); return { data: { number: 42, html_url: 'mock-pr' } }; },
+        async update(payload) { calls.push(['update', payload]); },
+    },
+    actions: { async createWorkflowDispatch(payload) { calls.push(['dispatch', payload]); } },
+} };
+const core = { summary, setOutput() {} };
+const requireMock = name => {
+    assert.equal(name, 'node:fs');
+    return { readFileSync: () => 'Mock review body' };
+};
+const script = review.steps.find(step => step.id === 'pr').with.script;
+const runReview = new AsyncFunction('require', 'github', 'context', 'core', 'process', script);
+await runReview(requireMock, github,
+    { ...context, serverUrl: 'https://github.com', runId: 7 }, core,
+    { env: { REVIEW_BRANCH: 'content/digest-review-7-1' } });
+assert.deepEqual(calls.map(call => call[0]), ['create', 'update', 'dispatch']);
+assert.equal(calls[0][1].draft, true);
+assert.equal(calls[0][1].base, 'main');
+assert.equal(calls[0][1].head, 'content/digest-review-7-1');
+assert.equal(calls[2][1].workflow_id, 'site-quality-gates.yml');
+assert.equal(calls[2][1].ref, calls[0][1].head);
+console.log('5 pending-PR cases and the mocked draft/create-update-dispatch sequence passed.');
+```
 
-현재 파이프라인은 아래 흐름으로 동작합니다.
+실행해 확인한 출력입니다.
 
 ```text
-RSS/공식 블로그 수집
-  -> 점수화/중복 제거
-  -> Markdown 생성
-  -> 형식 검증
-  -> Jekyll build
-  -> GitHub Actions commit/push
+5 pending-PR cases and the mocked draft/create-update-dispatch sequence passed.
 ```
 
-이 구조를 만들면서 가장 신경 쓴 부분은 "중간 단계 하나라도 깨지면 다음 단계로 넘어가지 않게 하는 것"이었습니다.
+입력 5개는 대기 PR 없음, 같은 저장소의 다이제스트 PR, 다른 저장소의 PR, 다른 로컬 브랜치, head 저장소 없음으로 구분합니다. 통과 결과는 이 스크립트의 선택된 계약을 확인합니다. GitHub 토큰 권한·브랜치 보호·출처의 정확성·호스팅된 워크플로 전체를 입증하지는 않습니다.
 
-### 1. 콘텐츠 수집
+## 후보 요청과 게시 판단
 
-`scripts/generate_dev_digest.py`가 RSS 기반으로 개발 관련 글을 가져옵니다.
+**Actions → Dev Content Pipeline → Run workflow**에서 `main`을 선택합니다. `preview`를 해제하면 검토 후보를 준비합니다. 체크하면 `--dry-run --force --max-items 2` 경로로 실행하며 후보를 커밋하지 않습니다. 이미 대기 중인 다이제스트가 있다면 생성은 멈춥니다. 수동 실행 화면은 [GitHub 안내](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow)에서도 확인할 수 있습니다.
 
-현재는 다음과 같은 소스를 기준으로 수집합니다.
+Draft PR과 한영 미리보기를 열고 출처 날짜, 원래 주장과 근거, 번역 범위, 링크, 게시할 가치가 있는지 확인합니다. 코드·스키마 검사는 이 편집 판단을 대신하지 않습니다. 필요한 내용을 고친 뒤 변경된 커밋의 검사를 확인하고, 게시를 승인하면 Ready for review로 바꾸고 병합합니다. Draft 상태를 해제하는 것만으로 배포되지는 않습니다.
 
-- GitHub Blog
-- Spring Blog
-- JetBrains Blog
-- Cloudflare Blog
-- InfoQ
-
-아무 글이나 가져오는 것이 아니라, 최신성/중복 여부/기술 키워드 기준으로 점수를 계산해서 상위 항목만 선택합니다.
-
-예를 들어 공식 블로그이거나, 최근 며칠 안에 올라왔거나, 현재 블로그 주제와 맞는 키워드를 포함한 글에 더 높은 점수를 주는 방식입니다.
-
-
-## 2. Markdown 생성
-
-선택된 결과는 Jekyll 포스트 형식으로 `_posts/dev/digest/` 아래에 생성됩니다.
-
-예를 들어 아래와 같은 front matter를 포함합니다.
-
-```yaml
----
-layout: posts
-title: "[dev] 주간 기술 아티클 다이제스트"
-date: 2026-03-16 11:46:48 +0900
-categories:
-  - dev
-  - digest
-tags:
-  - ai
-  - java
----
-```
-
-실제로는 Python 스크립트가 날짜, 카테고리, 태그, 본문 섹션을 함께 만들어 줍니다.
-
-```python
-posts_dir = repo_root / "_posts" / "dev" / "digest"
-file_name = f"{today_kst.strftime('%Y-%m-%d')}-dev-digest.markdown"
-target_post = posts_dir / file_name
-
-markdown = build_markdown(today_kst, selected, selected_tags)
-target_post.write_text(markdown, encoding="utf-8")
-```
-
-여기서 중요한 점은 원문 전체를 그대로 재배포하지 않는다는 점입니다.
-
-포스트에는 아래 정보만 넣습니다.
-
-- 출처
-- 발행일
-- 원문 링크
-- 한 줄 요약
-- 왜 중요한가
-
-이렇게 하면 블로그 콘텐츠 품질은 유지하면서도, 원문 전체 복제보다 더 제한된 형태로 정보를 다루게 됩니다. 다만 RSS/Atom summary를 활용하는 경우가 있어, 이 부분은 항상 보수적으로 운영하는 것이 좋습니다.
-
-또한 블로그에 올라오는 글의 형식이 일정해져서, 읽는 입장에서도 "어떤 정보를 기대하면 되는지"가 명확해집니다.
-
-
-## 3. 검증
-
-자동 생성은 편하지만, 형식이 조금만 틀어져도 Jekyll 빌드가 깨질 수 있습니다.
-
-그래서 `scripts/validate_dev_digest.py`를 추가해서 아래를 검사하게 했습니다.
-
-- front matter 존재 여부
-- `layout`, `categories`, `tags` 같은 핵심 필드 존재 여부
-- 필수 섹션 존재 여부
-- 최소 항목 개수
-- 링크 형식
-
-자동 생성이 되었더라도 검증을 통과하지 못하면 publish 단계로 넘어가지 않도록 했습니다.
-
-이 부분은 생각보다 중요합니다. 자동화는 편하지만, 한 번 잘못된 형식이 들어가면 이후 단계가 모두 무의미해질 수 있기 때문입니다.
-
-```bash
-python3 scripts/validate_dev_digest.py _posts/dev/digest/YYYY-MM-DD-dev-digest.markdown --min-items 1
-```
-
-## 4. GitHub Actions 발행
-
-`.github/workflows/dev-content-pipeline.yml`에서 실제 자동 발행을 처리합니다.
-
-동작 순서는 다음과 같습니다.
-
-1. 저장소 checkout
-2. Python 환경 준비
-3. digest 생성
-4. 생성된 Markdown 검증
-5. Jekyll build 수행
-6. 변경 사항이 있을 때만 commit/push
-
-여기서 핵심은 **Markdown 생성 성공이 아니라 Jekyll build 성공을 기준으로 발행한다는 점**입니다.
-
-글 파일만 생겼다고 끝나는 것이 아니라, 블로그 전체가 실제로 렌더링 가능한 상태여야 최종 발행됩니다.
-
-워크플로 관점에서는 아래 단계가 핵심입니다.
-
-```yaml
-- name: Generate digest post
-  run: python3 scripts/generate_dev_digest.py --max-items 6
-
-- name: Resolve latest generated post
-  run: latest_post="$(find _posts/dev/digest -name '*-dev-digest.markdown' | sort | tail -n 1)"
-
-- name: Validate generated digest
-  run: python3 scripts/validate_dev_digest.py "$latest_post" --min-items 1
-
-- name: Build site
-  env:
-    JEKYLL_ENV: production
-  run: bundle exec jekyll build
-```
-
-그리고 자동 commit/push를 넣을 때는 한 가지 더 고려할 점이 있습니다. 워크플로가 같은 브랜치에 다시 push 하기 때문에, 저장소 권한(`contents: write`)과 브랜치 보호 정책, 그리고 후속 워크플로 트리거 방식까지 함께 봐야 운영이 안정적입니다.
-
-
-## 품질 게이트도 따로 추가했다
-
-자동 발행 외에도, 블로그 자체 품질을 지키기 위한 워크플로를 별도로 두었습니다.
-
-`.github/workflows/site-quality-gates.yml`에서는 아래를 검사합니다.
-
-- `bundle exec jekyll build`
-- `proof-html` 기반 링크/HTML 검사
-- `bundler-audit` 기반 Ruby 의존성 보안 검사
-
-실패 시에는 `_site`와 audit 결과를 artifact로 남길 수 있도록 구성해서, 가능하면 나중에 원인을 추적하기 쉽게 만들었습니다. 다만 빌드가 아주 이른 단계에서 실패하면 `_site` 아티팩트는 생성되지 않을 수 있습니다.
-
-즉, 발행 파이프라인은 "새 글을 올리는 일"에 집중하고, 품질 게이트는 "사이트 전체 품질을 지키는 일"에 집중하도록 역할을 분리했습니다.
-
-## 구현하면서 만난 문제
-
-이번 작업에서 가장 까다로웠던 부분은 블로그 글 생성이 아니라 **로컬 Ruby 빌드 환경 복구**였습니다.
-
-특히 다음 문제가 있었습니다.
-
-- rbenv Ruby 바이너리가 다른 사용자 경로를 바라보는 문제
-- `eventmachine`, `ffi` 같은 native gem 빌드 문제
-- macOS Command Line Tools와 C++ 헤더 경로 문제
-
-결국 `scripts/ruby_cxx_fix.rb`와 `scripts/jekyll-build.sh`를 추가해 로컬에서도 `bundle install`과 `jekyll build`가 다시 가능하도록 정리했습니다.
-
-이 문제는 단순히 "명령어가 실패했다" 수준이 아니라, 블로그 자동화가 장기적으로 유지될 수 있느냐를 결정하는 문제였습니다.
-
-이 과정에서 느낀 점은, 자동화는 스크립트 몇 줄 추가보다 **재현 가능한 개발 환경**을 만드는 일이 훨씬 중요하다는 것입니다.
-
-
-## 이번 구조의 장점
-
-현재 구조의 장점은 아래와 같습니다.
-
-- 사람이 매번 수작업으로 정리하지 않아도 된다.
-- 글 생성 규칙이 일정해서 품질 편차가 줄어든다.
-- 빌드와 링크 검사를 통과한 결과만 발행된다.
-- 블로그가 단순 글 저장소가 아니라 운영 가능한 시스템이 된다.
-
-- 사람이 컨텐츠 운영보다 더 중요한 "운영 구조 개선"에 시간을 쓸 수 있다.
-
-결국 블로그 운영의 핵심이 “글을 올리는 행위”에서 “좋은 콘텐츠를 지속적으로 발행하는 시스템”으로 바뀌게 됩니다.
-
-## 앞으로 개선하고 싶은 점
-
-아직 개선할 부분도 남아 있습니다.
-
-- digest 외에 일반 기술 글 초안도 템플릿 기반으로 생성하기
-- 소스별 신뢰도 가중치 고도화
-- 중복 주제 감지 강화
-- 대표 이미지/요약 메타데이터 자동 생성
-- 인기 태그 중심의 큐레이션 전략 추가
-
-장기적으로는 이 블로그를 단순한 GitHub Pages 사이트가 아니라, **개발 지식을 축적하고 자동 발행하는 개인 미디어 시스템**으로 발전시키는 것이 목표입니다.
-
-## 마무리
-
-이번 작업을 통해 얻은 가장 큰 변화는 “글을 쓰는 블로그”에서 “발행 프로세스를 설계한 블로그”로 한 단계 넘어갔다는 점입니다.
-
-자동화는 시간을 아끼기 위한 도구이기도 하지만, 더 중요한 것은 **꾸준히 운영할 수 있는 구조를 만든다**는 데 있습니다.
-
-다음 글에서는 이번에 실제로 겪었던 **Ruby/rbenv + Jekyll 빌드 문제를 어떻게 해결했는지**를 좀 더 자세히 정리해보려고 합니다.
-
-운영을 해보니, 개인 블로그를 오래 유지하는 힘은 글쓰기 의지보다도 "반복되는 과정을 얼마나 시스템으로 바꿨는가"에서 나온다는 생각이 들었습니다.
-
-## 함께 읽으면 좋은 글
-
-- 다음 글: [Jekyll 빌드가 깨졌을 때: Ruby/rbenv 복구 기록](/blog/troubleshooting/ruby-rbenv-jekyll-build-troubleshooting/)
-- 이어지는 글: [Jekyll 블로그에 품질 게이트 붙이기](/blog/automation/jekyll-quality-gates-proof-html-bundler-audit/)
-
-
-## 현재 구현과의 차이 — 2026-10-24
-
-현재 저장소는 Astro로 전환되어 이 글의 Jekyll 워크플로와 `npm run jekyll:build` 명령은 운영 경로에서 사용하지 않습니다. 현재 명령은 `npm run check`, `npm run build`이며, 이전 Ruby 환경은 `bash scripts/jekyll-build.sh`로 별도 재현할 수 있습니다. 봇이 기본 GITHUB_TOKEN으로 커밋·푸시하는 것만으로 GitHub Pages 빌드가 시작되지는 않습니다. 현재 구현은 생성 커밋 SHA를 재사용 배포 워크플로에 전달해 직접 배포합니다. 상태 파일·감사 파일을 보존하고 원문 링크 접속 확인과 요약 사실 검증을 구분해야 합니다.
-
-참고: [GitHub Pages 게시 소스](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site), [Astro Pages 배포](https://docs.astro.build/en/guides/deploy/github/).
+[품질 게이트 글](/ko/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/)에서 정상적인 PR 실행이 배포를 생략하는 이유와 병합 후 확인할 항목을 이어 설명합니다. 이전 Ruby 환경은 [Jekyll 빌드 문제 해결 기록](/ko/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/)에서 확인할 수 있습니다.

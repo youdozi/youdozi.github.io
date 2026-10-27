@@ -1,0 +1,515 @@
+{
+  "createdAt": "2026-10-27T06:22:12.662162+00:00",
+  "purpose": "Replace a release-gap-only Querydsl discussion with a reproducible Querydsl/Specification comparison and connect bilingual Spring Boot learning paths.",
+  "baseCommit": "9fd85b0ccedd8562a1339cf9bda542aed2290eab",
+  "branch": "content/query-strategy-batch-010",
+  "scope": {
+    "articleManuscripts": 4,
+    "topics": 2,
+    "firstEnglishEditions": 1,
+    "newCategoryGuides": 2,
+    "newDiagramAssets": 2,
+    "registeredTopics": 27,
+    "allGeneratedDiagramAssets": 54
+  },
+  "publicationApprovalAtPreparation": null,
+  "publication": "Draft review only. PR63 remains pending, is not included in this branch, and is not approved by this work. No merge or deploy.",
+  "newEditionDatePolicy": "The first English edition uses its preparation timestamp. Refresh publishedAt and updatedAt when publication is explicitly approved; preserve existing publication dates.",
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "review": {
+    "type": "Two-pass self AI review: primary API and code contracts, then bilingual explanations, diagrams, generated SEO and browser rendering.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "issue": "A release-gap headline could imply that no subsequent Querydsl release exists.",
+        "resolution": "Cite the official5.1.0 tag without claiming it is latest; separate fixed reproduction versions from current artifact selection."
+      },
+      {
+        "issue": "Matching both query outputs could hide a shared mistake.",
+        "resolution": "Six cases assert each implementation against explicit expected values; two more tests check typo and null contracts."
+      },
+      {
+        "issue": "String-based Criteria examples could imply Specifications are inherently untyped.",
+        "resolution": "Scope the runtime typo to root.get(String) and link the JPA static metamodel alternative."
+      },
+      {
+        "issue": "A category matching a tag was hidden by existing footer deduplication, leaving curated guides without backlinks.",
+        "resolution": "Keep Spring Boot and coding-test category links even when same-name tags exist; verify38 article backlinks across four rendered guides."
+      },
+      {
+        "issue": "Different Boot versions in a learning guide could be read as one shared build.",
+        "resolution": "Explicitly require each article’s documented Boot/JDK/Gradle combination."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "reviewedSha256": {
+      ".github/workflows/site-checks.yml": "35bf66641ba45bdf1222f4f11e044cb7a3ed81532baf64c3f42ac8c07c2db836",
+      "README.md": "400c2a853581251245adcf35f01480c2e1bcd146fbe00959dfcefa4edbdbc275",
+      "docs/technical-writing.md": "b5bf26e339d1c49819a4bb7cab506ffe423b9edc618b6ee3dac1a5cf737880db",
+      "package.json": "c5d6f3c6ea0b834cda431c9676adc1896dd9adaba398af080c959bc194566d86",
+      "scripts/build_algorithm_diagrams.py": "54b2e24d7451fe6601367839cec112a7c1a541b3cb09a03d0a83743f8316b6b7",
+      "scripts/test_algorithm_diagrams.py": "f8bd052730e34b7c16343250f97b9ba4f8dee038d5e8adb50e93276ff2e5f6d0",
+      "src/components/AlgorithmCategory.astro": "a6f05f0cc475bc8b887ac5f65544946b6b8db10b00bed1a723d07f72903d3ad6",
+      "src/components/Article.astro": "d55edc88ae0af35535c976107b84d6d2345cc149c017e736dc9e21747f8f842b",
+      "src/content/posts/en/2023-09-09-springboot3-querydsl.md": "80ab936fca9b2a7745fe8ba36927b8bc0f6a59577fe316bf6f79d0a38e5f54d7",
+      "src/content/posts/ko/2023-09-05-querydsl-no-release.md": "a3a4af9f2a8c368b1f9a85dfa48a01c1f3abce01049bec93462d4d8cd7e4d868",
+      "src/content/posts/ko/2023-09-09-springboot3-querydsl.md": "c09c1e7b75d0e01dc8067bc0c6bf933cea77fcc18699e59ca50195cea17f1294",
+      "src/lib/algorithm-guide.ts": "e54e72525b54fb7b6c638d82e1328a41e697f0d1387a3124cc139e810aa35cf9",
+      "src/pages/[lang]/[taxonomy]/[term].astro": "676f14c2432d175c44d981d0a9dc94278e2c43e2de63200b63b2b8ef2323d975",
+      "src/pages/sitemap.xml.ts": "681a8e6f381b9966970acfb26bf45bea8d4d5b33dd25a0fe277bb781b80222b4",
+      "content/diagrams/query-strategies.json": "c4e231fd5d357ca060889f607aeb4291f73eb9ff3b665ea2414a10a9034f3ef6",
+      "scripts/check_query_strategies.py": "0efee7772cd235e5ee1f77fae844efff4e6af7da37f08e28f5a596d5c59d08f6",
+      "scripts/test-spring-guide.mjs": "f44a6e2c8db03fdea7e67860c8d5b891b61a9ca56447185cb8227bc8c23e81d7",
+      "src/components/CategoryGuide.astro": "33cd872046f472c6c4fbeaaaedd2b14120b430aa1985d42f689d81279730c396",
+      "src/content/posts/en/2023-09-05-querydsl-no-release.md": "891033eb8bdd418de24cb46eb7021fb18bae4f99f3fc12e11986d525ec431eed",
+      "src/lib/category-guide.ts": "be9a3a9cbfdf8a133cb23789a0b9ad6899c15c59a019601c3ba998d278b1fd7d",
+      "src/lib/spring-guide.ts": "7c91550ddf6508f10698362863b9aea55992a55feba07a75e840f641e62628fd"
+    }
+  },
+  "provenance": [
+    {
+      "path": "src/content/posts/en/2023-09-09-springboot3-querydsl.md",
+      "preservedPublishedAt": "2026-10-27T02:02:40+00:00",
+      "preservedRoute": true,
+      "preservedLegacyProvenance": true
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-05-querydsl-no-release.md",
+      "preservedPublishedAt": "2023-09-04T15:00:00.000Z",
+      "preservedRoute": true,
+      "preservedLegacyProvenance": true
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-09-springboot3-querydsl.md",
+      "preservedPublishedAt": "2023-09-07T15:00:00.000Z",
+      "preservedRoute": true,
+      "preservedLegacyProvenance": true
+    }
+  ],
+  "validation": {
+    "queryExecution": {
+      "command": "python3 -B scripts/check_query_strategies.py",
+      "environment": "Gradle8.4 / Corretto17.0.8.1",
+      "completeProjectFiles": 8,
+      "pairedCodeEqual": true,
+      "cleanRuns": 2,
+      "baselineTestsPerRun": 2,
+      "comparisonContractTestsPerRun": 8,
+      "generatedSourceAndClassVerified": true,
+      "result": "passed",
+      "logSha256": "7da79d506346a339d5b5c2e7c211859b424beda7719c5a5d58c4c6a48bf82b04"
+    },
+    "pythonTests": 157,
+    "nodeTests": 30,
+    "astroDiagnostics": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "generatedHTML": 888,
+    "sitemapUrls": 445,
+    "articleSEO": {
+      "articleResults": [
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-05-querydsl-no-release/",
+          "language": "en",
+          "title": "Querydsl and JPA Specifications: Test a Query Before Switching",
+          "htmlSha256": "a79cd0615508ae80635513aa1e36a02a0fbf0847fcc0042bd809ef566758b54d",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-09-springboot3-querydsl/",
+          "language": "en",
+          "title": "Spring Boot 3 and Querydsl: Jakarta Setup and Q-Type Generation",
+          "htmlSha256": "97455be50ffe42bb4fbe7176f003fb34d128576a1e796ea545b54a7264c3f44b",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-05-querydsl-no-release/",
+          "language": "ko",
+          "title": "Querydsl 대안 판단하기: JPA Specification과 같은 조건 실행하기",
+          "htmlSha256": "ed1036096cc86368fdbe4372601ecf9c265dba1f78dfd0a19d8b489f20553b34",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-09-springboot3-querydsl/",
+          "language": "ko",
+          "title": "Spring Boot 3 Querydsl 설정: Jakarta 의존성과 Q 타입 생성",
+          "htmlSha256": "6e7ae3dfbf63492e17f015e16b0ed907ef5ff3f0c81ccfb682091fb2c366a765",
+          "result": "passed"
+        }
+      ],
+      "sitemapUrls": 445,
+      "result": "passed"
+    },
+    "guideSEO": [
+      {
+        "url": "https://youdozi.github.io/en/categories/springboot/",
+        "items": 9,
+        "visibleEqualsSchema": true,
+        "backlinksVerified": 9,
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/categories/springboot/",
+        "items": 9,
+        "visibleEqualsSchema": true,
+        "backlinksVerified": 9,
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/en/categories/coding-test/",
+        "items": 10,
+        "visibleEqualsSchema": true,
+        "backlinksVerified": 10,
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/categories/coding-test/",
+        "items": 10,
+        "visibleEqualsSchema": true,
+        "backlinksVerified": 10,
+        "result": "passed"
+      }
+    ],
+    "browser": [
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-en.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-ko.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-en.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-ko.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-en.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-ko.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-05-querydsl-no-release-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-05-querydsl-no-release-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/springboot/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "diagram": [],
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/springboot/",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [],
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/coding-test/",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [],
+        "result": "passed"
+      },
+      {
+        "path": "/en/posts/2023-09-05-querydsl-no-release/",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 354
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "path": "/ko/posts/2023-09-05-querydsl-no-release/",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 354
+          }
+        ],
+        "result": "passed"
+      }
+    ],
+    "screenshotsReviewed": [
+      "Spring Boot EN desktop1280",
+      "Query comparison KO mobile390"
+    ],
+    "commands": [
+      "npm run test:python",
+      "npm test",
+      "npm run check",
+      "npm run build",
+      "git diff --check"
+    ]
+  },
+  "limits": [
+    "H2 with a single entity and selected predicates; no join/projection/pagination, production-database, migration or performance guarantee.",
+    "jOOQ/Jdbi/Doma roles are documented but not executed.",
+    "No search ranking or indexing improvement is claimed.",
+    "Remaining existing CI checkers must pass on the exact PR head; evidence is recorded separately."
+  ]
+}

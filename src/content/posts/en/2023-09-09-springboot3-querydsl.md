@@ -5,7 +5,7 @@ translationKey: "2023-09-09-springboot3-querydsl"
 routeSlug: "2023-09-09-springboot3-querydsl"
 kind: "post"
 publishedAt: "2026-10-27T02:02:40+00:00"
-updatedAt: 2026-10-27T05:23:47.316+00:00
+updatedAt: 2026-10-27T07:19:48.249Z
 reviewedAt: "2026-10-27"
 reviewStatus: "revised"
 reviewScope: "Official documentation checked; Q-type generation and H2 query tests reproduced."
@@ -102,6 +102,8 @@ public class Employee {
     private Long id;
     private String name;
 
+    public String getName() { return name; }
+
     protected Employee() {}
 
     public Employee(String name) {
@@ -194,3 +196,7 @@ The generated Q type in this example imports `javax.annotation.processing.Genera
 The example does not add custom `sourceSets`, `JavaCompile` or `clean` configuration for generated files. If you need a custom path, keep main and test outputs separate. `configureEach` controls lazy task configuration; it does not fix Jakarta dependency compatibility. [Gradle configuration avoidance](https://docs.gradle.org/current/userguide/lazy_configuration.html).
 
 For the surrounding upgrade sequence, see the [Spring Boot 3 migration guide](/en/posts/2023-09-08-springboot3-migration/). For outbound HTTP boundaries, use the [WebClient and MockWebServer tests](/en/posts/2023-09-19-springboot-test-webclient/).
+
+## Compare before changing query tools
+
+The complete Employee class includes a getter so repository results can be compared as names. Add the three files from the [Querydsl and Specification comparison](/en/posts/2023-09-05-querydsl-no-release/) to run eight additional checks on the same entity. The two original tests above remain part of that ten-test project. This compares selected H2 predicates, not all database behavior. The [Spring Boot guide](/en/categories/springboot/) connects the surrounding setup and testing steps.

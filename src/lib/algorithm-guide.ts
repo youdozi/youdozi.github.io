@@ -68,21 +68,4 @@ export function algorithmGuide(lang: Language, all: Entry[]) {
 
 export type AlgorithmGuide = NonNullable<ReturnType<typeof algorithmGuide>>;
 
-export function algorithmStructuredData(guide: AlgorithmGuide, site: URL): Record<string, unknown>[] {
-  const url = new URL(guide.url, site).href;
-  const listId = `${url}#exercises`;
-  return [
-    { '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `${url}#collection`,
-      url, name: guide.title, description: guide.description, inLanguage: guide.lang,
-      dateModified: guide.updatedAt.toISOString(), mainEntity: { '@id': listId } },
-    { '@context': 'https://schema.org', '@type': 'ItemList', '@id': listId,
-      numberOfItems: guide.ordered.length, itemListElement: guide.ordered.map((entry, index) => ({
-        '@type': 'ListItem', position: index + 1, name: entry.title, url: new URL(entry.url, site).href,
-      })) },
-    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
-      { '@type': 'ListItem', position: 1, name: guide.home, item: new URL(`/${guide.lang}/`, site).href },
-      { '@type': 'ListItem', position: 2, name: guide.categories, item: new URL(`/${guide.lang}/categories/`, site).href },
-      { '@type': 'ListItem', position: 3, name: guide.label, item: url },
-    ] },
-  ];
-}
+export { categoryStructuredData as algorithmStructuredData } from './category-guide.ts';

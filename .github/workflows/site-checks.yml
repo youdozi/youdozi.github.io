@@ -31,6 +31,8 @@ jobs:
       - run: npm ci
       - name: Python collection and bilingual evidence tests
         run: npm run test:python
+      - name: Execute paired local HTTP, drawio XML and Git search examples
+        run: python3 -B scripts/check_developer_tool_examples.py
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -45,8 +47,8 @@ jobs:
           gradle-version: '8.4'
       - name: Compile and execute published WebClient response contracts
         run: python3 -B scripts/check_webclient_example.py
-      - name: Generate Querydsl Q types and run the published H2 queries twice from clean
-        run: python3 -B scripts/check_querydsl_example.py
+      - name: Generate Q types and compare Querydsl and Specification contracts twice from clean
+        run: python3 -B scripts/check_query_strategies.py
       - name: Execute the published shell automation examples with local HTTP fixtures
         run: python3 -B scripts/check_shell_automation_examples.py
       - name: Build both Vue apps and verify the executable JAR serves current assets

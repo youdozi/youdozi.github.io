@@ -96,7 +96,7 @@ class AlgorithmDiagramsTests(unittest.TestCase):
     def test_all_registered_workflows_render_localized_assets_and_keep_algorithm_contracts(self):
         data=diagrams.load_sources()
         diagrams.validate_articles(data)
-        self.assertEqual(len(data['diagrams']),len(self.data['diagrams'])+len(json.loads(diagrams.WORKFLOW_SOURCE.read_text())['diagrams']))
+        self.assertEqual(len(data['diagrams']),sum(len(json.loads(path.read_text())['diagrams']) for path in [diagrams.SOURCE,diagrams.WORKFLOW_SOURCE,diagrams.STRATEGY_SOURCE,diagrams.PUBLICATION_SOURCE]))
         for item in data['diagrams']:
             for lang in diagrams.LANGUAGES:
                 tree=ET.fromstring(diagrams.render(item,lang))
@@ -122,6 +122,29 @@ class AlgorithmDiagramsTests(unittest.TestCase):
         branch=next(s['branch'] for s in broken['steps'] if 'branch' in s)
         del branch['exit']['ko']
         with self.assertRaises(ValueError):diagrams.validate({'version':1,'diagrams':[broken]})
+
+
+    def test_existing_dotted_article_slug_is_safe_but_path_controls_are_rejected(self):
+        item=copy.deepcopy(next(i for i in json.loads(diagrams.WORKFLOW_SOURCE.read_text())['diagrams'] if i['key']=='2021-07-23-app-diagrams.net'))
+        diagrams.validate({'version':1,'diagrams':[item]})
+        for key in ['2021-07-23-app..diagrams','2021-07-23-app/../diagrams','2021-07-23-app%2ediagrams','2021-07-23-app.']:
+            item['key']=key
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                diagrams.validate({'version':1,'diagrams':[item]})
+
+
+    def test_successful_early_return_is_distinct_from_an_error_terminal(self):
+        source=json.loads(diagrams.WORKFLOW_SOURCE.read_text())
+        item=copy.deepcopy(next(i for i in source['diagrams'] if i['key']=='2021-07-20-http-status-test'))
+        diagrams.validate({'version':1,'diagrams':[item]})
+        for lang in diagrams.LANGUAGES:
+            tree=ET.fromstring(diagrams.render(item,lang))
+            labels=[e.text for e in tree.findall('.//{*}text')]
+            self.assertIn('✓',labels);self.assertNotIn('×',labels)
+            self.assertEqual(tree.find('.//{*}circle').get('fill'),'#2b6044')
+        branch=next(s['branch'] for s in item['steps'] if 'branch' in s)
+        branch['outcome']='unknown'
+        with self.assertRaises(ValueError):diagrams.validate({'version':1,'diagrams':[item]})
 
 
 if __name__ == '__main__':

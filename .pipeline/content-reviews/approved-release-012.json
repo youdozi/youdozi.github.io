@@ -1,0 +1,161 @@
+{
+  "createdAt": "2026-10-27T07:20:30.888162+00:00",
+  "approval": {
+    "userInstruction": "PR 확정하고 다음 작업 진행",
+    "scope": "Publish approved PR63,64,65 together; next batch remains draft.",
+    "approvedAt": "2026-10-27T07:19:48.249Z"
+  },
+  "includedPRs": [
+    63,
+    64,
+    65
+  ],
+  "integration": "Preserve all three branch histories and merge the integration PR with merge strategy so the other heads are also ancestors of main.",
+  "manuscripts": 14,
+  "firstEnglishEditions": 6,
+  "guidePages": 2,
+  "registeredTopics": 32,
+  "diagramAssets": 64,
+  "changes": [
+    "Combine source collections and both new test entry points",
+    "Preserve XML/JavaScript code contracts and dotted slugs",
+    "Refresh first English edition publication dates; preserve eight existing publication dates",
+    "Mark a pending-digest pause as a normal completion rather than an error"
+  ],
+  "localValidation": {
+    "pythonTests": 159,
+    "nodeTests": 32,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 912,
+    "sitemapUrls": 450,
+    "articleSEO": {
+      "articleResults": [
+        {
+          "url": "https://youdozi.github.io/en/posts/2021-07-20-http-status-test/",
+          "language": "en",
+          "title": "Test HTTP Status Codes Locally with a Small Python Server",
+          "htmlSha256": "c33ca9d62496cebde176add22e2d5596fdfaae95ef4b0ea57971052ff885926b",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2021-07-20-http-status-test/",
+          "language": "ko",
+          "title": "HTTP 상태 코드 로컬 테스트: Python 서버로 응답 계약 확인하기",
+          "htmlSha256": "7bc51fbc7136ac41ad4fcf89a7c4a2fd52a55e616aeacda282964940918c6540",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2021-07-23-app-diagrams.net/",
+          "language": "en",
+          "title": "Keep Editable draw.io Sources Alongside Shared Diagrams",
+          "htmlSha256": "9b1b1ec11889e02b3396af2fe4921e677705818a12e362c86ff05dc41fab3604",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2021-07-23-app-diagrams.net/",
+          "language": "ko",
+          "title": "draw.io 다이어그램 관리: 편집 원본과 공유 이미지를 함께 보관하기",
+          "htmlSha256": "8d7ab6c906a0cb7e43e05c50ba62ee93f660d316663b3a81c6e0172f39040861",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2021-08-06-search-github/",
+          "language": "en",
+          "title": "Search Code with GitHub, Sourcegraph and Local Git",
+          "htmlSha256": "9e38264130f3480f862f98ea0dd7644a3d092f3b490b17edd9a0c6c016e3f467",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2021-08-06-search-github/",
+          "language": "ko",
+          "title": "GitHub·Sourcegraph 코드 검색: 저장소·경로를 좁히고 로컬에서 확인하기",
+          "htmlSha256": "0fa8ee122c4f16042ca96fabdde84a5a0559e1d829ad688c2403406d6c75ffe7",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-05-querydsl-no-release/",
+          "language": "en",
+          "title": "Querydsl and JPA Specifications: Test a Query Before Switching",
+          "htmlSha256": "74f8e670d65aac18cbed731c7bbb5d048fef256ff1d038e4b754481e0107f622",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-05-querydsl-no-release/",
+          "language": "ko",
+          "title": "Querydsl 대안 판단하기: JPA Specification과 같은 조건 실행하기",
+          "htmlSha256": "a703c34504d1f73ab9caa0a94608ea9c12fb9c410a4025b75892361fdb19d441",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-09-springboot3-querydsl/",
+          "language": "en",
+          "title": "Spring Boot 3 and Querydsl: Jakarta Setup and Q-Type Generation",
+          "htmlSha256": "6c0d4cb6e7eb9c5da3624ae0f6e6fedd5d2ac6aba1cd0d3eae9937931c8eb086",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-09-springboot3-querydsl/",
+          "language": "ko",
+          "title": "Spring Boot 3 Querydsl 설정: Jakarta 의존성과 Q 타입 생성",
+          "htmlSha256": "9874b6c84b573c703c7d5f1e25966e8ede44ba1e4c564b8d135f8752b66f33ce",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2026-04-07-jekyll-github-actions-content-pipeline/",
+          "language": "en",
+          "title": "From Jekyll Auto-Publishing to Astro Draft PR Review",
+          "htmlSha256": "624bd7a77e34a1be1739fd6878c65064fc2153eb59fffb132a59983d26a54f56",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2026-04-07-jekyll-github-actions-content-pipeline/",
+          "language": "ko",
+          "title": "Jekyll 자동 게시에서 Astro Draft PR 검토로 전환하기",
+          "htmlSha256": "daf71663dce1716e9a44a650b6621490f9ea770f761c78ce0d98481acf0fa2a0",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/",
+          "language": "en",
+          "title": "Astro Quality Gates: Why a Passing PR Does Not Deploy",
+          "htmlSha256": "53734c7b458aae0285dd41bc0b6e36f55f230f40c9c3f6f5d5f078a1a13fd183",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/",
+          "language": "ko",
+          "title": "Astro 품질 게이트: PR 검사 성공과 배포 조건 구분하기",
+          "htmlSha256": "4965e80451511f7484cac646962024a498056460265f2942aac514772077c434",
+          "result": "passed"
+        }
+      ],
+      "sitemapUrls": 450,
+      "result": "passed"
+    }
+  },
+  "review": "Self AI integration review, not independent review",
+  "sha256": {
+    "src/content/posts/en/2021-07-20-http-status-test.md": "6a0015675b8a80249e52069a1e2ba364408570bbf983db78a56b13b3ebf0b721",
+    "src/content/posts/ko/2021-07-20-http-status-test.md": "9f007735aea2c4f8fa08a69db59ae34f9dc09f7dc76c0ba72739cb226d6f4eaa",
+    "src/content/posts/en/2021-07-23-app-diagrams.net.md": "994c0cd18640921c0e130d9310adace919b39b5be0e5a2b54b5cee9772bdd8c0",
+    "src/content/posts/ko/2021-07-23-app-diagrams.net.md": "c885eec990bb3862b98e2bbdfc118eb25c55b8e1f6839b06eb28fcdb90944c1c",
+    "src/content/posts/en/2021-08-06-search-github.md": "22da61f44f3002516631540293a6b08b9b0de12d2c7963e6c52ae57b297efddf",
+    "src/content/posts/ko/2021-08-06-search-github.md": "c10bea6b15f08119e7e605eb59388a75c611668bd24844f610f4c9c342d33b32",
+    "src/content/posts/en/2023-09-05-querydsl-no-release.md": "23fe3b60bb4735a72a59a7bcc0dfabd76d68df0af84bdd636d79f15699cfc798",
+    "src/content/posts/ko/2023-09-05-querydsl-no-release.md": "b8643ba24d1524f0642c982777e3e2f0295be4d3386c90ddce7dc527f8c12364",
+    "src/content/posts/en/2023-09-09-springboot3-querydsl.md": "ee1f78a4057b3065d7263ee7a4d5fef3e891d2d160f421d5ab5e0e2d1d29d99d",
+    "src/content/posts/ko/2023-09-09-springboot3-querydsl.md": "05f8ff1802fec505ce7e6cfb4ad2536b498997633c7b4ef4a579897c0096df33",
+    "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md": "12226531a63ffece862798351d0562f1f29cc2b14f9731dad4dd5fece0e77637",
+    "src/content/posts/ko/2026-04-07-jekyll-github-actions-content-pipeline.md": "96f5f0bf7292ee9cb0533b890ccf71e97c1b578e79e84e4278bdfb4535f924f9",
+    "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md": "f5c09678ab191654be64bc9fd457df828066c7f199625a6b32c5d94a02200363",
+    "src/content/posts/ko/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md": "b53a3d41ded47955fdc164b07174a0ffe77ba2f443c11a8072a5ca200cf77db1",
+    "scripts/build_algorithm_diagrams.py": "4045fe07040849c6452fb100474e963321d0ee2da4582b324a932c5ce04ab9ff",
+    "scripts/test_algorithm_diagrams.py": "8927faf114060863e12bffe5cbc142343bb2d25e9ba08c438b22b37e7fdfa561",
+    "content/diagrams/publication.json": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143",
+    "README.md": "302db720e6f2fd84406b14ae436d7a2a63bc9a4312fc57fa4adba6f1691a33d0",
+    "docs/technical-writing.md": "fafa1f5b0de6ded036ae876097d1dc32258edec4ba8dee95c08f1f873fa3204f",
+    "package.json": "145439f001079ae452c3f9835c988ab1766d01ec73605f4cb8e2d5c4a5606798"
+  },
+  "ci": "Exact final head must pass before merge; final deployment evidence is recorded separately."
+}
