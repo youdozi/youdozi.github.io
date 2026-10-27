@@ -180,3 +180,4 @@ python3 -B scripts/indexnow.py --submit
 한영 Spring Boot 카테고리는 프로젝트 생성·영속성·테스트·패키징 순서의 학습 안내를 제공합니다. 실제 공개 가능한 글만 연결하고 각 글의 재현 버전을 구분합니다. 안내의 목록·언어 링크·사이트맵·구조화 데이터는 같은 글 집합을 사용합니다.
 
 Ruby 아카이브 예제는 `python3 -B scripts/check_ruby_environment_examples.py`로 한영 전체 파일을 추출해 비교합니다. Ruby3.2.2에서 설치된 gem으로 임시 번들을 해결하고 두 페이지 렌더링·C++17 출력·잘못된 컴파일러의 실패를 확인합니다. CI의 `--install`은 임시 저장소에 과거 번들을 설치합니다. Ruby3.2는 지원 종료된 재현 환경이며 현재 Astro 빌드나 신규 환경 권장 버전이 아닙니다. macOS SDK 플래그 검사는 로컬에서, 기본 C++ 호출은 Linux CI에서 구분해 확인합니다.
+Jenkins 예제는 `python3 -B scripts/check_jenkins_examples.py`로 한영 전체 Python 파일을 추출해 실행합니다. 실행 중인 Linux 컨테이너 Docker 엔진이 필요합니다. 이미지를 digest로 고정한 일회용 컨트롤러에서 재생성·정지 백업·master.key 분리·새 볼륨 복구를 검사하고 생성 자원을 삭제합니다. 암호와 백업은 로그나 CI 산출물로 남기지 않습니다. 전체 운영 복구나 작업 실행을 입증하는 검사는 아닙니다.

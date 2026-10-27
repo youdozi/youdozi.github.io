@@ -1,145 +1,148 @@
 ---
-title: "[jenkins] jenkins docker install"
-language: "ko"
-translationKey: "2023-09-28-jenkins-docker-install"
-routeSlug: "2023-09-28-jenkins-docker-install"
-kind: "post"
-publishedAt: "2023-09-27T15:00:00.000Z"
+title: "Docker Jenkins: 부팅과 컨테이너 재생성 검증하기"
+language: ko
+translationKey: 2023-09-28-jenkins-docker-install
+routeSlug: 2023-09-28-jenkins-docker-install
+kind: post
+publishedAt: 2023-09-27T15:00:00.000Z
 categories:
-  - "jenkins"
+  - jenkins
 tags:
-  - "jenkins"
-  - "docker install"
-legacyUrl: "/jenkins/jenkins-docker-install/"
-legacySource: "_posts/jenkins/docker-install/2023-09-28-jenkins-docker-install.markdown"
-updatedAt: "2026-10-24T09:00:00+09:00"
-reviewedAt: "2026-10-24"
-reviewStatus: "revised"
-reviewScope: "공식 문서 대조 및 예제 코드 검토"
-archiveBodySha256: "15cb216cb3c50496f3c50b550fc831b31c44ebcb0830d8be8ef009d8ac7d5bbd"
+  - jenkins
+  - docker
+  - containers
+  - backup
+  - testing
+legacyUrl: /jenkins/jenkins-docker-install/
+legacySource: _posts/jenkins/docker-install/2023-09-28-jenkins-docker-install.markdown
+updatedAt: 2026-10-27T07:50:31.083Z
+reviewedAt: "2026-10-27"
+reviewStatus: revised
+reviewScope: Primary documentation and disposable-container contracts reviewed; exact image/version and hosted execution evidence recorded separately.
+archiveBodySha256: 15cb216cb3c50496f3c50b550fc831b31c44ebcb0830d8be8ef009d8ac7d5bbd
 reviewSources:
-  - "https://www.jenkins.io/doc/book/installing/docker/"
-  - "https://github.com/jenkinsci/docker/blob/master/README.md"
+  - https://www.jenkins.io/doc/book/installing/docker/
+  - https://github.com/jenkinsci/docker/blob/master/README.md
+  - https://www.jenkins.io/doc/book/system-administration/backing-up/
+  - https://docs.docker.com/engine/storage/volumes/
+  - https://docs.docker.com/engine/network/port-publishing/
+description: 이미지 digest로 일회용 Jenkins를 실행하고 로컬 HTTP 준비 상태와 같은 볼륨의 컨테이너 재생성을 확인합니다. 초기 비밀번호는 출력하지 않습니다.
 ---
-ci/cd 오픈소스 도구로 가장 많이 사랑 받는 jenkins에 대해 포스팅 해보겠습니다.  
-먼저 설치부터 해야겠지요?  
-항상 패키지 매니저로 설치했었는데 이번에는 docker로 설치해보도록 하겠습니다.
+Jenkins를 이름 있는 홈 볼륨으로 시작하고 HTTP 응답을 확인한 뒤, 같은 볼륨으로 컨테이너를 다시 생성합니다. 설정 화면에 접근할 수 있다는 사실은 컨트롤러가 시작됐음을 보여줍니다. 홈 데이터가 컨테이너 교체 뒤에도 남는지는 두 번째 실행으로 확인합니다.
 
-### jenkins docker 이미지 다운로드
-docker hub에서 jenkins를 검색하면 가장 상단에 `jenkins docker official image`가 가장 먼저 보일겁니다.
+변경되는 이미지 태그는 나중에 다른 이미지를 가리킬 수 있습니다. 실험을 시작할 때 이미지를 고정하고 생성된 초기 비밀번호는 비공개로 다룹니다. 일회용 예제는 비교 결과만 출력하며 비밀번호 자체는 출력하지 않습니다.
 
-![jenkins_00.png](/assets%2Fimg%2Fjenkins%2Fdocker-install%2Fjenkins_00.png)
+## 한 번의 실험에서 이미지를 고정하기
 
-하지만 `DEPRECATED; use "jenkins/jenkins:lts" instead`라고 안내하고 있으니 아래에 있는 `jenkins/jenkins Sponsored OSS`의 이미지를 다운로드 받도록 합니다.
-```shell
-docker pull jenkins/jenkins:lts-jdk21
+![로컬 Jenkins 컨트롤러를 시작하고 재생성 뒤 데이터를 확인하는 흐름](/assets/diagrams/2023-09-28-jenkins-docker-install-ko.svg)
+
+Python3와 Linux 컨테이너를 실행하는 Docker 엔진이 필요합니다. [Jenkins 이미지 안내](https://github.com/jenkinsci/docker/blob/master/README.md)는 `jenkins/jenkins`와 홈 디렉터리를 설명합니다. 이 실습은 `jenkins/jenkins:lts-jdk21`을 내려받고 저장소 digest를 확인합니다. 이후 해당 실행의 컨트롤러는 변경되는 태그를 다시 조회하지 않고 digest를 사용합니다. 재현할 때는 digest와 응답의 Jenkins 버전을 기록하세요. 태그만으로 영구적인 릴리스를 지정할 수는 없습니다.
+
+매핑한 포트에 누가 접근할 수 있는지는 Docker의 [포트 공개 방식](https://docs.docker.com/engine/network/port-publishing/)을 따릅니다. 스크립트는 `127.0.0.1::8080`을 요청해 Docker가 루프백의 호스트 포트를 선택하게 하고 실제 바인딩을 확인합니다. 에이전트 포트를 공개하거나 Docker 소켓을 마운트하지 않습니다. 로컬 컨트롤러 실습이며 Docker 빌드 에이전트나 원격 HTTPS 서비스 설치가 아닙니다.
+
+## 전체 실습 실행하기
+
+다음 전체 파일을 `jenkins_lab.py`로 저장합니다. 고유한 이름의 볼륨과 컨테이너를 새로 생성합니다. 준비 상태나 데이터 검사가 실패해도 context manager가 생성한 실습 자원을 정리합니다. 일회용 예제에 운영 볼륨을 넣지 마세요.
+
+### `jenkins_lab.py`
+
+```python
+import http.client
+import json
+import os
+import subprocess
+import time
+import urllib.error
+import urllib.request
+import uuid
+
+
+class DockerLab:
+    def __init__(self):
+        self.prefix = 'jenkins-proof-' + uuid.uuid4().hex[:12]
+        self.containers, self.volumes = [], []
+
+    def cli(self, *args):
+        return subprocess.check_output(['docker', *args], text=True, stderr=subprocess.PIPE).strip()
+
+    def volume(self):
+        name = f'{self.prefix}-home-{len(self.volumes)}'
+        existing = subprocess.run(['docker', 'volume', 'inspect', name], capture_output=True)
+        if existing.returncode == 0:
+            raise RuntimeError('Refusing an existing volume')
+        self.cli('volume', 'create', name)
+        self.volumes.append(name)
+        return name
+
+    def __enter__(self):
+        self.cli('info')
+        requested = os.environ.get('JENKINS_IMAGE', 'jenkins/jenkins:lts-jdk21')
+        self.cli('pull', requested)
+        self.image = self.cli('image', 'inspect', requested, '--format', '{{index .RepoDigests 0}}')
+        if '@sha256:' not in self.image:
+            raise RuntimeError('Expected a pulled repository digest')
+        self.home = self.volume()
+        return self
+
+    def start(self, volume=None):
+        name = f'{self.prefix}-controller-{len(self.containers)}'
+        self.cli('run', '-d', '--name', name, '-p', '127.0.0.1::8080',
+                 '--mount', f'type=volume,source={volume or self.home},target=/var/jenkins_home', self.image)
+        self.containers.append(name)
+        port = self.cli('port', name, '8080/tcp')
+        if not port.startswith('127.0.0.1:'):
+            raise RuntimeError('Expected a loopback binding')
+        deadline = time.monotonic() + 180
+        while time.monotonic() < deadline:
+            try:
+                with urllib.request.urlopen(f'http://{port}/login', timeout=5) as response:
+                    self.version = response.headers.get('X-Jenkins')
+                    if response.status == 200 and self.version and b'Jenkins' in response.read():
+                        return name
+            except (urllib.error.URLError, TimeoutError, ConnectionError, http.client.HTTPException):
+                pass
+            time.sleep(2)
+        raise RuntimeError('Jenkins login was not ready within 180 seconds')
+
+    def password(self, name):
+        return self.cli('exec', name, 'cat', '/var/jenkins_home/secrets/initialAdminPassword')
+
+    def marker(self, name):
+        return self.cli('exec', name, 'cat', '/var/jenkins_home/lab-marker')
+
+    def __exit__(self, *_):
+        for name in reversed(self.containers):
+            subprocess.run(['docker', 'rm', '-f', name], capture_output=True)
+        for name in reversed(self.volumes):
+            subprocess.run(['docker', 'volume', 'rm', name], capture_output=True)
+
+
+if __name__ == '__main__':
+    with DockerLab() as lab:
+        first = lab.start()
+        password = lab.password(first)
+        assert password, 'Missing initial password'
+        lab.cli('exec', first, 'sh', '-c', 'printf kept > /var/jenkins_home/lab-marker')
+        lab.cli('rm', '-f', first)
+        second = lab.start()
+        assert lab.marker(second) == 'kept'
+        assert lab.password(second) == password
+        print(json.dumps({'image': lab.image, 'jenkins': lab.version, 'recreated': True,
+                          'markerPersisted': True, 'passwordPersisted': True, 'result': 'passed'}))
 ```
-정상적으로 이미지를 다운로드 받았습니다.
-```shell
-latest: Pulling from jenkins/jenkins
-796cc43785ac: Pull complete
-0f7bbb193a37: Pull complete
-eb083ec37208: Pull complete
-811cee232129: Pull complete
-9cb3c9c2fc84: Pull complete
-391cfa07b590: Pull complete
-2bd9a9e0235f: Pull complete
-0c4eaef6fe70: Pull complete
-b96098b82b9a: Pull complete
-ea3fc5fce43a: Pull complete
-ffabf053eb7a: Pull complete
-77934a986327: Pull complete
-9399b337c044: Pull complete
-Digest: sha256:14e3f4912ade77739d675aced9673eeab7ceaa4186dee8365ba61b72828f3b29
-Status: Downloaded newer image for jenkins/jenkins:latest
-docker.io/jenkins/jenkins:latest
+
+Docker 데몬을 사용할 수 있는 상태에서 실행합니다.
+
+```sh
+python3 jenkins_lab.py
 ```
 
-### jenkins docker 실행
-이제 docker 컨테이너를 가동하도록 하겠습니다.
-```shell
-docker run -d --restart=on-failure \
-  -p 127.0.0.1:8080:8080 \
-  -v jenkins_home:/var/jenkins_home \
-  --name jenkins jenkins/jenkins:lts-jdk21
-```
-플러그인과 설정을 유지하기 위해 볼륨 설정을 넣었습니다.
-```shell
-fadd1ce5b81bf64038f5583e9ff86bdc71b2fa53eb58a488b62201214930813c
-```
-docker 컨테이너 id를 리턴해주면서 정상적으로 생성됐네요.  
-이제 jenkins 설정 화면을 만나보겠습니다!
-아 그전에 초기 비번을 확인해야 하는데 아래 명령어를 통해 알아보도록 하겠습니다.
+컨트롤러를 두 번 시작할 때 각각 최대 180초 동안 `/login`의 HTTP200, `X-Jenkins` 헤더, `Jenkins`가 포함된 본문을 기다립니다. 시작 중의 연결 재설정·일시적 HTTP 실패·미완성 HTTP 연결은 해당 제한 시간 안에서 재시도합니다. 표식 파일을 쓰고 초기 비밀번호를 출력 없이 읽은 뒤 첫 컨테이너를 교체하고 두 값을 다시 비교합니다. `recreated`·`markerPersisted`·`passwordPersisted`가 true이고 `result: passed`라면 선택한 검사를 통과한 것입니다. JSON에는 digest와 실제 Jenkins 버전도 기록하므로 임의의 pull 로그를 붙이지 않아도 됩니다.
 
-### jenkins 초기 비번 확인
-```shell
-docker logs fadd1ce5b81bf64038f5583e9ff86bdc71b2fa53eb58a488b62201214930813c
-```
-위 명령어를 통해 docker 로그를 볼 수 있습니다.  
-로그 중에 아래 단락에서 초기 비번을 확인할 수 있습니다.
-```shell
-Jenkins initial setup is required. An admin user has been created and a password generated.
-Please use the following password to proceed to installation:
+이 실습은 Jenkins 잠금 해제, 플러그인 설치, 관리자 계정 설정 완료나 작업 실행을 하지 않습니다. 준비 상태 검사는 로그인 HTTP 응답을 확인하며 초기 설정 완료를 뜻하지 않습니다. Mac에서 Docker 엔진이 꺼져 있다면 선택한 엔진을 먼저 시작해야 합니다. Docker CLI만으로는 실습을 실행할 수 없습니다.
 
-992e7983ba1748b1852018edff0638bf
+## 설치와 데이터 보존 구분하기
 
-This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
-```
-위 값은 과거 실행 로그의 예시입니다. 실제 초기 비밀번호는 각 설치에서 생성되며 그대로 재사용하지 않습니다.  
-초기 비번을 확인됐으니 웹브라우저로 http://localhost:8080에 접속 해보겠습니다.
+계속 사용할 설치는 [공식 설정 마법사](https://www.jenkins.io/doc/book/installing/docker/)를 따라 관리자 계정을 생성합니다. 초기 비밀번호는 직접 만든 컨트롤러의 `/var/jenkins_home/secrets/initialAdminPassword`에서 읽으세요. 예제 값을 재사용하거나 해당 값이 포함된 로그를 공개하지 않습니다. 이 스크립트는 실습 자원을 삭제하므로 대화형 설치를 보존할 명령은 아닙니다.
 
-### Unlock Jenkins
-![jenkins_01.png](/assets%2Fimg%2Fjenkins%2Fdocker-install%2Fjenkins_01.png)  
-
-`Unlock Jenkins` 화면이 나온다면 설치는 완료된 것 입니다.  
-여기에 초기 비번을 입력하고 continue 버튼을 클릭합니다.  
-
-### Customize Jenkins
-![jenkins_02.png](/assets%2Fimg%2Fjenkins%2Fdocker-install%2Fjenkins_02.png)
-
-`Customize Jenkins` 화면이 나올텐데 여기서는 우측   
-`Install suggested plugins`를 선택합니다.
-
-![jenkins_03.png](/assets%2Fimg%2Fjenkins%2Fdocker-install%2Fjenkins_03.png)
-
-필요한 플러그인을 다운로드 받고 설치하기 시작합니다.  
-조금 시간이 걸릴 수 있으니 차분하게 기다려주세요~!  
-
-### Create First Admin User
-![jenkins_04.png](/assets%2Fimg%2Fjenkins%2Fdocker-install%2Fjenkins_04.png)
-
-플러그인 설치까지 완료 되었습니다.  
-`Create First Admin User` 화면이 나올 텐데 초기 설정이 끝난 이후에도 admin 계정을 만들 수 있습니다.  
-개인 관리자 계정을 생성하고 고유한 비밀번호로 초기 설정을 마칩니다. 초기 admin 계정으로 계속 운영하는 절차는 권장하지 않습니다.
-> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 실 사용시 반드시 admin 계정을 생성하시길 바랍니다.
-
-### Instance Configuration
-![jenkins_05.png](/assets%2Fimg%2Fjenkins%2Fdocker-install%2Fjenkins_05.png)
-
-`Instance Configuration` 화면이 나옵니다.  
-기본 default로 적용된 주소 그대로 사용하며 `Save and Finish` 버튼을 클릭합니다.
-
-### Jenkins is Ready
-![jenkins_06.png](/assets%2Fimg%2Fjenkins%2Fdocker-install%2Fjenkins_06.png)
-
-마지막 입니다.  
-`Create First Admin User` 단계에서 admin 계정을 설정하지 않아 warning 메시지를 노출하네요.  
-admin 계정을 만들고 왔다면 warning 메시지는 보이지 않을 겁니다.  
-이제 `Start using jenkins` 버튼을 클릭합니다.
-
-### Jenkins home
-![jenkins_07.png](/assets%2Fimg%2Fjenkins%2Fdocker-install%2Fjenkins_07.png)
-
-드디어 젠킨스 홈 화면으로 진입했습니다~!!  
-여기까지 해서 젠킨스 설치를 마무리 짓도록 하겠습니다.  
-다음에는 젠킨스 job을 만들어보도록 하겠습니다.  
-수고하셨습니다.
-
-## 검증 및 보강 — 2026-10-24
-
-실행 명령은 LTS 이미지와 로컬 접근용 포트 바인딩으로 보완했습니다. `latest`는 재현 가능한 고정 버전이 아니며 운영에서는 검증한 구체 버전 태그 또는 digest를 기록하세요. 본문의 Pull 로그는 2023년 `latest` 실행 기록이므로 현재 이미지의 출력과 일치할 필요가 없습니다. 초기 암호는 `docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword`로 확인할 수 있습니다. 컨테이너 삭제 전 볼륨 백업·복구를 검증하고, 원격 공개 시에는 HTTPS와 접근 제어를 별도로 구성해야 합니다. Docker 소켓 마운트는 이 설치에 필요하지 않습니다.
-
-### 확인한 자료
-
-- [공식 자료 1](https://www.jenkins.io/doc/book/installing/docker/)
-- [공식 자료 2](https://github.com/jenkinsci/docker/blob/master/README.md)
+[이름 있는 Docker 볼륨](https://docs.docker.com/engine/storage/volumes/)은 컨테이너를 삭제해도 남길 수 있지만 백업은 아닙니다. 볼륨을 잃으면 데이터도 잃습니다. [정지한 볼륨의 백업·복구 실습](/ko/posts/2026-10-27-jenkins-home-backup-restore/)에서 같은 이미지와 별도 대상 볼륨으로 이어 확인합니다. 이 블로그 자체의 게시는 [Astro Draft PR 워크플로](/ko/posts/2026-04-07-jekyll-github-actions-content-pipeline/)를 따릅니다. Jenkins 예제가 해당 파이프라인을 대체하지 않습니다.

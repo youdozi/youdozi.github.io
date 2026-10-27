@@ -96,7 +96,7 @@ class AlgorithmDiagramsTests(unittest.TestCase):
     def test_all_registered_workflows_render_localized_assets_and_keep_algorithm_contracts(self):
         data=diagrams.load_sources()
         diagrams.validate_articles(data)
-        self.assertEqual(len(data['diagrams']),sum(len(json.loads(path.read_text())['diagrams']) for path in [diagrams.SOURCE,diagrams.WORKFLOW_SOURCE,diagrams.STRATEGY_SOURCE,diagrams.PUBLICATION_SOURCE,diagrams.RUBY_SOURCE]))
+        self.assertEqual(len(data['diagrams']),sum(len(json.loads(path.read_text())['diagrams']) for path in [diagrams.SOURCE,diagrams.WORKFLOW_SOURCE,diagrams.STRATEGY_SOURCE,diagrams.PUBLICATION_SOURCE,diagrams.RUBY_SOURCE,diagrams.JENKINS_SOURCE]))
         for item in data['diagrams']:
             for lang in diagrams.LANGUAGES:
                 tree=ET.fromstring(diagrams.render(item,lang))
