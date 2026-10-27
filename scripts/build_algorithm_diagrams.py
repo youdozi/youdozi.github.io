@@ -10,6 +10,8 @@ SOURCE = Path('content/diagrams/algorithms.json')
 WORKFLOW_SOURCE = Path('content/diagrams/workflows.json')
 STRATEGY_SOURCE = Path('content/diagrams/query-strategies.json')
 PUBLICATION_SOURCE = Path('content/diagrams/publication.json')
+RUBY_SOURCE = Path('content/diagrams/ruby-environment.json')
+JENKINS_SOURCE = Path('content/diagrams/jenkins.json')
 OUTPUT = Path('public/assets/diagrams')
 LANGUAGES = ('en', 'ko')
 
@@ -53,7 +55,7 @@ def validate(data):
             if not isinstance(contracts, list) or not contracts:
                 raise ValueError('Expected nonempty code requirements')
             for contract in contracts:
-                if (not isinstance(contract, dict) or contract.get('language') not in ('java','sh','groovy','python','xml','javascript')
+                if (not isinstance(contract, dict) or contract.get('language') not in ('java','sh','groovy','python','xml','javascript','ruby')
                         or not isinstance(contract.get('contains'), str) or not contract['contains'].strip()):
                     raise ValueError('Invalid code language or required snippet')
         loop = item.get('loop')
@@ -119,7 +121,7 @@ def validate_articles(data, posts=Path('src/content/posts')):
                     raise ValueError(f'Missing required {contract["language"]} code: {lang}/{item["key"]}')
 
 
-def load_sources(paths=(SOURCE, WORKFLOW_SOURCE, STRATEGY_SOURCE, PUBLICATION_SOURCE)):
+def load_sources(paths=(SOURCE, WORKFLOW_SOURCE, STRATEGY_SOURCE, PUBLICATION_SOURCE, RUBY_SOURCE, JENKINS_SOURCE)):
     combined = {'version':1, 'diagrams':[]}
     for path in paths:
         combined['diagrams'].extend(validate(json.loads(Path(path).read_text()))['diagrams'])

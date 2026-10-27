@@ -1,8 +1,7 @@
 ---
 import Listing from '../../../components/Listing.astro';
 import CategoryGuide from '../../../components/CategoryGuide.astro';
-import { springGuide, springCategoryAlternates } from '../../../lib/spring-guide';
-import { algorithmGuide, algorithmCategoryAlternates } from '../../../lib/algorithm-guide';
+import {categoryGuide,categoryGuideAlternates} from '../../../lib/technical-guides';
 import { entries, publishedLanguages, taxonomySlug, taxonomyUrl, type Language } from '../../../lib/content';
 export async function getStaticPaths() {
   const all = await entries();
@@ -12,7 +11,7 @@ const lang = Astro.params.lang as Language;
 const kind = Astro.params.taxonomy as 'categories' | 'tags';
 const term = Astro.props.term as string;
 const all = await entries();
-const guide = kind !== 'categories' ? undefined : term === 'coding-test' ? algorithmGuide(lang, all) : term === 'springboot' ? springGuide(lang, all) : undefined;
-const alternates = term === 'springboot' ? springCategoryAlternates(all) : algorithmCategoryAlternates(all);
+const guide = kind === 'categories' ? categoryGuide(term,lang,all) : undefined;
+const alternates = guide ? categoryGuideAlternates(term,all) : [];
 ---
 {guide ? <CategoryGuide guide={guide} alternates={alternates} /> : <Listing items={all.filter(e => e.language === lang && e[kind].includes(term))} lang={lang} title={term} root={taxonomyUrl(lang,kind,term)} />}

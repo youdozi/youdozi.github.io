@@ -1,389 +1,117 @@
 ---
-title: "[jekyll] jekyll install"
-language: "ko"
-translationKey: "2023-09-04-jekyll-install"
-routeSlug: "2023-09-04-jekyll-install"
-kind: "post"
-publishedAt: "2023-09-03T15:00:00.000Z"
+title: "macOS Jekyll 환경: Ruby·Bundler와 두 페이지 빌드 확인하기"
+language: ko
+translationKey: 2023-09-04-jekyll-install
+routeSlug: 2023-09-04-jekyll-install
+kind: post
+publishedAt: 2023-09-03T15:00:00.000Z
 categories:
-  - "jekyll"
+  - jekyll
 tags:
-  - "jekyll"
-  - "blog"
-  - "github.io"
-legacyUrl: "/jekyll/jekyll-install/"
-legacySource: "_posts/jekyll/install/2023-09-04-jekyll-install.markdown"
-updatedAt: "2026-10-24T09:00:00+09:00"
-reviewedAt: "2026-10-24"
-reviewStatus: "revised"
-reviewScope: "공식 문서 대조 및 예제 코드 검토"
-archiveBodySha256: "3e460f436e05c908c3ebf4c4ff74bf0b742768e8499e1989228baa0d89e24812"
+  - ruby
+  - rbenv
+  - bundler
+  - jekyll
+  - macos
+legacyUrl: /jekyll/jekyll-install/
+legacySource: _posts/jekyll/install/2023-09-04-jekyll-install.markdown
+updatedAt: 2026-10-27T08:56:40.345Z
+reviewedAt: "2026-10-27"
+reviewStatus: revised
+reviewScope: Primary documentation checked; isolated legacy bundle render and temporary C++ probe executed. Historical versions and host-specific limits stated.
+archiveBodySha256: 3e460f436e05c908c3ebf4c4ff74bf0b742768e8499e1989228baa0d89e24812
 reviewSources:
-  - "https://jekyllrb.com/docs/installation/macos/"
-  - "https://bundler.io/guides/using_bundler_in_applications.html"
+  - https://github.com/rbenv/rbenv#readme
+  - https://jekyllrb.com/docs/installation/macos/
+  - https://guides.rubygems.org/using_bundler_in_applications/
+  - https://docs.ruby-lang.org/en/3.2/RbConfig.html
+  - https://www.ruby-lang.org/en/downloads/branches/
+  - https://developer.apple.com/library/archive/technotes/tn2339/_index.html
+description: 권한 변경 전에 Ruby 선택과 번들 환경을 확인합니다. 격리된 Jekyll 예제를 실행하고 gem 설치 여부와 번들 포함 여부를 구분합니다.
 ---
-### 개요
-오랫동안 방치했던 블로그를 다시 열면서  
-jekyll를 다시 설치해봤습니다.  
-### 설치
-jekyll 프로젝트로 이동하여 아래 명령어를 입력합니다.
-```shell
-gem install jekyll bundler
-```
-```shell
-Fetching pathutil-0.16.2.gem
-Fetching terminal-table-3.0.2.gem
-Fetching webrick-1.8.1.gem
-Fetching forwardable-extended-2.6.0.gem
-Fetching rouge-4.1.3.gem
-Fetching mercenary-0.4.0.gem
-Fetching safe_yaml-1.0.5.gem
-Fetching unicode-display_width-2.4.2.gem
-Fetching liquid-4.0.4.gem
-Fetching kramdown-2.4.0.gem
-Fetching kramdown-parser-gfm-1.1.0.gem
-Fetching ffi-1.15.5.gem
-Fetching rb-inotify-0.10.1.gem
-Fetching rb-fsevent-0.11.2.gem
-Fetching listen-3.8.0.gem
-Fetching jekyll-watch-2.2.1.gem
-Fetching google-protobuf-3.24.2-arm64-darwin.gem
-Fetching sass-embedded-1.66.1-x86_64-darwin.gem
-Fetching jekyll-sass-converter-3.0.0.gem
-Fetching concurrent-ruby-1.2.2.gem
-Fetching i18n-1.14.1.gem
-Fetching http_parser.rb-0.8.0.gem
-Fetching eventmachine-1.2.7.gem
-Fetching em-websocket-0.5.3.gem
-Fetching colorator-1.1.0.gem
-Fetching public_suffix-5.0.3.gem
-Fetching addressable-2.8.5.gem
-Fetching jekyll-4.3.2.gem
-ERROR:  While executing gem ... (Gem::FilePermissionError)
-    You don't have write permissions for the /Library/Ruby/Gems/2.6.0 directory.
-```
-웁스. 권한 문제가 발생했네요.  
-맥북 기본 설치된 ruby를 사용하다보니 해당 디렉토리 권한이 없다고 합니다.  
-이럴 때는 sudo..아니아니 rbenv부터 찬찬히 해봅시다.
+권한을 바꾸기 전에 실행 중인 Ruby, Bundler가 선택한 의존성, 작은 사이트의 렌더링을 순서대로 확인합니다. 현재 이 사이트는 Astro로 빌드합니다. 아래 Jekyll 예제는 남아 있는 Ruby 아카이브를 진단하기 위한 것입니다.
 
-참고 : [https://jojoldu.tistory.com/288](https://jojoldu.tistory.com/288)
+원래 설치 글은 Ruby3.2.2를 사용했습니다. 해당 계열은 현재 [지원이 종료](https://www.ruby-lang.org/en/downloads/branches/)되어 과거 호환성 재현용이며 신규 설치 권장 버전이 아닙니다. 새 환경에는 프로젝트의 gem과 호환되는 유지보수 중인 Ruby를 선택하세요.
 
-## rbenv
-rbenv를 설치해봅시다.
+## gem 설치 전에 실행기 선택 확인하기
 
-```shell
-brew update
-brew install rbenv ruby-build
-```
-rbenv 설치가 잘됐는지.. 확인도 해보죠.
-```shell
-rbenv versions
-* system
-```
-system. 즉 os에서 기본 제공하는 ruby를 사용하고 있네요.  
-아마 버전도 상당히 낮은 ruby를 사용하고 있을꺼라 예상되네요.  
-이제 직접 ruby를 설치해봅시다.  
-당시 이 글에서 사용한 Ruby는 3.2.2입니다. 현재 최신 버전이라는 뜻은 아니며 프로젝트가 지원하는 Ruby 버전을 선택해야 합니다.
-```shell
-rbenv install 3.2.2
-To follow progress, use 'tail -f /var/folders/2_/8rvvvv_533d_dzj5y82h6lj00000gn/T/ruby-build.20230904230149.5486.log' or pass --verbose
-Downloading openssl-3.1.1.tar.gz...
--> https://dqw8nmjcqpjn7.cloudfront.net/b3aa61334233b852b63ddb048df181177c2c659eb9d4376008118f9c08d07674
-Installing openssl-3.1.1...
-Installed openssl-3.1.1 to /.rbenv/versions/3.2.2
+![Ruby 선택과 번들 의존성을 확인하고 작은 사이트를 렌더링하는 흐름](/assets/diagrams/2023-09-04-jekyll-install-ko.svg)
 
-Downloading ruby-3.2.2.tar.gz...
--> https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.2.tar.gz
-Installing ruby-3.2.2...
-ruby-build: using readline from homebrew
-ruby-build: using libyaml from homebrew
-Installed ruby-3.2.2 to /.rbenv/versions/3.2.2
+[Jekyll macOS 설치 문서](https://jekyllrb.com/docs/installation/macos/)는 시스템 Ruby 대신 별도로 관리하는 Ruby 환경을 안내합니다. 이 저장소의 이전 환경은 rbenv를 사용했습니다. [rbenv의 버전 선택 규칙](https://github.com/rbenv/rbenv#readme)은 프로젝트의 `.ruby-version`, `RBENV_VERSION`, 전역 기본값을 구분합니다.
 
+프로젝트 디렉터리에서 다음을 확인합니다.
 
-NOTE: to activate this Ruby version as the new default, run: rbenv global 3.2.2
+```sh
+command -v ruby
+ruby --version
+rbenv version
+rbenv which ruby
+gem env home
+bundle --version
 ```
-가장 밑에 note를 보면 새로운 ruby를 설치했으니 default로 셋팅하라고 합니다.  
-따라해보겠습니다.
-```shell
-rbenv global 3.2.2
-```
-다시 버전을 확인해 보면?
-```shell
-rbenv versions
-  system
-* 3.2.2 (set by /.rbenv/version)
-```
-깔끔하게 잘 됐네요.  
-이제 path에 추가하여 어디서든 ruby 명령어를 사용해봅시다.
-```shell
-vim ~/.zshrc
 
-# 아래 코드 추가
-[[ -d ~/.rbenv  ]] && \
-  export PATH=${HOME}/.rbenv/bin:${PATH} && \
-  eval "$(rbenv init -)"
-  
-# source 명령어로 적용
-source ~/.zshrc
-```
-자.. 드디어 모든 준비가 끝났습니다.  
-이제 bundler를 설치합니다.
-## bundler
-```shell
-gem install bundler
-Fetching bundler-2.4.19.gem
-Successfully installed bundler-2.4.19
-Parsing documentation for bundler-2.4.19
-Installing ri documentation for bundler-2.4.19
-Done installing documentation for bundler after 0 seconds
-1 gem installed
+예상한 관리자가 Ruby를 선택하지 못하면 설치부터 반복하지 말고 셸 초기화를 확인합니다. 설치한 rbenv 버전의 안내에 따라 `rbenv init`을 적용하고, 다른 사용자의 홈 경로를 셸 설정에 복사하지 않습니다. 모든 Ruby 프로젝트에 영향을 주는 `rbenv global`보다 프로젝트 단위 선택을 우선합니다.
 
-A new release of RubyGems is available: 3.4.10 → 3.4.19!
-Run `gem update --system 3.4.19` to update your installation.
-```
-아직 마지막 관문이 남아 있습니다.
-```shell
-gem install jekyll bundler
-Fetching unicode-display_width-2.4.2.gem
-Fetching terminal-table-3.0.2.gem
-Fetching safe_yaml-1.0.5.gem
-Fetching rouge-4.1.3.gem
-Fetching forwardable-extended-2.6.0.gem
-Fetching mercenary-0.4.0.gem
-Fetching webrick-1.8.1.gem
-Fetching pathutil-0.16.2.gem
-Fetching liquid-4.0.4.gem
-Fetching kramdown-2.4.0.gem
-Fetching kramdown-parser-gfm-1.1.0.gem
-Fetching ffi-1.15.5.gem
-Fetching rb-inotify-0.10.1.gem
-Fetching rb-fsevent-0.11.2.gem
-Fetching listen-3.8.0.gem
-Fetching jekyll-watch-2.2.1.gem
-Fetching google-protobuf-3.24.2-arm64-darwin.gem
-Fetching sass-embedded-1.66.1-arm64-darwin.gem
-Fetching jekyll-sass-converter-3.0.0.gem
-Fetching concurrent-ruby-1.2.2.gem
-Fetching i18n-1.14.1.gem
-Fetching http_parser.rb-0.8.0.gem
-Fetching eventmachine-1.2.7.gem
-Fetching em-websocket-0.5.3.gem
-Fetching jekyll-4.3.2.gem
-Fetching colorator-1.1.0.gem
-Fetching public_suffix-5.0.3.gem
-Fetching addressable-2.8.5.gem
-Successfully installed webrick-1.8.1
-Successfully installed unicode-display_width-2.4.2
-Successfully installed terminal-table-3.0.2
-Successfully installed safe_yaml-1.0.5
-Successfully installed rouge-4.1.3
-Successfully installed forwardable-extended-2.6.0
-Successfully installed pathutil-0.16.2
-Successfully installed mercenary-0.4.0
-Successfully installed liquid-4.0.4
-Successfully installed kramdown-2.4.0
-Successfully installed kramdown-parser-gfm-1.1.0
-Building native extensions. This could take a while...
-Successfully installed ffi-1.15.5
-Successfully installed rb-inotify-0.10.1
-Successfully installed rb-fsevent-0.11.2
-Successfully installed listen-3.8.0
-Successfully installed jekyll-watch-2.2.1
-Successfully installed google-protobuf-3.24.2-arm64-darwin
-Successfully installed sass-embedded-1.66.1-arm64-darwin
-Successfully installed jekyll-sass-converter-3.0.0
-Successfully installed concurrent-ruby-1.2.2
-Successfully installed i18n-1.14.1
-Building native extensions. This could take a while...
-Successfully installed http_parser.rb-0.8.0
-Building native extensions. This could take a while...
-Successfully installed eventmachine-1.2.7
-Successfully installed em-websocket-0.5.3
-Successfully installed colorator-1.1.0
-Successfully installed public_suffix-5.0.3
-Successfully installed addressable-2.8.5
-Successfully installed jekyll-4.3.2
-Parsing documentation for webrick-1.8.1
-Installing ri documentation for webrick-1.8.1
-Parsing documentation for unicode-display_width-2.4.2
-Installing ri documentation for unicode-display_width-2.4.2
-Parsing documentation for terminal-table-3.0.2
-Installing ri documentation for terminal-table-3.0.2
-Parsing documentation for safe_yaml-1.0.5
-Installing ri documentation for safe_yaml-1.0.5
-Parsing documentation for rouge-4.1.3
-Installing ri documentation for rouge-4.1.3
-Parsing documentation for forwardable-extended-2.6.0
-Installing ri documentation for forwardable-extended-2.6.0
-Parsing documentation for pathutil-0.16.2
-Installing ri documentation for pathutil-0.16.2
-Parsing documentation for mercenary-0.4.0
-Installing ri documentation for mercenary-0.4.0
-Parsing documentation for liquid-4.0.4
-Installing ri documentation for liquid-4.0.4
-Parsing documentation for kramdown-2.4.0
-Installing ri documentation for kramdown-2.4.0
-Parsing documentation for kramdown-parser-gfm-1.1.0
-Installing ri documentation for kramdown-parser-gfm-1.1.0
-Parsing documentation for ffi-1.15.5
-Installing ri documentation for ffi-1.15.5
-Parsing documentation for rb-inotify-0.10.1
-Installing ri documentation for rb-inotify-0.10.1
-Parsing documentation for rb-fsevent-0.11.2
-Installing ri documentation for rb-fsevent-0.11.2
-Parsing documentation for listen-3.8.0
-Installing ri documentation for listen-3.8.0
-Parsing documentation for jekyll-watch-2.2.1
-Installing ri documentation for jekyll-watch-2.2.1
-Parsing documentation for google-protobuf-3.24.2-arm64-darwin
-Installing ri documentation for google-protobuf-3.24.2-arm64-darwin
-Parsing documentation for sass-embedded-1.66.1-arm64-darwin
-Installing ri documentation for sass-embedded-1.66.1-arm64-darwin
-Parsing documentation for jekyll-sass-converter-3.0.0
-Installing ri documentation for jekyll-sass-converter-3.0.0
-Parsing documentation for concurrent-ruby-1.2.2
-Installing ri documentation for concurrent-ruby-1.2.2
-Parsing documentation for i18n-1.14.1
-Installing ri documentation for i18n-1.14.1
-Parsing documentation for http_parser.rb-0.8.0
-unknown encoding name "chunked\r\n\r\n25" for ext/ruby_http_parser/vendor/http-parser-java/tools/parse_tests.rb, skipping
-Installing ri documentation for http_parser.rb-0.8.0
-Parsing documentation for eventmachine-1.2.7
-Installing ri documentation for eventmachine-1.2.7
-Parsing documentation for em-websocket-0.5.3
-Installing ri documentation for em-websocket-0.5.3
-Parsing documentation for colorator-1.1.0
-Installing ri documentation for colorator-1.1.0
-Parsing documentation for public_suffix-5.0.3
-Installing ri documentation for public_suffix-5.0.3
-Parsing documentation for addressable-2.8.5
-Installing ri documentation for addressable-2.8.5
-Parsing documentation for jekyll-4.3.2
-Installing ri documentation for jekyll-4.3.2
-Done installing documentation for webrick, unicode-display_width, terminal-table, safe_yaml, rouge, forwardable-extended, pathutil, mercenary, liquid, kramdown, kramdown-parser-gfm, ffi, rb-inotify, rb-fsevent, listen, jekyll-watch, google-protobuf, sass-embedded, jekyll-sass-converter, concurrent-ruby, i18n, http_parser.rb, eventmachine, em-websocket, colorator, public_suffix, addressable, jekyll after 7 seconds
-Successfully installed bundler-2.4.19
-Parsing documentation for bundler-2.4.19
-Done installing documentation for bundler after 0 seconds
-29 gems installed
-euisunchoi@Euiui-MacBookAir github.io % bundle exec jekyll serve
-Could not find gem 'jekyll (~> 3.5)' in locally installed gems.
+## 두 페이지로 번들 렌더링 확인하기
 
-The source contains the following gems matching 'jekyll':
-  * jekyll-4.3.2
-Run `bundle install` to install missing gems.
+이 호환성 예제는 Ruby3.2.2·Bundler2.4.19·Jekyll3.9.3·kramdown-parser-gfm1.1.0에서 실행했습니다. 기록된 과거 버전 조합이며 지원 버전의 기준이 아닙니다. Gemfile은 직접 사용하는 gem 두 개를 고정하고, 생성된 Gemfile.lock이 해당 플랫폼의 전이 의존성을 기록합니다.
+
+별도 임시 작업 디렉터리를 만들고 다음 전체 파일을 저장합니다. 저장소에 있는 기존 Gemfile을 덮어쓰지 마세요.
+
+### `Gemfile`
+
+```ruby
+source 'https://rubygems.org'
+gem 'jekyll', '= 3.9.3'
+gem 'kramdown-parser-gfm', '= 1.1.0'
 ```
-막판에 missing gems가 있다면서 bundle install을 실행시키라 하는군요.
-```shell
+
+### `jekyll_probe.rb`
+
+```ruby
+require 'jekyll'
+require 'tmpdir'
+require 'fileutils'
+require 'json'
+
+Dir.mktmpdir('jekyll-probe-') do |root|
+  root = File.realpath(root)
+  source = File.join(root, 'source')
+  destination = File.join(root, 'output')
+  FileUtils.mkdir_p(File.join(source, '_layouts'))
+  File.write(File.join(source, '_layouts', 'default.html'), '<!doctype html><html lang="en"><body>{{ content }}</body></html>')
+  File.write(File.join(source, 'index.md'), "---\nlayout: default\ntitle: Probe\n---\n# Bundled build\n\n[Guide](/guide/)\n")
+  File.write(File.join(source, 'guide.md'), "---\nlayout: default\npermalink: /guide/\n---\n# Local guide\n")
+  config = Jekyll.configuration('config' => [], 'source' => source, 'destination' => destination, 'quiet' => true)
+  Dir.chdir(source) { Jekyll::Site.new(config).process }
+  home = File.read(File.join(destination, 'index.html'))
+  guide = File.read(File.join(destination, 'guide', 'index.html'))
+  raise 'Missing rendered heading' unless home.include?('<h1') && home.include?('Bundled build')
+  raise 'Missing guide link' unless home.include?('href="/guide/"')
+  raise 'Missing guide output' unless guide.include?('Local guide')
+  puts JSON.generate('ruby' => RUBY_VERSION, 'jekyll' => Jekyll::VERSION, 'pages' => 2, 'result' => 'passed')
+end
+```
+
+선택한 Ruby와 Bundler를 사용할 수 있는 상태에서 해당 디렉터리에서 실행합니다.
+
+```sh
 bundle install
-Fetching gem metadata from https://rubygems.org/..........
-Resolving dependencies...
-Fetching rexml 3.2.6
-Fetching mercenary 0.3.6
-Fetching rouge 3.30.0
-Fetching faraday-net_http 3.0.2
-Fetching jekyll-paginate 1.1.0
-Fetching sass-listen 4.0.0
-Installing faraday-net_http 3.0.2
-Installing jekyll-paginate 1.1.0
-Installing sass-listen 4.0.0
-Installing mercenary 0.3.6
-Installing rexml 3.2.6
-Fetching faraday 2.7.10
-Fetching sass 3.7.4
-Installing rouge 3.30.0
-Installing faraday 2.7.10
-Fetching sawyer 0.9.2
-Installing sass 3.7.4
-Installing sawyer 0.9.2
-Fetching octokit 4.25.1
-Fetching jekyll-sass-converter 1.5.2
-Installing octokit 4.25.1
-Installing jekyll-sass-converter 1.5.2
-Fetching jekyll-gist 1.5.0
-Fetching jekyll 3.9.3
-Installing jekyll-gist 1.5.0
-Installing jekyll 3.9.3
-Fetching jekyll-feed 0.17.0
-Fetching jekyll-include-cache 0.2.1
-Fetching jekyll-seo-tag 2.8.0
-Fetching jekyll-sitemap 1.4.0
-Installing jekyll-feed 0.17.0
-Installing jekyll-include-cache 0.2.1
-Installing jekyll-seo-tag 2.8.0
-Installing jekyll-sitemap 1.4.0
-Fetching minimal-mistakes-jekyll 4.24.0
-Installing minimal-mistakes-jekyll 4.24.0
-Bundle complete! 5 Gemfile dependencies, 39 gems now installed.
-Use `bundle info [gemname]` to see where a bundled gem is installed.
-Post-install message from sass:
-
-Ruby Sass has reached end-of-life and should no longer be used.
-
-* If you use Sass as a command-line tool, we recommend using Dart Sass, the new
-  primary implementation: https://sass-lang.com/install
-
-* If you use Sass as a plug-in for a Ruby web framework, we recommend using the
-  sassc gem: https://github.com/sass/sassc-ruby#readme
-
-* For more details, please refer to the Sass blog:
-  https://sass-lang.com/blog/posts/7828841
+bundle exec ruby jekyll_probe.rb
 ```
-드디어 끝난것 같습니다.  
-이제 로컬에 띄우기만 하면!!
-```shell
-bundle exec jekyll serve
-Configuration file: /IdeaProjects/github.io/_config.yml
-To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
-            Source: /IdeaProjects/github.io
-       Destination: /IdeaProjects/github.io/_site
- Incremental build: disabled. Enable with --incremental
-      Generating...
-       Jekyll Feed: Generating feed for posts
-                    done in 1.336 seconds.
- Auto-regeneration: enabled for '/IdeaProjects/github.io'
-bundler: failed to load command: jekyll (/.rbenv/versions/3.2.2/bin/jekyll)
-<internal:/.rbenv/versions/3.2.2/lib/ruby/site_ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:38:in `require': cannot load such file -- webrick (LoadError)
+
+정확한 gem이 이미 설치되어 있다면 `bundle lock --local`로 로컬 목록에서 의존성을 결정한 뒤 같은 실행 명령을 사용할 수 있습니다. 없는 gem을 내려받지는 않습니다. 실패를 재현할 때는 lockfile을 보존하고 갱신 전 차이를 검토하세요. [Bundler의 애플리케이션 안내](https://guides.rubygems.org/using_bundler_in_applications/)에서 Gemfile과 lockfile의 역할을 설명합니다.
+
+실행해 확인한 결과입니다.
+
+```json
+{"ruby":"3.2.2","jekyll":"3.9.3","pages":2,"result":"passed"}
 ```
-순순히 끝나지 않는군요.  
-마지막으로 webrick을 bundle에 추가해줍니다.
-```shell
-bundle add webrick
 
-Fetching gem metadata from https://rubygems.org/.........
-Resolving dependencies...
-Fetching gem metadata from https://rubygems.org/.........
-Resolving dependencies...
-```
-다시 로컬에 띄우겠습니다.
-## Run Jekyll
-```shell
-bundle exec jekyll serve
-Configuration file: /IdeaProjects/github.io/_config.yml
-To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
-            Source: /IdeaProjects/github.io
-       Destination: /IdeaProjects/github.io/_site
- Incremental build: disabled. Enable with --incremental
-      Generating...
-       Jekyll Feed: Generating feed for posts
-                    done in 0.805 seconds.
- Auto-regeneration: enabled for '/IdeaProjects/github.io'
-    Server address: http://127.0.0.1:4000
-  Server running... press ctrl-c to stop.
-```
-깔끔하게 올라왔습니다.  
-브라우저 주소창에 아래와 같이 입력합니다.  
-http://localhost:4000
+예제는 임시 디렉터리에서 빌드합니다. macOS의 `/var` 심볼릭 링크 경로 차이를 피하도록 실제 경로를 사용하고, 기본 설정 파일 탐색을 끈 뒤 자체 소스 디렉터리로 이동해 렌더링합니다. 제목·링크·대상 페이지를 확인하고 임시 파일을 삭제합니다. 전체 아카이브·테마·플러그인·CSS·배포는 이 검사의 범위가 아닙니다.
 
-못난 사이트 하나 올라옵니다.  
-<img src="/assets/img/jekyll/jekyll-browser.png" alt="jekyll-browser">
+## 설치 여부와 번들 포함 여부 구분하기
 
-완료!!
+이번 재현에서는 Jekyll을 불러올 수 있어도 번들이 `kramdown-parser-gfm`을 선언하지 않으면 Markdown 변환이 실패했습니다. 시스템 어딘가에 설치된 gem과 `bundle exec` 안에서 사용할 수 있는 gem은 다릅니다. 이 예제의 Gemfile에 파서를 추가한 뒤 변환을 확인했습니다.
 
-## 검증 및 보강 — 2026-10-24
-
-현재 이 저장소는 Astro로 전환되어 Node 24와 Python을 사용합니다. 이 글은 이전 Jekyll 환경 재현용입니다. 다른 Jekyll 저장소를 실행한다면 먼저 `Gemfile`과 프로젝트 Ruby 버전을 확인하고, `bundle install` 후 `bundle exec jekyll serve`를 사용하세요. 전역 `gem install jekyll`만으로 저장소 의존성이 재현되지는 않습니다. 이 글의 설치 로그와 버전은 과거 환경의 예시입니다.
-
-### 확인한 자료
-
-- [공식 자료 1](https://jekyllrb.com/docs/installation/macos/)
-- [공식 자료 2](https://bundler.io/guides/using_bundler_in_applications.html)
+두 페이지 예제가 성공하면 실제 사이트의 설정·테마·플러그인·입력으로 조사 범위를 좁힐 수 있습니다. 네이티브 확장을 불러오거나 컴파일하는 단계에서 실패하면 [Ruby·C++ 진단 예제](/ko/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/)로 계층을 나눠 확인합니다. 현재 사이트의 게시는 [Astro 후보 검토 워크플로](/ko/posts/2026-04-07-jekyll-github-actions-content-pipeline/)를 따릅니다.

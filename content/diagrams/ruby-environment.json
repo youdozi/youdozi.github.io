@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2023-09-04-jekyll-install",
+      "title": {
+        "en": "Isolate the Jekyll build layer",
+        "ko": "Jekyll 빌드 계층 분리"
+      },
+      "description": {
+        "en": "The code renders two temporary pages inside a declared legacy bundle. It does not build the full archive or select a supported Ruby version.",
+        "ko": "코드는 선언한 과거 번들에서 임시 페이지 두 개를 렌더링합니다. 전체 아카이브 빌드나 지원 Ruby 버전 선택은 별도로 확인합니다."
+      },
+      "codeContract": [
+        {
+          "language": "ruby",
+          "contains": "Jekyll::Site.new(config).process"
+        },
+        {
+          "language": "ruby",
+          "contains": "File.realpath(root)"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Inspect selected Ruby and Bundler"
+          ],
+          "ko": [
+            "선택된 Ruby·Bundler 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Use a separate fixture Gemfile",
+            "Declare Jekyll and GFM parser"
+          ],
+          "ko": [
+            "별도 예제 Gemfile 사용",
+            "Jekyll·GFM 파서 선언"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Resolve bundle dependencies",
+            "Keep the generated lockfile"
+          ],
+          "ko": [
+            "번들 의존성 결정",
+            "생성된 lockfile 보존"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Build two temporary pages",
+            "Use real paths and own config"
+          ],
+          "ko": [
+            "임시 페이지 두 개 빌드",
+            "실제 경로·자체 설정 사용"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Assert heading, link and target",
+            "Then inspect the real site"
+          ],
+          "ko": [
+            "제목·링크·대상 페이지 확인",
+            "이후 실제 사이트 조사"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "title": {
+        "en": "Separate runtime and compiler probes",
+        "ko": "실행기와 컴파일러 진단 분리"
+      },
+      "description": {
+        "en": "The Ruby script compares compiler configuration and builds one temporary C++ program. A passing probe does not establish native gem compilation.",
+        "ko": "Ruby 스크립트가 컴파일러 설정을 비교하고 임시 C++ 프로그램 하나를 빌드합니다. 통과해도 네이티브 gem 빌드를 입증하지 않습니다."
+      },
+      "codeContract": [
+        {
+          "language": "ruby",
+          "contains": "Open3.capture3(*compiler"
+        },
+        {
+          "language": "ruby",
+          "contains": "PROBE_CXXFLAGS"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Check Ruby startup and RbConfig"
+          ],
+          "ko": [
+            "Ruby 실행·RbConfig 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Choose the probe compiler",
+            "Parse command-scoped flags"
+          ],
+          "ko": [
+            "진단 컴파일러 선택",
+            "명령 단위 플래그 해석"
+          ],
+          "kind": "process"
+        },
+        {
+          "kind": "condition",
+          "en": [
+            "Temporary C++17 compile succeeded?"
+          ],
+          "ko": [
+            "임시 C++17 컴파일이 성공했는가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "No: stop",
+              "ko": "실패: 중단"
+            },
+            "continue": {
+              "en": "Yes",
+              "ko": "성공"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "en": [
+            "Execution succeeded with output 42?"
+          ],
+          "ko": [
+            "실행 성공·출력 42인가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "No: stop",
+              "ko": "실패: 중단"
+            },
+            "continue": {
+              "en": "Yes",
+              "ko": "성공"
+            }
+          }
+        },
+        {
+          "en": [
+            "Report the probe result",
+            "Return to the gem build log"
+          ],
+          "ko": [
+            "진단 결과 출력",
+            "gem 빌드 로그로 조사 복귀"
+          ],
+          "kind": "result"
+        }
+      ]
+    }
+  ]
+}

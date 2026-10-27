@@ -33,6 +33,15 @@ jobs:
         run: npm run test:python
       - name: Execute paired local HTTP, drawio XML and Git search examples
         run: python3 -B scripts/check_developer_tool_examples.py
+      - name: Select the archived Ruby example runtime
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2.2'
+          bundler: '2.4.19'
+      - name: Render the isolated legacy Jekyll bundle and run native compiler probes
+        run: python3 -B scripts/check_ruby_environment_examples.py --install
+      - name: Start, recreate and restore disposable Jenkins Docker controllers
+        run: python3 -B scripts/check_jenkins_examples.py
       - uses: actions/setup-java@v4
         with:
           distribution: temurin

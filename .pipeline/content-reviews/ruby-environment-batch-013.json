@@ -1,0 +1,546 @@
+{
+  "createdAt": "2026-10-27T07:31:00.628Z",
+  "purpose": "Rebuild legacy Ruby setup and native-gem troubleshooting articles around separate executable probes rather than global reinstall/flag changes.",
+  "baseCommit": "8503456e0db5536f52bf9df0995b52137a355e40",
+  "branch": "content/ruby-environment-batch-013",
+  "scope": {
+    "topics": 2,
+    "manuscripts": 4,
+    "firstEnglishEditions": 2,
+    "newDiagrams": 4,
+    "allTopics": 34,
+    "allDiagramAssets": 68
+  },
+  "publicationApprovalAtPreparation": null,
+  "publication": "Draft only. Approval and publication of PR63/64/65 does not approve this new batch.",
+  "previousPublication": {
+    "PRs": [
+      63,
+      64,
+      65
+    ],
+    "mainCommit": "8503456e0db5536f52bf9df0995b52137a355e40",
+    "productionRun": 40466883651,
+    "liveArticlesVerified": 14,
+    "liveGuidesVerified": 2,
+    "indexNow": {
+      "changedUrls": 48,
+      "httpStatus": 200
+    }
+  },
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "provenance": [
+    {
+      "file": "src/content/posts/ko/2023-09-04-jekyll-install.md",
+      "publishedAt": "2023-09-03T15:00:00.000Z",
+      "routePreserved": true,
+      "legacyIdentityPreserved": true
+    },
+    {
+      "file": "src/content/posts/ko/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "publishedAt": "2026-04-07T13:10:00.000Z",
+      "routePreserved": true,
+      "legacyIdentityPreserved": true
+    }
+  ],
+  "newEditionDatePolicy": "Refresh first English publication/update dates on explicit publication approval; retain original Korean dates.",
+  "review": {
+    "type": "Two-pass self AI review of documented contracts and paired prose/code/diagrams, followed by browser rendering.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "issue": "The legacy installation commands could be read as a current supported-version recommendation.",
+        "resolution": "Record Ruby3.2.2 as an EOL compatibility reproduction; link maintenance status and require selecting supported versions separately."
+      },
+      {
+        "issue": "Installed gems and bundle-visible gems were conflated.",
+        "resolution": "Use a separate two-gem Gemfile; an observed missing-GFM failure is distinguished from the successful declared bundle."
+      },
+      {
+        "issue": "Jekyll3 layout lookup and macOS /var symlinks leaked host paths into the temporary fixture.",
+        "resolution": "Use File.realpath, disable default config discovery and render from the fixture source directory."
+      },
+      {
+        "issue": "A successful standalone compiler probe could be mistaken for a native gem rebuild.",
+        "resolution": "Report its exact output and selected compiler separately from RbConfig and limit the claim to that temporary C++ program."
+      },
+      {
+        "issue": "A linear compiler flow could imply continuation after failure.",
+        "resolution": "Show explicit stopped branches for compilation or execution/output failure."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "sha256": {
+      ".github/workflows/site-checks.yml": "3a71d5fd77b25806303efb0849dce7864fdc1f963397d07df8b544b27ddda150",
+      "README.md": "4031d3ac10bd658c824bc632b57608dd8e00670a40382652ebf2953a6e621c9b",
+      "docs/technical-writing.md": "6b8352a0e6cd2f6c3ca7b72c6d34fed7410c56c4c3b63ac90da16e0a9ee3b695",
+      "scripts/build_algorithm_diagrams.py": "b50d4dc1dd9f8e36ba30748834774889c9bee062c24b55a1c08f485a58174799",
+      "scripts/test_algorithm_diagrams.py": "5a0eaeb5e4bc210b191ced10a85f49c9beae4749fb0088cfd7afd7c5c1000389",
+      "src/content/posts/ko/2023-09-04-jekyll-install.md": "b2cd3021ffed2b288b280d4ebc62741444cbbdf12cfe8d4f81a91f8f774f0800",
+      "src/content/posts/ko/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md": "f811a7c9d464915326862a95d6fce87ab2b1dc0836c4367b3c4e16cfbc160283",
+      "content/diagrams/ruby-environment.json": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b",
+      "scripts/check_ruby_environment_examples.py": "c60f55da5a5868b2e1fcb80e5c9244993ff675bd9ce92712ea85602ebed17b8f",
+      "src/content/posts/en/2023-09-04-jekyll-install.md": "9b279ad74b5dd6bbc502f3f7ab30767975e5519899e01ae7b1892e435c41a5ae",
+      "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md": "2f8e50da0d7175cbd2080194409a590778b1e800a5d55594a05df59db73d917b"
+    }
+  },
+  "validation": {
+    "localRuntime": "Ruby3.2.2 / Bundler2.4.19 / Jekyll3.9.3 / GFM1.1.0 on macOS",
+    "pairedProjectFiles": 3,
+    "renderedFixturePages": 2,
+    "compilerSuccessOutput": "42",
+    "invalidCompilerCases": 2,
+    "defaultMacCompilerFailure": "iostream not found; command-scoped selected SDK header flags passed",
+    "globalRubySDKConfigurationChanged": false,
+    "executionLogSha256": "14fd177371e795f51f7866ab1fd01016d141ca6bd56b2bc24ea2d1b7f77770af",
+    "pythonTests": 159,
+    "nodeTests": 32,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 920,
+    "sitemapUrls": 452,
+    "seo": {
+      "articleResults": [
+        {
+          "url": "https://youdozi.github.io/en/posts/2023-09-04-jekyll-install/",
+          "language": "en",
+          "title": "Jekyll on macOS: Verify Ruby, Bundler and a Two-Page Build",
+          "htmlSha256": "11ffa2de7115642ac57bc432bab21dbe78dfd5abf8a3c5cd246832a4322596f5",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2023-09-04-jekyll-install/",
+          "language": "ko",
+          "title": "macOS Jekyll 환경: Ruby·Bundler와 두 페이지 빌드 확인하기",
+          "htmlSha256": "1894d8930fdce4f8e6e38aa751e5352a672efbcf23a3b9b86ead1da0166f56dd",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/",
+          "language": "en",
+          "title": "Ruby Native Gem Failures: Separate Runtime and C++ Header Checks",
+          "htmlSha256": "3b36b3c0951301265709c3356b51aba8639fcc20290de9bee198ed11e02a6d97",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/",
+          "language": "ko",
+          "title": "Ruby 네이티브 gem 실패: 실행기와 C++ 헤더 검사 나누기",
+          "htmlSha256": "cb144aa141c6ee6e1b9c405ceee2e575dad080f5eb27bccf39d87475b64426e7",
+          "result": "passed"
+        }
+      ],
+      "sitemapUrls": 452,
+      "result": "passed"
+    },
+    "browser": [
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-en.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-ko.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-en.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-ko.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-en.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-ko.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-http-status-test-en.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-http-status-test-ko.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-app-diagrams.net-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-app-diagrams.net-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-06-search-github-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-06-search-github-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-05-querydsl-no-release-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-05-querydsl-no-release-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-github-actions-content-pipeline-en.svg",
+        "labels": 15,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-github-actions-content-pipeline-ko.svg",
+        "labels": 15,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit-en.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit-ko.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-04-jekyll-install-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-04-jekyll-install-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting-en.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting-ko.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "lang": "en",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 420
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "ko",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 354
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "en",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 354
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "ko",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 354
+          }
+        ],
+        "result": "passed"
+      }
+    ],
+    "screenshotsReviewed": [
+      "KO installation390px",
+      "EN native probe390px"
+    ],
+    "CI": "The workflow installs the legacy bundle in temporary storage on Linux and repeats both extracted probes. Exact-head CI result recorded separately."
+  },
+  "limits": [
+    "Ruby3.2 is unsupported; this is not a maintained runtime/dependency recommendation.",
+    "Direct gems are pinned; resolved platform-specific transitive versions are logged rather than asserting a shared full lockfile.",
+    "No full legacy archive/theme/plugin/CSS build or native gem rebuild is claimed.",
+    "Mac SDK flags are host-specific; Linux CI uses its own default C++ toolchain.",
+    "New draft pages are not published."
+  ]
+}

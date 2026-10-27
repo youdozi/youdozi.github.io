@@ -12,23 +12,31 @@ test('each original post retains its provenance and a unique language route afte
     const source = await readFile(`src/content/posts/ko/${file}`, 'utf8');
     const [, front, body] = source.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
     const data = YAML.parse(front);
-    const original = await readFile(data.legacySource,'utf8');
-    const expected = convertPost(original, data.legacySource);
-    if (data.reviewedAt) {
-      assert.equal(data.archiveBodySha256, createHash('sha256').update(expected.body).digest('hex'), data.legacySource);
-      assert.ok(data.reviewScope && data.reviewSources.length > 0, data.legacySource);
-      assert.ok(body.trim().length > 0);
-    } else assert.equal(body, expected.body, data.legacySource);
-    assert.equal(data.routeSlug, expected.metadata.routeSlug);
+    if (data.legacySource) {
+      const original = await readFile(data.legacySource,'utf8');
+      const expected = convertPost(original, data.legacySource);
+      if (data.reviewedAt) {
+        assert.equal(data.archiveBodySha256, createHash('sha256').update(expected.body).digest('hex'), data.legacySource);
+        assert.ok(data.reviewScope && data.reviewSources.length > 0, data.legacySource);
+        assert.ok(body.trim().length > 0);
+      } else assert.equal(body, expected.body, data.legacySource);
+      assert.equal(data.routeSlug, expected.metadata.routeSlug);
+      assert.ok(!sources.has(data.legacySource)); sources.add(data.legacySource);
+    } else {
+      assert.equal(data.legacyUrl, undefined, 'New posts do not invent legacy routes');
+      assert.equal(data.archiveBodySha256, undefined, 'New posts do not invent archive hashes');
+      assert.ok(body.trim().length > 0 && data.description && data.reviewScope && data.reviewSources.length > 0);
+    }
     assert.equal(data.language, 'ko');
     assert.equal(typeof data.routeSlug, 'string');
     const route = `/ko/${data.kind === 'digest' ? 'digest' : 'posts'}/${data.routeSlug}/`;
     assert.ok(!routes.has(route), `duplicate ${route}`); routes.add(route);
-    assert.ok(!sources.has(data.legacySource)); sources.add(data.legacySource);
     assert.ok(!translations.has(data.translationKey)); translations.add(data.translationKey);
   }
-  async function originals(dir) { return (await Promise.all((await readdir(dir,{withFileTypes:true})).map(e => e.isDirectory() ? originals(`${dir}/${e.name}`) : Promise.resolve(e.name.endsWith('.markdown') ? 1 : 0)))).reduce((a,b)=>a+b,0); }
-  assert.equal(files.length, await originals('_posts'));
+  async function originals(dir) {
+    return (await Promise.all((await readdir(dir,{withFileTypes:true})).map(e => e.isDirectory() ? originals(`${dir}/${e.name}`) : Promise.resolve(e.name.endsWith('.markdown') ? [`${dir}/${e.name}`] : [])))).flat();
+  }
+  assert.deepEqual([...sources].sort(), (await originals('_posts')).sort(), 'Every original source retains exactly one reviewed Korean edition');
 });
 
 test('migration converts prose attributes and image spaces while preserving code', () => {
@@ -171,6 +179,40 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.equal(posting.inLanguage,'en');assert.equal(posting.author.name,'youdozi');
     assert.ok(posting.datePublished && posting.dateModified);
     assert.ok(graph.some(item=>item['@type']==='BreadcrumbList'));
+
+
+    // Check emitted paths rather than assuming the registry is rendered correctly.
+    const guideCounts=[['coding-test',10],['springboot',9],['linux',4],['jdk',3],['util',3]];
+    for(const lang of ['en','ko']){
+      const hubPath=`/${lang}/guides/`;
+      const hub=await readFile(`dist${hubPath}index.html`,'utf8');
+      const hubData=JSON.parse(hub.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      const hubList=hubData.find(x=>x['@type']==='ItemList');
+      assert.deepEqual(hubList.itemListElement.map(x=>x.url),guideCounts.map(([term])=>`https://youdozi.github.io/${lang}/categories/${term}/`));
+      assert.equal(hubList.numberOfItems,5);
+      assert.ok(!hubData.some(x=>x['@type']==='BlogPosting'));
+      for(const [term,count] of guideCounts){
+        const path=`/${lang}/categories/${term}/`;
+        const html=await readFile(`dist${path}index.html`,'utf8');
+        const data=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+        const collection=data.find(x=>x['@type']==='CollectionPage');
+        const list=data.find(x=>x['@type']==='ItemList');
+        assert.equal(list.numberOfItems,count);assert.equal(collection.inLanguage,lang);
+        const groups=html.match(/<div class="algorithm-groups"[^>]*>([\s\S]*?)<\/div>/)[1];
+        const visible=[...groups.matchAll(/href="([^"]+)"/g)].map(m=>'https://youdozi.github.io'+m[1]);
+        assert.deepEqual(visible,list.itemListElement.map(x=>x.url),'Visible order must match schema');
+        assert.ok(html.includes(`href="${hubPath}"`));
+        assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${path}</loc><lastmod>${collection.dateModified}</lastmod>`));
+        for(const item of list.itemListElement){
+          const article=await readFile(`dist${item.url.replace('https://youdozi.github.io','')}index.html`,'utf8');
+          assert.ok(article.includes(`href="${path}"`),'Each linked article returns to its category guide');
+        }
+      }
+      assert.ok(hub.includes(`hreflang="x-default" href="https://youdozi.github.io/en/guides/"`));
+      assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${hubPath}</loc>`));
+    }
+    const japaneseHome=await readFile('dist/ja/index.html','utf8');
+    assert.ok(!japaneseHome.includes('href="/ja/guides/"'),'Do not link to an unavailable guide index');
 
 
     const renewals=await readdir('src/content/renewals');
