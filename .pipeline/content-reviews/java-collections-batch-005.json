@@ -1,0 +1,190 @@
+{
+  "createdAt": "2026-10-27T04:14:15.084023+00:00",
+  "purpose": "Four collection/counting/ranking problems as eight Korean/English manuscripts with complete runnable solutions and bounded exhaustive checks.",
+  "publicationApprovalAtPreparation": null,
+  "topics": [
+    "2021-07-20-pair-delete",
+    "2021-07-23-unsuccessful-runner",
+    "2021-07-24-fail-percentage",
+    "2021-07-29-ponkemon"
+  ],
+  "previousPR": {
+    "number": 59,
+    "mergeCommit": "fa19e61bebd85b1c61ed086aae07dcefd5bf672c",
+    "deploymentRun": 40448330258,
+    "deploymentVerification": "Recorded outside repository after production deployment."
+  },
+  "newEnglishEditions": {
+    "preparedPublishedAt": {
+      "2021-07-20-pair-delete": "2026-10-27T04:11:15.275Z",
+      "2021-07-23-unsuccessful-runner": "2026-10-27T04:11:15.275Z",
+      "2021-07-24-fail-percentage": "2026-10-27T04:11:15.275Z",
+      "2021-07-29-ponkemon": "2026-10-27T04:11:15.275Z"
+    },
+    "refreshAllPublicationTimesAfterApproval": true,
+    "policy": "After explicit approval refresh the four first-English publishedAt/updatedAt timestamps before final CI; preserve Korean original publication dates and reviewed bodies."
+  },
+  "selectionEvidence": {
+    "purpose": "Complete a coherent stack/frequency/ranking/distinct-count group after the prior Java batch.",
+    "limits": "No claim of measured English search demand for these four topics."
+  },
+  "preserved": [
+    "Korean publishedAt",
+    "translationKey and routeSlug",
+    "legacyUrl and legacySource",
+    "archiveBodySha256"
+  ],
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "sourceVerification": {
+    "problems": [
+      "https://school.programmers.co.kr/learn/courses/30/lessons/12973",
+      "https://school.programmers.co.kr/learn/courses/30/lessons/42576",
+      "https://school.programmers.co.kr/learn/courses/30/lessons/42889",
+      "https://school.programmers.co.kr/learn/courses/30/lessons/1845"
+    ],
+    "javaApi": [
+      "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayDeque.html",
+      "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html",
+      "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashSet.html",
+      "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Comparator.html"
+    ],
+    "checked": "Primary problem conditions and Java contracts checked; long copied stories replaced with concise paraphrases."
+  },
+  "review": {
+    "type": "Two-pass self AI review: source/code/English-Korean meaning, then each edition as a standalone article.",
+    "independentSession": false,
+    "humanReview": false,
+    "scope": "Eight manuscripts, complete paired source classes, regression fixture scope, original identities and generated HTML.",
+    "findings": [
+      {
+        "severity": "minor",
+        "issue": "Original pair deletion compared boxed Character references. Java Character caching makes this valid for the problem's ASCII lowercase inputs, but obscures the intended value comparison.",
+        "resolution": "Use ArrayDeque and primitive char comparison; explain the prefix invariant and unboxing, test repeated and alternating million-character inputs."
+      },
+      {
+        "severity": "major",
+        "issue": "Old copied descriptions and partial methods obscured the reasoning and runnable context.",
+        "resolution": "Provide concise constraints, full Solution classes/imports, stack/count/selection proofs and ratio example."
+      },
+      {
+        "severity": "minor",
+        "issue": "Runner joined all positive map keys instead of making the one-missing-person contract explicit.",
+        "resolution": "Count duplicates and return the single count1 entry; explain order independence and that fallback exception is not complete validation."
+      },
+      {
+        "severity": "minor",
+        "issue": "Exact ratio comparison introduces products beyond int bounds.",
+        "resolution": "Use long count arrays and products, zero-rate denominator1, and stage-number tie break; test200000players/500stages."
+      },
+      {
+        "severity": "minor",
+        "issue": "Initial stack prose said every character was pushed once.",
+        "resolution": "State at most once for push and pop."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "reviewedSha256": {
+      "src/content/posts/en/2021-07-20-pair-delete.md": "1c072e9e9c05243bfb56db9c0166cdc5903ecea5b327daf805b1a639450ab6a0",
+      "src/content/posts/ko/2021-07-20-pair-delete.md": "5aee7fa0bffb10474b6addc5cfe71eb367287d74986fae841799d2d7b33c7350",
+      "src/content/posts/en/2021-07-23-unsuccessful-runner.md": "56412372a0ad1a69d62a34cc9b27d77b0bf5fc9d98c454a20b35ec396eebd9e6",
+      "src/content/posts/ko/2021-07-23-unsuccessful-runner.md": "f1b6621ebd9ca8792d9eea036fa961d546b6ac5f9c0d7109ca522332e647dc2f",
+      "src/content/posts/en/2021-07-24-fail-percentage.md": "cfac0ad8ee2dff02d824d4f192d99ebc6eec53fe2ad0f75997912e165bb3b7a7",
+      "src/content/posts/ko/2021-07-24-fail-percentage.md": "baae9eac3e552758cafdfb88504a0165c10c869b72b65e037012eee1aa3ba9dd",
+      "src/content/posts/en/2021-07-29-ponkemon.md": "74fdbe2e241e52fdfd03983610f7c0323a9383ebbf39d884530d550db12849fa",
+      "src/content/posts/ko/2021-07-29-ponkemon.md": "a7d0e85251be96b3bd41363d79307136eb94c96bf5f03f162033e6f8ca72b4f9",
+      "scripts/check_article_examples.py": "103d5f519088519d7d502f313cdcb2aab6a2857df4f2b2878298846215caac93"
+    }
+  },
+  "execution": {
+    "compilerAndRuntime": "JDK17.0.8.1 with javac --release11; no separate JDK11 runtime tested.",
+    "compiledSolutions": 11,
+    "bilingualPairsTotal": 8,
+    "newCompleteSolutionClasses": 4,
+    "priorAssertionsPreserved": 44169,
+    "pairStrings": {
+      "alphabet": "abc",
+      "lengths": [
+        1,
+        8
+      ],
+      "assertions": 9840,
+      "reference": "Repeated literal aa/bb/cc removal"
+    },
+    "runnerScenarios": {
+      "names": [
+        "ana",
+        "bob",
+        "cam"
+      ],
+      "participantLengths": [
+        1,
+        5
+      ],
+      "scenarios": 1641,
+      "reference": "Known omitted position; completion order reversed. Scenarios are not deduplicated by resulting arrays."
+    },
+    "failureScenarios": {
+      "levels": [
+        1,
+        4
+      ],
+      "players": [
+        1,
+        5
+      ],
+      "assertions": 5694,
+      "reference": "Independent full population scans for reached counts, sharing exact ratio mathematics with the solution."
+    },
+    "pokemonArrays": {
+      "typeIds": [
+        1,
+        2,
+        3
+      ],
+      "evenLengths": [
+        2,
+        8
+      ],
+      "assertions": 7380,
+      "reference": "Enumerate all selections of N/2 positions rather than reuse min(distinct,slots)."
+    },
+    "additionalBoundaryAssertions": 9,
+    "totalAssertions": 68733,
+    "otherChecks": [
+      "One million alternating letters plus retained one million repeated letters",
+      "100000 duplicate-name participants",
+      "500stages and200000players with cross-products above int",
+      "All users completed or later stages unreachable",
+      "10000unique types and10000copies of one type",
+      "Retained version-comparison shell8cases"
+    ],
+    "limits": [
+      "Not performance or memory benchmarks",
+      "Problem contracts, not general invalid-input validators",
+      "Eight identical bilingual code pairs checked once at runtime; not independent implementation or human review"
+    ]
+  },
+  "siteValidation": {
+    "nodeTestsPassed": 24,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "astroHints": 0,
+    "htmlPages": 881,
+    "sitemapUrls": 438,
+    "englishListedEntries": 85,
+    "koreanListedEntries": 289,
+    "eightPageAudit": "Passed H1/descriptions/OG/BlogPosting dates, canonical/self and reciprocal en/ko/x-default, RSS/search/sitemap lastmod, full code and no editorial banners."
+  },
+  "ci": "Existing mandatory test:articles step now checks eight paired articles and expanded boundaries; exact PR result tracked separately.",
+  "publication": "Draft review only; no new batch content deployed before explicit approval.",
+  "publicationApproval": {
+    "approvedAt": "2026-10-27T04:21:24+00:00",
+    "approvedBy": "youdozi",
+    "pullRequest": 60,
+    "basis": "User requested completing PR60 and continuing the next work.",
+    "englishPublicationPreparedAt": "2026-10-27T04:21:24+00:00",
+    "scope": "Publish four reviewed Korean/English pairs; only first-English publication/modified timestamps changed. Korean original dates and all bodies preserved."
+  }
+}
