@@ -47,6 +47,13 @@ def targets(base=ROOT):
         url = SITE + language + '/'
         result.append({'language': language, 'key': language, 'url': url,
                        'expectedCanonical': url, 'kind': 'home', 'group': 'home'})
+    # Archive routes exist only for languages with public articles, unlike homes.
+    public_languages = {r['language'] for r in result if r['kind'] == 'article'}
+    for language in languages:
+        if language in public_languages:
+            url = SITE + language + '/archive/'
+            result.append({'language': language, 'key': language, 'url': url,
+                           'expectedCanonical': url, 'kind': 'archive', 'group': 'archive'})
     if len({r['url'] for r in result}) != len(result):
         raise ValueError('Duplicate observation URL')
     return result
@@ -122,7 +129,7 @@ def collect(token, key, selected, now, post=growth.google_post, get=None, bing=b
         import requests
         get = requests.get
     report = growth.collect(token, selected, now, post, get)
-    report.update({'schemaVersion': 1, 'selection': 'Public translation files, their en/ko counterparts, core guides/legacy URLs, locale homes; no private drafts',
+    report.update({'schemaVersion': 1, 'selection': 'Public translation files, their en/ko counterparts, core guides/legacy URLs, locale homes and public article archives; no private drafts',
                    'bingBasis': 'GetUrlInfo is a crawl observation, not proof of index membership; empty performance rows are not zero exposure',
                    'publicSitemap': sitemap(get), 'bingSite': {}})
     for method in ('GetUserSites', 'GetFeeds', 'GetRankAndTrafficStats'):
@@ -205,14 +212,29 @@ def summarize(report):
     return result
 
 
-def compare(previous, current):
+def comparison_selection(previous, current, allow_selection_change=False):
     before = {r['url']: r for r in previous['urls']}
     after = {r['url']: r for r in current['urls']}
-    if previous.get('site') != SITE or current.get('site') != SITE or before.keys() != after.keys():
+    if (previous.get('site') != SITE or current.get('site') != SITE
+            or previous.get('schemaVersion') != 1 or current.get('schemaVersion') != 1
+            or len(before) != len(previous['urls']) or len(after) != len(current['urls'])
+            or not before.keys() & after.keys()
+            or any(not url.startswith(SITE) for url in before.keys() | after.keys())):
+        raise ValueError('Expected unique overlapping URL selections for this property')
+    if not allow_selection_change and before.keys() != after.keys():
         raise ValueError('Compare the same property and URL selection')
+    return before, after
+
+
+def compare(previous, current, allow_selection_change=False):
+    before, after = comparison_selection(previous, current, allow_selection_change)
     result = {'previousCheckedAt': previous['checkedAt'], 'newGooglePass': [], 'noLongerGooglePass': [], 'googleUncomparable': [], 'newBingCrawlRecords': [],
+              'comparedURLCount': len(before.keys() & after.keys()),
+              'addedURLs': sorted(after.keys() - before.keys()), 'removedURLs': sorted(before.keys() - after.keys()),
               'note': 'Stored observations can lag; rolling performance windows overlap and do not prove causal effects.'}
     for url, row in after.items():
+        if url not in before:
+            continue  # First observations are baselines, not indexing gains.
         old, new = google_state(before[url]), google_state(row)
         if old is None or new is None:
             result['googleUncomparable'].append(url)
@@ -252,6 +274,8 @@ def format_report(report):
     lines.append('Bing 빈 실적은 노출 0의 증거가 아닙니다. Google PASS도 개별 검색어 순위나 현재 검색 결과 노출을 보장하지 않습니다.')
     if 'comparison' in report:
         c = report['comparison']
+        if 'comparedURLCount' in c:
+            lines.append(f"공통 URL 비교 {c['comparedURLCount']} · 신규 기준선 {len(c['addedURLs'])} · 대상 제외 {len(c['removedURLs'])} (신규·제외 URL은 색인 증감에 포함하지 않음)")
         lines.append(f"이전 대비 Google PASS 전환 {len(c['newGooglePass'])} · PASS 해제 {len(c['noLongerGooglePass'])} · 비교 불가 {len(c['googleUncomparable'])} · Bing 새 크롤링 기록 {len(c['newBingCrawlRecords'])}")
     return '\n'.join(lines)
 
@@ -285,9 +309,12 @@ def main():
     parser.add_argument('--retry-bing', type=Path, help='Retry only failed Bing URL reads from an existing snapshot')
     parser.add_argument('--report', type=Path)
     parser.add_argument('--previous', type=Path)
+    parser.add_argument('--allow-selection-change', action='store_true', help='With --live --previous, compare common URLs and report additions/removals separately')
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     try:
+        if args.allow_selection_change and (not args.live or not args.previous or args.report or args.retry_bing):
+            raise ValueError('Selection changes require --live --previous')
         if args.report:
             if args.live or args.previous or args.output or args.retry_bing: raise ValueError('Report is offline only')
             print(format_report(json.loads(args.report.expanduser().read_text())))
@@ -314,13 +341,12 @@ def main():
         output = destination(output)
         previous = json.loads(args.previous.expanduser().read_text()) if args.previous else None
         if previous is not None:
-            if {r['url'] for r in previous['urls']} != {r['url'] for r in selected} or previous.get('site') != SITE:
-                raise ValueError('Previous selection differs')
+            comparison_selection(previous, {'site': SITE, 'schemaVersion': 1, 'urls': selected}, args.allow_selection_change)
         key = (CONFIG / 'bing-api-key.txt').read_text().strip()
         if not key: raise ValueError('Bing key is empty')
         token = access_token(SimpleNamespace(client=None, token_file=CONFIG / 'token.json'))
         report = collect(token, key, selected, now)
-        if previous is not None: report['comparison'] = compare(previous, report)
+        if previous is not None: report['comparison'] = compare(previous, report, args.allow_selection_change)
         path = save_new(output, report)
         print(json.dumps({'snapshot': str(path), 'summary': report['summary']}, ensure_ascii=False, indent=2))
         failed = any(google_state(r) is None or r['bing'].get('error') or not r['live'].get('matchesExpectedStaticRoute') for r in report['urls'])

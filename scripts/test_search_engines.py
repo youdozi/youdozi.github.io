@@ -14,8 +14,8 @@ import search_engines as audit
 
 
 class SearchEngineTests(unittest.TestCase):
-    def report(self, url_bing=None):
-        selected = audit.targets()[:3]
+    def report(self, url_bing=None, selected=None):
+        selected = audit.targets()[:3] if selected is None else selected
         def post(token, url, payload):
             if url.endswith('index:inspect'):
                 return {'httpStatus': 200, 'data': {'inspectionResult': {'indexStatusResult': {'verdict': 'PASS', 'googleCanonical': payload['inspectionUrl']}}}}
@@ -44,6 +44,12 @@ class SearchEngineTests(unittest.TestCase):
         self.assertEqual({(t['language'], t['key']) for t in targets if t['group'] == 'published-digest'}, editions)
         self.assertEqual(sum(t['kind'] == 'home' for t in targets), len(json.loads((audit.ROOT/'src/lib/locales.json').read_text())['locales']))
         self.assertEqual(sum(t['kind'] == 'legacy' for t in targets), 10)
+        article_languages = {t['language'] for t in targets if t['kind'] == 'article'}
+        self.assertEqual({t['language'] for t in targets if t['kind'] == 'archive'}, article_languages)
+        for target in targets:
+            if target['kind'] == 'archive':
+                self.assertEqual(target['url'], audit.SITE + target['language'] + '/archive/')
+                self.assertEqual(target['expectedCanonical'], target['url'])
         self.assertEqual(len({t['url'] for t in targets}), len(targets))
 
     def test_private_manuscripts_are_ignored_and_shared_public_counterparts_are_deduplicated(self):
@@ -60,9 +66,11 @@ class SearchEngineTests(unittest.TestCase):
                 (base/f'src/content/translations/{lang}-{source_id}.json').write_text(json.dumps({'language': lang, 'renewalId': source_id}))
             private = base/'.pipeline/translations/batches'; private.mkdir(parents=True)
             (private/'not-public.json').write_text(json.dumps({'translations': [{'language': 'de', 'renewalId': source_id}]}))
-            rows = [t for t in audit.targets(base) if t['group'] == 'published-digest']
+            targets = audit.targets(base)
+            rows = [t for t in targets if t['group'] == 'published-digest']
             self.assertEqual({t['language'] for t in rows}, {'en', 'ko', 'zh-CN', 'ja'})
             self.assertEqual(len(rows), 4)
+            self.assertEqual({t['language'] for t in targets if t['kind'] == 'archive'}, {'en', 'ko', 'zh-CN', 'ja'})
 
     def test_bing_transport_never_follows_redirects_or_discloses_request_errors(self):
         def get(url, **kwargs):
@@ -104,6 +112,18 @@ class SearchEngineTests(unittest.TestCase):
         for secret in ['private-google-token', 'private-bing-key', 'private-verification-code', 'AuthenticationCode']:
             self.assertNotIn(secret, value)
 
+    def test_archive_routes_flow_through_google_bing_and_static_checks(self):
+        selected = [r for r in audit.targets() if r['kind'] == 'archive']
+        report = self.report(selected=selected)
+        self.assertEqual(len(report['urls']), len(selected))
+        for item in report['summary'].values():
+            self.assertEqual(item['byGroup'], {'archive': 1})
+            self.assertEqual(item['liveMatches'], 1)
+            self.assertEqual(item['googlePass'], 1)
+            self.assertEqual(item['bingResponses'], 1)
+            self.assertEqual(item['bingCrawlRecords'], 0)
+        self.assertIn('색인 확정: 불가', audit.format_report(report))
+
     def test_google_empty_success_and_errors_are_not_a_loss_of_indexing(self):
         before = self.report(); after = deepcopy(before)
         after['urls'][0]['inspection'] = {'httpStatus': 200, 'indexStatus': {}}
@@ -122,6 +142,89 @@ class SearchEngineTests(unittest.TestCase):
         self.assertEqual(audit.compare(before, after)['newBingCrawlRecords'], [after['urls'][0]['url']])
         before['urls'][0]['bing']['error'] = 'Timeout'
         self.assertEqual(audit.compare(before, after)['newBingCrawlRecords'], [])
+
+    def test_selection_migration_only_compares_common_urls(self):
+        before = self.report(); after = deepcopy(before)
+        removed = after['urls'].pop()
+        added = deepcopy(after['urls'][0])
+        added.update({'url': audit.SITE + 'en/archive/', 'kind': 'archive', 'group': 'archive'})
+        added['bing'].update({'observation': 'crawl-record-present', 'lastCrawledAt': '2026-10-28'})
+        after['urls'].append(added)
+        after['urls'][0]['inspection']['indexStatus']['verdict'] = 'NEUTRAL'
+        frozen = deepcopy((before, after))
+        with self.assertRaises(ValueError): audit.compare(before, after)
+        result = audit.compare(before, after, allow_selection_change=True)
+        self.assertEqual(result['comparedURLCount'], 2)
+        self.assertEqual(result['addedURLs'], [added['url']])
+        self.assertEqual(result['removedURLs'], [removed['url']])
+        self.assertEqual(result['newGooglePass'], [])
+        self.assertEqual(result['noLongerGooglePass'], [after['urls'][0]['url']])
+        self.assertEqual(result['newBingCrawlRecords'], [])
+        self.assertEqual((before, after), frozen)
+        after['comparison'] = result
+        text = audit.format_report(after)
+        self.assertIn('공통 URL 비교 2 · 신규 기준선 1 · 대상 제외 1', text)
+
+    def test_selection_migration_rejects_duplicates_foreign_property_and_disjoint_urls(self):
+        before = self.report()
+        for mutation in ('duplicate', 'property', 'foreign-url', 'empty', 'disjoint', 'schema'):
+            after = deepcopy(before)
+            if mutation == 'duplicate': after['urls'].append(deepcopy(after['urls'][0]))
+            if mutation == 'property': after['site'] = 'https://outside.example/'
+            if mutation == 'foreign-url': after['urls'][0]['url'] = 'https://outside.example/'
+            if mutation == 'empty': after['urls'] = []
+            if mutation == 'disjoint': after['urls'] = [{'url': audit.SITE + 'en/archive/'}]
+            if mutation == 'schema': after['schemaVersion'] = 99
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                audit.compare(before, after, allow_selection_change=True)
+
+    def test_selection_migration_retains_unknown_state_semantics(self):
+        before = self.report(); after = deepcopy(before)
+        after['urls'].pop()
+        after['urls'][0]['inspection'] = {'httpStatus': 200, 'indexStatus': {}}
+        result = audit.compare(before, after, allow_selection_change=True)
+        self.assertEqual(result['googleUncomparable'], [after['urls'][0]['url']])
+        self.assertEqual(result['noLongerGooglePass'], [])
+
+    def test_invalid_selection_is_rejected_before_credentials_or_quota(self):
+        with tempfile.TemporaryDirectory() as folder:
+            snapshot = Path(folder)/'before.json'; snapshot.write_text(json.dumps(self.report()))
+            selected = audit.targets()
+            for extra in ([], ['--allow-selection-change']):
+                previous = self.report()
+                if extra: previous['urls'].append(deepcopy(previous['urls'][0]))
+                snapshot.write_text(json.dumps(previous))
+                with patch('sys.argv', ['search_engines.py', '--live', '--previous', str(snapshot), '--output', str(Path(folder)/'new.json'), *extra]), patch.object(audit, 'access_token') as auth, patch.object(audit, 'collect') as collect, patch.object(audit.Path, 'read_text', autospec=True, side_effect=lambda p: snapshot.read_bytes().decode() if p == snapshot else self.fail('Credentials must not be read')), patch.object(audit, 'targets', return_value=selected), contextlib.redirect_stdout(io.StringIO()):
+                    self.assertEqual(audit.main(), 1)
+                    auth.assert_not_called(); collect.assert_not_called()
+
+    def test_selection_change_flag_requires_live_previous(self):
+        for args in [[], ['--live'], ['--previous', 'missing.json'], ['--live', '--previous', 'missing.json', '--retry-bing', 'missing.json']]:
+            with patch('sys.argv', ['search_engines.py', '--allow-selection-change', *args]), patch.object(audit, 'access_token') as auth, patch.object(audit, 'collect') as collect, contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(audit.main(), 1)
+                auth.assert_not_called(); collect.assert_not_called()
+
+    def test_live_cli_migrates_selection_without_counting_added_pass_as_a_gain(self):
+        before = self.report(); after = deepcopy(before)
+        added = deepcopy(after['urls'][0])
+        added.update({'url': audit.SITE + 'en/archive/', 'kind': 'archive', 'group': 'archive'})
+        after['urls'].append(added)
+        with tempfile.TemporaryDirectory() as folder:
+            snapshot = Path(folder)/'before.json'; output = Path(folder)/'after.json'
+            snapshot.write_text(json.dumps(before))
+            selected = [{k: r[k] for k in ('url', 'language', 'kind', 'group', 'key', 'expectedCanonical')} for r in after['urls']]
+            def read(path):
+                if path == snapshot: return snapshot.read_bytes().decode()
+                if path == audit.CONFIG/'bing-api-key.txt': return 'PRIVATE KEY'
+                self.fail('Unexpected file read')
+            with patch('sys.argv', ['search_engines.py', '--live', '--previous', str(snapshot), '--allow-selection-change', '--output', str(output)]), patch.object(audit, 'targets', return_value=selected), patch.object(audit.Path, 'read_text', autospec=True, side_effect=read), patch.object(audit, 'access_token', return_value='PRIVATE TOKEN'), patch.object(audit, 'collect', return_value=after) as collect, contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(audit.main(), 0)
+                self.assertEqual(collect.call_args.args[2], selected)
+            saved = json.loads(output.read_text())
+            self.assertEqual(saved['comparison']['comparedURLCount'], 3)
+            self.assertEqual(saved['comparison']['addedURLs'], [added['url']])
+            self.assertEqual(saved['comparison']['newGooglePass'], [])
+            self.assertEqual(snapshot.read_text(), json.dumps(before))
 
     def test_retry_only_reads_failed_bing_urls_and_preserves_original_observations(self):
         original = self.report()
