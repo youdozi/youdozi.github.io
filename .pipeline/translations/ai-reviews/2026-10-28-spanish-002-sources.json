@@ -1,0 +1,354 @@
+{
+  "checkedAt": "2026-10-28T02:25:47.526048+00:00",
+  "scope": "Live HTTP retrieval and presence of existing English evidence excerpts; does not certify current product availability or all semantics. Existing sources, editions, hashes and publication states are preserved.",
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 334,
+      "sha256": "20762465f121df602010b572c657f80899ce35b1afa97e086d79888c3daefa60"
+    },
+    {
+      "url": "https://spring.io/blog/2026/06/01/spring_and_security_in_the_times_of_ai",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 7345,
+      "sha256": "a6b32c3c2b8e734db5753a79bbba8d38dfe52b0c6231128a56c5927f6573b2f4"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1658,
+      "sha256": "0d27a35e2385ea6f2554d908392e17371ad671f8ae50314e1c4a206e9f443ef2"
+    },
+    {
+      "url": "https://docs.gitlab.com/releases/19/gitlab-19-0-released/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 28820,
+      "sha256": "ba32bb188eaa9bae40224993ad50d565cd0ba5f1935776fc4e822ae0379a61ba"
+    },
+    {
+      "url": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 16655,
+      "sha256": "ba53be1aadff9df0cfe93ebcebe04d32815008af85da1595c47905e827b79845"
+    },
+    {
+      "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 9279,
+      "sha256": "4c6739af8f3c568150822a20b84657a4fd0e1d22af9702842ce307442f499e5d"
+    },
+    {
+      "url": "https://www.php.net/archive/2026.php",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 3693,
+      "sha256": "309a7911e3c6d186f132fa45b29c88f6b121c22812fe38daf061fd424678985b"
+    },
+    {
+      "url": "https://buildkite.com/resources/blog/what-shipped-at-buildkite-september-27-october-3-2026/",
+      "status": "unavailable",
+      "error": "source unavailable (curl 56, attempt 3)"
+    },
+    {
+      "url": "https://blog.cloudflare.com/scaling-security-scans/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 13080,
+      "sha256": "8ff83301eb88b1e81a65a76d7a75acbfc46b79649cc09d79266f8905c0643754"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-08-innersource-security-advisories-are-generally-available",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 825,
+      "sha256": "577d872d44f492b78d7f2c139aa226a5c33a095a1d41c7a46f6de62d86483dc0"
+    },
+    {
+      "url": "https://blog.cloudflare.com/enterprise-mcp/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 17207,
+      "sha256": "46f97e3a895d004dffee19fd14b5b6a6299af58990f6f1c212419eb580e6a469"
+    },
+    {
+      "url": "https://newsroom.arm.com/blog/arm-metis-agentic-ai-security",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 10781,
+      "sha256": "aeae5d098d8280e49bdb1c7169c7f4f0e9a247b1169f4e95ebe0737fdb3e4f9f"
+    },
+    {
+      "url": "https://www.infoq.com/articles/security-ai-threat-evolution/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 42660,
+      "sha256": "ccc2597b841402574ce7e771810d2ba9602c3676f15e4d03227d16bfb893e3c3"
+    }
+  ],
+  "items": [
+    {
+      "renewalId": "1e8ba1d86d179142",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available",
+          "quote": "Organization admins and security managers",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available",
+          "quote": "get contextual explanations and guided next steps.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "2b6f4abe346a373d",
+      "checks": [
+        {
+          "document": "https://spring.io/blog/2026/06/01/spring_and_security_in_the_times_of_ai",
+          "quote": "The majority of projects within the Spring portfolio will require upgrades for newly released security patches.",
+          "present": true
+        },
+        {
+          "document": "https://spring.io/blog/2026/06/01/spring_and_security_in_the_times_of_ai",
+          "quote": "not every security report results in a new CVE being issued.",
+          "present": true
+        },
+        {
+          "document": "https://spring.io/blog/2026/06/01/spring_and_security_in_the_times_of_ai",
+          "quote": "duplicates or invalid findings that get filtered out",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "3f90329447f77e33",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+          "quote": "GitHub now automatically analyzes it for potential security vulnerabilities using CodeQL",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+          "quote": "checks newly introduced dependencies against the GitHub Advisory Database, and uses GitHub secret scanning",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+          "quote": "Security validation doesn’t require a GitHub Advanced Security license.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+          "quote": "These security validations are on by default and follow your repository’s Copilot settings for which validation tools to use.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+          "quote": "the agent attempts to resolve them before finalizing the pull request.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "4380abffaf1a31e0",
+      "checks": [
+        {
+          "document": "https://docs.gitlab.com/releases/19/gitlab-19-0-released/",
+          "quote": "The GitLab Secrets Manager is now available in open beta for Premium and Ultimate customers on GitLab.com and GitLab Self-Managed.",
+          "present": true
+        },
+        {
+          "document": "https://docs.gitlab.com/releases/19/gitlab-19-0-released/",
+          "quote": "might not be ready for production use.",
+          "present": true
+        },
+        {
+          "document": "https://docs.gitlab.com/releases/19/gitlab-19-0-released/",
+          "quote": "Dependency scanning by using SBOM generally available Tier: Ultimate Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated",
+          "present": true
+        },
+        {
+          "document": "https://docs.gitlab.com/releases/19/gitlab-19-0-released/",
+          "quote": "The minimum supported version of PostgreSQL is now version 17.",
+          "present": true
+        },
+        {
+          "document": "https://docs.gitlab.com/releases/19/gitlab-19-0-released/",
+          "quote": "If you use the packaged PostgreSQL 16, upgrade the packaged PostgreSQL server before installing GitLab 19.0.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "46983b9e8a1cf49c",
+      "checks": [
+        {
+          "document": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+          "quote": "Copy Fail\" ( CVE-2026-31431 )",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+          "quote": "test the patched kernel in our staging datacenters",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+          "quote": "no impact to the Cloudflare environment",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "4a59615041b968ae",
+      "checks": [
+        {
+          "document": "https://www.php.net/archive/2026.php",
+          "quote": "PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fix two critical vulnerabilities",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+          "quote": "Customers should patch their PHP repos",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+          "quote": "Customers who have changed session.upload_progress.name are not covered by the WAF rule.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "checks": [
+        {
+          "document": "https://buildkite.com/resources/blog/what-shipped-at-buildkite-september-27-october-3-2026/",
+          "quote": "Pipeline secrets are cluster secrets restricted to the current pipeline",
+          "present": null
+        },
+        {
+          "document": "https://buildkite.com/resources/blog/what-shipped-at-buildkite-september-27-october-3-2026/",
+          "quote": "validate_pipeline to check pipeline YAML against the official schema before upload",
+          "present": null
+        }
+      ],
+      "allEvidencePresent": false
+    },
+    {
+      "renewalId": "db11f89181439d98",
+      "checks": [
+        {
+          "document": "https://blog.cloudflare.com/scaling-security-scans/",
+          "quote": "The trade-offs are that we’d have more work to re-do if our process crashed midway through a batch, and our memory usage would be slightly increased.",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/scaling-security-scans/",
+          "quote": "We changed our checkers to consume messages in batches , processing each message in a separate goroutine.",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/scaling-security-scans/",
+          "quote": "based on the total number of accounts and zones we have, and our scanning frequencies.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "e458b053b5a9f878",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-07-08-innersource-security-advisories-are-generally-available",
+          "quote": "GitHub Advanced Security enterprise customers can now publish internal security advisories.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-08-innersource-security-advisories-are-generally-available",
+          "quote": "their visibility is restricted to repositories owned by the enterprise.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-08-innersource-security-advisories-are-generally-available",
+          "quote": "including operations to create, update, or withdraw vulnerabilities.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-08-innersource-security-advisories-are-generally-available",
+          "quote": "Dependabot will open a pull request to upgrade a vulnerable version of the component to one with a fix.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "e858b2ec6331d84e",
+      "checks": [
+        {
+          "document": "https://blog.cloudflare.com/enterprise-mcp/",
+          "quote": "Cloudflare Access as the OAuth provider.",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/enterprise-mcp/",
+          "quote": "centralized logging, consistent policy enforcement and data loss prevention",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "ecc191be72688d94",
+      "checks": [
+        {
+          "document": "https://newsroom.arm.com/blog/arm-metis-agentic-ai-security",
+          "quote": "developed and open-sourced Metis",
+          "present": true
+        },
+        {
+          "document": "https://newsroom.arm.com/blog/arm-metis-agentic-ai-security",
+          "quote": "combines large language models (LLMs) with project-specific knowledge",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "eea31f00e6ce7be1",
+      "checks": [
+        {
+          "document": "https://www.infoq.com/articles/security-ai-threat-evolution/",
+          "quote": "Each agent needs its own profile, permissions, credentials, and lifecycle",
+          "present": true
+        },
+        {
+          "document": "https://www.infoq.com/articles/security-ai-threat-evolution/",
+          "quote": "agents only get the narrow capabilities they absolutely need, and every sensitive action is checked against policy.",
+          "present": true
+        },
+        {
+          "document": "https://www.infoq.com/articles/security-ai-threat-evolution/",
+          "quote": "It requires breaking the system on purpose, experimenting with prompts, seeding malicious content into retrieval sources, and observing how behavior changes when context or permissions shift.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    }
+  ]
+}
