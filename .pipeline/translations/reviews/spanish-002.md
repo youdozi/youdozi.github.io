@@ -445,4 +445,3 @@ Panel sobre seguridad de IA: recomendaciones atribuidas sobre identidad y prueba
 2. Vijay Dilwale sostiene que los defensores deben probar la inyección de instrucciones, el abuso de la recuperación de información y el acceso a herramientas manipulando deliberadamente las entradas y observando el comportamiento cuando cambian el contexto o los permisos. Es asesoramiento experto, no una prueba comparativa que demuestre la eficacia de un control.
 
 검토 초점: Este resumen de una selección del panel no representa las opiniones de todos sus participantes ni establece una frecuencia universal de ataques. Antes de adoptar las recomendaciones, defina un modelo de amenazas, los límites de aprobación, los registros y pruebas repetibles.
-

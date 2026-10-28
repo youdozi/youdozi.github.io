@@ -541,4 +541,3 @@ CNCF y Kusari ofrecen herramientas de cadena de suministro a los mantenedores de
 2. El anuncio incluye GUAC, in-toto/Witness y OpenVEX entre los proyectos que adoptan la herramienta. Es una lista de adopción comunicada, no una prueba independiente de que se hayan eliminado todas las vulnerabilidades.
 
 검토 초점: Revise los requisitos de acceso, el tratamiento de los datos y la cobertura de las dependencias antes de conectar un repositorio. Mida los hallazgos que permiten actuar y los falsos positivos en el proyecto, en lugar de dar por hecho el beneficio solo por adoptar la herramienta.
-
