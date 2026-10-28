@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-28T10:12:12.926626+00:00",
+  "baseCommit": "05d67f87de0875bfcaf6d9d932e4e7c1b58747cc",
+  "purpose": "Fail publication builds when known internal editorial labels, review cards, metadata or stored review advice leak into public HTML, search data or RSS.",
+  "scope": {
+    "publicArticles": 423,
+    "searchIndexes": 8,
+    "feedsIncludingLegacyRoot": 9,
+    "siteSitemapURLs": 479,
+    "privateDraftsRead": 0,
+    "articleBodiesChanged": 0,
+    "publicTemplatesChanged": 0,
+    "publicationApprovalChanged": false
+  },
+  "policy": {
+    "inventory": "Existing public per-language search indexes; en/ko plus actually published translation languages.",
+    "checks": [
+      "Known localized archive UI editorial labels and Korean editorial record formats.",
+      "Review cards including hidden cards on public article pages.",
+      "Stored reviewFocus text for each public digest URL.",
+      "Known review metadata fields in search records and feed items.",
+      "Missing or malformed indexes/articles/feeds, duplicate inventory URLs and output-directory traversal."
+    ],
+    "preserved": [
+      "Ordinary technical code/security review prose.",
+      "HTML code and source quotations, fenced Markdown code and Markdown quotations.",
+      "Actual technical corrections, follow-up facts, news dates and source links."
+    ],
+    "scopeLimit": "Known formats and stored advice only; not universal semantic or factual review in all languages.",
+    "privateReviewShell": "Excluded from public article inventory, remains noindex; not claimed to require authentication.",
+    "errorOutput": "File paths and rule identifiers only; no private review advice text."
+  },
+  "validation": {
+    "pythonTests": 237,
+    "readerGateTests": 11,
+    "nodeTests": 74,
+    "normalBuild": "passed",
+    "finalGateOnGeneratedBuild": "passed after final policy refinements",
+    "generatedArticleChecks": 423,
+    "generatedSearchIndexChecks": 8,
+    "generatedFeedChecks": 9,
+    "mockLeakDetection": "HTML headings/cards, search body/metadata, RSS descriptions/content/metadata and unlabelled known advice rejected.",
+    "newBrowserChecks": 0,
+    "newSearchEngineAPIRequests": 0
+  },
+  "review": {
+    "method": "Self AI code review and regression tests; no independent or human review.",
+    "limit": "Article text, UI templates and translation files unchanged. No claim about search-engine rankings or external caches."
+  },
+  "sha256": {
+    "scripts/check_reader_content.py": "94ac7129fe56bb5cf2d73cc8ac13664aad6259c05cf97e5c77f9bf1f3ceb4871",
+    "scripts/test_reader_content.py": "d4b86325fba99c98db1d5e78aa942a03ddf6b47aef196d1d95bf9ad2fddd3a89",
+    "package.json": "6bfb58338a0475f50ab815f6459399b6acb04470d19c14085497a029d42911da",
+    "README.md": "c162115a342a98d1071436205948bf60665f09c65d0374d1ecab180fec757b47",
+    "docs/public-reader-content.md": "52eae741d1949691b412150d49c0d052a93b3e71978989b50643365085a03f8f"
+  },
+  "publication": "Draft review PR for the new guard only; no translation or article publication."
+}
