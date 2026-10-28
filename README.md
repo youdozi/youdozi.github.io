@@ -181,7 +181,9 @@ python3 -B scripts/indexnow.py --submit
 
 보안·CI 주제의 스페인어 12편은 [두 번째 검토 문서](.pipeline/translations/reviews/spanish-002.md)에 준비했습니다. 해당 12편은 자체 AI 대조·교정과 격리된 렌더링 검사를 거쳤으며 게시 승인은 대기 상태입니다. Buildkite 1편은 외부 원문 재조회에 실패해 게시 전 재확인이 필요합니다. [공개 후보 목록](.pipeline/translations/releases/spanish-002.json)에 범위·조건을 기록했으며 공개 번역 파일은 추가하지 않았습니다.
 
-인프라·프레임워크 보안 주제의 스페인어 15편은 [세 번째 검토 문서](.pipeline/translations/reviews/spanish-003.md)에 추가했습니다. 누적 스페인어 초안은 33/59편이며 26편이 미작성 상태입니다. 새 15편은 근거 문서 17개 재조회·자체 AI 번역 검토·격리된 렌더링 검사를 거쳤으며, [게시 후보 목록](.pipeline/translations/releases/spanish-003.json)에 승인을 기다리는 정확한 원고를 기록했습니다. 공개 번역은 기존 36편이며 앞선 Buildkite 재확인 대기는 그대로 유지합니다.
+인프라·프레임워크 보안 주제의 스페인어 15편은 [세 번째 검토 문서](.pipeline/translations/reviews/spanish-003.md)에 추가했습니다. 해당 15편은 근거 문서 17개 재조회·자체 AI 번역 검토·격리된 렌더링 검사를 거쳤으며, [게시 후보 목록](.pipeline/translations/releases/spanish-003.json)에 승인을 기다리는 정확한 원고를 기록했습니다.
+
+모델·요금·시험 제공 범위·설계 사례 등 나머지 26편은 [네 번째 검토 문서](.pipeline/translations/reviews/spanish-004.md)에 준비했습니다. 스페인어 59/59편, 전체 6개 번역 언어 354/354건의 준비를 마쳤습니다. 이는 게시 완료나 모든 언어의 현재 외부 사실 재검증을 뜻하지 않습니다. PR #78에서 스페인어 미게시 후보 53편을 검토하며, 실제 공개 번역은 기존 36편입니다. Buildkite 1편은 원문 재접근에도 실패해 게시 전 재확인이 필요합니다. [게시 후보 목록](.pipeline/translations/releases/spanish-004.json)은 실행 입력이나 승인 기록이 아닙니다.
 
 한영 Spring Boot 카테고리는 프로젝트 생성·영속성·테스트·패키징 순서의 학습 안내를 제공합니다. 실제 공개 가능한 글만 연결하고 각 글의 재현 버전을 구분합니다. 안내의 목록·언어 링크·사이트맵·구조화 데이터는 같은 글 집합을 사용합니다.
 
