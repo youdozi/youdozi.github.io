@@ -101,7 +101,7 @@ export async function publishBatch(batch,approval,base=root){
   return records;
 }
 async function main(){
-  const {positionals,values}=parseArgs({allowPositionals:true,options:{output:{type:'string'},batch:{type:'string'},'reviewed-by':{type:'string'},'approval-pr':{type:'string'},'approval-basis':{type:'string'}}});
+  const {positionals,values}=parseArgs({allowPositionals:true,options:{output:{type:'string'},batch:{type:'string'},release:{type:'string'},'reviewed-by':{type:'string'},'approval-pr':{type:'string'},'approval-basis':{type:'string'}}});
   const [command]=positionals;
   if(command==='prepare'){
     if(!values.output)throw new Error('prepare requires --output');
@@ -129,8 +129,9 @@ async function main(){
     const report=await renderReview(await load(values.batch));await mkdir(dirname(output),{recursive:true});
     await writeFile(output,report,{flag:'wx'});console.log('[ok] Private translation review written');
   }else if(command==='publish'){
-    if(!values.batch || !values['reviewed-by'] || !values['approval-basis'] || !/^[1-9]\d*$/.test(values['approval-pr']||''))throw new Error('Publication requires --batch, --reviewed-by, --approval-pr and --approval-basis recording explicit human approval');
-    const records=await publishBatch(await load(values.batch),{reviewedBy:values['reviewed-by'],pullRequest:Number(values['approval-pr']),basis:values['approval-basis']});
+    if(values.batch || !values.release || !values['reviewed-by'] || !values['approval-basis'] || !/^[1-9]\d*$/.test(values['approval-pr']||''))throw new Error('Publication requires a pinned --release (not --batch), --reviewed-by, --approval-pr and --approval-basis recording explicit user approval');
+    const {publishRelease}=await import('./translation-release.mjs');
+    const records=await publishRelease(values.release,{reviewedBy:values['reviewed-by'],pullRequest:Number(values['approval-pr']),basis:values['approval-basis']});
     console.log(`[ok] ${records.length} approved translation files prepared for a publication PR; no deployment triggered`);
   }else throw new Error('Usage: node scripts/translations.mjs prepare|check|validate|review|publish [options]');
 }

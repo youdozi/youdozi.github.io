@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-28T05:16:25.451671+00:00",
+  "unit": "multilingual-readiness-032",
+  "newPrivateRelease": {
+    "editions": 265,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "editionsPerLanguage": 53,
+    "newSelfAIReviewedEditions": 50,
+    "existingAIReviewReusedEditions": 215,
+    "awaitingApproval": 265,
+    "blocked": 0
+  },
+  "combinedPendingReleases": 318,
+  "publicTranslations": 36,
+  "sourceAndManuscriptChanges": 0,
+  "externalSourceFetchesThisUnit": 0,
+  "reviewMethod": "New self-AI full comparison and fluency pass on renewals-003/004; exact-hash provenance checks on remaining reviews; existing stored source observations reused.",
+  "validation": {
+    "nodeTests": 69,
+    "targetedReleaseTests": 12,
+    "astroFiles": 60,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuild": "passed",
+    "normalPublishedArticles": 423,
+    "preview": {
+      "checkedAt": "2026-10-28T05:15:39.065361+00:00",
+      "fixtureOnly": true,
+      "pendingEditions": 318,
+      "previewTranslationEditions": 354,
+      "translationArticlesPerLanguage": {
+        "zh-CN": 59,
+        "ja": 59,
+        "de": 59,
+        "fr": 59,
+        "ru": 59,
+        "es": 59
+      },
+      "previewArticleLanguages": [
+        "en",
+        "ko",
+        "zh-CN",
+        "ja",
+        "de",
+        "fr",
+        "ru",
+        "es"
+      ],
+      "claimsAndFollowUp": 738,
+      "sitemapURLs": 789,
+      "RSSItemsPerTranslationLanguage": {
+        "zh-CN": 30,
+        "ja": 30,
+        "de": 30,
+        "fr": 30,
+        "ru": 30,
+        "es": 30
+      },
+      "reciprocalHreflangGroups": 53,
+      "normalPublicTranslations": 36,
+      "normalSitemapURLs": 471,
+      "pendingURLsAbsentFromNormalHTMLSearchRSSSitemap": 318,
+      "originalPublicTranslationBytes": "unchanged",
+      "browserChecksThisUnit": 0,
+      "limitations": [
+        "No live publication, search-engine indexing or ranking verification",
+        "No new browser pass; existing templates and public text unchanged",
+        "Source evidence and 215 older reviews reused; only 50 new semantic reviews"
+      ]
+    }
+  },
+  "behavior": [
+    "Accept explicit legacy recheck resolved without converting open/contradictory status to resolved",
+    "Require full review language and fields; reject a carry-forward-only endorsement as a standalone full review",
+    "Run both pinned release checks in normal check/build",
+    "Generic private review renderer covers every translation language"
+  ],
+  "fileSha256": {
+    "scripts/translation-release.mjs": "04f8a1263951a4a5001baf25765e15719ce55937d65e1bab6a65027adcc92469",
+    "scripts/test-translation-release.mjs": "ad69f483b1e36f9139158ae27758bc8f12e73403e8735a5b4f019c47c931c715",
+    ".pipeline/translations/releases/multilingual-full-032.json": "1fe1ab47b50d5a5c53f41e29086d14b0d0f3efad571c91e833120072f330ea40",
+    ".pipeline/translations/ai-reviews/2026-10-28-multilingual-032.json": "24b16606e7c782733ac6026ea2a0ef7726dffd400f05a55611f85adc0d13c379"
+  },
+  "limitations": [
+    "No actual publication approval, merge or deployment",
+    "No new independent, native-speaker or human review",
+    "No live search-engine indexing or ranking measurements",
+    "No new browser pass; rendered candidate content and metadata were checked offline; prior browser checks apply only to their recorded scope",
+    "Exact file/evidence consistency does not establish factual truth or authenticated sources"
+  ]
+}

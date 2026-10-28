@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "state": "draft",
+  "batchId": "spanish-003",
+  "sourceLanguage": "en",
+  "reviewRequired": "AI meaning and target-language review; explicit user publication approval remains required.",
+  "translations": [
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "568305543e6754fa",
+      "language": "es",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "edition": {
+        "title": "Spring Boot en fase milestone: cambios en LDAP y telemetría",
+        "claims": [
+          "El milestone Spring Boot 4.2.0-M2 añade soporte de paquetes SSL para LDAP, incluido LDAPS para el servidor integrado. Este resumen verifica la parte relativa a Boot de la recopilación anterior.",
+          "El mismo milestone añade soporte para las convenciones semánticas de OpenTelemetry, junto con una configuración común del endpoint OTLP, las cabeceras y la compresión."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Conserve la fecha original de la recopilación y describa estas funciones como propias de un milestone. Antes de aprobar el artículo original completo, verifique por separado las versiones de Framework, Data, Security e Integration; este borrador de alcance más limitado no verifica esas secciones."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "f05ff63990b375e2",
+      "language": "es",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "edition": {
+        "title": "Spring Boot incorpora controles de red del cliente y telemetría en una versión candidata",
+        "claims": [
+          "El anuncio de Spring Boot 4.1.0-RC1 incluye medidas de mitigación de SSRF en el cliente HTTP mediante InetAddressFilter. Este resumen abarca únicamente la parte relativa a Boot de la recopilación anterior.",
+          "La misma versión candidata incluye soporte para las variables de entorno del SDK de OpenTelemetry."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Verifique por separado los demás proyectos de la recopilación antes de dar por completado el artículo original. Revise el estado de versión candidata, la configuración del filtro de direcciones y los ajustes de observabilidad frente a las versiones realmente desplegadas."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "9d263cda22c982a1",
+      "language": "es",
+      "sourceSha256": "fd6362f6ce2cb99651f4eecbc0e56325631954375d3bcb0fd2ade0e1534699d2",
+      "edition": {
+        "title": "Recopilación de versiones de Spring: bases seleccionadas de plataforma e IA",
+        "claims": [
+          "El equipo de Spring Boot anunció la disponibilidad de 4.1.0 en Maven Central e indica que incluye las correcciones de Spring Boot 4.0.7. Este resumen abarca esa versión de la plataforma, no todos los proyectos de la recopilación original.",
+          "El equipo de Spring AI anunció la disponibilidad de 2.0.0 en Maven Central. Su base documentada es Spring Boot 4.0 / 4.1 con Spring Framework 7.0, por lo que se debe revisar la compatibilidad de las aplicaciones antes de actualizarlas."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compruebe las notas de migración, la coherencia de las versiones de las dependencias y el comportamiento en las pruebas de regresión. Los demás proyectos y los CVE individuales mencionados en la recopilación original no se han validado en este resumen de alcance limitado."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "ad44e1abd30ad1f2",
+      "language": "es",
+      "sourceSha256": "db88dfaf65d4c8302430160f855c07d6047c4bcecbaed8ea2281fdf275778361",
+      "edition": {
+        "title": "Versiones de Spring Security y límites de soporte en el aviso de abril",
+        "claims": [
+          "El aviso de abril anuncia Spring Security 6.5.10, 7.0.5 y 7.1.0-RC1 y enlaza los avisos de seguridad abordados por esas versiones. Se trata de versiones históricas.",
+          "Indica que el soporte de código abierto para las generaciones Spring Security 5.7.x, 5.8.x, 6.3.x y 6.4.x había finalizado. El soporte comercial tiene un alcance distinto."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Relacione las dependencias desplegadas con cada aviso oficial y con la rama de versiones con soporte que corresponda. No elija una versión histórica solo porque aparezca en este archivo y distinga una versión candidata de una versión estable."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "7067e48d153e8525",
+      "language": "es",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "edition": {
+        "title": "Argo CD en versión candidata: mTLS interno y configuración de integridad del código fuente",
+        "claims": [
+          "La página oficial de Argo CD v3.5.0-rc1 identifica este artefacto como una versión preliminar e incluye soporte de mTLS en repo-server. Esto permite describir una capacidad de la versión candidata, no afirmar que todas las instalaciones exijan mTLS.",
+          "El mismo registro de cambios incluye soporte en la CLI para configurar Source Integrity y el acceso a la interfaz de ApplicationSet. Este resumen no afirma que la verificación de firmas apareciera por primera vez en esta versión ni que el tráfico interno anterior siempre circulara sin cifrar."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "No se pudo obtener el artículo enlazado del blog oficial; este borrador de alcance más limitado utiliza el artefacto de lanzamiento del proyecto. Antes de la implantación, revise las notas de actualización, los certificados, las raíces de confianza y los ajustes de integridad de la versión de destino. No se afirma que esta versión candidata siga siendo la más reciente."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "fecc68bc1f0f9da3",
+      "language": "es",
+      "sourceSha256": "072f89fad175fbc75fe474e42dd2891a458672d756b3f52d65f25350cabb89ff",
+      "edition": {
+        "title": "Kubernetes 1.36: mutación de admisión y espacios de nombres de usuario para pods en estado estable",
+        "claims": [
+          "El equipo de lanzamiento de Kubernetes 1.36 describe el paso de MutatingAdmissionPolicies al estado estable. Es una declaración sobre la madurez de esa función en dicha versión.",
+          "La misma versión describe el paso del soporte de espacios de nombres de usuario para pods al estado estable; esto no demuestra que todos los clústeres existentes estén configurados para utilizarlo."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compruebe por separado la versión del plano de control, el sistema operativo, el entorno de ejecución de contenedores y la configuración de las cargas de trabajo. Revise las condiciones de migración y compatibilidad antes de sustituir los webhooks de admisión o activar los espacios de nombres de usuario."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6944923e55b6bbd0",
+      "language": "es",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "edition": {
+        "title": "El aviso de TeamCity distingue la exposición de On-Premises y Cloud",
+        "claims": [
+          "JetBrains describe CVE-2026-44413 como un problema de TeamCity On-Premises que requiere autenticación previa, afecta a versiones hasta la 2025.11.4 y está corregido en la 2026.1. Son las versiones indicadas en el aviso histórico.",
+          "El proveedor declara que TeamCity Cloud no está afectado y no requiere ninguna acción por este problema."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compare el tipo de despliegue y la versión instalada con el aviso del proveedor. Confirme una versión corregida con soporte o un complemento de parche aplicable y sus requisitos de activación; este archivo no recomienda instalar una versión antigua."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "72477d086944244f",
+      "language": "es",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "edition": {
+        "title": "La protección de NetScaler requiere parches y controles sobre el origen",
+        "claims": [
+          "Cloudflare comienza su guía de NetScaler indicando a los clientes afectados que apliquen el parche a su gateway antes de considerar capas de protección adicionales.",
+          "El artículo advierte que el acceso directo a la dirección de origen o a un nombre de host alternativo puede eludir los controles de Access situados delante.",
+          "La protección de la ruta de autenticación web no cubre automáticamente los listeners del gateway que tienen DTLS activado."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Haga un inventario de todos los listeners expuestos y de las rutas alternativas al origen. Revise por separado el estado de los parches, la política de autenticación y las restricciones del origen; este borrador no afirma que un cambio de DNS o un WAF por sí solos eliminen la exposición."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "59c87ea544e0e5db",
+      "language": "es",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "edition": {
+        "title": "Reglas de respuesta del WAF de Cloudflare: acciones y restricciones sobre el cuerpo",
+        "claims": [
+          "El WAF de Cloudflare permite crear hasta 3 reglas de respuesta personalizadas compatibles con las acciones Log y Block.",
+          "El anuncio indica expresamente que todavía no se pueden crear reglas personalizadas sobre el cuerpo de la respuesta."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Al evaluar la cobertura, distinga las detecciones gestionadas de las reglas de respuesta creadas por el cliente. Este artículo conservado había desaparecido del listado anterior después de que un resumen de noticias más reciente sustituyera la página; su renovación sigue requiriendo una revisión explícita."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "7ec61f556fb8d2c3",
+      "language": "es",
+      "sourceSha256": "8c3de756afe00f70b90d7547ce3e3bbbf57a4ad6e92d278edc175a646fb748a3",
+      "edition": {
+        "title": "Cloudflare Security Overview distingue la prioridad del riesgo de la visibilidad",
+        "claims": [
+          "Cloudflare describe un panel Security Overview que ordena los elementos por criticidad y permite filtrar información como la actividad sospechosa o las configuraciones inseguras.",
+          "En el lanzamiento, el artículo describe una experiencia a nivel de dominio y sitúa la agregación a nivel de cuenta en la hoja de ruta. Esto no demuestra que la vista de toda la cuenta ya estuviera disponible."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Revise qué se observa realmente y qué controles están activados antes de considerar un panel como prueba de protección. Distinga una función disponible de una declaración de hoja de ruta y confirme por separado la disponibilidad actual a nivel de cuenta."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "87db18d4899cc26c",
+      "language": "es",
+      "sourceSha256": "65fcae80a88f0dd69441d675ad3044294860089a6708cabecaf02cd3639dde07",
+      "edition": {
+        "title": "El contexto de ejecución de Dynatrace ayuda a priorizar las alertas de GitHub",
+        "claims": [
+          "El aviso de GitHub de abril describe el contexto de ejecución de Dynatrace para priorizar alertas de seguridad según los artefactos desplegados y el riesgo en tiempo de ejecución en Kubernetes.",
+          "El aviso indica que la función está disponible de forma general para los clientes de GitHub Enterprise Cloud. Esa declaración histórica de disponibilidad no afirma que todos los planes de GitHub la incluyan."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Revise la correspondencia entre repositorios y contenedores y la cobertura en tiempo de ejecución antes de considerar una lista de alertas filtrada como un inventario completo. Confirme por separado los requisitos actuales de integración y del plan."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "b4cc1e300a7d9c1b",
+      "language": "es",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "edition": {
+        "title": "Las evaluaciones de organizaciones de GitHub resumen los riesgos de seguridad del código",
+        "claims": [
+          "GitHub anunció una evaluación gratuita de riesgos de Code Security que los administradores de organizaciones y los responsables de seguridad pueden ejecutar para su organización.",
+          "La evaluación resume las vulnerabilidades por gravedad, tipo de regla y lenguaje de programación, lo que ayuda a priorizar los hallazgos comunicados."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compruebe el alcance de la evaluación y la cobertura de los repositorios antes de interpretar el informe como una auditoría de seguridad completa. Las correcciones sugeridas siguen requiriendo revisión del código y las pruebas adecuadas."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "9aee971925826c50",
+      "language": "es",
+      "sourceSha256": "14cbf673a6cfbee2d6a53b8bffe1ad520623b9267985970cd67a710d3db42ff7",
+      "edition": {
+        "title": "BadHost: autorización basada en rutas de Starlette y condiciones del proxy",
+        "claims": [
+          "Los investigadores explican que Starlette reconstruía una URL a partir de una cabecera Host sin validar, mientras que el enrutamiento utilizaba la ruta real de la solicitud. Por tanto, la autorización basada en la ruta reconstruida podía no coincidir con el endpoint al que se dirigía la solicitud.",
+          "El aviso de los investigadores identifica como afectadas las versiones de Starlette >= 0.8.3 y < 1.0.1, y señala la 1.0.1 como corregida. La aplicabilidad sigue dependiendo de las decisiones de seguridad basadas en rutas de la aplicación."
+        ],
+        "followUp": [
+          "En el momento de la revisión, el aviso del mantenedor indica que un proxy o balanceador de carga solo mitiga el problema si rechaza o normaliza las cabeceras Host malformadas antes de reenviarlas y si la aplicación no confía en cabeceras de host controladas por un atacante en otros puntos."
+        ]
+      },
+      "reviewFocus": "Inspeccione el middleware de autorización, las versiones resueltas de las dependencias y la confianza en las cabeceras reenviadas. La mera presencia de un proxy no basta; pruebe la configuración real de entrada. No se realizó ningún experimento de explotación para este borrador."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c78cf468160e1a45",
+      "language": "es",
+      "sourceSha256": "0d86ac8ee62c5ab5467eac08d56af5dff3519826c3562b6b635bbeb09ba2bcd0",
+      "edition": {
+        "title": "Incidente de eMudhra: revise la confianza de la aplicación además de actualizar los clientes",
+        "claims": [
+          "Cloudflare indicó a sus clientes de Tunnel que actualizaran cloudflared a 2026.10.2 y volvieran a desplegar las imágenes de contenedor corregidas cuando correspondiera. Es la versión del aviso del incidente, no una afirmación sobre la versión más reciente.",
+          "El aviso advierte que actualizar únicamente un SDK puede dejar sin cambios la política subyacente de verificación de certificados.",
+          "Cloudflare advierte que no se deben resolver los errores de certificados desactivando la verificación."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Identifique qué biblioteca HTTP, entorno de ejecución y almacén de certificados de confianza utiliza realmente cada aplicación. Una solicitud correcta desde el navegador no demuestra por sí sola que todas las rutas de las aplicaciones estén protegidas; valide los clientes pertinentes sin desactivar la verificación."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "bb5be26c24786b21",
+      "language": "es",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "edition": {
+        "title": "CNCF y Kusari ofrecen herramientas de cadena de suministro a los mantenedores de proyectos",
+        "claims": [
+          "El anuncio alojado por CNCF indica que los proyectos de CNCF reciben acceso gratuito a Kusari Inspector, descrito como una herramienta de revisión de código y gestión de dependencias basada en IA.",
+          "El anuncio incluye GUAC, in-toto/Witness y OpenVEX entre los proyectos que adoptan la herramienta. Es una lista de adopción comunicada, no una prueba independiente de que se hayan eliminado todas las vulnerabilidades."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Revise los requisitos de acceso, el tratamiento de los datos y la cobertura de las dependencias antes de conectar un repositorio. Mida los hallazgos que permiten actuar y los falsos positivos en el proyecto, en lugar de dar por hecho el beneficio solo por adoptar la herramienta."
+    }
+  ]
+}

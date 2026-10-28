@@ -1,0 +1,67 @@
+{
+  "createdAt": "2026-10-28T04:49:36.227267+00:00",
+  "baseCommit": "dc3e4113c9e4c6cd63a7a8f98fbd9556db04e506",
+  "publication": "Draft only; no new user publication approval or real publication prepared. Isolated test fixtures and a rejected legacy CLI invocation are not publication.",
+  "scope": [
+    "Supplement unchanged Buildkite claims with two official changelogs while preserving original source failure",
+    "Pin all 53 Spanish candidates to exact batch, parsed draft, source, review and evidence files",
+    "Make publication CLI require --release and fail before writes on blocked or duplicate items",
+    "Add offline readiness checks to regular validation and build"
+  ],
+  "review": {
+    "type": "Self AI code and primary-source-context review; not independent or human review",
+    "findings": [
+      {
+        "issue": "A free-form --batch publication command did not consult the held-source condition in advisory manifests.",
+        "resolution": "CLI now requires the pinned ledger; low-level publishBatch remains for existing test fixtures and file conversion."
+      },
+      {
+        "issue": "Alternate primary documents must not be reported as recovery of the failed URL or as full HTML captures.",
+        "resolution": "Preserve originalSourceRecovered=false and quote-only digest scope; pin each unchanged claim to an observed official document."
+      },
+      {
+        "issue": "Historical pending source-retrieval findings must remain visible without permanently blocking a newer successful source observation.",
+        "resolution": "Only the matching source-retrieval finding can be superseded by later checked evidence; open translation findings remain blocked."
+      },
+      {
+        "issue": "Read and review-output paths can be redirected through symlinks.",
+        "resolution": "Resolve allowed directories and actual file/parent paths before reading or writing."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": []
+  },
+  "verification": {
+    "newReleaseTests": 9,
+    "fullNodeTests": 66,
+    "finalTargetedRecheck": 9,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "build": "passed",
+    "readiness": {
+      "total": 53,
+      "awaitingApproval": 53,
+      "alreadyPublished": 0,
+      "blocked": 0
+    },
+    "publicTranslationsPreservedByteForByte": 36,
+    "publicSpanishArticles": 6,
+    "candidateURLsExcluded": 53,
+    "noSourceOrTranslationBodyChanges": true,
+    "noWorkflowChanges": true,
+    "noNewBrowserTests": "No public UI or article text changed. Earlier 106 browser cases remain scoped to the pinned, unchanged article content."
+  },
+  "sha256": {
+    "scripts/translation-release.mjs": "318f2197377889f4fcff12d0db468e08fc9c6f2f194a3889de3315f6e95f17de",
+    "scripts/test-translation-release.mjs": "772ef538079b4be22b73344e852514467aefb883b24373e931b524df377ebc9e",
+    "scripts/translations.mjs": "aed7ce1cbea86b312998d6c761802e2248713ac1ecee4d1daffa6b2d6b491e3c",
+    "package.json": "b465ba9bdf51c7f4c8f5adc8b0d9240bbc4686f99f82196198096b8b8c39b015",
+    ".pipeline/translations/releases/spanish-full-031.json": "754f55bc790e13f65838fc4815ee0fdbd2948d6ead57b531091deffd6883419d",
+    ".pipeline/translations/ai-reviews/2026-10-28-buildkite-supplement.json": "b7171f5d5530372870bc4ee4d84c2f746e89837231969ed271132e498e5dd4aa"
+  },
+  "limitations": [
+    "Offline checks validate recorded provenance and consistency, not the live state of every source or factual truth.",
+    "CLI approval arguments are operator records, not independent proof of user authorization.",
+    "Original Buildkite weekly URL remains inaccessible; public source citations are unchanged.",
+    "Ledger is an approval-pending plan; real approval is recorded only in public files after explicit user authorization."
+  ]
+}

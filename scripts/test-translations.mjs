@@ -12,7 +12,7 @@ const source=JSON.parse(sourceBytes);
 const approval={reviewedBy:'test reviewer',pullRequest:1,basis:'Explicit human approval fixture only'};
 const approved=d=>{const now=new Date().toISOString();return {...d,state:'approved',reviewedAt:now,publishedAt:now,updatedAt:now,approval:{...approval,approvedAt:now}};};
 
-test('translation queue covers all supported languages and preserves partially prepared batches',async()=>{
+test('translation queue covers all sources and reports their actual prepared status',async()=>{
   const queue=await prepareQueue();
   const sources=(await readdir('src/content/renewals')).filter(f=>f.endsWith('.json'));
   assert.equal(queue.sources.length,sources.length);
@@ -22,13 +22,41 @@ test('translation queue covers all supported languages and preserves partially p
   const drafts=(await Promise.all(batches.map(async f=>JSON.parse(await readFile(`.pipeline/translations/batches/${f}`,'utf8')).translations))).flat();
   assert.equal(queue.tasks.filter(t=>t.status==='draft').length,drafts.length);
   for(const task of queue.tasks)assert.equal(task.status,drafts.some(d=>d.renewalId===task.renewalId&&d.language===task.language)?'draft':'pending');
-  assert.ok(queue.tasks.some(t=>t.language==='es'&&t.status==='pending'));
   assert.ok(queue.tasks.some(t=>t.language==='es'&&t.status==='draft'));
   for(const s of queue.sources){
     const bytes=await readFile(`src/content/renewals/${s.renewalId}.json`,'utf8');
     assert.equal(s.sourceSha256,createHash('sha256').update(bytes).digest('hex'));
     assert.equal(queue.tasks.filter(t=>t.renewalId===s.renewalId).length,queue.languages.length);
   }
+});
+
+test('translation queue handles both partial and complete preparation of a source',async()=>{
+  const base=await mkdtemp(join(tmpdir(),'youdozi-partial-translation-queue-'));
+  try{
+    await mkdir(join(base,'src/content/renewals'),{recursive:true});
+    await mkdir(join(base,'.pipeline/translations/batches'),{recursive:true});
+    await writeFile(join(base,`src/content/renewals/${source.id}.json`),sourceBytes);
+    const draft=batch.translations[0];
+    await writeFile(join(base,'.pipeline/translations/batches/partial.json'),JSON.stringify({...batch,translations:[draft]}));
+    const queue=await prepareQueue(base);
+    assert.equal(queue.sources.length,1);
+    assert.equal(queue.tasks.length,queue.languages.length);
+    assert.equal(queue.tasks.filter(t=>t.status==='draft').length,1);
+    assert.equal(queue.tasks.filter(t=>t.status==='pending').length,queue.languages.length-1);
+    for(const task of queue.tasks){
+      assert.equal(task.status,task.language===draft.language?'draft':'pending');
+      assert.equal(task.sourceSha256,draft.sourceSha256);
+      assert.equal(task.batch,task.language===draft.language?'batches/partial.json':undefined);
+    }
+    const spanishBatch=JSON.parse(await readFile('.pipeline/translations/batches/spanish-001.json','utf8'));
+    const spanish=spanishBatch.translations.find(t=>t.renewalId===source.id);
+    assert.ok(spanish);
+    await writeFile(join(base,'.pipeline/translations/batches/partial.json'),JSON.stringify({...batch,translations:[...batch.translations,spanish]}));
+    const complete=await prepareQueue(base);
+    assert.equal(complete.tasks.length,complete.languages.length);
+    assert.ok(complete.tasks.every(t=>t.status==='draft'));
+    assert.equal(complete.tasks.filter(t=>t.status==='pending').length,0);
+  }finally{await rm(base,{recursive:true,force:true});}
 });
 
 test('public translation schema rejects drafts, missing approval and invalid chronology',()=>{

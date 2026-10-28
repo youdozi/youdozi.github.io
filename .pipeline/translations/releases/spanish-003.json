@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "spanish-003",
+  "state": "awaiting-publication-approval",
+  "batch": ".pipeline/translations/batches/spanish-003.json",
+  "batchSha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb",
+  "translationReview": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+  "scope": {
+    "sources": 15,
+    "editions": 15,
+    "languages": [
+      "es"
+    ]
+  },
+  "approval": null,
+  "candidates": [
+    {
+      "renewalId": "568305543e6754fa",
+      "language": "es",
+      "title": "Spring Boot en fase milestone: cambios en LDAP y telemetría",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "url": "https://youdozi.github.io/es/digest/2026-09-30-spring-boot-milestone-ldap-and-telemetry/",
+      "publicationFile": "src/content/translations/es-568305543e6754fa.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "f05ff63990b375e2",
+      "language": "es",
+      "title": "Spring Boot incorpora controles de red del cliente y telemetría en una versión candidata",
+      "sourceSha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+      "url": "https://youdozi.github.io/es/digest/2026-04-28-spring-boot-client-network-and-telemetry/",
+      "publicationFile": "src/content/translations/es-f05ff63990b375e2.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "9d263cda22c982a1",
+      "language": "es",
+      "title": "Recopilación de versiones de Spring: bases seleccionadas de plataforma e IA",
+      "sourceSha256": "fd6362f6ce2cb99651f4eecbc0e56325631954375d3bcb0fd2ade0e1534699d2",
+      "url": "https://youdozi.github.io/es/digest/2026-06-16-spring-boot-and-ai-platform-baselines/",
+      "publicationFile": "src/content/translations/es-9d263cda22c982a1.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "ad44e1abd30ad1f2",
+      "language": "es",
+      "title": "Versiones de Spring Security y límites de soporte en el aviso de abril",
+      "sourceSha256": "db88dfaf65d4c8302430160f855c07d6047c4bcecbaed8ea2281fdf275778361",
+      "url": "https://youdozi.github.io/es/digest/2026-04-22-spring-security-releases-and-support/",
+      "publicationFile": "src/content/translations/es-ad44e1abd30ad1f2.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "7067e48d153e8525",
+      "language": "es",
+      "title": "Argo CD en versión candidata: mTLS interno y configuración de integridad del código fuente",
+      "sourceSha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+      "url": "https://youdozi.github.io/es/digest/2026-06-27-argo-cd-release-candidate-security-configuration/",
+      "publicationFile": "src/content/translations/es-7067e48d153e8525.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "fecc68bc1f0f9da3",
+      "language": "es",
+      "title": "Kubernetes 1.36: mutación de admisión y espacios de nombres de usuario para pods en estado estable",
+      "sourceSha256": "072f89fad175fbc75fe474e42dd2891a458672d756b3f52d65f25350cabb89ff",
+      "url": "https://youdozi.github.io/es/digest/2026-05-15-kubernetes-1-36-admission-and-user-namespaces/",
+      "publicationFile": "src/content/translations/es-fecc68bc1f0f9da3.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "6944923e55b6bbd0",
+      "language": "es",
+      "title": "El aviso de TeamCity distingue la exposición de On-Premises y Cloud",
+      "sourceSha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+      "url": "https://youdozi.github.io/es/digest/2026-05-12-teamcity-on-premises-security-advisory/",
+      "publicationFile": "src/content/translations/es-6944923e55b6bbd0.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "72477d086944244f",
+      "language": "es",
+      "title": "La protección de NetScaler requiere parches y controles sobre el origen",
+      "sourceSha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+      "url": "https://youdozi.github.io/es/digest/2026-10-20-netscaler-patching-and-origin-controls/",
+      "publicationFile": "src/content/translations/es-72477d086944244f.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "59c87ea544e0e5db",
+      "language": "es",
+      "title": "Reglas de respuesta del WAF de Cloudflare: acciones y restricciones sobre el cuerpo",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "url": "https://youdozi.github.io/es/digest/2026-10-24-cloudflare-waf-response-rule-limits/",
+      "publicationFile": "src/content/translations/es-59c87ea544e0e5db.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "7ec61f556fb8d2c3",
+      "language": "es",
+      "title": "Cloudflare Security Overview distingue la prioridad del riesgo de la visibilidad",
+      "sourceSha256": "8c3de756afe00f70b90d7547ce3e3bbbf57a4ad6e92d278edc175a646fb748a3",
+      "url": "https://youdozi.github.io/es/digest/2026-05-05-cloudflare-security-overview-scope/",
+      "publicationFile": "src/content/translations/es-7ec61f556fb8d2c3.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "87db18d4899cc26c",
+      "language": "es",
+      "title": "El contexto de ejecución de Dynatrace ayuda a priorizar las alertas de GitHub",
+      "sourceSha256": "65fcae80a88f0dd69441d675ad3044294860089a6708cabecaf02cd3639dde07",
+      "url": "https://youdozi.github.io/es/digest/2026-04-08-dynatrace-github-runtime-alert-context/",
+      "publicationFile": "src/content/translations/es-87db18d4899cc26c.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "b4cc1e300a7d9c1b",
+      "language": "es",
+      "title": "Las evaluaciones de organizaciones de GitHub resumen los riesgos de seguridad del código",
+      "sourceSha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+      "url": "https://youdozi.github.io/es/digest/2026-04-09-github-code-security-risk-assessment/",
+      "publicationFile": "src/content/translations/es-b4cc1e300a7d9c1b.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "9aee971925826c50",
+      "language": "es",
+      "title": "BadHost: autorización basada en rutas de Starlette y condiciones del proxy",
+      "sourceSha256": "14cbf673a6cfbee2d6a53b8bffe1ad520623b9267985970cd67a710d3db42ff7",
+      "url": "https://youdozi.github.io/es/digest/2026-06-02-badhost-starlette-authorization-and-proxy-conditions/",
+      "publicationFile": "src/content/translations/es-9aee971925826c50.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "c78cf468160e1a45",
+      "language": "es",
+      "title": "Incidente de eMudhra: revise la confianza de la aplicación además de actualizar los clientes",
+      "sourceSha256": "0d86ac8ee62c5ab5467eac08d56af5dff3519826c3562b6b635bbeb09ba2bcd0",
+      "url": "https://youdozi.github.io/es/digest/2026-10-21-emudhra-certificate-trust-review/",
+      "publicationFile": "src/content/translations/es-c78cf468160e1a45.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "bb5be26c24786b21",
+      "language": "es",
+      "title": "CNCF y Kusari ofrecen herramientas de cadena de suministro a los mantenedores de proyectos",
+      "sourceSha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878",
+      "url": "https://youdozi.github.io/es/digest/2026-04-11-cncf-kusari-supply-chain-review/",
+      "publicationFile": "src/content/translations/es-bb5be26c24786b21.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    }
+  ],
+  "publicationNotes": [
+    "Review artifact only; not consumed by builds or publication commands.",
+    "No authorization to publish, merge or deploy is recorded.",
+    "Temporary preview fixture approval records and timestamps must never be reused for publication.",
+    "Existing news dates and all 36 public translations are preserved.",
+    "The earlier Buildkite source recheck pending in spanish-002 remains pending; this batch does not resolve or approve it."
+  ],
+  "integration": {
+    "pullRequest": 78,
+    "branch": "feat/spanish-security-batch-028",
+    "head": "70ec79ef7099deaff0e0bb93fcc8dcb8e8cdf23b",
+    "reason": "Keep the previous 12 private drafts and cumulative queue state; do not merge or publish them implicitly.",
+    "relationship": "Extend the same Draft PR from 12 to 27 editions; previous head does not establish approval of the new batch."
+  }
+}

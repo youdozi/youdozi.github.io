@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "spanish-002",
+  "state": "awaiting-publication-approval",
+  "batch": ".pipeline/translations/batches/spanish-002.json",
+  "batchSha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73",
+  "translationReview": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+  "scope": {
+    "sources": 12,
+    "editions": 12,
+    "languages": [
+      "es"
+    ]
+  },
+  "approval": null,
+  "candidates": [
+    {
+      "renewalId": "1e8ba1d86d179142",
+      "language": "es",
+      "title": "Copilot añade ayuda contextual a los resultados de evaluación de riesgos de GitHub",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "url": "https://youdozi.github.io/es/digest/2026-04-10-copilot-risk-assessment-context/",
+      "publicationFile": "src/content/translations/es-1e8ba1d86d179142.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "2b6f4abe346a373d",
+      "language": "es",
+      "title": "Proyectos de Spring: clasificación de informes de seguridad y aplicación de parches",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "url": "https://youdozi.github.io/es/digest/2026-06-02-spring-security-report-triage/",
+      "publicationFile": "src/content/translations/es-2b6f4abe346a373d.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "3f90329447f77e33",
+      "language": "es",
+      "title": "Validación de seguridad para agentes de programación de terceros en GitHub",
+      "sourceSha256": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f",
+      "url": "https://youdozi.github.io/es/digest/2026-06-10-third-party-coding-agent-security-validation/",
+      "publicationFile": "src/content/translations/es-3f90329447f77e33.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "4380abffaf1a31e0",
+      "language": "es",
+      "title": "GitLab 19.0: beta de secretos, análisis de dependencias y requisitos de actualización",
+      "sourceSha256": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+      "url": "https://youdozi.github.io/es/digest/2026-06-20-gitlab-security-features-and-upgrade-prerequisites/",
+      "publicationFile": "src/content/translations/es-4380abffaf1a31e0.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "46983b9e8a1cf49c",
+      "language": "es",
+      "title": "Cloudflare describe su respuesta operativa a Copy Fail",
+      "sourceSha256": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974",
+      "url": "https://youdozi.github.io/es/digest/2026-05-08-cloudflare-copy-fail-response/",
+      "publicationFile": "src/content/translations/es-46983b9e8a1cf49c.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "4a59615041b968ae",
+      "language": "es",
+      "title": "Los parches de PHP siguen siendo necesarios junto con las protecciones WAF de Cloudflare",
+      "sourceSha256": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4",
+      "url": "https://youdozi.github.io/es/digest/2026-10-22-php-patching-and-waf-protection/",
+      "publicationFile": "src/content/translations/es-4a59615041b968ae.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "language": "es",
+      "title": "Buildkite limita el alcance de los secretos y añade herramientas de validación de pipelines",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "url": "https://youdozi.github.io/es/digest/2026-10-20-buildkite-scoped-secrets-and-validation/",
+      "publicationFile": "src/content/translations/es-50b97c32c1d2c027.json",
+      "sourceRecheck": "pending-transport-failure",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition",
+        "Recheck the external source before preparing this publication file"
+      ]
+    },
+    {
+      "renewalId": "db11f89181439d98",
+      "language": "es",
+      "title": "Security Insights: procesamiento por lotes y planificación adaptativa de análisis",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "url": "https://youdozi.github.io/es/digest/2026-06-13-security-insights-batching-and-adaptive-scheduling/",
+      "publicationFile": "src/content/translations/es-db11f89181439d98.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "e458b053b5a9f878",
+      "language": "es",
+      "title": "Avisos innersource: visibilidad empresarial y corrección de dependencias",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "url": "https://youdozi.github.io/es/digest/2026-07-09-innersource-advisories-and-remediation/",
+      "publicationFile": "src/content/translations/es-e458b053b5a9f878.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "e858b2ec6331d84e",
+      "language": "es",
+      "title": "Cloudflare describe los límites de identidad y gobernanza para MCP",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "url": "https://youdozi.github.io/es/digest/2026-04-23-cloudflare-mcp-identity-and-governance/",
+      "publicationFile": "src/content/translations/es-e858b2ec6331d84e.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "ecc191be72688d94",
+      "language": "es",
+      "title": "Arm Metis: framework de código abierto y contexto del repositorio",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "url": "https://youdozi.github.io/es/digest/2026-05-31-arm-metis-repository-context/",
+      "publicationFile": "src/content/translations/es-ecc191be72688d94.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "eea31f00e6ce7be1",
+      "language": "es",
+      "title": "Panel sobre seguridad de IA: recomendaciones atribuidas sobre identidad y pruebas adversarias",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "url": "https://youdozi.github.io/es/digest/2026-06-30-ai-security-panel-identity-and-testing/",
+      "publicationFile": "src/content/translations/es-eea31f00e6ce7be1.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    }
+  ],
+  "publicationNotes": [
+    "Review artifact only; not read by the build or publication commands.",
+    "No authorization to publish, merge or deploy is recorded.",
+    "Buildkite source transport failure requires a new source check before that edition is proposed for publication. This manifest is not an automatic gate.",
+    "The preview used synthetic fixtures in a separate temporary worktree; no fixture approval or timestamps may be reused for publication.",
+    "Existing source news dates and all 36 public translations are preserved."
+  ]
+}

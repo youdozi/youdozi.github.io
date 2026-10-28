@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "state": "draft",
+  "batchId": "spanish-002",
+  "sourceLanguage": "en",
+  "reviewRequired": "AI meaning and target-language review; explicit user publication approval remains required.",
+  "translations": [
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "1e8ba1d86d179142",
+      "language": "es",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "edition": {
+        "title": "Copilot añade ayuda contextual a los resultados de evaluación de riesgos de GitHub",
+        "claims": [
+          "GitHub permite que los administradores de organizaciones y los responsables de seguridad abran Copilot directamente desde los resultados de las evaluaciones de riesgos de secretos o de Code Security.",
+          "El aviso describe explicaciones contextuales y orientación sobre los siguientes pasos. No demuestra que Copilot haya corregido automáticamente los problemas subyacentes."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Revise las acciones sugeridas y los permisos necesarios para ejecutarlas. Al registrar los resultados de una evaluación, distinga las explicaciones, las correcciones propuestas y las correcciones verificadas."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "2b6f4abe346a373d",
+      "language": "es",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "edition": {
+        "title": "Proyectos de Spring: clasificación de informes de seguridad y aplicación de parches",
+        "claims": [
+          "Spring advirtió que la mayoría de los proyectos de su cartera necesitarían actualizaciones para recibir los parches de seguridad programados y recomendó aplicar los parches más recientes. Se trataba de un aviso sobre una serie de lanzamientos, no de una matriz de versiones afectadas para cada aplicación.",
+          "El equipo distingue expresamente los informes de seguridad recibidos de los CVE emitidos: los informes pueden contener duplicados o hallazgos no válidos y requieren una clasificación por parte de los mantenedores. El volumen de informes por sí solo no determina la gravedad de las vulnerabilidades."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Relacione las dependencias reales de la aplicación con cada aviso de seguridad y con las ramas de versiones con soporte. Este resumen no reproduce de forma independiente las estadísticas de informes del proveedor ni demuestra que todas las aplicaciones sean explotables."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "3f90329447f77e33",
+      "language": "es",
+      "sourceSha256": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f",
+      "edition": {
+        "title": "Validación de seguridad para agentes de programación de terceros en GitHub",
+        "claims": [
+          "GitHub anunció la disponibilidad general de la validación de seguridad para los agentes de programación de terceros compatibles que trabajan en repositorios. Describe análisis con CodeQL, comprobaciones de las dependencias recién incorporadas frente a GitHub Advisory Database y análisis de secretos.",
+          "Las validaciones están activadas de forma predeterminada, siguen la configuración de herramientas de validación de Copilot del repositorio y no requieren una licencia de GitHub Advanced Security. Si se detectan problemas, el agente intenta corregirlos antes de finalizar la solicitud de incorporación de cambios; el éxito no está garantizado."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Confirme que la integración del agente sea compatible y compruebe la configuración efectiva del repositorio; mantenga la revisión humana y las comprobaciones independientes para los cambios sensibles desde el punto de vista de la seguridad. No se reprodujo ninguna prueba comparativa de la tasa de detección ni del éxito de las correcciones."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "4380abffaf1a31e0",
+      "language": "es",
+      "sourceSha256": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+      "edition": {
+        "title": "GitLab 19.0: beta de secretos, análisis de dependencias y requisitos de actualización",
+        "claims": [
+          "En GitLab 19.0, Secrets Manager es una beta abierta para clientes Premium y Ultimate de GitLab.com y Self-Managed. Las notas de la versión advierten que la beta podría no estar lista para su uso en producción.",
+          "El análisis de dependencias basado en SBOM está disponible de forma general en el nivel Ultimate de GitLab.com, Self-Managed y Dedicated. Su disponibilidad y su nivel de suscripción difieren de los de la beta de Secrets Manager.",
+          "Para actualizar una instalación Self-Managed a GitLab 19.0, PostgreSQL 17 es la versión mínima compatible. Las notas indican a quienes utilizan PostgreSQL 16 incluido en el paquete que actualicen la base de datos antes de instalar esta versión de GitLab."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Este resumen de alcance limitado abarca determinadas condiciones del lanzamiento, no todos los flujos de trabajo con agentes, los cambios de facturación ni los requisitos de plataforma. Antes del despliegue, compruebe la modalidad del servicio, el plan, la migración de la base de datos y la política de soporte de la beta que correspondan."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "46983b9e8a1cf49c",
+      "language": "es",
+      "sourceSha256": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974",
+      "edition": {
+        "title": "Cloudflare describe su respuesta operativa a Copy Fail",
+        "claims": [
+          "En relación con Copy Fail (CVE-2026-31431), Cloudflare describe cómo probó un kernel con el parche aplicado en un entorno de preproducción antes de reanudar el proceso de reinicio de su infraestructura.",
+          "Cloudflare afirma que su propio entorno no se vio afectado durante el incidente. Esa afirmación específica de la empresa no demuestra la seguridad de otras instalaciones de Linux."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compare por separado la exposición, la telemetría, las medidas temporales de mitigación y el despliegue verificado de parches. Consulte los avisos de cada distribución para identificar las versiones afectadas y no considere el caso de un proveedor como prueba de que otra infraestructura está protegida."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "4a59615041b968ae",
+      "language": "es",
+      "sourceSha256": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4",
+      "edition": {
+        "title": "Los parches de PHP siguen siendo necesarios junto con las protecciones WAF de Cloudflare",
+        "claims": [
+          "El proyecto PHP identifica las versiones 8.5.12, 8.4.27, 8.3.36 y 8.2.35 como correcciones para las vulnerabilidades críticas de ejecución remota de código divulgadas en aquel momento.",
+          "Cloudflare indica que sus clientes deben aplicar los parches de PHP incluso cuando su WAF aporte una capa defensiva adicional."
+        ],
+        "followUp": [
+          "En una actualización posterior, Cloudflare limita la protección frente al problema relacionado con el progreso de las cargas al nombre de campo predeterminado; cambiar session.upload_progress.name queda fuera de la cobertura de esa regla WAF."
+        ]
+      },
+      "reviewFocus": "Revise la compilación de PHP desplegada y los parches adaptados por la distribución por separado de la cobertura WAF. Compruebe la configuración del progreso de las cargas antes de considerar aplicable la mitigación posterior. Estas son sugerencias de revisión; no se probó ninguna aplicación."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "50b97c32c1d2c027",
+      "language": "es",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "edition": {
+        "title": "Buildkite limita el alcance de los secretos y añade herramientas de validación de pipelines",
+        "claims": [
+          "Buildkite describe los secretos de pipeline como secretos del clúster restringidos al pipeline actual, con la posibilidad de establecer condiciones de acceso adicionales.",
+          "Su servidor MCP incorpora validate_pipeline para comprobar el YAML del pipeline frente al esquema oficial antes de subirlo."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Revise la exposición de los secretos en cada paso y los permisos concedidos a los agentes de CI. La validación del esquema es una comprobación limitada; el comportamiento durante la ejecución, los complementos y los límites de permisos requieren una revisión aparte."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "db11f89181439d98",
+      "language": "es",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "edition": {
+        "title": "Security Insights: procesamiento por lotes y planificación adaptativa de análisis",
+        "claims": [
+          "Cloudflare describe un cambio en sus verificadores para que consuman mensajes por lotes y procesen cada mensaje en una goroutine independiente. Señala expresamente las contrapartidas: repetir más trabajo si el proceso falla a mitad de un lote y un consumo de memoria ligeramente mayor.",
+          "El relato técnico también describe un límite de planificación adaptativo que se recalcula a partir del número total de cuentas y zonas y de las frecuencias de análisis requeridas, en lugar de mantener una tasa fija a medida que aumenta la carga de trabajo."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Esta revisión se limita a la arquitectura documentada y no reproduce de forma independiente el aumento de la capacidad de procesamiento anunciado en el titular. Antes de adoptar estos patrones, compare la carga de trabajo, la memoria, el comportamiento tras un reinicio y la latencia de planificación."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e458b053b5a9f878",
+      "language": "es",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "edition": {
+        "title": "Avisos innersource: visibilidad empresarial y corrección de dependencias",
+        "claims": [
+          "GitHub anunció la disponibilidad general de avisos de seguridad internos para clientes empresariales de Advanced Security. A diferencia de los avisos públicos de código abierto, su visibilidad está restringida a los repositorios propiedad de esa empresa.",
+          "La API REST permite crear, actualizar y retirar vulnerabilidades innersource. Tras crear un aviso, Dependabot puede notificar a los repositorios internos que utilizan el componente y abrir una solicitud de incorporación de cambios para actualizarlo cuando se necesita una versión corregida."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Antes de la implantación, verifique la propiedad empresarial, la identidad del componente y la correspondencia de las dependencias. Un aviso o una solicitud de incorporación de cambios generada no despliega por sí mismo una corrección; mantenga los controles de revisión, pruebas y publicación."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e858b2ec6331d84e",
+      "language": "es",
+      "sourceSha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+      "edition": {
+        "title": "Cloudflare describe los límites de identidad y gobernanza para MCP",
+        "claims": [
+          "Cloudflare describe una plantilla de servidor MCP que utiliza Cloudflare Access como proveedor OAuth. Se trata de su arquitectura de referencia, no de un requisito universal de MCP.",
+          "El artículo indica que los portales de servidores MCP centralizan los registros, la aplicación de políticas y los controles de prevención de pérdida de datos."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Separe la verificación de identidad de la autorización de herramientas y de la política de acceso a los datos. Revise el alcance de las credenciales, los permisos de escritura y la visibilidad de auditoría de cada servidor conectado; un portal compartido no demuestra por sí solo que se opere con el mínimo privilegio."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "ecc191be72688d94",
+      "language": "es",
+      "sourceSha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+      "edition": {
+        "title": "Arm Metis: framework de código abierto y contexto del repositorio",
+        "claims": [
+          "Arm anunció que su equipo de seguridad de producto desarrolló Metis y lo publicó como un framework de seguridad de código abierto basado en agentes.",
+          "El anuncio describe una arquitectura de generación aumentada por recuperación que combina modelos de lenguaje con conocimiento específico del proyecto para realizar análisis de seguridad."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Antes de adoptarlo, revise el contexto del repositorio, el acceso al modelo, los límites de los datos y la validación de los hallazgos. En esta revisión no se reprodujeron de forma independiente las pruebas comparativas internas del proveedor sobre tasas de detección y falsos positivos."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "eea31f00e6ce7be1",
+      "language": "es",
+      "sourceSha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+      "edition": {
+        "title": "Panel sobre seguridad de IA: recomendaciones atribuidas sobre identidad y pruebas adversarias",
+        "claims": [
+          "En el panel, Elham Arshad recomienda tratar a los agentes como identidades con sus propios perfiles, permisos, credenciales y ciclos de vida, con capacidades de alcance limitado y comprobaciones de políticas para las acciones sensibles. Estas son recomendaciones de la participante.",
+          "Vijay Dilwale sostiene que los defensores deben probar la inyección de instrucciones, el abuso de la recuperación de información y el acceso a herramientas manipulando deliberadamente las entradas y observando el comportamiento cuando cambian el contexto o los permisos. Es asesoramiento experto, no una prueba comparativa que demuestre la eficacia de un control."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Este resumen de una selección del panel no representa las opiniones de todos sus participantes ni establece una frecuencia universal de ataques. Antes de adoptar las recomendaciones, defina un modelo de amenazas, los límites de aprobación, los registros y pruebas repetibles."
+    }
+  ]
+}

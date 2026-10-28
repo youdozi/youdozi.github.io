@@ -1,0 +1,477 @@
+{
+  "createdAt": "2026-10-28T02:06:46.013565+00:00",
+  "baseCommit": "72fb3714f5b57317a83568b77149782b30a85302",
+  "branch": "feat/sitewide-discovery-batch-027",
+  "publication": "Draft only; user approved PR76 publication and requested a broader next work unit, not automatic publication of this follow-up.",
+  "workUnit": {
+    "name": "Sitewide multilingual content discovery",
+    "scope": [
+      "All-article year archives for eight languages",
+      "Inventory-based header/footer and active location",
+      "Same-language empty-state and multilingual404 recovery",
+      "Explicit article-language home fallback and keyboard menu handling",
+      "Sitemap, ItemList, IndexNow route support and whole-site discovery/SEO validation"
+    ],
+    "acceptance": "Every sitemap URL is reachable from its own language home; every article URL requires at most two static HTML link steps; no public page links to an empty noindex list.",
+    "articleSourcesChanged": 0,
+    "articleURLsPreserved": 423,
+    "newArchivePages": 8,
+    "supportedLocales": 8
+  },
+  "previousPublication": {
+    "PR": 76,
+    "mainCommit": "72fb3714f5b57317a83568b77149782b30a85302",
+    "productionRun": 40616543018,
+    "buildJob": 122580251178,
+    "deployJob": 122581851172,
+    "conclusion": "success",
+    "publicArticleMetadataChecked": 423,
+    "publicArticleMetadataPassed": 423
+  },
+  "initialAudit": {
+    "emptyNoindexDestinations": 12,
+    "publicLinksToEmptyDestinations": 144,
+    "affectedPublicSourcePages": 72,
+    "unicodeTargetsPreviouslyExcluded": [
+      "/ko/tags/다이어그램/",
+      "/ko/tags/프로그래머스/",
+      "/ko/tags/코딩테스트/"
+    ],
+    "issue": "Filesystem Unicode paths were compared with percent-encoded canonical URLs without URL encoding, silently omitting three existing public pages from SEO/metadata checks."
+  },
+  "review": {
+    "type": "Self AI code, localized-copy, static-graph and browser review; not independent or human review",
+    "findings": [
+      {
+        "issue": "Section availability was repeated inconsistently across templates and metadata.",
+        "resolution": "Share actual inventory decisions across navigation, empty recovery, section alternates and sitemap roots; do not invent an archive link for an absent locale inventory."
+      },
+      {
+        "issue": "Foreign-language menus sent readers to empty post/topic lists, whose recovery then switched to Korean.",
+        "resolution": "Remove empty destinations from common navigation and recover through the current language archive. Preserve incoming empty URLs as noindex pages."
+      },
+      {
+        "issue": "An absent article translation looked like a same-article language switch.",
+        "resolution": "Label fallback links as a move to the target-language home; keep actual counterpart URLs direct."
+      },
+      {
+        "issue": "Year grouping can disagree with visible dates around UTC New Year.",
+        "resolution": "Use the existing Asia/Seoul publication display zone, and test the boundary."
+      },
+      {
+        "issue": "Collection lastmod should represent a recorded structure/content update, not a fresh build time.",
+        "resolution": "Use the latest recorded source modification or captured structure update (2026-10-28T02:00:43Z). Preserve all article dates."
+      },
+      {
+        "issue": "A link-depth scan could accidentally count another language, redirects or search as shortcuts.",
+        "resolution": "Traverse only self-canonical indexable HTML nodes within the source locale; require all XML URLs and a two-step article budget under site policy."
+      },
+      {
+        "issue": "Korean filesystem paths were being silently skipped by prior metadata/SEO checks.",
+        "resolution": "Use shared encoded emitted_url identity in all three graph/metadata checks and exercise a native Unicode path fixture."
+      },
+      {
+        "issue": "IndexNow route expansion could accidentally allow arbitrary archive children or unpublished locales.",
+        "resolution": "Permit only actual canonical sitemap archive roots and test rejected child/unknown/noindex URLs."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "sha256": {
+      "docs/site-discovery.md": "8145c4f552b0cc07883f91fdda30f44d616794b0bfc13be49bfac39bc39173be",
+      "src/lib/discovery.ts": "a7a8344c4de8cd4f7466a0e12dc693c522f3c48c00ff7b303030f2e7cc9ce1f1",
+      "src/lib/discovery-ui.json": "6f9e01f8900454939fc23baafe3f9520f30710ffaf432b6db4751b460a85b647",
+      "src/pages/[lang]/archive.astro": "48a64b4b742b02ba3d7a6a98cc853ae7e26ff983b7343639d588229929e5f3dc",
+      "src/components/EmptyState.astro": "cf4e52a27f59b51052152dc06ecfb2d3d2c443549a49593fc6be80bf342e615f",
+      "src/components/Listing.astro": "56739275d88f5e42575ace844d8b0010f72e9252cf5e94df5e05bf61f5ac15f2",
+      "src/layouts/Base.astro": "162ff765a13d076dc74ebcedb88f7c99566fc3cb44ab877f5172d424e92a30d4",
+      "src/scripts/navigation.ts": "70d3f6ef0d7c636427c0ec3c5bbdd9550aa59f6187b14ce910e8e2b170c03054",
+      "src/pages/404.astro": "95ab26b5f3a638ec46d551f11911b7a440fb7d7c39de32063eeb0c38f9330a7a",
+      "src/pages/[lang]/posts/index.astro": "c715dc6bdc0c14350396058e18b9ca8c502dd92365b96c45f049216abc572d0a",
+      "src/pages/[lang]/digest/index.astro": "010807b8d3a960ab3101c7a30a852a14d1b242eb8b23a56ca06c3bf45ebdbe4d",
+      "src/pages/[lang]/[taxonomy]/index.astro": "4e5bbc90f0da6f71c5d58f5a729b43433d80835080f3da13c47de372b8b7f0f9",
+      "src/pages/sitemap.xml.ts": "96943cbc35f3d5aba4acd0f6818890ab956baaa613ad288cb1079dfa58ae3424",
+      "src/styles/global.css": "1d4c91b41708df1622a6dd32841d2125a7c21c950c8c2bc42b00ab5b992ff81e",
+      "scripts/check_seo.py": "403844f9695d012844935e74ff0f28e62cb924feefda2bae4d1270daad102349",
+      "scripts/check_metadata.py": "a87986b52ec39b42454dc30a5ead34bf0a4270c5991bc7d1209b5e4e2edd3648",
+      "scripts/check_discovery.py": "1c8e9d13b5689bc2519a4792c04009f26fdd0d2c754f695acf5e7c584ee17205",
+      "scripts/indexnow.py": "5ca826cc49b77bae39fd41fcfef1b445e5acbfcee199ea5f0cf591a4030581b9",
+      "scripts/test-discovery.mjs": "0c607c49f02f53255fa5c058a9920938d3de4a1ead10c70fdeb5c07601a28220",
+      "scripts/test_check_discovery.py": "3b5b2bbfd20d9a53c5ebe49593bb88d1e0960d0605052f2c75d965fc7fde584d",
+      "scripts/test_indexnow.py": "3f0ffdd09a1dc39190284545bd342e2cdb0244c6258b92a6cd8b6568dddfc5fd",
+      "scripts/test-site.mjs": "31da8e2a8e81884589010c925611c5b67a912f3b7b2d04b164cb3657b475610d",
+      "package.json": "9cf5287fa1bdeb5c7837b59f4a52a3af2b4653c851e3cc546f9be2836d747754",
+      "README.md": "97b81f898163aedb057843ade91d9ad3dcc53b4a7c1198685d51f2a709e50318"
+    }
+  },
+  "translationReview": {
+    "skill": "translate",
+    "sourceLocale": "en",
+    "targetLocales": [
+      "ko",
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru",
+      "es"
+    ],
+    "stringsPerLocale": 8,
+    "method": "Meaning comparison followed by target-language fluency review of short navigation, recovery and archive labels. Count headings avoid numeric noun-inflection branches. Spanish new imperatives follow existing formal UI wording.",
+    "scopeLimit": "No article translations were created or certified."
+  },
+  "validation": {
+    "python": 194,
+    "node": 61,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "static": {
+      "discovery": {
+        "publicPages": 824,
+        "emptyDestinations": 12,
+        "emptyDestinationLinks": 0,
+        "sitemapURLs": 479,
+        "articles": 423,
+        "languages": {
+          "de": {
+            "sitemapURLs": 10,
+            "reachableSitemapURLs": 10,
+            "articles": 6,
+            "maxArticleLinkSteps": 1
+          },
+          "en": {
+            "sitemapURLs": 113,
+            "reachableSitemapURLs": 113,
+            "articles": 97,
+            "maxArticleLinkSteps": 2
+          },
+          "es": {
+            "sitemapURLs": 10,
+            "reachableSitemapURLs": 10,
+            "articles": 6,
+            "maxArticleLinkSteps": 1
+          },
+          "fr": {
+            "sitemapURLs": 10,
+            "reachableSitemapURLs": 10,
+            "articles": 6,
+            "maxArticleLinkSteps": 1
+          },
+          "ja": {
+            "sitemapURLs": 10,
+            "reachableSitemapURLs": 10,
+            "articles": 6,
+            "maxArticleLinkSteps": 1
+          },
+          "ko": {
+            "sitemapURLs": 306,
+            "reachableSitemapURLs": 306,
+            "articles": 290,
+            "maxArticleLinkSteps": 2
+          },
+          "ru": {
+            "sitemapURLs": 10,
+            "reachableSitemapURLs": 10,
+            "articles": 6,
+            "maxArticleLinkSteps": 1
+          },
+          "zh-CN": {
+            "sitemapURLs": 10,
+            "reachableSitemapURLs": 10,
+            "articles": 6,
+            "maxArticleLinkSteps": 1
+          }
+        }
+      },
+      "metadata": {
+        "pages": 824,
+        "articles": 423
+      },
+      "seo": {
+        "htmlPages": 944,
+        "selfCanonicalIndexablePages": 824,
+        "sitemapURLs": 479,
+        "htmlAlternateEdges": 1531,
+        "alternateGroups": 306,
+        "sitemapByLanguage": {
+          "de": 10,
+          "en": 113,
+          "es": 10,
+          "fr": 10,
+          "ja": 10,
+          "ko": 306,
+          "ru": 10,
+          "zh-CN": 10
+        }
+      }
+    },
+    "browser": [
+      {
+        "case": "archive",
+        "language": "en",
+        "width": 320,
+        "articles": 97,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "ko",
+        "width": 320,
+        "articles": 290,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "zh-CN",
+        "width": 320,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "ja",
+        "width": 320,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "de",
+        "width": 320,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "fr",
+        "width": 320,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "ru",
+        "width": 320,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "es",
+        "width": 320,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "en",
+        "width": 1280,
+        "articles": 97,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "ko",
+        "width": 1280,
+        "articles": 290,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "zh-CN",
+        "width": 1280,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "ja",
+        "width": 1280,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "de",
+        "width": 1280,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "fr",
+        "width": 1280,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "ru",
+        "width": 1280,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "archive",
+        "language": "es",
+        "width": 1280,
+        "articles": 6,
+        "yearAnchor": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "empty posts",
+        "language": "zh-CN",
+        "recovery": "/zh-CN/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "empty tags",
+        "language": "zh-CN",
+        "recovery": "/zh-CN/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "empty posts",
+        "language": "ja",
+        "recovery": "/ja/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "empty tags",
+        "language": "ja",
+        "recovery": "/ja/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "empty posts",
+        "language": "de",
+        "recovery": "/de/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "empty tags",
+        "language": "de",
+        "recovery": "/de/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "empty posts",
+        "language": "fr",
+        "recovery": "/fr/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "empty tags",
+        "language": "fr",
+        "recovery": "/fr/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "empty posts",
+        "language": "ru",
+        "recovery": "/ru/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "empty tags",
+        "language": "ru",
+        "recovery": "/ru/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "empty posts",
+        "language": "es",
+        "recovery": "/es/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "empty tags",
+        "language": "es",
+        "recovery": "/es/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "language menu",
+        "path": "/en/posts/2023-09-19-springboot-test-webclient/",
+        "fallbackHints": 6,
+        "keyboardAndOutside": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "language menu",
+        "path": "/ko/posts/2023-09-19-springboot-test-webclient/",
+        "fallbackHints": 6,
+        "keyboardAndOutside": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "language menu",
+        "path": "/fr/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "fallbackHints": 0,
+        "keyboardAndOutside": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "language menu",
+        "path": "/ko/digest/2026-10-22/",
+        "fallbackHints": 7,
+        "keyboardAndOutside": "passed",
+        "result": "passed"
+      },
+      {
+        "case": "rendered404",
+        "width": 320,
+        "languages": 8,
+        "result": "passed"
+      },
+      {
+        "case": "rendered404",
+        "width": 1280,
+        "languages": 8,
+        "result": "passed"
+      },
+      {
+        "case": "JavaScript disabled",
+        "path": "/ko/archive/",
+        "result": "passed"
+      },
+      {
+        "case": "JavaScript disabled",
+        "path": "/404.html",
+        "result": "passed"
+      }
+    ],
+    "screenshotsReviewed": [
+      "Korean320px archive overview",
+      "English-default320px rendered404 with eight native-language destinations"
+    ],
+    "generatedIntegration": "All eight archive ItemLists equal their language search indexes and XML dates; all foreign empty post/topic pages recover to their own archive; header/footer and404 links checked.",
+    "codeExamples": "Full existing example reproduction suite remains required in CI."
+  },
+  "sources": [
+    "https://developers.google.com/search/docs/crawling-indexing/links-crawlable",
+    "https://developers.google.com/search/docs/specialty/international/localized-versions"
+  ],
+  "limits": [
+    "Two HTML link steps are this project’s navigation rule, not a Google ranking requirement or a measured crawl path.",
+    "The graph proves sitemap reachability, not that every taxonomy route must be in the sitemap.",
+    "IndexNow remains preview-only before approval; acceptance after publication would not prove indexing.",
+    "The local404 tests verify the rendered fallback page, not every remote host’s missing-URL status behavior.",
+    "Existing article content, source dates and reviewed-publication workflow are unchanged."
+  ]
+}

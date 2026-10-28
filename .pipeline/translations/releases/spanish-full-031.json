@@ -1,0 +1,1234 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "spanish-full-031",
+  "state": "awaiting-publication-approval",
+  "createdAt": "2026-10-28T04:42:17.413Z",
+  "approval": null,
+  "editions": [
+    {
+      "key": "es-1e8ba1d86d179142",
+      "title": "Copilot añade ayuda contextual a los resultados de evaluación de riesgos de GitHub",
+      "url": "https://youdozi.github.io/es/digest/2026-04-10-copilot-risk-assessment-context/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "2234ab482fa677cd9f4eaf96d6254e29fe990ff169fdac7b97bfc00e0b52fa4d",
+      "source": {
+        "path": "src/content/renewals/1e8ba1d86d179142.json",
+        "sha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+        "sha256": "adeb143b6532f4a8e202b7882ce0d64df53946aa1cafeb7e2453679f596d4110",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-2b6f4abe346a373d",
+      "title": "Proyectos de Spring: clasificación de informes de seguridad y aplicación de parches",
+      "url": "https://youdozi.github.io/es/digest/2026-06-02-spring-security-report-triage/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "1b8dd0e3a567d557549ba358ec4a04ba4fd6e2e74b2edc2f8f3bb236c7ea95ac",
+      "source": {
+        "path": "src/content/renewals/2b6f4abe346a373d.json",
+        "sha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+        "sha256": "adeb143b6532f4a8e202b7882ce0d64df53946aa1cafeb7e2453679f596d4110",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-3f90329447f77e33",
+      "title": "Validación de seguridad para agentes de programación de terceros en GitHub",
+      "url": "https://youdozi.github.io/es/digest/2026-06-10-third-party-coding-agent-security-validation/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "d5df09ae0a3bf221da8a19346661eda54ce836a84a58e8de59c614c195172272",
+      "source": {
+        "path": "src/content/renewals/3f90329447f77e33.json",
+        "sha256": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+        "sha256": "adeb143b6532f4a8e202b7882ce0d64df53946aa1cafeb7e2453679f596d4110",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-4380abffaf1a31e0",
+      "title": "GitLab 19.0: beta de secretos, análisis de dependencias y requisitos de actualización",
+      "url": "https://youdozi.github.io/es/digest/2026-06-20-gitlab-security-features-and-upgrade-prerequisites/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "fcf34821fbb21780b8f9b96a3904e43016b9f522007bd70e4d1213c227d662bf",
+      "source": {
+        "path": "src/content/renewals/4380abffaf1a31e0.json",
+        "sha256": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+        "sha256": "adeb143b6532f4a8e202b7882ce0d64df53946aa1cafeb7e2453679f596d4110",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-46983b9e8a1cf49c",
+      "title": "Cloudflare describe su respuesta operativa a Copy Fail",
+      "url": "https://youdozi.github.io/es/digest/2026-05-08-cloudflare-copy-fail-response/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "321a530e8c928eff269ebb94b95d344835b6ac43a7a6b2b700aace358c882910",
+      "source": {
+        "path": "src/content/renewals/46983b9e8a1cf49c.json",
+        "sha256": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+        "sha256": "adeb143b6532f4a8e202b7882ce0d64df53946aa1cafeb7e2453679f596d4110",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-4a59615041b968ae",
+      "title": "Los parches de PHP siguen siendo necesarios junto con las protecciones WAF de Cloudflare",
+      "url": "https://youdozi.github.io/es/digest/2026-10-22-php-patching-and-waf-protection/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "739d1582d646cbc0b9e4b358b5dd55f19f310af3c6938fd6b6064c13adc0e011",
+      "source": {
+        "path": "src/content/renewals/4a59615041b968ae.json",
+        "sha256": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+        "sha256": "adeb143b6532f4a8e202b7882ce0d64df53946aa1cafeb7e2453679f596d4110",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-50b97c32c1d2c027",
+      "title": "Buildkite limita el alcance de los secretos y añade herramientas de validación de pipelines",
+      "url": "https://youdozi.github.io/es/digest/2026-10-20-buildkite-scoped-secrets-and-validation/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "cb1d974db3ffb04415725086e0488a6c8bad900c8d0f49285e241c95a3cfdc28",
+      "source": {
+        "path": "src/content/renewals/50b97c32c1d2c027.json",
+        "sha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-buildkite-supplement.json",
+        "sha256": "b7171f5d5530372870bc4ee4d84c2f746e89837231969ed271132e498e5dd4aa",
+        "method": "supplemental-primary"
+      }
+    },
+    {
+      "key": "es-db11f89181439d98",
+      "title": "Security Insights: procesamiento por lotes y planificación adaptativa de análisis",
+      "url": "https://youdozi.github.io/es/digest/2026-06-13-security-insights-batching-and-adaptive-scheduling/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "bed7f49879346aa2453feee580c1056b9883dce22c2cb72dbe3db785f136cca0",
+      "source": {
+        "path": "src/content/renewals/db11f89181439d98.json",
+        "sha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+        "sha256": "adeb143b6532f4a8e202b7882ce0d64df53946aa1cafeb7e2453679f596d4110",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-e458b053b5a9f878",
+      "title": "Avisos innersource: visibilidad empresarial y corrección de dependencias",
+      "url": "https://youdozi.github.io/es/digest/2026-07-09-innersource-advisories-and-remediation/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "3f0880e9bf326a0c5c6964e2188f6799d298546f54101824e6aadcc5222a769c",
+      "source": {
+        "path": "src/content/renewals/e458b053b5a9f878.json",
+        "sha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+        "sha256": "adeb143b6532f4a8e202b7882ce0d64df53946aa1cafeb7e2453679f596d4110",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-e858b2ec6331d84e",
+      "title": "Cloudflare describe los límites de identidad y gobernanza para MCP",
+      "url": "https://youdozi.github.io/es/digest/2026-04-23-cloudflare-mcp-identity-and-governance/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "dbdfbe46cc9522849950d3242f4c463804009e6217c4a9f12ee32f56f838c17c",
+      "source": {
+        "path": "src/content/renewals/e858b2ec6331d84e.json",
+        "sha256": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+        "sha256": "adeb143b6532f4a8e202b7882ce0d64df53946aa1cafeb7e2453679f596d4110",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-ecc191be72688d94",
+      "title": "Arm Metis: framework de código abierto y contexto del repositorio",
+      "url": "https://youdozi.github.io/es/digest/2026-05-31-arm-metis-repository-context/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "2fb0a43f8fcbe8497c130770bd83ed6e3f035a1d6eaabc4ee835df7877aa9b1f",
+      "source": {
+        "path": "src/content/renewals/ecc191be72688d94.json",
+        "sha256": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+        "sha256": "adeb143b6532f4a8e202b7882ce0d64df53946aa1cafeb7e2453679f596d4110",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-eea31f00e6ce7be1",
+      "title": "Panel sobre seguridad de IA: recomendaciones atribuidas sobre identidad y pruebas adversarias",
+      "url": "https://youdozi.github.io/es/digest/2026-06-30-ai-security-panel-identity-and-testing/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-002.json",
+        "sha256": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+      },
+      "draftSha256": "8b6d76d32b18ecb3ce67535209a2d510e228c23f8c8e9c69fb197e397951cf8a",
+      "source": {
+        "path": "src/content/renewals/eea31f00e6ce7be1.json",
+        "sha256": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002.json",
+        "sha256": "4833423e21bebbd48ab840ed40a54f0e164ce05be72c246ca5ff4cc69cac20ab"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+        "sha256": "adeb143b6532f4a8e202b7882ce0d64df53946aa1cafeb7e2453679f596d4110",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-568305543e6754fa",
+      "title": "Spring Boot en fase milestone: cambios en LDAP y telemetría",
+      "url": "https://youdozi.github.io/es/digest/2026-09-30-spring-boot-milestone-ldap-and-telemetry/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "334bf5654c6ce00c083288b1fc60d6c2cab4d790ddfcc7ae454a6cc1c345ca8f",
+      "source": {
+        "path": "src/content/renewals/568305543e6754fa.json",
+        "sha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-f05ff63990b375e2",
+      "title": "Spring Boot incorpora controles de red del cliente y telemetría en una versión candidata",
+      "url": "https://youdozi.github.io/es/digest/2026-04-28-spring-boot-client-network-and-telemetry/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "cae010a1a92f40de86995a71bcc08717ec550067370dc1214ab9d3dcea17e2ef",
+      "source": {
+        "path": "src/content/renewals/f05ff63990b375e2.json",
+        "sha256": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-9d263cda22c982a1",
+      "title": "Recopilación de versiones de Spring: bases seleccionadas de plataforma e IA",
+      "url": "https://youdozi.github.io/es/digest/2026-06-16-spring-boot-and-ai-platform-baselines/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "58c995184d556389d816aebe0c149ed2add0e97a1d23330d194df5af56279850",
+      "source": {
+        "path": "src/content/renewals/9d263cda22c982a1.json",
+        "sha256": "fd6362f6ce2cb99651f4eecbc0e56325631954375d3bcb0fd2ade0e1534699d2"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-ad44e1abd30ad1f2",
+      "title": "Versiones de Spring Security y límites de soporte en el aviso de abril",
+      "url": "https://youdozi.github.io/es/digest/2026-04-22-spring-security-releases-and-support/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "986a830cefb8f2b1a120cb275c4c00ee30a0765ecc12ecb1d762d81da3338ae5",
+      "source": {
+        "path": "src/content/renewals/ad44e1abd30ad1f2.json",
+        "sha256": "db88dfaf65d4c8302430160f855c07d6047c4bcecbaed8ea2281fdf275778361"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-7067e48d153e8525",
+      "title": "Argo CD en versión candidata: mTLS interno y configuración de integridad del código fuente",
+      "url": "https://youdozi.github.io/es/digest/2026-06-27-argo-cd-release-candidate-security-configuration/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "dd64af93aff51f834c0eb3ddb85e2651bfc63f721277406448113ba0a5d36604",
+      "source": {
+        "path": "src/content/renewals/7067e48d153e8525.json",
+        "sha256": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-fecc68bc1f0f9da3",
+      "title": "Kubernetes 1.36: mutación de admisión y espacios de nombres de usuario para pods en estado estable",
+      "url": "https://youdozi.github.io/es/digest/2026-05-15-kubernetes-1-36-admission-and-user-namespaces/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "d1abe6a4a2c771a09455a9716f9a9c1001b13defbfc9e10a91174ca055d17dcc",
+      "source": {
+        "path": "src/content/renewals/fecc68bc1f0f9da3.json",
+        "sha256": "072f89fad175fbc75fe474e42dd2891a458672d756b3f52d65f25350cabb89ff"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-6944923e55b6bbd0",
+      "title": "El aviso de TeamCity distingue la exposición de On-Premises y Cloud",
+      "url": "https://youdozi.github.io/es/digest/2026-05-12-teamcity-on-premises-security-advisory/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "57a19a4d8b0c405906a978834ab7a9aa960220c5490e5153f9afc1946e4b0113",
+      "source": {
+        "path": "src/content/renewals/6944923e55b6bbd0.json",
+        "sha256": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-72477d086944244f",
+      "title": "La protección de NetScaler requiere parches y controles sobre el origen",
+      "url": "https://youdozi.github.io/es/digest/2026-10-20-netscaler-patching-and-origin-controls/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "600c0855d6b2d1326a11db9cf3443bb14dc3ffc5a75d8c7c3ec2650d38c7be5a",
+      "source": {
+        "path": "src/content/renewals/72477d086944244f.json",
+        "sha256": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-59c87ea544e0e5db",
+      "title": "Reglas de respuesta del WAF de Cloudflare: acciones y restricciones sobre el cuerpo",
+      "url": "https://youdozi.github.io/es/digest/2026-10-24-cloudflare-waf-response-rule-limits/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "5210168b287a6de47b2bcfe9771d557d9b09172603ed66964b1d921edc408dbe",
+      "source": {
+        "path": "src/content/renewals/59c87ea544e0e5db.json",
+        "sha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-7ec61f556fb8d2c3",
+      "title": "Cloudflare Security Overview distingue la prioridad del riesgo de la visibilidad",
+      "url": "https://youdozi.github.io/es/digest/2026-05-05-cloudflare-security-overview-scope/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "fd4326ebd5fa3e076c55ca5efd840265141f94af1f57088b0285a964d40cffaa",
+      "source": {
+        "path": "src/content/renewals/7ec61f556fb8d2c3.json",
+        "sha256": "8c3de756afe00f70b90d7547ce3e3bbbf57a4ad6e92d278edc175a646fb748a3"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-87db18d4899cc26c",
+      "title": "El contexto de ejecución de Dynatrace ayuda a priorizar las alertas de GitHub",
+      "url": "https://youdozi.github.io/es/digest/2026-04-08-dynatrace-github-runtime-alert-context/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "fe26454538e5216d9198a76768be1306f90945fed55e21875c341daba7420111",
+      "source": {
+        "path": "src/content/renewals/87db18d4899cc26c.json",
+        "sha256": "65fcae80a88f0dd69441d675ad3044294860089a6708cabecaf02cd3639dde07"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-b4cc1e300a7d9c1b",
+      "title": "Las evaluaciones de organizaciones de GitHub resumen los riesgos de seguridad del código",
+      "url": "https://youdozi.github.io/es/digest/2026-04-09-github-code-security-risk-assessment/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "60ed45298afd908570bbd824c5a0b2747d586865b75ca8aa1597bc6ffe6fd8f7",
+      "source": {
+        "path": "src/content/renewals/b4cc1e300a7d9c1b.json",
+        "sha256": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-9aee971925826c50",
+      "title": "BadHost: autorización basada en rutas de Starlette y condiciones del proxy",
+      "url": "https://youdozi.github.io/es/digest/2026-06-02-badhost-starlette-authorization-and-proxy-conditions/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "60ac564247a9780c3cd59530bc48c6eca2326512c4c8380bc8f3fc26b9b8d077",
+      "source": {
+        "path": "src/content/renewals/9aee971925826c50.json",
+        "sha256": "14cbf673a6cfbee2d6a53b8bffe1ad520623b9267985970cd67a710d3db42ff7"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-c78cf468160e1a45",
+      "title": "Incidente de eMudhra: revise la confianza de la aplicación además de actualizar los clientes",
+      "url": "https://youdozi.github.io/es/digest/2026-10-21-emudhra-certificate-trust-review/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "ed67fa5b93b5e1494a4665b1d3d081f924935662f9bcac2d409bf6852973db1d",
+      "source": {
+        "path": "src/content/renewals/c78cf468160e1a45.json",
+        "sha256": "0d86ac8ee62c5ab5467eac08d56af5dff3519826c3562b6b635bbeb09ba2bcd0"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-bb5be26c24786b21",
+      "title": "CNCF y Kusari ofrecen herramientas de cadena de suministro a los mantenedores de proyectos",
+      "url": "https://youdozi.github.io/es/digest/2026-04-11-cncf-kusari-supply-chain-review/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-003.json",
+        "sha256": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+      },
+      "draftSha256": "5401a2aad96694926e429c468ef1292c8e260a99a3b013d30e01800d8e3e312c",
+      "source": {
+        "path": "src/content/renewals/bb5be26c24786b21.json",
+        "sha256": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003.json",
+        "sha256": "78e9f986a761fdb35808791926a35f8bb713fc17d00e636270adbabad20f456c"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+        "sha256": "22529550019c326e26840074a8be032c91d5f167f27303fb6fee94f9cf134739",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-27d181b6a4903b28",
+      "title": "Análisis de código con IA: condiciones de la versión preliminar y posterior disponibilidad general",
+      "url": "https://youdozi.github.io/es/digest/2026-07-15-ai-code-scanning-preview-and-general-availability/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "1fa7c7b567087b418d20e8c5541ca3abe44f5b527af97d2767701265b90dc393",
+      "source": {
+        "path": "src/content/renewals/27d181b6a4903b28.json",
+        "sha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-28ede0247b95214f",
+      "title": "Retirada de modelos de Copilot: alcance, alternativas y excepción para la revisión de código",
+      "url": "https://youdozi.github.io/es/digest/2026-06-07-copilot-model-retirement-and-code-review-exception/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "b4b05397a4b614d66b89b22f5977e5451fa7d54892b9b5cd68bd7f85480dcc59",
+      "source": {
+        "path": "src/content/renewals/28ede0247b95214f.json",
+        "sha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-38bfcb4310c98b8d",
+      "title": "Workers y Durable Objects incorporan perfiles de recursos bajo demanda",
+      "url": "https://youdozi.github.io/es/digest/2026-10-12-workers-on-demand-profiling/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "7a445d8186fe717c664fa5a8b1135ccb65d6283378d3fa2fe5a2271bda8b6c1d",
+      "source": {
+        "path": "src/content/renewals/38bfcb4310c98b8d.json",
+        "sha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-3e483be55bb45ecb",
+      "title": "GitHub Copilot: correcciones sobre la retirada de GPT-5.2 y GPT-5.2-Codex",
+      "url": "https://youdozi.github.io/es/digest/2026-05-02-copilot-gpt-retirement-date-corrections/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "ecc1a538af0d991d3c0af8599b9c478b020fc50d6d827db579b36973e93ce19b",
+      "source": {
+        "path": "src/content/renewals/3e483be55bb45ecb.json",
+        "sha256": "bb76edf97af70128a4eee1582db825b0a114175ed49f9ce5f00ce0a7d1f0c560"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-52ee7abbb037f678",
+      "title": "Azure DevOps Autofix: fases preliminares, controles de revisión y facturación",
+      "url": "https://youdozi.github.io/es/digest/2026-07-01-azure-devops-autofix-preview-and-billing/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "8c7f830790522cd934f5c9bf2ee62b809e96852f1e86c99a9397d6588602f37c",
+      "source": {
+        "path": "src/content/renewals/52ee7abbb037f678.json",
+        "sha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-5fe80662057aa753",
+      "title": "Los límites estrictos de presupuesto de GitHub Advanced Security pueden bloquear nueva cobertura",
+      "url": "https://youdozi.github.io/es/digest/2026-05-29-github-advanced-security-hard-budget-limits/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "0133816b6d6bf65be4f9bf98d83b08cd6204ecb68cf6ed50442c28adb69c02d9",
+      "source": {
+        "path": "src/content/renewals/5fe80662057aa753.json",
+        "sha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-68e2ee5d21f7dc1b",
+      "title": "Cloudflare comunica menores costes de inferencia para su revisor interno",
+      "url": "https://youdozi.github.io/es/digest/2026-10-20-cloudflare-inference-cost-optimization/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "c4b230e005c7a1110aecf0dd803f8690a20ba905a6c3c4a60da1e58292cd6c57",
+      "source": {
+        "path": "src/content/renewals/68e2ee5d21f7dc1b.json",
+        "sha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-6ad4fb7dea8c6f87",
+      "title": "Presupuestos por usuario en centros de costes: interfaz de facturación y alcance de la pertenencia",
+      "url": "https://youdozi.github.io/es/digest/2026-07-08-cost-center-user-budgets-and-membership/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "099d4d1d6383e64fea0b42d232cb9a9d9885b6a456c20e9b5857a3af8d69885b",
+      "source": {
+        "path": "src/content/renewals/6ad4fb7dea8c6f87.json",
+        "sha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-81aa0c8f7db4aee1",
+      "title": "AWS FinOps Agent en versión preliminar: alcance de la investigación y límites regionales",
+      "url": "https://youdozi.github.io/es/digest/2026-06-29-aws-finops-agent-preview-scope/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "a60421606d263d68e5150875354e4abba438696232c90c36c25e199c1692f559",
+      "source": {
+        "path": "src/content/renewals/81aa0c8f7db4aee1.json",
+        "sha256": "fa9ab1cb21cecf1bed28f4914b155c1571c5a75d67f19879aa04ff16b7d1af59"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-92303a0e5010240e",
+      "title": "Coalición Athena: coordinación de correcciones y condiciones de divulgación",
+      "url": "https://youdozi.github.io/es/digest/2026-06-19-athena-coalition-and-disclosure-conditions/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "5a166356df66678661223a7e294892854133a03e44778950d8d3cfaf99748ee0",
+      "source": {
+        "path": "src/content/renewals/92303a0e5010240e.json",
+        "sha256": "62a391116e058b6ebe2c99955ceba44831ad40c1398ca8810647cf33b3b0f72e"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-942a88912e2e412f",
+      "title": "Diseño de series temporales: identidad de las series y compromisos de cardinalidad",
+      "url": "https://youdozi.github.io/es/digest/2026-05-13-time-series-identity-and-cardinality/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "bc095f3e7c26abfd208bcdd2d28290135a266bb61d0930de33ff7ed83069c52c",
+      "source": {
+        "path": "src/content/renewals/942a88912e2e412f.json",
+        "sha256": "52968c158995b66b2f6e177cfddf7ef425d064924805cbb539c3e7b424fe781f"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-973739bcb859e5ab",
+      "title": "Opciones de modelos y multiplicadores de uso del agente en la nube de Copilot",
+      "url": "https://youdozi.github.io/es/digest/2026-05-19-copilot-cloud-agent-model-multipliers/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "da10efb0f29fdce270d207487275afdd3174574c3a9add85d43e517386a22472",
+      "source": {
+        "path": "src/content/renewals/973739bcb859e5ab.json",
+        "sha256": "a72607be8dbfa0f0469eaa8526bf98d813ae6a7d5b926f7bc02ab5be85ee2ecd"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-9efda109fcdd4210",
+      "title": "El anuncio de retirada de Claude Sonnet 4 se refiere a Copilot",
+      "url": "https://youdozi.github.io/es/digest/2026-05-11-copilot-claude-sonnet-4-retirement/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "249a984fd10a0fc5c36bca8045b36efc95ad470fe6b15ae875d12f8674a18ab3",
+      "source": {
+        "path": "src/content/renewals/9efda109fcdd4210.json",
+        "sha256": "e3ecbf6153d7054890c95fd9ced64f57c8637626c45e8d4959786c91fefc1fc2"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-be1017688a0667ca",
+      "title": "El aviso de retirada de GPT-4.1 de GitHub se refiere a Copilot",
+      "url": "https://youdozi.github.io/es/digest/2026-05-10-copilot-gpt-4-1-retirement/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "6e17f86608a50822a87fa30d91ab53ccfae77cbc694c1855516549ca2ffc4f52",
+      "source": {
+        "path": "src/content/renewals/be1017688a0667ca.json",
+        "sha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-c12b394bcd713139",
+      "title": "Alertas cerradas de Dependabot: retención anunciada y acceso a archivos",
+      "url": "https://youdozi.github.io/es/digest/2026-07-01-dependabot-alert-retention-and-archives/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "a06bc4c30f83439cee9de303b2d4045a654875a15776ad514194e4b4498d4bc0",
+      "source": {
+        "path": "src/content/renewals/c12b394bcd713139.json",
+        "sha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-c2532ba4f69bf1ba",
+      "title": "Microsoft MDASH: análisis con múltiples modelos y estado preliminar",
+      "url": "https://youdozi.github.io/es/digest/2026-05-26-microsoft-mdash-preview-and-model-ensemble/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "9ba1c92f0c4aa6c92abb68aa192538305f6b6985f6d61c0eb08e800105bcd55b",
+      "source": {
+        "path": "src/content/renewals/c2532ba4f69bf1ba.json",
+        "sha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-c4a7f428da738696",
+      "title": "La revisión de seguridad de Copilot CLI sigue siendo una función preliminar experimental",
+      "url": "https://youdozi.github.io/es/digest/2026-06-11-copilot-cli-security-review-preview/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "54334d35781fbe49e97f1e828b32a9124b6d460fcd9798c335ea3cdb5adef29e",
+      "source": {
+        "path": "src/content/renewals/c4a7f428da738696.json",
+        "sha256": "4303bfdd031dceaecc88c1353108da5fb5f0edc333f2624055739913e5674b57"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-c505a5c997b12684",
+      "title": "Caso de un servicio de seguimiento: esquemas de eventos y envío no bloqueante",
+      "url": "https://youdozi.github.io/es/digest/2026-06-23-tracking-service-schemas-and-delivery/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "ceeaacd698edcbbec09d107ab6e136ca195fa4441fb0177204256fc99ce0d8d4",
+      "source": {
+        "path": "src/content/renewals/c505a5c997b12684.json",
+        "sha256": "dc72630c6fb3cfd5d9e466d9e403e31022bcfc4620ab006ad7dcfa586469b9ba"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-ce26c7555a2bf537",
+      "title": "Contención de agentes en Windows: versión preliminar temprana y límites del modo de auditoría",
+      "url": "https://youdozi.github.io/es/digest/2026-06-20-windows-agent-containment-and-audit-mode/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "ade1538a76146a0c6e15a74ea96ac4550ac2b299a7be6a434dd91e0637891ba4",
+      "source": {
+        "path": "src/content/renewals/ce26c7555a2bf537.json",
+        "sha256": "61eec32d86e9c98f3d522d13df2da1dad6aa6e8a9c38f362e26909cc7d450d3a"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-d123262315e62321",
+      "title": "Valores predeterminados de instalación de npm y restricciones escalonadas de tokens",
+      "url": "https://youdozi.github.io/es/digest/2026-07-09-npm-installation-defaults-and-token-restrictions/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "2e4f58e09f000cff184bb8603919be7378fa3c3ac8523372dd4f341bbdc9660c",
+      "source": {
+        "path": "src/content/renewals/d123262315e62321.json",
+        "sha256": "158dc5be465f07d476dedacb8f6645f21f00df2504671386cbeb63e74f732483"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-d17b2ae1f047cf94",
+      "title": "Pódcast de seguridad en la nube: consejos atribuidos sobre aislamiento y aprendizaje",
+      "url": "https://youdozi.github.io/es/digest/2026-07-07-cloud-security-podcast-isolation-and-learning/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "f8f257cc20081ae3986498522051866731047c55bdb59150e02c0de7da7c27ad",
+      "source": {
+        "path": "src/content/renewals/d17b2ae1f047cf94.json",
+        "sha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-d92a8a6927fa76ff",
+      "title": "Retirada de Gemini en Copilot: avisos de planificación y finalización",
+      "url": "https://youdozi.github.io/es/digest/2026-07-05-copilot-gemini-retirement-and-alternatives/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "0c03b685d80b53171eccfe2a2971d146f805708650cf507c5ed4e4fccb2fb7e8",
+      "source": {
+        "path": "src/content/renewals/d92a8a6927fa76ff.json",
+        "sha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-d9492522fb4514ef",
+      "title": "Una prueba comparativa de lenguajes mide una tarea de Git simplificada",
+      "url": "https://youdozi.github.io/es/digest/2026-04-07-claude-code-language-benchmark-conditions/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "0d8baaffdadd61726825fce5f31c2a2362b179077c03d9e4a1b0080eec73f97d",
+      "source": {
+        "path": "src/content/renewals/d9492522fb4514ef.json",
+        "sha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-e467e85426c883ef",
+      "title": "Anuncio de un curso de seguridad de IA: alcance y límites de la evidencia",
+      "url": "https://youdozi.github.io/es/digest/2026-07-07-ai-security-course-announcement-scope/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "f8b1679e8a9f511f7ce56c4f00fd57a1360413d44bd46ab94a1acb70ac548ab8",
+      "source": {
+        "path": "src/content/renewals/e467e85426c883ef.json",
+        "sha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-fb47d93f2cc47316",
+      "title": "La hoja de ruta de Cloudflare incluye autenticación poscuántica",
+      "url": "https://youdozi.github.io/es/digest/2026-04-08-cloudflare-post-quantum-authentication-roadmap/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "9e8a563761402e7ab0e57528551c453c38663e9a0caeafc9ab79cdf8102a645f",
+      "source": {
+        "path": "src/content/renewals/fb47d93f2cc47316.json",
+        "sha256": "faff7a3fb3e3669e2d391012661d2825859f2db1a61e44011b0ab61623c97c02"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    },
+    {
+      "key": "es-fe469724f5828fb0",
+      "title": "Revisión de seguridad en la aplicación Copilot: alcance preliminar y límites de la revisión",
+      "url": "https://youdozi.github.io/es/digest/2026-07-15-copilot-app-security-review-preview/",
+      "batch": {
+        "path": ".pipeline/translations/batches/spanish-004.json",
+        "sha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14"
+      },
+      "draftSha256": "0dbd47fe61a1a160b0e1bdffde4978ede74c7780446e711ae4bb6f9ade6f7895",
+      "source": {
+        "path": "src/content/renewals/fe469724f5828fb0.json",
+        "sha256": "e7ed00186abcdf5d88f2717c8b08b1bffa654f181c4c216eade0ceeb176ed1fc"
+      },
+      "review": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+        "sha256": "41abe6d4894fcf689ed8e80336826d0ee5b5878b8e2b7ec03f1913e72f2704b4"
+      },
+      "evidence": {
+        "path": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004-sources.json",
+        "sha256": "a6d68d520f3c079532bc905d261065995386fe923504e8c3abf27831b8431b3c",
+        "method": "stored-excerpts"
+      }
+    }
+  ],
+  "notes": [
+    "Offline consistency checks of pinned review artifacts; not a live source fetch or factual-accuracy guarantee.",
+    "53 private Spanish editions only. Existing 36 approved public translations are outside this release.",
+    "Explicit user publication approval is still required; command arguments are an operator record, not proof of authorization.",
+    "Original Buildkite source failure is retained; the current row uses separately verified alternate official sources."
+  ]
+}

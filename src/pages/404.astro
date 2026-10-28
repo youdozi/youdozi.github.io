@@ -1,4 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
+import {entries,localeInfo} from '../lib/content';
+import {archiveAlternates} from '../lib/discovery';
+import copy from '../lib/discovery-ui.json';
+const destinations=archiveAlternates(await entries());
 ---
-<Base lang="en" title="Page not found" canonical="/404.html" noindex><section class="page-heading"><span class="eyebrow">404</span><h1>Page not found.</h1><p>Find your way back to the writing.</p><a class="button" href="/en/">English home ↗</a> <a class="button" href="/ko/">한국어 홈 ↗</a></section></Base>
+<Base lang="en" title="Page not found" canonical="/404.html" noindex>
+  <section class="page-heading"><span class="eyebrow">404</span><h1>Page not found.</h1><p>{copy.en.notFound}</p></section>
+  <ul class="recovery-languages">{destinations.map(destination=><li><a href={destination.url} lang={destination.language} hreflang={destination.language}><strong>{localeInfo[destination.language].label}</strong><span>{copy[destination.language].archive} →</span></a></li>)}</ul>
+</Base>
+<style>
+.recovery-languages{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.recovery-languages a{display:flex;flex-direction:column;gap:12px;border:1px solid var(--line);padding:24px;overflow-wrap:anywhere}.recovery-languages span{font-size:14px;color:var(--muted)}
+@media(max-width:520px){.recovery-languages{grid-template-columns:1fr}}
+</style>

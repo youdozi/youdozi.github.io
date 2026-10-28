@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "spanish-004",
+  "state": "awaiting-publication-approval",
+  "batch": ".pipeline/translations/batches/spanish-004.json",
+  "batchSha256": "f622b047cd19bf602f733108a5cee1152e22d4de1e61e587fd3787df21b9fa14",
+  "translationReview": ".pipeline/translations/ai-reviews/2026-10-28-spanish-004.json",
+  "scope": {
+    "sources": 26,
+    "editions": 26,
+    "languages": [
+      "es"
+    ]
+  },
+  "approval": null,
+  "integration": {
+    "pullRequest": 78,
+    "previousHead": "48330a3573f7c7725d4e6f3c4b1ce29f7a779d39",
+    "relationship": "Expand the same Draft PR from 27 to 53 private editions. Preparation completion is not publication approval."
+  },
+  "candidates": [
+    {
+      "renewalId": "27d181b6a4903b28",
+      "language": "es",
+      "title": "Análisis de código con IA: condiciones de la versión preliminar y posterior disponibilidad general",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "url": "https://youdozi.github.io/es/digest/2026-07-15-ai-code-scanning-preview-and-general-availability/",
+      "publicationFile": "src/content/translations/es-27d181b6a4903b28.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "28ede0247b95214f",
+      "language": "es",
+      "title": "Retirada de modelos de Copilot: alcance, alternativas y excepción para la revisión de código",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "url": "https://youdozi.github.io/es/digest/2026-06-07-copilot-model-retirement-and-code-review-exception/",
+      "publicationFile": "src/content/translations/es-28ede0247b95214f.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "38bfcb4310c98b8d",
+      "language": "es",
+      "title": "Workers y Durable Objects incorporan perfiles de recursos bajo demanda",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "url": "https://youdozi.github.io/es/digest/2026-10-12-workers-on-demand-profiling/",
+      "publicationFile": "src/content/translations/es-38bfcb4310c98b8d.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "3e483be55bb45ecb",
+      "language": "es",
+      "title": "GitHub Copilot: correcciones sobre la retirada de GPT-5.2 y GPT-5.2-Codex",
+      "sourceSha256": "bb76edf97af70128a4eee1582db825b0a114175ed49f9ce5f00ce0a7d1f0c560",
+      "url": "https://youdozi.github.io/es/digest/2026-05-02-copilot-gpt-retirement-date-corrections/",
+      "publicationFile": "src/content/translations/es-3e483be55bb45ecb.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "52ee7abbb037f678",
+      "language": "es",
+      "title": "Azure DevOps Autofix: fases preliminares, controles de revisión y facturación",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "url": "https://youdozi.github.io/es/digest/2026-07-01-azure-devops-autofix-preview-and-billing/",
+      "publicationFile": "src/content/translations/es-52ee7abbb037f678.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "5fe80662057aa753",
+      "language": "es",
+      "title": "Los límites estrictos de presupuesto de GitHub Advanced Security pueden bloquear nueva cobertura",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "url": "https://youdozi.github.io/es/digest/2026-05-29-github-advanced-security-hard-budget-limits/",
+      "publicationFile": "src/content/translations/es-5fe80662057aa753.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "68e2ee5d21f7dc1b",
+      "language": "es",
+      "title": "Cloudflare comunica menores costes de inferencia para su revisor interno",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "url": "https://youdozi.github.io/es/digest/2026-10-20-cloudflare-inference-cost-optimization/",
+      "publicationFile": "src/content/translations/es-68e2ee5d21f7dc1b.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "6ad4fb7dea8c6f87",
+      "language": "es",
+      "title": "Presupuestos por usuario en centros de costes: interfaz de facturación y alcance de la pertenencia",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "url": "https://youdozi.github.io/es/digest/2026-07-08-cost-center-user-budgets-and-membership/",
+      "publicationFile": "src/content/translations/es-6ad4fb7dea8c6f87.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "81aa0c8f7db4aee1",
+      "language": "es",
+      "title": "AWS FinOps Agent en versión preliminar: alcance de la investigación y límites regionales",
+      "sourceSha256": "fa9ab1cb21cecf1bed28f4914b155c1571c5a75d67f19879aa04ff16b7d1af59",
+      "url": "https://youdozi.github.io/es/digest/2026-06-29-aws-finops-agent-preview-scope/",
+      "publicationFile": "src/content/translations/es-81aa0c8f7db4aee1.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "92303a0e5010240e",
+      "language": "es",
+      "title": "Coalición Athena: coordinación de correcciones y condiciones de divulgación",
+      "sourceSha256": "62a391116e058b6ebe2c99955ceba44831ad40c1398ca8810647cf33b3b0f72e",
+      "url": "https://youdozi.github.io/es/digest/2026-06-19-athena-coalition-and-disclosure-conditions/",
+      "publicationFile": "src/content/translations/es-92303a0e5010240e.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "942a88912e2e412f",
+      "language": "es",
+      "title": "Diseño de series temporales: identidad de las series y compromisos de cardinalidad",
+      "sourceSha256": "52968c158995b66b2f6e177cfddf7ef425d064924805cbb539c3e7b424fe781f",
+      "url": "https://youdozi.github.io/es/digest/2026-05-13-time-series-identity-and-cardinality/",
+      "publicationFile": "src/content/translations/es-942a88912e2e412f.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "973739bcb859e5ab",
+      "language": "es",
+      "title": "Opciones de modelos y multiplicadores de uso del agente en la nube de Copilot",
+      "sourceSha256": "a72607be8dbfa0f0469eaa8526bf98d813ae6a7d5b926f7bc02ab5be85ee2ecd",
+      "url": "https://youdozi.github.io/es/digest/2026-05-19-copilot-cloud-agent-model-multipliers/",
+      "publicationFile": "src/content/translations/es-973739bcb859e5ab.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "9efda109fcdd4210",
+      "language": "es",
+      "title": "El anuncio de retirada de Claude Sonnet 4 se refiere a Copilot",
+      "sourceSha256": "e3ecbf6153d7054890c95fd9ced64f57c8637626c45e8d4959786c91fefc1fc2",
+      "url": "https://youdozi.github.io/es/digest/2026-05-11-copilot-claude-sonnet-4-retirement/",
+      "publicationFile": "src/content/translations/es-9efda109fcdd4210.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "be1017688a0667ca",
+      "language": "es",
+      "title": "El aviso de retirada de GPT-4.1 de GitHub se refiere a Copilot",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "url": "https://youdozi.github.io/es/digest/2026-05-10-copilot-gpt-4-1-retirement/",
+      "publicationFile": "src/content/translations/es-be1017688a0667ca.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "c12b394bcd713139",
+      "language": "es",
+      "title": "Alertas cerradas de Dependabot: retención anunciada y acceso a archivos",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "url": "https://youdozi.github.io/es/digest/2026-07-01-dependabot-alert-retention-and-archives/",
+      "publicationFile": "src/content/translations/es-c12b394bcd713139.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "c2532ba4f69bf1ba",
+      "language": "es",
+      "title": "Microsoft MDASH: análisis con múltiples modelos y estado preliminar",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "url": "https://youdozi.github.io/es/digest/2026-05-26-microsoft-mdash-preview-and-model-ensemble/",
+      "publicationFile": "src/content/translations/es-c2532ba4f69bf1ba.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "c4a7f428da738696",
+      "language": "es",
+      "title": "La revisión de seguridad de Copilot CLI sigue siendo una función preliminar experimental",
+      "sourceSha256": "4303bfdd031dceaecc88c1353108da5fb5f0edc333f2624055739913e5674b57",
+      "url": "https://youdozi.github.io/es/digest/2026-06-11-copilot-cli-security-review-preview/",
+      "publicationFile": "src/content/translations/es-c4a7f428da738696.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "c505a5c997b12684",
+      "language": "es",
+      "title": "Caso de un servicio de seguimiento: esquemas de eventos y envío no bloqueante",
+      "sourceSha256": "dc72630c6fb3cfd5d9e466d9e403e31022bcfc4620ab006ad7dcfa586469b9ba",
+      "url": "https://youdozi.github.io/es/digest/2026-06-23-tracking-service-schemas-and-delivery/",
+      "publicationFile": "src/content/translations/es-c505a5c997b12684.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "ce26c7555a2bf537",
+      "language": "es",
+      "title": "Contención de agentes en Windows: versión preliminar temprana y límites del modo de auditoría",
+      "sourceSha256": "61eec32d86e9c98f3d522d13df2da1dad6aa6e8a9c38f362e26909cc7d450d3a",
+      "url": "https://youdozi.github.io/es/digest/2026-06-20-windows-agent-containment-and-audit-mode/",
+      "publicationFile": "src/content/translations/es-ce26c7555a2bf537.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "language": "es",
+      "title": "Valores predeterminados de instalación de npm y restricciones escalonadas de tokens",
+      "sourceSha256": "158dc5be465f07d476dedacb8f6645f21f00df2504671386cbeb63e74f732483",
+      "url": "https://youdozi.github.io/es/digest/2026-07-09-npm-installation-defaults-and-token-restrictions/",
+      "publicationFile": "src/content/translations/es-d123262315e62321.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "d17b2ae1f047cf94",
+      "language": "es",
+      "title": "Pódcast de seguridad en la nube: consejos atribuidos sobre aislamiento y aprendizaje",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "url": "https://youdozi.github.io/es/digest/2026-07-07-cloud-security-podcast-isolation-and-learning/",
+      "publicationFile": "src/content/translations/es-d17b2ae1f047cf94.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "d92a8a6927fa76ff",
+      "language": "es",
+      "title": "Retirada de Gemini en Copilot: avisos de planificación y finalización",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "url": "https://youdozi.github.io/es/digest/2026-07-05-copilot-gemini-retirement-and-alternatives/",
+      "publicationFile": "src/content/translations/es-d92a8a6927fa76ff.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "d9492522fb4514ef",
+      "language": "es",
+      "title": "Una prueba comparativa de lenguajes mide una tarea de Git simplificada",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "url": "https://youdozi.github.io/es/digest/2026-04-07-claude-code-language-benchmark-conditions/",
+      "publicationFile": "src/content/translations/es-d9492522fb4514ef.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "e467e85426c883ef",
+      "language": "es",
+      "title": "Anuncio de un curso de seguridad de IA: alcance y límites de la evidencia",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "url": "https://youdozi.github.io/es/digest/2026-07-07-ai-security-course-announcement-scope/",
+      "publicationFile": "src/content/translations/es-e467e85426c883ef.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "fb47d93f2cc47316",
+      "language": "es",
+      "title": "La hoja de ruta de Cloudflare incluye autenticación poscuántica",
+      "sourceSha256": "faff7a3fb3e3669e2d391012661d2825859f2db1a61e44011b0ab61623c97c02",
+      "url": "https://youdozi.github.io/es/digest/2026-04-08-cloudflare-post-quantum-authentication-roadmap/",
+      "publicationFile": "src/content/translations/es-fb47d93f2cc47316.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    },
+    {
+      "renewalId": "fe469724f5828fb0",
+      "language": "es",
+      "title": "Revisión de seguridad en la aplicación Copilot: alcance preliminar y límites de la revisión",
+      "sourceSha256": "e7ed00186abcdf5d88f2717c8b08b1bffa654f181c4c216eade0ceeb176ed1fc",
+      "url": "https://youdozi.github.io/es/digest/2026-07-15-copilot-app-security-review-preview/",
+      "publicationFile": "src/content/translations/es-fe469724f5828fb0.json",
+      "sourceRecheck": "existing-evidence-excerpts-present",
+      "publicationPrerequisites": [
+        "Explicit user approval of this edition"
+      ]
+    }
+  ],
+  "publicationNotes": [
+    "Review artifact only; not consumed by builds or publication commands.",
+    "No authorization to publish, merge or deploy is recorded.",
+    "Synthetic preview approval records and timestamps must not be reused for real publication.",
+    "Existing source dates and 36 public translations are unchanged.",
+    "The earlier Buildkite prerequisite was retried and remains unresolved. Completing translation preparation does not authorize its publication."
+  ]
+}
