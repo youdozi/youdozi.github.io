@@ -324,3 +324,15 @@ node scripts/translations.mjs publish \
 프로젝트 밖의 임시 worktree에서 테스트 전용 게시 파일 12개를 만들어 본문 26개 문장(주장·후속 사실), 검색·RSS·사이트맵·자기 canonical·스페인어 메타데이터·한영 대응 링크를 검사합니다. 각 글의 320px/1280px 화면 24건을 확인하고, 일반 빌드에서는 후보 URL이 모두 빠져 있는지 확인합니다. 테스트 승인 기록·시각은 실제 게시에 재사용하지 않습니다.
 
 [후보 목록](.pipeline/translations/releases/spanish-002.json)은 승인 대기이며 빌드나 게시 명령이 읽는 실행 입력이 아닙니다. 승인과 원문 재확인 조건을 별도로 기록합니다. 이 PR은 실제 공개 번역 36편·원문·게시일·자동 게시 절차를 바꾸지 않습니다. 새 [준비 목록](.pipeline/translations/queue-2026-10-28-spanish-002.json)은 전체 354건 중 초안 313건(기존 295건 + 스페인어 18건), 미작성 스페인어 41건을 기록합니다. 공개 여부는 초안 수가 아닌 `src/content/translations/`의 승인 기록으로 판단합니다.
+
+### 스페인어 인프라·프레임워크 보안 배치: 15편
+
+[spanish-003 검토 문서](.pipeline/translations/reviews/spanish-003.md)는 Spring 4건, Argo CD·Kubernetes·TeamCity·NetScaler·Cloudflare WAF·Security Overview·Dynatrace·GitHub 위험 평가·BadHost·eMudhra·CNCF/Kusari를 다룹니다. 영어 보강 요약 15건의 전체 제목·주장·후속 사실·내부 검토 초점을 번역하며 외부 기사 전문 번역은 아닙니다. 원문에 없는 코드나 흐름도는 추가하지 않습니다.
+
+전역 `translate` 스킬에 따라 원문 의미 대조 후 스페인어만 읽는 교정을 수행했습니다. WAF 제목의 응답 본문 제약이 크기 제한으로 읽히지 않도록 다듬고, Argo CD UI 접근을 최초 도입 주장과 구분했습니다. 시험 제공 상태, Spring 지원 범위, TeamCity 인증 전제, BadHost 버전 구간과 프록시 조건, 인증서 검증 정책을 보존했습니다. [자체 AI 검토](.pipeline/translations/ai-reviews/2026-10-28-spanish-003.json)이며 독립·사람·원어민 검토로 기록하지 않습니다.
+
+[원문 재조회](.pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json)에서 17개 문서를 모두 읽고 15개 원고의 기존 근거 인용문을 확인했습니다. 이는 제품의 현재 제공 조건이나 보안 효과를 전수 검증한 결과가 아닙니다. 앞선 spanish-002의 Buildkite 조회 실패는 이번 배치로 해결되거나 승인된 것이 아닙니다.
+
+격리된 worktree의 테스트 fixture 15개로 주장·후속 사실 33개가 HTML·검색·RSS에 보존되는지, 사이트맵·스페인어 메타데이터·실제 한영 대응 링크가 맞는지 확인합니다. 후보 미리보기의 스페인어 글은 기존 공개 6개와 새 fixture 15개를 합한 21개이며, 앞선 비공개 초안 12개를 게시한 것으로 세지 않습니다. 각 글의 320px/1280px 브라우저 검사 30건과 BadHost·Kubernetes 모바일 화면을 확인합니다. 임시 fixture·worktree를 제거하고 일반 빌드에서 새 후보 URL이 없는지 확인합니다.
+
+이 작업은 PR #78의 `feat/spanish-security-batch-028`에서 이어지며 같은 Draft PR을 기존 12편과 새 15편, 총 27편의 검토 단위로 확대합니다. 현재 전체 CI가 main/develop 대상 PR에서 실행되므로 별도 기능 브랜치를 대상으로 하는 PR을 추가하지 않습니다. 합쳐진 27편의 별도 미리보기에서 본문 59개 문장·검색·RSS·사이트맵·한영 대응 링크와 브라우저 54건도 검사합니다. 이 미리보기의 스페인어 검색 글은 33개이며 최근 30개 RSS 정책은 유지합니다. 이 통합은 병합·게시 승인이 아닙니다. [후보 목록](.pipeline/translations/releases/spanish-003.json)은 승인 대기 자료로 빌드·게시 명령이 읽지 않습니다. 새 [준비 목록](.pipeline/translations/queue-2026-10-28-spanish-003.json)은 전체 354건 중 초안 328건(기존 295건 + 스페인어 33건), 미작성 스페인어 26건을 기록합니다. 실제 공개 번역 36편·원문·게시일·워크플로는 바꾸지 않습니다.

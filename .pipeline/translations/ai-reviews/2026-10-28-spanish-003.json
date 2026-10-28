@@ -1,0 +1,1304 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-28T02:44:27.755757+00:00",
+  "skill": "translate",
+  "reviewMethod": "self-ai-meaning-comparison-then-target-language-editing",
+  "independentReview": false,
+  "humanReview": false,
+  "scope": {
+    "sources": 15,
+    "editions": 15,
+    "language": "es",
+    "region": "not country-specific",
+    "fields": [
+      "edition.title",
+      "edition.claims",
+      "edition.followUp",
+      "reviewFocus"
+    ],
+    "type": "Complete translations of the existing concise English renewals, not full translations of external articles. Existing evidence and source documents remain unchanged."
+  },
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/spanish-003.json": "8fb1f80c7fc6934c6eac14dcb5ba535a804d405f9a7efcd26f729a6076fbfdeb"
+  },
+  "sourceSha256": {
+    "src/content/renewals/568305543e6754fa.json": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+    "src/content/renewals/f05ff63990b375e2.json": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c",
+    "src/content/renewals/9d263cda22c982a1.json": "fd6362f6ce2cb99651f4eecbc0e56325631954375d3bcb0fd2ade0e1534699d2",
+    "src/content/renewals/ad44e1abd30ad1f2.json": "db88dfaf65d4c8302430160f855c07d6047c4bcecbaed8ea2281fdf275778361",
+    "src/content/renewals/7067e48d153e8525.json": "699b40d7e8db3500324e35e99f376fd8eb40f5f5ddc36bbb61139e999c0bba9c",
+    "src/content/renewals/fecc68bc1f0f9da3.json": "072f89fad175fbc75fe474e42dd2891a458672d756b3f52d65f25350cabb89ff",
+    "src/content/renewals/6944923e55b6bbd0.json": "bae31ac9b9cbd248a095fb96c033e9a3e31d79c865f6e7242105c236e9594bc1",
+    "src/content/renewals/72477d086944244f.json": "d6cdd5448f27cca3deb6f7c72a159c2f1c8f93eafb615ac6e3e0f17935af8994",
+    "src/content/renewals/59c87ea544e0e5db.json": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+    "src/content/renewals/7ec61f556fb8d2c3.json": "8c3de756afe00f70b90d7547ce3e3bbbf57a4ad6e92d278edc175a646fb748a3",
+    "src/content/renewals/87db18d4899cc26c.json": "65fcae80a88f0dd69441d675ad3044294860089a6708cabecaf02cd3639dde07",
+    "src/content/renewals/b4cc1e300a7d9c1b.json": "1cb754753127d922aa8b27d9a95001220242793e7914a1a152ac1e00590892d5",
+    "src/content/renewals/9aee971925826c50.json": "14cbf673a6cfbee2d6a53b8bffe1ad520623b9267985970cd67a710d3db42ff7",
+    "src/content/renewals/c78cf468160e1a45.json": "0d86ac8ee62c5ab5467eac08d56af5dff3519826c3562b6b635bbeb09ba2bcd0",
+    "src/content/renewals/bb5be26c24786b21.json": "641b80c95e76e8fd8b945ce3a40f8a85355a3cd8d11350f5c60051990b49a878"
+  },
+  "findings": [
+    {
+      "renewalId": "59c87ea544e0e5db",
+      "field": "edition.title",
+      "finding": "Body limits could be read as a response size limit instead of the unavailable ability to create custom body rules.",
+      "resolution": "Use restricciones sobre el cuerpo; retain up to 3 Log/Block rules and explicit unavailability of custom body rules.",
+      "status": "resolved"
+    },
+    {
+      "renewalId": "7067e48d153e8525",
+      "field": "edition.claims[1]",
+      "finding": "Incorporation of the UI could imply that the UI first existed in this release.",
+      "resolution": "Use el acceso a la interfaz de ApplicationSet; preserve the separate non-assertions about signature-verification history and previous internal encryption.",
+      "status": "resolved"
+    }
+  ],
+  "semanticReview": [
+    "Spring milestone and release-candidate states remain separate from stable releases; limited Boot coverage is preserved rather than certifying every project in a roundup.",
+    "Spring Boot 4.1.0/4.0.7 and Spring AI 2.0.0 baseline versions 4.0/4.1/7.0 are unchanged.",
+    "Spring Security release versions and ended open-source support generations are retained as historical information, with commercial support separate.",
+    "Argo CD pre-release mTLS and Source Integrity configuration are not made default enforcement or first-introduction claims.",
+    "Kubernetes Stable maturity is not translated as automatic enablement on all clusters.",
+    "TeamCity requires prior authentication; affected versions through 2025.11.4 and fixed 2026.1 remain separate from the unaffected Cloud offering.",
+    "NetScaler patching, alternate origin bypass and DTLS listeners retain distinct scopes; Access remains a product name.",
+    "WAF numeric maximum 3, Log/Block actions and absence of custom response-body rules are preserved.",
+    "Security Overview domain-level launch and account-level roadmap are not collapsed into released account-wide availability.",
+    "Dynatrace historical GitHub Enterprise Cloud availability is not extended to every plan.",
+    "GitHub risk assessment scope and reported findings are not made a complete security audit.",
+    "BadHost affected interval >= 0.8.3 and < 1.0.1, patched 1.0.1, application conditions and both proxy/header-trust mitigation prerequisites are retained.",
+    "eMudhra historical cloudflared version 2026.10.2 is not called the latest version; SDK updates and trust policy remain separate and disabling verification is rejected.",
+    "CNCF free project access, named adoption list and absence of independent vulnerability-removal proof remain distinct.",
+    "Formal usted imperatives follow existing Spanish batches; titles, negation, conditionals, identifiers and target-language flow were reread. Internal reviewFocus remains private."
+  ],
+  "sourceRecheck": {
+    "report": ".pipeline/translations/ai-reviews/2026-10-28-spanish-003-sources.json",
+    "documents": 17,
+    "retrieved": 17,
+    "itemsWithAllExistingEvidenceExcerpts": 15,
+    "pendingItems": [],
+    "limit": "Presence of stored excerpts is not a comprehensive current-version, product-availability or security audit."
+  },
+  "verification": {
+    "translationSchemaAndProtectedTokens": "passed for all 15",
+    "translationTests": 6,
+    "preview": {
+      "fixtureOnly": true,
+      "articles": [
+        {
+          "renewalId": "568305543e6754fa",
+          "route": "/es/digest/2026-09-30-spring-boot-milestone-ldap-and-telemetry/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "f05ff63990b375e2",
+          "route": "/es/digest/2026-04-28-spring-boot-client-network-and-telemetry/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "9d263cda22c982a1",
+          "route": "/es/digest/2026-06-16-spring-boot-and-ai-platform-baselines/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "ad44e1abd30ad1f2",
+          "route": "/es/digest/2026-04-22-spring-security-releases-and-support/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "7067e48d153e8525",
+          "route": "/es/digest/2026-06-27-argo-cd-release-candidate-security-configuration/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "fecc68bc1f0f9da3",
+          "route": "/es/digest/2026-05-15-kubernetes-1-36-admission-and-user-namespaces/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "6944923e55b6bbd0",
+          "route": "/es/digest/2026-05-12-teamcity-on-premises-security-advisory/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "72477d086944244f",
+          "route": "/es/digest/2026-10-20-netscaler-patching-and-origin-controls/",
+          "result": "passed",
+          "claimsAndFollowUp": 3,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "59c87ea544e0e5db",
+          "route": "/es/digest/2026-10-24-cloudflare-waf-response-rule-limits/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "7ec61f556fb8d2c3",
+          "route": "/es/digest/2026-05-05-cloudflare-security-overview-scope/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "87db18d4899cc26c",
+          "route": "/es/digest/2026-04-08-dynatrace-github-runtime-alert-context/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "b4cc1e300a7d9c1b",
+          "route": "/es/digest/2026-04-09-github-code-security-risk-assessment/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "9aee971925826c50",
+          "route": "/es/digest/2026-06-02-badhost-starlette-authorization-and-proxy-conditions/",
+          "result": "passed",
+          "claimsAndFollowUp": 3,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "c78cf468160e1a45",
+          "route": "/es/digest/2026-10-21-emudhra-certificate-trust-review/",
+          "result": "passed",
+          "claimsAndFollowUp": 3,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "bb5be26c24786b21",
+          "route": "/es/digest/2026-04-11-cncf-kusari-supply-chain-review/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        }
+      ],
+      "newSpanishArticles": 15,
+      "previewSpanishArticles": 21,
+      "sitemapURLs": 486,
+      "claimsAndFollowUp": 33,
+      "checks": [
+        "Full title and claim/follow-up text in HTML, search and RSS",
+        "Self canonical, indexability, Spanish OG and BlogPosting",
+        "Sitemap inclusion and reciprocal en/ko/es article alternates",
+        "Original news date retained; internal review focus excluded"
+      ],
+      "notVerified": [
+        "Live production publication",
+        "Actual search-engine indexing or rankings",
+        "Native-speaker or independent review"
+      ]
+    },
+    "browserCases": [
+      {
+        "renewalId": "568305543e6754fa",
+        "path": "/es/digest/2026-09-30-spring-boot-milestone-ldap-and-telemetry/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "f05ff63990b375e2",
+        "path": "/es/digest/2026-04-28-spring-boot-client-network-and-telemetry/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "9d263cda22c982a1",
+        "path": "/es/digest/2026-06-16-spring-boot-and-ai-platform-baselines/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "ad44e1abd30ad1f2",
+        "path": "/es/digest/2026-04-22-spring-security-releases-and-support/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "7067e48d153e8525",
+        "path": "/es/digest/2026-06-27-argo-cd-release-candidate-security-configuration/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "fecc68bc1f0f9da3",
+        "path": "/es/digest/2026-05-15-kubernetes-1-36-admission-and-user-namespaces/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "6944923e55b6bbd0",
+        "path": "/es/digest/2026-05-12-teamcity-on-premises-security-advisory/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "72477d086944244f",
+        "path": "/es/digest/2026-10-20-netscaler-patching-and-origin-controls/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "59c87ea544e0e5db",
+        "path": "/es/digest/2026-10-24-cloudflare-waf-response-rule-limits/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "7ec61f556fb8d2c3",
+        "path": "/es/digest/2026-05-05-cloudflare-security-overview-scope/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "87db18d4899cc26c",
+        "path": "/es/digest/2026-04-08-dynatrace-github-runtime-alert-context/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "b4cc1e300a7d9c1b",
+        "path": "/es/digest/2026-04-09-github-code-security-risk-assessment/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "9aee971925826c50",
+        "path": "/es/digest/2026-06-02-badhost-starlette-authorization-and-proxy-conditions/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "c78cf468160e1a45",
+        "path": "/es/digest/2026-10-21-emudhra-certificate-trust-review/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "bb5be26c24786b21",
+        "path": "/es/digest/2026-04-11-cncf-kusari-supply-chain-review/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "568305543e6754fa",
+        "path": "/es/digest/2026-09-30-spring-boot-milestone-ldap-and-telemetry/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "f05ff63990b375e2",
+        "path": "/es/digest/2026-04-28-spring-boot-client-network-and-telemetry/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "9d263cda22c982a1",
+        "path": "/es/digest/2026-06-16-spring-boot-and-ai-platform-baselines/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "ad44e1abd30ad1f2",
+        "path": "/es/digest/2026-04-22-spring-security-releases-and-support/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "7067e48d153e8525",
+        "path": "/es/digest/2026-06-27-argo-cd-release-candidate-security-configuration/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "fecc68bc1f0f9da3",
+        "path": "/es/digest/2026-05-15-kubernetes-1-36-admission-and-user-namespaces/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "6944923e55b6bbd0",
+        "path": "/es/digest/2026-05-12-teamcity-on-premises-security-advisory/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "72477d086944244f",
+        "path": "/es/digest/2026-10-20-netscaler-patching-and-origin-controls/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "59c87ea544e0e5db",
+        "path": "/es/digest/2026-10-24-cloudflare-waf-response-rule-limits/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "7ec61f556fb8d2c3",
+        "path": "/es/digest/2026-05-05-cloudflare-security-overview-scope/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "87db18d4899cc26c",
+        "path": "/es/digest/2026-04-08-dynatrace-github-runtime-alert-context/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "b4cc1e300a7d9c1b",
+        "path": "/es/digest/2026-04-09-github-code-security-risk-assessment/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "9aee971925826c50",
+        "path": "/es/digest/2026-06-02-badhost-starlette-authorization-and-proxy-conditions/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "c78cf468160e1a45",
+        "path": "/es/digest/2026-10-21-emudhra-certificate-trust-review/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "bb5be26c24786b21",
+        "path": "/es/digest/2026-04-11-cncf-kusari-supply-chain-review/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      }
+    ],
+    "screenshotsReviewed": [
+      "BadHost at 320px",
+      "Kubernetes at 320px"
+    ],
+    "fixtureOnly": true,
+    "candidatePublicationFilesInProject": 0,
+    "productionBuild": "passed; 15 candidate URLs excluded",
+    "baseline": {
+      "checkedAt": "2026-10-28T02:47:19.581531+00:00",
+      "publicTranslations": 36,
+      "publicSpanishArticles": 6,
+      "privateCandidateURLsAbsent": 15,
+      "sitemapURLs": 471,
+      "nodeTests": 56,
+      "translationTests": 6,
+      "astroErrors": 0,
+      "astroWarnings": 0,
+      "productionBuild": "passed; no publishing or submission",
+      "combinedPrivateCandidateURLsAbsent": 27
+    },
+    "combinedPreview": {
+      "fixtureOnly": true,
+      "articles": [
+        {
+          "renewalId": "1e8ba1d86d179142",
+          "route": "/es/digest/2026-04-10-copilot-risk-assessment-context/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "2b6f4abe346a373d",
+          "route": "/es/digest/2026-06-02-spring-security-report-triage/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "3f90329447f77e33",
+          "route": "/es/digest/2026-06-10-third-party-coding-agent-security-validation/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "4380abffaf1a31e0",
+          "route": "/es/digest/2026-06-20-gitlab-security-features-and-upgrade-prerequisites/",
+          "result": "passed",
+          "claimsAndFollowUp": 3,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "46983b9e8a1cf49c",
+          "route": "/es/digest/2026-05-08-cloudflare-copy-fail-response/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "4a59615041b968ae",
+          "route": "/es/digest/2026-10-22-php-patching-and-waf-protection/",
+          "result": "passed",
+          "claimsAndFollowUp": 3,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "50b97c32c1d2c027",
+          "route": "/es/digest/2026-10-20-buildkite-scoped-secrets-and-validation/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "db11f89181439d98",
+          "route": "/es/digest/2026-06-13-security-insights-batching-and-adaptive-scheduling/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "e458b053b5a9f878",
+          "route": "/es/digest/2026-07-09-innersource-advisories-and-remediation/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "e858b2ec6331d84e",
+          "route": "/es/digest/2026-04-23-cloudflare-mcp-identity-and-governance/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "ecc191be72688d94",
+          "route": "/es/digest/2026-05-31-arm-metis-repository-context/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "eea31f00e6ce7be1",
+          "route": "/es/digest/2026-06-30-ai-security-panel-identity-and-testing/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "568305543e6754fa",
+          "route": "/es/digest/2026-09-30-spring-boot-milestone-ldap-and-telemetry/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "f05ff63990b375e2",
+          "route": "/es/digest/2026-04-28-spring-boot-client-network-and-telemetry/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "9d263cda22c982a1",
+          "route": "/es/digest/2026-06-16-spring-boot-and-ai-platform-baselines/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "ad44e1abd30ad1f2",
+          "route": "/es/digest/2026-04-22-spring-security-releases-and-support/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "7067e48d153e8525",
+          "route": "/es/digest/2026-06-27-argo-cd-release-candidate-security-configuration/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "fecc68bc1f0f9da3",
+          "route": "/es/digest/2026-05-15-kubernetes-1-36-admission-and-user-namespaces/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "6944923e55b6bbd0",
+          "route": "/es/digest/2026-05-12-teamcity-on-premises-security-advisory/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "72477d086944244f",
+          "route": "/es/digest/2026-10-20-netscaler-patching-and-origin-controls/",
+          "result": "passed",
+          "claimsAndFollowUp": 3,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "59c87ea544e0e5db",
+          "route": "/es/digest/2026-10-24-cloudflare-waf-response-rule-limits/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "7ec61f556fb8d2c3",
+          "route": "/es/digest/2026-05-05-cloudflare-security-overview-scope/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "87db18d4899cc26c",
+          "route": "/es/digest/2026-04-08-dynatrace-github-runtime-alert-context/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "b4cc1e300a7d9c1b",
+          "route": "/es/digest/2026-04-09-github-code-security-risk-assessment/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "9aee971925826c50",
+          "route": "/es/digest/2026-06-02-badhost-starlette-authorization-and-proxy-conditions/",
+          "result": "passed",
+          "claimsAndFollowUp": 3,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "c78cf468160e1a45",
+          "route": "/es/digest/2026-10-21-emudhra-certificate-trust-review/",
+          "result": "passed",
+          "claimsAndFollowUp": 3,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "bb5be26c24786b21",
+          "route": "/es/digest/2026-04-11-cncf-kusari-supply-chain-review/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        }
+      ],
+      "newSpanishArticles": 27,
+      "previewSpanishArticles": 33,
+      "sitemapURLs": 498,
+      "claimsAndFollowUp": 59,
+      "checks": [
+        "Full title and claim/follow-up text in HTML, search and RSS",
+        "Self canonical, indexability, Spanish OG and BlogPosting",
+        "Sitemap inclusion and reciprocal en/ko/es article alternates",
+        "Original news date retained; internal review focus excluded"
+      ],
+      "notVerified": [
+        "Live production publication",
+        "Actual search-engine indexing or rankings",
+        "Native-speaker or independent review"
+      ]
+    },
+    "combinedBrowserCases": [
+      {
+        "renewalId": "1e8ba1d86d179142",
+        "path": "/es/digest/2026-04-10-copilot-risk-assessment-context/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "2b6f4abe346a373d",
+        "path": "/es/digest/2026-06-02-spring-security-report-triage/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "3f90329447f77e33",
+        "path": "/es/digest/2026-06-10-third-party-coding-agent-security-validation/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "4380abffaf1a31e0",
+        "path": "/es/digest/2026-06-20-gitlab-security-features-and-upgrade-prerequisites/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "46983b9e8a1cf49c",
+        "path": "/es/digest/2026-05-08-cloudflare-copy-fail-response/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "4a59615041b968ae",
+        "path": "/es/digest/2026-10-22-php-patching-and-waf-protection/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "50b97c32c1d2c027",
+        "path": "/es/digest/2026-10-20-buildkite-scoped-secrets-and-validation/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "db11f89181439d98",
+        "path": "/es/digest/2026-06-13-security-insights-batching-and-adaptive-scheduling/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "e458b053b5a9f878",
+        "path": "/es/digest/2026-07-09-innersource-advisories-and-remediation/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "e858b2ec6331d84e",
+        "path": "/es/digest/2026-04-23-cloudflare-mcp-identity-and-governance/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "ecc191be72688d94",
+        "path": "/es/digest/2026-05-31-arm-metis-repository-context/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "eea31f00e6ce7be1",
+        "path": "/es/digest/2026-06-30-ai-security-panel-identity-and-testing/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "568305543e6754fa",
+        "path": "/es/digest/2026-09-30-spring-boot-milestone-ldap-and-telemetry/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "f05ff63990b375e2",
+        "path": "/es/digest/2026-04-28-spring-boot-client-network-and-telemetry/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "9d263cda22c982a1",
+        "path": "/es/digest/2026-06-16-spring-boot-and-ai-platform-baselines/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "ad44e1abd30ad1f2",
+        "path": "/es/digest/2026-04-22-spring-security-releases-and-support/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "7067e48d153e8525",
+        "path": "/es/digest/2026-06-27-argo-cd-release-candidate-security-configuration/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "fecc68bc1f0f9da3",
+        "path": "/es/digest/2026-05-15-kubernetes-1-36-admission-and-user-namespaces/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "6944923e55b6bbd0",
+        "path": "/es/digest/2026-05-12-teamcity-on-premises-security-advisory/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "72477d086944244f",
+        "path": "/es/digest/2026-10-20-netscaler-patching-and-origin-controls/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "59c87ea544e0e5db",
+        "path": "/es/digest/2026-10-24-cloudflare-waf-response-rule-limits/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "7ec61f556fb8d2c3",
+        "path": "/es/digest/2026-05-05-cloudflare-security-overview-scope/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "87db18d4899cc26c",
+        "path": "/es/digest/2026-04-08-dynatrace-github-runtime-alert-context/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "b4cc1e300a7d9c1b",
+        "path": "/es/digest/2026-04-09-github-code-security-risk-assessment/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "9aee971925826c50",
+        "path": "/es/digest/2026-06-02-badhost-starlette-authorization-and-proxy-conditions/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "c78cf468160e1a45",
+        "path": "/es/digest/2026-10-21-emudhra-certificate-trust-review/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "bb5be26c24786b21",
+        "path": "/es/digest/2026-04-11-cncf-kusari-supply-chain-review/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "1e8ba1d86d179142",
+        "path": "/es/digest/2026-04-10-copilot-risk-assessment-context/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "2b6f4abe346a373d",
+        "path": "/es/digest/2026-06-02-spring-security-report-triage/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "3f90329447f77e33",
+        "path": "/es/digest/2026-06-10-third-party-coding-agent-security-validation/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "4380abffaf1a31e0",
+        "path": "/es/digest/2026-06-20-gitlab-security-features-and-upgrade-prerequisites/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "46983b9e8a1cf49c",
+        "path": "/es/digest/2026-05-08-cloudflare-copy-fail-response/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "4a59615041b968ae",
+        "path": "/es/digest/2026-10-22-php-patching-and-waf-protection/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "50b97c32c1d2c027",
+        "path": "/es/digest/2026-10-20-buildkite-scoped-secrets-and-validation/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "db11f89181439d98",
+        "path": "/es/digest/2026-06-13-security-insights-batching-and-adaptive-scheduling/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "e458b053b5a9f878",
+        "path": "/es/digest/2026-07-09-innersource-advisories-and-remediation/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "e858b2ec6331d84e",
+        "path": "/es/digest/2026-04-23-cloudflare-mcp-identity-and-governance/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "ecc191be72688d94",
+        "path": "/es/digest/2026-05-31-arm-metis-repository-context/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "eea31f00e6ce7be1",
+        "path": "/es/digest/2026-06-30-ai-security-panel-identity-and-testing/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "568305543e6754fa",
+        "path": "/es/digest/2026-09-30-spring-boot-milestone-ldap-and-telemetry/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "f05ff63990b375e2",
+        "path": "/es/digest/2026-04-28-spring-boot-client-network-and-telemetry/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "9d263cda22c982a1",
+        "path": "/es/digest/2026-06-16-spring-boot-and-ai-platform-baselines/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "ad44e1abd30ad1f2",
+        "path": "/es/digest/2026-04-22-spring-security-releases-and-support/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "7067e48d153e8525",
+        "path": "/es/digest/2026-06-27-argo-cd-release-candidate-security-configuration/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "fecc68bc1f0f9da3",
+        "path": "/es/digest/2026-05-15-kubernetes-1-36-admission-and-user-namespaces/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "6944923e55b6bbd0",
+        "path": "/es/digest/2026-05-12-teamcity-on-premises-security-advisory/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "72477d086944244f",
+        "path": "/es/digest/2026-10-20-netscaler-patching-and-origin-controls/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "59c87ea544e0e5db",
+        "path": "/es/digest/2026-10-24-cloudflare-waf-response-rule-limits/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "7ec61f556fb8d2c3",
+        "path": "/es/digest/2026-05-05-cloudflare-security-overview-scope/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "87db18d4899cc26c",
+        "path": "/es/digest/2026-04-08-dynatrace-github-runtime-alert-context/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "b4cc1e300a7d9c1b",
+        "path": "/es/digest/2026-04-09-github-code-security-risk-assessment/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "9aee971925826c50",
+        "path": "/es/digest/2026-06-02-badhost-starlette-authorization-and-proxy-conditions/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "c78cf468160e1a45",
+        "path": "/es/digest/2026-10-21-emudhra-certificate-trust-review/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "bb5be26c24786b21",
+        "path": "/es/digest/2026-04-11-cncf-kusari-supply-chain-review/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      }
+    ],
+    "combinedScreenshotsReviewed": [
+      "BadHost at 320px",
+      "Kubernetes at 320px"
+    ],
+    "temporaryWorktreeRemoved": true,
+    "candidatePreviewFixturesRemoved": true
+  },
+  "result": "Translation self-review passed in stated scope. All drafts await explicit publication approval.",
+  "limitations": [
+    "Not independent, human or native-speaker review.",
+    "News summaries retain their original scope; no implementations, code or diagrams are invented.",
+    "Synthetic preview fixtures do not establish approval or production availability.",
+    "No live search-engine indexing, ranking or geographic visibility was measured."
+  ],
+  "integration": {
+    "pullRequest": 78,
+    "branch": "feat/spanish-security-batch-028",
+    "head": "70ec79ef7099deaff0e0bb93fcc8dcb8e8cdf23b",
+    "reason": "Keep the previous 12 private drafts and cumulative queue state; do not merge or publish them implicitly.",
+    "relationship": "Extend the same Draft PR from 12 to 27 editions; previous head does not establish approval of the new batch."
+  }
+}

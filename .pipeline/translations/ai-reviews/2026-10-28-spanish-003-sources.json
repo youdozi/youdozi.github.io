@@ -1,0 +1,427 @@
+{
+  "checkedAt": "2026-10-28T02:40:57.411758+00:00",
+  "scope": "Live HTTP retrieval and presence of existing English evidence excerpts; does not certify current product availability or all semantics. Existing sources, editions, hashes and publication states are preserved.",
+  "documents": [
+    {
+      "url": "https://spring.io/blog/2026/09/25/spring-boot-4-2-0-M2-available-now",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 930,
+      "sha256": "b48086b1e69e80de70775145818e67b61e4efece28ba53f55358075a1d439ead"
+    },
+    {
+      "url": "https://spring.io/blog/2026/04/23/spring-boot-4-1-0-RC1-available-now",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 872,
+      "sha256": "318cc9eb5ddb109b64b13aa37b6d3c7d2a20bd10f8a2569735271eb78c03c1f9"
+    },
+    {
+      "url": "https://spring.io/blog/2026/06/10/spring-boot-4",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1150,
+      "sha256": "53df6e38bfe8d39b5a85d746c9424df48feb49c15c8e1da1d3d03366d7d68d0e"
+    },
+    {
+      "url": "https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 9498,
+      "sha256": "e7b46d8a86bf2bbf8dce4cba62be977bae1218a9cf7ec64691e2115b7348a50a"
+    },
+    {
+      "url": "https://spring.io/blog/2026/04/21/spring-security-releases",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1593,
+      "sha256": "ef4c2dea7c7547fb81b2f3cde23d8eb5200785a95967c8ec016af4f63bf2e6f5"
+    },
+    {
+      "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 63331,
+      "sha256": "12484c54a6686dfefe8f65de849c9f001ec0fcca39b310fed43686d14c25640f"
+    },
+    {
+      "url": "https://kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 41025,
+      "sha256": "aa869a55e08d50fe2607386e5cdad6c17a34897feeff17e70e80d522b4ff4539"
+    },
+    {
+      "url": "https://blog.jetbrains.com/teamcity/2026/05/cve-2026-44413/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 5838,
+      "sha256": "108b732a7c684ea0f5a408db20e5dcb213a4dc8249edfd7b53b33ce885ccdc30"
+    },
+    {
+      "url": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 13164,
+      "sha256": "3627d660d7001472e4a5987f0a3b8011ae0f1e041deb6888d9bd17d8e4dc0035"
+    },
+    {
+      "url": "https://blog.cloudflare.com/full-transaction-waf/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 10573,
+      "sha256": "2aca568767d8399228f2680f56fbe6c13d44d95242f827c46026cc73aaf82a2a"
+    },
+    {
+      "url": "https://blog.cloudflare.com/security-overview-dashboard/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 14158,
+      "sha256": "3e1f6145babfb0d3bd73a91753aa498f46089a48de10259691fa86726868262a"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1268,
+      "sha256": "8741e85b658d325aa26423ccbe64ad276239c33898e2ab9bb4eb9f3f23cd47f6"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 829,
+      "sha256": "5b4a8dd899deeefc3af74dd34056e4c1ea7f113299f91516598d1119e1f02e1e"
+    },
+    {
+      "url": "https://www.x41-dsec.de/lab/advisories/x41-2026-002-starlette/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 4771,
+      "sha256": "414994bc3bddd4ee867c821fc1a8b944739c9b927c89b4bf2746658c7f1a3084"
+    },
+    {
+      "url": "https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 3782,
+      "sha256": "3f5c496a595b58d172b5f636d39b68902e006e8e3b88e9232cb0ed8b2564f011"
+    },
+    {
+      "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 6292,
+      "sha256": "d54ae5fc0725b51388e9a99369e6225f90e2d552292b77f25dc780ad316bfd21"
+    },
+    {
+      "url": "https://www.cncf.io/blog/2026/03/23/kusari-and-cncf-advancing-software-supply-chain-security-for-cloud-native-projects/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 5022,
+      "sha256": "614d9771d554306905973d41fe00b731d76fca37a882a073515c18a2042969d7"
+    }
+  ],
+  "items": [
+    {
+      "renewalId": "568305543e6754fa",
+      "checks": [
+        {
+          "document": "https://spring.io/blog/2026/09/25/spring-boot-4-2-0-M2-available-now",
+          "quote": "Spring Boot 4.2.0-M2 has been released",
+          "present": true
+        },
+        {
+          "document": "https://spring.io/blog/2026/09/25/spring-boot-4-2-0-M2-available-now",
+          "quote": "SSL bundle support for LDAP",
+          "present": true
+        },
+        {
+          "document": "https://spring.io/blog/2026/09/25/spring-boot-4-2-0-M2-available-now",
+          "quote": "OpenTelemetry's semantic conventions, alongside common OTLP endpoint, header, and compression configuration.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "f05ff63990b375e2",
+      "checks": [
+        {
+          "document": "https://spring.io/blog/2026/04/23/spring-boot-4-1-0-RC1-available-now",
+          "quote": "Spring Boot 4.1.0-RC1 has been released",
+          "present": true
+        },
+        {
+          "document": "https://spring.io/blog/2026/04/23/spring-boot-4-1-0-RC1-available-now",
+          "quote": "HTTP Client SSRF Mitigation with InetAddressFilter",
+          "present": true
+        },
+        {
+          "document": "https://spring.io/blog/2026/04/23/spring-boot-4-1-0-RC1-available-now",
+          "quote": "Support for OpenTelemetry SDK environment variables",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "9d263cda22c982a1",
+      "checks": [
+        {
+          "document": "https://spring.io/blog/2026/06/10/spring-boot-4",
+          "quote": "It also includes all of the bug fixes, documentation improvements and security fixes from Spring Boot 4.0.7",
+          "present": true
+        },
+        {
+          "document": "https://spring.io/blog/2026/06/10/spring-boot-4",
+          "quote": "Spring Boot 4.1.0 has been released and is now available from Maven Central.",
+          "present": true
+        },
+        {
+          "document": "https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now",
+          "quote": "Spring AI 2.0 has been designed to be used with Spring Boot 4.0 / 4.1 and Spring Framework 7.0",
+          "present": true
+        },
+        {
+          "document": "https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now",
+          "quote": "Spring AI 2.0.0 has been released and is now available from Maven Central!",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "ad44e1abd30ad1f2",
+      "checks": [
+        {
+          "document": "https://spring.io/blog/2026/04/21/spring-security-releases",
+          "quote": "Spring Security 6.5.10 , 7.0.5 , and 7.1.0-RC1 .",
+          "present": true
+        },
+        {
+          "document": "https://spring.io/blog/2026/04/21/spring-security-releases",
+          "quote": "Spring Security 5.7.x, 5.8.x, 6.3.x, and 6.4.x generations has ended",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "7067e48d153e8525",
+      "checks": [
+        {
+          "document": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
+          "quote": "v3.5.0-rc1 Pre-release",
+          "present": true
+        },
+        {
+          "document": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
+          "quote": "feat: adds mTLS support in repo-server",
+          "present": true
+        },
+        {
+          "document": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
+          "quote": "feat(cli): Add support for Source Integrity configuration",
+          "present": true
+        },
+        {
+          "document": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc1",
+          "quote": "feat: expose Appset UI and fix pie chart summary",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "fecc68bc1f0f9da3",
+      "checks": [
+        {
+          "document": "https://kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/",
+          "quote": "graduation of MutatingAdmissionPolicies to Stable.",
+          "present": true
+        },
+        {
+          "document": "https://kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/",
+          "quote": "support for User Namespaces graduates to Stable.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "6944923e55b6bbd0",
+      "checks": [
+        {
+          "document": "https://blog.jetbrains.com/teamcity/2026/05/cve-2026-44413/",
+          "quote": "assigned the CVE identifier CVE-2026-44413.",
+          "present": true
+        },
+        {
+          "document": "https://blog.jetbrains.com/teamcity/2026/05/cve-2026-44413/",
+          "quote": "versions through 2025.11.4.",
+          "present": true
+        },
+        {
+          "document": "https://blog.jetbrains.com/teamcity/2026/05/cve-2026-44413/",
+          "quote": "fixed in version 2026.1.",
+          "present": true
+        },
+        {
+          "document": "https://blog.jetbrains.com/teamcity/2026/05/cve-2026-44413/",
+          "quote": "TeamCity Cloud is not affected and requires no action.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "72477d086944244f",
+      "checks": [
+        {
+          "document": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
+          "quote": "If you’re a NetScaler customer and you haven’t patched your instance",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
+          "quote": "they can avoid the controls placed in front of it.",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
+          "quote": "including DTLS-enabled listeners.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "59c87ea544e0e5db",
+      "checks": [
+        {
+          "document": "https://blog.cloudflare.com/full-transaction-waf/",
+          "quote": "up to three custom response rules supporting Log and Block actions",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/full-transaction-waf/",
+          "quote": "Creating rules on the response body is not yet available.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "7ec61f556fb8d2c3",
+      "checks": [
+        {
+          "document": "https://blog.cloudflare.com/security-overview-dashboard/",
+          "quote": "items are ranked by criticality",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/security-overview-dashboard/",
+          "quote": "launching at the domain level today",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "87db18d4899cc26c",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace",
+          "quote": "deployed artifacts and runtime risk in your Kubernetes environment.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace",
+          "quote": "generally available for GitHub Enterprise Cloud customers.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "b4cc1e300a7d9c1b",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations",
+          "quote": "run a free Code Security risk assessment",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations",
+          "quote": "summarizes vulnerabilities by severity, rule type, and programming language.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "9aee971925826c50",
+      "checks": [
+        {
+          "document": "https://www.x41-dsec.de/lab/advisories/x41-2026-002-starlette/",
+          "quote": "routing in Starlette is based on the actual request path.",
+          "present": true
+        },
+        {
+          "document": "https://www.x41-dsec.de/lab/advisories/x41-2026-002-starlette/",
+          "quote": "does not perform any validation of the Host header value.",
+          "present": true
+        },
+        {
+          "document": "https://www.x41-dsec.de/lab/advisories/x41-2026-002-starlette/",
+          "quote": "Confirmed Affected Versions: starlette >= 0.8.3, < 1.0.1 Confirmed Patched Versions: starlette 1.0.1",
+          "present": true
+        },
+        {
+          "document": "https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr",
+          "quote": "mitigated only if that proxy rejects or normalizes the malformed Host header before forwarding",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "c78cf468160e1a45",
+      "checks": [
+        {
+          "document": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+          "quote": "Upgrade to 2026.10.2 .",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+          "quote": "Updating the SDK alone may not change the underlying policy.",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+          "quote": "not resolve these errors by disabling verification",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "bb5be26c24786b21",
+      "checks": [
+        {
+          "document": "https://www.cncf.io/blog/2026/03/23/kusari-and-cncf-advancing-software-supply-chain-security-for-cloud-native-projects/",
+          "quote": "provide CNCF projects with free access to Kusari Inspector",
+          "present": true
+        },
+        {
+          "document": "https://www.cncf.io/blog/2026/03/23/kusari-and-cncf-advancing-software-supply-chain-security-for-cloud-native-projects/",
+          "quote": "GUAC, in-toto/Witness, OpenVEX",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    }
+  ]
+}
