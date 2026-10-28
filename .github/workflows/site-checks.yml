@@ -41,6 +41,9 @@ jobs:
       - name: Render the isolated legacy Jekyll bundle and run native compiler probes
         run: python3 -B scripts/check_ruby_environment_examples.py --install
       - name: Start, recreate and restore disposable Jenkins Docker controllers
+        env:
+          # Verified by the successful production run 40643062477; keep CI reproducible.
+          JENKINS_IMAGE: jenkins/jenkins@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
         run: python3 -B scripts/check_jenkins_examples.py
       - uses: actions/setup-java@v4
         with:
