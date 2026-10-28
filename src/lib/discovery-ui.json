@@ -1,0 +1,82 @@
+{
+  "en": {
+    "archive": "All articles",
+    "intro": "Browse every available article in this language by publication year.",
+    "years": "Browse by year",
+    "count": "Articles",
+    "fallback": "No translation · Home",
+    "recover": "Browse available articles",
+    "notFound": "Choose a language to find articles.",
+    "emptySection": "No articles in this section yet."
+  },
+  "ko": {
+    "archive": "전체 글",
+    "intro": "이 언어로 제공되는 모든 글을 발행 연도별로 찾아보세요.",
+    "years": "연도별 탐색",
+    "count": "글 수",
+    "fallback": "번역 없음 · 홈으로",
+    "recover": "제공되는 글 찾아보기",
+    "notFound": "글을 찾을 언어를 선택하세요.",
+    "emptySection": "아직 이 분류에 글이 없습니다."
+  },
+  "zh-CN": {
+    "archive": "全部文章",
+    "intro": "按发布年份浏览此语言的所有文章。",
+    "years": "按年份浏览",
+    "count": "文章数",
+    "fallback": "暂无译文 · 首页",
+    "recover": "浏览现有文章",
+    "notFound": "选择语言以查找文章。",
+    "emptySection": "此栏目暂无文章。"
+  },
+  "ja": {
+    "archive": "すべての記事",
+    "intro": "この言語で読めるすべての記事を公開年別に探せます。",
+    "years": "年別に探す",
+    "count": "記事数",
+    "fallback": "翻訳なし · ホームへ",
+    "recover": "公開済みの記事を探す",
+    "notFound": "記事を探す言語を選んでください。",
+    "emptySection": "このセクションにはまだ記事がありません。"
+  },
+  "de": {
+    "archive": "Alle Beiträge",
+    "intro": "Alle verfügbaren Beiträge in dieser Sprache nach Veröffentlichungsjahr durchsuchen.",
+    "years": "Nach Jahr durchsuchen",
+    "count": "Beiträge",
+    "fallback": "Keine Übersetzung · Startseite",
+    "recover": "Verfügbare Beiträge durchsuchen",
+    "notFound": "Eine Sprache auswählen, um Beiträge zu finden.",
+    "emptySection": "In diesem Bereich gibt es noch keine Beiträge."
+  },
+  "fr": {
+    "archive": "Tous les articles",
+    "intro": "Parcourez tous les articles disponibles dans cette langue par année de publication.",
+    "years": "Parcourir par année",
+    "count": "Articles",
+    "fallback": "Pas de traduction · Accueil",
+    "recover": "Parcourir les articles disponibles",
+    "notFound": "Choisissez une langue pour trouver des articles.",
+    "emptySection": "Cette rubrique ne contient pas encore d’articles."
+  },
+  "ru": {
+    "archive": "Все статьи",
+    "intro": "Все доступные статьи на этом языке по году публикации.",
+    "years": "По годам",
+    "count": "Статей",
+    "fallback": "Нет перевода · Главная",
+    "recover": "Открыть доступные статьи",
+    "notFound": "Выберите язык, чтобы найти статьи.",
+    "emptySection": "В этом разделе пока нет статей."
+  },
+  "es": {
+    "archive": "Todos los artículos",
+    "intro": "Consulte todos los artículos disponibles en este idioma por año de publicación.",
+    "years": "Explorar por año",
+    "count": "Artículos",
+    "fallback": "Sin traducción · Inicio",
+    "recover": "Explorar artículos disponibles",
+    "notFound": "Elija un idioma para encontrar artículos.",
+    "emptySection": "Todavía no hay artículos en esta sección."
+  }
+}
