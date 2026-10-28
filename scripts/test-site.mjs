@@ -135,6 +135,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     const build=spawnSync(process.execPath,['node_modules/astro/bin/astro.mjs','build'],{encoding:'utf8',maxBuffer:8*1024*1024});
     assert.equal(build.status,0,build.stderr);
     const checked=spawnSync('python3',['-B','scripts/check_site.py'],{encoding:'utf8'});assert.equal(checked.status,0,checked.stdout+checked.stderr);
+    const seoChecked=spawnSync('python3',['-B','scripts/check_seo.py'],{encoding:'utf8'});assert.equal(seoChecked.status,0,seoChecked.stdout+seoChecked.stderr);
     const en=await readFile('dist/en/digest/2000-01-01/index.html','utf8');
     const ko=await readFile('dist/ko/digest/2000-01-01/index.html','utf8');
     assert.match(en,/<html lang="en">/);assert.match(ko,/<html lang="ko">/);
@@ -160,6 +161,17 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.match(sample,/noindex,follow/);assert.match(sample,/예제 데이터/);
     assert.ok(!sample.includes('<details class="article-toc"'));
     const sitemap=await readFile('dist/sitemap.xml','utf8');
+    for (const lang of ['en','ko']) {
+      const listing=await readFile(`dist/${lang}/posts/index.html`,'utf8');
+      for (const other of ['en','ko']) assert.ok(listing.includes(`hreflang="${other}" href="https://youdozi.github.io/${other}/posts/"`));
+      for (const empty of ['zh-CN','ja','de','fr','ru','es']) assert.ok(!listing.includes(`hreflang="${empty}"`),'Empty post lists are not translation counterparts');
+    }
+    for (const lang of ['zh-CN','ja','de','fr','ru','es']) {
+      const listing=await readFile(`dist/${lang}/posts/index.html`,'utf8');
+      assert.ok(listing.includes('noindex,follow'));
+      assert.ok(!listing.includes('hreflang='));
+      assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/posts/</loc>`));
+    }
     assert.ok(!sitemap.includes('/ko/digest/2026-03-16/'));
     const reviewShell=await readFile('dist/review/index.html','utf8');
     assert.match(reviewShell,/noindex,follow/);
