@@ -6,3 +6,5 @@
 html:lang(zh-CN) .entry-card h2,html:lang(zh-CN) .article-heading h1,html:lang(ja) .entry-card h2,html:lang(ja) .article-heading h1{word-break:normal}
 
 .entry-meta .publication-date,.entry-meta .modification-date{white-space:nowrap}.entry-meta .modification-date::before{content:none}
+
+.language-menu ul{min-width:220px;max-width:min(260px,calc(100vw - 36px));max-height:60vh;overflow:auto}.language-fallback{display:block;font-size:11px;line-height:1.5;color:var(--muted);margin-top:4px;white-space:normal}.site-header nav>a[aria-current],.footer-links>a[aria-current]{color:var(--accent);text-decoration:underline;text-underline-offset:5px}.browse-all{display:inline-block;color:var(--accent);font-size:14px;text-decoration:underline;text-underline-offset:4px}
