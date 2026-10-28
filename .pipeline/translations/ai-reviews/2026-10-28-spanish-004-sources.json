@@ -1,0 +1,904 @@
+{
+  "checkedAt": "2026-10-28T03:04:24.614983+00:00",
+  "scope": "Live HTTP retrieval and presence of existing English evidence excerpts; does not certify current product availability or all semantics. Existing sources, editions, hashes and publication states are preserved.",
+  "documents": [
+    {
+      "url": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 2394,
+      "sha256": "dde70cd3f4eabf355cf1dd653effb5f8fc4e166c7b7d9a5fe67bc3ec82a4dc60"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1650,
+      "sha256": "cdc7a03d58d56a3a619605a4a0bae55ee8ee7cb1e759c3ba1ca74664035e3b62"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1227,
+      "sha256": "add78f965d5c2126791b6eee473e76e2aa87d82b186b8b9c1546b14e79ba53dc"
+    },
+    {
+      "url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 11233,
+      "sha256": "6f916933b64fe743bacbc0bf722f4c7c6db3399c77091d79921f110b64363e47"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1496,
+      "sha256": "5705285bf661f3e71f89e3cf6b361705e9e4f1e9e075ff817be1816239a6b11b"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/devops/copilot-autofix-for-github-advanced-security-for-azure-devops/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 5040,
+      "sha256": "7d7961422d68477a659b88152ed6797e95f7d70e3404ba9787b06a6e6932444e"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning-autofix?view=azure-devops",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 20740,
+      "sha256": "e96ea32d4e81d768eb7e5be0143c7ea8db7008cf03ec727c173cbba8f0877366"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-28-hard-budget-limits-now-available-for-github-advanced-security",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1997,
+      "sha256": "951fab5ead2000ded47600766935462120c8912975bbf4554362ab801d2b34ef"
+    },
+    {
+      "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 17685,
+      "sha256": "57f11440fdeb0800e3807ec9391fa8fb15b69fdcbc1541a68982255ab1cf6460"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 712,
+      "sha256": "901c4092ad4bc4707f0b00c2b77e1a82c5056934a0be55abf818304443680a6c"
+    },
+    {
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1326,
+      "sha256": "a514d9c1fae1da4a9d49244d7531493cf13eeeefd7d1e395655b78096d2e805d"
+    },
+    {
+      "url": "https://www.docker.com/blog/docker-joins-the-athena-coalition-a-cross-industry-collaboration-for-supply-chain-security/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 4444,
+      "sha256": "5a48bbda5b20dc2b887bee0b913a3c72866fd647a62e713095c9ae8dc2369d68"
+    },
+    {
+      "url": "https://www.chainguard.dev/athena",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 5671,
+      "sha256": "22e6c1170341781bd742f95075a6c72a1747405c7a81714cfe0f1bb57d2a8a29"
+    },
+    {
+      "url": "https://www.infoq.com/articles/time-series-storage-design/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 24750,
+      "sha256": "e0959942c03d7065484c77643b18e0ddf38fb22be407885e9d99e920de8cc645"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 595,
+      "sha256": "6c0897c2e50276c6bf482f443e96e13337f2aa3b8c32bc64a5816739980452e9"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1123,
+      "sha256": "f7090baabb33fcbac879cadc263cbf8d561d599a69e26d34b12965dee181571b"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1140,
+      "sha256": "87322d317c1ac0a296615e7f823ff3aa603fc4b9674aee6ba175d1bbe39db0f5"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 2213,
+      "sha256": "a53b2a847e0f7cc86798a1c352dd26a28bbdacb6d96132d87592f4f19d5abf72"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/12/defense-at-ai-speed-microsofts-new-multi-model-agentic-security-system-tops-leading-industry-benchmark/?v=1",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 24828,
+      "sha256": "3873220718dd565cd4baf9d4fc4fbf94d66b9e02c6b45af233b42f75072ae25b"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1459,
+      "sha256": "a32b167225ee468fdc455ecf572249a72311ab486b0abcf3c712025a8de96a58"
+    },
+    {
+      "url": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 27728,
+      "sha256": "df921b85f0240d4ba737a676fe1153547f68dc2a9bfcd9242c99a2e6080ee32e"
+    },
+    {
+      "url": "https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 12520,
+      "sha256": "25142da25f027f4e3ef2e3c8f3b327a8fe5c2df2b96b11ae7f277ddbe81d07e2"
+    },
+    {
+      "url": "https://github.com/microsoft/mxc",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 6290,
+      "sha256": "b5dd2d5f14ac4d68fe82ee44bf031fc72f0ac0c698bb97d37f173be855a45f1c"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 2784,
+      "sha256": "dd2952678f4cd7c8e595b38a649b4dee2592b68df1318bea551ef9a8a7f77156"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1433,
+      "sha256": "207cf450161f64abe7e9f2b69efda083db2e31bb5c5a5a0d7cda2db8cce6404e"
+    },
+    {
+      "url": "https://www.infoq.com/podcasts/new-blueprint-cloud-security/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v2",
+      "characters": 34694,
+      "sha256": "75667e94aabe5272a0e8f6f1ac125ea059a991f0b9f7e3fce7dd9c7a4e4ee3da"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1230,
+      "sha256": "05b82d61fccd67568c95a4b5304822edc871706ab941593099f04346ac393d49"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1186,
+      "sha256": "57f0dccf8c4d55c4ee042d7eacec64bc38524dbf8aee6e360a426aabf89353a1"
+    },
+    {
+      "url": "https://dev.to/mame/which-programming-language-is-best-for-claude-code-508a",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 10027,
+      "sha256": "aa1685013bba3d62d5a5dc7216f4f36eae95cab10abe1e7a47e82f2776d99e30"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/07/online-cohort-ai-security/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v2",
+      "characters": 3243,
+      "sha256": "c95798477da075249e70bbf3371e97e187b35fc30cef0116bd96bb0d77349cee"
+    },
+    {
+      "url": "https://blog.cloudflare.com/post-quantum-roadmap/",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 13499,
+      "sha256": "190912a31dd65877bdca962707d0e52d5dd3bbcbfa321f8238d04a90776e79b9"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+      "status": "fetched",
+      "extractorVersion": "article-parser-v1",
+      "characters": 1371,
+      "sha256": "f5f22fb1b7bb07ea87f259dd0905fdfb2ce0ee56699e627fa998c78089e1e80f"
+    },
+    {
+      "url": "https://buildkite.com/resources/blog/what-shipped-at-buildkite-september-27-october-3-2026/",
+      "status": "unavailable",
+      "error": "source unavailable (curl 56, attempt 3)"
+    }
+  ],
+  "items": [
+    {
+      "renewalId": "27d181b6a4903b28",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
+          "quote": "AI security detections must be allowed by your Enterprise policy and enabled at the organization level.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
+          "quote": "While CodeQL is not the tool performing the AI analysis, the AI detection engine relies on it to function.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
+          "quote": "These findings are informational and won’t block pull request merges.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
+          "quote": "During public preview, AI security detections require a GitHub Copilot license and draw down your organization’s AI credits.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+          "quote": "Code scanning AI Scan for pull requests is now generally available.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+          "quote": "A GitHub Copilot license is not required.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+          "quote": "For private and internal organization-owned repositories, GitHub Code Security or GitHub Advanced Security is required.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+          "quote": "They do not fail the code scanning check and cannot block pull request merges through ruleset requirements.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+          "quote": "AI Scan does not run on pull requests from forks or pull requests created by Dependabot.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+          "quote": "AI Scan for pull requests consumes Code Security AI Credits.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "28ede0247b95214f",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+          "quote": "Note that GPT-5.2 is still available as part of Copilot code review.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+          "quote": "As of today, June 5, 2026, we have deprecated the following models across most GitHub Copilot experiences",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+          "quote": "Copilot Enterprise administrators may need to enable access to alternative models through their model policies in Copilot settings.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+          "quote": "GPT-5.2 2026-06-05 GPT-5.5 GPT-5.2-Codex 2026-06-05 GPT-5.3-Codex",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "38bfcb4310c98b8d",
+      "checks": [
+        {
+          "document": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+          "quote": "support for CPU and memory profiling of Workers and Durable Objects",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+          "quote": "begin sampling at a one millisecond interval.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "3e483be55bb45ecb",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex",
+          "quote": "GPT-5.2 6-05-2026 GPT-5.5 GPT-5.2-Codex",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex",
+          "quote": "their model policies",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex",
+          "quote": "from June 1, 2026 to June 5, 2026.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex",
+          "quote": "GPT-5.2 instead of GPT-5.2-Codex",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "52ee7abbb037f678",
+      "checks": [
+        {
+          "document": "https://devblogs.microsoft.com/devops/copilot-autofix-for-github-advanced-security-for-azure-devops/",
+          "quote": "Copilot Autofix is available today in limited private preview for GitHub Advanced Security for Azure DevOps.",
+          "present": true
+        },
+        {
+          "document": "https://devblogs.microsoft.com/devops/copilot-autofix-for-github-advanced-security-for-azure-devops/",
+          "quote": "Enablement is processed in waves",
+          "present": true
+        },
+        {
+          "document": "https://devblogs.microsoft.com/devops/copilot-autofix-for-github-advanced-security-for-azure-devops/",
+          "quote": "Your usual review and build gates run on the pull request. Once it merges and the next CodeQL scan completes, the alert resolves on its own.",
+          "present": true
+        },
+        {
+          "document": "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning-autofix?view=azure-devops",
+          "quote": "This feature is in limited public preview. Microsoft isn't currently accepting additional users for the preview.",
+          "present": true
+        },
+        {
+          "document": "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning-autofix?view=azure-devops",
+          "quote": "Generating a fix consumes AI credits from your organization's Azure billing meter.",
+          "present": true
+        },
+        {
+          "document": "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning-autofix?view=azure-devops",
+          "quote": "GitHub Copilot budget settings and user limits configured on GitHub don't apply to Copilot Autofix meter spend in Azure DevOps.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "5fe80662057aa753",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-05-28-hard-budget-limits-now-available-for-github-advanced-security",
+          "quote": "Enterprise administrators and billing managers",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-05-28-hard-budget-limits-now-available-for-github-advanced-security",
+          "quote": "additional license usage is blocked",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "68e2ee5d21f7dc1b",
+      "checks": [
+        {
+          "document": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+          "quote": "$0.77, down 68% from the $2.43",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+          "quote": "About 40% of the savings came from changes and optimizations to the reviewer's code",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "6ad4fb7dea8c6f87",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+          "quote": "This feature is available for GitHub Enterprise Cloud.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+          "quote": "This gives you the same per-user AI credit budget controls that were previously only available through the REST API.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+          "quote": "set one per-user budget for that cost center, and have it automatically apply to everyone in it.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+          "quote": "As membership changes, budget coverage stays in sync",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "81aa0c8f7db4aee1",
+      "checks": [
+        {
+          "document": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/",
+          "quote": "answers cost questions, surfaces optimization opportunities, automatically investigates cost anomalies, and runs recurring FinOps workflows on a schedule you define.",
+          "present": true
+        },
+        {
+          "document": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/",
+          "quote": "can open Jira tickets on your behalf.",
+          "present": true
+        },
+        {
+          "document": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/",
+          "quote": "AWS FinOps Agent (preview) is available in the US East (N. Virginia) Region",
+          "present": true
+        },
+        {
+          "document": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/",
+          "quote": "except AWS GovCloud (US) Regions and AWS China (Beijing and Ningxia) Regions.",
+          "present": true
+        },
+        {
+          "document": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/",
+          "quote": "AWS FinOps Agent is offered at no additional charge during the preview.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "92303a0e5010240e",
+      "checks": [
+        {
+          "document": "https://www.docker.com/blog/docker-joins-the-athena-coalition-a-cross-industry-collaboration-for-supply-chain-security/",
+          "quote": "Docker is a founding participant.",
+          "present": true
+        },
+        {
+          "document": "https://www.docker.com/blog/docker-joins-the-athena-coalition-a-cross-industry-collaboration-for-supply-chain-security/",
+          "quote": "share findings and coordinate responses before vulnerabilities become public.",
+          "present": true
+        },
+        {
+          "document": "https://www.chainguard.dev/athena",
+          "quote": "available to members through Chainguard Libraries before disclosure for 30 days.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "942a88912e2e412f",
+      "checks": [
+        {
+          "document": "https://www.infoq.com/articles/time-series-storage-design/",
+          "quote": "referencing it by a compact ID",
+          "present": true
+        },
+        {
+          "document": "https://www.infoq.com/articles/time-series-storage-design/",
+          "quote": "High-cardinality fields like request IDs and session tokens",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "973739bcb859e5ab",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
+          "quote": "Claude Haiku 4.5 (0.33x multiplier) GPT-5.4-mini",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
+          "quote": "GPT-5.4-mini (0.33x multiplier)",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "9efda109fcdd4210",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+          "quote": "Claude Sonnet 4 2026-05-06",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+          "quote": "enable access to alternative models through their model policies",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "be1017688a0667ca",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+          "quote": "GPT-4.1 2026-06-01 GPT-5.5",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+          "quote": "enable access to alternative models through their model policies",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "c12b394bcd713139",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+          "quote": "Starting September 25, 2026, GitHub will introduce a data retention policy for closed Dependabot security alerts.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+          "quote": "It does not apply to GitHub Enterprise Server (GHES).",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+          "quote": "Open alerts stay fully accessible in the UI and API, regardless of age.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+          "quote": "Closed alerts stay fully accessible in the UI and API for two years after they are closed.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-30-cloud-data-retention-policy-for-closed-security-alerts",
+          "quote": "Enterprise, organization, and repository administrators and security managers can download them as a CSV",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "c2532ba4f69bf1ba",
+      "checks": [
+        {
+          "document": "https://www.microsoft.com/en-us/security/blog/2026/05/12/defense-at-ai-speed-microsofts-new-multi-model-agentic-security-system-tops-leading-industry-benchmark/?v=1",
+          "quote": "ensemble of frontier and distilled models",
+          "present": true
+        },
+        {
+          "document": "https://www.microsoft.com/en-us/security/blog/2026/05/12/defense-at-ai-speed-microsofts-new-multi-model-agentic-security-system-tops-leading-industry-benchmark/?v=1",
+          "quote": "sign up to join the private preview",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "c4a7f428da738696",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+          "quote": "The new /security-review slash command is shipping as an experimental feature in public preview",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+          "quote": "turn on experimental mode in Copilot CLI",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+          "quote": "This is a Copilot-driven scan that doesn’t rely on GitHub code scanning, Dependabot, or GitHub secret scanning.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "c505a5c997b12684",
+      "checks": [
+        {
+          "document": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+          "quote": "we have a mobile SDK, and a frontend SDK, in TypeScript, to collect the data and to send to our API.",
+          "present": true
+        },
+        {
+          "document": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+          "quote": "our data storage, which is BigQuery",
+          "present": true
+        },
+        {
+          "document": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+          "quote": "we introduced code generated event models",
+          "present": true
+        },
+        {
+          "document": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+          "quote": "you have an error on compilation time",
+          "present": true
+        },
+        {
+          "document": "https://www.infoq.com/presentations/mobile-user-tracking-service/",
+          "quote": "it reads from the queue, takes a batch of some events, and is sending to our API.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "ce26c7555a2bf537",
+      "checks": [
+        {
+          "document": "https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/",
+          "quote": "an early preview of the Microsoft Execution Containers (MXC) SDK",
+          "present": true
+        },
+        {
+          "document": "https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/",
+          "quote": "a cross-platform, policy-driven execution layer for agents on Windows and WSL.",
+          "present": true
+        },
+        {
+          "document": "https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/",
+          "quote": "Linux containers Will bring the containment model to Linux-first agent toolchains via WSL.",
+          "present": true
+        },
+        {
+          "document": "https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/",
+          "quote": "With the future addition of MXC integration",
+          "present": true
+        },
+        {
+          "document": "https://github.com/microsoft/mxc",
+          "quote": "Warning: --audit turns off all sandbox security for the workload being analyzed. Never use it to run untrusted code.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "d123262315e62321",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+          "quote": "Dependency lifecycle scripts (i.e., preinstall , install , postinstall ) and implicit node-gyp builds no longer run unless explicitly allowed.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+          "quote": "--allow-git defaults to none",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+          "quote": "--allow-remote defaults to none",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+          "quote": "We expect this change to take effect in early August 2026.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+          "quote": "We expect this change to take effect around January 2027.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation",
+          "quote": "move automated publishing to trusted publishing (OIDC) or staged publishing with a human approval step",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/",
+          "quote": "npm granular access tokens (GATs) configured to bypass 2FA can no longer perform sensitive account, org, and package management actions.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/",
+          "quote": "This does not affect GitHub personal access tokens, GitHub App tokens, or GITHUB_TOKEN in Actions.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/",
+          "quote": "We are targeting January 2027 for this update.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "d17b2ae1f047cf94",
+      "checks": [
+        {
+          "document": "https://www.infoq.com/podcasts/new-blueprint-cloud-security/",
+          "quote": "we have this concept called a zone that allows you to run isolated workloads inside of a safe virtual machine.",
+          "present": true
+        },
+        {
+          "document": "https://www.infoq.com/podcasts/new-blueprint-cloud-security/",
+          "quote": "have Claude explain to me all the information that I need to know",
+          "present": true
+        },
+        {
+          "document": "https://www.infoq.com/podcasts/new-blueprint-cloud-security/",
+          "quote": "at the end of it, you have to understand what you did.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "d92a8a6927fa76ff",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+          "quote": "We will deprecate Gemini 2.5 Pro and Gemini 3 Flash across all GitHub Copilot experiences",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+          "quote": "code completions) on July 31st, 2026:",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+          "quote": "Gemini 2.5 Pro 7-31-2026 Gemini 3.1 Pro Gemini 3 Flash 7-31-2026 Gemini 3.5 Flash",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+          "quote": "Copilot Enterprise administrators may need to enable access to the alternative models through their model policies",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/",
+          "quote": "we have deprecated the following models across all GitHub Copilot experiences",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/",
+          "quote": "Gemini 2.5 Pro 2026-07-31 Gemini 3.1 Pro (Preview) Gemini 3 Flash 2026-07-31 Gemini 3.6 Flash",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "d9492522fb4514ef",
+      "checks": [
+        {
+          "document": "https://dev.to/mame/which-programming-language-is-best-for-claude-code-508a",
+          "quote": "simplified version of Git in 13 languages.",
+          "present": true
+        },
+        {
+          "document": "https://dev.to/mame/which-programming-language-is-best-for-claude-code-508a",
+          "quote": "Each language was run 20 times. The model was Claude Opus 4.6 (high effort).",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "e467e85426c883ef",
+      "checks": [
+        {
+          "document": "https://www.infoq.com/news/2026/07/online-cohort-ai-security/",
+          "quote": "a five-week online cohort for senior engineers and architects",
+          "present": true
+        },
+        {
+          "document": "https://www.infoq.com/news/2026/07/online-cohort-ai-security/",
+          "quote": "are facilitated by Katharine Jarmul",
+          "present": true
+        },
+        {
+          "document": "https://www.infoq.com/news/2026/07/online-cohort-ai-security/",
+          "quote": "Each working group produces a documented risk assessment and mitigation report for an AI product architecture as its capstone",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "fb47d93f2cc47316",
+      "checks": [
+        {
+          "document": "https://blog.cloudflare.com/post-quantum-roadmap/",
+          "quote": "target 2029 to be fully post-quantum",
+          "present": true
+        },
+        {
+          "document": "https://blog.cloudflare.com/post-quantum-roadmap/",
+          "quote": "work is not done until authentication is also upgraded.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "fe469724f5828fb0",
+      "checks": [
+        {
+          "document": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+          "quote": "The /security-review slash command is shipping in public preview",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+          "quote": "High-confidence security findings, scored by severity and confidence.",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+          "quote": "It complements GitHub code scanning, Dependabot, and secret scanning",
+          "present": true
+        },
+        {
+          "document": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+          "quote": "The command is available to Copilot Free, Pro, Business, and Enterprise users during public preview.",
+          "present": true
+        }
+      ],
+      "allEvidencePresent": true
+    },
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "checks": [
+        {
+          "document": "https://buildkite.com/resources/blog/what-shipped-at-buildkite-september-27-october-3-2026/",
+          "quote": "Pipeline secrets are cluster secrets restricted to the current pipeline",
+          "present": null
+        },
+        {
+          "document": "https://buildkite.com/resources/blog/what-shipped-at-buildkite-september-27-october-3-2026/",
+          "quote": "validate_pipeline to check pipeline YAML against the official schema before upload",
+          "present": null
+        }
+      ],
+      "allEvidencePresent": false
+    }
+  ]
+}

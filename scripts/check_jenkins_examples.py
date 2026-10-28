@@ -15,6 +15,7 @@ assert set(files)=={'jenkins_lab.py','jenkins_restore.py'}
 with tempfile.TemporaryDirectory(prefix='jenkins-article-') as directory:
     for name,code in files.items():Path(directory,name).write_text(code+'\n')
     env=os.environ.copy(); selected_image=None
+    print(json.dumps({'requestedJenkinsImage':env.get('JENKINS_IMAGE','jenkins/jenkins:lts-jdk21')}),flush=True)
     for name in files:
         result=subprocess.run([sys.executable,str(Path(directory,name))],capture_output=True,text=True,timeout=600,env=env)
         if result.returncode:raise RuntimeError(f'{name} failed: {result.stderr}')

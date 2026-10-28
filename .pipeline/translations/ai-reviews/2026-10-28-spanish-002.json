@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-28T02:29:42.170394+00:00",
+  "skill": "translate",
+  "reviewMethod": "self-ai-meaning-comparison-then-target-language-editing",
+  "independentReview": false,
+  "humanReview": false,
+  "scope": {
+    "sources": 12,
+    "editions": 12,
+    "language": "es",
+    "region": "not country-specific",
+    "fields": [
+      "edition.title",
+      "edition.claims",
+      "edition.followUp",
+      "reviewFocus"
+    ],
+    "type": "Complete translations of the existing approved concise English renewals; not translations of the full external articles. Original evidence and source documents remain unchanged."
+  },
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/spanish-002.json": "a956641988237f1ebb7f113482e5e2099b26aa61138ed3e14f9c4c7f37c4aa73"
+  },
+  "sourceSha256": {
+    "src/content/renewals/1e8ba1d86d179142.json": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+    "src/content/renewals/2b6f4abe346a373d.json": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+    "src/content/renewals/3f90329447f77e33.json": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f",
+    "src/content/renewals/4380abffaf1a31e0.json": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+    "src/content/renewals/46983b9e8a1cf49c.json": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974",
+    "src/content/renewals/4a59615041b968ae.json": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4",
+    "src/content/renewals/50b97c32c1d2c027.json": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+    "src/content/renewals/db11f89181439d98.json": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+    "src/content/renewals/e458b053b5a9f878.json": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+    "src/content/renewals/e858b2ec6331d84e.json": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+    "src/content/renewals/ecc191be72688d94.json": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+    "src/content/renewals/eea31f00e6ce7be1.json": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324"
+  },
+  "findings": [
+    {
+      "renewalId": "2b6f4abe346a373d",
+      "field": "reviewFocus",
+      "finding": "Supported release lines concern vendor maintenance support, not only compatibility.",
+      "resolution": "Use ramas de versiones con soporte.",
+      "status": "resolved"
+    },
+    {
+      "renewalId": "db11f89181439d98",
+      "field": "reviewFocus",
+      "finding": "Throughput is narrower than general performance.",
+      "resolution": "Use capacidad de procesamiento; preserve that no independent benchmark was reproduced.",
+      "status": "resolved"
+    },
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "field": "external source retrieval",
+      "finding": "Bounded HTTPS retrieval failed with curl 56 in three attempts; web fallback was also inaccessible.",
+      "resolution": "Preserve the stored English edition and source hash. Mark live source recheck as pending before publication; do not claim the source was reverified.",
+      "status": "pending-external-source-recheck"
+    }
+  ],
+  "semanticReview": [
+    "Copilot explanations and remediation attempts are not presented as verified fixes.",
+    "Spring report volume is not presented as vulnerability severity or proof that every application is exploitable.",
+    "GitLab beta, generally available scanning, subscription tiers and database upgrade ordering remain distinct.",
+    "Copy Fail response and absence of impact remain attributed to Cloudflare; no safety guarantee is extended to other fleets.",
+    "PHP versions, WAF default-field exception and session.upload_progress.name are preserved.",
+    "Security Insights batching crash and memory costs remain alongside adaptive scheduling; no throughput measurement is invented.",
+    "Innersource advisory visibility, dependency matching and deployment controls remain distinct.",
+    "Cloudflare MCP architecture is not made a universal requirement or proof of least privilege.",
+    "Arm design and panel participants’ recommendations remain attributed; no independent security benchmark is claimed.",
+    "Formal usted imperatives follow the existing Spanish UI and translation batch; titles, negation, modality and follow-up scope were reread."
+  ],
+  "sourceRecheck": {
+    "report": ".pipeline/translations/ai-reviews/2026-10-28-spanish-002-sources.json",
+    "documents": 13,
+    "retrieved": 12,
+    "itemsWithAllExistingEvidenceExcerpts": 11,
+    "pendingItems": [
+      "50b97c32c1d2c027"
+    ],
+    "limit": "Presence of existing excerpts in retrieved documents is not a full current-product availability or security audit."
+  },
+  "verification": {
+    "translationSchemaAndProtectedTokens": "passed for all 12",
+    "preview": {
+      "fixtureOnly": true,
+      "articles": [
+        {
+          "renewalId": "1e8ba1d86d179142",
+          "route": "/es/digest/2026-04-10-copilot-risk-assessment-context/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "2b6f4abe346a373d",
+          "route": "/es/digest/2026-06-02-spring-security-report-triage/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "3f90329447f77e33",
+          "route": "/es/digest/2026-06-10-third-party-coding-agent-security-validation/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "4380abffaf1a31e0",
+          "route": "/es/digest/2026-06-20-gitlab-security-features-and-upgrade-prerequisites/",
+          "result": "passed",
+          "claimsAndFollowUp": 3,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "46983b9e8a1cf49c",
+          "route": "/es/digest/2026-05-08-cloudflare-copy-fail-response/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "4a59615041b968ae",
+          "route": "/es/digest/2026-10-22-php-patching-and-waf-protection/",
+          "result": "passed",
+          "claimsAndFollowUp": 3,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "50b97c32c1d2c027",
+          "route": "/es/digest/2026-10-20-buildkite-scoped-secrets-and-validation/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "db11f89181439d98",
+          "route": "/es/digest/2026-06-13-security-insights-batching-and-adaptive-scheduling/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "e458b053b5a9f878",
+          "route": "/es/digest/2026-07-09-innersource-advisories-and-remediation/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "e858b2ec6331d84e",
+          "route": "/es/digest/2026-04-23-cloudflare-mcp-identity-and-governance/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "ecc191be72688d94",
+          "route": "/es/digest/2026-05-31-arm-metis-repository-context/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        },
+        {
+          "renewalId": "eea31f00e6ce7be1",
+          "route": "/es/digest/2026-06-30-ai-security-panel-identity-and-testing/",
+          "result": "passed",
+          "claimsAndFollowUp": 2,
+          "reciprocalArticleLanguages": [
+            "en",
+            "ko",
+            "es"
+          ]
+        }
+      ],
+      "newSpanishArticles": 12,
+      "previewSpanishArticles": 18,
+      "sitemapURLs": 483,
+      "claimsAndFollowUp": 26,
+      "checks": [
+        "Full title and claim/follow-up text in HTML, search and RSS",
+        "Self canonical, indexability, Spanish OG and BlogPosting",
+        "Sitemap inclusion and reciprocal en/ko/es article alternates",
+        "Original news date retained; internal review focus excluded"
+      ],
+      "notVerified": [
+        "Live production publication",
+        "Actual search-engine indexing or rankings",
+        "Native-speaker or independent review"
+      ]
+    },
+    "browserCases": [
+      {
+        "renewalId": "1e8ba1d86d179142",
+        "path": "/es/digest/2026-04-10-copilot-risk-assessment-context/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "2b6f4abe346a373d",
+        "path": "/es/digest/2026-06-02-spring-security-report-triage/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "3f90329447f77e33",
+        "path": "/es/digest/2026-06-10-third-party-coding-agent-security-validation/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "4380abffaf1a31e0",
+        "path": "/es/digest/2026-06-20-gitlab-security-features-and-upgrade-prerequisites/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "46983b9e8a1cf49c",
+        "path": "/es/digest/2026-05-08-cloudflare-copy-fail-response/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "4a59615041b968ae",
+        "path": "/es/digest/2026-10-22-php-patching-and-waf-protection/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "50b97c32c1d2c027",
+        "path": "/es/digest/2026-10-20-buildkite-scoped-secrets-and-validation/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "db11f89181439d98",
+        "path": "/es/digest/2026-06-13-security-insights-batching-and-adaptive-scheduling/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "e458b053b5a9f878",
+        "path": "/es/digest/2026-07-09-innersource-advisories-and-remediation/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "e858b2ec6331d84e",
+        "path": "/es/digest/2026-04-23-cloudflare-mcp-identity-and-governance/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "ecc191be72688d94",
+        "path": "/es/digest/2026-05-31-arm-metis-repository-context/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "eea31f00e6ce7be1",
+        "path": "/es/digest/2026-06-30-ai-security-panel-identity-and-testing/",
+        "width": 320,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "1e8ba1d86d179142",
+        "path": "/es/digest/2026-04-10-copilot-risk-assessment-context/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "2b6f4abe346a373d",
+        "path": "/es/digest/2026-06-02-spring-security-report-triage/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "3f90329447f77e33",
+        "path": "/es/digest/2026-06-10-third-party-coding-agent-security-validation/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "4380abffaf1a31e0",
+        "path": "/es/digest/2026-06-20-gitlab-security-features-and-upgrade-prerequisites/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "46983b9e8a1cf49c",
+        "path": "/es/digest/2026-05-08-cloudflare-copy-fail-response/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "4a59615041b968ae",
+        "path": "/es/digest/2026-10-22-php-patching-and-waf-protection/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "50b97c32c1d2c027",
+        "path": "/es/digest/2026-10-20-buildkite-scoped-secrets-and-validation/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "db11f89181439d98",
+        "path": "/es/digest/2026-06-13-security-insights-batching-and-adaptive-scheduling/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "e458b053b5a9f878",
+        "path": "/es/digest/2026-07-09-innersource-advisories-and-remediation/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "e858b2ec6331d84e",
+        "path": "/es/digest/2026-04-23-cloudflare-mcp-identity-and-governance/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "ecc191be72688d94",
+        "path": "/es/digest/2026-05-31-arm-metis-repository-context/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      },
+      {
+        "renewalId": "eea31f00e6ce7be1",
+        "path": "/es/digest/2026-06-30-ai-security-panel-identity-and-testing/",
+        "width": 1280,
+        "visibleClaims": true,
+        "horizontalOverflow": false,
+        "result": "passed"
+      }
+    ],
+    "screenshotsReviewed": [
+      "PHP at 320px",
+      "Buildkite at 320px"
+    ],
+    "fixtureOnly": true,
+    "candidatePublicationFilesInProject": 0,
+    "productionBuild": "passed; 12 candidate URLs excluded",
+    "baseline": {
+      "checkedAt": "2026-10-28T02:31:06.716943+00:00",
+      "publicTranslations": 36,
+      "publicSpanishArticles": 6,
+      "privateCandidateURLsAbsent": 12,
+      "sitemapURLs": 471,
+      "nodeTests": 56,
+      "translationTests": 6,
+      "astroErrors": 0,
+      "astroWarnings": 0,
+      "productionBuild": "passed; no publishing or submission"
+    },
+    "temporaryWorktreeRemoved": true,
+    "candidatePreviewFixturesRemoved": true
+  },
+  "result": "Translation self-review passed for 12 editions; one external-source recheck remains pending. All drafts await explicit publication approval.",
+  "limitations": [
+    "Not independent, human or native-speaker review.",
+    "No code or flow diagrams were fabricated for news summaries.",
+    "Isolated preview fixtures do not establish publication approval or production availability.",
+    "No live search-engine indexing, rankings or geographic visibility were measured."
+  ]
+}

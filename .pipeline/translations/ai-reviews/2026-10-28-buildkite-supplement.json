@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "state": "verified-with-alternate-primary-sources",
+  "renewalId": "50b97c32c1d2c027",
+  "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+  "reviewedAt": "2026-10-28T04:42:17.413Z",
+  "reviewMethod": "self-ai-primary-source-context-review",
+  "originalSourceRecovered": false,
+  "originalSourceURL": "https://buildkite.com/resources/blog/what-shipped-at-buildkite-september-27-october-3-2026/",
+  "originalSourceFailure": "Existing weekly-post URL remains inaccessible. Alternate official changelogs support the unchanged claims; this is not recovery of that URL.",
+  "documents": [
+    {
+      "url": "https://buildkite.com/resources/changelog/414-manage-secrets-from-pipeline-settings/",
+      "title": "Manage secrets from pipeline settings",
+      "displayedDate": "2026-09-29",
+      "quotes": [
+        "Pipeline secrets are cluster secrets with access restricted to the current pipeline.",
+        "branch, queue, build source, or creator conditions"
+      ],
+      "observedAt": "2026-10-28T04:42:17.413Z",
+      "transport": "web.run",
+      "hashScope": "quoted-excerpts-only",
+      "excerptsSha256": "4f2251a68eb299df6277721b5cfbaaaebabe10417182696fab4de223914f2200"
+    },
+    {
+      "url": "https://buildkite.com/resources/changelog/423-catch-pipeline-yaml-errors-before-your-first-build-with-buildkite-mcp/",
+      "title": "Catch pipeline YAML errors before your first build with Buildkite MCP",
+      "displayedDate": "2026-10-13",
+      "quotes": [
+        "validate_pipeline",
+        "checks YAML syntax and structure against Buildkite's pipeline schema, without uploading the pipeline or starting a build."
+      ],
+      "observedAt": "2026-10-28T04:42:17.413Z",
+      "transport": "web.run",
+      "hashScope": "quoted-excerpts-only",
+      "excerptsSha256": "81ea9c34aaec177e5f8c330242294eb1e2b0cb83fc6a9949ff21cac249eb4df5"
+    }
+  ],
+  "coverage": [
+    {
+      "section": "claims",
+      "index": 0,
+      "textSha256": "6c44b42e141a2f065fc9ed89200ee87908e08a0d5ae3f8d797dea6d0d9be27fa",
+      "document": 0
+    },
+    {
+      "section": "claims",
+      "index": 1,
+      "textSha256": "b325d82c5e285536cc656d3e918be296bf264b73cc70d487fe63a6415c4b7408",
+      "document": 1
+    }
+  ],
+  "assessment": [
+    "The official secrets notice supports pipeline-limited cluster secrets and additional access conditions.",
+    "The official MCP notice supports validate_pipeline checking YAML against the pipeline schema before upload; it also limits the check to schema/syntax, not runtime behavior.",
+    "Both displayed notice dates precede the archived news date 2026-10-20. No claim is made that either feature was first released in the inaccessible weekly post.",
+    "The English/Korean source, all six translations, dates and original evidence records remain byte-for-byte unchanged.",
+    "Excerpt digests identify only the quoted text, not a full HTML capture or independently authenticated source."
+  ],
+  "independentReview": false,
+  "humanReview": false,
+  "publicationApproval": null
+}
