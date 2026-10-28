@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-28T08:33:46.166469+00:00",
+  "baseCommit": "64effe008792eb553ff24877927087e5a2f5efab",
+  "purpose": "Observe recurrent Jenkins CI readiness failures without altering published example code or accepting failed checks.",
+  "trigger": {
+    "run": 40647766798,
+    "attempt1": "Initial controller readiness exceeded 180 seconds.",
+    "attempt2": "Same commit passed all checks.",
+    "cause": "Unconfirmed; pinned image alone did not prevent recurrence."
+  },
+  "scope": {
+    "readOnlyDockerCommands": [
+      "ps",
+      "inspect",
+      "logs"
+    ],
+    "preexistingContainers": "excluded",
+    "containerNamePattern": "jenkins-proof-[a-f0-9]{12}-controller-[0-9]+",
+    "maxContainers": 8,
+    "maxStateChangesPerContainer": 8,
+    "logTailLines": 400,
+    "samplePauseSeconds": 2,
+    "dockerReadTimeoutSeconds": 2,
+    "httpReadTimeoutSeconds": 1,
+    "httpTarget": "Numeric 127.0.0.1 binding, /login only; no redirects or body read.",
+    "rawLogsOrSecretsWritten": false,
+    "publishedCodeChanged": false,
+    "readinessDeadlineChanged": false,
+    "executionTimeoutChanged": false,
+    "assertionsSkipped": false,
+    "automaticRetriesAdded": false
+  },
+  "validation": {
+    "pythonTests": 226,
+    "newDiagnosticTests": 10,
+    "result": "passed",
+    "method": "Mocked Docker/HTTP failures, allowlist privacy, lifecycle, bounded history, command/environment/timeout preservation, original checker failure propagation.",
+    "localDockerExecution": false,
+    "newBrowserChecks": 0,
+    "note": "Real disposable-container execution is validated by the feature commit CI; local unit tests do not prove Docker startup."
+  },
+  "review": {
+    "method": "Self AI code review; no independent or human review.",
+    "limits": [
+      "Sampling may miss short-lived controllers or transitions.",
+      "Missing log flags do not disprove a problem; flags and OOM state alone do not establish failure causality.",
+      "Probe does not follow redirects and is not a replacement for the published urllib readiness assertion.",
+      "Locally concurrent newly started labs using the same name convention can also be observed."
+    ]
+  },
+  "sha256": {
+    "scripts/jenkins_diagnostics.py": "337c4bdfe406247677a7f330c956f7deb83386a9bdffdd60c0d36a1b60bb7b3c",
+    "scripts/test_jenkins_diagnostics.py": "3b883f314910459b2c52e3bbfbf6cefe5004aa2385861a442e7ef8e321998389",
+    "scripts/check_jenkins_examples.py": "af85f0c7960dae4f2fa6304615e7faf97f4091c551873745a3ff17a02a017b18",
+    "docs/jenkins-ci-diagnostics.md": "4482aa007dd3d8ed48e38956aa614dee30cfd2db0456eddfc15cc5edc00c958f",
+    "README.md": "f807580989eba3123a8bf5387e09132c27fdf83eb0e61edd6a65d306d735136e"
+  },
+  "publication": "Review PR only; no automatic merge or publication of article or translation drafts."
+}
