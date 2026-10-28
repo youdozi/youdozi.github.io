@@ -1,0 +1,96 @@
+{
+  "createdAt": "2026-10-28T01:15:51.370673+00:00",
+  "baseCommit": "a3a5b294ffd30cfeea604489b304194fc4132bbf",
+  "branch": "seo/article-metadata-batch-026",
+  "publication": "Draft follow-up; user approved PR75, not this new change.",
+  "purpose": "Align article sharing dates/author and actual localized editions with existing JSON-LD; prevent metadata drift in generated output.",
+  "previousPublication": {
+    "PR": 75,
+    "mainCommit": "a3a5b294ffd30cfeea604489b304194fc4132bbf",
+    "productionRun": 40612979567,
+    "conclusion": "success",
+    "publicLanguageSearches": 8
+  },
+  "initialAudit": {
+    "BlogPostingPages": 423,
+    "ogPublishedTime": 0,
+    "ogModifiedTime": 0,
+    "escaping": "The initial concern about double escaping was disproved by executing the existing serializer: round-trip true, no raw less-than delimiter. Preserve the existing behavior; do not report a security defect or corrupted production data."
+  },
+  "scope": {
+    "articleSourcesChanged": 0,
+    "newRoutes": 0,
+    "translatedUIStringsChanged": 0,
+    "dates": "Recorded publication and modification values; no new editorial timestamps.",
+    "social": "Add article:published_time, article:modified_time, article:author and og:site_name. Only actual alternate editions enter og:locale:alternate.",
+    "serialization": "Move existing HTML-safe JSON-LD serialization into a tested helper without changing its behavior.",
+    "guard": "Build compares site graph shape, BlogPosting identity/language/headline/description/dates/profile, visible title/dates and social metadata; skips noindex/redirect shells."
+  },
+  "review": {
+    "type": "Self AI review, not independent or human review",
+    "findings": [
+      {
+        "issue": "Article dates and author were present in JSON-LD but absent in article sharing tags.",
+        "resolution": "Use one article metadata value source for JSON-LD and Open Graph."
+      },
+      {
+        "issue": "A global list of supported languages would advertise translations that do not exist for a specific article.",
+        "resolution": "Derive og:locale:alternate from that page’s real hreflang editions and exclude current/duplicate locales."
+      },
+      {
+        "issue": "The existing serializer was suspected of double escaping.",
+        "resolution": "Reproduction showed it was correct. Preserve it and add round-trip and browser DOM regression evidence; no production bug claim."
+      },
+      {
+        "issue": "A raw script-looking sequence can occur safely inside an escaped quoted meta attribute, so source substring tests can give false positives.",
+        "resolution": "Validate JSON values, escaped visible heading and actual executable script nodes in the browser."
+      },
+      {
+        "issue": "Optional sharing tags and valid structured data do not prove external preview or rank changes.",
+        "resolution": "Limit claims to metadata consistency; do not promise search ranking, rich results or platform cache refresh."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "sha256": {
+      "src/lib/page-metadata.ts": "46237218266095bbef8df84d71c040dc99cfa30caae8405c7bab69b93787dbfc",
+      "src/components/Article.astro": "424cb9d4d80ada5dbe1f3b5394b385354ae56633694a949b6ba7871602812c82",
+      "src/layouts/Base.astro": "00b1b2cb5d092934bb5866cbb8cccc9fb6ab98b63208bf1002b1b98ecb486611",
+      "scripts/check_metadata.py": "5c9693ebf5de155e9a4441b265855b218ed2dcef18a3b7b9a479d46dc55f2282",
+      "scripts/test_check_metadata.py": "ef6b9140e2ed4c6c7b2373111e3e9ed667c8f824891cc030467568b62fa71585",
+      "scripts/test-page-metadata.mjs": "9c35552d1b40ebac3b65a40c01690b8943832dfbc52a80c5171f378a76536aef",
+      "scripts/test-site.mjs": "5e64abfe7c6bec08dbe4b39adb4d6dd52b8a59d193af28fa8d2a6cf5fc7c23a2",
+      "README.md": "3b2ae82b178b0d0aef6e1cb0ffd12b1d7dcc1e62e4e556d94bc8deaaef218dd3",
+      "package.json": "5232619274c4739632a1b5fc30ed547e960ecf772aa0a8bd5e83aa90f2497325"
+    }
+  },
+  "validation": {
+    "python": 186,
+    "node": 56,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 936,
+    "sitemapURLs": 471,
+    "hreflangEdges": 1459,
+    "metadataPages": 813,
+    "BlogPostingPages": 423,
+    "nodeCases": "Safe serialization including closing-script text, all-eight-language author/date fallbacks and only-real locale alternates.",
+    "pythonCases": "Nine methods cover malformed/duplicate/missing graph, title/language/identity/description drift, duplicate/missing tags, invalid or reversed/naive dates, visible date drift, wrong author/locales, double-escaped values, non-article separation and noindex/redirect/ownership exclusions.",
+    "generatedFixture": "Temporary English post with special characters and closing-script text; JSON-LD/headline round trip. Test source removed and production output rebuilt.",
+    "browserSpecialText": {
+      "executableProbe": false,
+      "roundTrip": true,
+      "rawLessThan": false,
+      "headingCount": 1
+    }
+  },
+  "sources": [
+    "https://ogp.me/",
+    "https://developers.google.com/search/docs/appearance/structured-data/article"
+  ],
+  "limits": [
+    "No social platform cache/preview or external search ranking effect measured.",
+    "Open Graph fields added here are optional protocol metadata, not claimed to be Google requirements.",
+    "JSON-LD array layout and author fallback rules are site-specific validation policy.",
+    "The existing default sharing image is unchanged; no new article image or personal biography is invented."
+  ]
+}

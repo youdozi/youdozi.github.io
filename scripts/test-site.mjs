@@ -101,6 +101,9 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
   const result = spawnSync('python3', ['-B', '-c', "import sys,json;sys.path.insert(0,'scripts');from test_bilingual_digest import article;a=article();a['publishedAt']='2000-01-01T00:00:00+09:00';a['editions']['en']['title']='Literal {{ 7 | times: 7 }} <script>alert(1)</script>';print(json.dumps({'date':'2000-01-01','publishedAt':'2000-01-01T01:00:00+09:00','articles':[a]}))"], {encoding:'utf8'});
   assert.equal(result.status,0,result.stderr);
   const fixture='src/content/digests/2000-01-01.json';
+  const metadataFixture='src/content/posts/en/2000-01-02-metadata-fixture.md';
+  const metadataTitle='Literal <tag> & "</script><script>window.__metadataProbe=1</script>" \\u003c';
+  let metadataCreated=false;
   const {publishBatch,checkPublished}=await import('./translations.mjs');
   const batch=JSON.parse(await readFile('.pipeline/translations/batches/pilot-001.json','utf8'));
   const spanishBatch=JSON.parse(await readFile('.pipeline/translations/batches/spanish-001.json','utf8'));
@@ -110,6 +113,12 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
 
   try {
     await writeFile(fixture,result.stdout,{flag:'wx'});
+    await writeFile(metadataFixture,'---\n'+YAML.stringify({
+      title:metadataTitle,description:'Literal <summary> & "quotes"',language:'en',
+      translationKey:'metadata-regression-fixture',routeSlug:'2000-01-02-metadata-fixture',kind:'post',
+      publishedAt:'2000-01-02T00:00:00Z',updatedAt:'2000-01-03T00:00:00Z',categories:[],tags:[],
+    })+'---\nTemporary metadata test text.\n',{flag:'wx'});
+    metadataCreated=true;
     const records=[],missing=[];
     for(const draft of [...batch.translations,...spanishBatch.translations]){
       const path=`src/content/translations/${draft.language}-${draft.renewalId}.json`;
@@ -136,6 +145,14 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.equal(build.status,0,build.stderr);
     const checked=spawnSync('python3',['-B','scripts/check_site.py'],{encoding:'utf8'});assert.equal(checked.status,0,checked.stdout+checked.stderr);
     const seoChecked=spawnSync('python3',['-B','scripts/check_seo.py'],{encoding:'utf8'});assert.equal(seoChecked.status,0,seoChecked.stdout+seoChecked.stderr);
+    const metadataChecked=spawnSync('python3',['-B','scripts/check_metadata.py'],{encoding:'utf8'});assert.equal(metadataChecked.status,0,metadataChecked.stdout+metadataChecked.stderr);
+    const metadataHtml=await readFile('dist/en/posts/2000-01-02-metadata-fixture/index.html','utf8');
+    const metadataRaw=metadataHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
+    assert.equal(JSON.parse(metadataRaw).find(item=>item['@type']==='BlogPosting').headline,metadataTitle);
+    assert.ok(!metadataRaw.includes('<'));
+    const metadataHeading=metadataHtml.match(/<h1>([\s\S]*?)<\/h1>/)[1];
+    assert.ok(!metadataHeading.includes('<script>'));
+    assert.ok(metadataHeading.includes('&lt;script&gt;'));
     const en=await readFile('dist/en/digest/2000-01-01/index.html','utf8');
     const ko=await readFile('dist/ko/digest/2000-01-01/index.html','utf8');
     assert.match(en,/<html lang="en">/);assert.match(ko,/<html lang="ko">/);
@@ -380,6 +397,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
 
   } finally {
     await unlink(fixture);
+    if(metadataCreated)await unlink(metadataFixture);
     await Promise.all(translationFiles.map(file=>unlink(file)));
     for(const [file,bytes] of existingTranslations)assert.equal(await readFile(file,'utf8'),bytes,'Build tests must preserve real publication records');
   }
