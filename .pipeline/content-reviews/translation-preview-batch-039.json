@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-28T12:43:24.419498+00:00",
+  "baseCommit": "10e452e11122d5a3319bd194ab3187bc92832bbe",
+  "purpose": "Continuously render pinned approval-pending translations in a disposable committed snapshot while preserving actual publication inputs/output.",
+  "scope": {
+    "pendingEditions": 318,
+    "languages": 6,
+    "sourceTopics": 53,
+    "newTranslationsWritten": 0,
+    "actualPublicationFilesCreated": 0,
+    "realUserApprovalRecorded": false,
+    "publicationOrDeploymentFunctionsCalled": false,
+    "indexNowOrSearchEngineAPICalled": false
+  },
+  "isolation": {
+    "snapshot": "git archive HEAD; untracked and uncommitted changes excluded; exact sourceCommit reported.",
+    "fixtures": "Synthetic schema-compatible approval fields explicitly deny human approval; fixture PR number is Number.MAX_SAFE_INTEGER, not a real review PR.",
+    "cleanup": "Temporary snapshot removed on normal completion and ordinary exceptions; OS/process forced termination not guaranteed.",
+    "protectedWorkingPaths": [
+      "src/content",
+      ".pipeline/translations",
+      "dist"
+    ],
+    "protection": "SHA256 tree fingerprints before/after; detect concurrent edits without overwriting them.",
+    "ciArtifact": "Preview precedes upload; only unchanged normal dist is uploaded."
+  },
+  "validation": {
+    "pythonTests": 243,
+    "nodeTests": 84,
+    "newPythonPreviewTests": 6,
+    "newNodePreviewTests": 10,
+    "normalBuild": "passed",
+    "normalPublicArticles": 423,
+    "normalSitemapURLs": 479,
+    "normalPublicTranslations": 36,
+    "localPreviewSnapshotCommit": "cec371da77911d1c0770cec8c9163030361e90d8",
+    "pendingFixtureEditions": 318,
+    "previewTranslations": 354,
+    "previewArticles": 741,
+    "previewSitemapURLs": 797,
+    "previewArticleLanguages": {
+      "en": 97,
+      "ko": 290,
+      "zh-CN": 59,
+      "ja": 59,
+      "de": 59,
+      "fr": 59,
+      "ru": 59,
+      "es": 59
+    },
+    "claimsAndFollowUpRenderChecks": 738,
+    "languageCounterpartGroups": 53,
+    "fixtureEditionsIncludedInRSS": 180,
+    "translationRSSPolicies": 6,
+    "readerGate": {
+      "articles": 741,
+      "searchIndexes": 8,
+      "feeds": 9,
+      "result": "passed"
+    },
+    "temporarySnapshotRemoved": true,
+    "workingPublicationFilesChanged": false,
+    "workingDistChanged": false,
+    "newBrowserChecks": 0
+  },
+  "review": {
+    "method": "Self AI code review, failure/isolation regression tests and actual isolated build; no independent or human review.",
+    "limits": [
+      "Reuses pinned translation drafts and stored AI/source-evidence reviews; no new semantic/native-language review or live source-fact recheck.",
+      "Preview dates and counts are synthetic and are not publication, indexing or ranking evidence.",
+      "Translation-language RSS verifier explicitly fails if non-translation entries need new date rules."
+    ]
+  },
+  "sha256": {
+    "scripts/translation-preview.mjs": "2ee08fe65379a513315b45feee06930568924943472165b52eada6c2610b69f0",
+    "scripts/test-translation-preview.mjs": "5d9d7ce381b904a310e642066afb1e20a3345ca56fb01ed2f3723fbd90758664",
+    "scripts/check_translation_preview.py": "e566764de1505abeca1274e7965dd4d5d446938b8f166d771b7c399c7612b70d",
+    "scripts/test_translation_preview.py": "6c14d45426d62334f8d4befc748f62330e7914f419a1daaa4870bb57961ad53b",
+    ".github/workflows/site-checks.yml": "e4791b4e87ec2830f6d7352d83228f7f45affb5802cd0bc5195ac2737c4c3510",
+    "package.json": "c54ea051edcbcd273ae04950949c9a69ba19d4028181c1ee4817589ace6d00a6",
+    "docs/translation-preview.md": "f3032a4aba432d83532860ab4d705adeca5b09d7b47769c6e86818ef2f7f72c7",
+    "README.md": "7179c8e56bebb375eb1e67dc4159a999bf82ba0385a78e611b302c4def696ee6"
+  },
+  "publication": "New review PR only. PR82 was separately authorized and deployed; this change does not publish any waiting translations."
+}
