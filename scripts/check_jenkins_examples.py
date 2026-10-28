@@ -1,5 +1,6 @@
 from pathlib import Path
-import subprocess,json,re,sys,tempfile,os
+import json,re,sys,tempfile,os
+from jenkins_diagnostics import run_example
 keys=['2023-09-28-jenkins-docker-install','2026-10-27-jenkins-home-backup-restore']
 files={}
 for key in keys:
@@ -17,8 +18,11 @@ with tempfile.TemporaryDirectory(prefix='jenkins-article-') as directory:
     env=os.environ.copy(); selected_image=None
     print(json.dumps({'requestedJenkinsImage':env.get('JENKINS_IMAGE','jenkins/jenkins:lts-jdk21')}),flush=True)
     for name in files:
-        result=subprocess.run([sys.executable,str(Path(directory,name))],capture_output=True,text=True,timeout=600,env=env)
-        if result.returncode:raise RuntimeError(f'{name} failed: {result.stderr}')
+        print(json.dumps({'example':name,'phase':'starting'}),flush=True)
+        result=run_example([sys.executable,str(Path(directory,name))],env)
+        if result.returncode:
+            reason='; login readiness deadline exceeded' if 'Jenkins login was not ready within 180 seconds' in result.stderr else ''
+            raise RuntimeError(f'{name} failed (exit {result.returncode}{reason}); see sanitized Jenkins diagnostics')
         report=json.loads(result.stdout)
         assert report['result']=='passed' and '@sha256:' in report['image']
         if selected_image is None:
@@ -26,4 +30,4 @@ with tempfile.TemporaryDirectory(prefix='jenkins-article-') as directory:
         assert report['image']==selected_image,'Both examples must use the same image digest'
         required=['recreated','markerPersisted','passwordPersisted'] if name=='jenkins_lab.py' else ['sourceStopped','restoredToNewVolume','markerRestored','passwordRestored','masterKeyExcluded','keyCopiedSeparately']
         assert all(report.get(field) is True for field in required)
-        print(json.dumps({'example':name,**report}))
+        print(json.dumps({'example':name,**report}),flush=True)
