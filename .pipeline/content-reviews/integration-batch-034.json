@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-28T06:03:05.249145+00:00",
+  "purpose": "Review-only integration of pending PR77, PR78 and PR79 without main merge or publication.",
+  "baseCommit": "72fb3714f5b57317a83568b77149782b30a85302",
+  "sourceFeatureHeads": {
+    "77": "572a110c1d7919ca84075c1eecb83e935734608c",
+    "78": "64b772d79dd957b035965a6ab09c8e0097723999",
+    "79": "077499d4052c4e7e9ba073f7b702975ba06cf9a4"
+  },
+  "reviewOnlyIntegrationCommit": "4b3c76ddf2527f48fbfd10f8c7f4423c8895520b",
+  "reviewOnlyIntegrationTree": "2174235d4be8bb384a80cbe2266eda44913a6945",
+  "testedMergeOrder": [
+    77,
+    78,
+    79
+  ],
+  "mergeConflicts": {
+    "files": [
+      "README.md",
+      "package.json"
+    ],
+    "resolution": "Preserve all three README feature sections, both discovery and translation-release Node test suites, discovery build check and both pinned release checks.",
+    "resolvedFileSha256": {
+      "package.json": "0edfd0e9e970d928824ea38c191d0392fe6ba2e28ba55123b6d413b3cb665844",
+      "README.md": "cc9ea171e87b232f29ca12dcd223a4fea4a3ca214f832ea492403ebefb1b0d2e"
+    },
+    "expectedScripts": {
+      "dev": "astro dev",
+      "check": "npm run check:digests && astro check",
+      "build": "npm run check:digests && node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py && python3 -B scripts/check_seo.py && python3 -B scripts/check_metadata.py && python3 -B scripts/check_discovery.py && python3 -B scripts/indexnow.py",
+      "preview": "astro preview",
+      "test": "node --test scripts/test-site.mjs scripts/test-translations.mjs scripts/test-reader-markdown.mjs scripts/test-related.mjs scripts/test-algorithm-guide.mjs scripts/test-spring-guide.mjs scripts/test-publication-examples.mjs scripts/test-technical-guides.mjs scripts/test-core-articles.mjs scripts/test-author.mjs scripts/test-article-navigation.mjs scripts/test-comments.mjs scripts/test-search.mjs scripts/test-page-metadata.mjs scripts/test-discovery.mjs scripts/test-translation-release.mjs",
+      "test:python": "python3 -m unittest discover -s scripts -p 'test*.py' -v",
+      "generate:digest": "python3 scripts/generate_digest.py",
+      "generate:digest:dry": "python3 scripts/generate_digest.py --dry-run",
+      "migrate:jekyll": "node scripts/migrate-jekyll.mjs",
+      "test:articles": "python3 -B scripts/check_article_examples.py",
+      "audit:archive": "python3 -B scripts/audit_archive.py",
+      "check:digests": "python3 -B scripts/check_digests.py && npm run check:archive && npm run check:translations",
+      "check:archive": "python3 -B scripts/archive_renewal.py check",
+      "check:translations": "node scripts/translations.mjs check && npm run check:translation-release",
+      "check:translation-release": "node scripts/translation-release.mjs check --release .pipeline/translations/releases/spanish-full-031.json && node scripts/translation-release.mjs check --release .pipeline/translations/releases/multilingual-full-032.json",
+      "prepare:translations": "node scripts/translations.mjs prepare",
+      "preview:indexnow": "python3 -B scripts/indexnow.py"
+    }
+  },
+  "normal": {
+    "articles": 423,
+    "emptyDestinationLinks": 0,
+    "emptyDestinations": 12,
+    "languages": {
+      "de": {
+        "articles": 6,
+        "maxArticleLinkSteps": 1,
+        "reachableSitemapURLs": 10,
+        "sitemapURLs": 10
+      },
+      "en": {
+        "articles": 97,
+        "maxArticleLinkSteps": 2,
+        "reachableSitemapURLs": 113,
+        "sitemapURLs": 113
+      },
+      "es": {
+        "articles": 6,
+        "maxArticleLinkSteps": 1,
+        "reachableSitemapURLs": 10,
+        "sitemapURLs": 10
+      },
+      "fr": {
+        "articles": 6,
+        "maxArticleLinkSteps": 1,
+        "reachableSitemapURLs": 10,
+        "sitemapURLs": 10
+      },
+      "ja": {
+        "articles": 6,
+        "maxArticleLinkSteps": 1,
+        "reachableSitemapURLs": 10,
+        "sitemapURLs": 10
+      },
+      "ko": {
+        "articles": 290,
+        "maxArticleLinkSteps": 2,
+        "reachableSitemapURLs": 306,
+        "sitemapURLs": 306
+      },
+      "ru": {
+        "articles": 6,
+        "maxArticleLinkSteps": 1,
+        "reachableSitemapURLs": 10,
+        "sitemapURLs": 10
+      },
+      "zh-CN": {
+        "articles": 6,
+        "maxArticleLinkSteps": 1,
+        "reachableSitemapURLs": 10,
+        "sitemapURLs": 10
+      }
+    },
+    "publicPages": 824,
+    "sitemapURLs": 479
+  },
+  "expandedFixtureOnly": {
+    "articles": 741,
+    "emptyDestinationLinks": 0,
+    "emptyDestinations": 12,
+    "languages": {
+      "de": {
+        "articles": 59,
+        "maxArticleLinkSteps": 2,
+        "reachableSitemapURLs": 63,
+        "sitemapURLs": 63
+      },
+      "en": {
+        "articles": 97,
+        "maxArticleLinkSteps": 2,
+        "reachableSitemapURLs": 113,
+        "sitemapURLs": 113
+      },
+      "es": {
+        "articles": 59,
+        "maxArticleLinkSteps": 2,
+        "reachableSitemapURLs": 63,
+        "sitemapURLs": 63
+      },
+      "fr": {
+        "articles": 59,
+        "maxArticleLinkSteps": 2,
+        "reachableSitemapURLs": 63,
+        "sitemapURLs": 63
+      },
+      "ja": {
+        "articles": 59,
+        "maxArticleLinkSteps": 2,
+        "reachableSitemapURLs": 63,
+        "sitemapURLs": 63
+      },
+      "ko": {
+        "articles": 290,
+        "maxArticleLinkSteps": 2,
+        "reachableSitemapURLs": 306,
+        "sitemapURLs": 306
+      },
+      "ru": {
+        "articles": 59,
+        "maxArticleLinkSteps": 2,
+        "reachableSitemapURLs": 63,
+        "sitemapURLs": 63
+      },
+      "zh-CN": {
+        "articles": 59,
+        "maxArticleLinkSteps": 2,
+        "reachableSitemapURLs": 63,
+        "sitemapURLs": 63
+      }
+    },
+    "publicPages": 1262,
+    "sitemapURLs": 797
+  },
+  "validation": {
+    "pythonTests": 209,
+    "nodeTests": 74,
+    "astroFiles": 64,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "astroHints": 0,
+    "normalBuild": "passed",
+    "expandedBuild": "passed",
+    "restoredNormalBuild": "passed",
+    "candidateEditions": 318,
+    "claimsAndFollowUpCompared": 738,
+    "reciprocalEightLanguageTopics": 53,
+    "translationSearchArticlesPerLanguage": 59,
+    "RSSItemsPerTranslationLanguage": 30,
+    "browserCases": 72,
+    "browser": {
+      "normal": [
+        {
+          "case": "archive",
+          "language": "en",
+          "width": 320,
+          "articles": 97,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ko",
+          "width": 320,
+          "articles": 290,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "zh-CN",
+          "width": 320,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ja",
+          "width": 320,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "de",
+          "width": 320,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "fr",
+          "width": 320,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ru",
+          "width": 320,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "es",
+          "width": 320,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "en",
+          "width": 1280,
+          "articles": 97,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ko",
+          "width": 1280,
+          "articles": 290,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "zh-CN",
+          "width": 1280,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ja",
+          "width": 1280,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "de",
+          "width": 1280,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "fr",
+          "width": 1280,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ru",
+          "width": 1280,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "es",
+          "width": 1280,
+          "articles": 6,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "zh-CN",
+          "recovery": "/zh-CN/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "zh-CN",
+          "recovery": "/zh-CN/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "ja",
+          "recovery": "/ja/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "ja",
+          "recovery": "/ja/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "de",
+          "recovery": "/de/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "de",
+          "recovery": "/de/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "fr",
+          "recovery": "/fr/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "fr",
+          "recovery": "/fr/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "ru",
+          "recovery": "/ru/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "ru",
+          "recovery": "/ru/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "es",
+          "recovery": "/es/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "es",
+          "recovery": "/es/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "language menu",
+          "path": "/en/posts/2023-09-19-springboot-test-webclient/",
+          "fallbackHints": 6,
+          "keyboardAndOutside": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "language menu",
+          "path": "/ko/posts/2023-09-19-springboot-test-webclient/",
+          "fallbackHints": 6,
+          "keyboardAndOutside": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "language menu",
+          "path": "/fr/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+          "fallbackHints": 0,
+          "keyboardAndOutside": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "language menu",
+          "path": "/ko/digest/2026-10-22/",
+          "fallbackHints": 7,
+          "keyboardAndOutside": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "rendered404",
+          "width": 320,
+          "languages": 8,
+          "result": "passed"
+        },
+        {
+          "case": "rendered404",
+          "width": 1280,
+          "languages": 8,
+          "result": "passed"
+        },
+        {
+          "case": "JavaScript disabled",
+          "path": "/ko/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "JavaScript disabled",
+          "path": "/404.html",
+          "result": "passed"
+        }
+      ],
+      "expanded": [
+        {
+          "case": "archive",
+          "language": "en",
+          "width": 320,
+          "articles": 97,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ko",
+          "width": 320,
+          "articles": 290,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "zh-CN",
+          "width": 320,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ja",
+          "width": 320,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "de",
+          "width": 320,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "fr",
+          "width": 320,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ru",
+          "width": 320,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "es",
+          "width": 320,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "en",
+          "width": 1280,
+          "articles": 97,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ko",
+          "width": 1280,
+          "articles": 290,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "zh-CN",
+          "width": 1280,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ja",
+          "width": 1280,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "de",
+          "width": 1280,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "fr",
+          "width": 1280,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "ru",
+          "width": 1280,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "archive",
+          "language": "es",
+          "width": 1280,
+          "articles": 59,
+          "yearAnchor": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "zh-CN",
+          "recovery": "/zh-CN/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "zh-CN",
+          "recovery": "/zh-CN/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "ja",
+          "recovery": "/ja/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "ja",
+          "recovery": "/ja/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "de",
+          "recovery": "/de/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "de",
+          "recovery": "/de/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "fr",
+          "recovery": "/fr/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "fr",
+          "recovery": "/fr/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "ru",
+          "recovery": "/ru/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "ru",
+          "recovery": "/ru/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty posts",
+          "language": "es",
+          "recovery": "/es/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "empty tags",
+          "language": "es",
+          "recovery": "/es/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "language menu",
+          "path": "/en/posts/2023-09-19-springboot-test-webclient/",
+          "fallbackHints": 6,
+          "keyboardAndOutside": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "language menu",
+          "path": "/ko/posts/2023-09-19-springboot-test-webclient/",
+          "fallbackHints": 6,
+          "keyboardAndOutside": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "language menu",
+          "path": "/fr/digest/2026-04-10-copilot-risk-assessment-context/",
+          "fallbackHints": 0,
+          "keyboardAndOutside": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "language menu",
+          "path": "/ko/digest/2026-10-22/",
+          "fallbackHints": 7,
+          "keyboardAndOutside": "passed",
+          "result": "passed"
+        },
+        {
+          "case": "rendered404",
+          "width": 320,
+          "languages": 8,
+          "result": "passed"
+        },
+        {
+          "case": "rendered404",
+          "width": 1280,
+          "languages": 8,
+          "result": "passed"
+        },
+        {
+          "case": "JavaScript disabled",
+          "path": "/ko/archive/",
+          "result": "passed"
+        },
+        {
+          "case": "JavaScript disabled",
+          "path": "/404.html",
+          "result": "passed"
+        }
+      ]
+    },
+    "screenshotsVisuallyReviewed": [
+      "expanded/fr-archive-320.png",
+      "expanded/es-archive-320.png"
+    ]
+  },
+  "restoration": {
+    "temporaryFixtureFilesRemoved": 318,
+    "remainingPublicTranslations": 36,
+    "originalPublicTranslationBytes": "match Git exactly",
+    "candidatesExcludedFromRestoredHTMLSearchRSSSitemap": 318,
+    "integrationWorktreeTrackedFiles": "clean after removal"
+  },
+  "externalChecks": {
+    "bingFollowup": "Read-only retries of earlier failed public URLs; numeric host throttling remains an API failure rather than an index verdict. Raw observations retained outside Git.",
+    "google": "No new Google requests; previous observations retain their original timestamps."
+  },
+  "reviewMethod": "Self AI integration/code review and direct browser checks; no independent or human approval.",
+  "limitations": [
+    "Local integration is not a main merge or publication approval.",
+    "The tested PR79 head is the implementation commit listed above; later additions in this PR contain only integration documentation and this evidence.",
+    "The private integration branch includes local merge resolutions; merging actual PRs requires resolving against then-current main and rerunning CI.",
+    "No new source fact revalidation or translation meaning review in this unit; existing pinned reviews/evidence reused.",
+    "HTML discovery paths and browser checks do not measure actual search-engine indexing or ranking.",
+    "The 72 browser checks cover navigation, archive lists, recovery and menus, not visual review of all 318 full article pages."
+  ]
+}

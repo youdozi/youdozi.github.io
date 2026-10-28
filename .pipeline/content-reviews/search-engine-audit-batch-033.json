@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-28T05:39:50.624995+00:00",
+  "baseCommit": "72fb3714f5b57317a83568b77149782b30a85302",
+  "purpose": "Observe actual public multilingual Google/Bing state without submitting URLs or exposing private metrics.",
+  "scope": {
+    "selectedURLs": 86,
+    "coreAndLegacyURLs": 30,
+    "publishedDigestURLs": 48,
+    "localeHomes": 8,
+    "privateDraftsQueried": 0,
+    "articleContentChanges": 0,
+    "publicTemplateChanges": 0
+  },
+  "liveCollection": {
+    "executed": true,
+    "googleInspectionResponses": 86,
+    "publicRouteMatches": 86,
+    "publicSitemapURLs": 471,
+    "bingReadOperations": [
+      "GetUserSites",
+      "GetFeeds",
+      "GetRankAndTrafficStats",
+      "GetUrlInfo"
+    ],
+    "result": "Google/live public checks completed; Bing partial after a bounded retry; host throttling remains.",
+    "privateEvidence": "Three new mode-600 JSON snapshots outside all repository checkouts; no private query rows, API keys, Google/Bing performance totals or individual index states in Git."
+  },
+  "review": {
+    "method": "Self AI code review and mocked transport regression tests; not independent or human review.",
+    "changesAfterLiveObservation": [
+      "Preserve numeric Bing error codes without logging raw error bodies or credential-bearing request URLs.",
+      "Run Bing URL reads sequentially and stop remaining requests on user/host throttling.",
+      "Retry only failed current public Bing URLs; preserve original Google/performance/public response timestamps and earlier errors.",
+      "Do not treat successful-but-empty Google inspection or an API error as lost indexing."
+    ],
+    "limitations": [
+      "The original full live run preceded final throttle-stop handling; the final handling was validated with isolated mocks.",
+      "Do not infer Bing index membership from crawl date, IsPage, HTTP status or document size.",
+      "No new browser tests; public content, UI and site templates unchanged."
+    ]
+  },
+  "validation": {
+    "pythonTests": 201,
+    "newSearchEngineTests": 15,
+    "nodeTests": 56,
+    "astroFiles": 60,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuild": "passed",
+    "HTML": 936,
+    "sitemapURLs": 471,
+    "publicArticles": 423,
+    "publicTranslations": 36
+  },
+  "sha256": {
+    "scripts/search_engines.py": "cbe55678fd9712b5056019468bf8b07b1bb2bed132fb2fb325188fd1d0a29b9c",
+    "scripts/test_search_engines.py": "2da0d23f7bb1bb8b182f11456568ddf0b32ff4c1bb594ca8f1c287229b4d4f79",
+    "docs/search-growth.md": "af4d6ea166c1ce3318543a7745b8c9b368005dc26621392ff173d5364ca0a87b",
+    "README.md": "2cc0de445ea1569f2ad0fba3463ab2bb7f21ab03e96c10912ee6b24ef3d4dc99"
+  },
+  "publication": "Draft PR only; no merge, deployment, indexing request or sitemap submission."
+}
