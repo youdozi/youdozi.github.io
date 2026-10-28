@@ -78,13 +78,16 @@ export async function inspectRelease(manifestPath,base=root){
       if(row.title!==draft.edition.title||row.url!==expectedURL)fail('Release title or URL differs from the draft');
       const review=await pinned(row.review,'.pipeline/translations/ai-reviews');
       if(review.reviewedBatchSha256?.[row.batch.path]!==row.batch.sha256||review.sourceSha256?.[row.source.path]!==row.source.sha256||!time(review.reviewedAt)||Date.parse(review.reviewedAt)<Date.parse(source.updatedAt))fail('Review does not cover the pinned draft and source');
+      const languages=review.scope?.languages??[review.scope?.language];
+      const fields=review.scope?.fields?.map(f=>f.replace(/^edition\./,''))??[];
+      if(!Array.isArray(languages)||!languages.includes(draft.language)||!['title','claims','followUp','reviewFocus'].every(f=>fields.includes(f))||Object.hasOwn(review.carryForwardScope??{},batch.batchId))fail('Review does not cover the full edition and language');
       const evidence=await pinned(row.evidence,'.pipeline/translations/ai-reviews');
       if(row.evidence.method==='stored-excerpts')checkStoredEvidence(evidence,source);
       else if(row.evidence.method==='supplemental-primary')checkSupplement(evidence,source,row.source.sha256);
       else fail('Unknown evidence method');
       for(const finding of review.findings??[]){
         if(finding.renewalId&&finding.renewalId!==draft.renewalId)continue;
-        if(finding.status==='resolved')continue;
+        if((finding.status==='resolved'&&(finding.recheck===undefined||finding.recheck==='resolved'))||(finding.status===undefined&&finding.recheck==='resolved'))continue;
         const evidenceTime=row.evidence.method==='supplemental-primary'?evidence.reviewedAt:evidence.checkedAt;
         if(finding.renewalId===draft.renewalId&&finding.status==='pending-external-source-recheck'&&finding.field==='external source retrieval'&&Date.parse(evidenceTime)>=Date.parse(review.reviewedAt))continue;
         fail('Unresolved translation review finding');
@@ -113,7 +116,8 @@ export async function publishRelease(manifestPath,approval,base=root){
 }
 export function renderReleaseReview(report){
   const escape=value=>String(value).replaceAll('|','\\|').replaceAll('\n',' ');
-  const lines=['# 스페인어 통합 게시 전 검토 목록','','이 목록은 원고·검토·근거 파일의 고정된 해시를 검사합니다. 내용의 진실성이나 사람의 게시 승인을 자동 판정하지 않습니다. 현재 원고는 비공개이며 아래 주소는 게시 예정 URL입니다.','','원고 대조: [12편](spanish-002.md), [15편](spanish-003.md), [26편](spanish-004.md).','','Buildkite의 기존 주소 접근 실패는 보존합니다. 추가 공식 근거는 [별도 기록](../ai-reviews/2026-10-28-buildkite-supplement.json)에 남깁니다. 공개 원문·발행일·번역 본문을 변경하지 않습니다.','',`검토 대상 ${report.summary.total}편 · 검사 통과/승인 대기 ${report.summary.awaitingApproval}편 · 이미 게시 ${report.summary.alreadyPublished}편 · 차단 ${report.summary.blocked}편`,'','| 원고 | 상태 | 예정 URL |','| --- | --- | --- |'];
+  const lines=['# 번역 통합 게시 전 검토 목록', '', `게시 계획: ${escape(report.releaseId)}`, '', '이 목록은 원고·검토·근거 파일의 고정된 해시를 검사합니다. 내용의 진실성이나 사람의 게시 승인을 자동 판정하지 않습니다. 아래 주소는 게시 예정 URL입니다.', '', '원고와 검토·근거 파일의 정확한 대응은 같은 releaseId의 JSON ledger를 따릅니다. 기존 관측을 재사용하며 이번 검사 자체는 외부 사실의 실시간 재검증이 아닙니다.', '', `검토 대상 ${report.summary.total}편 · 검사 통과/승인 대기 ${report.summary.awaitingApproval}편 · 이미 게시 ${report.summary.alreadyPublished}편 · 차단 ${report.summary.blocked}`, '', '| 원고 | 상태 | 예정 URL |', '| --- | --- | --- |'];
+  if(report.editions.some(e=>e.evidenceMethod==='supplemental-primary'))lines.splice(6,0,'Buildkite의 기존 주소 접근 실패는 보존합니다. 추가 공식 근거는 [별도 기록](../ai-reviews/2026-10-28-buildkite-supplement.json)에 남깁니다. 공개 원문·발행일·번역 본문을 변경하지 않습니다.', '');
   for(const item of report.editions)lines.push(`| ${escape(item.title)} | ${item.status==='awaiting-approval'?'검사 통과·승인 대기':escape(item.status+' '+item.reasons.join('; '))} | ${escape(item.url)} |`);
   return lines.join('\n')+'\n';
 }

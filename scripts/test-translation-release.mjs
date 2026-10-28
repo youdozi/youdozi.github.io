@@ -112,3 +112,41 @@ test('the publication CLI rejects the old raw-batch route before accessing a man
  const result=spawnSync(process.execPath,['scripts/translations.mjs','publish','--batch','not-a-real-batch.json','--reviewed-by','TEST ONLY','--approval-pr','1','--approval-basis','TEST ONLY'],{cwd:root,encoding:'utf8'});
  assert.notEqual(result.status,0);assert.match(result.stderr,/pinned --release \(not --batch\)/);
 });
+
+test('the remaining five languages pin exactly the private counterparts of the Spanish release',async()=>{
+ const report=await inspectRelease('.pipeline/translations/releases/multilingual-full-032.json');
+ assert.deepEqual(report.summary,{total:265,awaitingApproval:265,alreadyPublished:0,blocked:0});
+ assert.equal(report.approval,null);
+ const sourceIds=new Set(ledger.editions.map(e=>e.key.slice(3)));
+ for(const lang of ['zh-CN','ja','de','fr','ru']){
+  const editions=report.editions.filter(e=>e.draft.language===lang);
+  assert.equal(editions.length,53);
+  assert.deepEqual(new Set(editions.map(e=>e.draft.renewalId)),sourceIds);
+  for(const e of editions)await assert.rejects(readFile(resolve(root,e.publicationFile)),{code:'ENOENT'});
+ }
+ assert.equal(report.editions.filter(e=>e.evidenceMethod==='supplemental-primary').length,5);
+});
+
+test('legacy resolved rechecks are accepted but open, unknown and contradictory findings block publication',async()=>{
+ for(const [finding,blocked] of [[{recheck:'resolved'},false],[{recheck:'open'},true],[{},true],[{status:'open',recheck:'resolved'},true],[{status:'resolved',recheck:'open'},true]])await fixture(async(base,data)=>{
+  const row=data.editions[0];data.editions=[row];
+  const review=await load(join(base,row.review.path));
+  review.findings=[{renewalId:row.key.slice(3),field:'edition.claims[0]',...finding}];
+  await repin(base,row,'review',review);await saveLedger(base,data);
+  const report=await inspectRelease(ledgerPath,base);assert.equal(report.summary.blocked,Number(blocked));
+  if(blocked)await assert.rejects(publishRelease(ledgerPath,approval,base),/blocked editions/);
+  assert.deepEqual(await readdir(join(base,'src/content/translations')),[]);
+ });
+});
+
+test('an exact batch hash cannot turn a different language or partial review into full coverage',async()=>{
+ for(const change of [r=>r.scope.language='ja',r=>r.scope.languages='es',r=>r.scope.fields=['edition.title'],r=>r.carryForwardScope={'spanish-002':'Only one changed field was rechecked'},r=>r.carryForwardScope={'spanish-002':''}])await fixture(async(base,data)=>{
+  const row=data.editions[0];data.editions=[row];
+  const review=await load(join(base,row.review.path));change(review);
+  await repin(base,row,'review',review);await saveLedger(base,data);
+  const report=await inspectRelease(ledgerPath,base);assert.equal(report.summary.blocked,1);
+  assert.match(report.editions[0].reasons.join(' '),/full edition and language/);
+  await assert.rejects(publishRelease(ledgerPath,approval,base),/blocked editions/);
+  assert.deepEqual(await readdir(join(base,'src/content/translations')),[]);
+ });
+});

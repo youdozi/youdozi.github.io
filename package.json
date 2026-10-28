@@ -21,7 +21,7 @@
     "check:digests": "python3 -B scripts/check_digests.py && npm run check:archive && npm run check:translations",
     "check:archive": "python3 -B scripts/archive_renewal.py check",
     "check:translations": "node scripts/translations.mjs check && npm run check:translation-release",
-    "check:translation-release": "node scripts/translation-release.mjs check --release .pipeline/translations/releases/spanish-full-031.json",
+    "check:translation-release": "node scripts/translation-release.mjs check --release .pipeline/translations/releases/spanish-full-031.json && node scripts/translation-release.mjs check --release .pipeline/translations/releases/multilingual-full-032.json",
     "prepare:translations": "node scripts/translations.mjs prepare",
     "preview:indexnow": "python3 -B scripts/indexnow.py"
   },
