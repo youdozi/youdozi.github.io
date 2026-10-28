@@ -262,12 +262,15 @@ node scripts/translations.mjs review \
   --batch .pipeline/translations/batches/pilot-001.json \
   --output .pipeline/translations/reviews/pilot-001.md
 
-# 아래는 사용자에게 해당 배치의 게시 승인을 받은 후에만 실행
+# 통합 목록의 파일 해시·검토·근거 검사 (네트워크·게시 파일 쓰기 없음)
+npm run check:translation-release
+
+# 아래는 사용자에게 해당 53편의 게시 승인을 받은 후에만 실행
 node scripts/translations.mjs publish \
-  --batch .pipeline/translations/batches/pilot-001.json \
+  --release .pipeline/translations/releases/spanish-full-031.json \
   --reviewed-by youdozi \
-  --approval-pr <번역을-승인한-PR-번호> \
-  --approval-basis '<해당 배치에 대한 명시적 승인 기록>'
+  --approval-pr '<실제-게시-승인-PR-번호>' \
+  --approval-basis '<해당 53편에 대한 실제 명시적 승인 기록>'
 ```
 
 확정 범위 59건의 5개 언어 초안 295편을 모두 준비했습니다. 이후 영어 기준본이 바뀌면 관련 번역을 같은 절차로 대조하고 다시 검토합니다. 승인된 글에 대해서만 다섯 언어를 순차 공개하며, 실제 Google 색인 여부는 공개 후 Search Console에서 확인합니다. 다국어 SEO 태그의 검증은 색인이나 검색 순위 보장이 아닙니다.
@@ -350,3 +353,15 @@ node scripts/translations.mjs publish \
 프로젝트 밖의 worktree에서 spanish-002/003/004의 테스트 fixture 53개를 함께 렌더링합니다. 스페인어 검색 글은 기존 6개와 합한 59개, 사이트맵은 524 URL인 테스트 상태입니다. 후보 53편의 주장·후속 사실 123개를 HTML·검색에서 대조하고, 실제 RSS에 포함되는 최근 30개는 본문도 대조합니다. RSS 밖의 후보를 누락 오류로 간주하거나 RSS 정책을 확장하지 않습니다. 후보 전체의 canonical·스페인어 공유/구조화 데이터·사이트맵·실제 한영 대응 링크와 320px/1280px 브라우저 106건을 검사합니다. AI Scan·Gemini·MXC 모바일 화면도 확인합니다. 임시 fixture와 worktree를 제거하고 일반 빌드에서는 후보 53개 URL이 없는지 확인합니다.
 
 PR #78을 스페인어 미게시 후보 총 53편의 검토 단위로 확대합니다. [후보 목록](.pipeline/translations/releases/spanish-004.json)은 승인 대기 자료이며 실제 게시 명령의 입력이 아닙니다. 번역 준비 완료를 게시 승인으로 처리하지 않으며, 원문·게시일·공개 번역 파일·배포 워크플로는 유지합니다. 다른 언어 초안의 게시 승인이나 현재 사실 검증까지 이번 작업으로 완료한 것은 아닙니다.
+
+### 스페인어 게시 전 통합 검사와 Buildkite 추가 근거
+
+기존 Buildkite 주간 글 URL의 접근 실패는 그대로입니다. [추가 근거 기록](.pipeline/translations/ai-reviews/2026-10-28-buildkite-supplement.json)은 공식 변경 기록의 비밀값 범위·접근 조건과 MCP YAML 스키마 검증 설명을 새로 대조합니다. 문서 표시일은 2026-09-29와 2026-10-13으로 보존한 소식 날짜 2026-10-20보다 앞섭니다. 원래 URL이 복구됐다고 하지 않으며 원문·인용·원고·게시일·번역 본문은 바꾸지 않습니다. `web.run`으로 읽은 인용 부분만 해시로 고정하며 전체 HTML을 수집·해시 검증한 것처럼 기록하지 않습니다. 자체 AI 검토로, 독립·사람·원어민 검토가 아닙니다.
+
+[통합 ledger](.pipeline/translations/releases/spanish-full-031.json)는 53편 각각의 배치 파일, 파싱된 번역, 기준 원문, 번역 검토, 근거 관측 파일 해시와 예정 URL을 묶습니다. 52편은 기존 관측의 전체 인용 대조를, Buildkite는 2개 공식 대체 자료의 주장별 대조를 사용합니다. 과거 개별 배치의 실패 기록을 덮어쓰지 않으며 현행 조건은 이 ledger와 [검토 목록](.pipeline/translations/reviews/spanish-full-031.md)을 따릅니다.
+
+`scripts/translation-release.mjs check --release PATH`는 네트워크나 공개 파일 쓰기 없이 파일·해시·원고 범위·검토 범위·미해결 지적·근거 범위·예정 URL을 검사합니다. 허용 경로를 벗어나는 파일과 심볼릭 링크도 거부합니다. 근거 관측은 기록된 시점의 확인이며 검사 실행 때 외부 사이트의 최신 상태를 재조회하지 않습니다. 해시 일치는 문장의 진실성·출처 인증·보안 효과를 증명하지 않습니다. 추가 근거는 기존 원문이 복구됐다는 주장을 허용하지 않습니다.
+
+검사 결과는 `awaiting-approval`, `already-published`, `blocked`로 구분합니다. 일반 `check:translations`와 빌드에서도 통합 검사를 실행하고 차단 항목이 있으면 실패합니다. 이미 게시된 파일은 같은 원고·기준 원문과 승인 메타데이터가 유효해야 통과하며 게시 명령은 중복 준비를 거부합니다. 기존 36편은 이번 ledger의 대상이 아닙니다.
+
+게시 준비 CLI의 `publish --batch` 경로는 제거하고 `publish --release`를 사용합니다. 모든 대상이 검사를 통과한 뒤에만 정확한 원고 집합으로 게시 파일을 준비하며 차단·중복·승인 정보 누락 시 공개 파일을 만들지 않습니다. 내부 `publishBatch`는 기존 테스트 fixture와 파일 변환용 저수준 함수로 남습니다. CLI 인자만으로 실제 사용자 승인을 판별할 수 없으므로 운영자는 해당 원고 집합에 대한 대화 승인을 먼저 확인해야 합니다. ledger는 승인 기록이 아니며 실제 승인은 승인 후 생성하는 공개 번역 파일에 기록합니다. 이번 작업에서는 실제 게시 준비 명령·병합·배포를 실행하지 않습니다.
