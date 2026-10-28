@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import {entries,text,formatDate,type Language} from '../../lib/content';
+import {archiveAlternates,archiveYears,archiveEntries,archiveStructuredData} from '../../lib/discovery';
+import copy from '../../lib/discovery-ui.json';
+export async function getStaticPaths(){return archiveAlternates(await entries()).map(a=>({params:{lang:a.language}}));}
+const lang=Astro.params.lang as Language;
+const all=await entries(),groups=archiveYears(all,lang),items=archiveEntries(all,lang),ui=copy[lang];
+---
+<Base lang={lang} title={ui.archive} description={ui.intro} alternates={archiveAlternates(all)} structuredData={archiveStructuredData(all,lang,ui.archive,ui.intro,Astro.site!)}>
+  <header class="page-heading"><span class="eyebrow">{text[lang].overview}</span><h1>{ui.archive}</h1><p>{ui.intro}</p><p>{ui.count}: <strong>{new Intl.NumberFormat(lang).format(items.length)}</strong></p></header>
+  <nav class="archive-years" aria-label={ui.years}>{groups.map(group=><a href={'#year-'+group.year}>{group.year}</a>)}</nav>
+  <div class="archive">
+    {groups.map(group=><section aria-labelledby={'year-'+group.year}><h2 id={'year-'+group.year}>{group.year}</h2><ol>{group.entries.map(entry=><li><time datetime={entry.publishedAt.toISOString()}>{formatDate(entry.publishedAt,lang)}</time><div><a href={entry.url}>{entry.title}</a><span class="archive-kind">{text[lang][entry.kind==='post'?'posts':'digest']}</span></div></li>)}</ol></section>)}
+  </div>
+</Base>
+<style>
+.archive-years{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 40px}.archive-years a{padding:9px 14px;border:1px solid var(--line);border-radius:4px}
+.archive section{margin-bottom:48px}.archive h2{font-size:28px;scroll-margin-top:24px}.archive ol{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.archive li{display:grid;grid-template-columns:140px minmax(0,1fr);gap:24px;padding:19px 0;border-bottom:1px solid var(--line)}
+.archive time,.archive-kind{color:var(--muted);font-size:12px;line-height:1.8}.archive a{font-size:17px;line-height:1.6;overflow-wrap:anywhere}.archive-kind{display:block;margin-top:5px}
+@media(max-width:520px){.archive li{grid-template-columns:1fr;gap:5px}}
+</style>

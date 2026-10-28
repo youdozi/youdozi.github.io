@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 import re
 
-from check_seo import Head, SITE
+from check_seo import Head, SITE, emitted_url
 
 LOCALES = json.loads((Path(__file__).resolve().parents[1] / 'src/lib/locales.json').read_text())['locales']
 
@@ -135,7 +135,7 @@ def audit(root):
         page = Metadata()
         page.feed(file.read_text(encoding='utf-8'))
         path = '/' + file.relative_to(root).as_posix()
-        url = SITE + (path[:-10] if path.endswith('/index.html') else path)
+        url = emitted_url(Path(root), file)
         if page.language not in LOCALES or page.noindex or page.refresh or page.canonicals != [url]:
             continue
         checked += 1

@@ -6,13 +6,20 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, quote
 import xml.etree.ElementTree as ET
 
 SITE = 'https://youdozi.github.io'
 LANGUAGES = set(json.loads((Path(__file__).resolve().parents[1] / 'src/lib/locales.json').read_text())['locales'])
 SM = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
 XHTML = '{http://www.w3.org/1999/xhtml}'
+
+
+def emitted_url(root, file):
+    path = '/' + file.relative_to(root).as_posix()
+    if path.endswith('/index.html'):
+        path = path[:-10]
+    return SITE + quote(path, safe="/%:@!$&'()*+,;=-._~")
 
 
 class Head(HTMLParser):
@@ -58,10 +65,7 @@ def audit(root):
         # Ownership verification files contain text only, not public HTML pages.
         if head.language is None:
             continue
-        path = '/' + file.relative_to(root).as_posix()
-        if path.endswith('/index.html'):
-            path = path[:-10]
-        pages[SITE + path] = head
+        pages[emitted_url(root, file)] = head
     errors = []
     eligible = {url: p for url, p in pages.items()
                 if p.canonicals == [url] and not p.noindex and not p.refresh}

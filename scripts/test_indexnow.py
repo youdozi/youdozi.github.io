@@ -8,6 +8,18 @@ import indexnow as ix
 
 
 class IndexNowTests(unittest.TestCase):
+    def test_archive_directories_require_real_canonical_sitemap_pages_in_every_language(self):
+        urls = [self.page('/' + language + '/archive/') for language in ix.LANGUAGES]
+        self.sitemap(urls)
+        self.assertEqual(set(ix.build_manifest(self.dist)['pages']), set(urls))
+        for path in ['/fr/archive/private/', '/en/archive/page/2/', '/xx/archive/']:
+            with self.subTest(path=path):
+                with self.assertRaises(ValueError):
+                    ix.public_url(ix.SITE + path)
+        self.page('/fr/archive/', extra='<meta name="robots" content="noindex">')
+        with self.assertRaises(ValueError):
+            ix.build_manifest(self.dist)
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)

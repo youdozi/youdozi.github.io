@@ -146,6 +146,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     const checked=spawnSync('python3',['-B','scripts/check_site.py'],{encoding:'utf8'});assert.equal(checked.status,0,checked.stdout+checked.stderr);
     const seoChecked=spawnSync('python3',['-B','scripts/check_seo.py'],{encoding:'utf8'});assert.equal(seoChecked.status,0,seoChecked.stdout+seoChecked.stderr);
     const metadataChecked=spawnSync('python3',['-B','scripts/check_metadata.py'],{encoding:'utf8'});assert.equal(metadataChecked.status,0,metadataChecked.stdout+metadataChecked.stderr);
+    const discoveryChecked=spawnSync('python3',['-B','scripts/check_discovery.py'],{encoding:'utf8'});assert.equal(discoveryChecked.status,0,discoveryChecked.stdout+discoveryChecked.stderr);
     const metadataHtml=await readFile('dist/en/posts/2000-01-02-metadata-fixture/index.html','utf8');
     const metadataRaw=metadataHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
     assert.equal(JSON.parse(metadataRaw).find(item=>item['@type']==='BlogPosting').headline,metadataTitle);
@@ -178,6 +179,32 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.match(sample,/noindex,follow/);assert.match(sample,/예제 데이터/);
     assert.ok(!sample.includes('<details class="article-toc"'));
     const sitemap=await readFile('dist/sitemap.xml','utf8');
+    for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es']) {
+      const archive=await readFile('dist/'+lang+'/archive/index.html','utf8');
+      const index=JSON.parse(await readFile('dist/'+lang+'/search-index.json','utf8'));
+      const graph=JSON.parse(archive.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      const list=graph.find(item=>item['@type']==='ItemList');
+      const collection=graph.find(item=>item['@type']==='CollectionPage');
+      assert.equal(list.numberOfItems,index.length);
+      assert.deepEqual(list.itemListElement.map(item=>item.url).sort(),index.map(item=>'https://youdozi.github.io'+item.url).sort());
+      assert.deepEqual(list.itemListElement.map(item=>item.position),Array.from({length:index.length},(_,i)=>i+1));
+      assert.ok(sitemap.includes('<loc>https://youdozi.github.io/'+lang+'/archive/</loc><lastmod>'+collection.dateModified+'</lastmod>'));
+      const home=await readFile('dist/'+lang+'/index.html','utf8');
+      assert.ok(home.includes('href="/'+lang+'/archive/"'));
+      if(!['en','ko'].includes(lang)) {
+        const header=home.match(/<header class="site-header[^>]*>([\s\S]*?)<\/header>/)[1];
+        const footer=home.match(/<footer class="site-footer[^>]*>([\s\S]*?)<\/footer>/)[1];
+        assert.ok(!header.includes('href="/'+lang+'/posts/"'));
+        assert.ok(!footer.includes('href="/'+lang+'/tags/"'));
+        for(const kind of ['posts','tags']) {
+          const empty=await readFile('dist/'+lang+'/'+kind+'/index.html','utf8');
+          assert.ok(empty.includes('class="empty"'));
+          assert.ok(empty.includes('href="/'+lang+'/archive/"'));
+        }
+      }
+      const notFound=await readFile('dist/404.html','utf8');
+      assert.ok(notFound.includes('href="/'+lang+'/archive/" lang="'+lang+'"'));
+    }
     for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es']) {
       const search=await readFile(`dist/${lang}/search/index.html`,'utf8');
       assert.ok(search.includes('noindex,follow'));
