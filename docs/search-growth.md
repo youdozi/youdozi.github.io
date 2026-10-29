@@ -80,6 +80,28 @@ python3 -B scripts/check_migration.py --dist dist
 
 ## Google·Bing 다국어 공개 글 관측
 
+### 공개 응답의 크롤링 접근성
+
+`scripts/crawl_access.py`는 색인 API와 별개로 같은 공개 관측 목록 94개와 robots.txt·사이트맵을 일반 HTTP로 읽습니다. API 키·OAuth·JavaScript를 사용하지 않으며 실제 Googlebot/Bingbot을 가장하지 않습니다. 기본 실행은 요청 수 미리보기뿐입니다.
+
+```sh
+python3 -B scripts/crawl_access.py
+.venv-search-console/bin/python scripts/crawl_access.py --live \
+  --output ~/.config/youdozi-search-console/새-크롤링-접근성.json
+python3 -B scripts/crawl_access.py \
+  --report ~/.config/youdozi-search-console/새-크롤링-접근성.json
+```
+
+`--live`는 저장소의 공개 파일에서 결정한 주소만 최대 두 개씩 조회하고 서버 리디렉션을 자동 추적하지 않습니다. 대체 링크에 적힌 외부·미관측 주소를 추가로 방문하지 않습니다. 응답의 HTTP 상태·HTML 콘텐츠 형식·canonical·즉시 이동·HTML 언어·색인 제외 지시문을 검사합니다. HTTP `X-Robots-Tag`도 별도로 읽고 Googlebot/Bingbot 범위와 반복 헤더를 구분합니다. HTML 본문의 robots meta도 관측하며 조건부·미지원 지시문은 추가 확인 대상으로 남깁니다. 쿠키·인증 정보·전체 헤더·HTML 본문은 결과에 저장하지 않습니다. [robots meta와 HTTP 지시문](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag)
+
+현재 robots.txt의 `User-agent: *`·`Allow: /`·해당 사이트맵 명시 정책만 인식합니다. 임의의 robots 규칙을 구현한 검색엔진 모방 도구가 아니며 정책이 달라지거나 HTTP 오류가 나면 접근 허용으로 간주하지 않습니다. 이때 `robots-policy-unconfirmed`로 추가 확인을 요구합니다. [Google robots.txt 해석](https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec)
+
+84개 최종 페이지는 사이트맵에 포함되고 과거 이동 주소 10개는 제외되어야 합니다. 현재 공개 언어판의 대체 주소가 빠지지 않았는지, 대체 주소가 조회된 최종 자기 canonical 페이지인지, 언어와 상호 링크가 맞는지 확인합니다. 양쪽 페이지가 서로의 링크를 함께 잃은 경우도 공개 언어판 목록과 비교해 검출합니다. `x-default`는 영문판과 일치해야 합니다. [다국어 대체 페이지 지침](https://developers.google.com/search/docs/specialty/international/localized-versions)
+
+결과는 `checks-passed`·`issue`·`unknown`으로 나누며 하나라도 문제나 미확인이 있으면 종료 코드 2로 반환합니다. 요청 실패와 미확인 상태를 정상으로 바꾸지 않습니다. 비공개 새 파일만 권한 600으로 저장하며 모든 worktree 내부와 기존 파일 덮어쓰기를 거부합니다. 일반 HTTP에서 검사가 통과해도 실제 검색봇의 방문·색인·노출을 증명하지 않으며, 이를 판정하려면 별도의 저장 색인 및 검색 실적 관측과 함께 읽어야 합니다. 예약 조회나 색인·사이트맵 제출은 추가하지 않습니다.
+
+### Google·Bing API 관측
+
 `scripts/search_engines.py`는 기존 핵심 글 조회에 현재 공개 번역과 각 번역의 한영 대응 글, 언어별 홈과 공개 글이 있는 언어의 전체 글 아카이브를 더합니다. 현재 기준 94 URL(핵심 글·과거 주소 30, 다국어 다이제스트 48, 홈 8, 아카이브 8)이며 `.pipeline/`의 미게시 번역은 읽지 않습니다. 공개 번역 파일이 바뀌면 대상 수도 바뀝니다. 실제 배포된 `main` 기준으로 실행합니다. 아카이브는 PR #77에서 배포되었습니다. 관측 목록에 포함한 것만으로 탐색 구조의 검색 성과가 입증되지는 않으며, 미게시 번역은 관측 대상이 아닙니다.
 
 기존 Google OAuth와 `~/.config/youdozi-search-console/bing-api-key.txt`를 사용합니다. 키를 명령행 인자로 전달하지 않습니다.
