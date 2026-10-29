@@ -1,0 +1,280 @@
+{
+  "date": "2026-10-26",
+  "publishedAt": "2026-10-26T08:42:37.489290+09:00",
+  "articles": [
+    {
+      "id": "53a59f4bc4ce98a9",
+      "source": "InfoQ",
+      "url": "https://www.infoq.com/news/2026/10/pingcap-cloud-data-breach/",
+      "publishedAt": "2026-10-25T06:27:00+00:00",
+      "tags": [
+        "cloud",
+        "data"
+      ],
+      "editions": {
+        "en": {
+          "title": "PingCAP Breach Exposes Customer Records and Source Code",
+          "summary": "PingCAP confirmed unauthorized access to internal systems along with the theft of source code and customer-related data. The cyber extortion group FulcrumSec claimed to have stolen 10.6 TB of data including TiDB Cloud control-plane records. PingCAP stated that an external incident response firm found no evidence that the attacker ran commands in reviewed production systems.",
+          "claims": [
+            {
+              "text": "PingCAP confirmed unauthorized access to internal systems along with the theft of source code and customer-related data.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "PingCAP recently confirmed unauthorized access to its internal systems and the theft of source code and customer-related data."
+                }
+              ]
+            },
+            {
+              "text": "The cyber extortion group FulcrumSec claimed to have stolen 10.6 TB of data including TiDB Cloud control-plane records.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The attacker, cyber extortion group FulcrumSec, claimed to have stolen 10.6 TB of data , including TiDB Cloud control-plane records"
+                }
+              ]
+            },
+            {
+              "text": "PingCAP stated that an external incident response firm found no evidence that the attacker ran commands in reviewed production systems.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "An external incident response firm reviewed PingCAP’s production systems and found no evidence that the attacker ran commands or maintained persistent access in the systems reviewed."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0
+            ],
+            "affectedAudience": [
+              1
+            ],
+            "conditions": [
+              2
+            ]
+          }
+        },
+        "ko": {
+          "title": "핑캡 보안 침해로 고객 기록과 소스 코드 노출",
+          "summary": "핑캡은 내부 시스템에 대한 무단 접근과 소스 코드 및 고객 관련 데이터 유출을 확인했습니다. 사이버 갈취 조직인 풀크룸섹은 TiDB 클라우드 제어 플레인 기록을 포함해 10.6 TB의 데이터를 탈취했다고 주장했습니다. 핑캡은 외부 사고 대응 업체의 검토 결과 공격자가 검토된 프로덕션 시스템에서 명령을 실행했다는 증거가 발견되지 않았다고 밝혔습니다.",
+          "claims": [
+            {
+              "text": "핑캡은 내부 시스템에 대한 무단 접근과 소스 코드 및 고객 관련 데이터 유출을 확인했습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "PingCAP recently confirmed unauthorized access to its internal systems and the theft of source code and customer-related data."
+                }
+              ]
+            },
+            {
+              "text": "사이버 갈취 조직인 풀크룸섹은 TiDB 클라우드 제어 플레인 기록을 포함해 10.6 TB의 데이터를 탈취했다고 주장했습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "The attacker, cyber extortion group FulcrumSec, claimed to have stolen 10.6 TB of data , including TiDB Cloud control-plane records"
+                }
+              ]
+            },
+            {
+              "text": "핑캡은 외부 사고 대응 업체의 검토 결과 공격자가 검토된 프로덕션 시스템에서 명령을 실행했다는 증거가 발견되지 않았다고 밝혔습니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "An external incident response firm reviewed PingCAP’s production systems and found no evidence that the attacker ran commands or maintained persistent access in the systems reviewed."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0
+            ],
+            "affectedAudience": [
+              1
+            ],
+            "conditions": [
+              2
+            ]
+          }
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://www.infoq.com/news/2026/10/pingcap-cloud-data-breach/",
+          "sha256": "881538a738c8a8899769a127ff9556be9b8df30a6ee63ab83b1923189126db17"
+        }
+      ],
+      "selection": {
+        "audience": "java-spring-backend",
+        "method": "keyword-rules-v1",
+        "relevance": "adjacent",
+        "priority": "normal",
+        "reasons": [
+          "backend-operations"
+        ]
+      },
+      "editorial": {
+        "opinion": {
+          "en": "",
+          "ko": ""
+        },
+        "experiment": {
+          "status": "not_tested",
+          "reportUrl": null,
+          "environment": {
+            "en": "",
+            "ko": ""
+          },
+          "result": {
+            "en": "",
+            "ko": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "dea8ba729eb28582",
+      "source": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
+      "publishedAt": "2026-10-22T22:19:17+00:00",
+      "tags": [
+        "ai"
+      ],
+      "editions": {
+        "en": {
+          "title": "Custom skills, agents, and MCP servers in usage metrics API",
+          "summary": "Copilot usage metrics API reports now display specific configured names for organization-created custom agents, skills, MCP servers, slash commands, and plugins instead of generic groupings. Each totals_by_* list now includes up to 25 entries per record, increased from the previous limit of five entries. Prompt mode, the app, and ACP integrations require Copilot CLI version 1.0.97 or later, while the Copilot SDK requires version 1.0.21 or later.",
+          "claims": [
+            {
+              "text": "Copilot usage metrics API reports now display specific configured names for organization-created custom agents, skills, MCP servers, slash commands, and plugins instead of generic groupings.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Copilot usage metrics now show the names of the skills, custom agents, Model Context Protocol (MCP) servers, slash commands, and plugins that your organization creates, instead of grouping them under other or custom ."
+                }
+              ]
+            },
+            {
+              "text": "Each totals_by_* list now includes up to 25 entries per record, increased from the previous limit of five entries.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Each totals_by_* list now includes up to 25 entries per record, up from five, so you can see more of the long tail of customizations your developers use."
+                }
+              ]
+            },
+            {
+              "text": "Prompt mode, the app, and ACP integrations require Copilot CLI version 1.0.97 or later, while the Copilot SDK requires version 1.0.21 or later.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Prompt mode, the app, and ACP integrations require Copilot CLI 1.0.97 or later. The Copilot SDK requires v1.0.21 or later."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0
+            ],
+            "affectedAudience": [
+              0,
+              1,
+              2
+            ],
+            "conditions": [
+              2
+            ]
+          }
+        },
+        "ko": {
+          "title": "사용량 메트릭 API의 커스텀 스킬, 에이전트, MCP 서버",
+          "summary": "Copilot 사용량 메트릭 API 보고서는 이제 일반적인 그룹 대신 조직에서 생성한 커스텀 에이전트, 스킬, MCP 서버, 슬래시 명령어, 플러그인에 대한 구체적인 설정 이름을 표시합니다. 각 totals_by_* 목록은 이제 레코드당 최대 25개의 항목을 포함하며, 이는 기존의 5개 제한에서 증가한 수치입니다. 프롬프트 모드, 앱, ACP 통합에는 Copilot CLI 1.0.97 버전 이상이 필요하며, Copilot SDK에는 v1.0.21 버전 이상이 필요합니다.",
+          "claims": [
+            {
+              "text": "Copilot 사용량 메트릭 API 보고서는 이제 일반적인 그룹 대신 조직에서 생성한 커스텀 에이전트, 스킬, MCP 서버, 슬래시 명령어, 플러그인에 대한 구체적인 설정 이름을 표시합니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Copilot usage metrics now show the names of the skills, custom agents, Model Context Protocol (MCP) servers, slash commands, and plugins that your organization creates, instead of grouping them under other or custom ."
+                }
+              ]
+            },
+            {
+              "text": "각 totals_by_* 목록은 이제 레코드당 최대 25개의 항목을 포함하며, 이는 기존의 5개 제한에서 증가한 수치입니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Each totals_by_* list now includes up to 25 entries per record, up from five, so you can see more of the long tail of customizations your developers use."
+                }
+              ]
+            },
+            {
+              "text": "프롬프트 모드, 앱, ACP 통합에는 Copilot CLI 1.0.97 버전 이상이 필요하며, Copilot SDK에는 v1.0.21 버전 이상이 필요합니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Prompt mode, the app, and ACP integrations require Copilot CLI 1.0.97 or later. The Copilot SDK requires v1.0.21 or later."
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0
+            ],
+            "affectedAudience": [
+              0,
+              1,
+              2
+            ],
+            "conditions": [
+              2
+            ]
+          }
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api/",
+          "sha256": "feb907676eadabd6fd40a905decd6e89994f31c25b6146db288732e694bf06d9"
+        }
+      ],
+      "selection": {
+        "audience": "java-spring-backend",
+        "method": "keyword-rules-v1",
+        "relevance": "adjacent",
+        "priority": "normal",
+        "reasons": [
+          "backend-operations",
+          "developer-tooling"
+        ]
+      },
+      "editorial": {
+        "opinion": {
+          "en": "",
+          "ko": ""
+        },
+        "experiment": {
+          "status": "not_tested",
+          "reportUrl": null,
+          "environment": {
+            "en": "",
+            "ko": ""
+          },
+          "result": {
+            "en": "",
+            "ko": ""
+          }
+        }
+      }
+    }
+  ]
+}
