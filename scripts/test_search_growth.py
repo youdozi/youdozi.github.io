@@ -71,6 +71,8 @@ class SearchGrowthTests(unittest.TestCase):
         self.assertIn('합계 미제공 또는 조회 실패', text)
         self.assertNotIn('private query', text)
         self.assertNotIn('클릭 0', text)
+        report['comparison'] = {'newPass': [], 'noLongerPass': [], 'canonicalChanges': [], 'uncomparableUrls': []}
+        self.assertIn('canonical 미제공 미기록', growth.format_report(report))
         report['site'] = 'https://other.example/'
         with self.assertRaises(ValueError): growth.format_report(report)
 

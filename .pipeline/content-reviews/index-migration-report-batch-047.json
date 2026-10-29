@@ -31,10 +31,10 @@
     "offlinePrivateBaseline": "generated without API calls; no private metrics committed"
   },
   "sourceSha256": {
-    "scripts/search_growth.py": "da7e26e9042aecbd561d80e43e1c7d241b455a8a9fb3c74f182cf27ac54f192b",
+    "scripts/search_growth.py": "5917ff3518ca14ca2ad0690fe4a0386264e0b585fb14482a212027f72c1605e0",
     "scripts/migration_report.py": "91b236f06e9dd23e1a26988203e1328399b4b9efa16cdaa87b1a47c4c5e50801",
     "scripts/test_migration_report.py": "3cb8c282e10007803542aca3a492e81976c3e2dd0e273d25275c402a2ac87060",
-    "scripts/test_search_growth.py": "8b54f4b45eeb0c847f355d452a77f8127b2373c4a4ccfb2339b66babb84ac639"
+    "scripts/test_search_growth.py": "1f01e92e0cedbe74fa59a166c90f6d6657840515b71928501399d22e6b64b270"
   },
   "limits": [
     "No new Google observations or indexing requests in this change.",

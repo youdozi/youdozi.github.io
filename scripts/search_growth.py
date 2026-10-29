@@ -217,7 +217,8 @@ def format_report(report):
             lines.append(f"\n{label} ({start}~{end}, PT): 합계 미제공 또는 조회 실패")
     comparison = report.get('comparison')
     if comparison:
-        lines.append(f"\n이전 조회 대비: PASS 전환 {len(comparison['newPass'])}, PASS 해제 {len(comparison['noLongerPass'])}, canonical 변경 {len(comparison['canonicalChanges'])}, 비교 불가 {len(comparison['uncomparableUrls'])}, canonical 미제공 {len(comparison.get('canonicalUncomparableUrls', []))}")
+        missing = len(comparison['canonicalUncomparableUrls']) if 'canonicalUncomparableUrls' in comparison else '미기록'
+        lines.append(f"\n이전 조회 대비: PASS 전환 {len(comparison['newPass'])}, PASS 해제 {len(comparison['noLongerPass'])}, canonical 변경 {len(comparison['canonicalChanges'])}, 비교 불가 {len(comparison['uncomparableUrls'])}, canonical 미제공 {missing}")
     lines.append('\n미반환 행은 노출 0이 아니며, 겹치는 28일 구간과 변경 전후 차이는 인과효과를 증명하지 않습니다.')
     return '\n'.join(lines)
 
