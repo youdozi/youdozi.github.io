@@ -131,7 +131,7 @@ test('fixture validation rejects all records before writing and refuses existing
 test('preview commands cannot submit IndexNow or publish and include reader/SEO/discovery gates',()=>{
   const commands=JSON.stringify(checks);
   assert.ok(!/indexnow|--submit|publish|deploy|npm/.test(commands));
-  for(const name of ['check_site.py','check_seo.py','check_metadata.py','check_discovery.py','check_reader_content.py'])assert.ok(commands.includes(name));
+  for(const name of ['check_site.py','check_seo.py','check_metadata.py','check_discovery.py','check_reader_content.py','check_article_images.py'])assert.ok(commands.includes(name));
 });
 
 test('CI previews before uploading normal dist and package separates preview from normal build',async()=>{

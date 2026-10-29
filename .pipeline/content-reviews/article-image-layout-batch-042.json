@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-29T00:36:49.734284+00:00",
+  "baseCommit": "99e13512b03332c2fc6ee1c6b45ad7530059d69f",
+  "purpose": "Reserve article image geometry before network completion and validate local image attributes at build time.",
+  "scope": {
+    "localImages": 72,
+    "articlesWithImages": 72,
+    "articleManuscriptsChanged": 0,
+    "assetFilesChanged": 0,
+    "pendingTranslationsPublished": 0
+  },
+  "policy": {
+    "metadataSource": "Astro imageMetadata on local public asset bytes only; containment checks also resolve symlinks.",
+    "automaticScope": "Markdown image HAST nodes with /assets/ URLs; raw HTML images need explicit attributes.",
+    "loading": "First Markdown image eager by default; subsequent images lazy; explicit properties retained.",
+    "decoding": "async by default; explicit properties retained.",
+    "altAndSource": "Unchanged",
+    "remoteRequestsAdded": 0,
+    "buildGate": "Positive integer dimensions, declared loading/decoding, actual SVG viewBox ratio; normal and isolated builds."
+  },
+  "validation": {
+    "pythonTests": 247,
+    "nodeTests": 107,
+    "newPythonTests": 4,
+    "newNodeTests": 5,
+    "astroCheck": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "normalBuild": "passed",
+    "publicArticles": 423,
+    "sitemapURLs": 479,
+    "publishedTranslations": 36,
+    "browser": {
+      "passed": true,
+      "generatedArticles": 72,
+      "localImages": 72,
+      "metadataMatchesDecodedImages": true,
+      "altAndSourcePreserved": true,
+      "firstImageEager": true,
+      "decodingAsync": true,
+      "delayedImageGeometry": [
+        {
+          "width": 1360,
+          "reservedHeight": 735,
+          "imageHeightChange": 0,
+          "imageBottomChange": 0
+        },
+        {
+          "width": 390,
+          "reservedHeight": 619.5,
+          "imageHeightChange": 0,
+          "imageBottomChange": 0
+        }
+      ],
+      "exceptions": 0,
+      "limits": "Reserved image geometry only; not a field Core Web Vitals or search ranking measurement."
+    }
+  },
+  "limits": [
+    "The delayed-load browser measurement proves reserved geometry for one real article at two widths, not field CLS, LCP, or search ranking gains.",
+    "Existing rendered alt/source preservation checked; no new semantic alt review or article fact checking.",
+    "Raster dimensions have a parser test; the current 72 public article images are SVG."
+  ],
+  "files": {
+    "scripts/article-images.mjs": "d47690247daa55d3a47d59a54c0d1b4f28e1885b6b5cb7302e0d8fc09bb88ba1",
+    "scripts/check_article_images.py": "5de46d3f6c490064ada1f6a787c5429756f300c0e351189263c7ddb0f0aa772c",
+    "scripts/reader-markdown-processor.mjs": "247face1d366fdd76ca1e166a3e20406d5164ebe41584b80c4f0f87df14ca3b6",
+    "scripts/test-article-images.mjs": "d6c5ce3a66d625be1e2f2c44941d90e13c66a4fdb185e6f8e822fafc2ed03799",
+    "scripts/test_article_images.py": "d6aaa3e1393b297ecaeaf892db6c0436967e9c67e3fb58d74804d3aea440cd12",
+    "scripts/translation-preview.mjs": "faa2d4446befa23565d9afcdd198400bc9803dabd46c3fe423d3afafa352cce9",
+    "scripts/test-translation-preview.mjs": "7af7afdc9a4e13a1456f725ee824333faa5d724aac130dc25c228fedf9d6b183",
+    "package.json": "e964936c02a3b3581a9f6770681181d63afb30c65a88e2b26a82039f08654c89",
+    "README.md": "5229bc7911cae685bc2c255c19f91956fc900649b5e6b5b6c0d07c3c5163983b"
+  }
+}

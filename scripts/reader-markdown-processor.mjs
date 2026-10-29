@@ -1,8 +1,9 @@
 import {satteri} from '@astrojs/markdown-satteri';
 import {readerMarkdown} from '../src/lib/reader-markdown.ts';
+import {articleImagePlugin} from './article-images.mjs';
 
 export function readerMarkdownProcessor() {
-  const processor = satteri();
+  const processor = satteri({hastPlugins:[articleImagePlugin()]});
   return {
     name: 'reader-markdown',
     options: processor.options,
