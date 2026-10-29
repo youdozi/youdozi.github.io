@@ -1,0 +1,34 @@
+{
+  "key": "2021-07-29-interval-num",
+  "language": "fr",
+  "title": "Une suite de pas x",
+  "description": "Transformer les indices commençant à zéro en numéros de termes, convertir x en long avant la multiplication, puis collecter dans l’ordre.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Générer les indices de 0 à n - 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Numéro du terme = indice + 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Convertir d’abord x en long",
+        "Puis multiplier par le numéro"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Collecter dans l’ordre de parcours",
+        "Renvoyer long[]"
+      ]
+    }
+  ]
+}

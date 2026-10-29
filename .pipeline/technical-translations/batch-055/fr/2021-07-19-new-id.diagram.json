@@ -1,0 +1,53 @@
+{
+  "key": "2021-07-19-new-id",
+  "language": "fr",
+  "title": "Ordre de normalisation des ID",
+  "description": "Le schéma suit la version Optional. La boucle combine filtrage et réduction des points consécutifs en préservant les mêmes règles.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Passer en minuscules : Locale.ROOT"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Retirer les caractères non autorisés",
+        "Garder a-z, 0-9, point, _, -"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Réduire les points consécutifs"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Retirer les points aux extrémités"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Vide ? Remplacer par a"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Tronquer à 15 caractères maximum",
+        "Puis retirer le point final"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Moins de 3 ? Répéter le dernier",
+        "Renvoyer l’ID normalisé"
+      ]
+    }
+  ]
+}

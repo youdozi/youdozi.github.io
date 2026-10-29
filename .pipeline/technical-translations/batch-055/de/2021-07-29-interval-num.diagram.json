@@ -1,0 +1,34 @@
+{
+  "key": "2021-07-29-interval-num",
+  "language": "de",
+  "title": "Eine Folge mit Abstand x",
+  "description": "Nullbasierte Indizes werden zu Gliednummern. Vor der Multiplikation wird x zu long erweitert; die Ergebnisse bleiben in Reihenfolge.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Indizes 0 bis n - 1 erzeugen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Gliednummer = Index + 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Zuerst x zu long erweitern",
+        "Dann mit Gliednummer multiplizieren"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Glieder in Durchlaufreihenfolge",
+        "Als long[] zurückgeben"
+      ]
+    }
+  ]
+}

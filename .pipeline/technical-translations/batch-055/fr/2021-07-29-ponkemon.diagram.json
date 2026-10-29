@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-29-ponkemon",
+  "language": "fr",
+  "title": "Types distincts et places de sélection",
+  "description": "Le nombre de types distincts et la limite de sélection N/2 sont deux bornes supérieures. Leur minimum est atteignable dans les conditions de l’exercice.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Parcourir chaque identifiant de type"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Insérer dans un HashSet",
+        "Les doublons n’ajoutent pas de type"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "kinds = taille de l’ensemble",
+        "slots = nums.length / 2"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Renvoyer min(kinds, slots)",
+        "Un compte, pas le sous-ensemble"
+      ]
+    }
+  ]
+}

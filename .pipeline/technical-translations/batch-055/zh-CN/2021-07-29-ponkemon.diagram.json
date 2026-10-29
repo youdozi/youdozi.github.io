@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-29-ponkemon",
+  "language": "zh-CN",
+  "title": "不同种类与选择名额",
+  "description": "不同种类数和 N/2 选择限制都是上限。在题目约束下，可以达到两者的最小值。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "读取每个种类 ID"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "插入 HashSet",
+        "重复 ID 不增加种类数"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "kinds = 集合大小",
+        "slots = nums.length / 2"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "返回 min(kinds, slots)",
+        "返回数量，而非所选子集"
+      ]
+    }
+  ]
+}

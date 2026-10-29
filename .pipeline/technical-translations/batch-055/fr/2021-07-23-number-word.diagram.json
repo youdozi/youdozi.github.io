@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-23-number-word",
+  "language": "fr",
+  "title": "Remplacement des mots de chiffres",
+  "description": "Remplacer littéralement les mots fixes de zero à nine par des chiffres, puis analyser la chaîne décimale obtenue.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Partir de la chaîne d’entrée"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Parcourir les mots de zero à nine",
+        "Dans la table fixe"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Remplacer le mot par un chiffre",
+        "Conserver les chiffres existants"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Après les dix remplacements",
+        "Integer.parseInt → renvoyer int"
+      ]
+    }
+  ]
+}

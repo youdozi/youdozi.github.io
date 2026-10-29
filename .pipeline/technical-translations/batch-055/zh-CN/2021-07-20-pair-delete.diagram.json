@@ -1,0 +1,46 @@
+{
+  "key": "2021-07-20-pair-delete",
+  "language": "zh-CN",
+  "title": "删除相邻字符对",
+  "description": "栈保存已处理前缀消除后的结果。每个新字符要么移除相同的栈顶，要么成为新的栈顶。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "从空栈开始"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "读取下一个字符 c"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "栈非空且栈顶等于 c？",
+        "是：pop；否：push c"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "还有字符？",
+        "是：重复；否：结束"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "栈为空：返回 1",
+        "否则：返回 0"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 3,
+    "to": 1,
+    "label": "是"
+  }
+}

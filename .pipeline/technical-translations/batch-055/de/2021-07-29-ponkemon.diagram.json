@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-29-ponkemon",
+  "language": "de",
+  "title": "Verschiedene Typen und Plätze",
+  "description": "Die Typanzahl und die Auswahlgrenze N/2 sind beide Obergrenzen. Unter den Aufgabenbedingungen ist ihr Minimum erreichbar.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Jede Typ-ID durchlaufen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "In HashSet einfügen",
+        "Duplikate erhöhen Typanzahl nicht"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "kinds = Größe der Menge",
+        "slots = nums.length / 2"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "min(kinds, slots) zurückgeben",
+        "Anzahl, nicht ausgewählte Teilmenge"
+      ]
+    }
+  ]
+}

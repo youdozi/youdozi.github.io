@@ -1,0 +1,53 @@
+{
+  "key": "2021-07-19-new-id",
+  "language": "ja",
+  "title": "ID 正規化の順序",
+  "description": "図は Optional 版の流れです。ループ版はフィルターと連続するドットの圧縮をまとめ、同じ規則を保ちます。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Locale.ROOT で小文字化"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "許可しない文字を削除",
+        "a-z、0-9、ドット、_、- を保持"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "連続するドットを圧縮"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "先頭と末尾のドットを削除"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "空なら a に置換"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "最大 15 文字に切り詰め",
+        "その後で末尾のドットを削除"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "3 文字未満なら末尾を繰り返す",
+        "正規化した ID を返す"
+      ]
+    }
+  ]
+}

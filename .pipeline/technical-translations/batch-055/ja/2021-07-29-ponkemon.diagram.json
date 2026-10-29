@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-29-ponkemon",
+  "language": "ja",
+  "title": "異なる種類と選択枠",
+  "description": "異なる種類の数と N/2 の選択制限は、どちらも上限です。問題の条件では、その小さい方を達成できます。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "すべての種類 ID を読む"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "HashSet に挿入する",
+        "同じ ID は種類を増やさない"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "kinds = 集合のサイズ",
+        "slots = nums.length / 2"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "min(kinds, slots) を返す",
+        "選んだ部分集合ではなく個数"
+      ]
+    }
+  ]
+}

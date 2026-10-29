@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-23-number-word",
+  "language": "zh-CN",
+  "title": "数字单词替换",
+  "description": "将 zero 到 nine 这些固定单词按字面量替换为数字字符，再解析得到的十进制字符串。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "从输入字符串开始"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "遍历固定表中的单词",
+        "zero 到 nine"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "把单词按字面量替换为数字",
+        "保留已有数字字符"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "完成十个单词的替换后",
+        "Integer.parseInt → 返回 int"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "key": "2021-07-23-unsuccessful-runner",
+  "language": "es",
+  "title": "Diferencia de frecuencias de nombres",
+  "description": "Cuenta a cada participante, resta a cada corredor que termina y devuelve el nombre cuyo recuento restante es uno.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Crear un mapa nombre → recuento"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Cada participante: sumar 1",
+        "Nombres iguales comparten cuenta"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Cada corredor que termina: restar 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Recorrer los recuentos restantes",
+        "Encontrar el único recuento de 1"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Devolver ese nombre",
+        "Se garantiza que solo falta uno"
+      ]
+    }
+  ]
+}

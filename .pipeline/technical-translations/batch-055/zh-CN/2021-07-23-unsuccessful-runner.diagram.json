@@ -1,0 +1,41 @@
+{
+  "key": "2021-07-23-unsuccessful-runner",
+  "language": "zh-CN",
+  "title": "姓名频次差",
+  "description": "统计每位参赛者，逐一扣除完赛者，再返回剩余人数为一的姓名。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "创建姓名 → 人数映射"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "每位参赛者：加 1",
+        "重名累加到同一计数"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "每位完赛者：减 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "遍历剩余人数",
+        "找出唯一计数为 1 的项"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "返回该姓名",
+        "题目保证只有一人未完赛"
+      ]
+    }
+  ]
+}

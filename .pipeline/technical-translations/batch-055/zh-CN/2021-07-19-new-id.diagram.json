@@ -1,0 +1,53 @@
+{
+  "key": "2021-07-19-new-id",
+  "language": "zh-CN",
+  "title": "ID 规范化顺序",
+  "description": "流程图对应 Optional 版本。循环版本合并过滤与连续点压缩操作，同时保留相同规则。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "用 Locale.ROOT 转为小写"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "删除不允许的字符",
+        "保留 a-z、0-9、点、_、-"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "合并连续的点"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "删除开头和结尾的点"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "为空？替换为 a"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "截断至最多 15 个字符",
+        "然后删除结尾的点"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "长度不足 3？重复末尾字符",
+        "返回规范化后的 ID"
+      ]
+    }
+  ]
+}
