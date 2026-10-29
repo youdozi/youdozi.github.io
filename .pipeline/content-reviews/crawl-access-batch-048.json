@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-29T07:15:25.265644+00:00",
+  "baseCommit": "9b8dda679c9f127024e415a496c9c1def67475b3",
+  "purpose": "Observe deployed HTTP crawl-access and public multilingual alternate relationships separately from search-engine indexing.",
+  "scope": {
+    "articleManuscriptsChanged": 0,
+    "pendingTranslationsPublished": 0,
+    "newSearchAPIRequests": 0,
+    "siteSettingsChanged": 0
+  },
+  "policy": {
+    "selection": "Existing public Google/Bing observation targets only; no private drafts.",
+    "transport": "At most two ordinary identified HTTP requests concurrently; no automatic server redirects or extra alternate fetching.",
+    "checks": [
+      "HTTP and HTML content type",
+      "HTML and scoped/repeated HTTP index directives",
+      "Expected simple robots policy",
+      "Canonical/meta refresh and sitemap membership",
+      "Published edition coverage and reciprocal hreflang"
+    ],
+    "unknown": "Unrecognized robots policy, conditional directives, transport errors and unobserved alternates are not passes.",
+    "privacy": "New private mode-600 output outside all worktrees; no cookies, credentials, complete headers or HTML bodies.",
+    "references": [
+      "https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag",
+      "https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec",
+      "https://developers.google.com/search/docs/specialty/international/localized-versions"
+    ]
+  },
+  "validation": {
+    "pythonTests": 285,
+    "nodeTests": 117,
+    "astroCheckErrors": 0,
+    "normalBuild": "passed",
+    "publicArticles": 423,
+    "sitemapURLs": 479,
+    "publicTranslations": 36,
+    "liveHTTPURLsChecked": 94,
+    "liveHTTPURLsPassed": 94,
+    "liveRobots": "expected explicit allow-all policy",
+    "legacyURLsExcludedFromSitemap": 10,
+    "finalURLsIncludedInSitemap": 84
+  },
+  "limits": [
+    "Ordinary HTTP observations do not prove access by real authenticated search crawlers, indexing, rankings or exposure.",
+    "This is not a complete robots parser or search-engine directive interpreter.",
+    "No JavaScript, Analytics events, submission requests, automatic schedules or content publication."
+  ],
+  "sourceSha256": {
+    "scripts/crawl_access.py": "47a7b32de1ec21b44930e5e24087d6227e0bbfd79a7fa6c9c7690a211b49acd7",
+    "scripts/test_crawl_access.py": "817b3c748cf1b293c2c60f2746f809216a9d1aa33eefb9cf0b8f8ab048eda9b3"
+  }
+}
