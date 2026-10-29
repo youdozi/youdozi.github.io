@@ -12,6 +12,39 @@ import search_growth as growth
 
 
 class SearchGrowthTests(unittest.TestCase):
+    def test_missing_verdict_is_not_an_indexing_loss_or_gain(self):
+        before = {'site': growth.SITE, 'checkedAt': 'before', 'windows': {'current': ['a', 'b']},
+                  'urls': [{'url': growth.SITE + 'one/', 'kind': 'article', 'live': {},
+                            'inspection': {'httpStatus': 200, 'indexStatus': {'verdict': 'PASS'}}}]}
+        for state in ({}, None, {'verdict': 'VERDICT_UNSPECIFIED'}):
+            after = deepcopy(before)
+            after['urls'][0]['inspection']['indexStatus'] = state
+            result = growth.compare(before, after)
+            self.assertEqual(result['noLongerPass'], [])
+            self.assertEqual(result['uncomparableUrls'], [growth.SITE + 'one/'])
+            self.assertEqual(growth.summarize(after)['article']['googleUnknownOrError'], 1)
+        after['urls'][0]['inspection']['indexStatus'] = {'verdict': 'NEUTRAL'}
+        self.assertEqual(growth.compare(before, after)['noLongerPass'], [growth.SITE + 'one/'])
+
+    def test_missing_canonical_and_duplicate_urls_cannot_be_reported_as_changes(self):
+        before = {'site': growth.SITE, 'checkedAt': 'before', 'windows': {'current': ['a', 'b']},
+                  'urls': [{'url': growth.SITE + 'one/', 'inspection': {'httpStatus': 200, 'indexStatus': {'verdict': 'NEUTRAL'}}}]}
+        after = deepcopy(before)
+        after['urls'][0]['inspection']['indexStatus'] = {'verdict': 'PASS', 'googleCanonical': growth.SITE + 'one/'}
+        result = growth.compare(before, after)
+        self.assertEqual(result['newPass'], [growth.SITE + 'one/'])
+        self.assertEqual(result['canonicalChanges'], [])
+        self.assertEqual(result['canonicalUncomparableUrls'], [growth.SITE + 'one/'])
+        before['urls'][0]['inspection']['indexStatus']['googleCanonical'] = growth.SITE + 'old/'
+        self.assertEqual(len(growth.compare(before, after)['canonicalChanges']), 1)
+        after['urls'].append(deepcopy(after['urls'][0]))
+        with self.assertRaises(ValueError): growth.compare(before, after)
+
+    def test_unsafe_output_is_rejected_before_google_authentication(self):
+        with patch('sys.argv', ['search_growth.py', '--live', '--output', str(growth.ROOT / 'private.json')]), patch.object(growth, 'access_token') as auth:
+            with contextlib.redirect_stdout(io.StringIO()): self.assertEqual(growth.main(), 1)
+            auth.assert_not_called()
+
     def test_report_cli_does_not_authenticate_collect_or_write(self):
         with tempfile.TemporaryDirectory() as folder:
             snapshot = Path(folder) / 'snapshot.json'
@@ -38,6 +71,8 @@ class SearchGrowthTests(unittest.TestCase):
         self.assertIn('합계 미제공 또는 조회 실패', text)
         self.assertNotIn('private query', text)
         self.assertNotIn('클릭 0', text)
+        report['comparison'] = {'newPass': [], 'noLongerPass': [], 'canonicalChanges': [], 'uncomparableUrls': []}
+        self.assertIn('canonical 미제공 미기록', growth.format_report(report))
         report['site'] = 'https://other.example/'
         with self.assertRaises(ValueError): growth.format_report(report)
 

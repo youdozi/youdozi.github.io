@@ -12,7 +12,7 @@ from types import SimpleNamespace
 from urllib.parse import quote
 from zoneinfo import ZoneInfo
 
-from search_console import CONFIG, SITE, access_token, private_json
+from search_console import CONFIG, SITE, access_token
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / 'content/seo/core-articles.json'
@@ -142,40 +142,49 @@ def collect(token, selected, now, post=google_post, get=None):
     return report
 
 
+def index_status(inspection):
+    state = inspection.get('indexStatus', {})
+    return state if inspection.get('httpStatus') == 200 and isinstance(state, dict) and state.get('verdict') in ('PASS', 'FAIL', 'NEUTRAL', 'PARTIAL') else None
+
+
 def summarize(report):
     result = {}
     for kind in ('article', 'legacy'):
         rows = [r for r in report['urls'] if r['kind'] == kind]
         successful = [r for r in rows if r['inspection'].get('httpStatus') == 200]
+        known = [state for r in rows if (state := index_status(r['inspection'])) is not None]
         result[kind] = {'checked': len(rows),
                         'liveMatches': sum(bool(r['live'].get('matchesExpectedStaticRoute')) for r in rows),
                         'inspectionResponses': len(successful),
-                        'googlePass': sum(r['inspection']['indexStatus'].get('verdict') == 'PASS' for r in successful),
-                        'coverageStates': dict(Counter(r['inspection']['indexStatus'].get('coverageState', 'unspecified') for r in successful))}
+                        'googleKnown': sum(index_status(r['inspection']) is not None for r in rows),
+                        'googleUnknownOrError': sum(index_status(r['inspection']) is None for r in rows),
+                        'googlePass': sum(state.get('verdict') == 'PASS' for state in known),
+                        'coverageStates': dict(Counter(state.get('coverageState', 'unspecified') for state in known))}
     return result
 
 
 def compare(previous, current):
     before = {r['url']: r for r in previous['urls']}
     after = {r['url']: r for r in current['urls']}
-    if previous.get('site') != SITE or current.get('site') != SITE or before.keys() != after.keys():
+    if previous.get('site') != SITE or current.get('site') != SITE or before.keys() != after.keys() or len(before) != len(previous['urls']) or len(after) != len(current['urls']):
         raise ValueError('Compare snapshots for the same property and URL set')
     result = {'previousCheckedAt': previous['checkedAt'], 'currentCheckedAt': current['checkedAt'],
-              'newPass': [], 'noLongerPass': [], 'canonicalChanges': [], 'uncomparableUrls': [],
+              'newPass': [], 'noLongerPass': [], 'canonicalChanges': [], 'uncomparableUrls': [], 'canonicalUncomparableUrls': [],
               'performanceWindows': {'previousSnapshot': previous['windows']['current'],
                                      'currentSnapshot': current['windows']['current']},
               'note': 'Rolling windows can overlap; changes are observations, not causal effects.'}
     for url, row in after.items():
-        old, new = before[url]['inspection'], row['inspection']
-        if old.get('httpStatus') != 200 or new.get('httpStatus') != 200:
+        old, new = index_status(before[url]['inspection']), index_status(row['inspection'])
+        if old is None or new is None:
             result['uncomparableUrls'].append(url)
             continue
-        old, new = old['indexStatus'], new['indexStatus']
         if old.get('verdict') != 'PASS' and new.get('verdict') == 'PASS':
             result['newPass'].append(url)
         if old.get('verdict') == 'PASS' and new.get('verdict') != 'PASS':
             result['noLongerPass'].append(url)
-        if old.get('googleCanonical') != new.get('googleCanonical'):
+        if not old.get('googleCanonical') or not new.get('googleCanonical'):
+            result['canonicalUncomparableUrls'].append(url)
+        elif old['googleCanonical'] != new['googleCanonical']:
             result['canonicalChanges'].append({'url': url, 'before': old.get('googleCanonical'),
                                                 'after': new.get('googleCanonical')})
     return result
@@ -190,11 +199,11 @@ def format_report(report):
              'Google 저장 색인 상태와 당시 공개 응답입니다. 실시간 색인 검사가 아닙니다.']
     for kind, label in [('article', '핵심 글'), ('legacy', '과거 주소')]:
         s = summary[kind]
-        lines.append(f"{label}: {s['checked']}개 중 Google PASS {s['googlePass']}개 / API 응답 {s['inspectionResponses']}개 / 공개 경로 일치 {s['liveMatches']}개")
+        lines.append(f"{label}: {s['checked']}개 중 Google PASS {s['googlePass']}개 / 판정 미제공·오류 {s['googleUnknownOrError']}개 / API 응답 {s['inspectionResponses']}개 / 공개 경로 일치 {s['liveMatches']}개")
     for row in report['urls']:
         inspection = row['inspection']
-        state = inspection.get('indexStatus', {})
-        status = state.get('coverageState', '상태 미제공') if inspection.get('httpStatus') == 200 else '조회 실패·비교 불가'
+        state = index_status(inspection) or {}
+        status = state.get('coverageState', '상태 미제공·비교 불가') if inspection.get('httpStatus') == 200 else '조회 실패·비교 불가'
         lines.extend([f"\n{row['url']}", f"  색인: {status}",
                       f"  Google canonical: {state.get('googleCanonical', '미제공')}",
                       f"  마지막 크롤링: {state.get('lastCrawlTime', '미제공')}"])
@@ -208,7 +217,8 @@ def format_report(report):
             lines.append(f"\n{label} ({start}~{end}, PT): 합계 미제공 또는 조회 실패")
     comparison = report.get('comparison')
     if comparison:
-        lines.append(f"\n이전 조회 대비: PASS 전환 {len(comparison['newPass'])}, PASS 해제 {len(comparison['noLongerPass'])}, canonical 변경 {len(comparison['canonicalChanges'])}, 비교 불가 {len(comparison['uncomparableUrls'])}")
+        missing = len(comparison['canonicalUncomparableUrls']) if 'canonicalUncomparableUrls' in comparison else '미기록'
+        lines.append(f"\n이전 조회 대비: PASS 전환 {len(comparison['newPass'])}, PASS 해제 {len(comparison['noLongerPass'])}, canonical 변경 {len(comparison['canonicalChanges'])}, 비교 불가 {len(comparison['uncomparableUrls'])}, canonical 미제공 {missing}")
     lines.append('\n미반환 행은 노출 0이 아니며, 겹치는 28일 구간과 변경 전후 차이는 인과효과를 증명하지 않습니다.')
     return '\n'.join(lines)
 
@@ -231,9 +241,8 @@ def main():
             print(json.dumps({'mode': 'preview', 'articles': 20, 'legacyUrls': 10, 'urls': selected}, indent=2))
             return 0
         now = datetime.now(timezone.utc)
-        output = (args.output or CONFIG / f'search-growth-{now:%Y%m%dT%H%M%SZ}.json').expanduser().resolve()
-        if output.is_relative_to(ROOT) or output.exists():
-            raise ValueError('Use a new private snapshot outside the repository')
+        from search_engines import destination, save_new
+        output = destination(args.output or CONFIG / f'search-growth-{now:%Y%m%dT%H%M%SZ}.json')
         previous = json.loads(args.previous.expanduser().read_text()) if args.previous else None
         if previous is not None:
             # Validate the selected property and URL set before spending API quota.
@@ -243,9 +252,9 @@ def main():
         report = collect(token, selected, now)
         if previous is not None:
             report['comparison'] = compare(previous, report)
-        private_json(output, report)
+        save_new(output, report)
         print(json.dumps({'snapshot': str(output), 'windows': report['windows'], 'summary': report['summary']}, ensure_ascii=False, indent=2))
-        failed = any(r['inspection'].get('httpStatus') != 200 or not r['live'].get('matchesExpectedStaticRoute') for r in report['urls'])
+        failed = any(index_status(r['inspection']) is None or not r['live'].get('matchesExpectedStaticRoute') for r in report['urls'])
         failed |= any(v.get('httpStatus') != 200 for p in report['performance'].values() for v in p.values())
         return 1 if failed else 0
     except Exception as error:
