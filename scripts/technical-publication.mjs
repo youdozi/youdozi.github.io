@@ -8,7 +8,8 @@ import {pathToFileURL} from 'node:url';
 import {parse} from 'yaml';
 import {inspectTechnicalTranslations} from './check-technical-translations.mjs';
 import {technicalPublicationSchema} from '../src/lib/technical-publication-schema.ts';
-export const root=resolve(import.meta.dirname,'..');
+// Astro bundles this server-only module into dist; the build working directory remains the project root.
+export const root=resolve(process.cwd());
 export const manifestPath='.pipeline/technical-translations/batch-050/manifest.json';
 export const sha=raw=>createHash('sha256').update(raw).digest('hex');
 export function readArticle(raw){
