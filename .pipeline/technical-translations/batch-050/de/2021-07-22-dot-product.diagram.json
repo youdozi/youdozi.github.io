@@ -1,0 +1,34 @@
+{
+  "key": "2021-07-22-dot-product",
+  "language": "de",
+  "title": "Skalarprodukt von Arrays",
+  "description": "Jeden gemeinsamen Index auf ein Produkt abbilden und diese Produkte addieren. Die Grenzen der Aufgabe passen in int.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Gemeinsame Indizes erzeugen",
+        "0 bis length - 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "a[i] und b[i] lesen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Auf a[i] * b[i] abbilden"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Produkte addieren",
+        "int-Ergebnis zurückgeben"
+      ]
+    }
+  ]
+}

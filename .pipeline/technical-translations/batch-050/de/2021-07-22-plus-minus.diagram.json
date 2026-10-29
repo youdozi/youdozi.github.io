@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-22-plus-minus",
+  "language": "de",
+  "title": "Summe mit Vorzeichen",
+  "description": "Denselben Index in beiden Arrays lesen, das Vorzeichen anwenden und anschließend die vorzeichenbehafteten Werte addieren.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Indizes erzeugen",
+        "0 bis length - 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "absolutes[i] und signs[i] lesen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "true: Betrag beibehalten",
+        "false: Betrag negieren"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Abgebildete Werte addieren",
+        "int-Ergebnis zurückgeben"
+      ]
+    }
+  ]
+}

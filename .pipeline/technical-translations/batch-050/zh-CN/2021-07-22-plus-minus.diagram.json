@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-22-plus-minus",
+  "language": "zh-CN",
+  "title": "带符号数值求和",
+  "description": "读取两个数组相同下标处的元素，应用对应符号，再对带符号的数值求和。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "生成下标",
+        "从 0 到 length - 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "读取 absolutes[i] 和 signs[i]"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "true：保留绝对值",
+        "false：取绝对值的相反数"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "对转换后的各项求和",
+        "返回 int 结果"
+      ]
+    }
+  ]
+}

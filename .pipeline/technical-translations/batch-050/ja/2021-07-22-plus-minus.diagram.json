@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-22-plus-minus",
+  "language": "ja",
+  "title": "符号付きの値の合計",
+  "description": "両配列の同じ添字を読み、符号を適用してから、符号付きの値を合計します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "添字を生成",
+        "0 から length - 1 まで"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "absolutes[i] と signs[i] を読む"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "true：絶対値を維持",
+        "false：絶対値を負にする"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "変換した項を合計",
+        "int の結果を返す"
+      ]
+    }
+  ]
+}
