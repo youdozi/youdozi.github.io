@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import {readFile,readdir} from 'node:fs/promises';
+import {checkTechnicalPublications} from '../../scripts/technical-publication.mjs';
 import extraText from './localized-ui.json' with {type:'json'};
 import {nativeLanguages,translationLanguages,localeInfo,type Language,type NativeLanguage} from './locales';
 import {translatedEdition,validateTranslationSource} from './translation-schema';
@@ -12,7 +13,7 @@ export type Entry = {
   title: string; language: Language; translationKey: string; slug: string; kind: 'post' | 'digest';
   publishedAt: Date; updatedAt?: Date; categories: string[]; tags: string[]; description: string; url: string;
   reviewStatus?: 'revised' | 'source-audited' | 'example';
-  legacyUrl?: string; legacySource?: string; post?: CollectionEntry<'posts'>; digest?: CollectionEntry<'digests'>;
+  legacyUrl?: string; legacySource?: string; post?: CollectionEntry<'posts'> | CollectionEntry<'technicalTranslations'>; digest?: CollectionEntry<'digests'>;
   renewal?: CollectionEntry<'renewals'>;
   translation?: CollectionEntry<'translations'>;
   renewalEdition?: CollectionEntry<'renewals'>['data']['editions']['en']; renewalFocus?:string;
@@ -60,6 +61,18 @@ export async function entries(includeExamples = false): Promise<Entry[]> {
       validateTranslationSource(t,renewal.data,await readFile(`src/content/renewals/${t.renewalId}.json`,'utf8'));
       const edition=translatedEdition(t,renewal.data);
       result.push({title:edition.title,language:t.language,translationKey:`renewal-${t.renewalId}`,slug:renewal.data.slug,kind:'digest',publishedAt:new Date(t.publishedAt),updatedAt:new Date(t.updatedAt),categories:['dev','digest'],tags:renewal.data.tags,description:edition.claims[0].text,url:`/${t.language}/digest/${renewal.data.slug}/`,renewal,translation,renewalEdition:edition,renewalFocus:t.reviewFocus});
+    }
+    const technical = await checkTechnicalPublications();
+    if(technical.approvedEditions){
+      const approved=new Map(technical.records.map(record=>[record.path,record]));
+      for(const post of await getCollection('technicalTranslations')){
+        const d=post.data;
+        const record=approved.get(`src/content/technical-translations/${d.language}/${d.translationKey}.md`);
+        if(!record || post.body!==record.body)throw new Error('Technical collection differs from validated publication');
+        result.push({title:d.title,language:d.language,translationKey:d.translationKey,slug:d.routeSlug,kind:'post',
+          publishedAt:new Date(d.publishedAt),updatedAt:new Date(d.updatedAt),categories:d.categories,tags:d.tags,
+          description:d.description,url:`/${d.language}/posts/${d.routeSlug}/`,post});
+      }
     }
     const urls = new Set<string>();
     const translationKeys = new Set<string>();

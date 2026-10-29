@@ -70,7 +70,7 @@ async function command(command,args,cwd){
 
 export async function withSnapshot(base,work){
   const actual=await realpath(base);
-  const protectedPaths=['src/content','.pipeline/translations','dist'];
+  const protectedPaths=['src/content','.pipeline/translations','.pipeline/technical-translations','dist'];
   const before=await fingerprint(actual,protectedPaths);
   const directory=await mkdtemp(join(tmpdir(),'youdozi-translation-preview-'));
   const sandbox=join(directory,'site');

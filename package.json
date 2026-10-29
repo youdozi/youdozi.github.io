@@ -15,7 +15,7 @@
     "preview": "astro preview",
     "check:browser-isolation": "node scripts/check_browser_isolation.mjs",
     "audit:measurement": "python3 -B scripts/measurement_audit.py",
-    "test": "node --test scripts/test-site.mjs scripts/test-translations.mjs scripts/test-translation-release.mjs scripts/test-translation-preview.mjs scripts/test-translation-review-packet.mjs scripts/test-reader-markdown.mjs scripts/test-related.mjs scripts/test-algorithm-guide.mjs scripts/test-spring-guide.mjs scripts/test-publication-examples.mjs scripts/test-technical-guides.mjs scripts/test-core-articles.mjs scripts/test-author.mjs scripts/test-article-navigation.mjs scripts/test-article-learning.mjs scripts/test-comments.mjs scripts/test-code-tools.mjs scripts/test-article-images.mjs scripts/test-search.mjs scripts/test-page-metadata.mjs scripts/test-browser-isolation.mjs scripts/test-listing-metadata.mjs scripts/test-discovery.mjs scripts/test-technical-translations.mjs",
+    "test": "node --test scripts/test-site.mjs scripts/test-translations.mjs scripts/test-translation-release.mjs scripts/test-translation-preview.mjs scripts/test-translation-review-packet.mjs scripts/test-reader-markdown.mjs scripts/test-related.mjs scripts/test-algorithm-guide.mjs scripts/test-spring-guide.mjs scripts/test-publication-examples.mjs scripts/test-technical-guides.mjs scripts/test-core-articles.mjs scripts/test-author.mjs scripts/test-article-navigation.mjs scripts/test-article-learning.mjs scripts/test-comments.mjs scripts/test-code-tools.mjs scripts/test-article-images.mjs scripts/test-search.mjs scripts/test-page-metadata.mjs scripts/test-browser-isolation.mjs scripts/test-listing-metadata.mjs scripts/test-discovery.mjs scripts/test-technical-translations.mjs scripts/test-technical-publication.mjs",
     "test:python": "python3 -m unittest discover -s scripts -p 'test*.py' -v",
     "generate:digest": "python3 scripts/generate_digest.py",
     "generate:digest:dry": "python3 scripts/generate_digest.py --dry-run",
@@ -24,12 +24,14 @@
     "audit:archive": "python3 -B scripts/audit_archive.py",
     "check:digests": "python3 -B scripts/check_digests.py && npm run check:archive && npm run check:translations",
     "check:archive": "python3 -B scripts/archive_renewal.py check",
-    "check:translations": "node scripts/translations.mjs check && npm run check:translation-release && npm run check:technical-translations",
+    "check:translations": "node scripts/translations.mjs check && npm run check:translation-release && npm run check:technical-translations && npm run check:technical-publications",
     "check:translation-release": "node scripts/translation-release.mjs check --release .pipeline/translations/releases/spanish-full-031.json && node scripts/translation-release.mjs check --release .pipeline/translations/releases/multilingual-full-032.json",
     "prepare:translations": "node scripts/translations.mjs prepare",
     "preview:indexnow": "python3 -B scripts/indexnow.py",
     "check:technical-translations": "node scripts/check-technical-translations.mjs",
-    "review:technical-translations": "node scripts/technical-translation-review.mjs"
+    "review:technical-translations": "node scripts/technical-translation-review.mjs",
+    "check:technical-publications": "node scripts/technical-publication.mjs check",
+    "check:technical-preview": "node scripts/technical-translation-preview.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "0.4.5",
