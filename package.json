@@ -13,7 +13,9 @@
     "check:translation-preview": "node scripts/translation-preview.mjs",
     "check:translation-review": "node scripts/translation-review-packet.mjs",
     "preview": "astro preview",
-    "test": "node --test scripts/test-site.mjs scripts/test-translations.mjs scripts/test-translation-release.mjs scripts/test-translation-preview.mjs scripts/test-translation-review-packet.mjs scripts/test-reader-markdown.mjs scripts/test-related.mjs scripts/test-algorithm-guide.mjs scripts/test-spring-guide.mjs scripts/test-publication-examples.mjs scripts/test-technical-guides.mjs scripts/test-core-articles.mjs scripts/test-author.mjs scripts/test-article-navigation.mjs scripts/test-comments.mjs scripts/test-code-tools.mjs scripts/test-article-images.mjs scripts/test-search.mjs scripts/test-page-metadata.mjs scripts/test-discovery.mjs",
+    "check:browser-isolation": "node scripts/check_browser_isolation.mjs",
+    "audit:measurement": "python3 -B scripts/measurement_audit.py",
+    "test": "node --test scripts/test-site.mjs scripts/test-translations.mjs scripts/test-translation-release.mjs scripts/test-translation-preview.mjs scripts/test-translation-review-packet.mjs scripts/test-reader-markdown.mjs scripts/test-related.mjs scripts/test-algorithm-guide.mjs scripts/test-spring-guide.mjs scripts/test-publication-examples.mjs scripts/test-technical-guides.mjs scripts/test-core-articles.mjs scripts/test-author.mjs scripts/test-article-navigation.mjs scripts/test-comments.mjs scripts/test-code-tools.mjs scripts/test-article-images.mjs scripts/test-search.mjs scripts/test-page-metadata.mjs scripts/test-browser-isolation.mjs scripts/test-discovery.mjs",
     "test:python": "python3 -m unittest discover -s scripts -p 'test*.py' -v",
     "generate:digest": "python3 scripts/generate_digest.py",
     "generate:digest:dry": "python3 scripts/generate_digest.py --dry-run",
@@ -35,6 +37,7 @@
   "devDependencies": {
     "@astrojs/check": "0.9.12",
     "@types/node": "24.19.2",
+    "playwright-core": "1.64.1",
     "typescript": "~5.9.3"
   }
 }

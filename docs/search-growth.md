@@ -105,3 +105,65 @@ PR #77(탐색 구조), #78(번역 준비·게시 전 검사), #79(검색엔진 �
 통합 일반 상태에서는 423개 글·479개 사이트맵 URL·공개 번역 36편을 확인했습니다. 318개 테스트 fixture를 더한 상태는 741개 글·797개 사이트맵 URL이며, 8개 언어의 모든 공개 글이 각 언어 홈에서 두 번 이내의 HTML 링크 이동으로 도달했습니다. 두 상태 모두 빈 noindex 목록으로 보내는 공개 링크는 0개입니다. fixture를 제거한 뒤 일반 빌드와 원래 공개 파일을 다시 확인했습니다. 미리보기 수치는 실제 배포 수치가 아닙니다.
 
 Python 209개·Node 74개, Astro 64개 파일 검사, 일반·확장 빌드, 두 상태의 브라우저 검사 총 72개를 수행했습니다. 번역 318편의 주장·후속 사실 738개, 검색·최근 30개 RSS 정책·사이트맵·53개 주제의 8개 언어 상호 링크도 대조했습니다. 새 언어 의미 검토나 외부 출처의 사실 재검증을 추가한 것은 아닙니다. 정확한 PR 커밋과 검사 범위는 [통합 검증 기록](../.pipeline/content-reviews/integration-batch-034.json)을 따릅니다. 이후 PR 원고·코드가 바뀌면 해당 기록을 새 버전의 검증으로 간주하지 않습니다.
+
+## 트래픽 급증 조사와 검증 방문 분리
+
+`measurement_audit.py`는 Search Console 클릭과 GA4 세션을 같은 실제 시간 구간에서 읽고, 검토 페이지와 의심 규칙에 맞은 `page_view` 이벤트를 별도 보고합니다. 기본 실행은 미리보기이며 인증 정보·네트워크·출력 파일을 사용하지 않습니다.
+
+```sh
+.venv-search-console/bin/python scripts/measurement_audit.py \
+  --start 2026-10-24 --end 2026-10-26 \
+  --segment-start 2026-10-25 --segment-end 2026-10-26
+
+# 검토한 비공개 규칙을 지정해 읽기 전용 조회 결과를 새 파일로 저장
+.venv-search-console/bin/python scripts/measurement_audit.py --live \
+  --start 2026-10-24 --end 2026-10-26 \
+  --segment-start 2026-10-25 --segment-end 2026-10-26 \
+  --rules ~/.config/youdozi-blog-review/traffic-review-rules.json \
+  --output ~/.config/youdozi-blog-review/measurement-audit-new.json
+
+# 저장된 결과만 읽기: API 조회와 파일 쓰기 없음
+.venv-search-console/bin/python scripts/measurement_audit.py \
+  --report ~/.config/youdozi-blog-review/measurement-audit-new.json
+```
+
+`--start/--end`는 GSC의 PT 달력 날짜이며 최대 7일을 허용합니다. PT 자정 경계를 GA 속성의 한국 시간으로 변환해 `dateHour` 필터를 만듭니다. 예를 들어 PT 10월 24~26일은 한국 시간 10월 24일 16시부터 27일 16시 직전까지입니다. DST 경계는 UTC 시간으로 순회하며 하루를 항상 24시간으로 가정하지 않습니다. `--segment-start/--segment-end`는 별도로 지정하는 GA 속성 시간대의 달력 날짜입니다. [GSC 시간·행 범위](https://developers.google.com/webmaster-tools/v1/searchanalytics/query)와 [GA 세션 집계](https://support.google.com/analytics/answer/9191807)를 참고합니다.
+
+GSC는 `final` 웹 검색 합계·날짜·페이지 행을 요청합니다. 클릭과 GA 세션은 다른 지표이고, GSC는 과거 canonical 주소로 집계할 수 있으며 페이지 행은 일부가 생략될 수 있습니다. API 오류나 반환되지 않은 행을 0으로 만들지 않습니다. Bing은 `GetUserSites`가 돌려준 실제 등록 주소로 `GetRankAndTrafficStats`를 한 번 요청합니다. 빈 배열은 클릭 0이 아니라 실적 비교 불가이며, API 자체의 날짜·검색 범위를 GA 시간 구간과 같다고 가정하지 않습니다. [Bing 공식 실적 API](https://learn.microsoft.com/en-us/dotnet/api/microsoft.bing.webmaster.api.interfaces.iwebmasterapi.getrankandtrafficstats?view=bing-webmaster-dotnet)
+
+분리 보고서는 원본 조회 → `/review`·`/review/` 조회 → 그 외 조회 → 의심 규칙 일치 → 나머지 참고 구간을 표시하고 두 분할 합계를 검산합니다. 단위는 `page_view` 이벤트 수입니다. 페이지별로 겹칠 수 있는 사용자·세션 수를 빼서 순방문자를 계산하지 않습니다. 규칙 파일을 지정하지 않으면 의심 규칙을 자동 생성하지 않습니다. 규칙 파일은 다음 구조를 따르며, 실제 검토한 분·출처·경로를 저장소 밖에 보관합니다.
+
+```json
+{
+  "schemaVersion": 1,
+  "property": "properties/280207087",
+  "timeZone": "Asia/Seoul",
+  "rules": [{
+    "id": "example-reviewed-overlap",
+    "classification": "suspected",
+    "reason": "검토한 게시 시점·경로 일치. 방문 주체는 미확인",
+    "sourceMedium": "bing / organic",
+    "minutes": ["202610250000"],
+    "paths": ["/en/digest/example/"]
+  }]
+}
+```
+
+이는 파일 형식의 예시입니다. 국가·브라우저·게시 시점이 겹친다는 이유만으로 사람/봇을 확정하지 않으며, 나머지 구간도 검증된 실제 독자로 표시하지 않습니다. 과거 API 결과·규칙·보고서는 덮어쓰지 않고 새 비공개 JSON(600)으로 저장합니다. GA 필터·이벤트·속성 설정을 변경하거나 원본 데이터·기존 파일을 삭제하지 않습니다. 이 절차는 예약 조회·색인 요청·게시 기능을 추가하지 않습니다.
+
+## 운영 Analytics에 더하지 않는 브라우저 검증
+
+간단한 공개 페이지 확인은 다음 명령을 사용합니다. 기본 모드는 페이지를 열기 전에 GA 관련 네트워크 차단을 설치합니다.
+
+```sh
+node scripts/check_browser_pages.mjs \
+  --url https://youdozi.github.io/en/ \
+  --url https://youdozi.github.io/ko/
+npm run check:browser-isolation
+```
+
+복잡한 검사는 `scripts/browser/isolated-context.mjs`의 `isolatedContext(browser, options)`로 만든 Playwright 컨텍스트를 사용합니다. 모든 페이지·팝업에 같은 경로 차단을 적용하고 서비스 워커를 차단합니다. 기본 모드는 Google 태그·수집 도메인과 알려진 수집 경로·GA 형태의 프록시 요청을 막습니다. 쿠키·원시 요청 URL·본문·개인 식별자를 결과에 보관하지 않고 차단 횟수만 기록합니다. 임의로 이름을 바꾼 모든 외부 수집 서버를 탐지하는 도구는 아닙니다.
+
+실제 Google 태그 생성 여부를 검사해야 할 때만 `isolatedContext(browser, options, 'tag-verification')`을 사용합니다. 이 사이트의 정확한 HTTPS 태그 라이브러리만 허용하며, 생성된 이벤트의 전송은 계속 차단합니다. 페이지별 route로 공통 차단을 덮어쓰지 않습니다. [Playwright 요청 차단과 서비스 워커 제한](https://playwright.dev/docs/api/class-browsercontext#browser-context-route)을 따릅니다.
+
+CI의 로컬 브라우저 검사는 Google 서버에 접속하지 않고 일반 콘텐츠 요청이 통과하는 동안 GET·POST·프록시 본문·비콘·이미지·스크립트·워커·팝업의 수집 요청이 테스트 서버에 도달하지 않는지 확인합니다. 설치된 Chrome/Chromium을 사용하며 `CHROME_PATH`로 실행 파일을 지정할 수 있습니다. `playwright-core`만 설치하며 브라우저를 자동 다운로드하거나 사용자 브라우저 프로필을 재사용하지 않습니다.

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-29T03:28:23.475741+00:00",
+  "baseCommit": "101b20569a9ff0fd7981618909ccb4ba354d8ef1",
+  "purpose": "Read-only, time-aligned search/GA observations; immutable private traffic sensitivity reports; mandatory browser telemetry isolation.",
+  "scope": {
+    "liveReadOnlyAPIs": [
+      "GA4 Data",
+      "Analytics Admin property/stream validation",
+      "GSC final web search",
+      "Bing GetUserSites/GetRankAndTrafficStats"
+    ],
+    "siteAnalyticsSettingsModified": false,
+    "applicationTrackingCodeModified": false,
+    "publishedArticlesChanged": 0,
+    "newTranslationPublications": 0,
+    "productionDataSentByNewBrowserChecks": false,
+    "privateReportAndRulesStoredOutsideAllWorktrees": true,
+    "privateTrafficCountsCommitted": false
+  },
+  "analysisPolicy": {
+    "timeAlignment": "PT GSC calendar boundaries mapped to actual UTC hours and then GA property timezone; handle 23/25-hour DST days.",
+    "segmentation": "Separate page_view event queries for raw, review paths, non-review, exact suspected minute/source/path rules, and sensitivity remainder; arithmetic checks.",
+    "interpretation": "Rule matches remain suspected; remainder is not a verified human audience. Do not subtract overlapping user/session counts.",
+    "providerUnknowns": "API failures, missing totals and empty Bing stats remain unknown; Bing registered URL is read before its stats query.",
+    "sideEffects": "New private snapshots only; no settings mutation, indexing request or publication."
+  },
+  "browserPolicy": {
+    "runtime": "Pinned playwright-core 1.64.1 with installed Chrome/Chromium; fresh temporary browser contexts.",
+    "default": "Block Google tag/vendor hosts, known collection paths and GA-shaped request payloads before navigation; block service workers.",
+    "tagVerification": "Only exact HTTPS GET library for this measurement ID; collection remains blocked.",
+    "privacy": "Record counters only; no raw telemetry payloads, request URLs, cookies or identifiers.",
+    "localProof": {
+      "modes": 2,
+      "collectionRequestsBlockedPerMode": 9,
+      "telemetryRequestsReceivedByFixture": 0,
+      "cases": [
+        "GET",
+        "POST",
+        "proxy payload",
+        "beacon",
+        "image",
+        "script",
+        "worker",
+        "popup",
+        "external GA collection"
+      ]
+    },
+    "liveReadOnlySmoke": {
+      "pages": 2,
+      "normalDisplay": "passed",
+      "tagBlockedInEachContext": true
+    },
+    "liveTagProof": {
+      "passed": true,
+      "actualGoogleTagLoaded": true,
+      "collectionRequestsInterceptedBeforeTransmission": true,
+      "mode": "tag-verification",
+      "serviceWorkers": "block",
+      "blocked": 2,
+      "blockedCollection": 2,
+      "allowedTag": 1
+    }
+  },
+  "validation": {
+    "pythonTests": 257,
+    "nodeTests": 112,
+    "newPythonTests": 10,
+    "newNodeTests": 5,
+    "astroCheck": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "normalBuild": "passed",
+    "publicArticles": 423,
+    "sitemapURLs": 479,
+    "publishedTranslations": 36
+  },
+  "limits": [
+    "No actor identity is established from aggregated traffic.",
+    "Bing performance comparison remains unavailable if its API returns an empty array.",
+    "Unknown custom telemetry proxies are not universally discoverable by a URL/payload classifier.",
+    "Historical events cannot be retroactively blocked by future browser isolation."
+  ],
+  "files": {
+    "AGENTS.md": "060509816b48eccdeb420f9de193c0baec224b7be1241db8b14a33368c59fb83",
+    "README.md": "74277bc1bb3c5b9cc3d40e3275ac6aa406eea57054c6ea3e262a17c7b32af612",
+    "docs/search-growth.md": "82d2f1ad3e8e855e60944900f0754fd3690d281dc67b05ec0cc302e759cf0814",
+    "package.json": "1e9a86e1fc5d1a570edc56b78358b06134c0249dc899d4d0653439c9d39e0008",
+    "package-lock.json": "5f6edb73c23ff0137a774bf690862ff62c0589927d5d8d16e2a6884f15b50056",
+    ".github/workflows/site-checks.yml": "25869ba31e78727ff3220f6f0058c9aa405d0a8541a81e35aebc7d2c53f0876b",
+    "scripts/measurement_audit.py": "5d33663d650966201b500d15200bff0bc18b3fd73b2b663601c31c0010da1598",
+    "scripts/test_measurement_audit.py": "e1bc9e9bb42d3d76b14e08148a1c948b4d860e3a5e10f225e9bff451c60332ce",
+    "scripts/browser/isolated-context.mjs": "cdc505aa40b215e1077978d61d5dd0cd8e15c8b7c1b0ba0fbaaa6eea996d36d9",
+    "scripts/browser/chrome.mjs": "83161d87067806678bb5075a65522085e311c1dd4d1e5088c5efc3c59fc5ea2b",
+    "scripts/check_browser_isolation.mjs": "c1009880879d287a10090ecf2ebc2bf6172b511187d4c315b135dac7796c8830",
+    "scripts/check_browser_pages.mjs": "b776dfb85b8fe21f4d22723f1c8b4f202443a601b59eb08b0395fde987076fd3",
+    "scripts/test-browser-isolation.mjs": "838e3dbc2aaad2b30edd8b66f672eb26417f629ca13905c77d62f705308dd828"
+  }
+}
