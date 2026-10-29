@@ -109,11 +109,11 @@
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/fr/2023-09-20-linux-shellscript-function-error.diagram.json",
-        "sha256": "4dd64c82a870fbe8203caf078eb396a8a7f259e75f431b3bc7e894a814358ee7"
+        "sha256": "916a0b41248fe67b3b5cca5a18c13be3a62040f04be470087fc41a92339fcd71"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-052/fr/2023-09-20-linux-shellscript-function-error.svg",
-        "sha256": "5431de4737a2fdd076e3efd423ddcaf5f9717a286add920db182956fc5b13d29"
+        "sha256": "326adf9e5dd38816eb4a7e3138f846e4692ef9923fe570d324b0fcc91876a203"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
@@ -305,15 +305,15 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/es/2023-11-17-linux-shellscript-version-compare.md",
-        "sha256": "d1f7defa960ebc0f534593495d7769ee271797abefe9b62725d1e1ca9085fc64"
+        "sha256": "c14040cadfc35bedb44bb556f918593c1f679f36efecca6f0fa6c0537b1e4246"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/es/2023-11-17-linux-shellscript-version-compare.diagram.json",
-        "sha256": "4f668a4da6f5e28052b2f5cc974cd0cb8cffb314284a95c3c34e99e97ea0a155"
+        "sha256": "2e696dd9dd563815be014b01f78a224bd0d74fa489a60ce5fa3df8f4d2996dd4"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-052/es/2023-11-17-linux-shellscript-version-compare.svg",
-        "sha256": "cc783c31e4ef49eef20168e13d85b28f672429ff3bd99852bda234fcf1971ea6"
+        "sha256": "dd939daaf2137dc13504ea94c7a7c1a8e8d27826f6a1e20af96d593f406d7a8a"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",

@@ -2,7 +2,7 @@
   "key": "2023-11-17-linux-shellscript-version-compare",
   "language": "es",
   "title": "Comparar versiones numéricas",
-  "description": "Valida el contrato de entrada exclusivamente numérica, completa los componentes ausentes con cero y detente en el primer par diferente. Un resultado menor que también es una comparación realizada con éxito.",
+  "description": "Valida el contrato de entrada exclusivamente numérica, completa los componentes ausentes con cero y detente en el primer par diferente. Un resultado «menor que» también indica que la comparación se ha realizado correctamente.",
   "steps": [
     {
       "kind": "condition",

@@ -1,7 +1,7 @@
 {
   "key": "2023-09-20-linux-shellscript-function-error",
   "language": "fr",
-  "title": "Choisir le Shell et les arguments",
+  "title": "Choisir le Shell, garder les arguments",
   "description": "L’interpréteur invoqué analyse la fonction. L’exemple vérifie qu’un seul argument est fourni et préserve les espaces et les caractères génériques grâce aux guillemets.",
   "steps": [
     {

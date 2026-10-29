@@ -13,9 +13,9 @@ Rechaza `v1.2`, `1.2-rc1` y `1.2+build`. Para la precedencia de versiones prelim
 
 ## Flujo del procesamiento
 
-![Valida el contrato de entrada exclusivamente numérica, completa los componentes ausentes con cero y detente en el primer par diferente. Un resultado menor que también es una comparación realizada con éxito.](2023-11-17-linux-shellscript-version-compare.svg)
+![Valida el contrato de entrada exclusivamente numérica, completa los componentes ausentes con cero y detente en el primer par diferente. Un resultado «menor que» también indica que la comparación se ha realizado correctamente.](2023-11-17-linux-shellscript-version-compare.svg)
 
-Valida el contrato de entrada exclusivamente numérica, completa los componentes ausentes con cero y detente en el primer par diferente. Un resultado menor que también es una comparación realizada con éxito.
+Valida el contrato de entrada exclusivamente numérica, completa los componentes ausentes con cero y detente en el primer par diferente. Un resultado «menor que» también indica que la comparación se ha realizado correctamente.
 
 ## Un script de comparación ejecutable
 
