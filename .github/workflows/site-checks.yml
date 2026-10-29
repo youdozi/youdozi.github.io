@@ -81,6 +81,8 @@ jobs:
         run: python3 -B scripts/check_jvm_runtime_examples.py --part jdk
       - name: Migration regression tests
         run: npm test
+      - name: Verify local browser checks block Analytics collection
+        run: npm run check:browser-isolation
       - name: Check Astro types and content schemas
         run: npm run check
       - name: Build and check generated pages, assets and internal links
