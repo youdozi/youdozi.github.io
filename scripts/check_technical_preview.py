@@ -88,7 +88,7 @@ def check(base):
         row = indexes[lang].get(url)
         if not row or row['title'] != record['title'] or row['description'] != record['description']:
             raise ValueError('Technical search metadata changed')
-        visible = normalize(' '.join(body.text))
+        visible = normalize(''.join(body.text))
         # readerMarkdown leaves inline Markdown in the search index; compare its prose with the same stripping.
         search = normalize(re.sub(r'(?<!!)\[([^\]\n]*)\]\([^)]+\)', r'\1', row['content']).replace('**', '').replace('`', '').replace('|', ' '))
         for paragraph in expected_paragraphs(record['body']):
