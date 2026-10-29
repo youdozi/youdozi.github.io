@@ -1,0 +1,34 @@
+{
+  "key": "2021-07-22-dot-product",
+  "language": "fr",
+  "title": "Produit scalaire de tableaux",
+  "description": "Associez à chaque indice commun un produit, puis additionnez ces produits. Les limites de l’exercice permettent d’utiliser int.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Générer les indices communs",
+        "De 0 à length - 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lire a[i] et b[i]"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Associer a[i] * b[i]"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Additionner les produits",
+        "Renvoyer le résultat int"
+      ]
+    }
+  ]
+}

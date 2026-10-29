@@ -69,6 +69,23 @@ class TranslationPreviewTests(unittest.TestCase):
             path.write_text(path.read_text().replace('fixture-1/', 'fixture-30/'))
             with self.assertRaisesRegex(ValueError, 'latest 30'): check(base)
 
+    def test_mixed_technical_and_news_feed_uses_explicit_per_edition_dates(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base = Path(folder); self.fixture(base)
+            path = base/'src/content/technical-translations/es/2026-10-01-tech.md'
+            path.parent.mkdir(parents=True)
+            data = {'state': 'approved', 'kind': 'post', 'language': 'es', 'routeSlug': '2026-10-01-tech', 'updatedAt': '2026-10-29T00:00:00+00:00'}
+            path.write_text('---\n'+json.dumps(data)+'\n---\nTechnical body')
+            index = base/'dist/es/search-index.json'; rows = json.loads(index.read_text())
+            rows.append({'url': '/es/posts/2026-10-01-tech/', 'title': 'Technical title', 'content': 'Technical body'})
+            index.write_text(json.dumps(rows))
+            feed = base/'dist/es/feed.xml'; content = feed.read_text()
+            tech = '<item><link>https://youdozi.github.io/es/posts/2026-10-01-tech/</link><description>Technical body</description></item>'
+            feed.write_text(content.replace('<channel>', '<channel>'+tech))
+            self.assertEqual(check(base)['translationRSSPoliciesChecked'], 1)
+            feed.write_text(content.replace('</channel>', tech+'</channel>'))
+            with self.assertRaisesRegex(ValueError, 'latest 30'): check(base)
+
     def test_missing_sitemap_or_counterpart_alternate_is_rejected(self):
         for surface in ('sitemap', 'alternate'):
             with self.subTest(surface=surface), tempfile.TemporaryDirectory() as folder:

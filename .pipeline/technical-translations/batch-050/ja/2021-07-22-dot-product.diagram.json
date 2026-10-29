@@ -1,0 +1,34 @@
+{
+  "key": "2021-07-22-dot-product",
+  "language": "ja",
+  "title": "配列の内積",
+  "description": "共通の添字ごとに要素の積を求め、その積を合計します。問題の制約では int に収まります。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "共通の添字を生成",
+        "0 から length - 1 まで"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "a[i] と b[i] を読む"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "a[i] * b[i] に変換"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "積を合計",
+        "int の結果を返す"
+      ]
+    }
+  ]
+}

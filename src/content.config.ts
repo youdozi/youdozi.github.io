@@ -1,3 +1,5 @@
+import {readdirSync} from 'node:fs';
+import { technicalPublicationSchema } from './lib/technical-publication-schema';
 import { digestSchema } from './lib/digest-schema';
 import { translationSchema } from './lib/translation-schema';
 import { renewalSchema } from './lib/renewal-schema';
@@ -25,4 +27,9 @@ const renewals = defineCollection({
   schema: renewalSchema,
 });
 const translations = defineCollection({loader:glob({pattern:'*.json',base:'./src/content/translations'}),schema:translationSchema});
-export const collections = { posts, digests, renewals, translations };
+const technicalTranslations = defineCollection({
+  loader: readdirSync('src/content/technical-translations',{recursive:true}).some(path=>String(path).endsWith('.md'))
+    ? glob({pattern:'**/*.md',base:'./src/content/technical-translations'}) : async()=>[],
+  schema: technicalPublicationSchema,
+});
+export const collections = { posts, digests, renewals, translations, technicalTranslations };

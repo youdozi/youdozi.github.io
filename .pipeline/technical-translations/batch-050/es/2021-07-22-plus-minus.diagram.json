@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-22-plus-minus",
+  "language": "es",
+  "title": "Suma de valores con signo",
+  "description": "Lee el mismo índice en los dos arrays, aplica su signo y suma los valores con signo.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Generar índices",
+        "De 0 a length - 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Leer absolutes[i] y signs[i]"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "true: mantener el valor",
+        "false: negar el valor"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Sumar los términos",
+        "Devolver el resultado int"
+      ]
+    }
+  ]
+}

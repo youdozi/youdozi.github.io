@@ -1,0 +1,34 @@
+{
+  "key": "2021-07-22-dot-product",
+  "language": "zh-CN",
+  "title": "数组点积",
+  "description": "将每个共同下标映射为对应元素的乘积，再将这些乘积求和。题目的取值范围不会超出 int。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "生成共同下标",
+        "从 0 到 length - 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "读取 a[i] 和 b[i]"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "映射为 a[i] * b[i]"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "对乘积求和",
+        "返回 int 结果"
+      ]
+    }
+  ]
+}

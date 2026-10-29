@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Reject known internal editorial material in public articles, feeds and search data."""
+from technical_publications import technical_records
 import argparse
 from html.parser import HTMLParser
 import json
@@ -38,6 +39,7 @@ def policy(base=BASE):
         source = json.loads((base / f"src/content/renewals/{translation['renewalId']}.json").read_text())
         language = translation['language']; languages.add(language)
         advice[f"/{language}/digest/{source['slug']}/"] = translation['reviewFocus']
+    languages.update(record['language'] for record in technical_records(base).values())
     return labels, advice, languages
 
 

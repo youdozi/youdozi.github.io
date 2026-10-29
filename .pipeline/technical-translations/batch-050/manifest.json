@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "batchId": "technical-050",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "653c128616c8cb2adf887e6f752e63a774ab83db",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "AI self-review against complete English article and standalone target-language reading",
+    "independentReviewer": false,
+    "newExternalFactVerification": false,
+    "scope": "Title, description, every prose paragraph, table headers, image alt/caption and four diagram steps; code retained byte for byte. Existing source execution statements are translations, not claims of a new run."
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2021-07-22-dot-product",
+      "language": "zh-CN",
+      "translationKey": "2021-07-22-dot-product",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-dot-product.md",
+        "sha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/zh-CN/2021-07-22-dot-product.md",
+        "sha256": "eceb5c70f7671f49f937a110790152460598f8c4cccd8adf05aab662ae0630a2"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/zh-CN/2021-07-22-dot-product.diagram.json",
+        "sha256": "6a915db649fba58da6c3154dd8e6877d774f84c0e20be660fbdb04aba7909ef0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/zh-CN/2021-07-22-dot-product.svg",
+        "sha256": "f7bec5a8854b3b731296fcdeedf87d413ee419261ad920b8c460f66d36372d24"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "ja-2021-07-22-dot-product",
+      "language": "ja",
+      "translationKey": "2021-07-22-dot-product",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-dot-product.md",
+        "sha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/ja/2021-07-22-dot-product.md",
+        "sha256": "092530c40fbacc8d05b70655c6f57989c8c0b6c370215c95eefb06221f0099dc"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/ja/2021-07-22-dot-product.diagram.json",
+        "sha256": "5d2e2eb8881927c15376ec7da085ba8dd44a0801adeb0b32a4de407e46438364"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/ja/2021-07-22-dot-product.svg",
+        "sha256": "8c4b58387e5fc698f51eee5693e26419afe35132274f7f1eac853f2f4d89d872"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "de-2021-07-22-dot-product",
+      "language": "de",
+      "translationKey": "2021-07-22-dot-product",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-dot-product.md",
+        "sha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/de/2021-07-22-dot-product.md",
+        "sha256": "c09b38868d2d1c425953b27a8b458c1ab2576214c990b4261f3cc5347db989fe"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/de/2021-07-22-dot-product.diagram.json",
+        "sha256": "1b22d2e97458f0c08288c50cbdad1263dfb6903c1c87278b57ca93755d2c7b63"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/de/2021-07-22-dot-product.svg",
+        "sha256": "62e1a330bab7113757540efc1dc7cbed2bdf8600d9dd6b5650ead865eb3311d1"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "fr-2021-07-22-dot-product",
+      "language": "fr",
+      "translationKey": "2021-07-22-dot-product",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-dot-product.md",
+        "sha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/fr/2021-07-22-dot-product.md",
+        "sha256": "80a17f165371ef4bdf6159883e6db15d34487e0fecd0087156fba1caf89ed3ab"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/fr/2021-07-22-dot-product.diagram.json",
+        "sha256": "a35fcaae18509c9aea6abab99c57b9fda2ff2ff13e87ec7ce51412edc005b83b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/fr/2021-07-22-dot-product.svg",
+        "sha256": "a864d7ad93edff0185c05dec525fc244994e59a67522a43e901424acf7171e55"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "ru-2021-07-22-dot-product",
+      "language": "ru",
+      "translationKey": "2021-07-22-dot-product",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-dot-product.md",
+        "sha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/ru/2021-07-22-dot-product.md",
+        "sha256": "be560eb7fa9b0ef8c80e5b072b884ca0d4f188f7b0ca9f613bac6e1664c179de"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/ru/2021-07-22-dot-product.diagram.json",
+        "sha256": "eabba6880b43c07d0c97a92a43b5aacac897f6237669e6a7255ace1b2473be13"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/ru/2021-07-22-dot-product.svg",
+        "sha256": "3c688201f8a0ee4383c8ae1d8f29de795e129e0bf885fc3967a157ea78b50ae3"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "es-2021-07-22-dot-product",
+      "language": "es",
+      "translationKey": "2021-07-22-dot-product",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-dot-product.md",
+        "sha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/es/2021-07-22-dot-product.md",
+        "sha256": "82775aa2db8ae7f756d0cad4cb76a7760cb17237320c8e3d5d0a7c8300825036"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/es/2021-07-22-dot-product.diagram.json",
+        "sha256": "6b0108f03e997998c67cd935cb62a377431ab4ea85f562df30f50c87cd3e25d4"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/es/2021-07-22-dot-product.svg",
+        "sha256": "b53d955437fb1d6103b3589f33a360ddd2e6468351e7b263db863079f392bf5c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "zh-CN-2021-07-22-plus-minus",
+      "language": "zh-CN",
+      "translationKey": "2021-07-22-plus-minus",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-plus-minus.md",
+        "sha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/zh-CN/2021-07-22-plus-minus.md",
+        "sha256": "ddb89a65c7089c30994060bf4c0a92c19f3c2488be59133ac3bc99f340ab46ab"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/zh-CN/2021-07-22-plus-minus.diagram.json",
+        "sha256": "92cb79927bda08af34f71a7e3de0a51c49d3826a1d0a7d8f740effc8c94c5456"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/zh-CN/2021-07-22-plus-minus.svg",
+        "sha256": "cc11f3f8d3d3f7203a7d057918d81a6dd34950c0fb0b27a01edcb7cbfa770372"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "ja-2021-07-22-plus-minus",
+      "language": "ja",
+      "translationKey": "2021-07-22-plus-minus",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-plus-minus.md",
+        "sha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/ja/2021-07-22-plus-minus.md",
+        "sha256": "a29b193f789881396444b4f3c00174ffd38c0c3c136ccaeba471eb76eabd048c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/ja/2021-07-22-plus-minus.diagram.json",
+        "sha256": "d95061f785203845a32d7b91eb7605d65b5abe7e81a7cef34d02ec74fda06cd2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/ja/2021-07-22-plus-minus.svg",
+        "sha256": "b714f26ffd28f719ecd5c8ede2e58374db4c6485fb09e9e66c0c8069c9b273e6"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "de-2021-07-22-plus-minus",
+      "language": "de",
+      "translationKey": "2021-07-22-plus-minus",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-plus-minus.md",
+        "sha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/de/2021-07-22-plus-minus.md",
+        "sha256": "c63b7d5c321c56bdf3c54e26ff0e5010b68b239ec53be637788b95e36599cc0a"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/de/2021-07-22-plus-minus.diagram.json",
+        "sha256": "2691ef92b5e3a983bab30d055e86befd187e3d87c25f1db3aa000b9ac7bf2bbc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/de/2021-07-22-plus-minus.svg",
+        "sha256": "e1f31f6faf684b9f458e24cca321353087a59d7de03e1f6d27386a1ac5403381"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "fr-2021-07-22-plus-minus",
+      "language": "fr",
+      "translationKey": "2021-07-22-plus-minus",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-plus-minus.md",
+        "sha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/fr/2021-07-22-plus-minus.md",
+        "sha256": "ee6acde715691bd560feafa61b2b23a93814ce78f198087efe7ffc45c93f52db"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/fr/2021-07-22-plus-minus.diagram.json",
+        "sha256": "407800c0149cc7bb2f5cd4e0e98aa27f3853fab528c2403202e1fe051894b93a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/fr/2021-07-22-plus-minus.svg",
+        "sha256": "4d5cadbc05c00c69a26c8985ec3b4ed57622312d854445d2cffbb64a43481726"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "ru-2021-07-22-plus-minus",
+      "language": "ru",
+      "translationKey": "2021-07-22-plus-minus",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-plus-minus.md",
+        "sha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/ru/2021-07-22-plus-minus.md",
+        "sha256": "dfd0fbac3fb05aad6cd8b5a288febe9e82b97e71cf74d05c022ff7e5999c229d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/ru/2021-07-22-plus-minus.diagram.json",
+        "sha256": "60cf1949badf57a1ef2807709a729b0496fcf9c319603b4dc3214891f1445fc1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/ru/2021-07-22-plus-minus.svg",
+        "sha256": "10feffb5da41ee38947461d3558d7db8f8062be1073f3a27b5316d81ad3bbb21"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "es-2021-07-22-plus-minus",
+      "language": "es",
+      "translationKey": "2021-07-22-plus-minus",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-plus-minus.md",
+        "sha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-050/es/2021-07-22-plus-minus.md",
+        "sha256": "9dac66f6ce3c3ce05bc7f9789c529707a263a67c5abf0405f3e8ba26b8741c70"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-050/es/2021-07-22-plus-minus.diagram.json",
+        "sha256": "b461a449d758218a6f9deeb5acbb329820e262c03ab9930f6869ccf90dc08486"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-050/es/2021-07-22-plus-minus.svg",
+        "sha256": "9920c479b20ccca5d707e1a4a46bc2127f1790389105a278fd739be8748ca240"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    }
+  ]
+}
