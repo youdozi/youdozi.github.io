@@ -1,11 +1,13 @@
 import type { Entry, Language } from './content';
+import {nativeLanguages,translationLanguages} from './locales.ts';
+import {guideLocales,hasLocalizedGuide,localizedGuidesUpdatedAt} from './guide-locales.ts';
 import type { CategoryGuide } from './category-guide';
 import { algorithmGuide } from './algorithm-guide.ts';
 import { springGuide } from './spring-guide.ts';
 
 export const guideTerms = ['coding-test', 'springboot', 'linux', 'jdk', 'util', 'automation', 'jenkins', 'jekyll'] as const;
 const updatedAt = new Date('2026-10-27T08:19:59.645138+00:00');
-export const guideIndexCopy = {
+const nativeGuideIndexCopy = {
   en: { label: 'Guides', title: 'Technical Learning Guides',
     description: 'Choose a reading path through Java exercises, Spring Boot, shell automation, JDK features, development tools, reviewed publishing, Jenkins recovery and legacy Ruby diagnostics, with code and clearly scoped checks.',
     intro: 'Choose the problem you want to solve. Each path connects available articles with code and recorded checks. Read each article’s environment and limits before reusing an example.',
@@ -15,6 +17,7 @@ export const guideIndexCopy = {
     intro: '해결하려는 문제에서 시작하세요. 각 안내는 코드와 확인 범위가 있는 실제 글을 연결합니다. 예제를 적용하기 전에 해당 글의 실행 환경과 한계를 확인하세요.',
     home: '홈', open: '안내 읽기' },
 };
+export const guideIndexCopy = {...nativeGuideIndexCopy,...Object.fromEntries(Object.entries(guideLocales).map(([lang,copy])=>[lang,copy.index]))} as Record<Language,typeof nativeGuideIndexCopy.en>;
 const common = {
   en: { extra: 'More articles', home: 'Home', categories: 'Categories' },
   ko: { extra: '다른 글', home: '홈', categories: '카테고리' },
@@ -129,8 +132,12 @@ const paths = {
 export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGuide|undefined {
   if(term==='coding-test')return algorithmGuide(lang,all);
   if(term==='springboot')return springGuide(lang,all);
-  if((lang!=='en'&&lang!=='ko')||!Object.hasOwn(paths,term))return undefined;
-  const definition=paths[term as keyof typeof paths][lang];
+  if(!Object.hasOwn(paths,term))return undefined;
+  const native=paths[term as keyof typeof paths];
+  if(hasLocalizedGuide(lang)&&term!=='linux')return undefined;
+  const localized=hasLocalizedGuide(lang)?guideLocales[lang]:undefined;
+  const shell=localized?.linux;
+  const definition=shell?{...shell,groups:paths.linux.en.groups.map(group=>({...group,...shell.groups[group.id as keyof typeof shell.groups]}))}:native[lang as 'en'|'ko'];
   const items=all.filter(e=>e.language===lang&&e.kind==='post'&&(e.categories.includes(term)||crossCategoryKeys[term]?.includes(e.translationKey))&&e.reviewStatus!=='example'&&e.publishedAt.getTime()<=Date.now());
   if(!items.length)return undefined;
   const byKey=new Map(items.map(e=>[e.translationKey,e]));let position=1;
@@ -140,21 +147,21 @@ export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGui
   }).filter(group=>group.entries.length>0);
   const selected=new Set(sections.flatMap(s=>s.entries.map(e=>e.translationKey)));
   const extras=items.filter(e=>!selected.has(e.translationKey));const ordered=[...sections.flatMap(s=>s.entries),...extras];
-  return {...definition,...common[lang],lang,url:`/${lang}/categories/${term}/`,listAnchor:'articles',sections,extras,ordered,
-    updatedAt:new Date(Math.max(updatedAt.getTime(),...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
+  return {...definition,...(localized?.common||common[lang as 'en'|'ko']),lang,url:`/${lang}/categories/${term}/`,listAnchor:'articles',sections,extras,ordered,
+    updatedAt:new Date(Math.max(localized?localizedGuidesUpdatedAt.getTime():updatedAt.getTime(),...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
 }
 export function categoryGuideAlternates(term:string,all:Entry[]) {
-  return (['en','ko'] as const).flatMap(language=>{const guide=categoryGuide(term,language,all);return guide?[{language,url:guide.url}]:[];});
+  return ([...nativeLanguages,...translationLanguages]).flatMap(language=>{const guide=categoryGuide(term,language,all);return guide?[{language,url:guide.url}]:[];});
 }
 export function technicalGuides(lang:Language,all:Entry[]) {
   return guideTerms.flatMap(term=>{const guide=categoryGuide(term,lang,all);return guide?[guide]:[];});
 }
 export function guideIndexAlternates(all:Entry[]) {
-  return (['en','ko'] as const).filter(language=>technicalGuides(language,all).length>0).map(language=>({language,url:`/${language}/guides/`}));
+  return ([...nativeLanguages,...translationLanguages]).filter(language=>technicalGuides(language,all).length>0).map(language=>({language,url:`/${language}/guides/`}));
 }
-export function guideIndexStructuredData(lang:'en'|'ko',guides:CategoryGuide[],site:URL) {
+export function guideIndexStructuredData(lang:Language,guides:CategoryGuide[],site:URL) {
   const copy=guideIndexCopy[lang];const url=new URL(`/${lang}/guides/`,site).href;
-  const lastmod=new Date(Math.max(updatedAt.getTime(),...guides.map(g=>g.updatedAt.getTime()))).toISOString();
+  const lastmod=new Date(Math.max(hasLocalizedGuide(lang)?localizedGuidesUpdatedAt.getTime():updatedAt.getTime(),...guides.map(g=>g.updatedAt.getTime()))).toISOString();
   return [
     {'@context':'https://schema.org','@type':'CollectionPage','@id':url+'#collection',url,name:copy.title,description:copy.description,inLanguage:lang,dateModified:lastmod,mainEntity:{'@id':url+'#paths'}},
     {'@context':'https://schema.org','@type':'ItemList','@id':url+'#paths',numberOfItems:guides.length,itemListElement:guides.map((g,i)=>({'@type':'ListItem',position:i+1,name:g.title,url:new URL(g.url,site).href}))},

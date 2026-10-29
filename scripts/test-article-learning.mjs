@@ -33,3 +33,17 @@ test('named cross-category steps join their guide, with matching Korean and Engl
   assert.ok(learningPathCopy[language].previous&&learningPathCopy[language].next);
  }
 });
+
+test('all six translated editions use curated same-language neighbors without unpublished prerequisites',()=>{
+ for(const language of ['zh-CN','ja','de','fr','ru','es']){
+  const entries=[make(keys[3],language),make(keys[2],language),make(keys[0],language),make(keys[1],'en'),make(keys[1],language,{publishedAt:new Date('2999-01-01Z')})];
+  const middle=articleLearningPath(entries[1],entries);
+  assert.equal(middle.guide.url,`/${language}/categories/linux/`);
+  assert.equal(middle.position,2);assert.equal(middle.total,3);
+  assert.equal(middle.previous.url,entries[2].url);assert.equal(middle.next.url,entries[0].url);
+  assert.equal(articleLearningPath(entries[2],entries).previous,undefined);
+  assert.equal(articleLearningPath(entries[0],entries).next,undefined);
+  assert.ok(learningPathCopy[language].previous&&learningPathCopy[language].next);
+  assert.equal(articleLearningPath(entries[4],entries),undefined);
+ }
+});

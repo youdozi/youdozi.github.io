@@ -1,15 +1,15 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import {entries} from '../../../lib/content';
+import {entries,type Language} from '../../../lib/content';
 import {guideIndexAlternates,guideIndexCopy,guideIndexStructuredData,technicalGuides} from '../../../lib/technical-guides';
 export async function getStaticPaths(){return guideIndexAlternates(await entries()).map(a=>({params:{lang:a.language}}));}
-const lang=Astro.params.lang as 'en'|'ko';
+const lang=Astro.params.lang as Language;
 const all=await entries();const guides=technicalGuides(lang,all);const copy=guideIndexCopy[lang];
 ---
 <Base title={copy.title} description={copy.description} lang={lang} alternates={guideIndexAlternates(all)} structuredData={guideIndexStructuredData(lang,guides,Astro.site!)}>
   <header class="page-heading"><span class="eyebrow">{copy.label}</span><h1>{copy.title}<span class="count">{guides.length}</span></h1><p>{copy.intro}</p></header>
   <div class="guide-paths">
-    {guides.map(guide=><section class="guide-card"><p class="guide-count">{lang==='ko'?`${guide.ordered.length}편`:`${guide.ordered.length} ${guide.ordered.length===1?'article':'articles'}`}</p><h2><a href={guide.url}>{guide.title}</a></h2><p>{guide.description}</p><a class="guide-open" href={guide.url}>{copy.open} →</a></section>)}
+    {guides.map(guide=><section class="guide-card"><p class="guide-count">{lang==='ko'?`${guide.ordered.length}편`:lang==='en'?`${guide.ordered.length} ${guide.ordered.length===1?'article':'articles'}`:guide.ordered.length}</p><h2><a href={guide.url}>{guide.title}</a></h2><p>{guide.description}</p><a class="guide-open" href={guide.url}>{copy.open} →</a></section>)}
   </div>
 </Base>
 <style>
