@@ -23,6 +23,27 @@
 
 `--report`는 저장된 결과를 네트워크·인증·파일 쓰기 없이 읽습니다. URL별 색인 상태·Google canonical·마지막 크롤링, 사이트 전체 실적과 저장된 비교 결과를 텍스트로 표시합니다. 검색어 행은 출력하지 않으며 미제공 값을 0으로 바꾸지 않습니다. 조회 시각을 함께 표시하므로 과거 결과를 현재 상태로 해석하지 않습니다. 다른 조회 옵션과 함께 사용할 수 없습니다.
 
+### 주제별 주소 전환 보고서
+
+`scripts/migration_report.py`는 이미 저장한 스냅샷만 읽어 핵심 10개 주제의 영문·한글·과거 주소를 함께 표시합니다. 별도 API 호출이나 OAuth 인증, 색인 요청 없이 사용합니다.
+
+```sh
+python3 -B scripts/migration_report.py \
+  --snapshot ~/.config/youdozi-search-console/현재-스냅샷.json
+python3 -B scripts/migration_report.py \
+  --snapshot ~/.config/youdozi-search-console/현재-스냅샷.json \
+  --previous ~/.config/youdozi-search-console/이전-스냅샷.json \
+  --output ~/.config/youdozi-search-console/새-주소전환-보고서.json
+```
+
+기본 출력은 터미널 텍스트뿐입니다. `--output`을 지정한 경우에만 모든 프로젝트 worktree 밖의 새 JSON을 권한 600으로 저장하고 기존 파일은 덮어쓰지 않습니다. 검색어 행과 원본 API 응답은 복사하지 않습니다. 입력 스냅샷의 조회 시점·실적 구간을 유지하고 대상 속성·주소 중복·등록된 핵심 글 매핑을 확인합니다. 이전 스냅샷은 같은 URL 집합과 같거나 앞선 관측 시각이어야 합니다.
+
+`--deployed-at`에는 GitHub Pages의 실제 배포 완료 시각을 시간대가 있는 ISO 8601 값으로 넣을 수 있습니다. 병합 시각을 배포 완료 시각으로 대신하지 않습니다. 스냅샷 자체가 배포 전인지, 각 주소의 마지막 크롤링이 배포 전후인지 별도로 표시합니다. 배포 후 크롤링 날짜가 있더라도 변경 HTML 반영이나 색인 완료·인과효과의 증거는 아닙니다. 인자를 생략하면 배포 전후는 비교하지 않습니다.
+
+새 한글 주소가 PASS여도 과거 주소가 여전히 Google의 대표 주소로 선택되어 있으면 이를 구분합니다. 양쪽이 목적지를 선택한 관측도 전체 이전 완료로 단정하지 않습니다. 영문 상태는 별도로 유지하며 한글 색인을 영문 색인으로 간주하지 않습니다. URL별 페이지 실적을 합산해 속성 전체 클릭·노출로 만들지 않습니다. 미반환 실적·마지막 크롤링·canonical은 비교 불가로 남깁니다.
+
+핵심 글 조회·비교에서도 HTTP 200만으로 색인 판정을 알 수 있다고 가정하지 않습니다. `VERDICT_UNSPECIFIED`·누락된 판정은 PASS 증감에서 제외하고, 양쪽 canonical이 모두 제공된 경우에만 대표 주소 변경으로 셉니다. 판정은 있으나 canonical이 없는 경우에는 색인 비교와 canonical 비교 가능 여부를 따로 기록합니다. [Google 응답 필드와 판정 정의](https://developers.google.com/webmaster-tools/v1/urlInspection.index/UrlInspectionResult)
+
 ## 판정과 후속 조치
 
 | 확인 결과 | 다음 행동 |
