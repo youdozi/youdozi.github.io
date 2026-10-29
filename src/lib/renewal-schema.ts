@@ -15,7 +15,7 @@ export const renewalSchema=z.object({
   reviewMethod:z.literal('editorial-source-context-review'),experimentStatus:z.literal('not_tested'),
   reviewFocus:z.object({en:nonempty.max(1200),ko:nonempty.max(1200)}),
   editions:z.object({en:edition,ko:edition}),tags:z.array(nonempty).min(1),
-  documents:z.array(z.object({url:https,role:z.enum(['primary','reporting']),sha256:z.string().regex(/^[0-9a-f]{64}$/),fetchedAt:timestamp,extractorVersion:z.literal('article-parser-v1')})).min(1).max(4),
+  documents:z.array(z.object({url:https,role:z.enum(['primary','reporting']),sha256:z.string().regex(/^[0-9a-f]{64}$/),fetchedAt:timestamp,extractorVersion:z.enum(['article-parser-v1','article-parser-v2'])})).min(1).max(4),
   approval:z.object({reviewedBy:nonempty,pullRequest:z.number().int().positive(),approvedAt:timestamp,basis:nonempty}),
 }).superRefine((value,ctx)=>{
   const fail=(message:string)=>ctx.addIssue({code:'custom',message});

@@ -12,23 +12,31 @@ test('each original post retains its provenance and a unique language route afte
     const source = await readFile(`src/content/posts/ko/${file}`, 'utf8');
     const [, front, body] = source.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
     const data = YAML.parse(front);
-    const original = await readFile(data.legacySource,'utf8');
-    const expected = convertPost(original, data.legacySource);
-    if (data.reviewedAt) {
-      assert.equal(data.archiveBodySha256, createHash('sha256').update(expected.body).digest('hex'), data.legacySource);
-      assert.ok(data.reviewScope && data.reviewSources.length > 0, data.legacySource);
-      assert.ok(body.trim().length > 0);
-    } else assert.equal(body, expected.body, data.legacySource);
-    assert.equal(data.routeSlug, expected.metadata.routeSlug);
+    if (data.legacySource) {
+      const original = await readFile(data.legacySource,'utf8');
+      const expected = convertPost(original, data.legacySource);
+      if (data.reviewedAt) {
+        assert.equal(data.archiveBodySha256, createHash('sha256').update(expected.body).digest('hex'), data.legacySource);
+        assert.ok(data.reviewScope && data.reviewSources.length > 0, data.legacySource);
+        assert.ok(body.trim().length > 0);
+      } else assert.equal(body, expected.body, data.legacySource);
+      assert.equal(data.routeSlug, expected.metadata.routeSlug);
+      assert.ok(!sources.has(data.legacySource)); sources.add(data.legacySource);
+    } else {
+      assert.equal(data.legacyUrl, undefined, 'New posts do not invent legacy routes');
+      assert.equal(data.archiveBodySha256, undefined, 'New posts do not invent archive hashes');
+      assert.ok(body.trim().length > 0 && data.description && data.reviewScope && data.reviewSources.length > 0);
+    }
     assert.equal(data.language, 'ko');
     assert.equal(typeof data.routeSlug, 'string');
     const route = `/ko/${data.kind === 'digest' ? 'digest' : 'posts'}/${data.routeSlug}/`;
     assert.ok(!routes.has(route), `duplicate ${route}`); routes.add(route);
-    assert.ok(!sources.has(data.legacySource)); sources.add(data.legacySource);
     assert.ok(!translations.has(data.translationKey)); translations.add(data.translationKey);
   }
-  async function originals(dir) { return (await Promise.all((await readdir(dir,{withFileTypes:true})).map(e => e.isDirectory() ? originals(`${dir}/${e.name}`) : Promise.resolve(e.name.endsWith('.markdown') ? 1 : 0)))).reduce((a,b)=>a+b,0); }
-  assert.equal(files.length, await originals('_posts'));
+  async function originals(dir) {
+    return (await Promise.all((await readdir(dir,{withFileTypes:true})).map(e => e.isDirectory() ? originals(`${dir}/${e.name}`) : Promise.resolve(e.name.endsWith('.markdown') ? [`${dir}/${e.name}`] : [])))).flat();
+  }
+  assert.deepEqual([...sources].sort(), (await originals('_posts')).sort(), 'Every original source retains exactly one reviewed Korean edition');
 });
 
 test('migration converts prose attributes and image spaces while preserving code', () => {
@@ -93,10 +101,59 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
   const result = spawnSync('python3', ['-B', '-c', "import sys,json;sys.path.insert(0,'scripts');from test_bilingual_digest import article;a=article();a['publishedAt']='2000-01-01T00:00:00+09:00';a['editions']['en']['title']='Literal {{ 7 | times: 7 }} <script>alert(1)</script>';print(json.dumps({'date':'2000-01-01','publishedAt':'2000-01-01T01:00:00+09:00','articles':[a]}))"], {encoding:'utf8'});
   assert.equal(result.status,0,result.stderr);
   const fixture='src/content/digests/2000-01-01.json';
+  const metadataFixture='src/content/posts/en/2000-01-02-metadata-fixture.md';
+  const metadataTitle='Literal <tag> & "</script><script>window.__metadataProbe=1</script>" \\u003c';
+  let metadataCreated=false;
+  const {publishBatch,checkPublished}=await import('./translations.mjs');
+  const batch=JSON.parse(await readFile('.pipeline/translations/batches/pilot-001.json','utf8'));
+  const spanishBatch=JSON.parse(await readFile('.pipeline/translations/batches/spanish-001.json','utf8'));
+  const source=JSON.parse(await readFile(`src/content/renewals/${batch.translations[0].renewalId}.json`,'utf8'));
+  const translationFiles=[];
+  const existingTranslations=new Map();
+
   try {
     await writeFile(fixture,result.stdout,{flag:'wx'});
+    await writeFile(metadataFixture,'---\n'+YAML.stringify({
+      title:metadataTitle,description:'Literal <summary> & "quotes"',language:'en',
+      translationKey:'metadata-regression-fixture',routeSlug:'2000-01-02-metadata-fixture',kind:'post',
+      publishedAt:'2000-01-02T00:00:00Z',updatedAt:'2000-01-03T00:00:00Z',categories:[],tags:[],
+    })+'---\nTemporary metadata test text.\n',{flag:'wx'});
+    metadataCreated=true;
+    const records=[],missing=[];
+    for(const draft of [...batch.translations,...spanishBatch.translations]){
+      const path=`src/content/translations/${draft.language}-${draft.renewalId}.json`;
+      let bytes;
+      try{bytes=await readFile(path,'utf8');}catch(error){if(error.code!=='ENOENT')throw error;}
+      if(bytes===undefined){missing.push(draft);continue;}
+      existingTranslations.set(path,bytes);
+      const record=JSON.parse(bytes);
+      assert.deepEqual(record.edition,draft.edition,'Published pilot must match its reviewed draft');
+      assert.equal(record.reviewFocus,draft.reviewFocus);
+      records.push(record);
+    }
+    if(missing.length){
+      const created=await publishBatch({...batch,translations:missing},{reviewedBy:'Build test fixture',pullRequest:1,basis:'Temporary integration fixture, removed after test'});
+      translationFiles.push(...created.map(t=>`src/content/translations/${t.language}-${t.renewalId}.json`));
+      records.push(...created);
+    }
+    const published=records.filter(record=>record.renewalId===source.id);
+    await checkPublished();
+    const approvedTranslations=await Promise.all((await readdir('src/content/translations')).filter(file=>file.endsWith('.json')).map(async file=>JSON.parse(await readFile(`src/content/translations/${file}`,'utf8'))));
+
+    const assets=spawnSync(process.execPath,['scripts/prepare-public.mjs'],{encoding:'utf8'});assert.equal(assets.status,0,assets.stderr);
     const build=spawnSync(process.execPath,['node_modules/astro/bin/astro.mjs','build'],{encoding:'utf8',maxBuffer:8*1024*1024});
     assert.equal(build.status,0,build.stderr);
+    const checked=spawnSync('python3',['-B','scripts/check_site.py'],{encoding:'utf8'});assert.equal(checked.status,0,checked.stdout+checked.stderr);
+    const seoChecked=spawnSync('python3',['-B','scripts/check_seo.py'],{encoding:'utf8'});assert.equal(seoChecked.status,0,seoChecked.stdout+seoChecked.stderr);
+    const metadataChecked=spawnSync('python3',['-B','scripts/check_metadata.py'],{encoding:'utf8'});assert.equal(metadataChecked.status,0,metadataChecked.stdout+metadataChecked.stderr);
+    const discoveryChecked=spawnSync('python3',['-B','scripts/check_discovery.py'],{encoding:'utf8'});assert.equal(discoveryChecked.status,0,discoveryChecked.stdout+discoveryChecked.stderr);
+    const metadataHtml=await readFile('dist/en/posts/2000-01-02-metadata-fixture/index.html','utf8');
+    const metadataRaw=metadataHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
+    assert.equal(JSON.parse(metadataRaw).find(item=>item['@type']==='BlogPosting').headline,metadataTitle);
+    assert.ok(!metadataRaw.includes('<'));
+    const metadataHeading=metadataHtml.match(/<h1>([\s\S]*?)<\/h1>/)[1];
+    assert.ok(!metadataHeading.includes('<script>'));
+    assert.ok(metadataHeading.includes('&lt;script&gt;'));
     const en=await readFile('dist/en/digest/2000-01-01/index.html','utf8');
     const ko=await readFile('dist/ko/digest/2000-01-01/index.html','utf8');
     assert.match(en,/<html lang="en">/);assert.match(ko,/<html lang="ko">/);
@@ -107,7 +164,12 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.match(en,/&lt;script&gt;/);
     const fixtureGraph=JSON.parse(en.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
     assert.ok(!JSON.stringify(fixtureGraph).includes('\\u003c'));
-    assert.match(en,/Source evidence/);assert.match(ko,/원문 인용 근거/);
+    assert.ok(!en.includes('Source evidence'));assert.ok(!ko.includes('원문 인용 근거'));
+    for(const [lang,html] of [['en',en],['ko',ko]]){
+      const article=JSON.parse(result.stdout).articles[0];
+      assert.ok(html.includes(article.url));
+      for(const claim of article.editions[lang].claims)assert.ok(html.includes(claim.text));
+    }
     const englishIndex=JSON.parse(await readFile('dist/en/search-index.json','utf8'));
     assert.ok(englishIndex.some(entry => entry.url === '/en/digest/2000-01-01/'));
     assert.ok(englishIndex.some(entry => entry.url === '/en/posts/2023-09-19-springboot-test-webclient/'));
@@ -115,7 +177,54 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.ok(!koreanIndex.some(entry=>entry.url==='/ko/digest/2026-03-16/'));
     const sample=await readFile('dist/ko/digest/2026-03-16/index.html','utf8');
     assert.match(sample,/noindex,follow/);assert.match(sample,/예제 데이터/);
+    assert.ok(!sample.includes('<details class="article-toc"'));
     const sitemap=await readFile('dist/sitemap.xml','utf8');
+    for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es']) {
+      const archive=await readFile('dist/'+lang+'/archive/index.html','utf8');
+      const index=JSON.parse(await readFile('dist/'+lang+'/search-index.json','utf8'));
+      const graph=JSON.parse(archive.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      const list=graph.find(item=>item['@type']==='ItemList');
+      const collection=graph.find(item=>item['@type']==='CollectionPage');
+      assert.equal(list.numberOfItems,index.length);
+      assert.deepEqual(list.itemListElement.map(item=>item.url).sort(),index.map(item=>'https://youdozi.github.io'+item.url).sort());
+      assert.deepEqual(list.itemListElement.map(item=>item.position),Array.from({length:index.length},(_,i)=>i+1));
+      assert.ok(sitemap.includes('<loc>https://youdozi.github.io/'+lang+'/archive/</loc><lastmod>'+collection.dateModified+'</lastmod>'));
+      const home=await readFile('dist/'+lang+'/index.html','utf8');
+      assert.ok(home.includes('href="/'+lang+'/archive/"'));
+      if(!['en','ko'].includes(lang)) {
+        const header=home.match(/<header class="site-header[^>]*>([\s\S]*?)<\/header>/)[1];
+        const footer=home.match(/<footer class="site-footer[^>]*>([\s\S]*?)<\/footer>/)[1];
+        assert.ok(!header.includes('href="/'+lang+'/posts/"'));
+        assert.ok(!footer.includes('href="/'+lang+'/tags/"'));
+        for(const kind of ['posts','tags']) {
+          const empty=await readFile('dist/'+lang+'/'+kind+'/index.html','utf8');
+          assert.ok(empty.includes('class="empty"'));
+          assert.ok(empty.includes('href="/'+lang+'/archive/"'));
+        }
+      }
+      const notFound=await readFile('dist/404.html','utf8');
+      assert.ok(notFound.includes('href="/'+lang+'/archive/" lang="'+lang+'"'));
+    }
+    for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es']) {
+      const search=await readFile(`dist/${lang}/search/index.html`,'utf8');
+      assert.ok(search.includes('noindex,follow'));
+      assert.ok(search.includes('aria-controls="results"'));
+      assert.ok(search.includes('data-loading='));assert.ok(search.includes('data-count='));
+      assert.match(search,/<button[^>]*id="search-retry"[^>]*hidden/);
+      assert.ok(search.includes('<noscript>'));
+      assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/search/</loc>`));
+    }
+    for (const lang of ['en','ko']) {
+      const listing=await readFile(`dist/${lang}/posts/index.html`,'utf8');
+      for (const other of ['en','ko']) assert.ok(listing.includes(`hreflang="${other}" href="https://youdozi.github.io/${other}/posts/"`));
+      for (const empty of ['zh-CN','ja','de','fr','ru','es']) assert.ok(!listing.includes(`hreflang="${empty}"`),'Empty post lists are not translation counterparts');
+    }
+    for (const lang of ['zh-CN','ja','de','fr','ru','es']) {
+      const listing=await readFile(`dist/${lang}/posts/index.html`,'utf8');
+      assert.ok(listing.includes('noindex,follow'));
+      assert.ok(!listing.includes('hreflang='));
+      assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/posts/</loc>`));
+    }
     assert.ok(!sitemap.includes('/ko/digest/2026-03-16/'));
     const reviewShell=await readFile('dist/review/index.html','utf8');
     assert.match(reviewShell,/noindex,follow/);
@@ -126,15 +235,88 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.ok(!reviewShell.includes('Literal {{ 7 | times: 7 }}'));
     assert.ok(!reviewShell.includes('utteranc.es'));
 
+    for(const lang of ['en','ko']) {
+      const path=`/${lang}/about/`;const profile=await readFile(`dist${path}index.html`,'utf8');
+      const schema=JSON.parse(profile.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      const data=schema.find(x=>x['@type']==='ProfilePage');
+      assert.equal(data.mainEntity.name,'youdozi');assert.equal(data.mainEntity.url,'https://youdozi.github.io'+path);
+      assert.equal(data.mainEntity['@id'],'https://youdozi.github.io/#author');
+      assert.ok(profile.includes('rel="me"'));assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${path}</loc><lastmod>${data.dateModified}</lastmod>`));
+      assert.ok(!schema.some(x=>x['@type']==='BlogPosting'));
+      const sample=await readFile(`dist/${lang}/posts/2023-09-19-springboot-test-webclient/index.html`,'utf8');
+      assert.ok(sample.includes(`href="${path}" rel="author"`));
+      const articleSchema=JSON.parse(sample.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      const author=articleSchema.find(x=>x['@type']==='BlogPosting').author;
+      assert.deepEqual(author,data.mainEntity);
+    }
+    for(const lang of ['ja','zh-CN','de','fr','ru','es']){
+      const home=await readFile(`dist/${lang}/index.html`,'utf8');
+      assert.ok(home.includes('href="/en/about/" lang="en"'));
+      assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/about/</loc>`));
+    }
     const englishArticle=await readFile('dist/en/posts/2023-09-19-springboot-test-webclient/index.html','utf8');
     assert.match(englishArticle,/<html lang="en">/);
     assert.match(englishArticle,/rel="canonical" href="https:\/\/youdozi.github.io\/en\/posts\/2023-09-19-springboot-test-webclient\/"/);
     assert.match(englishArticle,/hreflang="ko" href="https:\/\/youdozi.github.io\/ko\/posts\/2023-09-19-springboot-test-webclient\/"/);
+    assert.ok(!englishArticle.includes('hreflang="ja"'));assert.ok(englishArticle.includes('href="/ja/"'));
     const graph=JSON.parse(englishArticle.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
     const posting=graph.find(item=>item['@type']==='BlogPosting');
     assert.equal(posting.inLanguage,'en');assert.equal(posting.author.name,'youdozi');
     assert.ok(posting.datePublished && posting.dateModified);
+    assert.ok(englishArticle.includes('<on-demand-comments'));
+    assert.ok(englishArticle.includes('aria-controls="comment-widget"'));
+    assert.ok(!/<script[^>]*src="https:\/\/utteranc\.es\/client\.js"/.test(englishArticle));
+    assert.ok(englishArticle.includes('https://github.com/youdozi/youdozi.github.io/issues?'));
+    const contents=englishArticle.match(/<details class="article-toc"[\s\S]*?<\/details>/)?.[0];
+    assert.ok(contents,'A technical article with four rendered sections exposes contents');
+    assert.deepEqual([...contents.matchAll(/href="#([^"]+)"/g)].map(m=>decodeURIComponent(m[1])),['processing-flow','set-up-a-standalone-test-project','test-eight-response-contracts','why-status-and-decoding-are-checked-separately']);
+    for(const slug of [...contents.matchAll(/href="#([^"]+)"/g)].map(m=>decodeURIComponent(m[1])))assert.ok(englishArticle.includes(`id="${slug}"`));
+    assert.ok(englishArticle.includes(`class="publication-date">Published: <time datetime="${posting.datePublished}"`));
+    assert.ok(englishArticle.includes(`class="modification-date">Updated: <time datetime="${posting.dateModified}"`));
+
     assert.ok(graph.some(item=>item['@type']==='BreadcrumbList'));
+
+
+    // Check emitted paths rather than assuming the registry is rendered correctly.
+    const guideCounts=[['coding-test',10],['springboot',9],['linux',4],['jdk',3],['util',3],['automation',2],['jenkins',2],['jekyll',2]];
+    for(const lang of ['en','ko']){
+      const hubPath=`/${lang}/guides/`;
+      const hub=await readFile(`dist${hubPath}index.html`,'utf8');
+      const hubData=JSON.parse(hub.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      const hubList=hubData.find(x=>x['@type']==='ItemList');
+      assert.deepEqual(hubList.itemListElement.map(x=>x.url),guideCounts.map(([term])=>`https://youdozi.github.io/${lang}/categories/${term}/`));
+      assert.equal(hubList.numberOfItems,8);
+      assert.ok(!hubData.some(x=>x['@type']==='BlogPosting'));
+      for(const [term,count] of guideCounts){
+        const path=`/${lang}/categories/${term}/`;
+        const html=await readFile(`dist${path}index.html`,'utf8');
+        const data=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+        const collection=data.find(x=>x['@type']==='CollectionPage');
+        const list=data.find(x=>x['@type']==='ItemList');
+        assert.equal(list.numberOfItems,count);assert.equal(collection.inLanguage,lang);
+        const groups=html.match(/<div class="algorithm-groups"[^>]*>([\s\S]*?)<\/div>/)[1];
+        const visible=[...groups.matchAll(/href="([^"]+)"/g)].map(m=>'https://youdozi.github.io'+m[1]);
+        assert.deepEqual(visible,list.itemListElement.map(x=>x.url),'Visible order must match schema');
+        assert.ok(html.includes(`href="${hubPath}"`));
+        assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${path}</loc><lastmod>${collection.dateModified}</lastmod>`));
+        for(const item of list.itemListElement){
+          const article=await readFile(`dist${item.url.replace('https://youdozi.github.io','')}index.html`,'utf8');
+          assert.ok(article.includes(`href="${path}"`),'Each linked article returns to its category guide');
+        }
+      }
+      assert.ok(hub.includes(`hreflang="x-default" href="https://youdozi.github.io/en/guides/"`));
+      assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${hubPath}</loc>`));
+    }
+    const coreRegistry=JSON.parse(await readFile('content/seo/core-articles.json','utf8'));
+    for(const lang of ['en','ko']) {
+      const home=await readFile(`dist/${lang}/index.html`,'utf8');
+      const featured=home.match(/<section class="core-articles"[\s\S]*?<\/section>/)?.[0];
+      assert.ok(featured,'Native home exposes the selected practical guides');
+      assert.deepEqual([...featured.matchAll(/href="([^"]+)"/g)].map(m=>m[1]),coreRegistry.articles.map(a=>`/${lang}/posts/${a.key}/`));
+    }
+    const japaneseHome=await readFile('dist/ja/index.html','utf8');
+    assert.ok(!japaneseHome.includes('core-articles-heading'));
+    assert.ok(!japaneseHome.includes('href="/ja/guides/"'),'Do not link to an unavailable guide index');
 
 
     const renewals=await readdir('src/content/renewals');
@@ -150,6 +332,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
         assert.ok(html.includes(`hreflang="x-default" href="https://youdozi.github.io/en/digest/${article.slug}/"`));
         assert.ok(html.includes(`data-archive-date="${article.archiveDate}"`));
         assert.ok(!html.includes('noindex,follow'));
+        for(const document of article.documents)assert.ok(html.includes(document.url.replaceAll('&','&amp;')),'Reader source links must remain available');
         const data=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]).find(item=>item['@type']==='BlogPosting');
         assert.equal(data.datePublished,new Date(article.editionPublishedAt[lang]).toISOString());
         assert.equal(data.dateModified,new Date(article.updatedAt).toISOString());
@@ -172,7 +355,66 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     const revisedLegacy=await readFile('dist/ko/digest/2026-10-20/index.html','utf8');
     assert.ok(revisedLegacy.includes('정정 요약'));
     assert.ok(!revisedLegacy.includes('32사'));
+    for(const internal of ['기존 아카이브 글입니다.','검토·보강:','활용 가이드','검토 기록 —','검토 초점 · 직접 적용 결과가 아닌 편집 제안','검토 시점 후속 확인'])assert.ok(!revisedLegacy.includes(internal));
+    const legacyIndex=koreanIndex.find(entry=>entry.url==='/ko/digest/2026-10-20/');
+    assert.ok(legacyIndex);
+    for(const internal of ['활용 가이드','검토 기록 —','직접 적용 결과가 아닌 편집 제안'])assert.ok(!legacyIndex.content.includes(internal));
     assert.ok(!sitemap.includes('pilot-001'));
+
+    for(const record of published){
+      const lang=record.language,url=`https://youdozi.github.io/${lang}/digest/${source.slug}/`;
+      const html=await readFile(`dist/${lang}/digest/${source.slug}/index.html`,'utf8');
+      assert.ok(html.includes(`<html lang="${lang}">`));
+      const policy=JSON.parse(await readFile('src/lib/locales.json','utf8'));
+      assert.ok(html.includes(`property="og:locale" content="${policy.locales[lang].ogLocale}"`));
+      assert.ok(html.includes(`rel="canonical" href="${url}"`));
+      assert.ok(!html.includes('noindex,follow'));
+      for(const other of ['en','ko',...published.map(t=>t.language)]){
+        const counterpart=await readFile(`dist/${other}/digest/${source.slug}/index.html`,'utf8');
+        assert.ok(html.includes(`hreflang="${other}" href="https://youdozi.github.io/${other}/digest/${source.slug}/"`));
+        assert.ok(counterpart.includes(`hreflang="${lang}" href="${url}"`));
+      }
+      assert.ok(html.includes(`hreflang="x-default" href="https://youdozi.github.io/en/digest/${source.slug}/"`));
+      const graph=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      const posting=graph.find(item=>item['@type']==='BlogPosting');
+      assert.equal(posting.inLanguage,lang);assert.equal(posting.datePublished,record.publishedAt);
+      assert.equal(posting.dateModified,record.updatedAt);
+      assert.ok(!html.includes(source.editions.en.claims[0].evidence[0].quote));
+      assert.ok(!html.includes(record.reviewFocus));
+      assert.ok(html.includes(source.url));
+      const index=JSON.parse(await readFile(`dist/${lang}/search-index.json`,'utf8'));
+      assert.equal(index.length,approvedTranslations.filter(t=>t.language===lang).length);
+      assert.ok(index.find(entry=>entry.url===`/${lang}/digest/${source.slug}/`)?.content.includes(record.edition.claims[0]));
+      const feed=await readFile(`dist/${lang}/feed.xml`,'utf8');
+      assert.ok(feed.includes(`<language>${lang}</language>`));
+      assert.ok(feed.includes(record.edition.claims[0].replaceAll('&','&amp;').replaceAll("'",'&apos;')));
+      assert.ok(sitemap.includes(`<loc>${url}</loc>`));
+      assert.ok(!sitemap.includes(`/${lang}/posts/`));
+      assert.ok(!(await readFile(`dist/${lang}/index.html`,'utf8')).includes('noindex,follow'));
+      const tagsPage=await readFile(`dist/${lang}/tags/index.html`,'utf8');
+      assert.ok(!tagsPage.includes('archive-renewal'));
+      assert.match(tagsPage,/noindex,follow/);
+      assert.ok(!tagsPage.includes('hreflang='));
+      assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/tags/</loc>`));
+      assert.ok((await readFile(`dist/${lang}/posts/index.html`,'utf8')).includes('noindex,follow'));
+    }
+    const esIndex=JSON.parse(await readFile('dist/es/search-index.json','utf8'));
+    const esFeed=await readFile('dist/es/feed.xml','utf8');
+    for(const draft of spanishBatch.translations){
+      const original=JSON.parse(await readFile(`src/content/renewals/${draft.renewalId}.json`,'utf8'));
+      const route=`/es/digest/${original.slug}/`,url=`https://youdozi.github.io${route}`;
+      const html=await readFile(`dist${route}index.html`,'utf8');
+      assert.ok(html.includes('<html lang="es">'));
+      assert.ok(html.includes(`rel="canonical" href="${url}"`));
+      assert.ok(html.includes('property="og:locale" content="es_ES"'));
+      assert.ok(esIndex.some(entry=>entry.url===route&&entry.content.includes(draft.edition.claims[0])));
+      assert.ok(esFeed.includes(url));assert.ok(sitemap.includes(`<loc>${url}</loc>`));
+      for(const lang of ['en','ko','zh-CN','ja','de','fr','ru']){
+        const counterpart=await readFile(`dist/${lang}/digest/${original.slug}/index.html`,'utf8');
+        assert.ok(html.includes(`hreflang="${lang}" href="https://youdozi.github.io/${lang}/digest/${original.slug}/"`));
+        assert.ok(counterpart.includes(`hreflang="es" href="${url}"`));
+      }
+    }
 
     const tags=await readFile('dist/ko/tags/index.html','utf8');
     const upper=tags.match(/href="([^"]+)"[^>]*>SpringBoot /)?.[1];
@@ -182,6 +424,9 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
 
   } finally {
     await unlink(fixture);
+    if(metadataCreated)await unlink(metadataFixture);
+    await Promise.all(translationFiles.map(file=>unlink(file)));
+    for(const [file,bytes] of existingTranslations)assert.equal(await readFile(file,'utf8'),bytes,'Build tests must preserve real publication records');
   }
 });
 
@@ -281,4 +526,18 @@ test('main protection requires Actions checks and PRs without granting bots a by
   assert.equal(reviews.rules[0].parameters.required_approving_review_count,1);
   assert.equal(reviews.rules[0].parameters.dismiss_stale_reviews_on_push,true);
   assert.deepEqual(reviews.bypass_actors,[{actor_type:'RepositoryRole',actor_id:5,bypass_mode:'pull_request'}]);
+});
+
+
+test('archive schema accepts explicit legacy and stable extractor versions only', async () => {
+  const {renewalSchema} = await import('../src/lib/renewal-schema.ts');
+  const files = await readdir('src/content/renewals');
+  const original = JSON.parse(await readFile(`src/content/renewals/${files[0]}`, 'utf8'));
+  for (const version of ['article-parser-v1', 'article-parser-v2']) {
+    const value = structuredClone(original);
+    value.documents[0].extractorVersion = version;
+    assert.equal(renewalSchema.safeParse(value).success, true);
+  }
+  original.documents[0].extractorVersion = 'unknown-extractor';
+  assert.equal(renewalSchema.safeParse(original).success, false);
 });

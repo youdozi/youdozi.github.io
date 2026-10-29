@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-28T23:14:09.842235+00:00",
+  "baseCommit": "9780218b65e60ee0b6199e079b782c99ab56d937",
+  "purpose": "Help readers copy exact rendered code and reach horizontal code scrollers with a keyboard.",
+  "scope": {
+    "articleManuscriptsChanged": 0,
+    "pendingTranslationsPublished": 0,
+    "newArticleApprovals": 0,
+    "uiLanguages": 8,
+    "uiStringsPerLanguage": 4
+  },
+  "behavior": {
+    "clipboardWriteTrigger": "Explicit code-copy button click only.",
+    "copiedPayload": "Code element textContent verbatim, excluding controls and status.",
+    "unsupportedAPI": "Original selectable code and focusable code region; no inactive copy button.",
+    "deniedWrite": "Local status message and retry; no selection mutation or legacy execCommand fallback.",
+    "networkOrStorageAdded": false
+  },
+  "validation": {
+    "nodeTests": 102,
+    "newNodeTests": 7,
+    "astroCheck": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "normalBuild": "passed",
+    "publicArticles": 423,
+    "sitemapURLs": 479,
+    "publishedTranslations": 36,
+    "browser": {
+      "passed": true,
+      "generatedArticles": 72,
+      "codeBlocks": 218,
+      "exactCodePreservation": true,
+      "oneClipboardWritePerClick": true,
+      "denialAndRetry": true,
+      "pendingWriteGuard": true,
+      "keyboardHorizontalScroll": true,
+      "viewports": [
+        390,
+        1360
+      ],
+      "realChromeClipboardRoundTrip": true,
+      "noJavaScriptCodePreserved": true,
+      "exceptions": 0
+    }
+  },
+  "translationReview": {
+    "skill": "translate",
+    "sourceLanguage": "en",
+    "targetLanguages": [
+      "ko",
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru",
+      "es"
+    ],
+    "method": "Self AI semantic and fluency review of 4 UI strings per target language; no human/native reviewer.",
+    "limits": "Short code-copy UI only; does not certify pending article translations."
+  },
+  "files": {
+    "src/scripts/code-tools.ts": "77435d1ccfe810595825b5b941eba26afd26dfc0084ab8fc73658c428261774c",
+    "src/scripts/article-code.ts": "278c3cd7f37f9076b2d8cccdd17bec1c0416f42419dfdb8c6ceca70fd9b749b6",
+    "src/lib/code-copy-ui.json": "379c37fc512e00bfe1dc2479e998ad00d4fdec8866699c05eb6a0cc4d5a0966b",
+    "src/components/Article.astro": "2a4ad294681fe3f4cddbbc3bdeca1741d21d35f3f341734b1ba306d0e09cc133",
+    "src/styles/global.css": "101baa77b3a0ca6053cf62dd790972660e59010512433e2448030d3fcd127916",
+    "scripts/test-code-tools.mjs": "dd1f1f5a33a5a20b08f40bcaf8fd18804e6682b8764aa4c863bd0a1fc70803a0",
+    "package.json": "138aa2c43816ac37ac34d41fd0d648d4425f05f1bef539dd06f720fbe6ac3548",
+    "README.md": "c785e04a56f7b2ebf1741031884dc506e71e9ddbb4e0536528cdf154605ac582"
+  }
+}

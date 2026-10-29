@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "state": "draft",
+  "batchId": "spanish-004",
+  "sourceLanguage": "en",
+  "reviewRequired": "AI meaning and target-language review; explicit user publication approval remains required.",
+  "translations": [
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "27d181b6a4903b28",
+      "language": "es",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "edition": {
+        "title": "Análisis de código con IA: condiciones de la versión preliminar y posterior disponibilidad general",
+        "claims": [
+          "Al lanzar la versión preliminar, GitHub describió las detecciones de IA en solicitudes de incorporación de cambios como una ampliación de la cobertura de lenguajes y frameworks más allá de CodeQL. Se requerían permiso empresarial, activación en la organización y el análisis predeterminado de CodeQL en el repositorio, aunque el análisis lo realizaba un motor de IA independiente.",
+          "Los hallazgos de la versión preliminar eran informativos y no bloqueaban las fusiones. El anuncio exigía una licencia de Copilot y consumía créditos de IA de la organización durante la versión preliminar pública, por lo que la función original no era un control de aprobación automático ni un servicio gratuito sin condiciones."
+        ],
+        "followUp": [
+          "El aviso de GitHub del 2026-10-15 anuncia la disponibilidad general de AI Scan. Indica que no se requiere una licencia de Copilot; los repositorios privados e internos de organizaciones siguen requiriendo GitHub Code Security o Advanced Security. Estas condiciones difieren de las del anuncio de la versión preliminar.",
+          "El aviso posterior mantiene el carácter meramente orientativo de los hallazgos e indica que AI Scan no puede bloquear fusiones mediante conjuntos de reglas. No se ejecuta en solicitudes de incorporación de cambios procedentes de bifurcaciones ni en las creadas por Dependabot.",
+          "El modelo de facturación posterior consume Code Security AI Credits, que aparecen bajo Advanced Security en el uso empresarial de IA. La ausencia del requisito de una licencia de Copilot no significa que el análisis no tenga cargos por uso."
+        ]
+      },
+      "reviewFocus": "Utilice el aviso posterior para interpretar los requisitos de acceso y la facturación actuales, y conserve las condiciones de la versión preliminar como información histórica. Los hallazgos orientativos requieren una respuesta humana y no sustituyen las comprobaciones obligatorias ni una validación de seguridad completa."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "28ede0247b95214f",
+      "language": "es",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "edition": {
+        "title": "Retirada de modelos de Copilot: alcance, alternativas y excepción para la revisión de código",
+        "claims": [
+          "GitHub anunció la retirada de GPT-5.2 y GPT-5.2-Codex el 2026-06-05 en la mayoría de las experiencias de Copilot, pero mantuvo expresamente GPT-5.2 para la revisión de código de Copilot en aquel anuncio. Esto no demuestra su retirada en otros proveedores o API.",
+          "El anuncio propone GPT-5.5 como alternativa a GPT-5.2 y GPT-5.3-Codex como alternativa a GPT-5.2-Codex. Los administradores empresariales pueden tener que habilitar las alternativas mediante políticas de modelos antes de que los usuarios puedan seleccionarlas."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Antes de migrar, compruebe el producto concreto de Copilot y la política de la organización. Estas son las excepciones y alternativas del aviso histórico, no una afirmación de que la disponibilidad de sus modelos siga igual hoy."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "38bfcb4310c98b8d",
+      "language": "es",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "edition": {
+        "title": "Workers y Durable Objects incorporan perfiles de recursos bajo demanda",
+        "claims": [
+          "Cloudflare anunció la creación de perfiles de CPU y memoria para Workers y Durable Objects, con recopilación bajo demanda y perfiles descargables descritos en el artículo.",
+          "Para los perfiles de CPU, la implementación inicia un perfilador de V8 con un intervalo de muestreo de 1 milisegundo. Ese detalle del muestreo no demuestra que la sobrecarga en producción sea nula."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compruebe que la versión y el isolate solicitados estén activos en la ubicación seleccionada y compare el comportamiento con y sin perfiles bajo tráfico representativo. Las muestras de asignación de recursos y la memoria retenida son cuestiones diferentes."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "3e483be55bb45ecb",
+      "language": "es",
+      "sourceSha256": "bb76edf97af70128a4eee1582db825b0a114175ed49f9ce5f00ce0a7d1f0c560",
+      "edition": {
+        "title": "GitHub Copilot: correcciones sobre la retirada de GPT-5.2 y GPT-5.2-Codex",
+        "claims": [
+          "GitHub publicó un aviso de retirada en Copilot que abarcaba GPT-5.2 y GPT-5.2-Codex. Es un aviso del producto Copilot, no una declaración sobre todas las API de los proveedores.",
+          "El aviso indica que los administradores de Copilot Enterprise pueden tener que habilitar modelos alternativos mediante sus políticas de modelos."
+        ],
+        "followUp": [
+          "Una nota editorial posterior trasladó la retirada prevista del 2026-06-01 al 2026-06-05.",
+          "Otra corrección identifica GPT-5.2, en lugar de GPT-5.2-Codex, como la excepción para Copilot Code Review."
+        ]
+      },
+      "reviewFocus": "Utilice las fechas corregidas y la excepción del producto al auditar decisiones históricas sobre modelos. Confirme la disponibilidad actual en el producto pertinente en lugar de tratar este archivo como una recomendación de modelos vigente."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "52ee7abbb037f678",
+      "language": "es",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "edition": {
+        "title": "Azure DevOps Autofix: fases preliminares, controles de revisión y facturación",
+        "claims": [
+          "La publicación de lanzamiento de Microsoft describe Copilot Autofix para GitHub Advanced Security for Azure DevOps como una versión preliminar privada limitada, con altas procesadas por tandas. No se deben combinar esa publicación y la documentación posterior como si describieran una disponibilidad sin cambios.",
+          "El flujo de lanzamiento genera un cambio sugerido a partir de alertas de CodeQL compatibles y abre una solicitud de incorporación de cambios. Los controles de revisión y compilación existentes siguen ejecutándose, y la alerta se resuelve después de la fusión y del siguiente análisis de CodeQL."
+        ],
+        "followUp": [
+          "En el momento de la revisión, la guía oficial identifica la función como una versión preliminar pública limitada e indica que Microsoft no acepta más usuarios. Es un estado documentado posteriormente, no una prueba de que la descripción original como versión preliminar privada fuera falsa.",
+          "La guía actual indica que la generación de correcciones consume créditos de IA facturados mediante la suscripción de Azure vinculada y que los presupuestos y límites de usuario de GitHub Copilot no rigen ese medidor de Azure DevOps. La inclusión en la licencia no debe interpretarse como generación gratuita de correcciones."
+        ]
+      },
+      "reviewFocus": "Antes de activar la generación, compruebe la inscripción, los tipos de alertas compatibles y la suscripción de Azure vinculada. Valide las correcciones manualmente y mediante pruebas; generar una sugerencia no corrige por sí mismo una alerta."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "5fe80662057aa753",
+      "language": "es",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "edition": {
+        "title": "Los límites estrictos de presupuesto de GitHub Advanced Security pueden bloquear nueva cobertura",
+        "claims": [
+          "GitHub anunció límites estrictos de presupuesto de licencias para Advanced Security que pueden configurar los administradores empresariales y los responsables de facturación. Es un control de licencias del producto, no un límite para todos los gastos de la empresa.",
+          "Al alcanzar el umbral, el aviso indica que se bloquea el uso adicional de licencias y no se activa Advanced Security en repositorios nuevos hasta que se libere capacidad o se aumente el presupuesto."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Supervise tanto la capacidad de licencias restante como los repositorios sin cobertura de seguridad. Pruebe los procedimientos de incorporación y escalado para evitar que un límite de presupuesto deje repositorios nuevos fuera de los controles previstos sin que se advierta."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "68e2ee5d21f7dc1b",
+      "language": "es",
+      "sourceSha256": "5c3fc48c4de227b2d3e4fdd0e16ff98c3a913e1ac703e81f30d859f931859070",
+      "edition": {
+        "title": "Cloudflare comunica menores costes de inferencia para su revisor interno",
+        "claims": [
+          "Cloudflare informa de que su revisor interno de código tuvo un coste medio de $0.77 por revisión, un 68% menos frente a una base de $2.43 de sus semanas más caras. Son resultados de su carga de trabajo, no ahorros garantizados para otros equipos.",
+          "La empresa atribuye cerca del 40% del ahorro a cambios y optimizaciones en el código del revisor, y el resto a la elección de modelos y niveles de esfuerzo."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compare los costes junto con la calidad de las revisiones, la combinación de cargas de trabajo y el período de evaluación. Reproduzca las mediciones con cambios representativos antes de seleccionar modelos o reducir el esfuerzo; este borrador no contiene ninguna prueba comparativa local."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "6ad4fb7dea8c6f87",
+      "language": "es",
+      "sourceSha256": "13fcb6fed8c7c486534509f68b9dd37fa29cddd9ccefeaf82782ee44dc27c958",
+      "edition": {
+        "title": "Presupuestos por usuario en centros de costes: interfaz de facturación y alcance de la pertenencia",
+        "claims": [
+          "GitHub anunció que los administradores de Enterprise Cloud podían crear presupuestos por usuario para centros de costes desde la interfaz de facturación, exponiendo controles antes disponibles mediante la API REST. Se trata de una ampliación de la interfaz de gestión.",
+          "El presupuesto por usuario configurado se aplica a los equipos empresariales o usuarios individuales del centro de costes y se adapta automáticamente a los cambios de pertenencia. Es una configuración de presupuesto compartida que se aplica a cada miembro, no un límite negociado por separado para cada persona."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Examine la pertenencia efectiva, el comportamiento del presupuesto y los ajustes de exceso de consumo junto con la política de facturación empresarial. La disponibilidad de una interfaz no demuestra por sí sola que se bloquee todo el gasto en IA ni que se hayan medido ahorros."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "81aa0c8f7db4aee1",
+      "language": "es",
+      "sourceSha256": "fa9ab1cb21cecf1bed28f4914b155c1571c5a75d67f19879aa04ff16b7d1af59",
+      "edition": {
+        "title": "AWS FinOps Agent en versión preliminar: alcance de la investigación y límites regionales",
+        "claims": [
+          "AWS anunció una versión preliminar de FinOps Agent que responde a preguntas sobre costes, presenta recomendaciones de optimización, investiga anomalías de costes y programa flujos de trabajo recurrentes. Puede canalizar hallazgos mediante Jira o Slack; esas capacidades no demuestran ahorros medidos.",
+          "El anuncio sitúa la versión preliminar en US East (N. Virginia), con datos de costes que abarcan las regiones de AWS excepto GovCloud y China. Ofrece el servicio sin cargo adicional durante la versión preliminar; no es un precio permanente ni un compromiso de uso ilimitado."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Confirme la disponibilidad actual, las cuotas, el alcance de los permisos y la facturación antes de activar los flujos de trabajo. La investigación de costes y la creación de incidencias no deben generalizarse como permiso para modificar autónomamente recursos de producción."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "92303a0e5010240e",
+      "language": "es",
+      "sourceSha256": "62a391116e058b6ebe2c99955ceba44831ad40c1398ca8810647cf33b3b0f72e",
+      "edition": {
+        "title": "Coalición Athena: coordinación de correcciones y condiciones de divulgación",
+        "claims": [
+          "Docker anunció su incorporación a Athena como participante fundador y describió la coalición como una defensa coordinada del software de código abierto. Es la descripción de la iniciativa por parte de un participante.",
+          "Docker describe cómo las organizaciones comparten hallazgos y coordinan respuestas antes de que las vulnerabilidades se hagan públicas. Esto establece el modelo de colaboración declarado, no una cobertura o un éxito de corrección verificados de forma independiente."
+        ],
+        "followUp": [
+          "En el momento de la revisión, la página del programa de Chainguard describe versiones privadas reforzadas disponibles para los miembros mediante Chainguard Libraries durante los 30 días previos a la divulgación. Es la condición de acceso declarada por el programa, no una promesa de disponibilidad pública inmediata de los parches."
+        ]
+      },
+      "reviewFocus": "Evalúe las reglas de participación, la gestión de los embargos de divulgación y la coordinación con los mantenedores de los proyectos originales. Aquí no se sustentan de forma independiente las métricas de lanzamiento ni las afirmaciones de protección universal; no se deben presentar las condiciones actuales del programa como hechos invariables desde el día del lanzamiento."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "942a88912e2e412f",
+      "language": "es",
+      "sourceSha256": "52968c158995b66b2f6e177cfddf7ef425d064924805cbb539c3e7b424fe781f",
+      "edition": {
+        "title": "Diseño de series temporales: identidad de las series y compromisos de cardinalidad",
+        "claims": [
+          "El autor propone almacenar las dimensiones repetidas de las series en una tabla de metadatos separada y referenciarlas mediante un identificador compacto. Describe una propuesta de diseño, no un ahorro de almacenamiento garantizado.",
+          "El autor advierte que no se utilicen campos de alta cardinalidad, como identificadores de solicitudes y tokens de sesión, como identidad de las series, porque el beneficio depende de que las muestras repetidas compartan una identidad."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compare la tasa de ingesta, la cardinalidad de las dimensiones, la retención y los patrones de consulta con datos representativos. Este resumen no reproduce los ahorros numéricos comunicados, y la propuesta del autor no debe generalizarse a todos los motores de series temporales."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "973739bcb859e5ab",
+      "language": "es",
+      "sourceSha256": "a72607be8dbfa0f0469eaa8526bf98d813ae6a7d5b926f7bc02ab5be85ee2ecd",
+      "edition": {
+        "title": "Opciones de modelos y multiplicadores de uso del agente en la nube de Copilot",
+        "claims": [
+          "GitHub añadió Claude Haiku 4.5 y GPT-5.4-mini como opciones de modelos para el agente en la nube de Copilot. El aviso los presenta como opciones para cambios sencillos, no como sustitutos universales para trabajos complejos.",
+          "El aviso indica un multiplicador de 0.33x para cada modelo añadido. Un multiplicador de uso no es una garantía medida de tiempo de ejecución, calidad del código o coste total del proyecto."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Evalúe tareas representativas atendiendo a la corrección, los reintentos y el esfuerzo de revisión, además de los cargos por uso. Verifique la lista actual de modelos del producto y sus políticas en lugar de tratar este multiplicador histórico como una cotización de precio vigente."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "9efda109fcdd4210",
+      "language": "es",
+      "sourceSha256": "e3ecbf6153d7054890c95fd9ced64f57c8637626c45e8d4959786c91fefc1fc2",
+      "edition": {
+        "title": "El anuncio de retirada de Claude Sonnet 4 se refiere a Copilot",
+        "claims": [
+          "GitHub declaró que Claude Sonnet 4 fue retirado de sus experiencias de Copilot el 2026-05-06. La declaración se refiere a Copilot, no a todos los canales de distribución de Anthropic.",
+          "El anuncio indica a los administradores de Copilot Enterprise que comprueben las políticas de modelos al habilitar alternativas."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Distinga la retirada de un producto, la retirada por parte del proveedor y el comportamiento local de las alternativas de respaldo. Pruebe los permisos y el comportamiento del flujo de trabajo con opciones compatibles, en lugar de tratar una recomendación antigua de sustitución como orientación vigente."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "be1017688a0667ca",
+      "language": "es",
+      "sourceSha256": "ce071e9cb1826de17522d8ca7b738de97d158e1ee7e714348e0a83598cb1920f",
+      "edition": {
+        "title": "El aviso de retirada de GPT-4.1 de GitHub se refiere a Copilot",
+        "claims": [
+          "GitHub anunció la retirada prevista de GPT-4.1 de Copilot para el 2026-06-01. Esto no describe su disponibilidad a través de todas las API externas.",
+          "Según el aviso, los administradores de Copilot Enterprise pueden tener que habilitar el acceso a modelos de sustitución mediante políticas de modelos."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Confirme qué experiencia de Copilot y qué política utiliza el flujo de trabajo. Trate la fecha programada como evidencia histórica y compruebe la disponibilidad real y actual de los modelos antes de actualizar la configuración."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c12b394bcd713139",
+      "language": "es",
+      "sourceSha256": "1a60ca75a31bb3776f61264a55eb89de73e15bb26596e60d263a4564577c9f06",
+      "edition": {
+        "title": "Alertas cerradas de Dependabot: retención anunciada y acceso a archivos",
+        "claims": [
+          "El aviso de GitHub programó un cambio de retención para el 2026-09-25, empezando por las alertas de seguridad cerradas de Dependabot en github.com y Enterprise Cloud. Excluye expresamente Enterprise Server; el anuncio por sí solo no verifica que el despliegue se haya completado.",
+          "Según la política anunciada, las alertas abiertas siguen siendo accesibles independientemente de su antigüedad, mientras que las cerradas permanecen en la interfaz y la API durante 2 años después de su cierre. Las alertas cerradas más antiguas pasan a archivos CSV descargables para administradores y responsables de seguridad autorizados, en lugar de seguir apareciendo en los resultados de la API."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Audite las consultas y las exportaciones de cumplimiento que dependen de alertas cerradas antiguas. Verifique el acceso real a los archivos y el estado del despliegue en la cuenta correspondiente; no aplique este aviso a todos los tipos de alertas ni deduzca una retención permanente tras eliminar una cuenta o un repositorio."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c2532ba4f69bf1ba",
+      "language": "es",
+      "sourceSha256": "52865fc6b15b9c18b9853ddb698fc473b57627717d0fb3c0942e2d446bf12f88",
+      "edition": {
+        "title": "Microsoft MDASH: análisis con múltiples modelos y estado preliminar",
+        "claims": [
+          "Microsoft describe MDASH como una infraestructura de análisis basada en agentes y múltiples modelos que coordina un conjunto de modelos de frontera y destilados. Es la descripción de su arquitectura por parte del proveedor.",
+          "El anuncio invita a participar en una versión preliminar privada, que no debe confundirse con disponibilidad pública general."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Distinga los resultados de pruebas comparativas comunicados por el proveedor de los hallazgos reproducidos de forma independiente. Revise las condiciones de acceso, el tratamiento del código fuente y los requisitos de validación antes de utilizar la herramienta en un flujo de seguridad."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c4a7f428da738696",
+      "language": "es",
+      "sourceSha256": "4303bfdd031dceaecc88c1353108da5fb5f0edc333f2624055739913e5674b57",
+      "edition": {
+        "title": "La revisión de seguridad de Copilot CLI sigue siendo una función preliminar experimental",
+        "claims": [
+          "GitHub introdujo el comando /security-review para cambios de código locales como una función experimental en versión preliminar pública. Los usuarios deben activar el modo experimental para probarlo.",
+          "El anuncio describe un análisis impulsado por Copilot que no depende del análisis de código de GitHub, Dependabot ni del análisis de secretos. Complementa esas herramientas con una revisión bajo demanda antes de confirmar los cambios; no demuestra que se detecten todas las vulnerabilidades."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compruebe la disponibilidad de la función en la CLI instalada e inspeccione los hallazgos manualmente. Mantenga las comprobaciones de seguridad deterministas y no considere un análisis preliminar sin hallazgos como una certificación de seguridad."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "c505a5c997b12684",
+      "language": "es",
+      "sourceSha256": "dc72630c6fb3cfd5d9e466d9e403e31022bcfc4620ab006ad7dcfa586469b9ba",
+      "edition": {
+        "title": "Caso de un servicio de seguimiento: esquemas de eventos y envío no bloqueante",
+        "claims": [
+          "En la transcripción publicada, Alina Krasavina describe el servicio interno de seguimiento de Delivery Hero, que utiliza SDK móviles y de frontend, una API de ingesta, consumidores en tiempo real y almacenamiento en BigQuery. Es el relato de la implementación por parte de la ponente.",
+          "La ponente afirma que los modelos de eventos producidos mediante generación de código revelaban problemas de esquema durante la compilación de las aplicaciones, mientras que una cola en el dispositivo y el envío por lotes en segundo plano permitían un envío no bloqueante. Las cifras comunicadas de costes y tasa de captura se excluyen de este resumen de alcance limitado."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Trate la transcripción como evidencia primaria de lo que comunicó la ponente, no como una reproducción independiente. Evalúe la responsabilidad sobre los esquemas, los límites de almacenamiento temporal, los fallos de entrega, los requisitos de privacidad y la equivalencia durante la migración para su propia carga de trabajo."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "ce26c7555a2bf537",
+      "language": "es",
+      "sourceSha256": "61eec32d86e9c98f3d522d13df2da1dad6aa6e8a9c38f362e26909cc7d450d3a",
+      "edition": {
+        "title": "Contención de agentes en Windows: versión preliminar temprana y límites del modo de auditoría",
+        "claims": [
+          "Microsoft presentó MXC SDK como una versión preliminar temprana: una capa de ejecución para agentes en Windows y WSL regida por políticas. El anuncio de un SDK no es evidencia independiente de que las cargas arbitrarias de agentes sean seguras.",
+          "El anuncio describe varias formas de aislamiento bajo un modelo de políticas compartido. Identifica el soporte de contenedores Linux y la integración de MXC con la nube como trabajo futuro, por lo que esos planes no deben presentarse como funciones entregadas en el momento del anuncio."
+        ],
+        "followUp": [
+          "En el momento de la revisión, el repositorio de MXC advierte que --audit desactiva toda la seguridad del entorno aislado para la carga analizada y que nunca debe utilizarse para ejecutar código no confiable. El modo de auditoría para elaborar políticas no es una garantía de contención."
+        ]
+      },
+      "reviewFocus": "Verifique el backend real, el soporte del sistema operativo, el acceso al sistema de archivos y el comportamiento de la red en un entorno representativo. Esta es una revisión del contexto de las fuentes, sin pruebas de escape del entorno aislado ni de contención."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d123262315e62321",
+      "language": "es",
+      "sourceSha256": "158dc5be465f07d476dedacb8f6645f21f00df2504671386cbeb63e74f732483",
+      "edition": {
+        "title": "Valores predeterminados de instalación de npm y restricciones escalonadas de tokens",
+        "claims": [
+          "El anuncio de npm 12 exige una autorización explícita para ejecutar scripts del ciclo de vida de las dependencias y compilaciones implícitas de node-gyp, y configura en none la resolución de dependencias de Git y de URL remotas salvo autorización expresa. Son valores predeterminados de instalación, no una garantía de que el código instalado sea inofensivo.",
+          "El mismo aviso preveía retirar las acciones de gestión sensibles de los tokens de npm que omiten 2FA a principios de 2026-08. Por separado, situaba las restricciones de publicación directa alrededor de 2027-01, con la publicación de confianza o la publicación por etapas aprobada por una persona como vías de migración."
+        ],
+        "followUp": [
+          "La actualización del 2026-07-31 indica que los tokens de acceso granular de npm que omiten 2FA ya no pueden realizar acciones de gestión sensibles y que se requiere una comprobación interactiva de 2FA. Excluye expresamente de ese cambio los tokens de acceso personal de GitHub, los tokens de GitHub App y GITHUB_TOKEN.",
+          "Esa actualización sigue describiendo la retirada de la publicación directa como un objetivo para 2027-01. No comunica que esa restricción posterior de publicación se haya completado."
+        ]
+      },
+      "reviewFocus": "Pruebe las compilaciones nativas y las fuentes de dependencias antes de actualizar, y revise las listas de scripts permitidos en lugar de activarlo todo. Verifique el soporte actual de publicación de su proveedor de CI; un anuncio de calendario no demuestra que todas las acciones del registro ya hayan cambiado."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d17b2ae1f047cf94",
+      "language": "es",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "edition": {
+        "title": "Pódcast de seguridad en la nube: consejos atribuidos sobre aislamiento y aprendizaje",
+        "claims": [
+          "En la transcripción, Alex Zenla, que cofundó Edera, describe una abstracción denominada zona para aislar cargas dentro de máquinas virtuales. Ese relato del diseño procede del proveedor; no es un límite de seguridad probado de forma independiente.",
+          "Zenla describe el uso de modelos de lenguaje para explicar especificaciones y subraya la necesidad de comprender la implementación resultante. Las críticas de la entrevista a la infraestructura existente son una opinión técnica atribuida, no una prueba de que todos los despliegues de contenedores o GPU sean inseguros."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Utilice la transcripción para evaluar el argumento de la persona entrevistada y valide después los requisitos de aislamiento y los modos de fallo frente a su propio modelo de amenazas. Para este resumen no se realizó ningún experimento de escape del entorno aislado, rendimiento o hardware de IA."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d92a8a6927fa76ff",
+      "language": "es",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "edition": {
+        "title": "Retirada de Gemini en Copilot: avisos de planificación y finalización",
+        "claims": [
+          "El aviso original de GitHub programó la retirada de Gemini 2.5 Pro y Gemini 3 Flash de las experiencias de Copilot para el 2026-07-31. Es un aviso del producto Copilot y no demuestra la retirada de esos mismos modelos en otros proveedores o API.",
+          "Las alternativas previstas eran Gemini 3.1 Pro y Gemini 3.5 Flash. El aviso también advertía que las políticas empresariales de modelos podían tener que permitir las alternativas antes de que los usuarios pudieran seleccionarlas."
+        ],
+        "followUp": [
+          "La actualización de GitHub del 2026-07-31 comunica que la retirada en Copilot se ha completado. Su tabla de alternativas incluye Gemini 3.1 Pro (Preview) y Gemini 3.6 Flash, que sustituye la sugerencia anterior de Gemini 3.5 Flash. Son las alternativas de ese aviso, no una afirmación de que su disponibilidad siga igual hoy."
+        ]
+      },
+      "reviewFocus": "Confirme la experiencia concreta de Copilot, la política de la organización y los modelos actualmente compatibles. El aviso posterior de finalización cambia una alternativa sugerida; no siga presentando la sugerencia inicial como la orientación definitiva de migración."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d9492522fb4514ef",
+      "language": "es",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "edition": {
+        "title": "Una prueba comparativa de lenguajes mide una tarea de Git simplificada",
+        "claims": [
+          "El autor de la prueba comparativa pidió a Claude Code que implementara un Git simplificado en 13 lenguajes. El experimento mide esa tarea, no la idoneidad general de los lenguajes.",
+          "El autor comunica 20 ejecuciones por lenguaje con Claude Opus 4.6 y un nivel de esfuerzo alto. Los costes y la velocidad comunicados dependen de ese modelo y de la configuración de la tarea."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compare las instrucciones, la cobertura de pruebas, los permisos de las herramientas, las repeticiones y la configuración del modelo antes de utilizar el resultado para elegir un lenguaje de producción. Las clasificaciones comunicadas no se reprodujeron aquí de forma independiente."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e467e85426c883ef",
+      "language": "es",
+      "sourceSha256": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+      "edition": {
+        "title": "Anuncio de un curso de seguridad de IA: alcance y límites de la evidencia",
+        "claims": [
+          "El propio anuncio de InfoQ describía un curso en línea por cohortes de 5 semanas sobre seguridad y privacidad de IA para ingenieros sénior y arquitectos de sectores regulados, facilitado por Katharine Jarmul. Esto establece el formato anunciado por el proveedor, no un aval independiente de la calidad de la formación.",
+          "El proveedor describía el modelado de amenazas, las pruebas de red teaming, los controles, la observabilidad y la gobernanza, con una evaluación de riesgos documentada y un informe de mitigación como proyecto final. Son actividades de aprendizaje anunciadas, no evidencia de que los participantes o los productos cumplan los requisitos normativos."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Trate el anuncio archivado como información del curso facilitada por su proveedor. Antes de comprar, verifique directamente el calendario, el temario, el precio y la inscripción actuales; las fechas y los precios históricos de inscripción no se presentan deliberadamente como ofertas vigentes."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "fb47d93f2cc47316",
+      "language": "es",
+      "sourceSha256": "faff7a3fb3e3669e2d391012661d2825859f2db1a61e44011b0ab61623c97c02",
+      "edition": {
+        "title": "La hoja de ruta de Cloudflare incluye autenticación poscuántica",
+        "claims": [
+          "Cloudflare anunció el objetivo de alcanzar una seguridad plenamente poscuántica en 2029, incluida expresamente la autenticación. Es un objetivo de hoja de ruta, no una migración completada.",
+          "El anuncio distingue el cifrado poscuántico de la autenticación e indica que el trabajo no está terminado hasta que también se actualice la autenticación."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Haga inventarios separados del intercambio de claves, los certificados y las dependencias de firma. Confirme la hoja de ruta actual de cada producto antes de programar cambios; la fecha histórica no es una garantía de migración para todos los despliegues."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "fe469724f5828fb0",
+      "language": "es",
+      "sourceSha256": "e7ed00186abcdf5d88f2717c8b08b1bffa654f181c4c216eade0ceeb176ed1fc",
+      "edition": {
+        "title": "Revisión de seguridad en la aplicación Copilot: alcance preliminar y límites de la revisión",
+        "claims": [
+          "GitHub introdujo el comando /security-review de la aplicación Copilot en versión preliminar pública para los cambios del workstream actual. El anuncio describía hallazgos puntuados por gravedad y confianza, con sugerencias que permiten actuar, no una prueba de que se encontrarían todas las vulnerabilidades.",
+          "El comando complementa el análisis de código, Dependabot y el análisis de secretos con una revisión bajo demanda de los cambios locales. En el lanzamiento estaba disponible para usuarios de Copilot Free, Pro, Business y Enterprise durante la versión preliminar pública; el aviso no establece precios permanentes ni una disponibilidad continuada."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Confirme la compatibilidad de la aplicación instalada y las condiciones actuales del plan, y valide después cada sugerencia con pruebas y revisión. Una revisión de IA sin hallazgos no debe considerarse una certificación de seguridad ni un sustituto de los controles de publicación."
+    }
+  ]
+}

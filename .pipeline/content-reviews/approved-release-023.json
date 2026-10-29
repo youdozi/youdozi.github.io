@@ -1,0 +1,24 @@
+{
+  "createdAt": "2026-10-27T22:56:57.942716+00:00",
+  "publicationAuthorization": "User: pr 확정 후 다음 작업 진행",
+  "approvedPRs": [
+    72,
+    73
+  ],
+  "approvedHeads": {
+    "72": "8a162cefbb8e67d5a1dd1ae87d4ae0cbbe6cfafe",
+    "73": "5c9aa697775e53b9c68e83d7ff4078fced291ae0"
+  },
+  "baseCommit": "faf7a70b079aef8dfa796751aaa3f58d8a063fbc",
+  "integration": "Merge published PR72 into PR73; retain both README paragraphs and test suites. Article.astro merges cleanly with both contents/dates and on-demand comments.",
+  "validation": {
+    "python": 169,
+    "node": 47,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 936,
+    "sitemapURLs": 471
+  },
+  "publicationDatePolicy": "No source manuscripts or publication/modification dates changed.",
+  "measurement": "Final integrated CI and Pages deployment will be checked before reporting publication. No ranking or field performance claim."
+}

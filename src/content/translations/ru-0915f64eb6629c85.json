@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "0915f64eb6629c85",
+  "language": "ru",
+  "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+  "edition": {
+    "title": "Объявление о прекращении поддержки Grok Code Fast 1 уточняет охват Copilot",
+    "claims": [
+      "GitHub объявила о планируемом прекращении использования Grok Code Fast 1 в Copilot с 2026-05-15. Здесь зафиксирован объявленный график, а не независимое подтверждение фактического отключения.",
+      "В уведомлении говорится, что дату перенесли на более ранний срок из-за отказа поставщика от поддержки модели."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Перед изменением рабочих процессов следует составить перечень названий моделей для каждого продукта и зависимостей от политик администрирования. Проверьте текущую доступность и оцените альтернативу на типичных задачах, а не принимайте автоматически рекомендации моделей из прошлых объявлений.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

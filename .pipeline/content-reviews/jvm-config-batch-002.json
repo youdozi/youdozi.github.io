@@ -1,0 +1,173 @@
+{
+  "createdAt": "2026-10-27T03:12:17.860558+00:00",
+  "purpose": "Review four existing JVM/runtime/configuration topics as eight Korean/English manuscripts with executable examples.",
+  "publicationApprovalAtPreparation": null,
+  "topics": [
+    "2023-09-20-jdk-21-release",
+    "2023-10-10-temurin-jdk21-delay",
+    "2023-10-27-springbatch5-migration",
+    "2021-07-27-parse-yaml"
+  ],
+  "newEnglishEditions": {
+    "preparedPublishedAt": {
+      "2023-09-20-jdk-21-release": "2026-10-27T03:08:04.102Z",
+      "2023-10-10-temurin-jdk21-delay": "2026-10-27T03:08:04.102Z",
+      "2023-10-27-springbatch5-migration": "2026-10-27T03:08:04.102Z",
+      "2021-07-27-parse-yaml": "2026-10-27T03:08:04.102Z"
+    },
+    "refreshAllPublicationTimesAfterApproval": true,
+    "policy": "Refresh the first English publishedAt/updatedAt timestamps only after explicit approval. Preserve Korean original dates and all reviewed bodies."
+  },
+  "selectionEvidence": {
+    "source": "Search Console API, actual-search-status-2026-10-27.json stored outside the repository",
+    "period": "2026-09-29 through 2026-10-26 America/Los_Angeles, dataState all; October25 onward provisional",
+    "legacyPageImpressions": {
+      "/jdk/jdk-21-release/": 17,
+      "/jdk/temurin-jdk21-delay/": 14,
+      "/spring/springbatch5-migration/": 8,
+      "/linux/parse-yaml/": 2
+    },
+    "limits": "Small historical sample; no claim of established demand for the new English editions."
+  },
+  "preserved": [
+    "Korean original publishedAt",
+    "translationKey and routeSlug",
+    "legacyUrl and legacySource",
+    "archiveBodySha256"
+  ],
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "sourceVerification": {
+    "temurinNoticeUpdate": "October9,2023 (corrected from original October10)",
+    "temurinInitialReleasePublishedAt": "2023-10-10T13:55:52Z from the official GitHub release metadata; not all asset upload times",
+    "liveAdoptiumMetadata": {
+      "query": "Java21/Linux/x64/HotSpot/JDK/vendor eclipse",
+      "returnedSemver": "21.0.13+9.0.LTS",
+      "assets": 1,
+      "binaryDownloaded": false,
+      "limits": "Volatile lookup; neither production-version recommendation nor binary integrity verification."
+    },
+    "openjdkDirectFetch": "OpenJDK project/JEP pages returned403; use Oracle Java21 API/language/release documentation instead."
+  },
+  "review": {
+    "type": "Two-pass self AI review: technical/semantic comparison, then independent reading of each language edition.",
+    "independentSession": false,
+    "humanReview": false,
+    "scope": "Eight titles/descriptions/bodies, paired code, primary-source dates, source identity, code checker scope and public reader output.",
+    "findings": [
+      {
+        "severity": "major",
+        "issue": "Original Batch article exposed destructive column changes without completed value migration.",
+        "resolution": "Remove generic executable migration SQL; require DB-specific rehearsal and document v4 history/restart restrictions. Fresh-schema tests are explicitly not data migration proof."
+      },
+      {
+        "severity": "major",
+        "issue": "Original YAML example accepted numeric-looking YAML strings after rendering.",
+        "resolution": "Use typed safe_load plus exact int/range checks; reject booleans and strings; test parser and command boundary."
+      },
+      {
+        "severity": "minor",
+        "issue": "Original Temurin text dated the notice update October10.",
+        "resolution": "Use October9 notice update and distinguish October10 GitHub publication."
+      },
+      {
+        "severity": "minor",
+        "issue": "Separate shell lines could run selector after failed curl.",
+        "resolution": "Join curl and selector with &&."
+      },
+      {
+        "severity": "minor",
+        "issue": "Non-string package URL could trigger an uncaught parsing exception.",
+        "resolution": "Reject non-string URL and cover it in fixtures."
+      },
+      {
+        "severity": "minor",
+        "issue": "YAML serializer emitted unquoted reviewedAt, interpreted as Date by Astro.",
+        "resolution": "Quote all eight dates; rerun schema/build tests."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "reviewedSha256": {
+      "src/content/posts/en/2023-09-20-jdk-21-release.md": "3d4cf396c38b3ff56dadee16421a2ed4297338e095cfdf7a6d5d120a89a77603",
+      "src/content/posts/ko/2023-09-20-jdk-21-release.md": "027973c78799298cb1ec2f1f71c2d6e9e60043eb12ec5d37d6ccb514a315dc26",
+      "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md": "8baec0ce1ce0a33276c9dec5648940e91fae1dd01071b7abe56b356b9712d240",
+      "src/content/posts/ko/2023-10-10-temurin-jdk21-delay.md": "a11bb684ee24b45a16276887e4066c8d600b0dcc104e202286486824ad0fd600",
+      "src/content/posts/en/2023-10-27-springbatch5-migration.md": "b5067016f8532e0f2473a1cec2437f468c1561122e5668c9639d8bc4792905ad",
+      "src/content/posts/ko/2023-10-27-springbatch5-migration.md": "c443a243de7169631173dec61258d5ff4efcb3c64aab9e052f8ef9e52a66cf1d",
+      "src/content/posts/en/2021-07-27-parse-yaml.md": "e4e1645a37c3ed3963cfae054b447fa836ea24bd1744b856dcf204ded92edb8a",
+      "src/content/posts/ko/2021-07-27-parse-yaml.md": "6edeacb78f26c27a4d9c3e78bb38950d8e344a97f6fa4d7d6f1166f09d37f344",
+      "scripts/check_config_input_examples.py": "161973fa0f8422eaf74a7f0dc2a41b501a98b40b6f71e91894cbd289f501a41a",
+      "scripts/check_jvm_runtime_examples.py": "385ba3b046732dcbfc96d405a397b636216461fbf1af01022861018c41e6efd6",
+      "scripts/requirements-config-examples.txt": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a"
+    }
+  },
+  "execution": {
+    "jdk21": {
+      "localVersion": "Zulu21.0.1",
+      "previewFlagsUsed": false,
+      "checks": [
+        "five exact output lines",
+        "reverse view reflects original mutation",
+        "record/switch/null behavior",
+        "virtual thread creation and completion",
+        "source rejected for Java17 target"
+      ],
+      "performanceMeasured": false
+    },
+    "batch5": {
+      "gradle": "8.4",
+      "jdk": "17.0.8.1",
+      "bootBOM": "3.5.7",
+      "batch": "5.2.4",
+      "h2": "2.3.232",
+      "testsPassed": 3,
+      "checks": [
+        "typed parameter persistence",
+        "same completed instance rejected",
+        "failed instance new execution skips completed Step"
+      ],
+      "limits": [
+        "fresh H2 schema only",
+        "no v4 data conversion",
+        "one process, no JVM restart or exactly-once external side-effect proof"
+      ]
+    },
+    "configuration": {
+      "python": "3.13",
+      "pyyaml": "6.0.3",
+      "yamlParserCases": 21,
+      "wrapperAndUsageCases": 6,
+      "temurinMetadataCases": 18,
+      "totalCases": 45,
+      "externalRequestsInChecker": 0,
+      "binaryDownloads": 0,
+      "limits": [
+        "trusted local configuration",
+        "duplicate keys not rejected",
+        "no resource sandbox"
+      ]
+    }
+  },
+  "siteValidation": {
+    "nodeTestsPassed": 24,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "astroHints": 0,
+    "htmlPages": 859,
+    "sitemapUrls": 426,
+    "englishListedEntries": 73,
+    "koreanListedEntries": 289,
+    "eightPageAudit": "Passed canonical, reciprocal en/ko and x-default, H1/descriptions/OG/schema dates, RSS, search indexes, sitemap lastmod, reader code and absence of editorial banners."
+  },
+  "ci": "Both executable checkers configured. Final PR check result tracked separately.",
+  "publication": "Draft review only. No batch changes deployed before explicit approval.",
+  "publicationApproval": {
+    "approvedAt": "2026-10-27T03:19:18+00:00",
+    "approvedBy": "youdozi",
+    "pullRequest": 57,
+    "basis": "User explicitly requested PR57 confirmation followed by the next work batch.",
+    "englishPublicationPreparedAt": "2026-10-27T03:19:18+00:00",
+    "scope": "Publish four reviewed Korean/English pairs. Only first-English publication/modified timestamps changed; Korean original dates and all bodies preserved."
+  }
+}

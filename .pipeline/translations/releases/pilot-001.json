@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "pilot-release-001",
+  "state": "approved-for-publication",
+  "batch": ".pipeline/translations/batches/pilot-001.json",
+  "batchSha256": "c87a70d2377c6c96ea504e3dd7d8af850db7d1395a442481d35b1e00d7fdc811",
+  "renewalId": "7c3a8ce4dcd53d2b",
+  "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+  "translationReview": ".pipeline/translations/ai-reviews/2026-10-27-pilot-release-001.json",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 49,
+    "approvedAt": "2026-10-26T15:29:08.424Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 in direct response to PR #49 final review and explicit request for publication approval of this one source in zh-CN, ja, de, fr and ru."
+  },
+  "scope": {
+    "sources": 1,
+    "editions": 5,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ]
+  },
+  "candidates": [
+    {
+      "language": "zh-CN",
+      "title": "多区域设计：复制、写入与故障转移的权衡",
+      "url": "https://youdozi.github.io/zh-CN/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+      "publicationFile": "src/content/translations/zh-CN-7c3a8ce4dcd53d2b.json",
+      "publicationFileSha256": "c094bd1c15350e2efe4d728b05c8c86466d025a157eeedcbd274d41f0db75a83"
+    },
+    {
+      "language": "ja",
+      "title": "マルチリージョン設計：レプリケーション・書き込み・フェイルオーバーのトレードオフ",
+      "url": "https://youdozi.github.io/ja/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+      "publicationFile": "src/content/translations/ja-7c3a8ce4dcd53d2b.json",
+      "publicationFileSha256": "5ec4afe996672e30faf0df5b3ae502be346d87ed89f6d34342279b6e9b133f67"
+    },
+    {
+      "language": "de",
+      "title": "Mehrregionen-Architektur: Abwägungen bei Replikation, Schreibzugriffen und Failover",
+      "url": "https://youdozi.github.io/de/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+      "publicationFile": "src/content/translations/de-7c3a8ce4dcd53d2b.json",
+      "publicationFileSha256": "11f73b25edbe7eca71ff2a288b4cff5fd2983e37104c58d42fe5dd1d4d2b1c11"
+    },
+    {
+      "language": "fr",
+      "title": "Architecture multirégion : compromis entre réplication, écritures et basculement",
+      "url": "https://youdozi.github.io/fr/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+      "publicationFile": "src/content/translations/fr-7c3a8ce4dcd53d2b.json",
+      "publicationFileSha256": "90876e1a5f3211fd24582954932f7aeeb78a64abe2bfba4e9a400fda09571c02"
+    },
+    {
+      "language": "ru",
+      "title": "Мультирегиональная архитектура: компромиссы репликации, записи и переключения при сбое",
+      "url": "https://youdozi.github.io/ru/digest/2026-07-12-multi-region-replication-and-failover-trade-offs/",
+      "publicationFile": "src/content/translations/ru-7c3a8ce4dcd53d2b.json",
+      "publicationFileSha256": "d1055f33c62a9c8a90cfd74fcd677134d52799b6e0e9c5f4be6971953d5550ec"
+    }
+  ],
+  "publicationNotes": [
+    "This manifest is a review artifact; no build or publication script consumes it.",
+    "User approved these five editions in the Codex conversation for PR #49.",
+    "Production availability must be verified after merge and successful deployment.",
+    "Approval and translation publication timestamps are new; source news dates and test fixture metadata are not reused."
+  ],
+  "publicationPreparedAt": "2026-10-26T15:29:08.424Z",
+  "publicationVerification": {
+    "checkedAt": "2026-10-26T15:30:50.889908+00:00",
+    "nodeTestsPassed": 15,
+    "astroCheck": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "htmlPagesExcludingOwnershipFiles": 790,
+    "canonicalSitemapUrls": 388,
+    "approvedTranslations": 5,
+    "remainingUnpublishedEditions": 290,
+    "reciprocalArticleLanguages": [
+      "en",
+      "ko",
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "englishXDefault": true,
+    "localizedFeedsAndSearchIndexes": true,
+    "productionDeployment": "pending"
+  }
+}

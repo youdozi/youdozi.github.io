@@ -1,5 +1,5 @@
 ---
-title: "[springboot] springboot test webclient"
+title: "Spring WebClient 테스트: MockWebServer와 JUnit 5로 응답 검증"
 language: "ko"
 translationKey: "2023-09-19-springboot-test-webclient"
 routeSlug: "2023-09-19-springboot-test-webclient"
@@ -13,37 +13,51 @@ tags:
   - "webclient"
 legacyUrl: "/springboot/springboot-test-webclient/"
 legacySource: "_posts/spring/test/webclient/2023-09-19-springboot-test-webclient.markdown"
-updatedAt: "2026-10-24T09:00:00+09:00"
-reviewedAt: "2026-10-24"
+updatedAt: 2026-10-27T05:23:47.316+00:00
+reviewedAt: "2026-10-27"
 reviewStatus: "revised"
-reviewScope: "공식 WebClient 문서 대조 및 HTTP 상태·미디어 타입 테스트 재작성"
+reviewScope: "공식 문서 대조, 재현 절차와 버전별 적용 조건 보강"
 archiveBodySha256: "2e7abc1e5f3ccd2ff3b59e43e886b2a5e6a6f582b1058f2d1cf726ba260e7964"
 reviewSources:
-  - "https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-testing.html"
-  - "https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-exchange.html"
-  - "https://github.com/square/okhttp/tree/parent-4.12.0/mockwebserver"
+  - "https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html"
+  - "https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-exchange.html"
+description: "MockWebServer와 JUnit 5로 Spring WebClient의 JSON·HTML·HTTP 500·Content-Type 누락·잘못된 JSON·빈 본문을 검증하는 실행 가능한 여덟 테스트입니다."
 ---
-## 무엇을 검증할 것인가
+로컬 MockWebServer를 사용하면 Spring WebClient의 HTTP 상태·Content-Type·JSON 디코딩을 함께 테스트할 수 있습니다. HTTP 200에 HTML이 들어온 것과 HTTP 500 응답은 서로 다른 실패입니다. `Accept: application/json`을 보내도 서버가 반드시 JSON을 반환하는 것은 아닙니다.
 
-외부 API가 JSON 대신 HTML을 반환하면 HTTP 상태와 Content-Type을 별도로 처리해야 합니다. HTTP 500을 반환하는 것과 HTTP 200에 HTML 오류 페이지를 담는 것은 다른 실패입니다. `Accept: application/json`은 요청자의 선호를 표현할 뿐 상대 서버의 응답 형식을 보장하지 않습니다.
+fluent API 체인을 모킹하는 대신 실제 WebClient로 로컬 HTTP 서버에 요청합니다. Spring도 클라이언트의 네트워크 동작을 확인할 수 있는 [모의 웹 서버 테스트](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html)를 안내합니다.
 
-기존 예제는 선언되지 않은 Mockito 필드, 초기화되지 않은 final 필드, HTML을 JSON 문자열로 감싼 본문, `RuntimeException`을 만들고 `ConnectException`을 기대하는 검증이 섞여 있었습니다. 아래 예제는 fluent API 체인 대신 실제 로컬 HTTP 서버를 사용하도록 다시 구성했습니다.
+## 처리 흐름
 
-## 의존성과 실행 조건
+![HTTP 응답 계약 확인 흐름도](/assets/diagrams/2023-09-19-springboot-test-webclient-ko.svg)
 
-Java 17 이상, Spring Boot 3.x 계열의 의존성 관리가 적용된 Gradle 프로젝트를 기준으로 합니다. 아래 MockWebServer 4.12.0은 예제 API를 고정하기 위한 버전이며 최신 권장 버전이라는 뜻은 아닙니다.
+클라이언트는 상태 코드 다음에 미디어 타입을 검사하고 거절한 본문을 해제합니다. StepVerifier는 값뿐 아니라 완료·오류 신호도 확인합니다.
+
+## 독립적인 테스트 프로젝트 만들기
+
+재현 환경은 JDK 17.0.8.1, Gradle 8.4, Spring Boot **3.5.7 BOM**, MockWebServer **4.12.0**입니다. 예제의 의존성을 고정한 조합이며 현재 운영 버전의 권장은 아닙니다. 일반 Java 테스트 프로젝트이므로 실행 중인 Spring Boot 애플리케이션은 필요하지 않습니다.
+
+새 디렉터리에서 `settings.gradle`에 `rootProject.name = 'webclient-example'`을 적고, 다음 내용으로 `build.gradle`을 만듭니다.
 
 ```groovy
+plugins { id 'java' }
+repositories { mavenCentral() }
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    testImplementation platform('org.springframework.boot:spring-boot-dependencies:3.5.7')
+    testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
     testImplementation 'com.squareup.okhttp3:mockwebserver:4.12.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-tasks.named('test') { useJUnitPlatform() }
+test { useJUnitPlatform() }
 ```
 
-## HTTP 경계를 포함하는 테스트
+Boot Gradle 플러그인이 없어도 Spring·Reactor 의존성의 버전이 정해지도록 BOM을 명시했습니다. 이미 Boot로 의존성을 관리하는 애플리케이션이라면 해당 애플리케이션의 BOM에 맞춰 테스트 의존성을 적용하세요.
+
+## 응답 계약 여덟 가지 테스트하기
+
+다음 클래스를 `src/test/java/ExternalApiTest.java`로 저장합니다.
 
 ```java
 import java.io.IOException;
@@ -86,8 +100,9 @@ class ExternalApiTest {
                     return response.createException().flatMap(Mono::error);
                 }
                 boolean json = response.headers().contentType()
-                    .map(type -> MediaType.APPLICATION_JSON.isCompatibleWith(type)
-                        || type.getSubtype().endsWith("+json"))
+                    .map(type -> "application".equals(type.getType())
+                        && ("json".equals(type.getSubtype())
+                            || type.getSubtype().endsWith("+json")))
                     .orElse(false);
                 if (!json) {
                     return response.releaseBody().then(Mono.<Payload>error(
@@ -110,6 +125,7 @@ class ExternalApiTest {
         assertNotNull(request);
         assertEquals("GET", request.getMethod());
         assertEquals("/employee/100", request.getPath());
+        assertEquals("application/json", request.getHeader("Accept"));
     }
 
     @Test
@@ -131,21 +147,92 @@ class ExternalApiTest {
             .expectNextMatches(payload -> payload.message().equals("ok"))
             .expectComplete().verify(Duration.ofSeconds(5));
     }
+
+    @Test
+    void rejectsMissingContentType() {
+        server.enqueue(new MockResponse().setResponseCode(200)
+            .setBody("{\"message\":\"ok\"}"));
+        StepVerifier.create(fetch())
+            .expectErrorMatches(error -> error instanceof IllegalStateException
+                && error.getMessage().equals("Expected JSON response"))
+            .verify(Duration.ofSeconds(5));
+    }
+
+    @Test
+    void rejectsMalformedJson() {
+        server.enqueue(new MockResponse().setResponseCode(200)
+            .setHeader("Content-Type", "application/json").setBody("{broken"));
+        StepVerifier.create(fetch())
+            .expectError(org.springframework.core.codec.DecodingException.class)
+            .verify(Duration.ofSeconds(5));
+    }
+
+    @Test
+    void decodesStructuredJsonSubtype() {
+        server.enqueue(new MockResponse().setResponseCode(200)
+            .setHeader("Content-Type", "application/vnd.example+json")
+            .setBody("{\"message\":\"ok\"}"));
+        StepVerifier.create(fetch())
+            .expectNextMatches(payload -> payload.message().equals("ok"))
+            .expectComplete().verify(Duration.ofSeconds(5));
+    }
+
+    @Test
+    void completesWithoutPayloadForEmptyJsonBody() {
+        server.enqueue(new MockResponse().setResponseCode(200)
+            .setHeader("Content-Type", "application/json"));
+        StepVerifier.create(fetch())
+            .expectComplete().verify(Duration.ofSeconds(5));
+    }
+
+    @Test
+    void rejectsNonApplicationJsonSubtype() {
+        server.enqueue(new MockResponse().setResponseCode(200)
+            .setHeader("Content-Type", "text/example+json")
+            .setBody("{\"message\":\"ok\"}"));
+        StepVerifier.create(fetch())
+            .expectErrorMatches(error -> error instanceof IllegalStateException
+                && error.getMessage().equals("Expected JSON response"))
+            .verify(Duration.ofSeconds(5));
+    }
 }
 ```
 
-## 실패 종류를 나누는 이유
+JDK 17을 선택하고 Gradle 8.4가 설치된 환경에서 실행합니다.
 
-HTTP 오류는 `WebClientResponseException`, 연결 실패 등 요청 자체의 오류는 보통 `WebClientRequestException`으로 구분됩니다. 연결 예외의 내부 원인을 HTTP 500과 혼동하지 않아야 합니다. HTML을 응답할 때는 `setBody(html)`로 원문을 넣으며 `ObjectMapper.writeValueAsString(html)`로 JSON 문자열을 만들지 않습니다.
+```sh
+java -version
+gradle --version
+gradle --no-daemon test
+```
 
-예제의 `verify(Duration...)`는 테스트가 무한 대기하지 않게 하는 제한입니다. 실제 클라이언트의 연결·응답 시간 제한을 설정한 것은 아니므로 운영 구성에서 별도로 정해야 합니다. 빈 JSON 본문, 잘못된 JSON, Content-Type 누락, `application/problem+json`, 타임아웃도 계약에 맞게 테스트를 추가할 수 있습니다. 오류 본문에는 개인 정보가 있을 수 있으므로 실제 서비스 로그에는 그대로 출력하지 않습니다.
+여덟 테스트가 모두 통과해야 합니다. 개별 결과는 `build/reports/tests/test/index.html`에서 확인할 수 있습니다. Gradle의 태스크 출력에 통과한 테스트 이름이 모두 표시되는 것은 아닙니다.
 
-## 실행 검증
+| 응답 | 이 예제가 요구하는 결과 |
+| --- | --- |
+| HTTP 200, JSON 본문 | payload 디코딩 |
+| HTTP 200, HTML 본문 | 예상과 다른 응답 형식으로 거부 |
+| HTTP 500, HTML 본문 | HTTP 오류 타입 유지 |
+| HTTP 200, Content-Type 누락 | 응답 형식이 명시되지 않아 거부 |
+| HTTP 200, 잘못된 JSON | 디코딩 오류 |
+| HTTP 200, `application/vnd.example+json` | 호환되는 JSON payload 디코딩 |
+| HTTP 200, 빈 JSON 본문 | payload를 방출하지 않고 완료 |
+| HTTP 200, `text/example+json` | application 계열이 아닌 미디어 타입 거부 |
 
-2026-10-24에 본문의 테스트 클래스를 그대로 추출해 JDK 17, Gradle 8.4, Spring Boot 3.5.7 BOM과 MockWebServer 4.12.0으로 컴파일·실행했습니다. JSON 200, HTML 200, HTML 500의 세 테스트가 통과했습니다. 저장소의 `python3 scripts/check_webclient_example.py`로 같은 검증을 반복할 수 있습니다. 이 조합은 예제 재현 조건이며 운영 의존성의 최신성·보안 상태를 보증하지 않습니다.
+빈 본문 처리는 이 예제에서 선택한 계약입니다. 반드시 payload가 있어야 하는 API라면 `switchIfEmpty(Mono.error(...))`를 추가하고 빈 JSON 본문 테스트도 애플리케이션 오류를 기대하도록 바꿔야 합니다.
 
-## 확인한 자료
+## 상태와 디코딩을 나눠 확인하는 이유
 
-- [공식 자료 1](https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-testing.html)
-- [공식 자료 2](https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-exchange.html)
-- [공식 자료 3](https://github.com/square/okhttp/tree/parent-4.12.0/mockwebserver)
+`fetch()`는 오류 상태를 먼저 처리한 뒤 성공 응답의 형식을 검사합니다. `createException()`은 HTTP 500을 `WebClientResponseException.InternalServerError`로 유지합니다. 연결 실패는 보통 `WebClientRequestException` 경로이며 서버가 보낸 HTTP 오류 응답과 구분해야 합니다.
+
+오류 상태가 아니면 `application/json`과 `application/*+json` 미디어 타입을 허용하고, 실제 본문은 디코더가 검사하게 합니다. 잘못된 Content-Type과 잘못된 JSON을 서로 다른 오류로 구분할 수 있습니다. 이는 예제의 계약이며 리다이렉트나 모든 성공 상태를 다루는 완전한 정책은 아닙니다.
+
+성공 응답의 형식을 거부할 때는 본문을 해제한 뒤 애플리케이션 오류를 반환합니다. `exchangeToMono`에서는 콜백 안에서 본문을 소비하거나 처리해야 합니다. [Spring의 exchange 안내](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-exchange.html)는 완료 후 소비하지 않은 본문을 해제하는 동작을 설명합니다.
+
+`setBody(html)`은 HTML 원문을 보냅니다. 먼저 JSON 문자열로 직렬화하면 테스트하려던 응답 자체가 바뀝니다. 기록된 요청으로 실제 전송한 메서드·경로·`Accept` 헤더도 확인합니다.
+
+`verify(Duration.ofSeconds(5))`는 각 테스트의 대기를 제한합니다. 운영 클라이언트의 연결·응답 시간 제한을 설정하는 것은 아닙니다. 타임아웃과 재시도는 API 계약에 맞춰 별도 테스트해야 하며, 이 여덟 테스트에는 포함하지 않았습니다.
+
+위 재현 환경에서 여덟 테스트가 모두 통과했습니다. 저장소에서는 `python3 scripts/check_webclient_example.py`로 반복할 수 있습니다. Jakarta 전환을 함께 진행한다면 클라이언트 동작을 바꾸기 전에 [Spring Boot 마이그레이션 기준선](/ko/posts/2023-09-08-springboot3-migration/)부터 확인하세요.
+
+MockWebServer API는 [OkHttp 4.12.0 소스와 예제](https://github.com/square/okhttp/tree/parent-4.12.0/mockwebserver)를 참고할 수 있습니다.

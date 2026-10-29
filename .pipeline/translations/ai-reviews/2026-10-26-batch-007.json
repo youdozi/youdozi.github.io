@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T10:35:34.526369+00:00",
+  "skill": "tech-blog-writing",
+  "reviewMethod": "independent-ai-session-and-targeted-recheck",
+  "reviewSession": "batch007_review",
+  "writingConversationProvidedToReviewer": false,
+  "previousVerdictsProvidedAtInitialReview": false,
+  "scope": {
+    "editions": 25,
+    "sources": 5,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "title",
+      "claims",
+      "followUp",
+      "reviewFocus"
+    ],
+    "additionalTargetedEditions": 2,
+    "additionalTargetedFields": [
+      "38bfcb4310c98b8d/ru/edition.claims[1]",
+      "4380abffaf1a31e0/ru/edition.claims[0]"
+    ],
+    "audience": "software developers",
+    "type": "concise historical-news translations",
+    "steps": [
+      "Read target-language prose without source",
+      "Compare to approved English edition and stored evidence",
+      "Writer applies source-supported corrections",
+      "Reviewer rechecks five new-batch fields and compares two old fields de novo"
+    ]
+  },
+  "initialBatchSha256": {
+    ".pipeline/translations/batches/renewals-003.json": "5bf963ba6321bea35feb32bda018e062702c2d42d058844f7c0c391a735cb4ca",
+    ".pipeline/translations/batches/renewals-004.json": "adc8235a0910f032c998abd5aefd51402394cdc8c44900bbf112d8bb94130a9e",
+    ".pipeline/translations/batches/renewals-007.json": "f4aaa53881757283bbafccf8aadaa80ed2b9d6f03753696786c3963518c18fdf"
+  },
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/renewals-003.json": "7eb552006f744b1619c59bf2e46de1723fcddef3f70f9ac0f35fba9a87aa9463",
+    ".pipeline/translations/batches/renewals-004.json": "a64f9725e6f8cb62e29629844996447cf73bf736b29a85f534d9f92c82672cc5",
+    ".pipeline/translations/batches/renewals-007.json": "74a1ba90b35df89ca96a307667d1b36e2215b027a7d9d3fe164f992c7565c025"
+  },
+  "sourceSha256": {
+    "src/content/renewals/38bfcb4310c98b8d.json": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+    "src/content/renewals/4380abffaf1a31e0.json": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+    "src/content/renewals/7ec61f556fb8d2c3.json": "8c3de756afe00f70b90d7547ce3e3bbbf57a4ad6e92d278edc175a646fb748a3",
+    "src/content/renewals/81aa0c8f7db4aee1.json": "fa9ab1cb21cecf1bed28f4914b155c1571c5a75d67f19879aa04ff16b7d1af59",
+    "src/content/renewals/87db18d4899cc26c.json": "65fcae80a88f0dd69441d675ad3044294860089a6708cabecaf02cd3639dde07",
+    "src/content/renewals/92303a0e5010240e.json": "62a391116e058b6ebe2c99955ceba44831ad40c1398ca8810647cf33b3b0f72e",
+    "src/content/renewals/942a88912e2e412f.json": "52968c158995b66b2f6e177cfddf7ef425d064924805cbb539c3e7b424fe781f"
+  },
+  "findings": [
+    {
+      "renewalId": "92303a0e5010240e",
+      "language": "zh-CN",
+      "fields": [
+        "edition.followUp[0]"
+      ],
+      "severity": "major",
+      "origin": "independent-review",
+      "resolution": "30일 이내 취득이 아닌 공개 전 30일 동안 접근 가능하다는 기간을 보존",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "81aa0c8f7db4aee1",
+      "language": "ru",
+      "fields": [
+        "reviewFocus"
+      ],
+      "severity": "major",
+      "origin": "independent-review",
+      "resolution": "일반 작업 환경이 아닌 production 자원 변경 권한의 범위로 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "92303a0e5010240e",
+      "language": "fr",
+      "fields": [
+        "edition.claims[0]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "free software와 구분해 원문의 open source 용어를 유지",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "942a88912e2e412f",
+      "language": "ru",
+      "fields": [
+        "edition.claims[0]",
+        "reviewFocus"
+      ],
+      "severity": "minor",
+      "origin": "writer-self-review",
+      "resolution": "측정값과 혼동하지 않도록 series dimensions를 시계열 속성으로 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "38bfcb4310c98b8d",
+      "language": "ru",
+      "fields": [
+        "edition.claims[1]"
+      ],
+      "severity": "minor",
+      "origin": "writer-self-review",
+      "resolution": "기존 배치 003의 production 오버헤드 범위를 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "4380abffaf1a31e0",
+      "language": "ru",
+      "fields": [
+        "edition.claims[0]"
+      ],
+      "severity": "minor",
+      "origin": "writer-self-review",
+      "resolution": "기존 배치 004 베타의 production 적합성 범위를 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    }
+  ],
+  "carryForwardScope": {
+    "renewals-003": "Unchanged fields retain their earlier review at ai-reviews/2026-10-26-batches-001-003.json; only the Russian production-scope field was rechecked here.",
+    "renewals-004": "Unchanged fields retain their earlier review at ai-reviews/2026-10-26-batch-004.json; only the Russian production-scope field was rechecked here."
+  },
+  "result": "No unresolved major findings in the reviewed scope; seven targeted fields rechecked",
+  "externalSourceRevalidation": false,
+  "nativeSpeakerOrHumanLanguageReview": false,
+  "publicationApprovalGranted": false,
+  "limitations": [
+    "AI review does not guarantee accuracy.",
+    "Approved English and stored evidence were compared; current external facts were not revalidated.",
+    "Publication requires explicit user approval.",
+    "Remaining 140 translations have not been drafted or reviewed."
+  ]
+}

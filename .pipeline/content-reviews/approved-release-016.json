@@ -1,0 +1,39 @@
+{
+  "createdAt": "2026-10-27T08:56:40.345Z",
+  "publicationAuthorization": "User: PR 적용 후 다음 작업 진행",
+  "PRs": [
+    66,
+    67,
+    68
+  ],
+  "integrationPR": 66,
+  "baseCommit": "8503456e0db5536f52bf9df0995b52137a355e40",
+  "newManuscripts": [
+    "src/content/posts/en/2023-09-04-jekyll-install.md",
+    "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+    "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+    "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+    "src/content/posts/ko/2026-10-27-jenkins-home-backup-restore.md"
+  ],
+  "updatedManuscripts": [
+    "src/content/posts/en/2023-09-04-jekyll-install.md",
+    "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+    "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+    "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+    "src/content/posts/ko/2023-09-04-jekyll-install.md",
+    "src/content/posts/ko/2023-09-28-jenkins-docker-install.md",
+    "src/content/posts/ko/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+    "src/content/posts/ko/2026-10-27-jenkins-home-backup-restore.md"
+  ],
+  "originalKoreanPublicationDatesPreserved": true,
+  "scope": {
+    "technicalTopics": 36,
+    "diagramAssets": 72,
+    "guidePaths": 5,
+    "guideLanguages": [
+      "en",
+      "ko"
+    ]
+  },
+  "strategy": "Merge all approved heads with ancestry retained; verify combined CI then merge PR66 and verify deployment. Prepare subsequent work as draft only."
+}

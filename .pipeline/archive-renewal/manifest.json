@@ -9303,9 +9303,20 @@
       "originalTitle": "InfoQ Opens AI Security & Privacy Engineering Cohort for Regulated Industries",
       "visibility": "listed",
       "priority": "risk",
-      "status": "blocked",
-      "batchId": "batch-007",
-      "reviewPullRequest": 36
+      "status": "published",
+      "batchId": "recovery-001",
+      "reviewPullRequest": 38,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 38,
+        "approvedAt": "2026-10-26T01:34:51+00:00",
+        "basis": "Codex conversation: user explicitly instructed 병합/게시해줘 for PR 38, including the three bilingual recovery candidates shown in its review body."
+      },
+      "publication": {
+        "file": "src/content/renewals/e467e85426c883ef.json",
+        "slug": "2026-07-07-ai-security-course-announcement-scope",
+        "englishPublishedAt": "2026-10-26T01:34:51+00:00"
+      }
     },
     {
       "id": "170494b1ad546945",
@@ -9351,9 +9362,20 @@
       "originalTitle": "Podcast: Spite-Driven Engineering: A New Blueprint for Cloud Security in the AI Native Era",
       "visibility": "listed",
       "priority": "risk",
-      "status": "blocked",
-      "batchId": "batch-007",
-      "reviewPullRequest": 36
+      "status": "published",
+      "batchId": "recovery-001",
+      "reviewPullRequest": 38,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 38,
+        "approvedAt": "2026-10-26T01:34:51+00:00",
+        "basis": "Codex conversation: user explicitly instructed 병합/게시해줘 for PR 38, including the three bilingual recovery candidates shown in its review body."
+      },
+      "publication": {
+        "file": "src/content/renewals/d17b2ae1f047cf94.json",
+        "slug": "2026-07-07-cloud-security-podcast-isolation-and-learning",
+        "englishPublishedAt": "2026-10-26T01:34:51+00:00"
+      }
     },
     {
       "id": "7fde2c7311756207",
@@ -9832,9 +9854,20 @@
       "originalTitle": "Article: Trade-Offs in Multi-Region Architectures: Latency vs. Cost",
       "visibility": "listed",
       "priority": "risk",
-      "status": "blocked",
-      "batchId": "batch-007",
-      "reviewPullRequest": 36
+      "status": "published",
+      "batchId": "recovery-001",
+      "reviewPullRequest": 38,
+      "approval": {
+        "reviewedBy": "youdozi",
+        "pullRequest": 38,
+        "approvedAt": "2026-10-26T01:34:51+00:00",
+        "basis": "Codex conversation: user explicitly instructed 병합/게시해줘 for PR 38, including the three bilingual recovery candidates shown in its review body."
+      },
+      "publication": {
+        "file": "src/content/renewals/7c3a8ce4dcd53d2b.json",
+        "slug": "2026-07-12-multi-region-replication-and-failover-trade-offs",
+        "englishPublishedAt": "2026-10-26T01:34:51+00:00"
+      }
     },
     {
       "id": "2f1a325d883e73ed",

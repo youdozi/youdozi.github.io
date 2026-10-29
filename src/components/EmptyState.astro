@@ -1,0 +1,9 @@
+---
+import {entries,type Language} from '../lib/content';
+import {recoveryPath} from '../lib/discovery';
+import copy from '../lib/discovery-ui.json';
+interface Props {lang:Language}
+const {lang}=Astro.props;
+const href=recoveryPath(await entries(),lang);
+---
+<div class="empty"><p>{copy[lang].emptySection}</p><a class="button" href={href}>{copy[lang].recover} →</a></div>

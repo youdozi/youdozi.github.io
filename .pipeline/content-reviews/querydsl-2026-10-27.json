@@ -1,0 +1,100 @@
+{
+  "createdAt": "2026-10-27T01:55:32.801925+00:00",
+  "purpose": "Pre-publication review of a renewed Korean Querydsl article and its first English edition",
+  "publicationApprovalAtReview": null,
+  "newEnglishEdition": {
+    "preparedPublishedAt": "2026-10-27T01:49:52+00:00",
+    "refreshPublishedAtBeforePublication": true,
+    "policy": "Set the new English publication and modification timestamps at publication preparation after user approval; preserve the Korean original publication date."
+  },
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "selection": {
+    "basis": "Complete the Spring Boot migration topic with a reproducible Querydsl/Jakarta example.",
+    "searchEvidence": "Last fetched 28-day page data recorded one impression and no clicks for the legacy Querydsl setup URL, and nine impressions for the multi-frontend Gradle URL. No returned query rows for these candidates. This does not establish search demand.",
+    "nextCandidate": "2021-07-23-multiple-gradle-build; not modified in this PR."
+  },
+  "scope": {
+    "korean": "Rewrite existing guide while preserving URL, original publication date and migration provenance.",
+    "english": "First edition, using a new 2026 publication timestamp rather than the 2023 source date.",
+    "inboundLink": "Add one contextual link from the English Spring Boot migration guide."
+  },
+  "independentAIReview": {
+    "session": "querydsl_article_review",
+    "mode": "Read-only, context separated from author; static article/code review and primary-source browsing. No Gradle execution by reviewer, and no human/native-speaker review.",
+    "findings": [
+      {
+        "severity": "minor",
+        "issue": "The checker did not verify or record the actual Gradle/JVM versions.",
+        "resolution": "Require Gradle8.4/JVM17 and print the actual JVM patch.",
+        "independentRecheck": "resolved"
+      },
+      {
+        "severity": "minor",
+        "issue": "Korean sorting and English collation described slightly different unverified database behavior.",
+        "resolution": "Use strings comparison and collation wording in Korean.",
+        "independentRecheck": "resolved"
+      }
+    ],
+    "unresolvedFindings": [],
+    "reviewedSha256": {
+      "src/content/posts/ko/2023-09-09-springboot3-querydsl.md": "787bb6ccd57ebfd8cf4b612854a48607a8c3f4d11c9bd26787a393407ac65cd0",
+      "src/content/posts/en/2023-09-09-springboot3-querydsl.md": "c6e9cd14234d1baf761bf8c504e5ac1a7f87643226da659357d3b7be6a8650bb",
+      "scripts/check_querydsl_example.py": "5588ae4c9c25b7b56749ab0869c9a6c9e8462fc4bc76a5a8e7c4c31a330a445b",
+      "src/content/posts/en/2023-09-08-springboot3-migration.md": "776c9c62235d0eb31e793f0665479c0c406fc9531fb12d525b69f574a876f694"
+    }
+  },
+  "execution": {
+    "authorSessionExecuted": true,
+    "source": "The same five project files extracted from both article editions",
+    "environment": {
+      "jdk": "17.0.8.1",
+      "gradle": "8.4",
+      "bootBom": "3.5.7",
+      "querydsl": "5.1.0:jakarta",
+      "hibernate": "6.6.33.Final",
+      "h2": "2.3.232"
+    },
+    "cleanRuns": 2,
+    "uniqueQueryTestsPerRun": 2,
+    "checks": [
+      "QEmployee source in the documented Gradle default path",
+      "QEmployee compiled class",
+      "No generated QEmployee under handwritten src tree",
+      "Exact name match query",
+      "Missing-name query returns empty list"
+    ],
+    "limits": "H2 sample only; no production SQL dialect, collation, locking or migration validation."
+  },
+  "siteValidation": {
+    "nodeTestsPassed": 24,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "astroHints": 0,
+    "htmlPages": 832,
+    "sitemapUrls": 418,
+    "englishListedEntries": 65,
+    "koreanListedEntries": 289,
+    "checked": [
+      "internal references",
+      "source provenance",
+      "new English publication year",
+      "paired canonical and hreflang",
+      "search metadata",
+      "RSS entries",
+      "sitemap entries",
+      "inbound contextual link",
+      "no internal review banners"
+    ]
+  },
+  "ci": "The Querydsl extraction checker is configured after the existing Gradle8.4 setup; CI status is tracked in the PR.",
+  "publicationApproval": {
+    "approvedAt": "2026-10-27T02:02:40+00:00",
+    "approvedBy": "youdozi",
+    "basis": "User requested the next task after PR55 review and asked for larger batches.",
+    "pullRequest": 55,
+    "englishPublicationPreparedAt": "2026-10-27T02:02:40+00:00",
+    "scope": "Publish the reviewed Korean renewal and first English edition; only publication timestamps changed after review."
+  }
+}

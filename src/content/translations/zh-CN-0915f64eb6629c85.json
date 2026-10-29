@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "0915f64eb6629c85",
+  "language": "zh-CN",
+  "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+  "edition": {
+    "title": "Grok Code Fast 1 停用公告明确了 Copilot 范围",
+    "claims": [
+      "GitHub 宣布计划于 2026-05-15 从 Copilot 中停用 Grok Code Fast 1。此处记录的是公告中的时间安排，并未独立核实停用是否已经完成。",
+      "公告称，由于模型提供商弃用该模型，停用日期被提前。"
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "调整工作流程前，应清点各产品使用的模型名称及其对管理员策略的依赖。核实当前可用性，并用有代表性的任务评估替代方案，不应直接采用历史公告中建议的模型。",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

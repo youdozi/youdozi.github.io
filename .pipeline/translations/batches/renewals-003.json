@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "state": "draft",
+  "batchId": "renewals-003",
+  "sourceLanguage": "en",
+  "reviewRequired": "AI meaning and target-language review; explicit user publication approval remains required.",
+  "preparation": {
+    "method": "assistant-direct-translation",
+    "externalTranslationApiUsed": false,
+    "skill": "tech-blog-writing"
+  },
+  "translations": [
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "1e8ba1d86d179142",
+      "language": "zh-CN",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "edition": {
+        "title": "Copilot 为 GitHub 风险评估结果提供上下文帮助",
+        "claims": [
+          "GitHub 允许组织管理员和安全管理员直接从机密信息或 Code Security 风险评估结果中打开 Copilot。",
+          "公告介绍了结合上下文的解释和后续操作指引，但并未证明 Copilot 已自动修复相关问题。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "检查建议的操作及执行这些操作所需的权限。记录评估结果时，应区分解释、修复建议与已经验证的修复。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "1e8ba1d86d179142",
+      "language": "ja",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "edition": {
+        "title": "Copilot が GitHub のリスク評価結果に応じた説明を提供",
+        "claims": [
+          "GitHub は、組織管理者とセキュリティマネージャーが、シークレットまたは Code Security のリスク評価結果から直接 Copilot を開けるようにした。",
+          "告知では、結果の文脈に応じた説明と次の操作の案内を紹介している。Copilot が実際の問題を自動修復したことを示すものではない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "提案された操作と、その実行に必要な権限を確認する。評価結果を記録する際は、説明、修復の提案、検証済みの修復を区別する。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "1e8ba1d86d179142",
+      "language": "de",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "edition": {
+        "title": "Copilot ergänzt kontextbezogene Hilfe zu GitHub-Risikobewertungen",
+        "claims": [
+          "GitHub ermöglicht Organisationsadministratoren und Sicherheitsmanagern, Copilot direkt aus den Ergebnissen einer Risikobewertung für Secrets oder Code Security zu öffnen.",
+          "Die Mitteilung beschreibt kontextbezogene Erläuterungen und angeleitete nächste Schritte. Sie belegt nicht, dass Copilot die zugrunde liegenden Probleme automatisch behoben hat."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Die vorgeschlagenen Maßnahmen und die dafür erforderlichen Berechtigungen prüfen. Bei der Dokumentation von Bewertungsergebnissen zwischen Erläuterungen, vorgeschlagenen Behebungen und nachweislich behobenen Problemen unterscheiden."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "1e8ba1d86d179142",
+      "language": "fr",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "edition": {
+        "title": "Copilot apporte une aide contextuelle aux résultats d’évaluation des risques de GitHub",
+        "claims": [
+          "GitHub permet aux administrateurs d’organisation et aux responsables de la sécurité d’ouvrir Copilot directement depuis les résultats d’évaluation des risques liés aux secrets ou à Code Security.",
+          "L’avis décrit des explications contextuelles et un accompagnement pour les étapes suivantes. Il ne démontre pas que Copilot a automatiquement corrigé les problèmes sous-jacents."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Examiner les actions proposées et les autorisations nécessaires pour les exécuter. Lors de la consignation des résultats, distinguer les explications, les corrections suggérées et les corrections vérifiées."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "1e8ba1d86d179142",
+      "language": "ru",
+      "sourceSha256": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+      "edition": {
+        "title": "Copilot дополняет результаты оценки рисков GitHub контекстными пояснениями",
+        "claims": [
+          "GitHub позволяет администраторам организаций и руководителям по безопасности открывать Copilot прямо из результатов оценки рисков для секретов или Code Security.",
+          "Уведомление описывает контекстные пояснения и рекомендации по следующим действиям. Оно не подтверждает, что Copilot автоматически устранил сами проблемы."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Проверьте предлагаемые действия и необходимые для их выполнения разрешения. При документировании результатов оценки различайте пояснения, предлагаемые способы устранения и проверенные исправления."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "27d181b6a4903b28",
+      "language": "zh-CN",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "edition": {
+        "title": "AI 代码扫描：预览条件与后续正式可用公告",
+        "claims": [
+          "预览版推出时，GitHub 将拉取请求中的 AI 检测描述为对 CodeQL 之外语言和框架覆盖范围的扩展。虽然分析由独立的 AI 引擎执行，仍须获得企业许可、在组织中启用功能，并为仓库启用 CodeQL 默认分析。",
+          "预览版的发现仅供参考，不会阻止合并。公告要求在公开预览期间持有 Copilot 许可证，并消耗组织的 AI 额度，因此原始功能既不是自动审批关卡，也不是无条件的免费服务。"
+        ],
+        "followUp": [
+          "GitHub 在 2026-10-15 的公告中宣布 AI Scan 正式可用。公告称无需 Copilot 许可证；组织的私有和内部仓库仍须具备 GitHub Code Security 或 Advanced Security。这些条件与预览公告不同。",
+          "后续公告保留了发现仅供参考的定位，并说明 AI Scan 不能通过规则集阻止合并。它不会对来自 fork 的拉取请求或由 Dependabot 创建的拉取请求运行。",
+          "后续计费模式消耗 Code Security AI Credits，在企业 AI 用量中显示于 Advanced Security 项下。无需 Copilot 许可证，并不意味着扫描没有使用费用。"
+        ]
+      },
+      "reviewFocus": "解读当前使用资格和计费条件时，应采用后续公告，同时保留预览条件作为历史记录。建议性的发现需要人员响应，不能替代必需检查或全面的安全验证。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "27d181b6a4903b28",
+      "language": "ja",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "edition": {
+        "title": "AI コードスキャン：プレビューの条件と後の一般提供",
+        "claims": [
+          "プレビュー開始時、GitHub はプルリクエストの AI 検出を、CodeQL の対応範囲を超えて言語・フレームワークのカバレッジを広げるものと説明した。別の AI エンジンが分析するにもかかわらず、エンタープライズ側の許可、組織での有効化、リポジトリの CodeQL デフォルト分析が必要だった。",
+          "プレビューの検出結果は参考情報であり、マージを阻止しなかった。告知では、パブリックプレビュー中は Copilot ライセンスが必要で、組織の AI クレジットを消費するとしていた。そのため、当初の機能は自動承認ゲートでも、無条件の無料サービスでもなかった。"
+        ],
+        "followUp": [
+          "GitHub の 2026-10-15 の告知は、AI Scan の一般提供を発表している。Copilot ライセンスは不要としているが、組織の非公開・内部リポジトリには引き続き GitHub Code Security または Advanced Security が必要である。これらの条件はプレビューの告知とは異なる。",
+          "後の告知でも検出結果は助言にとどまり、AI Scan はルールセットでマージを阻止できないとしている。フォークからのプルリクエストや、Dependabot が作成したプルリクエストでは実行されない。",
+          "後の課金方式では Code Security AI Credits を消費し、企業の AI 使用量では Advanced Security の項目に表示される。Copilot ライセンスが不要でも、スキャンの利用料金が発生しないという意味ではない。"
+        ]
+      },
+      "reviewFocus": "現在の利用条件と課金の解釈には後の告知を使い、プレビュー時の条件は履歴として残す。助言としての検出結果には人による対応が必要であり、必須チェックや包括的なセキュリティ検証の代わりにはならない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "27d181b6a4903b28",
+      "language": "de",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "edition": {
+        "title": "KI-Codeanalyse: Vorschau-Bedingungen und spätere allgemeine Verfügbarkeit",
+        "claims": [
+          "Beim Start der Vorschau beschrieb GitHub die KI-Erkennung in Pull Requests als Erweiterung der Sprach- und Framework-Abdeckung über CodeQL hinaus. Obwohl eine separate KI-Engine analysierte, waren die Erlaubnis auf Unternehmensebene, die Aktivierung in der Organisation und die CodeQL-Standardanalyse im Repository erforderlich.",
+          "Die Ergebnisse der Vorschau dienten nur zur Information und blockierten keine Merges. Laut Ankündigung war während der öffentlichen Vorschau eine Copilot-Lizenz erforderlich; außerdem wurden KI-Credits der Organisation verbraucht. Die ursprüngliche Funktion war somit weder eine automatische Freigabeschranke noch ein uneingeschränkt kostenloser Dienst."
+        ],
+        "followUp": [
+          "GitHub kündigt in der Mitteilung vom 2026-10-15 die allgemeine Verfügbarkeit von AI Scan an. Eine Copilot-Lizenz sei nicht erforderlich; private und interne Organisations-Repositories benötigen weiterhin GitHub Code Security oder Advanced Security. Diese Bedingungen unterscheiden sich von der Vorschau-Ankündigung.",
+          "In der späteren Mitteilung bleiben die Ergebnisse rein beratend. AI Scan kann demnach Merges nicht über Regelsätze blockieren. Die Analyse läuft weder auf Pull Requests aus Forks noch auf von Dependabot erstellten Pull Requests.",
+          "Das spätere Abrechnungsmodell verbraucht Code Security AI Credits, die in der KI-Nutzungsübersicht des Unternehmens unter Advanced Security erscheinen. Ohne Copilot-Lizenz auszukommen bedeutet nicht, dass für die Analyse keine Nutzungsgebühren anfallen."
+        ]
+      },
+      "reviewFocus": "Für die Auslegung aktueller Zugangs- und Abrechnungsbedingungen die spätere Mitteilung heranziehen und die Vorschau-Bedingungen als historischen Stand erhalten. Beratende Ergebnisse erfordern eine menschliche Reaktion und ersetzen weder Pflichtprüfungen noch eine umfassende Sicherheitsvalidierung."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "27d181b6a4903b28",
+      "language": "fr",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "edition": {
+        "title": "Analyse de code par IA : conditions de préversion et disponibilité générale ultérieure",
+        "claims": [
+          "Au lancement de la préversion, GitHub présentait les détections par IA dans les pull requests comme une extension de la couverture des langages et frameworks au-delà de CodeQL. L’autorisation au niveau de l’entreprise, l’activation dans l’organisation et l’analyse CodeQL par défaut du dépôt étaient nécessaires, même si un moteur d’IA distinct réalisait l’analyse.",
+          "Les résultats de préversion étaient informatifs et ne bloquaient pas les fusions. L’annonce exigeait une licence Copilot et indiquait une consommation des crédits d’IA de l’organisation pendant la préversion publique. La fonction initiale n’était donc ni un mécanisme d’approbation automatique ni un service gratuit sans condition."
+        ],
+        "followUp": [
+          "L’avis de GitHub du 2026-10-15 annonce la disponibilité générale d’AI Scan. Il indique qu’une licence Copilot n’est pas nécessaire ; les dépôts privés et internes d’une organisation nécessitent toujours GitHub Code Security ou Advanced Security. Ces conditions diffèrent de celles de la préversion.",
+          "L’avis ultérieur maintient le caractère consultatif des résultats et précise qu’AI Scan ne peut pas bloquer les fusions via des ensembles de règles. Il ne s’exécute ni sur les pull requests provenant de forks ni sur celles créées par Dependabot.",
+          "Le modèle de facturation ultérieur consomme des Code Security AI Credits, affichés sous Advanced Security dans l’utilisation de l’IA de l’entreprise. L’absence d’exigence de licence Copilot ne signifie pas que l’analyse est sans frais d’utilisation."
+        ]
+      },
+      "reviewFocus": "S’appuyer sur l’avis ultérieur pour interpréter les conditions actuelles d’accès et de facturation, tout en conservant celles de la préversion comme historique. Les résultats consultatifs nécessitent une réponse humaine et ne remplacent ni les contrôles obligatoires ni une validation complète de la sécurité."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "27d181b6a4903b28",
+      "language": "ru",
+      "sourceSha256": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+      "edition": {
+        "title": "AI-сканирование кода: условия предварительной версии и последующая общая доступность",
+        "claims": [
+          "При запуске предварительной версии GitHub описывала AI-проверки pull request как расширение охвата языков и фреймворков за пределы CodeQL. Хотя анализ выполнял отдельный AI-движок, требовались разрешение на уровне предприятия, включение функции в организации и стандартный анализ CodeQL в репозитории.",
+          "Результаты предварительной версии носили информационный характер и не блокировали слияние. Объявление требовало лицензию Copilot и предусматривало расход AI-кредитов организации во время публичной предварительной версии. Поэтому исходная функция не была ни автоматическим этапом одобрения, ни безусловно бесплатным сервисом."
+        ],
+        "followUp": [
+          "В уведомлении GitHub от 2026-10-15 объявлена общая доступность AI Scan. В нём сказано, что лицензия Copilot не требуется; для частных и внутренних репозиториев организаций по-прежнему нужны GitHub Code Security или Advanced Security. Эти условия отличаются от объявления предварительной версии.",
+          "В последующем уведомлении результаты остаются рекомендательными: AI Scan не может блокировать слияние через наборы правил. Проверка не выполняется для pull request из форков и для pull request, созданных Dependabot.",
+          "Последующая модель оплаты расходует Code Security AI Credits, которые отображаются в разделе Advanced Security в учёте использования AI предприятия. Отсутствие требования лицензии Copilot не означает отсутствие платы за использование сканирования."
+        ]
+      },
+      "reviewFocus": "При трактовке текущих условий доступа и оплаты используйте последующее уведомление, сохраняя условия предварительной версии как исторические. Рекомендательные результаты требуют реакции человека и не заменяют обязательные проверки или всестороннюю проверку безопасности."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "28ede0247b95214f",
+      "language": "zh-CN",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "edition": {
+        "title": "Copilot 模型停用：范围、替代方案与代码审查例外",
+        "claims": [
+          "GitHub 宣布于 2026-06-05 在大多数 Copilot 体验中弃用 GPT-5.2 和 GPT-5.2-Codex，同时在该公告中明确保留 GPT-5.2 用于 Copilot 代码审查。这并不能证明其他提供商或 API 也停用了这些模型。",
+          "公告建议用 GPT-5.5 替代 GPT-5.2，用 GPT-5.3-Codex 替代 GPT-5.2-Codex。企业管理员可能需要先通过模型策略启用替代模型，用户才能选择它们。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "迁移前，检查具体的 Copilot 产品和组织策略。这里记录的是历史公告中的例外与替代方案，并不声称其中的模型可用性至今没有变化。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "28ede0247b95214f",
+      "language": "ja",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "edition": {
+        "title": "Copilot のモデル廃止：対象範囲・代替モデル・コードレビューの例外",
+        "claims": [
+          "GitHub は、2026-06-05 にほとんどの Copilot 利用環境で GPT-5.2 と GPT-5.2-Codex を廃止したと発表した。一方、同じ告知で Copilot のコードレビューには GPT-5.2 を明示的に残している。これにより、他の提供元や API でも廃止されたと確認できるわけではない。",
+          "告知では、GPT-5.2 の代替に GPT-5.5、GPT-5.2-Codex の代替に GPT-5.3-Codex を挙げている。ユーザーが選択する前に、エンタープライズ管理者がモデルポリシーで代替モデルを有効にする必要がある場合がある。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "移行前に、対象となる Copilot 製品と組織ポリシーを確認する。ここで示すのは過去の告知に記載された例外と代替案であり、モデルの利用可否が現在も変わらないと主張するものではない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "28ede0247b95214f",
+      "language": "de",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "edition": {
+        "title": "Copilot-Modellabkündigung: Umfang, Alternativen und Ausnahme für Code-Reviews",
+        "claims": [
+          "GitHub gab bekannt, dass GPT-5.2 und GPT-5.2-Codex am 2026-06-05 in den meisten Copilot-Nutzungsumgebungen eingestellt wurden. Die Mitteilung hielt ausdrücklich fest, dass GPT-5.2 für Copilot-Code-Reviews weiterhin verfügbar war. Daraus lässt sich keine Einstellung bei anderen Anbietern oder APIs ableiten.",
+          "Die Ankündigung empfiehlt GPT-5.5 als Ersatz für GPT-5.2 und GPT-5.3-Codex als Ersatz für GPT-5.2-Codex. Unternehmensadministratoren müssen Alternativen gegebenenfalls erst über Modellrichtlinien aktivieren, bevor Nutzer sie auswählen können."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Vor der Migration das konkrete Copilot-Produkt und die Organisationsrichtlinie prüfen. Dies sind Ausnahmen und Alternativen der historischen Mitteilung, keine Aussage darüber, dass die damalige Modellverfügbarkeit bis heute unverändert geblieben ist."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "28ede0247b95214f",
+      "language": "fr",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "edition": {
+        "title": "Retrait de modèles Copilot : périmètre, alternatives et exception pour la revue de code",
+        "claims": [
+          "GitHub a annoncé l’abandon de GPT-5.2 et GPT-5.2-Codex le 2026-06-05 dans la plupart des environnements Copilot, tout en conservant explicitement GPT-5.2 pour la revue de code Copilot dans cette annonce. Cela ne démontre pas leur retrait chez d’autres fournisseurs ou dans d’autres API.",
+          "L’annonce propose GPT-5.5 pour remplacer GPT-5.2 et GPT-5.3-Codex pour remplacer GPT-5.2-Codex. Les administrateurs d’entreprise peuvent devoir activer les alternatives dans les règles de gestion des modèles avant que les utilisateurs puissent les sélectionner."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Avant de migrer, vérifier le produit Copilot concerné et les règles de l’organisation. Il s’agit des exceptions et alternatives de l’avis historique, sans affirmer que la disponibilité de ces modèles est restée inchangée jusqu’à aujourd’hui."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "28ede0247b95214f",
+      "language": "ru",
+      "sourceSha256": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+      "edition": {
+        "title": "Вывод моделей Copilot: охват, альтернативы и исключение для проверки кода",
+        "claims": [
+          "GitHub объявила о прекращении использования GPT-5.2 и GPT-5.2-Codex с 2026-06-05 в большинстве вариантов работы с Copilot, явно сохранив в том же объявлении GPT-5.2 для проверки кода Copilot. Это не подтверждает вывод моделей у других поставщиков или в других API.",
+          "Объявление предлагает GPT-5.5 вместо GPT-5.2 и GPT-5.3-Codex вместо GPT-5.2-Codex. Администраторам предприятия может потребоваться сначала включить альтернативы через политики моделей, прежде чем пользователи смогут их выбрать."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Перед переходом проверьте конкретный продукт Copilot и политику организации. Здесь приведены исключения и альтернативы исторического уведомления, а не утверждение о неизменной доступности моделей на сегодняшний день."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "2b6f4abe346a373d",
+      "language": "zh-CN",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "edition": {
+        "title": "Spring 项目组合：安全报告分诊与补丁",
+        "claims": [
+          "Spring 提醒，其项目组合中的大多数项目都需要升级，以应用计划发布的安全补丁，并建议安装最新补丁。这是一份系列发布公告，并非针对每个应用的受影响版本对照表。",
+          "团队明确区分了收到的安全报告与已发布的 CVE：报告可能重复或无效，需要维护者分诊。仅凭报告数量无法确定漏洞的严重程度。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "将应用实际使用的依赖映射到各项安全公告及仍受支持的发布分支。本简报未独立复现厂商的报告统计，也未证明每个应用都可被利用。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "2b6f4abe346a373d",
+      "language": "ja",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "edition": {
+        "title": "Spring 製品群：セキュリティ報告のトリアージとパッチ適用",
+        "claims": [
+          "Spring は、予定されたセキュリティパッチを適用するには製品群の大半のプロジェクトでアップグレードが必要になると警告し、最新パッチの適用を勧めた。これは一連のリリースに関する告知であり、各アプリケーションの影響バージョン一覧ではない。",
+          "チームは、受け付けたセキュリティ報告と発行済み CVE を明確に区別している。報告には重複や無効な指摘が含まれる場合があり、メンテナーによるトリアージが必要である。報告件数だけでは脆弱性の深刻度は判断できない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "実際のアプリケーション依存関係を、個々のアドバイザリとサポート対象のリリース系列に対応付ける。この短報は、ベンダーの報告統計を独立に再現したものでも、すべてのアプリケーションが攻撃可能と確認したものでもない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "2b6f4abe346a373d",
+      "language": "de",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "edition": {
+        "title": "Spring-Portfolio: Sicherheitsmeldungen bewerten und Patches einspielen",
+        "claims": [
+          "Spring warnte, dass die Mehrheit der Portfolio-Projekte für die vorgesehenen Sicherheitspatches aktualisiert werden müsse, und empfahl die neuesten Patches. Dies war eine Mitteilung zu einer Release-Reihe, keine Matrix betroffener Versionen für jede Anwendung.",
+          "Das Team unterscheidet ausdrücklich zwischen eingehenden Sicherheitsmeldungen und veröffentlichten CVEs: Meldungen können Duplikate oder ungültige Befunde enthalten und müssen von den Maintainerinnen und Maintainern bewertet werden. Die Zahl der Meldungen allein belegt nicht die Schwere von Schwachstellen."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Die tatsächlich verwendeten Anwendungsabhängigkeiten den einzelnen Sicherheitshinweisen und unterstützten Release-Linien zuordnen. Dieser Kurzbericht reproduziert die Meldestatistik des Anbieters nicht unabhängig und belegt nicht, dass jede Anwendung ausnutzbar ist."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "2b6f4abe346a373d",
+      "language": "fr",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "edition": {
+        "title": "Portefeuille Spring : triage des signalements de sécurité et correctifs",
+        "claims": [
+          "Spring a averti que la majorité des projets de son portefeuille nécessiteraient une mise à niveau pour les correctifs de sécurité prévus et a recommandé d’appliquer les derniers correctifs. Il s’agissait d’un avis relatif à un train de versions, pas d’une matrice des versions affectées pour chaque application.",
+          "L’équipe distingue explicitement les signalements de sécurité reçus des CVE publiées : les signalements peuvent être des doublons ou des constats invalides et nécessitent un triage par les responsables de maintenance. Leur volume ne suffit pas à établir la gravité des vulnérabilités."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Associer les dépendances réelles de l’application aux avis individuels et aux branches de versions prises en charge. Cette brève ne reproduit pas indépendamment les statistiques de signalement de l’éditeur et ne démontre pas que chaque application est exploitable."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "2b6f4abe346a373d",
+      "language": "ru",
+      "sourceSha256": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+      "edition": {
+        "title": "Проекты Spring: разбор сообщений о безопасности и установка исправлений",
+        "claims": [
+          "Spring предупредила, что большинству проектов её портфеля потребуются обновления для запланированных исправлений безопасности, и рекомендовала установить последние исправления. Это было уведомление о серии выпусков, а не матрица затронутых версий для каждого приложения.",
+          "Команда явно различает поступающие сообщения о безопасности и опубликованные CVE: сообщения могут дублироваться или содержать некорректные результаты и требуют разбора сопровождающими. Одно лишь количество сообщений не определяет серьёзность уязвимостей."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Сопоставьте фактические зависимости приложения с отдельными уведомлениями безопасности и поддерживаемыми ветками выпусков. Этот краткий обзор не воспроизводит независимо статистику сообщений поставщика и не подтверждает, что каждое приложение уязвимо для эксплуатации."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "38bfcb4310c98b8d",
+      "language": "zh-CN",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "edition": {
+        "title": "Workers 和 Durable Objects 新增按需资源性能剖析",
+        "claims": [
+          "Cloudflare 宣布为 Workers 和 Durable Objects 提供 CPU 与内存性能剖析；文章介绍了按需采集和可下载的剖析数据。",
+          "在 CPU 性能剖析中，该实现以 1 毫秒的采样间隔启动 V8 profiler。这项采样细节并不能证明生产环境中的开销为零。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "检查所请求的版本和 isolate 是否在所选位置处于运行状态，并在有代表性的流量下对比开启与关闭性能剖析时的行为。资源分配采样与保留内存回答的是不同问题。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "38bfcb4310c98b8d",
+      "language": "ja",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "edition": {
+        "title": "Workers と Durable Objects にオンデマンドのリソースプロファイリング",
+        "claims": [
+          "Cloudflare は、Workers と Durable Objects 向けの CPU・メモリプロファイリングを発表した。記事では、必要なときの収集とプロファイルのダウンロードを説明している。",
+          "CPU プロファイリングの実装では、サンプリング間隔を 1 ミリ秒に設定して V8 プロファイラーを起動する。このサンプリングの仕様だけでは、本番環境でのオーバーヘッドがゼロとはいえない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "指定したバージョンと isolate が選択した場所で稼働しているか確認し、代表的なトラフィックでプロファイリング有無の動作を比較する。リソース割り当てのサンプルと保持メモリは、それぞれ異なる問いに答えるものとして区別する。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "38bfcb4310c98b8d",
+      "language": "de",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "edition": {
+        "title": "Workers und Durable Objects erhalten Ressourcenprofile auf Abruf",
+        "claims": [
+          "Cloudflare kündigte CPU- und Speicher-Profiling für Workers und Durable Objects an. Der Artikel beschreibt die Erfassung auf Abruf und herunterladbare Profile.",
+          "Für das CPU-Profiling startet die Implementierung einen V8-Profiler mit einem Abtastintervall von 1 Millisekunde. Dieses Abtastdetail belegt nicht, dass im Produktivbetrieb kein zusätzlicher Aufwand entsteht."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Prüfen, ob die angeforderte Version und das Isolate am ausgewählten Standort aktiv sind. Das Verhalten mit und ohne Profiling unter repräsentativem Datenverkehr vergleichen. Stichproben zur Ressourcenzuweisung und im Speicher gehaltene Daten beantworten unterschiedliche Fragen."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "38bfcb4310c98b8d",
+      "language": "fr",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "edition": {
+        "title": "Workers et Durable Objects proposent des profils de ressources à la demande",
+        "claims": [
+          "Cloudflare a annoncé le profilage du CPU et de la mémoire pour Workers et Durable Objects. L’article décrit une collecte à la demande et des profils téléchargeables.",
+          "Pour le profilage du CPU, l’implémentation lance un profileur V8 avec un intervalle d’échantillonnage de 1 milliseconde. Ce détail ne prouve pas l’absence de surcoût en production."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Vérifier que la version et l’isolate demandés sont actifs à l’emplacement choisi, puis comparer le comportement avec et sans profilage sous un trafic représentatif. Les échantillons d’allocation de ressources et la mémoire retenue répondent à des questions différentes."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "38bfcb4310c98b8d",
+      "language": "ru",
+      "sourceSha256": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+      "edition": {
+        "title": "Workers и Durable Objects получили профилирование ресурсов по запросу",
+        "claims": [
+          "Cloudflare объявила о профилировании CPU и памяти для Workers и Durable Objects. В статье описаны сбор по запросу и возможность загрузки профилей.",
+          "Для профилирования CPU реализация запускает профилировщик V8 с интервалом выборки 1 миллисекунда. Эта особенность выборки не доказывает отсутствие накладных расходов в производственной среде."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Проверьте, что нужные версия и isolate активны в выбранном расположении, и сравните поведение с профилированием и без него на типичном трафике. Выборки выделения ресурсов и удерживаемая память отвечают на разные вопросы."
+    }
+  ]
+}

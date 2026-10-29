@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "state": "draft",
+  "batchId": "spanish-001",
+  "sourceLanguage": "en",
+  "reviewRequired": "AI meaning and target-language review; explicit user publication approval remains required.",
+  "translations": [
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "0915f64eb6629c85",
+      "language": "es",
+      "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+      "edition": {
+        "title": "El aviso de retirada de Grok Code Fast 1 delimita su alcance en Copilot",
+        "claims": [
+          "GitHub anunció la retirada prevista de Grok Code Fast 1 de Copilot para el 2026-05-15. Aquí se recoge el calendario anunciado, sin verificar de forma independiente que la retirada se haya completado.",
+          "El aviso indica que la fecha se adelantó debido a la retirada del modelo por parte de su proveedor."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Antes de cambiar los flujos de trabajo, haga un inventario de los nombres de modelos específicos de cada producto y de las dependencias de las políticas de administración. Compruebe la disponibilidad actual y evalúe una alternativa con tareas representativas, en lugar de adoptar automáticamente los modelos recomendados en anuncios históricos."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "097c455a9b953f24",
+      "language": "es",
+      "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+      "edition": {
+        "title": "CodeQL incorpora sanitizadores y validadores personalizados a los modelos como datos",
+        "claims": [
+          "GitHub describe sanitizadores y validadores declarativos en las extensiones de datos YAML de CodeQL mediante barrierModel y barrierGuardModel.",
+          "El anuncio señala que están disponibles a partir de CodeQL 2.25.2. Esta es la versión mínima indicada en aquel anuncio histórico, no una recomendación de actualización actual."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Modele únicamente los tipos de vulnerabilidades y las rutas que el sanitizador protege realmente. Pruebe ejemplos positivos y negativos para evitar que una barrera demasiado amplia oculte flujos reales de datos contaminados; este borrador no afirma haber medido una reducción de los falsos positivos."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "09e0d0ec5ed64f8a",
+      "language": "es",
+      "sourceSha256": "5c97c6f02a9a1f0f2521a7fb7169e71e10b5dc78aeb94851759c52a1b403fc3c",
+      "edition": {
+        "title": "GitHub comunica la retirada de Grok Code Fast 1 de Copilot",
+        "claims": [
+          "GitHub comunicó que Grok Code Fast 1 se había retirado de sus distintas experiencias de Copilot el 2026-05-15. Se trata del aviso del proveedor del producto que confirma la retirada, distinto del anuncio anterior de la fecha prevista.",
+          "El aviso indica que los administradores de Copilot Enterprise podrían tener que habilitar modelos alternativos mediante sus políticas de modelos."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Al revisar el archivo, relacione este aviso de retirada completada con el artículo anterior sobre la retirada prevista. Confirme la disponibilidad real del producto y las políticas de administración antes de cambiar un flujo de trabajo; el anuncio no describe todas las API de los proveedores."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "0a337adda878feca",
+      "language": "es",
+      "sourceSha256": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+      "edition": {
+        "title": "Fondos de créditos de Copilot: uso incluido y gasto adicional",
+        "claims": [
+          "GitHub anunció fondos de créditos de AI por centro de costes para Copilot Business y Enterprise en Enterprise Cloud. En el momento del anuncio, la configuración estaba disponible mediante la REST API, mientras que la gestión desde la interfaz de ajustes aún estaba prevista.",
+          "El límite del fondo restringe los créditos incluidos del conjunto de la empresa que puede utilizar un centro de costes; el presupuesto del centro de costes regula los cargos por consumo una vez agotado el fondo incluido. Estos controles cubren distintas fases del gasto y pueden combinarse.",
+          "GitHub calcula el límite del fondo a partir de las licencias asignadas. Al alcanzar el límite, las empresas pueden bloquear el uso adicional de créditos incluidos o permitir gasto adicional si se autorizan los excesos de consumo, por lo que el fondo no constituye automáticamente un límite estricto para todos los cargos."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Revise conjuntamente la asignación de créditos incluidos, la política de exceso de consumo y los presupuestos de pago por uso. Confirme la disponibilidad actual de la API y de la interfaz antes de cambiar los controles; esta revisión de la fuente no mide el ahorro real."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "1c1c9e6c82aad3a4",
+      "language": "es",
+      "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+      "edition": {
+        "title": "Los avisos de seguridad de los repositorios de GitHub incorporan búsqueda y filtros",
+        "claims": [
+          "GitHub añadió búsqueda y filtrado de avisos de seguridad directamente en la pestaña Security de un repositorio.",
+          "El aviso enumera sort, package, ecosystems y severity entre las palabras clave de búsqueda o filtrado admitidas."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Compruebe si la vista contiene los avisos en borrador, recibidos y publicados que necesita para la revisión. Un conjunto de resultados filtrados más pequeño no debe interpretarse como un menor número de vulnerabilidades subyacentes."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "7c3a8ce4dcd53d2b",
+      "language": "es",
+      "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+      "edition": {
+        "title": "Diseño multirregión: compromisos entre replicación, escrituras y conmutación por error",
+        "claims": [
+          "El autor del artículo contrapone las regiones active-active que atienden solicitudes de forma independiente a un diseño que sirve las lecturas localmente, pero reenvía las escrituras remotas a una región de escritura global. Los compromisos incluyen la replicación, la gestión de conflictos y la latencia de escritura entre regiones.",
+          "Para el funcionamiento active-passive, el autor describe una región principal que atiende el tráfico y una secundaria que recibe replicación continua. El artículo advierte de que las rutas de conmutación por error que no se han probado pueden fallar y recomienda incorporar el comportamiento medido de la conmutación a la planificación. Aquí se excluyen los porcentajes de ahorro y las estimaciones de recuperación de la latencia que presenta."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Esta revisión se limita al análisis del diseño que hace el autor y no constituye un modelo de costes universal. Mida la distribución geográfica de la carga, los requisitos de consistencia, el comportamiento de recuperación y el esfuerzo operativo antes de elegir una arquitectura regional."
+    }
+  ],
+  "preparation": {
+    "method": "assistant-direct-translation",
+    "externalTranslationApiUsed": false,
+    "skill": "translate",
+    "scope": "six English renewals already available in five translation languages"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "createdAt": "2026-10-27T02:25:51.280069+00:00",
+  "purpose": "A larger pre-publication unit: four related build/shell topics and eight English/Korean manuscripts with executable examples and SEO checks.",
+  "publicationApprovalAtPreparation": null,
+  "topics": [
+    "2021-07-23-multiple-gradle-build",
+    "2023-09-20-linux-shellscript-function-error",
+    "2023-11-17-linux-shellscript-version-compare",
+    "2023-09-23-linux-shellscript-github-latest"
+  ],
+  "newEnglishEditions": {
+    "preparedPublishedAt": {
+      "2021-07-23-multiple-gradle-build": "2026-10-27T02:14:35+00:00",
+      "2023-09-20-linux-shellscript-function-error": "2026-10-27T02:12:24+00:00",
+      "2023-11-17-linux-shellscript-version-compare": "2026-10-27T02:12:24+00:00",
+      "2023-09-23-linux-shellscript-github-latest": "2026-10-27T02:12:24+00:00"
+    },
+    "refreshAllPublicationTimesAfterApproval": true,
+    "policy": "After explicit approval, refresh publishedAt/updatedAt for these four first English editions before final CI and merge; preserve each Korean original publication date."
+  },
+  "previousPR": {
+    "number": 55,
+    "mergedCommit": "14323d6c91de1971bc5ebd76dfe2f429855c79f5",
+    "deploymentRun": 40436438457,
+    "liveVerification": "Two Querydsl editions and reciprocal hreflang/sitemap418 verified after deployment.",
+    "indexNow": {
+      "changedUrls": 16,
+      "httpStatus": 200
+    }
+  },
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "scope": {
+    "koreanRenewals": 4,
+    "firstEnglishEditions": 4,
+    "preserved": [
+      "Korean original publication dates",
+      "translation keys",
+      "route slugs",
+      "legacy URLs and source references",
+      "original archive body hashes"
+    ],
+    "publication": "Draft review only; no batch content deployed before explicit approval."
+  },
+  "independentAIReview": {
+    "sessions": {
+      "build_batch_review": "Two Vue/Gradle manuscripts and their checker; primary-source lookup and static comparison only.",
+      "shell_batch_review": "Six shell manuscripts and their checker; primary-source lookup and static comparison only."
+    },
+    "reviewerLimits": "No reviewer ran Gradle/npm/HTTP fixtures/browser. Runtime evidence comes from the author session. Not human or native-speaker review.",
+    "findings": [
+      {
+        "severity": "minor",
+        "issue": "Tool patch versions listed in the build article were not all enforced by the checker.",
+        "resolution": "Document exact Gradle plus JDK/Node major enforcement and actual patch/npm recording.",
+        "independentRecheck": "resolved"
+      },
+      {
+        "severity": "minor",
+        "issue": "Explicitly empty repository arguments silently selected the default.",
+        "resolution": "Default only when the argument is omitted; reject an empty argument with status2, document the policy, and test both cases.",
+        "independentRecheck": "resolved"
+      }
+    ],
+    "unresolvedFindings": [],
+    "reviewedSha256": {
+      "src/content/posts/en/2021-07-23-multiple-gradle-build.md": "607e88f5cd119293405f08afd02e224e306fff968229ad38fca31ec414e96f1c",
+      "src/content/posts/ko/2021-07-23-multiple-gradle-build.md": "e21823b2e4dc9f36017af6ba2aca3a6c967b152345f576e08cb948bd2bd5e2a4",
+      "src/content/posts/en/2023-09-20-linux-shellscript-function-error.md": "75136178ec7a7cdf64167f68906603572fb3c387cf71cf71610c9a1675463f80",
+      "src/content/posts/ko/2023-09-20-linux-shellscript-function-error.md": "57b729c7b3186a3b0f36ae65e6e00570e1f7f097e6a17fdeaf6d7dbdade6ef6d",
+      "src/content/posts/en/2023-11-17-linux-shellscript-version-compare.md": "4e495ccfc453656de6874e8e7d7ce2fe3f7619975f946b3e84a8d93513a1b33d",
+      "src/content/posts/ko/2023-11-17-linux-shellscript-version-compare.md": "7870ecba80f08f1a20c6d9322f11c4a99ec082cccb45908dd59ab2183e337393",
+      "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md": "8d82feff4801a5ae7acc7cdb70ea00627d1fe17a7ae2fc61c6877cb774d41ea6",
+      "src/content/posts/ko/2023-09-23-linux-shellscript-github-latest.md": "35faadaa3a2d391f08e2381e8a040f59c767115c08015f0f9aa0ebdb5472c612",
+      "scripts/check_multi_frontend_example.py": "6a538ef7158a70d1b1ca17ab647393a516763c78d43d4f3b941681e683097413",
+      "scripts/check_shell_automation_examples.py": "b69affaa603cc0bde97bafcd83955ac2d55e7fb0a128f842efff2bc790ebe747"
+    }
+  },
+  "execution": {
+    "shell": {
+      "functions": 4,
+      "numericVersions": 19,
+      "localReleaseHTTP": 13,
+      "releaseArguments": 7,
+      "totalCases": 43,
+      "externalGitHubRequests": 0,
+      "installationDownloads": 0,
+      "source": "Matching runnable code extracted from both language editions."
+    },
+    "multiFrontend": {
+      "apps": 2,
+      "environment": {
+        "jdk": "17.0.8.1",
+        "gradle": "8.4",
+        "node": "24.13.0",
+        "npm": "11.6.2",
+        "boot": "3.5.7",
+        "vue": "3.5.44",
+        "vite": "8.3.5"
+      },
+      "checks": [
+        "Separate lockfiles and installed dependencies",
+        "Both Vue production builds",
+        "Executable Boot JAR paths and correct per-app bases",
+        "Obsolete public file absent after rebuild without clean",
+        "Packaged application served both HTML files and JS assets over HTTP",
+        "Both Vue headings rendered in local Chrome"
+      ],
+      "browserInCI": false,
+      "browserLocal": true
+    }
+  },
+  "siteValidation": {
+    "nodeTestsPassed": 24,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "astroHints": 0,
+    "htmlPages": 847,
+    "sitemapUrls": 422,
+    "englishListedEntries": 69,
+    "koreanListedEntries": 289,
+    "checked": [
+      "Internal references and images",
+      "Original migration provenance",
+      "New English publication years",
+      "Eight canonical/self and reciprocal hreflang/x-default sets",
+      "Search descriptions and titles",
+      "RSS and sitemap entries",
+      "No internal review banners in reader HTML"
+    ]
+  },
+  "ci": "Both new example checkers are configured; CI result tracked in the PR.",
+  "ciIntegrationCorrection": {
+    "issue": "The pre-existing Java/article checker only extracted bash fences and could not read the renewed POSIX sh version-comparison example.",
+    "change": "Accept both bash and sh fences, with an explicit missing-snippet error. Preserve all eight existing shell regressions and the Java behavior checks.",
+    "scope": "Own integration review after CI discovery; manuscript and independent-review target hashes unchanged.",
+    "sha256": "99d3af0bcf304aa9a8cac3d8c39b245098faae85d5244682740549539f70970f",
+    "localValidation": "npm run test:articles and all 43 shell fixture cases passed."
+  },
+  "publicationApproval": {
+    "approvedAt": "2026-10-27T02:36:39+00:00",
+    "approvedBy": "youdozi",
+    "basis": "User requested 진행해줘 after the concrete Draft PR56 review result.",
+    "pullRequest": 56,
+    "englishPublicationPreparedAt": "2026-10-27T02:36:39+00:00",
+    "scope": "Publish four reviewed English/Korean pairs. Only first-English publication and modified timestamps changed after review; Korean dates and all article bodies preserved."
+  }
+}

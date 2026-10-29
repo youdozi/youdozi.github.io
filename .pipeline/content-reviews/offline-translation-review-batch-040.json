@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-28T23:00:30.394779+00:00",
+  "baseCommit": "5833f95b6aed8597886bc647f35521d40cf07f82",
+  "purpose": "Generate private offline source/translation comparisons for explicit human review before publication.",
+  "scope": {
+    "pendingEditions": 318,
+    "languages": 6,
+    "editionsPerLanguage": 53,
+    "newTranslationsWritten": 0,
+    "actualPublicationFilesCreated": 0,
+    "realUserApprovalRecorded": false
+  },
+  "privateArtifact": {
+    "sourceCommit": "7b7ecda6d3cf99ac696764c72af48284d9dc27cd",
+    "sha256": "837d61d0f4bd990bc8467d6b5c5d460a5877e10c3d405cd1c0f7ca3a64c67df0",
+    "storedOutsideAllProjectWorktrees": true,
+    "fileMode": "600",
+    "excludedFromPublicBuildAndCIArtifacts": true
+  },
+  "validation": {
+    "pythonTests": 243,
+    "nodeTests": 95,
+    "newNodeTests": 11,
+    "normalBuild": "passed",
+    "publicArticles": 423,
+    "sitemapURLs": 479,
+    "publicTranslations": 36,
+    "realPacketPreview": "passed",
+    "temporarySnapshotRemoved": true,
+    "browser": {
+      "passed": true,
+      "entries": 318,
+      "languages": 6,
+      "perLanguage": 53,
+      "viewports": [
+        1360,
+        390
+      ],
+      "navigation": true,
+      "searchEmptyReset": true,
+      "immutableData": true,
+      "links": true,
+      "xssLiteral": true,
+      "externalRequests": 0,
+      "exceptions": 0
+    }
+  },
+  "reviewLimits": [
+    "Existing pinned AI/evidence records reused; no new fact verification or human/native-language semantic approval.",
+    "No approval or publication action is exposed by the offline file."
+  ],
+  "files": {
+    "scripts/translation-review-packet.mjs": "803c6604baf86165072d662f72a4b2ed796de05e95b5cfa188b06337fab68fab",
+    "scripts/translation-review-client.mjs": "fea1a2ee24baeb7a01a9a880522571877c282d4b981e855f5d44661ca3c6f799",
+    "scripts/test-translation-review-packet.mjs": "ebeb8ab693697f9969d2cac2e3eb1ecc0ac42ee37e501d0d79d70b21c7bee9d3",
+    "docs/translation-review.md": "83a81438209c62fbd75d033f770dc73a703deae940cf7c58fd1c4e4ac7298df0",
+    ".github/workflows/site-checks.yml": "e268bf251039a2b64e1ffbf4ec27d61b7435e20f0b2cac0c0dc5a2b1e0d8fce5",
+    "package.json": "11bc537c13ca5baad4b6bc9d731c7d3daa8dd6e65d089a064c7eb907e3d05ec8",
+    "README.md": "44d282dfb7cb2c3ba1bd05c8358332ef7b6b0480cd6e77d0e92e44df6ad88643"
+  }
+}

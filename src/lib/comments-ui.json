@@ -1,0 +1,10 @@
+{
+  "en": {"show":"Show comments","loading":"Opening comments…","opened":"Comments opened.","error":"Comments could not load. View them on GitHub.","github":"View on GitHub"},
+  "ko": {"show":"댓글 보기","loading":"댓글을 여는 중…","opened":"댓글을 열었습니다.","error":"댓글을 불러오지 못했습니다. GitHub에서 확인하세요.","github":"GitHub에서 보기"},
+  "zh-CN": {"show":"查看评论","loading":"正在打开评论…","opened":"评论已打开。","error":"无法加载评论，请在 GitHub 上查看。","github":"在 GitHub 上查看"},
+  "ja": {"show":"コメントを表示","loading":"コメントを開いています…","opened":"コメントを開きました。","error":"コメントを読み込めませんでした。GitHubでご確認ください。","github":"GitHubで見る"},
+  "de": {"show":"Kommentare anzeigen","loading":"Kommentare werden geöffnet…","opened":"Kommentare geöffnet.","error":"Kommentare konnten nicht geladen werden. Auf GitHub ansehen.","github":"Auf GitHub ansehen"},
+  "fr": {"show":"Afficher les commentaires","loading":"Ouverture des commentaires…","opened":"Commentaires ouverts.","error":"Impossible de charger les commentaires. Consultez-les sur GitHub.","github":"Voir sur GitHub"},
+  "ru": {"show":"Показать комментарии","loading":"Открытие комментариев…","opened":"Комментарии открыты.","error":"Не удалось загрузить комментарии. Посмотрите их на GitHub.","github":"Посмотреть на GitHub"},
+  "es": {"show":"Mostrar comentarios","loading":"Abriendo los comentarios…","opened":"Comentarios abiertos.","error":"No se pudieron cargar los comentarios. Consúltalos en GitHub.","github":"Ver en GitHub"}
+}

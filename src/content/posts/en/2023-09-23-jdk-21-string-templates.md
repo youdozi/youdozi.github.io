@@ -1,5 +1,5 @@
 ---
-title: "Java String Templates: JDK 21 Preview and JDK 23 Removal"
+title: "Java String Templates: JDK 21 Preview, JDK 23 Removal and Alternatives"
 language: "en"
 translationKey: "2023-09-23-jdk-21-string-templates"
 routeSlug: "2023-09-23-jdk-21-string-templates"
@@ -11,29 +11,39 @@ tags:
   - "jdk21"
   - "openjdk"
   - "string templates"
-updatedAt: "2026-10-24T06:00:52.186Z"
-reviewedAt: "2026-10-24"
+updatedAt: 2026-10-27T05:23:47.316+00:00
+reviewedAt: "2026-10-27"
 reviewStatus: "revised"
-reviewScope: "English edition based on the reviewed Korean article; technical
-  references and reproduction conditions retained."
+reviewScope: "Official documentation checked; runnable examples and version boundaries clarified."
 reviewSources:
   - "https://inside.java/2024/06/20/newscast-71/"
-  - "https://openjdk.org/jeps/430"
-  - "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/text/Mes\
-    sageFormat.html"
-description: "Understand Java String Templates in JDK 21 and 22, their removal
-  in JDK 23, matching preview flags, and standard String and MessageFormat
-  alternatives."
+  - "https://docs.oracle.com/en/java/javase/21/language/string-templates.html"
+  - "https://docs.oracle.com/en/java/javase/21/language/preview-language-and-vm-features.html"
+  - "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/text/MessageFormat.html"
+  - "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html"
+description: "Run a complete JDK 21 String Templates example, understand its JDK 23 removal, and replace STR with tested Java formatting alternatives."
 ---
-## The compatibility point to check first
+String Templates were preview features in JDK 21 and 22 and were removed in JDK 23. Adding `--enable-preview` to JDK 23 does not restore `STR`. For code that must move beyond those previews, use standard string APIs or a format-specific serializer. [Oracle's removal explanation](https://inside.java/2024/06/20/newscast-71/) describes the change.
 
-String Templates were a preview feature in JDK 21 and were previewed again in JDK 22. They were removed in JDK 23. Code using the `STR` processor from these previews cannot be enabled in JDK 23 simply by adding `--enable-preview`.
+## Processing flow
 
-This article preserves the context of the original JDK 21 example and explains the constraints that matter when revisiting it. Preview syntax is tied to a particular JDK release and should not be assumed to become a permanent language feature.
+![Use standard formatting APIs workflow](/assets/diagrams/2023-09-23-jdk-21-string-templates-en.svg)
 
-## Reproduce a JDK 21 preview example
+This shows the standard FormattingExample, not the historical preview example. It compares three formatting forms and checks MessageFormat apostrophe quoting.
 
-Use a JDK 21 compiler and runtime for this historical example:
+## Which JDK can run the old example?
+
+| JDK | String Templates status | What to do |
+| --- | --- | --- |
+| 21 | Preview | Use JDK 21 for both compilation and execution, with preview enabled. |
+| 22 | Second preview | Use the matching JDK 22 compiler, runtime and preview settings. |
+| 23 | Removed | Replace the preview syntax; flags cannot restore a removed feature. |
+
+A compiler's `--release` flag is not a way to revive an older preview feature on a newer compiler. [Oracle's preview guide](https://docs.oracle.com/en/java/javase/21/language/preview-language-and-vm-features.html) requires the compiler from the preview's release.
+
+## Run the historical JDK 21 example
+
+Save this complete class as `Example.java`. This section requires JDK 21, even if another JDK is your default.
 
 ```java
 public class Example {
@@ -46,54 +56,66 @@ public class Example {
 }
 ```
 
-Compile and run with the matching release and preview flags:
+Check the selected tools, then compile and run in the directory containing the file:
 
 ```sh
+javac -version
+java -version
 javac --enable-preview --release 21 Example.java
 java --enable-preview Example
 ```
 
-The expected output is `2 plus 3 equals 5`. Running a preview class on a different Java release is not a portable deployment strategy.
+The output is `2 plus 3 equals 5`. Compilation also reports that the class uses preview features. `STR` is implicitly imported in this JDK 21 preview; a missing processor on a later JDK is not fixed by adding an import. See the [JDK 21 String Templates guide](https://docs.oracle.com/en/java/javase/21/language/string-templates.html).
 
-## Standard formatting alternatives
+## Replace preview syntax with standard APIs
 
-For ordinary formatting, standard APIs remain useful. In the following examples, `x` is 2 and `y` is 3:
-
-```java
-String result = "%1$d plus %2$d equals %3$d".formatted(x, y, x + y);
-```
-
-`String.formatted` is available from Java 15. For older Java environments, use `String.format` with the same format string.
-
-`MessageFormat` uses numbered placeholders and accepts the values as an object array:
+Save the following as `FormattingExample.java`. It uses standard APIs and needs no preview flags. The complete class works on Java 17. `String.format` and `MessageFormat` use an explicit locale here so the numeric output is reproducible.
 
 ```java
-java.text.MessageFormat format =
-    new java.text.MessageFormat("{0} plus {1} equals {2}");
-String result = format.format(new Object[] {x, y, x + y});
+import java.text.MessageFormat;
+import java.util.Locale;
+
+public class FormattingExample {
+    public static void main(String[] args) {
+        int x = 2;
+        int y = 3;
+        System.out.println(x + " plus " + y + " equals " + (x + y));
+        System.out.println(String.format(Locale.ROOT, "%1$d plus %2$d equals %3$d", x, y, x + y));
+        MessageFormat format = new MessageFormat("{0} plus {1} equals {2}", Locale.ROOT);
+        System.out.println(format.format(new Object[] {x, y, x + y}));
+        System.out.println(new MessageFormat("It''s {0}", Locale.ROOT)
+            .format(new Object[] {"ready"}));
+    }
+}
 ```
 
-The array is significant: the original article’s `format(x, y, x + y)` call did not match that API. MessageFormat also has its own quoting and locale rules, so Java format strings and MessageFormat patterns are not interchangeable.
+```sh
+javac FormattingExample.java
+java FormattingExample
+```
 
-## Formatting is not escaping
+Output:
 
-Interpolating a value into text does not automatically produce valid JSON or a safe SQL statement. A quote or a backslash inside a value can require encoding in the destination format.
+```text
+2 plus 3 equals 5
+2 plus 3 equals 5
+2 plus 3 equals 5
+It's ready
+```
 
-Use a JSON serializer to produce JSON and parameter binding to construct SQL queries. Treat HTML output with the escaping rules of the rendering system. The convenience of a formatting expression does not replace those contracts.
+| Need | Suitable API | Detail to preserve |
+| --- | --- | --- |
+| A short expression | `+` | Parentheses around `x + y` keep the arithmetic explicit. |
+| Repeated appends | `StringBuilder` | Useful when constructing text incrementally. |
+| A format string | `String.format` or `.formatted` | `%d` and `%s` follow Formatter rules; use `String.format(Locale.ROOT, ...)` when an explicit locale is needed. |
+| A localized message pattern | `MessageFormat` | Uses numbered arguments, an object array, and different quoting rules. |
 
-## Migration notes
+`MessageFormat` treats single quotes as pattern syntax. The doubled quote in `It''s {0}` produces the literal apostrophe shown above. Replacing a `%s` pattern with `{0}` also means switching APIs and checking their locale behavior. [MessageFormat API](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/text/MessageFormat.html), [String API](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html).
 
-- Identify whether existing code depends on a preview feature or a standard API.
-- Record the compiler and runtime versions used by the example.
-- Keep preview flags scoped to the matching build and test configuration.
-- Replace preview syntax before moving to a release that no longer includes it.
-- Keep shell or JShell output separate from compilable Java source.
+## Keep formatting separate from encoding
 
-The Korean article retains more of the original comparison examples; both editions include the removal and compatibility correction.
+Neither `STR` nor ordinary formatting makes arbitrary values safe JSON, SQL or HTML. Use a JSON serializer, SQL parameter binding, or the rendering system's HTML escaping for the destination format. A string that looks correct for simple sample values can fail when a value contains quotes or backslashes.
 
-## Sources
+Both complete classes were compiled and run with the commands above: the preview on JDK 21.0.1, and the standard alternative on JDK 17.0.8.1 and 21.0.1. The JDK 22 and 23 rows describe documented feature history; they were not executed in this environment.
 
-- [Inside Java: what happened to String Templates](https://inside.java/2024/06/20/newscast-71/)
-- [JEP 430: String Templates, preview in JDK 21](https://openjdk.org/jeps/430)
-- [JDK 21 MessageFormat API](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/text/MessageFormat.html)
-- [JDK 21 String API](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#formatted(java.lang.Object...))
+A JDK upgrade also changes framework compatibility. For an older Spring application, see the [Spring Boot 2.7 to 3.0 migration sequence](/en/posts/2023-09-08-springboot3-migration/).

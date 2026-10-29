@@ -1,0 +1,7 @@
+---
+import CategoryGuide from './CategoryGuide.astro';
+import type { AlgorithmGuide } from '../lib/algorithm-guide';
+import type { Language } from '../lib/content';
+interface Props { guide: AlgorithmGuide; alternates: { language: Language; url: string }[]; }
+---
+<CategoryGuide {...Astro.props} />

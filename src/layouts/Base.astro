@@ -1,16 +1,32 @@
 ---
-import { SITE, text, type Language } from '../lib/content';
+import { SITE, text, localeInfo, publishedLanguages, type Language } from '../lib/content';
 import '../styles/global.css';
-interface Props { title: string; description?: string; lang: Language; alternates?: { language: Language; url: string }[]; canonical?: string; noindex?: boolean; structuredData?: Record<string, unknown>[]; }
+import labels from '../lib/archive-ui.json';
+import {entries} from '../lib/content';
+import {guideIndexAlternates,guideIndexCopy} from '../lib/technical-guides';
+import {authorData,authorPath,profileCopy} from '../lib/author';
+import {serializeJsonLd,alternateLocales,type ArticleMetadata} from '../lib/page-metadata';
+import {hasSection,archiveAlternates} from '../lib/discovery';
+import discoveryUi from '../lib/discovery-ui.json';
+interface Props { title: string; description?: string; lang: Language; alternates?: { language: Language; url: string }[]; canonical?: string; noindex?: boolean; structuredData?: Record<string, unknown>[]; articleMetadata?: ArticleMetadata; }
 const { title, description = text[Astro.props.lang].about, lang, alternates = [], canonical = Astro.url.pathname, noindex = false } = Astro.props;
-const siteData = { '@context': 'https://schema.org', '@type': 'WebSite', '@id': new URL('/#website', Astro.site).href, url: new URL('/', Astro.site).href, name: SITE, inLanguage: ['en', 'ko'] };
+const availableLanguages = await publishedLanguages();
+const siteData = { '@context': 'https://schema.org', '@type': 'WebSite', '@id': new URL('/#website', Astro.site).href, url: new URL('/', Astro.site).href, name: SITE, inLanguage: availableLanguages,publisher:authorData(lang) };
 const jsonLd = [siteData, ...(Astro.props.structuredData || [])];
-const serializedJsonLd = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
+const serializedJsonLd = serializeJsonLd(jsonLd);
+const articleMetadata = Astro.props.articleMetadata;
 const t = text[lang];
-const other = lang === 'en' ? 'ko' : 'en';
-const counterpart = alternates.find(a => a.language === other);
-const isArticle = /^\/(en|ko)\/posts\/[^/]+\/$/.test(Astro.url.pathname) || /^\/(en|ko)\/digest\/\d/.test(Astro.url.pathname);
-const switchUrl = counterpart?.url || `/${other}/`;
+const allEntries=await entries();
+const archiveLink=archiveAlternates(allEntries).find(item=>item.language===lang);
+const guideLink=guideIndexAlternates(allEntries).find(a=>a.language===lang);
+const navItems=[
+  ...(hasSection(allEntries,lang,'posts')?[{href:'/'+lang+'/posts/',label:t.posts}]:[]),
+  ...(guideLink?[{href:guideLink.url,label:lang==='ko'?guideIndexCopy.ko.label:guideIndexCopy.en.label}]:[]),
+  ...(hasSection(allEntries,lang,'digest')?[{href:'/'+lang+'/digest/',label:t.digest}]:[]),
+  {href:'/'+lang+'/search/',label:t.search},
+];
+const current=(href:string)=>Astro.url.pathname===href?'page':Astro.url.pathname.startsWith(href)?'location':undefined;
+const isArticle = /^\/[^/]+\/(posts|digest)\/[^/]+\/$/.test(Astro.url.pathname);
 ---
 <!doctype html>
 <html lang={lang}>
@@ -23,7 +39,14 @@ const switchUrl = counterpart?.url || `/${other}/`;
     {alternates.some(a => a.language === 'en') && <link rel="alternate" hreflang="x-default" href={new URL(alternates.find(a => a.language === 'en')!.url, Astro.site)} />}
     <meta property="og:type" content={isArticle ? 'article' : 'website'} /><meta property="og:title" content={title} />
     <meta property="og:description" content={description} /><meta property="og:url" content={new URL(canonical, Astro.site)} />
-    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'ko_KR'} />
+    <meta property="og:locale" content={localeInfo[lang].ogLocale} />
+    {alternateLocales(lang,alternates).map(locale=><meta property="og:locale:alternate" content={locale} />)}
+    <meta property="og:site_name" content={SITE} />
+    {articleMetadata && <>
+      <meta property="article:published_time" content={articleMetadata.publishedTime} />
+      <meta property="article:modified_time" content={articleMetadata.modifiedTime} />
+      <meta property="article:author" content={articleMetadata.authorUrl} />
+    </>}
     <meta name="twitter:card" content="summary" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} />
     <script type="application/ld+json" set:html={serializedJsonLd} />
     <meta property="og:image" content={new URL('/assets/img/profile.jpg', Astro.site)} />
@@ -44,15 +67,19 @@ const switchUrl = counterpart?.url || `/${other}/`;
     <link rel="alternate" type="application/rss+xml" title={`${SITE} (${lang})`} href={`/${lang}/feed.xml`} />
   </head>
   <body>
-    <a class="skip-link" href="#main">{lang === 'en' ? 'Skip to content' : '본문으로 건너뛰기'}</a>
+    <a class="skip-link" href="#main">{labels[lang].skip}</a>
     <header class="site-header shell">
       <a class="brand" href={`/${lang}/`}><span class="brand-mark" aria-hidden="true">y.</span><span>{SITE}</span></a>
-      <nav aria-label={lang === 'en' ? 'Main navigation' : '주 메뉴'}>
-        <a href={`/${lang}/posts/`}>{t.posts}</a><a href={`/${lang}/digest/`}>{t.digest}</a><a href={`/${lang}/search/`}>{t.search}</a>
-        <a class="language" href={switchUrl} lang={other} title={isArticle && !counterpart ? t.notTranslated : undefined}>{other === 'ko' ? '한국어' : 'English'} <span aria-hidden="true">↗</span></a>
+      <nav aria-label={labels[lang].navigation}>
+        {navItems.map(item=><a href={item.href} aria-current={current(item.href)}>{item.label}</a>)}
+        <details class="language language-menu"><summary>{t.language}</summary><ul>{availableLanguages.filter(other=>other!==lang).map(other=>{
+          const counterpart=alternates.find(a=>a.language===other);
+          return <li><a href={counterpart?.url || `/${other}/`} lang={other} title={isArticle && !counterpart ? t.notTranslated : undefined}>{localeInfo[other].label}{isArticle && !counterpart && <small class="language-fallback" lang={lang}>{discoveryUi[lang].fallback}</small>}</a></li>;
+        })}</ul></details>
       </nav>
     </header>
     <main id="main" class="shell"><slot /></main>
-    <footer class="site-footer shell"><div><a class="brand" href={`/${lang}/`}>{SITE}</a><p>{t.footer}</p></div><div class="footer-links"><a href={`/${lang}/categories/`}>{t.categories}</a><a href={`/${lang}/tags/`}>{t.tags}</a><a href={`/${lang}/feed.xml`}>RSS</a><a href="https://github.com/youdozi">GitHub ↗</a></div></footer>
+    <footer class="site-footer shell"><div><a class="brand" href={`/${lang}/`}>{SITE}</a><p>{t.footer}</p></div><div class="footer-links">{archiveLink && <a href={archiveLink.url} aria-current={current(archiveLink.url)}>{discoveryUi[lang].archive}</a>}<a href={authorPath(lang)} lang={lang==='ko'?'ko':'en'}>{profileCopy[lang==='ko'?'ko':'en'].label}</a>{hasSection(allEntries,lang,'categories') && <a href={`/${lang}/categories/`} aria-current={current(`/${lang}/categories/`)}>{t.categories}</a>}{hasSection(allEntries,lang,'tags') && <a href={`/${lang}/tags/`} aria-current={current(`/${lang}/tags/`)}>{t.tags}</a>}<a href={`/${lang}/feed.xml`}>RSS</a><a href="https://github.com/youdozi">GitHub ↗</a></div></footer>
+    <script>import '../scripts/navigation';</script>
   </body>
 </html>

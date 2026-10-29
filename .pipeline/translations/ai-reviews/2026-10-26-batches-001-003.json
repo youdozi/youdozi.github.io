@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T08:30:16.599752+00:00",
+  "skill": "tech-blog-writing",
+  "reviewMethod": "independent-ai-session-and-targeted-recheck",
+  "reviewSession": "translation_review",
+  "writingConversationProvidedToReviewer": false,
+  "previousVerdictsProvidedAtInitialReview": false,
+  "scope": {
+    "editions": 55,
+    "sources": 11,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "title",
+      "claims",
+      "followUp",
+      "reviewFocus"
+    ],
+    "audience": "software developers",
+    "type": "concise historical-news translations",
+    "steps": [
+      "Read target-language prose without source",
+      "Compare to approved English edition and evidence",
+      "Writer validates and applies findings",
+      "Reviewer rechecks changed fields"
+    ]
+  },
+  "initialBatchSha256": {
+    "pilot-001": "8e37c2f649385124e5063adf493209ce5b548ea561b5e17d742edf2ddc4bbcbe",
+    "renewals-002": "f6a25ee44dfbd42f2b9b145b7e8a7260de952c3f9b5c3e370b7ea8c1fce6ee2e",
+    "renewals-003": "3c47adcba29d3eca9d2eaa01c46f3bab57100abbdc312ff2eaf2038bd246d931"
+  },
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/pilot-001.json": "8f6d637aff494071675c7741a886c5931b17108f468ddf44b4072ba2a2398229",
+    ".pipeline/translations/batches/renewals-002.json": "d52dee50bbb4d1c405da7901256132f32925a0abbcf8c03478ed81614b087793",
+    ".pipeline/translations/batches/renewals-003.json": "5bf963ba6321bea35feb32bda018e062702c2d42d058844f7c0c391a735cb4ca"
+  },
+  "sourceSha256": {
+    "src/content/renewals/7c3a8ce4dcd53d2b.json": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+    "src/content/renewals/0915f64eb6629c85.json": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+    "src/content/renewals/097c455a9b953f24.json": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+    "src/content/renewals/09e0d0ec5ed64f8a.json": "5c97c6f02a9a1f0f2521a7fb7169e71e10b5dc78aeb94851759c52a1b403fc3c",
+    "src/content/renewals/0a337adda878feca.json": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+    "src/content/renewals/1c1c9e6c82aad3a4.json": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+    "src/content/renewals/1e8ba1d86d179142.json": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+    "src/content/renewals/27d181b6a4903b28.json": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+    "src/content/renewals/28ede0247b95214f.json": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+    "src/content/renewals/2b6f4abe346a373d.json": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+    "src/content/renewals/38bfcb4310c98b8d.json": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb"
+  },
+  "findings": [
+    {
+      "renewalId": "09e0d0ec5ed64f8a",
+      "language": "zh-CN",
+      "field": "edition.claims[0]",
+      "severity": "minor",
+      "resolution": "완료 공지와 예정 날짜의 비교를 완료 공지와 예정 공지의 비교로 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "09e0d0ec5ed64f8a",
+      "language": "ru",
+      "field": "edition.claims[0]",
+      "severity": "minor",
+      "resolution": "공지와 날짜를 비교하던 표현의 대상을 공지끼리로 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "1c1c9e6c82aad3a4",
+      "language": "fr",
+      "field": "edition.title",
+      "severity": "minor",
+      "resolution": "검색 기능 추가를 자연스러운 동사로 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "7c3a8ce4dcd53d2b",
+      "language": "de",
+      "field": "edition.claims[1]",
+      "severity": "minor",
+      "resolution": "장애 전환 절차에 부자연스러운 ungeübt를 nicht erprobt로 수정",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "097c455a9b953f24",
+      "language": "ru",
+      "field": "reviewFocus",
+      "severity": "minor",
+      "resolution": "일반 경계 대신 데이터 흐름 분석의 barrier 용어를 유지",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "28ede0247b95214f",
+      "language": "ja",
+      "field": "edition.claims[0]",
+      "severity": "major",
+      "resolution": "예정으로 옮긴 폐지 상태를 완료로 수정하고 코드 리뷰 예외·다른 제공자 범위를 유지",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "28ede0247b95214f",
+      "language": "de",
+      "field": "edition.claims[0]",
+      "severity": "major",
+      "resolution": "예정으로 옮긴 중단 상태를 완료로 수정하고 당시 코드 리뷰 제공 상태를 유지",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "27d181b6a4903b28",
+      "language": "ja",
+      "field": "edition.claims[0]",
+      "severity": "minor",
+      "resolution": "CodeQL 자체 확장이 아닌 그 범위 밖의 AI 탐지를 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "27d181b6a4903b28",
+      "language": "de",
+      "field": "edition.claims[1]",
+      "severity": "minor",
+      "resolution": "라이선스 필요 조건과 크레딧 소비의 동사·호응을 수정",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "2b6f4abe346a373d",
+      "language": "ru",
+      "field": "edition.claims[1]",
+      "severity": "minor",
+      "resolution": "invalid findings를 미확인이 아닌 유효하지 않은 결과로 수정",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    }
+  ],
+  "result": "No unresolved major findings in the reviewed scope after targeted recheck",
+  "externalSourceRevalidation": false,
+  "nativeSpeakerOrHumanLanguageReview": false,
+  "publicationApprovalGranted": false,
+  "limitations": [
+    "AI review is not a guarantee of translation or factual accuracy.",
+    "Archived English and source evidence were compared; current external product availability was not reverified.",
+    "Publication remains subject to explicit user approval.",
+    "Remaining 240 translations have not been drafted or reviewed."
+  ]
+}

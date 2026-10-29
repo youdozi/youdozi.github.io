@@ -1,0 +1,25 @@
+---
+import labels from '../lib/archive-ui.json';
+import copy from '../lib/comments-ui.json';
+import {commentTerm,commentFallback} from '../lib/comments';
+import type {Entry} from '../lib/content';
+interface Props {entry:Entry;}
+const {entry}=Astro.props;const t=copy[entry.language];const term=commentTerm(entry);
+---
+<section class="article comments" aria-labelledby="discussion-heading">
+  <h2 id="discussion-heading">{labels[entry.language].discussion}</h2>
+  <on-demand-comments data-term={term} data-loading={t.loading} data-opened={t.opened} data-error={t.error}>
+    <div class="comment-actions"><button type="button" hidden aria-controls="comment-widget" aria-expanded="false">{t.show}</button><a href={commentFallback(term)} rel="noopener noreferrer">{t.github} ↗</a></div>
+    <p class="comment-status" role="status" aria-live="polite"></p>
+    <div id="comment-widget" hidden></div>
+  </on-demand-comments>
+</section>
+<script>
+  import '../scripts/comments';
+</script>
+<style>
+on-demand-comments{display:block}.comment-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px;line-height:1.8}
+button{font:inherit;cursor:pointer;padding:10px 16px;background:white;border:1px solid var(--line);border-radius:4px;color:var(--accent);max-width:100%;overflow-wrap:anywhere}
+button[aria-disabled="true"]{cursor:wait;color:var(--muted)}a{text-decoration:underline;text-underline-offset:3px;font-size:14px;overflow-wrap:anywhere}
+.comment-status{font-size:14px;color:var(--muted);line-height:1.8}.comment-status:empty{display:none}
+</style>

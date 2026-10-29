@@ -1,12 +1,13 @@
 import policy from './bilingual-quality-policy.json' with {type:'json'};
 
 type Edition = {title:string; claims:{text:string}[]; review?:{keyChange:number[];affectedAudience:number[];conditions:number[]}};
-function numbers(text:string) {
+export function numbers(text:string) {
   const words=policy.numberWords as Record<string,string>;
-  const normalized=text.replace(new RegExp(`\\b(${Object.keys(words).join('|')})\\b`,'gi'),value=>words[value.toLowerCase()]);
+  // JavaScript \b is ASCII-based and splits words such as Aktivitäten before ten.
+  const normalized=text.replace(new RegExp(`(?<![\\p{L}\\p{N}_])(${Object.keys(words).join('|')})(?![\\p{L}\\p{N}_])`,'giu'),value=>words[value.toLowerCase()]);
   return new Set([...normalized.matchAll(new RegExp(policy.numberPattern,'g'))].map(match=>match[0].replaceAll(',','')));
 }
-function terms(text:string) {
+export function terms(text:string) {
   return new Set(Object.entries(policy.terms).filter(([,pattern])=>new RegExp(`(?<![A-Za-z0-9])(?:${pattern})(?![A-Za-z0-9])`,'i').test(text)).map(([name])=>name));
 }
 function equal(a:Set<string>,b:Set<string>) {return a.size===b.size && [...a].every(value=>b.has(value));}

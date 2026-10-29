@@ -1,18 +1,12 @@
 ---
 import type {RenewalData} from '../lib/renewal-schema';
-import {formatDate,type Language} from '../lib/content';
-interface Props {article:RenewalData;lang:Language;}
-const {article,lang}=Astro.props;
-const en=lang==='en';const edition=article.editions[lang];
-const sections=[{name:en?'The news at the time':'당시 소식',claims:edition.claims},{name:en?'Follow-up checked during renewal':'리뉴얼 시점의 후속 확인',claims:edition.followUp}];
+import labels from '../lib/archive-ui.json';
+import type {Language} from '../lib/content';
+interface Props {article:RenewalData;lang:Language;edition:RenewalData['editions']['en'];}
+const {article,lang,edition}=Astro.props;
+const t=labels[lang];
+const additionalSources=[...new Set(article.documents.map(document=>document.url))].filter(url=>url!==article.url);
 ---
-<aside class="notice" data-archive-date={article.archiveDate}>
-  <strong>{en?'Renewed archive · original news date':'리뉴얼 아카이브 · 원래 뉴스 기준일'}: {article.archiveDate}</strong>
-  <p>{en?'This is a historical news brief. Its release versions and measurements describe the source at the time.':'과거 뉴스의 보강 원고입니다. 출시 버전과 측정 수치는 당시 원문의 맥락으로 읽어야 합니다.'}</p>
-  <p>{en?'Reviewed':'원문 검토'}: <time datetime={article.reviewedAt}>{formatDate(new Date(article.reviewedAt),lang)}</time> · {en?'Renewed':'보강 공개'}: <time datetime={article.updatedAt}>{formatDate(new Date(article.updatedAt),lang)}</time></p>
-</aside>
-{sections.map(section=><section class="digest-article"><h2>{section.name}</h2>{section.claims.length ? section.claims.map(c=><p>{c.text}</p>):<p>{en?'No additional follow-up fact was established in this renewal. This does not establish that nothing changed.':'이번 리뉴얼에서 추가로 확인한 후속 사실이 없습니다. 그동안 변경이 없었다는 뜻은 아닙니다.'}</p>}</section>)}
-<section class="digest-article"><h2>{en?'What to review before applying this':'적용 전 검토할 점'}</h2><p>{article.reviewFocus[lang]}</p><p>{en?'Editorial review suggestions; no hands-on product experiment was performed.':'편집 검토 제안입니다. 제품을 직접 적용·실험한 결과가 아닙니다.'}</p></section>
-<p><a class="source-link" href={article.url} rel="noopener noreferrer">{en?'Read the original reporting':'기존 기사 원문 읽기'} ↗</a></p>
-<details class="digest-article"><summary>{en?'Claim-by-claim source evidence':'문장별 원문 인용 근거'}</summary>{[...edition.claims,...edition.followUp].map(c=><section><p>{c.text}</p>{c.evidence.map(e=><blockquote><p>{e.quote}</p><a href={article.documents[e.document_id].url} rel="noopener noreferrer">{en?'Evidence source':'인용 출처'} ↗</a></blockquote>)}</section>)}</details>
-<p>{en?'Korean digest for the historical date':'해당 기준일의 한국어 다이제스트'}: <a href={`/ko/digest/${article.archiveDate}/`}>{article.archiveDate}</a>. {en?'Quotations and source context were reviewed editorially; this is not an independent experimental verification.':'인용과 원문 맥락을 편집 검토했으며 독립적인 실험 검증은 아닙니다.'}</p>
+<p class="entry-meta" data-archive-date={article.archiveDate}>{t.newsDate}: <time datetime={article.archiveDate}>{article.archiveDate}</time></p>
+{[...edition.claims,...edition.followUp].map(c=><p>{c.text}</p>)}
+<p><a class="source-link" href={article.url} rel="noopener noreferrer">{t.original} ↗</a>{additionalSources.map(url=><span> · <a href={url} title={url} rel="noopener noreferrer">{new URL(url).hostname} ↗</a></span>)}</p>

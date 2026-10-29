@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-28T05:13:44.427225+00:00",
+  "skill": "translate",
+  "reviewMethod": "self-ai-full-meaning-comparison-then-target-language-pass",
+  "scope": {
+    "editions": 50,
+    "sources": 10,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "title",
+      "claims",
+      "followUp",
+      "reviewFocus"
+    ],
+    "steps": [
+      "Compare each current target edition with the complete stored English brief and reviewFocus",
+      "Read each target language separately for fluency and scope",
+      "Record no required changes; preserve manuscript and source bytes"
+    ]
+  },
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/renewals-003.json": "7eb552006f744b1619c59bf2e46de1723fcddef3f70f9ac0f35fba9a87aa9463",
+    ".pipeline/translations/batches/renewals-004.json": "a64f9725e6f8cb62e29629844996447cf73bf736b29a85f534d9f92c82672cc5"
+  },
+  "sourceSha256": {
+    "src/content/renewals/1e8ba1d86d179142.json": "7a9ee43d65f75199ca3cc4fbdcdc9248862e926fc9d5082ff853fce50ec5b872",
+    "src/content/renewals/27d181b6a4903b28.json": "d247e1111edb11fa656f01ca7ae8f806bf5dd1f79a53624d563de54b07d0ff56",
+    "src/content/renewals/28ede0247b95214f.json": "62ae89cf15617e4ca5dfadd822ee282c81ce4bff76a2de4ebfa23d2a288056ae",
+    "src/content/renewals/2b6f4abe346a373d.json": "1ff11eff9c0f4b97fe5d8638ecb924b4961fae4d69b21de90f5f04baa8598c5b",
+    "src/content/renewals/38bfcb4310c98b8d.json": "9147af7e88f0bedd73d452eb54e41a8353debd8e60734c97b4f9e5caf0602fcb",
+    "src/content/renewals/3e483be55bb45ecb.json": "bb76edf97af70128a4eee1582db825b0a114175ed49f9ce5f00ce0a7d1f0c560",
+    "src/content/renewals/3f90329447f77e33.json": "1d33340e4a307f8e9e0ab2165c691894fbd49fbcf8ed402fdec3e3b040fc448f",
+    "src/content/renewals/4380abffaf1a31e0.json": "4fad29c6d34f27a2edda68e5e69caa63eb11b6d079892bd3171d59ab0bd8b182",
+    "src/content/renewals/46983b9e8a1cf49c.json": "65e180e922683e8b6cc8a576ef271a0130627b7c5ea7bbdaee18be0f10dc9974",
+    "src/content/renewals/4a59615041b968ae.json": "27defdf2b7b379a64541d1510c1e4a83dc3ded26f3ce198fb0eca00031902cb4"
+  },
+  "findings": [],
+  "observations": [
+    "Copilot risk-assessment explanation remains distinct from automatic remediation.",
+    "AI Scan preview and later general availability preserve different license and credit conditions, advisory-only findings and fork/Dependabot exclusions.",
+    "Model retirement is scoped to Copilot, preserves corrected dates and the GPT-5.2 code-review exception, and makes no current availability recommendation.",
+    "Spring report triage is distinct from issued CVEs; resource sampling interval is distinct from production overhead.",
+    "GitLab beta versus generally available scanning, offering/tier differences and PostgreSQL prerequisites remain distinct.",
+    "Copy Fail reports describe Cloudflare operations rather than universal Linux safety; PHP WAF coverage retains the upload-progress field-name condition."
+  ],
+  "historicalReviewRecords": [
+    ".pipeline/translations/ai-reviews/2026-10-26-batches-001-003.json",
+    ".pipeline/translations/ai-reviews/2026-10-26-batch-004.json",
+    ".pipeline/translations/ai-reviews/2026-10-26-batch-007.json"
+  ],
+  "reason": "The batch-007 record endorses two older batches with carry-forward field coverage. This new full 50-edition self-review covers the current bytes without presenting that targeted review as a new full review.",
+  "externalSourceRevalidation": false,
+  "nativeSpeakerOrHumanLanguageReview": false,
+  "independentReview": false,
+  "publicationApprovalGranted": false,
+  "limitations": [
+    "Only these 50 editions received a new semantic and fluency review in this work unit.",
+    "Other 215 editions reuse earlier pinned AI reviews; file checks do not prove semantic accuracy.",
+    "No live external retrieval, new product availability verification, code execution, security validation or publication approval occurred."
+  ]
+}

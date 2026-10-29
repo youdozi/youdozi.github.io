@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "7c3a8ce4dcd53d2b",
+  "language": "zh-CN",
+  "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+  "edition": {
+    "title": "多区域设计：复制、写入与故障转移的权衡",
+    "claims": [
+      "文章作者对比了两种设计：各区域独立提供服务的 active-active 架构，以及在本地处理读取、将远程写入代理到全局写入区域的架构。需要权衡的因素包括复制、冲突处理和跨区域写入延迟。",
+      "对于 active-passive 模式，作者描述了由主区域处理流量、备用区域持续接收复制的方式。文章提醒，未经演练的故障转移路径可能在启用时失效，并建议在规划中采用实测的故障转移表现。本文未纳入原文中的成本节省百分比，也未纳入延迟恢复估算。"
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "本次审阅仅限于作者的设计讨论，并非通用成本模型。在选择区域架构前，应测量工作负载的地域分布、一致性要求、恢复表现和运维投入。",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:29:08.424Z",
+  "publishedAt": "2026-10-26T15:29:08.424Z",
+  "updatedAt": "2026-10-26T15:29:08.424Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 49,
+    "approvedAt": "2026-10-26T15:29:08.424Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 in direct response to PR #49 final review and explicit request for publication approval of this one source in zh-CN, ja, de, fr and ru."
+  }
+}

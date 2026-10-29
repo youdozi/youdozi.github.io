@@ -1,5 +1,5 @@
 ---
-title: "[linux] curl과 jq를 이용한 github api 조회"
+title: "curl·jq로 GitHub 최신 릴리스 조회와 다운로드 자산 선택하기"
 language: "ko"
 translationKey: "2023-09-23-linux-shellscript-github-latest"
 routeSlug: "2023-09-23-linux-shellscript-github-latest"
@@ -16,166 +16,101 @@ tags:
 legacyUrl: "/linux/linux-shellscript-github-latest/"
 legacySource: "_posts/linux/shell-script/github-latest/2023-09-23-linux-shellsc\
   ript-github-latest.markdown"
-updatedAt: "2026-10-24T09:00:00+09:00"
-reviewedAt: "2026-10-24"
+updatedAt: 2026-10-27T10:25:23.707+00:00
+reviewedAt: "2026-10-27"
 reviewStatus: "revised"
-reviewScope: "공식 문서 대조 및 예제 코드 검토"
+reviewScope: "공식 문서 대조 및 원고 실행 예제 검증"
 archiveBodySha256: "877051a28045533ef144cb07484e1a225f8961202dd0b24dd398d49603b3a275"
 reviewSources:
-  - "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api"
   - "https://docs.github.com/en/rest/releases/releases#get-the-latest-release"
+  - "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api"
+  - "https://curl.se/docs/manpage.html"
+  - "https://jqlang.org/manual/"
+description: "curl과 jq로 GitHub 최신 릴리스에서 OS·CPU·형식에 맞는 자산 하나를 선택합니다. HTTP 오류·잘못된 JSON·누락·중복을 처리하며 파일은 다운로드하지 않습니다."
 ---
-## 개요
-github rest API 문서를 보면 재미있는 API들이 있습니다.  
-오늘은 그 중 최신 release 가져오는 API를 만져보도록 하겠습니다.
+`curl`로 GitHub 최신 릴리스를 조회하고 `jq`로 OS·CPU·파일 형식에 맞는 다운로드 자산을 정확히 하나 선택합니다. 아래 스크립트는 HTTP 오류·잘못된 JSON·자산 누락·중복에서 실패하며, 파일을 다운로드하지 않고 메타데이터를 반환합니다.
 
-### 준비물
-#### jq
-* 설치 -> `brew install jq`
+`releases/latest`는 숫자로 가장 큰 Git 태그를 계산하는 API가 아닙니다. [공식 릴리스 API](https://docs.github.com/en/rest/releases/releases#get-the-latest-release)는 일반 태그·draft·prerelease와 게시 릴리스를 구분합니다.
 
-#### github access token
-* [https://docs.github.com/ko/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens](https://docs.github.com/ko/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
-* 인증하지 않은 REST API 기본 한도는 일반적으로 IP당 시간당 60회입니다. 검색 API 등은 별도 한도가 있으므로 응답 헤더와 rate_limit 엔드포인트를 확인해야 합니다.
-* 아래 API를 요청하면 core, graphql, integration_manifest, search 별로 limit, reset 시간을 알 수 있습니다.
+아래 예제는 공개 저장소 `adoptium/temurin17-binaries`의 Linux x64 HotSpot JDK tar.gz 메타데이터를 조회합니다. 토큰이나 실제 파일 다운로드는 필요하지 않습니다. 저장소 인자를 생략하면 이 기본값을 사용하고 명시적인 빈 인자는 거부합니다.
 
-request
-```shell
-curl https://api.github.com/rate_limit
+## 처리 흐름
+
+![GitHub 릴리스 자산 1개 선택 흐름도](/assets/diagrams/2023-09-23-linux-shellscript-github-latest-ko.svg)
+
+HTTP 실패는 JSON 파싱 전에 종료합니다. 올바른 릴리스 객체에서 조건에 맞는 자산 1개만 선택하며 URL 선택은 파일 검증이 아닙니다.
+
+## HTTP 실패와 JSON 선택 실패 분리하기
+
+`curl`, `jq`, POSIX sh가 필요합니다. `latest-release.sh`로 저장합니다.
+
+### `latest-release.sh`
+
+```sh
+#!/bin/sh
+set -eu
+if [ "$#" -gt 1 ]; then
+    printf '%s\n' 'usage: latest-release.sh OWNER/REPO' >&2
+    exit 2
+fi
+repo=${1-adoptium/temurin17-binaries}
+case "$repo" in
+    */*/*|/*|*/|*[!A-Za-z0-9_./-]*) printf '%s\n' 'usage: latest-release.sh OWNER/REPO' >&2; exit 2 ;;
+esac
+case "$repo" in
+    */*) ;;
+    *) printf '%s\n' 'usage: latest-release.sh OWNER/REPO' >&2; exit 2 ;;
+esac
+api=${GITHUB_API_URL:-https://api.github.com}
+response=$(curl --fail --silent --show-error --location --max-time 20 \
+    --header 'Accept: application/vnd.github+json' \
+    --header 'X-GitHub-Api-Version: 2026-03-10' \
+    "$api/repos/$repo/releases/latest") || exit 1
+printf '%s' "$response" | jq --slurp --exit-status '
+    if length != 1 or (.[0] | type) != "object" then
+        error("expected one release object")
+    else .[0] end
+    | . as $release
+    | if (.tag_name | type) != "string" or (.tag_name | length) == 0
+         or (.assets | type) != "array" then
+        error("missing release tag or assets")
+      else . end
+    | [.assets[] | select(.name | test("^OpenJDK17U-jdk_x64_linux_hotspot_.*\\.tar\\.gz$"))] as $assets
+    | if ($assets | length) != 1 then
+        error("expected exactly one Linux x64 JDK tar.gz asset")
+      elif ($assets[0].browser_download_url | type) != "string"
+           or ($assets[0].browser_download_url | length) == 0 then
+        error("missing asset download URL")
+      else {tag_name: $release.tag_name, download_url: $assets[0].browser_download_url} end
+'
 ```
 
-### github API 분석
-openjdk의 공급사인 adoptium의 최신 release를 가져오도록 하겠습니다.  
-github access token을 아래 넣어주고 API 요청을 합니다.  
-
-request
-```shell
-curl --fail --silent --show-error -L -H "Authorization: Bearer ${ACCESS_TOKEN}" \
-https://api.github.com/repos/adoptium/temurin17-binaries/releases/latest
+```sh
+sh latest-release.sh adoptium/temurin17-binaries
 ```
-response
+
+정상 결과는 `tag_name`, `download_url`을 가진 JSON 객체입니다. 값은 조회 시점의 릴리스에 따라 달라집니다. 아래는 응답 구조를 보여주는 테스트 데이터이며 현재 최신 버전이라는 뜻은 아닙니다.
+
 ```json
-{
-  "url": "https://api.github.com/repos/adoptium/temurin17-binaries/releases/119075034",
-  "assets_url": "https://api.github.com/repos/adoptium/temurin17-binaries/releases/119075034/assets",
-  "upload_url": "https://uploads.github.com/repos/adoptium/temurin17-binaries/releases/119075034/assets{?name,label}",
-  "html_url": "https://github.com/adoptium/temurin17-binaries/releases/tag/jdk-17.0.8.1%2B1",
-  "id": 119075034,
-  "author": {
-    "login": "eclipse-temurin-bot",
-    "id": 81643974,
-    "node_id": "MDQ6VXNlcjgxNjQzOTc0",
-    "avatar_url": "https://avatars.githubusercontent.com/u/81643974?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/eclipse-temurin-bot",
-    "html_url": "https://github.com/eclipse-temurin-bot",
-    "followers_url": "https://api.github.com/users/eclipse-temurin-bot/followers",
-    "following_url": "https://api.github.com/users/eclipse-temurin-bot/following{/other_user}",
-    "gists_url": "https://api.github.com/users/eclipse-temurin-bot/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/eclipse-temurin-bot/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/eclipse-temurin-bot/subscriptions",
-    "organizations_url": "https://api.github.com/users/eclipse-temurin-bot/orgs",
-    "repos_url": "https://api.github.com/users/eclipse-temurin-bot/repos",
-    "events_url": "https://api.github.com/users/eclipse-temurin-bot/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/eclipse-temurin-bot/received_events",
-    "type": "User",
-    "site_admin": false
-  },
-  "node_id": "RE_kwDOFjpjCs4HGPDa",
-  "tag_name": "jdk-17.0.8.1+1",
-  "target_commitish": "main",
-  "name": "jdk-17.0.8.1+1",
-  "draft": false,
-  "prerelease": false,
-  "created_at": "2022-08-15T07:03:39Z",
-  "published_at": "2023-08-29T13:10:18Z",
-  "assets": [
-    {
-      "url": "https://api.github.com/repos/adoptium/temurin17-binaries/releases/assets/123616608",
-      "id": 123616608,
-      "node_id": "RA_kwDOFjpjCs4HXj1g",
-      "name": "OpenJDK17U-debugimage_aarch64_linux_hotspot_17.0.8.1_1.tar.gz",
-      "label": "",
-      "uploader": {
-        "login": "eclipse-temurin-bot",
-        "id": 81643974,
-        "node_id": "MDQ6VXNlcjgxNjQzOTc0",
-        "avatar_url": "https://avatars.githubusercontent.com/u/81643974?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/eclipse-temurin-bot",
-        "html_url": "https://github.com/eclipse-temurin-bot",
-        "followers_url": "https://api.github.com/users/eclipse-temurin-bot/followers",
-        "following_url": "https://api.github.com/users/eclipse-temurin-bot/following{/other_user}",
-        "gists_url": "https://api.github.com/users/eclipse-temurin-bot/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/eclipse-temurin-bot/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/eclipse-temurin-bot/subscriptions",
-        "organizations_url": "https://api.github.com/users/eclipse-temurin-bot/orgs",
-        "repos_url": "https://api.github.com/users/eclipse-temurin-bot/repos",
-        "events_url": "https://api.github.com/users/eclipse-temurin-bot/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/eclipse-temurin-bot/received_events",
-        "type": "User",
-        "site_admin": false
-      },
-      "content_type": "application/x-compressed-tar",
-      "state": "uploaded",
-      "size": 162252748,
-      "download_count": 493,
-      "created_at": "2023-08-29T13:10:53Z",
-      "updated_at": "2023-08-29T13:11:00Z",
-      "browser_download_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8.1%2B1/OpenJDK17U-debugimage_aarch64_linux_hotspot_17.0.8.1_1.tar.gz"
-    },
-    ...
-}
+{"tag_name":"jdk-17.0.8.1+1","download_url":"https://github.com/adoptium/temurin17-binaries/releases/download/example/OpenJDK17U-jdk_x64_linux_hotspot_example.tar.gz"}
 ```
-방대한 데이터가 오기 때문에 앞 부분만 잘랐습니다.  
-크게 부모 release object -> 자식 assets array 구조로 나눠져 있는 것을 볼 수 있습니다.  
-여기서 tag_name, assets[].browser_download_url 만 있으면 될 것 같네요.  
-하지만 tag_name은 부모, browser_download_url는 자식 array에 있으니 평탄화 해서 이쁘게 처리 해보겠습니다.
 
-```shell
-curl --fail --silent --show-error -L -H "Authorization: Bearer ${ACCESS_TOKEN}" \
-https://api.github.com/repos/adoptium/temurin17-binaries/releases/latest |
-jq '{("tag_name"): .tag_name, ("download_url"): .assets[].browser_download_url} |
-select( .download_url | contains("jdk_x64_linux_hotspot")) |
-select( .tag_name | contains("beta") | not) |
-select( .download_url | test("\\.tar.gz$"))'
-```
-curl 이후 pipe를 통해 jq로 응답값을 전달합니다.  
-이제 본격적으로 jq를 이용해서 json을 만져볼텐데..  
-단락별로 나눠서 설명 드리도록 하겠습니다.
+`curl --fail`로 HTTP 오류를 먼저 처리합니다. 응답을 변수에 받은 뒤 JSON을 처리하므로 네트워크 실패를 파이프라인의 마지막 명령 성공으로 덮지 않습니다. [`curl` 옵션](https://curl.se/docs/manpage.html).
 
-```shell
-jq '{("tag_name"): .tag_name, ("download_url"): .assets[].browser_download_url}'
-```
-tag_name, assets[].browser_download_url를 파싱하여 한쌍의 json으로 노출될 수 있도록 평탄화해주는 작업을 합니다.  
-jq에서도 pipe를 통해 값을 이후로 전달할 수 있습니다!
+`jq --slurp`는 입력 전체를 배열로 받습니다. JSON 값이 정확히 하나인지 확인하므로 빈 응답도 거부합니다. 그다음 릴리스 객체·태그·자산 배열을 검사하고, 파일명 패턴과 맞는 자산이 하나일 때만 객체를 출력합니다. [`jq` 매뉴얼](https://jqlang.org/manual/).
 
-```shell
-select( .download_url | contains("jdk_x64_linux_hotspot")) |
-select( .tag_name | contains("beta") | not) |
-select( .download_url | test("\\.tar.gz$"))
-```
-jq select 함수를 이용하여 필터링 합니다.
-여기서 필터링할 내용이 몇가지 있는데 
-* linux x64 hotspot
-* beta 제외
-* tar.gz로 끝나는 확장자
+## 자동화에서 확인할 결과
 
-이 3가지 유형을 contains, not contains, 정규식등의 예제가 각각 보여줍니다.
-이제 결과물을 보자면?
-```json
-{
-  "tag_name": "jdk-17.0.8.1+1",
-  "download_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.8.1_1.tar.gz"
-}
-```
-우리가 원하는 데이터가 나옵니다.
-이런 방식으로 github API를 응용하면 재미난 것을 많이 구현할 수 있습니다.
+| 상황 | 처리 |
+| --- | --- |
+| 정상 응답, 일치 자산 1개 | JSON 출력, 종료 코드 0 |
+| HTTP 403·404 또는 연결 실패 | 0이 아닌 코드로 종료 |
+| 빈 응답·잘못된 JSON | 0이 아닌 코드로 종료 |
+| 자산 0개·2개 이상 | 임의로 고르지 않고 실패 |
+| 잘못된 저장소 인자 형식 | 사용법 출력, 종료 코드 2 |
 
-## 검증 및 보강 — 2026-10-24
+예제는 로컬 HTTP 응답으로 성공·HTTP 오류·JSON 오류·자산 누락과 중복을 확인했습니다. `GITHUB_API_URL`은 기본적으로 공개 API 주소이며 같은 응답 계약을 가진 테스트 서버로 바꿔 검사할 수 있습니다.
 
-`releases/latest`는 숫자로 가장 큰 태그를 계산하는 API가 아닙니다. GitHub가 latest로 취급하는 게시 릴리스를 반환하며 draft·prerelease와 일반 Git 태그를 구분해야 합니다. 공개 저장소 조회에는 토큰이 필수가 아니며, 사용할 때는 환경 변수로 전달하고 셸 추적(`set -x`)이나 로그에 노출하지 않습니다. jq 선택 결과가 0개 또는 여러 개일 수도 있으므로 설치 자동화에서는 자산 개수와 OS/CPU를 검사하고 공급자의 체크섬도 검증하세요.
+공개 리소스 조회에는 인증이 필수가 아닙니다. 인증이 필요해 확장한다면 토큰을 소스에 적거나 셸 추적 로그에 남기지 마세요. 요청 한도는 응답 헤더와 [GitHub rate-limit 안내](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api)로 확인합니다.
 
-### 확인한 자료
-
-- [공식 자료 1](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api)
-- [공식 자료 2](https://docs.github.com/en/rest/releases/releases#get-the-latest-release)
+이 스크립트는 다운로드 URL을 선택할 뿐 설치 파일의 무결성을 확인하지 않습니다. 설치 자동화에서는 공급자의 체크섬·서명과 대상 플랫폼을 별도로 확인해야 합니다. 태그를 [숫자 버전 비교](/ko/posts/2023-11-17-linux-shellscript-version-compare/)에 넘길 때도 그 문서의 입력 범위와 같은지 먼저 판단하세요.

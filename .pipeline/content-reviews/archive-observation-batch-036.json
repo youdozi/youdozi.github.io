@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-28T07:04:11.471216+00:00",
+  "baseCommit": "29eef435b11bb7c8d249ddc9e77cef6873991e4e",
+  "purpose": "Include deployed public archive roots in repeatable Google/Bing observations and compare changed selections without inventing indexing gains or losses.",
+  "scope": {
+    "selectedURLs": 94,
+    "coreAndLegacyURLs": 30,
+    "publishedDigestURLs": 48,
+    "localeHomes": 8,
+    "publicArchives": 8,
+    "privateDraftsQueried": 0,
+    "publicContentOrTemplateChanges": 0
+  },
+  "comparison": {
+    "default": "Require identical URL selections.",
+    "explicitMigration": "--live --previous FILE --allow-selection-change; compare only common URLs, list addedURLs/removedURLs separately.",
+    "preflight": "Reject mismatched properties, schema versions, duplicate URLs, foreign URLs and disjoint selections before credentials or API quota.",
+    "unknowns": "Unknown Google states and failed Bing reads cannot become indexing losses or new crawl records.",
+    "previousSnapshots": "Read-only; original timestamps and files preserved."
+  },
+  "validation": {
+    "pythonTests": 216,
+    "searchEngineTests": 22,
+    "result": "passed",
+    "currentLocalSitemapURLs": 479,
+    "selectedNonLegacyURLsInLocalSitemap": 84,
+    "existingPrivate86SnapshotReadable": true,
+    "offlineMigrationCommonURLs": 86,
+    "offlineMigrationAddedArchives": 8,
+    "liveAPIRequests": 0,
+    "newBrowserChecks": 0,
+    "newSiteBuild": false,
+    "note": "Existing generated sitemap checked for selection membership; mock transports exercise archive collection and CLI migration. No fresh search-engine state claimed."
+  },
+  "review": {
+    "method": "Self AI code review and regression tests; no independent or human review.",
+    "limits": [
+      "The eight archive baseline and earlier 86-URL snapshot have different timestamps and formats; they were not merged into a simultaneous observation.",
+      "Bing crawl records do not prove index membership. Google PASS does not prove current query ranking.",
+      "All 318 prepared unpublished translations remain private; public translation files unchanged."
+    ]
+  },
+  "followUp": {
+    "manualDates": [
+      "2026-11-04",
+      "2026-11-11",
+      "2026-11-25"
+    ],
+    "scheduled": false,
+    "nextCollection": "After merging the tool update, explicitly migrate the 86-URL baseline during the next manual live observation. The run reads all current targets, not just additions."
+  },
+  "sha256": {
+    "scripts/search_engines.py": "317d4324650bfab607aae40b9bc903cbe337d4db747763117eab6106e8ab2503",
+    "scripts/test_search_engines.py": "5987a7caf93d5f62669249e8c7f9dd11ab54f1915cc94077193f7af789181025",
+    "docs/search-growth.md": "1d70a58a19185d75920a4ed608124b3c8ff73d5cd89be9dd3236e8b10232f5a5",
+    "README.md": "5f89684deed81f132d25266145daf28a73068e316d3c0649b0d40bca8f11aee9"
+  },
+  "publication": "Review PR only; no merge, deployment, sitemap submission or indexing request in this change."
+}

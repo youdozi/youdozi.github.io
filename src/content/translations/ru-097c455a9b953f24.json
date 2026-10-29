@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "097c455a9b953f24",
+  "language": "ru",
+  "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+  "edition": {
+    "title": "CodeQL: модели в виде данных получают пользовательские санитайзеры и валидаторы",
+    "claims": [
+      "GitHub описывает декларативные санитайзеры и валидаторы в расширениях данных CodeQL в формате YAML с использованием barrierModel и barrierGuardModel.",
+      "В объявлении указана доступность начиная с CodeQL 2.25.2. Это минимальная версия из исторического объявления, а не актуальная рекомендация по обновлению."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Моделируйте только те типы уязвимостей и пути, от которых санитайзер действительно защищает. Проверяйте положительные и отрицательные примеры, чтобы чрезмерно широкий барьер не скрывал реальные потоки загрязнённых данных; этот черновик не заявляет об измеренном сокращении ложных срабатываний.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

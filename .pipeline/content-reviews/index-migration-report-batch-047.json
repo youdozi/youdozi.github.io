@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-29T06:45:38.333964+00:00",
+  "baseCommit": "39c71ae36e78973bf66e9ed03577407cd2553b83",
+  "purpose": "Compare saved core-topic legacy, Korean and English index observations without treating missing verdicts or canonicals as changes.",
+  "scope": {
+    "articleManuscriptsChanged": 0,
+    "pendingTranslationsPublished": 0,
+    "networkRequestsByNewReport": 0,
+    "settingsChanged": 0
+  },
+  "policy": {
+    "source": "Existing private snapshots only; preserve observation dates and PT performance windows.",
+    "grouping": "Ten registered topics, each with English/Korean/legacy identity validation.",
+    "deployment": "Use actual timezone-aware deployment completion time, not merge time; post-deployment crawl is not proof of causality or indexing completion.",
+    "unknown": "Missing verdicts are uncomparable, missing canonical fields are not canonical changes, missing performance rows are not zero.",
+    "privacy": "No query data in the report; optional exclusive mode-600 output outside all registered worktrees.",
+    "references": [
+      "https://developers.google.com/webmaster-tools/v1/urlInspection.index/inspect",
+      "https://developers.google.com/webmaster-tools/v1/urlInspection.index/UrlInspectionResult"
+    ]
+  },
+  "validation": {
+    "pythonTests": 277,
+    "nodeTests": 117,
+    "astroCheckErrors": 0,
+    "normalBuild": "passed",
+    "publicArticles": 423,
+    "sitemapURLs": 479,
+    "approvedTranslations": 36,
+    "offlinePrivateBaseline": "generated without API calls; no private metrics committed"
+  },
+  "sourceSha256": {
+    "scripts/search_growth.py": "5917ff3518ca14ca2ad0690fe4a0386264e0b585fb14482a212027f72c1605e0",
+    "scripts/migration_report.py": "91b236f06e9dd23e1a26988203e1328399b4b9efa16cdaa87b1a47c4c5e50801",
+    "scripts/test_migration_report.py": "3cb8c282e10007803542aca3a492e81976c3e2dd0e273d25275c402a2ac87060",
+    "scripts/test_search_growth.py": "1f01e92e0cedbe74fa59a166c90f6d6657840515b71928501399d22e6b64b270"
+  },
+  "limits": [
+    "No new Google observations or indexing requests in this change.",
+    "No automatic schedule registered.",
+    "No production deployment of this report feature."
+  ]
+}

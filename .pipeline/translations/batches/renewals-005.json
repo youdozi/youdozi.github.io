@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "state": "draft",
+  "batchId": "renewals-005",
+  "sourceLanguage": "en",
+  "reviewRequired": "AI meaning and target-language review; explicit user publication approval remains required.",
+  "preparation": {
+    "method": "assistant-direct-translation",
+    "externalTranslationApiUsed": false,
+    "skill": "tech-blog-writing"
+  },
+  "translations": [
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "50b97c32c1d2c027",
+      "language": "zh-CN",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "edition": {
+        "title": "Buildkite 限定流水线机密范围并新增流水线验证工具",
+        "claims": [
+          "Buildkite 将流水线机密描述为仅限当前流水线使用的集群机密，并可附加访问条件。",
+          "其 MCP 服务器新增 validate_pipeline，可在上传前根据官方模式校验流水线 YAML。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "检查各个步骤中的机密暴露情况及授予 CI 代理的权限。模式校验的范围有限；执行行为、插件和权限边界仍需单独审查。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "50b97c32c1d2c027",
+      "language": "ja",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "edition": {
+        "title": "Buildkite がパイプラインのシークレット範囲を限定し、検証ツールを追加",
+        "claims": [
+          "Buildkite は、パイプラインシークレットを現在のパイプラインに利用を限定したクラスターシークレットと説明している。追加のアクセス条件も設定できる。",
+          "MCP サーバーには validate_pipeline が追加され、アップロード前にパイプライン YAML を公式スキーマと照合できる。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "各ステップでのシークレットの露出と、CI エージェントに付与した権限を確認する。スキーマ検証で確認できる範囲は限られる。実行時の動作、プラグイン、権限境界は別途レビューする必要がある。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "50b97c32c1d2c027",
+      "language": "de",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "edition": {
+        "title": "Buildkite begrenzt Pipeline-Secrets und ergänzt Werkzeuge zur Pipeline-Prüfung",
+        "claims": [
+          "Buildkite beschreibt Pipeline-Secrets als Cluster-Secrets, die auf die aktuelle Pipeline beschränkt sind. Zusätzliche Zugriffsbedingungen lassen sich festlegen.",
+          "Der MCP-Server bietet jetzt validate_pipeline, um Pipeline-YAML vor dem Hochladen gegen das offizielle Schema zu prüfen."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Die Offenlegung von Secrets in einzelnen Schritten und die Berechtigungen der CI-Agenten prüfen. Die Schemaprüfung deckt nur einen engen Bereich ab; Ausführungsverhalten, Plugins und Berechtigungsgrenzen benötigen weiterhin eine gesonderte Prüfung."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "50b97c32c1d2c027",
+      "language": "fr",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "edition": {
+        "title": "Buildkite limite la portée des secrets de pipeline et ajoute des outils de validation",
+        "claims": [
+          "Buildkite décrit les secrets de pipeline comme des secrets de cluster limités au pipeline courant, auxquels peuvent s’ajouter des conditions d’accès.",
+          "Son serveur MCP ajoute validate_pipeline pour vérifier le YAML du pipeline par rapport au schéma officiel avant son envoi."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Examiner l’exposition des secrets dans chaque étape et les autorisations accordées aux agents CI. La validation du schéma est un contrôle limité ; le comportement à l’exécution, les plugins et les frontières d’autorisation nécessitent une revue distincte."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "50b97c32c1d2c027",
+      "language": "ru",
+      "sourceSha256": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+      "edition": {
+        "title": "Buildkite ограничивает область действия секретов конвейера и добавляет средства проверки",
+        "claims": [
+          "Buildkite описывает секреты конвейера как секреты кластера, доступные только текущему конвейеру, с возможностью задать дополнительные условия доступа.",
+          "В MCP-сервер добавлен validate_pipeline для проверки YAML конвейера по официальной схеме перед загрузкой."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Проверьте раскрытие секретов на отдельных этапах и разрешения, выданные CI-агентам. Проверка схемы имеет ограниченный охват; поведение при выполнении, плагины и границы полномочий требуют отдельного рассмотрения."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "52ee7abbb037f678",
+      "language": "zh-CN",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "edition": {
+        "title": "Azure DevOps Autofix：预览阶段、审查关卡与计费",
+        "claims": [
+          "Microsoft 的发布文章将用于 GitHub Advanced Security for Azure DevOps 的 Copilot Autofix 描述为有限私有预览，分批处理加入申请。不能将发布文章与后续文档合并为一项可用性始终未变的声明。",
+          "发布时介绍的流程会根据受支持的 CodeQL 告警生成修改建议并打开拉取请求。现有审查和构建关卡仍会运行，告警会在合并并完成下一次 CodeQL 扫描后消除。"
+        ],
+        "followUp": [
+          "本次审阅时，官方指南将该功能标为有限公开预览，并称 Microsoft 不接受更多用户加入。这是后续文档记录的状态，并不能证明最初的私有预览表述有误。",
+          "本次审阅时的指南称，修复生成会消耗 AI 额度，并通过关联的 Azure 订阅计费；GitHub Copilot 的预算和用户限额不控制 Azure DevOps 的这项用量计费。许可证中包含该功能，不应被理解为修复生成免费。"
+        ]
+      },
+      "reviewFocus": "启用生成前，检查加入条件、受支持的告警类型和关联的 Azure 订阅。应手动验证修复并运行测试；生成建议本身并不会消除告警。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "52ee7abbb037f678",
+      "language": "ja",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "edition": {
+        "title": "Azure DevOps Autofix：プレビュー段階・レビュー条件・課金",
+        "claims": [
+          "Microsoft の公開開始時の記事は、GitHub Advanced Security for Azure DevOps 向けの Copilot Autofix を、参加申請を段階的に処理する限定プライベートプレビューと説明している。公開時の記事と後の文書をまとめて、利用条件が変わっていないと扱ってはならない。",
+          "公開時に示されたワークフローは、対応する CodeQL アラートから変更案を生成してプルリクエストを開く。既存のレビューとビルドのゲートは引き続き実行され、アラートはマージとその後の CodeQL スキャンを経て解消される。"
+        ],
+        "followUp": [
+          "レビュー時点の公式ガイドは、この機能を限定パブリックプレビューと表記し、Microsoft は追加の利用者を受け付けていないとしている。これは後に文書化された状態であり、当初のプライベートプレビューという表記が誤りだった証拠ではない。",
+          "レビュー時点のガイドによると、修正案の生成は AI クレジットを消費し、関連付けた Azure サブスクリプションに課金される。GitHub Copilot の予算やユーザー上限は、Azure DevOps のこの課金メーターを制御しない。ライセンスに含まれることを、修正案の無料生成と捉えてはならない。"
+        ]
+      },
+      "reviewFocus": "生成を有効にする前に、参加条件、対応アラートの種類、関連付けた Azure サブスクリプションを確認する。修正は手動確認とテストで検証する。提案を生成しただけでは、アラート自体は解消されない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "52ee7abbb037f678",
+      "language": "de",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "edition": {
+        "title": "Azure DevOps Autofix: Vorschauphasen, Review-Gates und Abrechnung",
+        "claims": [
+          "Microsoft beschreibt Copilot Autofix für GitHub Advanced Security for Azure DevOps im Startbeitrag als begrenzte private Vorschau, deren Anmeldungen schrittweise bearbeitet werden. Der Startbeitrag und die spätere Dokumentation dürfen nicht zu einer Aussage über unveränderte Verfügbarkeit zusammengefasst werden.",
+          "Der zum Start beschriebene Ablauf erzeugt aus unterstützten CodeQL-Warnungen einen Änderungsvorschlag und öffnet einen Pull Request. Bestehende Review- und Build-Gates laufen weiterhin. Die Warnung wird nach dem Merge und dem nächsten CodeQL-Scan aufgelöst."
+        ],
+        "followUp": [
+          "Zum Prüfzeitpunkt kennzeichnet der offizielle Leitfaden die Funktion als begrenzte öffentliche Vorschau und erklärt, dass Microsoft keine weiteren Nutzer aufnimmt. Dies ist ein später dokumentierter Stand, kein Beleg dafür, dass die ursprüngliche Bezeichnung als private Vorschau falsch war.",
+          "Der zum Prüfzeitpunkt aktuelle Leitfaden erklärt, dass die Generierung von Korrekturen KI-Credits verbraucht, die über das verknüpfte Azure-Abonnement abgerechnet werden. GitHub Copilot-Budgets und Nutzerlimits steuern diesen Azure DevOps-Abrechnungszähler nicht. Die Einbeziehung in eine Lizenz bedeutet keine kostenlose Korrekturgenerierung."
+        ]
+      },
+      "reviewFocus": "Vor dem Aktivieren der Generierung die Aufnahmebedingungen, unterstützten Warnungstypen und das verknüpfte Azure-Abonnement prüfen. Korrekturen manuell und mit Tests validieren; die Erzeugung eines Vorschlags behebt für sich genommen keine Warnung."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "52ee7abbb037f678",
+      "language": "fr",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "edition": {
+        "title": "Azure DevOps Autofix : phases de préversion, contrôles de revue et facturation",
+        "claims": [
+          "L’article de lancement de Microsoft décrit Copilot Autofix pour GitHub Advanced Security for Azure DevOps comme une préversion privée limitée, dont les inscriptions sont traitées par vagues. L’article initial et la documentation ultérieure ne doivent pas être fusionnés en une affirmation de disponibilité inchangée.",
+          "Le processus présenté au lancement génère une proposition de modification à partir d’alertes CodeQL prises en charge et ouvre une pull request. Les contrôles de revue et de compilation existants continuent de s’exécuter. L’alerte est résolue après la fusion et l’analyse CodeQL suivante."
+        ],
+        "followUp": [
+          "Au moment de cette revue, le guide officiel qualifie la fonction de préversion publique limitée et indique que Microsoft n’accepte pas d’utilisateurs supplémentaires. Cet état documenté ultérieurement ne prouve pas que la formulation initiale de préversion privée était fausse.",
+          "Le guide consulté lors de la revue indique que la génération de correctifs consomme des crédits d’IA facturés via l’abonnement Azure lié. Les budgets et limites par utilisateur de GitHub Copilot ne régissent pas cette mesure de facturation Azure DevOps. L’inclusion dans une licence ne signifie pas que la génération des correctifs est gratuite."
+        ]
+      },
+      "reviewFocus": "Avant d’activer la génération, vérifier les conditions d’inscription, les types d’alertes pris en charge et l’abonnement Azure lié. Valider les correctifs manuellement et par des tests ; la seule génération d’une suggestion ne corrige pas l’alerte."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "52ee7abbb037f678",
+      "language": "ru",
+      "sourceSha256": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+      "edition": {
+        "title": "Azure DevOps Autofix: этапы предварительного доступа, проверки и оплата",
+        "claims": [
+          "В статье о запуске Microsoft описывает Copilot Autofix для GitHub Advanced Security for Azure DevOps как ограниченную закрытую предварительную версию с поэтапной обработкой заявок. Статью о запуске и последующую документацию нельзя объединять в утверждение о неизменных условиях доступности.",
+          "Описанный при запуске процесс создаёт предложение об изменении на основе поддерживаемых предупреждений CodeQL и открывает pull request. Существующие проверки при ревью и сборке продолжают выполняться; предупреждение устраняется после слияния и следующего сканирования CodeQL."
+        ],
+        "followUp": [
+          "На момент проверки официальный справочник обозначает функцию как ограниченную публичную предварительную версию и сообщает, что Microsoft не принимает новых пользователей. Это более позднее документированное состояние, а не доказательство ошибочности первоначального описания закрытой предварительной версии.",
+          "В руководстве на момент проверки сказано, что создание исправлений расходует AI-кредиты с оплатой через связанную подписку Azure. Бюджеты и пользовательские лимиты GitHub Copilot не управляют этим учётом потребления Azure DevOps. Включение функции в лицензию не означает бесплатного создания исправлений."
+        ]
+      },
+      "reviewFocus": "Перед включением генерации проверьте условия подключения, поддерживаемые типы предупреждений и связанную подписку Azure. Проверяйте исправления вручную и тестами: само создание предложения не устраняет предупреждение."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "568305543e6754fa",
+      "language": "zh-CN",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "edition": {
+        "title": "Spring Boot 里程碑版本：LDAP 与遥测变更",
+        "claims": [
+          "Spring Boot 4.2.0-M2 里程碑版本新增 LDAP 的 SSL bundle 支持，包括嵌入式服务器的 LDAPS。本草稿核验的是旧版综述中的 Boot 部分。",
+          "同一里程碑版本还新增 OpenTelemetry 语义约定支持，以及共享的 OTLP 端点、请求头和压缩配置。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "保留原始综述日期，并将这些能力描述为里程碑版本功能。在批准原条目整体内容前，应单独核验 Framework、Data、Security 和 Integration 的发布；本草稿范围更窄，未核验这些部分。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "568305543e6754fa",
+      "language": "ja",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "edition": {
+        "title": "Spring Boot のマイルストーン：LDAP とテレメトリの変更",
+        "claims": [
+          "Spring Boot 4.2.0-M2 マイルストーンでは、LDAP の SSL バンドル対応が追加され、組み込みサーバーの LDAPS も含まれる。この草稿で検証するのは、以前のまとめ記事の Boot 部分である。",
+          "同じマイルストーンでは、共有の OTLP エンドポイント・ヘッダー・圧縮設定とともに、OpenTelemetry のセマンティック規約への対応が追加されている。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "元のまとめ記事の日付を保ち、これらをマイルストーンの機能として説明する。元の項目全体を承認する前に、Framework、Data、Security、Integration のリリースを別々に確認する。この草稿の範囲は限定されており、それらの部分は検証していない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "568305543e6754fa",
+      "language": "de",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "edition": {
+        "title": "Spring-Boot-Meilenstein: Änderungen bei LDAP und Telemetrie",
+        "claims": [
+          "Der Meilenstein Spring Boot 4.2.0-M2 ergänzt SSL-Bundle-Unterstützung für LDAP, einschließlich LDAPS für den eingebetteten Server. Dieser Entwurf prüft den Boot-Teil der älteren Zusammenstellung.",
+          "Derselbe Meilenstein ergänzt Unterstützung für die semantischen Konventionen von OpenTelemetry sowie gemeinsame Einstellungen für OTLP-Endpunkt, Header und Kompression."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Das ursprüngliche Datum der Zusammenstellung beibehalten und die Änderungen als Meilenstein-Funktionen beschreiben. Vor der Freigabe des gesamten ursprünglichen Eintrags die Releases von Framework, Data, Security und Integration gesondert prüfen; dieser enger gefasste Entwurf bestätigt diese Abschnitte nicht."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "568305543e6754fa",
+      "language": "fr",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "edition": {
+        "title": "Version jalon de Spring Boot : évolutions LDAP et télémétrie",
+        "claims": [
+          "La version jalon Spring Boot 4.2.0-M2 ajoute la prise en charge des bundles SSL pour LDAP, y compris LDAPS pour le serveur intégré. Ce brouillon vérifie la partie Boot de l’ancienne synthèse.",
+          "Le même jalon ajoute la prise en charge des conventions sémantiques OpenTelemetry ainsi qu’une configuration commune du point de terminaison, des en-têtes et de la compression OTLP."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Conserver la date de la synthèse initiale et présenter ces éléments comme des fonctionnalités de version jalon. Avant d’approuver l’intégralité de l’article initial, vérifier séparément les versions de Framework, Data, Security et Integration ; ce brouillon plus restreint ne vérifie pas ces sections."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "568305543e6754fa",
+      "language": "ru",
+      "sourceSha256": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+      "edition": {
+        "title": "Промежуточный выпуск Spring Boot: изменения LDAP и телеметрии",
+        "claims": [
+          "Промежуточный выпуск Spring Boot 4.2.0-M2 добавляет поддержку SSL bundle для LDAP, включая LDAPS для встроенного сервера. Этот черновик проверяет часть Boot из более ранней подборки.",
+          "Тот же промежуточный выпуск добавляет поддержку семантических соглашений OpenTelemetry, а также общие настройки конечной точки OTLP, заголовков и сжатия."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Сохраняйте дату исходной подборки и описывайте эти возможности как функции промежуточного выпуска. Перед одобрением исходного пункта целиком отдельно проверьте выпуски Framework, Data, Security и Integration: этот более узкий черновик не проверяет соответствующие разделы."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "59c87ea544e0e5db",
+      "language": "zh-CN",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "edition": {
+        "title": "Cloudflare WAF 响应规则：操作与响应体限制",
+        "claims": [
+          "Cloudflare WAF 允许客户创建最多 3 条自定义响应规则，支持 Log 和 Block 操作。",
+          "公告明确指出，针对响应体的自定义规则尚不可用。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "评估覆盖范围时，应区分托管检测与客户编写的响应规则。该保留条目曾因较新的简报替换了原页面而从旧版列表中消失；此次更新仍需明确审阅。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "59c87ea544e0e5db",
+      "language": "ja",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "edition": {
+        "title": "Cloudflare WAF のレスポンスルール：アクションと本文の制限",
+        "claims": [
+          "Cloudflare WAF では、Log と Block アクションに対応するカスタムレスポンスルールを最大 3 件作成できる。",
+          "告知では、レスポンス本文に対するカスタムルールはまだ利用できないと明示している。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "カバー範囲を評価する際は、マネージド検出と利用者が作成するレスポンスルールを区別する。この保存項目は、新しいダイジェストがページを置き換えた後、旧一覧から消えていた。今回の再整備にも明示的なレビューが必要である。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "59c87ea544e0e5db",
+      "language": "de",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "edition": {
+        "title": "Cloudflare-WAF-Antwortregeln: Aktionen und Grenzen beim Antworttext",
+        "claims": [
+          "Cloudflare WAF erlaubt Kunden, bis zu 3 benutzerdefinierte Antwortregeln mit den Aktionen Log und Block zu erstellen.",
+          "Die Ankündigung erklärt ausdrücklich, dass benutzerdefinierte Regeln für den Antwortkörper noch nicht verfügbar sind."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Bei der Bewertung der Abdeckung zwischen verwalteten Erkennungsmechanismen und kundenseitig erstellten Antwortregeln unterscheiden. Dieser erhaltene Eintrag war aus der alten Liste verschwunden, nachdem ein neuerer Digest die Seite ersetzt hatte; die Überarbeitung benötigt weiterhin eine ausdrückliche Prüfung."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "59c87ea544e0e5db",
+      "language": "fr",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "edition": {
+        "title": "Règles de réponse Cloudflare WAF : actions et restrictions concernant le corps de la réponse",
+        "claims": [
+          "Cloudflare WAF permet aux clients de créer jusqu’à 3 règles de réponse personnalisées prenant en charge les actions Log et Block.",
+          "L’annonce précise explicitement que les règles personnalisées portant sur le corps de la réponse ne sont pas encore disponibles."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Pour évaluer la couverture, distinguer les détections gérées des règles de réponse rédigées par le client. Cet élément conservé avait disparu de l’ancienne liste après le remplacement de la page par un récapitulatif plus récent ; sa révision nécessite toujours un examen explicite."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "59c87ea544e0e5db",
+      "language": "ru",
+      "sourceSha256": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+      "edition": {
+        "title": "Правила ответов Cloudflare WAF: действия и ограничения тела ответа",
+        "claims": [
+          "Cloudflare WAF позволяет клиентам создавать до 3 пользовательских правил для ответов с поддержкой действий Log и Block.",
+          "Объявление прямо указывает, что пользовательские правила для тела ответа пока недоступны."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "При оценке охвата различайте управляемые механизмы обнаружения и правила ответов, написанные клиентом. Этот сохранённый пункт исчез из прежнего списка после замены страницы более новым дайджестом; обновление по-прежнему требует явной проверки."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "5fe80662057aa753",
+      "language": "zh-CN",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "edition": {
+        "title": "GitHub Advanced Security 硬性预算可能阻止新增安全覆盖",
+        "claims": [
+          "GitHub 宣布为 Advanced Security 提供硬性许可证预算限制，可由企业管理员和计费管理员配置。这是产品许可证控制，并非对企业所有支出的上限。",
+          "公告称，达到阈值后会阻止额外的许可证使用，并且不会为新仓库启用 Advanced Security，直到释放容量或提高预算。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "同时监控剩余许可证容量和缺少安全覆盖的仓库。测试新仓库接入及升级处理流程，避免预算限制悄然使新仓库处于预期控制之外。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "5fe80662057aa753",
+      "language": "ja",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "edition": {
+        "title": "GitHub Advanced Security の厳格な予算上限は新規リポジトリの保護を妨げ得る",
+        "claims": [
+          "GitHub は、エンタープライズ管理者と請求マネージャーが設定できる Advanced Security の厳格なライセンス予算上限を発表した。これは製品ライセンスの制御であり、企業のすべての支出に対する上限ではない。",
+          "告知によると、しきい値に達すると追加のライセンス利用がブロックされ、容量が空くか予算が増えるまで、新しいリポジトリでは Advanced Security が有効にならない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "ライセンスの残容量と、セキュリティ保護がないリポジトリの両方を監視する。新規リポジトリの受け入れとエスカレーションの手順をテストし、予算制限によって新しいリポジトリが気付かれないまま意図した制御の対象外に残ることを防ぐ。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "5fe80662057aa753",
+      "language": "de",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "edition": {
+        "title": "Harte Budgets für GitHub Advanced Security können neue Sicherheitsabdeckung blockieren",
+        "claims": [
+          "GitHub kündigte harte Lizenzbudgetgrenzen für Advanced Security an, die Unternehmensadministratoren und Abrechnungsmanager konfigurieren können. Dies ist eine Produktlizenzkontrolle und keine Obergrenze für sämtliche Unternehmensausgaben.",
+          "Laut Mitteilung wird beim Erreichen des Schwellenwerts zusätzliche Lizenznutzung blockiert. Advanced Security wird auf neuen Repositories nicht aktiviert, bis Kapazität frei wird oder das Budget erhöht wird."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Sowohl die verbleibende Lizenzkapazität als auch Repositories ohne Sicherheitsabdeckung überwachen. Aufnahme- und Eskalationsprozesse testen, damit ein Budgetlimit neue Repositories nicht unbemerkt außerhalb der vorgesehenen Kontrollen lässt."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "5fe80662057aa753",
+      "language": "fr",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "edition": {
+        "title": "Les budgets stricts de GitHub Advanced Security peuvent bloquer une nouvelle couverture",
+        "claims": [
+          "GitHub a annoncé des plafonds stricts de budget de licences Advanced Security, configurables par les administrateurs d’entreprise et les responsables de facturation. Il s’agit d’un contrôle des licences du produit, pas d’un plafond pour toutes les dépenses de l’entreprise.",
+          "Lorsque le seuil est atteint, l’avis indique que l’utilisation de licences supplémentaires est bloquée et qu’Advanced Security n’est pas activé sur de nouveaux dépôts jusqu’à ce que de la capacité soit libérée ou que le budget soit augmenté."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Surveiller à la fois la capacité de licences restante et les dépôts sans couverture de sécurité. Tester les procédures d’intégration et d’escalade pour éviter qu’un plafond budgétaire laisse silencieusement de nouveaux dépôts hors des contrôles prévus."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "5fe80662057aa753",
+      "language": "ru",
+      "sourceSha256": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7",
+      "edition": {
+        "title": "Жёсткие бюджеты GitHub Advanced Security могут блокировать новую защиту",
+        "claims": [
+          "GitHub объявила о жёстких бюджетных ограничениях на лицензии Advanced Security, которые могут настраивать администраторы предприятия и менеджеры по выставлению счетов. Это управление лицензиями продукта, а не предел всех расходов предприятия.",
+          "В уведомлении сказано, что при достижении порога использование дополнительных лицензий блокируется, а Advanced Security не включается в новых репозиториях, пока не освободится ёмкость или не будет увеличен бюджет."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Контролируйте как оставшуюся ёмкость лицензий, так и репозитории без защиты. Проверяйте процедуры подключения и эскалации, чтобы бюджетное ограничение незаметно не оставило новые репозитории вне предусмотренных мер контроля."
+    }
+  ]
+}

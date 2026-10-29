@@ -9,25 +9,35 @@
   "scripts": {
     "dev": "astro dev",
     "check": "npm run check:digests && astro check",
-    "build": "npm run check:digests && node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py",
+    "build": "npm run check:digests && node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py && python3 -B scripts/check_seo.py && python3 -B scripts/check_migration.py && python3 -B scripts/check_metadata.py && python3 -B scripts/check_listing_metadata.py && python3 -B scripts/check_learning_paths.py && python3 -B scripts/check_discovery.py && python3 -B scripts/check_reader_content.py && python3 -B scripts/check_article_images.py && python3 -B scripts/indexnow.py",
+    "check:translation-preview": "node scripts/translation-preview.mjs",
+    "check:translation-review": "node scripts/translation-review-packet.mjs",
     "preview": "astro preview",
-    "test": "node --test scripts/test-site.mjs",
+    "check:browser-isolation": "node scripts/check_browser_isolation.mjs",
+    "audit:measurement": "python3 -B scripts/measurement_audit.py",
+    "test": "node --test scripts/test-site.mjs scripts/test-translations.mjs scripts/test-translation-release.mjs scripts/test-translation-preview.mjs scripts/test-translation-review-packet.mjs scripts/test-reader-markdown.mjs scripts/test-related.mjs scripts/test-algorithm-guide.mjs scripts/test-spring-guide.mjs scripts/test-publication-examples.mjs scripts/test-technical-guides.mjs scripts/test-core-articles.mjs scripts/test-author.mjs scripts/test-article-navigation.mjs scripts/test-article-learning.mjs scripts/test-comments.mjs scripts/test-code-tools.mjs scripts/test-article-images.mjs scripts/test-search.mjs scripts/test-page-metadata.mjs scripts/test-browser-isolation.mjs scripts/test-listing-metadata.mjs scripts/test-discovery.mjs",
     "test:python": "python3 -m unittest discover -s scripts -p 'test*.py' -v",
     "generate:digest": "python3 scripts/generate_digest.py",
     "generate:digest:dry": "python3 scripts/generate_digest.py --dry-run",
     "migrate:jekyll": "node scripts/migrate-jekyll.mjs",
     "test:articles": "python3 -B scripts/check_article_examples.py",
     "audit:archive": "python3 -B scripts/audit_archive.py",
-    "check:digests": "python3 -B scripts/check_digests.py && npm run check:archive",
-    "check:archive": "python3 -B scripts/archive_renewal.py check"
+    "check:digests": "python3 -B scripts/check_digests.py && npm run check:archive && npm run check:translations",
+    "check:archive": "python3 -B scripts/archive_renewal.py check",
+    "check:translations": "node scripts/translations.mjs check && npm run check:translation-release",
+    "check:translation-release": "node scripts/translation-release.mjs check --release .pipeline/translations/releases/spanish-full-031.json && node scripts/translation-release.mjs check --release .pipeline/translations/releases/multilingual-full-032.json",
+    "prepare:translations": "node scripts/translations.mjs prepare",
+    "preview:indexnow": "python3 -B scripts/indexnow.py"
   },
   "dependencies": {
+    "@astrojs/markdown-satteri": "0.4.5",
     "astro": "7.4.2",
     "yaml": "2.9.1"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
     "@types/node": "24.19.2",
+    "playwright-core": "1.64.1",
     "typescript": "~5.9.3"
   }
 }

@@ -1,0 +1,415 @@
+{
+  "createdAt": "2026-10-27T04:59:39.612214+00:00",
+  "purpose": "Require flow figures and matching code in technical writing, and add localized static processing diagrams to ten bilingual algorithm topics.",
+  "publicationApprovalAtPreparation": null,
+  "pullRequest": 61,
+  "topics": [
+    "2021-07-22-plus-minus",
+    "2021-07-22-dot-product",
+    "2021-07-29-interval-num",
+    "2021-07-23-number-word",
+    "2021-07-19-new-id",
+    "2021-07-20-pair-delete",
+    "2021-07-23-unsuccessful-runner",
+    "2021-07-29-ponkemon",
+    "2021-07-24-fail-percentage",
+    "2021-08-17-cache"
+  ],
+  "articles": 20,
+  "diagramAssets": 20,
+  "publication": "Review-only extension of draft PR61; no new approval inferred from request to continue work.",
+  "policy": {
+    "repository": [
+      "AGENTS.md",
+      "docs/technical-writing.md",
+      "README.md"
+    ],
+    "globalSkillUpdated": "/Users/youdozi/.agents/skills/tech-blog-writing/SKILL.md",
+    "globalSkillSha256": "d13b08a19264de55e35343691958bf69aaea7aad9196467e946c7e1fcb8debe9",
+    "scope": "Complete technical writing and substantive revisions include a rendered localized flow figure and corresponding code; narrow edits, translations and news honor their original scope."
+  },
+  "implementation": {
+    "sources": "content/diagrams/algorithms.json",
+    "generator": "scripts/build_algorithm_diagrams.py",
+    "output": "public/assets/diagrams/*.svg, generated during npm run build",
+    "runtimeDependencies": "No client rendering library, remote diagram service or additional package required.",
+    "accessibility": "Localized nonempty Markdown alt, SVG title/desc/role and adjacent prose.",
+    "limits": "Compact processing overview, not a compiler-generated control-flow graph.",
+    "generatorIntegration": "Shared scripts/prepare-public.mjs; used by normal builds and integration fixtures."
+  },
+  "review": {
+    "type": "Two-pass self AI review of diagram/code semantics and localized standalone text/rendering.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "issue": "Initial cache sketch could imply recreating the map on each city.",
+        "resolution": "Separate one-time map initialization from per-city normalization, and loop back only to reading the next city."
+      },
+      {
+        "issue": "Normalization implementations combine steps differently.",
+        "resolution": "Caption identifies the Optional order and explains that the loop combines filtering with consecutive-dot removal."
+      },
+      {
+        "issue": "Flows need to preserve early returns, sum bounds and ratio denominator updates.",
+        "resolution": "Show capacity0 immediate return; promote before multiplication; save reached before subtraction and retain zero-denominator/tie treatment."
+      },
+      {
+        "issue": "Microsecond timestamps compare differently after JavaScript Date serialization.",
+        "resolution": "Use millisecond ISO timestamps and recheck all20 BlogPosting/sitemap modification dates."
+      },
+      {
+        "issue": "CI fresh checkout failed because the integration fixture prepared public assets without generating new SVGs.",
+        "resolution": "Generate diagrams in the shared prepare-public.mjs used by both builds and fixtures. Removed generated public SVGs before rerunning all27 Node tests successfully, then rebuilt and re-audited."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "reviewedSha256": {
+      "src/content/posts/en/2021-07-22-plus-minus.md": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc",
+      "src/content/posts/ko/2021-07-22-plus-minus.md": "07fa553fe821701a3f1c69382c33276c94df85aebfa31541d545ad1a3fd82e47",
+      "src/content/posts/en/2021-07-22-dot-product.md": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463",
+      "src/content/posts/ko/2021-07-22-dot-product.md": "6ae4cf37fa1358ee3d881ba25ea0b17edd219769a3767264340b44958c9f379c",
+      "src/content/posts/en/2021-07-29-interval-num.md": "4674cdefcccdc5107e92b9fe49ee186426b25a096d2687d60d42724c51d29cf4",
+      "src/content/posts/ko/2021-07-29-interval-num.md": "686d10bd34ad82fdf78bdc069b789752a8248d547ea3b3f8b9b06ff44a61ca70",
+      "src/content/posts/en/2021-07-23-number-word.md": "28614468f78703f7e406439ee8b23b83e06091ae7f42ed9835cd50c6d1bb2e87",
+      "src/content/posts/ko/2021-07-23-number-word.md": "fe18a1be3bc7905ab03e7df111d51a386f2544d70579e31090d7637c34634ac3",
+      "src/content/posts/en/2021-07-19-new-id.md": "d974b2c5791736b9568a1598a457390b7df0c0450c6dd11323c3c26a895ea8a2",
+      "src/content/posts/ko/2021-07-19-new-id.md": "bac10e10edb3e7db00bba7c273d9458388013f626bdccc7a7c7e8641924afca2",
+      "src/content/posts/en/2021-07-20-pair-delete.md": "a1962a62aeb00132eea16a0b3b607dfb9e256902ddc165613dbe7c044f14966e",
+      "src/content/posts/ko/2021-07-20-pair-delete.md": "b5d220493db835601670b27a938fdad40f5612b48134b7e11e94c537910f2f93",
+      "src/content/posts/en/2021-07-23-unsuccessful-runner.md": "a8c9e485842a9d8718e6cec7f5d0bcbda5a716bad751608cc67094ac938487d6",
+      "src/content/posts/ko/2021-07-23-unsuccessful-runner.md": "7b15d0af97794d9b93eac5c3e6bfa1bcc9de45714c32c7581565fe2caaab8796",
+      "src/content/posts/en/2021-07-29-ponkemon.md": "99cbe2a5028aa94ba76d028c0e9bf48f91f84d6ab43c457f183d0a8a1d9752de",
+      "src/content/posts/ko/2021-07-29-ponkemon.md": "24fd458e22d8878bf5fad172a2bb18238dae33da854af1e39761ff93bf1fa58b",
+      "src/content/posts/en/2021-07-24-fail-percentage.md": "c684945a1636e85bfe7ce5165815a7785215f97a78fa784c21dd34e8f275d30b",
+      "src/content/posts/ko/2021-07-24-fail-percentage.md": "d35c7340b51ef1ec29215245ddb9595e829b1caea0683895be712054aa23c9af",
+      "src/content/posts/en/2021-08-17-cache.md": "77818be49804ec89674a652987cb0a60ff7d9f11d5d0ec584536b13135759eb1",
+      "src/content/posts/ko/2021-08-17-cache.md": "43e75101e9763d879025d7e1a015169fcfef8e64ae0f06b1c1e0ff35fe75759f",
+      "AGENTS.md": "57c2d527a57db191507c2451b36dfa410c4c1e0ebb4c1ec670a76fde775e7790",
+      "docs/technical-writing.md": "39bcfe5d92449f9f2da1287c222b35569b8de989ad770463f53ef1cdcf4a13a4",
+      "README.md": "236a94d180b10a41acc2864657ceebb30052542bcacf16d438f22221674f2c0a",
+      "package.json": "ac89bae2ab322d8d90f1e009a89203272fbe9928897e6619d6551717bc8541ee",
+      "content/diagrams/algorithms.json": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2",
+      "scripts/build_algorithm_diagrams.py": "b1040919618112c66f3bd0686fa27b2edf404e5c06b42bd3ff7263f12018755a",
+      "scripts/test_algorithm_diagrams.py": "1f35e5bf5e2833b4f40e29c596b59768dbb5d6bdd300ed8083ead53c22387ff4",
+      "scripts/prepare-public.mjs": "c5b153e91c9ebc536a20ab388c04ea471919759c9c8cf0ac0c8a8e4f9d7da0f6"
+    }
+  },
+  "preserved": {
+    "all20OriginalPublishedAt": true,
+    "routesAndTranslationKeys": true,
+    "allJavaCodeBlocksIdenticalToPreviousPRHead": true,
+    "legacyMetadataAndOriginalHashes": true,
+    "updatedAt": "2026-10-27T04:56:35.582+00:00"
+  },
+  "execution": {
+    "javaBehaviorAssertions": 78570,
+    "compiledSolutions": 11,
+    "identicalCodePairs": 10,
+    "compilerAndRuntime": "JDK17.0.8.1; javac --release11",
+    "nodeTestsPassed": 27,
+    "pythonTestsPassed": 153,
+    "newDiagramRegressionTests": 4,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "astroHints": 0,
+    "htmlPages": 884,
+    "sitemapUrls": 442,
+    "englishListedEntries": 87,
+    "koreanListedEntries": 289,
+    "build": "passed; static assets, internal images/links/anchors and IndexNow preview validated",
+    "cleanAssetIntegrationTest": "27 Node tests passed after deleting generated public SVGs; no stale assets required."
+  },
+  "seoAudit": {
+    "articleResults": [
+      {
+        "url": "https://youdozi.github.io/en/posts/2021-07-22-plus-minus/",
+        "language": "en",
+        "title": "Sum Signed Values in Java with IntStream",
+        "htmlSha256": "25c4321755885aaa9eecf100b923f67902cb9fe668f18dc158710fdc6f19d5c8",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/posts/2021-07-22-plus-minus/",
+        "language": "ko",
+        "title": "Java 음양 더하기: 인덱스별 부호를 적용해 합산하기",
+        "htmlSha256": "5581f57f76ccd7d79b7444fe5823f4c8bc6ca3bd86dc4031364fded156c9b363",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/en/posts/2021-07-22-dot-product/",
+        "language": "en",
+        "title": "Java Array Dot Product: IntStream and Integer Bounds",
+        "htmlSha256": "0323727f760c644f5bf852637eae95b52236abddb678aa414ee6a6cf72e3c686",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/posts/2021-07-22-dot-product/",
+        "language": "ko",
+        "title": "Java 배열 내적: IntStream으로 계산하고 int 범위 확인하기",
+        "htmlSha256": "57f63a49b40fb6e3b1848a6e6cc57630b85072e2ef5a3713acd436db87ebce39",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/en/posts/2021-07-29-interval-num/",
+        "language": "en",
+        "title": "Generate an x-Spaced Sequence in Java: Promote Before Multiplication",
+        "htmlSha256": "88cbf348bb86dbde99d1fcb054ecb371e8fd59e62205dbb04fe2570d6810606c",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/posts/2021-07-29-interval-num/",
+        "language": "ko",
+        "title": "Java x 간격 수열 만들기: 곱셈 전에 long으로 변환하기",
+        "htmlSha256": "d20a2adfa39c0875c0ec9fb857b4484ded2ab84f44b9ad5fecabab761b3aa9e3",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/en/posts/2021-07-23-number-word/",
+        "language": "en",
+        "title": "Convert English Digit Words in Java with String.replace",
+        "htmlSha256": "15949bc849243fe1bf9cebd2dc4cda9247ebb84968521a4ba7f592dce890d9ca",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/posts/2021-07-23-number-word/",
+        "language": "ko",
+        "title": "Java 숫자 영단어 변환: replace와 replaceAll 구분하기",
+        "htmlSha256": "05c8924d0b5221173a8b57fe19168a44524fdde771cbcea911aca68d29432a98",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/en/posts/2021-07-19-new-id/",
+        "language": "en",
+        "title": "Java New ID Recommendation: Normalization Order and Truncation",
+        "htmlSha256": "47adc2ce86cad86995f766db83134bc06720c95c0a000e5b51cb35bee091e84d",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/posts/2021-07-19-new-id/",
+        "language": "ko",
+        "title": "Java 신규 아이디 추천: 정규화 순서와 15자 절단 처리",
+        "htmlSha256": "faa51040e2a324e7b6986e6946e185941a6b29825217679f52267b738fbc062c",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/en/posts/2021-07-20-pair-delete/",
+        "language": "en",
+        "title": "Remove Adjacent Duplicate Pairs in Java with an ArrayDeque Stack",
+        "htmlSha256": "0ef20cf123dedd1d8d2a2cf64ad4c6a53b7c01c59ebb7877a600b5b2f6333e1c",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/posts/2021-07-20-pair-delete/",
+        "language": "ko",
+        "title": "Java 짝지어 제거하기: ArrayDeque 스택의 불변식",
+        "htmlSha256": "35c08ce0d4f4a154d290e61b7b1c5bc5177cbf0bc6d2cc6a5ddd7a744428a817",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/en/posts/2021-07-23-unsuccessful-runner/",
+        "language": "en",
+        "title": "Find the Missing Runner in Java with Name Frequencies",
+        "htmlSha256": "a1c45abf6bc1d582c8aa349efc17a210104be0b1d02687328ef5048f1660f4a4",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/posts/2021-07-23-unsuccessful-runner/",
+        "language": "ko",
+        "title": "Java 미완주 선수 찾기: Set 대신 이름별 빈도 세기",
+        "htmlSha256": "32272f2fea67064163c6bd3b0f1acb277b74fd10ed4da80671017eae1eaa3470",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/en/posts/2021-07-29-ponkemon/",
+        "language": "en",
+        "title": "Java Ponketmon: Why the Answer Is min(Distinct Types, N/2)",
+        "htmlSha256": "caf1b846a1fb3c257ea3414aab8ade22a69a6a5c21ae86111cc2ed7527355aa9",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/posts/2021-07-29-ponkemon/",
+        "language": "ko",
+        "title": "Java 폰켓몬 풀이: 서로 다른 종류와 선택 개수의 최솟값",
+        "htmlSha256": "99a2e11a202f33fea3906398a8c1bae892cb438520776360d33d8c61519c128f",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/en/posts/2021-07-24-fail-percentage/",
+        "language": "en",
+        "title": "Sort Failure Rates in Java: Denominators, Ties, and Long Products",
+        "htmlSha256": "4dc81bc3b5cdd93d42cebcd759cbb9aff6d2230e545a214357c63e3d141b7ad9",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/posts/2021-07-24-fail-percentage/",
+        "language": "ko",
+        "title": "Java 실패율 정렬: 분모·동률·long 교차곱 처리하기",
+        "htmlSha256": "5958f17bf7d8bd8d7052b64feabc6daa81c7e3d67ad95b3388be4d7a5975f35e",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/en/posts/2021-08-17-cache/",
+        "language": "en",
+        "title": "Java LRU Cache: Use Access Order in LinkedHashMap",
+        "htmlSha256": "6db1283942f55ad5619cf63cc425063549c5502714b7159a31ad2915b362b0d1",
+        "result": "passed"
+      },
+      {
+        "url": "https://youdozi.github.io/ko/posts/2021-08-17-cache/",
+        "language": "ko",
+        "title": "Java LRU 캐시 풀이: LinkedHashMap의 접근 순서 활용하기",
+        "htmlSha256": "438163eafd80a884af4d087445ebac496d02405d44b5ceaf58ab3ec004f4f870",
+        "result": "passed"
+      }
+    ],
+    "sitemapUrls": 442,
+    "result": "passed"
+  },
+  "browserAudit": [
+    {
+      "path": "/assets/diagrams/2021-07-22-plus-minus-en.svg",
+      "labels": 8,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-22-plus-minus-ko.svg",
+      "labels": 8,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-22-dot-product-en.svg",
+      "labels": 7,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-22-dot-product-ko.svg",
+      "labels": 7,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-29-interval-num-en.svg",
+      "labels": 7,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-29-interval-num-ko.svg",
+      "labels": 7,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-23-number-word-en.svg",
+      "labels": 8,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-23-number-word-ko.svg",
+      "labels": 8,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-19-new-id-en.svg",
+      "labels": 11,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-19-new-id-ko.svg",
+      "labels": 11,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-20-pair-delete-en.svg",
+      "labels": 10,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-20-pair-delete-ko.svg",
+      "labels": 10,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-en.svg",
+      "labels": 9,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-ko.svg",
+      "labels": 9,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-29-ponkemon-en.svg",
+      "labels": 8,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-29-ponkemon-ko.svg",
+      "labels": 8,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-24-fail-percentage-en.svg",
+      "labels": 12,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-07-24-fail-percentage-ko.svg",
+      "labels": 12,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-08-17-cache-en.svg",
+      "labels": 14,
+      "result": "passed"
+    },
+    {
+      "path": "/assets/diagrams/2021-08-17-cache-ko.svg",
+      "labels": 14,
+      "result": "passed"
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "diagram": [
+        {
+          "complete": true,
+          "naturalWidth": 420,
+          "width": 420
+        }
+      ],
+      "result": "passed"
+    },
+    {
+      "lang": "ko",
+      "width": 390,
+      "scrollWidth": 390,
+      "diagram": [
+        {
+          "complete": true,
+          "naturalWidth": 420,
+          "width": 353.984375
+        }
+      ],
+      "result": "passed"
+    }
+  ],
+  "browserScreenshotsReviewed": [
+    "EN cache1280px desktop",
+    "KO new ID390px mobile"
+  ],
+  "limits": [
+    "Automated structural checks do not prove semantic correctness.",
+    "No independent or human review claimed.",
+    "No new search engine indexing or keyword demand claimed."
+  ],
+  "publicationApproval": {
+    "approvedAt": "2026-10-27T05:10:21.640+00:00",
+    "approvedBy": "youdozi",
+    "pullRequest": 61,
+    "basis": "User requested proceeding after the explicit review-waiting summary of PR61.",
+    "scope": "Publish the two remaining bilingual problem pairs, twenty reviewed static flow diagrams, writing rules and bilingual Java learning guides.",
+    "firstEnglishPublicationAt": "2026-10-27T05:10:21.640+00:00",
+    "preserved": "All reviewed bodies, Java code, Korean original publication dates and other publication identities unchanged."
+  }
+}

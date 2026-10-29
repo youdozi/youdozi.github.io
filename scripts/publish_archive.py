@@ -94,7 +94,8 @@ def publish(root,batch,slugs,approval,*,published_at,check_sources=True):
     if set(slugs)!={e['id'] for e in renewed}:raise ValueError('Explicit slug map must cover exactly the approved drafts')
     if len(set(slugs.values()))!=len(slugs):raise ValueError('Duplicate publication slugs')
     if check_sources:
-        bodies={d['url']:fetch_document(d['url']) for e in renewed for d in e['documents']}
+        keys=dict.fromkeys((d['url'],d['extractorVersion']) for e in renewed for d in e['documents'])
+        bodies={(url,version):fetch_document(url,version) for url,version in keys}
         errors=validate_batch(batch,manifest,documents=bodies)
         if errors:raise ValueError('; '.join(errors))
     originals={r['id']:r for r in manifest['items']};publications=[]

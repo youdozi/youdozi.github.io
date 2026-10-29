@@ -1,0 +1,219 @@
+{
+  "createdAt": "2026-10-28T00:55:39.811757+00:00",
+  "baseCommit": "b49b613059b35d45c263ce1c5cb2b2fdd028eaed",
+  "branch": "feat/multilingual-search-batch-025",
+  "purpose": "Help readers find direct title matches and search localized text while handling async loading and IME input.",
+  "publication": "Draft only; user approved PR74 publication, not this follow-up.",
+  "previousPublication": {
+    "PR": 74,
+    "mainCommit": "b49b613059b35d45c263ce1c5cb2b2fdd028eaed",
+    "productionRun": 40611118293,
+    "conclusion": "success",
+    "publicListingPages": 16,
+    "sitemapURLs": 471
+  },
+  "scope": {
+    "articleSourcesChanged": 0,
+    "newRoutes": 0,
+    "searchLocales": 8,
+    "localizedStringsPerLocale": 3,
+    "resultLimit": 50,
+    "externalSearchAPI": false,
+    "queryPersistence": false,
+    "ranking": "All query terms required; exact title/phrase then per-term title/topic/description/body weights; ties retain original index order.",
+    "normalization": "NFKC and lowercase; decompose/strip marks only for Latin characters. Preserve kana voicing and distinct Cyrillic letters."
+  },
+  "initialComparison": [
+    {
+      "language": "en",
+      "query": "WebClient",
+      "oldTotal": 5,
+      "newTotal": 5,
+      "oldFirst": "Test HTTP Status Codes Locally with a Small Python Server",
+      "newFirst": "Spring WebClient Tests with MockWebServer and JUnit 5",
+      "oldFirstTitleMatchRank": 4
+    },
+    {
+      "language": "de",
+      "query": "GitHub",
+      "oldTotal": 5,
+      "newTotal": 5,
+      "oldFirst": "Ankündigung zur Einstellung von Grok Code Fast 1 grenzt den Copilot-Bereich ab",
+      "newFirst": "GitHub meldet die Einstellung von Grok Code Fast 1 in Copilot",
+      "oldFirstTitleMatchRank": 3
+    },
+    {
+      "language": "fr",
+      "query": "perimetre",
+      "oldTotal": 0,
+      "newTotal": 1,
+      "newFirst": "L’annonce du retrait de Grok Code Fast 1 précise le périmètre de Copilot",
+      "oldFirstTitleMatchRank": 0
+    }
+  ],
+  "review": {
+    "type": "Self AI code/UI/translation review; not an independent or human review",
+    "skills": [
+      "translate"
+    ],
+    "findings": [
+      {
+        "issue": "The original substring filter returned corpus order, so body mentions could precede a title match.",
+        "resolution": "Normalize once per index load and rank all matched entries before applying the display limit."
+      },
+      {
+        "issue": "Removing every Unicode mark would merge distinct Japanese and Cyrillic letters.",
+        "resolution": "Limit accent folding to Latin letters and test preserved distinctions plus Hangul canonical composition."
+      },
+      {
+        "issue": "A rejected shared promise after clearing could poison the next input.",
+        "resolution": "Reset the failed index promise in its own rejection handler, independently of whether its UI version is stale."
+      },
+      {
+        "issue": "Slow responses and composition input could repaint obsolete results.",
+        "resolution": "Version the request/render cycle; ignore composition input until commit and keep latest/cleared input authoritative."
+      },
+      {
+        "issue": "A bare displayed count hid the existence of results after the 50-item cap.",
+        "resolution": "Localize displayed and total counts separately; preserve no-results and error states."
+      },
+      {
+        "issue": "Technical titles may contain HTML-looking text.",
+        "resolution": "Continue rendering title/description through textContent; test no inserted image or event execution."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "sha256": {
+      "src/lib/search.ts": "2f2c89485e959a3631449fce02c1afaf3fff72cfd017b4e753629e5b38f3435e",
+      "src/lib/search-ui.json": "3dfbcf03f4bab20d651d97a04b0ea468361d736b2bd187c2caa15cb766bf7b13",
+      "src/scripts/search.ts": "1887ebae2880a3c0387659e33a8b82d85f44799cb8177661b481a9216bd534f7",
+      "src/pages/[lang]/search.astro": "761c493014711adf548ebb268a5a89a1aa1abb4dcaba126ec797928109138572",
+      "scripts/test-search.mjs": "8663821f8589ce216f28266ce71a748cf1c9581516edca99e07973cc88144587",
+      "scripts/test-site.mjs": "c51b9de89ef397e9ac6dcacad5726153649e6f0ca52a499629e9fcd77ac242a8",
+      "package.json": "b3db5cfd20035e6bbfe4788bc88f86cdb80d3b8f50062ee693d16a95a93d66c4",
+      "README.md": "8543cf07afa47d0ee942bd911f7defaab97bffeff91fcc92d467c1389f93633e"
+    }
+  },
+  "translationReview": {
+    "sourceLocale": "en",
+    "targetLocales": [
+      "ko",
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru",
+      "es"
+    ],
+    "stringsPerLocale": 3,
+    "method": "Meaning comparison followed by a standalone fluency pass; count-label wording avoids numeric noun inflection. Placeholders retained exactly. Limited to these short UI strings."
+  },
+  "validation": {
+    "python": 177,
+    "node": 53,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "HTML": 936,
+    "sitemapURLs": 471,
+    "htmlHreflangEdges": 1459,
+    "browser": [
+      {
+        "language": "en",
+        "firstResult": "/en/posts/2023-09-19-springboot-test-webclient/",
+        "initialRequests": 0,
+        "indexRequests": 1,
+        "width": 320,
+        "result": "passed"
+      },
+      {
+        "language": "ko",
+        "firstResult": "/ko/posts/2023-09-19-springboot-test-webclient/",
+        "initialRequests": 0,
+        "indexRequests": 1,
+        "width": 320,
+        "result": "passed"
+      },
+      {
+        "language": "zh-CN",
+        "firstResult": "/zh-CN/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "initialRequests": 0,
+        "indexRequests": 1,
+        "width": 320,
+        "result": "passed"
+      },
+      {
+        "language": "ja",
+        "firstResult": "/ja/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "initialRequests": 0,
+        "indexRequests": 1,
+        "width": 320,
+        "result": "passed"
+      },
+      {
+        "language": "de",
+        "firstResult": "/de/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "initialRequests": 0,
+        "indexRequests": 1,
+        "width": 320,
+        "result": "passed"
+      },
+      {
+        "language": "fr",
+        "firstResult": "/fr/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "initialRequests": 0,
+        "indexRequests": 1,
+        "width": 320,
+        "result": "passed"
+      },
+      {
+        "language": "ru",
+        "firstResult": "/ru/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "initialRequests": 0,
+        "indexRequests": 1,
+        "width": 320,
+        "result": "passed"
+      },
+      {
+        "language": "es",
+        "firstResult": "/es/digest/2026-05-09-copilot-grok-code-fast-retirement/",
+        "initialRequests": 0,
+        "indexRequests": 1,
+        "width": 320,
+        "result": "passed"
+      },
+      {
+        "case": "latest query wins over a delayed shared request",
+        "result": "passed"
+      },
+      {
+        "case": "clear while loading",
+        "result": "passed"
+      },
+      {
+        "case": "HTTP failure, keyboard retry, 61 total / 50 shown, safe literal text",
+        "result": "passed"
+      },
+      {
+        "case": "failure after clear recovers on the next query",
+        "result": "passed"
+      },
+      {
+        "case": "composition commit and duplicate final input reuse one request",
+        "result": "passed"
+      },
+      {
+        "case": "JavaScript disabled browse fallback",
+        "result": "passed"
+      }
+    ],
+    "screenshot": "Korean320px search results reviewed.",
+    "generatedSearchPages": "All eight search pages remain noindex, outside sitemap, with hidden retry and static noscript browse guidance."
+  },
+  "limits": [
+    "This improves internal site search; external ranking and user engagement effects were not measured.",
+    "Accented Latin spellings can share a match; this is not transliteration or semantic search.",
+    "IME checks use synthetic composition events, not every native OS keyboard.",
+    "Normalization does not certify article translation quality.",
+    "Existing article order is retained only for equal scores; no new recency signal is invented."
+  ]
+}

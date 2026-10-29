@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T09:28:33.656934+00:00",
+  "skill": "tech-blog-writing",
+  "reviewMethod": "independent-ai-session-and-targeted-recheck",
+  "reviewSession": "batch005_review",
+  "writingConversationProvidedToReviewer": false,
+  "previousVerdictsProvidedAtInitialReview": false,
+  "scope": {
+    "editions": 25,
+    "sources": 5,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "title",
+      "claims",
+      "followUp",
+      "reviewFocus"
+    ],
+    "audience": "software developers",
+    "type": "concise historical-news translations",
+    "steps": [
+      "Read target-language prose without source",
+      "Compare to approved English edition and embedded evidence",
+      "Writer applies source-supported corrections",
+      "Reviewer rechecks seven changed fields"
+    ]
+  },
+  "initialBatchSha256": "5b25aea3afcdab8698376ee91da744c03d7baf366cabeb1576331e4939309943",
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/renewals-005.json": "328a3332757a79b367c551f1dc62c911708c92922b7f66fec0f1e6b83cdfc08a"
+  },
+  "sourceSha256": {
+    "src/content/renewals/50b97c32c1d2c027.json": "a96a0a6ebca17473b98ffc6bad257c0cf8f93fcd34b410a08d47e0e3df5fca62",
+    "src/content/renewals/52ee7abbb037f678.json": "054e9612fe1feaec23c3b9d60780b1ab7e27082acedabff7d729617bf5ddf9a1",
+    "src/content/renewals/568305543e6754fa.json": "1de7953fa3d46532182948b9279837a6e12fe5089d6fadabaabd7a0cdfa9913d",
+    "src/content/renewals/59c87ea544e0e5db.json": "6a93e8a1e301c08518c5a8158e3be3ea3ab4eff1c836ac3c5a3b7f4aa92449eb",
+    "src/content/renewals/5fe80662057aa753.json": "6acf216793b9c66eafa85914deea93d62e00d3190a83295956480a9bb73ae9e7"
+  },
+  "findings": [
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "language": "de",
+      "field": "edition.claims[1]",
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "MCP 서버가 validate_pipeline 도구를 추가 제공한다는 뜻을 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "50b97c32c1d2c027",
+      "language": "ru",
+      "field": "edition.title",
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "비밀값의 범위를 자연스러운 область действия로 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "59c87ea544e0e5db",
+      "language": "de",
+      "field": "reviewFocus",
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "관리형 탐지를 명확한 Erkennungsmechanismen으로 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "59c87ea544e0e5db",
+      "language": "fr",
+      "field": "edition.title",
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "제한 대상이 응답 본문임을 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "5fe80662057aa753",
+      "language": "ru",
+      "field": "edition.claims[0]",
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "billing managers의 역할 명칭을 자연스럽게 수정",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "5fe80662057aa753",
+      "language": "ja",
+      "field": "reviewFocus",
+      "origin": "independent-review",
+      "severity": "minor",
+      "resolution": "리포지토리 보호 공백을 놓치지 말라는 문장의 수식 순서를 정리",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "5fe80662057aa753",
+      "language": "fr",
+      "field": "edition.claims[1]",
+      "origin": "writer-self-review",
+      "severity": "minor",
+      "resolution": "용량 확보 또는 예산 증액 중 하나가 충족되면 된다는 대안 조건을 명확히 함",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    }
+  ],
+  "result": "No unresolved major findings within the independently reviewed scope; seven corrections rechecked",
+  "externalSourceRevalidation": false,
+  "nativeSpeakerOrHumanLanguageReview": false,
+  "publicationApprovalGranted": false,
+  "limitations": [
+    "AI review does not guarantee accuracy.",
+    "Archived English and stored source evidence were compared; current external availability was not reverified.",
+    "Publication requires explicit user approval.",
+    "Remaining 190 translations have not been drafted or reviewed."
+  ]
+}

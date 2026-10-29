@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "1c1c9e6c82aad3a4",
+  "language": "es",
+  "sourceSha256": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f",
+  "edition": {
+    "title": "Los avisos de seguridad de los repositorios de GitHub incorporan búsqueda y filtros",
+    "claims": [
+      "GitHub añadió búsqueda y filtrado de avisos de seguridad directamente en la pestaña Security de un repositorio.",
+      "El aviso enumera sort, package, ecosystems y severity entre las palabras clave de búsqueda o filtrado admitidas."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Compruebe si la vista contiene los avisos en borrador, recibidos y publicados que necesita para la revisión. Un conjunto de resultados filtrados más pequeño no debe interpretarse como un menor número de vulnerabilidades subyacentes.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T22:53:32.255Z",
+  "publishedAt": "2026-10-26T22:53:32.255Z",
+  "updatedAt": "2026-10-26T22:53:32.255Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 51,
+    "approvedAt": "2026-10-26T22:53:32.255Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after the final report linking the six independently reviewed Spanish articles from PR #51 and stating that Spanish publication awaited approval."
+  }
+}

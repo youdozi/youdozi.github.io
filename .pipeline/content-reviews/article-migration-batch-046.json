@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-29T06:21:41.596563+00:00",
+  "baseCommit": "276b632e1ff1fccfb6d183ce2e6b9b2d03d64dd8",
+  "purpose": "Align legacy public article moves with canonicalization guidance and validate all generated migration routes.",
+  "scope": {
+    "articleManuscriptsChanged": 0,
+    "pendingTranslationsPublished": 0,
+    "publicArticleMovePagesChanged": 35,
+    "navigationAndExcludedPoliciesUnchanged": 62,
+    "newIndexingRequests": 0
+  },
+  "policy": {
+    "articleMoves": "Immediate meta refresh, destination canonical and visible continuation link; no noindex on public article move pages.",
+    "otherMoves": "Keep noindex on root, navigation and example redirects.",
+    "hosting": "HTTP 200 static meta refresh, not a server 301.",
+    "sitemap": "Only existing canonical public URLs; redirect routes remain excluded.",
+    "references": [
+      "https://developers.google.com/search/docs/crawling-indexing/301-redirects",
+      "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
+    ]
+  },
+  "validation": {
+    "pythonTests": 267,
+    "nodeTests": 117,
+    "astroCheck": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "normalBuild": "passed",
+    "redirectsChecked": 97,
+    "coreEditionsChecked": 20,
+    "publicArticles": 423,
+    "sitemapURLs": 479,
+    "approvedTranslations": 36,
+    "realChromeLocalRoutes": 3,
+    "realChromeLocalMetaRefresh": "passed with shared isolated context",
+    "translationPreviewGateConfigured": true
+  },
+  "limits": [
+    "Static output checks are not evidence of Google re-crawling, indexing, canonical selection or ranking effects.",
+    "No new Search Console or Analytics collection during this change; previous private baseline remains unchanged.",
+    "No production deployment performed by this change."
+  ],
+  "sourceSha256": {
+    "src/components/Redirect.astro": "7abd857809693e7ad5ac9b9249229fdb299e563a05d8e3162e8addadc3c9ef2c",
+    "src/pages/[...legacy].astro": "0a03b74396966a6872f1d5b604a51550a8a9d671a8f69fa5ef479f63a375039b",
+    "scripts/check_migration.py": "98ba6b2a031b18e5b067741c9d0fe783c069fb639a11d578de50c63255db5e3f",
+    "scripts/test_migration.py": "66e34e82c1481015ebea32b175d6182ac0237e74ad6d4d86aba0e37a44b2f56f"
+  }
+}

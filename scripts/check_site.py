@@ -7,6 +7,7 @@ import json
 
 ROOT = Path('dist').resolve()
 SITE = 'https://youdozi.github.io'
+LANGUAGES = json.loads(Path('src/lib/locales.json').read_text())['locales']
 
 
 class Page(HTMLParser):
@@ -34,17 +35,21 @@ class Page(HTMLParser):
 
 def main():
     errors = []
+    expected_languages = {'en', 'ko'} | {json.loads(p.read_text())['language'] for p in Path('src/content/translations').glob('*.json')}
+    for lang in LANGUAGES:
+        if (ROOT/lang/'index.html').exists() != (lang in expected_languages):
+            errors.append(f'{lang}: language routes must match approved translations')
     pages = {}
     for file in ROOT.rglob('*.html'):
         if file.parent == ROOT and file.name.startswith(('google', 'naver')):
             continue  # Search-engine ownership files intentionally contain only verification text.
         page = Page(); page.feed(file.read_text(encoding='utf-8'))
         pages[file] = page
-        if page.lang not in ('en', 'ko'):
+        if page.lang not in LANGUAGES:
             errors.append(f'{file.relative_to(ROOT)}: missing language')
         if len(page.canonical) != 1:
             errors.append(f'{file.relative_to(ROOT)}: must have exactly one canonical')
-        if file.name != '404.html' and ('en' in file.relative_to(ROOT).parts[:1] or 'ko' in file.relative_to(ROOT).parts[:1]) and page.h1 != 1:
+        if file.name != '404.html' and any(lang in file.relative_to(ROOT).parts[:1] for lang in LANGUAGES) and page.h1 != 1:
             errors.append(f'{file.relative_to(ROOT)}: expected one h1, found {page.h1}')
     for file, page in pages.items():
         base = SITE + '/' + file.relative_to(ROOT).as_posix()
@@ -60,9 +65,13 @@ def main():
             elif target.fragment and dest in pages and unquote(target.fragment) not in pages[dest].ids:
                 # Old taxonomy fragments are preserved separately in the migration redirects.
                 errors.append(f'{file.relative_to(ROOT)}: missing anchor {ref}')
+    for lang in LANGUAGES:
+        if lang not in expected_languages and (ROOT/lang).exists():
+            errors.append(f'{lang}: unpublished language has public output')
     ko = json.loads((ROOT/'ko/search-index.json').read_text())
     en = json.loads((ROOT/'en/search-index.json').read_text())
-    urls = [e['url'] for e in ko+en]
+    indexes = {lang: json.loads((ROOT/lang/'search-index.json').read_text()) for lang in LANGUAGES if (ROOT/lang/'search-index.json').exists()}
+    urls = [e['url'] for index in indexes.values() for e in index]
     if len(urls) != len(set(urls)):
         errors.append('duplicate article URLs in search indexes')
     legacy_count = len(list(Path('_posts').rglob('*.markdown')))
@@ -76,6 +85,8 @@ def main():
     for error in sorted(set(errors)):
         print('[error]', error)
     if not errors:
+        counts = ', '.join(f'{lang}: {len(index)}' for lang, index in indexes.items())
+        print(f'[ok] Published language indexes: {counts}')
         print(f'[ok] {len(pages)} HTML pages; {len(ko)} Korean / {len(en)} English listed entries; {examples} unlisted examples; internal links, images and anchors verified.')
     return int(bool(errors))
 

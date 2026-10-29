@@ -1,0 +1,1512 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2023-09-07-springboot-initializer",
+      "title": {
+        "en": "Generate, inspect, test",
+        "ko": "생성·설정 확인·테스트"
+      },
+      "description": {
+        "en": "Generate the complete archive before running its Wrapper. A context test and a separately running HTTP application establish different things.",
+        "ko": "전체 프로젝트를 생성한 뒤 포함된 Wrapper를 실행합니다. 컨텍스트 테스트 통과와 HTTP 애플리케이션 실행은 별도로 확인합니다."
+      },
+      "codeContract": [
+        {
+          "language": "sh",
+          "contains": "./gradlew test"
+        },
+        {
+          "language": "groovy",
+          "contains": "id 'org.springframework.boot'"
+        },
+        {
+          "language": "java",
+          "contains": "class DemoApplication"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Select compatible Boot, JDK, Gradle"
+          ],
+          "ko": [
+            "호환되는 Boot·JDK·Gradle 선택"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Generate and unpack full archive",
+            "Retain the Gradle Wrapper files"
+          ],
+          "ko": [
+            "전체 압축 파일 생성·해제",
+            "Gradle Wrapper 파일 유지"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Inspect build.gradle and toolchain",
+            "Run ./gradlew --version"
+          ],
+          "ko": [
+            "build.gradle·toolchain 확인",
+            "./gradlew --version 실행"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Run ./gradlew test",
+            "Check context initialization"
+          ],
+          "ko": [
+            "./gradlew test 실행",
+            "컨텍스트 초기화 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Run bootRun separately",
+            "No controller yet: / may be 404"
+          ],
+          "ko": [
+            "bootRun으로 별도 실행",
+            "컨트롤러가 없으면 /는 404 가능"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-09-08-springboot3-migration",
+      "title": {
+        "en": "Boot 3 migration checks",
+        "ko": "Boot 3 이관 확인 순서"
+      },
+      "description": {
+        "en": "This is the article’s proposed migration check order. The commands inspect the environment; they do not automatically migrate an application or database.",
+        "ko": "본문에서 제안한 이관 확인 순서입니다. 명령은 환경을 확인하며 애플리케이션이나 데이터베이스를 자동 이관하지 않습니다."
+      },
+      "codeContract": [
+        {
+          "language": "sh",
+          "contains": "./gradlew --version"
+        },
+        {
+          "language": "groovy",
+          "contains": "spring-boot-properties-migrator"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Establish a passing 2.7 baseline",
+            "Record tests and runtime settings"
+          ],
+          "ko": [
+            "통과하는 2.7 기준선 확보",
+            "테스트·실행 설정 기록"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Check JDK and Gradle execution",
+            "Prepare the Java 17 baseline"
+          ],
+          "ko": [
+            "JDK·Gradle 실행 환경 확인",
+            "Java 17 기준 준비"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Review Java EE → Jakarta changes",
+            "Keep Java SE javax APIs intact"
+          ],
+          "ko": [
+            "Java EE → Jakarta 전환 검토",
+            "Java SE javax API는 유지"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Align dependencies and processors",
+            "Compile and exercise queries"
+          ],
+          "ko": [
+            "의존성·프로세서 조합 정리",
+            "컴파일·쿼리 실행 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Review properties and security",
+            "Remove temporary migration helper"
+          ],
+          "ko": [
+            "속성·보안 동작 확인",
+            "임시 이관 도우미 제거"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Test application behavior",
+            "Then assess later runtime options"
+          ],
+          "ko": [
+            "애플리케이션 동작 검증",
+            "이후 추가 런타임 옵션 검토"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-09-09-springboot3-querydsl",
+      "title": {
+        "en": "Generate Q types and query",
+        "ko": "Q 타입 생성과 쿼리 실행"
+      },
+      "description": {
+        "en": "The processor generates QEmployee during main compilation. The H2 test then executes a query with those generated types.",
+        "ko": "메인 컴파일의 프로세서가 QEmployee를 생성합니다. 이후 H2 테스트가 생성 타입을 사용한 쿼리를 실행합니다."
+      },
+      "codeContract": [
+        {
+          "language": "groovy",
+          "contains": "querydsl-apt"
+        },
+        {
+          "language": "java",
+          "contains": "QEmployee"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Configure JPA and Querydsl Jakarta"
+          ],
+          "ko": [
+            "JPA·Querydsl Jakarta 의존성 설정"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Configure annotationProcessor",
+            "Include its BOM and Jakarta APIs"
+          ],
+          "ko": [
+            "annotationProcessor 별도 설정",
+            "BOM·Jakarta API도 제공"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Compile annotated Employee",
+            "Generate QEmployee source/class"
+          ],
+          "ko": [
+            "어노테이션이 있는 Employee 컴파일",
+            "QEmployee 소스·클래스 생성"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Start the JPA test with H2",
+            "Persist the test employees"
+          ],
+          "ko": [
+            "H2를 사용하는 JPA 테스트 시작",
+            "테스트 직원 데이터 저장"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Execute typed queries",
+            "Assert results; repeat clean test"
+          ],
+          "ko": [
+            "타입 기반 쿼리 실행",
+            "결과 확인·clean test 반복"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-09-10-springboot-intellij-import",
+      "title": {
+        "en": "Separate build and IDE failures",
+        "ko": "빌드와 IDE 오류 구분"
+      },
+      "description": {
+        "en": "Use the Wrapper build to distinguish project failures from IDE setup. HTTP tests use a random port; manual bootRun uses the configured port.",
+        "ko": "Wrapper 빌드로 프로젝트 오류와 IDE 설정을 구분합니다. HTTP 테스트는 임의 포트, 수동 bootRun은 지정 포트를 사용합니다."
+      },
+      "codeContract": [
+        {
+          "language": "sh",
+          "contains": "./gradlew bootRun"
+        },
+        {
+          "language": "java",
+          "contains": "class GreetingController"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Open the Gradle project root",
+            "Check JDK and Wrapper settings"
+          ],
+          "ko": [
+            "Gradle 프로젝트 루트 열기",
+            "JDK·Wrapper 설정 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Wrapper build fails?",
+            "Fix build, dependencies, sources"
+          ],
+          "ko": [
+            "Wrapper 빌드도 실패하는가?",
+            "빌드·의존성·소스부터 수정"
+          ],
+          "kind": "condition"
+        },
+        {
+          "en": [
+            "Wrapper passes, IDE fails?",
+            "Reload Gradle; check run settings"
+          ],
+          "ko": [
+            "Wrapper 통과·IDE만 실패하는가?",
+            "Gradle 재로딩·실행 설정 확인"
+          ],
+          "kind": "condition"
+        },
+        {
+          "en": [
+            "HTTP tests check JSON and 404",
+            "Use a random server port"
+          ],
+          "ko": [
+            "HTTP 테스트로 JSON·404 확인",
+            "임의 서버 포트 사용"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Run the app and request /greeting",
+            "Check route and configured port"
+          ],
+          "ko": [
+            "앱 실행 후 /greeting 요청",
+            "경로·지정 포트 확인"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-09-13-springboot-history",
+      "title": {
+        "en": "Resolve actual component versions",
+        "ko": "실제 구성요소 버전 확인"
+      },
+      "description": {
+        "en": "The flow summarizes dependency inspection rather than a release timeline. Boot, Framework and Lombok have separate version identities and dependency configurations.",
+        "ko": "그림은 릴리스 연표가 아닌 의존성 확인 순서입니다. Boot·Framework·Lombok 버전과 의존성 구성은 서로 구분합니다."
+      },
+      "codeContract": [
+        {
+          "language": "sh",
+          "contains": "dependencyInsight"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Identify the selected Boot version"
+          ],
+          "ko": [
+            "선택한 Boot 버전 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Inspect dependency management",
+            "Do not equate Boot/Framework IDs"
+          ],
+          "ko": [
+            "의존성 관리 설정 확인",
+            "Boot·Framework 버전 번호 구분"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "dependencyInsight: spring-core",
+            "Inspect runtimeClasspath"
+          ],
+          "ko": [
+            "dependencyInsight: spring-core",
+            "runtimeClasspath 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "dependencyInsight: lombok",
+            "Inspect annotationProcessor"
+          ],
+          "ko": [
+            "dependencyInsight: lombok",
+            "annotationProcessor 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Record resolved versions",
+            "Assess compatibility for that set"
+          ],
+          "ko": [
+            "실제로 해석된 버전 기록",
+            "해당 조합의 호환성 판단"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-09-15-springboot-intellij-lombok",
+      "title": {
+        "en": "Compile Lombok before IDE fixes",
+        "ko": "Lombok 컴파일과 IDE 확인"
+      },
+      "description": {
+        "en": "Check generated constructors and getters in main and test compilation separately. Fix IDE recognition after the Wrapper tests pass.",
+        "ko": "메인·테스트 컴파일의 생성자와 getter 생성을 각각 확인합니다. Wrapper 테스트가 통과한 뒤 IDE 인식 문제를 다룹니다."
+      },
+      "codeContract": [
+        {
+          "language": "groovy",
+          "contains": "testAnnotationProcessor"
+        },
+        {
+          "language": "java",
+          "contains": "class LombokGenerationTest"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Add compileOnly + processor",
+            "Configure main and test scopes"
+          ],
+          "ko": [
+            "compileOnly·프로세서 추가",
+            "메인·테스트 구성을 각각 설정"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Compile generated constructor",
+            "and getter in main sources"
+          ],
+          "ko": [
+            "메인 소스에서 생성한",
+            "생성자·getter 컴파일"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Compile test-source Lombok use",
+            "Check both generation tests"
+          ],
+          "ko": [
+            "테스트 소스의 Lombok도 컴파일",
+            "두 생성 검증 테스트 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Run all five tests and bootJar",
+            "Check unchanged HTTP JSON"
+          ],
+          "ko": [
+            "테스트 5개·bootJar 실행",
+            "HTTP JSON 동작 유지 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Only IDE still reports errors?",
+            "Reload project; inspect IDE support"
+          ],
+          "ko": [
+            "IDE에만 오류가 남는가?",
+            "재로딩·IDE 지원 설정 확인"
+          ],
+          "kind": "condition"
+        },
+        {
+          "en": [
+            "Keep Lombok off runtime classpath",
+            "Compiled members run without it"
+          ],
+          "ko": [
+            "Lombok 런타임 의존성 제외",
+            "생성된 멤버는 컴파일 결과로 실행"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-09-19-springboot-test-webclient",
+      "title": {
+        "en": "Validate the HTTP response",
+        "ko": "HTTP 응답 계약 확인"
+      },
+      "description": {
+        "en": "The client checks status before media type, releases rejected bodies and decodes supported JSON. StepVerifier checks completion or error as well as emitted values.",
+        "ko": "클라이언트는 상태 코드 다음에 미디어 타입을 검사하고 거절한 본문을 해제합니다. StepVerifier는 값뿐 아니라 완료·오류 신호도 확인합니다."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "exchangeToMono"
+        },
+        {
+          "language": "groovy",
+          "contains": "reactor-test"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Enqueue local mock response",
+            "Subscribe to the client request"
+          ],
+          "ko": [
+            "로컬 모의 응답 등록",
+            "클라이언트 요청 구독"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Error HTTP status?",
+            "Yes: emit exception and stop"
+          ],
+          "ko": [
+            "HTTP 오류 상태인가?",
+            "예: 예외 신호를 내고 종료"
+          ],
+          "kind": "condition",
+          "branch": {
+            "exit": {
+              "en": "Yes",
+              "ko": "예"
+            },
+            "continue": {
+              "en": "No",
+              "ko": "아니오"
+            }
+          }
+        },
+        {
+          "en": [
+            "application/json or",
+            "application/*+json?",
+            "Other: release body, then error"
+          ],
+          "ko": [
+            "application/json 또는",
+            "application/*+json인가?",
+            "그 외: 본문 해제 후 오류 반환"
+          ],
+          "kind": "condition",
+          "branch": {
+            "exit": {
+              "en": "Other",
+              "ko": "그 외"
+            },
+            "continue": {
+              "en": "JSON",
+              "ko": "JSON"
+            }
+          }
+        },
+        {
+          "en": [
+            "Only supported types: decode Payload",
+            "Observe empty or malformed body"
+          ],
+          "ko": [
+            "허용한 타입: Payload로 디코딩",
+            "빈 본문·잘못된 본문 결과 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Verify values and terminal signal",
+            "Inspect method, path and Accept"
+          ],
+          "ko": [
+            "값과 종료 신호 검증",
+            "메서드·경로·Accept 확인"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-10-27-springbatch5-migration",
+      "title": {
+        "en": "Restart the failed v5 instance",
+        "ko": "v5 실패 인스턴스 재시작"
+      },
+      "description": {
+        "en": "This summarizes the fresh-schema v5 restart test, not a v4 database migration. A second execution of the same instance reruns the failed step; the completed step remains complete.",
+        "ko": "새 스키마에서 실행한 v5 재시작 테스트 흐름입니다. v4 DB 이관이 아니며 같은 인스턴스의 새 실행은 실패한 Step을 다시 수행합니다."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "failedInstanceRestartsOnlyItsFailedStep"
+        },
+        {
+          "language": "groovy",
+          "contains": "spring-batch-core"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Create fresh H2 Batch 5 schema",
+            "Build identifying job parameters"
+          ],
+          "ko": [
+            "새 H2 Batch 5 스키마 준비",
+            "식별용 잡 파라미터 구성"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Launch job: step 1 completes"
+          ],
+          "ko": [
+            "잡 실행: Step 1 완료"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Step 2 fails once",
+            "Execution status becomes FAILED"
+          ],
+          "ko": [
+            "Step 2를 한 번 실패시킴",
+            "실행 상태 FAILED"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Launch with the same parameters",
+            "Same instance, new execution"
+          ],
+          "ko": [
+            "같은 파라미터로 다시 실행",
+            "같은 인스턴스·새 실행"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Skip completed step 1",
+            "Rerun step 2 → COMPLETED"
+          ],
+          "ko": [
+            "완료한 Step 1은 건너뜀",
+            "Step 2 재실행 → COMPLETED"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Assert step counts: 1 and 2",
+            "No JVM recovery guarantee here"
+          ],
+          "ko": [
+            "Step 실행 횟수 1회·2회 확인",
+            "JVM 복구 보장 실험은 아님"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2021-07-23-multiple-gradle-build",
+      "title": {
+        "en": "Build assets into the JAR",
+        "ko": "프런트 자산을 JAR로 패키징"
+      },
+      "description": {
+        "en": "Each Vue app builds its own output. A Gradle Sync task collects only those outputs, then bootJar places them under separate static paths.",
+        "ko": "각 Vue 앱의 빌드 결과만 Gradle Sync 작업으로 모읍니다. bootJar가 이를 서로 다른 정적 경로에 포함합니다."
+      },
+      "codeContract": [
+        {
+          "language": "groovy",
+          "contains": "tasks.register('collectFrontend', Sync)"
+        },
+        {
+          "language": "sh",
+          "contains": "npm install --package-lock-only"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Commit each app lockfile",
+            "Use pinned project dependencies"
+          ],
+          "ko": [
+            "앱별 lockfile 커밋",
+            "프로젝트 의존성 버전 고정"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Per app: npm ci",
+            "Then npm run build"
+          ],
+          "ko": [
+            "각 앱에서 npm ci",
+            "이후 npm run build"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Sync both dist directories",
+            "Keep static/project1 and project2"
+          ],
+          "ko": [
+            "두 dist 디렉터리 Sync",
+            "static/project1·project2 구분"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "bootJar depends on collection",
+            "Copy into BOOT-INF/classes"
+          ],
+          "ko": [
+            "bootJar가 자산 수집에 의존",
+            "BOOT-INF/classes 아래에 포함"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Run JAR; request both app paths",
+            "Verify current bundles are served"
+          ],
+          "ko": [
+            "JAR 실행·두 앱 경로 요청",
+            "현재 번들이 제공되는지 확인"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2021-07-27-parse-yaml",
+      "title": {
+        "en": "Validate YAML before exec",
+        "ko": "YAML 검증 후 명령 실행"
+      },
+      "description": {
+        "en": "Parse and validate the integer port before exporting SERVER_PORT. Loader failure prevents the target command from starting; exec preserves the target’s status.",
+        "ko": "정수 포트를 파싱·검증한 뒤 SERVER_PORT를 내보냅니다. 로더 실패 시 대상 명령은 시작하지 않으며 exec는 대상의 종료 상태를 유지합니다."
+      },
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "type(port) is not int"
+        },
+        {
+          "language": "sh",
+          "contains": "exec \"$@\""
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Read YAML with safe_load"
+          ],
+          "ko": [
+            "safe_load로 YAML 읽기"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Check root and server mappings"
+          ],
+          "ko": [
+            "루트·server가 매핑인지 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Require integer port 1..65535",
+            "Invalid input: stop with error"
+          ],
+          "ko": [
+            "정수 포트 1..65535만 허용",
+            "잘못된 입력: 오류로 종료"
+          ],
+          "kind": "condition",
+          "branch": {
+            "exit": {
+              "en": "Invalid",
+              "ko": "오류"
+            },
+            "continue": {
+              "en": "Valid",
+              "ko": "정상"
+            }
+          }
+        },
+        {
+          "en": [
+            "Only valid port: export SERVER_PORT",
+            "exec command with quoted args"
+          ],
+          "ko": [
+            "올바른 포트: SERVER_PORT export",
+            "인자를 보존해 명령 exec"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-09-20-linux-shellscript-function-error",
+      "title": {
+        "en": "Choose shell, preserve arguments",
+        "ko": "셸 선택과 인자 보존"
+      },
+      "description": {
+        "en": "The invoked interpreter parses the function. The example validates one argument and preserves spaces and wildcard characters through quoting.",
+        "ko": "명시적으로 실행한 인터프리터가 함수를 파싱합니다. 예제는 인자 1개를 검사하고 따옴표로 공백·와일드카드를 보존합니다."
+      },
+      "codeContract": [
+        {
+          "language": "sh",
+          "contains": "greet \"$@\""
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Choose sh or Bash deliberately",
+            "Match syntax to that interpreter"
+          ],
+          "ko": [
+            "sh·Bash 인터프리터 선택",
+            "해당 셸의 문법 사용"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "sh -n checks syntax only",
+            "Also execute the script"
+          ],
+          "ko": [
+            "sh -n으로 문법만 확인",
+            "스크립트를 실제로도 실행"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Pass quoted \"$@\" into greet"
+          ],
+          "ko": [
+            "따옴표를 쓴 \"$@\"로 greet 호출"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Argument count is not 1?",
+            "Write usage; return status 2"
+          ],
+          "ko": [
+            "인자가 1개가 아닌가?",
+            "사용법 출력·상태 2 반환"
+          ],
+          "kind": "condition",
+          "branch": {
+            "exit": {
+              "en": "Yes",
+              "ko": "예"
+            },
+            "continue": {
+              "en": "No",
+              "ko": "아니오"
+            }
+          }
+        },
+        {
+          "en": [
+            "One argument: print greeting",
+            "Final function status → script"
+          ],
+          "ko": [
+            "인자 1개면 인사 출력",
+            "마지막 함수 상태 → 스크립트"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-11-17-linux-shellscript-version-compare",
+      "title": {
+        "en": "Compare dotted numeric versions",
+        "ko": "점으로 나눈 숫자 버전 비교"
+      },
+      "description": {
+        "en": "Validate the numeric-only contract, align missing components with zero and stop at the first differing pair. A less-than result is still a successful comparison.",
+        "ko": "숫자 전용 입력을 검사한 뒤 부족한 구간을 0으로 맞추고 처음 다른 구간에서 비교를 결정합니다. 작은 버전이라는 결과도 정상 실행입니다."
+      },
+      "codeContract": [
+        {
+          "language": "sh",
+          "contains": "zip_longest"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Require exactly two versions",
+            "Allow digits separated by dots"
+          ],
+          "ko": [
+            "버전 인자 정확히 2개 확인",
+            "점으로 구분한 숫자만 허용"
+          ],
+          "kind": "condition"
+        },
+        {
+          "en": [
+            "Convert components to integers",
+            "Conversion failure: status 2"
+          ],
+          "ko": [
+            "구간별 정수 변환",
+            "변환 실패: 상태 2"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Align pairs; missing value = 0"
+          ],
+          "ko": [
+            "구간 대응·부족한 값은 0"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "First unequal pair decides < or >",
+            "No unequal pair means ="
+          ],
+          "ko": [
+            "처음 다른 구간에서 <·> 결정",
+            "다른 구간이 없으면 ="
+          ],
+          "kind": "condition"
+        },
+        {
+          "en": [
+            "Print relationship; status 0",
+            "Apply deployment policy separately"
+          ],
+          "ko": [
+            "비교 결과 출력·상태 0",
+            "배포 정책은 별도로 판단"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-09-23-linux-shellscript-github-latest",
+      "title": {
+        "en": "Select one GitHub release asset",
+        "ko": "GitHub 릴리스 자산 1개 선택"
+      },
+      "description": {
+        "en": "HTTP failure stops the script before JSON parsing. A valid release object must contain exactly one matching asset; selecting its URL does not verify the downloaded file.",
+        "ko": "HTTP 실패는 JSON 파싱 전에 종료합니다. 올바른 릴리스 객체에서 조건에 맞는 자산 1개만 선택하며 URL 선택은 파일 검증이 아닙니다."
+      },
+      "codeContract": [
+        {
+          "language": "sh",
+          "contains": "jq --slurp --exit-status"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Validate OWNER/REPO argument"
+          ],
+          "ko": [
+            "OWNER/REPO 인자 형식 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "curl captures the HTTP response",
+            "Request failure: exit nonzero"
+          ],
+          "ko": [
+            "curl로 HTTP 응답 수집",
+            "요청 실패: 0이 아닌 상태 종료"
+          ],
+          "kind": "condition",
+          "branch": {
+            "exit": {
+              "en": "Failed",
+              "ko": "실패"
+            },
+            "continue": {
+              "en": "Success",
+              "ko": "성공"
+            }
+          }
+        },
+        {
+          "en": [
+            "Require one JSON release object",
+            "Check nonempty tag and assets"
+          ],
+          "ko": [
+            "JSON 릴리스 객체 1개 확인",
+            "태그·자산 배열 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Match platform filename",
+            "Zero or many: stop with error"
+          ],
+          "ko": [
+            "플랫폼 파일명 조건 적용",
+            "0개·여러 개면 오류 종료"
+          ],
+          "kind": "condition",
+          "branch": {
+            "exit": {
+              "en": "Invalid",
+              "ko": "오류"
+            },
+            "continue": {
+              "en": "One match",
+              "ko": "1개 일치"
+            }
+          }
+        },
+        {
+          "en": [
+            "Emit tag and download URL",
+            "Verify file integrity separately"
+          ],
+          "ko": [
+            "태그·다운로드 URL 출력",
+            "파일 무결성은 별도로 확인"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-10-10-temurin-jdk21-delay",
+      "title": {
+        "en": "Validate binary metadata",
+        "ko": "바이너리 메타데이터 확인"
+      },
+      "description": {
+        "en": "This is the metadata-selection example, not an installation flow. It checks the platform, Java major version, checksum syntax and URL location without downloading or hashing the archive.",
+        "ko": "설치가 아닌 메타데이터 선택 예제입니다. 플랫폼·Java 주 버전·체크섬 형식·URL 위치를 확인하며 압축 파일을 다운로드하거나 해시하지는 않습니다."
+      },
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "urlparse(link)"
+        },
+        {
+          "language": "sh",
+          "contains": "api.adoptium.net"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Fetch assets JSON with curl"
+          ],
+          "ko": [
+            "curl로 자산 JSON 조회"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Require exactly one asset",
+            "Check linux/x64/jdk/hotspot"
+          ],
+          "ko": [
+            "자산 정확히 1개 확인",
+            "linux/x64/jdk/hotspot 확인"
+          ],
+          "kind": "condition"
+        },
+        {
+          "en": [
+            "Require Java major version 21"
+          ],
+          "ko": [
+            "Java 주 버전 21 확인"
+          ],
+          "kind": "condition"
+        },
+        {
+          "en": [
+            "Check SHA-256 metadata syntax",
+            "Validate expected HTTPS URL"
+          ],
+          "ko": [
+            "SHA-256 메타데이터 형식 확인",
+            "예상한 HTTPS URL인지 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Emit version, name, URL, checksum",
+            "No downloaded-file hash checked"
+          ],
+          "ko": [
+            "버전·이름·URL·체크섬 출력",
+            "다운로드 파일 해시 검증은 아님"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-09-20-jdk-21-release",
+      "title": {
+        "en": "Run final Java 21 features",
+        "ko": "Java 21 정식 기능 실행"
+      },
+      "description": {
+        "en": "The flow follows Jdk21Example without preview flags. The reversed list is a view, and join waits for the virtual thread’s output.",
+        "ko": "그림은 preview 옵션 없이 실행하는 Jdk21Example 순서입니다. 역순 목록은 뷰이며 join은 가상 스레드의 출력을 기다립니다."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "class Jdk21Example"
+        },
+        {
+          "language": "sh",
+          "contains": "javac --release 21"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Use matching Java 21 tools",
+            "Compile without preview flags"
+          ],
+          "ko": [
+            "Java 21 컴파일러·실행기 선택",
+            "preview 옵션 없이 컴파일"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Create list and reversed view",
+            "Change the original first element"
+          ],
+          "ko": [
+            "목록과 역순 뷰 생성",
+            "원본 첫 원소 변경"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Print endpoints and reversed view"
+          ],
+          "ko": [
+            "양 끝 원소·역순 뷰 출력"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Match Point record and null",
+            "Print both switch results"
+          ],
+          "ko": [
+            "Point 레코드·null 패턴 판별",
+            "두 switch 결과 출력"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Start virtual thread and join",
+            "Wait for its output before return"
+          ],
+          "ko": [
+            "가상 스레드 시작 후 join",
+            "출력을 마칠 때까지 대기"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2023-09-23-jdk-21-string-templates",
+      "title": {
+        "en": "Use standard formatting APIs",
+        "ko": "표준 문자열 포맷 API 사용"
+      },
+      "description": {
+        "en": "This shows the standard FormattingExample, not the historical preview example. It compares three formatting forms and checks MessageFormat apostrophe quoting.",
+        "ko": "과거 preview 예제가 아닌 표준 FormattingExample의 흐름입니다. 세 표현을 비교하고 MessageFormat의 작은따옴표 처리를 확인합니다."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "class FormattingExample"
+        },
+        {
+          "language": "sh",
+          "contains": "javac FormattingExample.java"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Set x = 2 and y = 3"
+          ],
+          "ko": [
+            "x = 2·y = 3 설정"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Concatenate with grouped x + y"
+          ],
+          "ko": [
+            "괄호로 x + y를 계산해 문자열 연결"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "String.format with Locale.ROOT",
+            "Use numbered integer placeholders"
+          ],
+          "ko": [
+            "Locale.ROOT로 String.format",
+            "번호가 있는 정수 자리표시자 사용"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "MessageFormat with Locale.ROOT",
+            "Pass arguments as an Object array"
+          ],
+          "ko": [
+            "Locale.ROOT로 MessageFormat",
+            "Object 배열로 인자 전달"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Double apostrophe in the pattern",
+            "Print all four example outputs"
+          ],
+          "ko": [
+            "패턴의 작은따옴표는 두 번 표시",
+            "예제 출력 4개 확인"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2021-07-20-http-status-test",
+      "title": {
+        "en": "Local response selection",
+        "ko": "로컬 응답 선택"
+      },
+      "description": {
+        "en": "Choose a route, then write status, headers and body. The 204 route ends without Content-Length or content.",
+        "ko": "경로에 따라 상태·헤더·본문을 선택합니다. 204는 Content-Length와 본문 없이 종료합니다."
+      },
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "class StatusHandler"
+        },
+        {
+          "language": "sh",
+          "contains": "python3 status_server.py"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Receive a local GET request",
+            "Select a supported route"
+          ],
+          "ko": [
+            "로컬 GET 요청 수신",
+            "지원하는 경로 선택"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Unknown path or status?",
+            "Use the fixture JSON 404"
+          ],
+          "ko": [
+            "알 수 없는 경로·상태인가?",
+            "예제의 JSON 404 선택"
+          ],
+          "kind": "condition"
+        },
+        {
+          "en": [
+            "Status 204: end headers and stop",
+            "No Content-Length or body"
+          ],
+          "ko": [
+            "상태 204: 헤더 종료 후 반환",
+            "Content-Length·본문 없음"
+          ],
+          "kind": "condition",
+          "branch": {
+            "exit": {
+              "en": "204",
+              "ko": "204"
+            },
+            "continue": {
+              "en": "Other",
+              "ko": "그 외"
+            },
+            "outcome": "complete"
+          }
+        },
+        {
+          "en": [
+            "Other status: select JSON or HTML",
+            "Set media type and byte length"
+          ],
+          "ko": [
+            "그 외: JSON·HTML 본문 선택",
+            "미디어 타입·바이트 길이 설정"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Write headers and body",
+            "Check each response independently"
+          ],
+          "ko": [
+            "헤더·본문 전송",
+            "각 응답 조건을 구분해 확인"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2021-07-23-app-diagrams.net",
+      "title": {
+        "en": "Three-node XML example",
+        "ko": "XML 노드 3개 예제"
+      },
+      "description": {
+        "en": "This overview has the same node order and edges as the article’s uncompressed XML. It is not an editor export.",
+        "ko": "본문의 압축하지 않은 XML과 같은 노드 순서·연결을 표시한 그림이며 편집기에서 내보낸 결과는 아닙니다."
+      },
+      "codeContract": [
+        {
+          "language": "xml",
+          "contains": "<mxfile"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Request",
+            "Input node"
+          ],
+          "ko": [
+            "Request",
+            "입력 노드"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Validate",
+            "Intermediate node"
+          ],
+          "ko": [
+            "Validate",
+            "중간 노드"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Response",
+            "Output node"
+          ],
+          "ko": [
+            "Response",
+            "출력 노드"
+          ],
+          "kind": "result"
+        }
+      ]
+    },
+    {
+      "key": "2021-08-06-search-github",
+      "title": {
+        "en": "Scope and verify a code search",
+        "ko": "코드 검색 범위와 문맥 확인"
+      },
+      "description": {
+        "en": "Choose accessible data, narrow the query and inspect the intended revision. Use a local fixed-string search to reproduce file-scope behavior.",
+        "ko": "접근 가능한 데이터를 선택하고 검색 조건을 좁힌 뒤 필요한 리비전을 확인합니다. 로컬 고정 문자열 검색으로 파일 범위 동작을 재현합니다."
+      },
+      "codeContract": [
+        {
+          "language": "sh",
+          "contains": "git grep -n -F"
+        }
+      ],
+      "steps": [
+        {
+          "en": [
+            "Choose an accessible repository",
+            "Identify the revision you need"
+          ],
+          "ko": [
+            "접근 가능한 저장소 선택",
+            "필요한 리비전 확인"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Use the selected tool syntax",
+            "Narrow repo, language and path"
+          ],
+          "ko": [
+            "도구에 맞는 검색 문법 사용",
+            "저장소·언어·경로 범위 제한"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Open a matching source file",
+            "Read surrounding code and tests"
+          ],
+          "ko": [
+            "일치한 소스 파일 열기",
+            "주변 코드·테스트 읽기"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Local git grep -F with path scope",
+            "Compare the tracked-file results"
+          ],
+          "ko": [
+            "로컬 git grep -F에 경로 지정",
+            "추적 파일의 검색 결과 비교"
+          ],
+          "kind": "process"
+        },
+        {
+          "en": [
+            "Check version, license and behavior",
+            "Before adapting the example"
+          ],
+          "ko": [
+            "예제 적용 전 버전·라이선스 확인",
+            "필요한 동작을 별도로 검증"
+          ],
+          "kind": "result"
+        }
+      ]
+    }
+  ]
+}

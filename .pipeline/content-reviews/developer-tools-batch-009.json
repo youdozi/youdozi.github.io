@@ -1,0 +1,533 @@
+{
+  "createdAt": "2026-10-27T05:57:47.842289+00:00",
+  "purpose": "Rewrite three screenshot-oriented utility archives into six paired practical guides with runnable or structurally checked examples and localized flow figures.",
+  "topics": [
+    "2021-07-20-http-status-test",
+    "2021-07-23-app-diagrams.net",
+    "2021-08-06-search-github"
+  ],
+  "manuscripts": 6,
+  "newEnglishEditions": 3,
+  "newFlowAssets": 6,
+  "registeredTechnicalTopics": 29,
+  "generatedFlowAssets": 58,
+  "publicationApprovalAtPreparation": null,
+  "publication": "Draft review only; no new batch content deployed before approval.",
+  "previousPR": {
+    "number": 62,
+    "mergeCommit": "9fd85b0ccedd8562a1339cf9bda542aed2290eab",
+    "productionRun": 40456797558,
+    "deploymentJob": 122033077535,
+    "deployment": "success",
+    "liveArticlePages": 32,
+    "liveSVGAssets": 32,
+    "indexNow": {
+      "changedUrls": 32,
+      "httpStatus": 200
+    },
+    "limits": "Notification acceptance is not actual indexing."
+  },
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "newEnglishPublicationPolicy": {
+    "preparedAt": "2026-10-27T05:47:47.001Z",
+    "refreshFirstEnglishPublishedAtAndUpdatedAtAfterApproval": true,
+    "preserve": "All Korean original publication dates, routes, translation keys, legacy source references and archive body hashes; reviewed article bodies stay unchanged during publication metadata refresh."
+  },
+  "selection": {
+    "scope": "Three related Korean-only utility articles with outdated UI/screenshot-led descriptions and limited reproducibility.",
+    "limits": "No search-demand or ranking improvement measured."
+  },
+  "sourceVerification": {
+    "method": "Primary documentation pages opened and relevant contracts checked in this writing session.",
+    "sources": [
+      "https://docs.python.org/3/library/http.server.html",
+      "https://www.rfc-editor.org/rfc/rfc9110.html#section-8.6",
+      "https://www.drawio.com/docs/manual/editor/save-file-formats/",
+      "https://www.drawio.com/docs/manual/advanced/diagram-source-edit/",
+      "https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax",
+      "https://sourcegraph.com/docs/code-search/queries",
+      "https://git-scm.com/docs/git-grep"
+    ],
+    "scope": "HTTP204 framing, standard HTTP server APIs, uncompressed drawio format/page fragment distinction, hosted query syntax and local fixed-string search."
+  },
+  "review": {
+    "type": "Two-pass self AI review of facts/code/bilingual meaning, then each article and rendered diagrams as standalone content.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "severity": "major",
+        "issue": "Screenshot-led external status response examples did not provide a stable local reproduction.",
+        "resolution": "Provide a full localhost Python fixture with15 real HTTP response cases and3 CLI port errors; distinguish200 HTML, JSON error status and204."
+      },
+      {
+        "severity": "major",
+        "issue": "A204 response must not include Content-Length even when its value would be0.",
+        "resolution": "Terminate headers before any body framing, assert no body/Content-Length/Content-Type for the fixture204 route, and link RFC9110 section8.6."
+      },
+      {
+        "severity": "major",
+        "issue": "The existing terminal marker used an error cross for every early return, misleading for successful204.",
+        "resolution": "Add validated branch.outcome=complete and green check for successful early return; defaults preserve error exits. Cover success/error distinction in regression."
+      },
+      {
+        "severity": "minor",
+        "issue": "An existing dotted slug could not pass the old diagram-key allowlist.",
+        "resolution": "Accept single internal dots between alphanumeric components while rejecting repeated dots, slashes, percent escapes and trailing dots."
+      },
+      {
+        "severity": "minor",
+        "issue": "Original drawio/search descriptions generalized old cloud integration and extension screens.",
+        "resolution": "Replace them with explicit XML source handling and query/local Git procedures, keeping UI/export/live hosted-search limits clear."
+      },
+      {
+        "severity": "minor",
+        "issue": "A long filename heading wrapped awkwardly on mobile.",
+        "resolution": "Use a short Korean XML heading and put the filename in the adjacent instruction."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "reviewedSha256": {
+      "src/content/posts/en/2021-07-20-http-status-test.md": "17fc1259b2d544e67a6e88fc19ad9ccb53860f093b2cb11b69be8d5f32712640",
+      "src/content/posts/ko/2021-07-20-http-status-test.md": "0b10c7d909503185a5ef8d0fdce4166c02704361e6a99cab7554c09061d84efc",
+      "src/content/posts/en/2021-07-23-app-diagrams.net.md": "e63456cb7fd28e4ff9f808594f87f3aaa06fecdadfe4d143dfa8b79a145615fc",
+      "src/content/posts/ko/2021-07-23-app-diagrams.net.md": "820a617be27c9f216770aac9eb88ba6a55ee82d1032dd863f8d6b840f7294211",
+      "src/content/posts/en/2021-08-06-search-github.md": "a2357066eacb31a59f1ea70ac73f84a27a4eff9a48324927d6ee26b292311cd5",
+      "src/content/posts/ko/2021-08-06-search-github.md": "3a27852e95754241a199fa93d771f0cbbe57a705c00ffa60a5768096bd95eac7",
+      "content/diagrams/workflows.json": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034",
+      "scripts/build_algorithm_diagrams.py": "6d59ea4c5bd03c1658cf8d15acea63e06874afa728f63babc87fd2092ee77468",
+      "scripts/test_algorithm_diagrams.py": "0d24812580bf422286bc62b23707ba0d8b75fa17fa717819d77e849065f73e57",
+      "scripts/check_developer_tool_examples.py": "28d9a19a95317775fb73609f9843cbd8bb1b14b013429a6c48ec6174e1220e51",
+      ".github/workflows/site-checks.yml": "62e935cc2e3a790378abc0a4aa0429fbb079d7b1e1b2990d5b974e6e7fe670c7",
+      "README.md": "52ff5842e5f3ffa4720c3a9212600c6ddcb8390462aca469dede6de51a2f3e32",
+      "docs/technical-writing.md": "a315fdbef6167241b49e587f49b449b0e4f9e98be9adb54a5cdbb4dcd75d6bb6"
+    }
+  },
+  "validation": {
+    "pairedExampleExecution": {
+      "httpResponseCases": 15,
+      "invalidPortCLICases": 3,
+      "drawioVertices": 3,
+      "drawioDirectedEdges": 2,
+      "editorUIOrExportExecuted": false,
+      "localGitSearchCases": 5,
+      "liveHostedSearchExecuted": false
+    },
+    "nodeTestsPassed": 27,
+    "pythonTestsPassed": 159,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "astroHints": 0,
+    "htmlPages": 898,
+    "sitemapUrls": 445,
+    "englishListedEntries": 90,
+    "koreanListedEntries": 289,
+    "seoAudit": {
+      "articleResults": [
+        {
+          "url": "https://youdozi.github.io/en/posts/2021-07-20-http-status-test/",
+          "language": "en",
+          "title": "Test HTTP Status Codes Locally with a Small Python Server",
+          "htmlSha256": "2b08de1f1dffab1b95b82130e7e447b8c887bb2767541502b582fcbc6dfa82eb",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2021-07-20-http-status-test/",
+          "language": "ko",
+          "title": "HTTP 상태 코드 로컬 테스트: Python 서버로 응답 계약 확인하기",
+          "htmlSha256": "0c16d4857011fd8dede89b1b5b0873a57465aad0127cda38c51fe5ad4d932def",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2021-07-23-app-diagrams.net/",
+          "language": "en",
+          "title": "Keep Editable draw.io Sources Alongside Shared Diagrams",
+          "htmlSha256": "61e1252c678b6bceaa6164c6fb04dcae20760a26b21bead8a352edd13435d8fa",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2021-07-23-app-diagrams.net/",
+          "language": "ko",
+          "title": "draw.io 다이어그램 관리: 편집 원본과 공유 이미지를 함께 보관하기",
+          "htmlSha256": "4a4d20a73ca7daa32a43cfda24a6be6849392ec8dacab3864e3c0906b872ec76",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/posts/2021-08-06-search-github/",
+          "language": "en",
+          "title": "Search Code with GitHub, Sourcegraph and Local Git",
+          "htmlSha256": "0be7e05d4cf1911b3475d126be44d5272778d6f17d77db1afa84291c8584e158",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/posts/2021-08-06-search-github/",
+          "language": "ko",
+          "title": "GitHub·Sourcegraph 코드 검색: 저장소·경로를 좁히고 로컬에서 확인하기",
+          "htmlSha256": "55841fd1eaed2b49254612cdc081c9ee638072641fc2cf1d2ef8df54fdc33c00",
+          "result": "passed"
+        }
+      ],
+      "sitemapUrls": 445,
+      "result": "passed"
+    },
+    "browserAudit": [
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-plus-minus-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-22-dot-product-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-interval-num-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-number-word-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-19-new-id-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-pair-delete-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-unsuccessful-runner-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-en.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-29-ponkemon-ko.svg",
+        "labels": 8,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-24-fail-percentage-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-en.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-17-cache-ko.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-07-springboot-initializer-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-08-springboot3-migration-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-09-springboot3-querydsl-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-10-springboot-intellij-import-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-13-springboot-history-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-15-springboot-intellij-lombok-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-en.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-19-springboot-test-webclient-ko.svg",
+        "labels": 18,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-en.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-27-springbatch5-migration-ko.svg",
+        "labels": 12,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-multiple-gradle-build-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-27-parse-yaml-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-en.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-linux-shellscript-function-error-ko.svg",
+        "labels": 13,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-11-17-linux-shellscript-version-compare-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-en.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-linux-shellscript-github-latest-ko.svg",
+        "labels": 16,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-10-10-temurin-jdk21-delay-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-en.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-20-jdk-21-release-ko.svg",
+        "labels": 10,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-en.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2023-09-23-jdk-21-string-templates-ko.svg",
+        "labels": 9,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-http-status-test-en.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-20-http-status-test-ko.svg",
+        "labels": 14,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-app-diagrams.net-en.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-07-23-app-diagrams.net-ko.svg",
+        "labels": 7,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-06-search-github-en.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "path": "/assets/diagrams/2021-08-06-search-github-ko.svg",
+        "labels": 11,
+        "result": "passed"
+      },
+      {
+        "lang": "en",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 420
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "ko",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 353.984375
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "en",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 354
+          }
+        ],
+        "result": "passed"
+      },
+      {
+        "lang": "ko",
+        "width": 390,
+        "scrollWidth": 390,
+        "diagram": [
+          {
+            "complete": true,
+            "naturalWidth": 420,
+            "width": 354
+          }
+        ],
+        "result": "passed"
+      }
+    ],
+    "screenshotsReviewed": [
+      "HTTP English desktop1280px",
+      "drawio Korean mobile390px",
+      "search English mobile390px",
+      "HTTP Korean mobile390px"
+    ],
+    "newCIRequirement": "Execute paired local HTTP, drawio XML and Git search examples before JVM checks."
+  },
+  "limits": [
+    "XML structure/relationship checks are not editor UI or export round-trip tests.",
+    "Hosted GitHub/Sourcegraph result counts and index coverage not executed or guaranteed.",
+    "HTTP fixture models a fixed GET response contract, not TLS, latency, authentication or retry scheduling.",
+    "Structural code/diagram checks do not prove semantic correctness."
+  ]
+}

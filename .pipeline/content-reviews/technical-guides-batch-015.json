@@ -1,0 +1,555 @@
+{
+  "createdAt": "2026-10-27T08:27:49.346584+00:00",
+  "purpose": "Connect published technical articles through bilingual learning indexes and ordered shell/JDK/tool category guides, preserving canonical category routes.",
+  "baseCommit": "8503456e0db5536f52bf9df0995b52137a355e40",
+  "branch": "content/technical-guides-batch-015",
+  "scope": {
+    "newHubPages": 2,
+    "upgradedCategoryGuidePages": 6,
+    "existingGuidePagesRegressionChecked": 4,
+    "topicPathsPerLanguage": 5,
+    "articlesPerLanguageInPaths": 29,
+    "articleReturnLinks": 58,
+    "newHTMLRoutes": 2,
+    "addedCanonicalSitemapURLs": 8
+  },
+  "publicationApprovalAtPreparation": null,
+  "publication": "Draft only. PR66 and PR67 remain separate pending work and are not included in this main-based branch. No merge or deployment.",
+  "skills": [
+    "tech-blog-writing"
+  ],
+  "contentBasis": "Existing main-branch article titles/descriptions and documented example limits. This task adds navigation/overview copy, not a new technical tutorial, invented code example or ranking claim.",
+  "preserved": [
+    "All article source files, publication/update dates and original provenance",
+    "Existing algorithm and Spring Boot category URLs, learning order and schemas",
+    "Unsupported locales do not acquire guide routes, hreflang or navigation links"
+  ],
+  "review": {
+    "type": "Two-pass self AI review: reading-order and scope copy against existing articles, then actual generated links/schema/sitemaps and browser rendering.",
+    "independentSession": false,
+    "humanReview": false,
+    "findings": [
+      {
+        "issue": "A guide registry could create unsupported locale or future/example links.",
+        "resolution": "Filter actual eligible articles and use the same registry for routes, navigation, alternates, schema and sitemap; test partial inventories and unknown/prototype keys."
+      },
+      {
+        "issue": "Same-name tags could hide return links to curated categories.",
+        "resolution": "Keep category guide links and localized labels for all registered paths; verify58 rendered article return links."
+      },
+      {
+        "issue": "New guide index URLs were outside the existing IndexNow route validator.",
+        "resolution": "Allow only native en/ko guide indexes while requiring actual canonical sitemap pages; reject unavailable-language and nested/private paths."
+      },
+      {
+        "issue": "The extra header link could overflow a narrow phone screen.",
+        "resolution": "Allow navigation wrapping and verify320px,390px and1280px viewports."
+      },
+      {
+        "issue": "Guide counts can read unnaturally or drift from actual data.",
+        "resolution": "Derive counts from the selected entries and use Korean 편 and English singular/plural article labels."
+      }
+    ],
+    "unresolvedCriticalOrMajorFindings": [],
+    "reviewedSha256": {
+      "README.md": "9b041e44a999701b9d9308bdac6b88537c825fc9ae763fff191f20a320bbb15a",
+      "package.json": "1255d23de0c10a0ad33812a2ec336d77e5ed8cb953c62a1e5117cde257ca3e76",
+      "scripts/indexnow.py": "e1b75e0deebe645d627a7524a1f8e461cc20f1f40412208251388195ee7742da",
+      "scripts/test-site.mjs": "a608bfc68eca8b2c36caa3638beb90e742c736bf92062a423d9815517db873e0",
+      "scripts/test_indexnow.py": "133c6422052f675f560293f070df2b718b94c55601813b6e417683fcad8c369d",
+      "src/components/Article.astro": "876cb5cc50886e8f74db3317ca2b71006bef53bbf443bb32cc2e400f967f019f",
+      "src/components/CategoryGuide.astro": "7e2e3b57f7594f7fb1691a87ad0da7b5debe15f28db1e51a579dc798b208895a",
+      "src/layouts/Base.astro": "292ca8afcb2b0796776eb195ab726c0be7600d906676f1f89448ac6573a78cf4",
+      "src/pages/[lang]/[taxonomy]/[term].astro": "16c515d041cf4826aba2f266347f028e869868292848c9fb8d27188b6b55605d",
+      "src/pages/[lang]/[taxonomy]/index.astro": "433195c32332c180f6f6d8f7bbd25959676663a50667055791765fc19f047c71",
+      "src/pages/sitemap.xml.ts": "203be2cf946274bffecef1be7f8cc9af76af381cdb632e5cbe0bccff6c8618e8",
+      "src/styles/global.css": "91b87e167f72305027157393fafdc9a116bfa2f923ab0202caa081675b088a62",
+      "scripts/test-technical-guides.mjs": "75653122dd06c825a394276993bc78897d52a8bae50976846e86c0ed8c8a28b1",
+      "src/lib/technical-guides.ts": "7524d208413698df79979d4aa83df966c8bbe38f174ce416529bced832f4bacc",
+      "src/pages/[lang]/guides/index.astro": "4cbc0346b0e9a48914fbe6b1171508dfb7876f46c770bfbe7d7efe11556df644"
+    }
+  },
+  "validation": {
+    "pythonTests": 160,
+    "nodeTests": 36,
+    "astroDiagnostics": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "HTML": 914,
+    "sitemapURLs": 458,
+    "articleCounts": {
+      "en": 93,
+      "ko": 289
+    },
+    "seo": {
+      "guidePagesVerified": 12,
+      "articleReturnLinks": 58,
+      "sitemapUrls": 458,
+      "pages": [
+        {
+          "url": "https://youdozi.github.io/en/guides/",
+          "items": 5,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "c1dd48b1c909b7be3f857e2a52bb78829baa95222e5250801dcd3b07886fece6",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/coding-test/",
+          "items": 10,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "4158db90a8381d857153ab92337f3114677541bf86e761c7a205774809280971",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/springboot/",
+          "items": 9,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "d1a9b3aeec3ee19640395bcb5ad94b231380d744335f66c362daf602c9cfe2ae",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/linux/",
+          "items": 4,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "91d6ea684d097e8f4aea2957085902359e9b788135236dd40437c1e88712aab2",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/jdk/",
+          "items": 3,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "3b5270b9cffc1e6f63dd989c27f8d1fc91c9cae798357dc5f5b3a5738fee92ec",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/en/categories/util/",
+          "items": 3,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "55450406fdb1733ae98e0848d86afdae2a41bacabd5ce0b9dc9289860550bcac",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/guides/",
+          "items": 5,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "8b884bcc16a27c7f11eb3c00f975201ab5969c6f8beb0b817aebb2a2aacaa4c3",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/coding-test/",
+          "items": 10,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "6a590d75c8970f4c2def855a6bcbafc5ddc270a45818952d223f5009b85a5b93",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/springboot/",
+          "items": 9,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "afda33c81b7c7c7c6cdae6df4f0c6610e7be33385a4ffc9d44c8b83dc03bba59",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/linux/",
+          "items": 4,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "85e94f31798f67a4eeead8d4b3fed0a9b17988a51059d3ef6c23e991a9141cfd",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/jdk/",
+          "items": 3,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "9de506c0b6fdbf8d456edc736c4c0366c2817d36b6be0464df119072a001e468",
+          "result": "passed"
+        },
+        {
+          "url": "https://youdozi.github.io/ko/categories/util/",
+          "items": 3,
+          "collectionSchema": true,
+          "canonicalAndAlternates": true,
+          "sitemapLastmodMatches": true,
+          "sha256": "213269cf56e2d056d74beaa52c6e8b153004d6a3b33d1c1e235a5c64fb1db3e8",
+          "result": "passed"
+        }
+      ],
+      "noUnavailableGuides": true,
+      "result": "passed"
+    },
+    "browser": [
+      {
+        "path": "/en/guides/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 5,
+        "result": "passed"
+      },
+      {
+        "path": "/en/guides/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 5,
+        "result": "passed"
+      },
+      {
+        "path": "/en/guides/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 5,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/coding-test/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/coding-test/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/coding-test/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/springboot/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/springboot/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/springboot/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/linux/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/linux/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/linux/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/jdk/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/jdk/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/jdk/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/util/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/util/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/en/categories/util/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/guides/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 5,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/guides/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 5,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/guides/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 5,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/coding-test/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/coding-test/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/coding-test/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/springboot/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/springboot/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/springboot/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/linux/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/linux/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/linux/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/jdk/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/jdk/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/jdk/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/util/",
+        "width": 320,
+        "scrollWidth": 320,
+        "header": 284,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/util/",
+        "width": 390,
+        "scrollWidth": 390,
+        "header": 354,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ko/categories/util/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "header": 1120,
+        "hubLink": true,
+        "cards": 0,
+        "result": "passed"
+      },
+      {
+        "path": "/ja/",
+        "width": 320,
+        "result": "passed",
+        "noUnavailableGuide": true
+      }
+    ],
+    "screenshotsReviewed": [
+      "EN guide index1280px",
+      "KO guide index390px",
+      "EN shell guide320px"
+    ],
+    "commands": [
+      "npm run test:python",
+      "npm test",
+      "npm run check",
+      "npm run build",
+      "git diff --check"
+    ],
+    "CI": "Mandatory existing example checkers run again on the exact PR head; final result recorded separately."
+  },
+  "limits": [
+    "Guide collection pages are not BlogPosting entries and are not injected into article RSS/search indexes.",
+    "Internal linking, metadata and sitemap correctness do not prove external crawling, indexing, impressions or ranking gains.",
+    "Existing code examples are linked; this change does not expand their recorded execution or environment guarantees.",
+    "No publication or external search-engine submission is performed."
+  ]
+}

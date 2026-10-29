@@ -1,12 +1,17 @@
 ---
 import Listing from '../../../components/Listing.astro';
-import { entries, languages, taxonomySlug, taxonomyUrl, type Language } from '../../../lib/content';
+import CategoryGuide from '../../../components/CategoryGuide.astro';
+import {categoryGuide,categoryGuideAlternates} from '../../../lib/technical-guides';
+import { entries, publishedLanguages, taxonomySlug, taxonomyUrl, type Language } from '../../../lib/content';
 export async function getStaticPaths() {
   const all = await entries();
-  return languages.flatMap(lang => (['categories','tags'] as const).flatMap(taxonomy => [...new Set(all.filter(e => e.language === lang).flatMap(e => e[taxonomy]))].map(term => ({ params: { lang, taxonomy, term: taxonomySlug(term) }, props: { term } }))));
+  return (await publishedLanguages()).flatMap(lang => (['categories','tags'] as const).flatMap(taxonomy => [...new Set(all.filter(e => e.language === lang).flatMap(e => e[taxonomy]))].map(term => ({ params: { lang, taxonomy, term: taxonomySlug(term) }, props: { term } }))));
 }
 const lang = Astro.params.lang as Language;
 const kind = Astro.params.taxonomy as 'categories' | 'tags';
 const term = Astro.props.term as string;
+const all = await entries();
+const guide = kind === 'categories' ? categoryGuide(term,lang,all) : undefined;
+const alternates = guide ? categoryGuideAlternates(term,all) : [];
 ---
-<Listing items={(await entries()).filter(e => e.language === lang && e[kind].includes(term))} lang={lang} title={term} root={taxonomyUrl(lang,kind,term)} />
+{guide ? <CategoryGuide guide={guide} alternates={alternates} /> : <Listing items={all.filter(e => e.language === lang && e[kind].includes(term))} lang={lang} title={term} root={taxonomyUrl(lang,kind,term)} />}

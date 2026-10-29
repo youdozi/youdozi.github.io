@@ -31,18 +31,66 @@ jobs:
       - run: npm ci
       - name: Python collection and bilingual evidence tests
         run: npm run test:python
+      - name: Execute paired local HTTP, drawio XML and Git search examples
+        run: python3 -B scripts/check_developer_tool_examples.py
+      - name: Select the archived Ruby example runtime
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2.2'
+          bundler: '2.4.19'
+      - name: Render the isolated legacy Jekyll bundle and run native compiler probes
+        run: python3 -B scripts/check_ruby_environment_examples.py --install
+      - name: Start, recreate and restore disposable Jenkins Docker controllers
+        env:
+          # Verified by the successful production run 40643062477; keep CI reproducible.
+          JENKINS_IMAGE: jenkins/jenkins@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+        run: python3 -B scripts/check_jenkins_examples.py
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
       - name: Compile and execute published algorithm examples
         run: npm run test:articles
+      - name: Compile and execute published standard string formatting example
+        run: python3 -B scripts/check_string_formatting_examples.py
+      - name: Install the WebClient example's reproduction Gradle version
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.4'
+      - name: Compile and execute published WebClient response contracts
+        run: python3 -B scripts/check_webclient_example.py
+      - name: Generate Q types and compare Querydsl and Specification contracts twice from clean
+        run: python3 -B scripts/check_query_strategies.py
+      - name: Execute the published shell automation examples with local HTTP fixtures
+        run: python3 -B scripts/check_shell_automation_examples.py
+      - name: Build both Vue apps and verify the executable JAR serves current assets
+        run: python3 -B scripts/check_multi_frontend_example.py
+      - name: Check Batch 5 parameter persistence and failed-step restart
+        run: python3 -B scripts/check_jvm_runtime_examples.py --part batch
+      - name: Install the YAML example's pinned parser
+        run: python3 -m pip install -r scripts/requirements-config-examples.txt
+      - name: Execute YAML and Temurin metadata input contracts offline
+        run: python3 -B scripts/check_config_input_examples.py
+      - name: Verify Boot project stages, Lombok processors and executable HTTP JAR
+        run: python3 -B scripts/check_boot_workflow_examples.py
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Compile final JDK 21 features without preview flags
+        run: python3 -B scripts/check_jvm_runtime_examples.py --part jdk
       - name: Migration regression tests
         run: npm test
+      - name: Verify local browser checks block Analytics collection
+        run: npm run check:browser-isolation
       - name: Check Astro types and content schemas
         run: npm run check
       - name: Build and check generated pages, assets and internal links
         run: npm run build
+      - name: Render pending translations in a disposable snapshot without publication
+        run: npm run check:translation-preview
+      - name: Check the committed translation review packet without writing an artifact
+        run: npm run check:translation-review
       - uses: actions/upload-artifact@v4
         with:
           name: site-build-output

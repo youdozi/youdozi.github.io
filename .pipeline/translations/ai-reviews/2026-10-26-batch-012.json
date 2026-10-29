@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T14:28:02.348760+00:00",
+  "skill": "tech-blog-writing",
+  "reviewMethod": "independent-ai-session-and-targeted-recheck",
+  "reviewSession": "batch012_review",
+  "writingConversationProvidedToReviewer": false,
+  "previousVerdictsProvidedAtInitialReview": false,
+  "scope": {
+    "editions": 25,
+    "sources": 5,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "title",
+      "claims",
+      "followUp",
+      "reviewFocus"
+    ],
+    "audience": "software developers",
+    "type": "concise historical-news translations",
+    "steps": [
+      "Read all target-language prose before source comparison",
+      "Compare all fields to approved English edition and stored evidence",
+      "Writer applies seven source-supported corrections",
+      "Reviewer rechecks seven changed fields; six resolved and Japanese modifier clarity still requires correction",
+      "Writer applies an additional Japanese clarity correction and reviewer rechecks only that field"
+    ]
+  },
+  "initialBatchSha256": {
+    ".pipeline/translations/batches/renewals-012.json": "9c58c4d4cd312c3b1b8fafaa95075829c9ddc9371ee4e5db7f4b6788ae25d0e9"
+  },
+  "intermediateRecheckBatchSha256": {
+    ".pipeline/translations/batches/renewals-012.json": "72250506f2cac67472616f4280ffc763f02299fb85f20bb3c896ef434945f8a7"
+  },
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/renewals-012.json": "2b3dcee3d80fa075b3766d3a755a779f59d2272938c4e12338e5b8fe26eeac17"
+  },
+  "sourceSha256": {
+    "src/content/renewals/e467e85426c883ef.json": "85388315395612fd0b203f1c8662e350850e5e1263727f90924ddde149713275",
+    "src/content/renewals/e858b2ec6331d84e.json": "e4b70a6fc6d35606838421976f1050b63498349722d6b7f92cf2a30ec1bb80ef",
+    "src/content/renewals/ecc191be72688d94.json": "a682bd963a0bc311b5685aba15f0c64d59032065c00746cd010f516003e2a72a",
+    "src/content/renewals/eea31f00e6ce7be1.json": "937924fee65e945c33a3709273a9af1e7be8b6b1e78cb48bf933fe5cf0bc9324",
+    "src/content/renewals/f05ff63990b375e2.json": "3a539623a2fddb7235a54c048a3e134dd1ec279402184126ca15076a9b758a4c"
+  },
+  "findings": [
+    {
+      "renewalId": "eea31f00e6ce7be1",
+      "language": "ja",
+      "fields": [
+        "edition.claims[0]"
+      ],
+      "severity": "major",
+      "origin": "independent-review",
+      "resolution": "sensitive actions의 범위를 기밀성에 한정하지 않도록 보안상 중요한 작업으로 수정",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "e858b2ec6331d84e",
+      "language": "fr",
+      "fields": [
+        "reviewFocus"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "식별자와 구분해 인증 정보의 권한 범위를 명확히 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "medium",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "eea31f00e6ce7be1",
+      "language": "fr",
+      "fields": [
+        "edition.claims[1]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "검색 메커니즘의 악용이라는 뜻을 명확히 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "e467e85426c883ef",
+      "language": "ja",
+      "fields": [
+        "edition.claims[0]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "코호트 형식을 복원하고 추가 교정에서 그룹 학습과 진행자 수식을 별도 문장으로 분리",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "e467e85426c883ef",
+      "language": "ru",
+      "fields": [
+        "edition.claims[0]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "안내 형식의 확인과 품질에 대한 독립적 근거를 구별하는 문장의 문법을 수정",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "ecc191be72688d94",
+      "language": "fr",
+      "fields": [
+        "reviewFocus"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "데이터의 한계가 아닌 데이터 접근 및 처리의 경계를 명확히 표현",
+      "disposition": "adopted after source comparison",
+      "confidence": "medium",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "eea31f00e6ce7be1",
+      "language": "fr",
+      "fields": [
+        "edition.claims[0]"
+      ],
+      "severity": "minor",
+      "origin": "independent-review",
+      "resolution": "불필요한 우회 표현을 줄이고 발언자의 이름으로 귀속을 명시",
+      "disposition": "adopted after source comparison",
+      "confidence": "high",
+      "recheck": "resolved"
+    }
+  ],
+  "additionalTargetedCorrection": {
+    "renewalId": "e467e85426c883ef",
+    "language": "ja",
+    "field": "edition.claims[0]",
+    "severity": "minor",
+    "reason": "Cohort information restored but consecutive modifiers remained awkward",
+    "resolution": "Separate cohort description and facilitator into sentences while retaining evidence limitation",
+    "recheck": "resolved"
+  },
+  "result": "No unresolved findings in the reviewed scope; seven changed fields rechecked, with one extra targeted clarity pass",
+  "externalSourceRevalidation": false,
+  "nativeSpeakerOrHumanLanguageReview": false,
+  "publicationApprovalGranted": false,
+  "limitations": [
+    "AI review does not guarantee accuracy.",
+    "Approved English and stored evidence were compared; current external facts were not revalidated.",
+    "Publication requires explicit user approval.",
+    "Remaining 15 translations have not been drafted or reviewed."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "7c3a8ce4dcd53d2b",
+  "language": "es",
+  "sourceSha256": "028568ccc86fcabc5724427acb20d268196da1f1eb48bfcc7f8a94a9b4d40d66",
+  "edition": {
+    "title": "Diseño multirregión: compromisos entre replicación, escrituras y conmutación por error",
+    "claims": [
+      "El autor del artículo contrapone las regiones active-active que atienden solicitudes de forma independiente a un diseño que sirve las lecturas localmente, pero reenvía las escrituras remotas a una región de escritura global. Los compromisos incluyen la replicación, la gestión de conflictos y la latencia de escritura entre regiones.",
+      "Para el funcionamiento active-passive, el autor describe una región principal que atiende el tráfico y una secundaria que recibe replicación continua. El artículo advierte de que las rutas de conmutación por error que no se han probado pueden fallar y recomienda incorporar el comportamiento medido de la conmutación a la planificación. Aquí se excluyen los porcentajes de ahorro y las estimaciones de recuperación de la latencia que presenta."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Esta revisión se limita al análisis del diseño que hace el autor y no constituye un modelo de costes universal. Mida la distribución geográfica de la carga, los requisitos de consistencia, el comportamiento de recuperación y el esfuerzo operativo antes de elegir una arquitectura regional.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T22:53:32.255Z",
+  "publishedAt": "2026-10-26T22:53:32.255Z",
+  "updatedAt": "2026-10-26T22:53:32.255Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 51,
+    "approvedAt": "2026-10-26T22:53:32.255Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after the final report linking the six independently reviewed Spanish articles from PR #51 and stating that Spanish publication awaited approval."
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T15:39:07.326395+00:00",
+  "skill": "translate",
+  "reviewMethod": "independent-ai-session-and-targeted-recheck",
+  "reviewSession": "/root/release002_review",
+  "writingConversationProvidedToReviewer": false,
+  "previousVerdictsProvidedAtInitialReview": false,
+  "scope": {
+    "sources": 5,
+    "editions": 25,
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru"
+    ],
+    "fields": [
+      "edition.title",
+      "edition.claims",
+      "edition.followUp",
+      "reviewFocus"
+    ],
+    "type": "complete translations of approved concise English renewals; shared original evidence is untranslated"
+  },
+  "initialBatchSha256": "d52dee50bbb4d1c405da7901256132f32925a0abbcf8c03478ed81614b087793",
+  "reviewedBatchSha256": {
+    ".pipeline/translations/batches/renewals-002.json": "a2cab464ac4fb2320062884d5e540eb07b7fcc7fa42cdf1fb77d30b13c9063c7"
+  },
+  "sourceSha256": {
+    "src/content/renewals/0915f64eb6629c85.json": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+    "src/content/renewals/097c455a9b953f24.json": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+    "src/content/renewals/09e0d0ec5ed64f8a.json": "5c97c6f02a9a1f0f2521a7fb7169e71e10b5dc78aeb94851759c52a1b403fc3c",
+    "src/content/renewals/0a337adda878feca.json": "a9e6e989d6a832f442d123f3feebbdb71115d5b729fe8295f9487eb2bc32c1da",
+    "src/content/renewals/1c1c9e6c82aad3a4.json": "0161ea0bc00dd4143dcae0a736bff8e87ef419e98f52a7ba6a94dc68db66158f"
+  },
+  "findings": [
+    {
+      "renewalId": "097c455a9b953f24",
+      "language": "fr",
+      "field": "edition.title",
+      "severity": "style",
+      "finding": "모델이 기능을 추가한다는 표현이 번역투임",
+      "resolution": "모델이 사용자 정의 정화기·검증기를 지원한다고 자연스럽게 표현",
+      "confidence": "medium",
+      "disposition": "adopted after source comparison",
+      "recheck": "resolved"
+    },
+    {
+      "renewalId": "0915f64eb6629c85",
+      "language": "de",
+      "field": "edition.claims[0]",
+      "severity": "style",
+      "finding": "zum 2026-05-15보다 독일어 날짜 표현이 자연스러울 수 있음",
+      "resolution": "원문의 ISO 날짜와 프로젝트 날짜·숫자 대조 규약을 유지하기 위해 현재 표기를 보존함. 필수 의미 수정 사항은 아님.",
+      "confidence": "high",
+      "disposition": "not adopted; optional style only",
+      "recheck": "not required; original passed initial review"
+    }
+  ],
+  "languageResults": {
+    "zh-CN": {
+      "editionsReviewed": 5,
+      "result": "passed in stated translation scope"
+    },
+    "ja": {
+      "editionsReviewed": 5,
+      "result": "passed in stated translation scope"
+    },
+    "de": {
+      "editionsReviewed": 5,
+      "result": "passed in stated translation scope"
+    },
+    "fr": {
+      "editionsReviewed": 5,
+      "result": "passed in stated translation scope"
+    },
+    "ru": {
+      "editionsReviewed": 5,
+      "result": "passed in stated translation scope"
+    }
+  },
+  "recheckScope": "changed French title for 097c455a9b953f24 only; unchanged fields retain initial review",
+  "verification": {
+    "method": "temporary synthetic approval fixtures, removed after local tests; no deployment",
+    "batchSha256": "a2cab464ac4fb2320062884d5e540eb07b7fcc7fa42cdf1fb77d30b13c9063c7",
+    "nodeTestsPassed": 15,
+    "astroCheckErrors": 0,
+    "astroCheckWarnings": 0,
+    "approvedFixtureTranslations": 25,
+    "existingApprovedTranslationsPreserved": 5,
+    "previewHtmlPagesExcludingOwnershipFiles": 815,
+    "previewCanonicalSitemapUrls": 413,
+    "indexNowChangedUrlCountInPreview": 50,
+    "articles": [
+      {
+        "renewalId": "0915f64eb6629c85",
+        "slug": "2026-05-09-copilot-grok-code-fast-retirement",
+        "correspondingLanguages": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "selfCanonical": true,
+        "reciprocalHreflang": true,
+        "englishXDefault": true,
+        "indexableRobots": true,
+        "localizedFeedsAndSearchIndexes": true
+      },
+      {
+        "renewalId": "097c455a9b953f24",
+        "slug": "2026-05-06-codeql-sanitizer-and-validator-models",
+        "correspondingLanguages": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "selfCanonical": true,
+        "reciprocalHreflang": true,
+        "englishXDefault": true,
+        "indexableRobots": true,
+        "localizedFeedsAndSearchIndexes": true
+      },
+      {
+        "renewalId": "09e0d0ec5ed64f8a",
+        "slug": "2026-05-16-copilot-grok-code-fast-retirement-confirmation",
+        "correspondingLanguages": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "selfCanonical": true,
+        "reciprocalHreflang": true,
+        "englishXDefault": true,
+        "indexableRobots": true,
+        "localizedFeedsAndSearchIndexes": true
+      },
+      {
+        "renewalId": "0a337adda878feca",
+        "slug": "2026-07-03-copilot-credit-pools-and-additional-spending",
+        "correspondingLanguages": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "selfCanonical": true,
+        "reciprocalHreflang": true,
+        "englishXDefault": true,
+        "indexableRobots": true,
+        "localizedFeedsAndSearchIndexes": true
+      },
+      {
+        "renewalId": "1c1c9e6c82aad3a4",
+        "slug": "2026-05-07-github-security-advisory-search",
+        "correspondingLanguages": [
+          "en",
+          "ko",
+          "zh-CN",
+          "ja",
+          "de",
+          "fr",
+          "ru"
+        ],
+        "selfCanonical": true,
+        "reciprocalHreflang": true,
+        "englishXDefault": true,
+        "indexableRobots": true,
+        "localizedFeedsAndSearchIndexes": true
+      }
+    ]
+  },
+  "restoredProductionBuild": {
+    "htmlPagesExcludingOwnershipFiles": 790,
+    "canonicalSitemapUrls": 388,
+    "approvedTranslations": 5,
+    "unpublishedCandidateTranslations": 25,
+    "temporaryCandidatesRemoved": true
+  },
+  "limitations": [
+    "AI review is not human or native-speaker review.",
+    "Reviewer did not independently validate current external-source facts or run builds.",
+    "The author ran the recorded local tests; synthetic approval fixtures are not user approval.",
+    "Candidate production indexing and visibility cannot be verified before publication."
+  ]
+}

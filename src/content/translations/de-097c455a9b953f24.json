@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "097c455a9b953f24",
+  "language": "de",
+  "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+  "edition": {
+    "title": "CodeQL: Datenbasierte Modelle erhalten eigene Sanitizer und Validatoren",
+    "claims": [
+      "GitHub beschreibt deklarative Sanitizer und Validatoren in CodeQL-YAML-Datenerweiterungen mithilfe von barrierModel und barrierGuardModel.",
+      "Die Ankündigung nennt CodeQL 2.25.2 als erste unterstützte Version. Dies ist die Mindestversion der damaligen Ankündigung und keine aktuelle Upgrade-Empfehlung."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Nur die Schwachstellenarten und Pfade modellieren, die der Sanitizer tatsächlich absichert. Positive und negative Beispiele testen, damit eine zu weit gefasste Barriere keine echten Taint-Flüsse verbirgt. Dieser Entwurf behauptet keine gemessene Verringerung von Fehlalarmen.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

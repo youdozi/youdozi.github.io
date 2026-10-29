@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "0915f64eb6629c85",
+  "language": "fr",
+  "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+  "edition": {
+    "title": "L’annonce du retrait de Grok Code Fast 1 précise le périmètre de Copilot",
+    "claims": [
+      "GitHub a annoncé le retrait prévu de Grok Code Fast 1 de Copilot le 2026-05-15. Il s’agit du calendrier annoncé, sans vérification indépendante de l’arrêt effectif.",
+      "L’avis indique que la date a été avancée en raison de l’abandon du modèle par son fournisseur."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Avant de modifier les processus de travail, recenser les noms de modèles propres à chaque produit et les dépendances aux règles d’administration. Vérifier la disponibilité actuelle et évaluer une solution de remplacement sur des tâches représentatives, plutôt que d’adopter automatiquement les modèles recommandés à l’époque.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

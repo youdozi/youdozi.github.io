@@ -1,0 +1,424 @@
+{
+  "schemaVersion": 1,
+  "state": "draft",
+  "batchId": "renewals-011",
+  "sourceLanguage": "en",
+  "reviewRequired": "AI meaning and target-language review; explicit user publication approval remains required.",
+  "preparation": {
+    "method": "assistant-direct-translation",
+    "externalTranslationApiUsed": false,
+    "skill": "tech-blog-writing"
+  },
+  "translations": [
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d17b2ae1f047cf94",
+      "language": "zh-CN",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "edition": {
+        "title": "云安全播客：受访者的隔离设计与学习建议",
+        "claims": [
+          "在文字稿中，Edera 联合创始人 Alex Zenla 描述了一种 zone 抽象，用于在虚拟机内隔离工作负载。这是供应商受访者对设计的叙述，并非经过独立测试的安全边界。",
+          "Zenla 描述了使用语言模型解释规范的做法，并强调必须理解最终得到的实现。访谈对现有基础设施的批评是受访者的工程观点，不能证明所有容器或 GPU 部署都不安全。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "通过文字稿评估受访者的论点，再根据自己的威胁模型验证隔离要求和失效模式。本摘要未进行沙箱逃逸、性能或 AI 硬件实验。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d17b2ae1f047cf94",
+      "language": "ja",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "edition": {
+        "title": "クラウドセキュリティのポッドキャスト：話者による隔離設計と学習の助言",
+        "claims": [
+          "書き起こしの中で、Edera の共同創業者 Alex Zenla は、仮想マシン内でワークロードを隔離する zone という抽象化を説明している。これはベンダー側の話者による設計の説明であり、独立したテストで確認されたセキュリティ境界ではない。",
+          "Zenla は、言語モデルに仕様を説明させる使い方を紹介し、得られた実装を理解することを重視している。インタビューでの既存インフラへの批判は話者のエンジニアリング上の見解であり、すべてのコンテナや GPU のデプロイが安全でないという証拠ではない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "書き起こしを使って話者の主張を評価し、その上で自分の脅威モデルに照らして隔離要件と障害モードを検証する。この要約では、サンドボックス脱出、性能、AI ハードウェアの実験は行っていない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d17b2ae1f047cf94",
+      "language": "de",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "edition": {
+        "title": "Cloud-Security-Podcast: Aussagen des Sprechers zu Isolation und Lernen",
+        "claims": [
+          "Im Transkript beschreibt Edera-Mitgründer Alex Zenla eine Zone-Abstraktion zur Isolation von Workloads innerhalb virtueller Maschinen. Dies ist die Designbeschreibung eines Sprechers des Anbieters, keine unabhängig getestete Sicherheitsgrenze.",
+          "Zenla beschreibt den Einsatz von Sprachmodellen zur Erklärung von Spezifikationen und betont, dass man die daraus entstandene Implementierung verstehen muss. Die Kritik an bestehender Infrastruktur im Interview ist eine dem Sprecher zuzuordnende technische Sichtweise, kein Beweis dafür, dass jede Container- oder GPU-Bereitstellung unsicher ist."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Anhand des Transkripts die Argumentation des Sprechers bewerten und anschließend Isolationsanforderungen und Fehlermodi am eigenen Bedrohungsmodell prüfen. Für diese Zusammenfassung wurden keine Experimente zu Sandbox-Ausbrüchen, Leistung oder KI-Hardware durchgeführt."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d17b2ae1f047cf94",
+      "language": "fr",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "edition": {
+        "title": "Podcast sur la sécurité cloud : propos de l’intervenant sur l’isolation et l’apprentissage",
+        "claims": [
+          "Dans la transcription, Alex Zenla, cofondateur d’Edera, décrit une abstraction appelée zone pour isoler les charges de travail à l’intérieur de machines virtuelles. Il s’agit du récit de la conception par un intervenant du fournisseur, et non d’une frontière de sécurité testée indépendamment.",
+          "Zenla décrit l’utilisation de modèles de langage pour expliquer des spécifications et souligne la nécessité de comprendre l’implémentation obtenue. Les critiques de l’infrastructure existante formulées dans l’entretien constituent un point de vue d’ingénierie attribué à l’intervenant, sans prouver que tout déploiement de conteneurs ou de GPU est peu sûr."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Utiliser la transcription pour évaluer l’argumentation de l’intervenant, puis valider les exigences d’isolation et les modes de défaillance au regard de son propre modèle de menace. Aucune expérience d’évasion de sandbox, de performance ou de matériel d’IA n’a été réalisée pour ce résumé."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d17b2ae1f047cf94",
+      "language": "ru",
+      "sourceSha256": "410170c7d752473379b2dee55f956529e93ed203a7bc9acce736eec6938bda01",
+      "edition": {
+        "title": "Подкаст об облачной безопасности: взгляды собеседника на изоляцию и обучение",
+        "claims": [
+          "В расшифровке сооснователь Edera Alex Zenla описывает абстракцию zone для изоляции нагрузок внутри виртуальных машин. Это рассказ представителя поставщика об устройстве системы, а не независимо проверенная граница безопасности.",
+          "Zenla рассказывает об использовании языковых моделей для объяснения спецификаций и подчёркивает необходимость понимать полученную реализацию. Критика существующей инфраструктуры в интервью — инженерная точка зрения собеседника, а не доказательство небезопасности любого развёртывания контейнеров или GPU."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Используйте расшифровку для оценки аргументов собеседника, затем проверьте требования к изоляции и режимы отказа с учётом собственной модели угроз. Для этого обзора не проводились эксперименты по выходу из песочницы, производительности или оборудованию для ИИ."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d92a8a6927fa76ff",
+      "language": "zh-CN",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "edition": {
+        "title": "Copilot 中 Gemini 的停用：计划公告与完成公告",
+        "claims": [
+          "GitHub 的最初公告计划于 2026-07-31 在各项 Copilot 使用环境中停用 Gemini 2.5 Pro 和 Gemini 3 Flash。这是针对 Copilot 产品的公告，不能据此认定其他提供商或 API 也停用了相同模型。",
+          "最初计划的替代模型是 Gemini 3.1 Pro 和 Gemini 3.5 Flash。公告还提醒，在用户可以选择替代模型之前，企业模型政策可能需要允许使用它们。"
+        ],
+        "followUp": [
+          "GitHub 于 2026-07-31 发布的后续公告称，Copilot 中的停用已完成。其替代模型表列出 Gemini 3.1 Pro (Preview) 和 Gemini 3.6 Flash，取代了先前对 Gemini 3.5 Flash 的建议。这些是该公告列出的替代选项，并非声称它们如今仍以相同状态提供。"
+        ]
+      },
+      "reviewFocus": "确认具体的 Copilot 使用环境、组织政策和当前受支持的模型。较晚的完成公告变更了建议的替代模型，不应继续将最初建议作为最终迁移指引。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d92a8a6927fa76ff",
+      "language": "ja",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "edition": {
+        "title": "Copilot の Gemini 提供終了：予定の告知と完了の告知",
+        "claims": [
+          "GitHub の最初の告知では、Copilot の各利用環境で Gemini 2.5 Pro と Gemini 3 Flash の提供を 2026-07-31 に終了する予定だとされていた。これは Copilot 製品に関する告知であり、他のプロバイダーや API からも同じモデルが廃止されたと確認するものではない。",
+          "当初予定された代替モデルは Gemini 3.1 Pro と Gemini 3.5 Flash だった。告知では、ユーザーが選択できるようにする前に、企業のモデルポリシーで代替モデルを許可する必要がある場合もあると注意していた。"
+        ],
+        "followUp": [
+          "GitHub の 2026-07-31 の続報は、Copilot での廃止が完了したと報告している。代替モデルの表には Gemini 3.1 Pro (Preview) と Gemini 3.6 Flash が載り、以前推奨された Gemini 3.5 Flash に代わっている。これらは当該告知の代替案であり、現在も利用状況が変わっていないという主張ではない。"
+        ]
+      },
+      "reviewFocus": "具体的な Copilot の利用環境、組織のポリシー、現在サポートされるモデルを確認する。後の完了告知では代替モデルの推奨が変わっているため、最初の推奨を最終的な移行指針として示し続けない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d92a8a6927fa76ff",
+      "language": "de",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "edition": {
+        "title": "Gemini-Einstellung in Copilot: Planung und Vollzugsmeldung",
+        "claims": [
+          "Die ursprüngliche GitHub-Mitteilung sah die Einstellung von Gemini 2.5 Pro und Gemini 3 Flash in allen Copilot-Nutzungsumgebungen für den 2026-07-31 vor. Dies ist eine Mitteilung zum Produkt Copilot und belegt nicht die Einstellung derselben Modelle bei anderen Anbietern oder APIs.",
+          "Als Alternativen waren Gemini 3.1 Pro und Gemini 3.5 Flash vorgesehen. Die Mitteilung warnte zudem, dass Unternehmensrichtlinien für Modelle die Alternativen möglicherweise erst erlauben müssen, bevor Nutzer sie auswählen können."
+        ],
+        "followUp": [
+          "GitHubs Folgemitteilung vom 2026-07-31 meldet die Abkündigung in Copilot als abgeschlossen. Die Tabelle der Alternativen nennt Gemini 3.1 Pro (Preview) und Gemini 3.6 Flash und ersetzt damit die frühere Empfehlung für Gemini 3.5 Flash. Dies sind die Alternativen aus dieser Mitteilung, keine Aussage über eine heute unveränderte Verfügbarkeit."
+        ]
+      },
+      "reviewFocus": "Die konkrete Copilot-Umgebung, Organisationsrichtlinien und aktuell unterstützte Modelle prüfen. Die spätere Vollzugsmeldung ändert eine empfohlene Alternative; die ursprüngliche Empfehlung daher nicht weiter als endgültige Migrationsanleitung darstellen."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d92a8a6927fa76ff",
+      "language": "fr",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "edition": {
+        "title": "Retrait de Gemini dans Copilot : annonce initiale et confirmation de l’achèvement",
+        "claims": [
+          "L’annonce initiale de GitHub prévoyait le retrait de Gemini 2.5 Pro et Gemini 3 Flash dans tous les environnements Copilot pour le 2026-07-31. Elle concerne le produit Copilot et n’établit pas le retrait de ces mêmes modèles chez d’autres fournisseurs ou dans d’autres API.",
+          "Les alternatives prévues étaient Gemini 3.1 Pro et Gemini 3.5 Flash. L’annonce avertissait aussi que les politiques de modèles d’entreprise pourraient devoir autoriser les alternatives avant que les utilisateurs puissent les sélectionner."
+        ],
+        "followUp": [
+          "Le suivi de GitHub du 2026-07-31 rapporte que la dépréciation dans Copilot est achevée. Son tableau d’alternatives indique Gemini 3.1 Pro (Preview) et Gemini 3.6 Flash, remplaçant la suggestion antérieure de Gemini 3.5 Flash. Ce sont les alternatives de cette annonce, sans affirmer que leur disponibilité reste identique aujourd’hui."
+        ]
+      },
+      "reviewFocus": "Confirmer l’environnement Copilot concerné, la politique de l’organisation et les modèles actuellement pris en charge. L’annonce ultérieure d’achèvement change une alternative suggérée ; ne pas continuer à présenter la suggestion initiale comme la recommandation finale de migration."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d92a8a6927fa76ff",
+      "language": "ru",
+      "sourceSha256": "aa786eea2bb1091f02a6788fa4c2ed20ade43afba0b4f52f6e02dd78121601c4",
+      "edition": {
+        "title": "Вывод Gemini из Copilot: план и сообщение о завершении",
+        "claims": [
+          "Первоначальное уведомление GitHub планировало вывод Gemini 2.5 Pro и Gemini 3 Flash из всех вариантов использования Copilot на 2026-07-31. Это уведомление о продукте Copilot; оно не подтверждает вывод тех же моделей у других поставщиков или из других API.",
+          "Запланированными альтернативами были Gemini 3.1 Pro и Gemini 3.5 Flash. Уведомление также предупреждало, что корпоративные политики моделей могут требовать разрешить альтернативы, прежде чем пользователи смогут их выбрать."
+        ],
+        "followUp": [
+          "В дополнении GitHub от 2026-07-31 сообщается о завершении вывода моделей из Copilot. В таблице альтернатив указаны Gemini 3.1 Pro (Preview) и Gemini 3.6 Flash вместо прежней рекомендации Gemini 3.5 Flash. Это альтернативы из данного уведомления, а не утверждение о неизменности их доступности сегодня."
+        ]
+      },
+      "reviewFocus": "Уточните конкретный вариант использования Copilot, политику организации и модели, поддерживаемые сейчас. Более позднее сообщение о завершении меняет предложенную альтернативу; не продолжайте представлять первоначальную рекомендацию как окончательное руководство по миграции."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d9492522fb4514ef",
+      "language": "zh-CN",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "edition": {
+        "title": "编程语言基准测试衡量的是一个简化版 Git 实现任务",
+        "claims": [
+          "基准测试作者要求 Claude Code 用 13 种语言实现简化版 Git。该实验衡量的是这一任务，而非语言的一般适用性。",
+          "作者报告，使用 Claude Opus 4.6 并将 effort 设为 high，每种语言运行了 20 次。所报告的成本和速度取决于这一模型与任务设置。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "在根据结果选择生产环境使用的语言之前，应比较提示词、测试覆盖、工具权限、重复次数和模型配置。此处未独立复现所报告的排名。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d9492522fb4514ef",
+      "language": "ja",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "edition": {
+        "title": "コーディング言語のベンチマークが測るのは簡略版 Git の実装タスク",
+        "claims": [
+          "ベンチマークの著者は、Claude Code に 13 言語で簡略版 Git を実装させた。この実験が測定するのはそのタスクであり、言語の一般的な適性ではない。",
+          "著者の報告によると、Claude Opus 4.6 を high effort で使い、各言語で 20 回実行したという。報告されたコストと速度は、このモデルとタスクの設定に依存する。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "結果を本番用の言語選択に使う前に、プロンプト、テストカバレッジ、ツールの権限、反復回数、モデル設定を比較する。報告された順位は、ここでは独立して再現していない。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d9492522fb4514ef",
+      "language": "de",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "edition": {
+        "title": "Programmiersprachen-Benchmark misst eine vereinfachte Git-Aufgabe",
+        "claims": [
+          "Der Benchmark-Autor ließ Claude Code ein vereinfachtes Git in 13 Sprachen implementieren. Das Experiment misst diese Aufgabe und nicht die allgemeine Eignung einer Sprache.",
+          "Der Autor berichtet von 20 Durchläufen pro Sprache mit Claude Opus 4.6 und der Einstellung high effort. Die berichteten Kosten und Geschwindigkeiten hängen von diesem Modell und diesem Aufgabenaufbau ab."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Prompts, Testabdeckung, Werkzeugberechtigungen, Wiederholungen und Modellkonfiguration vergleichen, bevor das Ergebnis zur Wahl einer Sprache für den Produktivbetrieb genutzt wird. Die berichteten Rangfolgen wurden hier nicht unabhängig reproduziert."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d9492522fb4514ef",
+      "language": "fr",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "edition": {
+        "title": "Un benchmark de langages mesure une tâche d’implémentation simplifiée de Git",
+        "claims": [
+          "L’auteur du benchmark a demandé à Claude Code d’implémenter une version simplifiée de Git dans 13 langages. L’expérience mesure cette tâche, et non l’adéquation générale des langages.",
+          "L’auteur rapporte 20 exécutions par langage avec Claude Opus 4.6 et le réglage high effort. Les coûts et vitesses rapportés dépendent de ce modèle et de cette configuration de tâche."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Comparer les prompts, la couverture des tests, les autorisations des outils, les répétitions et la configuration du modèle avant d’utiliser le résultat pour choisir un langage en production. Les classements rapportés n’ont pas été reproduits indépendamment ici."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "d9492522fb4514ef",
+      "language": "ru",
+      "sourceSha256": "34f21c8d401a9993b622290e561d4f241a5d69694d73f1b9510c425604049994",
+      "edition": {
+        "title": "Бенчмарк языков программирования измеряет задачу реализации упрощённого Git",
+        "claims": [
+          "Автор бенчмарка поручил Claude Code реализовать упрощённый Git на 13 языках. Эксперимент измеряет выполнение этой задачи, а не общую пригодность языков.",
+          "Автор сообщает о 20 запусках для каждого языка с Claude Opus 4.6 при настройке high effort. Заявленные стоимость и скорость зависят от этой модели и условий задачи."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Прежде чем использовать результат для выбора языка в продакшене, сравните промпты, покрытие тестами, разрешения инструментов, число повторений и конфигурацию модели. Заявленные рейтинги здесь независимо не воспроизводились."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "db11f89181439d98",
+      "language": "zh-CN",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "edition": {
+        "title": "Security Insights：批处理与自适应扫描调度",
+        "claims": [
+          "Cloudflare 描述了将检查器改为批量消费消息、并在独立 goroutine 中处理每条消息的做法。文章明确指出其代价：进程在批次中途崩溃后需要重做更多工作，内存使用量也会略有增加。",
+          "这篇工程实践文章还描述了自适应调度上限，会根据账户和 zone 总数以及所需扫描频率重新计算，而不是在工作负载增长时仍维持不变的速率。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "这是对已记录架构的限定范围审阅，并未独立复现标题所称的吞吐量增长。在采用这些模式前，应比较工作负载、内存、重启行为和调度延迟。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "db11f89181439d98",
+      "language": "ja",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "edition": {
+        "title": "Security Insights：バッチ処理と適応的なスキャンスケジューリング",
+        "claims": [
+          "Cloudflare は、チェッカーをバッチ単位でメッセージを受け取り、各メッセージを別の goroutine で処理する方式に変えたと説明している。バッチの途中でプロセスがクラッシュした際にやり直す作業が増え、メモリ使用量もわずかに増加するというトレードオフを明記している。",
+          "この技術記事では、アカウントとゾーンの総数、必要なスキャン頻度から上限を再計算する適応的なスケジューリングも説明している。ワークロードが増えても一定のレートを維持する方式ではない。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "これは記載されたアーキテクチャに対象を絞ったレビューであり、元記事の見出しにあるスループット向上を独立して再現したものではない。これらのパターンを採用する前に、ワークロード、メモリ、再起動時の動作、スケジューリング遅延を比較する。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "db11f89181439d98",
+      "language": "de",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "edition": {
+        "title": "Security Insights: Stapelverarbeitung und adaptive Scanplanung",
+        "claims": [
+          "Cloudflare beschreibt die Umstellung der Prüfer auf den stapelweisen Empfang von Nachrichten, wobei jede Nachricht in einer eigenen goroutine verarbeitet wird. Der Bericht benennt ausdrücklich die Nachteile: Nach einem Absturz mitten im Stapel muss mehr Arbeit wiederholt werden, und der Speicherverbrauch steigt leicht.",
+          "Der technische Bericht beschreibt außerdem eine adaptive Planungsgrenze, die aus der Gesamtzahl der Konten und Zonen sowie den erforderlichen Scanhäufigkeiten neu berechnet wird, statt bei wachsender Arbeitslast eine unveränderte Rate beizubehalten."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Dies ist eine auf die dokumentierte Architektur begrenzte Prüfung, keine unabhängige Reproduktion des in der Überschrift genannten Durchsatzzuwachses. Vor der Übernahme dieser Muster Arbeitslast, Speicherbedarf, Neustartverhalten und Planungslatenz vergleichen."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "db11f89181439d98",
+      "language": "fr",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "edition": {
+        "title": "Security Insights : traitement par lots et planification adaptative des analyses",
+        "claims": [
+          "Cloudflare décrit la modification des vérificateurs pour qu’ils consomment les messages par lots et traitent chaque message dans une goroutine distincte. Le récit précise les compromis : davantage de travail à refaire en cas de plantage au milieu d’un lot et une légère hausse de l’utilisation mémoire.",
+          "Le retour d’ingénierie décrit aussi une limite de planification adaptative, recalculée à partir du nombre total de comptes et de zones et des fréquences d’analyse requises, plutôt qu’un débit inchangé lorsque la charge augmente."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Il s’agit d’une revue limitée à l’architecture documentée, sans reproduction indépendante du gain de débit annoncé dans le titre. Comparer la charge de travail, la mémoire, le comportement au redémarrage et la latence de planification avant d’adopter ces pratiques."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "db11f89181439d98",
+      "language": "ru",
+      "sourceSha256": "c0cc7f636096648229058b00dd3cf83c8f8ce4c34033d74a0778997f21470387",
+      "edition": {
+        "title": "Security Insights: пакетная обработка и адаптивное планирование сканирований",
+        "claims": [
+          "Cloudflare описывает переход проверяющих компонентов к получению сообщений пакетами с обработкой каждого сообщения в отдельной goroutine. Явно указаны компромиссы: больше повторной работы после сбоя посреди пакета и немного больший расход памяти.",
+          "В техническом описании также представлен адаптивный предел планирования, пересчитываемый по общему числу учётных записей и зон и требуемым частотам сканирования, вместо сохранения неизменной интенсивности при росте нагрузки."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Это проверка документированной архитектуры с ограниченным охватом, а не независимое воспроизведение роста пропускной способности из заголовка. Перед применением этих подходов сравните нагрузку, расход памяти, поведение при перезапуске и задержку планирования."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e458b053b5a9f878",
+      "language": "zh-CN",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "edition": {
+        "title": "内部开源安全公告：企业内可见性与依赖修复",
+        "claims": [
+          "GitHub 宣布，面向 Advanced Security 企业客户的内部安全公告已正式可用。与公开的开源安全公告不同，其可见范围仅限于该企业所拥有的仓库。",
+          "REST API 支持创建、更新和撤回内部开源漏洞记录。创建安全公告后，Dependabot 可以通知使用该组件的内部仓库，并在需要修复版本时创建升级拉取请求。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "推出前应核实企业所有权、组件身份和依赖匹配情况。安全公告或自动生成的拉取请求本身并不会部署修复；应保留审查、测试和发布控制。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e458b053b5a9f878",
+      "language": "ja",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "edition": {
+        "title": "インナーソースのアドバイザリ：企業内の可視性と依存関係の修正",
+        "claims": [
+          "GitHub は、Advanced Security の企業顧客向けに内部セキュリティアドバイザリの一般提供を発表した。公開オープンソースのアドバイザリとは異なり、可視性はその企業が所有するリポジトリに限定される。",
+          "REST API は、インナーソースの脆弱性情報の作成、更新、撤回に対応している。アドバイザリ作成後、Dependabot はそのコンポーネントを利用する内部リポジトリに通知し、修正版が必要な場合にアップグレード用のプルリクエストを作成できる。"
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "展開前に、リポジトリがその企業に属すること、コンポーネントの識別、依存関係の対応付けを確認する。アドバイザリや生成されたプルリクエストだけで修正がデプロイされるわけではない。レビュー、テスト、リリース管理を維持する。"
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e458b053b5a9f878",
+      "language": "de",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "edition": {
+        "title": "Innersource-Sicherheitshinweise: Unternehmensinterne Sichtbarkeit und Abhängigkeitskorrekturen",
+        "claims": [
+          "GitHub hat die allgemeine Verfügbarkeit interner Sicherheitshinweise für Unternehmenskunden von Advanced Security angekündigt. Anders als bei öffentlichen Open-Source-Sicherheitshinweisen ist ihre Sichtbarkeit auf Repositorys im Besitz dieses Unternehmens beschränkt.",
+          "Die REST API unterstützt das Erstellen, Aktualisieren und Zurückziehen von Innersource-Schwachstellen. Nach dem Erstellen eines Sicherheitshinweises kann Dependabot interne Repositorys benachrichtigen, die die Komponente verwenden, und einen Upgrade-Pull-Request eröffnen, wenn ein Update auf eine korrigierte Version erforderlich ist."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Vor dem Rollout Unternehmenseigentum, Komponentenidentität und Zuordnung von Abhängigkeiten überprüfen. Ein Sicherheitshinweis oder generierter Pull Request spielt eine Korrektur nicht selbst in die Zielumgebung ein; Review-, Test- und Releasekontrollen beibehalten."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e458b053b5a9f878",
+      "language": "fr",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "edition": {
+        "title": "Avis innersource : visibilité en entreprise et correction des dépendances",
+        "claims": [
+          "GitHub a annoncé la disponibilité générale des avis de sécurité internes pour les clients entreprise d’Advanced Security. Contrairement aux avis publics de l’open source, leur visibilité est limitée aux dépôts appartenant à cette entreprise.",
+          "L’API REST permet de créer, de mettre à jour et de retirer des vulnérabilités innersource. Une fois un avis créé, Dependabot peut notifier les dépôts internes utilisant le composant et ouvrir une pull request de mise à niveau lorsqu’une version corrigée est nécessaire."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Vérifier l’appartenance des dépôts à l’entreprise, l’identité des composants et la correspondance des dépendances avant le déploiement. Un avis ou une pull request générée ne déploie pas en soi un correctif ; conserver les contrôles de revue, de test et de publication."
+    },
+    {
+      "schemaVersion": 1,
+      "state": "draft",
+      "renewalId": "e458b053b5a9f878",
+      "language": "ru",
+      "sourceSha256": "4cc8ca2e796a6a0c5ce16ed683ef25bde1451516938f9e37758164ce7bfc0af3",
+      "edition": {
+        "title": "Уведомления innersource: видимость внутри предприятия и исправление зависимостей",
+        "claims": [
+          "GitHub объявила об общей доступности внутренних уведомлений безопасности для корпоративных клиентов Advanced Security. В отличие от публичных уведомлений open source, их видимость ограничена репозиториями, принадлежащими этому предприятию.",
+          "REST API поддерживает создание, обновление и отзыв уязвимостей innersource. После создания уведомления Dependabot может оповестить внутренние репозитории, использующие компонент, и открыть пул-реквест на обновление, когда нужна исправленная версия."
+        ],
+        "followUp": []
+      },
+      "reviewFocus": "Перед внедрением проверьте принадлежность предприятию, идентичность компонентов и сопоставление зависимостей. Само уведомление или созданный пул-реквест не развёртывает исправление; сохраните контроль ревью, тестирования и выпуска."
+    }
+  ]
+}

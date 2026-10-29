@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2023-09-28-jenkins-docker-install",
+      "title": {
+        "en": "Verify a disposable Jenkins controller",
+        "ko": "일회용 Jenkins 컨트롤러 검증"
+      },
+      "description": {
+        "en": "The script verifies selected HTTP and volume contracts, then removes its own lab resources. Setup completion and job execution are outside its scope.",
+        "ko": "스크립트는 선택한 HTTP·볼륨 계약을 확인하고 자체 실습 자원을 삭제합니다. 초기 설정 완료와 작업 실행은 범위에 포함하지 않습니다."
+      },
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "class DockerLab"
+        },
+        {
+          "language": "python",
+          "contains": "passwordPersisted"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "en": [
+            "Pull image and resolve digest",
+            "Create a new named home volume"
+          ],
+          "ko": [
+            "이미지 pull 후 digest 확인",
+            "새 홈 볼륨 생성"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Start on a loopback host port"
+          ],
+          "ko": [
+            "루프백 호스트 포트로 시작"
+          ]
+        },
+        {
+          "kind": "condition",
+          "en": [
+            "Login HTTP ready within 180s?"
+          ],
+          "ko": [
+            "180초 안에 로그인 HTTP 준비?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "No: fail",
+              "ko": "아님: 실패"
+            },
+            "continue": {
+              "en": "Yes",
+              "ko": "준비"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Record password without printing",
+            "Write marker and replace container"
+          ],
+          "ko": [
+            "암호를 출력 없이 보관",
+            "표식 기록 후 컨테이너 교체"
+          ]
+        },
+        {
+          "kind": "condition",
+          "en": [
+            "Marker and password unchanged?"
+          ],
+          "ko": [
+            "표식·암호가 그대로인가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "No: fail",
+              "ko": "아님: 실패"
+            },
+            "continue": {
+              "en": "Yes",
+              "ko": "일치"
+            }
+          }
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Report result and image digest",
+            "Clean up all owned lab resources"
+          ],
+          "ko": [
+            "결과·이미지 digest 출력",
+            "자체 실습 자원 정리"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2026-10-27-jenkins-home-backup-restore",
+      "title": {
+        "en": "Restore into a separate home volume",
+        "ko": "별도 홈 볼륨으로 복구"
+      },
+      "description": {
+        "en": "The lab restores an archive and separately stored master.key, then checks HTTP and selected files. It does not prove recovery of production workloads or external systems.",
+        "ko": "압축 파일과 분리한 master.key를 복원하고 HTTP와 선택한 파일을 확인합니다. 운영 작업이나 외부 시스템의 복구를 입증하지 않습니다."
+      },
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "masterKeyExcluded"
+        },
+        {
+          "language": "python",
+          "contains": "restored_home = lab.volume()"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "en": [
+            "Seed a fresh controller and stop it"
+          ],
+          "ko": [
+            "새 컨트롤러에 표식 기록·정지"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Archive home without master.key",
+            "Copy that key to a separate path"
+          ],
+          "ko": [
+            "master.key를 제외하고 압축",
+            "키는 별도 경로에 복사"
+          ]
+        },
+        {
+          "kind": "condition",
+          "en": [
+            "Archive excludes master.key?"
+          ],
+          "ko": [
+            "압축 파일에 master.key가 없는가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "No: fail",
+              "ko": "아님: 실패"
+            },
+            "continue": {
+              "en": "Yes",
+              "ko": "확인"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Extract into a new volume",
+            "Restore master.key separately"
+          ],
+          "ko": [
+            "새 볼륨에 압축 해제",
+            "master.key 별도 복원"
+          ]
+        },
+        {
+          "kind": "condition",
+          "en": [
+            "HTTP, marker and password match?"
+          ],
+          "ko": [
+            "HTTP·표식·암호 검사를 통과했는가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "No: fail",
+              "ko": "아님: 실패"
+            },
+            "continue": {
+              "en": "Yes",
+              "ko": "통과"
+            }
+          }
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Report the bounded recovery check",
+            "Delete lab data and temporary files"
+          ],
+          "ko": [
+            "제한된 복구 검사 결과 출력",
+            "실습 데이터·임시 파일 삭제"
+          ]
+        }
+      ]
+    }
+  ]
+}

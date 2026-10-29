@@ -1,206 +1,142 @@
 ---
-title: "[blog] Jekyll 블로그에 품질 게이트 붙이기"
-language: "ko"
-translationKey: "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit"
-routeSlug: "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit"
-kind: "post"
-publishedAt: "2026-04-07T13:40:00.000Z"
+title: "Astro 품질 게이트: PR 검사 성공과 배포 조건 구분하기"
+language: ko
+translationKey: 2026-04-07-jekyll-quality-gates-proof-html-bundler-audit
+routeSlug: 2026-04-07-jekyll-quality-gates-proof-html-bundler-audit
+kind: post
+publishedAt: 2026-04-07T13:40:00.000Z
 categories:
-  - "blog"
-  - "automation"
+  - blog
+  - automation
 tags:
-  - "jekyll"
-  - "github-actions"
-  - "proof-html"
-  - "bundler-audit"
-  - "ci"
-legacyUrl: "/blog/automation/jekyll-quality-gates-proof-html-bundler-audit/"
-description: "Jekyll 블로그에 build, 링크 검사, Ruby 의존성 점검을 붙여 발행 전 품질 게이트를 만든 과정입니다."
-image: "/assets/img/blog/automation/jekyll-quality-gates-thumb.svg"
-legacySource: "_posts/blog/automation/2026-04-07-jekyll-quality-gates-proof-htm\
-  l-bundler-audit.markdown"
-updatedAt: "2026-10-24T09:00:00+09:00"
-reviewedAt: "2026-10-24"
-reviewStatus: "revised"
-reviewScope: "현재 저장소 구현 및 공식 배포 문서 대조"
-archiveBodySha256: "d9c0f36ce75e8201706759fcfd599f531cf18fbc0ed1d7fed43c406058cfc2d0"
+  - astro
+  - github-actions
+  - github-pages
+  - quality-gates
+  - testing
+legacyUrl: /blog/automation/jekyll-quality-gates-proof-html-bundler-audit/
+description: Astro 검증과 GitHub Pages 게시를 구분합니다. 커밋 ref·선행 빌드·배포 조건을 입력 모델 24개와 실패해야 하는 변형 6개로 확인합니다.
+legacySource: _posts/blog/automation/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.markdown
+updatedAt: 2026-10-27T07:19:48.249Z
+reviewedAt: "2026-10-27"
+reviewStatus: revised
+reviewScope: Current repository workflow contracts checked; paired offline JavaScript examples executed with mocked APIs and bounded deployment-policy tests.
+archiveBodySha256: d9c0f36ce75e8201706759fcfd599f531cf18fbc0ed1d7fed43c406058cfc2d0
 reviewSources:
-  - "https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site"
-  - "https://docs.astro.build/en/guides/deploy/github/"
+  - https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows
+  - https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs
+  - https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-jobs-with-conditions
+  - https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow
+  - https://docs.github.com/en/actions/concepts/security/github_token
+  - https://docs.astro.build/en/guides/deploy/github/
+  - https://github.com/youdozi/youdozi.github.io/blob/main/.github/workflows/dev-content-pipeline.yml
+  - https://github.com/youdozi/youdozi.github.io/blob/main/.github/workflows/site-quality-gates.yml
+  - https://github.com/youdozi/youdozi.github.io/blob/main/.github/workflows/site-checks.yml
 ---
-> **2026-10-24 검토:** 아래 본문은 2026년 4월 Jekyll 환경의 기록입니다. 현재 운영 구조와 다른 부분은 글 하단의 보강 내용을 확인하세요.
+PR 빌드의 성공은 설정된 검사가 통과했다는 뜻입니다. 이 사이트에서 후보를 게시하려면 `main` ref, 허용된 이벤트, 선행 빌드의 성공이라는 배포 조건도 충족해야 합니다.
 
-## 왜 품질 게이트가 필요했을까
+이전 Jekyll 환경은 `proof-html`과 `bundler-audit`를 사용했습니다. 현재 Astro 경로는 `site-checks.yml`에서 검증하고 `site-quality-gates.yml`에서 Pages에 배포합니다. Ruby 검사는 이전 도구에 해당하며 현재 사이트를 빌드하는 npm 의존성을 감사하지 않습니다.
 
-## 시리즈 글 안내
+## 검증과 배포 나누기
 
-- 1편. [Jekyll 블로그 자동 발행 파이프라인 구축기](/blog/automation/jekyll-github-actions-content-pipeline/)
-- 2편. [Jekyll 빌드가 깨졌을 때: Ruby/rbenv 복구 기록](/blog/troubleshooting/ruby-rbenv-jekyll-build-troubleshooting/)
-- 3편. **Jekyll 블로그에 품질 게이트 붙이기**
+![후보를 검사하고 main 이벤트 조건을 확인한 뒤 검사된 산출물을 배포하는 흐름](/assets/diagrams/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit-ko.svg)
 
-자동 발행 파이프라인을 만들고 나면 보통 "글이 자동으로 올라간다"는 사실에 먼저 만족하게 됩니다.
+[사이트 워크플로](https://github.com/youdozi/youdozi.github.io/blob/main/.github/workflows/site-quality-gates.yml)는 `${{ github.sha }}`를 공통 검사기에 전달합니다. [재사용 워크플로](https://github.com/youdozi/youdozi.github.io/blob/main/.github/workflows/site-checks.yml)는 입력받은 ref를 체크아웃하고, build 작업과 contents 읽기 권한을 가지며, 호출자가 활성화하지 않으면 Pages 산출물 옵션을 false로 유지합니다. 이러한 호출 구조는 GitHub의 [`workflow_call` 문서](https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows)에 설명되어 있습니다.
 
-그런데 실제 운영에서는 그다음 문제가 바로 나타납니다.
+설정된 검사는 서로 다른 실패를 찾습니다.
 
-- Markdown 파일은 생성됐지만 사이트 빌드는 실패할 수 있고
-- 링크는 생성됐지만 이미 깨진 주소일 수 있고
-- Ruby 의존성은 조용히 오래된 상태로 남아 있을 수 있습니다.
+| 검사 | 확인할 수 있는 범위 |
+| --- | --- |
+| Python·Node 테스트 | 수집·언어·게시·렌더링의 테스트된 계약 |
+| 글에서 추출한 실행 예제 | 기록한 도구 조합에서 선택한 동작 사례 |
+| `npm run check` | 콘텐츠 규칙과 Astro 타입·스키마 |
+| `npm run build` | 정적 출력과 내부 링크·이미지·앵커·이관 누락 |
 
-즉, 발행 자동화만으로는 충분하지 않았고, **발행 전에 무엇을 막아야 하는지**를 정의하는 단계가 추가로 필요했습니다.
+내부 링크 검사는 외부 URL의 접속 가능성을 보장하지 않습니다. 예제 통과가 모든 운영 동작을 입증하지도 않으며, 형식이 올바른 글에도 근거 없는 주장이 남을 수 있습니다. 현재 워크플로는 일반적인 npm 취약점 감사도 실행하지 않습니다.
 
-그래서 이번에는 Jekyll 블로그에 **품질 게이트(Quality Gates)** 를 붙이기로 했습니다.
+## 선택된 배포 계약 재현하기
 
-## 이번에 만든 품질 게이트
+저장소를 체크아웃하고 Node 24에서 `npm ci`를 실행합니다. 다음 전체 파일을 저장소 루트의 `deploy-contract.mjs`로 저장한 뒤 실행하세요.
 
-현재 품질 게이트는 `.github/workflows/site-quality-gates.yml`에서 동작합니다.
-
-구성은 크게 두 갈래입니다.
-
-1. 사이트 자체가 정상적으로 빌드되는지 확인
-2. 빌드된 결과와 Ruby 의존성이 안전한지 확인
-
-## 1. Jekyll build 검사
-
-가장 기본이면서 가장 중요한 단계입니다.
-
-```yaml
-- name: Build site
-  env:
-    JEKYLL_ENV: production
-  run: bundle exec jekyll build
+```sh
+node deploy-contract.mjs
 ```
 
-이 단계가 필요한 이유는 단순합니다.
+스크립트는 실제 YAML 값을 확인한 다음 고정된 배포 조건을 입력 조합 24개로 모델링합니다. 의도적으로 변경한 워크플로 객체 6개는 계약 검사를 통과하지 못해야 합니다. 배포나 네트워크 호출 기능은 없습니다.
 
-자동 생성된 글이 형식상 맞아 보여도, 실제 Jekyll 렌더링 시점에 front matter나 템플릿 처리 문제로 깨질 수 있기 때문입니다.
+### `deploy-contract.mjs`
 
-즉, 글 파일 생성 성공보다 **사이트 전체 빌드 성공**이 더 중요한 기준입니다.
+```javascript
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import YAML from 'yaml';
 
-## 2. proof-html로 링크/HTML 검사
+const read = file => YAML.parse(readFileSync(`.github/workflows/${file}`, 'utf8'));
+const site = read('site-quality-gates.yml');
+const checks = read('site-checks.yml');
+const condition = "github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')";
+function verify(site, checks) {
+    assert.equal(site.jobs.deploy.if, condition);
+    assert.equal(site.jobs.deploy.needs, 'build');
+    assert.equal(site.jobs.build.with.ref, '${{ github.sha }}');
+    assert.equal(site.jobs.build.with.pages_artifact, '${{ ' + condition + ' }}');
+    assert.deepEqual(Object.keys(checks.jobs), ['build']);
+    assert.deepEqual(checks.permissions, { contents: 'read' });
+    assert.equal(checks.on.workflow_call.inputs.pages_artifact.default, false);
+    assert.equal(checks.jobs.build.steps[0].with.ref, '${{ inputs.ref }}');
+    assert.ok(site.jobs.deploy.steps.some(step => step.uses === 'actions/deploy-pages@v4'));
+}
+verify(site, checks);
 
-사이트가 빌드되었다고 해서 모든 것이 끝난 것은 아닙니다.
+// A model of this fixed condition and successful dependency, not the Actions engine.
+function allowed(ref, event, build) {
+    return build === 'success' && ref === 'refs/heads/main' &&
+        (event === 'push' || event === 'workflow_dispatch');
+}
+const expected = new Set([
+    'refs/heads/main|push|success',
+    'refs/heads/main|workflow_dispatch|success',
+]);
+let cases = 0;
+for (const ref of ['refs/heads/main', 'refs/heads/develop', 'refs/heads/content/example', 'refs/pull/42/merge']) {
+    for (const event of ['push', 'workflow_dispatch', 'pull_request']) {
+        for (const build of ['success', 'failure']) {
+            assert.equal(allowed(ref, event, build), expected.has(`${ref}|${event}|${build}`));
+            cases++;
+        }
+    }
+}
 
-정적 블로그는 특히 다음 문제가 자주 남습니다.
-
-- 외부 링크 404
-- 잘못된 HTML 구조
-- favicon / Open Graph 메타 누락
-- HTTPS 강제 정책 누락
-
-이 부분은 `proof-html`로 검사하게 했습니다.
-
-```yaml
-- name: Proof HTML
-  uses: anishathalye/proof-html@v2
-  with:
-    directory: ./_site
-    check_html: true
-    check_favicon: true
-    check_opengraph: true
-    enforce_https: true
+const mutations = [
+    (site, checks) => { site.jobs.deploy.if = "github.event_name == 'pull_request'"; },
+    (site, checks) => { site.jobs.deploy.needs = []; },
+    (site, checks) => { site.jobs.build.with.ref = 'main'; },
+    (site, checks) => { checks.permissions.pages = 'write'; },
+    (site, checks) => { checks.on.workflow_call.inputs.pages_artifact.default = true; },
+    (site, checks) => { checks.jobs.build.steps[0].with.ref = 'main'; },
+];
+for (const mutate of mutations) {
+    const badSite = structuredClone(site), badChecks = structuredClone(checks);
+    mutate(badSite, badChecks);
+    assert.throws(() => verify(badSite, badChecks), assert.AssertionError);
+}
+console.log(`${cases} policy-model combinations and ${mutations.length} rejected workflow mutations passed.`);
 ```
 
-이 설정 덕분에 "페이지는 열리지만 어딘가 어색한 상태"를 좀 더 빨리 발견할 수 있습니다.
+실행해 확인한 출력입니다.
 
-
-## 3. bundler-audit로 Ruby 의존성 점검
-
-Jekyll 블로그는 애플리케이션처럼 복잡하지 않아 보여도, 결국 Ruby gem 위에서 돌아갑니다.
-
-그래서 의존성 보안 점검도 따로 붙였습니다.
-
-```yaml
-- name: Install bundler-audit
-  run: gem install bundler-audit --no-document
-
-- name: Run bundler audit
-  shell: bash
-  run: |
-    set -o pipefail
-    bundle-audit check --update | tee bundler-audit-report.txt
+```text
+24 policy-model combinations and 6 rejected workflow mutations passed.
 ```
 
-이 단계는 취약점 데이터베이스를 갱신한 뒤 현재 `Gemfile.lock` 기준으로 알려진 취약점을 확인합니다.
+이 모델은 `main`에서 `push` 또는 `workflow_dispatch`로 실행한 빌드가 성공한 경우만 허용합니다. 기능 브랜치의 수동 실행을 포함한 다른 조합은 거절합니다. `pull_request` 실행은 보통 PR 병합 ref를 사용하므로 성공하더라도 이 사이트의 배포 조건을 통과하지 않습니다. GitHub의 [작업 조건](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-jobs-with-conditions)과 [선행 작업 성공 규칙](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs)을 함께 확인하세요.
 
-즉, 블로그가 조용히 돌아가고 있더라도 "안전하게 오래된 상태"인지, 아니면 "위험하게 오래된 상태"인지를 가려내는 역할을 합니다.
+이는 선택된 ref·이벤트 조건과 빌드 성공 의존성을 표현한 모델이며 Actions 표현식 해석기가 아닙니다. 성공·실패 상태만 다루고 취소·선행 작업 생략·러너 배정·토큰 권한·산출물 출처·실제 Pages 배포는 재현하지 않습니다. YAML 조건이 바뀌면 명시적으로 재검토하도록 assertion이 실패하게 했습니다. 새 설정을 이전 모델로 조용히 검사하지 않습니다.
 
-## 4. 실패했을 때 디버깅 가능하게 만들기
+## 게시 결과 확인하기
 
-CI가 실패했을 때 가장 아쉬운 점은 "왜 실패했는지 다시 재현해야 한다"는 것입니다.
+후보를 승인하고 병합한 뒤에는 main 실행의 커밋, build 결과, deploy 작업을 확인합니다. PR 실행에서 `deploy: skipped`는 정상입니다. 빌드 성공만으로 게시를 완료했다고 판단하지 않습니다. Pages 작업은 검사된 산출물을 사용하며 [Astro Pages 배포 방식](https://docs.astro.build/en/guides/deploy/github/)을 따릅니다.
 
-그래서 품질 게이트 워크플로에서는 가능한 경우 아래 결과를 artifact로 남기도록 구성했습니다.
+실제 공개 글과 언어 링크를 열고 canonical URL, 출처 날짜, 사이트맵 항목을 확인합니다. IndexNow는 배포 뒤 실패를 허용하는 단계로 실행하므로 Pages가 성공해도 알림은 실패할 수 있습니다. 알림 접수나 사이트맵 포함만으로 검색엔진의 색인·노출을 입증할 수도 없습니다.
 
-- `_site` 빌드 산출물
-- `bundler-audit-report.txt`
-
-```yaml
-- name: Upload built site artifact
-  if: always()
-  uses: actions/upload-artifact@v4
-  with:
-    name: site-build-output
-    path: _site
-
-- name: Upload bundler audit report
-  if: always()
-  uses: actions/upload-artifact@v4
-  with:
-    name: bundler-audit-report
-    path: bundler-audit-report.txt
-```
-
-물론 빌드가 너무 이른 단계에서 실패하면 `_site`가 없을 수도 있습니다. 그래도 가능한 경우 결과를 남겨두면, 문제를 훨씬 빠르게 좁힐 수 있습니다.
-
-
-## 발행 파이프라인과 역할을 분리한 이유
-
-이번에 의도적으로 나눈 것은 "글을 올리는 파이프라인"과 "품질을 막는 파이프라인"의 역할입니다.
-
-- `dev-content-pipeline.yml`: 새 digest 생성, 검증, 빌드, commit/push
-- `site-quality-gates.yml`: 사이트 품질과 의존성 상태 검사
-
-이렇게 나누면 자동 발행 흐름은 단순해지고, 품질 검사는 더 명확한 책임을 갖게 됩니다.
-
-운영 경험상 이런 분리는 나중에 유지보수할 때 특히 도움이 됩니다.
-
-## 적용하고 나서 좋아진 점
-
-품질 게이트를 붙인 뒤 가장 좋아진 점은 "문제가 생겨도 나중에 찾는 방식"에서 "올리기 전에 막는 방식"으로 바뀌었다는 것입니다.
-
-특히 아래 변화가 체감됐습니다.
-
-- 발행 신뢰도가 높아졌다.
-- 링크 깨짐이나 메타 누락을 빨리 찾게 됐다.
-- Ruby 의존성 점검이 습관이 아니라 시스템이 됐다.
-- 실패 시 재현 시간이 줄었다.
-
-## 앞으로 더 붙이고 싶은 것
-
-아직도 확장할 여지는 많습니다.
-
-- Actions summary에 실패 원인 요약 남기기
-- proof-html 결과를 별도 리포트 파일로 저장하기
-- Dependabot으로 gem/npm 업데이트 자동 제안 받기
-- 특정 태그/카테고리별 빌드 검사 범위 최적화
-
-## 마무리
-
-블로그 자동화는 글을 더 빨리 올리게 해주지만, 품질 게이트는 그 글이 **문제 없이 오래 남도록** 도와줍니다.
-
-개인 블로그라도 운영 기간이 길어질수록 "한 번쯤 확인해야 할 것들"은 반드시 쌓입니다.
-
-그래서 지금 단계에서 가장 중요했던 것은 더 많은 자동화를 붙이는 것이 아니라, **자동화된 결과를 믿을 수 있게 만드는 것**이었습니다.
-
-결국 자동 발행 다음 단계는 품질 게이트였고, 이 둘이 같이 있어야 비로소 운영 가능한 블로그 시스템이 된다고 느꼈습니다.
-
-## 함께 읽으면 좋은 글
-
-- 이전 글: [Jekyll 블로그 자동 발행 파이프라인 구축기](/blog/automation/jekyll-github-actions-content-pipeline/)
-- 이전 글: [Jekyll 빌드가 깨졌을 때: Ruby/rbenv 복구 기록](/blog/troubleshooting/ruby-rbenv-jekyll-build-troubleshooting/)
-
-
-## 현재 구현과의 차이 — 2026-10-24
-
-현재 저장소는 Astro로 전환되어 이 글의 Jekyll 워크플로와 `npm run jekyll:build` 명령은 운영 경로에서 사용하지 않습니다. 현재 명령은 `npm run check`, `npm run build`이며, 이전 Ruby 환경은 `bash scripts/jekyll-build.sh`로 별도 재현할 수 있습니다. 빌드 성공은 링크·HTML·사실 정확성을 보장하지 않습니다. 현재는 Astro 스키마/타입 검사, 내부 링크·이미지·앵커 검사, Java/Python 예제 검증을 나눠 실행합니다. 외부 사이트가 403이나 시간 초과를 반환하는 경우를 영구 삭제와 구별해야 합니다.
-
-참고: [GitHub Pages 게시 소스](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site), [Astro Pages 배포](https://docs.astro.build/en/guides/deploy/github/).
+앞 단계인 Draft PR 검토는 [후보 생성 워크플로 글](/ko/posts/2026-04-07-jekyll-github-actions-content-pipeline/)에서 설명합니다. 기술 검사와 게시 결정은 역할이 다르며, 둘 다 글의 주장과 근거를 확인하는 일을 대신하지 않습니다.

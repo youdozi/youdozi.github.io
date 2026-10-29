@@ -1,0 +1,10 @@
+{
+  "en": {"copy":"Copy code","copied":"Code copied.","error":"Could not copy. Select the code and copy it manually.","block":"Code example"},
+  "ko": {"copy":"코드 복사","copied":"코드를 복사했습니다.","error":"복사하지 못했습니다. 코드를 선택해 직접 복사하세요.","block":"코드 예제"},
+  "zh-CN": {"copy":"复制代码","copied":"代码已复制。","error":"无法复制。请选择代码并手动复制。","block":"代码示例"},
+  "ja": {"copy":"コードをコピー","copied":"コードをコピーしました。","error":"コピーできませんでした。コードを選択して手動でコピーしてください。","block":"コード例"},
+  "de": {"copy":"Code kopieren","copied":"Code kopiert.","error":"Kopieren fehlgeschlagen. Den Code auswählen und manuell kopieren.","block":"Codebeispiel"},
+  "fr": {"copy":"Copier le code","copied":"Code copié.","error":"Impossible de copier. Sélectionnez le code et copiez-le manuellement.","block":"Exemple de code"},
+  "ru": {"copy":"Копировать код","copied":"Код скопирован.","error":"Не удалось скопировать. Выделите код и скопируйте его вручную.","block":"Пример кода"},
+  "es": {"copy":"Copiar código","copied":"Código copiado.","error":"No se pudo copiar. Selecciona el código y cópialo manualmente.","block":"Ejemplo de código"}
+}

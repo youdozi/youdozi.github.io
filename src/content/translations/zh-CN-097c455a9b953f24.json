@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "097c455a9b953f24",
+  "language": "zh-CN",
+  "sourceSha256": "262a44eefb812d4105dd13a5323664a850a170459bce28ccfad465b2c6fef140",
+  "edition": {
+    "title": "CodeQL 的数据式建模新增自定义净化器与验证器",
+    "claims": [
+      "GitHub 介绍了 CodeQL YAML 数据扩展中的声明式净化器与验证器，使用 barrierModel 和 barrierGuardModel。",
+      "公告列出的起始可用版本为 CodeQL 2.25.2。这是该历史公告中的最低版本，并非当前的升级建议。"
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "只应为净化器实际保护的漏洞类型和路径建模。使用正例和反例测试，避免过宽的屏障隐藏真实的污点传播路径；本草稿并不声称已测得误报减少。",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

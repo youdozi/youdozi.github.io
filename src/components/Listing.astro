@@ -1,15 +1,24 @@
 ---
+import labels from '../lib/archive-ui.json';
 import Base from '../layouts/Base.astro';
 import EntryList from './EntryList.astro';
-import { text, type Entry, type Language } from '../lib/content';
-interface Props { items: Entry[]; lang: Language; title: string; page?: number; root: string; alternates?: { language: Language; url: string }[]; }
-const { items, lang, title, page = 1, root, alternates = [] } = Astro.props;
-const size = 12;
-const total = Math.max(1, Math.ceil(items.length / size));
+import EmptyState from './EmptyState.astro';
+import {archivePath,availableEntries} from '../lib/discovery';
+import discoveryUi from '../lib/discovery-ui.json';
+import {listingPage,listingStructuredData} from '../lib/listing-metadata';
+import { text, entries, type Entry, type Language } from '../lib/content';
+interface Props { items: Entry[]; lang: Language; title: string; description?: string; page?: number; root: string; alternates?: { language: Language; url: string }[]; }
+const { items, lang, title, description, page = 1, root, alternates = [] } = Astro.props;
+const hasArchive=availableEntries(await entries(),lang).length>0;
+const {totalPages:total,visible}=listingPage(items,page);
 const href = (p: number) => p === 1 ? root : `${root}page/${p}/`;
+const pageTitle=page > 1 ? `${title} · ${labels[lang].page} ${page}` : title;
+const pageDescription=description || `${title}. ${visible.slice(0,3).map(entry => entry.title).join(' · ')}. ${text[lang].about}`.slice(0,240);
+const structuredData=listingStructuredData(visible,{title:pageTitle,description:pageDescription,lang,url:href(page)},Astro.site!);
 ---
-<Base title={page > 1 ? `${title} · ${lang === 'en' ? 'Page' : '페이지'} ${page}` : title} description={`${title}. ${items.slice((page-1)*size, page*size).slice(0,3).map(entry => entry.title).join(' · ')}. ${text[lang].about}`.slice(0,240)} lang={lang} noindex={items.length === 0} alternates={alternates}>
-  <section class="page-heading"><span class="eyebrow">{text[lang].overview}</span><h1>{title}<span class="count">{items.length}</span></h1><p>{text[lang].about}</p></section>
-  {items.length ? <EntryList items={items.slice((page-1)*size, page*size)} lang={lang} /> : <div class="empty"><p>{text[lang].empty}</p><p>{lang === 'en' ? 'New digests will be published in English and Korean. Earlier entries remain in the Korean archive.' : ''}</p><a class="button" href="/ko/">{text[lang].archive} ↗</a></div>}
-  {total > 1 && <nav class="pagination" aria-label={lang === 'en' ? 'Pagination' : '페이지 이동'}>{page > 1 && <a href={href(page-1)}>← {lang === 'en' ? 'Previous' : '이전'}</a>}<span>{page} / {total}</span>{page < total && <a href={href(page+1)}>{lang === 'en' ? 'Next' : '다음'} →</a>}</nav>}
+<Base title={pageTitle} description={pageDescription} lang={lang} noindex={items.length === 0} alternates={items.length ? alternates : []} structuredData={structuredData}>
+  <section class="page-heading"><span class="eyebrow">{text[lang].overview}</span><h1>{title}<span class="count">{items.length}</span></h1><p>{text[lang].about}</p>{hasArchive && <a class="browse-all" href={archivePath(lang)}>{discoveryUi[lang].archive} →</a>}</section>
+  <slot name="featured" />
+  <div data-article-listing>{items.length ? <EntryList items={visible} lang={lang} /> : <EmptyState lang={lang} />}</div>
+  {total > 1 && <nav class="pagination" aria-label={labels[lang].pagination}>{page > 1 && <a href={href(page-1)}>← {labels[lang].previous}</a>}<span>{page} / {total}</span>{page < total && <a href={href(page+1)}>{labels[lang].next} →</a>}</nav>}
 </Base>

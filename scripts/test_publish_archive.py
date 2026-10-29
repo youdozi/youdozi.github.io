@@ -87,6 +87,22 @@ class PublicationTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'unavailable'):publisher.publish(root,batch,slugs,approval,published_at=now)
             self.assertEqual(before,path.read_text());self.assertFalse((root/publisher.PUBLIC).exists())
 
+    def test_publication_fetches_each_url_version_once_and_keeps_versioned_provenance(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as folder:
+            root,batch,slugs,approval,now,path=self.context(folder)
+            entry=batch['entries'][0];shared=entry['documents'][1]['url'];bodies={}
+            for i,d in enumerate(entry['documents']):
+                d['url']=shared;d['extractorVersion']='article-parser-v1' if i==0 else 'article-parser-v2'
+                quotes=[q['quote'] for ed in entry['editions'].values() for c in ed['claims']+ed['followUp'] for q in c['evidence'] if q['document_id']==i]
+                body=' '.join(quotes)+' version '+str(i)
+                d['sha256']=hashlib.sha256(body.encode()).hexdigest();bodies[(shared,d['extractorVersion'])]=body
+            entry['documents'].append(copy.deepcopy(entry['documents'][0]))
+            with patch.object(archive,'source_records',return_value=archive.source_records(ROOT)),patch.object(publisher,'fetch_document',side_effect=lambda url,version:bodies[(url,version)]) as fetch:
+                result=publisher.publish(root,batch,slugs,approval,published_at=now)
+            self.assertEqual(2,fetch.call_count)
+            self.assertEqual(['article-parser-v1','article-parser-v2','article-parser-v1'],[d['extractorVersion'] for d in result[0]['documents']])
+
     def test_failed_write_rolls_back_original_page_and_manifest(self):
         with tempfile.TemporaryDirectory() as folder:
             root,batch,slugs,approval,now,path=self.context(folder);before=path.read_text()

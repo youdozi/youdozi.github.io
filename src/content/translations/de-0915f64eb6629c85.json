@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "renewalId": "0915f64eb6629c85",
+  "language": "de",
+  "sourceSha256": "0d01d2c7f201f8cea54b1e886860952065300d561a368ea621b07c840b94311d",
+  "edition": {
+    "title": "Ankündigung zur Einstellung von Grok Code Fast 1 grenzt den Copilot-Bereich ab",
+    "claims": [
+      "GitHub kündigte die geplante Einstellung von Grok Code Fast 1 in Copilot zum 2026-05-15 an. Hier wird der angekündigte Zeitplan festgehalten; die tatsächlich abgeschlossene Abschaltung wurde nicht unabhängig überprüft.",
+      "Laut Mitteilung wurde der Termin vorgezogen, weil der Modellanbieter das Modell abkündigte."
+    ],
+    "followUp": []
+  },
+  "reviewFocus": "Vor Änderungen an Arbeitsabläufen sollten produktspezifische Modellnamen und Abhängigkeiten von Administratorrichtlinien erfasst werden. Aktuelle Verfügbarkeit prüfen und Alternativen anhand repräsentativer Aufgaben bewerten, statt historisch empfohlene Modelle ungeprüft zu übernehmen.",
+  "state": "approved",
+  "reviewedAt": "2026-10-26T15:42:21.545Z",
+  "publishedAt": "2026-10-26T15:42:21.545Z",
+  "updatedAt": "2026-10-26T15:42:21.545Z",
+  "approval": {
+    "reviewedBy": "youdozi",
+    "pullRequest": 50,
+    "approvedAt": "2026-10-26T15:42:21.545Z",
+    "basis": "Codex conversation 2026-10-27: user instructed 진행해줘 directly after PR #50 final review and request for publication approval of these five sources in zh-CN, ja, de, fr and ru (25 editions)."
+  }
+}

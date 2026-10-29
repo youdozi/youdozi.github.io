@@ -24,6 +24,8 @@ jobs:
     permissions:
       pages: write
       id-token: write
+      contents: read
+      actions: read
     concurrency:
       group: github-pages-deployment
       cancel-in-progress: false
@@ -34,3 +36,39 @@ jobs:
       - name: Deploy checked static artifact
         id: deployment
         uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v4
+        id: indexnow_checkout
+        continue-on-error: true
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v5
+        id: indexnow_python
+        continue-on-error: true
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        id: indexnow_artifact
+        continue-on-error: true
+        with:
+          name: site-build-output
+          path: .indexnow-dist
+      - name: Restore last acknowledged IndexNow state
+        id: indexnow_state
+        continue-on-error: true
+        uses: actions/cache/restore@v4
+        with:
+          path: .pipeline/indexnow-state.json
+          key: indexnow-state-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: indexnow-state-
+      - name: Notify IndexNow of deployed public content changes
+        id: indexnow
+        if: steps.indexnow_checkout.outcome == 'success' && steps.indexnow_python.outcome == 'success' && steps.indexnow_artifact.outcome == 'success' && steps.indexnow_state.outcome == 'success'
+        continue-on-error: true
+        run: python3 -B scripts/indexnow.py --dist .indexnow-dist --submit
+      - name: Save acknowledged IndexNow state
+        if: steps.indexnow.outcome == 'success'
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: .pipeline/indexnow-state.json
+          key: indexnow-state-${{ github.run_id }}-${{ github.run_attempt }}

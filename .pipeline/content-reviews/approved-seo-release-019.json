@@ -1,0 +1,31 @@
+{
+  "createdAt": "2026-10-27T10:55:03.629483+00:00",
+  "publicationAuthorization": "User: 진행해줘, following the report that PR69 and PR70 await publication approval.",
+  "approvedPRs": [
+    69,
+    70
+  ],
+  "integrationPR": 69,
+  "baseCommit": "622e51d2e0d9ddef255ec564e5e01122fb1762e6",
+  "approvedHeads": {
+    "69": "d0a0c58348f33a105e43f92439cc84ef4a7a6226",
+    "70": "d2162a69fc605897041ffadab010161cb057c809"
+  },
+  "scope": {
+    "learningPathsPerLanguage": 8,
+    "guidePages": 18,
+    "guideArticleReturnLinks": 70,
+    "featuredTopics": 10,
+    "featuredLanguages": [
+      "en",
+      "ko"
+    ],
+    "editedManuscripts": 8,
+    "newManuscripts": 0,
+    "inspectionArticleUrls": 20,
+    "inspectionLegacyUrls": 10
+  },
+  "publicationDatePolicy": "All manuscripts already exist; retain original publication dates and reviewed content modification dates.",
+  "strategy": "Retain both approved PR head histories, validate the integration, merge PR69 with a merge commit and verify the Pages deployment.",
+  "measurement": "Verify public SEO and navigation after deployment; record release time and commit privately against the pre-publication Google snapshot. No immediate ranking effect is claimed."
+}

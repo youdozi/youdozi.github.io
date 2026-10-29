@@ -1,14 +1,21 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import { entries, languages, text, taxonomyUrl, type Language } from '../../../lib/content';
-export function getStaticPaths() { return languages.flatMap(lang => ['categories', 'tags'].map(taxonomy => ({ params: { lang, taxonomy } }))); }
+import EmptyState from '../../../components/EmptyState.astro';
+import {sectionAlternates} from '../../../lib/discovery';
+import {categoryGuide} from '../../../lib/technical-guides';
+import { entries, publishedLanguages, text, taxonomyUrl, type Language } from '../../../lib/content';
+export async function getStaticPaths() { return (await publishedLanguages()).flatMap(lang => ['categories', 'tags'].map(taxonomy => ({ params: { lang, taxonomy } }))); }
 const lang = Astro.params.lang as Language;
 const kind = Astro.params.taxonomy as 'categories' | 'tags';
+const all = await entries();
 const counts = new Map<string,number>();
-for (const entry of (await entries()).filter(e => e.language === lang)) for (const value of entry[kind]) counts.set(value,(counts.get(value)||0)+1);
+for (const entry of all.filter(e => e.language === lang)) for (const value of entry[kind]) {
+  if (value !== 'archive-renewal') counts.set(value,(counts.get(value)||0)+1);
+}
+const alternates = counts.size ? sectionAlternates(all,kind) : [];
 ---
-<Base title={text[lang][kind]} lang={lang} alternates={languages.map(language => ({ language, url: `/${language}/${kind}/` }))}>
+<Base title={text[lang][kind]} lang={lang} noindex={counts.size === 0} alternates={alternates}>
   <section class="page-heading"><span class="eyebrow">{text[lang].overview}</span><h1>{text[lang][kind]}</h1></section>
-  <div class="chips">{[...counts].sort((a,b) => b[1]-a[1]).map(([value,count]) => <a href={taxonomyUrl(lang, kind, value)}>{value} <span class="count">{count}</span></a>)}</div>
-  {!counts.size && <div class="empty"><p>{text[lang].empty}</p><a href="/ko/">{text[lang].archive} ↗</a></div>}
+  <div class="chips">{[...counts].sort((a,b) => b[1]-a[1]).map(([value,count]) => <a href={taxonomyUrl(lang, kind, value)}>{kind==='categories'?categoryGuide(value,lang,all)?.label||value:value} <span class="count">{count}</span></a>)}</div>
+  {!counts.size && <EmptyState lang={lang} />}
 </Base>

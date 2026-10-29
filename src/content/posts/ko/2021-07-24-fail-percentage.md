@@ -1,76 +1,89 @@
 ---
-title: "[코딩테스트] 프로그래머스 - 실패율(JAVA)"
-language: "ko"
-translationKey: "2021-07-24-fail-percentage"
-routeSlug: "2021-07-24-fail-percentage"
-kind: "post"
-publishedAt: "2021-07-23T15:00:00.000Z"
+title: "Java 실패율 정렬: 분모·동률·long 교차곱 처리하기"
+language: ko
+translationKey: 2021-07-24-fail-percentage
+routeSlug: 2021-07-24-fail-percentage
+kind: post
+publishedAt: 2021-07-23T15:00:00.000Z
 categories:
-  - "coding-test"
+  - coding-test
 tags:
-  - "코딩테스트"
-  - "프로그래머스"
-legacyUrl: "/coding-test/fail-percentage/"
-legacySource: "_posts/coding-test/2021-07-24-fail-percentage.markdown"
-updatedAt: "2026-10-24T09:00:00+09:00"
-reviewedAt: "2026-10-24"
-reviewStatus: "revised"
-reviewScope: "문제 조건 대조 및 Java 예제 실행 검증"
-archiveBodySha256: "725a7e1bd40bafced94a4df87e78689a5b7d6458d48ef868b6cf83940d460769"
+  - 코딩테스트
+  - 프로그래머스
+legacyUrl: /coding-test/fail-percentage/
+legacySource: _posts/coding-test/2021-07-24-fail-percentage.markdown
+updatedAt: 2026-10-27T04:56:35.582+00:00
+reviewedAt: "2026-10-27"
+reviewStatus: revised
+reviewScope: Problem conditions and Java APIs checked; complete paired solutions
+  compiled for Java11 and run on JDK17.
+archiveBodySha256: 725a7e1bd40bafced94a4df87e78689a5b7d6458d48ef868b6cf83940d460769
 reviewSources:
-  - "https://school.programmers.co.kr/learn/courses/30/lessons/42889"
+  - https://school.programmers.co.kr/learn/courses/30/lessons/42889
+  - https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Comparator.html
+description: 스테이지별 실패 인원과 도달 인원을 계산하고, long 교차곱으로 비율을 정렬합니다. 미도달 스테이지·전체 클리어·동률
+  순서를 함께 설명합니다.
 ---
-문제 설명
+실패율의 분모는 전체 이용자 수가 아니라 해당 스테이지에 도달한 인원입니다. 스테이지별 정지 인원을 세고 남은 도달 인원을 갱신한 뒤, 실패율 내림차순·번호 오름차순으로 정렬해야 합니다.
 
-슈퍼 게임 개발자 오렐리는 큰 고민에 빠졌다. 그녀가 만든 프랜즈 오천성이 대성공을 거뒀지만, 요즘 신규 사용자의 수가 급감한 것이다. 원인은 신규 사용자와 기존 사용자 사이에 스테이지 차이가 너무 큰 것이 문제였다.
+[문제](https://school.programmers.co.kr/learn/courses/30/lessons/42889)는 스테이지 N≤500, 이용자 M≤200,000을 보장합니다. 입력 값 N+1은 모든 스테이지를 통과한 이용자이며 정렬 대상 스테이지가 아닙니다. 도달자가 없는 스테이지의 실패율은 0입니다.
 
-이 문제를 어떻게 할까 고민 한 그녀는 동적으로 게임 시간을 늘려서 난이도를 조절하기로 했다. 역시 슈퍼 개발자라 대부분의 로직은 쉽게 구현했지만, 실패율을 구하는 부분에서 위기에 빠지고 말았다. 오렐리를 위해 실패율을 구하는 코드를 완성하라.
+## 처리 흐름
 
-실패율은 다음과 같이 정의한다.
-- 스테이지에 도달했으나 아직 클리어하지 못한 플레이어의 수 / 스테이지에 도달한 플레이어 수
+![멈춘 인원을 빼기 전에 도달 인원을 저장합니다. long 교차곱으로 비율을 비교하고 동률이면 스테이지 번호로 정렬합니다.](/assets/diagrams/2021-07-24-fail-percentage-ko.svg)
 
-전체 스테이지의 개수 N, 게임을 이용하는 사용자가 현재 멈춰있는 스테이지의 번호가 담긴 배열 stages가 매개변수로 주어질 때, 실패율이 높은 스테이지부터 내림차순으로 스테이지의 번호가 담겨있는 배열을 return 하도록 solution 함수를 완성하라.
+멈춘 인원을 빼기 전에 도달 인원을 저장합니다. long 교차곱으로 비율을 비교하고 동률이면 스테이지 번호로 정렬합니다.
 
----
-제한사항
-- 스테이지의 개수 N은 1 이상 500 이하의 자연수이다.
-- stages의 길이는 1 이상 200,000 이하이다.
-- stages에는 1 이상 N + 1 이하의 자연수가 담겨있다.
-    - 각 자연수는 사용자가 현재 도전 중인 스테이지의 번호를 나타낸다.
-    - 단, N + 1 은 마지막 스테이지(N 번째 스테이지) 까지 클리어 한 사용자를 나타낸다.
-- 만약 실패율이 같은 스테이지가 있다면 작은 번호의 스테이지가 먼저 오도록 하면 된다.
-- 스테이지에 도달한 유저가 없는 경우 해당 스테이지의 실패율은 0 으로 정의한다.
+## 빈도와 도달 인원 계산
 
----
-풀이
-- 해쉬를 이용하면 좀 더 편하게 풀 수 있습니다.
-- Stream을 이용하면 기존보다 훨씬 좋은 가독성을 가질 수 있습니다.
-- 스테이지별 빈도와 남아 있는 도달자 수로 실패율을 계산합니다.
-
+전체 코드를 `Solution.java`에 저장합니다. Java 11 타깃으로 컴파일하고 JDK 17에서 실행했습니다.
 
 ```java
-public int[] solution(int N, int[] stages) {
-    int[] stopped = new int[N + 2];
-    for (int stage : stages) stopped[stage]++;
-    double[] rates = new double[N + 1];
-    int reached = stages.length;
-    for (int stage = 1; stage <= N; stage++) {
-        rates[stage] = reached == 0 ? 0.0 : (double) stopped[stage] / reached;
-        reached -= stopped[stage];
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
+public class Solution {
+    public int[] solution(int N, int[] stages) {
+        long[] stopped = new long[N + 2];
+        for (int stage : stages) stopped[stage]++;
+        long[] reached = new long[N + 1];
+        long remaining = stages.length;
+        for (int stage = 1; stage <= N; stage++) {
+            reached[stage] = remaining;
+            remaining -= stopped[stage];
+        }
+        Integer[] order = IntStream.rangeClosed(1, N).boxed().toArray(Integer[]::new);
+        Arrays.sort(order, (a, b) -> {
+            long denominatorA = reached[a] == 0 ? 1 : reached[a];
+            long denominatorB = reached[b] == 0 ? 1 : reached[b];
+            int byRate = Long.compare(stopped[b] * denominatorA, stopped[a] * denominatorB);
+            return byRate != 0 ? byRate : Integer.compare(a, b);
+        });
+        return Arrays.stream(order).mapToInt(Integer::intValue).toArray();
     }
-    Integer[] order = IntStream.rangeClosed(1, N).boxed().toArray(Integer[]::new);
-    Arrays.sort(order, Comparator.<Integer>comparingDouble(stage -> rates[stage])
-        .reversed().thenComparingInt(Integer::intValue));
-    return Arrays.stream(order).mapToInt(Integer::intValue).toArray();
 }
 ```
 
-## 검증 및 보강 — 2026-10-24
+`remaining`은 현재 스테이지에 도달한 인원입니다. `reached[stage]`를 저장한 **다음** 해당 스테이지에 멈춘 인원을 빼야 다음 스테이지의 분모가 됩니다. N+1의 이용자는 끝까지 분모에 남습니다.
 
-실패율이 같으면 스테이지 번호 오름차순이라는 두 번째 정렬 기준이 필요합니다. 기존 코드는 `HashMap` 순회 순서에 기대고 있어 이 조건을 보장하지 못했습니다. 또한 스테이지마다 전체 이용자를 다시 조회하는 O(N×M) 계산을 빈도 배열로 변경했습니다. 수정 예제는 시간 O(M + N log N), 추가 공간 O(N)입니다. `N=5, stages=[2,1,2,6,2,4,3,3] → [3,4,2,1,5]`, 모든 사용자가 클리어한 경우 `[1,2,…,N]`을 확인하세요.
+N=5, 입력 `[2,1,2,6,2,4,3,3]`의 비율은 다음과 같습니다.
 
-메서드 예제는 `Solution` 클래스 내부에 넣는 형태이며, 사용한 클래스는 `java.util.Arrays`, `java.util.Comparator`, `java.util.stream.IntStream`입니다. 필요한 import를 클래스 선언 위에 추가하세요.
+| 스테이지 | 멈춘 인원 | 도달 인원 | 실패율 |
+| --- | --- | --- | --- |
+| 1 | 1 | 8 | 1/8 |
+| 2 | 3 | 7 | 3/7 |
+| 3 | 2 | 4 | 2/4 |
+| 4 | 1 | 2 | 1/2 |
+| 5 | 0 | 1 | 0/1 |
 
-### 확인한 자료
+3번과 4번의 비율이 같으므로 작은 번호인 3번이 먼저입니다. 최종 순서는 `[3,4,2,1,5]`입니다.
 
-- [공식 자료 1](https://school.programmers.co.kr/learn/courses/30/lessons/42889)
+## 비율 비교와 수치 범위
+
+양의 분모에서는 두 비율을 교차곱으로 비교할 수 있습니다. 내림차순 비교이므로 코드의 `Long.compare`는 b의 분자와 a의 분모를 곱한 값을 먼저 받습니다. 비율이 같으면 `Integer.compare(a, b)`로 번호를 비교합니다. [Comparator 계약](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Comparator.html)에 맞는 정렬 기준을 직접 지정하는 것입니다.
+
+도달 인원이 0이면 유효 입력에서 멈춘 인원도 0이므로 계산용 분모를 1로 바꿔 0/1로 비교합니다. 두 인원이 모두 최대 200,000일 수 있어 곱의 상한은 40,000,000,000입니다. 이 값은 int를 넘으므로 배열과 곱셈을 long으로 유지합니다. 곱한 뒤 int로 바꾸어 차를 반환하면 안 됩니다.
+
+빈도 계산은 O(M), 도달 인원 계산은 O(N), 정렬은 O(N log N)입니다. 전체 시간 O(M + N log N), 추가 공간 O(N)이며 입력을 수정하지 않습니다. 모든 이용자가 클리어했다면 모든 실패율이 0이어서 번호 순으로 나옵니다.
+
+입력 범위에 맞춘 곱셈 타입 선택은 [배열 내적의 int·long 범위](/ko/posts/2021-07-22-dot-product/)와도 연결됩니다.

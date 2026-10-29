@@ -140,3 +140,7 @@ client_secret*.json
 credentials.json
 token.json
 .venv-search-console/
+
+# Local notification state and downloaded Pages artifact
+.pipeline/indexnow-state.json
+.indexnow-dist/

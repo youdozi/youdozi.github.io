@@ -1,9 +1,9 @@
 ---
 import Listing from '../../../../components/Listing.astro';
-import { entries, languages, text, type Language } from '../../../../lib/content';
+import { entries, publishedLanguages, text, type Language } from '../../../../lib/content';
 export async function getStaticPaths() {
   const all = await entries();
-  return languages.flatMap(lang => ['posts','digest'].flatMap(section => Array.from({ length: Math.max(0, Math.ceil(all.filter(e => e.language === lang && e.kind === (section === 'posts' ? 'post' : 'digest')).length/12)-1) }, (_,i) => ({ params: { lang, section, page: String(i+2) } }))));
+  return (await publishedLanguages()).flatMap(lang => ['posts','digest'].flatMap(section => Array.from({ length: Math.max(0, Math.ceil(all.filter(e => e.language === lang && e.kind === (section === 'posts' ? 'post' : 'digest')).length/12)-1) }, (_,i) => ({ params: { lang, section, page: String(i+2) } }))));
 }
 const lang = Astro.params.lang as Language;
 const section = Astro.params.section as 'posts' | 'digest';

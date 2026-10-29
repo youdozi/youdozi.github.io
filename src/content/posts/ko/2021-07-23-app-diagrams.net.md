@@ -1,46 +1,81 @@
 ---
-title: "[유틸리티] UML 다이어그램 작성 툴"
-language: "ko"
-translationKey: "2021-07-23-app-diagrams.net"
-routeSlug: "2021-07-23-app-diagrams.net"
-kind: "post"
-publishedAt: "2021-07-23T01:00:00.000Z"
+title: "draw.io 다이어그램 관리: 편집 원본과 공유 이미지를 함께 보관하기"
+language: ko
+translationKey: 2021-07-23-app-diagrams.net
+routeSlug: 2021-07-23-app-diagrams.net
+kind: post
+publishedAt: 2021-07-23T01:00:00.000Z
 categories:
-  - "util"
+  - util
 tags:
-  - "util"
-  - "uml"
-  - "다이어그램"
-legacyUrl: "/util/app-diagrams.net/"
-legacySource: "_posts/util/2021-07-23-app-diagrams.net.markdown"
-updatedAt: "2026-10-24T09:00:00+09:00"
-reviewedAt: "2026-10-24"
-reviewStatus: "revised"
-reviewScope: "공식 문서 대조 및 예제 코드 검토"
-archiveBodySha256: "671e96b0078d6509043884567b4b94850a66f2830bdf1d55c47d8e51420af7c6"
+  - util
+  - uml
+  - 다이어그램
+legacyUrl: /util/app-diagrams.net/
+legacySource: _posts/util/2021-07-23-app-diagrams.net.markdown
+updatedAt: 2026-10-27T07:19:48.249Z
+reviewedAt: "2026-10-27"
+reviewStatus: revised
+reviewScope: Primary documentation checked; paired examples and diagram/code
+  structure validated. Execution and UI limits are stated in the article.
+archiveBodySha256: 671e96b0078d6509043884567b4b94850a66f2830bdf1d55c47d8e51420af7c6
 reviewSources:
-  - "https://www.drawio.com/docs/manual/editor/save-file-formats/"
+  - https://www.drawio.com/docs/manual/editor/save-file-formats/
+  - https://www.drawio.com/docs/manual/advanced/diagram-source-edit/
+description: .drawio XML 예제로 노드·연결 관계를 정의하고 편집 원본과 공유용 SVG·PNG를 구분합니다. 파일 확장자만으로
+  편집 가능 여부를 판단하지 않습니다.
 ---
-[https://app.diagrams.net/](https://app.diagrams.net/)
+게시한 그림과 함께 편집 가능한 다이어그램 원본을 보관하세요. 이미지는 현재 결과를 보여주고, 원본은 다음 수정에 필요한 도형·연결선·레이블을 유지합니다.
 
-분석 & 설계 중 급하게 UML 다이어그램이 필요할 때가 있습니다.
+[draw.io 파일 형식 안내](https://www.drawio.com/docs/manual/editor/save-file-formats/)는 압축하지 않은 XML인 `.drawio`를 권장합니다. SVG·PNG에도 다이어그램 데이터가 들어갈 수 있으므로 확장자만으로 편집 가능 여부를 단정하지 않습니다. 내보낸 파일에 데이터가 포함돼도 명시적인 원본을 함께 두면 관리 기준이 분명해집니다.
 
-ms office, google docs, 그외에 여러가지 프로그램이 생각날 수 있지만
+## 예제 흐름
 
-위에 소개한 온라인 UML 다이어그램 제작 툴을 이용하면 편합니다.
+![Request에서 Validate를 거쳐 Response로 가는 흐름도](/assets/diagrams/2021-07-23-app-diagrams.net-ko.svg)
 
-UML 다이어그램 뿐만 아니라 기획, 분석, 설계 다양한 분야로 쉽게 사용할 수 있으며
+그림은 아래 XML과 같은 노드 3개, 방향이 있는 연결 2개를 보여줍니다. 글에서 별도로 렌더링한 그림이며 편집기 화면이나 내보내기 결과를 캡처한 것은 아닙니다.
 
-Google Drive, One Drive, DropBox Cloud 저장소 뿐만 아니라
+## 원본 XML 저장하기
 
-GitHub, GitLab과도 연동할 수 있습니다.
+다음 코드를 `request-flow.drawio`로 저장합니다.
 
-쉽게 사용할 수 있어서 정신 건강에 좋아요!!
+```xml
+<mxfile host="app.diagrams.net">
+  <diagram id="request-flow" name="Request flow">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="request" value="Request" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="validate" value="Validate" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="response" value="Response" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="first" edge="1" parent="1" source="request" target="validate" style="endArrow=block;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="second" edge="1" parent="1" source="validate" target="response" style="endArrow=block;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+```
 
-## 검증 및 보강 — 2026-10-24
+`vertex="1"`인 `mxCell`이 세 노드입니다. 두 연결선은 출발·도착 노드의 ID를 참조하고, `mxGeometry`는 위치·크기를 정의합니다. 화면의 레이블 변경과 연결선이 참조하는 ID 변경은 서로 다른 수정입니다.
 
-설계 문서는 원본 `.drawio`와 공유용 SVG/PNG를 구분해 보관하면 수정 이력을 유지하기 쉽습니다. 도형 이름과 관계의 방향·다중성을 명시하고 외부 공유 전에 접속 정보나 개인 정보가 포함됐는지 확인하세요. 지원 저장소와 인증 방식은 바뀔 수 있으므로 실제 사용할 연동은 공식 안내에서 확인합니다. 로컬 저장으로 시작하면 클라우드 계정 연결 없이도 문서를 작성할 수 있습니다.
+파일을 편집기에서 엽니다. 전체 파일에는 바깥쪽 `mxfile`·`diagram` 요소가 포함됩니다. **Extras → Edit Diagram**을 사용할 때는 [원본 편집 안내](https://www.drawio.com/docs/manual/advanced/diagram-source-edit/)의 현재 페이지 `mxGraphModel` 범위를 다루므로 전체 파일과 페이지 조각을 구분하세요.
 
-### 확인한 자료
+| 파일 | 용도 |
+| --- | --- |
+| `request-flow.drawio` | 버전 관리할 편집 원본 |
+| `request-flow.svg`·`.png` | 공유·표시용 결과물. 편집 데이터 포함 여부는 별도로 확인 |
 
-- [공식 자료 1](https://www.drawio.com/docs/manual/editor/save-file-formats/)
+수정 후 원본을 다시 열어 화살표의 방향을 확인하고 공유 그림도 다시 내보냅니다. 소스 변경과 렌더링 결과를 함께 확인하면 서식 변경에 가려진 관계 수정도 찾기 쉽습니다.
+
+예제의 XML 구조·ID 중복·연결 대상은 로컬에서 검사했습니다. 클라우드 저장소, 편집기 UI 조작, 내보내기 후 재열기는 해당 검사의 범위가 아닙니다. 저장소 연동은 사용하는 계정·편집기에서 별도로 선택하세요. 저장소 안의 확인 대상을 좁히는 방법은 [코드 검색 가이드](/ko/posts/2021-08-06-search-github/)에서 이어집니다.

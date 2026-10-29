@@ -8,7 +8,8 @@ export async function getStaticPaths() {
   redirects.set('/dev/digest/dev-digest/', '/ko/digest/');
   redirects.set('/categories/', '/ko/categories/'); redirects.set('/tags/', '/ko/tags/');
   for (let i=2; i<=Math.ceil(all.filter(e=>e.language==='ko').length/5); i++) redirects.set(`/page${i}/`, '/ko/');
-  return [...redirects].map(([url,to]) => ({ params: { legacy: url.slice(1,-1) }, props: { to } }));
+  const publicArticles = new Set(all.filter(entry => entry.kind === 'post' && entry.reviewStatus !== 'example').map(entry => entry.url));
+  return [...redirects].map(([url,to]) => ({ params: { legacy: url.slice(1,-1) }, props: { to, articleMove: publicArticles.has(to) } }));
 }
 ---
-<Redirect to={Astro.props.to} />
+<Redirect to={Astro.props.to} articleMove={Astro.props.articleMove} />
