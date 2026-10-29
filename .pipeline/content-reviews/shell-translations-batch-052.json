@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-29T21:56:45.602690+00:00",
+  "baseCommit": "ab6af5e48e53d71074917008f6c6d56f33289ef2",
+  "dependsOnPR": 94,
+  "previousPRCI": {
+    "runId": 40958691529,
+    "build": "success",
+    "deploy": "skipped"
+  },
+  "purpose": "Prepare the linked POSIX shell, numeric version and GitHub release tutorials in six languages; support separate approved batches and preserve comparison/code text in search.",
+  "skills": [
+    "/Users/youdozi/.agents/skills/translate/SKILL.md"
+  ],
+  "scope": {
+    "newTopics": [
+      "2023-09-20-linux-shellscript-function-error",
+      "2023-11-17-linux-shellscript-version-compare",
+      "2023-09-23-linux-shellscript-github-latest"
+    ],
+    "newEditions": 18,
+    "newLocalizedDiagrams": 18,
+    "totalPreparedTechnicalTopics": 5,
+    "totalPreparedTechnicalEditions": 30,
+    "remainingTechnicalEditions": 186,
+    "pendingNewsEditions": 318,
+    "newPublicArticleFiles": 0
+  },
+  "review": {
+    "method": "AI source/target comparison of complete prose, metadata, tables and diagrams, followed by target-language reading",
+    "independentReview": false,
+    "newExternalFactVerification": false,
+    "execution": "Existing English/Korean source shell scripts were executed with local fixtures in this task; translated commands and JSON examples remain byte-identical to those sources."
+  },
+  "implementation": {
+    "batchRegistry": ".pipeline/technical-translations/batches.json",
+    "manifest": ".pipeline/technical-translations/batch-052/manifest.json",
+    "queue": ".pipeline/technical-translations/queue-052.json",
+    "approval": "Explicit registered manifest selection and its exact hash; approval for one batch cannot authorize another.",
+    "diagrams": "Preserve step order, branch presence and error/completion outcome; verify localized SVG labels and arrow counts. Labels still require semantic review.",
+    "tables": "Translate descriptive cells while preserving structure, protected inline code and numeric/boolean cells.",
+    "search": "Protect fenced and inline code before removing real HTML, preserving numeric comparisons and generic types."
+  },
+  "validation": {
+    "nodeTests": 146,
+    "pythonTests": 297,
+    "astroFiles": 71,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalPublicArticles": 423,
+    "normalSitemapURLs": 479,
+    "shellExecutionCases": {
+      "functions": 4,
+      "versions": 19,
+      "releaseHTTP": 13,
+      "releaseArguments": 7
+    },
+    "combinedPreview": {
+      "implementationCommit": "1ecf47056a2c3796432400a9a9fd5966316fc2e6",
+      "pendingNews": 318,
+      "pendingTechnical": 30,
+      "articleCount": 771,
+      "paragraphsAndTableRows": 498,
+      "codeBlocks": 54,
+      "codeLanguages": {
+        "java": 12,
+        "sh": 36,
+        "json": 6
+      },
+      "technicalSVGs": 30,
+      "technicalRSSItems": 30,
+      "newsRSSItems": 150,
+      "workingPublicationFilesChanged": false,
+      "workingDistChanged": false,
+      "temporarySnapshotRemoved": true,
+      "sitemapURLs": 839
+    },
+    "svgTextBounds": {
+      "diagrams": 18,
+      "passed": true
+    },
+    "browser": {
+      "articleCount": 18,
+      "widths": [
+        320,
+        1360
+      ],
+      "layoutAndKeyboardChecks": 36,
+      "passed": true,
+      "telemetryIsolation": "isolatedContext before page creation; service workers blocked"
+    }
+  },
+  "limits": [
+    "AI self-review is not independent human or native-speaker sign-off.",
+    "New translations remain unpublished; neither parent PR nor this work records a publication approval.",
+    "Static output and search-content preservation do not measure search-engine indexing or traffic."
+  ]
+}
