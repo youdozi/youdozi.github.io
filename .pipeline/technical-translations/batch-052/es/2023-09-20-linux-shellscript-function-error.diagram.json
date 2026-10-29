@@ -1,0 +1,48 @@
+{
+  "key": "2023-09-20-linux-shellscript-function-error",
+  "language": "es",
+  "title": "Elegir Shell y conservar argumentos",
+  "description": "El intérprete invocado analiza la función. El ejemplo comprueba que haya un solo argumento y conserva espacios y caracteres comodín mediante comillas.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Elegir sh o Bash explícitamente",
+        "Usar la sintaxis de ese intérprete"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "sh -n solo comprueba sintaxis",
+        "Ejecutar también el script"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Pasar \"$@\" entre comillas",
+        "a greet"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Cantidad distinta de 1?",
+        "Mostrar uso; código 2"
+      ],
+      "branch": {
+        "exit": "Sí",
+        "continue": "No",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Un argumento: mostrar saludo",
+        "Código de función final → script"
+      ]
+    }
+  ]
+}

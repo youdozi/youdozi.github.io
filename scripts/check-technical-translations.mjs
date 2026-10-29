@@ -40,9 +40,15 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language){
   same(links(source.body),links(draft.body),'Source links changed, reordered or omitted');
   same(numbers(source.body),numbers(draft.body),'Numeric values changed or omitted');
   same(shape(source.body),shape(draft.body),'Source paragraph, heading or table structure changed');
-  const sourceRows=source.body.split('\n').filter(line=>line.startsWith('|')).slice(1);
-  const draftRows=draft.body.split('\n').filter(line=>line.startsWith('|')).slice(1);
-  same(sourceRows,draftRows,'Table values changed or omitted');
+  const rows=body=>body.split('\n').filter(line=>line.startsWith('|')).map(line=>line.replace(/`[^`]+`/g,m=>m.replaceAll('|','\u0000')).split('|').slice(1,-1).map(cell=>cell.trim().replaceAll('\u0000','|')));
+  const sourceRows=rows(source.body),draftRows=rows(draft.body);
+  same(sourceRows.map(row=>row.length),draftRows.map(row=>row.length),'Table structure changed or omitted');
+  sourceRows.forEach((row,i)=>row.forEach((cell,j)=>{
+    const translated=draftRows[i][j];
+    same(inline(cell),inline(translated),'Table code changed or omitted');
+    same(numbers(cell),numbers(translated),'Table numbers changed or omitted');
+    if(/^(?:true|false|[-+]?\d[\d, .]*|`[^`]+`)$/.test(cell)&&cell!==translated)fail('Table values changed or omitted');
+  }));
   const images=[...draft.body.matchAll(/!\[([^\]\n]+)\]\(([^)]+)\)/g)];
   if(images.length!==1||images[0][1]!==diagram.description||images[0][2]!==`${key}.svg`||!draft.body.includes(`\n\n${diagram.description}\n\n`))fail('Localized diagram, alt or adjacent caption missing');
   return {source,draft};
@@ -78,19 +84,51 @@ export async function inspectTechnicalTranslations(base=root,manifestPath=defaul
     const original=JSON.parse(await pinned(row.sourceDiagram,'content/diagrams/')).diagrams.find(d=>d.key===key);
     if(!original||diagram.key!==key||diagram.language!==language||!diagram.title?.trim()||!diagram.description?.trim())fail('Invalid localized flow source');
     same(diagram.steps.map(s=>s.kind),original.steps.map(s=>s.kind),'Flow structure changed');
-    if(original.loop||original.steps.some(s=>s.branch))fail('This pilot checker only supports linear source flows');
+    original.steps.forEach((step,i)=>{
+      const localized=diagram.steps[i];
+      if(Boolean(step.branch)!==Boolean(localized.branch))fail('Flow branch was added or omitted');
+      if(step.branch){
+        if((step.branch.outcome??'error')!==localized.branch.outcome)fail('Flow exit outcome changed');
+        for(const label of ['exit','continue'])if(typeof localized.branch[label]!=='string'||!localized.branch[label].trim()||localized.branch[label].length>12)fail('Missing or oversized branch label');
+      }
+    });
+    if(Boolean(original.loop)!==Boolean(diagram.loop))fail('Flow loop was added or omitted');
+    if(original.loop&&(original.loop.from!==diagram.loop.from||original.loop.to!==diagram.loop.to||typeof diagram.loop.label!=='string'||!diagram.loop.label.trim()))fail('Flow loop endpoints or label changed');
     if(diagram.steps.some(s=>!Array.isArray(s.lines)||s.lines.length<1||s.lines.length>3||s.lines.some(line=>typeof line!=='string'||!line.trim())))fail('Empty or invalid translated flow step');
     const {draft}=compareManuscript(sourceRaw,draftRaw,diagram,key,language);
     if(draft.meta.sourcePath!==row.source.path||draft.meta.sourceSha256!==row.source.sha256)fail('Draft source pin mismatch');
-    const texts=[diagram.title,...diagram.steps.flatMap(s=>s.lines)].map(escape);
+    const labels=[diagram.title];
+    diagram.steps.forEach((step,i)=>{
+      labels.push(...step.lines);
+      if(step.branch){labels.push(step.branch.outcome==='complete'?'✓':'×',step.branch.exit);if(i<diagram.steps.length-1)labels.push(step.branch.continue);}
+    });
+    if(diagram.loop)labels.push(diagram.loop.label);
+    const texts=labels.map(escape);
     const svgTexts=[...svg.matchAll(/<text\b[^>]*>([^<]*)<\/text>/g)].map(m=>m[1]);
     same(svgTexts,texts,'SVG labels do not match localized diagram source');
     if(!svg.includes(`xml:lang="${language}"`)||!svg.includes(`<desc id="description">${escape(diagram.description)}</desc>`)||!svg.includes(`<title id="title">${escape(diagram.title)}</title>`)||/<(?:script|image|foreignObject)\b|\b(?:href|onload)=/i.test(svg))fail('Invalid or externally dependent diagram SVG');
-    if((svg.match(/marker-end="url\(#arrow\)"/g)??[]).length!==diagram.steps.length-1)fail('SVG arrows do not match linear flow');
+    if((svg.match(/marker-end="url\(#arrow\)"/g)??[]).length!==diagram.steps.length-1+diagram.steps.filter(s=>s.branch).length+(diagram.loop?1:0))fail('SVG arrows do not match reviewed flow');
   }
   for(const languages of byTopic.values())same([...languages].sort(),[...manifest.languages].sort(),'Incomplete language group');
   return {batchId:manifest.batchId,topics:byTopic.size,preparedEditions:seen.size,byLanguage:Object.fromEntries(manifest.languages.map(l=>[l,manifest.editions.filter(r=>r.language===l).length])),manifestApprovalRecorded:false,publicFilesWritten:0};
 }
+export async function registeredManifests(base=root){
+  const canonical=await realpath(base),path=resolve(canonical,'.pipeline/technical-translations/batches.json');
+  if(await realpath(path)!==path)fail('Technical registry must not be a symlink');
+  const registry=JSON.parse(await readFile(path,'utf8'));
+  if(registry.schemaVersion!==1||!Array.isArray(registry.manifests)||!registry.manifests.length||new Set(registry.manifests).size!==registry.manifests.length||registry.manifests.some(p=>typeof p!=='string'||!/^\.pipeline\/technical-translations\/batch-[0-9]+\/manifest\.json$/.test(p)))fail('Invalid technical batch registry');
+  return registry.manifests;
+}
+export async function inspectAllTechnicalTranslations(base=root){
+  const manifests=await registeredManifests(base),batches=[],seen=new Set(),topics=new Set(),ids=new Set();
+  for(const path of manifests){
+    const summary=await inspectTechnicalTranslations(base,path),manifest=JSON.parse(await readFile(resolve(base,path),'utf8'));
+    if(ids.has(manifest.batchId))fail('Duplicate technical batch ID');ids.add(manifest.batchId);
+    for(const row of manifest.editions){if(seen.has(row.key))fail('Duplicate edition across technical batches');seen.add(row.key);topics.add(row.translationKey);}
+    batches.push({...summary,manifest:path});
+  }
+  return {batches,topics:topics.size,preparedEditions:seen.size,manifestApprovalRecorded:false,publicFilesWritten:0};
+}
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
-  inspectTechnicalTranslations().then(r=>console.log(JSON.stringify(r,null,2))).catch(error=>{console.error(error.message);process.exitCode=1;});
+  inspectAllTechnicalTranslations().then(r=>console.log(JSON.stringify(r,null,2))).catch(error=>{console.error(error.message);process.exitCode=1;});
 }

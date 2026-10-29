@@ -1,0 +1,52 @@
+{
+  "key": "2023-09-23-linux-shellscript-github-latest",
+  "language": "de",
+  "title": "Ein GitHub-Release-Asset wählen",
+  "description": "Ein HTTP-Fehler beendet das Skript vor dem JSON-Parsen. Ein gültiges Release-Objekt muss genau ein passendes Asset enthalten. Die Auswahl seiner URL prüft nicht die heruntergeladene Datei.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "OWNER/REPO-Argument prüfen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "curl erfasst die HTTP-Antwort",
+        "Fehler: Status ungleich null"
+      ],
+      "branch": {
+        "exit": "Fehler",
+        "continue": "Erfolg",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Genau ein JSON-Release-Objekt",
+        "Tag und Assets auf Inhalt prüfen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Plattform-Dateinamen abgleichen",
+        "Kein/mehrere Treffer: Fehler"
+      ],
+      "branch": {
+        "exit": "Ungültig",
+        "continue": "Ein Treffer",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Tag und Download-URL ausgeben",
+        "Dateiintegrität separat prüfen"
+      ]
+    }
+  ]
+}

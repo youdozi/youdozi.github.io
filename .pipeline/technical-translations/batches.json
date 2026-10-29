@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "manifests": [
+    ".pipeline/technical-translations/batch-050/manifest.json",
+    ".pipeline/technical-translations/batch-052/manifest.json"
+  ]
+}

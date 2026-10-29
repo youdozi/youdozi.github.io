@@ -1,0 +1,42 @@
+{
+  "key": "2023-11-17-linux-shellscript-version-compare",
+  "language": "fr",
+  "title": "Comparer des versions numériques",
+  "description": "Vérifiez le contrat d’entrée exclusivement numérique, alignez les composants manquants avec zéro et arrêtez-vous à la première paire différente. Un résultat inférieur reste une comparaison réussie.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Exiger exactement deux versions",
+        "Chiffres séparés par des points"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Convertir les composants en entiers",
+        "Échec de conversion : code 2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Aligner les paires ; valeur absente = 0"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Première paire différente : < ou >",
+        "Aucune différence signifie ="
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Afficher la relation ; code 0",
+        "Appliquer la politique séparément"
+      ]
+    }
+  ]
+}

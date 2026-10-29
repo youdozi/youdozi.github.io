@@ -1,0 +1,52 @@
+{
+  "key": "2023-09-23-linux-shellscript-github-latest",
+  "language": "zh-CN",
+  "title": "选择一个 GitHub 发布资产",
+  "description": "HTTP 失败会在解析 JSON 前终止脚本。有效的发布版本对象必须恰好包含一个匹配资产；选出其 URL 不等于验证下载的文件。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "校验 OWNER/REPO 参数"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "curl 保存 HTTP 响应",
+        "请求失败：以非零状态退出"
+      ],
+      "branch": {
+        "exit": "失败",
+        "continue": "成功",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "要求一个 JSON 发布版本对象",
+        "检查非空标签和资产"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "匹配平台文件名",
+        "无匹配或多个匹配：报错停止"
+      ],
+      "branch": {
+        "exit": "无效",
+        "continue": "一个匹配",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "输出标签和下载 URL",
+        "单独验证文件完整性"
+      ]
+    }
+  ]
+}

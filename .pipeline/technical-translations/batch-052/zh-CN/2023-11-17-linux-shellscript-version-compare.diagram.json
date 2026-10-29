@@ -1,0 +1,42 @@
+{
+  "key": "2023-11-17-linux-shellscript-version-compare",
+  "language": "zh-CN",
+  "title": "比较点分数字版本",
+  "description": "校验输入是否符合纯数字约定，用零对齐缺失分量，并在遇到首对不同分量时停止比较。小于的结果仍然属于成功完成的比较。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "要求恰好两个版本参数",
+        "仅允许用点分隔的数字"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "将各分量转换为整数",
+        "转换失败：状态 2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "对齐分量，缺失值 = 0"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "首对不同分量决定 < 或 >",
+        "没有不同分量则为 ="
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "输出大小关系，状态 0",
+        "单独应用部署策略"
+      ]
+    }
+  ]
+}

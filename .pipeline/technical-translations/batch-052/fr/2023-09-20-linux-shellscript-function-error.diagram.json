@@ -1,0 +1,48 @@
+{
+  "key": "2023-09-20-linux-shellscript-function-error",
+  "language": "fr",
+  "title": "Choisir le Shell, garder les arguments",
+  "description": "L’interpréteur invoqué analyse la fonction. L’exemple vérifie qu’un seul argument est fourni et préserve les espaces et les caractères génériques grâce aux guillemets.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Choisir sh ou Bash explicitement",
+        "Adapter la syntaxe à ce choix"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "sh -n ne vérifie que la syntaxe",
+        "Exécuter aussi le script"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Passer \"$@\" entre guillemets",
+        "à greet"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Nombre d’arguments différent de 1 ?",
+        "Afficher l’usage ; code 2"
+      ],
+      "branch": {
+        "exit": "Oui",
+        "continue": "Non",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Un argument : afficher le salut",
+        "Code final de fonction → script"
+      ]
+    }
+  ]
+}

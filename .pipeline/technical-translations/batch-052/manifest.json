@@ -1,0 +1,474 @@
+{
+  "schemaVersion": 1,
+  "batchId": "technical-shell-052",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "ab6af5e48e53d71074917008f6c6d56f33289ef2",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "AI self-review against every English source paragraph followed by target-language reading",
+    "independentReviewer": false,
+    "newExternalFactVerification": false,
+    "scope": "Complete titles, descriptions, prose, tables, diagram labels/alt/captions. All code, commands, sample JSON, output literals, endpoint paths and source URLs preserved. Historical execution claims translated as recorded source checks."
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2023-09-20-linux-shellscript-function-error",
+      "language": "zh-CN",
+      "translationKey": "2023-09-20-linux-shellscript-function-error",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "4a12c2472fec8210e49537ae97c941a6ec2755fc4ae5bb962bf8923690b4aa68"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-09-20-linux-shellscript-function-error.diagram.json",
+        "sha256": "ff11790e39d557df546eabf81145df2016231cf0026959baed93a3f4ea93b1f2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-09-20-linux-shellscript-function-error.svg",
+        "sha256": "60a3958fc9b3c8aef5d9fb90c9d6b9601b2595d9e885e5f30cff82baaf918b26"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ja-2023-09-20-linux-shellscript-function-error",
+      "language": "ja",
+      "translationKey": "2023-09-20-linux-shellscript-function-error",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/ja/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "a484245c71e0927875ab102b6bd4d2e0a61462c866b11a023df6b41ac98a9474"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/ja/2023-09-20-linux-shellscript-function-error.diagram.json",
+        "sha256": "bcc28c4ab915ed5a8d4ba9b37bef9147249e3e6c6997e839ebc7704be2d3ef7a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/ja/2023-09-20-linux-shellscript-function-error.svg",
+        "sha256": "2de9a41b03206d98f27c2eee4c98483a5d2b2e982bdf961570a9ca3f706642b6"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "de-2023-09-20-linux-shellscript-function-error",
+      "language": "de",
+      "translationKey": "2023-09-20-linux-shellscript-function-error",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/de/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "4a010d05ae9637d17b26cc865c4ac891d5745a5db4fbf3703c310b862654c87c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/de/2023-09-20-linux-shellscript-function-error.diagram.json",
+        "sha256": "bc70cd0d95a75b4c0e8796d0bb956930cddd91d84d53ecf7f4e3efb87754a106"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/de/2023-09-20-linux-shellscript-function-error.svg",
+        "sha256": "c31a18b9e03d7aa1718da67994b63120a6f4b51c4801a166491208ca3a27467f"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "fr-2023-09-20-linux-shellscript-function-error",
+      "language": "fr",
+      "translationKey": "2023-09-20-linux-shellscript-function-error",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/fr/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "10f059fc79458632ad74b6a53a333464036878b1ffb2d0d139b9dd3829310a86"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/fr/2023-09-20-linux-shellscript-function-error.diagram.json",
+        "sha256": "916a0b41248fe67b3b5cca5a18c13be3a62040f04be470087fc41a92339fcd71"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/fr/2023-09-20-linux-shellscript-function-error.svg",
+        "sha256": "326adf9e5dd38816eb4a7e3138f846e4692ef9923fe570d324b0fcc91876a203"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ru-2023-09-20-linux-shellscript-function-error",
+      "language": "ru",
+      "translationKey": "2023-09-20-linux-shellscript-function-error",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/ru/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "a6bc0660ed9d3a40770d92365324126bd2a1ac550dd65fd574d6db222964b88d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/ru/2023-09-20-linux-shellscript-function-error.diagram.json",
+        "sha256": "26a7e92a8a3af56807a3953505bc49cedf26f6effaf11f1b8e3da4ba8b57dd05"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/ru/2023-09-20-linux-shellscript-function-error.svg",
+        "sha256": "444bdf279363d6faaeff5dab16d828163bd7b6475ab810608b7924847ef5c867"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "es-2023-09-20-linux-shellscript-function-error",
+      "language": "es",
+      "translationKey": "2023-09-20-linux-shellscript-function-error",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/es/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "e2ee64f37bc528476ed37942f581c440731c94a7955bc31f109b122733ccec5f"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/es/2023-09-20-linux-shellscript-function-error.diagram.json",
+        "sha256": "1def0cf6eaf656b074dc792f8d808db7f46d6f66af1824a4347f28bf4aa403c9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/es/2023-09-20-linux-shellscript-function-error.svg",
+        "sha256": "3f27274809ebc6d6103e371c138a3bbaf24e48fd0b71165641c8f88ea852b2ec"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "zh-CN-2023-11-17-linux-shellscript-version-compare",
+      "language": "zh-CN",
+      "translationKey": "2023-11-17-linux-shellscript-version-compare",
+      "source": {
+        "path": "src/content/posts/en/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "8a7aad8571d8d6d228d09374ac5269206cf3ab89507a23e808467d07fe823e44"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-11-17-linux-shellscript-version-compare.diagram.json",
+        "sha256": "8bdde54ab59698ce7c616a8eb12ae4dec8528693e50eceb105a9a4bde01767bc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-11-17-linux-shellscript-version-compare.svg",
+        "sha256": "2c97deb4b61847bd08b8cabaa29c6c06e8fac349012e45af4c124ac4d27edc78"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ja-2023-11-17-linux-shellscript-version-compare",
+      "language": "ja",
+      "translationKey": "2023-11-17-linux-shellscript-version-compare",
+      "source": {
+        "path": "src/content/posts/en/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/ja/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "776424c154eb54a26ab3d11f6de958c2f4ffdf0354827e5407bc701dfaa1508e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/ja/2023-11-17-linux-shellscript-version-compare.diagram.json",
+        "sha256": "dacc7f40ab0b1ee792e533963a632261fc7f461478559757081722b2be4c1de6"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/ja/2023-11-17-linux-shellscript-version-compare.svg",
+        "sha256": "353f4b65ceaeade1ae82c6b1bf9c6d1fbb63b35584ba40ed80d942bab1d8bc87"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "de-2023-11-17-linux-shellscript-version-compare",
+      "language": "de",
+      "translationKey": "2023-11-17-linux-shellscript-version-compare",
+      "source": {
+        "path": "src/content/posts/en/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/de/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "90fa2b55060bd5214e62e94a76532757f1626caf4c5e2122fea89240fdf06d1d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/de/2023-11-17-linux-shellscript-version-compare.diagram.json",
+        "sha256": "41360dbc38b586ea6adf124e92286304f5c903a94255023bfbbff714c702b285"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/de/2023-11-17-linux-shellscript-version-compare.svg",
+        "sha256": "60d7c7f5bc037778f7cc6eb0a5868f19913799f490deb541e9f9fac68b41c548"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "fr-2023-11-17-linux-shellscript-version-compare",
+      "language": "fr",
+      "translationKey": "2023-11-17-linux-shellscript-version-compare",
+      "source": {
+        "path": "src/content/posts/en/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/fr/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "1424b19aaf708db10883f23dee5feed146898b6d30cd6582183e79d4eb108ff5"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/fr/2023-11-17-linux-shellscript-version-compare.diagram.json",
+        "sha256": "76f18b55e729e7e917a718bf56597c07598b4eddd1832ca4841a81718766f974"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/fr/2023-11-17-linux-shellscript-version-compare.svg",
+        "sha256": "ed236df4b2c87f3152571b9b131eb430af33865e46541410caa724703af2cc72"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ru-2023-11-17-linux-shellscript-version-compare",
+      "language": "ru",
+      "translationKey": "2023-11-17-linux-shellscript-version-compare",
+      "source": {
+        "path": "src/content/posts/en/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/ru/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "2a6ca2d8c1cca75ffe1568dd309ddaa9f5bda91c0a204404a77230d321af7453"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/ru/2023-11-17-linux-shellscript-version-compare.diagram.json",
+        "sha256": "6b76e9246eb050641f847fb8c2c5058be6e95eb273fc74189df98f68ded91e1b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/ru/2023-11-17-linux-shellscript-version-compare.svg",
+        "sha256": "6461773a6a12c03eb1323dce9a725a32854d280ae8c893abf0aef8156f3c558b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "es-2023-11-17-linux-shellscript-version-compare",
+      "language": "es",
+      "translationKey": "2023-11-17-linux-shellscript-version-compare",
+      "source": {
+        "path": "src/content/posts/en/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/es/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "c14040cadfc35bedb44bb556f918593c1f679f36efecca6f0fa6c0537b1e4246"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/es/2023-11-17-linux-shellscript-version-compare.diagram.json",
+        "sha256": "2e696dd9dd563815be014b01f78a224bd0d74fa489a60ce5fa3df8f4d2996dd4"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/es/2023-11-17-linux-shellscript-version-compare.svg",
+        "sha256": "dd939daaf2137dc13504ea94c7a7c1a8e8d27826f6a1e20af96d593f406d7a8a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-23-linux-shellscript-github-latest",
+      "language": "zh-CN",
+      "translationKey": "2023-09-23-linux-shellscript-github-latest",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "e956ca56861f5adc50a51f3401fd7e17e428b0fa7d6ee22069b8dd6fdc59ea20"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-09-23-linux-shellscript-github-latest.diagram.json",
+        "sha256": "56baa749022f691968e580032250a24696beb53a992081662ae0fbc9999c82c3"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-09-23-linux-shellscript-github-latest.svg",
+        "sha256": "2a895c2fbdc73fb63a7f5446b88a56befe7553cdf03afba3cd15b84a8a3559e7"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ja-2023-09-23-linux-shellscript-github-latest",
+      "language": "ja",
+      "translationKey": "2023-09-23-linux-shellscript-github-latest",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/ja/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "94e6db900eb7f284c0e83e0094c17da26702a2cbd4e4da9b742bed8fa05b51a1"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/ja/2023-09-23-linux-shellscript-github-latest.diagram.json",
+        "sha256": "af67291e71635b7b9c2bfa671fb17fbd385b6c2e4c9d7d9b537c6318a11418b1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/ja/2023-09-23-linux-shellscript-github-latest.svg",
+        "sha256": "03b7d326a3d9c05ffff2f38733dd01fa8075654dd96c0fafc33b193cf9770e09"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "de-2023-09-23-linux-shellscript-github-latest",
+      "language": "de",
+      "translationKey": "2023-09-23-linux-shellscript-github-latest",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/de/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "3b4bcf71a1d34636b2cf3381a889b7c0828caf2baad7e4361737bcd3d00c5677"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/de/2023-09-23-linux-shellscript-github-latest.diagram.json",
+        "sha256": "f73f655df3b5e0e5f441d74cf6c24a54ef1960eb61e28477ec1818c691bc18be"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/de/2023-09-23-linux-shellscript-github-latest.svg",
+        "sha256": "67302682e98fbf764820eab512dc723b5b32ec74946495122524a3c391eddfd3"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "fr-2023-09-23-linux-shellscript-github-latest",
+      "language": "fr",
+      "translationKey": "2023-09-23-linux-shellscript-github-latest",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/fr/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "a4f27d9ef0059b5c0ab1d6bca9e2275559c2ffcf8db89e03b3dff2472f7b0358"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/fr/2023-09-23-linux-shellscript-github-latest.diagram.json",
+        "sha256": "351f89214e3787378b7000087f55f5ff7fd8f4e5e40423f4520931cfd7e10760"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/fr/2023-09-23-linux-shellscript-github-latest.svg",
+        "sha256": "02d49fd965886421ee0475bb90a15b94de2c42df100ee005ec3f7df8fe34743e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ru-2023-09-23-linux-shellscript-github-latest",
+      "language": "ru",
+      "translationKey": "2023-09-23-linux-shellscript-github-latest",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/ru/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "5ac197c0faa854c6d77ba090a0a1597ffd5a4c4d263519019d28711f34ee574d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/ru/2023-09-23-linux-shellscript-github-latest.diagram.json",
+        "sha256": "9e4c1eabc4f2ef4fc28d171fb7c3774239629f3af299d4a36751a4cf600f3883"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/ru/2023-09-23-linux-shellscript-github-latest.svg",
+        "sha256": "5f3d6b4c7781c33999d456367af0a667cbaf267526b7c10017878fafc0c67e2e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "es-2023-09-23-linux-shellscript-github-latest",
+      "language": "es",
+      "translationKey": "2023-09-23-linux-shellscript-github-latest",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-052/es/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "2a3cf18672a45425c9f947f5c0a201f803e09408d200bde45f358d009bc99529"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-052/es/2023-09-23-linux-shellscript-github-latest.diagram.json",
+        "sha256": "03914f5ab7372f3f4485ce10a5f5f437c61424aefcf3423773186a836c7eced5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-052/es/2023-09-23-linux-shellscript-github-latest.svg",
+        "sha256": "c61ee18bdc214f5b555e2dc10a40e8d713602fbe44ccec2f95a650ac75c9747c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    }
+  ]
+}
