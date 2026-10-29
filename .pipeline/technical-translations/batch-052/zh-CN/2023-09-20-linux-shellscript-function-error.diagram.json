@@ -1,0 +1,47 @@
+{
+  "key": "2023-09-20-linux-shellscript-function-error",
+  "language": "zh-CN",
+  "title": "选择 Shell 并保留参数",
+  "description": "实际调用的解释器负责解析函数。示例检查是否只有一个参数，并通过引号保留参数中的空格和通配符。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "明确选择 sh 或 Bash",
+        "使用该解释器支持的语法"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "sh -n 只检查语法",
+        "还需实际执行脚本"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "将带引号的 \"$@\" 传入 greet"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "参数数量不为 1？",
+        "输出用法，返回状态 2"
+      ],
+      "branch": {
+        "exit": "是",
+        "continue": "否",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "一个参数：输出问候语",
+        "最后的函数状态 → 脚本"
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 import {parseArgs} from 'node:util';
 import {pathToFileURL} from 'node:url';
 import {parse} from 'yaml';
-import {inspectTechnicalTranslations} from './check-technical-translations.mjs';
+import {inspectTechnicalTranslations,inspectAllTechnicalTranslations,registeredManifests} from './check-technical-translations.mjs';
 import {technicalPublicationSchema} from '../src/lib/technical-publication-schema.ts';
 // Astro bundles this server-only module into dist; the build working directory remains the project root.
 export const root=resolve(process.cwd());
@@ -21,9 +21,10 @@ export const serializeArticle=(data,body)=>`---\n${JSON.stringify(data,null,2)}\
 export const assetURL=(language,key)=>`/assets/diagrams/technical/${language}-${key}.svg`;
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 
-export async function inspectTechnicalBatch(base=root){
-  const summary=await inspectTechnicalTranslations(base,manifestPath);
-  const bytes=await readFile(resolve(base,manifestPath),'utf8'),manifest=JSON.parse(bytes);
+export async function inspectTechnicalBatch(base=root,selectedManifest=manifestPath){
+  if(!(await registeredManifests(base)).includes(selectedManifest))throw new Error('Unregistered technical manifest');
+  const summary=await inspectTechnicalTranslations(base,selectedManifest);
+  const bytes=await readFile(resolve(base,selectedManifest),'utf8'),manifest=JSON.parse(bytes);
   const editions=[];
   for(const row of manifest.editions){
     const draft=readArticle(await readFile(resolve(base,row.draft.path),'utf8'));
@@ -35,9 +36,14 @@ export async function inspectTechnicalBatch(base=root){
       data:{schemaVersion:1,state:'approved',language,translationKey:key,routeSlug:source.data.routeSlug,kind:'post',
         title:draft.data.title,description:draft.data.description,categories:source.data.categories??[],tags:source.data.tags??[],
         sourcePath:row.source.path,sourceSha256:row.source.sha256,draftSha256:row.draft.sha256,
-        manifestPath,manifestSha256:sha(bytes)}});
+        manifestPath:selectedManifest,manifestSha256:sha(bytes)}});
   }
   return {summary,manifestSha256:sha(bytes),editions};
+}
+export async function inspectTechnicalBatches(base=root){
+  const summary=await inspectAllTechnicalTranslations(base),editions=[];
+  for(const manifest of await registeredManifests(base))editions.push(...(await inspectTechnicalBatch(base,manifest)).editions);
+  return {summary,editions};
 }
 export function publicationPlan(batch,approval,at=new Date().toISOString()){
   if(approval?.kind!=='human'||!approval.reviewedBy?.trim()||!approval.basis?.trim()||!Number.isSafeInteger(approval.pullRequest)||approval.pullRequest<=0||approval.pullRequest===Number.MAX_SAFE_INTEGER)throw new Error('Explicit human approval details required');
@@ -83,7 +89,7 @@ export async function publishedTechnicalFiles(base=root){
 export async function checkTechnicalPublications(base=root){
   base=await realpath(base);
   const paths=await publishedTechnicalFiles(base);
-  const batch=await inspectTechnicalBatch(base),records=[];
+  const batch=await inspectTechnicalBatches(base),records=[];
   for(const path of paths){
     const {data,body}=readArticle(await readFile(resolve(base,path),'utf8'));
     const record=await validatePublishedEdition(data,body,batch,base);
@@ -108,8 +114,9 @@ async function writeRecords(base,records){
   }catch(error){await Promise.all(created.map(path=>unlink(path)));throw error;}
   return created.length;
 }
-export async function prepareApprovedTechnicalBatch(base,approval,expectedManifestSha256){
-  const batch=await inspectTechnicalBatch(base);
+export async function prepareApprovedTechnicalBatch(base,approval,expectedManifestSha256,selectedManifest=manifestPath){
+  await inspectAllTechnicalTranslations(base);
+  const batch=await inspectTechnicalBatch(base,selectedManifest);
   if(expectedManifestSha256!==batch.manifestSha256)throw new Error('Approval must name the exact reviewed manifest hash');
   const records=publicationPlan(batch,approval);
   // Validate the entire fixed set before the first write; wx prevents overwriting existing editions.
@@ -121,7 +128,7 @@ export async function stageTechnicalFixtures(sandbox,actualRoot,records){
   if(actual===base||base.startsWith(actual+sep)||actual.startsWith(base+sep))throw new Error('Technical fixtures require an isolated snapshot');
   const marker=JSON.parse(await readFile(resolve(base,'.translation-preview-fixture.json'),'utf8'));
   if(marker.actualRoot!==actual||marker.fixtureOnly!==true)throw new Error('Missing technical isolation marker');
-  const batch=await inspectTechnicalBatch(base);
+  const batch=await inspectTechnicalBatches(base);
   for(const record of records){
     if(record.data.approval.kind!=='render-fixture')throw new Error('Expected synthetic technical record');
     await validatePublishedEdition(record.data,record.body,batch,base);
@@ -137,7 +144,7 @@ export async function prepareTechnicalAssets(base=root){
   // This generated namespace is owned solely by this preparer; remove withdrawn editions too.
   await rm(destination,{recursive:true,force:true});
   if(!result.records.length)return 0;
-  const batch=await inspectTechnicalBatch(base);await mkdir(destination);
+  const batch=await inspectTechnicalBatches(base);await mkdir(destination);
   for(const record of result.records){
     const edition=batch.editions.find(e=>e.key===`${record.data.language}-${record.data.translationKey}`);
     const svg=await readFile(resolve(base,edition.diagramPath));
@@ -147,13 +154,13 @@ export async function prepareTechnicalAssets(base=root){
   return result.records.length;
 }
 async function main(){
-  const {positionals,values}=parseArgs({allowPositionals:true,options:{'reviewed-by':{type:'string'},'approval-pr':{type:'string'},'approval-basis':{type:'string'},'manifest-sha256':{type:'string'}}});
+  const {positionals,values}=parseArgs({allowPositionals:true,options:{manifest:{type:'string'},'reviewed-by':{type:'string'},'approval-pr':{type:'string'},'approval-basis':{type:'string'},'manifest-sha256':{type:'string'}}});
   const command=positionals[0]??'check';
   if(command==='check'){
     const {records,...summary}=await checkTechnicalPublications();console.log(JSON.stringify(summary,null,2));
   }else if(command==='publish'){
     if(!/^[1-9]\d*$/.test(values['approval-pr']??'')||!values['manifest-sha256'])throw new Error('publish requires exact manifest hash, reviewer, approval PR and explicit approval basis');
-    const count=await prepareApprovedTechnicalBatch(root,{kind:'human',reviewedBy:values['reviewed-by'],pullRequest:Number(values['approval-pr']),basis:values['approval-basis']},values['manifest-sha256']);
+    const count=await prepareApprovedTechnicalBatch(root,{kind:'human',reviewedBy:values['reviewed-by'],pullRequest:Number(values['approval-pr']),basis:values['approval-basis']},values['manifest-sha256'],values.manifest??manifestPath);
     console.log(JSON.stringify({preparedEditions:count,deployed:false}));
   }else throw new Error('Usage: technical-publication.mjs check|publish [explicit approval details]');
 }

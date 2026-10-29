@@ -1,0 +1,52 @@
+{
+  "key": "2023-09-23-linux-shellscript-github-latest",
+  "language": "es",
+  "title": "Elegir un recurso de GitHub",
+  "description": "Un error HTTP detiene el script antes de analizar JSON. Un objeto de release válido debe contener exactamente un recurso coincidente; seleccionar su URL no verifica el archivo descargado.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Validar el argumento OWNER/REPO"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "curl guarda la respuesta HTTP",
+        "Error: salir con código no cero"
+      ],
+      "branch": {
+        "exit": "Error",
+        "continue": "Correcto",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Exigir un objeto JSON de release",
+        "Comprobar etiqueta y recursos"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Comparar nombre con plataforma",
+        "Ninguno o varios: error"
+      ],
+      "branch": {
+        "exit": "No válido",
+        "continue": "Uno",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Emitir etiqueta y URL de descarga",
+        "Verificar integridad por separado"
+      ]
+    }
+  ]
+}

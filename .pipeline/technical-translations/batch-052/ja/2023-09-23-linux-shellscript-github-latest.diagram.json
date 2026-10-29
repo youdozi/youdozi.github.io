@@ -1,0 +1,52 @@
+{
+  "key": "2023-09-23-linux-shellscript-github-latest",
+  "language": "ja",
+  "title": "GitHub のリリース資産を選択",
+  "description": "HTTP の失敗では JSON の解析前に停止します。有効なリリースオブジェクトには一致する資産がちょうど一つ必要です。その URL を選んでもダウンロードファイルの検証にはなりません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "OWNER/REPO 引数を検証"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "curl で HTTP レスポンスを保持",
+        "失敗時はゼロ以外で終了"
+      ],
+      "branch": {
+        "exit": "失敗",
+        "continue": "成功",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "JSON リリースオブジェクトは一つ",
+        "空でないタグと資産を確認"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "プラットフォームのファイル名で照合",
+        "未一致や複数一致ならエラー終了"
+      ],
+      "branch": {
+        "exit": "不正",
+        "continue": "一つ一致",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "タグとダウンロード URL を出力",
+        "ファイルの完全性は別途検証"
+      ]
+    }
+  ]
+}

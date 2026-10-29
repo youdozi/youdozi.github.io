@@ -4,14 +4,17 @@ import {readFile,writeFile,copyFile,mkdir,mkdtemp,rm,symlink,readdir} from 'node
 import {join,dirname,resolve} from 'node:path';
 import {tmpdir} from 'node:os';
 import {technicalPublicationSchema} from '../src/lib/technical-publication-schema.ts';
-import {inspectTechnicalBatch,publicationPlan,technicalFixturePlan,prepareApprovedTechnicalBatch,validatePublishedEdition,checkTechnicalPublications,serializeArticle,stageTechnicalFixtures,prepareTechnicalAssets,manifestPath} from './technical-publication.mjs';
+import {inspectTechnicalBatch,inspectTechnicalBatches,publicationPlan,technicalFixturePlan,prepareApprovedTechnicalBatch,validatePublishedEdition,checkTechnicalPublications,serializeArticle,sha,stageTechnicalFixtures,prepareTechnicalAssets,manifestPath} from './technical-publication.mjs';
+const {inspectTechnicalTranslations}=await import('./check-technical-translations.mjs');
 const root=resolve(import.meta.dirname,'..');
 const approval={kind:'human',reviewedBy:'Test reviewer',pullRequest:123,basis:'Simulated unit-test authorization in a temporary directory only.'};
 async function project(work){
   const folder=await mkdtemp(join(tmpdir(),'youdozi-translation-preview-')),base=join(folder,'site');
   try{
-    const manifest=JSON.parse(await readFile(join(root,manifestPath),'utf8'));
-    const paths=new Set([manifestPath,...manifest.editions.flatMap(r=>[r.source.path,r.draft.path,r.diagramSource.path,r.diagram.path,r.sourceDiagram.path])]);
+    const registryPath='.pipeline/technical-translations/batches.json';
+    const registry=JSON.parse(await readFile(join(root,registryPath),'utf8'));
+    const manifests=await Promise.all(registry.manifests.map(async path=>JSON.parse(await readFile(join(root,path),'utf8'))));
+    const paths=new Set([registryPath,...registry.manifests,...manifests.flatMap(m=>m.editions.flatMap(r=>[r.source.path,r.draft.path,r.diagramSource.path,r.diagram.path,r.sourceDiagram.path]))]);
     for(const path of paths){await mkdir(dirname(join(base,path)),{recursive:true});await copyFile(join(root,path),join(base,path));}
     await mkdir(join(base,'src/content/technical-translations'),{recursive:true});
     await work(base,folder);
@@ -35,7 +38,7 @@ test('human preparation creates twelve approved Markdown files without altering 
   await project(async base=>{
     const batch=await inspectTechnicalBatch(base),before=await readFile(join(base,manifestPath),'utf8');
     assert.equal(await prepareApprovedTechnicalBatch(base,approval,batch.manifestSha256),12);
-    const checked=await checkTechnicalPublications(base);assert.equal(checked.approvedEditions,12);assert.equal(checked.pendingEditions,0);
+    const checked=await checkTechnicalPublications(base);assert.equal(checked.approvedEditions,12);assert.equal(checked.pendingEditions,18);
     assert.equal(await readFile(join(base,manifestPath),'utf8'),before);
     assert.equal(await prepareTechnicalAssets(base),12);
   });
@@ -82,5 +85,50 @@ test('asset preparation removes withdrawn generated diagrams without copying pen
   await project(async base=>{
     const generated=join(base,'public/assets/diagrams/technical');await mkdir(generated,{recursive:true});await writeFile(join(generated,'withdrawn.svg'),'stale');
     assert.equal(await prepareTechnicalAssets(base),0);await assert.rejects(readFile(join(generated,'withdrawn.svg')),{code:'ENOENT'});
+  });
+});
+
+test('approval hash for the first batch cannot publish the separate shell batch',async()=>{
+  await project(async base=>{
+    const first=await inspectTechnicalBatch(base),secondPath='.pipeline/technical-translations/batch-052/manifest.json';
+    await assert.rejects(prepareApprovedTechnicalBatch(base,approval,first.manifestSha256,secondPath),/exact reviewed manifest/);
+    const second=await inspectTechnicalBatch(base,secondPath);
+    assert.equal(await prepareApprovedTechnicalBatch(base,approval,second.manifestSha256,secondPath),18);
+    assert.equal((await checkTechnicalPublications(base)).approvedEditions,18);
+    assert.equal((await checkTechnicalPublications(base)).pendingEditions,12);
+    assert.equal((await inspectTechnicalBatches(base)).editions.length,30);
+  });
+});
+test('unknown or duplicated manifest registrations are rejected before publication',async()=>{
+  await project(async base=>{
+    await assert.rejects(inspectTechnicalBatch(base,'.pipeline/technical-translations/batch-999/manifest.json'),/Unregistered/);
+    const path=join(base,'.pipeline/technical-translations/batches.json'),registry=JSON.parse(await readFile(path,'utf8'));
+    registry.manifests.push(registry.manifests[0]);await writeFile(path,JSON.stringify(registry));
+    await assert.rejects(inspectTechnicalBatches(base),/Invalid technical batch registry/);
+  });
+});
+
+test('failure branches cannot be dropped or converted into successful exits',async()=>{
+  for(const mutate of [diagram=>diagram.steps[3].branch.outcome='complete',diagram=>delete diagram.steps[3].branch]){
+    await project(async base=>{
+      const path='.pipeline/technical-translations/batch-052/manifest.json',manifest=JSON.parse(await readFile(join(base,path),'utf8'));
+      const row=manifest.editions.find(r=>r.language==='zh-CN'&&r.translationKey.includes('function-error'));
+      const diagram=JSON.parse(await readFile(join(base,row.diagramSource.path),'utf8'));mutate(diagram);
+      const bytes=JSON.stringify(diagram);await writeFile(join(base,row.diagramSource.path),bytes);row.diagramSource.sha256=sha(bytes);
+      await writeFile(join(base,path),JSON.stringify(manifest));
+      await assert.rejects(inspectTechnicalTranslations(base,path),/Flow (exit outcome|branch)/);
+    });
+  }
+});
+test('release sample JSON remains protected executable-fence content',async()=>{
+  const batch=await inspectTechnicalBatch(root,'.pipeline/technical-translations/batch-052/manifest.json');
+  const record=publicationPlan(batch,approval).find(r=>r.data.translationKey.includes('github-latest'));
+  await assert.rejects(validatePublishedEdition(record.data,record.body.replace('jdk-17.0.8.1+1','jdk-99'),batch),/body differs/);
+});
+test('distinct registry paths cannot disguise a duplicated batch identity',async()=>{
+  await project(async base=>{
+    const path=join(base,'.pipeline/technical-translations/batch-052/manifest.json'),manifest=JSON.parse(await readFile(path,'utf8'));
+    manifest.batchId='technical-050';await writeFile(path,JSON.stringify(manifest));
+    await assert.rejects(inspectTechnicalBatches(base),/Duplicate technical batch ID/);
   });
 });

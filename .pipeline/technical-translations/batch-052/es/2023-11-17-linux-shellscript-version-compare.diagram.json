@@ -1,0 +1,42 @@
+{
+  "key": "2023-11-17-linux-shellscript-version-compare",
+  "language": "es",
+  "title": "Comparar versiones numéricas",
+  "description": "Valida el contrato de entrada exclusivamente numérica, completa los componentes ausentes con cero y detente en el primer par diferente. Un resultado «menor que» también indica que la comparación se ha realizado correctamente.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Exigir exactamente dos versiones",
+        "Solo cifras separadas por puntos"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Convertir componentes a enteros",
+        "Error de conversión: código 2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Alinear pares; valor ausente = 0"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Primer par distinto decide < o >",
+        "Si no hay diferencias: ="
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Mostrar relación; código 0",
+        "Aplicar la política por separado"
+      ]
+    }
+  ]
+}

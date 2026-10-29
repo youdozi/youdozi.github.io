@@ -1,0 +1,42 @@
+{
+  "key": "2023-11-17-linux-shellscript-version-compare",
+  "language": "de",
+  "title": "Numerische Versionen vergleichen",
+  "description": "Den Vertrag ausschließlich numerischer Eingaben prüfen, fehlende Komponenten mit null auffüllen und beim ersten ungleichen Paar entscheiden. Auch ein Kleiner-als-Ergebnis ist ein erfolgreich ausgeführter Vergleich.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Genau zwei Versionen verlangen",
+        "Nur Ziffern, durch Punkte getrennt"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Komponenten in Ganzzahlen wandeln",
+        "Konvertierungsfehler: Status 2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Paare ausrichten; fehlender Wert = 0"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Erstes ungleiches Paar: < oder >",
+        "Kein ungleiches Paar bedeutet ="
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Beziehung ausgeben; Status 0",
+        "Deployment-Regel separat anwenden"
+      ]
+    }
+  ]
+}
