@@ -1,3 +1,4 @@
+import {prepareTechnicalAssets} from './technical-publication.mjs';
 import { execFileSync } from 'node:child_process';
 import { cp, mkdir, readdir, writeFile } from 'node:fs/promises';
 await mkdir('public/assets', { recursive: true });
@@ -9,3 +10,5 @@ await writeFile('public/.nojekyll', '');
 
 // Both normal builds and integration fixtures prepare the same generated assets.
 execFileSync('python3', ['-B', 'scripts/build_algorithm_diagrams.py'], { stdio: 'inherit' });
+
+console.log(`[ok] ${await prepareTechnicalAssets()} approved technical diagram assets prepared`);

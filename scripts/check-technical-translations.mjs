@@ -89,7 +89,7 @@ export async function inspectTechnicalTranslations(base=root,manifestPath=defaul
     if((svg.match(/marker-end="url\(#arrow\)"/g)??[]).length!==diagram.steps.length-1)fail('SVG arrows do not match linear flow');
   }
   for(const languages of byTopic.values())same([...languages].sort(),[...manifest.languages].sort(),'Incomplete language group');
-  return {batchId:manifest.batchId,topics:byTopic.size,pendingEditions:seen.size,byLanguage:Object.fromEntries(manifest.languages.map(l=>[l,manifest.editions.filter(r=>r.language===l).length])),publicationApproved:false,publicFilesWritten:0};
+  return {batchId:manifest.batchId,topics:byTopic.size,preparedEditions:seen.size,byLanguage:Object.fromEntries(manifest.languages.map(l=>[l,manifest.editions.filter(r=>r.language===l).length])),manifestApprovalRecorded:false,publicFilesWritten:0};
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
   inspectTechnicalTranslations().then(r=>console.log(JSON.stringify(r,null,2))).catch(error=>{console.error(error.message);process.exitCode=1;});

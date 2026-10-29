@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Check disposable translation fixtures; never approve or publish editions."""
+from technical_publications import technical_records
 from datetime import datetime
 import json
 from pathlib import Path
@@ -25,6 +26,7 @@ def check(base):
         records[path.stem] = record
         languages.setdefault(record['renewalId'], {'en', 'ko'}).add(record['language'])
         by_url[f"/{record['language']}/digest/{source['slug']}/"] = record
+    by_url.update(technical_records(base))
     dist = base / 'dist'
     sitemap = {node.text for node in ET.parse(dist / 'sitemap.xml').findall('{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc')}
     indexes, feeds, cache = {}, {}, {}
@@ -33,8 +35,8 @@ def check(base):
         indexes[lang] = {row['url']: row for row in rows}
         items = ET.parse(dist / lang / 'feed.xml').findall('./channel/item')
         feeds[lang] = {item.findtext('link'): item for item in items}
-        # Translation-language indexes currently contain translation editions only.
-        # Refuse to infer dates for a new kind of entry without an explicit rule.
+        # Both news and approved technical posts supply explicit per-edition dates.
+        # Unknown kinds still fail rather than receiving invented feed dates.
         if any(row['url'] not in by_url for row in rows): raise ValueError('Preview RSS date inventory requires extension')
         expected = [SITE + row['url'] for row in sorted(rows, key=lambda row: datetime.fromisoformat(by_url[row['url']]['updatedAt']), reverse=True)[:30]]
         if [item.findtext('link') for item in items] != expected: raise ValueError('Preview RSS is not the latest 30 editions')

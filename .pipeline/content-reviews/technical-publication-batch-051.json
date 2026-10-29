@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-29T21:31:58.591605+00:00",
+  "baseCommit": "19d1e6ff7374b31343add2be83885d0c6d55532a",
+  "dependsOnPR": 93,
+  "purpose": "Add explicit approval preparation, source synchronization and real article rendering for six-language technical translations without publishing pending manuscripts.",
+  "scope": {
+    "newTechnicalCollection": true,
+    "pendingTechnicalEditions": 12,
+    "pendingNewsEditions": 318,
+    "approvedTechnicalEditions": 0,
+    "articleManuscriptsChanged": 0,
+    "pendingEditionsPublished": 0
+  },
+  "publicationPolicy": {
+    "commandDefault": "read-only check",
+    "writeCommand": "publish requires exact manifest SHA-256, reviewer, actual review PR and explicit approval basis for all twelve editions",
+    "sourceBinding": "English source, private draft and SVG hashes; immutable title/description/categories/tags/slug/body checked again on every build",
+    "bodyTransformation": "Only localized diagram URL changes; source code and reference URLs retained. Astro loader outer-whitespace normalization accounted for.",
+    "syntheticApproval": "render-fixture only in an external disposable non-Git snapshot with original-root and exact-key marker; never a human approval",
+    "writes": "exclusive-create with rollback of files created by this run on conflict",
+    "assets": "only approved SVGs copied into an owned generated namespace; withdrawn assets removed",
+    "dates": "per-language publication dates, not copied English original dates"
+  },
+  "validation": {
+    "nodeTests": 137,
+    "pythonTests": 295,
+    "astroFiles": 70,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuild": "passed",
+    "normalPublicArticles": 423,
+    "normalSitemapURLs": 479,
+    "combinedIsolatedPreview": {
+      "technicalEditions": 12,
+      "newsEditions": 318,
+      "articleCount": 753,
+      "sitemapURLs": 821,
+      "paragraphsAndTableRows": 174,
+      "technicalJavaExamples": 12,
+      "technicalSVGs": 12,
+      "technicalRSSItems": 12,
+      "newsClaimsAndFollowUp": 738,
+      "newsRSSItems": 168,
+      "workingPublicationFilesChanged": false,
+      "workingDistChanged": false,
+      "temporarySnapshotRemoved": true,
+      "implementationCommit": "d75afd0a58662588f37578206cb4121066218496"
+    },
+    "browser": {
+      "technicalOnlyArticles": 12,
+      "viewports": [
+        320,
+        1360
+      ],
+      "layoutAndKeyboardChecks": 24,
+      "javaScriptEnabled": true,
+      "articleImages": 12,
+      "canonicalAndEightLanguageAlternateSets": "passed",
+      "technicalOnlyLanguageCounts": {
+        "zh-CN": 8,
+        "ja": 8,
+        "de": 8,
+        "fr": 8,
+        "ru": 8,
+        "es": 8
+      },
+      "telemetryIsolation": "common isolatedContext with service workers blocked",
+      "temporarySnapshotRemoved": true
+    }
+  },
+  "limits": [
+    "First fixed technical batch only; additional batches require explicit manifest support.",
+    "Additional-language learning guides and curated previous/next paths remain untranslated; same-language related posts use existing matching.",
+    "Approval records cannot prove source truth, independent semantic review or actual search indexing.",
+    "No user publication approval, merge, deployment or indexing submission performed."
+  ]
+}
