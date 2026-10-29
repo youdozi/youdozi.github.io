@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "check": "npm run check:digests && astro check",
-    "build": "npm run check:digests && node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py && python3 -B scripts/check_seo.py && python3 -B scripts/check_metadata.py && python3 -B scripts/check_listing_metadata.py && python3 -B scripts/check_discovery.py && python3 -B scripts/check_reader_content.py && python3 -B scripts/check_article_images.py && python3 -B scripts/indexnow.py",
+    "build": "npm run check:digests && node scripts/prepare-public.mjs && astro build && python3 -B scripts/check_site.py && python3 -B scripts/check_seo.py && python3 -B scripts/check_migration.py && python3 -B scripts/check_metadata.py && python3 -B scripts/check_listing_metadata.py && python3 -B scripts/check_discovery.py && python3 -B scripts/check_reader_content.py && python3 -B scripts/check_article_images.py && python3 -B scripts/indexnow.py",
     "check:translation-preview": "node scripts/translation-preview.mjs",
     "check:translation-review": "node scripts/translation-review-packet.mjs",
     "preview": "astro preview",
