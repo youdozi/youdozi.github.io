@@ -18,7 +18,8 @@ export async function previewTechnicalTranslations(base=root){
     const at=new Date().toISOString();
     const technical=technicalFixturePlan(batch,at).filter(r=>!published.has(r.key));
     const reports=[];for(const manifest of releases)reports.push(await inspectRelease(manifest,sandbox));
-    const news=fixturePlan(reports,at);
+    // Separate synthetic timestamps exercise a feed containing both kinds of entry.
+    const news=fixturePlan(reports,new Date(new Date(at).getTime()-1000).toISOString());
     const markerPath=join(sandbox,'.translation-preview-fixture.json');
     const marker=JSON.parse(await readFile(markerPath,'utf8'));
     await writeFile(markerPath,JSON.stringify({...marker,technicalFixtureKeys:technical.map(r=>r.key),fixtureKeys:news.records.map(r=>r.path.split('/').at(-1).replace(/\.json$/,''))}));

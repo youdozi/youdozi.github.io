@@ -69,17 +69,27 @@ def check(base):
     records = technical_records(base)
     selected = {f"{r['language']}-{r['translationKey']}": (url, r) for url, r in records.items()}
     if set(keys) - selected.keys(): raise ValueError('Technical fixture missing')
+    inventory = dict(records)
+    for path in (base/'src/content/translations').glob('*.json'):
+        news = json.loads(path.read_text())
+        source = json.loads((base/f"src/content/renewals/{news['renewalId']}.json").read_text())
+        inventory[f"/{news['language']}/digest/{source['slug']}/"] = news
     dist = base / 'dist'
     sitemap = {n.text for n in ET.parse(dist/'sitemap.xml').findall('{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc')}
-    indexes, feeds, topics, paragraphs = {}, {}, set(), 0
+    indexes, feeds, topics, paragraphs, rss_count = {}, {}, set(), 0, 0
     for key in keys:
         url, record = selected[key]
         if record['approval']['kind'] != 'render-fixture' or record['approval']['reviewedBy'] != 'AUTOMATED_RENDER_FIXTURE_NOT_HUMAN_APPROVAL':
             raise ValueError('Technical preview cannot claim human approval')
         lang, slug = record['language'], record['routeSlug']
         if lang not in indexes:
-            indexes[lang] = {r['url']: r for r in json.loads((dist/lang/'search-index.json').read_text())}
-            feeds[lang] = {i.findtext('link'): i for i in ET.parse(dist/lang/'feed.xml').findall('./channel/item')}
+            rows = json.loads((dist/lang/'search-index.json').read_text())
+            if any(r['url'] not in inventory for r in rows): raise ValueError('Unknown technical-preview RSS date source')
+            expected_feed = [SITE+r['url'] for r in sorted(rows,key=lambda r:datetime.fromisoformat(inventory[r['url']]['updatedAt'].replace('Z','+00:00')),reverse=True)[:30]]
+            indexes[lang] = {r['url']: r for r in rows}
+            items = ET.parse(dist/lang/'feed.xml').findall('./channel/item')
+            if [i.findtext('link') for i in items] != expected_feed: raise ValueError('Technical RSS latest 30 selection changed')
+            feeds[lang] = {i.findtext('link'): i for i in items}
         html = article_file(dist, url).read_text()
         page, body = Metadata(), TechnicalHTML()
         page.feed(html); body.feed(html)
@@ -103,9 +113,11 @@ def check(base):
         if len(image) != 1 or image[0].get('src') != expected_asset or not image[0].get('alt') or not (dist/expected_asset.lstrip('/')).is_file():
             raise ValueError('Localized technical diagram missing')
         item = feeds[lang].get(SITE+url)
-        if item is None or item.findtext('title') != record['title'] or item.findtext('description') != record['description']:
+        if item is not None:
+            rss_count += 1
+        if item is not None and (item.findtext('title') != record['title'] or item.findtext('description') != record['description']):
             raise ValueError('Technical RSS metadata missing or changed')
-        if datetime.fromisoformat(item.findtext('{http://www.w3.org/2005/Atom}updated').replace('Z','+00:00')) != datetime.fromisoformat(record['updatedAt'].replace('Z','+00:00')):
+        if item is not None and datetime.fromisoformat(item.findtext('{http://www.w3.org/2005/Atom}updated').replace('Z','+00:00')) != datetime.fromisoformat(record['updatedAt'].replace('Z','+00:00')):
             raise ValueError('Technical RSS revision date changed')
         expected = {other: SITE+f'/{other}/posts/{slug}/' for other in ('en','ko','zh-CN','ja','de','fr','ru','es') if other in ('en','ko') or f'/{other}/posts/{slug}/' in records}
         expected['x-default'] = SITE+f'/en/posts/{slug}/'
@@ -116,7 +128,7 @@ def check(base):
                 raise ValueError('Technical counterpart missing or alternates changed')
         if 'AUTOMATED_RENDER_FIXTURE_NOT_HUMAN_APPROVAL' in html: raise ValueError('Internal approval leaked into HTML')
         topics.add(record['translationKey'])
-    return {'fixtureEditions':len(keys),'technicalTopics':len(topics),'completeParagraphsAndTableRows':paragraphs,'localizedJavaExamples':len(keys),'localizedDiagrams':len(keys),'rssEditions':len(keys),'fixtureOnly':True}
+    return {'fixtureEditions':len(keys),'technicalTopics':len(topics),'completeParagraphsAndTableRows':paragraphs,'localizedJavaExamples':len(keys),'localizedDiagrams':len(keys),'rssEditions':rss_count,'fixtureOnly':True}
 
 
 if __name__ == '__main__':
