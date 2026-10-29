@@ -60,6 +60,15 @@ class TechnicalPreviewTests(unittest.TestCase):
                 p.write_text(p.read_text().replace('antes de sumar.','' ) if surface=='search' else p.read_text().replace(CODE,'public class Wrong {}'))
                 with self.assertRaises(ValueError):check(base)
 
+    def test_localized_table_rows_preserve_inline_commands_without_markdown_delimiters(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base=Path(folder);self.fixture(base)
+            table='\n\n| Invocación | Intérprete |\n| --- | --- |\n| `sh greet.sh NAME` | Lee el archivo. |\n'
+            p=base/f'src/content/technical-translations/es/{SLUG}.md';p.write_text(p.read_text()+table)
+            p=base/('dist'+URL+'index.html');p.write_text(p.read_text().replace('</div></article>','<table><tr><th>Invocación</th><th>Intérprete</th></tr><tr><td><code>sh greet.sh NAME</code></td><td>Lee el archivo.</td></tr></table></div></article>'))
+            p=base/'dist/es/search-index.json';rows=json.loads(p.read_text());rows[0]['content']+=table;p.write_text(json.dumps(rows))
+            self.assertEqual(check(base)['completeParagraphsAndTableRows'],4)
+
     def test_shell_and_json_fences_are_checked_instead_of_assuming_java(self):
         for language,code in [('sh',"printf 'ok'"),('json','{"ok":true}')]:
             with self.subTest(language=language),tempfile.TemporaryDirectory() as folder:

@@ -56,7 +56,7 @@ def expected_paragraphs(body):
         if chunk.startswith('| '):
             for row in chunk.splitlines():
                 if not re.fullmatch(r'[| :\-]+', row):
-                    yield normalize(row.replace('|', ' '))
+                    yield normalize(row.replace('|', ' ').replace('`', '').replace('**', ''))
         else:
             text = re.sub(r'^#{1,6}\s+', '', chunk).replace('**', '').replace('`', '')
             if text.strip(): yield normalize(text)
