@@ -68,7 +68,8 @@ export async function entries(includeExamples = false): Promise<Entry[]> {
       for(const post of await getCollection('technicalTranslations')){
         const d=post.data;
         const record=approved.get(`src/content/technical-translations/${d.language}/${d.translationKey}.md`);
-        if(!record || post.body!==record.body)throw new Error('Technical collection differs from validated publication');
+        // Astro's Markdown entry loader trims only the outer document whitespace.
+        if(!record || post.body!==record.body.trim())throw new Error('Technical collection differs from validated publication');
         result.push({title:d.title,language:d.language,translationKey:d.translationKey,slug:d.routeSlug,kind:'post',
           publishedAt:new Date(d.publishedAt),updatedAt:new Date(d.updatedAt),categories:d.categories,tags:d.tags,
           description:d.description,url:`/${d.language}/posts/${d.routeSlug}/`,post});

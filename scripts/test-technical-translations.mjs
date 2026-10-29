@@ -14,7 +14,7 @@ async function fixture(key='2021-07-22-dot-product'){
 function check(f,draft){return compareManuscript(f.source,draft,f.diagram,f.row.translationKey,f.row.language);}
 test('all twelve complete private editions retain source code, structure and links',async()=>{
   const result=await inspectTechnicalTranslations();
-  assert.equal(result.topics,2);assert.equal(result.pendingEditions,12);assert.equal(result.publicationApproved,false);
+  assert.equal(result.topics,2);assert.equal(result.preparedEditions,12);assert.equal(result.manifestApprovalRecorded,false);
 });
 test('overflow-changing cast in executable code is rejected',async()=>{
   const f=await fixture();assert.throws(()=>check(f,f.draft.replace('.map(i -> a[i] * b[i])','.map(i -> (long) (a[i] * b[i]))')),/Executable code/);
