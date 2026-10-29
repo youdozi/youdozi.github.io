@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-29T12:38:05.066450+00:00",
+  "baseCommit": "653c128616c8cb2adf887e6f752e63a774ab83db",
+  "purpose": "Prepare the first complete technical-article translations in all six additional languages without exposing unapproved manuscripts.",
+  "skills": [
+    "/Users/youdozi/.agents/skills/translate/SKILL.md"
+  ],
+  "scope": {
+    "sourceTopics": 36,
+    "plannedEditions": 216,
+    "preparedTopics": 2,
+    "preparedEditions": 12,
+    "remainingEditions": 204,
+    "localizedDiagrams": 12,
+    "existingNewsDraftsUnchanged": 318,
+    "publicArticleFilesChanged": 0
+  },
+  "manifest": ".pipeline/technical-translations/batch-050/manifest.json",
+  "queue": ".pipeline/technical-translations/queue-050.json",
+  "review": {
+    "method": "AI self-review against complete English article and standalone target-language reading",
+    "independentReviewer": false,
+    "newExternalFactVerification": false,
+    "scope": "Title, description, every prose paragraph, table headers, image alt/caption and four diagram steps; code retained byte for byte. Existing source execution statements are translations, not claims of a new run."
+  },
+  "validation": {
+    "nodeTests": 128,
+    "newMutationRegressions": 7,
+    "astroFiles": 69,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "build": "passed",
+    "publicArticles": 423,
+    "sitemapURLs": 479,
+    "browserViewports": [
+      320,
+      1360
+    ],
+    "renderedComparisonColumns": 24,
+    "localizedDiagramTextBoundsChecked": 12,
+    "browserExternalRequests": 0,
+    "publishedJavaSolutionsCompiled": 11,
+    "publishedJavaAssertions": 78570,
+    "englishKoreanCodePairs": 10,
+    "shellVersionCases": 8,
+    "pythonTests": 288
+  },
+  "publication": {
+    "approved": false,
+    "publicRoutesAdded": 0,
+    "newsApprovalModified": false,
+    "deploymentTriggered": false
+  },
+  "limits": [
+    "AI self-review only; no separate AI session, native speaker or human sign-off.",
+    "Structural guards cannot prove semantic fidelity or future source accuracy.",
+    "Pilot manuscripts are not accepted by the current en/ko post schema; approved technical publication, output localization and full multilingual route/SEO validation require follow-up implementation.",
+    "The full 318 pending news translations were not newly semantically reviewed in this task."
+  ]
+}

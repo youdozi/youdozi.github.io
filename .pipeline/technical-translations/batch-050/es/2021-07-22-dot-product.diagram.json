@@ -1,0 +1,34 @@
+{
+  "key": "2021-07-22-dot-product",
+  "language": "es",
+  "title": "Producto escalar de arrays",
+  "description": "Asocia cada índice común a un producto y suma esos productos. Los límites del ejercicio permiten usar int.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Generar índices comunes",
+        "De 0 a length - 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Leer a[i] y b[i]"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Asociar a[i] * b[i]"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Sumar los productos",
+        "Devolver el resultado int"
+      ]
+    }
+  ]
+}

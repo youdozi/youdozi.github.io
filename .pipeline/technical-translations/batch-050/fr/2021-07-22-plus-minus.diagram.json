@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-22-plus-minus",
+  "language": "fr",
+  "title": "Somme de valeurs signées",
+  "description": "Lisez le même indice dans les deux tableaux, appliquez le signe, puis additionnez les valeurs signées.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Générer les indices",
+        "De 0 à length - 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lire absolutes[i] et signs[i]"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "true : conserver la valeur",
+        "false : changer le signe"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Additionner les termes",
+        "Renvoyer le résultat int"
+      ]
+    }
+  ]
+}

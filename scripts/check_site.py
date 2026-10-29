@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Check emitted HTML references and migration coverage without network access."""
+from technical_publications import technical_records
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote, urljoin
@@ -36,6 +37,7 @@ class Page(HTMLParser):
 def main():
     errors = []
     expected_languages = {'en', 'ko'} | {json.loads(p.read_text())['language'] for p in Path('src/content/translations').glob('*.json')}
+    expected_languages.update(record['language'] for record in technical_records(Path('.')).values())
     for lang in LANGUAGES:
         if (ROOT/lang/'index.html').exists() != (lang in expected_languages):
             errors.append(f'{lang}: language routes must match approved translations')

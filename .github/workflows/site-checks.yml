@@ -89,6 +89,8 @@ jobs:
         run: npm run build
       - name: Render pending translations in a disposable snapshot without publication
         run: npm run check:translation-preview
+      - name: Render technical and news translations together without publication
+        run: npm run check:technical-preview
       - name: Check the committed translation review packet without writing an artifact
         run: npm run check:translation-review
       - uses: actions/upload-artifact@v4
