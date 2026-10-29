@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "scope": "Six Java array, string, stack, frequency-map and set exercises translated in full into six languages and integrated with localized learning guides",
+  "sourceCommit": "4e45aafa205202d8bad9080c12685bb91cfb163d",
+  "manifest": {
+    "path": ".pipeline/technical-translations/batch-055/manifest.json",
+    "sha256": "49e1165a5ca205482b216f2156fa4ed3a5a2eb26877e46755fb9b079efe5e213"
+  },
+  "newEditions": 36,
+  "newTopics": 6,
+  "totalPreparedTechnicalEditions": 66,
+  "remainingTechnicalEditions": 150,
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "publicationApproval": null,
+  "publicFilesWritten": 0,
+  "review": {
+    "method": "AI self-review against complete English article and standalone target-language reading",
+    "independentReviewer": false,
+    "newExternalFactVerification": false,
+    "scope": "Complete metadata, prose, tables, captions and flow diagrams; Java source, inline identifiers, examples and URLs preserved. Source execution statements remain translations of prior evidence."
+  },
+  "validation": {
+    "nodeTests": 148,
+    "pythonTests": 298,
+    "astroFiles": 72,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "sourceJavaCompilation": {
+      "targetRelease": 11,
+      "localRuntime": "Zulu OpenJDK 21.0.1",
+      "completeClasses": 11,
+      "behavioralAssertions": 78570,
+      "includesTurkishLocaleAndOverflowAndExhaustiveSmallCases": true
+    },
+    "translatedJavaFencesComparedByteForByte": 42,
+    "localizedSVGLabelsChecked": 36,
+    "normalBuild": {
+      "articles": 425,
+      "sitemapURLs": 481
+    },
+    "combinedIsolatedPreview": {
+      "technicalFixtureEditions": 66,
+      "newsFixtureEditions": 318,
+      "previewArticles": 809,
+      "previewSitemapURLs": 895,
+      "workingPublicationFilesChanged": false,
+      "workingDistChanged": false,
+      "realUserApprovalRecorded": false,
+      "temporarySnapshotRemoved": true
+    },
+    "renderedContracts": {
+      "completeParagraphsAndTableRows": 1050,
+      "codeBlocksChecked": 96,
+      "codeLanguages": {
+        "java": 54,
+        "sh": 36,
+        "json": 6
+      },
+      "localizedDiagrams": 66,
+      "learningPathArticles": 136,
+      "neighborLinks": 216
+    },
+    "browser": {
+      "layoutAndKeyboardChecks": 72,
+      "widths": [
+        320,
+        1360
+      ],
+      "articles": 36,
+      "withJavaScript": true,
+      "telemetryIsolation": true,
+      "sameLanguageLearningPath": true,
+      "workingInputsAndDistUnchanged": true,
+      "temporarySnapshotRemoved": true
+    }
+  },
+  "limitations": [
+    "AI self-review, not independent or native-speaker certification.",
+    "Stored English article facts were translated; no new external fact verification is claimed.",
+    "Pending manuscripts remain outside published Astro content.",
+    "Manuscript reading links retain existing English destinations; same-language guides activate only for published editions."
+  ]
+}
