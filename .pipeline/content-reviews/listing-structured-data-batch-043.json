@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-29T01:10:55.593063+00:00",
+  "baseCommit": "101b20569a9ff0fd7981618909ccb4ba354d8ef1",
+  "purpose": "Describe visible paginated article listings with canonical page-scoped CollectionPage and ItemList metadata.",
+  "scope": {
+    "articleManuscriptsChanged": 0,
+    "pendingTranslationsPublished": 0,
+    "newArticleApprovals": 0,
+    "schemaTypesAdded": [
+      "CollectionPage",
+      "ItemList"
+    ],
+    "languages": 8
+  },
+  "policy": {
+    "items": "Exactly the current page card array; local positions start at one; numberOfItems describes the current page list.",
+    "identity": "Current canonical URL plus #collection / #entries; original localized names and description.",
+    "emptyListings": "Keep noindex and omit collection/list metadata.",
+    "featuredAndOtherPages": "Excluded from the current-page ItemList.",
+    "targets": "Same-language indexable self-canonical sitemap articles only.",
+    "dates": "No new publication/modification dates.",
+    "references": [
+      "https://schema.org/ItemList",
+      "https://schema.org/CollectionPage",
+      "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+    ]
+  },
+  "validation": {
+    "pythonTests": 253,
+    "nodeTests": 112,
+    "newPythonTests": 6,
+    "newNodeTests": 5,
+    "astroCheck": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "normalBuild": "passed",
+    "publicArticles": 423,
+    "sitemapURLs": 479,
+    "publishedTranslations": 36,
+    "listingGate": {
+      "emptyListings": 6,
+      "language:de": 6,
+      "language:en": 105,
+      "language:es": 6,
+      "language:fr": 6,
+      "language:ja": 6,
+      "language:ko": 230,
+      "language:ru": 6,
+      "language:zh-CN": 6,
+      "listingPages": 371,
+      "visibleCards": 2775
+    },
+    "browser": {
+      "passed": true,
+      "sampledListingPages": 16,
+      "visibleCardInstances": 133,
+      "languages": 8,
+      "viewports": [
+        390,
+        1360
+      ],
+      "firstSecondAndLastPostPage": true,
+      "tagAndCategoryPagination": true,
+      "emptyNoindexRetained": true,
+      "canonicalLanguageCountNameURLAndOrderMatch": true,
+      "exceptions": 0
+    }
+  },
+  "limits": [
+    "Static and local browser agreement do not measure search-engine indexing, rich-result eligibility, ranking or traffic.",
+    "Existing guide/archive collection metadata remains separate and unchanged.",
+    "Visible card instances repeat across different listings and are not unique article counts."
+  ],
+  "files": {
+    "src/lib/listing-metadata.ts": "2e03e802812d899865be3a338647bee5381670923549317734798d2123745f99",
+    "src/components/Listing.astro": "849501b47c92be4ba428a107a4237ae776f0b2f87c6f008222a0b3e155f90c8f",
+    "scripts/check_listing_metadata.py": "4ce2f5b4d78e6fabdd711606581e0ca08e0e6e049058b54aecd6ec2797c649fe",
+    "scripts/test-listing-metadata.mjs": "9866a02ce7a95093d76813376d1797141a8d3c6b37ed378f58044699c2fbc78a",
+    "scripts/test_listing_metadata.py": "034ec70d89047f5dcffadfef15786ceff6a8eb9f92734a2971c5215bddd7857e",
+    "scripts/translation-preview.mjs": "356c1d1f51f2cd80c49920843e28e47ba9a79111f3d586d23f3e19aa6fb6dc76",
+    "scripts/test-translation-preview.mjs": "7e04cbacd5fbac9e785e5dba448c591e9aa29ef71539eea9901eaf16168ae49d",
+    "package.json": "57f463a5e733db3a4096592554419412b9c2f4e9a60162b5862850870ad1b10c",
+    "README.md": "c745a99f97d06a19b1b4151c71681403194f93a10cda333111564ad6d029633a"
+  }
+}
