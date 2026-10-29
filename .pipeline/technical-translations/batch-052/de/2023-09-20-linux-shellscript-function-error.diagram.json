@@ -1,0 +1,47 @@
+{
+  "key": "2023-09-20-linux-shellscript-function-error",
+  "language": "de",
+  "title": "Shell wählen, Argumente erhalten",
+  "description": "Der aufgerufene Interpreter parst die Funktion. Das Beispiel prüft, ob genau ein Argument vorliegt, und erhält Leerzeichen und Platzhalterzeichen durch Anführungszeichen.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "sh oder Bash gezielt wählen",
+        "Syntax an Interpreter anpassen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "sh -n prüft nur die Syntax",
+        "Skript auch ausführen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "\"$@\" zitiert an greet übergeben"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Argumentanzahl ungleich 1?",
+        "Nutzung ausgeben; Status 2"
+      ],
+      "branch": {
+        "exit": "Ja",
+        "continue": "Nein",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Ein Argument: Gruß ausgeben",
+        "Letzter Funktionsstatus → Skript"
+      ]
+    }
+  ]
+}

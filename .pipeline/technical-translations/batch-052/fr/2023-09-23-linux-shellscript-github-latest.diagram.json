@@ -1,0 +1,52 @@
+{
+  "key": "2023-09-23-linux-shellscript-github-latest",
+  "language": "fr",
+  "title": "Sélection d’un asset GitHub",
+  "description": "Un échec HTTP arrête le script avant l’analyse JSON. Un objet de release valide doit contenir exactement un asset correspondant ; sélectionner son URL ne vérifie pas le fichier téléchargé.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Valider l’argument OWNER/REPO"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "curl capture la réponse HTTP",
+        "Échec : quitter avec un code non nul"
+      ],
+      "branch": {
+        "exit": "Échec",
+        "continue": "Succès",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Exiger un objet JSON de release",
+        "Vérifier tag non vide et assets"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Filtrer le nom selon la plateforme",
+        "Aucun ou plusieurs : erreur"
+      ],
+      "branch": {
+        "exit": "Invalide",
+        "continue": "Un seul",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Émettre tag et URL de téléchargement",
+        "Vérifier l’intégrité séparément"
+      ]
+    }
+  ]
+}

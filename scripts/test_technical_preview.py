@@ -60,6 +60,18 @@ class TechnicalPreviewTests(unittest.TestCase):
                 p.write_text(p.read_text().replace('antes de sumar.','' ) if surface=='search' else p.read_text().replace(CODE,'public class Wrong {}'))
                 with self.assertRaises(ValueError):check(base)
 
+    def test_shell_and_json_fences_are_checked_instead_of_assuming_java(self):
+        for language,code in [('sh',"printf 'ok'"),('json','{"ok":true}')]:
+            with self.subTest(language=language),tempfile.TemporaryDirectory() as folder:
+                base=Path(folder);self.fixture(base)
+                paths=[base/f'src/content/technical-translations/es/{SLUG}.md',base/('dist'+URL+'index.html')]
+                for p in paths:p.write_text(p.read_text().replace('```java','```'+language).replace(CODE,code))
+                result=check(base)
+                self.assertEqual(result['codeLanguages'],{language:1})
+                self.assertEqual(result['localizedJavaExamples'],0)
+                p=base/('dist'+URL+'index.html');p.write_text(p.read_text().replace(code,'changed code'))
+                with self.assertRaisesRegex(ValueError,'code example'):check(base)
+
     def test_older_fixture_may_be_absent_from_the_latest_thirty_feed(self):
         with tempfile.TemporaryDirectory() as folder:
             base=Path(folder);self.fixture(base)

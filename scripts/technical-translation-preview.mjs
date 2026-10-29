@@ -10,10 +10,10 @@ const exec=promisify(execFile);
 
 export async function previewTechnicalTranslations(base=root){
   const result=await withSnapshot(base,async(sandbox)=>{
-    const {inspectTechnicalBatch,technicalFixturePlan,stageTechnicalFixtures,checkTechnicalPublications}=await import(pathToFileURL(join(sandbox,'scripts/technical-publication.mjs')).href);
+    const {inspectTechnicalBatches,technicalFixturePlan,stageTechnicalFixtures,checkTechnicalPublications}=await import(pathToFileURL(join(sandbox,'scripts/technical-publication.mjs')).href);
     const {inspectRelease}=await import(pathToFileURL(join(sandbox,'scripts/translation-release.mjs')).href);
     const {translationSchema}=await import(pathToFileURL(join(sandbox,'src/lib/translation-schema.ts')).href);
-    const batch=await inspectTechnicalBatch(sandbox),existing=await checkTechnicalPublications(sandbox);
+    const batch=await inspectTechnicalBatches(sandbox),existing=await checkTechnicalPublications(sandbox);
     const published=new Set(existing.records.map(r=>`${r.data.language}-${r.data.translationKey}`));
     const at=new Date().toISOString();
     const technical=technicalFixturePlan(batch,at).filter(r=>!published.has(r.key));

@@ -1,0 +1,47 @@
+{
+  "key": "2023-09-20-linux-shellscript-function-error",
+  "language": "ja",
+  "title": "Shell 選択と引数の保持",
+  "description": "実際に呼び出したインタープリターが関数を解析します。この例では引数が一つであることを確認し、引用符によって空白とワイルドカードを保持します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "sh か Bash を明示的に選択",
+        "そのインタープリターの構文を使う"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "sh -n は構文のみを確認",
+        "スクリプトの実行も行う"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "引用符付きの \"$@\" を greet に渡す"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "引数の数が 1 ではない？",
+        "使い方を出力しステータス 2"
+      ],
+      "branch": {
+        "exit": "はい",
+        "continue": "いいえ",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "引数が一つなら挨拶を出力",
+        "最後の関数ステータス → スクリプト"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Check rendered technical fixtures, complete paragraphs, Java, feeds and eight-way alternates."""
+from collections import Counter
 import json
 from pathlib import Path
 import re
@@ -57,7 +58,7 @@ def expected_paragraphs(body):
                 if not re.fullmatch(r'[| :\-]+', row):
                     yield normalize(row.replace('|', ' '))
         else:
-            text = re.sub(r'^##\s+', '', chunk).replace('**', '').replace('`', '')
+            text = re.sub(r'^#{1,6}\s+', '', chunk).replace('**', '').replace('`', '')
             if text.strip(): yield normalize(text)
 
 
@@ -77,6 +78,7 @@ def check(base):
     dist = base / 'dist'
     sitemap = {n.text for n in ET.parse(dist/'sitemap.xml').findall('{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc')}
     indexes, feeds, topics, paragraphs, rss_count = {}, {}, set(), 0, 0
+    code_languages=Counter()
     for key in keys:
         url, record = selected[key]
         if record['approval']['kind'] != 'render-fixture' or record['approval']['reviewedBy'] != 'AUTOMATED_RENDER_FIXTURE_NOT_HUMAN_APPROVAL':
@@ -105,9 +107,11 @@ def check(base):
             if paragraph not in visible or paragraph not in search:
                 raise ValueError(f'Technical preview omits a paragraph: {key}')
             paragraphs += 1
-        expected_code = re.findall(r'^```java\n([\s\S]*?)^```', record['body'], re.M)
+        expected_blocks = re.findall(r'^```([a-z]+)\n([\s\S]*?)^```', record['body'], re.M)
+        expected_code = [code for language,code in expected_blocks]
+        code_languages.update(language for language,code in expected_blocks)
         actual_code = [''.join(c).strip() for c in body.code]
-        if [c.strip() for c in expected_code] != actual_code: raise ValueError('Technical Java example changed')
+        if [c.strip() for c in expected_code] != actual_code: raise ValueError('Technical code example changed')
         image = body.images
         expected_asset = f'/assets/diagrams/technical/{key}.svg'
         if len(image) != 1 or image[0].get('src') != expected_asset or not image[0].get('alt') or not (dist/expected_asset.lstrip('/')).is_file():
@@ -128,7 +132,7 @@ def check(base):
                 raise ValueError('Technical counterpart missing or alternates changed')
         if 'AUTOMATED_RENDER_FIXTURE_NOT_HUMAN_APPROVAL' in html: raise ValueError('Internal approval leaked into HTML')
         topics.add(record['translationKey'])
-    return {'fixtureEditions':len(keys),'technicalTopics':len(topics),'completeParagraphsAndTableRows':paragraphs,'localizedJavaExamples':len(keys),'localizedDiagrams':len(keys),'rssEditions':rss_count,'fixtureOnly':True}
+    return {'fixtureEditions':len(keys),'technicalTopics':len(topics),'completeParagraphsAndTableRows':paragraphs,'localizedJavaExamples':code_languages['java'],'codeBlocksChecked':sum(code_languages.values()),'codeLanguages':dict(code_languages),'localizedDiagrams':len(keys),'rssEditions':rss_count,'fixtureOnly':True}
 
 
 if __name__ == '__main__':
