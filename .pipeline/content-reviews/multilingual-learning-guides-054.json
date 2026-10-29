@@ -58,6 +58,19 @@
       "Only Java coding exercises and shell automation guides are localized; other guide domains remain en/ko.",
       "Additional-language guides appear only when that language has eligible published technical articles.",
       "Pending technical/news translations are not published by this change."
-    ]
+    ],
+    "afterNewsIntegration": {
+      "mainCommit": "78292d3746eddbe184e7f46b3d03e8de6aac55c3",
+      "sourceCommit": "e1b67b621056c1acb0a2db9be7138521d9e064b9",
+      "normalArticles": 425,
+      "normalSitemapURLs": 481,
+      "previewArticles": 773,
+      "previewSitemapURLs": 859,
+      "readingPathArticles": 100,
+      "neighborLinks": 144,
+      "temporarySnapshotRemoved": true,
+      "workingPublicationFilesChanged": false,
+      "workingDistChanged": false
+    }
   }
 }
