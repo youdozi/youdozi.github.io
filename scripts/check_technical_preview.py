@@ -16,28 +16,33 @@ from check_seo import SITE
 class TechnicalHTML(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.prose = False
         self.stack = []
         self.text, self.code, self.images = [], [], []
         self.in_pre = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        parent = self.stack[-1] if self.stack else False
-        active = parent or 'prose' in attrs.get('class', '').split()
-        if tag == 'pre' and active:
+        parent = self.stack[-1] if self.stack else {'active':False,'skip':False}
+        active = parent['active'] or 'prose' in attrs.get('class', '').split()
+        skip = parent['skip'] or tag in ('script','style','template') or 'hidden' in attrs or attrs.get('aria-hidden') == 'true'
+        if tag == 'pre' and active and not skip:
             self.in_pre = True
             self.code.append([])
-        if tag == 'img' and active: self.images.append(attrs)
-        if tag not in ('img', 'br', 'hr', 'meta', 'link', 'input'): self.stack.append(active)
+        if tag == 'img' and active and not skip: self.images.append(attrs)
+        if tag not in ('area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'):
+            self.stack.append({'tag':tag,'active':active,'skip':skip})
 
     def handle_endtag(self, tag):
+        index = next((i for i in range(len(self.stack)-1,-1,-1) if self.stack[i]['tag'] == tag), None)
+        if index is None: return
         if tag == 'pre': self.in_pre = False
-        if self.stack: self.stack.pop()
-        if not self.in_pre: self.text.append(' ')
+        # Inline code/links/emphasis must not invent spaces before CJK text or punctuation.
+        if not self.in_pre and tag in ('p','div','h1','h2','h3','h4','table','tr','td','th','pre'):
+            self.text.append(' ')
+        del self.stack[index:]
 
     def handle_data(self, data):
-        if self.stack and self.stack[-1]:
+        if self.stack and self.stack[-1]['active'] and not self.stack[-1]['skip']:
             if self.in_pre: self.code[-1].append(data)
             else: self.text.append(data)
 

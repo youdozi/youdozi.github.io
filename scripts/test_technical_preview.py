@@ -42,8 +42,15 @@ class TechnicalPreviewTests(unittest.TestCase):
     def test_hidden_paragraph_cannot_replace_visible_prose(self):
         with tempfile.TemporaryDirectory() as folder:
             base=Path(folder);self.fixture(base);p=base/('dist'+URL+'index.html')
-            p.write_text(p.read_text().replace('<p>Multiplica <code>a[i]</code> antes de sumar.</p>',''))
+            p.write_text(p.read_text().replace('<p>Multiplica <code>a[i]</code> antes de sumar.</p>','<script>Multiplica a[i] antes de sumar.</script>'))
             with self.assertRaisesRegex(ValueError,'omits'):check(base)
+
+    def test_inline_code_does_not_invent_a_space_before_punctuation(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base=Path(folder);self.fixture(base)
+            paths=[base/f'src/content/technical-translations/es/{SLUG}.md',base/('dist'+URL+'index.html'),base/'dist/es/search-index.json']
+            for p in paths:p.write_text(p.read_text().replace(' antes de sumar.', '.'))
+            self.assertEqual(check(base)['fixtureEditions'],1)
 
     def test_search_paragraph_and_java_code_changes_are_rejected(self):
         for surface in ('search','java'):
