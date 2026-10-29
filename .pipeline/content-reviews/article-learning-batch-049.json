@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-29T07:40:52.171680+00:00",
+  "baseCommit": "9b8dda679c9f127024e415a496c9c1def67475b3",
+  "purpose": "Continue curated technical reading directly from an article with guide context and same-language previous/next links.",
+  "scope": {
+    "articleManuscriptsChanged": 0,
+    "pendingTranslationsPublished": 0,
+    "articleNavigationPages": 70,
+    "neighborLinks": 108,
+    "languages": [
+      "en",
+      "ko"
+    ],
+    "parallelPendingPR": 91
+  },
+  "policy": {
+    "sequence": "Visible curated guide sections only, excluding extras, related-entry scores and publication-date sorting.",
+    "eligibility": "Published same-language posts, no examples/future posts/digests; at least two curated steps.",
+    "boundaries": "No wraparound; use the first matching guide in the existing guide-index order.",
+    "rendering": "Static anchor links with existing destination titles, guide context and current position.",
+    "dates": "No manuscript publication/modification date changes.",
+    "references": [
+      "https://developers.google.com/search/docs/crawling-indexing/links-crawlable"
+    ]
+  },
+  "translation": {
+    "skill": "/Users/youdozi/.agents/skills/translate/SKILL.md",
+    "method": "Short UI self-review against English source and standalone Korean reading; no claim of article translation review.",
+    "strings": {
+      "en": {
+        "label": "Learning path",
+        "heading": "Continue reading",
+        "previous": "Previous article",
+        "next": "Next article"
+      },
+      "ko": {
+        "label": "학습 경로",
+        "heading": "이어서 읽기",
+        "previous": "이전 글",
+        "next": "다음 글"
+      }
+    }
+  },
+  "validation": {
+    "pythonTests": 280,
+    "nodeTests": 120,
+    "astroFiles": 69,
+    "astroErrors": 0,
+    "normalBuild": "passed",
+    "guidePaths": {
+      "articles": 70,
+      "en": 35,
+      "ko": 35,
+      "neighborLinks": 108
+    },
+    "chrome": {
+      "viewports": [
+        320,
+        1360
+      ],
+      "javaScriptEnabled": false,
+      "layoutAndKeyboardChecks": 140,
+      "navigationChecks": 6,
+      "sharedAnalyticsIsolation": true
+    },
+    "publicArticles": 423,
+    "sitemapURLs": 479,
+    "publicTranslations": 36
+  },
+  "sourceSHA256": {
+    "src/lib/article-learning.ts": "e225ac9975efb3540dcbbeef1c0b215ec906cce995f08b59fc9e9566e1808514",
+    "src/components/ArticleLearningPath.astro": "90445c9649e636387504e29d5c2ef5fe61d7300b9bbb18cd197f7d25320e712a",
+    "src/components/Article.astro": "b619e3ed1ef12fdbfe02098e4833f2beee242940c62a46ab3afdaa1347e0386a",
+    "scripts/check_learning_paths.py": "22099951c52323ab59fd80086070b422422163f27021bdac4f6a501c95cd3fd8",
+    "scripts/test_learning_paths.py": "1e0cb599e4108c03e117574f9b9ec29eef19fe0c9310310fd3c45a0cf27e76f6",
+    "scripts/test-article-learning.mjs": "d603ab5ca596ee86d117a9156994d0aebed552734adbfd8e456f46e3a657f64a"
+  },
+  "limits": [
+    "Reader navigation and HTML link checks do not measure search rankings, indexing or actual reader continuation.",
+    "No production publishing, submission requests or Analytics settings changes."
+  ]
+}
