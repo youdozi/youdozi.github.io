@@ -1,0 +1,26 @@
+---
+import {learningPathCopy,type ArticleLearningPath} from '../lib/article-learning';
+interface Props {path:ArticleLearningPath;lang:'en'|'ko';}
+const {path,lang}=Astro.props;
+const copy=learningPathCopy[lang];
+---
+<nav class="learning-path" aria-label={`${copy.label}: ${path.guide.label}`} data-article-learning-path data-guide-url={path.guide.url} data-position={path.position} data-total={path.total}>
+  <h2>{copy.heading}</h2>
+  <p class="learning-path-context"><a href={path.guide.url} data-learning-guide>{path.guide.label}</a><span>{path.position} / {path.total}</span></p>
+  <ul>
+    {path.previous&&<li><a href={path.previous.url} data-learning-direction="previous"><span>{copy.previous}</span><strong>{path.previous.title}</strong></a></li>}
+    {path.next&&<li class="learning-next"><a href={path.next.url} data-learning-direction="next"><span>{copy.next}</span><strong>{path.next.title}</strong></a></li>}
+  </ul>
+</nav>
+<style>
+.learning-path{border-block:1px solid var(--line);padding:24px 0;margin-top:40px}
+h2{font-size:21px;line-height:1.5;margin:0 0 14px}
+.learning-path-context{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:0 0 20px;font-size:14px;line-height:1.8}
+.learning-path-context>a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.learning-path-context>span{white-space:nowrap;color:var(--muted);font-size:13px}
+ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:0;margin:0;list-style:none}
+li{min-width:0}.learning-next{grid-column:2}
+li a{display:flex;flex-direction:column;gap:7px;height:100%;border:1px solid var(--line);border-radius:4px;padding:16px;overflow-wrap:anywhere}
+li a:hover{border-color:var(--accent)}li span{font-size:12px;color:var(--muted)}li strong{font-size:15px;line-height:1.7;font-weight:600}
+@media(max-width:520px){ul{grid-template-columns:1fr}.learning-next{grid-column:auto}.learning-path-context{align-items:start}}
+</style>
