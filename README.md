@@ -217,3 +217,5 @@ Google·Bing의 공개 글 상태는 `scripts/search_engines.py`로 함께 관�
 Markdown 본문의 `/assets/` 이미지는 빌드 시 로컬 파일에서 가로·세로 크기를 읽어 공간을 미리 확보합니다. 첫 이미지는 기본 `eager`, 뒤의 이미지는 `lazy`, 디코딩은 `async`로 지정하며 기존 속성은 유지합니다. 원격 이미지를 조회하거나 파일·대체 텍스트를 변경하지 않습니다. 직접 작성한 HTML 이미지에는 작성자가 크기·로딩 속성을 지정해야 합니다. 일반 빌드와 격리 번역 빌드에서 본문 이미지의 크기·로딩 속성과 SVG 비율을 검사합니다. 이 검사는 실제 Core Web Vitals나 검색 순위 측정이 아닙니다.
 
 검색 실적과 급증한 GA 방문을 구분하려면 [측정 구간·검증 방문 분리 절차](docs/search-growth.md#트래픽-급증-조사와-검증-방문-분리)를 사용합니다. GSC의 PT 날짜를 GA 속성 시간대로 맞춰 읽고, 원본·검토 페이지·명시적 의심 규칙을 별도 조회합니다. 결과와 규칙은 저장소 밖 비공개 파일로 보관하며 원본 데이터나 GA 설정을 변경하지 않습니다. 자동 브라우저 검사는 `scripts/browser/isolated-context.mjs`를 공통 사용하고 `npm run check:browser-isolation`로 GA 전송 차단을 실제 Chrome에서 확인합니다.
+
+홈·글·다이제스트·태그·일반 카테고리의 목록은 현재 페이지에 보이는 글 카드와 같은 배열로 `CollectionPage`·`ItemList`를 생성합니다. 각 페이지의 canonical·언어·제목·설명과 카드의 이름·주소·순서를 연결하며, 목록의 수와 위치는 해당 페이지 기준입니다. 추천 링크와 다른 페이지의 카드를 섞지 않고 빈 목록은 `noindex`와 구조화 데이터 생략을 유지합니다. 일반 빌드와 격리 번역 빌드에서 생성 HTML 전체를 대조합니다. 형식은 [Schema.org ItemList](https://schema.org/ItemList)와 [Google의 공개 내용 일치 원칙](https://developers.google.com/search/docs/appearance/structured-data/sd-policies)을 참고하며 검색 노출이나 리치 결과를 보장하지 않습니다.
