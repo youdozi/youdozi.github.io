@@ -60,6 +60,21 @@ class TechnicalPreviewTests(unittest.TestCase):
                 p.write_text(p.read_text().replace('antes de sumar.','' ) if surface=='search' else p.read_text().replace(CODE,'public class Wrong {}'))
                 with self.assertRaises(ValueError):check(base)
 
+    def test_older_fixture_may_be_absent_from_the_latest_thirty_feed(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base=Path(folder);self.fixture(base)
+            original=json.loads((base/f'src/content/technical-translations/es/{SLUG}.md').read_text().split('---\n',2)[1])
+            index=base/'dist/es/search-index.json';rows=json.loads(index.read_text());items=[]
+            for i in range(31):
+                slug=f'2026-10-29-newer-{i}'
+                data={**original,'translationKey':slug,'routeSlug':slug,'updatedAt':'2026-10-29T01:00:00+00:00'}
+                (base/f'src/content/technical-translations/es/{slug}.md').write_text('---\n'+json.dumps(data)+'\n---\nAnother article.')
+                url=f'/es/posts/{slug}/';rows.append({'url':url,'title':'Another','content':'Another article.'})
+                if i<30:items.append('<item><link>https://youdozi.github.io'+url+'</link></item>')
+            index.write_text(json.dumps(rows))
+            (base/'dist/es/feed.xml').write_text('<rss><channel>'+''.join(items)+'</channel></rss>')
+            self.assertEqual(check(base)['rssEditions'],0)
+
     def test_missing_assets_feed_counterparts_and_forged_titles_are_rejected(self):
         for surface in ('asset','feed','alternate','title'):
             with self.subTest(surface=surface),tempfile.TemporaryDirectory() as folder:
