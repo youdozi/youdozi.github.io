@@ -1,5 +1,5 @@
 ---
-interface Props { to: string; }
-const { to } = Astro.props;
+interface Props { to: string; articleMove?: boolean; }
+const { to, articleMove = false } = Astro.props;
 ---
-<!doctype html><html lang={to.startsWith('/en/') ? 'en' : 'ko'}><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width"/><title>Redirect · youdozi's memory</title><meta http-equiv="refresh" content={`0;url=${to}`}/><link rel="canonical" href={new URL(to,Astro.site)}/><meta name="robots" content="noindex,follow"/></head><body><p><a href={to}>{to.startsWith('/en/') ? 'Continue in English' : '한국어 페이지로 이동'}</a></p></body></html>
+<!doctype html><html lang={to.startsWith('/en/') ? 'en' : 'ko'}><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width"/><title>Redirect · youdozi's memory</title><meta http-equiv="refresh" content={`0;url=${to}`}/><link rel="canonical" href={new URL(to,Astro.site)}/>{!articleMove && <meta name="robots" content="noindex,follow"/>}</head><body><p><a href={to}>{to.startsWith('/en/') ? 'Continue in English' : '한국어 페이지로 이동'}</a></p></body></html>

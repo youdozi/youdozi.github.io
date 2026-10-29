@@ -35,6 +35,18 @@
 
 GitHub Pages의 기존 주소는 현재 HTTP 200과 즉시 meta refresh로 이동합니다. 이를 서버 301로 기록하지 않습니다. Google은 즉시 meta refresh를 영구 이동으로 해석하지만 서버 리디렉션을 우선 권장합니다. 추적만으로 순위 하락의 원인이나 호스팅 변경의 필요성을 확정하지 않습니다. [리디렉션 안내](https://developers.google.com/search/docs/crawling-indexing/301-redirects)
 
+### 게시글 이동 신호와 빌드 검사
+
+공개 기술 글의 과거 주소는 즉시 meta refresh·새 주소 canonical·동일한 이동 링크를 함께 제공합니다. 이 이동 페이지에는 `noindex`를 넣지 않습니다. Google은 같은 사이트 안에서 대표 주소를 선택하기 위한 `noindex` 사용을 권장하지 않습니다. 이 정책은 이미 공개된 실제 게시글로 이동하는 경로에만 적용하며, 루트·목록 이동과 예제 글 이동은 기존 `noindex,follow`를 유지합니다. 이동 주소를 사이트맵에 추가하지 않습니다. [대표 주소 지정 안내](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)
+
+`scripts/check_migration.py`는 일반 빌드와 격리 번역 빌드에서 전체 이동 페이지를 검사합니다. 목적지가 실제로 존재하는 최종 자기 canonical 페이지인지, 이동 체인·순환이 없는지, canonical·즉시 refresh·화면 링크가 같은지 확인합니다. 공개 게시글 이동에는 `noindex`가 없고 목적지는 사이트맵에 있어야 하며, 일반 탐색·예제 이동에는 `noindex`가 있어야 합니다. 공개 페이지에서 과거 이동 주소를 계속 링크하면 실패합니다. 핵심 글 10개는 등록된 과거 주소→한글판 매핑과 한영 20개 최종 주소를 별도로 검사합니다.
+
+```sh
+python3 -B scripts/check_migration.py --dist dist
+```
+
+이 검사는 생성 HTML의 이동 신호 일치만 검증합니다. Google의 재크롤링·대표 주소 선택·색인·순위 개선을 증명하지 않으며, 변경 전후의 실제 결과는 비공개 Search Console 스냅샷으로 비교합니다. 다음 수동 관측일인 2026-11-04에는 과거 주소와 새 주소의 마지막 크롤링·선택 canonical·색인 판정을 함께 비교합니다. 자동 색인 요청이나 예약 실행은 추가하지 않습니다.
+
 ## 4주 관측 계획
 
 게시 승인 후의 실제 배포일을 기준일로 삼습니다. 현재 조회는 변경 전 기준선이며 새 제목과 홈 연결의 효과를 측정한 결과가 아닙니다.
