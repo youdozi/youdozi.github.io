@@ -87,6 +87,8 @@ jobs:
         run: npm run check
       - name: Build and check generated pages, assets and internal links
         run: npm run build
+      - name: Verify multilingual search links, history, retry and input races
+        run: node scripts/check_search_navigation.mjs
       - name: Render pending translations in a disposable snapshot without publication
         run: npm run check:translation-preview
       - name: Render technical and news translations together without publication

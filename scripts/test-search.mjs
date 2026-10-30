@@ -2,7 +2,26 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {normalizeSearch,prepareSearch,searchItems} from '../src/lib/search.ts';
 import copy from '../src/lib/search-ui.json' with {type:'json'};
+import {searchQuery,searchLocation} from '../src/lib/search-location.ts';
 const item=(url,fields={})=>({title:'Other article',url,description:'',tags:[],content:'',...fields});
+
+test('search links round trip Unicode, technical punctuation and HTML as plain text',()=>{
+  for(const query of ['한글 검색','搜索验证','検索ガイド','für sécurité','Проверка','validación','C++ & x=1 #tag','<script>alert(1)</script>','  WebClient  ']){
+    const original=new URL('https://youdozi.github.io/ko/search/?from=guide#results');
+    const next=searchLocation(original,query);
+    assert.equal(searchQuery(next),query);assert.equal(next.origin,original.origin);
+    assert.equal(next.pathname,original.pathname);assert.equal(next.hash,'#results');
+    assert.equal(next.searchParams.get('from'),'guide');assert.equal(original.searchParams.has('q'),false);
+  }
+});
+
+test('clearing removes all query copies and missing queries restore an empty input',()=>{
+  const url=new URL('https://youdozi.github.io/en/search/?q=first&q=second&from=guide');
+  assert.equal(searchQuery(url),'first');
+  assert.deepEqual(searchLocation(url,'WebClient').searchParams.getAll('q'),['WebClient']);
+  const cleared=searchLocation(url,' \t ');
+  assert.equal(cleared.search,'?from=guide');assert.equal(searchQuery(cleared),'');
+});
 
 test('search normalizes width and canonical spellings while preserving non-Latin distinctions',()=>{
   for(const [left,right] of [['ＲＥＳＴ','rest'],['café','CAFE'],['für','fur'],['検証ガイド','検証カ\u3099イド'],['한글','한글']])assert.equal(normalizeSearch(left),normalizeSearch(right));

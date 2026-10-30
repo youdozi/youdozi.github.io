@@ -1,5 +1,15 @@
 # 핵심 글 검색 성과 확인
 
+## 사이트 안에서 검색 결과 다시 열기
+
+8개 언어의 검색 페이지는 `/{언어}/search/?q={검색어}` 주소로 결과를 다시 엽니다. 예를 들어 `/en/search/?q=WebClient`를 공유하거나 새로고침해도 검색어와 결과를 복원하며, 결과 글을 읽고 뒤로 돌아온 경우도 처리합니다. 입력은 잠시 모아 현재 기록을 교체하므로 글자마다 뒤로 가기 기록을 추가하지 않습니다. 검색어를 지우면 `q`도 제거합니다. 한글 등 조합 중인 입력은 조합 완료 후 반영합니다.
+
+검색 페이지의 `noindex,follow`와 검색어 없는 canonical, 사이트맵 제외를 유지합니다. 이 변경은 사이트 내부 탐색의 개선이며 Google·Bing 노출 증가를 증명하지 않습니다. URL 처리는 [HTML History API](https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-history-replacestate-dev)를 사용합니다.
+
+일반 빌드 후 `node scripts/check_search_navigation.mjs`로 8개 언어를 모바일·데스크톱에서 확인합니다. 주소 직접 열기·새로고침·글 방문 후 복귀·검색어 삭제·로딩 실패 후 재시도·늦은 응답 취소를 실제 Chrome에서 검사합니다. 조합 이벤트 검사는 합성 이벤트를 사용하며 운영체제 IME 전체 검증을 뜻하지 않습니다. 운영 배포 확인은 `--url https://youdozi.github.io/`를 추가하며, 두 모드 모두 공통 브라우저 격리로 GA 전송을 차단합니다. 동일 검사는 필수 CI에도 포함됩니다.
+
+## 관측 대상
+
 대표 글은 `content/seo/core-articles.json`의 10개 주제로 관리합니다. 첫 4개는 기존 Search Console 조회에서 노출이 있었던 주제이며, 나머지는 셸 입력 검증과 Spring 생성·영속성·HTTP 테스트·패키징의 연결을 고려해 선정했습니다. 이 목록은 검색량 순위가 아닙니다. 홈의 대표 글 목록과 조회 도구가 같은 키를 사용합니다.
 
 ## 조회
