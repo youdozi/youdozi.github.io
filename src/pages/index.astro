@@ -1,4 +1,25 @@
 ---
-import Redirect from '../components/Redirect.astro';
+import {publishedLanguages,localeInfo} from '../lib/content';
+import '../styles/global.css';
+const languages = await publishedLanguages();
 ---
-<Redirect to="/en/" />
+<!doctype html>
+<html lang="en" data-published-languages={languages.join(',')}>
+  <head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width" />
+    <title>Choose your language · youdozi's memory</title>
+    <link rel="canonical" href={new URL('/en/',Astro.site)} />
+    <meta name="robots" content="noindex,follow" />
+    <noscript><meta http-equiv="refresh" content="0;url=/en/" /></noscript>
+    <script>import '../scripts/language-entry';</script>
+  </head>
+  <body>
+    <main class="shell">
+      <h1>Choose your language</h1>
+      <p><a href="/en/">Continue in English</a></p>
+      <ul data-language-options={languages.join(',')}>
+        {languages.map(language=><li><a href={`/${language}/`} lang={language} data-language-choice={language}>{localeInfo[language].label}</a></li>)}
+      </ul>
+    </main>
+  </body>
+</html>
