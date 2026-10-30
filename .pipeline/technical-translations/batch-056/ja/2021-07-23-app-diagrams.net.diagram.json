@@ -1,0 +1,29 @@
+{
+  "key": "2021-07-23-app-diagrams.net",
+  "language": "ja",
+  "title": "三つのノードの XML 例",
+  "description": "図は下の XML と同じ三つの頂点と二つの有向接続を示します。この記事用に描画したもので、編集画面のスクリーンショットやエクスポートではありません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Request",
+        "入力ノード"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Validate",
+        "中間ノード"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Response",
+        "出力ノード"
+      ]
+    }
+  ]
+}

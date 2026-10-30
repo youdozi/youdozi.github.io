@@ -1,0 +1,43 @@
+{
+  "key": "2021-08-06-search-github",
+  "language": "fr",
+  "title": "Délimiter et vérifier la recherche",
+  "description": "Limiter la requête avant d’élargir la liste des résultats. Si la version compte, ouvrir la révision voulue ou rechercher dans son checkout plutôt que se fier à la branche par défaut.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Choisir un dépôt accessible",
+        "Identifier la révision voulue"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Utiliser la syntaxe de l’outil",
+        "Limiter dépôt, langage et chemin"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Ouvrir un fichier correspondant",
+        "Lire le code autour et les tests"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "git grep -F local avec un chemin",
+        "Comparer les fichiers suivis"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Avant d’adapter l’exemple",
+        "Vérifier version, licence et effets"
+      ]
+    }
+  ]
+}

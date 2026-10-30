@@ -1,0 +1,48 @@
+{
+  "key": "2021-07-20-http-status-test",
+  "language": "fr",
+  "title": "Choix de la réponse HTTP locale",
+  "description": "Le gestionnaire choisit statut et représentation avant les en-têtes. La branche 204 finit sans corps ni Content-Length ; les autres écrivent le nombre d’octets déclaré.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Recevoir une requête GET locale",
+        "Choisir une route prise en charge"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Chemin ou statut inconnu ?",
+        "Utiliser le JSON 404 du simulateur"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "204 : terminer les en-têtes et sortir",
+        "Ni Content-Length ni corps"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "204",
+        "continue": "Autres"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Sinon choisir JSON ou HTML",
+        "Fixer type de média et taille"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Écrire les en-têtes et le corps",
+        "Vérifier chaque réponse séparément"
+      ]
+    }
+  ]
+}

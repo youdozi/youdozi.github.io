@@ -1,0 +1,48 @@
+{
+  "key": "2021-07-20-http-status-test",
+  "language": "de",
+  "title": "Lokale HTTP-Antwort auswählen",
+  "description": "Der Handler wählt Status und Darstellung vor den Headern. Der 204-Zweig endet ohne Inhalt oder Content-Length; andere Routen schreiben die deklarierte Byteanzahl.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Lokale GET-Anfrage empfangen",
+        "Unterstützte Route auswählen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Unbekannter Pfad oder Status?",
+        "JSON 404 des Testservers nutzen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "204: Header beenden und stoppen",
+        "Kein Content-Length oder Inhalt"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "204",
+        "continue": "Andere"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Sonst JSON oder HTML auswählen",
+        "Medientyp und Bytelänge setzen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Header und Inhalt schreiben",
+        "Jede Antwort getrennt prüfen"
+      ]
+    }
+  ]
+}

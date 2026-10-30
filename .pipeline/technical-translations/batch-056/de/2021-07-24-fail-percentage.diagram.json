@@ -1,0 +1,50 @@
+{
+  "key": "2021-07-24-fail-percentage",
+  "language": "de",
+  "title": "Rangfolge der Fehlerraten",
+  "description": "Die erreichten Spieler vor dem Abziehen der gestoppten speichern. Raten mit long-Kreuzprodukten vergleichen, bei Gleichstand nach Stufennummer aufsteigend ordnen.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Gestoppte je Stufe zählen",
+        "Spieler bei N + 1 einschließen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "remaining = alle Spieler",
+        "Stufen 1 bis N durchlaufen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Zuerst reached = remaining sichern",
+        "Dann gestoppte Spieler abziehen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Niemand erreicht: Rate ist null",
+        "Zum Vergleichen Nenner 1 nutzen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "long-Kreuzprodukte vergleichen",
+        "Rate absteigend",
+        "Bei Gleichstand: kleinere ID"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Geordnete Stufennummern liefern"
+      ]
+    }
+  ]
+}

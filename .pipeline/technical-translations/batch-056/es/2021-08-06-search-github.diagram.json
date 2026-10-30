@@ -1,0 +1,43 @@
+{
+  "key": "2021-08-06-search-github",
+  "language": "es",
+  "title": "Acotar y comprobar la búsqueda",
+  "description": "Acota la consulta antes de ampliar la lista de resultados. Si importa la versión, abre la revisión deseada o busca en su checkout en lugar de depender de la rama predeterminada.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Elegir un repositorio accesible",
+        "Identificar la revisión necesaria"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Usar la sintaxis de cada herramienta",
+        "Acotar repositorio, lenguaje y ruta"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Abrir el archivo coincidente",
+        "Leer el código cercano y las pruebas"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "git grep -F local con ruta",
+        "Comparar los archivos seguidos"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Antes de adaptar el ejemplo",
+        "Comprobar versión, licencia y efecto"
+      ]
+    }
+  ]
+}

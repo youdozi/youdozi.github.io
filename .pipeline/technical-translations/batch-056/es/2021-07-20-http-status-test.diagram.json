@@ -1,0 +1,48 @@
+{
+  "key": "2021-07-20-http-status-test",
+  "language": "es",
+  "title": "Selección de respuesta HTTP local",
+  "description": "El manejador elige estado y representación antes de escribir cabeceras. La rama 204 termina sin cuerpo ni Content-Length; las otras escriben los bytes declarados.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Recibir una solicitud GET local",
+        "Seleccionar una ruta admitida"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Ruta o estado desconocidos?",
+        "Usar el JSON 404 del simulador"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "204: cerrar cabeceras y terminar",
+        "Sin Content-Length ni cuerpo"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "204",
+        "continue": "Otros"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Si no, seleccionar JSON o HTML",
+        "Fijar tipo y longitud en bytes"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Escribir cabeceras y cuerpo",
+        "Comprobar cada respuesta aparte"
+      ]
+    }
+  ]
+}

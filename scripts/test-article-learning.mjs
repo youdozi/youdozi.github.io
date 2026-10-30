@@ -47,3 +47,15 @@ test('all six translated editions use curated same-language neighbors without un
   assert.equal(articleLearningPath(entries[4],entries),undefined);
  }
 });
+
+test('localized tool articles follow HTTP, code search and diagram order',()=>{
+ for(const language of ['zh-CN','ja','de','fr','ru','es']){
+  const entries=['2021-07-23-app-diagrams.net','2021-08-06-search-github','2021-07-20-http-status-test'].map(key=>make(key,language,{categories:['util']}));
+  const path=articleLearningPath(entries[1],entries);
+  assert.equal(path.position,2);assert.equal(path.total,3);
+  assert.equal(path.guide.url,`/${language}/categories/util/`);
+  assert.equal(path.previous.url,entries[2].url);assert.equal(path.next.url,entries[0].url);
+  assert.equal(articleLearningPath(entries[2],entries).previous,undefined);
+  assert.equal(articleLearningPath(entries[0],entries).next,undefined);
+ }
+});

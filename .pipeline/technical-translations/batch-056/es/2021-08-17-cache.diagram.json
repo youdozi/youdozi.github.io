@@ -1,0 +1,55 @@
+{
+  "key": "2021-08-17-cache",
+  "language": "es",
+  "title": "Caché LRU por orden de acceso",
+  "description": "Con capacidad cero se devuelve inmediatamente el resultado. En otro caso get/put actualizan el uso reciente y el desbordamiento expulsa la clave menos recientemente usada.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Capacidad 0: devolver 5 × consultas",
+        "En otro caso seguir las flechas"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Crear el mapa por acceso una vez",
+        "Inicializar cost = 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Leer la siguiente ciudad",
+        "Minúsculas con Locale.ROOT"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "get(key): acierto +1, fallo +5",
+        "put(key) lo hace el más reciente"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Excede capacidad? Quitar primero",
+        "Si no, conservar todas las claves"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "¿Quedan ciudades?",
+        "Sí: repetir; no: devolver coste"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 5,
+    "to": 2,
+    "label": "Sí"
+  }
+}

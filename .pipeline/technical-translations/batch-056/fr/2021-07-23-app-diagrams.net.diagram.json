@@ -1,0 +1,29 @@
+{
+  "key": "2021-07-23-app-diagrams.net",
+  "language": "fr",
+  "title": "Exemple XML à trois nœuds",
+  "description": "La figure montre les mêmes trois sommets et deux connexions orientées que le XML ci-dessous. Elle est rendue pour l’article, sans être une capture ou un export de l’éditeur.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Request",
+        "Nœud d’entrée"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Validate",
+        "Nœud intermédiaire"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Response",
+        "Nœud de sortie"
+      ]
+    }
+  ]
+}

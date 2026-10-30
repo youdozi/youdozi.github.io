@@ -1,0 +1,29 @@
+{
+  "key": "2021-07-23-app-diagrams.net",
+  "language": "de",
+  "title": "XML-Beispiel mit drei Knoten",
+  "description": "Die Abbildung zeigt dieselben drei Knoten und zwei gerichteten Verbindungen wie das XML darunter. Sie wurde für den Artikel gerendert und ist kein Editor-Screenshot oder -Export.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Request",
+        "Eingabeknoten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Validate",
+        "Zwischenknoten"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Response",
+        "Ausgabeknoten"
+      ]
+    }
+  ]
+}

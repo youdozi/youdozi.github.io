@@ -1,0 +1,56 @@
+{
+  "key": "2021-08-17-cache",
+  "language": "de",
+  "title": "LRU nach Zugriffsreihenfolge",
+  "description": "Kapazität null liefert sofort das Ergebnis. Sonst aktualisieren get/put die Zugriffsreihenfolge; bei Überlauf wird der am längsten unbenutzte Schlüssel verdrängt.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Kapazität 0: 5 × Anfragen liefern",
+        "Sonst den Pfeilen folgen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Zugriffsgeordnete Map erstellen",
+        "cost = 0 initialisieren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Nächste Stadt lesen",
+        "Mit Locale.ROOT kleinschreiben"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "get(key): Treffer +1",
+        "Cache-Miss: +5",
+        "put(key): zuletzt benutzt"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Über Kapazität? Ersten entfernen",
+        "Sonst alle Schlüssel behalten"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Weitere Städte?",
+        "Ja: wiederholen; nein: Kosten liefern"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 5,
+    "to": 2,
+    "label": "Ja"
+  }
+}

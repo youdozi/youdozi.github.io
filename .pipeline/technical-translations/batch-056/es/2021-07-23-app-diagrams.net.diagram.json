@@ -1,0 +1,29 @@
+{
+  "key": "2021-07-23-app-diagrams.net",
+  "language": "es",
+  "title": "Ejemplo XML de tres nodos",
+  "description": "La figura muestra los mismos tres vértices y dos conexiones dirigidas que el XML de abajo. Está renderizada para el artículo; no es una captura ni una exportación del editor.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Request",
+        "Nodo de entrada"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Validate",
+        "Nodo intermedio"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Response",
+        "Nodo de salida"
+      ]
+    }
+  ]
+}

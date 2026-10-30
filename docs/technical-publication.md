@@ -39,7 +39,7 @@ node scripts/technical-publication.mjs publish \
 npm run check:technical-preview
 ```
 
-이 명령은 커밋된 HEAD의 임시 복사본에만 등록된 기술 번역 66편과 대기 뉴스 번역 318편을 시험용 승인 자료로 넣습니다. 일반 빌드·게시·배포·IndexNow 명령을 호출하지 않습니다. 이미 공개된 기술 번역이 있으면 덮어쓰지 않고 건너뜁니다.
+이 명령은 커밋된 HEAD의 임시 복사본에만 등록된 기술 번역 96편과 대기 뉴스 번역 318편을 시험용 승인 자료로 넣습니다. 일반 빌드·게시·배포·IndexNow 명령을 호출하지 않습니다. 이미 공개된 기술 번역이 있으면 덮어쓰지 않고 건너뜁니다.
 
 시험용 승인에는 `render-fixture` 종류와 `AUTOMATED_RENDER_FIXTURE_NOT_HUMAN_APPROVAL` 검토자를 명시합니다. 실제 저장소 밖의 전용 임시 폴더, Git 체크아웃이 아닌 경로, 원본 저장소 경로와 정확한 원고 키를 기록한 격리 표식이 모두 있어야 읽을 수 있습니다. 일반 게시 승인으로 인정하지 않습니다.
 

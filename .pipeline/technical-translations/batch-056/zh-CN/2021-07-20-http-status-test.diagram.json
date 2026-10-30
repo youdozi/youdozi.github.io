@@ -1,0 +1,48 @@
+{
+  "key": "2021-07-20-http-status-test",
+  "language": "zh-CN",
+  "title": "选择本地 HTTP 响应",
+  "description": "处理器先选择状态与表示，再写入响应头。204 分支不含正文或 Content-Length，其他路由写入声明的字节数。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "接收本地 GET 请求",
+        "选择受支持的路由"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "未知路径或状态？",
+        "使用模拟服务的 JSON 404"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "状态 204：结束响应头并返回",
+        "没有 Content-Length 或正文"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "204",
+        "continue": "其他"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "其他状态：选择 JSON 或 HTML",
+        "设置媒体类型与字节长度"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "写入响应头和正文",
+        "分别检查每个响应"
+      ]
+    }
+  ]
+}

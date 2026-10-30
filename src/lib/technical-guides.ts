@@ -1,6 +1,7 @@
 import type { Entry, Language } from './content';
 import {nativeLanguages,translationLanguages} from './locales.ts';
 import {guideLocales,hasLocalizedGuide,localizedGuidesUpdatedAt} from './guide-locales.ts';
+import {toolGuideLocales,toolGuidesUpdatedAt} from './tool-guide-locales.ts';
 import type { CategoryGuide } from './category-guide';
 import { algorithmGuide } from './algorithm-guide.ts';
 import { springGuide } from './spring-guide.ts';
@@ -134,10 +135,12 @@ export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGui
   if(term==='springboot')return springGuide(lang,all);
   if(!Object.hasOwn(paths,term))return undefined;
   const native=paths[term as keyof typeof paths];
-  if(hasLocalizedGuide(lang)&&term!=='linux')return undefined;
+  if(hasLocalizedGuide(lang)&&term!=='linux'&&term!=='util')return undefined;
   const localized=hasLocalizedGuide(lang)?guideLocales[lang]:undefined;
-  const shell=localized?.linux;
-  const definition=shell?{...shell,groups:paths.linux.en.groups.map(group=>({...group,...shell.groups[group.id as keyof typeof shell.groups]}))}:native[lang as 'en'|'ko'];
+  const translated=hasLocalizedGuide(lang)?(term==='linux'?guideLocales[lang].linux:toolGuideLocales[lang]):undefined;
+  const groupCopy=translated?.groups as Record<string,{title:string;description:string}>|undefined;
+  const definition=translated?{...translated,groups:native.en.groups.map(group=>({...group,...groupCopy![group.id]}))}:native[lang as 'en'|'ko'];
+  const copyUpdatedAt=term==='util'?toolGuidesUpdatedAt:localizedGuidesUpdatedAt;
   const items=all.filter(e=>e.language===lang&&e.kind==='post'&&(e.categories.includes(term)||crossCategoryKeys[term]?.includes(e.translationKey))&&e.reviewStatus!=='example'&&e.publishedAt.getTime()<=Date.now());
   if(!items.length)return undefined;
   const byKey=new Map(items.map(e=>[e.translationKey,e]));let position=1;
@@ -148,7 +151,7 @@ export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGui
   const selected=new Set(sections.flatMap(s=>s.entries.map(e=>e.translationKey)));
   const extras=items.filter(e=>!selected.has(e.translationKey));const ordered=[...sections.flatMap(s=>s.entries),...extras];
   return {...definition,...(localized?.common||common[lang as 'en'|'ko']),lang,url:`/${lang}/categories/${term}/`,listAnchor:'articles',sections,extras,ordered,
-    updatedAt:new Date(Math.max(localized?localizedGuidesUpdatedAt.getTime():updatedAt.getTime(),...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
+    updatedAt:new Date(Math.max(localized?copyUpdatedAt.getTime():updatedAt.getTime(),...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
 }
 export function categoryGuideAlternates(term:string,all:Entry[]) {
   return ([...nativeLanguages,...translationLanguages]).flatMap(language=>{const guide=categoryGuide(term,language,all);return guide?[{language,url:guide.url}]:[];});

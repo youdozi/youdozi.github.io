@@ -1,0 +1,29 @@
+{
+  "key": "2021-07-23-app-diagrams.net",
+  "language": "zh-CN",
+  "title": "三个节点的 XML 示例",
+  "description": "此图与下方 XML 具有相同的三个顶点和两条有向连接。它是为本文渲染的，不是编辑器截图或导出结果。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Request",
+        "输入节点"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Validate",
+        "中间节点"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Response",
+        "输出节点"
+      ]
+    }
+  ]
+}
