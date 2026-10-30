@@ -1816,6 +1816,167 @@
           ]
         }
       ]
+    },
+    {
+      "key": "2026-10-30-gitlab2shell-cve-2026-110264",
+      "title": {
+        "en": "Compare release thresholds",
+        "ko": "릴리스 수정 기준 비교"
+      },
+      "description": {
+        "en": "Validate stable version syntax, select the published branch threshold, then report comparison without certifying deployment.",
+        "ko": "안정 버전 형식을 검증하고 공개된 계열별 기준을 골라 비교합니다. 실제 배포를 인증하지 않습니다."
+      },
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "re.fullmatch(VERSION, argv[1])"
+        },
+        {
+          "language": "python",
+          "contains": "FIRST_FIX[branch]"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "condition",
+          "en": [
+            "Supported stable version syntax?"
+          ],
+          "ko": [
+            "지원하는 안정 버전 형식인가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "invalid: 2",
+              "ko": "형식 오류: 2"
+            },
+            "continue": {
+              "en": "yes",
+              "ko": "예"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Select known branch baseline",
+            "or older range / outside table"
+          ],
+          "ko": [
+            "등록된 계열 기준 선택",
+            "또는 과거 범위·표 밖 분류"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Compare known branch numbers",
+            "Retain older / unknown results"
+          ],
+          "ko": [
+            "등록 계열은 숫자로 비교",
+            "과거 범위·미확인 결과는 유지"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Print threshold and baseline",
+            "Deployment remains unverified"
+          ],
+          "ko": [
+            "수정 기준 비교·기준값 출력",
+            "실제 배포는 미검증으로 유지"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2026-10-30-jdk-emudhra-truststore",
+      "title": {
+        "en": "Inspect default JSSE trust",
+        "ko": "기본 JSSE 신뢰 정보 확인"
+      },
+      "description": {
+        "en": "Read JVM identity, initialize the default trust manager, collect candidate CA fingerprints, and print inventory only.",
+        "ko": "JVM 정보를 읽고 기본 신뢰 관리자를 초기화합니다. CA 후보 지문을 수집하고 목록만 출력합니다."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "factory.init((KeyStore) null)"
+        },
+        {
+          "language": "java",
+          "contains": "x509.getAcceptedIssuers()"
+        },
+        {
+          "language": "java",
+          "contains": "sha256.digest(cert.getEncoded())"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "en": [
+            "Read running JVM properties"
+          ],
+          "ko": [
+            "실행 중인 JVM 속성 읽기"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Initialize default TrustManagerFactory"
+          ],
+          "ko": [
+            "기본 TrustManagerFactory 초기화"
+          ]
+        },
+        {
+          "kind": "condition",
+          "en": [
+            "Initialization succeeded?"
+          ],
+          "ko": [
+            "초기화가 성공했는가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "exception",
+              "ko": "예외 종료"
+            },
+            "continue": {
+              "en": "yes",
+              "ko": "예"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Read accepted CA issuers",
+            "Match names and hash candidates"
+          ],
+          "ko": [
+            "신뢰하는 CA 목록 읽기",
+            "이름 후보 선택·지문 계산"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Print counts and inventory",
+            "No TLS-validation verdict"
+          ],
+          "ko": [
+            "개수·수집 정보 출력",
+            "TLS 검증 판정은 하지 않음"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -29,19 +29,23 @@ const crossCategoryKeys: Partial<Record<string, readonly string[]>> = {
 };
 const paths = {
   security: {
-    en: {label:'Runtime security guides',title:'Runtime Security Guides: PHP2Shell and Node2Shell',eyebrow:'Runtime patching',
-      description:'Identify the PHP or Node.js runtime, distinguish supplier fix evidence from version labels, and verify adoption by workers and replicas.',
-      intro:'Follow each product’s advisory and the runtime actually serving the workload. The local collectors print process evidence; they do not discover services, reproduce exploits or certify patch status.',
+    en: {label:'Runtime security guides',title:'Runtime Security Guides: PHP, Node.js, GitLab and JVM Trust',eyebrow:'Runtime patching',
+      description:'Check PHP, Node.js and GitLab upgrade evidence, distinguish supplier fixes from version labels, and inspect JVM certificate trust.',
+      intro:'Follow each product’s advisory and the runtime actually serving the workload. Local examples compare declared versions and collect runtime evidence; they do not discover services, reproduce exploits or certify patch status.',
       groups:[
         {id:'php',title:'PHP engine and web workers',description:'Separate the PHP engine fixes, vendor backports, session follow-up and Windows package rebuild.',keys:['2026-10-30-php2shell-runtime-patching']},
         {id:'node',title:'Brotli paths and Node.js rollout',description:'Trace untrusted decompression and connect runtime fix evidence to every worker and replica.',keys:['2026-10-30-node2shell-brotli-runtime-patching']},
+        {id:'gitlab',title:'GitLab server upgrade',description:'Compare the RCE release threshold and follow upgrade stops before verifying adoption.',keys:['2026-10-30-gitlab2shell-cve-2026-110264']},
+        {id:'trust',title:'JVM certificate trust',description:'Distinguish supplier distrust guidance from the CA inventory of a newly started JVM.',keys:['2026-10-30-jdk-emudhra-truststore']},
       ]},
-    ko: {label:'런타임 보안 학습 안내',title:'런타임 보안 학습 안내: PHP2Shell·Node2Shell',eyebrow:'런타임 패치',
-      description:'실제 PHP·Node.js 런타임을 식별하고 버전 이름표와 공급자의 수정 증거를 구분합니다. 모든 워커·복제본의 실행 반영을 확인합니다.',
-      intro:'제품별 공지와 실제 작업을 처리하는 런타임을 함께 확인합니다. 로컬 수집기는 프로세스 증거를 출력하며 서비스 탐색·악용 재현·패치 상태 인증은 하지 않습니다.',
+    ko: {label:'런타임 보안 학습 안내',title:'런타임 보안 학습 안내: PHP·Node.js·GitLab·JVM 신뢰',eyebrow:'런타임 패치',
+      description:'PHP·Node.js·GitLab의 업그레이드 증거와 버전 이름표를 구분하고 JVM 인증서 신뢰 설정을 확인합니다.',
+      intro:'제품별 공지와 실제 작업을 처리하는 런타임을 함께 확인합니다. 로컬 예제는 선언된 버전 비교와 런타임 증거 수집을 돕습니다. 서비스 탐색·악용 재현·패치 상태 인증은 하지 않습니다.',
       groups:[
         {id:'php',title:'PHP 엔진과 웹 워커',description:'PHP 엔진 수정·공급자 백포트·세션 후속 공지·Windows 패키지 재빌드를 구분합니다.',keys:['2026-10-30-php2shell-runtime-patching']},
         {id:'node',title:'Brotli 경로와 Node.js 반영',description:'신뢰할 수 없는 압축 해제 경로를 추적하고 모든 워커·복제본을 수정 런타임 증거와 연결합니다.',keys:['2026-10-30-node2shell-brotli-runtime-patching']},
+        {id:'gitlab',title:'GitLab 서버 업그레이드',description:'RCE 수정 기준을 비교하고 필수 경유 지점을 거쳐 실행 반영을 확인합니다.',keys:['2026-10-30-gitlab2shell-cve-2026-110264']},
+        {id:'trust',title:'JVM 인증서 신뢰',description:'공급자 신뢰 해제 안내와 새 JVM에서 수집한 CA 목록을 구분합니다.',keys:['2026-10-30-jdk-emudhra-truststore']},
       ]},
   },
   jekyll: {
@@ -111,21 +115,23 @@ const paths = {
       ]},
   },
   jdk: {
-    en: {label:'JDK feature guides',title:'JDK Guides: Final APIs, Preview History and Binary Checks',eyebrow:'JDK',
-      description:'Distinguish final and preview JDK 21 features, understand the String Templates history and inspect JDK binary metadata under each article’s recorded scope.',
+    en: {label:'JDK feature guides',title:'JDK Guides: APIs, Binary Checks and Certificate Trust',eyebrow:'JDK',
+      description:'Distinguish final and preview JDK 21 features, understand String Templates history, inspect binary metadata and check JVM certificate trust.',
       intro:'Separate language/API status from the runtime you actually install. These articles include historical release events and preview material; use each recorded version and do not infer current support from an old release note.',
       groups:[
         {id:'features',title:'Distinguish feature status',description:'Start with final APIs and the boundaries of preview features.',keys:['2023-09-20-jdk-21-release']},
         {id:'preview',title:'Read preview history',description:'Understand String Templates and the standard formatting alternative shown in the article.',keys:['2023-09-23-jdk-21-string-templates']},
         {id:'binaries',title:'Inspect runtime binaries',description:'Keep the historical Temurin delay separate from platform and binary-metadata checks.',keys:['2023-10-10-temurin-jdk21-delay']},
+        {id:'trust',title:'Check certificate trust',description:'Identify the JVM and supplier guidance before interpreting trust-store inventory.',keys:['2026-10-30-jdk-emudhra-truststore']},
       ]},
-    ko: {label:'JDK 기능 학습 안내',title:'JDK 학습 안내: 정식 API·Preview 이력·바이너리 확인',eyebrow:'JDK',
-      description:'JDK 21의 정식·Preview 기능을 구분하고 String Templates 이력과 JDK 바이너리 메타데이터를 각 글의 확인 범위에 따라 살펴봅니다.',
+    ko: {label:'JDK 기능 학습 안내',title:'JDK 학습 안내: API·바이너리·인증서 신뢰',eyebrow:'JDK',
+      description:'JDK 21의 정식·Preview 기능을 구분하고 String Templates 이력·바이너리 메타데이터·JVM 인증서 신뢰 설정을 살펴봅니다.',
       intro:'언어·API의 상태와 실제 설치할 실행기를 구분합니다. 과거 릴리스와 Preview 자료를 포함하므로 기록한 버전을 따르고 오래된 릴리스 글만으로 현재 지원 상태를 판단하지 않습니다.',
       groups:[
         {id:'features',title:'기능의 상태 구분',description:'정식 API와 Preview 기능의 적용 범위부터 확인합니다.',keys:['2023-09-20-jdk-21-release']},
         {id:'preview',title:'Preview 이력 확인',description:'String Templates 이력과 본문이 제공하는 표준 포맷팅 대안을 살펴봅니다.',keys:['2023-09-23-jdk-21-string-templates']},
         {id:'binaries',title:'실행기 바이너리 확인',description:'과거 Temurin 출시 지연과 플랫폼·바이너리 메타데이터 검사를 구분합니다.',keys:['2023-10-10-temurin-jdk21-delay']},
+        {id:'trust',title:'인증서 신뢰 확인',description:'JVM과 공급자 공지를 식별한 뒤 신뢰 저장소 목록을 해석합니다.',keys:['2026-10-30-jdk-emudhra-truststore']},
       ]},
   },
   util: {

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "gitlab-jdk-security-070",
+  "reviewedAt": "2026-10-30T14:54:45.853205+00:00",
+  "baseCommit": "583a147e2b162fb9cb5d29345479d783f061b9ed",
+  "scope": "User-confirmed GitLab CVE-2026-110264 and JDK eMudhra CA issue: two KO originals and complete EN translations, offline source-derived ZIP examples, localized flows and native security/JDK guide links. No production maintenance or exploitation.",
+  "newPublicArticles": 4,
+  "articleHashes": {
+    "ko/2026-10-30-gitlab2shell-cve-2026-110264": "2360a7ccf3b6b6057ed9013cd8de656c53c426aa3ccc84a7754eb585b7929696",
+    "ko/2026-10-30-jdk-emudhra-truststore": "334c61dde5afb023742c533b7779e20972350ca5ce44c91c33bab6aa1ff22d6e",
+    "en/2026-10-30-gitlab2shell-cve-2026-110264": "e82e5c142578027e209b24cd05267e840b1988b27684891f646b8e25af5576a7",
+    "en/2026-10-30-jdk-emudhra-truststore": "abdc8cf489bcb34919f036e665475c6dd2f939c07f1a4c42ffe10c86e32761e3"
+  },
+  "primaryReferencesChecked": [
+    "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-110264",
+    "https://docs.gitlab.com/update/upgrade_paths/",
+    "https://docs.gitlab.com/administration/raketasks/maintenance/",
+    "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-3-released/",
+    "https://ops.java/emudhra/",
+    "https://www.oracle.com/security-alerts/alert-cve-2026-91403.html",
+    "https://adoptium.net/news/2026/10/temurin-october-2026-emudhra/",
+    "https://ubuntu.com/blog/emudhra-ca-compromise-fixes-available",
+    "https://docs.oracle.com/en/java/javase/25/security/java-secure-socket-extension-jsse-reference-guide.html",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/javax/net/ssl/TrustManagerFactory.html",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/javax/net/ssl/X509TrustManager.html"
+  ],
+  "existingNativeArticlesChanged": false,
+  "existingIndividualDiagramItemsChanged": false,
+  "translationDraftsStillUnpublished": 120,
+  "translationContentChanged": false,
+  "translationQueue": ".pipeline/technical-translations/queue-070.json",
+  "unstartedEditionsAdded": 12,
+  "translationRemainingEditions": 132,
+  "review": {
+    "method": "Writing-skill self-review and separate-context independent technical and full KO-to-EN review, followed by corrections and re-review.",
+    "independentReviewer": true,
+    "reviewSession": "/root/gitlab_jdk070_review",
+    "initialMajorFindings": 1,
+    "initialMinorFindings": 2,
+    "unresolvedMajorOrCriticalFindings": 0,
+    "corrections": [
+      "Missing explicit trust-store path test now permits provider/build-specific fallback, empty inventory or initialization failure without a protection verdict.",
+      "Paired JDK prose describes missing-path behavior and observed default fallback/password failure.",
+      "Ubuntu requires additional manual Java-store synchronization and preservation of local CAs."
+    ],
+    "reviewerExecuted": "62-case offline runner on Corretto 17.0.8.1 after corrections.",
+    "limits": "No external affected TLS chains, production assets, upgrades or exploitation. UI and deployment checked separately."
+  },
+  "validation": {
+    "nodeTests": 165,
+    "pythonTests": 333,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 437,
+    "sitemapURLs": 495,
+    "diagramPairs": 42,
+    "exampleArchives": 26,
+    "readingPathArticles": 82,
+    "readingNeighborLinks": 130,
+    "offlineExampleCasesPerJDK": 62,
+    "localJDKs": [
+      "Corretto 17.0.8.1",
+      "Zulu 21.0.1"
+    ],
+    "oldJDKsUsedOnlyForCollectorBehaviorNotFixedBuildValidation": true,
+    "actualZIPCodeExecuted": true,
+    "localBrowserChecks": 8,
+    "widths": [
+      320,
+      1360
+    ],
+    "mobileFlowScreenshotsInspected": true
+  },
+  "googleIndexingOrAICitationGainEstablished": false
+}
