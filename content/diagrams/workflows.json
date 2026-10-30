@@ -2070,6 +2070,99 @@
           ]
         }
       ]
+    },
+    {
+      "key": "2026-10-31-jdk25-scopedvalue",
+      "title": {
+        "en": "Bound request context and restoration",
+        "ko": "요청 컨텍스트의 범위와 복원"
+      },
+      "description": {
+        "en": "Follows handleRequest in the virtual thread; nested normal and exceptional exits restore the outer binding. A plain child thread does not inherit it.",
+        "ko": "가상 스레드의 handleRequest를 따릅니다. 중첩 정상·예외 종료는 외부 바인딩을 복원하며 일반 자식 스레드는 이를 상속하지 않습니다."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "ScopedValue.where(CONTEXT,"
+        },
+        {
+          "language": "java",
+          "contains": "new RequestContext(\"tenant-b\", \"trace-123\")"
+        },
+        {
+          "language": "java",
+          "contains": "child.join();"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "en": [
+            "Start request in a virtual thread",
+            "Observe CONTEXT unbound"
+          ],
+          "ko": [
+            "가상 스레드에서 요청 시작",
+            "CONTEXT 미바인딩 확인"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "call(): bind tenant-a / trace-123",
+            "Read context in service()"
+          ],
+          "ko": [
+            "call(): tenant-a / trace-123 바인딩",
+            "service()에서 컨텍스트 읽기"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Nested run(): read tenant-b",
+            "Return and observe tenant-a"
+          ],
+          "ko": [
+            "중첩 run(): tenant-b 읽기",
+            "종료 후 tenant-a 복원 확인"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Nested run(): throw an exception",
+            "Catch outside; tenant-a restored"
+          ],
+          "ko": [
+            "중첩 run(): 예외 발생",
+            "범위 밖에서 처리·tenant-a 복원"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Start a plain virtual child",
+            "Observe unbound; join child"
+          ],
+          "ko": [
+            "일반 가상 자식 스레드 시작",
+            "미바인딩 확인·join 대기"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Return from outer call()",
+            "Observe unbound; get() throws"
+          ],
+          "ko": [
+            "외부 call() 종료",
+            "미바인딩·get() 예외 확인"
+          ]
+        }
+      ]
     }
   ]
 }

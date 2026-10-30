@@ -89,6 +89,12 @@ jobs:
           java-version: '21'
       - name: Compile final JDK 21 features without preview flags
         run: python3 -B scripts/check_jvm_runtime_examples.py --part jdk
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25.0.5+8'
+      - name: Execute finalized ScopedValue ZIP and concurrency contracts without preview
+        run: python3 -B scripts/check_scopedvalue_example.py
       - name: Migration regression tests
         run: npm test
       - name: Verify local browser checks block Analytics collection

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "jdk25-scopedvalue-072",
+  "reviewedAt": "2026-10-30T16:05:14.753668+00:00",
+  "baseCommit": "d402746fcc68a80140d66e5f58d36d6062ce897d",
+  "scope": "KO original and complete EN translation about finalized JDK 25 ScopedValue, a virtual-thread source-derived ZIP, localized flow and native JDK guide. No framework integration, StructuredTaskScope execution or production rollout.",
+  "newPublicArticles": 2,
+  "articleHashes": {
+    "ko": "f5c2c03a699f2d4f66a18615742f6d3f0e4b9e9b5f63661eccfcf5174dd80825",
+    "en": "b1b2085e75caffb25a2838a9d99da8e4b63dd107657a94ad5e08730bb04fbf66"
+  },
+  "primarySources": [
+    "https://openjdk.org/jeps/506",
+    "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ScopedValue.html",
+    "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ScopedValue.Carrier.html",
+    "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html",
+    "https://openjdk.org/jeps/505"
+  ],
+  "sourceAccess": "Oracle API read via web and curl; official OpenJDK JEPs read via curl after web returned 403. Adoptium API supplied the local runtime artifact and checksum.",
+  "review": {
+    "method": "Separate-context read-only technical and full KO-to-EN review under writing/translation skills.",
+    "session": "/root/scopedvalue072_review",
+    "requiredFindings": 0,
+    "unresolvedMajorOrCriticalFindings": 0,
+    "authorClarification": "KO sentence explicitly names Future.get() to distinguish it from ScopedValue.get(); reviewer rechecked current KO hash and EN equivalence.",
+    "reviewerExecuted": "18-case runner on Temurin 25.0.5+8; no preview flags.",
+    "limits": "StructuredTaskScope inheritance, framework integration, performance and production not executed; UI checked separately."
+  },
+  "validation": {
+    "nodeTests": 165,
+    "pythonTests": 333,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 441,
+    "sitemapURLs": 499,
+    "diagramPairs": 44,
+    "exampleArchives": 30,
+    "readingPathArticles": 86,
+    "readingNeighborLinks": 138,
+    "exampleChecks": 18,
+    "separateAPIContracts": 7,
+    "jdk": "Eclipse Temurin 25.0.5+8 macOS AArch64",
+    "localJDKArchiveSHA256": "36dc14d797aaff6d89aab302cd053fdba6207dfdcf772052fa7b023a94b0e857",
+    "actualZIPCodeExecuted": true,
+    "previewFlags": false,
+    "globalJDKConfigurationChanged": false,
+    "browserChecks": 4,
+    "widths": [
+      320,
+      1360
+    ],
+    "mobileArticleAndFlowInspected": true,
+    "performanceMeasured": false
+  },
+  "existingTechnicalTranslationsStillUnpublished": 120,
+  "newAdditionalLanguageTasksNotStarted": 6,
+  "translationQueue": ".pipeline/technical-translations/queue-072.json",
+  "googleIndexingRankingOrAICitationGainEstablished": false
+}

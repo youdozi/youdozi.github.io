@@ -326,6 +326,25 @@
         "en": "Compares ordinary/value records, field-state versus domain equality, identity, a nullable array slot and a handled monitor rejection. Semantic demonstration only; no layout, allocation, GC or throughput measurements and no production migration. This preview is not a finalized feature.",
         "ko": "일반·값 레코드, 필드 상태와 업무 동등성, 정체성, null 배열 슬롯과 처리한 모니터 거부를 비교합니다. 의미 시연이며 배치·할당량·GC·처리량 측정이나 운영 전환을 하지 않습니다. 미리보기는 정식 확정 기능이 아닙니다."
       }
+    },
+    {
+      "key": "2026-10-31-jdk25-scopedvalue",
+      "files": [
+        {
+          "path": "ScopedContextExample.java",
+          "language": "java",
+          "selector": "heading"
+        }
+      ],
+      "commands": "javac --release 25 ScopedContextExample.java\njava ScopedContextExample",
+      "environment": {
+        "en": "JDK 25 with matching javac/java. Observed on Eclipse Temurin 25.0.5+8, macOS AArch64. No preview flags, external dependencies or network requests from the program.",
+        "ko": "같은 JDK 25의 javac·java. macOS AArch64 Eclipse Temurin 25.0.5+8에서 실행했습니다. 미리보기 플래그·외부 의존성·프로그램 네트워크 요청은 없습니다."
+      },
+      "scope": {
+        "en": "Runs a request in a virtual thread; observes nested binding, normal/exception restoration, a plain virtual child without inheritance and unbound access. Does not execute StructuredTaskScope preview inheritance, framework/MDC/security integration, production rollout or performance measurements.",
+        "ko": "가상 스레드의 요청에서 중첩 바인딩·정상/예외 복원·일반 가상 자식의 미상속·미바인딩 접근을 확인합니다. StructuredTaskScope 미리보기의 상속·프레임워크/MDC/보안 연동·운영 전환·성능 측정은 실행하지 않습니다."
+      }
     }
   ]
 }
