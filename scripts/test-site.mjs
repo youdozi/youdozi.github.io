@@ -269,7 +269,8 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.ok(englishArticle.includes('https://github.com/youdozi/youdozi.github.io/issues?'));
     const contents=englishArticle.match(/<details class="article-toc"[\s\S]*?<\/details>/)?.[0];
     assert.ok(contents,'A technical article with four rendered sections exposes contents');
-    assert.deepEqual([...contents.matchAll(/href="#([^"]+)"/g)].map(m=>decodeURIComponent(m[1])),['processing-flow','set-up-a-standalone-test-project','test-eight-response-contracts','why-status-and-decoding-are-checked-separately']);
+    assert.ok(englishArticle.includes('id="why-status-and-decoding-are-checked-separately"'),'Existing external fragment links remain valid');
+    assert.deepEqual([...contents.matchAll(/href="#([^"]+)"/g)].map(m=>decodeURIComponent(m[1])),['processing-flow','set-up-a-standalone-test-project','test-eight-response-contracts','why-can-http-200-still-fail-response-validation']);
     for(const slug of [...contents.matchAll(/href="#([^"]+)"/g)].map(m=>decodeURIComponent(m[1])))assert.ok(englishArticle.includes(`id="${slug}"`));
     assert.ok(englishArticle.includes(`class="publication-date">Published: <time datetime="${posting.datePublished}"`));
     assert.ok(englishArticle.includes(`class="modification-date">Updated: <time datetime="${posting.dateModified}"`));

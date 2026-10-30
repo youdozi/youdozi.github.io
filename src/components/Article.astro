@@ -1,5 +1,6 @@
 ---
 import Comments from './Comments.astro';
+import {answerCitations} from '../lib/answer-pilot';
 import type {NativeLanguage} from '../lib/locales';
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
@@ -25,11 +26,13 @@ const sections=articleSections(entry.kind,rendered?.headings);
 const modified=visibleModified(entry);
 const canonical = new URL(entry.url, Astro.site).href;
 const metadata = articleMetadata(entry);
+const citations = answerCitations(entry);
 const articleData: Record<string, unknown>[] = entry.reviewStatus === 'example' ? [] : [
   { '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': `${canonical}#article`, mainEntityOfPage: canonical, url: canonical,
     headline: entry.title, description: entry.description, inLanguage: lang, datePublished: metadata.publishedTime, dateModified: metadata.modifiedTime,
     author: authorData(lang),
     publisher: authorData(lang),
+    ...(citations.length ? {citation: citations} : {}),
     ...(entry.renewal ? {isBasedOn:entry.renewal.data.url,citation:entry.renewal.data.documents.map(d=>d.url),temporalCoverage:entry.renewal.data.archiveDate} : {}),
     ...(entry.post?.data.image ? { image: new URL(entry.post.data.image, Astro.site).href } : {}) },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [

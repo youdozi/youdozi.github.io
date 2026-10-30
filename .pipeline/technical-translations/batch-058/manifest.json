@@ -3,7 +3,7 @@
   "batchId": "technical-058",
   "state": "awaiting-publication-approval",
   "approval": null,
-  "baseCommit": "ab9320c360dd0ee82590d58683eec65db190f3ed",
+  "baseCommit": "1caa01eab1af65d67dd939b093b1b515bf3f5aef",
   "sourceLanguage": "en",
   "languages": [
     "zh-CN",
@@ -17,7 +17,8 @@
     "method": "AI self-review against complete English article and standalone target-language reading",
     "independentReviewer": false,
     "newExternalFactVerification": false,
-    "scope": "Complete metadata, prose, tables, captions and flow diagrams; Java, Python, shell, YAML, literal outputs, inline identifiers and URLs preserved. Source execution statements remain translations of prior evidence."
+    "scope": "Complete metadata, prose, tables, captions and flow diagrams; Java, Python, shell, YAML, literal outputs, inline identifiers and URLs preserved. Source execution statements remain translations of prior evidence.",
+    "synchronization": "Batch 059: JDK 21 and YAML introductions synchronized with revised English sources; prior approval hash is not reused. Code, figures and other paragraphs unchanged."
   },
   "editions": [
     {
@@ -26,11 +27,11 @@
       "translationKey": "2023-09-20-jdk-21-release",
       "source": {
         "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
-        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+        "sha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-09-20-jdk-21-release.md",
-        "sha256": "b2f10c46889301de913165445987a707ba9ca3590a5cc2f62bd50448ffe413e7"
+        "sha256": "4ed3109e812bdfbc4bd0aedecb161544fdfec930671ee62eebc08019a2d89620"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-09-20-jdk-21-release.diagram.json",
@@ -51,11 +52,11 @@
       "translationKey": "2023-09-20-jdk-21-release",
       "source": {
         "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
-        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+        "sha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/ja/2023-09-20-jdk-21-release.md",
-        "sha256": "033feba2b2f1373b5aad3b55dba90c289f72147d31396927d4327767ca7fdc28"
+        "sha256": "e8277cabd1052082af0d6d5cbc474227ef64ac36ef0cfd12a9bc72236dc61338"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/ja/2023-09-20-jdk-21-release.diagram.json",
@@ -76,11 +77,11 @@
       "translationKey": "2023-09-20-jdk-21-release",
       "source": {
         "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
-        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+        "sha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/de/2023-09-20-jdk-21-release.md",
-        "sha256": "b8e11ef0566fb12d4a0aa7934223e439eb717eeaabe926bbd80884db8465e4fe"
+        "sha256": "c1e91d46c2a5db4dbceff9617a7e59aa312d53e1a96b0f0b2924541976578d4a"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/de/2023-09-20-jdk-21-release.diagram.json",
@@ -101,11 +102,11 @@
       "translationKey": "2023-09-20-jdk-21-release",
       "source": {
         "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
-        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+        "sha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/fr/2023-09-20-jdk-21-release.md",
-        "sha256": "82f06d86048469b5ebbb27bd5d948e244bda7f0cdb9309e3cf5ead25539b0192"
+        "sha256": "d3e7a9bf1bd7c2fe454bbd7b641529281baa05d78be0d6d93607aeccc4ddd00a"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/fr/2023-09-20-jdk-21-release.diagram.json",
@@ -126,11 +127,11 @@
       "translationKey": "2023-09-20-jdk-21-release",
       "source": {
         "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
-        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+        "sha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/ru/2023-09-20-jdk-21-release.md",
-        "sha256": "5817e9eabe53cc75a8e5d80f28dbcd282e4bddff8ad4c4e772fb0954dd39faa1"
+        "sha256": "986323c3ec432f61584cfeb28b3ec9df42c9ec47548a342bf176764d0adcd383"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/ru/2023-09-20-jdk-21-release.diagram.json",
@@ -151,11 +152,11 @@
       "translationKey": "2023-09-20-jdk-21-release",
       "source": {
         "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
-        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+        "sha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/es/2023-09-20-jdk-21-release.md",
-        "sha256": "3de1aab50466f340bca6f221a847326c4c68d3e91c24ab2ea84c3d5471ee4f8e"
+        "sha256": "c4e01c68634607ef4d5e79ecc88cb867ac3a8cd40246d78c69823482f0f6527f"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/es/2023-09-20-jdk-21-release.diagram.json",
@@ -476,11 +477,11 @@
       "translationKey": "2021-07-27-parse-yaml",
       "source": {
         "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
-        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+        "sha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/zh-CN/2021-07-27-parse-yaml.md",
-        "sha256": "dbe17e9831efd897f407d175836300d8248609f0c63e2500360bb8df5bc8091c"
+        "sha256": "41ca7077c354d177faf6e7ac07730dbe62b86ffc38f9a415c2d09ff1fe8c95ec"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/zh-CN/2021-07-27-parse-yaml.diagram.json",
@@ -501,11 +502,11 @@
       "translationKey": "2021-07-27-parse-yaml",
       "source": {
         "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
-        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+        "sha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/ja/2021-07-27-parse-yaml.md",
-        "sha256": "3d79c5c12d0aa5c56e7feab70c8535d46e415910c6afd45b6b2c79a8b44f73e3"
+        "sha256": "0bac8e0a51d6436393498cf7430cde6d12405b24541e08dcb455fe1fe0f24d7c"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/ja/2021-07-27-parse-yaml.diagram.json",
@@ -526,11 +527,11 @@
       "translationKey": "2021-07-27-parse-yaml",
       "source": {
         "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
-        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+        "sha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/de/2021-07-27-parse-yaml.md",
-        "sha256": "8715e35e426f3c999693422fe9f3739564d14289757bb7a3a3b809ecc08d81b0"
+        "sha256": "21745f55872956e127fe1b1bb8899d445144b3b410883ecfb7669ef62899a565"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/de/2021-07-27-parse-yaml.diagram.json",
@@ -551,11 +552,11 @@
       "translationKey": "2021-07-27-parse-yaml",
       "source": {
         "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
-        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+        "sha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/fr/2021-07-27-parse-yaml.md",
-        "sha256": "b2c787fc134adccacb0d8f917eea661fdfdb65eb1dc5588d9b58e5522cf93efe"
+        "sha256": "6cf1c74a0538288520025708e4a6908a9b96ec041ad1c63f809b49b472b4b889"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/fr/2021-07-27-parse-yaml.diagram.json",
@@ -576,11 +577,11 @@
       "translationKey": "2021-07-27-parse-yaml",
       "source": {
         "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
-        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+        "sha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/ru/2021-07-27-parse-yaml.md",
-        "sha256": "0d7aa8b9ebe2349963ec8340f6c6ebec4cec329ee5c0beb8259cb28fa15704d3"
+        "sha256": "b19e28c690ce80e814ca2903c15025b5257af1164eb1b9652633ed128819034d"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/ru/2021-07-27-parse-yaml.diagram.json",
@@ -601,11 +602,11 @@
       "translationKey": "2021-07-27-parse-yaml",
       "source": {
         "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
-        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+        "sha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/es/2021-07-27-parse-yaml.md",
-        "sha256": "9d9743df7ecedf33864c28a9b0051348d009b487fd134953e423baefd72fdcf9"
+        "sha256": "a56d655583bc54a089726f134d241af97dadc6686e5917ef37b7e6f396cf6e1a"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/es/2021-07-27-parse-yaml.diagram.json",

@@ -11,18 +11,18 @@ tags:
   - "springboot"
   - "test"
   - "webclient"
-updatedAt: 2026-10-27T05:23:47.316+00:00
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T04:11:22.994096+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "Official documentation checked; runnable examples and version boundaries clarified."
 reviewSources:
   - "https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html"
   - "https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-exchange.html"
-description: "Run eight Spring WebClient tests with MockWebServer and JUnit 5: JSON, HTML, HTTP 500, missing Content-Type, malformed JSON and empty bodies."
+description: "Test WebClient with MockWebServer for HTTP status, Content-Type, JSON decoding and completion signals. Check why HTTP 200 with HTML can violate the response contract."
 ---
-Use a local MockWebServer to test Spring WebClient's HTTP status, response Content-Type and JSON decoding together. A `200 OK` response containing HTML is a different failure from an HTTP 500 response. Sending `Accept: application/json` does not require the server to return JSON.
+Test WebClient with a local MockWebServer and check HTTP status, response Content-Type, body decoding and completion or error together. A `200 OK` response containing HTML can fail the client’s response contract even though the status indicates success; sending `Accept: application/json` does not require a JSON response. Spring documents [mock web server testing](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html) with the real HTTP client.
 
-The test uses a real WebClient over local HTTP, without mocking its fluent method chain. Spring recommends [mock web servers for WebClient tests](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html) because they exercise the client's network behavior.
+The tests use a real WebClient over local HTTP rather than a mock of its fluent method chain. They cover the response contracts shown below; production timeout and retry policies require separate tests.
 
 ## Processing flow
 
@@ -218,7 +218,9 @@ All eight tests should pass. Open `build/reports/tests/test/index.html` for the 
 
 The empty-body behavior is a deliberate contract in this sample. If your endpoint requires a payload, add `switchIfEmpty(Mono.error(...))` and change that test to expect the application error.
 
-## Why status and decoding are checked separately
+<span id="why-status-and-decoding-are-checked-separately"></span>
+
+## Why can HTTP 200 still fail response validation?
 
 `fetch()` handles error statuses before inspecting the successful-response format. `createException()` preserves an HTTP 500 as `WebClientResponseException.InternalServerError`. A connection failure usually follows the `WebClientRequestException` path instead; it is not an HTTP response from the server.
 

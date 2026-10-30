@@ -5,9 +5,9 @@ title: "Shell から YAML を読む：ポートを検証し eval なしでコマ
 description: "Python と PyYAML で YAML ポートを型付きで読み、不正入力を拒否して、eval や shell コード生成なしで SERVER_PORT を子コマンドへ渡します。"
 state: "draft"
 sourcePath: "src/content/posts/en/2021-07-27-parse-yaml.md"
-sourceSha256: "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+sourceSha256: "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
 ---
-shell から YAML を読むときは YAML パーサーで値の型と範囲を検証し、必要な変数だけを渡します。sed/awk で文法全体を近似したり、生成テキストを `eval` で評価したりしないでください。この例では Python と PyYAML で一つの `server.port` を読み、検証成功後にだけ子コマンドを起動します。
+shell から `eval` なしで YAML のポートを読むには、[YAML パーサー](https://pyyaml.org/wiki/PyYAMLDocumentation#loading-yaml)を使って値の型と範囲を検証し、必要な変数だけを渡します。この例では Python と PyYAML で一つの `server.port` を読み、検証成功後にだけ子コマンドを起動します。sed/awk で YAML の文法全体を近似しないでください。
 
 表示されたテキストだけでは YAML の整数 `8080` と文字列 `"8080"` を確実に区別できません。このローダーは**文字列を数値に変換しません**。解析結果が 1 から 65535 の整数である値だけを受け入れます。Python の bool は int のサブクラスなので、`isinstance(port, int)` と異なり `type(port) is int` は真偽値を拒否します。
 

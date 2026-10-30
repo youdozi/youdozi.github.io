@@ -13,8 +13,8 @@ tags:
   - "springboot3 migration"
 legacyUrl: "/springboot/springboot3-migration/"
 legacySource: "_posts/spring/migration/2023-09-08-springboot3-migration.markdown"
-updatedAt: 2026-10-27T05:23:47.316+00:00
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T04:11:22.994096+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조, 재현 절차와 버전별 적용 조건 보강"
 archiveBodySha256: "1d7de750bbc8801a9fd3e50b28b53820a6e8beede1dde34cc4ee282f000414b5"
@@ -22,11 +22,11 @@ reviewSources:
   - "https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide"
   - "https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html"
   - "https://spring.io/blog/2023/09/09/all-together-now-spring-boot-3-2-graalvm-native-images-java-21-and-virtual"
-description: "Spring Boot 2.7에서 3.0으로 옮길 때 Java 17, Jakarta 의존성, Gradle 검사, 설정 변경과 런타임 테스트를 확인하는 순서입니다. 가상 스레드의 버전 조건도 구분합니다."
+description: "Spring Boot 2.7에서 3.0으로 옮길 때 Java 17·Jakarta 의존성·런타임 테스트를 확인하는 순서입니다. 과거 버전의 전환과 현재 운영 버전 선택을 구분합니다."
 ---
-Spring Boot 2.7에서 3.0으로 옮길 때는 Java 17 기준선, Java EE에서 Jakarta로의 패키지 변경, 라이브러리·런타임 호환성을 나눠 확인해야 합니다. 컴파일 성공만으로 DB 매핑·인가·설정이 그대로 동작한다고 판단할 수는 없습니다.
+Spring Boot 2.7에서 3.0으로 옮길 때는 먼저 정상 동작하는 2.7 기준선을 만들고, Java 17 요구사항과 Java EE → Jakarta 패키지 변경, 라이브러리·런타임 호환성을 확인하세요. 이 순서는 [공식 3.0 마이그레이션 가이드](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide)에 설명돼 있습니다. 컴파일 성공만으로 DB 매핑·인가·설정이 올바르게 동작한다고 판단할 수는 없습니다.
 
-이 글은 2023년에 다룬 **2.7 → 3.0 마이그레이션**의 순서를 정리합니다. 지금 Boot 3.0을 운영에 배포하라는 권장은 아닙니다. 실제 업그레이드에서는 지원 중인 목표 릴리스를 선택하고 중간 버전의 마이그레이션 가이드도 확인하세요. 이 단계의 변경점은 [공식 3.0 가이드](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide)에 나와 있습니다.
+이 글은 2023년에 다룬 **2.7 → 3.0 마이그레이션**의 순서를 정리합니다. 지금 Boot 3.0을 운영에 배포하라는 권장은 아닙니다. 실제 업그레이드에서는 지원 중인 목표 릴리스를 선택하고 중간 버전의 마이그레이션 가이드도 확인하세요.
 
 ## 처리 흐름
 
@@ -90,7 +90,9 @@ spring.threads.virtual.enabled=true
 
 JDK 언어 미리보기에도 별도의 버전 조건이 있습니다. [String Templates 호환성 예제](/ko/posts/2023-09-23-jdk-21-string-templates/)는 preview 옵션이 일반적인 업그레이드 해결책이 될 수 없는 이유를 보여줍니다.
 
-## 배포 준비 판단하기
+<span id="배포-준비-판단하기"></span>
+
+## 마이그레이션의 배포 준비는 어떻게 판단하나요?
 
 | 검사 | 남길 근거 |
 | --- | --- |

@@ -5,18 +5,18 @@ translationKey: "2023-09-09-springboot3-querydsl"
 routeSlug: "2023-09-09-springboot3-querydsl"
 kind: "post"
 publishedAt: "2026-10-27T02:02:40+00:00"
-updatedAt: 2026-10-27T07:19:48.249Z
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T04:11:22.994096+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "Official documentation checked; Q-type generation and H2 query tests reproduced."
 categories: ["springboot"]
 tags: ["springboot", "springboot3", "querydsl"]
 reviewSources: ["https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_0_0", "https://docs.gradle.org/current/userguide/java_plugin.html", "https://docs.gradle.org/current/userguide/lazy_configuration.html", "https://docs.spring.io/spring-boot/3.5/reference/testing/spring-boot-applications.html", "https://docs.oracle.com/en/java/javase/17/docs/api/java.compiler/javax/annotation/processing/Generated.html"]
-description: "Configure Querydsl Jakarta with Spring Boot 3, generate Q types with Gradle, and run H2-backed JPA tests using a complete reproducible example."
+description: "Generate Querydsl Q types on Spring Boot 3 with aligned Jakarta dependencies and annotation processing, then verify a clean build and H2 query tests."
 ---
-For Querydsl JPA on Spring Boot 3, align the versions and `jakarta` classifiers of `querydsl-jpa` and `querydsl-apt`, then check both Q-type generation and a real query. Keeping Gradle's default generated-source paths avoids configuring main and test compilation to write to the same directory.
+To generate Querydsl JPA Q types on Spring Boot 3, align the versions and `jakarta` classifiers of `querydsl-jpa` and `querydsl-apt`, configure annotation processing, then check a clean build and a database query test. Querydsl’s [5.0 release notes](https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_0_0) document Jakarta classifier support. Keeping Gradle’s default generated-source paths avoids configuring main and test compilation to write to the same directory.
 
-This guide develops the original 2023 Korean example into a runnable configuration. [Querydsl's 5.0 release notes](https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_0_0) document Jakarta classifier support. The versions below pin the reproduction environment; they are not a recommendation of current production dependencies.
+This guide develops the original 2023 Korean example into a runnable configuration. The versions below pin the reproduction environment; they are not a recommendation of current production dependencies.
 
 ## Processing flow
 
@@ -183,7 +183,9 @@ Both tests passed with this configuration. Repeating `clean test` regenerated th
 
 The generated Q type in this example imports `javax.annotation.processing.Generated`, a Java SE `java.compiler` API. That import does not need a Jakarta replacement. [JDK 17 Generated API](https://docs.oracle.com/en/java/javase/17/docs/api/java.compiler/javax/annotation/processing/Generated.html).
 
-## Troubleshoot missing or duplicate Q types
+<span id="troubleshoot-missing-or-duplicate-q-types"></span>
+
+## Why are Q types missing or generated twice?
 
 | Symptom | First check |
 | --- | --- |

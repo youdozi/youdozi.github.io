@@ -14,8 +14,8 @@ tags:
   - yaml
 legacyUrl: /linux/parse-yaml/
 legacySource: _posts/linux/shell-script/parse-yaml/2021-07-27-parse-yaml.markdown
-updatedAt: 2026-10-27T05:23:47.316+00:00
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T04:11:22.994096+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
   migration and production claims.
@@ -27,7 +27,7 @@ reviewSources:
 description: Python과 PyYAML로 YAML 정수 포트를 검증하고, eval 없이 자식 프로세스에 SERVER_PORT를
   전달합니다. 문자열·불리언·잘못된 입력을 거부합니다.
 ---
-셸에서 YAML을 읽을 때는 sed/awk로 전체 문법을 흉내 내거나 파싱 결과를 `eval`하지 말고, YAML 파서가 읽은 값의 타입과 범위를 검사한 뒤 필요한 변수만 전달하세요. 이 예제는 Python과 PyYAML로 `server.port` 하나를 읽고, 검증에 성공했을 때만 자식 명령을 실행합니다.
+셸에서 `eval` 없이 YAML 포트를 읽으려면 [YAML 파서](https://pyyaml.org/wiki/PyYAMLDocumentation#loading-yaml)로 읽은 값의 타입과 범위를 검사한 뒤 필요한 변수만 전달하세요. 이 예제는 Python과 PyYAML로 `server.port` 하나를 읽고, 검증에 성공했을 때만 자식 명령을 실행합니다. sed/awk로 YAML 전체 문법을 흉내 내지 않습니다.
 
 출력 문자열만 검사하면 YAML 정수 `8080`과 문자열 `"8080"`을 구분하기 어렵습니다. 여기서는 **문자열을 숫자로 강제 변환하지 않고**, 파서가 정수로 읽은 1~65535만 허용합니다. Python의 bool은 int의 하위 타입이므로 `isinstance(port, int)` 대신 `type(port) is int`로 불리언을 거부합니다.
 

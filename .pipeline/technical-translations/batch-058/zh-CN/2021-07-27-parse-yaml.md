@@ -5,9 +5,9 @@ title: "从 Shell 读取 YAML：验证端口并在不用 eval 的情况下执行
 description: "使用 Python 与 PyYAML 按类型读取 YAML 端口，拒绝无效输入，并将 SERVER_PORT 传给子命令，不使用 eval 或生成 shell 代码。"
 state: "draft"
 sourcePath: "src/content/posts/en/2021-07-27-parse-yaml.md"
-sourceSha256: "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+sourceSha256: "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
 ---
-从 shell 读取 YAML 时，应使用 YAML 解析器，验证值的类型与范围，只传递需要的变量。避免用 sed/awk 近似实现完整语法，或用 `eval` 执行生成的文本。本例使用 Python 与 PyYAML 读取一个 `server.port` 值，只有验证成功才启动子命令。
+要从 shell 读取 YAML 端口且不用 `eval`，应使用 [YAML 解析器](https://pyyaml.org/wiki/PyYAMLDocumentation#loading-yaml)，验证值的类型与范围，并只传递需要的变量。本例使用 Python 与 PyYAML 读取一个 `server.port` 值，只有验证成功才启动子命令。不要用 sed/awk 近似实现 YAML 的完整语法。
 
 只检查渲染后的文本，无法可靠区分 YAML 整数 `8080` 与字符串 `"8080"`。此加载器**不会将字符串强制转换为数字**：只接受解析为 1 至 65535 之间整数的值。Python 的 bool 是 int 的子类，因此 `type(port) is int` 会拒绝布尔值，而 `isinstance(port, int)` 不会。
 
