@@ -5,7 +5,7 @@ title: "Temurin JDK 21：检查二进制元数据并理解 2023 年的延迟"
 description: "通过 Adoptium API 按操作系统、架构与包类型选择 Temurin JDK 21 元数据。区分元数据检查、下载验证与 2023 年的发布延迟。"
 state: "draft"
 sourcePath: "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md"
-sourceSha256: "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+sourceSha256: "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
 ---
 要查找 Temurin JDK 21 二进制文件，请按所需操作系统、CPU、JVM 与包类型查询 Adoptium API。以下示例检查 Linux x64 JDK 元数据、校验和格式与 URL 位置，不下载归档，也不计算其哈希。
 
@@ -79,3 +79,5 @@ print(json.dumps(result, indent=2))
 这里只验证校验和的**格式**，不验证下载文件的完整性。如果另外下载归档，应计算其 SHA-256 并与元数据比较，再决定是否解压或安装。实际二进制与公布校验和的一致性检查，不在本元数据示例的执行范围内。
 
 另一个资产选择示例可参阅[查询 GitHub 发行版与资产](/en/posts/2023-09-23-linux-shellscript-github-latest/)。功能稳定性可参阅 [JDK 21 正式与预览功能](/en/posts/2023-09-20-jdk-21-release/)。
+
+下载所选资源后，[将文件的 SHA-256 校验和与可信的预期值进行比较](/en/posts/2026-10-30-verify-sha256-download/)。验证器读取本地字节，不下载发布文件，也不验证发布者身份。

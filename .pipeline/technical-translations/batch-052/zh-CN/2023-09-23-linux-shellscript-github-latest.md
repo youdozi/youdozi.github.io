@@ -5,7 +5,7 @@ title: "用 curl 和 jq 查询 GitHub 最新发布版本：选择一个下载资
 description: "根据操作系统、CPU 和格式，用 curl 与 jq 选择一个 GitHub 发布资产，并处理 HTTP 错误、无效 JSON、无匹配及重复匹配。"
 state: "draft"
 sourcePath: "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md"
-sourceSha256: "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+sourceSha256: "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
 ---
 用 `curl` 获取 GitHub 最新发布版本，再用 `jq` 为所需操作系统、CPU 和格式选择恰好一个下载资产。下方脚本遇到 HTTP 错误、无效 JSON、无匹配或重复匹配时会停止；它返回元数据，不下载文件。
 
@@ -95,3 +95,5 @@ sh latest-release.sh adoptium/temurin17-binaries
 读取公开资源不要求认证。如果扩展为带认证的请求，应避免将令牌写入源码或 Shell 跟踪日志。检查速率限制响应头，并参阅 [GitHub 的速率限制文档](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api)。
 
 脚本只选择 URL，并不验证安装文件的完整性。安装自动化仍需处理提供方的校验和或签名，以及目标平台。在把标签交给[数字版本比较器](/en/posts/2023-11-17-linux-shellscript-version-compare/)之前，应检查它是否满足该脚本的输入约定。
+
+下载所选资源后，[将文件的 SHA-256 校验和与可信的预期值进行比较](/en/posts/2026-10-30-verify-sha256-download/)。验证器读取本地字节，不下载发布文件，也不验证发布者身份。

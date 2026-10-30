@@ -5,7 +5,7 @@ title: "Temurin JDK 21 : métadonnées des binaires et retard de 2023"
 description: "Sélectionner les métadonnées Temurin JDK 21 par OS, architecture et type de paquet avec l’API Adoptium. Distinguer contrôles de métadonnées, vérification du téléchargement et retard de 2023."
 state: "draft"
 sourcePath: "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md"
-sourceSha256: "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+sourceSha256: "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
 ---
 Pour trouver un binaire Temurin JDK 21, interrogez l’API Adoptium avec l’OS, le CPU, la JVM et le type de paquet nécessaires. L’exemple contrôle les métadonnées JDK Linux x64, la syntaxe de la somme de contrôle et l’emplacement de l’URL. Il ne télécharge ni ne hache l’archive.
 
@@ -79,3 +79,5 @@ Le sélecteur n’affiche un résultat que pour exactement un artefact présenta
 Cela valide le **format** de la somme de contrôle, pas l’intégrité d’un fichier téléchargé. Si vous récupérez l’archive séparément, calculez son SHA-256 et comparez-le aux métadonnées avant extraction ou installation. Vérifier la concordance entre le binaire réel et la somme publiée dépasse le périmètre d’exécution de cet exemple.
 
 Pour un autre exemple de sélection, voir la [recherche des versions et artefacts GitHub](/en/posts/2023-09-23-linux-shellscript-github-latest/). Pour la stabilité des fonctions, voir les [fonctions définitives et en preview du JDK 21](/en/posts/2023-09-20-jdk-21-release/).
+
+Après avoir téléchargé la ressource sélectionnée, [comparez sa somme de contrôle SHA-256 à une valeur attendue provenant d’une source fiable](/en/posts/2026-10-30-verify-sha256-download/). Le vérificateur lit les octets locaux ; il ne télécharge pas la version et n’authentifie pas son éditeur.

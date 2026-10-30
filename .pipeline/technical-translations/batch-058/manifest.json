@@ -43,7 +43,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -68,7 +68,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -93,7 +93,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -118,7 +118,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -143,7 +143,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -168,7 +168,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -193,7 +193,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -218,7 +218,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -243,7 +243,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -268,7 +268,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -293,7 +293,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -318,7 +318,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -327,11 +327,11 @@
       "translationKey": "2023-10-10-temurin-jdk21-delay",
       "source": {
         "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+        "sha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "ad3d6744b4ad000b70b7c50c0d469173aa49907c821823630bce0b1170a5cc58"
+        "sha256": "1226cd43dcbb1426faca2aeed660480eb8c7dbb92a3b43f262439dd9e5f6217f"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-10-10-temurin-jdk21-delay.diagram.json",
@@ -343,7 +343,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -352,11 +352,11 @@
       "translationKey": "2023-10-10-temurin-jdk21-delay",
       "source": {
         "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+        "sha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/ja/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "d0012d6d05d330bc2aae99a37862188e93ba423abbe1de79b4bb85ce36ee3f63"
+        "sha256": "86289e8b2295a5851a901d43406ef6b32285571bcb380a3036f4ac1bdc4593bb"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/ja/2023-10-10-temurin-jdk21-delay.diagram.json",
@@ -368,7 +368,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -377,11 +377,11 @@
       "translationKey": "2023-10-10-temurin-jdk21-delay",
       "source": {
         "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+        "sha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/de/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "35d896f2c5c3d41d17e3b29a2f057468d31f106b8f28e0eaf0cc23276e1b08ff"
+        "sha256": "2649daa214a054beaff2a338ff84e6c8be08b6f896c1a8af09d76f33644b24bb"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/de/2023-10-10-temurin-jdk21-delay.diagram.json",
@@ -393,7 +393,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -402,11 +402,11 @@
       "translationKey": "2023-10-10-temurin-jdk21-delay",
       "source": {
         "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+        "sha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/fr/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "ac90d6cabfa7d6c9dedf44b32fa24a56549fa3b5e4bb52a4b7b436d524882238"
+        "sha256": "480d7f5b1e20710ba26a5159b54203d229670df876c57c487dee3369b519a8f5"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/fr/2023-10-10-temurin-jdk21-delay.diagram.json",
@@ -418,7 +418,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -427,11 +427,11 @@
       "translationKey": "2023-10-10-temurin-jdk21-delay",
       "source": {
         "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+        "sha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/ru/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "9df85db2eab30daeb9e420d0cc38c422b23f9be03a088796557fd4c13df7253c"
+        "sha256": "dc3f3b79eea206b7074ce2227a81b41e25c627f057614a35d2404aa61ef1246e"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/ru/2023-10-10-temurin-jdk21-delay.diagram.json",
@@ -443,7 +443,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -452,11 +452,11 @@
       "translationKey": "2023-10-10-temurin-jdk21-delay",
       "source": {
         "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+        "sha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/es/2023-10-10-temurin-jdk21-delay.md",
-        "sha256": "00c983de1ea842f587db3c05f66b15fbc7e67f92645ddb71672cfbf5007606e6"
+        "sha256": "a4ad1a8b38913b708ab8faec2a7721cec6cda5dc89587ad0b8f0484f468ea09d"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/es/2023-10-10-temurin-jdk21-delay.diagram.json",
@@ -468,7 +468,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -493,7 +493,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -518,7 +518,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -543,7 +543,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -568,7 +568,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -593,7 +593,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -618,7 +618,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     }
   ]

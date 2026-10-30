@@ -5,7 +5,7 @@ title: "GitHubs neuestes Release mit curl und jq: ein Download-Asset auswählen"
 description: "Mit curl und jq genau ein GitHub-Release-Asset nach Betriebssystem, CPU und Format auswählen. HTTP-Fehler, ungültiges JSON sowie fehlende und mehrfache Treffer behandeln."
 state: "draft"
 sourcePath: "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md"
-sourceSha256: "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+sourceSha256: "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
 ---
 Mit `curl` das neueste GitHub-Release abrufen und mit `jq` genau ein Download-Asset für das benötigte Betriebssystem, die CPU und das Format auswählen. Das folgende Skript stoppt bei HTTP-Fehlern, ungültigem JSON sowie fehlenden oder mehrfachen Treffern. Es liefert Metadaten, ohne die Datei herunterzuladen.
 
@@ -95,3 +95,5 @@ Mit lokalen HTTP-Antworten wurden Erfolg, HTTP-Fehler, ungültiges JSON, fehlend
 Das Lesen öffentlicher Ressourcen erfordert keine Authentifizierung. Bei einer Erweiterung um authentifizierte Anfragen dürfen Tokens weder im Quellcode noch in Shell-Tracing-Logs stehen. Die Rate-Limit-Antwortheader und [GitHubs Dokumentation zu Rate Limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api) prüfen.
 
 Das Skript wählt eine URL aus, prüft aber nicht die Integrität der Installationsdatei. Die Installationsautomatisierung benötigt weiterhin Prüfsummen oder Signaturen des Anbieters und die Zielplattform. Vor der Übergabe eines Tags an den [numerischen Versionsvergleich](/en/posts/2023-11-17-linux-shellscript-version-compare/) muss geprüft werden, ob es dessen Eingabevertrag erfüllt.
+
+Nach dem Herunterladen des ausgewählten Assets [dessen SHA-256-Prüfsumme mit einem vertrauenswürdigen Sollwert vergleichen](/en/posts/2026-10-30-verify-sha256-download/). Das Prüfprogramm liest lokale Bytes; es lädt das Release nicht herunter und authentifiziert den Herausgeber nicht.

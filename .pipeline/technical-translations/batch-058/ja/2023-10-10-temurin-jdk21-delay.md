@@ -5,7 +5,7 @@ title: "Temurin JDK 21：バイナリーメタデータの確認と 2023 年の�
 description: "Adoptium API で OS・アーキテクチャー・パッケージ種別に応じた Temurin JDK 21 メタデータを選び、ダウンロード検証や 2023 年の遅延と区別します。"
 state: "draft"
 sourcePath: "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md"
-sourceSha256: "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+sourceSha256: "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
 ---
 Temurin JDK 21 のバイナリーを探すには、必要な OS・CPU・JVM・パッケージ種別で Adoptium API を検索します。以下の例は Linux x64 JDK のメタデータ、チェックサムの形式、URL の場所を確認します。アーカイブのダウンロードやハッシュ計算は行いません。
 
@@ -79,3 +79,5 @@ Java メジャーバージョン・プラットフォーム・イメージ種別
 検証するのはチェックサムの**形式**であり、ダウンロードしたファイルの完全性ではありません。別途アーカイブを取得したら SHA-256 を計算し、メタデータと比較してから展開・インストールを判断してください。実際のバイナリーと公開チェックサムの一致は、このメタデータ例の実行検証範囲外です。
 
 別のアセット選択例は [GitHub リリースとアセットの検索](/en/posts/2023-09-23-linux-shellscript-github-latest/)、機能の安定性は [JDK 21 の正式機能とプレビュー機能](/en/posts/2023-09-20-jdk-21-release/)を参照してください。
+
+選択したアセットをダウンロードしたら、[ファイルの SHA-256 チェックサムを信頼できる期待値と比較します](/en/posts/2026-10-30-verify-sha256-download/)。検証器はローカルのバイト列を読み取ります。リリースのダウンロードや配布元の認証は行いません。

@@ -5,7 +5,7 @@ title: "Temurin JDK 21: Binärmetadaten prüfen und die Verzögerung von 2023 ve
 description: "Temurin-JDK-21-Metadaten per Adoptium-API nach Betriebssystem, Architektur und Pakettyp auswählen. Metadatenprüfung, Downloadprüfung und die Verzögerung von 2023 trennen."
 state: "draft"
 sourcePath: "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md"
-sourceSha256: "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+sourceSha256: "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
 ---
 Um eine Temurin-JDK-21-Binärdatei zu finden, fragen Sie die Adoptium-API mit benötigtem Betriebssystem, CPU, JVM und Pakettyp ab. Das folgende Beispiel prüft Linux-x64-JDK-Metadaten, Prüfsummensyntax und URL-Ziel. Es lädt das Archiv weder herunter noch berechnet es dessen Hash.
 
@@ -79,3 +79,5 @@ Der Selektor gibt nur dann ein Ergebnis aus, wenn genau ein Asset die erwartete 
 Dies validiert das **Format** der Prüfsumme, nicht die Integrität einer heruntergeladenen Datei. Wenn Sie das Archiv separat herunterladen, berechnen Sie dessen SHA-256 und vergleichen Sie ihn vor dem Entpacken oder Installieren mit den Metadaten. Die Übereinstimmung tatsächlicher Binärdateien mit veröffentlichten Prüfsummen liegt außerhalb des Ausführungsumfangs dieses Metadatenbeispiels.
 
 Ein weiteres Beispiel zur Asset-Auswahl bietet die [Abfrage von GitHub-Releases und Assets](/en/posts/2023-09-23-linux-shellscript-github-latest/). Zum Stabilitätsstatus siehe [finale und Preview-Funktionen von JDK 21](/en/posts/2023-09-20-jdk-21-release/).
+
+Nach dem Herunterladen des ausgewählten Assets [dessen SHA-256-Prüfsumme mit einem vertrauenswürdigen Sollwert vergleichen](/en/posts/2026-10-30-verify-sha256-download/). Das Prüfprogramm liest lokale Bytes; es lädt das Release nicht herunter und authentifiziert den Herausgeber nicht.

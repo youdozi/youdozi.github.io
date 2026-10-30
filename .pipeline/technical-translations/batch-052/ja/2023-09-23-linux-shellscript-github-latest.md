@@ -5,7 +5,7 @@ title: "curl と jq で GitHub の最新リリースからダウンロード資�
 description: "OS、CPU、形式を指定し、curl と jq で GitHub のリリース資産を一つ選びます。HTTP エラー、不正な JSON、未一致や複数一致を処理します。"
 state: "draft"
 sourcePath: "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md"
-sourceSha256: "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+sourceSha256: "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
 ---
 `curl` で GitHub の最新リリースを取得し、`jq` で必要な OS、CPU、形式に合うダウンロード資産をちょうど一つ選びます。次のスクリプトは HTTP エラー、不正な JSON、未一致や複数一致で停止し、ファイルをダウンロードせずメタデータを返します。
 
@@ -95,3 +95,5 @@ HTTP リクエストが成功しても一致するアセットがない場合は
 公開リソースの読み取りに認証は不要です。認証付きリクエストへ拡張する場合は、ソースや Shell のトレースログにトークンを残さないでください。レート制限のレスポンスヘッダーと [GitHub のレート制限ドキュメント](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api)を確認してください。
 
 このスクリプトは URL を選ぶもので、インストールファイルの完全性は検証しません。インストールの自動化には、提供元のチェックサムや署名、および対象プラットフォームの確認が別途必要です。タグを[数値バージョン比較器](/en/posts/2023-11-17-linux-shellscript-version-compare/)へ渡す前に、その入力契約を満たしているか確認してください。
+
+選択したアセットをダウンロードしたら、[ファイルの SHA-256 チェックサムを信頼できる期待値と比較します](/en/posts/2026-10-30-verify-sha256-download/)。検証器はローカルのバイト列を読み取ります。リリースのダウンロードや配布元の認証は行いません。

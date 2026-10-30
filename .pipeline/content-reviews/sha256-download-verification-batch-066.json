@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "id": "sha256-download-verification-066",
+  "reviewedAt": "2026-10-30T10:15:25.329572+00:00",
+  "baseCommit": "add59292ef8790a21b8e2f17a4403df3e32f9dee",
+  "scope": "Paired SHA-256 file verifier guide, diagram and source-derived ZIP; GitHub/Temurin follow-up links in four existing native articles; shell guide order; twelve unpublished translation paragraphs and source pins synchronized.",
+  "newArticleKey": "2026-10-30-verify-sha256-download",
+  "newPublicArticles": 2,
+  "existingNativeUpdates": [
+    {
+      "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
+      "sha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
+    },
+    {
+      "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
+      "sha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-23-linux-shellscript-github-latest.md",
+      "sha256": "4831a727ad0d7933c85373d5e27975fb41f05879a79af038530c4b7de3325cff"
+    },
+    {
+      "path": "src/content/posts/ko/2023-10-10-temurin-jdk21-delay.md",
+      "sha256": "42be069d3f755f3761306b8d3e20cc3ca84753c286232e63d97edc47b5eeac25"
+    }
+  ],
+  "existingArticleCodeAndPublishedAtPreserved": true,
+  "existingWorkflowDiagramItemsPreserved": true,
+  "translationDraftsStillUnpublished": 120,
+  "translationContentEdits": 12,
+  "newGuideTranslationEditionsNotStarted": 6,
+  "review": {
+    "method": "AI self-review of EN/KO meaning, code and flow; new translated follow-up paragraphs compared with English and read in each target language; unchanged paragraphs carried forward with structural/hash checks.",
+    "independentReviewer": false,
+    "primaryReferences": [
+      "https://docs.python.org/3.11/library/hashlib.html",
+      "https://adoptium.net/installation/archives",
+      "https://adoptium.net/installation/gpg-verification"
+    ],
+    "limits": "Stable regular local files only. No archive download, installation, signature verification, publisher authentication or malware scan. Concurrent file replacement is not prevented."
+  },
+  "validation": {
+    "nodeTests": 164,
+    "pythonTests": 322,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 427,
+    "sitemapURLs": 483,
+    "diagramPairs": 37,
+    "exampleArchives": 16,
+    "checksumExecution": {
+      "cases": 33,
+      "names": [
+        "known-abc",
+        "uppercase-expected",
+        "changed-byte",
+        "missing-file",
+        "directory",
+        "sample with spaces.bin",
+        "한글 文件.bin",
+        "-leading-dash.bin",
+        "empty",
+        "lf",
+        "crlf",
+        "binary",
+        "line-ending-difference",
+        "chunk-boundary-1048575",
+        "chunk-boundary-1048576",
+        "chunk-boundary-1048577",
+        "chunk-boundary-2097169",
+        "large-file-changed",
+        "invalid-checksum-0",
+        "invalid-checksum-1",
+        "invalid-checksum-2",
+        "invalid-checksum-3",
+        "invalid-checksum-4",
+        "invalid-checksum-5",
+        "invalid-checksum-6",
+        "invalid-checksum-7",
+        "argument-count-0",
+        "argument-count-1",
+        "argument-count-2",
+        "regular-symlink",
+        "broken-symlink",
+        "named-pipe-rejected-without-blocking",
+        "injected-mid-read-error"
+      ],
+      "pairedZIPMembersExecuted": true,
+      "articleShellBlockExecuted": true,
+      "python": "3.13.0",
+      "networkRequests": 0
+    },
+    "browserDownloadAndMetadataChecks": 32,
+    "widths": [
+      320,
+      1360
+    ],
+    "mobileFlowAndArticleScreenshotsInspected": true,
+    "allDownloadBytesAndSHA256Matched": true,
+    "pairedFlowImageDecoded": true,
+    "existingLinksToNewGuideFound": true
+  },
+  "originalAEOCohortChanged": false,
+  "rankingOrAICitationGainEstablished": false
+}

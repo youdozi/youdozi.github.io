@@ -42,7 +42,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -67,7 +67,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -92,7 +92,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -117,7 +117,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -142,7 +142,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -167,7 +167,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -192,7 +192,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -217,7 +217,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -242,7 +242,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -267,7 +267,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -292,7 +292,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -317,7 +317,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -326,11 +326,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+        "sha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "28f891d5201a120667b57808b8a751371c2012b0c57b46905bffe0915a62126a"
+        "sha256": "5dbf6fc4b67f3905ea7340e05a1dab7608a974505e48dc96bc5ea31e6926991f"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -342,7 +342,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -351,11 +351,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+        "sha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/ja/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "02f304b026f88eca6f4f7625cb15c596330b53d46216e85b32af9944ce3ae5d3"
+        "sha256": "36bfbd115f36c026962b9001b74fbb2eee9703f573f2d7708bf9705e068ab371"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/ja/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -367,7 +367,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -376,11 +376,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+        "sha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/de/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "ecfd68ada3ae297fc6cc3ff87d3ac9e806d89fe0df90bb3e2242eaa4309b857c"
+        "sha256": "76edcce7544cc953c60102b058f93b4c02af1c4ead60c1e2131aa1794b65982c"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/de/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -392,7 +392,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -401,11 +401,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+        "sha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/fr/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "292675b8ab0efaab26f99f6f3a783734cf642ba521d39f7812ccf7f504a12b39"
+        "sha256": "01e8608b052320bd955e28e7c9f2b64d690b3917d42afaa90284aa734f214c7e"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/fr/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -417,7 +417,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -426,11 +426,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+        "sha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/ru/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "f0e4fcc862ab65a96082c277ed1d187f13e0f80c15c2542ca8bea900d1f5bd81"
+        "sha256": "0be8c59760c29a6a23e91a5020dfcdc7e69bcc6cb910551457543727302aadb3"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/ru/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -442,7 +442,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     },
     {
@@ -451,11 +451,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+        "sha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/es/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "a483714b2597f5d33a847e56212d9018bf927bbabc26cd967391982b785bb629"
+        "sha256": "031d34b3f526fb5147153100d83808a6e0e2d1566b1acf4d2fe16b46ae338afd"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/es/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -467,7 +467,7 @@
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
-        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+        "sha256": "a3c238a7db0925f0a8c1300adce7cfb59842b67eb59a84bfc810a5a2a88c5837"
       }
     }
   ]
