@@ -1,5 +1,8 @@
 import type { Entry, Language } from './content';
 import type { CategoryGuide } from './category-guide';
+import {nativeLanguages,translationLanguages} from './locales.ts';
+import {guideLocales,hasLocalizedGuide} from './guide-locales.ts';
+import {springGuideLocales,springGuideLocalesUpdatedAt} from './spring-guide-locales.ts';
 
 const groups = [
   {id:'start',keys:['2023-09-07-springboot-initializer','2023-09-13-springboot-history','2023-09-10-springboot-intellij-import','2023-09-15-springboot-intellij-lombok']},
@@ -29,21 +32,22 @@ const copy = {
 function eligible(lang:Language, all:Entry[]) {
   return all.filter(e=>e.language===lang && e.kind==='post' && e.categories.includes('springboot') && e.reviewStatus!=='example' && e.publishedAt.getTime()<=Date.now());
 }
-export function springCategoryLabel(lang:Language) {return lang==='en'||lang==='ko'?copy[lang].label:undefined;}
+export function springCategoryLabel(lang:Language) {return hasLocalizedGuide(lang)?springGuideLocales[lang].label:copy[lang].label;}
 export function springCategoryAlternates(all:Entry[]) {
-  return (['en','ko'] as const).filter(lang=>eligible(lang,all).length>0).map(language=>({language,url:`/${language}/categories/springboot/`}));
+  return ([...nativeLanguages,...translationLanguages]).filter(lang=>eligible(lang,all).length>0).map(language=>({language,url:`/${language}/categories/springboot/`}));
 }
 export function springGuide(lang:Language,all:Entry[]):CategoryGuide|undefined {
-  if(lang!=='en' && lang!=='ko')return undefined;
+  const localized=hasLocalizedGuide(lang);
+  const definition=localized?{...springGuideLocales[lang],...guideLocales[lang].common,extra:springGuideLocales[lang].extra}:copy[lang];
   const items=eligible(lang,all);if(!items.length)return undefined;
   const byKey=new Map(items.map(e=>[e.translationKey,e]));let position=1;
   const sections=groups.map(group=>{
     const entries=group.keys.flatMap(key=>byKey.has(key)?[byKey.get(key)!]:[]);
     const start=position;position+=entries.length;
-    return {id:group.id,...copy[lang].groups[group.id],entries,start};
+    return {id:group.id,...definition.groups[group.id],entries,start};
   }).filter(group=>group.entries.length>0);
   const selected=new Set(sections.flatMap(g=>g.entries.map(e=>e.translationKey)));
   const extras=items.filter(e=>!selected.has(e.translationKey));const ordered=[...sections.flatMap(g=>g.entries),...extras];
-  return {...copy[lang],lang,url:`/${lang}/categories/springboot/`,eyebrow:'Spring Boot',listAnchor:'articles',sections,extras,ordered,
-    updatedAt:new Date(Math.max(Date.parse('2026-10-27T00:00:00Z'),...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
+  return {...definition,lang,url:`/${lang}/categories/springboot/`,eyebrow:'Spring Boot',listAnchor:'articles',sections,extras,ordered,
+    updatedAt:new Date(Math.max(localized?springGuideLocalesUpdatedAt.getTime():Date.parse('2026-10-27T00:00:00Z'),...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
 }

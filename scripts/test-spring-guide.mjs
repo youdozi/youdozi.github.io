@@ -25,3 +25,16 @@ test('shared structured data uses actual article order, locale and the guide-spe
  assert.equal(data[0].mainEntity['@id'],list['@id']);assert.equal(data[0].inLanguage,'ko');
  assert.equal(data.at(-1).itemListElement.at(-1).item,'https://example.org/ko/categories/springboot/');
 });
+
+test('Spring alternates and structured data agree for all eight available languages',()=>{
+ const langs=['en','ko','zh-CN','ja','de','fr','ru','es'];
+ const entries=langs.flatMap(lang=>[entry('2023-09-19-springboot-test-webclient',lang),entry('2023-09-07-springboot-initializer',lang)]);
+ assert.deepEqual(springCategoryAlternates(entries).map(a=>a.language),langs);
+ for(const language of langs){
+  const guide=springGuide(language,entries),data=categoryStructuredData(guide,new URL('https://example.org'));
+  assert.equal(data[0].inLanguage,language);
+  assert.equal(data[0].name,guide.title);
+  assert.deepEqual(data[1].itemListElement.map(e=>e.url),guide.ordered.map(e=>'https://example.org'+e.url));
+  assert.equal(data[1].numberOfItems,2);
+ }
+});

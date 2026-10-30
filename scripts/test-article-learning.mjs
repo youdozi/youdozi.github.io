@@ -59,3 +59,21 @@ test('localized tool articles follow HTTP, code search and diagram order',()=>{
   assert.equal(articleLearningPath(entries[0],entries).next,undefined);
  }
 });
+
+test('new translated guide families provide correct boundaries and cross-category return paths',()=>{
+ const paths=[
+  ['springboot','2023-09-07-springboot-initializer','2023-09-19-springboot-test-webclient'],
+  ['jdk','2023-09-20-jdk-21-release','2023-10-10-temurin-jdk21-delay'],
+  ['automation','2026-04-07-jekyll-github-actions-content-pipeline','2026-04-07-jekyll-quality-gates-proof-html-bundler-audit'],
+  ['jenkins','2023-09-28-jenkins-docker-install','2026-10-27-jenkins-home-backup-restore'],
+  ['jekyll','2023-09-04-jekyll-install','2026-04-07-ruby-rbenv-jekyll-build-troubleshooting'],
+ ];
+ for(const language of ['zh-CN','ja','de','fr','ru','es'])for(const [term,first,last] of paths){
+  const entries=[make(last,language,{categories:[term==='jekyll'?'blog':term]}),make(first,language,{categories:[term]}),make('extra',language,{categories:[term]}),make(first,'en',{categories:[term]})];
+  const a=articleLearningPath(entries[1],entries),b=articleLearningPath(entries[0],entries);
+  assert.equal(a.guide.url,`/${language}/categories/${term}/`);
+  assert.equal(a.total,2);assert.equal(a.position,1);assert.equal(a.previous,undefined);assert.equal(a.next.url,entries[0].url);
+  assert.equal(b.total,2);assert.equal(b.position,2);assert.equal(b.next,undefined);assert.equal(b.previous.url,entries[1].url);
+  assert.equal(articleLearningPath(entries[2],entries),undefined);
+ }
+});
