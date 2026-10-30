@@ -7,7 +7,7 @@ import {springGuideLocales,springGuideLocalesUpdatedAt} from './spring-guide-loc
 const groups = [
   {id:'start',keys:['2023-09-07-springboot-initializer','2023-09-13-springboot-history','2023-09-10-springboot-intellij-import','2023-09-15-springboot-intellij-lombok']},
   {id:'data',keys:['2023-09-08-springboot3-migration','2023-09-05-querydsl-no-release','2023-09-09-springboot3-querydsl']},
-  {id:'deliver',keys:['2023-09-19-springboot-test-webclient','2026-10-30-webclient-timeout-retry','2021-07-23-multiple-gradle-build']},
+  {id:'deliver',keys:['2026-10-31-webclient-restclient-comparison','2023-09-19-springboot-test-webclient','2026-10-30-webclient-timeout-retry','2021-07-23-multiple-gradle-build']},
 ] as const;
 const copy = {
   en:{label:'Spring Boot guides',title:'Spring Boot Guides: Setup, Persistence, Testing and Packaging',
@@ -17,7 +17,7 @@ const copy = {
     groups:{
       start:{title:'Create and run',description:'Generate the project, distinguish component versions, then verify command-line execution and Lombok before diagnosing IDE recognition.'},
       data:{title:'Persistence and migration',description:'Review Java and Jakarta compatibility, compare representative query predicates, then generate and execute Querydsl Q types.'},
-      deliver:{title:'Test and package',description:'Check HTTP response contracts, timeout and retry boundaries with local tests, then package separate Vue outputs into an executable JAR.'},
+      deliver:{title:'Test and package',description:'Compare synchronous and reactive HTTP clients, check response, timeout and retry contracts locally, then package separate Vue outputs into an executable JAR.'},
     }},
   ko:{label:'Spring Boot 학습 안내',title:'Spring Boot 학습 안내: 생성·영속성·테스트·패키징',
     description:'프로젝트 생성과 IDE 확인부터 Jakarta 영속성, 쿼리 비교, HTTP 테스트, 프런트엔드 패키징까지 재현 가능한 Spring Boot 예제를 연결합니다.',
@@ -26,7 +26,7 @@ const copy = {
     groups:{
       start:{title:'프로젝트 생성과 실행',description:'프로젝트를 생성하고 구성요소의 버전을 구분합니다. 명령행 실행과 Lombok 컴파일을 확인한 뒤 IDE 인식 문제를 살펴봅니다.'},
       data:{title:'영속성과 이관',description:'Java·Jakarta 호환성을 확인하고 대표 쿼리 조건을 비교합니다. 이후 Q 타입을 생성해 실제 조회를 실행합니다.'},
-      deliver:{title:'테스트와 패키징',description:'로컬 테스트로 HTTP 응답 계약과 타임아웃·재시도 범위를 확인한 뒤, 별도로 빌드한 Vue 앱의 결과를 실행 JAR에 패키징합니다.'},
+      deliver:{title:'테스트와 패키징',description:'동기·반응형 HTTP 클라이언트를 비교하고 로컬 응답·타임아웃·재시도 계약을 확인한 뒤, 별도로 빌드한 Vue 앱의 결과를 실행 JAR에 패키징합니다.'},
     }},
 };
 function eligible(lang:Language, all:Entry[]) {

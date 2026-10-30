@@ -383,6 +383,35 @@
         "en": "Tests a two-permit admission gate with virtual workers, excess rejection and normal/failing permit return. Not a rate limiter or HTTP server. No 10k RPS test, deadlines, infrastructure deployment, database/cache/queue integration or production capacity validation.",
         "ko": "가상 작업과 두 허가의 입장 게이트에서 초과 거부·정상/실패 반환을 확인합니다. 요청률 제한기·HTTP 서버가 아니며 10k RPS 시험·기한·인프라 배포·DB/캐시/큐 연동·운영 용량 검증은 하지 않습니다."
       }
+    },
+    {
+      "key": "2026-10-31-webclient-restclient-comparison",
+      "files": [
+        {
+          "path": "settings.gradle",
+          "language": "groovy",
+          "selector": "heading"
+        },
+        {
+          "path": "build.gradle",
+          "language": "groovy",
+          "selector": "heading"
+        },
+        {
+          "path": "src/main/java/ClientComparison.java",
+          "language": "java",
+          "selector": "heading"
+        }
+      ],
+      "commands": "gradle --no-daemon --console=plain -q clean run",
+      "environment": {
+        "en": "JDK 17 and Gradle 8.4. Spring Framework 7.0.10 and Reactor Core 3.8.8; first dependency resolution needs Maven Central access.",
+        "ko": "JDK 17·Gradle 8.4. Spring Framework 7.0.10·Reactor Core 3.8.8. 최초 의존성 해석에는 Maven Central 접근이 필요합니다."
+      },
+      "scope": {
+        "en": "Seven local HTTP requests verify terminal/subscription execution, repeated subscriptions without caching, and both clients’ 404/503 exceptions. No throughput/latency benchmark, timeout/TLS/cancellation test, Boot autoconfiguration or production server validation.",
+        "ko": "로컬 HTTP 7요청으로 종료 연산·구독 시점, 캐시 없는 반복 구독과 양쪽의 404·503 예외를 확인합니다. 처리량/지연 벤치마크·타임아웃/TLS/취소 검사·Boot 자동 설정·운영 서버 검증은 하지 않습니다."
+      }
     }
   ]
 }

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "webclient-restclient-comparison-075",
+  "reviewedAt": "2026-10-30T23:52:28.466027+00:00",
+  "baseCommit": "3b8aa4eeb930fceab6bfbf14c0be74b277bd22d2",
+  "scope": "KO original and complete EN translation comparing RestClient/WebClient selection, terminal/subscription execution, blocking, status errors and operational boundaries. Same explicit JDK transport and seven loopback requests; not a performance comparison.",
+  "newPublicArticles": 2,
+  "articleHashes": {
+    "ko": "8447c8efa18ec1b5ba2dc0e9d33fa6c6bad00c3a00ee1dffa6307b721f039f94",
+    "en": "bd58a48bf9f4d5cff54316ad06b8af50e3cd21ddc292bcc0a63a53640a95c619"
+  },
+  "primarySources": [
+    "https://docs.spring.io/spring-framework/reference/integration/rest-clients.html",
+    "https://spring.io/blog/2025/09/30/the-state-of-http-clients-in-spring/",
+    "https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-synchronous.html",
+    "https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-retrieve.html",
+    "https://docs.spring.io/spring-framework/reference/web/webflux/new-framework.html",
+    "https://docs.spring.io/spring-framework/docs/7.0.10/javadoc-api/org/springframework/http/client/JdkClientHttpRequestFactory.html",
+    "https://docs.spring.io/spring-framework/docs/7.0.10/javadoc-api/org/springframework/http/client/reactive/JdkClientHttpConnector.html"
+  ],
+  "review": {
+    "method": "Separate-context technical and full KO-to-EN review under writing/translation skills.",
+    "session": "/root/httpclients075_review",
+    "findings": 2,
+    "unresolvedFindings": 0,
+    "authorCorrections": "Clarified that support for the chosen client determines version suitability; Boot upgrade guidance applies to Boot projects. Removed repeated then in guide copy. Both changes rechecked.",
+    "reviewerExecuted": "Source-derived ZIP runner with seven loopback HTTP requests; default status behavior, repeated subscriptions and full observed output.",
+    "limits": "Browser and complete build checked by author; reviewer did not measure throughput, timeout, TLS or cancellation."
+  },
+  "validation": {
+    "nodeTests": 165,
+    "pythonTests": 333,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 447,
+    "sitemapURLs": 505,
+    "diagramPairs": 47,
+    "exampleArchives": 36,
+    "readingPathArticles": 92,
+    "readingNeighborLinks": 150,
+    "localArticleImages": 96,
+    "articlesWithImages": 94,
+    "loopbackHTTPRequests": 7,
+    "applicationOutputLines": 12,
+    "framework": "7.0.10",
+    "reactorCore": "3.8.8",
+    "localJDK": "Corretto 17.0.8.1 macOS AArch64",
+    "gradle": "8.4",
+    "actualZIPCodeExecuted": true,
+    "browserChecks": 4,
+    "widths": [
+      320,
+      1360
+    ],
+    "mobileArticleAndFlowInspected": true,
+    "performanceMeasured": false,
+    "timeoutTLSCancellationTested": false
+  },
+  "existingTechnicalDraftsUnpublished": 120,
+  "newAdditionalLanguageTasksNotStarted": 6,
+  "translationQueue": ".pipeline/technical-translations/queue-075.json",
+  "googleIndexingRankingOrAICitationGainEstablished": false
+}
