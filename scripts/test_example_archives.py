@@ -12,7 +12,7 @@ import build_example_archives as examples
 class ExampleArchiveTests(unittest.TestCase):
     def test_all_paired_projects_have_identical_code_and_localized_provenance(self):
         recipes = examples.catalog()
-        self.assertEqual(len(recipes), 11)
+        self.assertEqual(len(recipes), 13)
         for recipe in recipes:
             _, code = examples.project_files(recipe, 'en')
             self.assertEqual(code, examples.project_files(recipe, 'ko')[1])

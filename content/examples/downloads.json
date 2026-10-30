@@ -269,6 +269,44 @@
         "en": "Records only the example process, not an already running service. Version labels are evidence fields, not a patch-status verdict. No decompression, exploit reproduction, package replacement or rollout. Restrict operational evidence rather than publishing paths and PIDs over HTTP.",
         "ko": "이미 실행 중인 서비스가 아닌 예제 프로세스만 기록합니다. 버전 이름표는 증거 필드이며 수정 판정이 아닙니다. 압축 해제·악용 재현·패키지 교체·롤아웃을 하지 않습니다. 경로·PID를 HTTP에 공개하지 말고 운영 증거 접근을 제한하세요."
       }
+    },
+    {
+      "key": "2026-10-30-gitlab2shell-cve-2026-110264",
+      "files": [
+        {
+          "path": "release-threshold.py",
+          "language": "python",
+          "selector": "heading"
+        }
+      ],
+      "commands": "python3 release-threshold.py 19.5.1-ee.0",
+      "environment": {
+        "en": "Python 3.11 or later; standard library only. No network access or GitLab installation required.",
+        "ko": "Python 3.11 이상·표준 라이브러리. 네트워크 접근과 GitLab 설치는 필요하지 않습니다."
+      },
+      "scope": {
+        "en": "Numeric comparison of declared stable upstream CE/EE versions against CVE-2026-110264 first-fix thresholds. Status 0 means threshold met, 1 below, 2 unsupported or outside table. Does not authenticate release existence, supplier backports, running nodes or remediation; no target discovery or exploitation.",
+        "ko": "선언된 안정 업스트림 CE/EE 버전을 CVE-2026-110264 최초 수정 기준과 숫자로 비교합니다. 종료 코드 0은 기준 이상, 1은 미만, 2는 미지원 형식·표 밖 계열입니다. 릴리스 존재·공급자 백포트·실행 노드·대응 완료를 인증하지 않으며 대상 탐색·악용을 하지 않습니다."
+      }
+    },
+    {
+      "key": "2026-10-30-jdk-emudhra-truststore",
+      "files": [
+        {
+          "path": "TrustInventory.java",
+          "language": "java",
+          "selector": "heading"
+        }
+      ],
+      "commands": "javac --release 17 TrustInventory.java\njava TrustInventory",
+      "environment": {
+        "en": "JDK 17 or later with javac and java; standard APIs only. No network request is made by the collector.",
+        "ko": "javac·java가 있는 JDK 17 이상. 표준 API만 사용하며 수집기는 네트워크 요청을 보내지 않습니다."
+      },
+      "scope": {
+        "en": "Reads the new JVM and its default JSSE trust initialization. CA name candidates and SHA-256 fingerprints are inventory, not a protection verdict. No store modification, external TLS handshake, revocation/path validation or signed-JAR test. Does not discover existing services or application-created SSL contexts.",
+        "ko": "새 JVM과 기본 JSSE 신뢰 초기화 경로를 읽습니다. CA 이름 후보·SHA-256 지문은 목록이며 보호 판정이 아닙니다. 저장소 변경·외부 TLS 연결·폐기/경로 검증·서명 JAR 테스트를 하지 않습니다. 기존 서비스와 애플리케이션의 별도 SSL 컨텍스트는 탐색하지 않습니다."
+      }
     }
   ]
 }
