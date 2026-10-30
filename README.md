@@ -253,6 +253,8 @@ Markdown 본문의 `/assets/` 이미지는 빌드 시 로컬 파일에서 가로
 
 ## 질문 중심 기술 글과 AEO 측정
 
+관측 그룹은 기본 한영 10 URL(`technical-answers-059`)과 SHA-256 후속 글 2 URL(`checksum-guide-066`)로 분리합니다. `python3 -B scripts/answer_observation.py --cohort checksum-guide-066 --index-only`로 인증 없이 계획을 확인하며 `--live --output <저장소 밖 새 JSON>`에서만 저장 색인 API를 조회합니다. 색인 전용 모드는 GSC 검색 실적·GA4를 수집하지 않습니다. [그룹 선택·날짜 범위·결과 해석](docs/search-growth.md#aeo-관측-그룹과-색인-전용-조회)을 따릅니다. 실제 API 조회와 저장 응답 재생은 구분하고, 발행일이 관측 구간 안이거나 이후인 경우와 발행일 기록이 없는 과거 보고서에서는 성과 증감을 만들지 않습니다.
+
 [첫 적용 목록](content/seo/answer-pilot.json)은 Spring Boot 이관·Querydsl·WebClient·YAML·JDK 21의 5개 주제, 영어·한국어 10개 URL입니다. 실제 검색량으로 순위를 정한 목록이 아니라 편집 실험입니다. 도입부에서 답과 적용 조건을 밝히고 공식 근거를 가까이 연결합니다. 기존 코드·그림·URL·발행일을 유지하며, 질문형 소제목으로 바꾼 위치에는 이전 문단 ID도 남깁니다. 첫 문단에 실제로 연결된 출처만 기존 `BlogPosting.citation`에 넣습니다. 별도 FAQ나 내부 검토 카드를 본문에 일괄 추가하지 않습니다.
 
 `answer_observation.py`는 현재 OAuth와 GA4 읽기 권한으로 대상 페이지의 GSC Web 검색·현재 URL 검사·GA4 랜딩 페이지별 유입 출처를 수집합니다. 기본 실행은 계획 출력이며 API 호출·파일 쓰기가 없습니다. 실제 수집은 기존 [Google 인증 절차](#search-console-사이트맵-제출)와 Python 의존성 설치 후 실행합니다. 원시 검색어·Analytics 자료는 모든 저장소 worktree 밖의 새 파일에만 저장하며 권한은 600입니다. 기존 파일을 덮어쓰지 않습니다.
