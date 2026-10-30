@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "search-navigation-064",
+  "reviewedAt": "2026-10-30T08:15:50.185431+00:00",
+  "baseCommit": "182c1e3c5daad9ffffd780815b1cfdf38042fc95",
+  "scope": "Restore and share client-side search results through q across eight public languages; preserve history state, debounce typing, restore navigation, retain retry and stale-response cancellation.",
+  "publicArticleSourcesChanged": false,
+  "translationPinsChanged": false,
+  "review": {
+    "method": "AI self-review and real Chrome behavioral checks",
+    "independentReviewer": false,
+    "primaryReferences": [
+      "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-history-replacestate-dev"
+    ],
+    "limits": "Synthetic composition events do not verify every OS IME. Search usability is not evidence of increased rankings or AI citations."
+  },
+  "validation": {
+    "nodeTests": 160,
+    "pythonTests": 322,
+    "astroFiles": 78,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 425,
+    "sitemapURLs": 481,
+    "browserWidths": [
+      320,
+      1360
+    ],
+    "browserLanguageCases": 16,
+    "restorationReloadBackClear": true,
+    "networkFailureRetry": true,
+    "literalQueryNoMarkupInjection": true,
+    "syntheticCompositionEvents": true,
+    "sameDocumentPopstate": true,
+    "staleResponseAfterClearIgnored": true,
+    "noindexAndCleanCanonicalPreserved": true,
+    "ciBrowserCheckAdded": true
+  },
+  "rankingOrAICitationImprovementEstablished": false
+}
