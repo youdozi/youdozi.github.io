@@ -1977,6 +1977,99 @@
           ]
         }
       ]
+    },
+    {
+      "key": "2026-10-31-project-valhalla-value-objects",
+      "title": {
+        "en": "Compare identity and value semantics",
+        "ko": "정체성과 값 의미 비교"
+      },
+      "description": {
+        "en": "The example compares records, then tests reference fields, null storage and a handled monitor exception. It does not inspect memory layout.",
+        "ko": "레코드를 비교한 뒤 참조 필드·null 저장·처리한 잠금 예외를 확인합니다. 메모리 배치는 조사하지 않습니다."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "value record ValuePoint(int x, int y)"
+        },
+        {
+          "language": "java",
+          "contains": "Objects.hasIdentity(p)"
+        },
+        {
+          "language": "java",
+          "contains": "catch (IdentityException expected)"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "en": [
+            "Create two ordinary records",
+            "Create two matching value records"
+          ],
+          "ko": [
+            "같은 값의 일반 레코드 두 개 생성",
+            "같은 값의 값 레코드 두 개 생성"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Compare == and equals()",
+            "Inspect Objects.hasIdentity()"
+          ],
+          "ko": [
+            "==와 equals() 결과 비교",
+            "Objects.hasIdentity() 확인"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Wrap distinct equal-content Strings",
+            "Compare Label == and equals()"
+          ],
+          "ko": [
+            "내용이 같은 별도 String을 감싸기",
+            "Label의 ==와 equals() 비교"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Create a value-record array",
+            "Confirm its first slot is null"
+          ],
+          "ko": [
+            "값 레코드 배열 생성",
+            "첫 슬롯이 null인지 확인"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Try locking through Object",
+            "Catch the expected IdentityException"
+          ],
+          "ko": [
+            "Object 변수를 통해 잠금 시도",
+            "예상 IdentityException 처리"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Semantic observations complete",
+            "No layout or performance measurement"
+          ],
+          "ko": [
+            "의미별 관찰 완료",
+            "배치·성능은 측정하지 않음"
+          ]
+        }
+      ]
     }
   ]
 }

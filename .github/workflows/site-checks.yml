@@ -53,6 +53,8 @@ jobs:
           java-version: '17'
       - name: Execute offline GitLab release comparisons and read-only JVM trust inventories
         run: python3 -B scripts/check_gitlab_jdk_examples.py
+      - name: Execute Valhalla semantics with a checksum-pinned temporary JDK 28 EA
+        run: python3 -B scripts/check_valhalla_example.py --download-jdk
       - name: Compile and execute published algorithm examples
         run: npm run test:articles
       - name: Compile and execute published standard string formatting example

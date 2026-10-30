@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "valhalla-value-objects-071",
+  "reviewedAt": "2026-10-30T15:27:26.278992+00:00",
+  "baseCommit": "a54b64bfe9f8479f8d012d3039838fd1a3881750",
+  "scope": "One KO original and complete EN translation explaining Valhalla value-object preview semantics on JDK 28 EA, native JDK guide links, localized flow and source-derived ZIP. Existing public article bodies and unpublished translations remain unchanged.",
+  "newPublicArticles": 2,
+  "articleHashes": {
+    "ko": "ed20f3d5c3dc816a0e13559491351dca191912dbb7c5b2af372dfe8f34ea0a79",
+    "en": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+  },
+  "primarySources": {
+    "https://openjdk.org/projects/valhalla/": "Project scope, incremental feature sets, August integration notice",
+    "https://openjdk.org/jeps/401": "Integrated/28, field-state equality, identity and optimization limits",
+    "https://openjdk.org/jeps/539": "Strict initialization is a preview VM feature, not a Java strict field modifier",
+    "https://jdk.java.net/28/": "Official Build 21 artifacts and checksums",
+    "https://docs.oracle.com/en/java/javase/17/language/records.html": "Ordinary record semantics",
+    "https://download.java.net/java/early_access/jdk28/docs/api/java.base/java/util/Objects.html": "Preview hasIdentity API"
+  },
+  "sourceAccess": "Official pages retrieved with curl after web tool returned 403. Secondary search results not used as technical authority.",
+  "review": {
+    "method": "Separate-context read-only technical and complete KO-to-EN review under writing/translation skills; author corrected and reviewer rechecked.",
+    "session": "/root/valhalla071_review",
+    "initialMajorFindings": 1,
+    "initialMinorFindings": 1,
+    "unresolvedMajorOrCriticalFindings": 0,
+    "corrections": [
+      "General JLS did not contain preview value-object equality rules; paired body links and source metadata now point to the actual JEP 401 comparison section.",
+      "Flow result describes completed observations rather than implying all output occurs at the end."
+    ],
+    "reviewerExecuted": "16 source-derived ZIP example checks on the specified JDK 28 EA.",
+    "limits": "No independent UI, memory-layout or performance measurement."
+  },
+  "validation": {
+    "nodeTests": 165,
+    "pythonTests": 333,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 439,
+    "sitemapURLs": 497,
+    "diagramPairs": 43,
+    "exampleArchives": 28,
+    "readingPathArticles": 84,
+    "readingNeighborLinks": 134,
+    "exampleChecks": 16,
+    "jdk": "OpenJDK 28-ea+21-1707 macOS AArch64",
+    "jdkArchiveSHA256": "cab7242cb132eb32c33f376817db91ca0c44f18d22633752f6f31d32a7714166",
+    "downloadAndChecksumPathExecuted": true,
+    "globalJDKConfigurationChanged": false,
+    "actualZIPCodeExecuted": true,
+    "browserChecks": 4,
+    "widths": [
+      320,
+      1360
+    ],
+    "mobileArticleAndFlowInspected": true,
+    "layoutOrPerformanceMeasured": false
+  },
+  "existingTechnicalDraftsStillUnpublished": 120,
+  "newAdditionalLanguageTasksNotStarted": 6,
+  "translationQueue": ".pipeline/technical-translations/queue-071.json",
+  "googleIndexingRankingOrAICitationGainEstablished": false
+}

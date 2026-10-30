@@ -307,6 +307,25 @@
         "en": "Reads the new JVM and its default JSSE trust initialization. CA name candidates and SHA-256 fingerprints are inventory, not a protection verdict. No store modification, external TLS handshake, revocation/path validation or signed-JAR test. Does not discover existing services or application-created SSL contexts.",
         "ko": "새 JVM과 기본 JSSE 신뢰 초기화 경로를 읽습니다. CA 이름 후보·SHA-256 지문은 목록이며 보호 판정이 아닙니다. 저장소 변경·외부 TLS 연결·폐기/경로 검증·서명 JAR 테스트를 하지 않습니다. 기존 서비스와 애플리케이션의 별도 SSL 컨텍스트는 탐색하지 않습니다."
       }
+    },
+    {
+      "key": "2026-10-31-project-valhalla-value-objects",
+      "files": [
+        {
+          "path": "ValhallaExample.java",
+          "language": "java",
+          "selector": "heading"
+        }
+      ],
+      "commands": "javac --enable-preview --release 28 ValhallaExample.java\njava --enable-preview ValhallaExample",
+      "environment": {
+        "en": "JDK 28 EA with matching javac/java; observed on OpenJDK 28-ea+21-1707 for macOS AArch64. Preview flags are required at compilation and runtime. No dependencies or network requests from the program.",
+        "ko": "같은 JDK 28 EA의 javac·java. macOS AArch64 OpenJDK 28-ea+21-1707에서 실행했습니다. 컴파일·실행 모두 미리보기 플래그가 필요하며 외부 의존성·프로그램의 네트워크 요청은 없습니다."
+      },
+      "scope": {
+        "en": "Compares ordinary/value records, field-state versus domain equality, identity, a nullable array slot and a handled monitor rejection. Semantic demonstration only; no layout, allocation, GC or throughput measurements and no production migration. This preview is not a finalized feature.",
+        "ko": "일반·값 레코드, 필드 상태와 업무 동등성, 정체성, null 배열 슬롯과 처리한 모니터 거부를 비교합니다. 의미 시연이며 배치·할당량·GC·처리량 측정이나 운영 전환을 하지 않습니다. 미리보기는 정식 확정 기능이 아닙니다."
+      }
     }
   ]
 }
