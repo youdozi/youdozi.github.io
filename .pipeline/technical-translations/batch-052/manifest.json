@@ -326,11 +326,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "e956ca56861f5adc50a51f3401fd7e17e428b0fa7d6ee22069b8dd6fdc59ea20"
+        "sha256": "28f891d5201a120667b57808b8a751371c2012b0c57b46905bffe0915a62126a"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/zh-CN/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -351,11 +351,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/ja/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "94e6db900eb7f284c0e83e0094c17da26702a2cbd4e4da9b742bed8fa05b51a1"
+        "sha256": "02f304b026f88eca6f4f7625cb15c596330b53d46216e85b32af9944ce3ae5d3"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/ja/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -376,11 +376,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/de/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "3b4bcf71a1d34636b2cf3381a889b7c0828caf2baad7e4361737bcd3d00c5677"
+        "sha256": "ecfd68ada3ae297fc6cc3ff87d3ac9e806d89fe0df90bb3e2242eaa4309b857c"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/de/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -401,11 +401,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/fr/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "a4f27d9ef0059b5c0ab1d6bca9e2275559c2ffcf8db89e03b3dff2472f7b0358"
+        "sha256": "292675b8ab0efaab26f99f6f3a783734cf642ba521d39f7812ccf7f504a12b39"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/fr/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -426,11 +426,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/ru/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "5ac197c0faa854c6d77ba090a0a1597ffd5a4c4d263519019d28711f34ee574d"
+        "sha256": "f0e4fcc862ab65a96082c277ed1d187f13e0f80c15c2542ca8bea900d1f5bd81"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/ru/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -451,11 +451,11 @@
       "translationKey": "2023-09-23-linux-shellscript-github-latest",
       "source": {
         "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+        "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/es/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "2a3cf18672a45425c9f947f5c0a201f803e09408d200bde45f358d009bc99529"
+        "sha256": "a483714b2597f5d33a847e56212d9018bf927bbabc26cd967391982b785bb629"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/es/2023-09-23-linux-shellscript-github-latest.diagram.json",

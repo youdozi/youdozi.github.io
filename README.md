@@ -2,6 +2,17 @@
 
 Astro로 생성하고 GitHub Pages에 배포하는 기술 블로그입니다. 영문을 기본 언어로 사용하며 한국어 아카이브를 함께 제공합니다. Python RSS 수집·근거 검증을 유지하고 새 다이제스트는 두 언어의 구조화된 JSON으로 발행합니다.
 
+## 문제별 실행 예제
+
+| 해결할 문제 | 영어 | 한국어 |
+| --- | --- | --- |
+| curl·jq로 GitHub 릴리스 자산 하나 선택 | [Release asset selection](https://youdozi.github.io/en/posts/2023-09-23-linux-shellscript-github-latest/) | [릴리스 자산 선택](https://youdozi.github.io/ko/posts/2023-09-23-linux-shellscript-github-latest/) |
+| Temurin JDK 21의 플랫폼 메타데이터 확인 | [Temurin metadata](https://youdozi.github.io/en/posts/2023-10-10-temurin-jdk21-delay/) | [Temurin 메타데이터](https://youdozi.github.io/ko/posts/2023-10-10-temurin-jdk21-delay/) |
+| Batch 5 이관 범위와 새 저장소의 재시작 구분 | [Batch migration and restart](https://youdozi.github.io/en/posts/2023-10-27-springbatch5-migration/) | [Batch 이관과 재시작](https://youdozi.github.io/ko/posts/2023-10-27-springbatch5-migration/) |
+| Vue 앱을 실행 JAR에 패키징하고 HTTP 응답 확인 | [Frontend packaging](https://youdozi.github.io/en/posts/2021-07-23-multiple-gradle-build/) | [프런트엔드 패키징](https://youdozi.github.io/ko/posts/2021-07-23-multiple-gradle-build/) |
+
+각 글에 코드·그림·고정 재현 환경과 확인 범위를 함께 제공합니다. 셸 검사는 `scripts/check_shell_automation_examples.py`, YAML·Temurin 입력 검사는 `scripts/check_config_input_examples.py`, Batch 검사는 `scripts/check_jvm_runtime_examples.py --part batch`, 패키징 검사는 `scripts/check_multi_frontend_example.py`를 사용합니다. 실행 환경은 아래 검증 안내와 각 글을 따르세요. 과거 예제의 고정 버전은 현재 운영 환경 추천이 아닙니다.
+
 ## 로컬 실행
 
 Node 24와 Python 3.11 이상을 사용합니다. 게시된 Java 예제 검증에는 JDK 17 이상도 필요합니다.

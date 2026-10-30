@@ -5,7 +5,7 @@ title: "GitHubs neuestes Release mit curl und jq: ein Download-Asset auswählen"
 description: "Mit curl und jq genau ein GitHub-Release-Asset nach Betriebssystem, CPU und Format auswählen. HTTP-Fehler, ungültiges JSON sowie fehlende und mehrfache Treffer behandeln."
 state: "draft"
 sourcePath: "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md"
-sourceSha256: "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+sourceSha256: "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
 ---
 Mit `curl` das neueste GitHub-Release abrufen und mit `jq` genau ein Download-Asset für das benötigte Betriebssystem, die CPU und das Format auswählen. Das folgende Skript stoppt bei HTTP-Fehlern, ungültigem JSON sowie fehlenden oder mehrfachen Treffern. Es liefert Metadaten, ohne die Datei herunterzuladen.
 
@@ -87,6 +87,8 @@ Bei Erfolg entsteht ein JSON-Objekt mit `tag_name` und `download_url`. Die Werte
 | Leerer Antwortkörper oder fehlerhaftes JSON | Status ungleich null. |
 | Kein oder mehrere passende Assets | Abbruch statt willkürlicher Auswahl. |
 | Ungültige Syntax des Repositoryarguments | Nutzungshinweis, Status 2. |
+
+Wenn die HTTP-Anfrage erfolgreich ist, aber kein Asset passt, prüfen Sie die Dateinamen des Releases, bevor Sie den `jq`-Filter ändern: Dieses Beispiel wählt Java 17 für Linux x64 aus, nicht jedes JDK-Paket. Für Java 21 verwenden Sie das [Beispiel zu Temurin-Plattformmetadaten](/en/posts/2023-10-10-temurin-jdk21-delay/). Wenn Repository- oder Plattformwerte aus YAML stammen, [lesen und validieren Sie die Konfiguration als Daten](/en/posts/2021-07-27-parse-yaml/), bevor Sie die Werte an einen Befehl übergeben.
 
 Mit lokalen HTTP-Antworten wurden Erfolg, HTTP-Fehler, ungültiges JSON, fehlende Assets und Duplikate geprüft. `GITHUB_API_URL` verweist standardmäßig auf die öffentliche API und kann auf einen Testserver mit demselben Antwortvertrag gesetzt werden.
 

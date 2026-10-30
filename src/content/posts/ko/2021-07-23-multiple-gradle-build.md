@@ -14,8 +14,8 @@ tags:
   - "SpringBoot"
 legacyUrl: "/springboot/multiple-gradle-build/"
 legacySource: "_posts/gradle/2021-07-23-multiple-gradle-build.markdown"
-updatedAt: 2026-10-27T05:23:47.316+00:00
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T05:15:39.658659+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 원고 실행 예제 검증"
 archiveBodySha256: "2237b16a9085e6bf2b6d52a2f67e59fe7e64e8cf6a170b564e74de62c9f45280"
@@ -213,5 +213,7 @@ BOOT-INF/classes/static/project2/assets/...
 - 생성 자산이 들어갈 `static/project1`, `static/project2`를 수동 리소스와 겹치지 않게 사용합니다.
 - Vue SFC를 사용한다면 해당 앱에 맞는 플러그인과 Vite 설정을 추가합니다. 이 작은 예제는 렌더 함수로 Vue를 사용합니다.
 - 일반 `jar`가 아닌 실행 `bootJar`에 연결한 예제입니다. 배포할 아티팩트의 내용을 확인하세요.
+
+기존 애플리케이션에서는 패키징과 별도로 [Spring Boot의 Java·Jakarta 마이그레이션 기준선](/ko/posts/2023-09-08-springboot3-migration/)을 확인하세요. Batch Job도 실행한다면 [Batch 저장소 이관과 재시작 검사](/ko/posts/2023-10-27-springbatch5-migration/)를 따로 진행해야 합니다. JAR에서 프런트엔드 자산이 제공된다고 저장된 Job 데이터까지 검증된 것은 아닙니다.
 
 릴리스 메타데이터를 빌드 자동화에 연결하려면 [GitHub 릴리스·자산 조회](/ko/posts/2023-09-23-linux-shellscript-github-latest/)와 [숫자 버전 비교의 입력 범위](/ko/posts/2023-11-17-linux-shellscript-version-compare/)를 함께 확인하세요. 준비 스크립트의 인터프리터 선택은 [POSIX sh 함수](/ko/posts/2023-09-20-linux-shellscript-function-error/)에서 다룹니다.

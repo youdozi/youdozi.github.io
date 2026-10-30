@@ -5,7 +5,7 @@ title: "用 curl 和 jq 查询 GitHub 最新发布版本：选择一个下载资
 description: "根据操作系统、CPU 和格式，用 curl 与 jq 选择一个 GitHub 发布资产，并处理 HTTP 错误、无效 JSON、无匹配及重复匹配。"
 state: "draft"
 sourcePath: "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md"
-sourceSha256: "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+sourceSha256: "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
 ---
 用 `curl` 获取 GitHub 最新发布版本，再用 `jq` 为所需操作系统、CPU 和格式选择恰好一个下载资产。下方脚本遇到 HTTP 错误、无效 JSON、无匹配或重复匹配时会停止；它返回元数据，不下载文件。
 
@@ -87,6 +87,8 @@ sh latest-release.sh adoptium/temurin17-binaries
 | 响应体为空或 JSON 格式错误 | 非零状态。 |
 | 无匹配资产或存在多个匹配资产 | 报错，不随意选择。 |
 | 仓库参数语法无效 | 输出用法说明，状态 2。 |
+
+如果 HTTP 请求成功却没有匹配的资源，请先检查发布文件名，再修改 `jq` 过滤器：本例选择的是 Java 17 的 Linux x64 软件包，而不是所有 JDK 软件包。若需要 Java 21，请使用 [Temurin 平台元数据示例](/en/posts/2023-10-10-temurin-jdk21-delay/)。如果仓库或平台值来自 YAML，请先[将配置作为数据解析并验证](/en/posts/2021-07-27-parse-yaml/)，再将值传给命令。
 
 示例使用本地 HTTP 响应检查了成功、HTTP 错误、无效 JSON、资产缺失和重复匹配。`GITHUB_API_URL` 默认为公开 API，也可设为实现同一响应约定的测试服务器。
 

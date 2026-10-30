@@ -15,14 +15,30 @@ class DiscoveryPage(Head):
     def __init__(self):
         super().__init__()
         self.links = []
+        self.prose_links = []
+        self.div_depth = 0
+        self.prose_depth = None
         self.empty = False
 
     def handle_starttag(self, tag, attrs):
         super().handle_starttag(tag, attrs)
         a = dict(attrs)
+        if tag == 'div':
+            self.div_depth += 1
+            if 'prose' in a.get('class', '').split():
+                self.prose_depth = self.div_depth
         if tag == 'a' and a.get('href'):
             self.links.append(a['href'])
+            if self.prose_depth is not None:
+                self.prose_links.append(a['href'])
         self.empty |= 'empty' in a.get('class', '').split()
+
+    def handle_endtag(self, tag):
+        super().handle_endtag(tag)
+        if tag == 'div':
+            if self.prose_depth == self.div_depth:
+                self.prose_depth = None
+            self.div_depth -= 1
 
 
 def destination(source, href):
@@ -30,6 +46,21 @@ def destination(source, href):
     if target.scheme not in ('http', 'https') or target.netloc != 'youdozi.github.io':
         return None
     return target.scheme + '://' + target.netloc + quote(target.path, safe="/%:@!$&'()*+,;=-._~")
+
+
+def contextual_incoming(public, targets):
+    """Count distinct same-language post bodies, excluding self and site chrome."""
+    sources = {url: set() for url in targets if url in public}
+    for source, page in public.items():
+        match = re.fullmatch(re.escape(SITE) + r'/(en|ko)/posts/[^/]+/', source)
+        if not match:
+            continue
+        prefix = SITE + '/' + match[1] + '/posts/'
+        for href in page.prose_links:
+            target = destination(source, href)
+            if target in sources and target != source and target.startswith(prefix):
+                sources[target].add(source)
+    return {url: len(rows) for url, rows in sorted(sources.items())}
 
 
 def inspect(root):
@@ -49,6 +80,11 @@ def inspect(root):
         raise ValueError('Expected a sitemap urlset')
     urls = [node.findtext(SM + 'loc', default='') for node in sitemap.findall(SM + 'url')]
     errors = []
+    registry = json.loads((Path(__file__).resolve().parents[1] / 'content/seo/core-articles.json').read_text())
+    incoming = contextual_incoming(public, [SITE + f'/{lang}/posts/{row["key"]}/'
+        for row in registry['articles'] for lang in ('en', 'ko')])
+    errors.extend(url + ': core article has no incoming same-language post-body link'
+                  for url, count in incoming.items() if not count)
     if not urls or len(urls) != len(set(urls)):
         errors.append('Expected unique nonempty sitemap URLs')
     errors.extend(f'{url}: link leads to an empty noindex destination {target}' for url, target in empty_links)
@@ -77,7 +113,7 @@ def inspect(root):
         by_language[language] = {'sitemapURLs': len(expected), 'reachableSitemapURLs': len(expected) - len(missing),
                                  'articles': len(articles),
                                  'maxArticleLinkSteps': max((distances.get(url, -1) for url in articles), default=0)}
-    return errors, {'publicPages': len(public), 'emptyDestinations': len(empty),
+    return errors, {'publicPages': len(public), 'coreContextualIncoming': incoming, 'emptyDestinations': len(empty),
                     'emptyDestinationLinks': len(empty_links), 'sitemapURLs': len(urls),
                     'articles': len(article_urls), 'languages': by_language}
 

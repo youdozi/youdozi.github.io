@@ -13,7 +13,7 @@ tags:
   - "webclient"
 legacyUrl: "/springboot/springboot-test-webclient/"
 legacySource: "_posts/spring/test/webclient/2023-09-19-springboot-test-webclient.markdown"
-updatedAt: 2026-10-30T04:11:22.994096+00:00
+updatedAt: 2026-10-30T05:15:39.658659+00:00
 reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조, 재현 절차와 버전별 적용 조건 보강"
@@ -236,5 +236,7 @@ gradle --no-daemon test
 `verify(Duration.ofSeconds(5))`는 각 테스트의 대기를 제한합니다. 운영 클라이언트의 연결·응답 시간 제한을 설정하는 것은 아닙니다. 타임아웃과 재시도는 API 계약에 맞춰 별도 테스트해야 하며, 이 여덟 테스트에는 포함하지 않았습니다.
 
 위 재현 환경에서 여덟 테스트가 모두 통과했습니다. 저장소에서는 `python3 scripts/check_webclient_example.py`로 반복할 수 있습니다. Jakarta 전환을 함께 진행한다면 클라이언트 동작을 바꾸기 전에 [Spring Boot 마이그레이션 기준선](/ko/posts/2023-09-08-springboot3-migration/)부터 확인하세요.
+
+이 클라이언트 테스트는 로컬 모의 서버를 사용하므로 배포 애플리케이션의 정적 파일을 확인하지 않습니다. Vue 앱을 함께 패키징한다면 [Gradle 프런트엔드 패키징 예제](/ko/posts/2021-07-23-multiple-gradle-build/)에서 실행 JAR과 HTML·JavaScript 응답을 확인할 수 있습니다. 두 예제의 고정 환경이 다르므로 의존성을 맞추지 않고 하나의 프로젝트로 합치면 안 됩니다.
 
 MockWebServer API는 [OkHttp 4.12.0 소스와 예제](https://github.com/square/okhttp/tree/parent-4.12.0/mockwebserver)를 참고할 수 있습니다.

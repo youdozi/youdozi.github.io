@@ -12,6 +12,37 @@ import search_growth as growth
 
 
 class SearchGrowthTests(unittest.TestCase):
+    def test_migration_pairs_distinguish_convergence_from_two_indexed_addresses(self):
+        target = growth.SITE + 'ko/posts/example/'
+        def row(kind, url, canonical):
+            return {'key': 'example', 'kind': kind, 'language': 'ko', 'url': url,
+                    'live': {'matchesExpectedStaticRoute': True},
+                    'inspection': {'httpStatus': 200, 'indexStatus': {
+                        'verdict': 'PASS', 'googleCanonical': canonical, 'lastCrawlTime': 'recorded-time'}}}
+        old = row('legacy', growth.SITE + 'old/', growth.SITE + 'old/')
+        new = row('article', target, target)
+        report = {'urls': [old, new]}
+        self.assertEqual(growth.migration_pairs(report)[0]['koreanMigrationState'], 'legacy-canonical-still-observed')
+        old['inspection']['indexStatus']['googleCanonical'] = target
+        pair = growth.migration_pairs(report)[0]
+        self.assertEqual(pair['koreanMigrationState'], 'canonical-convergence-observed')
+        self.assertEqual(pair['legacy']['lastCrawlTime'], 'recorded-time')
+        del old['inspection']['indexStatus']['googleCanonical']
+        self.assertEqual(growth.migration_pairs(report)[0]['koreanMigrationState'], 'destination-indexed-legacy-canonical-unconfirmed')
+
+    def test_migration_pair_errors_and_missing_canonical_never_certify_completion(self):
+        old = {'key': 'example', 'kind': 'legacy', 'language': 'ko', 'url': growth.SITE + 'old/',
+               'live': {'matchesExpectedStaticRoute': True}, 'inspection': {'httpStatus': 200, 'indexStatus': {'verdict': 'PASS'}}}
+        new = deepcopy(old); new.update(kind='article', url=growth.SITE + 'ko/posts/example/')
+        report = {'urls': [old, new]}
+        self.assertEqual(growth.migration_pairs(report)[0]['koreanMigrationState'], 'legacy-indexed-destination-not-confirmed')
+        new['inspection'] = {'httpStatus': 403}
+        self.assertEqual(growth.migration_pairs(report)[0]['koreanMigrationState'], 'inspection-unavailable')
+        self.assertIsNone(growth.migration_pairs(report)[0]['destination']['verdict'])
+        new['live'] = {}
+        self.assertEqual(growth.migration_pairs(report)[0]['koreanMigrationState'], 'public-route-unconfirmed')
+        self.assertEqual(growth.migration_pairs({'urls': [old]}), [])
+
     def test_missing_verdict_is_not_an_indexing_loss_or_gain(self):
         before = {'site': growth.SITE, 'checkedAt': 'before', 'windows': {'current': ['a', 'b']},
                   'urls': [{'url': growth.SITE + 'one/', 'kind': 'article', 'live': {},
