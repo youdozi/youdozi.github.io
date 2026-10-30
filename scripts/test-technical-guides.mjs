@@ -87,3 +87,27 @@ test('tool guides in six languages omit unpublished steps and keep source order 
   assert.ok(!categoryGuide('util',language,items.slice(2)));
  }
 });
+
+test('all guide families connect only eligible same-language steps in six translated editions',()=>{
+ const paths=[
+  ['springboot','2023-09-07-springboot-initializer','2023-09-19-springboot-test-webclient'],
+  ['jdk','2023-09-20-jdk-21-release','2023-10-10-temurin-jdk21-delay'],
+  ['automation','2026-04-07-jekyll-github-actions-content-pipeline','2026-04-07-jekyll-quality-gates-proof-html-bundler-audit'],
+  ['jenkins','2023-09-28-jenkins-docker-install','2026-10-27-jenkins-home-backup-restore'],
+  ['jekyll','2023-09-04-jekyll-install','2026-04-07-ruby-rbenv-jekyll-build-troubleshooting'],
+ ];
+ for(const language of ['zh-CN','ja','de','fr','ru','es'])for(const [term,first,last] of paths){
+  const entries=[entry(last,language,term==='jekyll'?'blog':term,{updatedAt:new Date('2026-12-01Z')}),entry('extra',language,term),entry(first,language,term),entry(first,'en',term),entry('future',language,term,{publishedAt:new Date('2999-01-01Z')}),entry('example',language,term,{reviewStatus:'example'}),entry('news',language,term,{kind:'digest'})];
+  const before=structuredClone(entries),guide=categoryGuide(term,language,entries);
+  assert.deepEqual(guide.sections.flatMap(g=>g.entries.map(e=>e.url)),[entries[2].url,entries[0].url]);
+  assert.deepEqual(guide.sections.map(g=>g.start),[1,2]);
+  assert.deepEqual(guide.extras,[entries[1]]);
+  assert.equal(guide.updatedAt.toISOString(),'2026-12-01T00:00:00.000Z');
+  assert.ok(guide.ordered.every(e=>e.language===language));
+  assert.ok(guide.title!==categoryGuide(term,'en',entries).title);
+  assert.deepEqual(categoryGuideAlternates(term,entries).map(a=>a.language),['en',language]);
+  assert.ok(technicalGuides(language,entries).some(g=>g.url===guide.url));
+  assert.equal(categoryGuide(term,language,entries.slice(3)),undefined);
+  assert.deepEqual(entries,before);
+ }
+});
