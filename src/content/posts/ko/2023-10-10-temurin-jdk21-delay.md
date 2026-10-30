@@ -13,7 +13,7 @@ tags:
   - temurin
 legacyUrl: /jdk/temurin-jdk21-delay/
 legacySource: _posts/jdk/temurin-jdk21-delay/2023-10-10-temurin-jdk21-delay.markdown
-updatedAt: 2026-10-27T10:25:23.707+00:00
+updatedAt: "2026-10-30T10:10:46.396668+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -98,3 +98,5 @@ print(json.dumps(result, indent=2))
 여기서 확인하는 것은 체크섬의 **형식**입니다. 실제 파일의 무결성을 검증한 것은 아닙니다. 파일을 별도로 내려받았다면 SHA-256을 계산해 메타데이터 값과 비교한 뒤 압축 해제·설치를 결정하세요. API에 게시된 값과 파일이 일치하는지도 이번 메타데이터 예제의 실행 범위에는 포함되지 않습니다.
 
 릴리스 자산 선택의 다른 예제는 [GitHub 릴리스와 자산 조회](/ko/posts/2023-09-23-linux-shellscript-github-latest/)에서, Java 21 기능의 확정 여부는 [JDK 21 정식 기능과 Preview](/ko/posts/2023-09-20-jdk-21-release/)에서 확인할 수 있습니다.
+
+선택한 자산을 다운로드했다면 [신뢰하는 기대값과 파일의 SHA-256 체크섬을 비교하세요](/ko/posts/2026-10-30-verify-sha256-download/). 검증기는 로컬 바이트를 읽으며 릴리스를 다운로드하거나 배포자 신원을 확인하지 않습니다.

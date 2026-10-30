@@ -5,7 +5,7 @@ title: "Temurin JDK 21: comprobar metadatos y entender el retraso de 2023"
 description: "Selecciona metadatos de Temurin JDK 21 por sistema operativo, arquitectura y tipo de paquete con la API Adoptium. Distingue metadatos, verificación de descargas y retraso de 2023."
 state: "draft"
 sourcePath: "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md"
-sourceSha256: "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+sourceSha256: "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
 ---
 Para localizar un binario Temurin JDK 21, consulta la API Adoptium con el sistema operativo, CPU, JVM y tipo de paquete necesarios. El ejemplo comprueba metadatos JDK de Linux x64, sintaxis de la suma de comprobación y destino de la URL. No descarga el archivo ni calcula su hash.
 
@@ -79,3 +79,5 @@ El selector solo muestra un resultado si hay exactamente un recurso con la versi
 Esto valida el **formato** de la suma de comprobación, no la integridad de un archivo descargado. Si descargas el archivo por separado, calcula su SHA-256 y compáralo con los metadatos antes de extraerlo o instalarlo. Comprobar la coincidencia del binario real con la suma publicada queda fuera del alcance de ejecución de este ejemplo.
 
 Para otro ejemplo de selección, consulta las [versiones y recursos de GitHub](/en/posts/2023-09-23-linux-shellscript-github-latest/). Para la estabilidad de funciones, consulta las [funciones definitivas y en preview del JDK 21](/en/posts/2023-09-20-jdk-21-release/).
+
+Tras descargar el archivo seleccionado, [compara su suma de comprobación SHA-256 con un valor esperado de una fuente fiable](/en/posts/2026-10-30-verify-sha256-download/). El verificador lee bytes locales; no descarga la versión ni autentica al distribuidor.

@@ -12,7 +12,7 @@ import build_example_archives as examples
 class ExampleArchiveTests(unittest.TestCase):
     def test_all_paired_projects_have_identical_code_and_localized_provenance(self):
         recipes = examples.catalog()
-        self.assertEqual(len(recipes), 7)
+        self.assertEqual(len(recipes), 8)
         for recipe in recipes:
             _, code = examples.project_files(recipe, 'en')
             self.assertEqual(code, examples.project_files(recipe, 'ko')[1])
@@ -85,7 +85,7 @@ class ExampleArchiveTests(unittest.TestCase):
                     target = root / language / 'posts' / recipe['key'] / 'index.html'
                     target.parent.mkdir(parents=True)
                     target.write_text(f'<a class="example-download" download href="/assets/examples/{recipe["key"]}-{language}.zip">Files</a>')
-            self.assertEqual(examples.check_dist(root)['articleDownloadLinks'], 14)
+            self.assertEqual(examples.check_dist(root)['articleDownloadLinks'], 2 * len(examples.catalog()))
             next(assets.glob('*.zip')).write_bytes(b'broken')
             with self.assertRaises((ValueError, zipfile.BadZipFile)): examples.check_dist(root)
 

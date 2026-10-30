@@ -5,7 +5,7 @@ title: "Última release de GitHub con curl y jq: elegir un archivo de descarga"
 description: "Selecciona un único recurso de una release de GitHub por sistema, CPU y formato con curl y jq. Trata errores HTTP, JSON no válido y coincidencias ausentes o duplicadas."
 state: "draft"
 sourcePath: "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md"
-sourceSha256: "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+sourceSha256: "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
 ---
 Usa `curl` para obtener la última release de GitHub y `jq` para elegir exactamente un recurso de descarga para el sistema, la CPU y el formato necesarios. El script se detiene ante errores HTTP, JSON no válido y coincidencias ausentes o duplicadas; devuelve metadatos sin descargar el archivo.
 
@@ -95,3 +95,5 @@ Se usaron respuestas HTTP locales para comprobar el éxito, los errores HTTP, el
 Leer recursos públicos no requiere autenticación. Si amplías el script para peticiones autenticadas, mantén los tokens fuera del código fuente y de los registros de trazado del Shell. Comprueba las cabeceras de límites de peticiones y la [documentación de GitHub sobre esos límites](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api).
 
 El script selecciona una URL; no verifica la integridad del archivo de instalación. La automatización de la instalación sigue necesitando las sumas de comprobación o firmas del proveedor y la plataforma de destino. Antes de pasar una etiqueta al [comparador de versiones numéricas](/en/posts/2023-11-17-linux-shellscript-version-compare/), comprueba que cumpla el contrato de entrada de ese script.
+
+Tras descargar el archivo seleccionado, [compara su suma de comprobación SHA-256 con un valor esperado de una fuente fiable](/en/posts/2026-10-30-verify-sha256-download/). El verificador lee bytes locales; no descarga la versión ni autentica al distribuidor.

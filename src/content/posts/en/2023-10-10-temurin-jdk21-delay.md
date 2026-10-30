@@ -11,7 +11,7 @@ tags:
   - temurin
 publishedAt: "2026-10-27T03:19:18+00:00"
 title: "Temurin JDK 21: Check Binary Metadata and Understand the 2023 Delay"
-updatedAt: 2026-10-27T10:25:23.707+00:00
+updatedAt: "2026-10-30T10:10:46.396668+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -95,3 +95,5 @@ The selector prints a result only for exactly one asset with the expected Java m
 This validates the checksum's **format**, not the integrity of a downloaded file. If you download the archive separately, calculate its SHA-256 and compare it with the metadata before deciding to extract or install it. Checking agreement between an actual binary and the published checksum is outside this metadata example's execution scope.
 
 For another asset-selection example, see [querying GitHub releases and assets](/en/posts/2023-09-23-linux-shellscript-github-latest/). For feature stability, see [JDK 21 final and preview features](/en/posts/2023-09-20-jdk-21-release/).
+
+After downloading the selected asset, [compare its SHA-256 checksum with a trusted expected value](/en/posts/2026-10-30-verify-sha256-download/). The checker reads local bytes; it does not download or authenticate the release.

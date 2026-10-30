@@ -16,7 +16,7 @@ tags:
 legacyUrl: "/linux/linux-shellscript-github-latest/"
 legacySource: "_posts/linux/shell-script/github-latest/2023-09-23-linux-shellsc\
   ript-github-latest.markdown"
-updatedAt: 2026-10-30T05:15:39.658659+00:00
+updatedAt: "2026-10-30T10:10:46.396668+00:00"
 reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 원고 실행 예제 검증"
@@ -116,3 +116,5 @@ HTTP 요청은 성공했는데 일치하는 자산이 없다면 `jq` 필터를 �
 공개 리소스 조회에는 인증이 필수가 아닙니다. 인증이 필요해 확장한다면 토큰을 소스에 적거나 셸 추적 로그에 남기지 마세요. 요청 한도는 응답 헤더와 [GitHub rate-limit 안내](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api)로 확인합니다.
 
 이 스크립트는 다운로드 URL을 선택할 뿐 설치 파일의 무결성을 확인하지 않습니다. 설치 자동화에서는 공급자의 체크섬·서명과 대상 플랫폼을 별도로 확인해야 합니다. 태그를 [숫자 버전 비교](/ko/posts/2023-11-17-linux-shellscript-version-compare/)에 넘길 때도 그 문서의 입력 범위와 같은지 먼저 판단하세요.
+
+선택한 자산을 다운로드했다면 [신뢰하는 기대값과 파일의 SHA-256 체크섬을 비교하세요](/ko/posts/2026-10-30-verify-sha256-download/). 검증기는 로컬 바이트를 읽으며 릴리스를 다운로드하거나 배포자 신원을 확인하지 않습니다.

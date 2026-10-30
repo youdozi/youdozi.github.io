@@ -1507,6 +1507,106 @@
           "kind": "result"
         }
       ]
+    },
+    {
+      "key": "2026-10-30-verify-sha256-download",
+      "title": {
+        "en": "Verify SHA-256 bytes",
+        "ko": "SHA-256 바이트 검증"
+      },
+      "description": {
+        "en": "Validate the expected digest, read a stable regular file in binary chunks, and compare. Input and read errors return 2, mismatch returns 1, match returns 0.",
+        "ko": "기대값을 검증하고 내용이 바뀌지 않는 일반 파일을 바이너리로 나누어 읽어 비교합니다. 입력·읽기 오류는 2, 불일치는 1, 일치는 0입니다."
+      },
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "digest.update(chunk)"
+        },
+        {
+          "language": "python",
+          "contains": "digest.hexdigest() != argv[1].lower()"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "condition",
+          "en": [
+            "64 hex characters?"
+          ],
+          "ko": [
+            "64자리 16진수인가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "invalid: 2",
+              "ko": "형식 오류: 2"
+            },
+            "continue": {
+              "en": "yes",
+              "ko": "예"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Read regular file in binary chunks",
+            "Update SHA-256 until EOF"
+          ],
+          "ko": [
+            "일반 파일을 바이너리로 나누어 읽기",
+            "EOF까지 SHA-256 갱신"
+          ]
+        },
+        {
+          "kind": "condition",
+          "en": [
+            "All file reads succeeded?"
+          ],
+          "ko": [
+            "파일 읽기가 모두 성공했는가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "read: 2",
+              "ko": "읽기 오류: 2"
+            },
+            "continue": {
+              "en": "yes",
+              "ko": "예"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "en": [
+            "Digest matches expectation?"
+          ],
+          "ko": [
+            "기대값과 해시가 일치하는가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "mismatch: 1",
+              "ko": "불일치: 1"
+            },
+            "continue": {
+              "en": "yes",
+              "ko": "예"
+            }
+          }
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Print OK; exit 0"
+          ],
+          "ko": [
+            "OK 출력·종료 코드 0"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -7,7 +7,7 @@ kind: "post"
 publishedAt: "2026-10-27T02:36:39+00:00"
 categories: ["linux"]
 tags: ["linux", "bash", "shell script", "jq", "github latest release"]
-updatedAt: 2026-10-30T05:15:39.658659+00:00
+updatedAt: "2026-10-30T10:10:46.396668+00:00"
 reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "Primary documentation checked; published runnable example verified."
@@ -102,3 +102,5 @@ Local HTTP responses were used to check success, HTTP errors, invalid JSON, miss
 Public-resource reads do not require authentication. If you extend this for authenticated requests, keep tokens out of source and shell-tracing logs. Check rate-limit response headers and [GitHub's rate-limit documentation](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api).
 
 The script selects a URL; it does not verify the installation file's integrity. Installation automation still needs the provider's checksums/signatures and the target platform. Before passing a tag to the [numeric version comparator](/en/posts/2023-11-17-linux-shellscript-version-compare/), check that it satisfies that script's input contract.
+
+After downloading the selected asset, [compare its SHA-256 checksum with a trusted expected value](/en/posts/2026-10-30-verify-sha256-download/). The checker reads local bytes; it does not download or authenticate the release.

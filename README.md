@@ -234,7 +234,7 @@ Google·Bing의 공개 글 상태는 `scripts/search_engines.py`로 함께 관�
 
 기술 글의 코드 블록은 JavaScript가 활성화되면 키보드로 초점을 옮겨 가로 스크롤할 수 있습니다. Clipboard API가 있는 환경에서는 사용자가 버튼을 누를 때만 코드 텍스트를 그대로 복사하고, 성공·실패를 현재 언어로 알립니다. 들여쓰기·빈 줄·명령 프롬프트를 바꾸거나 코드를 실행하지 않으며, API가 없거나 복사가 거부되어도 원래 코드를 직접 선택할 수 있습니다. 안내 문구는 8개 언어를 지원합니다.
 
-한영 기술 글 70편은 기존 학습 안내의 핵심 순서대로 이전·다음 글을 이어 읽을 수 있습니다. 안내로 돌아가는 링크와 현재 위치를 함께 제공하며 뉴스·추가 목록·미게시 원고를 순서에 넣지 않습니다. [기술 글 읽기 경로](docs/site-discovery.md#기술-글의-읽기-경로)는 일반·격리 빌드에서 안내의 실제 목록과 대조합니다.
+한영 기술 글 72편은 기존 학습 안내의 핵심 순서대로 이전·다음 글을 이어 읽을 수 있습니다. 안내로 돌아가는 링크와 현재 위치를 함께 제공하며 뉴스·추가 목록·미게시 원고를 순서에 넣지 않습니다. [기술 글 읽기 경로](docs/site-discovery.md#기술-글의-읽기-경로)는 일반·격리 빌드에서 안내의 실제 목록과 대조합니다.
 
 Markdown 본문의 `/assets/` 이미지는 빌드 시 로컬 파일에서 가로·세로 크기를 읽어 공간을 미리 확보합니다. 첫 이미지는 기본 `eager`, 뒤의 이미지는 `lazy`, 디코딩은 `async`로 지정하며 기존 속성은 유지합니다. 원격 이미지를 조회하거나 파일·대체 텍스트를 변경하지 않습니다. 직접 작성한 HTML 이미지에는 작성자가 크기·로딩 속성을 지정해야 합니다. 일반 빌드와 격리 번역 빌드에서 본문 이미지의 크기·로딩 속성과 SVG 비율을 검사합니다. 이 검사는 실제 Core Web Vitals나 검색 순위 측정이 아닙니다.
 
@@ -248,7 +248,7 @@ Markdown 본문의 `/assets/` 이미지는 빌드 시 로컬 파일에서 가로
 
 [공개 크롤링 접근성 관측](docs/search-growth.md#공개-응답의-크롤링-접근성)은 관측 URL 94개의 HTTP 상태·콘텐츠 형식·색인 지시문·사이트맵·다국어 상호 링크를 대조합니다. 기본은 미리보기이며, 일반 HTTP 검사 통과와 실제 Google/Bing 색인·노출을 구분합니다. 조건부 규칙이나 확인하지 못한 항목은 미확인으로 남깁니다.
 
-[기술 글의 6개 언어 번역](docs/technical-translations.md)은 기존 뉴스 번역과 별도로 준비합니다. 총 36개 주제·216편 중 Java 문제 풀이 10개 주제 60편·셸 자동화 3개 주제 18편·개발 도구 3개 주제 18편, JDK 3개 주제 18편·YAML 1개 주제 6편까지 합계 120편의 완전 번역과 현지화한 흐름도를 사이트 미게시 초안으로 준비했습니다. 남은 번역은 96편입니다. `npm run check:technical-translations`로 등록된 묶음의 원문·코드·수치·표·링크·그림을 대조하고, `npm run review:technical-translations -- --output <저장소 밖 새 HTML>`로 원문과 번역문을 함께 볼 수 있습니다. `--manifest`로 특정 묶음을 선택할 수 있으며 승인 해시는 묶음마다 구분합니다. [기술 글 게시 경로·승인 준비](docs/technical-publication.md)는 정확한 묶음과 사용자 승인 정보가 있어야 실행하며 실제 원고의 게시 승인은 남아 있습니다. `npm run check:technical-preview`는 뉴스 318편과 기술 원고 120편을 격리된 임시 빌드에서 함께 검사합니다. 검색 데이터는 비교 연산자와 코드 블록을 HTML 태그로 잘못 제거하지 않도록 보존합니다.
+[기술 글의 6개 언어 번역](docs/technical-translations.md)은 기존 뉴스 번역과 별도로 준비합니다. 총 37개 주제·222편 중 Java 문제 풀이 10개 주제 60편·셸 자동화 3개 주제 18편·개발 도구 3개 주제 18편, JDK 3개 주제 18편·YAML 1개 주제 6편까지 합계 120편의 완전 번역과 현지화한 흐름도를 사이트 미게시 초안으로 준비했습니다. 남은 번역은 102편입니다. `npm run check:technical-translations`로 등록된 묶음의 원문·코드·수치·표·링크·그림을 대조하고, `npm run review:technical-translations -- --output <저장소 밖 새 HTML>`로 원문과 번역문을 함께 볼 수 있습니다. `--manifest`로 특정 묶음을 선택할 수 있으며 승인 해시는 묶음마다 구분합니다. [기술 글 게시 경로·승인 준비](docs/technical-publication.md)는 정확한 묶음과 사용자 승인 정보가 있어야 실행하며 실제 원고의 게시 승인은 남아 있습니다. `npm run check:technical-preview`는 뉴스 318편과 기술 원고 120편을 격리된 임시 빌드에서 함께 검사합니다. 검색 데이터는 비교 연산자와 코드 블록을 HTML 태그로 잘못 제거하지 않도록 보존합니다.
 
 
 ## 질문 중심 기술 글과 AEO 측정
@@ -282,3 +282,5 @@ python3 scripts/answer_observation.py --live \
 후속 보고서는 같은 URL의 Web 검색 수치·GA4 유입 집계를 나란히 보존합니다. 미반환·실패·조회 상한 도달을 0으로 채우지 않습니다. 검색어 목록은 완전한 목록이 아니며 GA4 응답의 임계처리·샘플링 관련 메타데이터도 보존합니다. AI 도메인과 일치하는 `sessionSource`는 관측된 기여 출처 이름일 뿐 실제 AI 추천·인용·사람의 방문을 입증하지 않습니다. robots·Analytics 설정을 바꾸거나 색인·사이트맵을 제출하지 않습니다. 비교 결과는 관찰이며 인과 효과가 아닙니다.
 
 Google에는 [Search generative AI 포함 설정](https://support.google.com/webmasters/answer/16908024?hl=en)과 [전용 생성형 AI 성과 보고서](https://support.google.com/webmasters/answer/16984139?hl=en)가 있습니다. 전용 보고서가 보이지 않는 경우 노출 부족이나 제외 설정일 수 있습니다. 현재 계정 설정과 전용 보고서를 이 수집기로 확인했다고 표시하지 않습니다. [공식 Search Analytics API](https://developers.google.com/webmaster-tools/v1/searchanalytics/query)의 Web 자료와 구분해 `not-collected`로 남깁니다. Bing의 [AI Performance](https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c)도 대시보드에서 별도로 확인하며 문서화되지 않은 AI API를 호출하지 않습니다. 엔진의 AI 노출·인용, GSC Web 검색, GA4 방문은 서로 다른 관측값입니다.
+
+다운로드 파일 검증 예제는 `python3 -B scripts/check_checksum_examples.py`로 실행합니다. 실제 예제 ZIP의 한영 코드가 동일한지 대조하고, 정상·변경·빈 파일·읽기 오류·입력 형식·청크 경계를 로컬 바이트로 검사합니다. 파일 다운로드·설치·서명 검증은 수행하지 않습니다.

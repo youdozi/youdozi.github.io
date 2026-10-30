@@ -8,7 +8,7 @@ import { algorithmGuide } from './algorithm-guide.ts';
 import { springGuide } from './spring-guide.ts';
 
 export const guideTerms = ['coding-test', 'springboot', 'linux', 'jdk', 'util', 'automation', 'jenkins', 'jekyll'] as const;
-const updatedAt = new Date('2026-10-27T08:19:59.645138+00:00');
+const updatedAt = new Date('2026-10-30T10:10:46.396668+00:00');
 const nativeGuideIndexCopy = {
   en: { label: 'Guides', title: 'Technical Learning Guides',
     description: 'Choose a reading path through Java exercises, Spring Boot, shell automation, JDK features, development tools, reviewed publishing, Jenkins recovery and legacy Ruby diagnostics, with code and clearly scoped checks.',
@@ -83,7 +83,7 @@ const paths = {
       groups:[
         {id:'interpreter',title:'Choose an interpreter',description:'Keep POSIX syntax and Bash invocation consistent.',keys:['2023-09-20-linux-shellscript-function-error']},
         {id:'inputs',title:'Validate structured input',description:'Parse YAML without eval and compare dotted numeric versions under explicit bounds.',keys:['2021-07-27-parse-yaml','2023-11-17-linux-shellscript-version-compare']},
-        {id:'releases',title:'Select release assets',description:'Check the response and asset selection before treating metadata as a download instruction.',keys:['2023-09-23-linux-shellscript-github-latest']},
+        {id:'releases',title:'Select release assets',description:'Select the intended release asset, then compare the downloaded bytes with a trusted checksum.',keys:['2023-09-23-linux-shellscript-github-latest','2026-10-30-verify-sha256-download']},
       ]},
     ko: {label:'셸 자동화 학습 안내',title:'셸 자동화 학습 안내: 실행기·YAML·릴리스 자산',eyebrow:'셸 자동화',
       description:'sh·Bash 선택부터 YAML·숫자 버전 검증과 GitHub 릴리스 자산 선택까지 입력 조건과 로컬 예제로 이어 확인합니다.',
@@ -91,7 +91,7 @@ const paths = {
       groups:[
         {id:'interpreter',title:'실행기 선택',description:'POSIX 문법과 Bash 실행 방식을 일치시킵니다.',keys:['2023-09-20-linux-shellscript-function-error']},
         {id:'inputs',title:'구조화된 입력 검증',description:'eval 없이 YAML을 읽고 명시한 범위에서 점으로 나눈 숫자 버전을 비교합니다.',keys:['2021-07-27-parse-yaml','2023-11-17-linux-shellscript-version-compare']},
-        {id:'releases',title:'릴리스 자산 선택',description:'응답과 자산 선택을 확인한 뒤 다운로드에 사용할 정보를 결정합니다.',keys:['2023-09-23-linux-shellscript-github-latest']},
+        {id:'releases',title:'릴리스 자산 선택',description:'의도한 릴리스 자산을 고른 뒤 다운로드한 바이트를 신뢰하는 체크섬과 비교합니다.',keys:['2023-09-23-linux-shellscript-github-latest','2026-10-30-verify-sha256-download']},
       ]},
   },
   jdk: {

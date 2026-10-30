@@ -5,7 +5,7 @@ title: "Dernière release GitHub avec curl et jq : sélectionner un fichier à t
 description: "Sélectionnez un seul asset de release GitHub selon le système, le CPU et le format avec curl et jq. Gérez les erreurs HTTP, le JSON invalide et les correspondances absentes ou multiples."
 state: "draft"
 sourcePath: "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md"
-sourceSha256: "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+sourceSha256: "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
 ---
 Utilisez `curl` pour obtenir la dernière release GitHub et `jq` pour sélectionner exactement un asset à télécharger selon le système, le CPU et le format requis. Le script ci-dessous s’arrête en cas d’erreur HTTP, de JSON invalide ou de correspondances absentes ou multiples ; il renvoie des métadonnées sans télécharger le fichier.
 
@@ -95,3 +95,5 @@ Des réponses HTTP locales ont servi à vérifier le succès, les erreurs HTTP, 
 La lecture de ressources publiques ne nécessite pas d’authentification. Si vous ajoutez des requêtes authentifiées, ne placez pas les jetons dans le code source ni dans les journaux de traçage du Shell. Vérifiez les en-têtes de réponse relatifs aux limites de débit et la [documentation GitHub sur ces limites](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api).
 
 Le script sélectionne une URL ; il ne vérifie pas l’intégrité du fichier d’installation. L’automatisation de l’installation doit encore prendre en compte les sommes de contrôle ou signatures du fournisseur et la plateforme cible. Avant de transmettre un tag au [comparateur de versions numériques](/en/posts/2023-11-17-linux-shellscript-version-compare/), vérifiez qu’il respecte le contrat d’entrée de ce script.
+
+Après avoir téléchargé la ressource sélectionnée, [comparez sa somme de contrôle SHA-256 à une valeur attendue provenant d’une source fiable](/en/posts/2026-10-30-verify-sha256-download/). Le vérificateur lit les octets locaux ; il ne télécharge pas la version et n’authentifie pas son éditeur.
