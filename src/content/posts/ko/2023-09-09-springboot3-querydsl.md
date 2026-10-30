@@ -13,8 +13,8 @@ tags:
   - "querydsl"
 legacyUrl: "/springboot/springboot3-querydsl/"
 legacySource: "_posts/spring/migration/2023-09-09-springboot3-querydsl.markdown"
-updatedAt: 2026-10-27T07:19:48.249Z
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T04:11:22.994096+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 Gradle Q 타입 생성·H2 조회 테스트 재현"
 archiveBodySha256: "745e0ab660d077632d64c79624ffcf6a0c2b2b7d551068b6a8d5b098e27c5e73"
@@ -24,11 +24,11 @@ reviewSources:
   - "https://docs.gradle.org/current/userguide/lazy_configuration.html"
   - "https://docs.spring.io/spring-boot/3.5/reference/testing/spring-boot-applications.html"
   - "https://docs.oracle.com/en/java/javase/17/docs/api/java.compiler/javax/annotation/processing/Generated.html"
-description: "Spring Boot 3에서 Querydsl의 Jakarta 의존성을 맞추고 Gradle 기본 경로에 Q 타입을 생성합니다. 전체 설정과 H2 조회 테스트로 재현하는 방법을 정리합니다."
+description: "Spring Boot 3의 Jakarta 의존성과 annotation processor를 맞춰 Querydsl Q 타입을 생성하고, clean 빌드와 H2 조회 테스트로 확인합니다."
 ---
-Spring Boot 3에서 Querydsl JPA를 사용할 때는 `querydsl-jpa`와 `querydsl-apt`의 버전·`jakarta` classifier를 맞추고, Q 타입 생성과 실제 조회를 함께 확인해야 합니다. 생성 코드는 Gradle 기본 경로에 두면 main·test가 같은 출력 디렉터리를 공유하는 설정을 피할 수 있습니다.
+Spring Boot 3에서 Querydsl JPA Q 타입을 생성하려면 `querydsl-jpa`와 `querydsl-apt`의 버전·`jakarta` classifier를 맞추고 annotation processor를 설정한 뒤, clean 빌드와 DB 조회 테스트를 확인하세요. Jakarta classifier 지원은 [Querydsl 5.0 릴리스 설명](https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_0_0)에 나와 있습니다. Gradle 기본 생성 경로를 유지하면 main·test 컴파일을 같은 출력 디렉터리에 쓰도록 설정하는 일을 피할 수 있습니다.
 
-이 글은 기존 2023년 한국어 예제를 실행 가능한 구성으로 정리한 것입니다. [Querydsl 5.0 릴리스 설명](https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_0_0)에 Jakarta classifier 지원이 나와 있습니다. 아래에서 고정한 버전은 재현 환경이며 최신 운영 조합의 권장은 아닙니다.
+기존 2023년 한국어 예제를 실행 가능한 구성으로 정리한 글입니다. 아래에서 고정한 버전은 재현 환경이며 최신 운영 조합의 권장은 아닙니다.
 
 ## 처리 흐름
 
@@ -195,7 +195,9 @@ build/reports/tests/test/index.html
 
 이 예제의 Q 타입에 있는 `javax.annotation.processing.Generated`는 Java SE의 `java.compiler` API입니다. 이 import를 Jakarta로 바꿀 필요는 없습니다. [JDK 17 Generated API](https://docs.oracle.com/en/java/javase/17/docs/api/java.compiler/javax/annotation/processing/Generated.html).
 
-## Q 타입이 없거나 중복 생성될 때
+<span id="q-타입이-없거나-중복-생성될-때"></span>
+
+## Q 타입이 없거나 중복 생성되는 이유는 무엇인가요?
 
 | 증상 | 먼저 확인할 것 |
 | --- | --- |

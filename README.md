@@ -229,3 +229,36 @@ Markdown 본문의 `/assets/` 이미지는 빌드 시 로컬 파일에서 가로
 [공개 크롤링 접근성 관측](docs/search-growth.md#공개-응답의-크롤링-접근성)은 관측 URL 94개의 HTTP 상태·콘텐츠 형식·색인 지시문·사이트맵·다국어 상호 링크를 대조합니다. 기본은 미리보기이며, 일반 HTTP 검사 통과와 실제 Google/Bing 색인·노출을 구분합니다. 조건부 규칙이나 확인하지 못한 항목은 미확인으로 남깁니다.
 
 [기술 글의 6개 언어 번역](docs/technical-translations.md)은 기존 뉴스 번역과 별도로 준비합니다. 총 36개 주제·216편 중 Java 문제 풀이 10개 주제 60편·셸 자동화 3개 주제 18편·개발 도구 3개 주제 18편, JDK 3개 주제 18편·YAML 1개 주제 6편까지 합계 120편의 완전 번역과 현지화한 흐름도를 사이트 미게시 초안으로 준비했습니다. 남은 번역은 96편입니다. `npm run check:technical-translations`로 등록된 묶음의 원문·코드·수치·표·링크·그림을 대조하고, `npm run review:technical-translations -- --output <저장소 밖 새 HTML>`로 원문과 번역문을 함께 볼 수 있습니다. `--manifest`로 특정 묶음을 선택할 수 있으며 승인 해시는 묶음마다 구분합니다. [기술 글 게시 경로·승인 준비](docs/technical-publication.md)는 정확한 묶음과 사용자 승인 정보가 있어야 실행하며 실제 원고의 게시 승인은 남아 있습니다. `npm run check:technical-preview`는 뉴스 318편과 기술 원고 120편을 격리된 임시 빌드에서 함께 검사합니다. 검색 데이터는 비교 연산자와 코드 블록을 HTML 태그로 잘못 제거하지 않도록 보존합니다.
+
+
+## 질문 중심 기술 글과 AEO 측정
+
+[첫 적용 목록](content/seo/answer-pilot.json)은 Spring Boot 이관·Querydsl·WebClient·YAML·JDK 21의 5개 주제, 영어·한국어 10개 URL입니다. 실제 검색량으로 순위를 정한 목록이 아니라 편집 실험입니다. 도입부에서 답과 적용 조건을 밝히고 공식 근거를 가까이 연결합니다. 기존 코드·그림·URL·발행일을 유지하며, 질문형 소제목으로 바꾼 위치에는 이전 문단 ID도 남깁니다. 첫 문단에 실제로 연결된 출처만 기존 `BlogPosting.citation`에 넣습니다. 별도 FAQ나 내부 검토 카드를 본문에 일괄 추가하지 않습니다.
+
+`answer_observation.py`는 현재 OAuth와 GA4 읽기 권한으로 대상 페이지의 GSC Web 검색·현재 URL 검사·GA4 랜딩 페이지별 유입 출처를 수집합니다. 기본 실행은 계획 출력이며 API 호출·파일 쓰기가 없습니다. 실제 수집은 기존 [Google 인증 절차](#search-console-사이트맵-제출)와 Python 의존성 설치 후 실행합니다. 원시 검색어·Analytics 자료는 모든 저장소 worktree 밖의 새 파일에만 저장하며 권한은 600입니다. 기존 파일을 덮어쓰지 않습니다.
+
+```sh
+python3 scripts/answer_observation.py
+python3 scripts/answer_observation.py --live \
+  --output ~/.config/youdozi-search-console/aeo-baseline-new.json
+python3 scripts/answer_observation.py --report \
+  ~/.config/youdozi-search-console/aeo-baseline-new.json
+```
+
+기본 구간은 최근 PT 달력일 3일을 제외한 28일이며 GSC에는 확정 자료를 요청합니다. GA4는 속성 시간대, GSC는 PT를 사용합니다. 같은 날짜 문자열이 같은 UTC 구간을 뜻하지 않으므로 클릭과 세션을 직접 나눠 비율을 만들지 않습니다. URL 검사는 수집 시점의 상태이며 과거 28일의 색인 이력이 아닙니다. 대상 URL이 기준 구간 전체에 존재했는지도 따로 해석해야 합니다.
+
+2026-10-30의 변경 전 실측에서는 대상 10개 모두 URL 검사 HTTP 200·NEUTRAL로 아직 Google에 알려지지 않은 URL이었고, 2026-09-29~2026-10-26의 대상 페이지 Web 검색과 GA4 응답에는 행이 없었습니다. 이는 사이트 전체의 노출·방문 0이나 AI 인용 0을 의미하지 않습니다. 이 기준선으로부터 단기 AEO 효과를 입증하지 않습니다. 실제 원시 보고서는 저장소 밖에 보관합니다.
+
+아래는 후속 실행 형식의 **예시**입니다. 배포 시각은 실제 Pages 배포 시각으로 바꾸고 그 시각의 PT 날짜 다음 날부터 28일을 선택합니다. 구간 종료 후에도 최신 PT 3일 제외 조건을 충족해야 합니다. 배포 당일·기준선 중복·서로 다른 URL 집합은 거부합니다. 지금 미래 구간을 조회하면 API 호출 전에 중단됩니다.
+
+```sh
+python3 scripts/answer_observation.py --live \
+  --compare ~/.config/youdozi-search-console/aeo-baseline-new.json \
+  --changed-at 2026-10-30T12:00:00+09:00 \
+  --start 2026-10-30 --end 2026-11-26 \
+  --output ~/.config/youdozi-search-console/aeo-followup-new.json
+```
+
+후속 보고서는 같은 URL의 Web 검색 수치·GA4 유입 집계를 나란히 보존합니다. 미반환·실패·조회 상한 도달을 0으로 채우지 않습니다. 검색어 목록은 완전한 목록이 아니며 GA4 응답의 임계처리·샘플링 관련 메타데이터도 보존합니다. AI 도메인과 일치하는 `sessionSource`는 관측된 기여 출처 이름일 뿐 실제 AI 추천·인용·사람의 방문을 입증하지 않습니다. robots·Analytics 설정을 바꾸거나 색인·사이트맵을 제출하지 않습니다. 비교 결과는 관찰이며 인과 효과가 아닙니다.
+
+Google에는 [Search generative AI 포함 설정](https://support.google.com/webmasters/answer/16908024?hl=en)과 [전용 생성형 AI 성과 보고서](https://support.google.com/webmasters/answer/16984139?hl=en)가 있습니다. 전용 보고서가 보이지 않는 경우 노출 부족이나 제외 설정일 수 있습니다. 현재 계정 설정과 전용 보고서를 이 수집기로 확인했다고 표시하지 않습니다. [공식 Search Analytics API](https://developers.google.com/webmaster-tools/v1/searchanalytics/query)의 Web 자료와 구분해 `not-collected`로 남깁니다. Bing의 [AI Performance](https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c)도 대시보드에서 별도로 확인하며 문서화되지 않은 AI API를 호출하지 않습니다. 엔진의 AI 노출·인용, GSC Web 검색, GA4 방문은 서로 다른 관측값입니다.

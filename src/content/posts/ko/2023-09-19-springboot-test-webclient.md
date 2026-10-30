@@ -13,19 +13,19 @@ tags:
   - "webclient"
 legacyUrl: "/springboot/springboot-test-webclient/"
 legacySource: "_posts/spring/test/webclient/2023-09-19-springboot-test-webclient.markdown"
-updatedAt: 2026-10-27T05:23:47.316+00:00
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T04:11:22.994096+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조, 재현 절차와 버전별 적용 조건 보강"
 archiveBodySha256: "2e7abc1e5f3ccd2ff3b59e43e886b2a5e6a6f582b1058f2d1cf726ba260e7964"
 reviewSources:
   - "https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html"
   - "https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-exchange.html"
-description: "MockWebServer와 JUnit 5로 Spring WebClient의 JSON·HTML·HTTP 500·Content-Type 누락·잘못된 JSON·빈 본문을 검증하는 실행 가능한 여덟 테스트입니다."
+description: "MockWebServer로 WebClient의 상태·Content-Type·JSON 디코딩·완료 신호를 함께 검증합니다. HTTP 200의 HTML 응답이 계약을 위반하는 경우를 확인합니다."
 ---
-로컬 MockWebServer를 사용하면 Spring WebClient의 HTTP 상태·Content-Type·JSON 디코딩을 함께 테스트할 수 있습니다. HTTP 200에 HTML이 들어온 것과 HTTP 500 응답은 서로 다른 실패입니다. `Accept: application/json`을 보내도 서버가 반드시 JSON을 반환하는 것은 아닙니다.
+로컬 MockWebServer로 WebClient를 테스트하면서 HTTP 상태·응답 Content-Type·본문 디코딩·완료 또는 오류 신호를 함께 확인하세요. HTTP 200에 HTML이 들어오면 상태는 성공이어도 클라이언트의 응답 계약을 위반할 수 있습니다. `Accept: application/json`을 보내도 JSON 응답이 보장되지는 않습니다. Spring은 실제 HTTP 클라이언트를 사용하는 [모의 웹 서버 테스트](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html)를 안내합니다.
 
-fluent API 체인을 모킹하는 대신 실제 WebClient로 로컬 HTTP 서버에 요청합니다. Spring도 클라이언트의 네트워크 동작을 확인할 수 있는 [모의 웹 서버 테스트](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html)를 안내합니다.
+fluent API 체인을 모킹하는 대신 실제 WebClient로 로컬 HTTP 서버에 요청합니다. 아래의 응답 계약을 검증하며, 운영 타임아웃과 재시도 정책은 별도 테스트가 필요합니다.
 
 ## 처리 흐름
 
@@ -221,7 +221,9 @@ gradle --no-daemon test
 
 빈 본문 처리는 이 예제에서 선택한 계약입니다. 반드시 payload가 있어야 하는 API라면 `switchIfEmpty(Mono.error(...))`를 추가하고 빈 JSON 본문 테스트도 애플리케이션 오류를 기대하도록 바꿔야 합니다.
 
-## 상태와 디코딩을 나눠 확인하는 이유
+<span id="상태와-디코딩을-나눠-확인하는-이유"></span>
+
+## HTTP 200 응답을 클라이언트가 거부하는 이유는 무엇인가요?
 
 `fetch()`는 오류 상태를 먼저 처리한 뒤 성공 응답의 형식을 검사합니다. `createException()`은 HTTP 500을 `WebClientResponseException.InternalServerError`로 유지합니다. 연결 실패는 보통 `WebClientRequestException` 경로이며 서버가 보낸 HTTP 오류 응답과 구분해야 합니다.
 

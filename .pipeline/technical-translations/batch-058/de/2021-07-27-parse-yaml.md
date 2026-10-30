@@ -5,9 +5,9 @@ title: "YAML aus der Shell lesen: Port validieren und Befehle ohne eval starten"
 description: "Einen typisierten YAML-Port mit Python und PyYAML lesen, ungültige Eingaben ablehnen und SERVER_PORT ohne eval oder Shell-Code-Erzeugung an einen Kindbefehl übergeben."
 state: "draft"
 sourcePath: "src/content/posts/en/2021-07-27-parse-yaml.md"
-sourceSha256: "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+sourceSha256: "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
 ---
-Verwenden Sie beim Lesen von YAML aus der Shell einen YAML-Parser, prüfen Sie Typ und Bereich des Werts und übergeben Sie nur benötigte Variablen. Nähern Sie die vollständige Grammatik nicht mit sed/awk an und werten Sie generierten Text nicht mit `eval` aus. Das Beispiel liest mit Python und PyYAML einen Wert `server.port` und startet den Kindbefehl erst nach erfolgreicher Validierung.
+Um einen YAML-Port ohne `eval` aus der Shell zu lesen, verwenden Sie einen [YAML-Parser](https://pyyaml.org/wiki/PyYAMLDocumentation#loading-yaml), prüfen Typ und Wertebereich und übergeben nur benötigte Variablen. Das Beispiel liest mit Python und PyYAML einen Wert `server.port` und startet den Kindbefehl erst nach erfolgreicher Validierung. Nähern Sie die vollständige YAML-Grammatik nicht mit sed/awk an.
 
 Allein der dargestellte Text unterscheidet die YAML-Ganzzahl `8080` nicht zuverlässig vom String `"8080"`. Der Loader **wandelt Strings nicht in Zahlen um**: Er akzeptiert nur als Integer geparste Werte zwischen 1 und 65535. In Python ist bool eine Unterklasse von int, daher lehnt `type(port) is int` boolesche Werte ab, während `isinstance(port, int)` dies nicht täte.
 

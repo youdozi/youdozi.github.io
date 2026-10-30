@@ -5,9 +5,9 @@ title: "Leer YAML desde shell: validar un puerto y ejecutar sin eval"
 description: "Lee un puerto YAML tipado con Python y PyYAML, rechaza entradas inválidas y pasa SERVER_PORT a un comando hijo sin eval ni generación de código shell."
 state: "draft"
 sourcePath: "src/content/posts/en/2021-07-27-parse-yaml.md"
-sourceSha256: "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+sourceSha256: "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
 ---
-Al leer YAML desde shell, usa un analizador YAML, valida el tipo y rango del valor y pasa solo las variables necesarias. Evita aproximar toda la gramática con sed/awk o evaluar texto generado mediante `eval`. El ejemplo lee un valor `server.port` con Python y PyYAML e inicia un comando hijo solo si la validación tiene éxito.
+Para leer un puerto YAML desde shell sin `eval`, usa un [analizador YAML](https://pyyaml.org/wiki/PyYAMLDocumentation#loading-yaml), valida el tipo y rango del valor y pasa solo las variables necesarias. El ejemplo lee un valor `server.port` con Python y PyYAML e inicia el comando hijo solo si la validación tiene éxito. No aproximes toda la gramática YAML con sed/awk.
 
 Comprobar únicamente el texto mostrado no distingue de forma fiable el entero YAML `8080` de la cadena `"8080"`. Este cargador **no convierte cadenas en números**: solo acepta un valor analizado como entero entre 1 y 65535. bool es una subclase de int en Python, por lo que `type(port) is int` rechaza booleanos, mientras que `isinstance(port, int)` no lo haría.
 

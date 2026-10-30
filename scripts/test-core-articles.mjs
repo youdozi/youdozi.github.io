@@ -23,3 +23,14 @@ test('featured selection keeps editorial order and excludes unavailable editions
   assert.deepEqual(coreArticles('en',entries).map(e=>e.translationKey),[keys[0],keys[3]]);
   assert.deepEqual(coreArticles('ja',entries),[]);assert.deepEqual(coreArticles('ko',entries),[]);
 });
+
+import {answerCitations} from '../src/lib/answer-pilot.ts';
+import pilot from '../content/seo/answer-pilot.json' with {type:'json'};
+test('answer evidence is exposed only when actually linked in a pilot introduction',()=>{
+ for(const article of pilot.articles)for(const language of ['en','ko']){
+  const entry={language,kind:'post',translationKey:article.key,post:{body:`A supported claim. [Official source](${article.evidence[0]})\n\nDetails.`}};
+  assert.deepEqual(answerCitations(entry),article.evidence);
+  for(const body of ['No supporting link.',`Intro without citation.\n\n[Later](${article.evidence[0]})`,`\`\`\`text\n[Not visible evidence](${article.evidence[0]})\n\`\`\``])assert.deepEqual(answerCitations({...entry,post:{body}}),[]);
+  for(const patch of [{language:'ja'},{kind:'digest'},{translationKey:'unrelated'},{reviewStatus:'example'}])assert.deepEqual(answerCitations({...entry,...patch}),[]);
+ }
+});

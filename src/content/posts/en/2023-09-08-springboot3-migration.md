@@ -11,19 +11,19 @@ tags:
   - "springboot"
   - "springboot3"
   - "springboot3 migration"
-updatedAt: 2026-10-27T05:23:47.316+00:00
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T04:11:22.994096+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "Official migration documentation checked; diagnostic steps clarified without claiming an application migration."
 reviewSources:
   - "https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide"
   - "https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html"
   - "https://spring.io/blog/2023/09/09/all-together-now-spring-boot-3-2-graalvm-native-images-java-21-and-virtual"
-description: "Migrate Spring Boot 2.7 to 3.0 with Java 17, Jakarta dependencies, Gradle checks, property migration and runtime tests. Separate virtual threads from the upgrade."
+description: "Start a Spring Boot 2.7 to 3.0 migration with Java 17, Jakarta dependencies and runtime tests. Keep the historical version boundary separate from current production choices."
 ---
-For a Spring Boot 2.7 application moving to 3.0, separate three checks: the Java 17 baseline, the Java EE to Jakarta namespace change, and library/runtime compatibility. A successful compilation does not establish that database mappings, authorization or configuration still work.
+Start a Spring Boot 2.7 to 3.0 migration with a working 2.7 baseline, then check the Java 17 requirement, Java EE to Jakarta namespace changes, and library/runtime compatibility. The [official 3.0 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide) describes this sequence. Passing compilation alone does not establish correct database mappings, authorization or configuration.
 
-This is a **2.7 to 3.0 migration guide**, preserving the original 2023 topic. It is not a recommendation to deploy Boot 3.0 today. Choose a supported target release for a real upgrade and follow the intervening migration guides. The [official 3.0 guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide) documents this historical step.
+This is a **2.7 to 3.0 migration guide**, preserving the original 2023 topic. It is not a recommendation to deploy Boot 3.0 today. Choose a supported target release for a real upgrade and follow the intervening migration guides.
 
 ## Processing flow
 
@@ -87,7 +87,9 @@ That is a historical version boundary, not a recommendation to choose Boot 3.2 t
 
 JDK language previews have separate release constraints too. The [String Templates compatibility example](/en/posts/2023-09-23-jdk-21-string-templates/) shows why enabling preview flags is not a general upgrade fix.
 
-## Decide whether the application is ready
+<span id="decide-whether-the-application-is-ready"></span>
+
+## How do you know the migration is ready?
 
 | Check | Evidence to collect |
 | --- | --- |

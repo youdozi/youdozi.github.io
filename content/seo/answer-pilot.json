@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "cohortId": "technical-answers-059",
+  "selectionBasis": "Editorial pilot covering migration, generated queries, HTTP tests, typed configuration and JDK feature status. Not selected from measured search demand.",
+  "languages": [
+    "en",
+    "ko"
+  ],
+  "articles": [
+    {
+      "key": "2023-09-08-springboot3-migration",
+      "questions": {
+        "en": "Where should a Spring Boot 2.7 to 3.0 migration start?",
+        "ko": "Spring Boot 2.7에서 3.0으로 옮길 때 무엇부터 확인해야 하나요?"
+      },
+      "evidence": [
+        "https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide"
+      ]
+    },
+    {
+      "key": "2023-09-09-springboot3-querydsl",
+      "questions": {
+        "en": "How do I generate and test Querydsl Q types on Spring Boot 3?",
+        "ko": "Spring Boot 3에서 Querydsl Q 타입을 어떻게 생성하고 검증하나요?"
+      },
+      "evidence": [
+        "https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_0_0"
+      ]
+    },
+    {
+      "key": "2023-09-19-springboot-test-webclient",
+      "questions": {
+        "en": "How should I test WebClient when a successful HTTP response contains HTML?",
+        "ko": "WebClient가 성공 상태의 HTML 응답을 받으면 어떻게 테스트하나요?"
+      },
+      "evidence": [
+        "https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html"
+      ]
+    },
+    {
+      "key": "2021-07-27-parse-yaml",
+      "questions": {
+        "en": "How do I read a YAML port from shell without eval?",
+        "ko": "셸에서 eval 없이 YAML 포트를 어떻게 읽나요?"
+      },
+      "evidence": [
+        "https://pyyaml.org/wiki/PyYAMLDocumentation#loading-yaml"
+      ]
+    },
+    {
+      "key": "2023-09-20-jdk-21-release",
+      "questions": {
+        "en": "Which Java 21 features work without preview flags?",
+        "ko": "Java 21에서 Preview 옵션 없이 쓸 수 있는 기능은 무엇인가요?"
+      },
+      "evidence": [
+        "https://www.oracle.com/java/technologies/javase/21all-relnotes.html"
+      ]
+    }
+  ]
+}

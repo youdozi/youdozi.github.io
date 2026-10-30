@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "id": "answer-pilot-059",
+  "reviewedAt": "2026-10-30T04:25:53.042816+00:00",
+  "implementationCommit": "421e3822b7088414c6703e088ad65ff0ac887d64",
+  "scope": "Five public technical subjects in English and Korean: answer-first introductions, nearby official evidence, three paired question headings with old fragment IDs preserved, visible-evidence BlogPosting citations, and private read-only observations.",
+  "selectionBasis": "Editorial pilot, not measured keyword demand.",
+  "publicEditionsChanged": 10,
+  "newPublicArticles": 0,
+  "newManuscriptPublications": 0,
+  "originalPublishDatesAndRoutesPreserved": true,
+  "codeAndFiguresPreserved": true,
+  "review": {
+    "method": "AI self-review against both editions, runnable source and primary documentation; localized draft introductions synchronized under translate skill.",
+    "independentReviewer": false,
+    "sourceFactsRechecked": [
+      "https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide",
+      "https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_0_0",
+      "https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-testing.html",
+      "https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-exchange.html",
+      "https://www.oracle.com/java/technologies/javase/21all-relnotes.html",
+      "https://pyyaml.org/wiki/PyYAMLDocumentation#loading-yaml"
+    ],
+    "limitations": "Focused verification of rewritten claims; not a new blanket audit of every historical source or every framework version."
+  },
+  "sourceChanges": [
+    {
+      "path": "src/content/posts/en/2023-09-08-springboot3-migration.md",
+      "beforeSha256": "be1e825f8c3bf3be3b6d059de6c97975af81856cf3e8f36fe0de6b256b43e2ff",
+      "afterSha256": "4939fec22f416da9344b529b0e428c91a700920a27c10fdba00bdfd32e8a53a7"
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-08-springboot3-migration.md",
+      "beforeSha256": "2da493c9568f32ec613c1b7c793e4d338c92514c3ebff5ebba477ee9c27bcdf6",
+      "afterSha256": "d814acf1db1bd5f7224d5b207d489f724cd528e6904b0601e610dfe01c4cc15e"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-09-springboot3-querydsl.md",
+      "beforeSha256": "ee1f78a4057b3065d7263ee7a4d5fef3e891d2d160f421d5ab5e0e2d1d29d99d",
+      "afterSha256": "17f0353d5a048f80291207543b7abbb29e1d987ab0435009b82a4e1c16a7d953"
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-09-springboot3-querydsl.md",
+      "beforeSha256": "05f8ff1802fec505ce7e6cfb4ad2536b498997633c7b4ef4a579897c0096df33",
+      "afterSha256": "ed1550ee5d7782402872a00182121a1667eb9efe37c944d8b7c94317e88b38e1"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+      "beforeSha256": "ef7cf4e24374dfb396c5a401da0a8bbdda4379fac69420ffc39d0df5b5176fd5",
+      "afterSha256": "b859cefb7e62296f69c879f2af39ce3256525784158de046d79210c2582e3464"
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-19-springboot-test-webclient.md",
+      "beforeSha256": "ac9fe25206caecc3e2d7c543c4a36a592ccab49d332c9419fca4635e1dbd24f5",
+      "afterSha256": "b424097523f740d9726dabb9294f8c424a14f0f66452c89c3c3d4f06ad84b909"
+    },
+    {
+      "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
+      "beforeSha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c",
+      "afterSha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
+    },
+    {
+      "path": "src/content/posts/ko/2021-07-27-parse-yaml.md",
+      "beforeSha256": "4ce35f05fa7ca54457f42bea3e9f07b958ae717925b5f2d2c0e047af0e38f930",
+      "afterSha256": "a6a3b831a6ee5127e939b35d6992e89e763cd3642767c7be9b1b2545fef430af"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
+      "beforeSha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970",
+      "afterSha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578"
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-20-jdk-21-release.md",
+      "beforeSha256": "f6a73a9a5350445d8b36176c0eec5a950f4ceefdea88c45c1fa80c937cff329b",
+      "afterSha256": "2b5e56dffad5cc9f1fe87eb57d1fa328c4d21ca9f9916a6fc1f7ef5cfb4ae6ee"
+    }
+  ],
+  "translationSynchronization": {
+    "supersedesManifestSha256": "c3bebec5cc02faf2d8cd67692c5910245855e5332c8c0be8523408d95e9b9678",
+    "currentManifestSha256": "89532c73b4f3adfecb4f79bdf9b30679d9178212ca1392cfdef7e4497815953e",
+    "draftsSynchronized": 12
+  },
+  "validation": {
+    "nodeTests": 157,
+    "pythonTests": 311,
+    "astroFiles": 76,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "publicArticles": 425,
+    "publicSitemapURLs": 481,
+    "browserWidths": [
+      320,
+      1360
+    ],
+    "browserChecks": 20,
+    "allPreviousH2FragmentsPreserved": true,
+    "visibleEvidenceAndSchemaMatch": true,
+    "localJava": "Zulu JDK 21.0.1: final-feature output matched, Java 17 compilation target rejected",
+    "localConfigCases": {
+      "yaml": 21,
+      "wrapperAndUsage": 6,
+      "temurinMetadata": 18,
+      "externalRequests": 0
+    },
+    "isolatedPreview": {
+      "technicalDrafts": 120,
+      "newsDrafts": 318,
+      "articles": 863,
+      "sitemapURLs": 961,
+      "snapshotRemoved": true,
+      "workingContentAndDistFingerprintsPreserved": true
+    }
+  },
+  "baselineObservation": {
+    "observedAt": "2026-10-30T04:07:12.755794+00:00",
+    "dates": {
+      "start": "2026-09-29",
+      "end": "2026-10-26"
+    },
+    "gscTimeZone": "America/Los_Angeles",
+    "ga4TimeZone": "Asia/Seoul",
+    "indexInspectionHTTP200": 10,
+    "googleIndexVerdict": "NEUTRAL for all 10; URL unknown to Google at observation time",
+    "gscWebState": "no-returned-rows",
+    "ga4State": "no-returned-rows",
+    "dedicatedGoogleAIReport": "not-collected",
+    "dedicatedBingAIReport": "not-collected",
+    "accountGenerativeAIControl": "not-verified",
+    "rawQueriesAndAnalyticsCommitted": false,
+    "causalEffectEstablished": false,
+    "note": "New routes may not have existed for the full pre-window. Missing rows do not establish zero visits, impressions or citations."
+  },
+  "followUp": {
+    "intervalDays": 28,
+    "excludeDeploymentDayPT": true,
+    "recentPTDaysExcluded": 3,
+    "scheduledAutomationCreated": false,
+    "command": "scripts/answer_observation.py --live --compare PRIVATE_BASELINE --changed-at ACTUAL_DEPLOYMENT_ISO --start START_PT --end END_PT --output NEW_PRIVATE_OUTPUT",
+    "publicationBoundaryChecked": true,
+    "treatAsObservational": true
+  },
+  "measurementSources": [
+    "https://developers.google.com/webmaster-tools/v1/searchanalytics/query",
+    "https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema",
+    "https://support.google.com/webmasters/answer/16908024?hl=en",
+    "https://support.google.com/webmasters/answer/16984139?hl=en",
+    "https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c"
+  ]
+}
