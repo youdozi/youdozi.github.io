@@ -27,6 +27,7 @@ const navItems=[
 ];
 const current=(href:string)=>Astro.url.pathname===href?'page':Astro.url.pathname.startsWith(href)?'location':undefined;
 const isArticle = /^\/[^/]+\/(posts|digest)\/[^/]+\/$/.test(Astro.url.pathname);
+const currentPath = Astro.url.pathname.startsWith(`/${lang}/`) ? Astro.url.pathname : `/${lang}/`;
 ---
 <!doctype html>
 <html lang={lang}>
@@ -72,9 +73,9 @@ const isArticle = /^\/[^/]+\/(posts|digest)\/[^/]+\/$/.test(Astro.url.pathname);
       <a class="brand" href={`/${lang}/`}><span class="brand-mark" aria-hidden="true">y.</span><span>{SITE}</span></a>
       <nav aria-label={labels[lang].navigation}>
         {navItems.map(item=><a href={item.href} aria-current={current(item.href)}>{item.label}</a>)}
-        <details class="language language-menu"><summary>{t.language}</summary><ul>{availableLanguages.filter(other=>other!==lang).map(other=>{
+        <details class="language language-menu" data-language-options={availableLanguages.join(',')}><summary>{t.language}</summary><ul>{availableLanguages.map(other=>{
           const counterpart=alternates.find(a=>a.language===other);
-          return <li><a href={counterpart?.url || `/${other}/`} lang={other} title={isArticle && !counterpart ? t.notTranslated : undefined}>{localeInfo[other].label}{isArticle && !counterpart && <small class="language-fallback" lang={lang}>{discoveryUi[lang].fallback}</small>}</a></li>;
+          return <li><a href={other===lang ? currentPath + Astro.url.search : counterpart?.url || `/${other}/`} lang={other} data-language-choice={other} aria-current={other===lang ? 'page' : undefined} title={isArticle && other!==lang && !counterpart ? t.notTranslated : undefined}>{localeInfo[other].label}{isArticle && other!==lang && !counterpart && <small class="language-fallback" lang={lang}>{discoveryUi[lang].fallback}</small>}</a></li>;
         })}</ul></details>
       </nav>
     </header>

@@ -13,3 +13,5 @@ html:lang(zh-CN) .entry-card h2,html:lang(zh-CN) .article-heading h1,html:lang(j
 /* Long translated guide titles and labels must fit narrow reading screens. */
 .page-heading h1,.page-heading .eyebrow,.guide-parent{overflow-wrap:anywhere}
 .example-download{display:inline-block;padding:4px 0;color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+
+.language-menu a[aria-current="page"]{font-weight:700;color:var(--accent)}

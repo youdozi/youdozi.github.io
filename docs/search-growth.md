@@ -1,5 +1,15 @@
 # 핵심 글 검색 성과 확인
 
+## 첫 방문의 언어 선택
+
+첫 주소 `/`에서만 저장된 직접 선택 → 브라우저의 `navigator.languages` 순서 → 영어를 적용합니다. 실제 공개 언어만 선택하며 `ko-KR`, `fr-CA`, `es-419` 등은 대응 언어판으로 연결합니다. `zh`, `zh-CN`, `zh-SG`, `zh-Hans`는 간체로 연결하지만 `zh-Hant`, `zh-TW`, `zh-HK`, `zh-MO`는 다음 선호 언어나 영어로 넘어갑니다. 명시적인 `Hans` 스크립트가 지역보다 우선합니다.
+
+언어 메뉴에서 직접 선택하면 `localStorage`의 `youdozi.language`에 언어 코드만 저장합니다. 현재 언어도 선택할 수 있으며 검색어·URL 조각을 유지합니다. 지역·IP·로그인 정보는 조회하지 않습니다. 저장소 사용이 차단되면 방문 중 전환은 계속 동작하지만 다음 첫 주소 방문은 브라우저 언어를 다시 따릅니다. 브라우저 사이트 데이터를 지우면 저장된 선택도 해제됩니다. 자동으로 감지한 언어는 저장된 직접 선택으로 기록하지 않습니다.
+
+언어가 지정된 홈·검색·글 주소와 과거 글 이동에는 자동 선택을 적용하지 않습니다. 첫 주소는 `location.replace()`로 이동해 뒤로 가기 순환을 피하고 검색 매개변수·조각을 전달합니다. JavaScript가 꺼져 있으면 기존처럼 영어로 이동하며, 스크립트만 로딩 실패한 경우 화면의 8개 언어 링크로 이동할 수 있습니다. 첫 주소의 영어 canonical·`noindex,follow`·사이트맵 제외와 기존 언어판의 canonical·hreflang·영어 x-default를 유지합니다. [Google 다국어 사이트 지침](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites), [브라우저 언어](https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-languages), [브라우저 저장소](https://html.spec.whatwg.org/multipage/webstorage.html#dom-localstorage-dev)
+
+일반 빌드 후 `node scripts/check_language_preference.mjs`로 자동 선택·수동 선택 저장·명시적 글 주소 유지·번역 글 연결·선호 언어 순서·번체 처리·저장소 차단·JavaScript 비활성화·스크립트 실패·뒤로 가기를 실제 Chrome에서 검사합니다. 운영 검사는 `--url https://youdozi.github.io/`를 추가합니다. 두 모드 모두 GA 전송을 차단하며 필수 CI에도 같은 검사를 적용합니다.
+
 ## 사이트 안에서 검색 결과 다시 열기
 
 8개 언어의 검색 페이지는 `/{언어}/search/?q={검색어}` 주소로 결과를 다시 엽니다. 예를 들어 `/en/search/?q=WebClient`를 공유하거나 새로고침해도 검색어와 결과를 복원하며, 결과 글을 읽고 뒤로 돌아온 경우도 처리합니다. 입력은 잠시 모아 현재 기록을 교체하므로 글자마다 뒤로 가기 기록을 추가하지 않습니다. 검색어를 지우면 `q`도 제거합니다. 한글 등 조합 중인 입력은 조합 완료 후 반영합니다.

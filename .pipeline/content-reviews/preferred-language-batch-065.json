@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "preferred-language-065",
+  "reviewedAt": "2026-10-30T08:46:57.314694+00:00",
+  "baseCommit": "18779e171c18f8de093a537f182a3b6ab023e0ca",
+  "scope": "Root-only browser language selection, stored explicit menu choices, published-language filtering, Simplified Chinese script matching, English fallback, storage/script failure fallback, and current-language menu selection.",
+  "publicArticleSourcesChanged": false,
+  "translationPinsChanged": false,
+  "review": {
+    "method": "AI self-review and isolated real Chrome behavioral verification",
+    "independentReviewer": false,
+    "primaryReferences": [
+      "https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites",
+      "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-languages",
+      "https://html.spec.whatwg.org/multipage/webstorage.html#dom-localstorage-dev"
+    ],
+    "limits": "Browser preference is not a claim about nationality. Persistent choice requires working browser storage; automatic selection requires JavaScript. Verification does not establish increased ranking or AI citations."
+  },
+  "validation": {
+    "nodeTests": 164,
+    "pythonTests": 322,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 425,
+    "sitemapURLs": 481,
+    "languageBrowserCases": 26,
+    "existingSearchBrowserLanguageViewportCases": 16,
+    "widths": [
+      320,
+      1360
+    ],
+    "manualChoicesAllEightLanguages": true,
+    "keyboardChoice": true,
+    "currentLanguagePreservesSearchQuery": true,
+    "explicitArticleURLsPreserved": true,
+    "translatedArticleCounterpart": true,
+    "storedInvalidValueIgnored": true,
+    "traditionalChineseNotForcedToSimplified": true,
+    "queryAndFragmentPassedThroughRoot": true,
+    "backWithoutRedirectLoop": true,
+    "storageBlocked": true,
+    "javascriptDisabled": true,
+    "entryScriptBlockedManualLinksAvailable": true,
+    "noindexCanonicalSitemapPolicyPreserved": true,
+    "ciBrowserCheckAdded": true
+  },
+  "preferenceStorageKey": "youdozi.language",
+  "automaticDetectionsPersisted": false,
+  "ipLookupAdded": false,
+  "rankingOrAICitationGainEstablished": false
+}

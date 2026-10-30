@@ -179,6 +179,12 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.match(sample,/noindex,follow/);assert.match(sample,/예제 데이터/);
     assert.ok(!sample.includes('<details class="article-toc"'));
     const sitemap=await readFile('dist/sitemap.xml','utf8');
+    const rootEntry=await readFile('dist/index.html','utf8');
+    assert.match(rootEntry,/<noscript><meta http-equiv="refresh" content="0;url=\/en\/"[^>]*><\/noscript>/);
+    assert.ok(rootEntry.includes('data-published-languages="en,ko,zh-CN,ja,de,fr,ru,es"'));
+    assert.ok(rootEntry.includes('noindex,follow'));
+    assert.ok(rootEntry.includes('rel="canonical" href="https://youdozi.github.io/en/"'));
+    assert.ok(!sitemap.includes('<loc>https://youdozi.github.io/</loc>'));
     for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es']) {
       const archive=await readFile('dist/'+lang+'/archive/index.html','utf8');
       const index=JSON.parse(await readFile('dist/'+lang+'/search-index.json','utf8'));
