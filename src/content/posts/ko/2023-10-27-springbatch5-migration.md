@@ -12,7 +12,7 @@ tags:
   - migration
 legacyUrl: /spring/springbatch5-migration/
 legacySource: _posts/spring/migration/2023-10-27-springbatch5-migration.markdown
-updatedAt: 2026-10-30T05:15:39.658659+00:00
+updatedAt: 2026-10-30T05:22:10.381026+00:00
 reviewedAt: "2026-10-30"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -45,11 +45,9 @@ Batch 5는 Java 17 이상을 요구합니다. Java EE API의 `javax.*`는 해당
 
 ## 시작 상태에 맞는 이관 경로 고르기
 
-| 시작 상태 | 먼저 할 일 | 아래 예제가 확인하는 범위 |
-| --- | --- | --- |
-| 기존 Batch 4 저장소 | 백업 후 DB 복사본에서 스키마·파라미터·실행 컨텍스트 변환을 예행하고, 실패한 v4 인스턴스는 v4에서 처리합니다. | v4 저장소를 변환하거나 재시작하지 않습니다. |
-| 새 Batch 5 저장소 | 타입별 파라미터·완료 인스턴스·실패 Step 테스트를 실행합니다. | 새 H2 스키마의 세 동작을 한 프로세스에서 확인합니다. |
-| Batch Job이 있는 Boot 애플리케이션 | Boot와 명시적 Batch 구성 중 누가 설정과 스키마 초기화를 맡을지 정합니다. | Boot 자동 구성 대신 명시적 Spring 구성을 사용합니다. |
+- **기존 Batch 4 저장소:** 백업 후 DB 복사본에서 스키마·파라미터·실행 컨텍스트 변환을 예행하고, 실패한 v4 인스턴스는 v4에서 처리합니다. 아래 예제는 v4 저장소를 변환하거나 재시작하지 않습니다.
+- **새 Batch 5 저장소:** 타입별 파라미터·완료 인스턴스·실패 Step 테스트를 실행합니다. 새 H2 스키마의 세 동작을 한 프로세스에서 확인합니다.
+- **Batch Job이 있는 Boot 애플리케이션:** Boot와 명시적 Batch 구성 중 누가 설정과 스키마 초기화를 맡을지 정합니다. 예제는 Boot 자동 구성 대신 명시적 Spring 구성을 사용합니다.
 
 Boot 주 버전도 함께 바꾼다면 저장소 이관과 별도로 [Java·Jakarta 마이그레이션 기준선](/ko/posts/2023-09-08-springboot3-migration/)부터 확인하세요.
 

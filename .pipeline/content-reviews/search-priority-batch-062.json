@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "search-priority-062",
-  "reviewedAt": "2026-10-30T05:21:14.766333+00:00",
+  "reviewedAt": "2026-10-30T05:22:10.381026+00:00",
   "baseCommit": "5b30e7740910d42d08735f3b0081aa7f6fc3a74f",
   "scope": "Migration diagnosis from current read-only API observations; contextual discovery paths and starting-state guidance in four paired native technical topics; GitHub README entry points; offline migration-pair and contextual-link checks.",
   "selectionBasis": "Returned page/query rows and source-body incoming links. Small samples do not prove a title defect, ranking cause, demand in other languages, or an optimization effect. Raw queries and API responses remain outside Git.",
@@ -38,7 +38,7 @@
     {
       "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
       "beforeSha256": "ef75e5214a61bdc22d193905ae2963c6e9427ec1d2411c658042eb2571aad378",
-      "afterSha256": "0d3ba3c128e663cfbe61f0d0f4f47924146fe790da06188a4762e232dde74578"
+      "afterSha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
     },
     {
       "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
@@ -58,7 +58,7 @@
     {
       "path": "src/content/posts/ko/2023-10-27-springbatch5-migration.md",
       "beforeSha256": "8fab5fff888afbdb7a3f8a62dedf356c735fefd9421d1cbb9ad2f0e0b1536ffd",
-      "afterSha256": "64914ea32bb67b4a696ac6f2b7ce81f685a1a0fea7928e0d7d397d995948cac4"
+      "afterSha256": "f0167eda14357962df14473b577588967cfc233300d7a6ce2d7e8ba33d13f7d6"
     },
     {
       "path": "src/content/posts/ko/2021-07-23-multiple-gradle-build.md",
@@ -89,7 +89,8 @@
       "https://developers.google.com/search/docs/crawling-indexing/301-redirects",
       "https://developers.google.com/search/docs/crawling-indexing/links-crawlable"
     ],
-    "limits": "No fresh claim of production data migration, current deployment recommendations, independent review or ranking improvement."
+    "limits": "No fresh claim of production data migration, current deployment recommendations, independent review or ranking improvement.",
+    "mobileRevision": "Visual review at 320px found excessive word breaks in the new comparison table; changed it to three starting-state bullets without changing code or claims."
   },
   "validation": {
     "nodeTests": 157,

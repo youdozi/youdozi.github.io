@@ -556,7 +556,7 @@
       ],
       "source": {
         "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
-        "sha256": "0d3ba3c128e663cfbe61f0d0f4f47924146fe790da06188a4762e232dde74578"
+        "sha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
       },
       "koreanSource": "src/content/posts/ko/2023-10-27-springbatch5-migration.md",
       "coreSEO": true,

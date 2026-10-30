@@ -10,7 +10,7 @@ tags:
   - migration
 publishedAt: "2026-10-27T03:19:18+00:00"
 title: "Spring Batch 5 Migration Guide: Schema, Job Parameters and Restart"
-updatedAt: 2026-10-30T05:15:39.658659+00:00
+updatedAt: 2026-10-30T05:22:10.381026+00:00
 reviewedAt: "2026-10-30"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -42,11 +42,9 @@ The official guide also documents [historical data access restrictions](https://
 
 ## Choose the migration starting point
 
-| Starting point | First action | Scope of the example below |
-| --- | --- | --- |
-| Existing Batch 4 repository | Back up and rehearse schema, parameter and execution-context conversion on a database copy; resolve failed v4 instances under v4. | Does not convert or restart a v4 repository. |
-| New Batch 5 repository | Run the typed-parameter, completed-instance and failed-step tests. | Checks three behaviors in a fresh H2 schema, within one process. |
-| Boot application with Batch jobs | Decide whether Boot or explicit Batch configuration owns setup and schema initialization. | Uses explicit Spring configuration, not Boot auto-configuration. |
+- **Existing Batch 4 repository:** back up and rehearse schema, parameter and execution-context conversion on a database copy. Resolve failed v4 instances under v4. The example below does not convert or restart a v4 repository.
+- **New Batch 5 repository:** run the typed-parameter, completed-instance and failed-step tests. They check three behaviors in a fresh H2 schema, within one process.
+- **Boot application with Batch jobs:** decide whether Boot or explicit Batch configuration owns setup and schema initialization. The example uses explicit Spring configuration, not Boot auto-configuration.
 
 If this is also a Boot major-version upgrade, establish the [Java and Jakarta migration baseline](/en/posts/2023-09-08-springboot3-migration/) separately from the repository migration.
 
