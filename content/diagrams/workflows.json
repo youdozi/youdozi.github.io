@@ -2163,6 +2163,109 @@
           ]
         }
       ]
+    },
+    {
+      "key": "2026-10-31-virtual-threads-jdk21-jdk25",
+      "title": {
+        "en": "Observe monitor and plain waits",
+        "ko": "모니터 안팎의 대기 관측"
+      },
+      "description": {
+        "en": "Each invocation validates the mode and destination, records one virtual worker, then counts only its pinning events after stopping the recording.",
+        "ko": "각 실행은 모드·저장 경로를 확인하고 가상 작업 하나를 기록합니다. 녹화 정지 후 해당 작업의 pinning 이벤트만 셉니다."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "withThreshold(Duration.ZERO)"
+        },
+        {
+          "language": "java",
+          "contains": "synchronized (monitor) { Thread.sleep(100); }"
+        },
+        {
+          "language": "java",
+          "contains": "getJavaThreadId() == workerId"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "condition",
+          "en": [
+            "Valid monitor/plain argument?",
+            "Destination does not exist?"
+          ],
+          "ko": [
+            "monitor/plain 인수가 맞는가?",
+            "저장할 파일이 없는가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "no: reject",
+              "ko": "아니오: 거부"
+            },
+            "continue": {
+              "en": "yes",
+              "ko": "예"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Start JFR recording",
+            "Pinning event threshold = 0"
+          ],
+          "ko": [
+            "JFR 녹화 시작",
+            "pinning 이벤트 임계값 = 0"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Submit one virtual-thread task",
+            "Print isVirtual()"
+          ],
+          "ko": [
+            "가상 스레드 작업 하나 제출",
+            "isVirtual() 출력"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "monitor: sleep inside synchronized",
+            "plain: sleep without the monitor"
+          ],
+          "ko": [
+            "monitor: synchronized 안에서 대기",
+            "plain: 모니터 없이 대기"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Wait for Future.get()",
+            "Stop and dump the recording"
+          ],
+          "ko": [
+            "Future.get()으로 완료 대기",
+            "녹화 정지·파일 저장"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Read and filter by worker thread ID",
+            "Print matching pinning event count"
+          ],
+          "ko": [
+            "기록 읽기·작업 스레드 ID로 필터",
+            "일치하는 pinning 이벤트 수 출력"
+          ]
+        }
+      ]
     }
   ]
 }

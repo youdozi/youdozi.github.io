@@ -345,6 +345,25 @@
         "en": "Runs a request in a virtual thread; observes nested binding, normal/exception restoration, a plain virtual child without inheritance and unbound access. Does not execute StructuredTaskScope preview inheritance, framework/MDC/security integration, production rollout or performance measurements.",
         "ko": "가상 스레드의 요청에서 중첩 바인딩·정상/예외 복원·일반 가상 자식의 미상속·미바인딩 접근을 확인합니다. StructuredTaskScope 미리보기의 상속·프레임워크/MDC/보안 연동·운영 전환·성능 측정은 실행하지 않습니다."
       }
+    },
+    {
+      "key": "2026-10-31-virtual-threads-jdk21-jdk25",
+      "files": [
+        {
+          "path": "VirtualThreadProbe.java",
+          "language": "java",
+          "selector": "heading"
+        }
+      ],
+      "commands": "javac --release 21 VirtualThreadProbe.java\njava VirtualThreadProbe monitor\njava VirtualThreadProbe plain",
+      "environment": {
+        "en": "HotSpot JDK 21 or 25 including JFR; matching javac/java. Locally observed with Temurin 21.0.13+9 and 25.0.5+8 on macOS AArch64, without preview flags.",
+        "ko": "JFR을 포함한 HotSpot JDK 21 또는 25의 javac·java. macOS AArch64 Temurin 21.0.13+9·25.0.5+8에서 미리보기 옵션 없이 관측했습니다."
+      },
+      "scope": {
+        "en": "Creates monitor.jfr and plain.jfr in a fresh directory and counts worker-specific pinning events for a synthetic 100 ms sleep. Refuses existing destinations. No network/DB requests, throughput/latency comparison, carrier-limit tuning, production migration or remaining native-path verification.",
+        "ko": "새 디렉터리에 monitor.jfr·plain.jfr를 만들고 합성 100ms 대기에서 작업별 pinning 이벤트를 셉니다. 기존 파일이 있으면 거부합니다. 네트워크/DB 요청·처리량/지연 비교·캐리어 수 조정·운영 전환·남은 네이티브 경로 검증은 하지 않습니다."
+      }
     }
   ]
 }
