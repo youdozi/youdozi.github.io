@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "default": "technical-answers-059",
+  "cohorts": [
+    {
+      "id": "technical-answers-059",
+      "path": "content/seo/answer-pilot.json",
+      "topics": 5
+    },
+    {
+      "id": "checksum-guide-066",
+      "path": "content/seo/answer-checksum.json",
+      "topics": 1
+    }
+  ]
+}

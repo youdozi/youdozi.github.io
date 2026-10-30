@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "cohortId": "checksum-guide-066",
+  "selectionBasis": "Follow-up to GitHub/Temurin asset selection; editorial scope, not measured search demand. Kept separate from the original ten-URL pilot.",
+  "languages": [
+    "en",
+    "ko"
+  ],
+  "articles": [
+    {
+      "key": "2026-10-30-verify-sha256-download",
+      "questions": {
+        "en": "How do I verify a downloaded file against a trusted SHA-256 value?",
+        "ko": "다운로드한 파일을 신뢰하는 SHA-256 기대값과 어떻게 비교하나요?"
+      },
+      "evidence": [
+        "https://docs.python.org/3.11/library/hashlib.html",
+        "https://adoptium.net/installation/archives"
+      ]
+    }
+  ]
+}

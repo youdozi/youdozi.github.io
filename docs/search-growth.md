@@ -98,6 +98,25 @@ python3 -B scripts/check_migration.py --dist dist
 
 ## 4주 관측 계획
 
+### AEO 관측 그룹과 색인 전용 조회
+
+`answer_observation.py`의 기본 대상은 기존 `technical-answers-059` 한영 10 URL입니다. `--cohort checksum-guide-066`은 SHA-256 가이드 한영 2 URL만 선택합니다. `content/seo/answer-cohorts.json`에 등록된 ID·파일·주제 수를 확인하고, 조회 전에 원본 글의 공개 시각·언어·종류·검토 상태·경로를 검증합니다. 임의 URL·파일 경로를 인자로 받지 않으며 기존 첫 관측 그룹과 URL 집합 해시는 유지합니다.
+
+```sh
+python3 -B scripts/answer_observation.py --cohort checksum-guide-066 --index-only
+.venv-search-console/bin/python scripts/answer_observation.py \
+  --cohort checksum-guide-066 --index-only --live \
+  --output ~/.config/youdozi-search-console/checksum-index-new.json
+python3 -B scripts/answer_observation.py \
+  --report ~/.config/youdozi-search-console/checksum-index-new.json
+```
+
+첫 명령은 계획 출력만 하며 인증·네트워크·파일 쓰기가 없습니다. `--index-only --live`는 Google 저장 색인 상태만 읽고 GSC 검색 실적·GA4를 호출하지 않습니다. 날짜·성과 비교 옵션과 함께 사용할 수 없고 색인 전용 결과를 28일 실적의 기준선으로 사용하지 못합니다. 새 비공개 출력 경로를 필수로 받으며 덮어쓰기·저장소 내부 저장은 기존과 같이 거부합니다. API 오류·판정 미제공·PASS 이외 판정·미조회 URL을 따로 집계하고, URL별 canonical·마지막 크롤링·판정을 표시합니다. HTTP 200과 Google 색인 PASS는 별개입니다. [URL Inspection API](https://developers.google.com/webmaster-tools/v1/urlInspection.index/inspect)
+
+성과 모드는 원문 해시와 선언된 `publishedAt`을 기록하고 GSC의 PT·GA4 속성 시간대에서 관측 기간과 비교합니다. `not-yet-published`·`partial-window`·`not-recorded`를 표시하며, GSC 전후 두 구간 모두 `declared-before-window`가 아닐 때 클릭·노출 증감은 계산하지 않습니다. 오래된 보고서에 발행일 정보가 없으면 그 값을 추정하지 않고 원래 수치만 유지합니다. 선언된 발행일은 필요 날짜 조건일 뿐이며, 이전된 URL이 기간 전체에 실제 존재했거나 색인돼 있었다는 증거가 아닙니다. 비교에서도 `routeAvailabilityVerified: false`를 유지합니다. GA4의 같은 날짜 문자열도 PT와 경계가 다를 수 있습니다. [GA4 응답 시간대](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/ResponseMetaData)
+
+보고서의 `dataOrigin`은 실제 API 조회와 저장 응답 재생을 구분하며, 재생은 원래 관측 시각을 유지합니다. `--report`는 조회 시각을 갱신하거나 새 검색 실적을 수집하지 않습니다. 원시 검색어·API 응답은 비공개 파일에만 두고 요약에는 검색어를 출력하지 않습니다. Google·Bing의 전용 AI 보고서는 계속 `not-collected`이며 AI 출처 도메인과 일치한 GA 행을 실제 AI 인용이나 사람 방문으로 확정하지 않습니다.
+
 예제 다운로드 추가는 재현성과 이용 편의를 개선하는 별도 변경입니다. 7개 주제의 한영 14편에 ZIP 링크를 제공하지만 본문·제목·주소·게시일·본문 수정일과 번역 원문 고정 해시는 바꾸지 않습니다. 다운로드 이벤트 수집은 추가하지 않습니다. 이후 검색·참여 실적을 해석할 때 이 화면 변경도 함께 고려하고, 다운로드 파일 제공 자체를 색인·순위·AI 인용 증가로 기록하지 않습니다.
 
 2026-10-30 조회에서 핵심 새 주소 20개 중 한국어 GitHub 릴리스·Vue 패키징 2개가 PASS였고 18개는 미발견 상태였습니다. 과거 주소 10개 중 8개가 PASS였으며, 두 새 주소의 색인이 확인됐어도 Vue 글의 과거 주소에는 다른 Google canonical이 남아 있습니다. 현재 HTTP 응답·canonical·즉시 이동 검사 30개는 일치했습니다. 이는 주소 이전의 원인 확정이나 현재 Googlebot 접근 검사가 아닙니다. 원시 검색어·URL 검사 응답은 저장소 밖 비공개 결과로 보관합니다.

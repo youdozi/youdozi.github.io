@@ -16,9 +16,11 @@ from search_console import CONFIG, SITE, access_token
 from search_growth import google_post, windows
 from search_engines import destination, save_new
 from measurement_audit import PROPERTY, ga_session, ga_call
+from build_example_archives import article, scalar
 
 ROOT = Path(__file__).resolve().parents[1]
 COHORT = ROOT / 'content/seo/answer-pilot.json'
+REGISTRY = ROOT / 'content/seo/answer-cohorts.json'
 AI_DOMAINS = frozenset(('chatgpt.com', 'chat.openai.com', 'perplexity.ai', 'claude.ai', 'copilot.microsoft.com', 'gemini.google.com'))
 
 
@@ -26,8 +28,8 @@ def targets(cohort):
     if cohort.get('schemaVersion') != 1 or cohort.get('languages') != ['en', 'ko'] or not re.fullmatch(r'[a-z0-9-]+', cohort.get('cohortId', '')):
         raise ValueError('Invalid pilot identity')
     articles = cohort.get('articles', [])
-    if len(articles) != 5 or len({a['key'] for a in articles}) != 5:
-        raise ValueError('Expected five unique pilot topics')
+    if not isinstance(articles, list) or not 1 <= len(articles) <= 20 or any(not isinstance(a, dict) or not isinstance(a.get('key'), str) for a in articles) or len({a['key'] for a in articles}) != len(articles):
+        raise ValueError('Expected one to twenty unique cohort topics')
     output = []
     for a in articles:
         if not re.fullmatch(r'\d{4}-\d{2}-\d{2}-[a-z0-9-]+', a['key']):
@@ -37,6 +39,67 @@ def targets(cohort):
                 raise ValueError('Missing localized question')
             output.append({'key': a['key'], 'language': lang, 'url': SITE + f'{lang}/posts/{a["key"]}/'})
     return output
+
+
+def load_cohort(cohort_id=None, root=ROOT):
+    root = Path(root).resolve()
+    registry_path = root / REGISTRY.relative_to(ROOT)
+    if registry_path.resolve() != registry_path:
+        raise ValueError('Registry must not be a symlink')
+    registry = json.loads(registry_path.read_text())
+    rows = registry.get('cohorts', [])
+    if registry.get('schemaVersion') != 1 or not rows or len({r['id'] for r in rows}) != len(rows):
+        raise ValueError('Invalid cohort registry')
+    for row in rows:
+        if not re.fullmatch(r'[a-z0-9-]+', row['id']) or not re.fullmatch(r'content/seo/[a-z0-9-]+\.json', row['path']) or type(row.get('topics')) is not int or not 1 <= row['topics'] <= 20:
+            raise ValueError('Invalid registered cohort')
+    if registry.get('default') not in {r['id'] for r in rows}:
+        raise ValueError('Missing default cohort')
+    row = next((r for r in rows if r['id'] == (cohort_id or registry['default'])), None)
+    if row is None: raise ValueError('Unknown cohort ID')
+    path = root / row['path']
+    if path.resolve() != path: raise ValueError('Cohort must not be a symlink')
+    cohort = json.loads(path.read_text()); targets(cohort)
+    if cohort['cohortId'] != row['id'] or len(cohort['articles']) != row['topics']:
+        raise ValueError('Cohort identity or size disagrees with registry')
+    return cohort
+
+
+def source_records(cohort, root=ROOT):
+    records = {}
+    for row in targets(cohort):
+        raw, _ = article(root, {'key': row['key']}, row['language'])
+        head = raw.decode().split('---\n', 2)[1]
+        records[row['url']] = {'sha256': hashlib.sha256(raw).hexdigest(),
+                               'publishedAt': scalar(head, 'publishedAt')}
+    return records
+
+
+def inspect_targets(cohort, inspect):
+    def inspection(row):
+        return {'url': row['url'], 'response': safe(inspect, {'inspectionUrl': row['url'], 'siteUrl': SITE, 'languageCode': row['language']})}
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        return list(pool.map(inspection, targets(cohort)))
+
+
+def collect_index(cohort, inspect, now):
+    return {'schemaVersion': 1, 'mode': 'index-only', 'cohortId': cohort['cohortId'],
+            'cohortIdentity': cohort_identity(cohort), 'observedAt': now.isoformat(),
+            'targets': targets(cohort), 'inspections': inspect_targets(cohort, inspect),
+            'limitations': ['Saved Google index status only; no live crawl test, index request, GSC performance or GA4 collection.']}
+
+
+def publication_coverage(report, url, zone):
+    """Declared publication is a necessary date bound, not proof of route availability."""
+    declared = report.get('sourcePublications', {}).get(url)
+    if not isinstance(declared, str) or not declared or not zone: return 'not-recorded'
+    try:
+        published = datetime.fromisoformat(declared.replace('Z', '+00:00'))
+        if published.tzinfo is None: return 'not-recorded'
+        start = datetime.fromisoformat(report['dates']['start']).replace(tzinfo=ZoneInfo(zone))
+        end = datetime.fromisoformat(report['dates']['end']).replace(tzinfo=ZoneInfo(zone)) + timedelta(days=1)
+        return 'declared-before-window' if published <= start else 'not-yet-published' if published >= end else 'partial-window'
+    except (ValueError, KeyError): return 'not-recorded'
 
 
 def cohort_identity(cohort):
@@ -103,10 +166,7 @@ def collect(cohort, dates, gsc, inspect, ga, now):
                 {'dimension': 'page', 'operator': 'includingRegex', 'expression': regex}]}]}
     search = {name: paged(gsc, {**base, 'dimensions': dimensions}, 'startRow', 'rows')
               for name, dimensions in [('pages', ['page']), ('daily', ['page', 'date']), ('queries', ['page', 'query'])]}
-    def inspection(row):
-        return {'url': row['url'], 'response': safe(inspect, {'inspectionUrl': row['url'], 'siteUrl': SITE, 'languageCode': row['language']})}
-    with ThreadPoolExecutor(max_workers=3) as pool:
-        inspections = list(pool.map(inspection, selected))
+    inspections = inspect_targets(cohort, inspect)
     ga_report = paged(ga, {'dateRanges': [{'startDate': dates['start'], 'endDate': dates['end']}],
         'dimensions': [{'name': x} for x in ('landingPage', 'sessionSource', 'sessionMedium')],
         'metrics': [{'name': x} for x in ('sessions', 'engagedSessions')], 'limit': 25000,
@@ -162,6 +222,8 @@ def attribution_metrics(report, url):
 
 
 def comparison(before, after, changed_at=None):
+    if before.get('mode') == 'index-only' or after.get('mode') == 'index-only':
+        raise ValueError('Index-only observations are not performance baselines')
     if before.get('schemaVersion') != 1 or after.get('schemaVersion') != 1 or before.get('cohortIdentity') != after.get('cohortIdentity') or before.get('cohortId') != after.get('cohortId'):
         raise ValueError('Comparison requires the same pilot URL set')
     a, b = before['dates'], after['dates']; period(**a); period(**b)
@@ -189,8 +251,15 @@ def comparison(before, after, changed_at=None):
     per_page = []
     for target in after.get('targets', []):
         url = target['url']; old, new = page_metrics(before, url), page_metrics(after, url)
-        delta = {k: new[k] - old[k] for k in ('clicks', 'impressions') if k in old and k in new} if old is not None and new is not None else None
+        coverage = {'baseline': publication_coverage(before, url, 'America/Los_Angeles'),
+                    'followUp': publication_coverage(after, url, 'America/Los_Angeles')}
+        comparable = all(v == 'declared-before-window' for v in coverage.values())
+        delta = {k: new[k] - old[k] for k in ('clicks', 'impressions') if k in old and k in new} if comparable and old is not None and new is not None else None
         per_page.append({'url': url, 'baselineGscWeb': old, 'followUpGscWeb': new, 'delta': delta,
+                         'declaredPublicationCoveragePT': coverage, 'routeAvailabilityVerified': False,
+                         'declaredPublicationCoverageGA': {
+                             'baseline': publication_coverage(before, url, before.get('ga4Attribution', {}).get('metadata', {}).get('timeZone')),
+                             'followUp': publication_coverage(after, url, after.get('ga4Attribution', {}).get('metadata', {}).get('timeZone'))},
                          'baselineGaAttribution': attribution_metrics(before, url), 'followUpGaAttribution': attribution_metrics(after, url)})
     return {'baselineDates': a, 'followUpDates': b, 'equalLengthDays': 28,
             'deploymentDayPT': boundary, 'deploymentDayGA': ga_boundary,
@@ -200,9 +269,26 @@ def comparison(before, after, changed_at=None):
 
 def summary(report):
     inspection_rows = report.get('inspections', [])
-    passed = sum(r['response'].get('data', {}).get('inspectionResult', {}).get('indexStatusResult', {}).get('verdict') == 'PASS' for r in inspection_rows)
+    counts = {'pass': 0, 'nonPassVerdict': 0, 'missingVerdict': 0, 'apiError': 0, 'notObserved': 0}
+    for row in inspection_rows:
+        response = row.get('response', {})
+        verdict = response.get('data', {}).get('inspectionResult', {}).get('indexStatusResult', {}).get('verdict')
+        category = 'apiError' if response.get('httpStatus') != 200 or response.get('error') else 'pass' if verdict == 'PASS' else 'nonPassVerdict' if verdict in ('FAIL','PARTIAL','NEUTRAL') else 'missingVerdict'
+        counts[category] += 1
+    counts['notObserved'] = max(0, len(report['targets']) - len(inspection_rows))
+    passed = counts['pass']
+    if report.get('mode') == 'index-only':
+        return {'mode': 'index-only', 'cohortId': report['cohortId'], 'observedAt': report['observedAt'],
+                'dataOrigin': report.get('dataOrigin', 'not-recorded'),
+                'pilotURLs': len(report['targets']), 'googleIndex': counts,
+                'gscWeb': 'not-collected', 'ga4': 'not-collected',
+                'dedicatedAIReports': 'not-collected',
+                'urls': [{'url': row['url'], 'httpStatus': row['response'].get('httpStatus'),
+                    **{key: row['response'].get('data', {}).get('inspectionResult', {}).get('indexStatusResult', {}).get(key)
+                       for key in ('verdict','coverageState','googleCanonical','lastCrawlTime')}} for row in inspection_rows]}
     result = {'dates': report['dates'], 'pilotURLs': len(report['targets']), 'googleIndexPass': passed,
-            'googleIndexOtherOrUnknown': len(inspection_rows) - passed,
+            'observedAt': report.get('observedAt'), 'dataOrigin': report.get('dataOrigin', 'not-recorded'),
+            'cohortId': report.get('cohortId'), 'googleIndex': counts,
             'gscWebPages': report['gscWeb']['pages']['state'],
             'gscReturnedPageRows': len(report['gscWeb']['pages']['rows']),
             'ga4State': report['ga4Attribution']['state'],
@@ -212,13 +298,19 @@ def summary(report):
     if 'comparison' in report:
         compared = report['comparison']
         result['comparison'] = {k: compared[k] for k in ('baselineDates','followUpDates','publicationBoundaryVerified','causalEffectEstablished')}
-        result['comparison']['pages'] = [{k: row[k] for k in ('url','baselineGscWeb','followUpGscWeb','delta','baselineGaAttribution','followUpGaAttribution')} for row in compared['pages']]
+        result['comparison']['pages'] = [{k: row[k] for k in ('url','baselineGscWeb','followUpGscWeb','delta','baselineGaAttribution','followUpGaAttribution','declaredPublicationCoveragePT','declaredPublicationCoverageGA','routeAvailabilityVerified') if k in row} for row in compared['pages']]
+    result['declaredPublicationCoverage'] = [{'url': r['url'],
+        'gscPT': publication_coverage(report, r['url'], 'America/Los_Angeles'),
+        'ga4': publication_coverage(report, r['url'], report.get('ga4Attribution', {}).get('metadata', {}).get('timeZone')),
+        'routeAvailabilityVerified': False} for r in report['targets']]
     return result
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--live', action='store_true', help='Read GSC/GA APIs only; never submit URLs or modify settings')
+    parser.add_argument('--cohort', help='Registered cohort ID; default retains the original ten URLs')
+    parser.add_argument('--index-only', action='store_true', help='Inspect current saved Google status without performance or GA4 access')
     parser.add_argument('--output', type=Path)
     parser.add_argument('--start'); parser.add_argument('--end')
     parser.add_argument('--compare', type=Path, help='Existing private baseline for a non-overlapping 28-day comparison')
@@ -227,11 +319,29 @@ def main():
     args = parser.parse_args()
     try:
         if args.report:
-            if args.live or args.output or args.start or args.end or args.compare or args.changed_at:
+            if args.live or args.output or args.start or args.end or args.compare or args.changed_at or args.cohort or args.index_only:
                 raise ValueError('--report cannot query APIs or write files')
             print(json.dumps(summary(json.loads(args.report.read_text())), ensure_ascii=False, indent=2)); return 0
-        cohort = json.loads(COHORT.read_text()); targets(cohort)
+        cohort = load_cohort(args.cohort)
+        sources = source_records(cohort)
         now = datetime.now(timezone.utc)
+        if args.index_only:
+            if args.start or args.end or args.compare or args.changed_at:
+                raise ValueError('Index-only observations have no historical performance window')
+            if not args.live:
+                if args.output: raise ValueError('Writing requires --live')
+                print(json.dumps({'mode': 'plan-only', 'observationMode': 'index-only', 'cohortId': cohort['cohortId'], 'targets': targets(cohort), 'settingsModified': False}, indent=2)); return 0
+            if not args.output: raise ValueError('--live requires a new private --output')
+            output = destination(args.output)
+            token = access_token(SimpleNamespace(token_file=CONFIG / 'token.json', client=None))
+            report = collect_index(cohort, lambda body: google_post(token, 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', body), now)
+            report['dataOrigin'] = 'live-api'
+            report['sourceCommit'] = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+            report['sourceHashes'] = {url: value['sha256'] for url, value in sources.items()}
+            report['sourcePublications'] = {url: value['publishedAt'] for url, value in sources.items()}
+            save_new(output, report)
+            print(json.dumps(summary(report), ensure_ascii=False, indent=2))
+            return 1 if summary(report)['googleIndex']['apiError'] else 0
         if bool(args.start) != bool(args.end): raise ValueError('Specify both --start and --end')
         dates = period(args.start, args.end) if args.start else period(*windows(now)['current'])
         settled_end = windows(now)['current'][1]
@@ -239,7 +349,7 @@ def main():
         if bool(args.compare) != bool(args.changed_at): raise ValueError('Use --compare and --changed-at together')
         if not args.live:
             if args.output or args.compare: raise ValueError('Writing requires --live')
-            print(json.dumps({'mode': 'plan-only', 'dates': dates, 'targets': targets(cohort), 'settingsModified': False}, indent=2)); return 0
+            print(json.dumps({'mode': 'plan-only', 'cohortId': cohort['cohortId'], 'dates': dates, 'targets': targets(cohort), 'settingsModified': False}, indent=2)); return 0
         if not args.output: raise ValueError('--live requires a new private --output outside all worktrees')
         output = destination(args.output)
         before = json.loads(args.compare.read_text()) if args.compare else None
@@ -254,7 +364,9 @@ def main():
                 lambda body: ga_call(session, 'POST', PROPERTY + ':runReport', body), now)
         finally: session.close()
         report['sourceCommit'] = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
-        report['sourceHashes'] = {r['url']: hashlib.sha256((ROOT / f'src/content/posts/{r["language"]}/{r["key"]}.md').read_bytes()).hexdigest() for r in targets(cohort)}
+        report['dataOrigin'] = 'live-api'
+        report['sourceHashes'] = {url: value['sha256'] for url, value in sources.items()}
+        report['sourcePublications'] = {url: value['publishedAt'] for url, value in sources.items()}
         if before: report['comparison'] = comparison(before, report, args.changed_at)
         save_new(output, report)
         print(json.dumps(summary(report), ensure_ascii=False, indent=2))

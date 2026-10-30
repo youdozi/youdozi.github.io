@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "aeo-cohort-observation-067",
+  "reviewedAt": "2026-10-30T11:16:00.167834+00:00",
+  "baseCommit": "ce769cca2751a082979fbbe65643e23b13e7e548",
+  "scope": "Registered independent AEO observation cohorts, saved Google-index-only mode without GA4/search-performance calls, publication-date eligibility labels and comparison suppression, distinct API/missing/non-PASS states, observation timestamp and data-origin labels.",
+  "cohorts": {
+    "technical-answers-059": 10,
+    "checksum-guide-066": 2
+  },
+  "originalCohortAndURLIdentityPreserved": true,
+  "newArticlePublications": 0,
+  "publicArticleSourcesChanged": false,
+  "review": {
+    "method": "AI self-review with boundary, privacy, transport and temporal comparison tests",
+    "independentReviewer": false,
+    "primaryReferences": [
+      "https://developers.google.com/webmaster-tools/v1/urlInspection.index/inspect",
+      "https://developers.google.com/webmaster-tools/v1/urlInspection.index/UrlInspectionResult",
+      "https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/ResponseMetaData"
+    ],
+    "limits": "Declared publication dates are necessary date bounds and do not prove historical route availability or indexing. Index observations are not performance baselines. No dedicated AI report is collected."
+  },
+  "validation": {
+    "nodeTests": 164,
+    "pythonTests": 333,
+    "newPythonTests": 11,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 427,
+    "sitemapURLs": 483,
+    "distFileCount": 1142,
+    "distFilesChanged": 0,
+    "planModesDoNotAuthenticateOrWrite": true,
+    "liveIndexModeMocksNeverInitializeGA": true,
+    "unsafeOutputsAndUnknownCohortsFailBeforeAuthentication": true,
+    "partialMissingAndFuturePublicationDoNotCreateDeltas": true,
+    "apiFailureSavedAndNonzeroExit": true,
+    "rawQueriesAndSecretsExcludedFromSummaries": true
+  },
+  "newLiveAPIRequests": 0,
+  "indexingRequests": 0,
+  "rankingOrAICitationGainEstablished": false
+}
