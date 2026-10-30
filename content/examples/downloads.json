@@ -226,6 +226,49 @@
         "en": "Nine tests: seven loopback HTTP cases and two synthetic exchange cases using virtual time. GET only; retries only HTTP 503 twice. No TCP connect-timeout reproduction, production latency guarantee, write idempotency, Retry-After, jitter or load coordination. Each subscription can make up to three application attempts.",
         "ko": "아홉 테스트: 루프백 HTTP 일곱 가지와 가상 시간의 합성 exchange 두 가지. GET 전용이며 HTTP 503만 두 번 재시도합니다. TCP 연결 타임아웃 재현·운영 지연 보장·쓰기 멱등성·Retry-After·지터·부하 조율은 포함하지 않습니다. 구독마다 애플리케이션 시도는 최대 세 번입니다."
       }
+    },
+    {
+      "key": "2026-10-30-php2shell-runtime-patching",
+      "files": [
+        {
+          "path": "runtime-evidence.php",
+          "language": "php",
+          "selector": "heading"
+        }
+      ],
+      "commands": "php runtime-evidence.php\nphp -n -d session.upload_progress.enabled=0 runtime-evidence.php",
+      "environment": {
+        "en": "PHP 8.2 or later with the CLI, JSON and session support; POSIX shell command examples. No packages or network access required by the collector.",
+        "ko": "CLI·JSON·세션 기능이 있는 PHP 8.2 이상. 명령 예시는 POSIX 셸입니다. 수집기는 추가 패키지·네트워크 접근을 요구하지 않습니다."
+      },
+      "scope": {
+        "en": "Read-only CLI process metadata, not web-worker identification or a vulnerability scanner. The second command overrides only its own CLI configuration. No patching, restart, exploit reproduction or production validation. Keep the file outside the web document root.",
+        "ko": "읽기 전용 CLI 프로세스 정보이며 웹 워커 식별기나 취약점 스캐너가 아닙니다. 두 번째 명령은 그 CLI 설정만 덮어씁니다. 패치·재시작·악용 재현·운영 검증을 하지 않습니다. 파일은 웹 문서 루트 밖에 저장하세요."
+      }
+    },
+    {
+      "key": "2026-10-30-node2shell-brotli-runtime-patching",
+      "files": [
+        {
+          "path": "runtime-evidence.mjs",
+          "language": "javascript",
+          "selector": "heading"
+        },
+        {
+          "path": "app.mjs",
+          "language": "javascript",
+          "selector": "heading"
+        }
+      ],
+      "commands": "node app.mjs",
+      "environment": {
+        "en": "Node.js 22 or later; built-in process metadata only. No npm install or network access required.",
+        "ko": "Node.js 22 이상. 내장 프로세스 정보만 사용하며 npm 설치·네트워크 접근을 요구하지 않습니다."
+      },
+      "scope": {
+        "en": "Records only the example process, not an already running service. Version labels are evidence fields, not a patch-status verdict. No decompression, exploit reproduction, package replacement or rollout. Restrict operational evidence rather than publishing paths and PIDs over HTTP.",
+        "ko": "이미 실행 중인 서비스가 아닌 예제 프로세스만 기록합니다. 버전 이름표는 증거 필드이며 수정 판정이 아닙니다. 압축 해제·악용 재현·패키지 교체·롤아웃을 하지 않습니다. 경로·PID를 HTTP에 공개하지 말고 운영 증거 접근을 제한하세요."
+      }
     }
   ]
 }

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "php2shell-node2shell-runtime-069",
+  "reviewedAt": "2026-10-30T13:37:17.073824+00:00",
+  "baseCommit": "0f33bd25fe18f2eabc9ef73f37c190c954f6004f",
+  "scope": "Two security-response topics in KO and complete EN translations, read-only source-derived collectors/ZIPs, localized static flows and native runtime security guide. No remote server investigation, exploitation or runtime maintenance.",
+  "newPublicArticles": 4,
+  "articleHashes": {
+    "ko/2026-10-30-php2shell-runtime-patching": "de512ba440540f2fa691ca52d4c065428d8d2ef86adfe1251964d8544d931b13",
+    "en/2026-10-30-php2shell-runtime-patching": "f4aa334e127facad6b41b0eb19920466d78f78d25c9065c6faf85c584c63115c",
+    "ko/2026-10-30-node2shell-brotli-runtime-patching": "c0ac640975e1f05244da1052d45268096761146f3574d30321fdf473fa222dd1",
+    "en/2026-10-30-node2shell-brotli-runtime-patching": "9f8abe774ed0a87c0a07284163ad858f1f4ff629708131dff5f1b6088b23b959"
+  },
+  "primaryReferencesChecked": [
+    "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w",
+    "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp",
+    "https://www.php.net/archive/2026.php",
+    "https://ubuntu.com/security/notices/USN-8948-1",
+    "https://www.php.net/manual/en/reserved.constants.php",
+    "https://www.php.net/manual/en/function.ini-get.php",
+    "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+    "https://nodejs.org/en/blog/release/v22.23.4",
+    "https://nodejs.org/en/blog/release/v24.22.1",
+    "https://nodejs.org/en/blog/release/v26.12.1",
+    "https://github.com/nodejs/node/blob/v24.22.1/deps/brotli/c/common/version.h",
+    "https://expressjs.com/en/resources/middleware/body-parser/",
+    "https://nodejs.org/docs/latest-v24.x/api/process.html"
+  ],
+  "existingNativeArticlesChanged": false,
+  "existingIndividualDiagramItemsChanged": false,
+  "translationDraftsStillUnpublished": 120,
+  "translationContentChanged": false,
+  "translationQueue": ".pipeline/technical-translations/queue-069.json",
+  "unstartedEditionsAdded": 12,
+  "translationRemainingEditions": 120,
+  "review": {
+    "method": "Writing-skill self-review followed by a separate-context AI technical and complete KO-to-EN translation review, without prior verdicts or artifacts.",
+    "independentReviewer": true,
+    "reviewSession": "/root/runtime_security069_review",
+    "majorOrCriticalFindings": 0,
+    "translationCorrectionsRequired": false,
+    "finalClarification": "PHP 8.1 and older explicitly described as no longer supported by the PHP project; reviewer confirmed equivalence and source support.",
+    "reviewerExecuted": "Dedicated seven-case isolated collector runner.",
+    "reviewerStaticChecks": [
+      "CVE identity/conditions and version thresholds against primary sources",
+      "PHP backport/session follow-up/Windows rebuild distinctions",
+      "Node Brotli version-label caveat",
+      "Full EN equivalence",
+      "Collector/diagram/recipe correspondence"
+    ],
+    "limits": "No production asset identification or patch verification. No exploit/PoC, OOM payload, unsafe Brotli input or external target requests. UI and deployment checked separately by primary agent."
+  },
+  "validation": {
+    "nodeTests": 165,
+    "pythonTests": 333,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 433,
+    "sitemapURLs": 491,
+    "diagramPairs": 40,
+    "exampleArchives": 22,
+    "readingPathArticles": 78,
+    "readingNeighborLinks": 120,
+    "collectorCases": 7,
+    "localBrowserChecks": 8,
+    "widths": [
+      320,
+      1360
+    ],
+    "mobileFlowScreenshotsInspected": true
+  },
+  "googleIndexingOrAICitationGainEstablished": false
+}

@@ -23,7 +23,7 @@ test('existing algorithm and Spring paths remain in the registry with actual cou
  const guides=technicalGuides('en',items);
  assert.deepEqual(guides.map(g=>g.url),['/en/categories/coding-test/','/en/categories/springboot/','/en/categories/jdk/','/en/categories/util/']);
  assert.deepEqual(guides.map(g=>g.ordered.length),[1,1,1,1]);
- assert.equal(guideTerms.length,8);
+ assert.equal(guideTerms.length,9);
 });
 test('index schema preserves the visible path order and locale-specific URLs',()=>{
  const items=[entry('2021-08-06-search-github','ko','util'),entry('2023-09-20-jdk-21-release','ko','jdk')];
@@ -110,4 +110,15 @@ test('all guide families connect only eligible same-language steps in six transl
   assert.equal(categoryGuide(term,language,entries.slice(3)),undefined);
   assert.deepEqual(entries,before);
  }
+});
+
+
+test('runtime security guide connects the native pair without inventing translated guide copy',()=>{
+ const first='2026-10-30-php2shell-runtime-patching',last='2026-10-30-node2shell-brotli-runtime-patching';
+ for(const language of ['en','ko']){
+  const items=[entry(last,language,'security'),entry(first,language,'security')];
+  assert.deepEqual(categoryGuide('security',language,items).ordered.map(e=>e.translationKey),[first,last]);
+  assert.deepEqual(categoryGuideAlternates('security',items).map(e=>e.language),[language]);
+ }
+ for(const language of ['zh-CN','ja','de','fr','ru','es'])assert.equal(categoryGuide('security',language,[entry(first,language,'security')]),undefined);
 });
