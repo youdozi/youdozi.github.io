@@ -192,6 +192,40 @@
         "en": "Local fixture bytes abc and abcd, without network access or binary installation. The second verification intentionally prints MISMATCH and returns 1. The final command prints exit=1. A matching checksum does not authenticate a publisher or establish software safety.",
         "ko": "네트워크 접근이나 바이너리 설치 없이 로컬 abc·abcd 바이트를 검사합니다. 두 번째 검증은 의도적으로 MISMATCH를 출력하고 1을 반환합니다. 마지막 명령은 exit=1을 출력합니다. 체크섬 일치는 배포자 신원이나 소프트웨어의 안전성을 증명하지 않습니다."
       }
+    },
+    {
+      "key": "2026-10-30-webclient-timeout-retry",
+      "files": [
+        {
+          "path": "settings.gradle",
+          "language": "groovy",
+          "selector": "heading"
+        },
+        {
+          "path": "build.gradle",
+          "language": "groovy",
+          "selector": "heading"
+        },
+        {
+          "path": "src/main/java/RetryClient.java",
+          "language": "java",
+          "selector": "heading"
+        },
+        {
+          "path": "src/test/java/RetryClientTest.java",
+          "language": "java",
+          "selector": "heading"
+        }
+      ],
+      "commands": "gradle --no-daemon clean test",
+      "environment": {
+        "en": "JDK 17 and Gradle 8.4; Boot BOM 3.5.7 and MockWebServer 4.12.0. Initial dependency resolution needs network access. No Gradle wrapper is bundled.",
+        "ko": "JDK 17·Gradle 8.4·Boot BOM 3.5.7·MockWebServer 4.12.0. 최초 의존성 해결에는 네트워크가 필요합니다. Gradle wrapper는 포함하지 않습니다."
+      },
+      "scope": {
+        "en": "Nine tests: seven loopback HTTP cases and two synthetic exchange cases using virtual time. GET only; retries only HTTP 503 twice. No TCP connect-timeout reproduction, production latency guarantee, write idempotency, Retry-After, jitter or load coordination. Each subscription can make up to three application attempts.",
+        "ko": "아홉 테스트: 루프백 HTTP 일곱 가지와 가상 시간의 합성 exchange 두 가지. GET 전용이며 HTTP 503만 두 번 재시도합니다. TCP 연결 타임아웃 재현·운영 지연 보장·쓰기 멱등성·Retry-After·지터·부하 조율은 포함하지 않습니다. 구독마다 애플리케이션 시도는 최대 세 번입니다."
+      }
     }
   ]
 }
