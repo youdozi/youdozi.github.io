@@ -7,8 +7,8 @@ kind: "post"
 publishedAt: "2026-10-27T02:36:39+00:00"
 categories: ["linux"]
 tags: ["linux", "bash", "shell script", "jq", "github latest release"]
-updatedAt: 2026-10-27T10:25:23.707+00:00
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T05:15:39.658659+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "Primary documentation checked; published runnable example verified."
 reviewSources: ["https://docs.github.com/en/rest/releases/releases#get-the-latest-release", "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api", "https://curl.se/docs/manpage.html", "https://jqlang.org/manual/"]
@@ -94,6 +94,8 @@ A successful result is a JSON object with `tag_name` and `download_url`. Values 
 | Empty body or malformed JSON | Nonzero status. |
 | Zero or multiple matching assets | Fail instead of choosing arbitrarily. |
 | Invalid repository argument syntax | Usage message, status 2. |
+
+If the HTTP request succeeds but no asset matches, inspect the release filenames before changing the `jq` filter: this example selects Java 17 for Linux x64, not every JDK package. For Java 21, use the [Temurin platform-metadata example](/en/posts/2023-10-10-temurin-jdk21-delay/). If repository or platform values come from YAML, [parse and validate the configuration as data](/en/posts/2021-07-27-parse-yaml/) before passing values to a command.
 
 Local HTTP responses were used to check success, HTTP errors, invalid JSON, missing assets and duplicates. `GITHUB_API_URL` defaults to the public API and can be set to a test server implementing the same response contract.
 

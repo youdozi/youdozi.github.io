@@ -11,7 +11,7 @@ tags:
   - "springboot"
   - "test"
   - "webclient"
-updatedAt: 2026-10-30T04:11:22.994096+00:00
+updatedAt: 2026-10-30T05:15:39.658659+00:00
 reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "Official documentation checked; runnable examples and version boundaries clarified."
@@ -233,5 +233,7 @@ When rejecting a successful response, it releases the body before reporting the 
 `verify(Duration.ofSeconds(5))` bounds each test's wait. It does not configure the production client's connection or response timeouts. Add transport timeout and retry tests according to your API contract; they are not covered by these eight cases.
 
 All eight tests passed in the reproduction environment above. In this repository, `python3 scripts/check_webclient_example.py` repeats that check. For a project crossing the Jakarta boundary, establish the [Spring Boot migration baseline](/en/posts/2023-09-08-springboot3-migration/) before changing client behavior.
+
+These client tests use a local mock server; they do not check static files in a deployed application. If the application packages Vue apps, the [Gradle frontend packaging example](/en/posts/2021-07-23-multiple-gradle-build/) checks the executable JAR and its HTML/JavaScript responses. The two examples pin different environments and should not be combined without aligning their dependencies.
 
 MockWebServer API reference: [OkHttp 4.12.0 source and examples](https://github.com/square/okhttp/tree/parent-4.12.0/mockwebserver).

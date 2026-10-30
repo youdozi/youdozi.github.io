@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "id": "search-priority-062",
+  "reviewedAt": "2026-10-30T05:22:10.381026+00:00",
+  "baseCommit": "5b30e7740910d42d08735f3b0081aa7f6fc3a74f",
+  "scope": "Migration diagnosis from current read-only API observations; contextual discovery paths and starting-state guidance in four paired native technical topics; GitHub README entry points; offline migration-pair and contextual-link checks.",
+  "selectionBasis": "Returned page/query rows and source-body incoming links. Small samples do not prove a title defect, ranking cause, demand in other languages, or an optimization effect. Raw queries and API responses remain outside Git.",
+  "baseline": {
+    "observedAt": "2026-10-30T05:10:34.463379+00:00",
+    "searchDatesPT": [
+      "2026-09-29",
+      "2026-10-26"
+    ],
+    "nativeURLs": 20,
+    "nativeGooglePASS": 2,
+    "nativeUnknownToGoogle": 18,
+    "legacyURLs": 10,
+    "legacyGooglePASS": 8,
+    "matchingPublicRoutes": 30,
+    "koreanMigrationPairs": {
+      "canonical-convergence-observed": 1,
+      "legacy-indexed-destination-not-confirmed": 7,
+      "legacy-canonical-still-observed": 1,
+      "destination-indexing-not-confirmed": 1
+    },
+    "googleGenerativeAIControl": "Include inherited, confirmed by user screenshot; does not prove exposure"
+  },
+  "publicEditionsChanged": 8,
+  "newPublicArticles": 0,
+  "newDraftPublications": 0,
+  "routePublicationTitleCodeAndFiguresPreserved": true,
+  "sourceChanges": [
+    {
+      "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
+      "beforeSha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81",
+      "afterSha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+    },
+    {
+      "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+      "beforeSha256": "ef75e5214a61bdc22d193905ae2963c6e9427ec1d2411c658042eb2571aad378",
+      "afterSha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
+    },
+    {
+      "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
+      "beforeSha256": "8c56d878b812b739e8388d5e42fa62512ed2c9a12dbff0c122b188cebd049bf2",
+      "afterSha256": "2af4402a72130c6c53faa9d34008be0c7bc63b78b82a680f5675bdd70532ec4d"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+      "beforeSha256": "b859cefb7e62296f69c879f2af39ce3256525784158de046d79210c2582e3464",
+      "afterSha256": "aa9eca28ad3d642781c1a4ded9d566dab478bf6984a438bab68d460c967cc0b1"
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-23-linux-shellscript-github-latest.md",
+      "beforeSha256": "0f63a1769904a7fd90aa248026fffdb5d759a867fc48a7d3786911f3196ca701",
+      "afterSha256": "71ea9fc79e18e1fe880b8a6c768c82ea3be3fe09703c1b4d23afe3ccc1b0c014"
+    },
+    {
+      "path": "src/content/posts/ko/2023-10-27-springbatch5-migration.md",
+      "beforeSha256": "8fab5fff888afbdb7a3f8a62dedf356c735fefd9421d1cbb9ad2f0e0b1536ffd",
+      "afterSha256": "f0167eda14357962df14473b577588967cfc233300d7a6ce2d7e8ba33d13f7d6"
+    },
+    {
+      "path": "src/content/posts/ko/2021-07-23-multiple-gradle-build.md",
+      "beforeSha256": "16719e95327308392b7fde03f12af913d7802db9120bdf8631e51eb78123f252",
+      "afterSha256": "ba1fa2e12457f6e4af97e6cb11335dde15840fbccf43ad42ec387cbb5a19cf8a"
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-19-springboot-test-webclient.md",
+      "beforeSha256": "b424097523f740d9726dabb9294f8c424a14f0f66452c89c3c3d4f06ad84b909",
+      "afterSha256": "602ae34a40a917e421f0d48258d26708a80ca075b239f38e159c758f21e94df9"
+    }
+  ],
+  "translationSynchronization": {
+    "manifest": ".pipeline/technical-translations/batch-052/manifest.json",
+    "previousSha256": "52c8079c4e5474467c6bd2df705abbbe83704ec44b6ab5dbdd376da00305317a",
+    "currentSha256": "a764e533e7663f3355691aad520078f258fb8d778c44cda98e09189bd57dc174",
+    "draftsSynchronized": 6,
+    "publicationApproved": false,
+    "queue": ".pipeline/technical-translations/queue-062.json"
+  },
+  "review": {
+    "method": "AI self-review of both native editions and the six changed draft paragraphs; official migration and archive packaging documentation cross-check; separate target-language reading.",
+    "independentReviewer": false,
+    "primarySources": [
+      "https://docs.github.com/en/rest/releases/releases#get-the-latest-release",
+      "https://github.com/spring-projects/spring-batch/wiki/Spring-Batch-5.0-Migration-Guide",
+      "https://docs.spring.io/spring-boot/3.5/gradle-plugin/packaging.html",
+      "https://developers.google.com/search/docs/crawling-indexing/301-redirects",
+      "https://developers.google.com/search/docs/crawling-indexing/links-crawlable"
+    ],
+    "limits": "No fresh claim of production data migration, current deployment recommendations, independent review or ranking improvement.",
+    "mobileRevision": "Visual review at 320px found excessive word breaks in the new comparison table; changed it to three starting-state bullets without changing code or claims."
+  },
+  "validation": {
+    "nodeTests": 157,
+    "pythonTests": 316,
+    "astroFiles": 76,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "publicArticles": 425,
+    "sitemapURLs": 481,
+    "coreArticlesWithDistinctSameLanguageBodyDonors": 20,
+    "minimumDistinctDonors": 1,
+    "packagingBodyDonorsPerNativeEdition": {
+      "before": 0,
+      "after": 1
+    },
+    "browserChecks": 16,
+    "browserWidths": [
+      320,
+      1360
+    ],
+    "browserTelemetryIsolated": true,
+    "oldH2FragmentsPreserved": true,
+    "translationManuscriptsValidated": 120,
+    "codeChanges": false,
+    "fullExecutableChecks": "Required PR CI will run the existing full executable-example suite before merge."
+  },
+  "distribution": {
+    "githubReadmeEntryPoints": 8,
+    "communityMessagesSent": 0
+  },
+  "indexingRequested": false,
+  "searchSettingsModified": false,
+  "rankingOrAICitationImprovementEstablished": false
+}

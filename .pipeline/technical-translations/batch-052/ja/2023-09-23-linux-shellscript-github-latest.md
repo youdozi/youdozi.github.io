@@ -5,7 +5,7 @@ title: "curl と jq で GitHub の最新リリースからダウンロード資�
 description: "OS、CPU、形式を指定し、curl と jq で GitHub のリリース資産を一つ選びます。HTTP エラー、不正な JSON、未一致や複数一致を処理します。"
 state: "draft"
 sourcePath: "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md"
-sourceSha256: "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+sourceSha256: "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
 ---
 `curl` で GitHub の最新リリースを取得し、`jq` で必要な OS、CPU、形式に合うダウンロード資産をちょうど一つ選びます。次のスクリプトは HTTP エラー、不正な JSON、未一致や複数一致で停止し、ファイルをダウンロードせずメタデータを返します。
 
@@ -87,6 +87,8 @@ sh latest-release.sh adoptium/temurin17-binaries
 | 空の本文または不正な JSON | ゼロ以外のステータス。 |
 | 一致する資産がない、または複数ある | 任意に選ばず失敗する。 |
 | リポジトリ引数の構文が不正 | 使い方を表示、ステータス 2。 |
+
+HTTP リクエストが成功しても一致するアセットがない場合は、`jq` フィルターを変更する前にリリースのファイル名を確認してください。この例が選ぶのは Java 17 の Linux x64 向けパッケージ であり、すべての JDK パッケージではありません。Java 21 が必要な場合は [Temurin のプラットフォームメタデータの例](/en/posts/2023-10-10-temurin-jdk21-delay/)を使ってください。リポジトリやプラットフォームの値を YAML から取得する場合は、コマンドに渡す前に[設定をデータとして解析・検証](/en/posts/2021-07-27-parse-yaml/)してください。
 
 ローカルの HTTP レスポンスで成功、HTTP エラー、不正な JSON、資産の欠落、重複を確認しています。`GITHUB_API_URL` は既定で公開 API を指し、同じレスポンス契約を実装するテストサーバーにも変更できます。
 

@@ -12,8 +12,8 @@ tags:
   - migration
 legacyUrl: /spring/springbatch5-migration/
 legacySource: _posts/spring/migration/2023-10-27-springbatch5-migration.markdown
-updatedAt: 2026-10-27T10:25:23.707+00:00
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T05:22:10.381026+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
   migration and production claims.
@@ -42,6 +42,14 @@ Batch 5는 Java 17 이상을 요구합니다. Java EE API의 `javax.*`는 해당
 파라미터 테이블의 이전 `TYPE_CD`와 타입별 값 컬럼은 새로운 `PARAMETER_TYPE`·`PARAMETER_VALUE` 표현과 다릅니다. `LONG`을 `java.lang.Long`으로 바꾸는 것만으로 기존 LONG·DOUBLE·DATE 값의 보존과 재해석이 해결되지는 않습니다. 대상 DB와 Batch 버전에 맞는 변환 절차를 복제 DB에서 확인해야 합니다. DB별 초기 스키마와 이관 스크립트는 [Core JAR 안의 경로](https://docs.spring.io/spring-batch/reference/5.2/schema-appendix.html)를 확인하세요. 새 스키마 생성 스크립트를 기존 운영 테이블에 재실행하는 절차로 대체하면 안 됩니다.
 
 [공식 가이드의 이력 접근 제한](https://github.com/spring-projects/spring-batch/wiki/Spring-Batch-5.0-Migration-Guide#historical-data-access-implications)도 중요합니다. v4 실행 기록은 v5의 일부 JobExplorer 조회에서 읽기 실패가 생길 수 있습니다. 실패한 v4 인스턴스는 이관 전에 v4에서 성공하도록 재시작하거나 업무 판단을 거쳐 abandon 처리하는 것을 전제로 합니다. v5에서 기존 실패 작업을 그대로 재시작할 수 있다고 가정하지 마세요. 파라미터 외에도 실행 컨텍스트 직렬화 방식의 호환성을 별도로 확인해야 합니다.
+
+## 시작 상태에 맞는 이관 경로 고르기
+
+- **기존 Batch 4 저장소:** 백업 후 DB 복사본에서 스키마·파라미터·실행 컨텍스트 변환을 예행하고, 실패한 v4 인스턴스는 v4에서 처리합니다. 아래 예제는 v4 저장소를 변환하거나 재시작하지 않습니다.
+- **새 Batch 5 저장소:** 타입별 파라미터·완료 인스턴스·실패 Step 테스트를 실행합니다. 새 H2 스키마의 세 동작을 한 프로세스에서 확인합니다.
+- **Batch Job이 있는 Boot 애플리케이션:** Boot와 명시적 Batch 구성 중 누가 설정과 스키마 초기화를 맡을지 정합니다. 예제는 Boot 자동 구성 대신 명시적 Spring 구성을 사용합니다.
+
+Boot 주 버전도 함께 바꾼다면 저장소 이관과 별도로 [Java·Jakarta 마이그레이션 기준선](/ko/posts/2023-09-08-springboot3-migration/)부터 확인하세요.
 
 ## 새 Batch 5 저장소에서 동작 확인하기
 

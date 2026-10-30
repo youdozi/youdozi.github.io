@@ -16,8 +16,8 @@ tags:
 legacyUrl: "/linux/linux-shellscript-github-latest/"
 legacySource: "_posts/linux/shell-script/github-latest/2023-09-23-linux-shellsc\
   ript-github-latest.markdown"
-updatedAt: 2026-10-27T10:25:23.707+00:00
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T05:15:39.658659+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 원고 실행 예제 검증"
 archiveBodySha256: "877051a28045533ef144cb07484e1a225f8961202dd0b24dd398d49603b3a275"
@@ -108,6 +108,8 @@ sh latest-release.sh adoptium/temurin17-binaries
 | 빈 응답·잘못된 JSON | 0이 아닌 코드로 종료 |
 | 자산 0개·2개 이상 | 임의로 고르지 않고 실패 |
 | 잘못된 저장소 인자 형식 | 사용법 출력, 종료 코드 2 |
+
+HTTP 요청은 성공했는데 일치하는 자산이 없다면 `jq` 필터를 바꾸기 전에 릴리스 파일명을 확인하세요. 이 예제는 모든 JDK 패키지가 아니라 Linux x64용 Java 17을 선택합니다. Java 21이 필요하면 [Temurin 플랫폼 메타데이터 예제](/ko/posts/2023-10-10-temurin-jdk21-delay/)를 사용하세요. 저장소나 플랫폼 값을 YAML에서 읽는다면 명령에 넘기기 전에 [설정을 데이터로 읽고 검증](/ko/posts/2021-07-27-parse-yaml/)하세요.
 
 예제는 로컬 HTTP 응답으로 성공·HTTP 오류·JSON 오류·자산 누락과 중복을 확인했습니다. `GITHUB_API_URL`은 기본적으로 공개 API 주소이며 같은 응답 계약을 가진 테스트 서버로 바꿔 검사할 수 있습니다.
 

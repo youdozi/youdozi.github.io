@@ -8,6 +8,23 @@ from check_seo import SITE, emitted_url
 
 
 class DiscoveryTests(unittest.TestCase):
+    def test_contextual_incoming_does_not_count_navigation_self_or_other_language(self):
+        target = SITE + '/en/posts/target/'
+        def page(html):
+            parsed = discovery.DiscoveryPage(); parsed.feed(html); return parsed
+        public = {
+            target: page('<div class="prose"><a href="#details">Self</a></div>'),
+            SITE + '/en/posts/donor/': page('<nav><a href="/en/posts/target/">Navigation</a></nav>'
+                '<div class="prose"><div><a href="/en/posts/target/#details">Context</a></div>'
+                '<a href="/en/posts/target/">Repeated</a></div>'),
+            SITE + '/ko/posts/donor/': page('<div class="prose"><a href="/en/posts/target/">Foreign</a></div>'),
+            SITE + '/en/': page('<div class="prose"><a href="/en/posts/target/">Home</a></div>'),
+        }
+        self.assertEqual(discovery.contextual_incoming(public, [target]), {target: 1})
+        public[SITE + '/en/posts/donor/'] = page('<div class="prose">Text</div>'
+            '<aside><a href="/en/posts/target/">Related</a></aside>')
+        self.assertEqual(discovery.contextual_incoming(public, [target]), {target: 0})
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)

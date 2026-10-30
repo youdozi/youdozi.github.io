@@ -190,6 +190,45 @@ def compare(previous, current):
     return result
 
 
+def migration_pairs(report):
+    """Pair saved Korean destinations and legacy URLs; do not infer crawl causes."""
+    groups = {}
+    for row in report['urls']:
+        if row.get('key'):
+            groups.setdefault(row['key'], []).append(row)
+    pairs = []
+    for key, rows in groups.items():
+        old = [r for r in rows if r.get('kind') == 'legacy']
+        new = [r for r in rows if r.get('kind') == 'article' and r.get('language') == 'ko']
+        if len(old) != 1 or len(new) != 1:
+            continue
+        old, new = old[0], new[0]
+        previous, current = index_status(old['inspection']), index_status(new['inspection'])
+        if not all(r.get('live', {}).get('matchesExpectedStaticRoute') is True for r in (old, new)):
+            state = 'public-route-unconfirmed'
+        elif previous is None or current is None:
+            state = 'inspection-unavailable'
+        elif current.get('verdict') == 'PASS' and current.get('googleCanonical') == new['url']:
+            canonical = previous.get('googleCanonical')
+            state = ('canonical-convergence-observed' if canonical == new['url'] else
+                     'legacy-canonical-still-observed' if canonical else
+                     'destination-indexed-legacy-canonical-unconfirmed')
+        elif current.get('googleCanonical') and current['googleCanonical'] != new['url']:
+            state = 'destination-canonical-differs'
+        elif previous.get('verdict') == 'PASS':
+            state = 'legacy-indexed-destination-not-confirmed'
+        else:
+            state = 'destination-indexing-not-confirmed'
+        def observed(row, status):
+            return {'url': row['url'], 'httpStatus': row['inspection'].get('httpStatus'),
+                    'verdict': status.get('verdict') if status else None,
+                    'googleCanonical': status.get('googleCanonical') if status else None,
+                    'lastCrawlTime': status.get('lastCrawlTime') if status else None}
+        pairs.append({'key': key, 'koreanMigrationState': state,
+                      'legacy': observed(old, previous), 'destination': observed(new, current)})
+    return pairs
+
+
 def format_report(report):
     """Summarize an existing private snapshot without API calls or query disclosure."""
     if report.get('site') != SITE:
@@ -215,6 +254,10 @@ def format_report(report):
             lines.append(f"\n{label} ({start}~{end}, PT): 사이트 전체 클릭 {rows[0]['clicks']}, 노출 {rows[0]['impressions']}")
         else:
             lines.append(f"\n{label} ({start}~{end}, PT): 합계 미제공 또는 조회 실패")
+    pairs = migration_pairs(report)
+    if pairs:
+        lines.append('\n과거→한국어 주소별 관측 (영문 색인과 별개, 이전 완료·원인 확정 아님):')
+        lines.extend(f"{p['key']}: {p['koreanMigrationState']}" for p in pairs)
     comparison = report.get('comparison')
     if comparison:
         missing = len(comparison['canonicalUncomparableUrls']) if 'canonicalUncomparableUrls' in comparison else '미기록'

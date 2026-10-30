@@ -5,7 +5,7 @@ title: "Dernière release GitHub avec curl et jq : sélectionner un fichier à t
 description: "Sélectionnez un seul asset de release GitHub selon le système, le CPU et le format avec curl et jq. Gérez les erreurs HTTP, le JSON invalide et les correspondances absentes ou multiples."
 state: "draft"
 sourcePath: "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md"
-sourceSha256: "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+sourceSha256: "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
 ---
 Utilisez `curl` pour obtenir la dernière release GitHub et `jq` pour sélectionner exactement un asset à télécharger selon le système, le CPU et le format requis. Le script ci-dessous s’arrête en cas d’erreur HTTP, de JSON invalide ou de correspondances absentes ou multiples ; il renvoie des métadonnées sans télécharger le fichier.
 
@@ -87,6 +87,8 @@ Un résultat réussi est un objet JSON avec `tag_name` et `download_url`. Les va
 | Corps vide ou JSON mal formé | Code non nul. |
 | Aucun asset correspondant ou plusieurs | Échec plutôt qu’un choix arbitraire. |
 | Syntaxe invalide de l’argument de dépôt | Message d’utilisation, code 2. |
+
+Si la requête HTTP réussit mais qu’aucun fichier ne correspond, examinez les noms des fichiers de la release avant de modifier le filtre `jq` : cet exemple sélectionne Java 17 pour Linux x64, pas tous les paquets JDK. Pour Java 21, utilisez l’[exemple de métadonnées de plateforme Temurin](/en/posts/2023-10-10-temurin-jdk21-delay/). Si les valeurs du dépôt ou de la plateforme proviennent de YAML, [analysez et validez la configuration comme des données](/en/posts/2021-07-27-parse-yaml/) avant de transmettre les valeurs à une commande.
 
 Des réponses HTTP locales ont servi à vérifier le succès, les erreurs HTTP, le JSON invalide, les assets absents et les doublons. `GITHUB_API_URL` utilise l’API publique par défaut et peut viser un serveur de test implémentant le même contrat de réponse.
 

@@ -10,8 +10,8 @@ tags:
   - migration
 publishedAt: "2026-10-27T03:19:18+00:00"
 title: "Spring Batch 5 Migration Guide: Schema, Job Parameters and Restart"
-updatedAt: 2026-10-27T10:25:23.707+00:00
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T05:22:10.381026+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
   migration and production claims.
@@ -39,6 +39,14 @@ Batch 5 requires Java 17 or later. Migrate Java EE `javax.*` APIs to their Jakar
 The old parameter table's `TYPE_CD` and per-type value columns differ from the new `PARAMETER_TYPE` and `PARAMETER_VALUE` representation. Changing `LONG` to `java.lang.Long` alone neither preserves nor correctly reinterprets existing LONG, DOUBLE, and DATE values. Rehearse conversion on a database copy using the target database and Batch version. Locate the [database-specific schema and migration scripts in the Core JAR](https://docs.spring.io/spring-batch/reference/5.2/schema-appendix.html). Re-running a fresh-schema script against production tables is not a substitute for migration.
 
 The official guide also documents [historical data access restrictions](https://github.com/spring-projects/spring-batch/wiki/Spring-Batch-5.0-Migration-Guide#historical-data-access-implications): some v5 JobExplorer calls can fail while reading v4 executions. It expects failed v4 instances to be restarted successfully under v4 or abandoned following a business decision before migration. Do not assume v5 can directly restart an existing failed v4 execution. Check execution-context serialization compatibility separately from parameter conversion.
+
+## Choose the migration starting point
+
+- **Existing Batch 4 repository:** back up and rehearse schema, parameter and execution-context conversion on a database copy. Resolve failed v4 instances under v4. The example below does not convert or restart a v4 repository.
+- **New Batch 5 repository:** run the typed-parameter, completed-instance and failed-step tests. They check three behaviors in a fresh H2 schema, within one process.
+- **Boot application with Batch jobs:** decide whether Boot or explicit Batch configuration owns setup and schema initialization. The example uses explicit Spring configuration, not Boot auto-configuration.
+
+If this is also a Boot major-version upgrade, establish the [Java and Jakarta migration baseline](/en/posts/2023-09-08-springboot3-migration/) separately from the repository migration.
 
 ## Check behavior in a new Batch 5 repository
 

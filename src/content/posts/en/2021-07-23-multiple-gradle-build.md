@@ -7,8 +7,8 @@ kind: "post"
 publishedAt: "2026-10-27T02:36:39+00:00"
 categories: ["springboot"]
 tags: ["gradle", "vue", "build", "SpringBoot"]
-updatedAt: 2026-10-27T05:23:47.316+00:00
-reviewedAt: "2026-10-27"
+updatedAt: 2026-10-30T05:15:39.658659+00:00
+reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "Primary documentation checked; published runnable example verified."
 reviewSources: ["https://vite.dev/guide/", "https://vite.dev/guide/build.html", "https://docs.gradle.org/current/userguide/working_with_files.html", "https://docs.spring.io/spring-boot/3.5/gradle-plugin/packaging.html"]
@@ -201,5 +201,7 @@ Both apps were built and packaged with this configuration, and the running JAR s
 - Keep generated `static/project1` and `static/project2` namespaces separate from hand-written resources.
 - For Vue SFCs, add the plugin and Vite configuration appropriate to that app. This small example uses Vue render functions.
 - The integration targets executable `bootJar`, not the plain `jar`. Inspect the artifact you will deploy.
+
+For an existing application, check the [Spring Boot Java and Jakarta migration baseline](/en/posts/2023-09-08-springboot3-migration/) independently of packaging. If it also runs Batch jobs, follow the [Batch repository migration and restart checks](/en/posts/2023-10-27-springbatch5-migration/); serving frontend assets from a JAR does not validate persisted job data.
 
 For release-driven automation, see [GitHub release/asset selection](/en/posts/2023-09-23-linux-shellscript-github-latest/) and the [numeric comparator's input contract](/en/posts/2023-11-17-linux-shellscript-version-compare/). The [POSIX sh function guide](/en/posts/2023-09-20-linux-shellscript-function-error/) covers interpreter selection for preparation scripts.

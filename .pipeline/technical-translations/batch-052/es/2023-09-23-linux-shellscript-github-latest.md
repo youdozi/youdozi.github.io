@@ -5,7 +5,7 @@ title: "Última release de GitHub con curl y jq: elegir un archivo de descarga"
 description: "Selecciona un único recurso de una release de GitHub por sistema, CPU y formato con curl y jq. Trata errores HTTP, JSON no válido y coincidencias ausentes o duplicadas."
 state: "draft"
 sourcePath: "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md"
-sourceSha256: "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+sourceSha256: "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
 ---
 Usa `curl` para obtener la última release de GitHub y `jq` para elegir exactamente un recurso de descarga para el sistema, la CPU y el formato necesarios. El script se detiene ante errores HTTP, JSON no válido y coincidencias ausentes o duplicadas; devuelve metadatos sin descargar el archivo.
 
@@ -87,6 +87,8 @@ Un resultado correcto es un objeto JSON con `tag_name` y `download_url`. Los val
 | Cuerpo vacío o JSON mal formado | Código distinto de cero. |
 | Ningún recurso coincidente o varios | Fallar en lugar de elegir arbitrariamente. |
 | Sintaxis del argumento del repositorio no válida | Mensaje de uso, código 2. |
+
+Si la solicitud HTTP tiene éxito pero ningún archivo coincide, revise los nombres de los archivos de la versión antes de cambiar el filtro `jq`: este ejemplo selecciona Java 17 para Linux x64, no cualquier paquete JDK. Para Java 21, utilice el [ejemplo de metadatos de plataforma de Temurin](/en/posts/2023-10-10-temurin-jdk21-delay/). Si los valores del repositorio o la plataforma proceden de YAML, [analice y valide la configuración como datos](/en/posts/2021-07-27-parse-yaml/) antes de pasarlos a un comando.
 
 Se usaron respuestas HTTP locales para comprobar el éxito, los errores HTTP, el JSON no válido, los recursos ausentes y los duplicados. `GITHUB_API_URL` apunta por defecto a la API pública y puede dirigirse a un servidor de prueba que implemente el mismo contrato de respuesta.
 
