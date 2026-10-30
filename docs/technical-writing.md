@@ -11,7 +11,7 @@
 
 그림과 코드가 있다고 기술적 정확성이 검증된 것은 아닙니다. 코드 실행 검사와 별도로 그림·본문·코드의 의미를 검토합니다. 확인하지 않은 실행이나 독립 검토를 완료했다고 기록하지 않습니다. 검토 기록은 `.pipeline/`에 남기고 공개 본문에는 독자를 위한 설명만 담습니다.
 
-그림의 편집 원본은 알고리즘용 `content/diagrams/algorithms.json`과 기술 워크플로용 `content/diagrams/workflows.json`, 쿼리 비교용 `content/diagrams/query-strategies.json`, 게시 절차용 `content/diagrams/publication.json`, Jenkins용 `content/diagrams/jenkins.json`, Ruby 환경용 `content/diagrams/ruby-environment.json`입니다. `python3 scripts/build_algorithm_diagrams.py`로 `public/assets/diagrams/`에 정적 SVG를 생성하며 `npm run build`에서도 실행합니다. 생성 결과는 직접 편집하지 않습니다. 목록에 등록된 한영 글은 그림 링크와 지정한 언어의 코드 블록을 함께 확인합니다. 알고리즘은 전체 `Solution` 클래스, 다른 기술 글은 `codeContract`에 지정한 Java·Gradle·셸·Python·XML·JavaScript·Ruby·PHP 예제의 존재를 검사합니다. 코드가 본문이나 다른 언어의 블록에만 나타나면 통과하지 않습니다. 이 검사는 코드의 존재를 확인하며 실행 검사를 대체하지 않습니다. 현재 한영으로 보강한 45개 주제의 90개 글에 적용하며 나머지 한국어 아카이브 전체를 검증했다는 뜻은 아닙니다.
+그림의 편집 원본은 알고리즘용 `content/diagrams/algorithms.json`과 기술 워크플로용 `content/diagrams/workflows.json`, 쿼리 비교용 `content/diagrams/query-strategies.json`, 게시 절차용 `content/diagrams/publication.json`, Jenkins용 `content/diagrams/jenkins.json`, Ruby 환경용 `content/diagrams/ruby-environment.json`입니다. `python3 scripts/build_algorithm_diagrams.py`로 `public/assets/diagrams/`에 정적 SVG를 생성하며 `npm run build`에서도 실행합니다. 생성 결과는 직접 편집하지 않습니다. 목록에 등록된 한영 글은 그림 링크와 지정한 언어의 코드 블록을 함께 확인합니다. 알고리즘은 전체 `Solution` 클래스, 다른 기술 글은 `codeContract`에 지정한 Java·Gradle·셸·Python·XML·JavaScript·Ruby·PHP 예제의 존재를 검사합니다. 코드가 본문이나 다른 언어의 블록에만 나타나면 통과하지 않습니다. 이 검사는 코드의 존재를 확인하며 실행 검사를 대체하지 않습니다. 현재 한영으로 보강한 46개 주제의 92개 글에 적용하며 나머지 한국어 아카이브 전체를 검증했다는 뜻은 아닙니다.
 
 그림 원본의 종료 분기는 기본적으로 오류 종료를 뜻합니다. 정상적인 조기 반환은 `branch.outcome: "complete"`로 구분하며, 성공 반환을 오류 기호로 표시하지 않습니다.
 
@@ -21,3 +21,5 @@
 질문 중심 글에서는 독자가 묻는 문제에 대한 답과 적용 버전·조건을 도입부에 두고, 그 주장의 공식 근거를 가까이 연결합니다. 소제목을 바꿀 때는 기존 문단 ID를 남겨 이전 바로가기를 보존합니다. 표·코드·그림이 이미 답을 뒷받침한다면 재사용하고 중복 FAQ나 편집용 카드를 만들지 않습니다. 구조화 데이터의 출처는 독자에게 실제로 표시되는 링크와 일치해야 합니다. AI 노출을 보장하거나 자동 점수를 콘텐츠 품질 인증으로 쓰지 않습니다.
 
 예제 다운로드는 `content/examples/downloads.json`에 명시한 공개 한영 기술 글에서만 제공합니다. 실행 파일과 설정은 원고의 코드 블록·명시적 인라인 값에서 추출하며 별도 복사본을 수동 수정하지 않습니다. 파일 선택이 모호해지거나 한영 코드가 다르면 생성에 실패해야 합니다. 파일이 추가될 때 README의 실행 환경·의존성·실행 명령·외부 통신·예상 출력과 실제 검사 범위를 함께 대조합니다. 코드가 없는 도입 안내나 미게시·예제 상태의 글에 임의의 실행 프로젝트를 만들지 않습니다. ZIP 추가는 재현성 개선이며 검색 노출·색인·AI 인용 증가의 증거가 아닙니다.
+
+10k RPS 글의 추가 참조 구성 SVG는 `assets/img/architecture/`의 한영 원본을 편집합니다. 일반 빌드가 `/assets/img/architecture/`로 복사하며, 실행 가능한 입장 메서드 흐름과 전체 제안 구성을 구분합니다.

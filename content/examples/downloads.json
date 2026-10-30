@@ -364,6 +364,25 @@
         "en": "Creates monitor.jfr and plain.jfr in a fresh directory and counts worker-specific pinning events for a synthetic 100 ms sleep. Refuses existing destinations. No network/DB requests, throughput/latency comparison, carrier-limit tuning, production migration or remaining native-path verification.",
         "ko": "새 디렉터리에 monitor.jfr·plain.jfr를 만들고 합성 100ms 대기에서 작업별 pinning 이벤트를 셉니다. 기존 파일이 있으면 거부합니다. 네트워크/DB 요청·처리량/지연 비교·캐리어 수 조정·운영 전환·남은 네이티브 경로 검증은 하지 않습니다."
       }
+    },
+    {
+      "key": "2026-10-31-jdk-10k-rps-architecture",
+      "files": [
+        {
+          "path": "AdmissionDemo.java",
+          "language": "java",
+          "selector": "heading"
+        }
+      ],
+      "commands": "javac --release 27 AdmissionDemo.java\njava AdmissionDemo",
+      "environment": {
+        "en": "JDK 27 with matching javac/java; locally observed on Temurin 27.0.1.0.2+1, macOS AArch64. No preview flags, external dependencies or network requests.",
+        "ko": "같은 JDK 27의 javac·java. macOS AArch64 Temurin 27.0.1.0.2+1에서 실행했습니다. 미리보기 옵션·외부 의존성·네트워크 요청은 없습니다."
+      },
+      "scope": {
+        "en": "Tests a two-permit admission gate with virtual workers, excess rejection and normal/failing permit return. Not a rate limiter or HTTP server. No 10k RPS test, deadlines, infrastructure deployment, database/cache/queue integration or production capacity validation.",
+        "ko": "가상 작업과 두 허가의 입장 게이트에서 초과 거부·정상/실패 반환을 확인합니다. 요청률 제한기·HTTP 서버가 아니며 10k RPS 시험·기한·인프라 배포·DB/캐시/큐 연동·운영 용량 검증은 하지 않습니다."
+      }
     }
   ]
 }

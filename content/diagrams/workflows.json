@@ -2266,6 +2266,85 @@
           ]
         }
       ]
+    },
+    {
+      "key": "2026-10-31-jdk-10k-rps-architecture",
+      "title": {
+        "en": "Gate.call(): acquire, work, release",
+        "ko": "Gate.call(): 획득·업무·반납"
+      },
+      "description": {
+        "en": "Only the admission method is shown. Failure to acquire rejects without running work. After acquisition, finally returns the permit on success or failure.",
+        "ko": "입장 메서드만 표현합니다. 획득 실패는 업무를 실행하지 않고 거부합니다. 획득 후에는 정상·실패 모두 finally에서 허가를 반환합니다."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "if (!permits.tryAcquire())"
+        },
+        {
+          "language": "java",
+          "contains": "return work.call();"
+        },
+        {
+          "language": "java",
+          "contains": "permits.release();"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "condition",
+          "en": [
+            "tryAcquire() succeeded?"
+          ],
+          "ko": [
+            "tryAcquire()가 성공했는가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "no: reject",
+              "ko": "아니오: 거부"
+            },
+            "continue": {
+              "en": "yes",
+              "ko": "예"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Execute work.call()",
+            "Operation completes or throws"
+          ],
+          "ko": [
+            "work.call() 실행",
+            "작업 정상 종료 또는 예외 발생"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "finally: return the permit",
+            "After the actual operation ends"
+          ],
+          "ko": [
+            "finally: 허가 반환",
+            "실제 작업이 끝난 뒤 수행"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Return the result",
+            "Or propagate the exception"
+          ],
+          "ko": [
+            "결과 반환",
+            "또는 예외를 호출자에게 전달"
+          ]
+        }
+      ]
     }
   ]
 }
