@@ -169,6 +169,7 @@ def comparison(before, after, changed_at=None):
         raise ValueError('Follow-up must not overlap baseline')
     boundary = None
     ga_boundary = None
+    ga_zone_verified = False
     if changed_at:
         changed = datetime.fromisoformat(changed_at)
         if changed.tzinfo is None: raise ValueError('Deployment time requires an explicit timezone')
@@ -179,6 +180,7 @@ def comparison(before, after, changed_at=None):
         after_zone = after.get('ga4Attribution', {}).get('metadata', {}).get('timeZone')
         if before_zone and after_zone and before_zone != after_zone:
             raise ValueError('GA property timezone changed; periods are not comparable')
+        ga_zone_verified = bool(before_zone and after_zone)
         ga_zone = after_zone or before_zone
         if ga_zone:
             ga_boundary = str(changed.astimezone(ZoneInfo(ga_zone)).date())
@@ -192,7 +194,7 @@ def comparison(before, after, changed_at=None):
                          'baselineGaAttribution': attribution_metrics(before, url), 'followUpGaAttribution': attribution_metrics(after, url)})
     return {'baselineDates': a, 'followUpDates': b, 'equalLengthDays': 28,
             'deploymentDayPT': boundary, 'deploymentDayGA': ga_boundary,
-            'publicationBoundaryVerified': boundary is not None and ga_boundary is not None,
+            'publicationBoundaryVerified': boundary is not None and ga_zone_verified,
             'pages': per_page, 'causalEffectEstablished': False, 'dedicatedAIVisibilityMeasured': False}
 
 

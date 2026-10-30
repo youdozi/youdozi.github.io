@@ -165,7 +165,9 @@ class PropertyTimezoneBoundaryTests(unittest.TestCase):
         after=self.record('2026-10-31','2026-11-27','America/Los_Angeles')
         with self.assertRaisesRegex(ValueError,'timezone changed'):
             a.comparison(before,after,'2026-10-30T03:00:00+00:00')
-        before.pop('ga4Attribution');after.pop('ga4Attribution')
+        before.pop('ga4Attribution')
+        self.assertFalse(a.comparison(before,after,'2026-10-30T03:00:00+00:00')['publicationBoundaryVerified'])
+        after.pop('ga4Attribution')
         self.assertFalse(a.comparison(before,after,'2026-10-30T03:00:00+00:00')['publicationBoundaryVerified'])
 
 
