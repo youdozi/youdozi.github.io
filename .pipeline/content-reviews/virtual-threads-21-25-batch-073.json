@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "virtual-threads-21-25-073",
+  "reviewedAt": "2026-10-30T16:32:54.421831+00:00",
+  "baseCommit": "975da7e94369726f4fe6bfab619581ef343897e0",
+  "scope": "KO original and complete EN translation on virtual-thread concepts and JDK 21/25 differences, localized flow, source-derived JFR ZIP and native JDK-guide links. Existing public bodies unchanged.",
+  "newPublicArticles": 2,
+  "articleHashes": {
+    "ko": "718a4ded53ca7f5e759b250475567b97332f7d4e2f825b01683c81fe2d50ed5a",
+    "en": "4b100d81b2721e31e0a765676927aa48165b4b60c224dff2ba5846ba70dec8db"
+  },
+  "primarySources": [
+    "https://openjdk.org/jeps/444",
+    "https://openjdk.org/jeps/491",
+    "https://openjdk.org/jeps/506",
+    "https://openjdk.org/jeps/505",
+    "https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html",
+    "https://docs.oracle.com/en/java/javase/25/core/virtual-threads.html",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/jdk.jfr/jdk/jfr/Recording.html",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/jdk.jfr/jdk/jfr/consumer/RecordingFile.html"
+  ],
+  "review": {
+    "method": "Separate-context technical and complete KO-to-EN review under writing/translation skills.",
+    "session": "/root/virtualthreads073_review",
+    "requiredFindings": 0,
+    "unresolvedMajorOrCriticalFindings": 0,
+    "reviewerExecuted": "8-case runner on each JDK, plus localized SVG raster rendering at 360px.",
+    "authorCorrections": "Diagram exit-branch schema corrected after local tests; final Korean context wording clarified. Reviewer checked final sources and hashes.",
+    "limits": "No production application, throughput/latency or remaining native pinning path verification."
+  },
+  "validation": {
+    "nodeTests": 165,
+    "pythonTests": 333,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 443,
+    "sitemapURLs": 501,
+    "diagramPairs": 45,
+    "exampleArchives": 32,
+    "readingPathArticles": 88,
+    "readingNeighborLinks": 142,
+    "casesPerJDK": 8,
+    "jdks": [
+      "Temurin 21.0.13+9 macOS AArch64",
+      "Temurin 25.0.5+8 macOS AArch64"
+    ],
+    "jdk21DownloadSHA256": "bf036b35b071bfb2f54f2c0af8ee8d88afa95ee6eb3dce02c0f94cfc2524d04a",
+    "monitorPlainCounts": {
+      "21": [
+        1,
+        0
+      ],
+      "25": [
+        0,
+        0
+      ]
+    },
+    "actualZIPCodeExecuted": true,
+    "independentJFRCLIRead": true,
+    "existingRecordingPreservationTested": true,
+    "previewFlags": false,
+    "globalJDKConfigurationChanged": false,
+    "browserChecks": 4,
+    "widths": [
+      320,
+      1360
+    ],
+    "mobileArticleAndFlowInspected": true,
+    "performanceMeasured": false
+  },
+  "existingTechnicalDraftsUnpublished": 120,
+  "newAdditionalLanguageTasksNotStarted": 6,
+  "translationQueue": ".pipeline/technical-translations/queue-073.json",
+  "googleIndexingRankingOrAICitationGainEstablished": false
+}

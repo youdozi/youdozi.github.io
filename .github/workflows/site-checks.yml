@@ -86,15 +86,19 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '21'
+          java-version: '21.0.13+9'
       - name: Compile final JDK 21 features without preview flags
         run: python3 -B scripts/check_jvm_runtime_examples.py --part jdk
+      - name: Observe JDK 21 monitor pinning with the published JFR probe
+        run: python3 -B scripts/check_virtual_thread_example.py
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '25.0.5+8'
       - name: Execute finalized ScopedValue ZIP and concurrency contracts without preview
         run: python3 -B scripts/check_scopedvalue_example.py
+      - name: Observe JDK 25 monitor behavior with the same published JFR probe
+        run: python3 -B scripts/check_virtual_thread_example.py
       - name: Migration regression tests
         run: npm test
       - name: Verify local browser checks block Analytics collection
