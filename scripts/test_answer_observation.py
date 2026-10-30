@@ -142,4 +142,33 @@ class CompareCommandTests(unittest.TestCase):
                 auth.assert_called_once()
 
 
+
+
+
+class PropertyTimezoneBoundaryTests(unittest.TestCase):
+    def record(self,start,end,zone):
+        return {'schemaVersion':1,'cohortIdentity':'same','dates':{'start':start,'end':end},'ga4Attribution':{'metadata':{'timeZone':zone}}}
+
+    def test_pt_next_day_can_still_be_the_ga_deployment_day(self):
+        before=self.record('2026-09-29','2026-10-26','Asia/Seoul')
+        after=self.record('2026-10-30','2026-11-26','Asia/Seoul')
+        with self.assertRaisesRegex(ValueError,'GA property day'):
+            a.comparison(before,after,'2026-10-30T03:00:00+00:00')
+        after=self.record('2026-10-31','2026-11-27','Asia/Seoul')
+        result=a.comparison(before,after,'2026-10-30T03:00:00+00:00')
+        self.assertTrue(result['publicationBoundaryVerified'])
+        self.assertEqual(result['deploymentDayPT'],'2026-10-29')
+        self.assertEqual(result['deploymentDayGA'],'2026-10-30')
+
+    def test_missing_or_changed_ga_timezone_is_not_certified(self):
+        before=self.record('2026-09-29','2026-10-26','Asia/Seoul')
+        after=self.record('2026-10-31','2026-11-27','America/Los_Angeles')
+        with self.assertRaisesRegex(ValueError,'timezone changed'):
+            a.comparison(before,after,'2026-10-30T03:00:00+00:00')
+        before.pop('ga4Attribution')
+        self.assertFalse(a.comparison(before,after,'2026-10-30T03:00:00+00:00')['publicationBoundaryVerified'])
+        after.pop('ga4Attribution')
+        self.assertFalse(a.comparison(before,after,'2026-10-30T03:00:00+00:00')['publicationBoundaryVerified'])
+
+
 if __name__ == '__main__': unittest.main()
