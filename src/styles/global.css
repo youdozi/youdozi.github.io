@@ -12,3 +12,4 @@ html:lang(zh-CN) .entry-card h2,html:lang(zh-CN) .article-heading h1,html:lang(j
 .code-example{min-width:0;margin:24px 0}.code-tools{display:flex;justify-content:flex-end;padding:8px 0}.code-tools button{padding:8px 14px;min-height:40px;max-width:100%;border:1px solid #a9b6a7;border-radius:4px;background:#fff;color:var(--accent);cursor:pointer;overflow-wrap:anywhere;font-size:13px}.code-tools button[aria-disabled="true"]{cursor:wait}.prose .code-example pre{margin:0}.prose pre:focus-visible{outline:3px solid #598d69;outline-offset:3px}.prose .code-copy-status{min-height:1.7em;margin:5px 0 0;font-size:13px;line-height:1.7;color:var(--muted)}
 /* Long translated guide titles and labels must fit narrow reading screens. */
 .page-heading h1,.page-heading .eyebrow,.guide-parent{overflow-wrap:anywhere}
+.example-download{display:inline-block;padding:4px 0;color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}

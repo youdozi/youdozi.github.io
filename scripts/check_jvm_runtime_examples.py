@@ -8,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 from xml.etree import ElementTree
+from build_example_archives import extract_example
 
 
 def extract(slug, expected):
@@ -43,7 +44,7 @@ def run_jdk():
     print('[environment]', version.splitlines()[0], flush=True)
     with tempfile.TemporaryDirectory(prefix='youdozi-jdk21-') as directory:
         source = Path(directory) / 'Jdk21Example.java'
-        source.write_text(files['Jdk21Example.java'] + '\n')
+        extract_example('2023-09-20-jdk-21-release',directory,files)
         subprocess.run([javac, '--release', '21', '-d', directory, str(source)], check=True, timeout=45)
         result = subprocess.check_output([java, '-cp', directory, 'Jdk21Example'], text=True, timeout=30)
         assert result.splitlines() == ['ALPHA/gamma', '[gamma, beta, ALPHA]', 'point=2,3', 'missing', 'virtual=true'], result
@@ -66,10 +67,7 @@ def run_batch():
     print(f'[environment] Gradle {gradle[1]}, JVM {jvm[1]}', flush=True)
     with tempfile.TemporaryDirectory(prefix='youdozi-batch5-') as directory:
         root = Path(directory)
-        for name, code in files.items():
-            path = root / name
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(code + '\n')
+        extract_example('2023-10-27-springbatch5-migration',root,files)
         subprocess.run(['gradle', '-p', directory, '--no-daemon', 'clean', 'test'], env=env, check=True, timeout=240)
         suites = [ElementTree.parse(p).getroot() for p in root.glob('build/test-results/test/TEST-*.xml')]
         tests = sum(int(s.get('tests', 0)) for s in suites)

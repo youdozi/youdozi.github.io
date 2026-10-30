@@ -9,6 +9,7 @@ for (const file of await readdir('.')) {
 await writeFile('public/.nojekyll', '');
 
 // Both normal builds and integration fixtures prepare the same generated assets.
+execFileSync('python3', ['-B', 'scripts/build_example_archives.py'], { stdio: 'inherit' });
 execFileSync('python3', ['-B', 'scripts/build_algorithm_diagrams.py'], { stdio: 'inherit' });
 
 console.log(`[ok] ${await prepareTechnicalAssets()} approved technical diagram assets prepared`);

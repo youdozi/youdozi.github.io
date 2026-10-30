@@ -10,6 +10,7 @@ import sys
 import tempfile
 
 import yaml
+from build_example_archives import extract_example
 
 
 def extract(slug, expected):
@@ -53,8 +54,8 @@ def main():
     }
     with tempfile.TemporaryDirectory(prefix='youdozi-config-') as directory:
         root = Path(directory)
-        for name, text in files.items():
-            (root / name).write_text(text + '\n')
+        extract_example('2021-07-27-parse-yaml',root,{name:text for name,text in files.items() if name!='select-temurin.py'})
+        extract_example('2023-10-10-temurin-jdk21-delay',root,{'select-temurin.py':files['select-temurin.py']})
 
         def run(name, *args, env=None):
             command = ['sh', str(root / name)] if name.endswith('.sh') else [sys.executable, str(root / name)]
