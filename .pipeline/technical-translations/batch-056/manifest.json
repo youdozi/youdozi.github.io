@@ -17,7 +17,7 @@
     "method": "AI self-review against complete English article and standalone target-language reading",
     "independentReviewer": false,
     "newExternalFactVerification": false,
-    "scope": "Complete metadata, prose, tables, captions and flow diagrams; Java source, inline identifiers, examples and URLs preserved. Source execution statements remain translations of prior evidence."
+    "scope": "Complete metadata, prose, tables, captions and flow diagrams; Java, Python, shell and XML code, literal search queries, output, inline identifiers and URLs preserved. Source execution statements remain translations of prior evidence."
   },
   "editions": [
     {
