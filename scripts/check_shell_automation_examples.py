@@ -11,6 +11,7 @@ import subprocess
 import sys
 import tempfile
 import threading
+from build_example_archives import extract_example
 
 ARTICLES = {
     'greet.sh': '2023-09-20-linux-shellscript-function-error',
@@ -40,7 +41,11 @@ def main():
     with tempfile.TemporaryDirectory(prefix='youdozi-shell-examples-') as directory:
         root = Path(directory)
         for filename, slug in ARTICLES.items():
-            (root / filename).write_text(extract(filename, slug) + '\n')
+            code = extract(filename, slug)
+            if filename == 'greet.sh':
+                (root / filename).write_text(code + '\n')
+            else:
+                extract_example(slug,root,{filename:code})
             subprocess.run(['sh', '-n', str(root / filename)], check=True, timeout=10)
 
         def run(filename, args=(), env=None):

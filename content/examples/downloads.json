@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "languages": [
+    "en",
+    "ko"
+  ],
+  "examples": [
+    {
+      "key": "2023-09-23-linux-shellscript-github-latest",
+      "files": [
+        {
+          "path": "latest-release.sh",
+          "language": "sh",
+          "selector": "heading"
+        }
+      ],
+      "commands": "sh latest-release.sh adoptium/temurin17-binaries",
+      "environment": {
+        "en": "POSIX sh, curl and jq.",
+        "ko": "POSIX sh·curl·jq."
+      },
+      "scope": {
+        "en": "The command reads public GitHub metadata over the network and selects a Linux x64 HotSpot JDK 17 tar.gz URL. It does not download or verify that binary. HTTP, JSON and asset-selection failures stop the script.",
+        "ko": "명령은 네트워크로 공개 GitHub 메타데이터를 조회하고 Linux x64 HotSpot JDK 17 tar.gz URL을 선택합니다. 바이너리를 다운로드하거나 검증하지 않습니다. HTTP·JSON·자산 선택 오류가 나면 종료합니다."
+      }
+    },
+    {
+      "key": "2023-11-17-linux-shellscript-version-compare",
+      "files": [
+        {
+          "path": "version-compare.sh",
+          "language": "sh",
+          "selector": "heading"
+        }
+      ],
+      "commands": "sh version-compare.sh 1.10.5 1.3.1\nsh version-compare.sh 1.2 1.2.0",
+      "environment": {
+        "en": "POSIX sh and Python 3.",
+        "ko": "POSIX sh·Python 3."
+      },
+      "scope": {
+        "en": "Numeric dotted versions only, not full SemVer. A valid comparison returns status 0 even for a less-than result; read the printed relationship. Unsupported syntax returns status 2.",
+        "ko": "점으로 나눈 숫자 버전만 다루며 전체 SemVer 비교가 아닙니다. 정상 비교는 작다는 결과에도 종료 코드 0을 반환하므로 출력된 관계를 읽으세요. 지원하지 않는 형식은 종료 코드 2를 반환합니다."
+      }
+    },
+    {
+      "key": "2021-07-27-parse-yaml",
+      "files": [
+        {
+          "path": "application.yml",
+          "language": "yaml",
+          "selector": "heading"
+        },
+        {
+          "path": "read-port.py",
+          "language": "python",
+          "selector": "heading"
+        },
+        {
+          "path": "run-with-port.sh",
+          "language": "sh",
+          "selector": "heading"
+        }
+      ],
+      "commands": "python3 -m venv .venv\n.venv/bin/python -m pip install PyYAML==6.0.3\nPYTHON=.venv/bin/python sh run-with-port.sh application.yml \\\n  .venv/bin/python -c 'import os; print(os.environ[\"SERVER_PORT\"])'",
+      "environment": {
+        "en": "POSIX sh, Python 3 and PyYAML 6.0.3. Dependency installation needs network access.",
+        "ko": "POSIX sh·Python 3·PyYAML 6.0.3. 의존성 설치에는 네트워크가 필요합니다."
+      },
+      "scope": {
+        "en": "For trusted local configuration. Validates one integer server.port from 1 to 65535 and passes it to a child command without eval. This is not a general YAML schema, duplicate-key checker or resource-limit policy.",
+        "ko": "신뢰하는 로컬 설정을 위한 예제입니다. 1~65535 범위의 정수 server.port 하나를 검증하고 eval 없이 자식 명령에 전달합니다. 일반 YAML 스키마·중복 키 검사·자원 제한 정책이 아닙니다."
+      }
+    },
+    {
+      "key": "2023-10-10-temurin-jdk21-delay",
+      "files": [
+        {
+          "path": "select-temurin.py",
+          "language": "python",
+          "selector": "heading"
+        }
+      ],
+      "commands": "curl --fail --show-error --silent --location \\\n  'https://api.adoptium.net/v3/assets/latest/21/hotspot?architecture=x64&image_type=jdk&os=linux&vendor=eclipse' \\\n  --output assets.json &&\n  python3 select-temurin.py assets.json",
+      "environment": {
+        "en": "Python 3 and curl. The metadata request needs network access.",
+        "ko": "Python 3·curl. 메타데이터 조회에는 네트워크가 필요합니다."
+      },
+      "scope": {
+        "en": "Checks Java 21 Linux x64 HotSpot JDK metadata, URL location and checksum syntax. It does not download, hash or install a JDK archive. Returned versions depend on request time.",
+        "ko": "Java 21 Linux x64 HotSpot JDK 메타데이터·URL 위치·체크섬 형식을 검사합니다. JDK 아카이브를 다운로드·해시 계산·설치하지 않습니다. 반환 버전은 조회 시점에 따라 달라집니다."
+      }
+    },
+    {
+      "key": "2023-09-20-jdk-21-release",
+      "files": [
+        {
+          "path": "Jdk21Example.java",
+          "language": "java",
+          "selector": "heading"
+        }
+      ],
+      "commands": "javac --release 21 Jdk21Example.java\njava Jdk21Example",
+      "environment": {
+        "en": "JDK 21. No preview flags are used.",
+        "ko": "JDK 21. Preview 옵션은 사용하지 않습니다."
+      },
+      "scope": {
+        "en": "Demonstrates final JDK 21 features: a sequenced collection view, record and switch patterns, and a virtual thread. The recorded outputs describe this example, not a throughput benchmark or a production runtime recommendation.",
+        "ko": "순서가 있는 컬렉션 뷰·레코드 및 switch 패턴·가상 스레드 등 JDK 21의 정식 기능을 확인합니다. 기록된 출력은 이 예제의 결과이며 처리량 벤치마크나 운영 런타임 추천이 아닙니다."
+      }
+    },
+    {
+      "key": "2023-09-19-springboot-test-webclient",
+      "files": [
+        {
+          "path": "build.gradle",
+          "language": "groovy",
+          "selector": "unique-fence"
+        },
+        {
+          "path": "src/test/java/ExternalApiTest.java",
+          "language": "java",
+          "selector": "unique-fence"
+        }
+      ],
+      "inlineFiles": [
+        {
+          "path": "settings.gradle",
+          "value": "rootProject.name = 'webclient-example'"
+        }
+      ],
+      "commands": "gradle --no-daemon clean test",
+      "environment": {
+        "en": "JDK 17 and Gradle 8.4. The article records JDK 17.0.8.1, Boot BOM 3.5.7 and MockWebServer 4.12.0. Initial dependency resolution needs network access. No Gradle wrapper is bundled.",
+        "ko": "JDK 17·Gradle 8.4. 글의 재현 환경은 JDK 17.0.8.1·Boot BOM 3.5.7·MockWebServer 4.12.0입니다. 최초 의존성 해결에는 네트워크가 필요합니다. Gradle wrapper는 포함하지 않습니다."
+      },
+      "scope": {
+        "en": "Eight client response contracts use a local MockWebServer. No running Boot application is required. The tests do not establish production redirect, timeout or retry policies. Recorded dependency versions are reproduction inputs, not current production recommendations.",
+        "ko": "로컬 MockWebServer로 클라이언트 응답 계약 8개를 확인합니다. 실행 중인 Boot 애플리케이션은 필요하지 않습니다. 운영 리디렉션·타임아웃·재시도 정책을 검증하는 테스트는 아닙니다. 고정 의존성 버전은 재현 입력이며 현재 운영 버전 추천이 아닙니다."
+      }
+    },
+    {
+      "key": "2023-10-27-springbatch5-migration",
+      "files": [
+        {
+          "path": "settings.gradle",
+          "language": "groovy",
+          "selector": "heading"
+        },
+        {
+          "path": "build.gradle",
+          "language": "groovy",
+          "selector": "heading"
+        },
+        {
+          "path": "src/test/java/example/BatchRestartTest.java",
+          "language": "java",
+          "selector": "heading"
+        }
+      ],
+      "commands": "gradle --no-daemon clean test",
+      "environment": {
+        "en": "JDK 17 and Gradle 8.4. The article records JDK 17.0.8.1, Boot BOM 3.5.7, Batch 5.2.4 and H2 2.3.232. Initial dependency resolution needs network access. No Gradle wrapper is bundled.",
+        "ko": "JDK 17·Gradle 8.4. 글의 재현 환경은 JDK 17.0.8.1·Boot BOM 3.5.7·Batch 5.2.4·H2 2.3.232입니다. 최초 의존성 해결에는 네트워크가 필요합니다. Gradle wrapper는 포함하지 않습니다."
+      },
+      "scope": {
+        "en": "Three tests check typed parameters, completed-instance rejection and failed-step restart in a fresh H2 repository within one process. This does not migrate a Batch 4 database, restart a failed v4 instance or prove JVM recovery or exactly-once side effects. Recorded dependency versions are reproduction inputs, not current production recommendations.",
+        "ko": "새 H2 저장소에서 타입별 파라미터·완료 인스턴스 거부·실패 Step 재시작의 세 동작을 한 프로세스에서 확인합니다. Batch 4 DB 이관·실패한 v4 인스턴스 재시작·JVM 복구·외부 부수 효과의 정확히 한 번 실행을 입증하지 않습니다. 고정 의존성 버전은 재현 입력이며 현재 운영 버전 추천이 아닙니다."
+      }
+    }
+  ]
+}

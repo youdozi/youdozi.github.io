@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "id": "downloadable-examples-063",
+  "reviewedAt": "2026-10-30T07:47:39.712253+00:00",
+  "baseCommit": "fb81f3681588fff03e43eaf0ef160720c9dae84b",
+  "scope": "Downloadable example files for seven existing paired native technical subjects; deterministic ZIP generation from article code and inline project setup; existing execution checks consume verified ZIP members; generated asset and article eligibility checks.",
+  "publicNativeArticlesWithDownloads": 14,
+  "newPublicArticles": 0,
+  "sourceBodiesTitlesRoutesDatesAndTranslationPinsChanged": false,
+  "sourceIdentities": [
+    {
+      "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
+      "sha256": "f16e3b473bf828c56f507244947e3df3c7440005abaf27d54492d6fe5aaa1d23"
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-23-linux-shellscript-github-latest.md",
+      "sha256": "71ea9fc79e18e1fe880b8a6c768c82ea3be3fe09703c1b4d23afe3ccc1b0c014"
+    },
+    {
+      "path": "src/content/posts/en/2023-11-17-linux-shellscript-version-compare.md",
+      "sha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc"
+    },
+    {
+      "path": "src/content/posts/ko/2023-11-17-linux-shellscript-version-compare.md",
+      "sha256": "afd0c2ed789522d545abb5b6d78cc25d6ca7aa4d04e1b501cd3a5f0ef27f5a39"
+    },
+    {
+      "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
+      "sha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f"
+    },
+    {
+      "path": "src/content/posts/ko/2021-07-27-parse-yaml.md",
+      "sha256": "a6a3b831a6ee5127e939b35d6992e89e763cd3642767c7be9b1b2545fef430af"
+    },
+    {
+      "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
+      "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+    },
+    {
+      "path": "src/content/posts/ko/2023-10-10-temurin-jdk21-delay.md",
+      "sha256": "bf3b90a3ac294e71eaf3c0992fd6da07f2e042cf0daeec20179c34bd1e660e7d"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
+      "sha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578"
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-20-jdk-21-release.md",
+      "sha256": "2b5e56dffad5cc9f1fe87eb57d1fa328c4d21ca9f9916a6fc1f7ef5cfb4ae6ee"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+      "sha256": "aa9eca28ad3d642781c1a4ded9d566dab478bf6984a438bab68d460c967cc0b1"
+    },
+    {
+      "path": "src/content/posts/ko/2023-09-19-springboot-test-webclient.md",
+      "sha256": "602ae34a40a917e421f0d48258d26708a80ca075b239f38e159c758f21e94df9"
+    },
+    {
+      "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+      "sha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
+    },
+    {
+      "path": "src/content/posts/ko/2023-10-27-springbatch5-migration.md",
+      "sha256": "f0167eda14357962df14473b577588967cfc233300d7a6ce2d7e8ba33d13f7d6"
+    }
+  ],
+  "assetManifest": {
+    "schemaVersion": 1,
+    "archives": {
+      "2023-09-23-linux-shellscript-github-latest-en.zip": {
+        "sha256": "885c2dfb3c7ce66af31be5907a9a126b102a6b1aacb877d64d06dc29ca5bb305",
+        "bytes": 2881
+      },
+      "2023-09-23-linux-shellscript-github-latest-ko.zip": {
+        "sha256": "bade7c8abf8e8ecab709cc2d7c2515a696802ae46b7608dd70553c3374f163c0",
+        "bytes": 3010
+      },
+      "2023-11-17-linux-shellscript-version-compare-en.zip": {
+        "sha256": "c7cee8cb22eb859e7d1e40d474367f81e2e218f27c9abac0e5c41623771249cb",
+        "bytes": 2236
+      },
+      "2023-11-17-linux-shellscript-version-compare-ko.zip": {
+        "sha256": "829e9ad0d0d39f01e19cad46f5179d951949ecf3a28c82ba278fcee17ff812c5",
+        "bytes": 2399
+      },
+      "2021-07-27-parse-yaml-en.zip": {
+        "sha256": "b658ffa32e14e78786478c10f8896437a2f2b488a81e32cffaa48b91fa4c69d2",
+        "bytes": 3012
+      },
+      "2021-07-27-parse-yaml-ko.zip": {
+        "sha256": "015ccd7b5e9e530dd0ba62b62acbebdbaaf9a93b4aa0a3773c15dc6bfa696152",
+        "bytes": 3135
+      },
+      "2023-10-10-temurin-jdk21-delay-en.zip": {
+        "sha256": "ac9ec15f73afb35b60566745828a68df67335e9261a87bff02e402fec1103249",
+        "bytes": 3066
+      },
+      "2023-10-10-temurin-jdk21-delay-ko.zip": {
+        "sha256": "7aed4841eb89892526c7b82a4a7732d84705b066574dcfa4cd3c3b80e524e67f",
+        "bytes": 3225
+      },
+      "2023-09-20-jdk-21-release-en.zip": {
+        "sha256": "caa749431b77742322451218141820429f15cdb89beed0740b232e9c0610861e",
+        "bytes": 2316
+      },
+      "2023-09-20-jdk-21-release-ko.zip": {
+        "sha256": "404a932f91a153ea6d9023e6ddd657d233fef128d6513ae8c4f29d27957f9070",
+        "bytes": 2437
+      },
+      "2023-09-19-springboot-test-webclient-en.zip": {
+        "sha256": "9f7ac46ed2dca4c4b59195ed8986170e92e9981d2d5c4d22a53318861361f45b",
+        "bytes": 8007
+      },
+      "2023-09-19-springboot-test-webclient-ko.zip": {
+        "sha256": "eee5b3b9fd65befcb772faee2004f6abe03a225e9023a0e66a4c640f0e3db8ad",
+        "bytes": 8194
+      },
+      "2023-10-27-springbatch5-migration-en.zip": {
+        "sha256": "30e80b57f8beb2350d00f3488da54d1606953e372f3e52545ff4aa63d1a2d5fa",
+        "bytes": 8742
+      },
+      "2023-10-27-springbatch5-migration-ko.zip": {
+        "sha256": "2e496426bf20109aa82a2dfcce6a59ff9703d5325f94e040c68028ac2c82bfa4",
+        "bytes": 8906
+      }
+    }
+  },
+  "downloadLabels": [
+    "en",
+    "ko"
+  ],
+  "review": {
+    "method": "AI self-review of extraction, build integration and generated README instructions in both native languages; source-code and article scope comparison.",
+    "independentReviewer": false,
+    "primaryReferences": [
+      "https://docs.python.org/3.11/library/zipfile.html",
+      "https://html.spec.whatwg.org/multipage/links.html#downloading-resources",
+      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+    ],
+    "limits": "Execution and file-identity checks do not establish all production environments, current version recommendations, higher rankings or AI citations."
+  },
+  "validation": {
+    "nodeTests": 158,
+    "pythonTests": 322,
+    "astroFiles": 77,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 425,
+    "sitemapURLs": 481,
+    "archives": 14,
+    "totalArchiveBytes": 61566,
+    "browserWidths": [
+      320,
+      1360
+    ],
+    "browserChecks": 28,
+    "allDownloadsClickedAndSHA256Matched": true,
+    "keyboardFocusAndNoPageOverflow": true,
+    "sourceDateAndVisibleEvidencePreserved": true,
+    "telemetryIsolated": true,
+    "executableProjects": {
+      "shellVersionCases": 19,
+      "shellReleaseHTTPCases": 13,
+      "shellReleaseArgumentCases": 7,
+      "yamlParserCases": 21,
+      "yamlWrapperAndUsageCases": 6,
+      "temurinMetadataCases": 18,
+      "jdk21OutputLines": 5,
+      "java17TargetRejected": true,
+      "webclientContracts": 8,
+      "batchFreshSchemaContracts": 3
+    },
+    "localRuntimes": {
+      "jdk21": "Zulu 21.0.1",
+      "jdk17": "Corretto 17.0.8.1",
+      "gradle": "8.4",
+      "yamlParser": "6.0.3"
+    },
+    "translationDraftsStillValidated": 120
+  },
+  "networkRequestsDuringGeneration": 0,
+  "binaryDownloadsDuringMetadataFixtureTests": 0,
+  "downloadEventTrackingAdded": false,
+  "indexingRequested": false,
+  "analyticsOrSearchSettingsModified": false,
+  "rankingOrAICitationImprovementEstablished": false
+}

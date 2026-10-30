@@ -8,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 from xml.etree import ElementTree
+from build_example_archives import extract_example
 
 
 def main():
@@ -25,10 +26,9 @@ def main():
         raise SystemExit('English and Korean WebClient code and build files must match.')
     code,build=examples[0]
     with tempfile.TemporaryDirectory(prefix='youdozi-webclient-') as directory:
-        root=Path(directory);(root/'src/test/java').mkdir(parents=True)
-        (root/'src/test/java/ExternalApiTest.java').write_text(code)
-        (root/'settings.gradle').write_text("rootProject.name = 'article-webclient-regression'\n")
-        (root/'build.gradle').write_text(build+'\n')
+        root=Path(directory)
+        extract_example('2023-09-19-springboot-test-webclient',root,
+                        {'src/test/java/ExternalApiTest.java':code,'build.gradle':build})
         subprocess.run(['gradle','-p',directory,'--no-daemon','test'],env=env,check=True,timeout=240)
         suites=[ElementTree.parse(path).getroot() for path in (root/'build/test-results/test').glob('TEST-*.xml')]
         tests=sum(int(suite.get('tests','0')) for suite in suites)

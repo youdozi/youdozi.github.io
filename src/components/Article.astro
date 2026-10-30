@@ -1,5 +1,6 @@
 ---
 import Comments from './Comments.astro';
+import {exampleDownload} from '../lib/example-downloads';
 import {answerCitations} from '../lib/answer-pilot';
 import type {NativeLanguage} from '../lib/locales';
 import { render } from 'astro:content';
@@ -19,6 +20,7 @@ import { entries, text, alternateLinks, formatDate, taxonomyUrl, type Entry } fr
 interface Props { entry: Entry; }
 const { entry } = Astro.props;
 const lang = entry.language;
+const download = exampleDownload(entry);
 const all = await entries();
 const rendered = entry.post ? await render(entry.post) : undefined;
 const Content = rendered?.Content;
@@ -51,7 +53,7 @@ const hasTopics = all.some(candidate => candidate.language === lang && candidate
 ---
 <Base title={entry.title} description={entry.description} lang={lang} structuredData={articleData} articleMetadata={entry.reviewStatus === 'example' ? undefined : metadata} noindex={entry.reviewStatus === 'example'} alternates={alternateLinks(entry, all)}>
   <article class="article">
-    <header class="article-heading"><a class="eyebrow" href={`/${lang}/${entry.kind === 'digest' ? 'digest' : 'posts'}/`}>← {text[lang][entry.kind === 'digest' ? 'digest' : 'posts']}</a><h1>{entry.title}</h1><div class="entry-meta"><span class="publication-date">{text[lang].published}: <time datetime={entry.publishedAt.toISOString()}>{formatDate(entry.publishedAt, lang)}</time></span>{modified && <span class="modification-date">{articleUi[lang].updated}: <time datetime={modified.toISOString()}>{formatDate(modified,lang)}</time></span>}<a class="author-link" href={authorPath(lang)} rel="author" lang={lang==='ko'?'ko':'en'}>youdozi</a></div></header>
+    <header class="article-heading"><a class="eyebrow" href={`/${lang}/${entry.kind === 'digest' ? 'digest' : 'posts'}/`}>← {text[lang][entry.kind === 'digest' ? 'digest' : 'posts']}</a><h1>{entry.title}</h1><div class="entry-meta"><span class="publication-date">{text[lang].published}: <time datetime={entry.publishedAt.toISOString()}>{formatDate(entry.publishedAt, lang)}</time></span>{modified && <span class="modification-date">{articleUi[lang].updated}: <time datetime={modified.toISOString()}>{formatDate(modified,lang)}</time></span>}<a class="author-link" href={authorPath(lang)} rel="author" lang={lang==='ko'?'ko':'en'}>youdozi</a>{download && <a class="example-download" href={download} download>{lang==='ko'?'예제 파일 다운로드 (.zip)':'Download example files (.zip)'}</a>}</div></header>
     {entry.reviewStatus === 'example' && <aside class="notice">예제 데이터 — 실제 뉴스로 취급하지 마세요.</aside>}
     <ArticleContents sections={sections} label={articleUi[lang].toc} />
     <div class="prose">

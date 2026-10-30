@@ -14,7 +14,8 @@ export const root=resolve(import.meta.dirname,'..');
 export const releases=['.pipeline/translations/releases/spanish-full-031.json','.pipeline/translations/releases/multilingual-full-032.json'];
 // Deliberately omit IndexNow and all publication/deployment commands.
 export const checks=[['node',['scripts/prepare-public.mjs']],['node',['node_modules/astro/bin/astro.mjs','build']],
-  ...['check_site','check_seo','check_migration','check_metadata','check_listing_metadata','check_learning_paths','check_discovery','check_reader_content','check_article_images','check_translation_preview'].map(name=>['python3',['-B',`scripts/${name}.py`]])];
+  ...['check_site','check_seo','check_migration','check_metadata','check_listing_metadata','check_learning_paths','check_discovery','check_reader_content','check_article_images','check_translation_preview'].map(name=>['python3',['-B',`scripts/${name}.py`]]),
+  ['python3',['-B','scripts/build_example_archives.py','--check-dist','dist']]];
 
 export async function fingerprint(base,paths){
   const hash=createHash('sha256');

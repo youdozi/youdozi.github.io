@@ -13,6 +13,15 @@ Astro로 생성하고 GitHub Pages에 배포하는 기술 블로그입니다. �
 
 각 글에 코드·그림·고정 재현 환경과 확인 범위를 함께 제공합니다. 셸 검사는 `scripts/check_shell_automation_examples.py`, YAML·Temurin 입력 검사는 `scripts/check_config_input_examples.py`, Batch 검사는 `scripts/check_jvm_runtime_examples.py --part batch`, 패키징 검사는 `scripts/check_multi_frontend_example.py`를 사용합니다. 실행 환경은 아래 검증 안내와 각 글을 따르세요. 과거 예제의 고정 버전은 현재 운영 환경 추천이 아닙니다.
 
+GitHub 릴리스·숫자 버전 비교·YAML·Temurin 메타데이터·JDK 21·WebClient·Batch의 한영 글 14편은 글 상단에서 예제 ZIP을 받을 수 있습니다. 코드는 해당 언어 원고에서 추출하며 `README.txt`에 실행 환경·명령·네트워크 필요 여부·확인 범위를 제공합니다. WebClient는 본문의 인라인 프로젝트 설정도 파일로 포함합니다. Gradle wrapper나 설치된 의존성은 묶지 않습니다. `PROVENANCE.json`의 원문·파일 해시는 일치를 확인하는 용도이며 정확성이나 운영 적합성 인증이 아닙니다.
+
+`content/examples/downloads.json`이 대상·파일 선택·안내 문구를 관리합니다. `scripts/build_example_archives.py`는 네트워크 요청 없이 한영 코드 일치를 확인하고 고정 순서·시각·권한의 ZIP 14개를 생성합니다. `npm run dev` 전과 일반 빌드의 공통 자산 준비에서 생성하며 결과는 커밋하지 않습니다. 기존 실행 검사는 ZIP에서 푼 코드를 별도로 추출한 원고 코드와 대조한 뒤 실행합니다. 빌드 마지막에는 실제 배포 파일·해시·다운로드 링크·대상 외 페이지의 링크 부재까지 검사합니다. 글의 주소·게시일·본문·수정일과 미게시 번역 고정 목록은 유지합니다.
+
+```sh
+python3 -B scripts/build_example_archives.py
+python3 -B scripts/build_example_archives.py --check-dist dist
+```
+
 ## 로컬 실행
 
 Node 24와 Python 3.11 이상을 사용합니다. 게시된 Java 예제 검증에는 JDK 17 이상도 필요합니다.
