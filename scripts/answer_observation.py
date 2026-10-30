@@ -168,12 +168,22 @@ def comparison(before, after, changed_at=None):
     if date.fromisoformat(b['start']) <= date.fromisoformat(a['end']):
         raise ValueError('Follow-up must not overlap baseline')
     boundary = None
+    ga_boundary = None
     if changed_at:
         changed = datetime.fromisoformat(changed_at)
         if changed.tzinfo is None: raise ValueError('Deployment time requires an explicit timezone')
         boundary = str(changed.astimezone(ZoneInfo('America/Los_Angeles')).date())
         if a['end'] >= boundary or b['start'] <= boundary:
             raise ValueError('Exclude the deployment PT day from both windows')
+        before_zone = before.get('ga4Attribution', {}).get('metadata', {}).get('timeZone')
+        after_zone = after.get('ga4Attribution', {}).get('metadata', {}).get('timeZone')
+        if before_zone and after_zone and before_zone != after_zone:
+            raise ValueError('GA property timezone changed; periods are not comparable')
+        ga_zone = after_zone or before_zone
+        if ga_zone:
+            ga_boundary = str(changed.astimezone(ZoneInfo(ga_zone)).date())
+            if a['end'] >= ga_boundary or b['start'] <= ga_boundary:
+                raise ValueError('Exclude the deployment GA property day from both windows')
     per_page = []
     for target in after.get('targets', []):
         url = target['url']; old, new = page_metrics(before, url), page_metrics(after, url)
@@ -181,7 +191,8 @@ def comparison(before, after, changed_at=None):
         per_page.append({'url': url, 'baselineGscWeb': old, 'followUpGscWeb': new, 'delta': delta,
                          'baselineGaAttribution': attribution_metrics(before, url), 'followUpGaAttribution': attribution_metrics(after, url)})
     return {'baselineDates': a, 'followUpDates': b, 'equalLengthDays': 28,
-            'deploymentDayPT': boundary, 'publicationBoundaryVerified': boundary is not None,
+            'deploymentDayPT': boundary, 'deploymentDayGA': ga_boundary,
+            'publicationBoundaryVerified': boundary is not None and ga_boundary is not None,
             'pages': per_page, 'causalEffectEstablished': False, 'dedicatedAIVisibilityMeasured': False}
 
 
