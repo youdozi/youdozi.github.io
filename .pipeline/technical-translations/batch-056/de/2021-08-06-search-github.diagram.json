@@ -1,0 +1,43 @@
+{
+  "key": "2021-08-06-search-github",
+  "language": "de",
+  "title": "Codesuche eingrenzen und prüfen",
+  "description": "Den Suchraum vor dem Erweitern der Trefferliste eingrenzen. Bei relevanter Version die beabsichtigte Revision oder ihren Checkout statt des Standardbranches durchsuchen.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Zugängliches Repository wählen",
+        "Benötigte Revision bestimmen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Syntax des Werkzeugs verwenden",
+        "Repository, Sprache, Pfad eingrenzen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Passende Quelldatei öffnen",
+        "Umgebenden Code und Tests lesen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lokales git grep -F mit Pfad",
+        "Treffer verfolgter Dateien prüfen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Vor Übernahme des Beispiels",
+        "Version, Lizenz, Verhalten prüfen"
+      ]
+    }
+  ]
+}

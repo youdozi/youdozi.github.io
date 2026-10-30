@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "scope": "Complete remaining Java exercise translations and local HTTP, code search and draw.io tool cluster; add six-language tool learning guides",
+  "implementationCommit": "472dd85065b3fe35675a80959de045a302ce2f6d",
+  "manifest": {
+    "path": ".pipeline/technical-translations/batch-056/manifest.json",
+    "sha256": "3903c26139e3cc975342d841c1187a389ab2a2cae21ecd692044932d41f56dcb"
+  },
+  "newTopics": 5,
+  "newEditions": 30,
+  "totalPreparedTechnicalEditions": 96,
+  "remainingTechnicalEditions": 120,
+  "allTenJavaExerciseTopicsPrepared": true,
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "publicationApproval": null,
+  "publicFilesWritten": 0,
+  "review": {
+    "method": "AI self-review against complete English article and standalone target-language reading",
+    "independentReviewer": false,
+    "newExternalFactVerification": false,
+    "scope": "Complete metadata, prose, tables, captions and flow diagrams; Java, Python, shell and XML code, literal search queries, output, inline identifiers and URLs preserved. Source execution statements remain translations of prior evidence."
+  },
+  "validation": {
+    "nodeTests": 150,
+    "pythonTests": 298,
+    "astroFiles": 73,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "java": {
+      "targetRelease": 11,
+      "runtime": "Zulu OpenJDK 21.0.1",
+      "completeClasses": 11,
+      "behavioralAssertions": 78570
+    },
+    "developerTools": {
+      "localHTTPResponseCases": 15,
+      "invalidPortCLICases": 3,
+      "localGitSearchCases": 5,
+      "drawioVertices": 3,
+      "drawioDirectedEdges": 2,
+      "liveHostedSearchExecuted": false,
+      "editorUIOrExportExecuted": false
+    },
+    "localizedSVGLabelsChecked": 30,
+    "normalBuild": {
+      "articles": 425,
+      "sitemapURLs": 481
+    },
+    "combinedIsolatedPreview": {
+      "technicalFixtureEditions": 96,
+      "newsFixtureEditions": 318,
+      "previewArticles": 839,
+      "previewSitemapURLs": 931,
+      "workingPublicationFilesChanged": false,
+      "workingDistChanged": false,
+      "realUserApprovalRecorded": false,
+      "temporarySnapshotRemoved": true
+    },
+    "renderedContracts": {
+      "completeParagraphsAndTableRows": 1548,
+      "codeBlocksChecked": 156,
+      "codeLanguages": {
+        "java": 66,
+        "sh": 54,
+        "json": 6,
+        "python": 6,
+        "text": 18,
+        "xml": 6
+      },
+      "localizedDiagrams": 96,
+      "learningPathArticles": 166,
+      "neighborLinks": 264
+    },
+    "browser": {
+      "articleAndGuideChecks": 84,
+      "articleChecks": 60,
+      "guideChecks": 24,
+      "widths": [
+        320,
+        1360
+      ],
+      "technicalFixturesStaged": 96,
+      "newArticlesChecked": 30,
+      "sameLanguageLearningPaths": true,
+      "sharedTelemetryIsolation": true,
+      "workingInputsAndDistUnchanged": true,
+      "temporarySnapshotRemoved": true
+    },
+    "reviewPacket": {
+      "editions": 30,
+      "sourceAndTargetCodeBlocks": 120,
+      "sourceAndTargetImages": 60,
+      "widths": [
+        320,
+        1360
+      ]
+    }
+  },
+  "limitations": [
+    "AI self-review; no independent or native-speaker certification.",
+    "No new external fact verification; local execution scope is recorded separately.",
+    "Public manuscripts, approval state and deployment are not changed.",
+    "Internal article reference URLs remain the existing English destinations."
+  ]
+}

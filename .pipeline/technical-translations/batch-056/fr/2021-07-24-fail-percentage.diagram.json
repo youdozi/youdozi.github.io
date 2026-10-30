@@ -1,0 +1,49 @@
+{
+  "key": "2021-07-24-fail-percentage",
+  "language": "fr",
+  "title": "Classement des taux d’échec",
+  "description": "Enregistrer les effectifs arrivés avant de soustraire les joueurs arrêtés. Comparer les taux par produits croisés long, puis départager par numéro d’étape.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Compter les arrêts par étape",
+        "Inclure les joueurs à N + 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "remaining = tous les joueurs",
+        "Parcourir les étapes de 1 à N"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Sauver reached = remaining",
+        "Puis soustraire les joueurs arrêtés"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Aucune arrivée : taux nul",
+        "Utiliser le dénominateur 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Trier par produits croisés long",
+        "Taux décroissant, puis ID croissant"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Renvoyer les étapes ordonnées"
+      ]
+    }
+  ]
+}

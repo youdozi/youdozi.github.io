@@ -1,0 +1,49 @@
+{
+  "key": "2021-07-24-fail-percentage",
+  "language": "zh-CN",
+  "title": "失败率排序",
+  "description": "先保存到达人数，再扣除停留人数。用 long 交叉乘积比较比例，相同时按关卡编号排序。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "统计各关卡停留人数",
+        "也统计位于 N + 1 的玩家"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "remaining = 全部玩家数",
+        "遍历关卡 1 到 N"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "先保存 reached = remaining",
+        "再扣除停留人数"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "无人到达：失败率为零",
+        "比较时使用分母 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "用 long 交叉乘积排序",
+        "失败率降序，同率编号升序"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "返回排好序的关卡编号"
+      ]
+    }
+  ]
+}

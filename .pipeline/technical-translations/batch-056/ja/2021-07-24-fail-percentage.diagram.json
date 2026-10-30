@@ -1,0 +1,49 @@
+{
+  "key": "2021-07-24-fail-percentage",
+  "language": "ja",
+  "title": "失敗率の順位付け",
+  "description": "停止人数を引く前に到達人数を保存します。long の交差積で比率を比較し、同率ならステージ番号順に並べます。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "ステージ別の停止人数を数える",
+        "N + 1 のプレイヤーも含める"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "remaining = 全プレイヤー数",
+        "ステージ 1 から N を走査"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "先に reached = remaining を保存",
+        "その後で停止人数を引く"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "到達人数ゼロ：失敗率はゼロ",
+        "比較時の分母は 1 にする"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "long の交差積でソート",
+        "率は降順、同率なら番号昇順"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "並べたステージ番号を返す"
+      ]
+    }
+  ]
+}

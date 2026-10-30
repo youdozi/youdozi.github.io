@@ -1,0 +1,48 @@
+{
+  "key": "2021-07-20-http-status-test",
+  "language": "ja",
+  "title": "ローカル HTTP 応答の選択",
+  "description": "ハンドラーはヘッダーの前にステータスと表現を選びます。204 分岐は本文と Content-Length なしで終了し、それ以外は宣言したバイト数を書き込みます。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "ローカル GET を受信",
+        "対応するルートを選ぶ"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "未知のパスやステータス？",
+        "モックの JSON 404 を使う"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "204：ヘッダーを終了して返す",
+        "Content-Length と本文はなし"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "204",
+        "continue": "それ以外"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "それ以外：JSON か HTML を選ぶ",
+        "メディア型とバイト長を設定"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "ヘッダーと本文を書き込む",
+        "各応答を別々に確認"
+      ]
+    }
+  ]
+}

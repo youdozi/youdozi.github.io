@@ -1,0 +1,49 @@
+{
+  "key": "2021-07-24-fail-percentage",
+  "language": "es",
+  "title": "Clasificación de tasas de fallo",
+  "description": "Guarda los recuentos de llegada antes de restar a quienes se detienen. Compara tasas con productos cruzados long y desempata por número de etapa.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Contar detenidos por etapa",
+        "Incluir a quienes están en N + 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "remaining = todos los jugadores",
+        "Recorrer etapas de 1 a N"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Guardar reached = remaining",
+        "Después restar los detenidos"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Sin llegadas: tasa cero",
+        "Usar denominador 1 al comparar"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Ordenar por productos long",
+        "Tasa descendente, ID ascendente"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Devolver las etapas ordenadas"
+      ]
+    }
+  ]
+}

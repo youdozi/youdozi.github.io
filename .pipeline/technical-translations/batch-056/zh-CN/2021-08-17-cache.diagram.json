@@ -1,0 +1,55 @@
+{
+  "key": "2021-08-17-cache",
+  "language": "zh-CN",
+  "title": "按访问顺序维护 LRU",
+  "description": "容量为零时立即返回。否则 get/put 刷新最近访问顺序，容量溢出时淘汰最久未访问的键。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "容量 0：返回 5 × 请求数",
+        "否则沿箭头继续"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "创建一次访问顺序映射",
+        "初始化 cost = 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "读取下一个城市",
+        "用 Locale.ROOT 转为小写"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "get(key)：命中加 1，未命中加 5",
+        "put(key) 将其设为最近访问"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "超出容量？删除第一个键",
+        "否则保留所有键"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "还有城市？",
+        "是：重复；否：返回成本"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 5,
+    "to": 2,
+    "label": "是"
+  }
+}

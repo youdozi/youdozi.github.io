@@ -76,3 +76,14 @@ test('translated guides activate only for published eligible articles in their o
   assert.ok(!guideIndexAlternates(absent).some(a=>a.language===language));
  }
 });
+
+test('tool guides in six languages omit unpublished steps and keep source order and schema',()=>{
+ for(const language of ['zh-CN','ja','de','fr','ru','es']){
+  const items=[entry('2021-07-23-app-diagrams.net',language,'util'),entry('2021-07-20-http-status-test',language,'util'),entry('2021-08-06-search-github',language,'util',{publishedAt:new Date('2999-01-01Z')}),entry('2021-08-06-search-github','en','util')];
+  const guide=categoryGuide('util',language,items);
+  assert.deepEqual(guide.sections.map(s=>[s.id,s.start]),[['responses',1],['diagrams',2]]);
+  assert.deepEqual(guide.ordered.map(e=>e.url),[items[1].url,items[0].url]);
+  assert.equal(guideIndexStructuredData(language,[guide],new URL('https://example.org'))[1].itemListElement[0].url,`https://example.org/${language}/categories/util/`);
+  assert.ok(!categoryGuide('util',language,items.slice(2)));
+ }
+});

@@ -1,0 +1,55 @@
+{
+  "key": "2021-08-17-cache",
+  "language": "fr",
+  "title": "Cache LRU ordonné par accès",
+  "description": "Une capacité nulle renvoie immédiatement le résultat. Sinon get/put actualisent la récence et un dépassement évince la clé accédée le moins récemment.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Capacité 0 : renvoyer 5 × requêtes",
+        "Sinon suivre les flèches"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Créer la map ordonnée par accès",
+        "Initialiser cost = 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lire la ville suivante",
+        "Minuscules avec Locale.ROOT"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "get(key) : succès +1, défaut +5",
+        "put(key) rend l’accès le plus récent"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Capacité dépassée ? Retirer la 1re clé",
+        "Sinon conserver toutes les clés"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Encore des villes ?",
+        "Oui : répéter; non : renvoyer le coût"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 5,
+    "to": 2,
+    "label": "Oui"
+  }
+}
