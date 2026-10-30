@@ -1,0 +1,40 @@
+{
+  "key": "2021-07-27-parse-yaml",
+  "language": "fr",
+  "title": "Valider le YAML avant exec",
+  "description": "Analyser et valider le port entier avant d’exporter SERVER_PORT. Un échec du chargeur empêche le démarrage de la commande cible ; exec conserve son statut.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Lire le YAML avec safe_load"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Vérifier les mappings racine et server"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Exiger un port entier 1..65535",
+        "Entrée invalide : arrêter avec une erreur"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Invalide",
+        "continue": "Valide"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Port valide seulement :",
+        "exporter SERVER_PORT",
+        "exec avec arguments protégés"
+      ]
+    }
+  ]
+}

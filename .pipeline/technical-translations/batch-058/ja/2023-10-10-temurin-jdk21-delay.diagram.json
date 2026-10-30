@@ -1,0 +1,41 @@
+{
+  "key": "2023-10-10-temurin-jdk21-delay",
+  "language": "ja",
+  "title": "バイナリーメタデータを検証",
+  "description": "インストールではなくメタデータ選択の例です。プラットフォーム・Java メジャーバージョン・チェックサムの形式・URL の場所を確認し、アーカイブのダウンロードやハッシュ計算は行いません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "curl でアセット JSON を取得"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "アセットがちょうど一つか確認",
+        "linux/x64/jdk/hotspot を確認"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Java メジャーバージョン 21 を要求"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "SHA-256 メタデータの形式を確認",
+        "想定する HTTPS URL を検証"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "バージョン・名前・URL・チェックサム出力",
+        "取得ファイルのハッシュ確認は含まない"
+      ]
+    }
+  ]
+}

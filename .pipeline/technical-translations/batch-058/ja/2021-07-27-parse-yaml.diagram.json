@@ -1,0 +1,39 @@
+{
+  "key": "2021-07-27-parse-yaml",
+  "language": "ja",
+  "title": "exec の前に YAML を検証",
+  "description": "整数のポートを解析・検証してから SERVER_PORT を export します。ローダーの失敗時は対象コマンドを開始せず、exec が対象の終了状態を保ちます。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "safe_load で YAML を読む"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "ルートと server がマッピングか確認"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "整数ポート 1..65535 のみ許可",
+        "不正入力：エラーで停止"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "不正",
+        "continue": "有効"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "有効なポートだけ SERVER_PORT に export",
+        "引数を引用してコマンドを exec"
+      ]
+    }
+  ]
+}

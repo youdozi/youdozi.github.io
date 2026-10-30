@@ -1,0 +1,41 @@
+{
+  "key": "2023-09-23-jdk-21-string-templates",
+  "language": "zh-CN",
+  "title": "使用标准格式化 API",
+  "description": "图中展示的是标准 FormattingExample，而非历史预览示例。它比较三种格式化形式，并检查 MessageFormat 的单引号转义。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "设置 x = 2 与 y = 3"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "先计算括号内的 x + y 再拼接"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "String.format 使用 Locale.ROOT",
+        "使用带编号的整数占位符"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "MessageFormat 使用 Locale.ROOT",
+        "用 Object 数组传递参数"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "模式中双写单引号",
+        "输出全部四个示例结果"
+      ]
+    }
+  ]
+}

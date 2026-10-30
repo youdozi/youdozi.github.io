@@ -1,0 +1,41 @@
+{
+  "key": "2023-09-23-jdk-21-string-templates",
+  "language": "de",
+  "title": "Standard-Formatierungs-APIs verwenden",
+  "description": "Gezeigt wird das standardkonforme FormattingExample, nicht das historische Preview-Beispiel. Es vergleicht drei Formatierungsformen und prüft die Apostrophbehandlung von MessageFormat.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "x = 2 und y = 3 setzen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Mit geklammertem x + y verketten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "String.format mit Locale.ROOT",
+        "Nummerierte Integer-Platzhalter"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "MessageFormat mit Locale.ROOT",
+        "Argumente als Object-Array übergeben"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Apostroph im Muster verdoppeln",
+        "Alle vier Beispielausgaben anzeigen"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "key": "2021-07-27-parse-yaml",
+  "language": "zh-CN",
+  "title": "在 exec 前验证 YAML",
+  "description": "先解析并验证整数端口，再导出 SERVER_PORT。加载器失败会阻止目标命令启动；exec 保留目标的退出状态。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "使用 safe_load 读取 YAML"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "检查根节点与 server 是否为映射"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "要求整数端口 1..65535",
+        "无效输入：报错并停止"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "无效",
+        "continue": "有效"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "仅有效端口：导出 SERVER_PORT",
+        "使用带引号的参数 exec 命令"
+      ]
+    }
+  ]
+}

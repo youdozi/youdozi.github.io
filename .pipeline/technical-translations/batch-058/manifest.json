@@ -1,0 +1,624 @@
+{
+  "schemaVersion": 1,
+  "batchId": "technical-058",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "ab9320c360dd0ee82590d58683eec65db190f3ed",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "AI self-review against complete English article and standalone target-language reading",
+    "independentReviewer": false,
+    "newExternalFactVerification": false,
+    "scope": "Complete metadata, prose, tables, captions and flow diagrams; Java, Python, shell, YAML, literal outputs, inline identifiers and URLs preserved. Source execution statements remain translations of prior evidence."
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2023-09-20-jdk-21-release",
+      "language": "zh-CN",
+      "translationKey": "2023-09-20-jdk-21-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
+        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-09-20-jdk-21-release.md",
+        "sha256": "b2f10c46889301de913165445987a707ba9ca3590a5cc2f62bd50448ffe413e7"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-09-20-jdk-21-release.diagram.json",
+        "sha256": "8088b9446c26fc16a27bbbd667bafb0e59111c909d1066b63e6571c8d4784509"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-09-20-jdk-21-release.svg",
+        "sha256": "d673ddf1315624e79b32e731862c3db7f93aaa03b17bd726781dfbbb46a845a1"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ja-2023-09-20-jdk-21-release",
+      "language": "ja",
+      "translationKey": "2023-09-20-jdk-21-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
+        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2023-09-20-jdk-21-release.md",
+        "sha256": "033feba2b2f1373b5aad3b55dba90c289f72147d31396927d4327767ca7fdc28"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2023-09-20-jdk-21-release.diagram.json",
+        "sha256": "9a6a7e5b0a5e53b7997d242ce54f1b54e5db734256b8d820d8f16336799d1064"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2023-09-20-jdk-21-release.svg",
+        "sha256": "b593ecf9ee48cb68817fa062553b6ffa10fd970cd4fc4b7a66b308886dafd9d8"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "de-2023-09-20-jdk-21-release",
+      "language": "de",
+      "translationKey": "2023-09-20-jdk-21-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
+        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/de/2023-09-20-jdk-21-release.md",
+        "sha256": "b8e11ef0566fb12d4a0aa7934223e439eb717eeaabe926bbd80884db8465e4fe"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/de/2023-09-20-jdk-21-release.diagram.json",
+        "sha256": "7ee86c846ace31d39be2f38b1feca63115dde082c1ae47a12c79d0d62b296002"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/de/2023-09-20-jdk-21-release.svg",
+        "sha256": "e40369e0837bf09dd5ed51f1f07d9914997f47366b9ea863755ac7a57fc59bd6"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "fr-2023-09-20-jdk-21-release",
+      "language": "fr",
+      "translationKey": "2023-09-20-jdk-21-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
+        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2023-09-20-jdk-21-release.md",
+        "sha256": "82f06d86048469b5ebbb27bd5d948e244bda7f0cdb9309e3cf5ead25539b0192"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2023-09-20-jdk-21-release.diagram.json",
+        "sha256": "71b8ab61a60bf0a98df9932e867280a45fe40ea41f7b887ce8d57bd93ddba284"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2023-09-20-jdk-21-release.svg",
+        "sha256": "1087656262c0f45f8c17a5f780f721612d13f5d7fe6f4d3c360a309b0278a4e1"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ru-2023-09-20-jdk-21-release",
+      "language": "ru",
+      "translationKey": "2023-09-20-jdk-21-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
+        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2023-09-20-jdk-21-release.md",
+        "sha256": "5817e9eabe53cc75a8e5d80f28dbcd282e4bddff8ad4c4e772fb0954dd39faa1"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2023-09-20-jdk-21-release.diagram.json",
+        "sha256": "e03ab08e0b4dbd9da834b11ade29e061177f8b2d484213852d4946d277a48c17"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2023-09-20-jdk-21-release.svg",
+        "sha256": "0314ef575f32bef0dd4bee954f02677891ceea9860e15e55637091b02b55229d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "es-2023-09-20-jdk-21-release",
+      "language": "es",
+      "translationKey": "2023-09-20-jdk-21-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
+        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/es/2023-09-20-jdk-21-release.md",
+        "sha256": "3de1aab50466f340bca6f221a847326c4c68d3e91c24ab2ea84c3d5471ee4f8e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/es/2023-09-20-jdk-21-release.diagram.json",
+        "sha256": "b69f3aa18d1bfa259a62a9b83f45d4d8427cbf602263c2dd1b1e8b65c5a8b22c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/es/2023-09-20-jdk-21-release.svg",
+        "sha256": "5cf2730d6af5457ec121dbad394a1126a2d674a6f597146ac0bd101f455357f4"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-23-jdk-21-string-templates",
+      "language": "zh-CN",
+      "translationKey": "2023-09-23-jdk-21-string-templates",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "31efcb556567b9c9f6926f06d73e361f785f0f08273475e2292ef64633048762"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-09-23-jdk-21-string-templates.diagram.json",
+        "sha256": "ae896731728175207f4e188ea57909418308fd06616d1cc585c4de726daebd8b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-09-23-jdk-21-string-templates.svg",
+        "sha256": "4bef4c2b53d043e6a7efcf8f7798950dd3ef02b6389c9eb28f1f5d1d6d2a7cc1"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ja-2023-09-23-jdk-21-string-templates",
+      "language": "ja",
+      "translationKey": "2023-09-23-jdk-21-string-templates",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "5993b589cbd984949e8270718b85eb8ceecfc2d5bc0848b84cd92dfa8ac0c091"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2023-09-23-jdk-21-string-templates.diagram.json",
+        "sha256": "b0a047493387db8dbc068e66b9a52d84ef7745f4700ce01c51d31f43937cde26"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2023-09-23-jdk-21-string-templates.svg",
+        "sha256": "c32b4aea588ae7a53ff714793991cf4b5a7260aa13824c5977958968e5879efd"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "de-2023-09-23-jdk-21-string-templates",
+      "language": "de",
+      "translationKey": "2023-09-23-jdk-21-string-templates",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/de/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "07e0358a52b35d5922299d853bb485a78677a4e284fcf037610c02785bb85400"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/de/2023-09-23-jdk-21-string-templates.diagram.json",
+        "sha256": "a4e39b76550dca12f7c7f0705fb5aa39e157f0364d6dbc5d5896bb28de88ae90"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/de/2023-09-23-jdk-21-string-templates.svg",
+        "sha256": "e1d96e29eb00fd2cccb7bc61f81b392449ab6c75b37788c986fc7f2554ad252d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "fr-2023-09-23-jdk-21-string-templates",
+      "language": "fr",
+      "translationKey": "2023-09-23-jdk-21-string-templates",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "de4966522ba8a4923e2e6a066a19332482cf796e7ce779b211cc91c56ba046b9"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2023-09-23-jdk-21-string-templates.diagram.json",
+        "sha256": "91cf66adb0fb58e70e42cac2a53825fe46c8be6d1bd52cce559d99e3ae06c751"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2023-09-23-jdk-21-string-templates.svg",
+        "sha256": "87a7746a4dbefd7727f4f382bd7945728871e1be01ba50d51212b26957f2b6ce"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ru-2023-09-23-jdk-21-string-templates",
+      "language": "ru",
+      "translationKey": "2023-09-23-jdk-21-string-templates",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "6c41a452306450b9f4db01f5bef42ddbf4bb3c2b70930c3d805f54c7a71fdb65"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2023-09-23-jdk-21-string-templates.diagram.json",
+        "sha256": "37829449c18ee5c2343e13aa304636d6a693be6ecd3528cbd7b0b58726fa8e1a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2023-09-23-jdk-21-string-templates.svg",
+        "sha256": "d4c9e81a0cea1e87ec0e739ca1e5811d0457bcf66a4d9735242ceb04af728215"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "es-2023-09-23-jdk-21-string-templates",
+      "language": "es",
+      "translationKey": "2023-09-23-jdk-21-string-templates",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/es/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "9ebbb4cb80cd83748d891a35a36e85b85e7d830615e0c4975663ba7627374a3e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/es/2023-09-23-jdk-21-string-templates.diagram.json",
+        "sha256": "481d4d81070236841b48c6a8237eab70ec3b8ce6a8d65c2d84a43736038c543c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/es/2023-09-23-jdk-21-string-templates.svg",
+        "sha256": "eed602fb9a303c0e0a6462bd0af898c066896762d1283ca94af6cfa110d6db49"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "zh-CN-2023-10-10-temurin-jdk21-delay",
+      "language": "zh-CN",
+      "translationKey": "2023-10-10-temurin-jdk21-delay",
+      "source": {
+        "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "ad3d6744b4ad000b70b7c50c0d469173aa49907c821823630bce0b1170a5cc58"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-10-10-temurin-jdk21-delay.diagram.json",
+        "sha256": "885483f488bbb2cc55f04fa48e5899ab085b143a4ef12a0a4779373a4eebcbbf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2023-10-10-temurin-jdk21-delay.svg",
+        "sha256": "c150b59e493e78376b10ce5f2969e338e03686cba11f9d502abf51847eb0ec14"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ja-2023-10-10-temurin-jdk21-delay",
+      "language": "ja",
+      "translationKey": "2023-10-10-temurin-jdk21-delay",
+      "source": {
+        "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "d0012d6d05d330bc2aae99a37862188e93ba423abbe1de79b4bb85ce36ee3f63"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2023-10-10-temurin-jdk21-delay.diagram.json",
+        "sha256": "80e7f23de35d3781d972f0d67fe1bd2b5547b0c53d8e827e741672cb45d2a1dd"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2023-10-10-temurin-jdk21-delay.svg",
+        "sha256": "df9ca3f0f9bc49ff4d109e21fde6200b861b7ce8bfb562d5bddfb84db31fc2ad"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "de-2023-10-10-temurin-jdk21-delay",
+      "language": "de",
+      "translationKey": "2023-10-10-temurin-jdk21-delay",
+      "source": {
+        "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/de/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "35d896f2c5c3d41d17e3b29a2f057468d31f106b8f28e0eaf0cc23276e1b08ff"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/de/2023-10-10-temurin-jdk21-delay.diagram.json",
+        "sha256": "c53aa31fb28b570b22cdf4525f0c3fb6e517c7462b192ce602d6782277079575"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/de/2023-10-10-temurin-jdk21-delay.svg",
+        "sha256": "54641d35e7e7ba028e53f2d8da55aa043b67ac7e52a5b1999580fb24d423c96c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "fr-2023-10-10-temurin-jdk21-delay",
+      "language": "fr",
+      "translationKey": "2023-10-10-temurin-jdk21-delay",
+      "source": {
+        "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "ac90d6cabfa7d6c9dedf44b32fa24a56549fa3b5e4bb52a4b7b436d524882238"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2023-10-10-temurin-jdk21-delay.diagram.json",
+        "sha256": "e6e782cfcded88ac3002351b6ee6b11897cca02dad2842cb0e6edbb4aba135d9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2023-10-10-temurin-jdk21-delay.svg",
+        "sha256": "3ef186f9c2d09b128afa90fd47b60cba20a6d3bfa84252355b1a01fd48c76a62"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ru-2023-10-10-temurin-jdk21-delay",
+      "language": "ru",
+      "translationKey": "2023-10-10-temurin-jdk21-delay",
+      "source": {
+        "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "9df85db2eab30daeb9e420d0cc38c422b23f9be03a088796557fd4c13df7253c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2023-10-10-temurin-jdk21-delay.diagram.json",
+        "sha256": "e26073912bf1da0c501cbdbd1d72b4e4535d513e09095a4008bdae98ecf2c19b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2023-10-10-temurin-jdk21-delay.svg",
+        "sha256": "70e464986edf492781326e86a2cff789398d6b5c103c5252f81d4a1ecec0eba9"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "es-2023-10-10-temurin-jdk21-delay",
+      "language": "es",
+      "translationKey": "2023-10-10-temurin-jdk21-delay",
+      "source": {
+        "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/es/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "00c983de1ea842f587db3c05f66b15fbc7e67f92645ddb71672cfbf5007606e6"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/es/2023-10-10-temurin-jdk21-delay.diagram.json",
+        "sha256": "1e3d79e06a0071b9396d57d13395bee5d3cb66cd6d87c5c38c2bb0a86018fe70"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/es/2023-10-10-temurin-jdk21-delay.svg",
+        "sha256": "cba90489685725cf417e92df115947cbbfafe4b5bcb91728049ca7707217d4ba"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "zh-CN-2021-07-27-parse-yaml",
+      "language": "zh-CN",
+      "translationKey": "2021-07-27-parse-yaml",
+      "source": {
+        "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
+        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2021-07-27-parse-yaml.md",
+        "sha256": "dbe17e9831efd897f407d175836300d8248609f0c63e2500360bb8df5bc8091c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2021-07-27-parse-yaml.diagram.json",
+        "sha256": "03f6142fe72cca35d16427cbc42e1052843ced9b79c704affb2a96e9e3794e5a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/zh-CN/2021-07-27-parse-yaml.svg",
+        "sha256": "5baf9416dce499519cccaee3f80c813b9dc2f1e2164d969c6cb7ca022ce101cd"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ja-2021-07-27-parse-yaml",
+      "language": "ja",
+      "translationKey": "2021-07-27-parse-yaml",
+      "source": {
+        "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
+        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2021-07-27-parse-yaml.md",
+        "sha256": "3d79c5c12d0aa5c56e7feab70c8535d46e415910c6afd45b6b2c79a8b44f73e3"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2021-07-27-parse-yaml.diagram.json",
+        "sha256": "df382812bd73bcbeda7eb74ea5eb790d8ea847a74063efae855d2d76bab606c1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/ja/2021-07-27-parse-yaml.svg",
+        "sha256": "8b6045e5703d9fb9fc0fcdba5886a37b554cf8aef41a6b615dfee78f3327d900"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "de-2021-07-27-parse-yaml",
+      "language": "de",
+      "translationKey": "2021-07-27-parse-yaml",
+      "source": {
+        "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
+        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/de/2021-07-27-parse-yaml.md",
+        "sha256": "8715e35e426f3c999693422fe9f3739564d14289757bb7a3a3b809ecc08d81b0"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/de/2021-07-27-parse-yaml.diagram.json",
+        "sha256": "eceff631b8115a05e6e89cc75d4d0ef9d22640932016fa6c1f79f318a8feb1a0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/de/2021-07-27-parse-yaml.svg",
+        "sha256": "3db434872cb8dfa6c2ca5a543fafc805a1125513d1aaf228c6df2014d96f93cf"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "fr-2021-07-27-parse-yaml",
+      "language": "fr",
+      "translationKey": "2021-07-27-parse-yaml",
+      "source": {
+        "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
+        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2021-07-27-parse-yaml.md",
+        "sha256": "b2c787fc134adccacb0d8f917eea661fdfdb65eb1dc5588d9b58e5522cf93efe"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2021-07-27-parse-yaml.diagram.json",
+        "sha256": "b12f2fbe72ef76824858dd95d26057c800a8694855b99d526891f9b38e254682"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/fr/2021-07-27-parse-yaml.svg",
+        "sha256": "8d16702c902afe90d8edb60f185a289f618e4d0c4f9d091ee2e2fb15dd229b24"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "ru-2021-07-27-parse-yaml",
+      "language": "ru",
+      "translationKey": "2021-07-27-parse-yaml",
+      "source": {
+        "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
+        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2021-07-27-parse-yaml.md",
+        "sha256": "0d7aa8b9ebe2349963ec8340f6c6ebec4cec329ee5c0beb8259cb28fa15704d3"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2021-07-27-parse-yaml.diagram.json",
+        "sha256": "926c6e1a33e15f2a83b53c0de586dc9a3f006bb60867dd258fc7e225d42a8986"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/ru/2021-07-27-parse-yaml.svg",
+        "sha256": "9e9cefa25f2b1e79396a5663b36cec3319cd1ae952cfc010b59503af371e40b3"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    },
+    {
+      "key": "es-2021-07-27-parse-yaml",
+      "language": "es",
+      "translationKey": "2021-07-27-parse-yaml",
+      "source": {
+        "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
+        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-058/es/2021-07-27-parse-yaml.md",
+        "sha256": "9d9743df7ecedf33864c28a9b0051348d009b487fd134953e423baefd72fdcf9"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-058/es/2021-07-27-parse-yaml.diagram.json",
+        "sha256": "097c30aea365bac82eafcfe612f073546efe81bfaeea3c58a60aa1aae23adf12"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-058/es/2021-07-27-parse-yaml.svg",
+        "sha256": "24dd0dabf74d49790e390b06de8c83bd7b479247e56d8b7ffb1f55d91ffd3d68"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "e05d78eb9662aebb948385406c9664517c3cba021b7c6fcc7c2b773975753034"
+      }
+    }
+  ]
+}

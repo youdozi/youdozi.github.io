@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-20-jdk-21-release",
+  "language": "zh-CN",
+  "title": "运行 Java 21 正式功能",
+  "description": "流程展示不使用预览选项的 Jdk21Example。逆序列表是视图，join 等待虚拟线程的输出。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "使用配套的 Java 21 工具",
+        "不加预览选项进行编译"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "创建列表与逆序视图",
+        "修改原列表的首个元素"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "输出首尾元素与逆序视图"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "匹配 Point 记录与 null",
+        "输出两个 switch 结果"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "启动虚拟线程并 join",
+        "等待输出完成再返回"
+      ]
+    }
+  ]
+}

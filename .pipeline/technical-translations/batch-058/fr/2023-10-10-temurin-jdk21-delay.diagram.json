@@ -1,0 +1,41 @@
+{
+  "key": "2023-10-10-temurin-jdk21-delay",
+  "language": "fr",
+  "title": "Valider les métadonnées des binaires",
+  "description": "Il s’agit de sélectionner des métadonnées, pas d’installer un JDK. Le flux contrôle la plateforme, la version majeure Java, la syntaxe de la somme de contrôle et l’emplacement de l’URL, sans télécharger ni hacher l’archive.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Récupérer le JSON des artefacts avec curl"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Exiger exactement un artefact",
+        "Vérifier linux/x64/jdk/hotspot"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Exiger la version majeure Java 21"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Vérifier la syntaxe SHA-256",
+        "Valider l’URL HTTPS attendue"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Afficher version, nom, URL et somme",
+        "Aucun hachage du fichier téléchargé vérifié"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "key": "2023-10-10-temurin-jdk21-delay",
+  "language": "zh-CN",
+  "title": "验证二进制元数据",
+  "description": "这是元数据选择示例，而非安装流程。它检查平台、Java 主版本、校验和格式与 URL 位置，不下载归档，也不计算其哈希。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "用 curl 获取资产 JSON"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "要求恰好一个资产",
+        "检查 linux/x64/jdk/hotspot"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "要求 Java 主版本为 21"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "检查 SHA-256 元数据格式",
+        "验证预期的 HTTPS URL"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "输出版本、名称、URL、校验和",
+        "未检查下载文件的哈希"
+      ]
+    }
+  ]
+}

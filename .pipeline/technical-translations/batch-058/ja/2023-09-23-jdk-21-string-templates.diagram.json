@@ -1,0 +1,41 @@
+{
+  "key": "2023-09-23-jdk-21-string-templates",
+  "language": "ja",
+  "title": "標準の書式設定 API を使う",
+  "description": "過去のプレビュー例ではなく標準の FormattingExample の流れです。三つの書式設定を比較し、MessageFormat のアポストロフィー処理を確認します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "x = 2 と y = 3 を設定"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "括弧内の x + y を計算して連結"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Locale.ROOT で String.format",
+        "番号付き整数プレースホルダーを使用"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Locale.ROOT で MessageFormat",
+        "Object 配列で引数を渡す"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "パターン内のアポストロフィーを二重化",
+        "四つの例の出力を表示"
+      ]
+    }
+  ]
+}

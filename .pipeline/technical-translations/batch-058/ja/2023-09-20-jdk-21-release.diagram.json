@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-20-jdk-21-release",
+  "language": "ja",
+  "title": "Java 21 の正式機能を実行",
+  "description": "プレビューオプションを使わない Jdk21Example の流れです。逆順リストはビューであり、join は仮想スレッドの出力を待ちます。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "対応する Java 21 ツールを使う",
+        "プレビューオプションなしでコンパイル"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "リストと逆順ビューを作成",
+        "元の先頭要素を変更"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "両端の要素と逆順ビューを出力"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Point レコードと null を照合",
+        "両方の switch 結果を出力"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "仮想スレッドを開始して join",
+        "出力を待ってから戻る"
+      ]
+    }
+  ]
+}
