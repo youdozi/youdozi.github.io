@@ -121,7 +121,8 @@ def audit(root):
         if page.language:
             pages[emitted_url(root, file)] = page
     sitemap = {n.text for n in ET.parse(root / 'sitemap.xml').getroot().iter() if n.tag.endswith('}loc')}
-    return validate(pages, sitemap)
+    languages = sorted({'en', 'ko'} | {page.language for url, page in pages.items() if page.language and (urlsplit(url).path.endswith('/guides/') or page.paths)})
+    return validate(pages, sitemap, languages=languages)
 
 
 def main():

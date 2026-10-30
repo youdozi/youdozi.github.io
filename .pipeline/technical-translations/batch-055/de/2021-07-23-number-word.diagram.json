@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-23-number-word",
+  "language": "de",
+  "title": "Ziffernwörter ersetzen",
+  "description": "Die festen Wörter zero bis nine werden wörtlich durch Ziffern ersetzt; anschließend wird die entstandene Dezimalzeichenkette geparst.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Mit der Eingabezeichenkette starten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Wörter zero bis nine",
+        "Aus der festen Tabelle durchlaufen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Wort wörtlich durch Ziffer ersetzen",
+        "Vorhandene Ziffern beibehalten"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Nach allen zehn Ersetzungen",
+        "Integer.parseInt → int zurückgeben"
+      ]
+    }
+  ]
+}

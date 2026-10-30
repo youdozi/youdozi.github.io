@@ -38,7 +38,7 @@ test('human preparation creates twelve approved Markdown files without altering 
   await project(async base=>{
     const batch=await inspectTechnicalBatch(base),before=await readFile(join(base,manifestPath),'utf8');
     assert.equal(await prepareApprovedTechnicalBatch(base,approval,batch.manifestSha256),12);
-    const checked=await checkTechnicalPublications(base);assert.equal(checked.approvedEditions,12);assert.equal(checked.pendingEditions,18);
+    const checked=await checkTechnicalPublications(base);assert.equal(checked.approvedEditions,12);assert.equal(checked.pendingEditions,54);
     assert.equal(await readFile(join(base,manifestPath),'utf8'),before);
     assert.equal(await prepareTechnicalAssets(base),12);
   });
@@ -95,8 +95,8 @@ test('approval hash for the first batch cannot publish the separate shell batch'
     const second=await inspectTechnicalBatch(base,secondPath);
     assert.equal(await prepareApprovedTechnicalBatch(base,approval,second.manifestSha256,secondPath),18);
     assert.equal((await checkTechnicalPublications(base)).approvedEditions,18);
-    assert.equal((await checkTechnicalPublications(base)).pendingEditions,12);
-    assert.equal((await inspectTechnicalBatches(base)).editions.length,30);
+    assert.equal((await checkTechnicalPublications(base)).pendingEditions,48);
+    assert.equal((await inspectTechnicalBatches(base)).editions.length,66);
   });
 });
 test('unknown or duplicated manifest registrations are rejected before publication',async()=>{

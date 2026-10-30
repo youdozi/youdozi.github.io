@@ -1,0 +1,41 @@
+{
+  "key": "2021-07-23-unsuccessful-runner",
+  "language": "de",
+  "title": "Differenz der Namenshäufigkeiten",
+  "description": "Alle Teilnehmer zählen, jeden Finisher abziehen und den Namen mit einer verbleibenden Person zurückgeben.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Map Name → Anzahl erstellen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Je Teilnehmer: 1 addieren",
+        "Gleiche Namen gemeinsam zählen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Je Finisher: 1 abziehen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Verbleibende Anzahlen durchlaufen",
+        "Die einzige Anzahl 1 finden"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Diesen Namen zurückgeben",
+        "Genau ein Läufer fehlt garantiert"
+      ]
+    }
+  ]
+}

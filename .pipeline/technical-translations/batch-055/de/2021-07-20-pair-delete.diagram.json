@@ -1,0 +1,46 @@
+{
+  "key": "2021-07-20-pair-delete",
+  "language": "de",
+  "title": "Benachbarte Paare entfernen",
+  "description": "Der Stack enthält das reduzierte Präfix. Jedes neue Zeichen entfernt das gleiche oberste Element oder wird selbst zum obersten Element.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Mit leerem Stack starten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Nächstes Zeichen c lesen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Nicht leer und oberstes Zeichen = c?",
+        "Ja: pop · Nein: push c"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Weitere Zeichen?",
+        "Ja: wiederholen · Nein: beenden"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Leerer Stack: 1 zurückgeben",
+        "Sonst: 0 zurückgeben"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 3,
+    "to": 1,
+    "label": "Ja"
+  }
+}

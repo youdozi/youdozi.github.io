@@ -1,0 +1,53 @@
+{
+  "key": "2021-07-19-new-id",
+  "language": "es",
+  "title": "Orden de normalización de ID",
+  "description": "El diagrama sigue la versión Optional. El bucle combina el filtrado y la reducción de puntos consecutivos, manteniendo las mismas reglas.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Pasar a minúsculas: Locale.ROOT"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Quitar caracteres no permitidos",
+        "Conservar a-z, 0-9, punto, _, -"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Reducir puntos consecutivos"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Quitar puntos de los extremos"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Vacío? Sustituir por a"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Truncar a un máximo de 15",
+        "Después quitar el punto final"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "¿Menos de 3? Repetir el último",
+        "Devolver el ID normalizado"
+      ]
+    }
+  ]
+}

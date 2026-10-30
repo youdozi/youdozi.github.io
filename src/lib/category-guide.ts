@@ -1,9 +1,9 @@
-import type { Entry } from './content';
+import type { Entry, Language } from './content';
 
 export interface CategoryGuide {
   label: string; title: string; description: string; intro: string;
   extra: string; home: string; categories: string;
-  lang: 'en' | 'ko'; url: string; updatedAt: Date;
+  lang: Language; url: string; updatedAt: Date;
   eyebrow?: string; listAnchor?: string;
   sections: { id: string; title: string; description: string; entries: Entry[]; start: number }[];
   extras: Entry[]; ordered: Entry[];

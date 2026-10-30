@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "scope": "Six-language Java coding and shell learning guides, guide index and reading navigation",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "publicationApproval": null,
+  "translationReview": {
+    "method": "AI self-review against English guide copy and standalone target-language reading",
+    "independentReviewer": false,
+    "newExternalFactVerification": false
+  },
+  "implementationCommit": "f23288522d2debd66e84517850d0e93545d88259",
+  "validation": {
+    "nodeTests": 148,
+    "pythonTests": 298,
+    "astroFiles": 72,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildAtPR95": {
+      "articles": 423,
+      "sitemapURLs": 479,
+      "readingPathArticles": 70,
+      "neighborLinks": 108
+    },
+    "combinedIsolatedPreview": {
+      "sourceCommit": "ee5b16a13762df944a8714941e54a3a968955351",
+      "technicalFixtures": 30,
+      "newsFixtures": 318,
+      "articles": 771,
+      "sitemapURLs": 857,
+      "readingPathArticles": 100,
+      "neighborLinks": 144,
+      "userApprovalRecorded": false
+    },
+    "browser": {
+      "sourceCommit": "f23288522d2debd66e84517850d0e93545d88259",
+      "widths": [
+        320,
+        1360
+      ],
+      "languages": 6,
+      "guideIndexes": 6,
+      "categoryGuides": 12,
+      "articles": 30,
+      "totalLayoutChecks": 96,
+      "localOnly": true,
+      "sharedAnalyticsIsolation": true,
+      "workingInputsAndDistUnchanged": true,
+      "temporarySnapshotRemoved": true
+    },
+    "limitations": [
+      "Only Java coding exercises and shell automation guides are localized; other guide domains remain en/ko.",
+      "Additional-language guides appear only when that language has eligible published technical articles.",
+      "Pending technical/news translations are not published by this change."
+    ],
+    "afterNewsIntegration": {
+      "mainCommit": "78292d3746eddbe184e7f46b3d03e8de6aac55c3",
+      "sourceCommit": "e1b67b621056c1acb0a2db9be7138521d9e064b9",
+      "normalArticles": 425,
+      "normalSitemapURLs": 481,
+      "previewArticles": 773,
+      "previewSitemapURLs": 859,
+      "readingPathArticles": 100,
+      "neighborLinks": 144,
+      "temporarySnapshotRemoved": true,
+      "workingPublicationFilesChanged": false,
+      "workingDistChanged": false
+    }
+  }
+}

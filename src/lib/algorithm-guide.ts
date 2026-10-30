@@ -1,4 +1,6 @@
 import type { Entry, Language } from './content';
+import {nativeLanguages,translationLanguages} from './locales.ts';
+import {guideLocales,hasLocalizedGuide,localizedGuidesUpdatedAt} from './guide-locales.ts';
 
 const groups = [
   { id: 'arrays', keys: ['2021-07-22-plus-minus', '2021-07-22-dot-product', '2021-07-29-interval-num'] },
@@ -31,6 +33,10 @@ const copy = {
   },
 };
 
+function localizedCopy(lang:Language) {
+  return hasLocalizedGuide(lang)?{...guideLocales[lang].common,...guideLocales[lang].algorithm}:copy[lang];
+}
+
 function eligible(all: Entry[], lang: Language): Entry[] {
   const now = Date.now();
   return all.filter(entry => entry.language === lang && entry.kind === 'post' &&
@@ -38,16 +44,16 @@ function eligible(all: Entry[], lang: Language): Entry[] {
 }
 
 export function algorithmCategoryLabel(lang: Language): string | undefined {
-  return lang === 'en' || lang === 'ko' ? copy[lang].label : undefined;
+  return localizedCopy(lang).label;
 }
 
 export function algorithmCategoryAlternates(all: Entry[]) {
-  return (['en', 'ko'] as const).filter(lang => eligible(all, lang).length > 0)
+  return ([...nativeLanguages,...translationLanguages]).filter(lang => eligible(all, lang).length > 0)
     .map(language => ({ language, url: `/${language}/categories/coding-test/` }));
 }
 
 export function algorithmGuide(lang: Language, all: Entry[]) {
-  if (lang !== 'en' && lang !== 'ko') return undefined;
+  const localized = localizedCopy(lang);
   const items = eligible(all, lang);
   if (!items.length) return undefined;
   const byKey = new Map(items.map(entry => [entry.translationKey, entry]));
@@ -56,14 +62,14 @@ export function algorithmGuide(lang: Language, all: Entry[]) {
     const entries = group.keys.flatMap(key => byKey.has(key) ? [byKey.get(key)!] : []);
     const start = position;
     position += entries.length;
-    return { id: group.id, ...copy[lang].groups[group.id], entries, start };
+    return { id: group.id, ...localized.groups[group.id], entries, start };
   }).filter(group => group.entries.length > 0);
   const curated = new Set(sections.flatMap(group => group.entries.map(entry => entry.translationKey)));
   const extras = items.filter(entry => !curated.has(entry.translationKey));
   const ordered = [...sections.flatMap(group => group.entries), ...extras];
-  const updatedAt = new Date(Math.max(Date.parse('2026-10-27T00:00:00Z'),
+  const updatedAt = new Date(Math.max(hasLocalizedGuide(lang)?localizedGuidesUpdatedAt.getTime():Date.parse('2026-10-27T00:00:00Z'),
     ...ordered.map(entry => (entry.updatedAt || entry.publishedAt).getTime())));
-  return { ...copy[lang], lang, url: `/${lang}/categories/coding-test/`, sections, extras, ordered, updatedAt };
+  return { ...localized, lang, url: `/${lang}/categories/coding-test/`, sections, extras, ordered, updatedAt };
 }
 
 export type AlgorithmGuide = NonNullable<ReturnType<typeof algorithmGuide>>;

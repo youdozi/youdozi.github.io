@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-23-number-word",
+  "language": "es",
+  "title": "Sustitución de palabras de dígitos",
+  "description": "Sustituye literalmente las palabras fijas de zero a nine por dígitos y después analiza la cadena decimal resultante.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Empezar con la cadena de entrada"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Recorrer palabras de zero a nine",
+        "En la tabla fija"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Sustituir literalmente por dígitos",
+        "Conservar los dígitos existentes"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Tras las diez sustituciones",
+        "Integer.parseInt → devolver int"
+      ]
+    }
+  ]
+}

@@ -58,3 +58,21 @@ test('Ruby guide joins only the named cross-category article and provides a retu
  assert.deepEqual(additionalArticleGuides(installed,items),[]);
  assert.equal(categoryGuide('jekyll','en',items),undefined);
 });
+
+test('translated guides activate only for published eligible articles in their own language',()=>{
+ for(const language of ['zh-CN','ja','de','fr','ru','es']){
+  const items=[entry('2021-07-22-plus-minus',language,'coding-test'),entry('2021-07-22-dot-product',language,'coding-test'),entry('2023-09-20-linux-shellscript-function-error',language),entry('2023-11-17-linux-shellscript-version-compare',language),entry('2023-09-23-linux-shellscript-github-latest',language),entry('2021-07-27-parse-yaml','en'),entry('future',language,'linux',{publishedAt:new Date('2999-01-01Z')}),entry('example',language,'linux',{reviewStatus:'example'}),entry('news',language,'linux',{kind:'digest'})];
+  const guides=technicalGuides(language,items);
+  assert.deepEqual(guides.map(g=>g.ordered.length),[2,3]);
+  assert.deepEqual(guides[1].sections.map(g=>[g.id,g.start]),[['interpreter',1],['inputs',2],['releases',3]]);
+  assert.ok(guides.every(g=>g.ordered.every(e=>e.language===language)));
+  assert.equal(categoryGuide('springboot',language,items),undefined);
+  assert.ok(guideIndexAlternates(items).some(a=>a.language===language));
+  const schema=guideIndexStructuredData(language,guides,new URL('https://example.org'));
+  assert.equal(schema[0].inLanguage,language);assert.equal(schema[1].numberOfItems,2);
+  assert.deepEqual(schema[1].itemListElement.map(x=>x.url),guides.map(g=>'https://example.org'+g.url));
+  const absent=items.filter(e=>e.language!==language||e.kind==='digest'||e.reviewStatus==='example'||e.publishedAt.getTime()>Date.now());
+  assert.deepEqual(technicalGuides(language,absent),[]);
+  assert.ok(!guideIndexAlternates(absent).some(a=>a.language===language));
+ }
+});

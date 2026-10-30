@@ -1,0 +1,41 @@
+{
+  "key": "2021-07-23-unsuccessful-runner",
+  "language": "fr",
+  "title": "Différence des fréquences de noms",
+  "description": "Compter tous les participants, soustraire chaque arrivant, puis renvoyer le nom dont l’effectif restant est un.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Créer une map nom → effectif"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Chaque participant : ajouter 1",
+        "Les homonymes partagent le compte"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Chaque arrivant : soustraire 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Parcourir les effectifs restants",
+        "Trouver l’unique effectif de 1"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Renvoyer ce nom",
+        "Un seul coureur manquant garanti"
+      ]
+    }
+  ]
+}

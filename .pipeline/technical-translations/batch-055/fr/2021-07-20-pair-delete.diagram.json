@@ -1,0 +1,46 @@
+{
+  "key": "2021-07-20-pair-delete",
+  "language": "fr",
+  "title": "Suppression des paires adjacentes",
+  "description": "La pile conserve le préfixe réduit. Chaque nouveau caractère supprime le sommet identique ou devient le nouveau sommet.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Commencer avec une pile vide"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lire le caractère suivant c"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Pile non vide et sommet égal à c ?",
+        "Oui : pop · Non : push c"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Encore des caractères ?",
+        "Oui : répéter · Non : terminer"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Pile vide : renvoyer 1",
+        "Sinon : renvoyer 0"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 3,
+    "to": 1,
+    "label": "Oui"
+  }
+}

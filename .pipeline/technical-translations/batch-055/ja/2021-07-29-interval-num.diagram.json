@@ -1,0 +1,34 @@
+{
+  "key": "2021-07-29-interval-num",
+  "language": "ja",
+  "title": "x 間隔の数列",
+  "description": "ゼロ始まりの添字を項番号に変え、乗算前に x を long に拡張してから順番に集めます。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "添字 0 から n - 1 を生成"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "項番号 = 添字 + 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "先に x を long に拡張",
+        "その後で項番号を掛ける"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "走査順に各項を集める",
+        "long[] を返す"
+      ]
+    }
+  ]
+}

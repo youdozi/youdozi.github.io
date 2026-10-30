@@ -37,6 +37,27 @@ class LearningPathTests(unittest.TestCase):
         pages[SITE + '/en/posts/first/'].paths.clear()
         self.assertIn('expected exactly one', '\n'.join(validate(pages, sitemap, ('en',))[0]))
 
+    def test_translated_paths_reject_cross_language_neighbors_and_missing_index(self):
+        pages, sitemap = fixture()
+        # Exercise the same rendered contract with a Japanese edition, including URLs and attributes.
+        pages = {url.replace('/en/', '/ja/'): deepcopy(value) for url, value in pages.items()}
+        sitemap = {url.replace('/en/', '/ja/') for url in sitemap}
+        for value in pages.values():
+            value.language = 'ja'
+            value.canonicals = [url.replace('/en/', '/ja/') for url in value.canonicals]
+            value.jsonld = [raw.replace('/en/', '/ja/') for raw in value.jsonld]
+            for step in value.guide_steps:
+                step['url'] = step['url'].replace('/en/', '/ja/')
+            for path in value.paths:
+                path['attrs']['data-guide-url'] = path['attrs']['data-guide-url'].replace('/en/', '/ja/')
+                for link in path['links']:
+                    link['url'] = link['url'].replace('/en/', '/ja/')
+        self.assertEqual(validate(pages, sitemap, ('ja',))[0], [])
+        pages[SITE + '/ja/posts/middle/'].paths[0]['links'][1]['url'] = SITE + '/en/posts/first/'
+        self.assertIn('without wrapping', '\n'.join(validate(pages, sitemap, ('ja',))[0]))
+        del pages[SITE + '/ja/guides/']
+        self.assertIn('missing or invalid guide index', '\n'.join(validate(pages, sitemap, ('ja',))[0]))
+
     def test_wrong_neighbors_wraps_and_wrong_titles_fail(self):
         pages, sitemap = fixture()
         middle = pages[SITE + '/en/posts/middle/'].paths[0]

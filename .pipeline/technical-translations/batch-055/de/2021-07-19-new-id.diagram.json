@@ -1,0 +1,53 @@
+{
+  "key": "2021-07-19-new-id",
+  "language": "de",
+  "title": "Reihenfolge der ID-Normalisierung",
+  "description": "Das Diagramm folgt der Optional-Version. Die Schleife kombiniert Filterung und Punktzusammenfassung unter Beibehaltung derselben Regeln.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Mit Locale.ROOT kleinschreiben"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Unzulässige Zeichen entfernen",
+        "a-z, 0-9, Punkt, _, - behalten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Punktfolgen zusammenfassen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Randpunkte entfernen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Leer? Durch a ersetzen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Auf höchstens 15 Zeichen kürzen",
+        "Danach den Punkt am Ende entfernen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Unter 3? Letztes Zeichen wiederholen",
+        "Normalisierte ID zurückgeben"
+      ]
+    }
+  ]
+}

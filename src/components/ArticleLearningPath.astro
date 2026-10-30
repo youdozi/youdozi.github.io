@@ -1,6 +1,7 @@
 ---
 import {learningPathCopy,type ArticleLearningPath} from '../lib/article-learning';
-interface Props {path:ArticleLearningPath;lang:'en'|'ko';}
+import type {Language} from '../lib/content';
+interface Props {path:ArticleLearningPath;lang:Language;}
 const {path,lang}=Astro.props;
 const copy=learningPathCopy[lang];
 ---

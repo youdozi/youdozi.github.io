@@ -1,0 +1,46 @@
+{
+  "key": "2021-07-20-pair-delete",
+  "language": "es",
+  "title": "Eliminar pares adyacentes",
+  "description": "La pila guarda el prefijo reducido. Cada carácter nuevo elimina la cima igual o se convierte en la nueva cima.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Empezar con una pila vacía"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Leer el siguiente carácter c"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿No vacía y cima igual a c?",
+        "Sí: pop · No: push c"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Quedan caracteres?",
+        "Sí: repetir · No: terminar"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Pila vacía: devolver 1",
+        "En otro caso: devolver 0"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 3,
+    "to": 1,
+    "label": "Sí"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-29-ponkemon",
+  "language": "es",
+  "title": "Tipos distintos y plazas de selección",
+  "description": "El número de tipos distintos y el límite de selección N/2 son cotas superiores. Su mínimo es alcanzable con las condiciones del ejercicio.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Recorrer cada identificador de tipo"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Insertar en un HashSet",
+        "Los duplicados no añaden tipos"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "kinds = tamaño del conjunto",
+        "slots = nums.length / 2"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Devolver min(kinds, slots)",
+        "Un recuento, no el subconjunto"
+      ]
+    }
+  ]
+}

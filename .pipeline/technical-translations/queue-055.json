@@ -1,0 +1,1533 @@
+{
+  "schemaVersion": 1,
+  "state": "preparation-only",
+  "publicationApproval": null,
+  "baseCommit": "642acf94857febeee201573844c4aaa7a3f2862e",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "summary": {
+    "sourceTopics": 36,
+    "totalEditions": 216,
+    "preparedEditions": 66,
+    "remainingEditions": 150
+  },
+  "priorityPolicy": "Complete the array-to-string-to-collection learning cluster as a larger review batch after the pilot and shell cluster; then core SEO topics with prerequisites and remaining learning paths. This is editorial scope, not measured search demand.",
+  "articles": [
+    {
+      "translationKey": "2021-07-22-dot-product",
+      "title": "Java Array Dot Product: IntStream and Integer Bounds",
+      "categories": [
+        "coding-test"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-dot-product.md",
+        "sha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-22-dot-product.md",
+      "coreSEO": false,
+      "priority": 0,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        },
+        {
+          "language": "ja",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        },
+        {
+          "language": "de",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        },
+        {
+          "language": "fr",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        },
+        {
+          "language": "ru",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        },
+        {
+          "language": "es",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-22-plus-minus",
+      "title": "Sum Signed Values in Java with IntStream",
+      "categories": [
+        "coding-test"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-plus-minus.md",
+        "sha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-22-plus-minus.md",
+      "coreSEO": false,
+      "priority": 0,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        },
+        {
+          "language": "ja",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        },
+        {
+          "language": "de",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        },
+        {
+          "language": "fr",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        },
+        {
+          "language": "ru",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        },
+        {
+          "language": "es",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-050/manifest.json"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-20-linux-shellscript-function-error",
+      "title": "Fix the Shell function Warning: POSIX sh vs Bash",
+      "categories": [
+        "linux"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-20-linux-shellscript-function-error.md",
+      "coreSEO": false,
+      "priority": 0,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "ja",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "de",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "fr",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "ru",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "es",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-23-linux-shellscript-github-latest",
+      "title": "GitHub Latest Release with curl and jq: Select One Download Asset",
+      "categories": [
+        "linux"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "6c3e2757b880cf473ce279e66c04f2978db32504fdfb0de0582ddf611fbf0c81"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-23-linux-shellscript-github-latest.md",
+      "coreSEO": true,
+      "priority": 0,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "ja",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "de",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "fr",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "ru",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "es",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-11-17-linux-shellscript-version-compare",
+      "title": "Compare Dotted Numeric Versions in Shell with Python",
+      "categories": [
+        "linux"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc"
+      },
+      "koreanSource": "src/content/posts/ko/2023-11-17-linux-shellscript-version-compare.md",
+      "coreSEO": true,
+      "priority": 0,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "ja",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "de",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "fr",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "ru",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        },
+        {
+          "language": "es",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-052/manifest.json"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-23-multiple-gradle-build",
+      "title": "Package Multiple Vue Apps in a Spring Boot JAR with Gradle",
+      "categories": [
+        "springboot"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
+        "sha256": "8c56d878b812b739e8388d5e42fa62512ed2c9a12dbff0c122b188cebd049bf2"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-23-multiple-gradle-build.md",
+      "coreSEO": true,
+      "priority": 1,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-27-parse-yaml",
+      "title": "Read YAML from Shell: Validate a Port and Run a Command Without eval",
+      "categories": [
+        "linux"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-27-parse-yaml.md",
+        "sha256": "47c495241e0726054c4b38afcbef4f0c6c7ab737547803dc8efce6d78913c87c"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-27-parse-yaml.md",
+      "coreSEO": true,
+      "priority": 1,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-08-springboot3-migration",
+      "title": "Spring Boot 3 Migration: Java 17, Jakarta and Verification Steps",
+      "categories": [
+        "springboot"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-08-springboot3-migration.md",
+        "sha256": "be1e825f8c3bf3be3b6d059de6c97975af81856cf3e8f36fe0de6b256b43e2ff"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-08-springboot3-migration.md",
+      "coreSEO": true,
+      "priority": 1,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-09-springboot3-querydsl",
+      "title": "Spring Boot 3 and Querydsl: Jakarta Setup and Q-Type Generation",
+      "categories": [
+        "springboot"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-09-springboot3-querydsl.md",
+        "sha256": "ee1f78a4057b3065d7263ee7a4d5fef3e891d2d160f421d5ab5e0e2d1d29d99d"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-09-springboot3-querydsl.md",
+      "coreSEO": true,
+      "priority": 1,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-19-springboot-test-webclient",
+      "title": "Spring WebClient Tests with MockWebServer and JUnit 5",
+      "categories": [
+        "springboot"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+        "sha256": "ef7cf4e24374dfb396c5a401da0a8bbdda4379fac69420ffc39d0df5b5176fd5"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-19-springboot-test-webclient.md",
+      "coreSEO": true,
+      "priority": 1,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-20-jdk-21-release",
+      "title": "Java 21 Features: Virtual Threads, Collections and Preview Boundaries",
+      "categories": [
+        "jdk"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
+        "sha256": "8c6758944619d09544011e5d202aebeb5a002ffbf54030bf6dbf07daae30b970"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-20-jdk-21-release.md",
+      "coreSEO": true,
+      "priority": 1,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-10-10-temurin-jdk21-delay",
+      "title": "Temurin JDK 21: Check Binary Metadata and Understand the 2023 Delay",
+      "categories": [
+        "jdk"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "ea262b40509849be238aab4fbc2f86e1fcb0e6326123a88dd472328d512302dc"
+      },
+      "koreanSource": "src/content/posts/ko/2023-10-10-temurin-jdk21-delay.md",
+      "coreSEO": true,
+      "priority": 1,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-10-27-springbatch5-migration",
+      "title": "Spring Batch 5 Migration Guide: Schema, Job Parameters and Restart",
+      "categories": [
+        "spring"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+        "sha256": "ef75e5214a61bdc22d193905ae2963c6e9427ec1d2411c658042eb2571aad378"
+      },
+      "koreanSource": "src/content/posts/ko/2023-10-27-springbatch5-migration.md",
+      "coreSEO": true,
+      "priority": 1,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-19-new-id",
+      "title": "Java New ID Recommendation: Normalization Order and Truncation",
+      "categories": [
+        "coding-test"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-19-new-id.md",
+        "sha256": "d974b2c5791736b9568a1598a457390b7df0c0450c6dd11323c3c26a895ea8a2"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-19-new-id.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ja",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "de",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "fr",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ru",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "es",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-20-http-status-test",
+      "title": "Test HTTP Status Codes Locally with a Small Python Server",
+      "categories": [
+        "util"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-20-http-status-test.md",
+        "sha256": "6a0015675b8a80249e52069a1e2ba364408570bbf983db78a56b13b3ebf0b721"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-20-http-status-test.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-20-pair-delete",
+      "title": "Remove Adjacent Duplicate Pairs in Java with an ArrayDeque Stack",
+      "categories": [
+        "coding-test"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-20-pair-delete.md",
+        "sha256": "a1962a62aeb00132eea16a0b3b607dfb9e256902ddc165613dbe7c044f14966e"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-20-pair-delete.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ja",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "de",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "fr",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ru",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "es",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-23-app-diagrams.net",
+      "title": "Keep Editable draw.io Sources Alongside Shared Diagrams",
+      "categories": [
+        "util"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-app-diagrams.net.md",
+        "sha256": "994c0cd18640921c0e130d9310adace919b39b5be0e5a2b54b5cee9772bdd8c0"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-23-app-diagrams.net.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-23-number-word",
+      "title": "Convert English Digit Words in Java with String.replace",
+      "categories": [
+        "coding-test"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-number-word.md",
+        "sha256": "28614468f78703f7e406439ee8b23b83e06091ae7f42ed9835cd50c6d1bb2e87"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-23-number-word.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ja",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "de",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "fr",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ru",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "es",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-23-unsuccessful-runner",
+      "title": "Find the Missing Runner in Java with Name Frequencies",
+      "categories": [
+        "coding-test"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-unsuccessful-runner.md",
+        "sha256": "a8c9e485842a9d8718e6cec7f5d0bcbda5a716bad751608cc67094ac938487d6"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-23-unsuccessful-runner.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ja",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "de",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "fr",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ru",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "es",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-24-fail-percentage",
+      "title": "Sort Failure Rates in Java: Denominators, Ties, and Long Products",
+      "categories": [
+        "coding-test"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-24-fail-percentage.md",
+        "sha256": "c684945a1636e85bfe7ce5165815a7785215f97a78fa784c21dd34e8f275d30b"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-24-fail-percentage.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-29-interval-num",
+      "title": "Generate an x-Spaced Sequence in Java: Promote Before Multiplication",
+      "categories": [
+        "coding-test"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-29-interval-num.md",
+        "sha256": "4674cdefcccdc5107e92b9fe49ee186426b25a096d2687d60d42724c51d29cf4"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-29-interval-num.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ja",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "de",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "fr",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ru",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "es",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-07-29-ponkemon",
+      "title": "Java Ponketmon: Why the Answer Is min(Distinct Types, N/2)",
+      "categories": [
+        "coding-test"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-07-29-ponkemon.md",
+        "sha256": "99cbe2a5028aa94ba76d028c0e9bf48f91f84d6ab43c457f183d0a8a1d9752de"
+      },
+      "koreanSource": "src/content/posts/ko/2021-07-29-ponkemon.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ja",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "de",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "fr",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "ru",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        },
+        {
+          "language": "es",
+          "state": "draft-prepared",
+          "manifest": ".pipeline/technical-translations/batch-055/manifest.json"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-08-06-search-github",
+      "title": "Search Code with GitHub, Sourcegraph and Local Git",
+      "categories": [
+        "util"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-08-06-search-github.md",
+        "sha256": "22da61f44f3002516631540293a6b08b9b0de12d2c7963e6c52ae57b297efddf"
+      },
+      "koreanSource": "src/content/posts/ko/2021-08-06-search-github.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2021-08-17-cache",
+      "title": "Java LRU Cache: Use Access Order in LinkedHashMap",
+      "categories": [
+        "coding-test"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2021-08-17-cache.md",
+        "sha256": "77818be49804ec89674a652987cb0a60ff7d9f11d5d0ec584536b13135759eb1"
+      },
+      "koreanSource": "src/content/posts/ko/2021-08-17-cache.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-04-jekyll-install",
+      "title": "Jekyll on macOS: Verify Ruby, Bundler and a Two-Page Build",
+      "categories": [
+        "jekyll"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-04-jekyll-install.md",
+        "sha256": "0dbe6c1bad26411bc78aabc17773da808b4c74fe9cdc098a9bada2cfb2873e08"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-04-jekyll-install.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-05-querydsl-no-release",
+      "title": "Querydsl and JPA Specifications: Test a Query Before Switching",
+      "categories": [
+        "springboot"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-05-querydsl-no-release.md",
+        "sha256": "23fe3b60bb4735a72a59a7bcc0dfabd76d68df0af84bdd636d79f15699cfc798"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-05-querydsl-no-release.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-07-springboot-initializer",
+      "title": "Create and Test a Gradle Project with Spring Initializr",
+      "categories": [
+        "springboot"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-07-springboot-initializer.md",
+        "sha256": "97a876012a6c3d2dbf40856ed6360dc850f12741aecbd5ee7bd96023fb05275f"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-07-springboot-initializer.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-10-springboot-intellij-import",
+      "title": "Open and Run a Spring Boot Gradle Project in IntelliJ IDEA",
+      "categories": [
+        "springboot"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-10-springboot-intellij-import.md",
+        "sha256": "5b3c970364e92d3672967197986ea67769f45094ca27f6c9f8bfbd0779645bc2"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-10-springboot-intellij-import.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-13-springboot-history",
+      "title": "Spring Boot Release History and Spring Framework Version Mapping",
+      "categories": [
+        "springboot"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-13-springboot-history.md",
+        "sha256": "8f97cfe96eb4ed1a36dae63a187c6f28960c327ff6cba276c45537a1e7745da2"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-13-springboot-history.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-15-springboot-intellij-lombok",
+      "title": "Fix Lombok in IntelliJ: Separate Gradle Compilation from IDE Support",
+      "categories": [
+        "springboot"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "9fe45995bdaea610316410d2b79746c008656c5d20256f9de7d66bc47499dda1"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-15-springboot-intellij-lombok.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-23-jdk-21-string-templates",
+      "title": "Java String Templates: JDK 21 Preview, JDK 23 Removal and Alternatives",
+      "categories": [
+        "jdk"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-23-jdk-21-string-templates.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2023-09-28-jenkins-docker-install",
+      "title": "Jenkins in Docker: Verify Startup and Container Recreation",
+      "categories": [
+        "jenkins"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+        "sha256": "ed131abbe5537f6f1828891ac35483b44e96395c554a52b53f5c1ab6c4ff895e"
+      },
+      "koreanSource": "src/content/posts/ko/2023-09-28-jenkins-docker-install.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2026-04-07-jekyll-github-actions-content-pipeline",
+      "title": "From Jekyll Auto-Publishing to Astro Draft PR Review",
+      "categories": [
+        "blog",
+        "automation"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "12226531a63ffece862798351d0562f1f29cc2b14f9731dad4dd5fece0e77637"
+      },
+      "koreanSource": "src/content/posts/ko/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "title": "Astro Quality Gates: Why a Passing PR Does Not Deploy",
+      "categories": [
+        "blog",
+        "automation"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "f5c09678ab191654be64bc9fd457df828066c7f199625a6b32c5d94a02200363"
+      },
+      "koreanSource": "src/content/posts/ko/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "title": "Ruby Native Gem Failures: Separate Runtime and C++ Header Checks",
+      "categories": [
+        "blog",
+        "troubleshooting"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "b186e8b9ffc0b623a12d82e49d3428adc274669397a7a207f235d80673b0759a"
+      },
+      "koreanSource": "src/content/posts/ko/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    },
+    {
+      "translationKey": "2026-10-27-jenkins-home-backup-restore",
+      "title": "Jenkins Home Backup: Restore a Stopped Controller into a New Volume",
+      "categories": [
+        "jenkins"
+      ],
+      "source": {
+        "path": "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "f6fcbb37f82b9829ef3535f5fee0b0fdf0b7b0ebe4e8b4f96bb3f2ff104a59b4"
+      },
+      "koreanSource": "src/content/posts/ko/2026-10-27-jenkins-home-backup-restore.md",
+      "coreSEO": false,
+      "priority": 2,
+      "tasks": [
+        {
+          "language": "zh-CN",
+          "state": "not-started"
+        },
+        {
+          "language": "ja",
+          "state": "not-started"
+        },
+        {
+          "language": "de",
+          "state": "not-started"
+        },
+        {
+          "language": "fr",
+          "state": "not-started"
+        },
+        {
+          "language": "ru",
+          "state": "not-started"
+        },
+        {
+          "language": "es",
+          "state": "not-started"
+        }
+      ]
+    }
+  ]
+}

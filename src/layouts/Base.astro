@@ -21,7 +21,7 @@ const archiveLink=archiveAlternates(allEntries).find(item=>item.language===lang)
 const guideLink=guideIndexAlternates(allEntries).find(a=>a.language===lang);
 const navItems=[
   ...(hasSection(allEntries,lang,'posts')?[{href:'/'+lang+'/posts/',label:t.posts}]:[]),
-  ...(guideLink?[{href:guideLink.url,label:lang==='ko'?guideIndexCopy.ko.label:guideIndexCopy.en.label}]:[]),
+  ...(guideLink?[{href:guideLink.url,label:guideIndexCopy[lang].label}]:[]),
   ...(hasSection(allEntries,lang,'digest')?[{href:'/'+lang+'/digest/',label:t.digest}]:[]),
   {href:'/'+lang+'/search/',label:t.search},
 ];

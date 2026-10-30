@@ -1,0 +1,35 @@
+{
+  "key": "2021-07-23-number-word",
+  "language": "ja",
+  "title": "数字名の置換",
+  "description": "zero から nine の固定単語を数字文字にリテラル置換し、得られた十進数文字列を解析します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "入力文字列から開始"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "固定テーブルの単語を走査",
+        "zero から nine まで"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "単語を数字にリテラル置換",
+        "既存の数字文字は保持"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "十個の単語を置換した後",
+        "Integer.parseInt → int を返す"
+      ]
+    }
+  ]
+}
