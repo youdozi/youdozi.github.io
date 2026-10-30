@@ -13,7 +13,7 @@ tags:
   - "webclient"
 legacyUrl: "/springboot/springboot-test-webclient/"
 legacySource: "_posts/spring/test/webclient/2023-09-19-springboot-test-webclient.markdown"
-updatedAt: 2026-10-30T05:15:39.658659+00:00
+updatedAt: "2026-10-30T13:01:05.739661+00:00"
 reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조, 재현 절차와 버전별 적용 조건 보강"
@@ -240,3 +240,5 @@ gradle --no-daemon test
 이 클라이언트 테스트는 로컬 모의 서버를 사용하므로 배포 애플리케이션의 정적 파일을 확인하지 않습니다. Vue 앱을 함께 패키징한다면 [Gradle 프런트엔드 패키징 예제](/ko/posts/2021-07-23-multiple-gradle-build/)에서 실행 JAR과 HTML·JavaScript 응답을 확인할 수 있습니다. 두 예제의 고정 환경이 다르므로 의존성을 맞추지 않고 하나의 프로젝트로 합치면 안 됩니다.
 
 MockWebServer API는 [OkHttp 4.12.0 소스와 예제](https://github.com/square/okhttp/tree/parent-4.12.0/mockwebserver)를 참고할 수 있습니다.
+
+시간 제한과 재시도 횟수는 [WebClient 타임아웃·제한된 재시도 테스트](/ko/posts/2026-10-30-webclient-timeout-retry/)에서 이어서 확인할 수 있습니다. 이 후속 예제는 GET 응답 중 503만 재시도하며 시도별 제한과 전체 재시도 예산을 구분합니다.

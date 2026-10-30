@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "id": "webclient-timeout-retry-068",
+  "reviewedAt": "2026-10-30T13:04:03.494784+00:00",
+  "baseCommit": "d405a84d0a0277dcde7de2066526f914a6057b1a",
+  "scope": "Paired native timeout/retry guide, exact source-derived ZIP, diagram, nine executed tests, existing response-contract follow-up links and Spring reading path. Six new language editions queued only.",
+  "newArticleKey": "2026-10-30-webclient-timeout-retry",
+  "newPublicArticles": 2,
+  "articleHashes": {
+    "en": "757c2335d2f6b40391fa299791d6c6e6bade0e499c599b451be06be4eee77e3b",
+    "ko": "b44940f00a1d5f504676e48db667615c29e9e35b37f291e3f3693d18cf2f57b3"
+  },
+  "existingArticleCodeAndPublishedAtPreserved": true,
+  "existingIndividualWorkflowDiagramsPreserved": true,
+  "translationDraftsStillUnpublished": 120,
+  "translationContentChanged": false,
+  "translationQueue": ".pipeline/technical-translations/queue-068.json",
+  "translationRemainingEditions": 108,
+  "review": {
+    "method": "AI self-review plus a separate context AI technical and complete KO-to-EN translation review under writing/translate skill instructions. Reviewer had no prior verdict/artifacts.",
+    "independentReviewer": true,
+    "reviewSession": "/root/webclient068_review",
+    "initialHashes": {
+      "ko": "0d111bc17e96322f5fe2f1cc7b04ffbef18d13998b591b4616407a299334851e",
+      "en": "021c28bb199f67247fb2eadb68c018736d1681d53444a5b5251f6062643c350f"
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "issue": "Virtual time test observes success after advancing one second; does not separately assert an exact completion timestamp.",
+        "resolution": "Changed both language result-table descriptions to the observed check; reviewer confirmed resolved with final hashes."
+      }
+    ],
+    "unresolvedMajorOrCriticalFindings": 0,
+    "reviewerExecuted": [
+      "Nine exact paired ZIP JUnit cases, Gradle 8.4/JDK17.0.8.1"
+    ],
+    "reviewerStaticChecks": [
+      "KO/EN complete meaning and naturalness",
+      "Official API scope",
+      "Operator pipeline vs code",
+      "Archive recipe and limitations"
+    ],
+    "limits": "Local HTTP and synthetic virtual time; no TCP connect-timeout reproduction, production latency proof, DNS/TLS/pool exhaustion, Retry-After, jitter, write idempotency or distributed side effects."
+  },
+  "validation": {
+    "nodeTests": 164,
+    "pythonTests": 333,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 429,
+    "sitemapURLs": 485,
+    "diagramPairs": 38,
+    "exampleArchives": 18,
+    "executedExampleTests": 9,
+    "httpCases": 7,
+    "virtualTimeCases": 2,
+    "localBrowserChecks": 8,
+    "widths": [
+      320,
+      1360
+    ],
+    "mobileFlowScreenshotInspected": true
+  },
+  "rankingOrAICitationGainEstablished": false,
+  "googleIndexInspectionsPerformed": false
+}

@@ -1607,6 +1607,88 @@
           ]
         }
       ]
+    },
+    {
+      "key": "2026-10-30-webclient-timeout-retry",
+      "title": {
+        "en": "Timeout and retry operators",
+        "ko": "타임아웃·재시도 연산자"
+      },
+      "description": {
+        "en": "Read the operator pipeline from top to bottom. The total timeout surrounds attempts and retry delays. Only HTTP 503 is eligible for two retries.",
+        "ko": "위에서 아래로 연산자 순서를 읽습니다. 전체 타임아웃이 각 시도와 재시도 대기를 감쌉니다. HTTP 503만 두 번 재시도할 수 있습니다."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": ".timeout(attemptLimit)"
+        },
+        {
+          "language": "java",
+          "contains": "Retry.fixedDelay(2, retryDelay)"
+        },
+        {
+          "language": "java",
+          "contains": ".timeout(totalLimit)"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "en": [
+            "GET /value",
+            "retrieve → decode String"
+          ],
+          "ko": [
+            "GET /value",
+            "retrieve → String 디코딩"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "timeout(attemptLimit)",
+            "New budget for each attempt"
+          ],
+          "ko": [
+            "timeout(attemptLimit)",
+            "시도마다 제한 시간 새로 시작"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "retryWhen: only HTTP 503",
+            "Delay; at most two retries"
+          ],
+          "ko": [
+            "retryWhen: HTTP 503만",
+            "대기 후 최대 두 번 재시도"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "timeout(totalLimit)",
+            "Includes all attempts and delays"
+          ],
+          "ko": [
+            "timeout(totalLimit)",
+            "모든 시도·대기를 포함해 제한"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Subscriber receives value / completion",
+            "or final error"
+          ],
+          "ko": [
+            "구독자에게 값·완료",
+            "또는 최종 오류 전달"
+          ]
+        }
+      ]
     }
   ]
 }

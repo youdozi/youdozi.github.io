@@ -59,6 +59,8 @@ jobs:
           gradle-version: '8.4'
       - name: Compile and execute published WebClient response contracts
         run: python3 -B scripts/check_webclient_example.py
+      - name: Execute published WebClient timeout and bounded retry contracts
+        run: python3 -B scripts/check_webclient_retry_example.py
       - name: Generate Q types and compare Querydsl and Specification contracts twice from clean
         run: python3 -B scripts/check_query_strategies.py
       - name: Execute the published shell automation examples with local HTTP fixtures

@@ -11,7 +11,7 @@ tags:
   - "springboot"
   - "test"
   - "webclient"
-updatedAt: 2026-10-30T05:15:39.658659+00:00
+updatedAt: "2026-10-30T13:01:05.739661+00:00"
 reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "Official documentation checked; runnable examples and version boundaries clarified."
@@ -237,3 +237,5 @@ All eight tests passed in the reproduction environment above. In this repository
 These client tests use a local mock server; they do not check static files in a deployed application. If the application packages Vue apps, the [Gradle frontend packaging example](/en/posts/2021-07-23-multiple-gradle-build/) checks the executable JAR and its HTML/JavaScript responses. The two examples pin different environments and should not be combined without aligning their dependencies.
 
 MockWebServer API reference: [OkHttp 4.12.0 source and examples](https://github.com/square/okhttp/tree/parent-4.12.0/mockwebserver).
+
+For time limits and retry counts, continue with [WebClient timeout and bounded retry tests](/en/posts/2026-10-30-webclient-timeout-retry/). That example retries only GET responses with status 503 and separates per-attempt limits from the total retry budget.
