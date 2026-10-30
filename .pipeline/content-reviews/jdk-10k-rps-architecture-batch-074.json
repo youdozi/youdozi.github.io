@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "jdk-10k-rps-architecture-074",
+  "reviewedAt": "2026-10-30T23:27:15.928046+00:00",
+  "baseCommit": "e54dc64a7c164a54ac78e0466a8ac057e763d7e1",
+  "scope": "KO original and complete EN translation for user-confirmed 10,000 HTTP requests/second at the API load-balancer boundary. Reference architecture, capacity assumptions, overload admission demo and load-validation procedure; no achieved-throughput claim.",
+  "newPublicArticles": 2,
+  "articleHashes": {
+    "ko": "b62b6005bd4fc23f34acf7e3b0eccb8779d402663dbc6b49d2476fa9bd7142be",
+    "en": "c4bdc1984dacdabdaeabacf9e889b26a76991cbb44d19263a3a2bfb0b8e1e1bf"
+  },
+  "primarySources": [
+    "https://openjdk.org/projects/jdk/27/",
+    "https://www.oracle.com/java/technologies/java-se-support-roadmap.html",
+    "https://docs.oracle.com/en/java/javase/27/core/virtual-threads.html",
+    "https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/concurrent/Semaphore.html",
+    "https://web.mit.edu/2.810/www/files/lectures/lec1-intro-2019.pdf",
+    "https://sre.google/sre-book/handling-overload/",
+    "https://www.postgresql.org/docs/18/runtime-config-connection.html",
+    "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+    "https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/constant-arrival-rate/",
+    "https://grafana.com/docs/k6/latest/using-k6/scenarios/concepts/dropped-iterations/",
+    "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html"
+  ],
+  "review": {
+    "method": "Separate-context technical and full KO-to-EN review under writing and translation skills.",
+    "session": "/root/architecture074_review",
+    "requiredFindings": 1,
+    "unresolvedMajorOrCriticalFindings": 0,
+    "authorCorrections": "Minor flow alt text and adjacent caption corrected to describe Gate.call rather than full demo execution. Added official transactional-outbox source.",
+    "reviewerExecuted": "Actual source-derived JDK 27 demo plus eight separate gate contracts.",
+    "limits": "No HTTP throughput, infrastructure or failure-capacity measurement.",
+    "finalChangesRechecked": true,
+    "unresolvedFindings": 0
+  },
+  "validation": {
+    "nodeTests": 165,
+    "pythonTests": 333,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 445,
+    "sitemapURLs": 503,
+    "diagramPairs": 46,
+    "supplementaryArchitectureSVGs": 2,
+    "exampleArchives": 34,
+    "readingPathArticles": 90,
+    "readingNeighborLinks": 146,
+    "localArticleImages": 94,
+    "articlesWithImages": 92,
+    "admissionChecks": 14,
+    "jdk": "Temurin 27.0.1.0.2+1 macOS AArch64",
+    "jdkDownloadSHA256": "c2619cb73ff1d296edd0644d92ae8ed94039bc1bdd43282398835b7f88134fb6",
+    "actualZIPCodeExecuted": true,
+    "previewFlags": false,
+    "globalJDKConfigurationChanged": false,
+    "browserChecks": 4,
+    "widths": [
+      320,
+      1360
+    ],
+    "mobileArticleAndBothDiagramsInspected": true,
+    "performanceMeasured": false
+  },
+  "existingTechnicalDraftsUnpublished": 120,
+  "newAdditionalLanguageTasksNotStarted": 6,
+  "translationQueue": ".pipeline/technical-translations/queue-074.json",
+  "googleIndexingRankingOrAICitationGainEstablished": false
+}
