@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "scope": "Complete JDK feature/history/binary-selection cluster and remaining shell YAML article in six languages; support faithful localized calendar dates in structural checks.",
+  "reviewedAt": "2026-10-30T03:12:56.371192+00:00",
+  "implementationCommit": "ac6b0f573caeca00b59bec49d362e8eb1d6e5934",
+  "manifest": {
+    "path": ".pipeline/technical-translations/batch-058/manifest.json",
+    "sha256": "c3bebec5cc02faf2d8cd67692c5910245855e5332c8c0be8523408d95e9b9678"
+  },
+  "newTopics": 4,
+  "newEditions": 24,
+  "totalPreparedTechnicalEditions": 120,
+  "remainingTechnicalEditions": 96,
+  "allJDKAndShellTopicsPrepared": true,
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "publicationApproval": null,
+  "publicFilesWritten": 0,
+  "review": {
+    "method": "AI self-review against complete English article and standalone target-language reading under translate skill",
+    "independentReviewer": false,
+    "newExternalFactVerification": false,
+    "scope": "Complete title, description, prose, tables, captions and flow diagrams; Java, Python, shell, YAML, actual output, inline identifiers and reference URLs preserved. Existing execution statements remain translations of source evidence."
+  },
+  "validation": {
+    "nodeTests": 156,
+    "pythonTests": 298,
+    "astroFiles": 75,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "publicArticles": 425,
+    "publicSitemapURLs": 481,
+    "structuralManuscriptsChecked": 120,
+    "newDraftCodeBlocks": 96,
+    "newLocalizedSVGs": 24,
+    "browserWidths": [
+      320,
+      1360
+    ],
+    "articleAndGuideBrowserChecks": 84,
+    "articleBrowserChecks": 48,
+    "guideAndIndexBrowserChecks": 36,
+    "reviewPacketPairs": 24,
+    "reviewPacketCodeBlocks": 192,
+    "reviewPacketImages": 48,
+    "localJava": {
+      "finalFeatures": "Zulu JDK 21.0.1: five output lines without preview flags; Java 17 compilation target rejected",
+      "standardFormatting": "Corretto JDK 17.0.8.1: exact output with default and ar_EG locale settings",
+      "historicalPreview": "Zulu JDK 21.0.1: preview class compiled and output matched",
+      "jdk22Or23Executed": false
+    },
+    "configInputCases": {
+      "yaml": 21,
+      "wrapperAndUsage": 6,
+      "temurinMetadata": 18,
+      "externalRequests": 0,
+      "binaryDownloads": 0
+    },
+    "combinedPreview": {
+      "technicalFixtureEditions": 120,
+      "newsFixtureEditions": 318,
+      "articles": 863,
+      "sitemapURLs": 961,
+      "completeParagraphsAndTableRows": 2004,
+      "codeBlocks": 252,
+      "diagramsAndRSS": 120,
+      "readingPathArticles": 190,
+      "neighborLinks": 300,
+      "snapshotRemoved": true,
+      "workingContentAndDistFingerprintsPreserved": true
+    },
+    "calendarRegression": "Same explicit calendar dates in seven prose languages compare equally; changed day/year/version, malformed dates and ambiguous slash-date handling are covered. Calendar normalization does not relax ordered non-date numbers, code, inline tokens, URLs or table checks."
+  }
+}
