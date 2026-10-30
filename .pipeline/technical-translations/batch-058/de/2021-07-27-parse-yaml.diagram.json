@@ -1,0 +1,40 @@
+{
+  "key": "2021-07-27-parse-yaml",
+  "language": "de",
+  "title": "YAML vor exec validieren",
+  "description": "Den Integer-Port vor dem Export von SERVER_PORT parsen und validieren. Ein Loader-Fehler verhindert den Start des Zielbefehls; exec erhält dessen Status.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "YAML mit safe_load lesen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Root und server auf Mappings prüfen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Integer-Port 1..65535 verlangen",
+        "Ungültige Eingabe: mit Fehler stoppen"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Ungültig",
+        "continue": "Gültig"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Nur gültiger Port:",
+        "SERVER_PORT exportieren",
+        "exec mit quotierten Argumenten"
+      ]
+    }
+  ]
+}

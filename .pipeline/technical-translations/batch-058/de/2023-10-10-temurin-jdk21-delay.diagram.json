@@ -1,0 +1,41 @@
+{
+  "key": "2023-10-10-temurin-jdk21-delay",
+  "language": "de",
+  "title": "Binärmetadaten validieren",
+  "description": "Dies ist ein Beispiel zur Metadatenauswahl, kein Installationsablauf. Es prüft Plattform, Java-Hauptversion, Prüfsummenformat und URL-Ziel, ohne das Archiv herunterzuladen oder zu hashen.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Assets-JSON mit curl abrufen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Genau ein Asset verlangen",
+        "linux/x64/jdk/hotspot prüfen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Java-Hauptversion 21 verlangen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "SHA-256-Metadatensyntax prüfen",
+        "Erwartete HTTPS-URL validieren"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Version, Name, URL, Prüfsumme ausgeben",
+        "Kein Hash einer Download-Datei geprüft"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {normalizeCalendarDates} from './translation-dates.mjs';
 /** Validate private technical translation manuscripts; never publish or create routes. */
 import {readFile,realpath} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
@@ -23,8 +24,9 @@ function inline(body){return [...prose(body).matchAll(/`([^`\n]+)`/g)].map(m=>m[
 function links(body){return [...prose(body).matchAll(/(?<!!)\[[^\]\n]*\]\(([^)]+)\)/g)].map(m=>m[1]);}
 function numbers(body){
   // Ignore link paths, image alt (a duplicate caption), code and localized digit grouping.
-  const visible=prose(body).replace(/!\[[^\]\n]*\]\([^)]+\)/g,'').replace(/\]\([^)]+\)/g,']')
-    .replace(/`[^`\n]+`/g,'').replace(/(\d)[,.\u00a0\u202f](?=\d{3}(?:\D|$))/g,'$1');
+  const unformatted=prose(body).replace(/!\[[^\]\n]*\]\([^)]+\)/g,'').replace(/\]\([^)]+\)/g,']')
+    .replace(/`[^`\n]+`/g,'');
+  const visible=normalizeCalendarDates(unformatted).replace(/(\d)[,.\u00a0\u202f](?=\d{3}(?:\D|$))/g,'$1');
   return visible.match(/\d+/g)??[];
 }
 function shape(body){return prose(body).trim().split(/\n\n+/).map(block=>block.startsWith('## ')?'heading':block.startsWith('![')?'image':block.startsWith('| ')?'table':'paragraph');}

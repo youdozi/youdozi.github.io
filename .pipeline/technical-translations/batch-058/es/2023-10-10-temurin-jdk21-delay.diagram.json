@@ -1,0 +1,41 @@
+{
+  "key": "2023-10-10-temurin-jdk21-delay",
+  "language": "es",
+  "title": "Validar metadatos de binarios",
+  "description": "Es un ejemplo de selección de metadatos, no un proceso de instalación. Comprueba plataforma, versión principal de Java, sintaxis de la suma de comprobación y destino de la URL sin descargar ni calcular el hash del archivo.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Obtener el JSON de recursos con curl"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Exigir exactamente un recurso",
+        "Comprobar linux/x64/jdk/hotspot"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Exigir la versión principal Java 21"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Comprobar la sintaxis SHA-256",
+        "Validar la URL HTTPS esperada"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Mostrar versión, nombre, URL y suma",
+        "No se comprueba el hash del archivo"
+      ]
+    }
+  ]
+}

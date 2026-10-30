@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-20-jdk-21-release",
+  "language": "de",
+  "title": "Finale Java-21-Funktionen ausführen",
+  "description": "Der Ablauf folgt Jdk21Example ohne Preview-Flags. Die umgekehrte Liste ist eine Sicht; join wartet auf die Ausgabe des virtuellen Threads.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Passende Java-21-Werkzeuge verwenden",
+        "Ohne Preview-Flags kompilieren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Liste und umgekehrte Sicht erstellen",
+        "Erstes Element der Originalliste ändern"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Endelemente und",
+        "umgekehrte Sicht ausgeben"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Point-Record und null abgleichen",
+        "Beide switch-Ergebnisse ausgeben"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Virtuellen Thread starten und join aufrufen",
+        "Vor der Rückkehr auf die Ausgabe warten"
+      ]
+    }
+  ]
+}

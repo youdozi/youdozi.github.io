@@ -1,0 +1,41 @@
+{
+  "key": "2023-09-23-jdk-21-string-templates",
+  "language": "es",
+  "title": "Usar las API de formato estándar",
+  "description": "Se muestra el FormattingExample estándar, no el antiguo ejemplo de preview. Compara tres formas de formato y comprueba el tratamiento del apóstrofo en MessageFormat.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Definir x = 2 e y = 3"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Concatenar agrupando x + y"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "String.format con Locale.ROOT",
+        "Usar marcadores enteros numerados"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "MessageFormat con Locale.ROOT",
+        "Pasar los argumentos como array Object"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Duplicar el apóstrofo en el patrón",
+        "Mostrar las cuatro salidas del ejemplo"
+      ]
+    }
+  ]
+}

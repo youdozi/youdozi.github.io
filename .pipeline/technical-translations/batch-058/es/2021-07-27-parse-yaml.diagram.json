@@ -1,0 +1,39 @@
+{
+  "key": "2021-07-27-parse-yaml",
+  "language": "es",
+  "title": "Validar YAML antes de exec",
+  "description": "Analiza y valida el puerto entero antes de exportar SERVER_PORT. Un fallo del cargador impide iniciar el comando de destino; exec conserva su estado.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Leer YAML con safe_load"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Comprobar los mapas raíz y server"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Exigir un puerto entero 1..65535",
+        "Entrada inválida: parar con error"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Inválido",
+        "continue": "Válido"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Solo puerto válido: exportar SERVER_PORT",
+        "Lanzar exec con argumentos entre comillas"
+      ]
+    }
+  ]
+}

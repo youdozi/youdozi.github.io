@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-20-jdk-21-release",
+  "language": "es",
+  "title": "Ejecutar funciones definitivas de Java 21",
+  "description": "El flujo sigue Jdk21Example sin opciones de preview. La lista invertida es una vista y join espera la salida del hilo virtual.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Usar herramientas Java 21 compatibles",
+        "Compilar sin opciones de preview"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Crear la lista y la vista invertida",
+        "Cambiar el primer elemento original"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Mostrar extremos y vista invertida"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Comparar el record Point y null",
+        "Mostrar ambos resultados del switch"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Iniciar el hilo virtual y llamar a join",
+        "Esperar su salida antes de regresar"
+      ]
+    }
+  ]
+}
