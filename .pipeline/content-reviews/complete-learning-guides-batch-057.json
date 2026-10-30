@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "complete-learning-guides-057",
+  "reviewedAt": "2026-10-30T01:53:30.617670+00:00",
+  "scope": "Full localization of existing English guide copy and eligibility/reading navigation, not new article translation or publication.",
+  "sourceCommit": "175c9bfbb243abb8b9978ddef3f6e5cf6ed6c97b",
+  "implementationCommit": "fa7abef5d03e7b48c6ce90a996532f450923c8c0",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "newGuideFamilies": [
+    "springboot",
+    "jdk",
+    "automation",
+    "jenkins",
+    "jekyll"
+  ],
+  "newLocalizedGuides": 30,
+  "totalLocalizedGuideFamilies": 8,
+  "totalLocalizedGuides": 48,
+  "files": [
+    {
+      "path": "src/lib/spring-guide-locales.ts",
+      "sha256": "64b852015ed79cd5eb84e6a04a31458e1e1dd37bdd6cf99e302d2861838fe132"
+    },
+    {
+      "path": "src/lib/remaining-guide-locales.ts",
+      "sha256": "6d9ab9161b7f508915f98303e38be005fd9502d35e6b9229652e4bb50a7c2d06"
+    },
+    {
+      "path": "src/lib/spring-guide.ts",
+      "sha256": "48f6a9b0961d5bd5ad5998f8ee91b01eea1db0142d805d81a95b30493ece1736"
+    },
+    {
+      "path": "src/lib/technical-guides.ts",
+      "sha256": "2d6f8e52b0bc776b00859da07964de1732b7dbba96faf7ab0c4fcd64967809f5"
+    }
+  ],
+  "translationReview": {
+    "method": "AI self-review of English meaning and target-language fluency under translate skill",
+    "independentReviewer": false,
+    "humanReview": false,
+    "newExternalFactVerification": false,
+    "preserved": [
+      "release-history and support caveats",
+      "actual runtime versus API status",
+      "fixture scope versus production recovery",
+      "approval versus check/deployment evidence",
+      "curated article keys and order"
+    ]
+  },
+  "checks": {
+    "nodeTests": 153,
+    "pythonTests": 298,
+    "astroFiles": 75,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "publicArticles": 425,
+    "publicSitemapURLs": 481,
+    "browserWidths": [
+      320,
+      1360
+    ],
+    "browserChecks": 192,
+    "guideAndIndexBrowserChecks": 72,
+    "articleBoundaryBrowserChecks": 120,
+    "browserFixture": "Disposable committed snapshot with explicitly marked synthetic entries reusing English bodies. This checks guide rendering, metadata, same-language links and boundaries; it does not certify article translations or approval.",
+    "snapshotRemoved": true,
+    "workingContentAndDistFingerprintsPreserved": true
+  },
+  "publication": {
+    "articleDraftsPrepared": 96,
+    "articleDraftsRemaining": 120,
+    "newArticleDrafts": 0,
+    "newPublicArticles": 0,
+    "approvalRecorded": false
+  },
+  "mergePolicy": "Merge PRs after required checks without asking again, verify deployment, and do not bypass failed checks. Preparation-only PR merges retain their stated manuscript publication scope."
+}
