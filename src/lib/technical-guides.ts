@@ -7,15 +7,15 @@ import type { CategoryGuide } from './category-guide';
 import { algorithmGuide } from './algorithm-guide.ts';
 import { springGuide } from './spring-guide.ts';
 
-export const guideTerms = ['coding-test', 'springboot', 'linux', 'jdk', 'util', 'automation', 'jenkins', 'jekyll'] as const;
+export const guideTerms = ['coding-test', 'springboot', 'linux', 'jdk', 'util', 'automation', 'jenkins', 'jekyll', 'security'] as const;
 const updatedAt = new Date('2026-10-30T10:10:46.396668+00:00');
 const nativeGuideIndexCopy = {
   en: { label: 'Guides', title: 'Technical Learning Guides',
-    description: 'Choose a reading path through Java exercises, Spring Boot, shell automation, JDK features, development tools, reviewed publishing, Jenkins recovery and legacy Ruby diagnostics, with code and clearly scoped checks.',
+    description: 'Choose a reading path through Java exercises, Spring Boot, shell automation, JDK features, development tools, reviewed publishing, Jenkins recovery, legacy Ruby diagnostics and runtime security, with code and scoped checks.',
     intro: 'Choose the problem you want to solve. Each path connects available articles with code and recorded checks. Read each article’s environment and limits before reusing an example.',
     home: 'Home', open: 'Explore the guide' },
   ko: { label: '학습 안내', title: '기술 학습 안내',
-    description: 'Java 문제 풀이·Spring Boot·셸 자동화·JDK·개발 도구·검토 후 게시·Jenkins 복구·과거 Ruby 환경 진단을 읽는 순서로 연결합니다. 코드와 검증 범위를 확인하며 학습하세요.',
+    description: 'Java 문제 풀이·Spring Boot·셸 자동화·JDK·개발 도구·검토 후 게시·Jenkins 복구·과거 Ruby 환경 진단·런타임 보안을 읽는 순서로 연결합니다. 코드와 검증 범위를 확인하며 학습하세요.',
     intro: '해결하려는 문제에서 시작하세요. 각 안내는 코드와 확인 범위가 있는 실제 글을 연결합니다. 예제를 적용하기 전에 해당 글의 실행 환경과 한계를 확인하세요.',
     home: '홈', open: '안내 읽기' },
 };
@@ -28,6 +28,22 @@ const crossCategoryKeys: Partial<Record<string, readonly string[]>> = {
   jekyll: ['2026-04-07-ruby-rbenv-jekyll-build-troubleshooting'],
 };
 const paths = {
+  security: {
+    en: {label:'Runtime security guides',title:'Runtime Security Guides: PHP2Shell and Node2Shell',eyebrow:'Runtime patching',
+      description:'Identify the PHP or Node.js runtime, distinguish supplier fix evidence from version labels, and verify adoption by workers and replicas.',
+      intro:'Follow each product’s advisory and the runtime actually serving the workload. The local collectors print process evidence; they do not discover services, reproduce exploits or certify patch status.',
+      groups:[
+        {id:'php',title:'PHP engine and web workers',description:'Separate the PHP engine fixes, vendor backports, session follow-up and Windows package rebuild.',keys:['2026-10-30-php2shell-runtime-patching']},
+        {id:'node',title:'Brotli paths and Node.js rollout',description:'Trace untrusted decompression and connect runtime fix evidence to every worker and replica.',keys:['2026-10-30-node2shell-brotli-runtime-patching']},
+      ]},
+    ko: {label:'런타임 보안 학습 안내',title:'런타임 보안 학습 안내: PHP2Shell·Node2Shell',eyebrow:'런타임 패치',
+      description:'실제 PHP·Node.js 런타임을 식별하고 버전 이름표와 공급자의 수정 증거를 구분합니다. 모든 워커·복제본의 실행 반영을 확인합니다.',
+      intro:'제품별 공지와 실제 작업을 처리하는 런타임을 함께 확인합니다. 로컬 수집기는 프로세스 증거를 출력하며 서비스 탐색·악용 재현·패치 상태 인증은 하지 않습니다.',
+      groups:[
+        {id:'php',title:'PHP 엔진과 웹 워커',description:'PHP 엔진 수정·공급자 백포트·세션 후속 공지·Windows 패키지 재빌드를 구분합니다.',keys:['2026-10-30-php2shell-runtime-patching']},
+        {id:'node',title:'Brotli 경로와 Node.js 반영',description:'신뢰할 수 없는 압축 해제 경로를 추적하고 모든 워커·복제본을 수정 런타임 증거와 연결합니다.',keys:['2026-10-30-node2shell-brotli-runtime-patching']},
+      ]},
+  },
   jekyll: {
     en: {label:'Ruby and Jekyll environment guides',title:'Ruby and Jekyll Guides: Bundle Context and Native Compiler Checks',eyebrow:'Legacy Ruby diagnostics',
       description:'Identify the selected Ruby and Bundler context, render an isolated legacy Jekyll fixture and separate native compiler checks from gem installation.',
@@ -132,6 +148,7 @@ const paths = {
   },
 };
 export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGuide|undefined {
+  if(term==='security'&&lang!=='en'&&lang!=='ko')return undefined;
   if(term==='coding-test')return algorithmGuide(lang,all);
   if(term==='springboot')return springGuide(lang,all);
   if(!Object.hasOwn(paths,term))return undefined;

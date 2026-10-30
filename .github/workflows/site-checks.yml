@@ -33,6 +33,8 @@ jobs:
         run: npm run test:python
       - name: Execute paired local HTTP, drawio XML and Git search examples
         run: python3 -B scripts/check_developer_tool_examples.py
+      - name: Run source-derived PHP and Node runtime evidence collectors in isolated containers
+        run: python3 -B scripts/check_runtime_evidence_examples.py
       - name: Select the archived Ruby example runtime
         uses: ruby/setup-ruby@v1
         with:

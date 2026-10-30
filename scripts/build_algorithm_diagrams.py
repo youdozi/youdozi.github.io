@@ -55,7 +55,7 @@ def validate(data):
             if not isinstance(contracts, list) or not contracts:
                 raise ValueError('Expected nonempty code requirements')
             for contract in contracts:
-                if (not isinstance(contract, dict) or contract.get('language') not in ('java','sh','groovy','python','xml','javascript','ruby')
+                if (not isinstance(contract, dict) or contract.get('language') not in ('java','sh','groovy','python','xml','javascript','ruby','php')
                         or not isinstance(contract.get('contains'), str) or not contract['contains'].strip()):
                     raise ValueError('Invalid code language or required snippet')
         loop = item.get('loop')

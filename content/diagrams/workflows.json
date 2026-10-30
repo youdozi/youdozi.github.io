@@ -1689,6 +1689,133 @@
           ]
         }
       ]
+    },
+    {
+      "key": "2026-10-30-php2shell-runtime-patching",
+      "title": {
+        "en": "Collect CLI evidence",
+        "ko": "CLI 실행 증거 수집"
+      },
+      "description": {
+        "en": "Exit without disclosing data outside CLI. Read this CLI process and emit JSON without deciding patch status.",
+        "ko": "CLI가 아니면 정보 없이 종료합니다. 이 CLI 프로세스를 읽고 수정 판정 없이 JSON을 출력합니다."
+      },
+      "codeContract": [
+        {
+          "language": "php",
+          "contains": "PHP_SAPI !== 'cli'"
+        },
+        {
+          "language": "php",
+          "contains": "json_encode($evidence"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "condition",
+          "en": [
+            "PHP_SAPI is cli?"
+          ],
+          "ko": [
+            "PHP_SAPI가 cli인가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "web: 404",
+              "ko": "웹: 404"
+            },
+            "continue": {
+              "en": "yes",
+              "ko": "예"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Read PID, version and executable"
+          ],
+          "ko": [
+            "PID·버전·실행 파일 읽기"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Read loaded ini and session options"
+          ],
+          "ko": [
+            "로드한 ini·세션 설정 읽기"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Print CLI evidence as JSON",
+            "No patch-status verdict"
+          ],
+          "ko": [
+            "CLI 증거 JSON 출력",
+            "수정 상태는 판정하지 않음"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2026-10-30-node2shell-brotli-runtime-patching",
+      "title": {
+        "en": "Record the current process",
+        "ko": "현재 프로세스 기록"
+      },
+      "description": {
+        "en": "The example app imports a collector, reads its own runtime properties and emits JSON. No decompression or patch verdict.",
+        "ko": "예제 앱이 수집기를 불러와 자신의 런타임 정보를 읽고 JSON을 출력합니다. 압축 해제와 수정 판정은 하지 않습니다."
+      },
+      "codeContract": [
+        {
+          "language": "javascript",
+          "contains": "process.execPath"
+        },
+        {
+          "language": "javascript",
+          "contains": "process.versions.brotli ?? null"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "en": [
+            "Start app.mjs",
+            "Import runtimeEvidence"
+          ],
+          "ko": [
+            "app.mjs 시작",
+            "runtimeEvidence 불러오기"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Read PID, executable and versions",
+            "Read OS and architecture"
+          ],
+          "ko": [
+            "PID·실행 파일·버전 읽기",
+            "OS·아키텍처 읽기"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Print this process as JSON",
+            "No decompression or patch verdict"
+          ],
+          "ko": [
+            "이 프로세스의 JSON 출력",
+            "압축 해제·수정 판정 없음"
+          ]
+        }
+      ]
     }
   ]
 }

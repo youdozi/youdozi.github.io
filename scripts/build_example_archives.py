@@ -87,7 +87,7 @@ def project_files(recipe, language, root=ROOT):
     files = {}
     for spec in recipe['files']:
         path = safe_path(spec['path'])
-        if path in files or spec['language'] not in ('sh', 'python', 'java', 'groovy', 'yaml'):
+        if path in files or spec['language'] not in ('sh', 'python', 'java', 'groovy', 'yaml', 'php', 'javascript'):
             raise ValueError('Invalid or duplicate example file')
         fence = r'```' + re.escape(spec['language']) + r'\n([\s\S]*?)\n```[ \t]*(?=\n|$)'
         if spec['selector'] == 'heading':
