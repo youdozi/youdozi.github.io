@@ -36,7 +36,7 @@ const articleData: Record<string, unknown>[] = entry.reviewStatus === 'example' 
     publisher: authorData(lang),
     ...(citations.length ? {citation: citations} : {}),
     ...(entry.renewal ? {isBasedOn:entry.renewal.data.url,citation:entry.renewal.data.documents.map(d=>d.url),temporalCoverage:entry.renewal.data.archiveDate} : {}),
-    ...(entry.post?.data.image ? { image: new URL(entry.post.data.image, Astro.site).href } : {}) },
+    ...(entry.socialImage ? {image:new URL(entry.socialImage.src,Astro.site).href} : entry.post?.data.image ? { image: new URL(entry.post.data.image, Astro.site).href } : {}) },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: text[lang].home, item: new URL(`/${lang}/`, Astro.site).href },
     { '@type': 'ListItem', position: 2, name: text[lang][entry.kind === 'digest' ? 'digest' : 'posts'], item: new URL(`/${lang}/${entry.kind === 'digest' ? 'digest' : 'posts'}/`, Astro.site).href },
@@ -51,7 +51,7 @@ const additionalGuides=additionalArticleGuides(entry,all);
 const learningPath=articleLearningPath(entry,all);
 const hasTopics = all.some(candidate => candidate.language === lang && candidate.tags.some(tag => tag !== 'archive-renewal'));
 ---
-<Base title={entry.title} description={entry.description} lang={lang} structuredData={articleData} articleMetadata={entry.reviewStatus === 'example' ? undefined : metadata} noindex={entry.reviewStatus === 'example'} alternates={alternateLinks(entry, all)}>
+<Base title={entry.title} description={entry.description} lang={lang} structuredData={articleData} socialImage={entry.socialImage} articleMetadata={entry.reviewStatus === 'example' ? undefined : metadata} noindex={entry.reviewStatus === 'example'} alternates={alternateLinks(entry, all)}>
   <article class="article">
     <header class="article-heading"><a class="eyebrow" href={`/${lang}/${entry.kind === 'digest' ? 'digest' : 'posts'}/`}>← {text[lang][entry.kind === 'digest' ? 'digest' : 'posts']}</a><h1>{entry.title}</h1><div class="entry-meta"><span class="publication-date">{text[lang].published}: <time datetime={entry.publishedAt.toISOString()}>{formatDate(entry.publishedAt, lang)}</time></span>{modified && <span class="modification-date">{articleUi[lang].updated}: <time datetime={modified.toISOString()}>{formatDate(modified,lang)}</time></span>}<a class="author-link" href={authorPath(lang)} rel="author" lang={lang==='ko'?'ko':'en'}>youdozi</a>{download && <a class="example-download" href={download} download>{lang==='ko'?'예제 파일 다운로드 (.zip)':'Download example files (.zip)'}</a>}</div></header>
     {entry.reviewStatus === 'example' && <aside class="notice">예제 데이터 — 실제 뉴스로 취급하지 마세요.</aside>}

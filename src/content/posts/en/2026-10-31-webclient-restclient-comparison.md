@@ -8,6 +8,7 @@ tags: ["spring", "webclient", "restclient", "http-client", "reactive", "virtual-
 publishedAt: "2026-10-30T23:49:15.271160+00:00"
 updatedAt: "2026-10-30T23:49:15.271160+00:00"
 title: "WebClient vs RestClient: Choosing Synchronous, Reactive and Streaming Calls"
+socialImage: {"src": "/assets/img/social/webclient-restclient-en.png", "alt": "RestClient synchronous response waiting compared with WebClient reactive and streaming use", "width": 1200, "height": 630}
 description: "Compare Spring WebClient and RestClient execution timing, blocking, errors and virtual-thread use. A local HTTP example checks per-subscription requests and 404/503 handling."
 reviewedAt: "2026-10-31"
 reviewStatus: "revised"

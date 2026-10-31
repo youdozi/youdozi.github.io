@@ -8,13 +8,15 @@ import {authorData,authorPath,profileCopy} from '../lib/author';
 import {serializeJsonLd,alternateLocales,type ArticleMetadata} from '../lib/page-metadata';
 import {hasSection,archiveAlternates} from '../lib/discovery';
 import discoveryUi from '../lib/discovery-ui.json';
-interface Props { title: string; description?: string; lang: Language; alternates?: { language: Language; url: string }[]; canonical?: string; noindex?: boolean; structuredData?: Record<string, unknown>[]; articleMetadata?: ArticleMetadata; }
+interface Props { title: string; description?: string; lang: Language; alternates?: { language: Language; url: string }[]; canonical?: string; noindex?: boolean; structuredData?: Record<string, unknown>[]; articleMetadata?: ArticleMetadata; socialImage?: {src:string;alt:string;width:1200;height:630}; }
 const { title, description = text[Astro.props.lang].about, lang, alternates = [], canonical = Astro.url.pathname, noindex = false } = Astro.props;
 const availableLanguages = await publishedLanguages();
 const siteData = { '@context': 'https://schema.org', '@type': 'WebSite', '@id': new URL('/#website', Astro.site).href, url: new URL('/', Astro.site).href, name: SITE, inLanguage: availableLanguages,publisher:authorData(lang) };
 const jsonLd = [siteData, ...(Astro.props.structuredData || [])];
 const serializedJsonLd = serializeJsonLd(jsonLd);
 const articleMetadata = Astro.props.articleMetadata;
+const socialImage = Astro.props.socialImage;
+const imageUrl = new URL(socialImage?.src || '/assets/img/profile.jpg', Astro.site);
 const t = text[lang];
 const allEntries=await entries();
 const archiveLink=archiveAlternates(allEntries).find(item=>item.language===lang);
@@ -48,9 +50,15 @@ const currentPath = Astro.url.pathname.startsWith(`/${lang}/`) ? Astro.url.pathn
       <meta property="article:modified_time" content={articleMetadata.modifiedTime} />
       <meta property="article:author" content={articleMetadata.authorUrl} />
     </>}
-    <meta name="twitter:card" content="summary" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content={socialImage ? 'summary_large_image' : 'summary'} /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
     <script type="application/ld+json" set:html={serializedJsonLd} />
-    <meta property="og:image" content={new URL('/assets/img/profile.jpg', Astro.site)} />
+    <meta property="og:image" content={imageUrl} />
+    {socialImage && <>
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content={String(socialImage.width)} /><meta property="og:image:height" content={String(socialImage.height)} />
+      <meta property="og:image:alt" content={socialImage.alt} /><meta name="twitter:image:alt" content={socialImage.alt} />
+    </>}
     {noindex && <meta name="robots" content="noindex,follow" />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {import.meta.env.PROD && <script is:inline>

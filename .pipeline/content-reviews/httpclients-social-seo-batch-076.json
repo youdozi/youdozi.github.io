@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "httpclients-social-seo-076",
+  "reviewedAt": "2026-10-31T00:29:47.140569+00:00",
+  "baseCommit": "4c1c2834af5f6c59af18450a058c31d02aac980b",
+  "scope": "Optional per-post social PNG metadata; localized WebClient/RestClient cards, matching BlogPosting image and reproducible SVG sources. Body, publication timestamps and technical example unchanged.",
+  "reviewMethod": "Author implementation and visual review; localized short image copy compared directly. No separate-session review claimed.",
+  "validation": {
+    "nodeTests": 165,
+    "pythonTests": 335,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "browserChecks": 4,
+    "widths": [
+      320,
+      1360
+    ],
+    "socialImagesDecodedAndByteCompared": true,
+    "fallbackPagesChecked": 2,
+    "imageDimensions": [
+      1200,
+      630
+    ],
+    "publicArticles": 447,
+    "sitemapURLs": 505
+  },
+  "assets": {
+    "assets/img/social/webclient-restclient-en.png": "dfd31b5d405408030cbe09ae72ddc0f2508c8644c2e3095a4b84b9407d546471",
+    "assets/img/social/webclient-restclient-en.svg": "3df1dd0a1ebf012f9e6aab5ff5a711eda94b430d84d5fce7d7709cff645ca66f",
+    "assets/img/social/webclient-restclient-ko.png": "0bb401605db66b74bd64e34736a9276e1f0e11aa9409700229d2cfb1dfcd935d",
+    "assets/img/social/webclient-restclient-ko.svg": "d26db8af1d80f4d701e5b9a5eba70ca44ff354b3e85b26e776d46ce5a891bf37"
+  },
+  "privateMeasurement": {
+    "scope": "Two URL Inspection reads, two page-filtered GSC preliminary web queries and two Bing GetUrlInfo reads.",
+    "rawResultsOutsideGit": true,
+    "googleStatusBasis": "Stored indexed version, not a live indexing test.",
+    "bingStatusBasis": "Crawl record only; not proof of index membership.",
+    "performanceBasis": "Publication-day incomplete PT data; not a final performance conclusion.",
+    "aiCitationMeasured": false
+  },
+  "googleIndexingRankingOrAICitationGainEstablished": false
+}

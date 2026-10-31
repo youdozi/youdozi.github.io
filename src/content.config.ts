@@ -16,6 +16,10 @@ const posts = defineCollection({
     reviewScope: z.string().optional(), archiveBodySha256: z.string().length(64).optional(),
     reviewSources: z.array(z.url()).default([]), reviewStatus: z.enum(['revised', 'source-audited', 'example']).optional(),
     description: z.string().optional(), image: z.string().optional(), legacyUrl: z.string().optional(), legacySource: z.string().optional(),
+    socialImage: z.object({
+      src: z.string().regex(/^\/assets\/img\/social\/[a-z0-9-]+\.png$/),
+      alt: z.string().min(1), width: z.literal(1200), height: z.literal(630),
+    }).optional(),
   }),
 });
 const digests = defineCollection({
