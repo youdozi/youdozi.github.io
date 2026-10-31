@@ -1,0 +1,50 @@
+{
+  "key": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+  "language": "ja",
+  "title": "実行時と compiler を分ける",
+  "description": "Ruby script が設定を比較し一時 C++ を構築します。成功しても native gem の成功は証明しません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Ruby 起動と RbConfig を確認"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "probe 用 compiler を選択",
+        "command 単位の flag を解析"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "一時 C++17 compile は成功？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "いいえ：停止",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "実行成功で出力 42？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "いいえ：停止",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "probe 結果を報告",
+        "gem build log へ戻る"
+      ]
+    }
+  ]
+}

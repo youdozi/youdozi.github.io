@@ -1,0 +1,66 @@
+{
+  "key": "2026-10-31-cache-aside",
+  "language": "ru",
+  "title": "Чтение Cache-Aside",
+  "description": "Найти запись, проверить TTL, загрузить при промахе, сохранить успех, ограничить ёмкость и вернуть. Ошибку загрузки передать без сохранения.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Найти ключ, прочитать таймер"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Есть запись и время < TTL?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "из кэша",
+        "continue": "нет"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Удалить старую запись"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "loader.apply(key): источник"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Успешный результат не null?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "исключение",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Сохранить значение и время конца"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Сверх ёмкости? Удалить один LRU"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Вернуть загруженное значение"
+      ]
+    }
+  ]
+}

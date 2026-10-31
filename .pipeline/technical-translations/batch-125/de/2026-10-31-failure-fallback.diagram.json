@@ -1,0 +1,75 @@
+{
+  "key": "2026-10-31-failure-fallback",
+  "language": "de",
+  "title": "Fallback für öffentliche Daten",
+  "description": "Zulassung, Primärzugriff, Fehlerklassifizierung und Snapshot-Altersrichtlinie. Jede erhaltene Zulassung wird beim Verlassen freigegeben.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "tryAcquire(): Zulassung erhalten?"
+      ],
+      "branch": {
+        "exit": "abgelehnt",
+        "continue": "ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "primary.get(): Primärzugriff"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Hat die Primärquelle geantwortet?"
+      ],
+      "branch": {
+        "exit": "Primärwert",
+        "continue": "Ausnahme",
+        "outcome": "complete"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Ist der Fehler Unavailable?"
+      ],
+      "branch": {
+        "exit": "weitergeben",
+        "continue": "ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Ist ein Snapshot vorhanden?"
+      ],
+      "branch": {
+        "exit": "abgelehnt",
+        "continue": "ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Liegt das Alter zwischen 0 und 60s?"
+      ],
+      "branch": {
+        "exit": "abgelehnt",
+        "continue": "ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Snapshot, Quelle und Alter liefern"
+      ]
+    }
+  ]
+}

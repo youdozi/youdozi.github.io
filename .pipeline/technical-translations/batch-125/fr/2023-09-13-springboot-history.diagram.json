@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-13-springboot-history",
+  "language": "fr",
+  "title": "Résoudre les vraies versions",
+  "description": "Le flux résume l’inspection des dépendances plutôt qu’une chronologie. Boot, Framework et Lombok ont des identités de version et configurations distinctes.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Identifier la version Boot choisie"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Inspecter la gestion des dépendances",
+        "Distinguer les versions Boot/Framework"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: spring-core",
+        "Inspecter runtimeClasspath"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: lombok",
+        "Inspecter annotationProcessor"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Consigner les versions résolues",
+        "Évaluer leur compatibilité"
+      ]
+    }
+  ]
+}

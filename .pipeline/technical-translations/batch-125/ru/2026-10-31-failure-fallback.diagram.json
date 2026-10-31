@@ -1,0 +1,75 @@
+{
+  "key": "2026-10-31-failure-fallback",
+  "language": "ru",
+  "title": "Fallback публичного чтения",
+  "description": "Допуск, чтение источника, классификация сбоя и возраст копии. Каждое полученное разрешение возвращается при выходе.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "tryAcquire(): есть разрешение?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "отказ",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "primary.get(): чтение источника"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Источник вернул результат?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "источник",
+        "continue": "исключение"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Исключение Unavailable?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "исключение",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Копия существует?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "отказ",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Возраст от 0 до 60s?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "отказ",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Вернуть копию, источник, возраст"
+      ]
+    }
+  ]
+}

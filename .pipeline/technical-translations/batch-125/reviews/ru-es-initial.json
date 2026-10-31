@@ -1,0 +1,731 @@
+{
+  "reviewType": "Fresh-context read-only AI translation review",
+  "languages": [
+    "ru",
+    "es"
+  ],
+  "scope": {
+    "manuscripts": 42,
+    "diagramJson": 42,
+    "svg": 44,
+    "topicsPerLanguage": 21,
+    "reviewed": [
+      "target-only prose fluency, metadata, captions and alt text",
+      "source-to-target complete manuscript information, conditions, negation, quantities, versions, dates, guarantees, limitations, tables, execution statements",
+      "all diagram titles/descriptions/steps/branches and SVG textual content, including operations overview",
+      "code/command/output fence equality, with explicitly authorized authored-prompt exceptions; inline literals and link destinations"
+    ]
+  },
+  "reviewedTargets": [
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2021-07-23-multiple-gradle-build.diagram.json",
+      "sha256": "acaebc29903717013f561a17405e0311316794f7aa454d2068ecd6d51baf494e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2021-07-23-multiple-gradle-build.md",
+      "sha256": "46f64ecec4e83059c0c1592f79a57aa32643a0ccbae6279d6a06efe943b8f243"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2021-07-23-multiple-gradle-build.svg",
+      "sha256": "1178d35f2e94adbde873dd91c160ddae59a6dddc57668d2a9706e86836a08157"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-04-jekyll-install.diagram.json",
+      "sha256": "537ad2388cf3155986bb81a46fd2941d35d6cf90d0faafed1c5fba442bc67792"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-04-jekyll-install.md",
+      "sha256": "de4354fc6c8b4804c67f2ed4dbae57e7be017526030ad65bf5d4ed08a9dbfa86"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-04-jekyll-install.svg",
+      "sha256": "26636beab467e84f483f61729d76b77d8347ac9ac0cf56222f8c9a977308954a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-05-querydsl-no-release.diagram.json",
+      "sha256": "b3cc4e416b2bd6af85f2099561497d738ca35a07092151f5a4ff6afe0522ca04"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-05-querydsl-no-release.md",
+      "sha256": "f1f34f885dda4acf05c35515740cb50b554cb90cc149c3f10bb16b7c801a1dca"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-05-querydsl-no-release.svg",
+      "sha256": "9f5629862693fccfc3d487c2c1c585bf6a6cac9903b8741340c650ecda8394da"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-07-springboot-initializer.diagram.json",
+      "sha256": "137cda7a365fcabeec98d2350889c9a4aee73bcd5230495ef04cde1a3f0f68a9"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-07-springboot-initializer.md",
+      "sha256": "c694cdc13b2030ef27f4450b53cc3f375f82e7728844533d10844feee4eb5fcf"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-07-springboot-initializer.svg",
+      "sha256": "2e1f5fcbb9d0d90c216ec6138b9442bf0d28829f22c3680128aab9b188cfedf8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-08-springboot3-migration.diagram.json",
+      "sha256": "4a8f298b9c3f9b7653c0f160ab8b9af71fe8304e268a363d2303a4cf4b3ca819"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-08-springboot3-migration.md",
+      "sha256": "41b4933bf4c3d14783b0f477dd3261cae58e8a81fc2b3973fc7c46e5f424ec04"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-08-springboot3-migration.svg",
+      "sha256": "90d609b393322b073bfc7b8f0e4514fac9679967da0703995fc1e8fbab34eb61"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-09-springboot3-querydsl.diagram.json",
+      "sha256": "21b0993d19c5c4925a5587d0d726f77b06f41dcf58f4dbf76eacc75f717564ef"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-09-springboot3-querydsl.md",
+      "sha256": "b98fdaa47600e25ba3b757304fe59801a9009537a9299ec00b09ef8b61640c12"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-09-springboot3-querydsl.svg",
+      "sha256": "107d8a7c563fc360dd06433be2e1c050bc4c811cf57b01e5a4739d865dcfe291"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-10-springboot-intellij-import.diagram.json",
+      "sha256": "031b3b1e4c3398d4344f2c5120bcd6fcc432533a849ee70f31601b59356303d2"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-10-springboot-intellij-import.md",
+      "sha256": "15a87fdcf9abbad2dfa84a2119ab72a77383116150bf62ccb3ede16ce75bafac"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-10-springboot-intellij-import.svg",
+      "sha256": "db4da6c69924f6b88abb36be04410ee98f3b1df472038407f68f40d6ab075d13"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-13-springboot-history.diagram.json",
+      "sha256": "1ff60f208743f8bea3442f79d015b915638744736e81fa005f3d1373f7c78d0f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-13-springboot-history.md",
+      "sha256": "c437829791d20e149827f05f98984b273f92682097153bc890efd93588eb84f6"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-13-springboot-history.svg",
+      "sha256": "8b66525a82601ec636b53afe64cd21c1322af94f187cdfc405a9071e9123133c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-15-springboot-intellij-lombok.diagram.json",
+      "sha256": "62abd45c5b57125d666ac34b780e41cc4a86a49cca62223daaded96dc2594cc5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "d82abb5e1ec89d4b96c2bea28280b18eb35ccabe6b04777b10d7213abbbd8a78"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-15-springboot-intellij-lombok.svg",
+      "sha256": "652bcfc7da8d17b6f91b205e6a86c5e812cf00d1589c221b60b4a968d7414b8b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-19-springboot-test-webclient.diagram.json",
+      "sha256": "74801b7693432bcda71d90a56e7600a38912012c01c2f4ab85e136a91c7f67d1"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-19-springboot-test-webclient.md",
+      "sha256": "83a654cfd0c5de0dd28b0701663a66aa83b360abc6a445264683f1da09bd8046"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-19-springboot-test-webclient.svg",
+      "sha256": "5a3502a246e87ae020d45143659471b80c8d8b0717d6b6fb369caa3b20944878"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-28-jenkins-docker-install.diagram.json",
+      "sha256": "6acb95880ec3660e1728e9bc59734c3033db95afe562767948c4b78075b7db58"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-28-jenkins-docker-install.md",
+      "sha256": "42f14c9f305797c8220e797bd60c49d90c6dc9f7e40b9d3b0eb5603ce171d45c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-09-28-jenkins-docker-install.svg",
+      "sha256": "bce3e42af4085f39e2a0ae73d0db9b54c28871c620f9be49ffa4efa834122ac5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-10-27-springbatch5-migration.diagram.json",
+      "sha256": "54c8162413933caa980e1a5be579cbef5c018379f9379fa60376a3a04a46be31"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-10-27-springbatch5-migration.md",
+      "sha256": "b1e649972737a608910d76ed43e21932dcee746dc2c040090df64a7ec02577a0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2023-10-27-springbatch5-migration.svg",
+      "sha256": "def87648c702dcec4abdc2450679adc5db74b6ae00bdc409cdbd26f5a56108c3"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-github-actions-content-pipeline.diagram.json",
+      "sha256": "00bfe57b6aceffc3e39ad08d15d9d10d9e13498c692fb43f36411de1564086c1"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "cdd1e3f82e8082af00930f0926799b7c1b777af22feffd060312adfb682787e1"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-github-actions-content-pipeline.svg",
+      "sha256": "18fbcf61d9b96e606497c950350ac99544a21f7e73d66b7b79ed63b1beecb31a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.diagram.json",
+      "sha256": "6a6203107d89f616bef150b2085545ea29bb8b4cce08879971f8093a2b2cc97e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "dfb665d0db7f893f4017d2534c6fd7f88170fccce93e9f76ac60fc940fc344f8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.svg",
+      "sha256": "5b3fd78017838942191785c29d7ae561f0a96d5645ac05b55b442f1a28006cb5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.diagram.json",
+      "sha256": "c8031aff5eed22ddd2ce92aa210d836200a34caaa6834239b4ae435590724c80"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "e618e330395c881c1ecfc5b30ccf42d29291f82c2071ec168cb2c933e4144578"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.svg",
+      "sha256": "81fc3c67843b1ea694cfdf220634705884fa41c0d340c00ced31f8c1279f3680"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-27-jenkins-home-backup-restore.diagram.json",
+      "sha256": "c89d8648af0a1ced4a1f9da7ce7c37648a163c96bae05c42f6d8a5789dfe9c0f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "fa27ac6bcd8d2c312295d7b81f83a240a6dff8fe49ef053ef2e8a00eb2f95a95"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-27-jenkins-home-backup-restore.svg",
+      "sha256": "f0113dcbc2f2942178a37d83e16911e2d10184c706df2c8f3ec69927b1acb8e7"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations-architecture.svg",
+      "sha256": "57eae6b7241b4703d7823c1f514212ce57464c451cc4f2dc44225cefb48e9fdb"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.diagram.json",
+      "sha256": "1edd77d7c30077444455000e1183a14f654695ae61fc4b1894513945ebba3591"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.md",
+      "sha256": "dab186f23baf788f6adcf86cb969989952b1e954fc3fa99041bbc526c7d47a0f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.svg",
+      "sha256": "eb39fe9b8dacff66560401b1c7c0398e8bf2f3d00651269f449291dbd89f2675"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-refactoring.diagram.json",
+      "sha256": "7332e219630c6084e8b67152c1ce8fd5d6903792161c095bfada037b2f421f8b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "42d10a64f223821c629b2c46736d722b5c81c56a4dc02060b787d089e01e1c59"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-refactoring.svg",
+      "sha256": "d0496377aa46a8ffa272b1790c0b18627b68791b6a711601ef5f7c783afc8e3f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-cache-aside.diagram.json",
+      "sha256": "60632b9f1b8b16df00aa6a59580fa8b4cafdc27cc0c2918b63378a00f4eadebf"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-cache-aside.md",
+      "sha256": "353ab8835dcf70bae1b3bd354e02cc3b9ab95c9d8a0f5aa835db31c4bb887709"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-cache-aside.svg",
+      "sha256": "0805fa8b5b6260ab5c968db6a2d23ca44bf6421651d3903a0784d385f992fc7d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-failure-fallback.diagram.json",
+      "sha256": "516a932228f4024adc72a7d1a931c46c7012cdec1757430cbc1aec5f7d8e498c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-failure-fallback.md",
+      "sha256": "bc112a5a111e1e274817358c53721a59a2645ff3a0937ec3fee6b12e05a79dfe"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-failure-fallback.svg",
+      "sha256": "6b470986947e3da4126c8ff235e5a04d99a2d75dac1745accee7abbb92e18f1e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-kafka-event-streaming.diagram.json",
+      "sha256": "125601943133dfa48a4855c979f898c6f2fca0776f2b62fe05df86e3f717eb8d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-kafka-event-streaming.md",
+      "sha256": "9bfbb341e6a848add60439994d55a16264cd93206ce560ae47703265ddd1259c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-kafka-event-streaming.svg",
+      "sha256": "ecf8248ebea15b27ef355bd691162070dcdd591824d3edbb80af03d2dd7990c5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2021-07-23-multiple-gradle-build.diagram.json",
+      "sha256": "acb14cc3be78217eab680b6124a97c8f52614e12770ca8f8be1a53fffbff9ebf"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2021-07-23-multiple-gradle-build.md",
+      "sha256": "0893b14a1e03342a7db4af33d168ced60c0ab33d275fc6ec3da84e0003eb6808"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2021-07-23-multiple-gradle-build.svg",
+      "sha256": "478f653da7717b0671ff36ba5a3db165766d18fdaa2091f3536acc31f2f1a6fc"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-04-jekyll-install.diagram.json",
+      "sha256": "1cac707f411e52f7a7f94745d9eb8927b8da484758e6224a7266655ee3f17ff0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-04-jekyll-install.md",
+      "sha256": "6e76bd6852ff7dd137e3275ceca4a053b58e6ff02cdb7b57cec7ca740311eb53"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-04-jekyll-install.svg",
+      "sha256": "11a42758783b0e64efd111e61c330827e84b1be97709a0135bdb4d6ffbdb6321"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-05-querydsl-no-release.diagram.json",
+      "sha256": "89f96145224feaa04885ca0f415b791275a14d1c27971641db6f87f982d7cae5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-05-querydsl-no-release.md",
+      "sha256": "d8a7f41338ae0e8e63209381aefe395f14806b983c97cc0fdd58b488a410cafe"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-05-querydsl-no-release.svg",
+      "sha256": "c8e3ef4511b31a1a5873bbd4b579d0e2a50baaf63e28a7ac6abace4f376615e8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-07-springboot-initializer.diagram.json",
+      "sha256": "2d0aacc0c307838c172744459fb4c0ec15d4cef0ca4c9051ed3622e792f3fa8c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-07-springboot-initializer.md",
+      "sha256": "9217d7fb797eab36d25b574de62b4eb7cee467b58958075fff5e39ad3bfb447f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-07-springboot-initializer.svg",
+      "sha256": "d21fea632e470434a909187fc3bfcc174309dbf6ef0c1b7a9a13ac6f78d5d721"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-08-springboot3-migration.diagram.json",
+      "sha256": "43cc000328638cb3c7400e6242f46eec70fe53126654b25435876ae5e2f4cc86"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-08-springboot3-migration.md",
+      "sha256": "6e3ef9d78edc84ec301911208b5d218a7fc73139c54fde9590b0ebdbe36793b9"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-08-springboot3-migration.svg",
+      "sha256": "c235c5a25f6c55f8c393a3dcf0fcfdc0b02478834ffb2126a0edf506b42a2a35"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-09-springboot3-querydsl.diagram.json",
+      "sha256": "5e6585e8480cd5f14542c81ea87777d387ba072fe84c987ad90a96b2a9ac7b5f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-09-springboot3-querydsl.md",
+      "sha256": "ab30c62eeaefd138a082150e95a40e5c020b4c4d3e25f90dcfa47894611c4227"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-09-springboot3-querydsl.svg",
+      "sha256": "535dd357e6771fb2215fff723caa1ea2129326254a1fb801bc774c99b8ab87ee"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-10-springboot-intellij-import.diagram.json",
+      "sha256": "96f443a48dc6f08714b542f0e5c809e35b4077014e8f3b169b8fa2d1917d63ff"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-10-springboot-intellij-import.md",
+      "sha256": "c2b11dda1b540e6be2a63c0024f3755f1c275a24d7dd3cf67d78af554daf227b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-10-springboot-intellij-import.svg",
+      "sha256": "e761e8c71ba78287ed3b6df6e86a18b08b31969b0aabdd2c4519ce05fd78ca93"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-13-springboot-history.diagram.json",
+      "sha256": "ac939e21fea8803a0bb1875b8cc5992f593db3a660d75c535567d78701afaddc"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-13-springboot-history.md",
+      "sha256": "8aaa38df75048da4047c325c2b048cd58027d047d3213d9f014cd74d824c742d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-13-springboot-history.svg",
+      "sha256": "f98454e64f9b55698cb857f0499c93fffc107b29498fdb30b106a010900075d0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-15-springboot-intellij-lombok.diagram.json",
+      "sha256": "9c58c1ed349a1463126400655a2454e5f81768b5a09170ae03b9b58acd3d3164"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "9c8efbdd2ece010efd2e69ca3035d00ce65ed298f627f004cfabdf26f81f80f6"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-15-springboot-intellij-lombok.svg",
+      "sha256": "8e3b0ef655f9967d2200416cb923a2fe3385b91277fa3b928540fd6fafc18ac9"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-19-springboot-test-webclient.diagram.json",
+      "sha256": "487b3da5b296695e36b5ea279bdbad9a33ce7d2d9bb98ac454d69ee573c4487c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-19-springboot-test-webclient.md",
+      "sha256": "20022b20e80be03255cb749ce642878c91b02972791873e23483693018fe17d3"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-19-springboot-test-webclient.svg",
+      "sha256": "68e6ffed609db11b25fda2a4879410590e7ca6b938cfd62cdce594e7e607ee8d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-28-jenkins-docker-install.diagram.json",
+      "sha256": "6edb9925048e652cd0a8b2f762f5c201624fe58dee13f3b83a9067641094e2fa"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-28-jenkins-docker-install.md",
+      "sha256": "958301d5dc25cc9763b8cd1bb1906e6dbc11e368ed5749bc8ec47012babd85c9"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-09-28-jenkins-docker-install.svg",
+      "sha256": "88c5fe46779874e2cf4250dadffebf6b5e44b03e73adb8590735dc79c833b333"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-10-27-springbatch5-migration.diagram.json",
+      "sha256": "78900602b0a971847c5d62172c98e177b0c86a06b8a2ae5c854205cc3bb75f95"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-10-27-springbatch5-migration.md",
+      "sha256": "8cfa527dbace487d6f58c474de23e9ebc15c6169f92266730cabe4cbd1dbc9aa"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-10-27-springbatch5-migration.svg",
+      "sha256": "eb057bcc9d929da3829eb3eaed066b5f96c3b977f5d9dfd3bf7d43ec129e28d8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-github-actions-content-pipeline.diagram.json",
+      "sha256": "8ffb260d350f938d6640385af61405236e7ecaf7026361225955000886fa8c90"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "dd836fad047fead6dc3fb16f205f38b50edd68a2a9d3f36d4ef202047b2dff80"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-github-actions-content-pipeline.svg",
+      "sha256": "3cdccc5279f9a2178ba7c98f22d7947f6990f222a81d09a7d6566f17f68a66dc"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.diagram.json",
+      "sha256": "50b60e92f831be1b9db58d1faf30d134b201ee303be52f8219ab1ea6c711e0af"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "1a8a299c3cd203f37886a116abd881920230728a0e7add4c0f802923fbe6ecb3"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.svg",
+      "sha256": "328ae6615e754c934599ce322a1d80f51b0229b3441aad36f0884e0039cef869"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.diagram.json",
+      "sha256": "8b3b818049529de54829d00850782feda8c88193339db4b52da7e6e80d2b93d0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "b753390a247ae7b0d948e435bc5522578e38f3ea30e8a559e6a7e6a0579a734c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.svg",
+      "sha256": "dbac2d636e1c4f5c7e93c8b68fc5bbfcea6622e5c11e007f88b1bdea27679740"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-27-jenkins-home-backup-restore.diagram.json",
+      "sha256": "c903ae52994c6faf28835735a512dcf33ef0bcb831e27745a150a8f2a173682e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "a78e0f9b333cabbbf4ffffb3c9a9fbb2c77264f64f5e2e45d322ba8cdcf2630f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-27-jenkins-home-backup-restore.svg",
+      "sha256": "168bc573029e600aa5f2c1c9d4dfa16dddfeacd4f8db1c6dbf1ab232c894ac38"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-operations-architecture.svg",
+      "sha256": "1a9489d641e91a5600315458820e8b7fd1dce287c7bfb1c59e45d7353ec2c3d5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-operations.diagram.json",
+      "sha256": "4f447b601f55999bb7132b45e5c1be0724e423645664bd276a5dc2c76fb3287b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-operations.md",
+      "sha256": "207d3c88d4a279c473479b764b1f8b1b9a36b323cbb1a24b83d981b8eae91b00"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-operations.svg",
+      "sha256": "950cc2daecc0dc092585959cbd8addbe2c8b69f6970cfc05373a1fcca0cdb746"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-refactoring.diagram.json",
+      "sha256": "ce0cc14f029bd8f5273c9eb0eabce0f2db3390e48462a87c2b2a4d007dcbb271"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "c1c3857f0f5b74fb728fed16bd6de139e093b221080be40d77bdfba7884b52f7"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-refactoring.svg",
+      "sha256": "d3c7a53079eeeaf0ee255c7c2fb4e9a01ea4b74c2c7d05d80e5e7fd8cec4a73c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-cache-aside.diagram.json",
+      "sha256": "d6c360801b9bc86dd0c9896da1777674ba1f765b9a9f3466bdc37304a001af6b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-cache-aside.md",
+      "sha256": "67a95c3fde60f929016477b2a8e8fb1f1c8e96994a998facf9983fa3f75d9ed5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-cache-aside.svg",
+      "sha256": "0ce256171320cb73da063d431bee3caba117a0381790229f57596f1102982451"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-failure-fallback.diagram.json",
+      "sha256": "dfa68e7a8a6f4d3e9a9e726c559763a1ff05a861a6993647a838a37d2727f235"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-failure-fallback.md",
+      "sha256": "41478e905862a7291543a6e6bc326e8732d440efb02541c48f40818149adcb42"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-failure-fallback.svg",
+      "sha256": "445c9d500ed350e4431691a2f4aa5c30f907d42c1d6a87722b3c82ebb686ecd4"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-kafka-event-streaming.diagram.json",
+      "sha256": "bdd48ab07fc0dd4c50a504cedcde484c391db401b08cfced752a4758f6d5a001"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-kafka-event-streaming.md",
+      "sha256": "103327dc9484514c4b363d3fc7f20e358af9cc570b4a392381d2221ac2c92caf"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-kafka-event-streaming.svg",
+      "sha256": "2b7db4fe235fc7a4a1d6ef654ebe4c1c42a931de0a0ecb0cfba4af9f7a6f4203"
+    }
+  ],
+  "reviewedSources": [
+    {
+      "path": "assets/img/architecture/ai-agent-operations-overview-en.svg",
+      "sha256": "45ae8fd23f363870d0b1b17046e62e447e7655dea94d9c7e39b0113c76734ff4"
+    },
+    {
+      "path": "content/diagrams/jenkins.json",
+      "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+    },
+    {
+      "path": "content/diagrams/publication.json",
+      "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+    },
+    {
+      "path": "content/diagrams/query-strategies.json",
+      "sha256": "c4e231fd5d357ca060889f607aeb4291f73eb9ff3b665ea2414a10a9034f3ef6"
+    },
+    {
+      "path": "content/diagrams/ruby-environment.json",
+      "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+    },
+    {
+      "path": "content/diagrams/technical-125.json",
+      "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+    },
+    {
+      "path": "content/diagrams/workflows.json",
+      "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+    },
+    {
+      "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
+      "sha256": "2af4402a72130c6c53faa9d34008be0c7bc63b78b82a680f5675bdd70532ec4d"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-04-jekyll-install.md",
+      "sha256": "0dbe6c1bad26411bc78aabc17773da808b4c74fe9cdc098a9bada2cfb2873e08"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-05-querydsl-no-release.md",
+      "sha256": "23fe3b60bb4735a72a59a7bcc0dfabd76d68df0af84bdd636d79f15699cfc798"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-07-springboot-initializer.md",
+      "sha256": "97a876012a6c3d2dbf40856ed6360dc850f12741aecbd5ee7bd96023fb05275f"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-08-springboot3-migration.md",
+      "sha256": "4939fec22f416da9344b529b0e428c91a700920a27c10fdba00bdfd32e8a53a7"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-09-springboot3-querydsl.md",
+      "sha256": "17f0353d5a048f80291207543b7abbb29e1d987ab0435009b82a4e1c16a7d953"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-10-springboot-intellij-import.md",
+      "sha256": "5b3c970364e92d3672967197986ea67769f45094ca27f6c9f8bfbd0779645bc2"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-13-springboot-history.md",
+      "sha256": "8f97cfe96eb4ed1a36dae63a187c6f28960c327ff6cba276c45537a1e7745da2"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "9fe45995bdaea610316410d2b79746c008656c5d20256f9de7d66bc47499dda1"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+      "sha256": "f0a277b8719dc886c37dd8cbeb15f1e68228dce2f44d7fac53a97fee9cb5f885"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+      "sha256": "ed131abbe5537f6f1828891ac35483b44e96395c554a52b53f5c1ab6c4ff895e"
+    },
+    {
+      "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+      "sha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
+    },
+    {
+      "path": "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "12226531a63ffece862798351d0562f1f29cc2b14f9731dad4dd5fece0e77637"
+    },
+    {
+      "path": "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "f5c09678ab191654be64bc9fd457df828066c7f199625a6b32c5d94a02200363"
+    },
+    {
+      "path": "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "b186e8b9ffc0b623a12d82e49d3428adc274669397a7a207f235d80673b0759a"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "f6fcbb37f82b9829ef3535f5fee0b0fdf0b7b0ebe4e8b4f96bb3f2ff104a59b4"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-ai-agent-operations.md",
+      "sha256": "671fc15fe228c1e812d5ae95a16d5092a66fbbf55edf53f21c353c91c91e796f"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "efd733fd275675221deef4ebffa545ba2f54a6819e72fed217917d6708e3e4b9"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-cache-aside.md",
+      "sha256": "2c4422c55f14e7b5452f8b286bf5d6f986617fe624e229b7bd74462afe525ad9"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-failure-fallback.md",
+      "sha256": "93196b5c0ce64194996df961642c87053d74ea5be5c63b2b776cdd598dc7effd"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-kafka-event-streaming.md",
+      "sha256": "b5cac22382f44d1bdada1b264df07a6f746ee31761c0268ef2313e7f86eee118"
+    }
+  ],
+  "findings": [
+    {
+      "id": "RU-OPS-IMAGE-DIGEST",
+      "location": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-operations.md: GitHub Actions и EKS, first paragraph",
+      "shortSourceQuote": "the digest of an image built once from a commit",
+      "targetQuote": "CI связывает digest однажды собранного commit с проверками",
+      "reason": "The Russian sentence assigns the digest to a built commit and omits the image. The source binds the digest of one built image to its source commit and checks.",
+      "suggestedFix": "CI связывает digest образа, один раз собранного из commit, с результатами его проверок, а deploy продвигает этот артефакт.",
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "id": "ES-RESTORE-PASSWORD",
+      "location": [
+        ".pipeline/technical-translations/batch-125/es/2026-10-27-jenkins-home-backup-restore.diagram.json: steps[4].lines[0]",
+        ".pipeline/technical-translations/batch-125/es/2026-10-27-jenkins-home-backup-restore.svg: matching condition text"
+      ],
+      "shortSourceQuote": "HTTP, marker and password match?",
+      "targetQuote": "¿HTTP, marca y clave coinciden?",
+      "reason": "Clave is read as the master.key discussed immediately before this condition. The source and lab compare the original initial password, not the controller key. The manuscript already uses contraseña.",
+      "suggestedFix": "¿HTTP, marca y contraseña coinciden?",
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "id": "RU-BATCH-PER-TYPE",
+      "location": ".pipeline/technical-translations/batch-125/ru/2023-10-27-springbatch5-migration.md: paragraph beginning Пример не преобразует БД",
+      "shortSourceQuote": "check per-type values, historical access, execution contexts",
+      "targetQuote": "проверьте типовые значения, доступ к истории, контексты",
+      "reason": "Типовые means typical/standard values rather than values for each persisted parameter type. This loses an important migration check for LONG, DOUBLE and DATE.",
+      "suggestedFix": "проверьте значения каждого типа, доступ к истории, контексты",
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "id": "ES-OPS-REDACTION",
+      "location": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.md: Contrato de análisis y ejecución, paragraph after the authored prompt",
+      "shortSourceQuote": "sensitive logs and SQL values must be redacted",
+      "targetQuote": "redactar datos sensibles de logs y SQL antes de enviarlos",
+      "reason": "Spanish redactar means to compose/write, not to conceal sensitive data. The privacy control in the source requires masking the sensitive logs/SQL values before passing them onward.",
+      "suggestedFix": "enmascarar los datos sensibles de logs y los valores SQL antes de transmitirlos",
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "id": "ES-OPS-EXACT-DOMAINS",
+      "location": [
+        ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.diagram.json: steps[1].lines[0]",
+        ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.svg: first condition text"
+      ],
+      "shortSourceQuote": "Exactly six required domains?",
+      "targetQuote": "¿Las seis áreas requeridas?",
+      "reason": "The source explicitly requires an exact domain set, rejecting unexpected extra domains as well as missing ones. The translation no longer states exactly; the diagram should preserve this strict set check.",
+      "suggestedFix": "¿Exactamente las seis áreas requeridas?",
+      "severity": "low",
+      "confidence": "high"
+    }
+  ],
+  "verification": {
+    "jsonAndSvgParsed": true,
+    "sourceHashMetadataMatches": true,
+    "protectedFencesEqualExceptAuthorizedPrompts": true,
+    "inlineLiteralSequencesEqual": true,
+    "nonDiagramLinkDestinationsEqual": true,
+    "totalFencesComparedIncludingAuthorizedPrompts": 168,
+    "authorizedLocalizedFenceIndexes": {
+      "2026-10-31-ai-agent-refactoring": [
+        0,
+        4,
+        5
+      ],
+      "2026-10-31-ai-agent-operations": [
+        2
+      ]
+    }
+  },
+  "limitations": [
+    "AI review only; no human/native-speaker review or different-model consensus claimed.",
+    "No runnable examples, live infrastructure calls, build, deployment or browser rendering executed in this read-only review. Source execution claims were compared as translated claims, not independently rerun.",
+    "SVG XML and all text were inspected; geometric clipping and rendered visual appearance were not verified.",
+    "URLs were compared to sources but external pages were not fetched.",
+    "The source Korean inline literal (처리기 ID, eventId) was intentionally preserved under the protected-inline-literal instruction, not treated as a translation defect."
+  ],
+  "recommendation": "Resolve the findings and request focused recheck of changed passages and regenerated SVG text."
+}

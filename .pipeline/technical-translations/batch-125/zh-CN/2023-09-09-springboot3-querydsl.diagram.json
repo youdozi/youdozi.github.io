@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-09-springboot3-querydsl",
+  "language": "zh-CN",
+  "title": "生成 Q 类型并查询",
+  "description": "处理器在 main 编译时生成 QEmployee，H2 测试用生成类型执行查询。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "配置 JPA 与 Querydsl Jakarta"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "配置 annotationProcessor",
+        "包含其 BOM 与 Jakarta API"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "编译带注解的 Employee",
+        "生成 QEmployee 源码与类"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "用 H2 启动 JPA 测试",
+        "持久化测试员工"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "执行类型化查询",
+        "断言结果，重复 clean test"
+      ]
+    }
+  ]
+}

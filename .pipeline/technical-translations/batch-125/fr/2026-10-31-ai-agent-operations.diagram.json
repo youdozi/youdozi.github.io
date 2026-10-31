@@ -1,0 +1,65 @@
+{
+  "key": "2026-10-31-ai-agent-operations",
+  "language": "fr",
+  "title": "Vérifier les preuves",
+  "description": "Vérifier couverture, forme, identité, âge, échecs et inconnues. N’autorise pas l’exécution.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Preuves, cible fiable et heure actuelle"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Exactement les six domaines requis ?"
+      ],
+      "branch": {
+        "exit": "HOLD",
+        "continue": "oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Forme, identité et temps valides ?"
+      ],
+      "branch": {
+        "exit": "HOLD",
+        "continue": "oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Un signal valide est-il marqué fail ?"
+      ],
+      "branch": {
+        "exit": "STOP",
+        "continue": "non",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Un signal inconnu existe-t-il ?"
+      ],
+      "branch": {
+        "exit": "HOLD",
+        "continue": "non",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Retourner READY_FOR_REVIEW",
+        "Prêt pour revue, pas pour exécution"
+      ]
+    }
+  ]
+}

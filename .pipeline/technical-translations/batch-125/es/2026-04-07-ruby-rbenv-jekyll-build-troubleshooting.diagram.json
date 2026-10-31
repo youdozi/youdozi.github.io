@@ -1,0 +1,50 @@
+{
+  "key": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+  "language": "es",
+  "title": "Runtime y compilador",
+  "description": "El script Ruby compara configuración y compila un programa C++ temporal. Pasar no demuestra compilar gemas nativas.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Comprobar Ruby y RbConfig"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Elegir compilador de prueba",
+        "Analizar opciones por comando"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Compila el C++17 temporal?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "No: parar",
+        "continue": "Sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Ejecuta bien y devuelve 42?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "No: parar",
+        "continue": "Sí"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Informar resultado de prueba",
+        "Volver al log de la gema"
+      ]
+    }
+  ]
+}

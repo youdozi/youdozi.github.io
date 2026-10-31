@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-09-springboot3-querydsl",
+  "language": "fr",
+  "title": "Types Q et requêtes",
+  "description": "Le processeur génère QEmployee pendant la compilation principale. Le test H2 exécute ensuite une requête avec ces types générés.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Configurer JPA et Querydsl Jakarta"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Configurer annotationProcessor",
+        "Inclure sa BOM et les API Jakarta"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Compiler Employee annoté",
+        "Générer source/classe QEmployee"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lancer le test JPA avec H2",
+        "Persister les employés de test"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Exécuter les requêtes typées",
+        "Vérifier ; répéter clean test"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,785 @@
+{
+  "reviewer": "Root AI source-to-target review of previously prepared manuscripts",
+  "scope": "Complete source/target prose, headings, tables, captions, localized titles/descriptions and flow labels for 120 existing unpublished editions in batches050/052/055/056/058, plus5 recent English translations against Korean. Protected runnable code/output, inline literals, numbers, URLs and block shape checked mechanically; authored prompts separately localized. SVG layout checked for120 historical editions and6 English assets.",
+  "findings": [
+    {
+      "path": ".pipeline/technical-translations/batch-052/es/2023-09-23-linux-shellscript-github-latest.md",
+      "severity": "style",
+      "issue": "usted and tú imperatives mixed in updated platform-selection paragraph",
+      "resolution": "aligned to tú"
+    },
+    {
+      "language": "ja",
+      "severity": "style",
+      "issue": "two stray spaces in plus-minus and latest-release prose",
+      "resolution": "removed"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-055/ru/2021-07-20-pair-delete.md",
+      "severity": "style",
+      "issue": "Incorrect preposition and missing closing comma in final cross-reference sentence",
+      "resolution": "Changed to об участнике, не завершившем забег, нужны"
+    },
+    {
+      "severity": "layout",
+      "issue": "10 historical SVGs had crowded text within diagram edges",
+      "resolution": "Reflowed labels into at most3 lines and shortened1 French flow title, preserving meaning; browser bounds recheck passed126 assets"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-058/es/2023-09-20-jdk-21-release.md",
+      "severity": "style",
+      "issue": "Compound subject requires plural verb",
+      "resolution": "Changed explica to explican"
+    }
+  ],
+  "limits": [
+    "AI review, not human or native-speaker review",
+    "No new factual claims or live integration reruns",
+    "This report covers120 existing manuscripts and5 English sources; new126 extra-language reviews are recorded separately."
+  ],
+  "editions": [
+    {
+      "key": "zh-CN-2021-07-22-dot-product",
+      "sourceSha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463",
+      "draftSha256": "eceb5c70f7671f49f937a110790152460598f8c4cccd8adf05aab662ae0630a2",
+      "diagramSha256": "f7bec5a8854b3b731296fcdeedf87d413ee419261ad920b8c460f66d36372d24"
+    },
+    {
+      "key": "ja-2021-07-22-dot-product",
+      "sourceSha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463",
+      "draftSha256": "092530c40fbacc8d05b70655c6f57989c8c0b6c370215c95eefb06221f0099dc",
+      "diagramSha256": "8c4b58387e5fc698f51eee5693e26419afe35132274f7f1eac853f2f4d89d872"
+    },
+    {
+      "key": "de-2021-07-22-dot-product",
+      "sourceSha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463",
+      "draftSha256": "c09b38868d2d1c425953b27a8b458c1ab2576214c990b4261f3cc5347db989fe",
+      "diagramSha256": "62e1a330bab7113757540efc1dc7cbed2bdf8600d9dd6b5650ead865eb3311d1"
+    },
+    {
+      "key": "fr-2021-07-22-dot-product",
+      "sourceSha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463",
+      "draftSha256": "80a17f165371ef4bdf6159883e6db15d34487e0fecd0087156fba1caf89ed3ab",
+      "diagramSha256": "a864d7ad93edff0185c05dec525fc244994e59a67522a43e901424acf7171e55"
+    },
+    {
+      "key": "ru-2021-07-22-dot-product",
+      "sourceSha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463",
+      "draftSha256": "be560eb7fa9b0ef8c80e5b072b884ca0d4f188f7b0ca9f613bac6e1664c179de",
+      "diagramSha256": "3c688201f8a0ee4383c8ae1d8f29de795e129e0bf885fc3967a157ea78b50ae3"
+    },
+    {
+      "key": "es-2021-07-22-dot-product",
+      "sourceSha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463",
+      "draftSha256": "82775aa2db8ae7f756d0cad4cb76a7760cb17237320c8e3d5d0a7c8300825036",
+      "diagramSha256": "b53d955437fb1d6103b3589f33a360ddd2e6468351e7b263db863079f392bf5c"
+    },
+    {
+      "key": "zh-CN-2021-07-22-plus-minus",
+      "sourceSha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc",
+      "draftSha256": "ddb89a65c7089c30994060bf4c0a92c19f3c2488be59133ac3bc99f340ab46ab",
+      "diagramSha256": "cc11f3f8d3d3f7203a7d057918d81a6dd34950c0fb0b27a01edcb7cbfa770372"
+    },
+    {
+      "key": "ja-2021-07-22-plus-minus",
+      "sourceSha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc",
+      "draftSha256": "e9b8b4ceb095fa004e17653d10bc9a6e52663f865e20d64dc02ecfd5a5560124",
+      "diagramSha256": "b714f26ffd28f719ecd5c8ede2e58374db4c6485fb09e9e66c0c8069c9b273e6"
+    },
+    {
+      "key": "de-2021-07-22-plus-minus",
+      "sourceSha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc",
+      "draftSha256": "c63b7d5c321c56bdf3c54e26ff0e5010b68b239ec53be637788b95e36599cc0a",
+      "diagramSha256": "e1f31f6faf684b9f458e24cca321353087a59d7de03e1f6d27386a1ac5403381"
+    },
+    {
+      "key": "fr-2021-07-22-plus-minus",
+      "sourceSha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc",
+      "draftSha256": "ee6acde715691bd560feafa61b2b23a93814ce78f198087efe7ffc45c93f52db",
+      "diagramSha256": "4d5cadbc05c00c69a26c8985ec3b4ed57622312d854445d2cffbb64a43481726"
+    },
+    {
+      "key": "ru-2021-07-22-plus-minus",
+      "sourceSha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc",
+      "draftSha256": "dfd0fbac3fb05aad6cd8b5a288febe9e82b97e71cf74d05c022ff7e5999c229d",
+      "diagramSha256": "10feffb5da41ee38947461d3558d7db8f8062be1073f3a27b5316d81ad3bbb21"
+    },
+    {
+      "key": "es-2021-07-22-plus-minus",
+      "sourceSha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc",
+      "draftSha256": "9dac66f6ce3c3ce05bc7f9789c529707a263a67c5abf0405f3e8ba26b8741c70",
+      "diagramSha256": "9920c479b20ccca5d707e1a4a46bc2127f1790389105a278fd739be8748ca240"
+    },
+    {
+      "key": "zh-CN-2023-09-20-linux-shellscript-function-error",
+      "sourceSha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8",
+      "draftSha256": "4a12c2472fec8210e49537ae97c941a6ec2755fc4ae5bb962bf8923690b4aa68",
+      "diagramSha256": "60a3958fc9b3c8aef5d9fb90c9d6b9601b2595d9e885e5f30cff82baaf918b26"
+    },
+    {
+      "key": "ja-2023-09-20-linux-shellscript-function-error",
+      "sourceSha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8",
+      "draftSha256": "a484245c71e0927875ab102b6bd4d2e0a61462c866b11a023df6b41ac98a9474",
+      "diagramSha256": "2de9a41b03206d98f27c2eee4c98483a5d2b2e982bdf961570a9ca3f706642b6"
+    },
+    {
+      "key": "de-2023-09-20-linux-shellscript-function-error",
+      "sourceSha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8",
+      "draftSha256": "4a010d05ae9637d17b26cc865c4ac891d5745a5db4fbf3703c310b862654c87c",
+      "diagramSha256": "c31a18b9e03d7aa1718da67994b63120a6f4b51c4801a166491208ca3a27467f"
+    },
+    {
+      "key": "fr-2023-09-20-linux-shellscript-function-error",
+      "sourceSha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8",
+      "draftSha256": "10f059fc79458632ad74b6a53a333464036878b1ffb2d0d139b9dd3829310a86",
+      "diagramSha256": "326adf9e5dd38816eb4a7e3138f846e4692ef9923fe570d324b0fcc91876a203"
+    },
+    {
+      "key": "ru-2023-09-20-linux-shellscript-function-error",
+      "sourceSha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8",
+      "draftSha256": "a6bc0660ed9d3a40770d92365324126bd2a1ac550dd65fd574d6db222964b88d",
+      "diagramSha256": "444bdf279363d6faaeff5dab16d828163bd7b6475ab810608b7924847ef5c867"
+    },
+    {
+      "key": "es-2023-09-20-linux-shellscript-function-error",
+      "sourceSha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8",
+      "draftSha256": "e2ee64f37bc528476ed37942f581c440731c94a7955bc31f109b122733ccec5f",
+      "diagramSha256": "3f27274809ebc6d6103e371c138a3bbaf24e48fd0b71165641c8f88ea852b2ec"
+    },
+    {
+      "key": "zh-CN-2023-11-17-linux-shellscript-version-compare",
+      "sourceSha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc",
+      "draftSha256": "8a7aad8571d8d6d228d09374ac5269206cf3ab89507a23e808467d07fe823e44",
+      "diagramSha256": "2c97deb4b61847bd08b8cabaa29c6c06e8fac349012e45af4c124ac4d27edc78"
+    },
+    {
+      "key": "ja-2023-11-17-linux-shellscript-version-compare",
+      "sourceSha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc",
+      "draftSha256": "776424c154eb54a26ab3d11f6de958c2f4ffdf0354827e5407bc701dfaa1508e",
+      "diagramSha256": "353f4b65ceaeade1ae82c6b1bf9c6d1fbb63b35584ba40ed80d942bab1d8bc87"
+    },
+    {
+      "key": "de-2023-11-17-linux-shellscript-version-compare",
+      "sourceSha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc",
+      "draftSha256": "90fa2b55060bd5214e62e94a76532757f1626caf4c5e2122fea89240fdf06d1d",
+      "diagramSha256": "60d7c7f5bc037778f7cc6eb0a5868f19913799f490deb541e9f9fac68b41c548"
+    },
+    {
+      "key": "fr-2023-11-17-linux-shellscript-version-compare",
+      "sourceSha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc",
+      "draftSha256": "1424b19aaf708db10883f23dee5feed146898b6d30cd6582183e79d4eb108ff5",
+      "diagramSha256": "ed236df4b2c87f3152571b9b131eb430af33865e46541410caa724703af2cc72"
+    },
+    {
+      "key": "ru-2023-11-17-linux-shellscript-version-compare",
+      "sourceSha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc",
+      "draftSha256": "2a6ca2d8c1cca75ffe1568dd309ddaa9f5bda91c0a204404a77230d321af7453",
+      "diagramSha256": "6461773a6a12c03eb1323dce9a725a32854d280ae8c893abf0aef8156f3c558b"
+    },
+    {
+      "key": "es-2023-11-17-linux-shellscript-version-compare",
+      "sourceSha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc",
+      "draftSha256": "c14040cadfc35bedb44bb556f918593c1f679f36efecca6f0fa6c0537b1e4246",
+      "diagramSha256": "dd939daaf2137dc13504ea94c7a7c1a8e8d27826f6a1e20af96d593f406d7a8a"
+    },
+    {
+      "key": "zh-CN-2023-09-23-linux-shellscript-github-latest",
+      "sourceSha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61",
+      "draftSha256": "5dbf6fc4b67f3905ea7340e05a1dab7608a974505e48dc96bc5ea31e6926991f",
+      "diagramSha256": "2a895c2fbdc73fb63a7f5446b88a56befe7553cdf03afba3cd15b84a8a3559e7"
+    },
+    {
+      "key": "ja-2023-09-23-linux-shellscript-github-latest",
+      "sourceSha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61",
+      "draftSha256": "19657776f943b92a661a5d7156b2f234721f385f598e6d50ee3d12b8bc77bef8",
+      "diagramSha256": "03b7d326a3d9c05ffff2f38733dd01fa8075654dd96c0fafc33b193cf9770e09"
+    },
+    {
+      "key": "de-2023-09-23-linux-shellscript-github-latest",
+      "sourceSha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61",
+      "draftSha256": "76edcce7544cc953c60102b058f93b4c02af1c4ead60c1e2131aa1794b65982c",
+      "diagramSha256": "67302682e98fbf764820eab512dc723b5b32ec74946495122524a3c391eddfd3"
+    },
+    {
+      "key": "fr-2023-09-23-linux-shellscript-github-latest",
+      "sourceSha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61",
+      "draftSha256": "01e8608b052320bd955e28e7c9f2b64d690b3917d42afaa90284aa734f214c7e",
+      "diagramSha256": "02d49fd965886421ee0475bb90a15b94de2c42df100ee005ec3f7df8fe34743e"
+    },
+    {
+      "key": "ru-2023-09-23-linux-shellscript-github-latest",
+      "sourceSha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61",
+      "draftSha256": "0be8c59760c29a6a23e91a5020dfcdc7e69bcc6cb910551457543727302aadb3",
+      "diagramSha256": "5f3d6b4c7781c33999d456367af0a667cbaf267526b7c10017878fafc0c67e2e"
+    },
+    {
+      "key": "es-2023-09-23-linux-shellscript-github-latest",
+      "sourceSha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61",
+      "draftSha256": "274039fb651d0356a1621c636e581f42e58199abdea9a5d49bf5cf715c0caf64",
+      "diagramSha256": "c61ee18bdc214f5b555e2dc10a40e8d713602fbe44ccec2f95a650ac75c9747c"
+    },
+    {
+      "key": "zh-CN-2021-07-29-interval-num",
+      "sourceSha256": "4674cdefcccdc5107e92b9fe49ee186426b25a096d2687d60d42724c51d29cf4",
+      "draftSha256": "cb273cceb4d52543bbb08fc834641a315f26e2a3d9ced7bc6a5761556926a50d",
+      "diagramSha256": "9551de4196efd0a8b8fac3330846a75f7880424380d04475852bb9d00b634c41"
+    },
+    {
+      "key": "ja-2021-07-29-interval-num",
+      "sourceSha256": "4674cdefcccdc5107e92b9fe49ee186426b25a096d2687d60d42724c51d29cf4",
+      "draftSha256": "392a40b02ad20f3e2732819911e571de7be54d0c2dede755a0fd33db42bed1f1",
+      "diagramSha256": "a5804af918aef531ea33fb3689b79b0d3390066d73dfef7185c4e6a8ea727cdc"
+    },
+    {
+      "key": "de-2021-07-29-interval-num",
+      "sourceSha256": "4674cdefcccdc5107e92b9fe49ee186426b25a096d2687d60d42724c51d29cf4",
+      "draftSha256": "d3ca97e3360a1bec8493a5b17014c8e205593f35a61e1bc358908d7e8a246ea4",
+      "diagramSha256": "b2fef41c3c27c7f051154af298aa9df11022ad033af338a18136257a42b4b1f7"
+    },
+    {
+      "key": "fr-2021-07-29-interval-num",
+      "sourceSha256": "4674cdefcccdc5107e92b9fe49ee186426b25a096d2687d60d42724c51d29cf4",
+      "draftSha256": "4c18ee2bc4bf2a4ccb5491c1577d4789a55fb9999e083bc20cda4c747b4686da",
+      "diagramSha256": "6b45b0f226b7739e219c70d8dbd64a89645827c2985c60565f217890291d9b09"
+    },
+    {
+      "key": "ru-2021-07-29-interval-num",
+      "sourceSha256": "4674cdefcccdc5107e92b9fe49ee186426b25a096d2687d60d42724c51d29cf4",
+      "draftSha256": "42ba228063bdd907b508355348c21852616952e2ce9b9c1919097ba94f89a377",
+      "diagramSha256": "dae5bb570861e1d726a5cf0561a711b87de1910901031c970b720b9996183ecc"
+    },
+    {
+      "key": "es-2021-07-29-interval-num",
+      "sourceSha256": "4674cdefcccdc5107e92b9fe49ee186426b25a096d2687d60d42724c51d29cf4",
+      "draftSha256": "18f937dcf80c742e027c470a64892babd822f568a1b1657ccbaf5900f51b40c6",
+      "diagramSha256": "b0249791d9a9ec769eb38415f6877890d420baef56b00816470cc995844784b0"
+    },
+    {
+      "key": "zh-CN-2021-07-23-number-word",
+      "sourceSha256": "28614468f78703f7e406439ee8b23b83e06091ae7f42ed9835cd50c6d1bb2e87",
+      "draftSha256": "4404519619b5aabd16ff36af55610e2dc0c748749ca3e674573ee8a310a12a27",
+      "diagramSha256": "fbca9bdacc77d66359a758461a8b0bac40f402f2d70897f11b9fdc62e4c7435d"
+    },
+    {
+      "key": "ja-2021-07-23-number-word",
+      "sourceSha256": "28614468f78703f7e406439ee8b23b83e06091ae7f42ed9835cd50c6d1bb2e87",
+      "draftSha256": "c125d00070121f22e43199f60436b916dba268839a6ae7bd8fdb3589a30c8189",
+      "diagramSha256": "47aca20f4a02d69409c92cd2f0ba2e28a07058dff3ee4a3e5dc34a7eafff4a35"
+    },
+    {
+      "key": "de-2021-07-23-number-word",
+      "sourceSha256": "28614468f78703f7e406439ee8b23b83e06091ae7f42ed9835cd50c6d1bb2e87",
+      "draftSha256": "039b5b06f3a0e4b5c96cefaaf32d75dccfe15b61e36c0af6e21478150882f5e6",
+      "diagramSha256": "d1c8f0cbbf04b4a70b2b11a443cb4a6c8c0b894e4bab95575580c60ed4cb0eb5"
+    },
+    {
+      "key": "fr-2021-07-23-number-word",
+      "sourceSha256": "28614468f78703f7e406439ee8b23b83e06091ae7f42ed9835cd50c6d1bb2e87",
+      "draftSha256": "4e6479981f2c493ac21a49c1f58a0172b939372b421a3e50e49de35883b6ac23",
+      "diagramSha256": "69a58125b8c365e2eed91b1f2d8ea6cd7ea4a089e5971ee743d6a78582c3fda2"
+    },
+    {
+      "key": "ru-2021-07-23-number-word",
+      "sourceSha256": "28614468f78703f7e406439ee8b23b83e06091ae7f42ed9835cd50c6d1bb2e87",
+      "draftSha256": "c16b77efc6fb392a4cc2c6159b21504909194fa6170c181c4533d85f4f57edd2",
+      "diagramSha256": "1722336be8e149d56ca7038d43626a7c0231f899a2627e6f9ae2542a29dc7bc2"
+    },
+    {
+      "key": "es-2021-07-23-number-word",
+      "sourceSha256": "28614468f78703f7e406439ee8b23b83e06091ae7f42ed9835cd50c6d1bb2e87",
+      "draftSha256": "5c96e0bc6c40323c1b82790e3b39570a3b9f2d6fbf9c7e82b4f81bf5e279e817",
+      "diagramSha256": "f342346df401a06c19a014d14873349ca2604d37d29f29d9ecb09535527d05e3"
+    },
+    {
+      "key": "zh-CN-2021-07-19-new-id",
+      "sourceSha256": "d974b2c5791736b9568a1598a457390b7df0c0450c6dd11323c3c26a895ea8a2",
+      "draftSha256": "32de781cdbf0f8fb8cef319e5c13cb2934c4f72cda496b3bf37a3dc25dbd7fd4",
+      "diagramSha256": "5c58884a5ba6cb3db76d6db3dc2e87334d2884e690ff7d2bb61a68a8ffacef9e"
+    },
+    {
+      "key": "ja-2021-07-19-new-id",
+      "sourceSha256": "d974b2c5791736b9568a1598a457390b7df0c0450c6dd11323c3c26a895ea8a2",
+      "draftSha256": "b6d529515f49e6cd83e9edf138acea4797283375e75b4fdddf0ccf632851ef1a",
+      "diagramSha256": "6ef82a6968f0571f2e057b2a622279184a158c77b7d9441549af6048f33fa0ff"
+    },
+    {
+      "key": "de-2021-07-19-new-id",
+      "sourceSha256": "d974b2c5791736b9568a1598a457390b7df0c0450c6dd11323c3c26a895ea8a2",
+      "draftSha256": "3bb9cb9b1e70648ebce4fe6a17f5b8e5c2676965ff39ef5e2e06c34061b24065",
+      "diagramSha256": "3e27445002a0d21621b63a68689210bc61e6e377709ef96722e82ab85890991d"
+    },
+    {
+      "key": "fr-2021-07-19-new-id",
+      "sourceSha256": "d974b2c5791736b9568a1598a457390b7df0c0450c6dd11323c3c26a895ea8a2",
+      "draftSha256": "06c713b0537505730cf4ac24594f6fc396b9b7db6ea8ec1ab941bfd10148f7c0",
+      "diagramSha256": "7f232fa385e14dc4300da3632a033da7ba1ef1b13746f83e24332a2e3fa5bf59"
+    },
+    {
+      "key": "ru-2021-07-19-new-id",
+      "sourceSha256": "d974b2c5791736b9568a1598a457390b7df0c0450c6dd11323c3c26a895ea8a2",
+      "draftSha256": "59e87e4be91755ea4eff16a8d54fa41f89dc2edfd68e18f8ff45b8e230790f36",
+      "diagramSha256": "144df3674f417b1f7b7ff1a5d42630471e9194e88f7057126454ab8473a7a24a"
+    },
+    {
+      "key": "es-2021-07-19-new-id",
+      "sourceSha256": "d974b2c5791736b9568a1598a457390b7df0c0450c6dd11323c3c26a895ea8a2",
+      "draftSha256": "5d168c851747b9b4dedaf94d0447c1a5c30839418612ee208bfb39f3411b5b73",
+      "diagramSha256": "2ec9ea654173bfa8600a20598b2832bbbc858a967bce079d4b97d19fd0f0f1ec"
+    },
+    {
+      "key": "zh-CN-2021-07-20-pair-delete",
+      "sourceSha256": "a1962a62aeb00132eea16a0b3b607dfb9e256902ddc165613dbe7c044f14966e",
+      "draftSha256": "86e790a48632059c535a1e2ea634516c43d679c1cc4b4c811395476da7fb2f9b",
+      "diagramSha256": "45d41063efca758c158af32e03a15bab7e81790e95d26a3977f9265a0114083e"
+    },
+    {
+      "key": "ja-2021-07-20-pair-delete",
+      "sourceSha256": "a1962a62aeb00132eea16a0b3b607dfb9e256902ddc165613dbe7c044f14966e",
+      "draftSha256": "c3519de13ced3fa8597089c900e4271ea9aae567d4863d45d70c2b2a51ad4625",
+      "diagramSha256": "950f00700e1ed198659fc794b5e2e45c98089bb9dccf5515125f81a7e66235e6"
+    },
+    {
+      "key": "de-2021-07-20-pair-delete",
+      "sourceSha256": "a1962a62aeb00132eea16a0b3b607dfb9e256902ddc165613dbe7c044f14966e",
+      "draftSha256": "f5c711fdbc9a72b62f98599654a06c78d67994b1b2ce1e56f8a87775c3a16c56",
+      "diagramSha256": "ee9d71d8031f356a19bba31c614d7e028b0ce85222fd191fd08759149dd095a0"
+    },
+    {
+      "key": "fr-2021-07-20-pair-delete",
+      "sourceSha256": "a1962a62aeb00132eea16a0b3b607dfb9e256902ddc165613dbe7c044f14966e",
+      "draftSha256": "a3c11507e25f5486d242cd6a6325bc212222dcff3bc012f93ab39f903b81b06d",
+      "diagramSha256": "52a298f7438352ec4b01cbf781afd113f30467dd3c06820b19c4076c9ed187ef"
+    },
+    {
+      "key": "ru-2021-07-20-pair-delete",
+      "sourceSha256": "a1962a62aeb00132eea16a0b3b607dfb9e256902ddc165613dbe7c044f14966e",
+      "draftSha256": "c767a5494dc8e572c100c1bf1e0f7de3eb8b9161dccdecba04e69947875619b7",
+      "diagramSha256": "c1f46b90e4322db4ffa9e3852739cdeb2498bca1f14254d6e6a142e29949af38"
+    },
+    {
+      "key": "es-2021-07-20-pair-delete",
+      "sourceSha256": "a1962a62aeb00132eea16a0b3b607dfb9e256902ddc165613dbe7c044f14966e",
+      "draftSha256": "4e9c4e569ef3ad2ad40301d6c0eafb36e54985f4405528d7059a5b18072df12f",
+      "diagramSha256": "8818bec897619594f077255946c797155f8252c975c4b049abb1fcea51083526"
+    },
+    {
+      "key": "zh-CN-2021-07-23-unsuccessful-runner",
+      "sourceSha256": "a8c9e485842a9d8718e6cec7f5d0bcbda5a716bad751608cc67094ac938487d6",
+      "draftSha256": "5326c33f1beeb0beefa8fbbc36126d6d85d289c8ae428d9965f73a7a740b46ec",
+      "diagramSha256": "50b1438ff9a1af0a764585997ab87dedb052ea9fd07cad0a271e789988ac18d8"
+    },
+    {
+      "key": "ja-2021-07-23-unsuccessful-runner",
+      "sourceSha256": "a8c9e485842a9d8718e6cec7f5d0bcbda5a716bad751608cc67094ac938487d6",
+      "draftSha256": "645c8c87a83dc6405ab39013f379c77992802324e83920bea8644f45c6e289ce",
+      "diagramSha256": "87d1b23e795f17db8cc00ec3a25c69b5fa07c2b09587d819ee1eecde6218a52d"
+    },
+    {
+      "key": "de-2021-07-23-unsuccessful-runner",
+      "sourceSha256": "a8c9e485842a9d8718e6cec7f5d0bcbda5a716bad751608cc67094ac938487d6",
+      "draftSha256": "1bcb07c627e6e4ed4144ff00c6935ac2a96ec4ab009007fe394bbf0c7feb87d0",
+      "diagramSha256": "7dc54506ab3cd178835bf5428c819fc40bd49d08ca09fb3539b5ba2ec4a42c37"
+    },
+    {
+      "key": "fr-2021-07-23-unsuccessful-runner",
+      "sourceSha256": "a8c9e485842a9d8718e6cec7f5d0bcbda5a716bad751608cc67094ac938487d6",
+      "draftSha256": "0b37f7513e70e857ad1f0ae97d542387c053bf371a925f07283973be790786de",
+      "diagramSha256": "02deb771ea2cc718e301847c100103afef15e919fa48880e470bc3e42f272c61"
+    },
+    {
+      "key": "ru-2021-07-23-unsuccessful-runner",
+      "sourceSha256": "a8c9e485842a9d8718e6cec7f5d0bcbda5a716bad751608cc67094ac938487d6",
+      "draftSha256": "e9325059395472105e8e90ba8e48acabbe70f0ee3ed7c97648ccdda4987fd6e7",
+      "diagramSha256": "91d914ee07d3bb464133622c6210b7f6cd6ca22d975824da5361c90295e64642"
+    },
+    {
+      "key": "es-2021-07-23-unsuccessful-runner",
+      "sourceSha256": "a8c9e485842a9d8718e6cec7f5d0bcbda5a716bad751608cc67094ac938487d6",
+      "draftSha256": "99dbe87938d61abe4913946ddd43f0c63b3d38efbf11cf696c525525969f2c9d",
+      "diagramSha256": "7fa45e636ac0d5a04e10bae0cd030185972eb243b7c2e9ecd3a01381a5e7b8dc"
+    },
+    {
+      "key": "zh-CN-2021-07-29-ponkemon",
+      "sourceSha256": "99cbe2a5028aa94ba76d028c0e9bf48f91f84d6ab43c457f183d0a8a1d9752de",
+      "draftSha256": "dd15ce086259cd2d7898ed2d64f8313f68242fc01750d3bb14d907395ec1ae24",
+      "diagramSha256": "0ad131f9398ba1a790143ab4592e37ed5a6e921419f6da24f8015093528e8f62"
+    },
+    {
+      "key": "ja-2021-07-29-ponkemon",
+      "sourceSha256": "99cbe2a5028aa94ba76d028c0e9bf48f91f84d6ab43c457f183d0a8a1d9752de",
+      "draftSha256": "54fe3de6f18f7aacb71a04789c6d9e0d5780264d82e2c1d375fed3d896fee4cc",
+      "diagramSha256": "c2d1dade610eba46665c5f93b6cb7d01e5867e8f5d0a68dfe3bff611f1ac5ff2"
+    },
+    {
+      "key": "de-2021-07-29-ponkemon",
+      "sourceSha256": "99cbe2a5028aa94ba76d028c0e9bf48f91f84d6ab43c457f183d0a8a1d9752de",
+      "draftSha256": "26f22ff8dd38c259e9c9fc074890848465d66e79eb1b6647c8587e0eafbe8a97",
+      "diagramSha256": "33d8f92574a1cbf5a92059d4d2b8d74226708ab96eb51f46b8db7810f4de6a38"
+    },
+    {
+      "key": "fr-2021-07-29-ponkemon",
+      "sourceSha256": "99cbe2a5028aa94ba76d028c0e9bf48f91f84d6ab43c457f183d0a8a1d9752de",
+      "draftSha256": "9e0c31dea9165e56f15b119f2922049c95ff4bbc0bbce3fe5b8c4d70ee1c7ec2",
+      "diagramSha256": "b7f63f12ed24dc753927c40c95d567edb07c9e54d952cbc6dc60cdf6c9c9e3eb"
+    },
+    {
+      "key": "ru-2021-07-29-ponkemon",
+      "sourceSha256": "99cbe2a5028aa94ba76d028c0e9bf48f91f84d6ab43c457f183d0a8a1d9752de",
+      "draftSha256": "4b96886b14c5bdc2a9d9fa8794ca46c75496e4ba4cbdc1780cff7cc9bb84e2f4",
+      "diagramSha256": "7d383edcec41f8d7b7ea9da35a29d68481a22cee18c94c2d129a2ed629fef3a1"
+    },
+    {
+      "key": "es-2021-07-29-ponkemon",
+      "sourceSha256": "99cbe2a5028aa94ba76d028c0e9bf48f91f84d6ab43c457f183d0a8a1d9752de",
+      "draftSha256": "484f3a441d480b6136477fd577562d6ebefe3119e7528c1702e24ac149594539",
+      "diagramSha256": "f350f2e0b1b8a5fa3bdb7aa3ef71cbfd555b47f25d71e0ac9c16819675b9af88"
+    },
+    {
+      "key": "zh-CN-2021-07-24-fail-percentage",
+      "sourceSha256": "c684945a1636e85bfe7ce5165815a7785215f97a78fa784c21dd34e8f275d30b",
+      "draftSha256": "1ae941fb06e7e4d616b7a1fcd72ad394adcf33ba1a53bfa4b59c40e844eff9c3",
+      "diagramSha256": "4a8d71a01d6904e84346daa05d713ad4e4c6031d99dc8ed4f0a9bfb4fcbb28e6"
+    },
+    {
+      "key": "ja-2021-07-24-fail-percentage",
+      "sourceSha256": "c684945a1636e85bfe7ce5165815a7785215f97a78fa784c21dd34e8f275d30b",
+      "draftSha256": "6f5b734c721fbed31a6a24422540d3ac61181395ef490ee57e6270f3efc75cd2",
+      "diagramSha256": "dc35a21b0c0a5af77142f6dd3ee5e133e8f66ccf142f4d30e45f010e95fce652"
+    },
+    {
+      "key": "de-2021-07-24-fail-percentage",
+      "sourceSha256": "c684945a1636e85bfe7ce5165815a7785215f97a78fa784c21dd34e8f275d30b",
+      "draftSha256": "43750977192de5e436cbc39d88288db5739c5e896c7c1c0278923d8601ee9538",
+      "diagramSha256": "5adfcde15ab2544333e3934a9b4a6479fffc2588eb46f0ca801994d25aea3f70"
+    },
+    {
+      "key": "fr-2021-07-24-fail-percentage",
+      "sourceSha256": "c684945a1636e85bfe7ce5165815a7785215f97a78fa784c21dd34e8f275d30b",
+      "draftSha256": "899759de5cc8dd4e35b63b37366b6bfd40da19d623f49f1082f8152c7e1712c9",
+      "diagramSha256": "13790b91f91be9973f5a85fd06d6fe385608dd144f0043c27bbdf33c4bf4ac34"
+    },
+    {
+      "key": "ru-2021-07-24-fail-percentage",
+      "sourceSha256": "c684945a1636e85bfe7ce5165815a7785215f97a78fa784c21dd34e8f275d30b",
+      "draftSha256": "962be6295bdc1218fbd4c968982c607de6b843079cab14756ab1d56f8c68a707",
+      "diagramSha256": "ba4b1c85a4c929380e7cecf699ec3cc8824da85b6e3c50256887ab738b0d7fdd"
+    },
+    {
+      "key": "es-2021-07-24-fail-percentage",
+      "sourceSha256": "c684945a1636e85bfe7ce5165815a7785215f97a78fa784c21dd34e8f275d30b",
+      "draftSha256": "62d0d08e535d0a52aeb51c63805aa9ab213ae9b8f463157eef6a198137c935f2",
+      "diagramSha256": "0973b898d7f260496001062e92ca0bf943b2447c0eb4a9fd64e4c17230a7bf49"
+    },
+    {
+      "key": "zh-CN-2021-08-17-cache",
+      "sourceSha256": "77818be49804ec89674a652987cb0a60ff7d9f11d5d0ec584536b13135759eb1",
+      "draftSha256": "86d4ce6a2995b8944173c009f170b8ad96da6e69683bff4c1f3025111a4d7c7f",
+      "diagramSha256": "b0cef0ab253f34ed6d1c049c840223265570e3659b5de8f6f602d22467bdcc53"
+    },
+    {
+      "key": "ja-2021-08-17-cache",
+      "sourceSha256": "77818be49804ec89674a652987cb0a60ff7d9f11d5d0ec584536b13135759eb1",
+      "draftSha256": "e0abfa7ae5a5e3feb2ac891311768bcd96d29bc18da87d048b811aa338bf4dc0",
+      "diagramSha256": "6a0859b530636d1f1aa8f4b0b59223486f67852c346d17c10587011d47241fc4"
+    },
+    {
+      "key": "de-2021-08-17-cache",
+      "sourceSha256": "77818be49804ec89674a652987cb0a60ff7d9f11d5d0ec584536b13135759eb1",
+      "draftSha256": "9d5d8371c6ed4827cb2b781eb61ac44f7eaa0c11dde5de7d1e2ce400ccf3c75b",
+      "diagramSha256": "1a0d44db7f0bd2535722d33fef0d56c4fa5c9745bdf75bc52be8b22777f9a1d7"
+    },
+    {
+      "key": "fr-2021-08-17-cache",
+      "sourceSha256": "77818be49804ec89674a652987cb0a60ff7d9f11d5d0ec584536b13135759eb1",
+      "draftSha256": "45a44ecbe50930c446485962564758c49df29c2a56fe09d595ddd9a82289f6a4",
+      "diagramSha256": "c52b08f9656ca3f10ce5fa74493b916a662d9278fe0b62bb6e2071f27e142187"
+    },
+    {
+      "key": "ru-2021-08-17-cache",
+      "sourceSha256": "77818be49804ec89674a652987cb0a60ff7d9f11d5d0ec584536b13135759eb1",
+      "draftSha256": "cb48cdb87ae189749a0411c275a265166260cba9926f25cd50ce29e76b71b053",
+      "diagramSha256": "1ed428514504f65232a66accd93c143b32e8541efe482b31726ff9b7222880f2"
+    },
+    {
+      "key": "es-2021-08-17-cache",
+      "sourceSha256": "77818be49804ec89674a652987cb0a60ff7d9f11d5d0ec584536b13135759eb1",
+      "draftSha256": "eab100e4ce66bdec72301d70faca25e2d319329b57cbdf57a3b7c2d67719176b",
+      "diagramSha256": "e71fd95bad5b5c6b5b732fb0f492ebdcab4f9c9ec7415640868c7ca3aab03743"
+    },
+    {
+      "key": "zh-CN-2021-07-20-http-status-test",
+      "sourceSha256": "6a0015675b8a80249e52069a1e2ba364408570bbf983db78a56b13b3ebf0b721",
+      "draftSha256": "e09758826da46b539935f51ccd2af8fb618c50b54f74fa62724cee143e23388f",
+      "diagramSha256": "e8e542a3695e77a0c8c235e8cfbfc714880f7d7694ec362fa543171d78dc64ef"
+    },
+    {
+      "key": "ja-2021-07-20-http-status-test",
+      "sourceSha256": "6a0015675b8a80249e52069a1e2ba364408570bbf983db78a56b13b3ebf0b721",
+      "draftSha256": "ab1a0968d1e7f69ebaf52086fa3c16a6a45a8b60d3fe8290d85145c91f57cd84",
+      "diagramSha256": "e9ea801ebec967abd96e16feae753c4070f930d5f9c277781d883a017a038305"
+    },
+    {
+      "key": "de-2021-07-20-http-status-test",
+      "sourceSha256": "6a0015675b8a80249e52069a1e2ba364408570bbf983db78a56b13b3ebf0b721",
+      "draftSha256": "70cc329dd99caa0b9ea3d0cf2cf75eddd05aef803c21d5fad9cfb75f62edb8ce",
+      "diagramSha256": "b3fdce924facbe9816d4bbe0792aa67956f20a8eb0672eaa8fcc95bb0f8b0420"
+    },
+    {
+      "key": "fr-2021-07-20-http-status-test",
+      "sourceSha256": "6a0015675b8a80249e52069a1e2ba364408570bbf983db78a56b13b3ebf0b721",
+      "draftSha256": "a9519fa1ca7df6cfbb8575a7d6123bfc61b4071322c2a56cffe598bc598bd19e",
+      "diagramSha256": "afea4a5f78afeb0ce7acb2d964dc50a7a11f5a7c4595ea46e628d5fd95d1c6b5"
+    },
+    {
+      "key": "ru-2021-07-20-http-status-test",
+      "sourceSha256": "6a0015675b8a80249e52069a1e2ba364408570bbf983db78a56b13b3ebf0b721",
+      "draftSha256": "a512b56b73971f939b3dc24d0779bd078ff5a6231e6d3ceb8d96f83e34ce4874",
+      "diagramSha256": "0b5f46706642c02d877d73cfd3c5a41dc032f63e93f533844a64a58fc7e5669d"
+    },
+    {
+      "key": "es-2021-07-20-http-status-test",
+      "sourceSha256": "6a0015675b8a80249e52069a1e2ba364408570bbf983db78a56b13b3ebf0b721",
+      "draftSha256": "a7f3a549b10001df9bddff553f7d4751f5372dae46f83b7b3461951814aa958f",
+      "diagramSha256": "3bf401606c89cf3b880c9b7ab5ed3b314a79e4b09079ee2e740485396f1b33cc"
+    },
+    {
+      "key": "zh-CN-2021-08-06-search-github",
+      "sourceSha256": "22da61f44f3002516631540293a6b08b9b0de12d2c7963e6c52ae57b297efddf",
+      "draftSha256": "4f0eec905a1bbe9d45843ebaae6612c977b36320bd41982e2e6b19e945c57575",
+      "diagramSha256": "c12e6b5d54319f580c80bb7fbbcb836394bfbfeb0bb91ea28a4538368fca07fc"
+    },
+    {
+      "key": "ja-2021-08-06-search-github",
+      "sourceSha256": "22da61f44f3002516631540293a6b08b9b0de12d2c7963e6c52ae57b297efddf",
+      "draftSha256": "e28045106722baff09ea9f3d974732b4e5b4740305f600ec7e36e6f2c058cd9e",
+      "diagramSha256": "c9a308d406fc4bbf1623b938cc8bcd53635dc83060aebad459e61cea75350503"
+    },
+    {
+      "key": "de-2021-08-06-search-github",
+      "sourceSha256": "22da61f44f3002516631540293a6b08b9b0de12d2c7963e6c52ae57b297efddf",
+      "draftSha256": "d0f239a7a00ab9070ec6971d04432f04b707d4491b877a2f1f299bcd93518c34",
+      "diagramSha256": "1e22c5e4e04b54558a532857f3cc186cde347bdc8a605c7550ffbf577e557355"
+    },
+    {
+      "key": "fr-2021-08-06-search-github",
+      "sourceSha256": "22da61f44f3002516631540293a6b08b9b0de12d2c7963e6c52ae57b297efddf",
+      "draftSha256": "4350b4dcd4fc2e13970bcaa84de68ec243a4a69d3f2244052791cb96709a0d95",
+      "diagramSha256": "b18ba2093bb4acb096b2821db4749f48bdc98b64c33bfff7097c00d4960b89e1"
+    },
+    {
+      "key": "ru-2021-08-06-search-github",
+      "sourceSha256": "22da61f44f3002516631540293a6b08b9b0de12d2c7963e6c52ae57b297efddf",
+      "draftSha256": "d46fe5c144b9d38761314e7edde95565e7a1a8961cbe155c58e52f75da6dec2a",
+      "diagramSha256": "1c6aab1dc6e537102a1f09711b0dd66168ed09b1dea596a224473a1b664470c7"
+    },
+    {
+      "key": "es-2021-08-06-search-github",
+      "sourceSha256": "22da61f44f3002516631540293a6b08b9b0de12d2c7963e6c52ae57b297efddf",
+      "draftSha256": "eb3adc46be43f34e2f7da6a3c2da755cac11bc03e1502e22974df06b88146fad",
+      "diagramSha256": "f5eb6d684c313f99e5009946ae7a8a1d017c6f9fa645cacb9a125fda65c9af9c"
+    },
+    {
+      "key": "zh-CN-2021-07-23-app-diagrams.net",
+      "sourceSha256": "994c0cd18640921c0e130d9310adace919b39b5be0e5a2b54b5cee9772bdd8c0",
+      "draftSha256": "0697e4bf3aced9021943adae0e1f285cc4fa02b768f6c464efc62f072dbfa9ee",
+      "diagramSha256": "f2015621e6f8a512f1efacf2c877b89f7291a55aff3c2dd1a125d282781e8e46"
+    },
+    {
+      "key": "ja-2021-07-23-app-diagrams.net",
+      "sourceSha256": "994c0cd18640921c0e130d9310adace919b39b5be0e5a2b54b5cee9772bdd8c0",
+      "draftSha256": "c22fdf0e9c553b27cd300dde405b31571012f08bf9fc6cccdc2531ca6191aabd",
+      "diagramSha256": "e62f69d8eab1cbaa4d3bc56793260344517501ea21a9109a023a8b77498b2381"
+    },
+    {
+      "key": "de-2021-07-23-app-diagrams.net",
+      "sourceSha256": "994c0cd18640921c0e130d9310adace919b39b5be0e5a2b54b5cee9772bdd8c0",
+      "draftSha256": "c53f494eb46c2d85d481f6939a9cb518474bb6717f48808f133a2c810c3890fa",
+      "diagramSha256": "0fadaa230b9a320f2d23f08be45ae97cf5b3b002bf5552209fb558c689cfdef7"
+    },
+    {
+      "key": "fr-2021-07-23-app-diagrams.net",
+      "sourceSha256": "994c0cd18640921c0e130d9310adace919b39b5be0e5a2b54b5cee9772bdd8c0",
+      "draftSha256": "0e3a2f0e39c41e81082c513739cfb3448146b44f49a70bcd3a01102586291d8f",
+      "diagramSha256": "f1f16d509d2820e4e927452a121e527057128a1cb334aea17ba03719cf037e9d"
+    },
+    {
+      "key": "ru-2021-07-23-app-diagrams.net",
+      "sourceSha256": "994c0cd18640921c0e130d9310adace919b39b5be0e5a2b54b5cee9772bdd8c0",
+      "draftSha256": "9305b796fe5a1762a15e5dfc2caf368f7e82776985023a6f77594b0352f6a2ee",
+      "diagramSha256": "a28b05d866dba77828b0f2469f19fdd7ab5ed0b72a413bc884b7a96ba597714c"
+    },
+    {
+      "key": "es-2021-07-23-app-diagrams.net",
+      "sourceSha256": "994c0cd18640921c0e130d9310adace919b39b5be0e5a2b54b5cee9772bdd8c0",
+      "draftSha256": "5a1e43993be4996de97ad832c3a55a2158ff474259f320528aeda9eabf82ea38",
+      "diagramSha256": "82d911e7403e4aa25774fec144c713efc3909e488b308124a40ae10d8789e9a9"
+    },
+    {
+      "key": "zh-CN-2023-09-20-jdk-21-release",
+      "sourceSha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578",
+      "draftSha256": "4ed3109e812bdfbc4bd0aedecb161544fdfec930671ee62eebc08019a2d89620",
+      "diagramSha256": "d673ddf1315624e79b32e731862c3db7f93aaa03b17bd726781dfbbb46a845a1"
+    },
+    {
+      "key": "ja-2023-09-20-jdk-21-release",
+      "sourceSha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578",
+      "draftSha256": "e8277cabd1052082af0d6d5cbc474227ef64ac36ef0cfd12a9bc72236dc61338",
+      "diagramSha256": "b593ecf9ee48cb68817fa062553b6ffa10fd970cd4fc4b7a66b308886dafd9d8"
+    },
+    {
+      "key": "de-2023-09-20-jdk-21-release",
+      "sourceSha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578",
+      "draftSha256": "c1e91d46c2a5db4dbceff9617a7e59aa312d53e1a96b0f0b2924541976578d4a",
+      "diagramSha256": "9ece59e5f6be21846dddd8c267261cef6efee0655048abf6463e0131642da20d"
+    },
+    {
+      "key": "fr-2023-09-20-jdk-21-release",
+      "sourceSha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578",
+      "draftSha256": "d3e7a9bf1bd7c2fe454bbd7b641529281baa05d78be0d6d93607aeccc4ddd00a",
+      "diagramSha256": "a31f7c75e4b908d55420f2e4e463ce03c47dfc53cd657b2c72fa951db8204229"
+    },
+    {
+      "key": "ru-2023-09-20-jdk-21-release",
+      "sourceSha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578",
+      "draftSha256": "986323c3ec432f61584cfeb28b3ec9df42c9ec47548a342bf176764d0adcd383",
+      "diagramSha256": "928c08a5c1f0ede5c6c33bcb693581ce2246655105a3daa47139b2c348866b32"
+    },
+    {
+      "key": "es-2023-09-20-jdk-21-release",
+      "sourceSha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578",
+      "draftSha256": "2abeeb14b2194d824f0b8be6945887e7f64b3fe14ec66267edf1f9847d1d3429",
+      "diagramSha256": "5cf2730d6af5457ec121dbad394a1126a2d674a6f597146ac0bd101f455357f4"
+    },
+    {
+      "key": "zh-CN-2023-09-23-jdk-21-string-templates",
+      "sourceSha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b",
+      "draftSha256": "31efcb556567b9c9f6926f06d73e361f785f0f08273475e2292ef64633048762",
+      "diagramSha256": "4bef4c2b53d043e6a7efcf8f7798950dd3ef02b6389c9eb28f1f5d1d6d2a7cc1"
+    },
+    {
+      "key": "ja-2023-09-23-jdk-21-string-templates",
+      "sourceSha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b",
+      "draftSha256": "5993b589cbd984949e8270718b85eb8ceecfc2d5bc0848b84cd92dfa8ac0c091",
+      "diagramSha256": "c32b4aea588ae7a53ff714793991cf4b5a7260aa13824c5977958968e5879efd"
+    },
+    {
+      "key": "de-2023-09-23-jdk-21-string-templates",
+      "sourceSha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b",
+      "draftSha256": "07e0358a52b35d5922299d853bb485a78677a4e284fcf037610c02785bb85400",
+      "diagramSha256": "e1d96e29eb00fd2cccb7bc61f81b392449ab6c75b37788c986fc7f2554ad252d"
+    },
+    {
+      "key": "fr-2023-09-23-jdk-21-string-templates",
+      "sourceSha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b",
+      "draftSha256": "de4966522ba8a4923e2e6a066a19332482cf796e7ce779b211cc91c56ba046b9",
+      "diagramSha256": "87a7746a4dbefd7727f4f382bd7945728871e1be01ba50d51212b26957f2b6ce"
+    },
+    {
+      "key": "ru-2023-09-23-jdk-21-string-templates",
+      "sourceSha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b",
+      "draftSha256": "6c41a452306450b9f4db01f5bef42ddbf4bb3c2b70930c3d805f54c7a71fdb65",
+      "diagramSha256": "2c92ebf6dea541c19b0f7c11370b4b28e3c5e67fe64c0f80f164250c274dfa1b"
+    },
+    {
+      "key": "es-2023-09-23-jdk-21-string-templates",
+      "sourceSha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b",
+      "draftSha256": "9ebbb4cb80cd83748d891a35a36e85b85e7d830615e0c4975663ba7627374a3e",
+      "diagramSha256": "eed602fb9a303c0e0a6462bd0af898c066896762d1283ca94af6cfa110d6db49"
+    },
+    {
+      "key": "zh-CN-2023-10-10-temurin-jdk21-delay",
+      "sourceSha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac",
+      "draftSha256": "1226cd43dcbb1426faca2aeed660480eb8c7dbb92a3b43f262439dd9e5f6217f",
+      "diagramSha256": "c150b59e493e78376b10ce5f2969e338e03686cba11f9d502abf51847eb0ec14"
+    },
+    {
+      "key": "ja-2023-10-10-temurin-jdk21-delay",
+      "sourceSha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac",
+      "draftSha256": "86289e8b2295a5851a901d43406ef6b32285571bcb380a3036f4ac1bdc4593bb",
+      "diagramSha256": "d050362972f8b47281f535756d80a9a6e50475d703ff0a6719dd5eef06598678"
+    },
+    {
+      "key": "de-2023-10-10-temurin-jdk21-delay",
+      "sourceSha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac",
+      "draftSha256": "2649daa214a054beaff2a338ff84e6c8be08b6f896c1a8af09d76f33644b24bb",
+      "diagramSha256": "c9c64286700f24360b2fda819035ad6b737f49057ffa1422a2ca7b30c977c6c9"
+    },
+    {
+      "key": "fr-2023-10-10-temurin-jdk21-delay",
+      "sourceSha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac",
+      "draftSha256": "480d7f5b1e20710ba26a5159b54203d229670df876c57c487dee3369b519a8f5",
+      "diagramSha256": "2f1d73c563b1bb2696b2554f544b561938ac1ed8d5cddd2d3dbb39d17387722e"
+    },
+    {
+      "key": "ru-2023-10-10-temurin-jdk21-delay",
+      "sourceSha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac",
+      "draftSha256": "dc3f3b79eea206b7074ce2227a81b41e25c627f057614a35d2404aa61ef1246e",
+      "diagramSha256": "70e464986edf492781326e86a2cff789398d6b5c103c5252f81d4a1ecec0eba9"
+    },
+    {
+      "key": "es-2023-10-10-temurin-jdk21-delay",
+      "sourceSha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac",
+      "draftSha256": "a4ad1a8b38913b708ab8faec2a7721cec6cda5dc89587ad0b8f0484f468ea09d",
+      "diagramSha256": "cba90489685725cf417e92df115947cbbfafe4b5bcb91728049ca7707217d4ba"
+    },
+    {
+      "key": "zh-CN-2021-07-27-parse-yaml",
+      "sourceSha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f",
+      "draftSha256": "41ca7077c354d177faf6e7ac07730dbe62b86ffc38f9a415c2d09ff1fe8c95ec",
+      "diagramSha256": "5baf9416dce499519cccaee3f80c813b9dc2f1e2164d969c6cb7ca022ce101cd"
+    },
+    {
+      "key": "ja-2021-07-27-parse-yaml",
+      "sourceSha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f",
+      "draftSha256": "0bac8e0a51d6436393498cf7430cde6d12405b24541e08dcb455fe1fe0f24d7c",
+      "diagramSha256": "d3ccce90b388ce14c499d10eca6d898109a0c28473a8532e9654b23f012b8593"
+    },
+    {
+      "key": "de-2021-07-27-parse-yaml",
+      "sourceSha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f",
+      "draftSha256": "21745f55872956e127fe1b1bb8899d445144b3b410883ecfb7669ef62899a565",
+      "diagramSha256": "3db434872cb8dfa6c2ca5a543fafc805a1125513d1aaf228c6df2014d96f93cf"
+    },
+    {
+      "key": "fr-2021-07-27-parse-yaml",
+      "sourceSha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f",
+      "draftSha256": "6cf1c74a0538288520025708e4a6908a9b96ec041ad1c63f809b49b472b4b889",
+      "diagramSha256": "8d16702c902afe90d8edb60f185a289f618e4d0c4f9d091ee2e2fb15dd229b24"
+    },
+    {
+      "key": "ru-2021-07-27-parse-yaml",
+      "sourceSha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f",
+      "draftSha256": "b19e28c690ce80e814ca2903c15025b5257af1164eb1b9652633ed128819034d",
+      "diagramSha256": "13c4e4c36d61e78be2afd451f09549d06fac5b18668794e41c26949389156a01"
+    },
+    {
+      "key": "es-2021-07-27-parse-yaml",
+      "sourceSha256": "102f35eacb16194761699d994cc9b12de6dbd6cfb89d6e54580f0d74f30ec17f",
+      "draftSha256": "a56d655583bc54a089726f134d241af97dadc6686e5917ef37b7e6f396cf6e1a",
+      "diagramSha256": "5584f48fdd814ff0be4f553ef9ce4d39e2dfcd5c76962f8d82b2be43baa4b11c"
+    }
+  ],
+  "englishSourcePins": [
+    {
+      "path": "src/content/posts/en/2026-10-31-failure-fallback.md",
+      "sha256": "93196b5c0ce64194996df961642c87053d74ea5be5c63b2b776cdd598dc7effd"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-cache-aside.md",
+      "sha256": "2c4422c55f14e7b5452f8b286bf5d6f986617fe624e229b7bd74462afe525ad9"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-kafka-event-streaming.md",
+      "sha256": "b5cac22382f44d1bdada1b264df07a6f746ee31761c0268ef2313e7f86eee118"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "efd733fd275675221deef4ebffa545ba2f54a6819e72fed217917d6708e3e4b9"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-ai-agent-operations.md",
+      "sha256": "671fc15fe228c1e812d5ae95a16d5092a66fbbf55edf53f21c353c91c91e796f"
+    }
+  ],
+  "reviewedAt": "2026-10-31T15:22:29.786927+00:00"
+}

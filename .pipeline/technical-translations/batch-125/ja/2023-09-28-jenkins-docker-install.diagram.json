@@ -1,0 +1,57 @@
+{
+  "key": "2023-09-28-jenkins-docker-install",
+  "language": "ja",
+  "title": "使い捨て Jenkins を確認",
+  "description": "選んだ HTTP と volume の契約を調べ、実験資源を消します。設定完了や job 実行は対象外です。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "image 取得と digest 解決",
+        "新しい名前付き home volume"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "loopback host port で起動"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "180s 以内に login HTTP が準備？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "いいえ：失敗",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "password を非出力で記録",
+        "marker を書き container 交換"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "marker と password は同じ？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "いいえ：失敗",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "結果と digest を報告",
+        "自分の実験資源を全削除"
+      ]
+    }
+  ]
+}

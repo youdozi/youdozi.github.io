@@ -1,0 +1,58 @@
+{
+  "key": "2026-10-27-jenkins-home-backup-restore",
+  "language": "es",
+  "title": "Restaurar en otro volumen",
+  "description": "Restaura archivo y master.key separado y comprueba HTTP y archivos seleccionados. No demuestra recuperación productiva ni de sistemas externos.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Preparar controlador y detener"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Archivar home sin master.key",
+        "Copiar clave a ruta aparte"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Archivo excluye master.key?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "No: fallo",
+        "continue": "Sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Extraer en volumen nuevo",
+        "Restaurar master.key aparte"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Coinciden HTTP, marca",
+        "y contraseña?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "No: fallo",
+        "continue": "Sí"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Informar comprobación limitada",
+        "Borrar datos y temporales"
+      ]
+    }
+  ]
+}

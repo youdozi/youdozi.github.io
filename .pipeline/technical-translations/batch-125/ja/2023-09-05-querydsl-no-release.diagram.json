@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-05-querydsl-no-release",
+  "language": "ja",
+  "title": "クエリ契約を比較",
+  "description": "同じデータで両実装を明示的な期待リストと比較します。変更判断には実アプリ固有のケースも必要です。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "H2 に五行を投入",
+        "重複と null を含む"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Querydsl と Criteria を構築",
+        "等値と null 方針を明確に"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "各結果を名前順に整列",
+        "期待リストと比較"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "八つの契約を確認",
+        "clean 後に Q 型を再生成"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "実際のクエリの形を評価",
+        "テストだけで切替を決めない"
+      ]
+    }
+  ]
+}

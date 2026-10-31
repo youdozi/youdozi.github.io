@@ -1,0 +1,54 @@
+{
+  "key": "2026-04-07-jekyll-github-actions-content-pipeline",
+  "language": "ja",
+  "title": "候補から承認済み公開へ",
+  "description": "offline 例は保留 PR 選択と mock review を確認します。生成、承認、merge、配備は別の実処理や編集手順です。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "一致する digest PR が存在？"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "はい：保留",
+        "continue": "いいえ"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "二言語の候補を生成",
+        "commit 前に local 検査"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "候補 branch を push",
+        "commit SHA を検証"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Draft PR と preview を作る",
+        "review branch の検査を dispatch"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "事実と言語を review",
+        "承認して準備後に merge"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "main で検査、配備",
+        "公開結果を確認"
+      ]
+    }
+  ]
+}

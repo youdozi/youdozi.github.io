@@ -1,0 +1,50 @@
+{
+  "key": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+  "language": "fr",
+  "title": "Tester Ruby et le compilateur",
+  "description": "Le script Ruby compare la configuration du compilateur et construit un programme C++ temporaire. Un test réussi ne prouve pas la compilation d’une gem native.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Vérifier démarrage Ruby et RbConfig"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Choisir le compilateur du test",
+        "Lire les options de la commande"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Compilation C++17 temporaire réussie ?"
+      ],
+      "branch": {
+        "exit": "Non : arrêt",
+        "continue": "Oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Exécution réussie, sortie 42 ?"
+      ],
+      "branch": {
+        "exit": "Non : arrêt",
+        "continue": "Oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Rapporter le résultat du test",
+        "Revenir au journal de la gem"
+      ]
+    }
+  ]
+}

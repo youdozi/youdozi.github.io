@@ -1,0 +1,75 @@
+{
+  "key": "2026-10-31-failure-fallback",
+  "language": "zh-CN",
+  "title": "公开读取降级",
+  "description": "准入、主路径读取、故障分类与快照年龄策略。每次退出均释放已获取的许可。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "tryAcquire()：获得许可？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "拒绝",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "primary.get()：读主路径"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "主路径返回了结果？"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "主路径",
+        "continue": "异常"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "错误是 Unavailable？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "传播异常",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "快照存在？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "拒绝",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "年龄在 0 到 60 秒内？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "拒绝",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "返回快照、来源与年龄"
+      ]
+    }
+  ]
+}

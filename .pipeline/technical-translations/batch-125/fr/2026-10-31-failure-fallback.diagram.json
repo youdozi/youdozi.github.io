@@ -1,0 +1,75 @@
+{
+  "key": "2026-10-31-failure-fallback",
+  "language": "fr",
+  "title": "Repli de lecture publique",
+  "description": "Admission, lecture principale, classification des échecs et politique d’âge des instantanés. Toute autorisation acquise est libérée à la sortie.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "tryAcquire() : autorisation acquise ?"
+      ],
+      "branch": {
+        "exit": "refusé",
+        "continue": "oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "primary.get() : lecture principale"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "La source principale a répondu ?"
+      ],
+      "branch": {
+        "exit": "source",
+        "continue": "exception",
+        "outcome": "complete"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "L’erreur est-elle Unavailable ?"
+      ],
+      "branch": {
+        "exit": "propager",
+        "continue": "oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Un instantané existe-t-il ?"
+      ],
+      "branch": {
+        "exit": "refusé",
+        "continue": "oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "L’âge est-il compris entre 0 et 60s ?"
+      ],
+      "branch": {
+        "exit": "refusé",
+        "continue": "oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Retourner instantané, source et âge"
+      ]
+    }
+  ]
+}

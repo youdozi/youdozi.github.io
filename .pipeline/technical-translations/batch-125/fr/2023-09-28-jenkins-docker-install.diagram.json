@@ -1,0 +1,57 @@
+{
+  "key": "2023-09-28-jenkins-docker-install",
+  "language": "fr",
+  "title": "Vérifier Jenkins temporaire",
+  "description": "Le script vérifie des contrats HTTP et de volume sélectionnés, puis supprime ses ressources de laboratoire. Il ne couvre pas la fin de configuration ni l’exécution de jobs.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Télécharger et résoudre le digest",
+        "Créer un volume home nommé neuf"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Démarrer sur un port hôte loopback"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "HTTP de connexion prêt en 180s ?"
+      ],
+      "branch": {
+        "exit": "Non : échec",
+        "continue": "Oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Noter le mot de passe sans l’afficher",
+        "Écrire le marqueur ; recréer le conteneur"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Marqueur et mot de passe identiques ?"
+      ],
+      "branch": {
+        "exit": "Non : échec",
+        "continue": "Oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Rapporter résultat et digest",
+        "Nettoyer les ressources du laboratoire"
+      ]
+    }
+  ]
+}

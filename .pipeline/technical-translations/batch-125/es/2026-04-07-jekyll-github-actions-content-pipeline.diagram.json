@@ -1,0 +1,54 @@
+{
+  "key": "2026-04-07-jekyll-github-actions-content-pipeline",
+  "language": "es",
+  "title": "Candidato y publicación",
+  "description": "El ejemplo offline comprueba selección de PR y llamadas simuladas. Generación, aprobación, fusión y despliegue son pasos alojados o editoriales aparte.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Ya hay PR de resumen abierto?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "Sí: pausa",
+        "continue": "No"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Generar candidato bilingüe",
+        "Controles locales antes de commit"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Enviar rama candidata",
+        "Validar SHA de su commit"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Abrir Draft PR y vista previa",
+        "Activar controles de rama"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Revisar hechos e idioma",
+        "Aprobar y fusionar al estar listo"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Main comprueba y despliega",
+        "Verificar resultado público"
+      ]
+    }
+  ]
+}

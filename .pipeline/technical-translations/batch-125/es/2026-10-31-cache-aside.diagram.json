@@ -1,0 +1,66 @@
+{
+  "key": "2026-10-31-cache-aside",
+  "language": "es",
+  "title": "Lectura Cache-Aside",
+  "description": "Buscar, comprobar TTL, cargar si falta, guardar éxito, limitar capacidad y devolver. Propagar fallos sin guardar.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Buscar clave y leer contador"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Existe entrada y tiempo < TTL?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "en caché",
+        "continue": "no"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Borrar entrada antigua"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "loader.apply(key): cargar origen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Éxito con valor no null?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "propagar",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Guardar valor y hora final"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "¿Exceso? Expulsar un LRU"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Devolver valor cargado"
+      ]
+    }
+  ]
+}

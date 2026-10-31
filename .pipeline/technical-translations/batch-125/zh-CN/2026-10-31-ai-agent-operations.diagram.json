@@ -1,0 +1,65 @@
+{
+  "key": "2026-10-31-ai-agent-operations",
+  "language": "zh-CN",
+  "title": "证据就绪检查",
+  "description": "检查覆盖、形状、标识、年龄、失败和未知。不授予执行权限。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "证据、可信目标与当前时间"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "恰好六类必需领域？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "形状、标识、时间有效？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "有效信号中有 fail？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "STOP",
+        "continue": "否"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "存在 unknown 信号？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "否"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "返回 READY_FOR_REVIEW",
+        "就绪待审核，不是执行"
+      ]
+    }
+  ]
+}

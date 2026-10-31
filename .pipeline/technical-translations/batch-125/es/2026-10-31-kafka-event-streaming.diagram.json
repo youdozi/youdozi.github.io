@@ -1,0 +1,62 @@
+{
+  "key": "2026-10-31-kafka-event-streaming",
+  "language": "es",
+  "title": "Grupos Kafka y reproducción",
+  "description": "Crear broker y topic desechables, publicar dos eventos, leer con dos grupos, reproducir y limpiar. Al fallar, detener y limpiar.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Arrancar broker desechable"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Broker listo dentro de intentos?",
+        "Fallo: limpiar"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "fallo",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Crear orders.v1, una partición"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Publicar dos eventos, misma clave"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "projection-v1 lee ambos registros"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "audit-v1 lee ambos registros"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Reproducir partición 0, offset 0"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Eliminar contenedor y datos"
+      ]
+    }
+  ]
+}

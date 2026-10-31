@@ -1,0 +1,50 @@
+{
+  "key": "2023-09-08-springboot3-migration",
+  "language": "zh-CN",
+  "title": "Boot 3 迁移检查",
+  "description": "本文建议的迁移检查顺序。命令检查环境，不自动迁移应用或数据库。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "建立通过测试的 2.7 基线",
+        "记录测试与运行设置"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "检查 JDK 与 Gradle 执行",
+        "准备 Java 17 基线"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "审查 Java EE → Jakarta",
+        "保留 Java SE javax API"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "对齐依赖与处理器",
+        "编译并执行查询"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "审查属性和安全行为",
+        "移除临时迁移工具"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "测试应用行为",
+        "再评估后续运行时选项"
+      ]
+    }
+  ]
+}

@@ -580,7 +580,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-055/ru/2021-07-20-pair-delete.md",
-        "sha256": "4e51ea7ab9601c7f3c839c5dc80a83e86d1f5362ad3b7fda504ba036524ec1b9"
+        "sha256": "c767a5494dc8e572c100c1bf1e0f7de3eb8b9161dccdecba04e69947875619b7"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-055/ru/2021-07-20-pair-delete.diagram.json",

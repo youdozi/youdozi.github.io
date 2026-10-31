@@ -1,0 +1,888 @@
+{
+  "reviewType": "fresh-context AI translation review; initial read-only pass",
+  "reviewer": "/root/review125_zh_ja",
+  "createdAt": "2026-10-31T15:31:53.672459+00:00",
+  "scope": {
+    "languages": [
+      "zh-CN",
+      "ja"
+    ],
+    "topicsPerLanguage": 21,
+    "manuscripts": 42,
+    "diagramJSON": 42,
+    "SVG": 44,
+    "targetOnlyPass": "All complete manuscript prose, titles, descriptions, tables, captions and alt text read first; no source-dependent assumptions in the fluency pass.",
+    "sourceComparison": "All 21 full English manuscript prose scopes compared with both target texts, including conditions, negations, quantities, dates/versions, guarantees/limits, tables, commands, links, historical execution statements; all 42 diagram definitions and all 44 SVG text inventories compared with source labels and branches. Authored prompt fences manually compared in full.",
+    "protectedCode": "168 total target fences compared; byte-identical to source except AI-refactoring authored prompts indices 0,4,5 and AI-operations index 2. These allowed exceptions manually reviewed in full. Inline literal inventories identical (only valid language-driven reorderings).",
+    "structuralChecks": "All 42 sourceSha256 declarations match English files; link destination order matches; diagram step counts/kinds/branch existence/outcomes match source; rendered SVG text inventory matches every diagram JSON."
+  },
+  "status": "changes_requested",
+  "languageResults": {
+    "zh-CN": {
+      "reviewedAll21": true,
+      "findings": 0,
+      "result": "No actionable translation defect identified in reviewed scope."
+    },
+    "ja": {
+      "reviewedAll21": true,
+      "findings": 5,
+      "result": "Correct listed terminology/localization findings then perform focused recheck."
+    }
+  },
+  "findings": [
+    {
+      "id": "JA-TRANS-OPS",
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-operations.md",
+      "location": "line 34",
+      "briefSourceQuote": "query counts, transaction boundaries",
+      "targetQuote": "query 数、取引境界",
+      "reason": "取引 means a commercial deal; the source refers to database transaction boundaries. Use the established technical term consistently.",
+      "suggestedFix": "取引境界 → トランザクション境界",
+      "severity": "moderate",
+      "confidence": "high",
+      "category": "terminology"
+    },
+    {
+      "id": "JA-TRANS-REFACTOR",
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-refactoring.md",
+      "location": "line 171",
+      "briefSourceQuote": "DB queries and transaction boundaries",
+      "targetQuote": "DB 問合せと取引境界",
+      "reason": "The translation substitutes a commercial-deal term for the technical database transaction concept.",
+      "suggestedFix": "DB 問合せとトランザクション境界",
+      "severity": "moderate",
+      "confidence": "high",
+      "category": "terminology"
+    },
+    {
+      "id": "JA-TRANS-KAFKA",
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-kafka-event-streaming.md",
+      "location": "lines 132 and 138",
+      "briefSourceQuote": "Kafka transactions; in the same transaction; into one transaction",
+      "targetQuote": "Kafka 取引; 同一取引; 一取引",
+      "reason": "The source means atomic Kafka/DB transactions, not commercial transactions; the article already uses トランザクション correctly elsewhere.",
+      "suggestedFix": "Kafka トランザクション; 同一トランザクション; 一つのトランザクション",
+      "severity": "moderate",
+      "confidence": "high",
+      "category": "terminology"
+    },
+    {
+      "id": "JA-QUEUE",
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-failure-fallback.md",
+      "location": "line 21, recommendation API table row",
+      "briefSourceQuote": "Do not put core product reads in the same queue",
+      "targetQuote": "商品読取の中核を同じ列に入れない",
+      "reason": "列 is a row/column or line and does not clearly identify the shared work queue whose resource coupling matters here.",
+      "suggestedFix": "中核となる商品読取を同じキューに入れない",
+      "severity": "moderate",
+      "confidence": "high",
+      "category": "localization"
+    },
+    {
+      "id": "JA-ADMISSION",
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-failure-fallback.diagram.json",
+      "location": "description; same text in 2026-10-31-failure-fallback.svg desc",
+      "briefSourceQuote": "Admission, primary read, failure classification and snapshot age policy.",
+      "targetQuote": "准入、主系読取、障害分類、snapshot 鮮度方針です。",
+      "reason": "准入 is Chinese intrusion rather than natural Japanese for request admission control; also affects SVG accessible description.",
+      "suggestedFix": "受付制限、主系読取、障害分類、スナップショットの鮮度方針です。取得した許可は終了時に解放します。",
+      "severity": "minor",
+      "confidence": "high",
+      "category": "localization"
+    }
+  ],
+  "reviewedFiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2021-07-23-multiple-gradle-build.diagram.json",
+      "sha256": "5fc31f115f774736e5d4bcacd64dc8fdb48a3a9357b9b27046c7ab5036f8ca11",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2021-07-23-multiple-gradle-build.md",
+      "sha256": "7a707a58dc42919f1a1012976057d4592403796320113314445f4860a1167c4a",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2021-07-23-multiple-gradle-build.svg",
+      "sha256": "038a4c86dbb15e665fd4b129d59180b65e098a3921ad54ae990c4b7faf8a51d0",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-04-jekyll-install.diagram.json",
+      "sha256": "54ef79754ad6a74b599ac3c0dffde5266e1fd44ee1db7972f42f96c98b15e85a",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-04-jekyll-install.md",
+      "sha256": "2dc99cc5580e8e431a99da29c794ae9057bccf34687523b29f2721c5ce1742e0",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-04-jekyll-install.svg",
+      "sha256": "17b6428da971da8969613a2f8744437d33b4c21b1f79ffea998b6bd955c99fc0",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-05-querydsl-no-release.diagram.json",
+      "sha256": "5613acf0f4350d95e9a7af6f517737d434120f98531dfa49c7a6d1c02eb2c73f",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-05-querydsl-no-release.md",
+      "sha256": "8a48e6ed90a3fe8ee307860284c467c3af9763ed4b7fdd826770a100dee99108",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-05-querydsl-no-release.svg",
+      "sha256": "a6b5313b932cab466b5a2c6a76d55d75518d9091745dafd50457acfa271dfe35",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-07-springboot-initializer.diagram.json",
+      "sha256": "6e4f9ea86db8382ed12ec0a8398a1e2b18b0118563481a0b41e4d921e01c68b5",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-07-springboot-initializer.md",
+      "sha256": "09ba18393cbf0040b28f7adc82be8ecfde58dc358232bfd67c872fba77d483d4",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-07-springboot-initializer.svg",
+      "sha256": "7935a0107bc01d0a8b9ed69de17b51015b8597d2b01be074421912aebe6fe20b",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-08-springboot3-migration.diagram.json",
+      "sha256": "dbce6a53242935ec2a65a145023f4874c5e98c00a9ad097f8568ff13aee7aa14",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-08-springboot3-migration.md",
+      "sha256": "303ede0f7b2375c8b4dca43138a6781bf402f1b9c571ac1adc00c9abb3c216d8",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-08-springboot3-migration.svg",
+      "sha256": "7dd40ce4d7621f56a014d004bfa9ae0730692e1f8c8227261b7e9b216adc39db",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-09-springboot3-querydsl.diagram.json",
+      "sha256": "c0e8c6ccb4d9438be1178f9d2d1b884a006909141fa35618c0d6517e1cb64d66",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-09-springboot3-querydsl.md",
+      "sha256": "8e22d456d887cbe38c99d10ec298903dacdd7eaecd1f4aadc278b08d6f157339",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-09-springboot3-querydsl.svg",
+      "sha256": "4c165234aeff555b2d69cb0ca4319d31cf45c1ac987f4820beb2eb159c4af962",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-10-springboot-intellij-import.diagram.json",
+      "sha256": "4d6d8ab87104ecbb76c8b80e9d71b015dbb6c5f6a75f8d0b1e429d949f1fe0ba",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-10-springboot-intellij-import.md",
+      "sha256": "4f8d35e0721252ac70459ee7a29ed097a48b0fb7c58e276980538c6193224034",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-10-springboot-intellij-import.svg",
+      "sha256": "01a012de46b55e53da046a3a8d9bff0fa85dba40d93ea5c885e2e07929c74fe4",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-13-springboot-history.diagram.json",
+      "sha256": "202dd3920eb9d8467feb60a1ad74bfa6f2fdd5cee2903a3f0237684789f48b8b",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-13-springboot-history.md",
+      "sha256": "ec52615443a2849a1ae11b8937814b498acf83d6b16a737790c7f764f0e70887",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-13-springboot-history.svg",
+      "sha256": "f13b1dacf7ed147c08261d8efb1d3fd050cef29abaa425310d76a4b335a2607d",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-15-springboot-intellij-lombok.diagram.json",
+      "sha256": "811ab63328218514f56ac2e2d1d35a243b628d258f591318e52bc59d534777d0",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "b0ba13a31bdc550cf9e6090a6f270682b55b99d9385019a70f9e93f64dd1bc1b",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-15-springboot-intellij-lombok.svg",
+      "sha256": "ffa2f05114d59e20136637944dfd572cefab1d40293086cacf676d7c37fa1fac",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-19-springboot-test-webclient.diagram.json",
+      "sha256": "3a2179f633082f608426feb763642f80c79743a400ef5fb93827e5d465eafdf8",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-19-springboot-test-webclient.md",
+      "sha256": "c09948aa62718c0acf862705b34e829813ede998128fb5116d8de4e8ea611f79",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-19-springboot-test-webclient.svg",
+      "sha256": "f9359830e323c9fe3cb434822dc86431920eaab9011322fa54b0bc2af96c4329",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-28-jenkins-docker-install.diagram.json",
+      "sha256": "e9035a658093fd3f6a1cf130edd4fb0b7bf751e5edc4a9056572bcda3509eaad",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-28-jenkins-docker-install.md",
+      "sha256": "e9a838de7f1f1414bb3fa8c6ee651b5d1b26b483c59ada2622791279d67e7e0e",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-28-jenkins-docker-install.svg",
+      "sha256": "d4837cf5a78c4eb8214863acb884fb55808c708510aa042996e0c80198c59218",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-10-27-springbatch5-migration.diagram.json",
+      "sha256": "5189962d0c9ff05a87b3c61f7e2c67632c751a3352225369871d6655a5aabeff",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-10-27-springbatch5-migration.md",
+      "sha256": "1f454dca3c992fe911b5146e9e682a3449bd29e7e8c27f98f4c497c4df548927",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-10-27-springbatch5-migration.svg",
+      "sha256": "f4f80cba0c85f0409ab0d731f3023c11a2c44051d60479b538fc8316cd87d748",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-github-actions-content-pipeline.diagram.json",
+      "sha256": "a47537b97ef768272c20ef0b3ba8d78049cf6507df051ebb725944a95aa9b448",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "1858d5961f8edd0bbbcdafe81b2d15749175895cfdd46971923c1d2467798e99",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-github-actions-content-pipeline.svg",
+      "sha256": "8b337b51f91a102326973a7084b985e4826cecad64d84f2841f2fefcb0114c0a",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.diagram.json",
+      "sha256": "71481748ba7f1df661ea58f526019f79e2a107ef45313a11e1e7fffb52622531",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "54d727c45d5f6916b14af5ee3248649b22067aa85587a88c33976d664774d799",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.svg",
+      "sha256": "f72bfa15be7ca3178aa2b839d33acff89b1936c5e7a7de0e02b1f4fce5be1814",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.diagram.json",
+      "sha256": "5f6cf63238338c240cb5509591bc0e093ebc0bc3064016dea5923e2e18980eaf",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "c174a7ca498ec81e6675ae22313bf439e818598d7ff854bb5f7cb416f872e071",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.svg",
+      "sha256": "08bbd86debbfd6d38d786ca40744a4e72cabf84f285722e7cd52fcbe94db3650",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-27-jenkins-home-backup-restore.diagram.json",
+      "sha256": "7ca4d0a747c7d505fc8e66ec37b78c71d53feaa43a6a0a5e25caa89f5ddffad4",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "a154f7726d113aad4061e0bd02f607926a1f808fba7b35f3654fa547a90f4e12",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-27-jenkins-home-backup-restore.svg",
+      "sha256": "026898e3d2eec64c61e599fdfa43971dc8363261a684c402ca1640558a6fe7af",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-operations-architecture.svg",
+      "sha256": "566e82a12362cb0212cf251c66ddab0e26c6e551bfdf338c0085bffbcdfd08e2",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-operations.diagram.json",
+      "sha256": "a95c715d5ad94f96ee681bd44b1a8c9ea8f3f9d1010d6ab508e4366d191c7c5a",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-operations.md",
+      "sha256": "72d977b83c2194b7355df7db71178c13617d6d078cb114daa9b3ea59b1d4bd3f",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-operations.svg",
+      "sha256": "ec585f20a2f37609e7fd899b8e536658eb1071e5fba784c4f2cf68c54d70c73e",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-refactoring.diagram.json",
+      "sha256": "82cc4073db945749914b32b5b35d40fd43fdbe1345dadab9d48d2ac3a16e6a88",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "808ccbe7248bff4f9e9f5866403f1a923a82a40df07915f31b342fe6e0400b67",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-refactoring.svg",
+      "sha256": "2ec278d0d7d48c8c351c6194fb83b5830e543f1ba8d7108a3f28203862bbc4e0",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-cache-aside.diagram.json",
+      "sha256": "72c61377a86fe2146af213844bdc8bc0ce43a41dbe332c2f5504d0412a7c4c90",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-cache-aside.md",
+      "sha256": "0676c4dd9408b27050fa3aa6836b4556b67569415e09501aef64e3270ceb03ed",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-cache-aside.svg",
+      "sha256": "7af6e2d7216d34eec7b3d8a1ef989596aa4a906b523d263a065b0058c5a522be",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-failure-fallback.diagram.json",
+      "sha256": "75a9f9cdffee4765b499dc2eec8995b03b7495f51195993f111be88a1717dfe9",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-failure-fallback.md",
+      "sha256": "9039ebf0d680cc86fdc8091d89c59f9096a1c1369234a24df525db950ed93ecf",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-failure-fallback.svg",
+      "sha256": "26c1cb2bf306f848f2b68e1518ce981533994d46969aaeadc871a2448afe6875",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-kafka-event-streaming.diagram.json",
+      "sha256": "329a14dedcae1517a905dd314c72b39cfffb8359c1b5f304451dc8e3798ef176",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-kafka-event-streaming.md",
+      "sha256": "db1096d72b7b6477946012e7422e3a799e6f851584b339c85789091b80398a09",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-kafka-event-streaming.svg",
+      "sha256": "741eab4d4245094c2bc9342844eeba3228381e5e6920c5c58886b738060de734",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2021-07-23-multiple-gradle-build.diagram.json",
+      "sha256": "526ea991b2a403a563485ea11dedd65029a1462ab95b124cf6f4ef4721115dac",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2021-07-23-multiple-gradle-build.md",
+      "sha256": "1d40efa942ecdcf9c596231a7253810fd8af8638bb5ba9349f225b3d072812d7",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2021-07-23-multiple-gradle-build.svg",
+      "sha256": "56df1c91c15980814deb2fe2d3497f8f98a3d421b8f6c17df299b8907a8bd482",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-04-jekyll-install.diagram.json",
+      "sha256": "f88269f2074ce361fce0ee0c2c460032449a7dc4d5213cf14929f1b840ec3b20",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-04-jekyll-install.md",
+      "sha256": "e2ddacb54440e87040bf45a3b344453a252fe14134698809bc17167d3874fc42",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-04-jekyll-install.svg",
+      "sha256": "6b0a0539b930d0449d4f03b56f4ad8c64a8a670d30658964a979154540f18076",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-05-querydsl-no-release.diagram.json",
+      "sha256": "96b4ffde0373c7e87a307c266e436ab471cff56bbfdeae39a2f6864799fea66d",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-05-querydsl-no-release.md",
+      "sha256": "4368197efa92018b5966676e4c71a7abc1a3e3f615c5f635cdcabb8c6d4da0eb",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-05-querydsl-no-release.svg",
+      "sha256": "6547a3412213ccc7709015de6fe3fa0c89708ac338ff60b177783bda47672661",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-07-springboot-initializer.diagram.json",
+      "sha256": "05511f93f68ba4b319995eec6c8c1ccab55293c79ddfc14de35ddd11a17b2749",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-07-springboot-initializer.md",
+      "sha256": "1949e36c36428aad5407162ae219432807b7bc94e36168a06ac8c33c4a4b04d5",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-07-springboot-initializer.svg",
+      "sha256": "4cfa1dd9c9b09d012876995a484d8b560cf92c79dbe4a76916c0a8d3e0397399",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-08-springboot3-migration.diagram.json",
+      "sha256": "5bf41cfe1a361afd88827ad7f9781afbf0db0751d85e33004763a6ccea655611",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-08-springboot3-migration.md",
+      "sha256": "3f03a1653c7d388c8b9f3c3305ccc2068c8bf31aeef77e9b6ed16f408113cf91",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-08-springboot3-migration.svg",
+      "sha256": "5b297cccd79835fb309a2e9364f925ec9642576f53341ef3d85dfae88dd89ba7",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-09-springboot3-querydsl.diagram.json",
+      "sha256": "7f5687067366e858ec2d621fdf5f5a68055d8868cc897328cea6f24661767d83",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-09-springboot3-querydsl.md",
+      "sha256": "7bc73038e32fd8a9b7c649dbbffe1bb49b465c60e6d4186feabd58e298fe48ca",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-09-springboot3-querydsl.svg",
+      "sha256": "ccccbc3d790baccc2b2f6fb023e78b961261a775db7e011283c2510e7d4ad6a1",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-10-springboot-intellij-import.diagram.json",
+      "sha256": "5d525da49cda900978b033499181d0b83775ef90c79df9ac230a6e29a0b4663c",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-10-springboot-intellij-import.md",
+      "sha256": "cb38bb606ec4e270e2b4fb15f3357aae0eb1fe42879cba8eabb71718973712ad",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-10-springboot-intellij-import.svg",
+      "sha256": "406b3338f2f1788b0fd2e282a99554993090cb986e6a3b0a163e10b6348373fc",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-13-springboot-history.diagram.json",
+      "sha256": "7d35e3ef93328c11dbf82c24ede3b3f65c791544af5180495b5cf3ccdaedd2fc",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-13-springboot-history.md",
+      "sha256": "95f0f87e56134e312322b0c843b6636b810580ffeaf2246d66fd339e09695aca",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-13-springboot-history.svg",
+      "sha256": "7523472f9ec4cbf7737905f04a4b39f1566c64ca22ddabea2d5a7d547d6cfa3e",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-15-springboot-intellij-lombok.diagram.json",
+      "sha256": "1b13ae06a1d4e29e8e9a44a25f0757904617458b32d007d7b19eb42e22baa0df",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "c4f3f5deaf1fe449c881d82789e81877fe0dee785ad164a3c5cbd4bc2d56046e",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-15-springboot-intellij-lombok.svg",
+      "sha256": "c3c0e13c1bd42e26fdc7cf1d73525897164a546449a984ce46b8e4f9cafa8126",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-19-springboot-test-webclient.diagram.json",
+      "sha256": "070a0d3a5fe35757f358ceef6d5f8b3b31fd6679eb42bcd01a092d65a45e9e80",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-19-springboot-test-webclient.md",
+      "sha256": "761915fb81fde062f116024ab9bf8f5d1b42f487ba1e286a830e0096ff7b84f3",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-19-springboot-test-webclient.svg",
+      "sha256": "bc266985b3da4ee06344b128763987c88f829c3876b2ac97692fe7861a4a594a",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-28-jenkins-docker-install.diagram.json",
+      "sha256": "eed2b3a810ae614f8c5cad80243e532f3828b5a6f63a42203a1384099241fc51",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-28-jenkins-docker-install.md",
+      "sha256": "7927722419d5a545b80330ef1bec576b934b3f8af6d3787bbe36ec304e4b6d0e",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-09-28-jenkins-docker-install.svg",
+      "sha256": "021cc31d2938a9bec443c78768e94c59f3ae4a78db4333dc878adcbec763668d",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-10-27-springbatch5-migration.diagram.json",
+      "sha256": "7eef8dc4557247694de322112dcfdb0dd966f8b586dc00e78996faf38998a078",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-10-27-springbatch5-migration.md",
+      "sha256": "d571b028238562b7c32a30c45d762374c30b1baa1bfa835a9cc78e034490f2da",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2023-10-27-springbatch5-migration.svg",
+      "sha256": "9ef7a1542a0ca656a0b0c2f73d00101227eb6f5f0dbe24a9d9e010466566880f",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-github-actions-content-pipeline.diagram.json",
+      "sha256": "dda963e2be6fbc88e04fa3276a4147b0a1269a3d3d542e76d78bc54ea9fed647",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "cb52e9c8a07d2058002c1f1b8795ebacead290f38026f1c4e24b38c6c7f814fe",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-github-actions-content-pipeline.svg",
+      "sha256": "1526cf4cec49b4563881b392da8f82eac720909db0a8989afe3395c02c208583",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.diagram.json",
+      "sha256": "7dede84af05e3e0908d690162039962cbb4adf67fd0458ae55ac95e3cb0f5a46",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "3278ec8bd6293a8379e19d215a9c501aaca1a1051e1e7f0bb5987046cce7760b",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.svg",
+      "sha256": "3af7d8cedba2b3d688bdc09da65549258ef4625640b3ebfffe79939abd2561c3",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.diagram.json",
+      "sha256": "952abd1744f6dce5de58ef9c2078bceab48900aae37414607bb9903892771329",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "e471d4b8427a4b866a47d665bebe3052b3d89277f025710fde5615aed52ae61e",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.svg",
+      "sha256": "93f5178872024439c1a8731a2616c22eb927a48e37c2bd65aab9cd3f6c86defd",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-27-jenkins-home-backup-restore.diagram.json",
+      "sha256": "3448168b2f1001ada58e60bb7bdac6ef3faf790fc5bd91d69182b54897693b91",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "3833ffc0155943a14f5830030a28cd9db19eb0a20d770a82c3cf98f1552497dd",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-27-jenkins-home-backup-restore.svg",
+      "sha256": "8ecb2ce48b14dd6f1bea8e5695ed1d582b892fc154ff2bd1eb347e1967a00e4b",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-operations-architecture.svg",
+      "sha256": "4efd169a885d7f6788ce928196b6892bae2f7e085576980e52383e6ad39ba421",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-operations.diagram.json",
+      "sha256": "a1ff74a7e6d34a3aa4e6dc5bbb47ef54b8f498abe02a677187b33f51b5704c8a",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-operations.md",
+      "sha256": "c6550c82bb21fd007f2c365b5dc95a4a187f38d5b7888a1781cdd7a6e8f6ac94",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-operations.svg",
+      "sha256": "32e36871aea2c9893fc1c353428a57e54e52c2d98c59def7c49ac10b98e8aad3",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-refactoring.diagram.json",
+      "sha256": "bc366246022255049d26cb755379003227d8dfa8fe9b41a45b99894ecfc92b17",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "94f74b353af6e195d77a44b138405309989130f838d0df76d5e22faefef898fc",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-refactoring.svg",
+      "sha256": "7afa36d9e9b441591915a285f00e1a2939494b293775969caa2d68fb6b813c2c",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-cache-aside.diagram.json",
+      "sha256": "1eed2125244e88668ba63fdbd00a68dd3b8a1a0f20b508ab33c9da1fd41c9566",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-cache-aside.md",
+      "sha256": "0e192a977b9ea38cd42cc7c234c243dc4227a946352e752e56b37e47e913fcae",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-cache-aside.svg",
+      "sha256": "6aff88f29bcc454393d8f61407acfbbd4de7452648b6ddba4e678a69568c0fb8",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-failure-fallback.diagram.json",
+      "sha256": "e1f944894ff49d2e01c33230ae13c8ffb9fb915d21926903fd013f858b9140f0",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-failure-fallback.md",
+      "sha256": "4a28285bec3895036bd635b58b778df095da7c27c297fcbaa77b4b032b5920d3",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-failure-fallback.svg",
+      "sha256": "3fae5b4b13b1e95def4d85168fe1cd0580c7a2017c5e69cc138e2f9517945552",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-kafka-event-streaming.diagram.json",
+      "sha256": "c1bfa1df3099baa8d7b42afd1f430878fbc9b89600637043039d00de75fadc8e",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-kafka-event-streaming.md",
+      "sha256": "3410717716d06f0ac1e08f2c9075a99f82f7de2912997ff467a901b6147a315c",
+      "role": "translation"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-kafka-event-streaming.svg",
+      "sha256": "8c6e81c6e7af7c1f0e2c72c3174bd9dceeb904f4fc9516bac7d83a436d2cbfbd",
+      "role": "translation"
+    },
+    {
+      "path": "assets/img/architecture/ai-agent-operations-overview-en.svg",
+      "sha256": "45ae8fd23f363870d0b1b17046e62e447e7655dea94d9c7e39b0113c76734ff4",
+      "role": "source"
+    },
+    {
+      "path": "content/diagrams/algorithms.json",
+      "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2",
+      "role": "source"
+    },
+    {
+      "path": "content/diagrams/jenkins.json",
+      "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784",
+      "role": "source"
+    },
+    {
+      "path": "content/diagrams/publication.json",
+      "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143",
+      "role": "source"
+    },
+    {
+      "path": "content/diagrams/query-strategies.json",
+      "sha256": "c4e231fd5d357ca060889f607aeb4291f73eb9ff3b665ea2414a10a9034f3ef6",
+      "role": "source"
+    },
+    {
+      "path": "content/diagrams/ruby-environment.json",
+      "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b",
+      "role": "source"
+    },
+    {
+      "path": "content/diagrams/technical-125.json",
+      "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b",
+      "role": "source"
+    },
+    {
+      "path": "content/diagrams/workflows.json",
+      "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
+      "sha256": "2af4402a72130c6c53faa9d34008be0c7bc63b78b82a680f5675bdd70532ec4d",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-04-jekyll-install.md",
+      "sha256": "0dbe6c1bad26411bc78aabc17773da808b4c74fe9cdc098a9bada2cfb2873e08",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-05-querydsl-no-release.md",
+      "sha256": "23fe3b60bb4735a72a59a7bcc0dfabd76d68df0af84bdd636d79f15699cfc798",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-07-springboot-initializer.md",
+      "sha256": "97a876012a6c3d2dbf40856ed6360dc850f12741aecbd5ee7bd96023fb05275f",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-08-springboot3-migration.md",
+      "sha256": "4939fec22f416da9344b529b0e428c91a700920a27c10fdba00bdfd32e8a53a7",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-09-springboot3-querydsl.md",
+      "sha256": "17f0353d5a048f80291207543b7abbb29e1d987ab0435009b82a4e1c16a7d953",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-10-springboot-intellij-import.md",
+      "sha256": "5b3c970364e92d3672967197986ea67769f45094ca27f6c9f8bfbd0779645bc2",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-13-springboot-history.md",
+      "sha256": "8f97cfe96eb4ed1a36dae63a187c6f28960c327ff6cba276c45537a1e7745da2",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "9fe45995bdaea610316410d2b79746c008656c5d20256f9de7d66bc47499dda1",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+      "sha256": "f0a277b8719dc886c37dd8cbeb15f1e68228dce2f44d7fac53a97fee9cb5f885",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+      "sha256": "ed131abbe5537f6f1828891ac35483b44e96395c554a52b53f5c1ab6c4ff895e",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+      "sha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "12226531a63ffece862798351d0562f1f29cc2b14f9731dad4dd5fece0e77637",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "f5c09678ab191654be64bc9fd457df828066c7f199625a6b32c5d94a02200363",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "b186e8b9ffc0b623a12d82e49d3428adc274669397a7a207f235d80673b0759a",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "f6fcbb37f82b9829ef3535f5fee0b0fdf0b7b0ebe4e8b4f96bb3f2ff104a59b4",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-ai-agent-operations.md",
+      "sha256": "671fc15fe228c1e812d5ae95a16d5092a66fbbf55edf53f21c353c91c91e796f",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "efd733fd275675221deef4ebffa545ba2f54a6819e72fed217917d6708e3e4b9",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-cache-aside.md",
+      "sha256": "2c4422c55f14e7b5452f8b286bf5d6f986617fe624e229b7bd74462afe525ad9",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-failure-fallback.md",
+      "sha256": "93196b5c0ce64194996df961642c87053d74ea5be5c63b2b776cdd598dc7effd",
+      "role": "source"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-kafka-event-streaming.md",
+      "sha256": "b5cac22382f44d1bdada1b264df07a6f746ee31761c0268ef2313e7f86eee118",
+      "role": "source"
+    }
+  ],
+  "limitations": [
+    "This is AI review, not native-speaker or human review and not different-model consensus.",
+    "Runnable code/output fidelity was checked by byte comparison with English source; examples were not re-executed in this review. Historical execution claims remain translations of the source, not new live tests.",
+    "SVG XML/text/accessibility descriptions and source branch structure were inspected; browser rendering, clipping, layout and deployment were not tested by this reviewer.",
+    "External destinations were preserved but not fetched; source technical claims and current external product state were not independently re-researched.",
+    "English source itself contains the protected inline literal (처리기 ID, eventId); it was intentionally preserved and not counted as introduced Korean contamination."
+  ]
+}

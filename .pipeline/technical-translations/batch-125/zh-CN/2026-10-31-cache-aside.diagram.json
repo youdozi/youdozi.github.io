@@ -1,0 +1,66 @@
+{
+  "key": "2026-10-31-cache-aside",
+  "language": "zh-CN",
+  "title": "Cache-Aside 读取流程",
+  "description": "查条目和 TTL，未命中则加载，仅存成功结果，执行容量限制并返回。加载失败传播异常，不保存。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "查键并读取计时器"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "条目存在且经过时间 < TTL？"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "缓存值",
+        "continue": "否"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "移除旧条目"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "loader.apply(key)：读源站"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "成功且结果非 null？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "传播异常",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "保存值与完成时间"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "超出容量？逐出一个 LRU"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "返回加载值"
+      ]
+    }
+  ]
+}

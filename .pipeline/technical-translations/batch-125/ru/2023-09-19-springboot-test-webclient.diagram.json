@@ -1,0 +1,54 @@
+{
+  "key": "2023-09-19-springboot-test-webclient",
+  "language": "ru",
+  "title": "Проверка HTTP-ответа",
+  "description": "Клиент проверяет статус до формата, освобождает отвергнутые тела и декодирует JSON. StepVerifier проверяет значения и завершение либо ошибку.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Подготовить локальный mock-ответ",
+        "Подписаться на запрос клиента"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Ошибочный HTTP-статус?",
+        "Да: исключение и завершение"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Да",
+        "continue": "Нет"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "application/json или",
+        "application/*+json?",
+        "Иное: освободить тело и ошибка"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Другой",
+        "continue": "JSON"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Допустимый тип: читать Payload",
+        "Пустое или некорректное тело"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Проверить значения и завершение",
+        "Метод, путь и Accept"
+      ]
+    }
+  ]
+}

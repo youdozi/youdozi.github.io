@@ -1,0 +1,45 @@
+{
+  "key": "2026-10-31-ai-agent-refactoring",
+  "language": "es",
+  "title": "Cálculo de envío",
+  "description": "Leer subtotal, miembro y región, rechazar negativos, calcular base y recargo y devolver suma.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Leer subtotal, miembro y región"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Subtotal no negativo?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "mismo error",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "¿Miembro o subtotal >= 50,000?",
+        "Base: 0; si no, 3,000"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "¿Zona remota? Añadir 3,000",
+        "Si no, recargo 0"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Devolver base + recargo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "key": "2023-09-28-jenkins-docker-install",
+  "language": "de",
+  "title": "Jenkins temporär prüfen",
+  "description": "Das Skript prüft ausgewählte HTTP- und Volume-Verträge und entfernt danach eigene Laborressourcen. Einrichtungsabschluss und Jobausführung liegen außerhalb seines Umfangs.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Image laden und Digest auflösen",
+        "Neues benanntes Home-Volume erstellen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Auf einem Loopback-Host-Port starten"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Login-HTTP innerhalb 180s bereit?"
+      ],
+      "branch": {
+        "exit": "Nein: Fehler",
+        "continue": "Ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Passwort ohne Ausgabe erfassen",
+        "Markierung schreiben; Container ersetzen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Markierung und Passwort unverändert?"
+      ],
+      "branch": {
+        "exit": "Nein: Fehler",
+        "continue": "Ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Ergebnis und Image-Digest melden",
+        "Alle eigenen Laborressourcen löschen"
+      ]
+    }
+  ]
+}

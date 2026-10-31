@@ -1,0 +1,50 @@
+{
+  "key": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+  "language": "de",
+  "title": "Laufzeit und Compiler prüfen",
+  "description": "Das Ruby-Skript vergleicht die Compilerkonfiguration und baut ein temporäres C++-Programm. Ein bestandener Test belegt nicht die Kompilierung nativer Gems.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Ruby-Start und RbConfig prüfen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Compiler für den Test wählen",
+        "Befehlsgebundene Flags einlesen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Temporäres C++17 kompiliert?"
+      ],
+      "branch": {
+        "exit": "Nein: Stopp",
+        "continue": "Ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Ausführung erfolgreich, Ausgabe 42?"
+      ],
+      "branch": {
+        "exit": "Nein: Stopp",
+        "continue": "Ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Prüfergebnis melden",
+        "Zum Gem-Build-Log zurückkehren"
+      ]
+    }
+  ]
+}

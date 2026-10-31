@@ -1,0 +1,61 @@
+{
+  "key": "2026-10-31-kafka-event-streaming",
+  "language": "ja",
+  "title": "Kafka group と再読込",
+  "description": "一時 broker/topic を作り二イベントを発行し、二 group 消費と直接再読後に削除します。失敗時は停止、削除します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "一時 broker を起動"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "試行内に broker は準備？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "失敗・削除",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "一区画の orders.v1 を作る"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "同 key の二イベントを発行"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "projection-v1 で両方読む"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "audit-v1 で両方読む"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "partition 0、offset 0 から再読"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "demo container と data を削除"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-07-springboot-initializer",
+  "language": "ru",
+  "title": "Создать, проверить, тестировать",
+  "description": "Сначала создайте полный архив, затем запускайте Wrapper. Контекстный тест и отдельно запущенное HTTP-приложение подтверждают разное.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Совместимые Boot, JDK, Gradle"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Создать и распаковать архив",
+        "Сохранить файлы Gradle Wrapper"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Проверить build.gradle, toolchain",
+        "Выполнить ./gradlew --version"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Выполнить ./gradlew test",
+        "Проверить создание контекста"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Отдельный запуск bootRun",
+        "Без контроллера: / может дать 404"
+      ]
+    }
+  ]
+}

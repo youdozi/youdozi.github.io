@@ -1,0 +1,45 @@
+{
+  "key": "2026-10-31-ai-agent-refactoring",
+  "language": "zh-CN",
+  "title": "重构后的运费计算",
+  "description": "读小计、会员和地区，拒绝负金额，计算基础运费与偏远附加费并返回合计。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "读取小计、会员与地区"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "小计非负？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "同一异常",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "会员或小计 >= 50,000？",
+        "基础 0，否则 3,000"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "偏远地区？追加 3,000",
+        "否则附加费 0"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "返回基础运费 + 附加费"
+      ]
+    }
+  ]
+}

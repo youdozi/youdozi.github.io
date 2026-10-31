@@ -1,0 +1,66 @@
+{
+  "key": "2026-10-31-ai-agent-operations",
+  "language": "es",
+  "title": "Preparación de evidencia",
+  "description": "Comprobar cobertura, forma, identidad, edad, fallos y desconocidos. No autoriza ejecutar.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Evidencia, destino fiable y ahora"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Exactamente las seis",
+        "áreas requeridas?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Forma, identidad y tiempo válidos?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Alguna señal válida fail?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "STOP",
+        "continue": "no"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Alguna señal desconocida?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "no"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Devolver READY_FOR_REVIEW",
+        "Listo para revisar, no ejecutar"
+      ]
+    }
+  ]
+}

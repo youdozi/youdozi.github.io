@@ -1,0 +1,49 @@
+{
+  "key": "2023-10-27-springbatch5-migration",
+  "language": "zh-CN",
+  "title": "重启失败的 v5 实例",
+  "description": "新模式上的 v5 重启测试，不是 v4 数据库迁移。同实例再执行只重跑失败步骤，完成步骤保持完成。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "新建 H2 Batch 5 模式",
+        "构建标识性作业参数"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "启动作业：步骤 1 完成"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "步骤 2 失败一次",
+        "执行状态为 FAILED"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "用相同参数启动",
+        "同实例，新执行"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "跳过已完成步骤 1",
+        "重跑步骤 2 → COMPLETED"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "断言步骤次数为 1、2",
+        "不保证 JVM 重启恢复"
+      ]
+    }
+  ]
+}

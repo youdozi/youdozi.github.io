@@ -1,0 +1,45 @@
+{
+  "key": "2026-10-31-ai-agent-refactoring",
+  "language": "fr",
+  "title": "Frais d’expédition refactorisés",
+  "description": "Lire sous-total, adhésion et région, refuser les montants négatifs, calculer frais de base et supplément, puis retourner leur somme.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Lire sous-total, membre et région"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Le sous-total est-il non négatif ?"
+      ],
+      "branch": {
+        "exit": "même erreur",
+        "continue": "oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Membre ou sous-total >= 50 000 ?",
+        "Base : 0 ; sinon 3 000"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Zone éloignée ? Ajouter 3 000",
+        "Sinon le supplément est 0"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Retourner base + supplément"
+      ]
+    }
+  ]
+}

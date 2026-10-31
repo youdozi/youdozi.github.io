@@ -1,0 +1,62 @@
+{
+  "key": "2026-10-31-kafka-event-streaming",
+  "language": "de",
+  "title": "Kafka-Gruppen und Replay",
+  "description": "Temporären Broker und Topic erstellen, zwei Ereignisse veröffentlichen, mit zwei Gruppen lesen, direkt erneut lesen und Container entfernen. Bei Befehlsfehler stoppen und bereinigen.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Temporären Broker starten"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Broker innerhalb der Versuche bereit?",
+        "Bei Fehler: aufräumen"
+      ],
+      "branch": {
+        "exit": "Fehler",
+        "continue": "ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "orders.v1 mit einer Partition erstellen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Zwei Ereignisse desselben Schlüssels"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "projection-v1 liest beide Einträge"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "audit-v1 liest beide Einträge"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Partition 0 ab Offset 0 erneut lesen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Democontainer und Daten entfernen"
+      ]
+    }
+  ]
+}

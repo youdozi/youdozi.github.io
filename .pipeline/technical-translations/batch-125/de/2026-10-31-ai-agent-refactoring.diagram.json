@@ -1,0 +1,46 @@
+{
+  "key": "2026-10-31-ai-agent-refactoring",
+  "language": "de",
+  "title": "Versandkosten refaktoriert",
+  "description": "Zwischensumme, Mitgliedschaft und Versandgebiet lesen, negative Beträge ablehnen, Basisgebühr und Gebietszuschlag berechnen und die Summe zurückgeben.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Zwischensumme, Mitglied, Gebiet lesen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Ist die Zwischensumme nichtnegativ?",
+        "Sonst: gleicher Fehler"
+      ],
+      "branch": {
+        "exit": "Fehler",
+        "continue": "ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Mitglied oder Summe >= 50.000?",
+        "Basis: 0; andernfalls 3.000"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Abgelegen? 3.000 hinzufügen",
+        "Andernfalls Zuschlag 0"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Basis + Zuschlag zurückgeben"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "key": "2026-10-31-ai-agent-operations",
+  "language": "ru",
+  "title": "Готовность доказательств",
+  "description": "Проверить полноту, форму, идентичность, возраст, ошибки и неизвестность. Не разрешает выполнение.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Доказательства, цель и время"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Ровно шесть нужных областей?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Форма, идентичность, время верны?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Есть валидный сигнал fail?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "STOP",
+        "continue": "нет"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Есть неизвестный сигнал?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "нет"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Вернуть READY_FOR_REVIEW",
+        "Готово к проверке, не выполнению"
+      ]
+    }
+  ]
+}

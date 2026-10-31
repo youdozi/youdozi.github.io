@@ -1,0 +1,50 @@
+{
+  "key": "2023-09-08-springboot3-migration",
+  "language": "de",
+  "title": "Boot-3-Migration prüfen",
+  "description": "Vorgeschlagene Reihenfolge der Migrationsprüfungen. Die Befehle untersuchen die Umgebung und migrieren Anwendung oder Datenbank nicht automatisch.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Funktionierende 2.7-Basis schaffen",
+        "Tests und Laufzeitdaten erfassen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "JDK- und Gradle-Ausführung prüfen",
+        "Java-17-Basis vorbereiten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Java EE → Jakarta prüfen",
+        "Java-SE-javax-APIs beibehalten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Abhängigkeiten/Prozessoren abstimmen",
+        "Kompilieren und Abfragen ausführen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Eigenschaften und Sicherheit prüfen",
+        "Temporären Migrationshelfer entfernen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Anwendungsverhalten testen",
+        "Dann spätere Laufzeitoptionen prüfen"
+      ]
+    }
+  ]
+}

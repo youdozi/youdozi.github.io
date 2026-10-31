@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-07-springboot-initializer",
+  "language": "fr",
+  "title": "Générer, inspecter, tester",
+  "description": "Générez l’archive complète avant d’exécuter son Wrapper. Un test de contexte et une application HTTP exécutée séparément établissent des choses différentes.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Choisir Boot, JDK, Gradle compatibles"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Générer et extraire toute l’archive",
+        "Conserver les fichiers Wrapper"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Inspecter build.gradle et toolchain",
+        "Lancer ./gradlew --version"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lancer ./gradlew test",
+        "Vérifier l’initialisation du contexte"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Lancer bootRun séparément",
+        "Sans contrôleur, / peut donner 404"
+      ]
+    }
+  ]
+}

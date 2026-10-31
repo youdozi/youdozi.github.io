@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-04-jekyll-install",
+  "language": "fr",
+  "title": "Isoler la construction Jekyll",
+  "description": "Le code rend deux pages temporaires dans un ancien bundle déclaré. Il ne construit pas toute l’archive et ne sélectionne pas de version Ruby prise en charge.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Inspecter Ruby et Bundler choisis"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Utiliser un Gemfile de test distinct",
+        "Déclarer Jekyll et le parseur GFM"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Résoudre les dépendances",
+        "Conserver le verrouillage généré"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Construire deux pages temporaires",
+        "Chemins réels et config propre"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Vérifier titre, lien et page cible",
+        "Puis inspecter le vrai site"
+      ]
+    }
+  ]
+}

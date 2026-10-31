@@ -1,0 +1,54 @@
+{
+  "key": "2026-04-07-jekyll-github-actions-content-pipeline",
+  "language": "zh-CN",
+  "title": "从候选到批准发布",
+  "description": "离线示例检查待处理 PR 选择与模拟审核调用。生成、批准、合并和部署是独立的托管或编辑步骤。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "已有匹配的摘要 PR？"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "是：暂停",
+        "continue": "否"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "生成双语候选",
+        "提交前运行本地检查"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "推送候选分支",
+        "验证提交 SHA"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "创建 Draft PR 与预览",
+        "在审核分支触发检查"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "审核事实与语言",
+        "批准后准备好再合并"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "main 工作流检查并部署",
+        "验证公开结果"
+      ]
+    }
+  ]
+}

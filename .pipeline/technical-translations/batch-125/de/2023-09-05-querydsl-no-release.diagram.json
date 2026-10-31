@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-05-querydsl-no-release",
+  "language": "de",
+  "title": "Abfrageverträge vergleichen",
+  "description": "Die Tests legen dieselben Daten an und vergleichen jede Implementierung mit expliziten erwarteten Listen. Ein Ersatz erfordert weitere anwendungsspezifische Fälle.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Fünf Zeilen in H2 anlegen",
+        "Duplikate und null einschließen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Querydsl-/Criteria-Filter bauen",
+        "Gleichheits- und Null-Regeln klären"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Ergebnisse nach Namen sortieren",
+        "Mit Erwartungsliste vergleichen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Acht Vertragsszenarien prüfen",
+        "Q-Typen nach clean neu erzeugen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Dann reale Abfrageformen prüfen",
+        "Tests entscheiden Wechsel nicht"
+      ]
+    }
+  ]
+}

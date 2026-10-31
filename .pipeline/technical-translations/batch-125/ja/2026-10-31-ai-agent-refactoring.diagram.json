@@ -1,0 +1,45 @@
+{
+  "key": "2026-10-31-ai-agent-refactoring",
+  "language": "ja",
+  "title": "リファクタリング後の送料",
+  "description": "小計、会員、地域を読み、負額を拒否し基本送料と加算の合計を返します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "subtotal、member、region を読む"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "subtotal は非負？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "同じ例外",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "会員か subtotal >= 50,000？",
+        "基本 0、その他 3,000"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "遠隔地？3,000 を加算",
+        "その他は加算 0"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "基本送料 + 加算を返す"
+      ]
+    }
+  ]
+}

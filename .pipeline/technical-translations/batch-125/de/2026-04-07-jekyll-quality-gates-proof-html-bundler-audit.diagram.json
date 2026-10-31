@@ -1,0 +1,52 @@
+{
+  "key": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+  "language": "de",
+  "title": "Prüf- und Deployment-Gates",
+  "description": "Das Offline-Beispiel prüft YAML-Verträge und ein begrenztes Richtlinienmodell. Es führt weder die Actions-Engine aus noch deployt es Pages.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Eingabe-Commit-Ref prüfen",
+        "Gemeinsame Validierung ausführen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Build-Abhängigkeit erfolgreich?"
+      ],
+      "branch": {
+        "exit": "Nein: Stopp",
+        "continue": "Ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Main-Ref und zulässiges Ereignis?",
+        "push oder workflow_dispatch"
+      ],
+      "branch": {
+        "exit": "Nein: Ende",
+        "continue": "Ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Geprüftes Pages-Artefakt deployen",
+        "Gehosteter Schritt außerhalb des Modells"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Öffentliche URLs und Sitemap prüfen",
+        "IndexNow separat prüfen"
+      ]
+    }
+  ]
+}

@@ -154,3 +154,22 @@ test('recent batch keeps all supplementary figures private until exact approval,
     await assert.rejects(prepareTechnicalAssets(base),/Pinned file changed/);
   });
 });
+
+test('architecture primary pins protect the English visual and publish both operations diagrams',async()=>{
+  await project(async base=>{
+    const selected='.pipeline/technical-translations/batch-125/manifest.json';
+    const batch=await inspectTechnicalBatch(base,selected);
+    assert.equal(batch.editions.length,126);
+    const operations=batch.editions.filter(e=>e.data.translationKey==='2026-10-31-ai-agent-operations');
+    assert.equal(operations.length,6);
+    for(const edition of operations){
+      assert.equal(edition.additionalDiagrams.length,1);
+      assert.match(edition.body,/\/assets\/diagrams\/technical\/[^)]+-architecture\.svg/);
+      assert.doesNotMatch(edition.body,/\/assets\/img\/architecture\//);
+    }
+    const manifest=JSON.parse(await readFile(join(base,selected),'utf8'));
+    const primary=manifest.editions.find(e=>e.mainVisual).mainVisual;
+    await writeFile(join(base,primary.path),'changed primary SVG');
+    await assert.rejects(inspectTechnicalTranslations(base,selected),/Pinned file changed/);
+  });
+});

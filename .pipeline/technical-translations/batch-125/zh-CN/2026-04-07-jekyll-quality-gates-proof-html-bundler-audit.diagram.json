@@ -1,0 +1,52 @@
+{
+  "key": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+  "language": "zh-CN",
+  "title": "验证与部署关卡",
+  "description": "离线示例检查 YAML 契约和有界策略模型，不执行 Actions 引擎或部署 Pages。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "检查输入提交引用",
+        "运行共享验证"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "构建依赖成功？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "否：停止",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "main 引用与允许事件？",
+        "push 或 workflow_dispatch"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "否：跳过",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "部署检查过的 Pages 产物",
+        "托管步骤，在模型之外"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "检查公开 URL 与站点地图",
+        "单独检查 IndexNow"
+      ]
+    }
+  ]
+}

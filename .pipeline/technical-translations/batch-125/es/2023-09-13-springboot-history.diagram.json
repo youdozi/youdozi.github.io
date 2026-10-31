@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-13-springboot-history",
+  "language": "es",
+  "title": "Versiones reales",
+  "description": "El flujo inspecciona dependencias, no es una cronología. Boot, Framework y Lombok tienen versiones y configuraciones distintas.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Identificar versión Boot"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Revisar gestión de dependencias",
+        "No igualar Boot y Framework"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: spring-core",
+        "Inspeccionar runtimeClasspath"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: lombok",
+        "Revisar annotationProcessor"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Registrar versiones resueltas",
+        "Evaluar su compatibilidad"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-10-springboot-intellij-import",
+  "language": "ja",
+  "title": "ビルドと IDE の失敗を分離",
+  "description": "Wrapper でプロジェクトと IDE 設定を分けます。HTTP テストはランダム、手動 bootRun は設定ポートを使います。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Gradle project の root を開く",
+        "JDK と Wrapper を確認"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Wrapper build が失敗？",
+        "build、依存、source を修正"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Wrapper 成功、IDE 失敗？",
+        "Gradle 再読込と実行設定確認"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "HTTP test で JSON と 404 を確認",
+        "ランダムポートを使う"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "起動して /greeting を要求",
+        "route と設定ポートを確認"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "key": "2021-07-23-multiple-gradle-build",
+  "language": "zh-CN",
+  "title": "将资源构建进 JAR",
+  "description": "各 Vue 应用独立构建，Gradle Sync 只收集这些输出，bootJar 放入独立静态路径。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "提交每个应用的锁文件",
+        "使用固定项目依赖"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "逐应用运行 npm ci",
+        "再运行 npm run build"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Sync 两个 dist 目录",
+        "保留 static/project1 和 project2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "bootJar 依赖收集任务",
+        "复制到 BOOT-INF/classes"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "运行 JAR，访问两个应用路径",
+        "确认提供当前资源包"
+      ]
+    }
+  ]
+}

@@ -156,7 +156,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-058/es/2023-09-20-jdk-21-release.md",
-        "sha256": "c4e01c68634607ef4d5e79ecc88cb867ac3a8cd40246d78c69823482f0f6527f"
+        "sha256": "2abeeb14b2194d824f0b8be6945887e7f64b3fe14ec66267edf1f9847d1d3429"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/es/2023-09-20-jdk-21-release.diagram.json",

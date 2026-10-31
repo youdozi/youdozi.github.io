@@ -1,0 +1,50 @@
+{
+  "key": "2023-09-15-springboot-intellij-lombok",
+  "language": "de",
+  "title": "Lombok zuerst kompilieren",
+  "description": "Generierte Konstruktoren und Getter in Haupt- und Testkompilierung getrennt prüfen. IDE-Erkennung korrigieren, nachdem die Wrapper-Tests bestehen.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "compileOnly + Prozessor ergänzen",
+        "Haupt- und Testbereiche einrichten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Generierten Konstruktor und Getter",
+        "in Hauptquellen kompilieren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lombok in Testquellen kompilieren",
+        "Beide Generierungstests prüfen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Alle fünf Tests und bootJar starten",
+        "Unverändertes HTTP-JSON prüfen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Nur IDE meldet noch Fehler?",
+        "Neu laden; IDE-Unterstützung prüfen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Lombok aus Laufzeitklassenpfad halten",
+        "Kompilierte Member laufen ohne es"
+      ]
+    }
+  ]
+}
