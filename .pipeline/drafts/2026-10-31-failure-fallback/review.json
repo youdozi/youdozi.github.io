@@ -1,0 +1,60 @@
+{
+  "status": "draft-unpublished",
+  "language": "ko",
+  "review": "self-review; no independent session",
+  "scope": [
+    "technical claims against primary AWS, Google SRE, RFC 9110 and Java 21 documentation",
+    "code, article and diagram branch order",
+    "Korean clarity and publication scope"
+  ],
+  "executed": {
+    "java": "Zulu 21.0.1+12-LTS, javac --release 21",
+    "outputLines": 9,
+    "browser": [
+      {
+        "width": 320,
+        "overflow": false,
+        "broken": 0,
+        "javaBlocks": 1,
+        "images": 1,
+        "geometry": {
+          "texts": 23,
+          "outside": []
+        }
+      },
+      {
+        "width": 1360,
+        "overflow": false,
+        "broken": 0,
+        "javaBlocks": 1,
+        "images": 1,
+        "geometry": {
+          "texts": 23,
+          "outside": []
+        }
+      }
+    ],
+    "visualInspection": "320px diagram screenshot checked; no clipped labels or arrows"
+  },
+  "clarifications": [
+    "Fixed public product only; no user data cache or writes implemented",
+    "Admission cap applies to primary and fallback; no permit means immediate rejection",
+    "Full precision freshness checks; displayed age only is truncated to seconds",
+    "Every acquired permit released in finally",
+    "HTTP adapter, timeout, circuit breaker, cache population and recovery are intentionally outside the example"
+  ],
+  "limitations": [
+    "No concurrent load test or HTTP integration test",
+    "No production performance claim",
+    "Private offline rendering checked, no published Astro page checked",
+    "Korean draft only; translation and publication not performed"
+  ],
+  "files": {
+    "README.md": "9a5aecc7ecd058e155ee6cdfd6a0e9e0f2f0cb80304a8e43371c85ee14e34663",
+    "article.ko.md": "1e44499b79099096eef146740f7d59c3b07bc48ade93949ac6c47ad094b946ef",
+    "check.py": "ec5a39d77e19a1476073de80fc59be8f43de55a7aeec7ec26d98963c27b4f149",
+    "diagram.json": "3d4a4c083c33a8583e330a8bf6642752ee16bd93e7b3275974967f4478f1f636",
+    "execution.txt": "4d80253f348555228b9f572ea9cde1c120e2ab10082104a6c39dcd790e8a75df",
+    "fallback-ko.svg": "ca48ae15ef3ae20835caada2794c3f1006db53fc3f948334249c49b1647bf0b4"
+  }
+}

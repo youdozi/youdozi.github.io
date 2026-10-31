@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2026-10-31-failure-fallback",
+      "title": {
+        "ko": "공개 조회 fallback 판단",
+        "en": "Public read fallback"
+      },
+      "description": {
+        "ko": "입장 제한, 원본 조회, 장애 분류, 사본 유무와 신선도 검사를 거쳐 응답한다. 획득한 허가는 모든 종료 경로에서 반환한다.",
+        "en": "Admission, primary read, failure classification and snapshot age policy. Every acquired permit is released on exit."
+      },
+      "steps": [
+        {
+          "kind": "condition",
+          "ko": [
+            "tryAcquire(): 허가 획득?"
+          ],
+          "en": [
+            "tryAcquire(): permit acquired?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "거절",
+              "en": "rejected"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "primary.get(): 원본 조회"
+          ],
+          "en": [
+            "primary.get(): primary read"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "정상 결과를 받았는가?"
+          ],
+          "en": [
+            "Did the primary return?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "원본 반환",
+              "en": "primary"
+            },
+            "continue": {
+              "ko": "예외",
+              "en": "exception"
+            },
+            "outcome": "complete"
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "Unavailable 예외인가?"
+          ],
+          "en": [
+            "Is the error Unavailable?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "예외 전달",
+              "en": "propagate"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "snapshot이 존재하는가?"
+          ],
+          "en": [
+            "Does a snapshot exist?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "거절",
+              "en": "rejected"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "나이가 0초 이상, 60초 이하?"
+          ],
+          "en": [
+            "Is age between 0 and 60s?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "거절",
+              "en": "rejected"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "사본·출처·나이 반환"
+          ],
+          "en": [
+            "Return snapshot, source and age"
+          ]
+        }
+      ],
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "Reply read(Supplier<String> primary, Snapshot snapshot)"
+        }
+      ]
+    }
+  ]
+}
