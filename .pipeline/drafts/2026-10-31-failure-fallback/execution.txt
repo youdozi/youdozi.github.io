@@ -1,0 +1,9 @@
+Reply[value=live-description, source=primary, ageSeconds=0]
+Reply[value=saved-description, source=snapshot, ageSeconds=30]
+Reply[value=boundary, source=snapshot, ageSeconds=60]
+rejected=age
+rejected=age
+rejected=missing
+propagated=schema
+rejected=capacity
+Reply[value=recovered, source=primary, ageSeconds=0]

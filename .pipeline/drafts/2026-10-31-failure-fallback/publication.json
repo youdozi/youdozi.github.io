@@ -1,0 +1,9 @@
+{
+  "status": "publication-prepared",
+  "authorization": "User explicitly requested publication: 게시해줘",
+  "article": "src/content/posts/ko/2026-10-31-failure-fallback.md",
+  "diagramSource": ".pipeline/drafts/2026-10-31-failure-fallback/diagram.json",
+  "diagramAsset": "assets/img/architecture/fallback-ko.svg",
+  "language": "ko",
+  "scope": "Only the prepared Korean article; no other translations or drafts."
+}
