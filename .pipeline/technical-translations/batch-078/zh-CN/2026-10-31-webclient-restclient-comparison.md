@@ -7,7 +7,7 @@ state: "draft"
 sourcePath: "src/content/posts/en/2026-10-31-webclient-restclient-comparison.md"
 sourceSha256: "66635549fdfb330bbeabd658046b28dcb1566bef58dbf033b35e22e387806d15"
 ---
-**同步服务代码需要获得一个 HTTP 响应才能继续时，先考虑 RestClient；需要响应式组合或流式处理时，考虑 WebClient。**两者都提供链式调用 API，但 [RestClient 是同步客户端，WebClient 是非阻塞的响应式客户端](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html)。应根据应用的执行模型选择客户端，而不是请求量。
+**同步服务代码需要获得一个 HTTP 响应才能继续时，先考虑 RestClient；需要响应式组合或流式处理时，考虑 WebClient**。两者都提供链式调用 API，但 [RestClient 是同步客户端，WebClient 是非阻塞的响应式客户端](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html)。应根据应用的执行模型选择客户端，而不是请求量。
 
 
 RestClient 在 Spring Framework 6.1 中引入；WebClient 从 5.0 起可用。首先检查 Framework 版本是否支持选定客户端。升级 Boot 项目时，遵循 Boot 管理的兼容组合。下面的可运行示例固定使用 Framework 7.0.10。
@@ -30,7 +30,7 @@ RestClient 在 Spring Framework 6.1 中引入；WebClient 从 5.0 起可用。�
 
 ![主流程完成 RestClient 终结操作，创建 WebClient Mono，订阅两次产生独立请求，并检查两个客户端的 404 和 503 错误](2026-10-31-webclient-restclient-comparison.svg)
 
-图示展示 main 方法的核心检查，省略本地服务器搭建、客户端配置及清理。**RestClient 不会仅因调用 retrieve() 就发送请求。**此处由 body(String.class) 执行请求并等待结果。WebClient 在订阅时执行其默认请求 Mono。如果没有缓存或共享操作符，对此 Mono 订阅两次会发送两个请求。
+图示展示 main 方法的核心检查，省略本地服务器搭建、客户端配置及清理。**RestClient 不会仅因调用 retrieve() 就发送请求**。此处由 body(String.class) 执行请求并等待结果。WebClient 在订阅时执行其默认请求 Mono。如果没有缓存或共享操作符，对此 Mono 订阅两次会发送两个请求。
 
 这个独立控制台示例使用 Spring Framework 7.0.10、Reactor Core 3.8.8、JDK 17 和 Gradle 8.4 执行过。它不是 Spring Boot 应用。两个客户端都显式使用 JDK HttpClient，以消除默认连接器选择的差异。在 Boot 项目中，应优先使用该 Boot 版本管理的依赖，不要用此 BOM 覆盖它们。
 

@@ -65,7 +65,7 @@ php runtime-evidence.php
 php -n -d session.upload_progress.enabled=0 runtime-evidence.php
 ```
 
-第一条命令读取所选 CLI 的配置。第二条跳过 ini 文件，且仅对此次 CLI 调用禁用上传进度。**它既不修改 Web 服务器设置，也不检查 Web 工作进程的有效配置。**
+第一条命令读取所选 CLI 的配置。第二条跳过 ini 文件，且仅对此次 CLI 调用禁用上传进度。**它既不修改 Web 服务器设置，也不检查 Web 工作进程的有效配置**。
 
 本地检查在隔离的 PHP CLI 容器中运行，确认 JSON 输出中 `sapi` 为 `cli`。第二条命令的 `loadedIni` 返回 `null`，`uploadProgress` 返回字符串 `"0"`。路径、PID、版本和默认值因环境而异。这些结果不能确立生产服务的补丁状态，也没有复现利用过程。
 

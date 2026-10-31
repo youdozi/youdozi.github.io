@@ -5,7 +5,7 @@ title: "Java Project Valhalla：値オブジェクト、レコード、JDK 28プ
 description: "Project ValhallaとJEP 401を、実行可能なJDK 28 EAの例で理解します。レコードの同一性、値の等価性、モニター制約を比較し、最適化の限界も明確にします。"
 state: "draft"
 sourcePath: "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md"
-sourceSha256: "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+sourceSha256: "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
 ---
 Project Valhallaは、**オブジェクトの同一性を必要としないデータを値オブジェクトとして扱い、JVMがより効率よく格納・受け渡しできる余地を広げるOpenJDKプロジェクト**です。2026年10月31日時点の[プロジェクトページ](https://openjdk.org/projects/valhalla/)と[JEP 401](https://openjdk.org/jeps/401)では、最初の値オブジェクトのプレビューがJDK 28に統合されています。確定済みの機能ではありません。以下の例はJDK 28 EA Build 21で実行しました。
 
@@ -102,7 +102,7 @@ monitor IdentityException
 
 新しい値配列のスロットは`null`で、値オブジェクトを動的にモニターとして使うと`IdentityException`が発生します。型が明らかに値クラスである式を直接ロックしようとすると、代わりにコンパイル時に拒否される場合があります。移行前に、ロックや同一性に基づくキャッシュなど、同一性に依存する用途を確認します。
 
-## すぐにメモリを節約したりList<int>を使えたりしますか？
+## すぐにメモリを節約したり`List<int>`を使えたりしますか？
 
 同一性を取り除くことで、JVMには、ポインターの代わりにフィールド状態で参照を表す**フラット化**や、レジスターなどで値を個別の構成要素として渡す**スカラー化**の余地が生まれます。言語は、特定のレイアウト、割り当ての除去、高速化を保証しません。上の出力が確認するのは意味論であり、ヒープ使用量やスループットは測定していません。
 

@@ -15,7 +15,7 @@
     "es"
   ],
   "review": {
-    "method": "Six language-specific AI author sessions; six separate-context AI reviewers read target-language editions standalone and compare complete English sources, followed by correction rechecks.",
+    "method": "Six language-specific AI author sessions; six separate-context AI reviewers read target-language editions standalone and compare complete English sources, followed by correction rechecks and a separate review of final Markdown rendering corrections.",
     "independentReviewer": true,
     "newExternalFactVerification": false,
     "scope": "72 complete editions: metadata, prose, tables, captions, 72 flow diagrams and six supplementary architecture figures. Code, command/output blocks, inline literals and URLs preserved. Source execution statements remain translations of prior evidence.",
@@ -76,6 +76,14 @@
       {
         "path": ".pipeline/technical-translations/batch-078/reviews/es-recheck.json",
         "sha256": "96e4bdfaf902b47335fac70d0974b717ca4d0aaf531856c33053e15f29b2adb6"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/rendering.json",
+        "sha256": "83719900365dec08866d09b19e301fb7c40140fa7d83b33eaed9a2064759bf88"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/rendering-recheck.json",
+        "sha256": "eadd4f841342da9e27b35dc05ec606f73a1c2bbb23fc1b1fdaf8a5b2921a14b8"
       }
     ],
     "unresolvedMeaningFindings": 0,
@@ -398,7 +406,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-php2shell-runtime-patching.md",
-        "sha256": "4a0aed6128b5751f45ce7d25a94f909e4f47393ed64adc80ec884cbb809a8a9d"
+        "sha256": "a3bb95de71a35f769ce46a7bc7ad2d150f2523792c2a071846adfb1dcf43ef0a"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-php2shell-runtime-patching.diagram.json",
@@ -994,11 +1002,11 @@
       "translationKey": "2026-10-31-project-valhalla-value-objects",
       "source": {
         "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+        "sha256": "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "968baa237b71cc3150d9567aa1806bf8c87cba83d609d596231fb057c1242360"
+        "sha256": "50e757cd9bb0eb3639554ef6856683f5676cec18de1ba4b70a8572547b6b6e6d"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-project-valhalla-value-objects.diagram.json",
@@ -1019,11 +1027,11 @@
       "translationKey": "2026-10-31-project-valhalla-value-objects",
       "source": {
         "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+        "sha256": "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "da93129b14f39ec5754fe5aeac6a350cc456005b3b6d15723fa1983db9d0ab6c"
+        "sha256": "c2f1e05dfe62e72107f540a91e366cde75a84036e781bf887fa0a6cfadce559e"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-project-valhalla-value-objects.diagram.json",
@@ -1044,11 +1052,11 @@
       "translationKey": "2026-10-31-project-valhalla-value-objects",
       "source": {
         "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+        "sha256": "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "08d95912c14213378bb6043bd1d3927c46b055206dd171e873218f41c7a7d9bc"
+        "sha256": "7648de9311d0de496cd465630daf969a088157d78679a59626bed322c843ae6f"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-project-valhalla-value-objects.diagram.json",
@@ -1069,11 +1077,11 @@
       "translationKey": "2026-10-31-project-valhalla-value-objects",
       "source": {
         "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+        "sha256": "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "f089edc9129d13902f8daae6b2a40d7fe9134409bf01c3d72fe74014a28a3611"
+        "sha256": "7ddbe379d0829db4862e3113a51cc6836a0d02fc815e57b7b1e35bcd9564d6e5"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.diagram.json",
@@ -1094,11 +1102,11 @@
       "translationKey": "2026-10-31-project-valhalla-value-objects",
       "source": {
         "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+        "sha256": "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "580f25b6cf2150231f7d82f274e8f8ec56a69a5e79cca21e19155f97cc6b9801"
+        "sha256": "62c183eb0e8aa1ac0f10226a42fc733cb5901c77354b14764d2f009bb0953869"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-project-valhalla-value-objects.diagram.json",
@@ -1119,11 +1127,11 @@
       "translationKey": "2026-10-31-project-valhalla-value-objects",
       "source": {
         "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+        "sha256": "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.md",
-        "sha256": "03a4d294168e088935b2face8a1b91869f459809e842a0b58f043d3ec5eb4756"
+        "sha256": "7a8e0b8b6c1eba407bb5c62b0aaab654b5751047ef13923de06503662ced09c0"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.diagram.json",
@@ -1148,7 +1156,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk25-scopedvalue.md",
-        "sha256": "5227a4e6b07fe52f1cbb0181797c06a75a188f3155afe47a4f486e00c9b06d44"
+        "sha256": "749cbfaa011a2406b3e1234c1c93d5485231000721abe3662be4fe84099f1cff"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk25-scopedvalue.diagram.json",
@@ -1448,7 +1456,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk-10k-rps-architecture.md",
-        "sha256": "f8be232d9474a42a3dfa6377e4457f7c65dc9f38b879013b281ed258221ccada"
+        "sha256": "27fdbed73562872de425e0112c1578e47f3feed269b2766810aeb25512166a7f"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk-10k-rps-architecture.diagram.json",
@@ -1670,7 +1678,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-webclient-restclient-comparison.md",
-        "sha256": "18ea812ff981a8caee8cce9f5b10e99aa9e6f06a64328fb2edf2d54d7c03a2a2"
+        "sha256": "6d41cd470e874a6b31a4ffde17478f8534eb826879d3045c6d3545fa14291810"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-webclient-restclient-comparison.diagram.json",
@@ -1820,7 +1828,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-fragnesia-cve-2026-46300.md",
-        "sha256": "89772d4f0d2e5d19fb775dbf56fbaeb5d69c9a67cfc065b0a878bf04af13c577"
+        "sha256": "e15b60ce034e922ce1b25a30478119702b96a30bfab2b9959eab530d8db88f10"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-fragnesia-cve-2026-46300.diagram.json",

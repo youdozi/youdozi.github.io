@@ -5,7 +5,7 @@ title: "Java Project Valhalla：值对象、record 与 JDK 28 预览"
 description: "通过可运行的 JDK 28 EA 示例了解 Project Valhalla 和 JEP 401，比较 record 身份、值相等性和监视器限制，并明确优化边界。"
 state: "draft"
 sourcePath: "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md"
-sourceSha256: "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+sourceSha256: "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
 ---
 Project Valhalla 是**一个 OpenJDK 项目，让不需要对象身份的数据使用值对象，使 JVM 能更自由地高效存储和传递这些数据**。截至 2026年10月31日核对，[项目页面](https://openjdk.org/projects/valhalla/)和 [JEP 401](https://openjdk.org/jeps/401)显示，首个值对象预览已集成到 JDK 28。这不是已定稿功能。下面的示例在 JDK 28 EA Build 21 上运行。
 
@@ -102,7 +102,7 @@ monitor IdentityException
 
 新建值数组的槽位是 `null`，在运行时将值对象用作监视器会抛出 `IdentityException`。如果直接锁定一个类型明确为值类的表达式，则可能在编译时被拒绝。迁移前应检查锁定和基于身份的缓存等身份敏感用法。
 
-## 这会立即节省内存或支持 List<int> 吗？
+## 这会立即节省内存或支持 `List<int>` 吗？
 
 移除身份为 JVM 提供了进行**扁平化**和**标量化**的空间：前者用字段状态而非指针表示引用，后者将值作为独立组件在寄存器等位置传递。语言不保证特定布局、消除分配或提速。上面的输出检查语义，没有测量堆用量或吞吐量。
 

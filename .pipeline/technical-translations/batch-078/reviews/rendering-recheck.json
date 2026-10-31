@@ -1,0 +1,97 @@
+{
+  "reviewerSession": "/root/review078_rendering",
+  "scope": "Independent read-only recheck of all current changes against ddd29de05028c73513aa646ea806228123c1a393; rendering, changed-span source fidelity and technical-preview checker correctness. Not a full translation review.",
+  "files": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "7648de9311d0de496cd465630daf969a088157d78679a59626bed322c843ae6f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "7a8e0b8b6c1eba407bb5c62b0aaab654b5751047ef13923de06503662ced09c0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "7ddbe379d0829db4862e3113a51cc6836a0d02fc815e57b7b1e35bcd9564d6e5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "c2f1e05dfe62e72107f540a91e366cde75a84036e781bf887fa0a6cfadce559e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/manifest.json",
+      "sha256": "a9a36abc84912f4d7fc710dd6b4f1bec90bd43bf5506d8dbfbef17564ecf069a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "62c183eb0e8aa1ac0f10226a42fc733cb5901c77354b14764d2f009bb0953869"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "a3bb95de71a35f769ce46a7bc7ad2d150f2523792c2a071846adfb1dcf43ef0a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "e15b60ce034e922ce1b25a30478119702b96a30bfab2b9959eab530d8db88f10"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "27fdbed73562872de425e0112c1578e47f3feed269b2766810aeb25512166a7f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "749cbfaa011a2406b3e1234c1c93d5485231000721abe3662be4fe84099f1cff"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "50e757cd9bb0eb3639554ef6856683f5676cec18de1ba4b70a8572547b6b6e6d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "6d41cd470e874a6b31a4ffde17478f8534eb826879d3045c6d3545fa14291810"
+    },
+    {
+      "path": ".pipeline/technical-translations/queue-078.json",
+      "sha256": "4d9abcf0023254cf13c06b27200772bcd48350fc95e88177a78b5c5a86f23461"
+    },
+    {
+      "path": "scripts/check_technical_preview.py",
+      "sha256": "00d9b16c33681eba795702cc7c570006647a1c485946a59581096f454580eee1"
+    },
+    {
+      "path": "scripts/test_technical_preview.py",
+      "sha256": "a342f3f16fb0b172604a0ad208d2140429465e8b871c1604db219c8cd4cfda43"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
+    },
+    {
+      "path": "src/content/posts/ko/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "476b2fb774e656d3ee3cc353c46a2c1ce974819dd8ec4fdb70dc787763b8cde5"
+    }
+  ],
+  "resolution": [
+    {
+      "originalLocation": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk-10k-rps-architecture.md:10",
+      "originalSeverity": "medium",
+      "status": "resolved",
+      "evidence": "Current rendered first paragraph has exactly two separate, nonnested strong spans: opening claim ends at JDK, final limitation starts at 不是成功完成. The intervening explanation is ordinary text, matching source emphasis scope."
+    }
+  ],
+  "validation": [
+    "All changed Markdown body text is byte-for-byte unchanged against base after removing only backticks and strong delimiters; no information, numbers, links, code or execution/measurement limitations altered.",
+    "Every changed draft body exactly matches its latest /tmp/translations078-rendered.json input. Expected prose is present in rendered text. No literal ** remains in prose.",
+    "For every changed draft, all strong spans match its individual Markdown strong pairs after excluding fenced code; no nested strong spans.",
+    "All six translated Valhalla generic headings render <code>List&lt;int&gt;</code>.",
+    "python3 -m unittest discover -s scripts -p test_technical_preview.py: 12 tests passed, including positive and omission cases for list items, API fragment parentheses/typographic apostrophes, and generic tokens.",
+    "Every manifest edition source/draft/diagramSource/diagram hash agrees with current corresponding files."
+  ],
+  "findings": [],
+  "unresolved": [],
+  "unverified": [
+    "No production browser navigation, publication, or deployment.",
+    "No full-site fixture build/check command executed by this reviewer; latest supplied renderer HTML and local temporary checker fixtures examined.",
+    "No external factual research or article-program execution. Unchanged diagrams and full translations outside changed spans were not independently reviewed."
+  ]
+}

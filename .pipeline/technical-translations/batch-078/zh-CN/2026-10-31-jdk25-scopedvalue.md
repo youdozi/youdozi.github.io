@@ -116,7 +116,7 @@ outside=NoSuchElementException
 
 ## 创建虚拟线程会继承该值吗？
 
-**普通的 `Thread.ofVirtual().start()` 不会自动继承父线程的绑定。**示例通过 `plain-child-bound=false` 展示这一点。也不要假定将工作交给 `ExecutorService` 或 `CompletableFuture` 就会自动传播上下文。示例中的第一个虚拟线程是在任务内部建立绑定，而非继承绑定。
+**普通的 `Thread.ofVirtual().start()` 不会自动继承父线程的绑定**。示例通过 `plain-child-bound=false` 展示这一点。也不要假定将工作交给 `ExecutorService` 或 `CompletableFuture` 就会自动传播上下文。示例中的第一个虚拟线程是在任务内部建立绑定，而非继承绑定。
 
 [官方继承规则](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ScopedValue.html#inheritance)说明，创建 `StructuredTaskScope` 时会捕获绑定，通过该作用域的 `fork()` 启动的子任务会继承绑定。**结构化并发在 JDK 25 中是另一个独立的预览 API**，由 [JEP 505](https://openjdk.org/jeps/505)说明，本文代码未使用它。不要把此示例理解为验证了该继承机制。
 

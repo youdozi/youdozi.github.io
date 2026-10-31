@@ -5,7 +5,7 @@ title: "Project Valhalla de Java: objetos de valor, records y la versión prelim
 description: "Comprende Project Valhalla y JEP 401 con un ejemplo ejecutable en JDK 28 EA que compara identidad de records, igualdad de valores y restricciones de monitores, con límites de optimización claros."
 state: "draft"
 sourcePath: "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md"
-sourceSha256: "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+sourceSha256: "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
 ---
 Project Valhalla es **un proyecto de OpenJDK que permite representar mediante objetos de valor los datos que no necesitan identidad de objeto y da a la JVM más libertad para almacenarlos y pasarlos de forma eficiente**. Según la comprobación del 31 de octubre de 2026, la [página del proyecto](https://openjdk.org/projects/valhalla/) y [JEP 401](https://openjdk.org/jeps/401) muestran la primera versión preliminar de objetos de valor integrada en JDK 28. No es una función definitiva. El ejemplo siguiente se ejecutó en JDK 28 EA Build 21.
 
@@ -102,7 +102,7 @@ Los dos objetos `Label` tienen cadenas con el mismo contenido, por lo que el `eq
 
 La posición del nuevo array de valores es `null`, y utilizar dinámicamente un objeto de valor como monitor lanza `IdentityException`. En cambio, el bloqueo directo de una expresión cuyo tipo es claramente una clase de valor puede rechazarse al compilar. Comprueba los usos sensibles a la identidad, como los bloqueos y las cachés basadas en identidad, antes de migrar.
 
-## ¿Esto ahorra memoria de inmediato o permite List<int>?
+## ¿Esto ahorra memoria de inmediato o permite `List<int>`?
 
 Eliminar la identidad deja margen a la JVM para el **aplanamiento**, que representa una referencia mediante el estado de sus campos en lugar de un puntero, y la **escalarización**, que pasa los valores como componentes separados en registros y ubicaciones similares. El lenguaje no garantiza una disposición concreta, la eliminación de asignaciones ni una mejora de velocidad. La salida anterior comprueba la semántica; no mide el uso del heap ni el rendimiento en operaciones por unidad de tiempo.
 

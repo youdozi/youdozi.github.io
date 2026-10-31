@@ -5,7 +5,7 @@ title: "Java Project Valhalla : objets valeur, records et préversion du JDK 28"
 description: "Comprenez Project Valhalla et JEP 401 avec un exemple exécutable sur JDK 28 EA comparant identité des records, égalité de valeur et restrictions des moniteurs, sans confondre sémantique et optimisation."
 state: "draft"
 sourcePath: "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md"
-sourceSha256: "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+sourceSha256: "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
 ---
 Project Valhalla est **un projet OpenJDK permettant aux données qui n’ont pas besoin d’identité d’objet d’utiliser des objets valeur, ce qui donne à la JVM davantage de liberté pour les stocker et les transmettre efficacement**. Vérifiées le 31 octobre 2026, la [page du projet](https://openjdk.org/projects/valhalla/) et la [JEP 401](https://openjdk.org/jeps/401) indiquent que la première préversion des objets valeur est intégrée au JDK 28. Cette fonctionnalité n’est pas finalisée. L’exemple ci-dessous a été exécuté sur JDK 28 EA Build 21.
 
@@ -102,7 +102,7 @@ Les deux objets `Label` contiennent des chaînes de même contenu : leur méthod
 
 La case du nouveau tableau de valeurs est `null`, et utiliser dynamiquement un objet valeur comme moniteur lève `IdentityException`. Verrouiller directement une expression dont le type est clairement une classe valeur peut en revanche être rejeté à la compilation. Vérifiez les usages sensibles à l’identité, comme les verrous et les caches fondés sur l’identité, avant la migration.
 
-## Cela économise-t-il immédiatement de la mémoire ou permet-il List<int> ?
+## Cela économise-t-il immédiatement de la mémoire ou permet-il `List<int>` ?
 
 Supprimer l’identité donne à la JVM davantage de latitude pour l’**aplatissement**, qui représente une référence par l’état de ses champs plutôt que par un pointeur, et la **scalarisation**, qui transmet les valeurs sous forme de composants séparés dans des registres et des emplacements similaires. Le langage ne garantit ni une disposition particulière, ni la suppression d’allocations, ni un gain de vitesse. La sortie ci-dessus vérifie la sémantique ; elle ne mesure ni l’usage du tas ni le débit.
 

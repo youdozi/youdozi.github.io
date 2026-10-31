@@ -5,7 +5,7 @@ title: "Java Project Valhalla: Wertobjekte, Records und die JDK-28-Vorschau"
 description: "Verstehen Sie Project Valhalla und JEP 401 anhand eines ausführbaren JDK-28-EA-Beispiels zu Record-Identität, Wertgleichheit und Monitorbeschränkungen mit klaren Optimierungsgrenzen."
 state: "draft"
 sourcePath: "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md"
-sourceSha256: "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+sourceSha256: "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
 ---
 Project Valhalla ist **ein OpenJDK-Projekt, das Daten ohne Bedarf an Objektidentität die Nutzung von Wertobjekten ermöglicht und der JVM damit mehr Freiheit für effiziente Speicherung und Übergabe gibt**. Bei der Prüfung am 31. Oktober 2026 zeigen die [Projektseite](https://openjdk.org/projects/valhalla/) und [JEP 401](https://openjdk.org/jeps/401) die Integration der ersten Wertobjekt-Vorschau in JDK 28. Dies ist keine finalisierte Funktion. Das folgende Beispiel lief auf JDK 28 EA Build 21.
 
@@ -102,7 +102,7 @@ Die beiden `Label`-Objekte besitzen Zeichenfolgen mit gleichem Inhalt; ihr gener
 
 Der neue Wert-Arrayplatz ist `null`, und die dynamische Verwendung eines Wertobjekts als Monitor wirft `IdentityException`. Das direkte Sperren eines Ausdrucks, dessen Typ eindeutig eine Wertklasse ist, kann stattdessen schon beim Kompilieren abgewiesen werden. Prüfen Sie vor der Migration identitätssensitive Verwendungen wie Sperren und identitätsbasierte Caches.
 
-## Spart dies sofort Speicher oder ermöglicht List<int>?
+## Spart dies sofort Speicher oder ermöglicht `List<int>`?
 
 Das Entfernen der Identität ermöglicht der JVM **Flattening**, also die Darstellung einer Referenz durch Feldzustand statt eines Zeigers, und **Skalarisierung**, also die Übergabe von Werten als separate Komponenten in Registern und ähnlichen Orten. Die Sprache garantiert weder ein bestimmtes Layout noch vermiedene Allokationen oder Beschleunigung. Die obige Ausgabe prüft Semantik; sie misst weder Heap-Nutzung noch Durchsatz.
 

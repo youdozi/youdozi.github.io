@@ -38,7 +38,7 @@ class TechnicalHTML(HTMLParser):
         if index is None: return
         if tag == 'pre': self.in_pre = False
         # Inline code/links/emphasis must not invent spaces before CJK text or punctuation.
-        if not self.in_pre and tag in ('p','div','h1','h2','h3','h4','table','tr','td','th','pre'):
+        if not self.in_pre and tag in ('p','div','h1','h2','h3','h4','table','tr','td','th','pre','li'):
             self.text.append(' ')
         del self.stack[index:]
 
@@ -48,18 +48,32 @@ class TechnicalHTML(HTMLParser):
             else: self.text.append(data)
 
 
+def prose_normalize(value):
+    # Markdown typography may curl apostrophes without changing prose meaning.
+    return normalize(value).replace('’', "'").replace('‘', "'")
+
+
+def strip_markdown_links(value):
+    # API fragment URLs contain balanced parentheses, e.g. #tryAcquire().
+    return re.sub(r'(?<!!)\[([^\]\n]*)\]\((?:[^()]|\([^()]*\))*\)', r'\1', value)
+
+
 def expected_paragraphs(body):
     body = re.sub(r'^```[^\n]*\n[\s\S]*?^```\s*$', '', body, flags=re.M)
     body = re.sub(r'!\[[^\]\n]*\]\([^)]+\)', '', body)
-    body = re.sub(r'(?<!!)\[([^\]\n]*)\]\([^)]+\)', r'\1', body)
+    body = strip_markdown_links(body)
     for chunk in re.split(r'\n\n+', body.strip()):
         if chunk.startswith('| '):
             for row in chunk.splitlines():
                 if not re.fullmatch(r'[| :\-]+', row):
-                    yield normalize(row.replace('|', ' ').replace('`', '').replace('**', ''))
+                    yield prose_normalize(row.replace('|', ' ').replace('`', '').replace('**', ''))
         else:
-            text = re.sub(r'^#{1,6}\s+', '', chunk).replace('**', '').replace('`', '')
-            if text.strip(): yield normalize(text)
+            # HTML lists render item markers as layout, not visible text nodes.
+            # Compare each complete item so the Markdown search index may keep its markers.
+            items = re.split(r'(?m)^\s*(?:[-+*]|\d+[.)])\s+', chunk)
+            for item in items:
+                text = re.sub(r'^#{1,6}\s+', '', item).replace('**', '').replace('`', '')
+                if text.strip(): yield prose_normalize(text)
 
 
 def check(base):
@@ -100,9 +114,9 @@ def check(base):
         row = indexes[lang].get(url)
         if not row or row['title'] != record['title'] or row['description'] != record['description']:
             raise ValueError('Technical search metadata changed')
-        visible = normalize(''.join(body.text))
+        visible = prose_normalize(''.join(body.text))
         # readerMarkdown leaves inline Markdown in the search index; compare its prose with the same stripping.
-        search = normalize(re.sub(r'(?<!!)\[([^\]\n]*)\]\([^)]+\)', r'\1', row['content']).replace('**', '').replace('`', '').replace('|', ' '))
+        search = prose_normalize(strip_markdown_links(row['content']).replace('**', '').replace('`', '').replace('|', ' '))
         for paragraph in expected_paragraphs(record['body']):
             if paragraph not in visible or paragraph not in search:
                 raise ValueError(f'Technical preview omits a paragraph: {key}')

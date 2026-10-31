@@ -109,7 +109,7 @@ The two `Label` objects have strings with matching contents, so their generated 
 
 The new value-array slot is `null`, and dynamically using a value object as a monitor throws `IdentityException`. Directly locking an expression whose type is clearly a value class may instead be rejected at compilation. Check identity-sensitive uses such as locking and identity-based caches before migration.
 
-## Does this immediately save memory or enable List<int>?
+## Does this immediately save memory or enable `List<int>`?
 
 Removing identity gives the JVM room for **flattening**, representing a reference through field state rather than a pointer, and **scalarization**, passing values as separate components in registers and similar locations. The language does not guarantee a particular layout, eliminated allocations or speedup. The output above checks semantics; it does not measure heap usage or throughput.
 
