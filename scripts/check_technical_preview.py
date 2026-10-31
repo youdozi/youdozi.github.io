@@ -62,6 +62,7 @@ def expected_paragraphs(body):
     body = re.sub(r'^```[^\n]*\n[\s\S]*?^```\s*$', '', body, flags=re.M)
     body = re.sub(r'!\[[^\]\n]*\]\([^)]+\)', '', body)
     body = strip_markdown_links(body)
+    body = re.sub(r'(?m)^<span id="[^"]+"></span>[ \t]*(?:\n|$)', '', body)
     for chunk in re.split(r'\n\n+', body.strip()):
         if chunk.startswith('| '):
             for row in chunk.splitlines():

@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from xml.sax.saxutils import escape
 
-from check_technical_preview import check
+from check_technical_preview import check, expected_paragraphs
 
 KEY = 'es-2021-07-22-dot-product'
 SLUG = '2021-07-22-dot-product'
@@ -15,6 +15,12 @@ BODY = '## Flujo\n\nMultiplica `a[i]` antes de sumar.\n\n![Flujo]('+ASSET+')\n\n
 
 
 class TechnicalPreviewTests(unittest.TestCase):
+    def test_empty_legacy_anchor_is_layout_not_a_missing_paragraph(self):
+        self.assertEqual(list(expected_paragraphs('<span id="legacy"></span>\n\nKept **contract**.\n')), ['kept contract.'])
+
+    def test_literal_anchor_in_inline_code_is_still_visible_content(self):
+        self.assertEqual(list(expected_paragraphs('Literal `<span id="literal"></span>` remains.\n')), ['literal <span id="literal"></span> remains.'])
+
     def fixture(self, base):
         path = base/f'src/content/technical-translations/es/{SLUG}.md'; path.parent.mkdir(parents=True)
         data = {'state':'approved','kind':'post','language':'es','translationKey':SLUG,'routeSlug':SLUG,'title':'Producto escalar','description':'Calcula productos.',
