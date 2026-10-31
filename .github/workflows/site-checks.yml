@@ -95,6 +95,8 @@ jobs:
         run: python3 -B scripts/check_jvm_runtime_examples.py --part jdk
       - name: Execute the published fallback policy and verify its flow asset
         run: python3 -B .pipeline/drafts/2026-10-31-failure-fallback/check.py
+      - name: Execute the published cache policy and verify its flow asset
+        run: python3 -B scripts/check_cache_example.py
       - name: Observe JDK 21 monitor pinning with the published JFR probe
         run: python3 -B scripts/check_virtual_thread_example.py
       - uses: actions/setup-java@v4
