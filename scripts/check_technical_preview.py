@@ -114,7 +114,8 @@ def check(base):
         if [c.strip() for c in expected_code] != actual_code: raise ValueError('Technical code example changed')
         image = body.images
         expected_asset = f'/assets/diagrams/technical/{key}.svg'
-        if len(image) != 1 or image[0].get('src') != expected_asset or not image[0].get('alt') or not (dist/expected_asset.lstrip('/')).is_file():
+        expected_images = re.findall(r'!\[[^\]\n]+\]\(([^)]+)\)', record['body'])
+        if not expected_images or expected_images.count(expected_asset) != 1 or [item.get('src') for item in image] != expected_images or any(not item.get('alt') or not (dist/item['src'].lstrip('/')).is_file() for item in image):
             raise ValueError('Localized technical diagram missing')
         item = feeds[lang].get(SITE+url)
         if item is not None:

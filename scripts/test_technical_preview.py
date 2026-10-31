@@ -105,3 +105,16 @@ class TechnicalPreviewTests(unittest.TestCase):
                     p=base/('dist/es/feed.xml' if surface=='feed' else 'dist/ko/posts/'+SLUG+'/index.html' if surface=='alternate' else 'dist'+URL+'index.html')
                     p.write_text(p.read_text().replace('Calcula productos.','Wrong') if surface=='feed' else p.read_text().replace('hreflang="es"','hreflang="fr"') if surface=='alternate' else p.read_text().replace('<h1>Producto escalar</h1>','<h1>Wrong</h1>'))
                 with self.assertRaises(ValueError):check(base)
+
+    def test_supplementary_architecture_image_must_render_in_order_with_local_asset(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base=Path(folder);self.fixture(base)
+            extra='/assets/diagrams/technical/'+KEY+'-architecture.svg'
+            p=base/f'src/content/technical-translations/es/{SLUG}.md'
+            p.write_text(p.read_text()+'\n\n![Arquitectura]('+extra+')\n')
+            p=base/('dist'+URL+'index.html')
+            p.write_text(p.read_text().replace('</div></article>','<p><img src="'+extra+'" alt="Arquitectura"></p></div></article>'))
+            asset=base/('dist'+extra);asset.write_text('<svg/>')
+            self.assertEqual(check(base)['fixtureEditions'],1)
+            asset.unlink()
+            with self.assertRaisesRegex(ValueError,'diagram'):check(base)

@@ -1,0 +1,40 @@
+{
+  "key": "2026-10-31-jdk-10k-rps-architecture",
+  "title": "Gate.call()：获取、工作、释放",
+  "description": "仅展示准入方法。获取许可失败时拒绝，不运行工作。获取成功后，finally 在成功或失败时均归还许可。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "tryAcquire() 成功？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "否：拒绝",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "执行 work.call()",
+        "操作完成或抛出异常"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "finally：归还许可",
+        "在实际操作结束后"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "返回结果",
+        "或传播异常"
+      ]
+    }
+  ],
+  "language": "zh-CN"
+}

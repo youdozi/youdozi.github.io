@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-project-valhalla-value-objects",
+  "title": "同一性と値の意味を比較",
+  "description": "例はレコードを比較し、参照フィールド、null格納、処理されるモニター例外を確認します。メモリ配置は調べません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "通常のレコードを二つ作成",
+        "一致する値レコードを二つ作成"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "==とequals()を比較",
+        "Objects.hasIdentity()を確認"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "内容が同じ別々のStringを包む",
+        "Labelの==とequals()を比較"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "値レコードの配列を作成",
+        "最初のスロットがnullと確認"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Object経由でロックを試す",
+        "想定したIdentityExceptionを捕捉"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "意味上の観測が完了",
+        "配置・性能の測定は行わない"
+      ]
+    }
+  ],
+  "language": "ja"
+}

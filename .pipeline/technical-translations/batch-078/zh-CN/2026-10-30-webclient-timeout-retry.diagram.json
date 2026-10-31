@@ -1,0 +1,43 @@
+{
+  "key": "2026-10-30-webclient-timeout-retry",
+  "title": "超时与重试操作符",
+  "description": "从上到下阅读操作符管道。总超时包围尝试和重试等待。只有 HTTP 503 可重试两次。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "GET /value",
+        "retrieve → 解码 String"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(attemptLimit)",
+        "每次尝试重新分配预算"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "retryWhen：仅 HTTP 503",
+        "等待；最多重试两次"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(totalLimit)",
+        "包含所有尝试与等待"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "订阅者接收值 / 完成",
+        "或最终错误"
+      ]
+    }
+  ],
+  "language": "zh-CN"
+}

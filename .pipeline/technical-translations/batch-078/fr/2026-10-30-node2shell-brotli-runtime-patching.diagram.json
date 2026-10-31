@@ -1,0 +1,29 @@
+{
+  "key": "2026-10-30-node2shell-brotli-runtime-patching",
+  "title": "Enregistrer le processus courant",
+  "description": "L’application exemple importe un collecteur, lit les propriétés de son propre runtime et émet du JSON. Aucune décompression ni décision sur le correctif.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Démarrer app.mjs",
+        "Importer runtimeEvidence"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lire PID, exécutable et versions",
+        "Lire système et architecture"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Afficher ce processus en JSON",
+        "Aucun verdict ni décompression"
+      ]
+    }
+  ],
+  "language": "fr"
+}

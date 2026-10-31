@@ -1,0 +1,54 @@
+{
+  "key": "2026-10-30-verify-sha256-download",
+  "title": "Verificar bytes con SHA-256",
+  "description": "Validar el resumen esperado, leer un archivo normal estable en bloques binarios y comparar. Los errores de entrada y lectura devuelven 2; una discrepancia, 1; una coincidencia, 0.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "¿64 caracteres hex?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "inválido: 2",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Leer archivo en bloques binarios",
+        "Actualizar SHA-256 hasta EOF"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Todas las lecturas correctas?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "lectura: 2",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Coincide el resumen esperado?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "distinto: 1",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Imprimir OK; salir con 0"
+      ]
+    }
+  ],
+  "language": "es"
+}

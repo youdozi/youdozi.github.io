@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-webclient-restclient-comparison",
+  "title": "HTTP呼び出し：終端操作と購読",
+  "description": "mainの主要な確認だけを示し、サーバー準備、設定、後始末は省略します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "RestClient.retrieve()を構築",
+        "リクエスト数0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "body(String.class)で待つ",
+        "最初のリクエスト完了：1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "WebClientのMonoを構築",
+        "まだ未購読：1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "最初のblockで購読して待つ",
+        "リクエスト数2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "二回目のblockで再び購読",
+        "リクエスト数3"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "各クライアントの404と503を確認",
+        "さらに4リクエスト、合計7"
+      ]
+    }
+  ],
+  "language": "ja"
+}

@@ -1,0 +1,43 @@
+{
+  "key": "2026-10-30-webclient-timeout-retry",
+  "title": "タイムアウトとリトライ",
+  "description": "オペレーターを上から下に読みます。全体のタイムアウトは試行と再試行の待機を囲みます。HTTP 503 だけが 2 回の再試行の対象です。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "GET /value",
+        "retrieve → String にデコード"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(attemptLimit)",
+        "試行ごとに予算をリセット"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "retryWhen：HTTP 503 のみ",
+        "待機し、最大 2 回再試行"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(totalLimit)",
+        "全試行と待機時間を含む"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "購読者が値 / 完了を受け取る",
+        "または最終エラー"
+      ]
+    }
+  ],
+  "language": "ja"
+}

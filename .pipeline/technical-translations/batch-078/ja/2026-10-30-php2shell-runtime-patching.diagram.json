@@ -1,0 +1,38 @@
+{
+  "key": "2026-10-30-php2shell-runtime-patching",
+  "title": "CLIの証拠を収集",
+  "description": "CLI以外ではデータを公開せず終了します。このCLIプロセスを読み取り、修正状況を判定せずJSONを出力します。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "PHP_SAPIはcli？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Web：404",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "PID・バージョン・実行ファイルを読む"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "iniとセッション設定を読む"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "CLIの証拠をJSON出力",
+        "修正状況は判定しない"
+      ]
+    }
+  ],
+  "language": "ja"
+}

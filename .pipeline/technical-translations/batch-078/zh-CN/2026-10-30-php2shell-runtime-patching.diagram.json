@@ -1,0 +1,38 @@
+{
+  "key": "2026-10-30-php2shell-runtime-patching",
+  "title": "收集 CLI 证据",
+  "description": "非 CLI 环境直接退出，不披露数据。读取此 CLI 进程并输出 JSON，不判断补丁状态。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "PHP_SAPI 是 cli？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Web：404",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "读取 PID、版本和可执行文件"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "读取已加载的 ini 与会话选项"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "以 JSON 打印 CLI 证据",
+        "不判定补丁状态"
+      ]
+    }
+  ],
+  "language": "zh-CN"
+}

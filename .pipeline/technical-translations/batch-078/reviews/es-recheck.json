@@ -1,0 +1,63 @@
+{
+  "language": "es",
+  "reviewerSession": "/root/review078_es",
+  "scope": "Read-only recheck of two reported diagram issues, localized thousands notation changes and protected elements across all 12 translated articles. Latest architecture SVG hash refreshed after reported font-size-only adjustment (24px to 20px).",
+  "resolutions": [
+    {
+      "finding": "architecture.svg: cache label",
+      "status": "resolved",
+      "targetQuote": "Tasa de aciertos / TTL / coalescencia de misses",
+      "assessment": "Acceptable concise terminology for a developer-facing technical diagram. The read-cache context makes misses cache misses; coalescencia preserves combining same-item concurrent cache-miss requests. Tasa de aciertos restores hit rate. This technical borrowing is acceptable in the compact diagram and the prose explains request coalescing. No further mandatory wording change."
+    },
+    {
+      "finding": "Valhalla diagram: distinct identity versus equal contents",
+      "status": "resolved",
+      "targetQuote": "Envolver Strings distintos / de igual contenido",
+      "assessment": "The two lines preserve distinct objects and equal contents, matching distinct equal-content Strings. SVG and JSON both contain the corrected split text."
+    },
+    {
+      "finding": "thousands notation outside protected literals",
+      "status": "verified",
+      "assessment": "Checked changed Markdown and architecture diagram numerics against the English source. 1,000 → 1000 and 10,000 → 10000 preserve quantities and avoid decimal-comma ambiguity. Protected inline formulas retain source notation intentionally."
+    }
+  ],
+  "changedfiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-webclient-timeout-retry.md",
+      "previousSha256": "131fe627d0dfaff55a37508eaae693dd980f0c0275f4918390309c3ba98992f3",
+      "sha256": "7f7c27be38a4f974b2e39f4cf9b98191ff7c27dd80536d72cc6e23d88f74af50"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+      "previousSha256": "118cda880a7193bbe80298bd12c04df9882041bad23f406bf868ed10c3898e21",
+      "sha256": "afd5c98b8227e8123eaa3deffbf74d3cf49e543ef8d85a0be76c3e84dea4b66e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk-10k-rps-architecture.md",
+      "previousSha256": "ab23625ff0bc7635b1f015c253b8809077b208283e4d522db2294fb860602f1a",
+      "sha256": "2befc0bf27793a35cf88d095a5a735652618426cd62e555e129dc88c7bb2be38"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.diagram.json",
+      "previousSha256": "fa580b86edcb029e2ea5b0ed3026f2a80fec6d62bf9e2bcd2b4271e5a76d8a92",
+      "sha256": "9cdaddbc77d0039b07428c8a1aba9708b9e67f54dd5730bf15220af0d1180f54"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.svg",
+      "previousSha256": "614c33d41a7eea02ec98641cfec92d28c77ed4a4ec73ce2f5fe69af6232a3e00",
+      "sha256": "c1d7e2706c29bcf3107cb5c755434c8cbb36379d80d72836dc4dc9ea47c1057a"
+    }
+  ],
+  "protectedElements": {
+    "articlesChecked": 12,
+    "fencedCodeBlocks": "All identical to English source",
+    "inlineLiterals": "All identical to English source"
+  },
+  "unresolved": [],
+  "assessment": "Prior medium and low findings resolved. Translation meaning review approved for the reviewed snapshot and modification scope.",
+  "unverified": [
+    "No code execution or external factual revalidation.",
+    "No browser rendering, clipping or live accessibility-runtime validation; SVG strings parsed and inspected.",
+    "No new full review of unrelated content changes outside the hash changes reported."
+  ]
+}

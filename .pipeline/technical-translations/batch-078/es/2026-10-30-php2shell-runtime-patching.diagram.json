@@ -1,0 +1,38 @@
+{
+  "key": "2026-10-30-php2shell-runtime-patching",
+  "title": "Recopilar pruebas del CLI",
+  "description": "Salir sin revelar datos fuera del CLI. Leer este proceso CLI y emitir JSON sin decidir si está corregido.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "¿PHP_SAPI es cli?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "web: 404",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Leer PID, versión y ejecutable"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Leer ini y opciones de sesión"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Imprimir pruebas del CLI en JSON",
+        "Sin dictamen sobre el parche"
+      ]
+    }
+  ],
+  "language": "es"
+}

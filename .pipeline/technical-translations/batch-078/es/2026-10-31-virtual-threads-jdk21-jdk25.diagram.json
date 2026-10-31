@@ -1,0 +1,55 @@
+{
+  "key": "2026-10-31-virtual-threads-jdk21-jdk25",
+  "title": "Observar esperas con y sin monitor",
+  "description": "Cada invocación valida el modo y el destino, graba un trabajador virtual y cuenta solo sus eventos de fijación después de detener la grabación.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Argumento monitor/plain válido?",
+        "¿El destino no existe?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "no: rechazar",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Iniciar grabación JFR",
+        "Umbral de evento de fijación = 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Enviar una tarea de hilo virtual",
+        "Imprimir isVirtual()"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "monitor: dormir en synchronized",
+        "plain: dormir sin monitor"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Esperar Future.get()",
+        "Detener y volcar la grabación"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Leer y filtrar por ID del trabajador",
+        "Imprimir recuento de fijaciones"
+      ]
+    }
+  ],
+  "language": "es"
+}

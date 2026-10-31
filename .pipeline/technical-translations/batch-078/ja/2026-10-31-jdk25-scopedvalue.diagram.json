@@ -1,0 +1,51 @@
+{
+  "key": "2026-10-31-jdk25-scopedvalue",
+  "title": "リクエストのバインドと復元",
+  "description": "仮想スレッドのhandleRequestに沿って、入れ子の正常終了と例外終了で外側のバインディングを復元します。通常の子には継承しません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "仮想スレッドでリクエスト開始",
+        "CONTEXTが未バインドと確認"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "call()：tenant-a / trace-123をバインド",
+        "service()でコンテキストを読む"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "入れ子のrun()：tenant-bを読む",
+        "戻るとtenant-aを確認"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "入れ子のrun()：例外を投げる",
+        "外側で捕捉し、",
+        "tenant-aの復元を確認"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "通常の仮想子スレッドを起動",
+        "未バインドと確認しjoinする"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "外側のcall()から戻る",
+        "未バインドとなりget()は例外"
+      ]
+    }
+  ],
+  "language": "ja"
+}

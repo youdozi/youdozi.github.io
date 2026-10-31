@@ -1,0 +1,43 @@
+{
+  "key": "2026-10-30-webclient-timeout-retry",
+  "title": "Zeitlimit- und Retry-Operatoren",
+  "description": "Die Operator-Pipeline von oben nach unten lesen. Das Gesamtzeitlimit umfasst Versuche und Verzögerungen. Nur HTTP 503 darf zweimal wiederholt werden.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "GET /value",
+        "retrieve → String dekodieren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(attemptLimit)",
+        "Neues Budget pro Versuch"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "retryWhen: nur HTTP 503",
+        "Verzögerung; maximal zwei Retries"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(totalLimit)",
+        "Alle Versuche und Verzögerungen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Subscriber erhält Wert / Abschluss",
+        "oder abschließenden Fehler"
+      ]
+    }
+  ],
+  "language": "de"
+}

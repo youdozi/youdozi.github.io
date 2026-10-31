@@ -1,0 +1,55 @@
+{
+  "key": "2026-10-31-virtual-threads-jdk21-jdk25",
+  "title": "观察监视器内外的等待",
+  "description": "每次调用验证模式与目标文件，录制一个虚拟工作线程，停止录制后仅统计该线程的固定事件。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "monitor/plain 参数有效？",
+        "目标文件不存在？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "否：拒绝",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "启动 JFR 录制",
+        "固定事件阈值 = 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "提交一个虚拟线程任务",
+        "打印 isVirtual()"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "monitor：在 synchronized 内休眠",
+        "plain：不使用监视器休眠"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "等待 Future.get()",
+        "停止录制并转储"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "读取并按工作线程 ID 筛选",
+        "打印匹配的固定事件数"
+      ]
+    }
+  ],
+  "language": "zh-CN"
+}

@@ -1,0 +1,29 @@
+{
+  "key": "2026-10-30-node2shell-brotli-runtime-patching",
+  "title": "Aktuellen Prozess erfassen",
+  "description": "Die Beispiel-App importiert eine Erfassungsfunktion, liest eigene Laufzeiteigenschaften und gibt JSON aus. Keine Dekompression oder Patchbewertung.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "app.mjs starten",
+        "runtimeEvidence importieren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "PID, Programm und Versionen lesen",
+        "Betriebssystem und Architektur lesen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Diesen Prozess als JSON ausgeben",
+        "Keine Dekompression / Patchbewertung"
+      ]
+    }
+  ],
+  "language": "de"
+}

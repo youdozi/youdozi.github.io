@@ -1,0 +1,26 @@
+{
+  "language": "zh-CN",
+  "reviewerSession": "/root/review078_zh",
+  "scope": "Rechecked the revised introductory fluent-API sentence against English; optional style suggestion resolved.",
+  "status": "passed",
+  "sourceQuote": "Both offer fluent APIs",
+  "targetQuote": "两者都提供链式调用 API",
+  "assessment": "链式调用 API faithfully describes fluent APIs and clearly distinguishes them from streaming (流式处理) in the preceding sentence.",
+  "files": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "18ea812ff981a8caee8cce9f5b10e99aa9e6f06a64328fb2edf2d54d7c03a2a2"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "66635549fdfb330bbeabd658046b28dcb1566bef58dbf033b35e22e387806d15"
+    }
+  ],
+  "checks": {
+    "fencedCodeCommandsOutputsIdenticalToEnglish": true
+  },
+  "findings": [],
+  "unverified": [
+    "No browser rendering, publication, code execution or external factual revalidation."
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "language": "fr",
+  "reviewerSession": "/root/review078_fr",
+  "scope": "Recheck of four previous findings against English source; protected fenced and inline literals checked across all 12 French articles.",
+  "files": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-gitlab2shell-cve-2026-110264.diagram.json",
+      "sha256": "c8df16a6ddafd29b152092325c0ff1cd22eb1065583acf1188cbe53fa58cc79a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "sha256": "34b4d71311aa99d26f094aa2d1f7ba5461ad459b80dae50e80cadbb4f4b4f40c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-gitlab2shell-cve-2026-110264.svg",
+      "sha256": "0cbf1bed16ef21b3a551d58bcdae59ffe4807a037e75fd5b38e715c700c01e68"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-jdk-emudhra-truststore.diagram.json",
+      "sha256": "a140d3724ae5a6681a0eb40818911a8075514e2b504295239ee6bbf35af2e3d5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-jdk-emudhra-truststore.md",
+      "sha256": "788ac1af9b0bc7c8b7328792916c9e03b887a54992f0f19dd917c55cda1feba7"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-jdk-emudhra-truststore.svg",
+      "sha256": "3910e1242454cc9defd914040ff0d14ffa9133e3b60ec817e4aa2a0a2eee1d70"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-node2shell-brotli-runtime-patching.diagram.json",
+      "sha256": "984f85412db9c54c9eec04450c1a2a9d8e8431b67a7c97d53477d46b7e9b0ec6"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "sha256": "16020e84ca6a88133feb38febdaa2ff1b5ea56f7f5516e291b983781f6cc5ffb"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-node2shell-brotli-runtime-patching.svg",
+      "sha256": "aee19ee8a0398c079361c49191344d3dd3d2623b4128e01cb52a3fbef4db04f6"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-php2shell-runtime-patching.diagram.json",
+      "sha256": "4595e139f6e5015de3e6e2a9eb8dcbf2fe3859382e6b469bd27330ca9d1b0ddb"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "5f26fdfc35424eaa33cc4927b79d4509ee97691d763f3451f02f29a26428b0c5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-php2shell-runtime-patching.svg",
+      "sha256": "d83ec51c3fe86f0d5ff51698ca19bc16b3c95c39d5e8aca56e8b8755cd4eb62d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-verify-sha256-download.diagram.json",
+      "sha256": "5ada6437048f43a38b32b1083a80689f53b2eaee7bcc355afa70c525282cf688"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-verify-sha256-download.md",
+      "sha256": "f62509603636cc8e26e5d7bb1b04cf1349c2a669b45114ee83fffe1a1a8a3572"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-verify-sha256-download.svg",
+      "sha256": "25993d99c77283f2a75aa7a3febb2bad0086983699d014e11b5bf770b2d6e095"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-webclient-timeout-retry.diagram.json",
+      "sha256": "9897e809e922d1003b35a2c163cc560c5f1f67d8dd68ed18c3382464a7e8dea1"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "109938c7c742a93479fc217aa568dd0b7270901fb545b0090963a891cb7294c6"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-webclient-timeout-retry.svg",
+      "sha256": "8470aebd591210e9784da40f23070483bf237b99af4e52c933914fbab946b659"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-fragnesia-cve-2026-46300.diagram.json",
+      "sha256": "020cc8d226b03df103442c14a4cc3418eb3be8a6606c436a7c4ae1345b9f75a8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "ac7fead80b972ad033df77a4ad1f3f2bb62757bb4919636cc1388877add7cd53"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-fragnesia-cve-2026-46300.svg",
+      "sha256": "70ce917261ce7ed7f905358d2bf8d484935f474451ce960eff6e0c3d62b0ebc2"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+      "sha256": "94b6803a5b74321dbb6a7e565a7439f11a173face204936867ab69a7c9de177b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+      "sha256": "430c42d7613e4b49373492c7d931ee5382eafe42adce4323647aecef3fc39990"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "33599865eae2a45f851fc431cd321410ed23e4ae47ddd5ebe95f168d757f79d8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture.svg",
+      "sha256": "0aba7fa62ce4ed38cb1e802d474a4074b73fec46f8ad90696ab11c039908cddb"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk25-scopedvalue.diagram.json",
+      "sha256": "6d11feffc64868654a9d5ad5a022818a42a81b87edd7822b9f2cebd367e6db4b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "07c402ed161d01763cc19dc16c6c86a69cce61a4d6ceefc42a6fd4423db06106"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk25-scopedvalue.svg",
+      "sha256": "160264644b5f61caa88753e2ae47a3b7d673c1c8d8740b332e00609e79cf8ee6"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.diagram.json",
+      "sha256": "819d86b97ab46d23177da9384e3db82434a5773caa06848b81341dd01eacb2e1"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "f089edc9129d13902f8daae6b2a40d7fe9134409bf01c3d72fe74014a28a3611"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.svg",
+      "sha256": "ff148354cacaf94a12dd8bedba3c3d1ab80f4192b584f2a507ff69c9baa4bdf3"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-virtual-threads-jdk21-jdk25.diagram.json",
+      "sha256": "03d3e5752af819cc36e0bfa13887894e1e48e780355110f60af47f1f1558d922"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "441c9be7fb457ebb48a3db3d2e1d6a25caeea7d2e356c87a1be4d4550faff10a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-virtual-threads-jdk21-jdk25.svg",
+      "sha256": "281787476fc111d329f89889fa8a6f387d9d836b744d10fd92ac8ef887a87f7b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-webclient-restclient-comparison.diagram.json",
+      "sha256": "9aa93737d83d653a41112f4062a3d51e4a647729eac20c9a7fb879600fbc9cdf"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "63dead6a4827f35443ff54cf5cc5d84bd0a214bd542f278aaad32da6876d8a4c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-webclient-restclient-comparison.svg",
+      "sha256": "661972e85ff3a3e822e513b6a4a75b5143e64a41ef4c8ad131d4c26e9a9159b6"
+    }
+  ],
+  "changedFiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "109938c7c742a93479fc217aa568dd0b7270901fb545b0090963a891cb7294c6",
+      "previousSha256": "ceea1e96ffb9f65c0b5332bf41320685cec45bd460b1f993119d692cecf6aa9c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+      "sha256": "94b6803a5b74321dbb6a7e565a7439f11a173face204936867ab69a7c9de177b",
+      "previousSha256": "2585d7fdb60f8d2e03cc7cf65fa83b49b6b88751a268963c2d373ce780d848ad"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "33599865eae2a45f851fc431cd321410ed23e4ae47ddd5ebe95f168d757f79d8",
+      "previousSha256": "74825faed5e147656ae87be28143e11e5e279455bc05c90f51e7479400bd3bce"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "f089edc9129d13902f8daae6b2a40d7fe9134409bf01c3d72fe74014a28a3611",
+      "previousSha256": "46122872f4ccbffe0305cfde8911b6b084cf23679c5ea582a0f87d14f35b92d4"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "441c9be7fb457ebb48a3db3d2e1d6a25caeea7d2e356c87a1be4d4550faff10a",
+      "previousSha256": "032bbeb724db24d1e4c514a73e3d36f8cdb32e2ca09040851fb83a1376f46888"
+    }
+  ],
+  "resolutions": [
+    {
+      "findingIndex": 0,
+      "severity": "major",
+      "location": ".pipeline/technical-translations/batch-078/fr/2026-10-30-webclient-timeout-retry.md:62",
+      "resolution": "resolved",
+      "verification": "French prose now says 1 000 ms, preserving the intended 1000 ms and original code."
+    },
+    {
+      "findingIndex": 1,
+      "severity": "major",
+      "location": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture.md:5,10,22,29,153; .pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture-architecture.svg:2",
+      "resolution": "resolved",
+      "verification": "All listed localized prose, metadata/table and architecture SVG title now say 10 000, preserving original numeric meaning. Protected inline formulas remain original English literals."
+    },
+    {
+      "findingIndex": 2,
+      "severity": "style",
+      "location": ".pipeline/technical-translations/batch-078/fr/2026-10-31-virtual-threads-jdk21-jdk25.md:127",
+      "resolution": "resolved",
+      "verification": "Now « latence dans la queue de la distribution », preserving tail-latency meaning."
+    },
+    {
+      "findingIndex": 3,
+      "severity": "style",
+      "location": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.md:107",
+      "resolution": "resolved",
+      "verification": "Now « donne à la JVM davantage de latitude pour l’**aplatissement** », accurately preserving the English figurative freedom/room for flattening; following guarantees and measurement exclusions unchanged."
+    }
+  ],
+  "protectedElements": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-jdk-emudhra-truststore.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-php2shell-runtime-patching.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-verify-sha256-download.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-webclient-timeout-retry.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-fragnesia-cve-2026-46300.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk25-scopedvalue.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-webclient-restclient-comparison.md",
+      "fencedBlocksIdentical": true,
+      "inlineLiteralsIdentical": true
+    }
+  ],
+  "unresolved": [],
+  "disposition": "Approved for the reviewed linguistic scope: both required numeric-notation corrections and both optional style suggestions are resolved; no unresolved findings.",
+  "unverified": [
+    "No source examples rerun; original execution reports were compared as translation content only.",
+    "No new external fact-checking or vendor-advisory verification performed.",
+    "No browser rendering or graphical text-overflow verification performed; SVG XML, language strings, order and semantics reviewed.",
+    "Site integration, link rewrites, public deployment and CI are outside this linguistic review."
+  ]
+}

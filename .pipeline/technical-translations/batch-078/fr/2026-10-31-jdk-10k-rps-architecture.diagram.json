@@ -1,0 +1,40 @@
+{
+  "key": "2026-10-31-jdk-10k-rps-architecture",
+  "title": "Gate.call() : acquérir, agir, libérer",
+  "description": "Seule la méthode d’admission est représentée. Un échec d’acquisition rejette sans exécuter. Après acquisition, finally rend le permis en cas de succès ou d’échec.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "tryAcquire() a réussi ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "non : rejet",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Exécuter work.call()",
+        "L’opération termine ou lève"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "finally : rendre le permis",
+        "Après la fin réelle de l’opération"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Renvoyer le résultat",
+        "Ou propager l’exception"
+      ]
+    }
+  ],
+  "language": "fr"
+}

@@ -1,0 +1,46 @@
+{
+  "key": "2026-10-30-jdk-emudhra-truststore",
+  "title": "Inspeccionar confianza JSSE",
+  "description": "Leer la identidad de la JVM, inicializar el gestor de confianza predeterminado, recopilar huellas de CA candidatas e imprimir solo el inventario.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Leer propiedades de la JVM"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Inicializar TrustManagerFactory",
+        "con valores predeterminados"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Inicialización correcta?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "excepción",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Leer emisores CA aceptados",
+        "Buscar nombres y calcular huellas"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Imprimir recuentos e inventario",
+        "Sin dictamen de validación TLS"
+      ]
+    }
+  ],
+  "language": "es"
+}

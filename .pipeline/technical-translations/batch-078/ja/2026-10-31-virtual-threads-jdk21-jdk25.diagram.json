@@ -1,0 +1,55 @@
+{
+  "key": "2026-10-31-virtual-threads-jdk21-jdk25",
+  "title": "モニター内外の待機を観察",
+  "description": "各呼び出しはモードと出力先を検証し、一つの仮想ワーカーを記録します。記録停止後、そのワーカーのピン留めだけを数えます。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "monitor/plain引数は有効？",
+        "出力先は未作成？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "いいえ：拒否",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "JFR記録を開始",
+        "ピン留めイベントしきい値 = 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "仮想スレッドのタスクを一つ投入",
+        "isVirtual()を出力"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "monitor：synchronized内で待機",
+        "plain：モニターなしで待機"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Future.get()を待つ",
+        "記録を停止してダンプ"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "ワーカーのスレッドIDで抽出",
+        "一致するピン留め件数を出力"
+      ]
+    }
+  ],
+  "language": "ja"
+}

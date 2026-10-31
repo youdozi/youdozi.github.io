@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-project-valhalla-value-objects",
+  "title": "比较身份与值语义",
+  "description": "示例比较 record，然后测试引用字段、null 存储和已处理的监视器异常。不检查内存布局。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "创建两个普通 record",
+        "创建两个相同的值 record"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "比较 == 与 equals()",
+        "检查 Objects.hasIdentity()"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "包装独立但内容相同的 String",
+        "比较 Label 的 == 与 equals()"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "创建值 record 数组",
+        "确认首个槽位为 null"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "通过 Object 尝试加锁",
+        "捕获预期的 IdentityException"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "完成语义观察",
+        "未测量布局或性能"
+      ]
+    }
+  ],
+  "language": "zh-CN"
+}

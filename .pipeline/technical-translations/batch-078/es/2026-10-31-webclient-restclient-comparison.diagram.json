@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-webclient-restclient-comparison",
+  "title": "Llamadas HTTP: finales y suscripciones",
+  "description": "Solo comprobaciones principales de main; se omiten preparación del servidor, configuración y limpieza.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Crear RestClient.retrieve()",
+        "Recuento de solicitudes 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Esperar con body(String.class)",
+        "Primera solicitud completada: 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Crear Mono de WebClient",
+        "Aún sin suscripción: 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Primer block: suscribir y esperar",
+        "Recuento de solicitudes 2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Segundo block: nueva suscripción",
+        "Recuento de solicitudes 3"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Comprobar 404 y 503 de cada cliente",
+        "4 solicitudes más; total final 7"
+      ]
+    }
+  ],
+  "language": "es"
+}

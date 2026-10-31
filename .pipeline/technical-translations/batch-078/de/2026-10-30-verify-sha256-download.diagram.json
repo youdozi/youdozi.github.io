@@ -1,0 +1,54 @@
+{
+  "key": "2026-10-30-verify-sha256-download",
+  "title": "SHA-256-Bytes prüfen",
+  "description": "Sollwert validieren, eine unveränderte reguläre Datei in Binärblöcken lesen und vergleichen. Eingabe- und Lesefehler liefern 2, Abweichungen 1, Übereinstimmungen 0.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "64 Hex-Zeichen?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "ungültig: 2",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Reguläre Datei binär lesen",
+        "SHA-256 bis EOF aktualisieren"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Alle Lesevorgänge erfolgreich?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Lesefehler:2",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Hash entspricht dem Sollwert?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "abweichend:1",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "OK ausgeben; Exit 0"
+      ]
+    }
+  ],
+  "language": "de"
+}

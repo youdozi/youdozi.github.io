@@ -1,0 +1,1964 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-078",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "c17d09a652008ec309b671f9ddd399623fd62243",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Six language-specific AI author sessions; six separate-context AI reviewers read target-language editions standalone and compare complete English sources, followed by correction rechecks.",
+    "independentReviewer": true,
+    "newExternalFactVerification": false,
+    "scope": "72 complete editions: metadata, prose, tables, captions, 72 flow diagrams and six supplementary architecture figures. Code, command/output blocks, inline literals and URLs preserved. Source execution statements remain translations of prior evidence.",
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru",
+      "es"
+    ],
+    "reviewedTargetFiles": 222,
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/zh-CN.json",
+        "sha256": "c259a602a54e97491e2cfeebad99b7bddf8cf464f30fcd9335f9f9ff36109c9b"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/zh-CN-recheck.json",
+        "sha256": "86c2c2b934daaad5f639842d58ff0f023eb630c42ff0984f07b6b2d80a91351a"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/ja.json",
+        "sha256": "d047a6c047758a4fcbed4ddb71c89757e42b0a91b28fa219a82715f67cdfa568"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/ja-recheck.json",
+        "sha256": "8bc0f597d4c7e769cb312b3c18bcb5a7bbd7d0cb1b55c13bd0eeaf11057b718f"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/de.json",
+        "sha256": "e6c1566262eb1e6cd8122653886ad4287a687a03389c8dd22cb28e537408e152"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/de-recheck.json",
+        "sha256": "155ea891bf6512c2c5e34f7bb0c51568ba04439c05ea50342319adfbf5cbed72"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/fr.json",
+        "sha256": "0ae92914b9e94941cf19592bccb19ef24efff56299059a238237f189dfa0f84c"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/fr-recheck.json",
+        "sha256": "355cac9abcdd2e54afdd889fdfdcf68cbec0eb317cb124cf40186ec90f302c3e"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/ru.json",
+        "sha256": "5eccd90bb99f07b60d6d6d500dcaaf3d2a170d8d428589916c7f77beef3318d3"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/ru-recheck.json",
+        "sha256": "d1372035715f210696b2fa4c9b8f3db490c5d9ebb7c9542ca19794425210962b"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/es.json",
+        "sha256": "bcda2b72f09586e407ed6c58b16c0951262747f691c44ca234a4ca41d30e455f"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-078/reviews/es-recheck.json",
+        "sha256": "96e4bdfaf902b47335fac70d0974b717ca4d0aaf531856c33053e15f29b2adb6"
+      }
+    ],
+    "unresolvedMeaningFindings": 0,
+    "limitations": [
+      "AI review; not human/native-speaker review or separate-model consensus.",
+      "No new execution of article examples or external factual verification.",
+      "Literal code and inline formulas retain their English numeric notation.",
+      "Japanese standalone 十月 is retained without introducing a new Arabic-digit token; calendar dates use normal Japanese date notation."
+    ],
+    "publication": "Draft preparation only. No inherited publication/review timestamps or approval; exact manifest requires separate publication authorization."
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-10-30-verify-sha256-download",
+      "language": "zh-CN",
+      "translationKey": "2026-10-30-verify-sha256-download",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-verify-sha256-download.md",
+        "sha256": "9c91eef87fd5390b5be8f867c298bdaaaa20979b4571c13ba7694d62ba172e89"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-verify-sha256-download.md",
+        "sha256": "30d7ac0f17407e2a19a3bd10d308282436b685fa7196d55db760db630a34d093"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-verify-sha256-download.diagram.json",
+        "sha256": "67006252d86c02a614f60ff184f8640cbc20262f873805e3e8fd38cff1d0cbec"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-verify-sha256-download.svg",
+        "sha256": "9375699a93800f974ed131eb4815268d9800db7e3ad2afbfc9d8a42452ecfa55"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2026-10-30-verify-sha256-download",
+      "language": "ja",
+      "translationKey": "2026-10-30-verify-sha256-download",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-verify-sha256-download.md",
+        "sha256": "9c91eef87fd5390b5be8f867c298bdaaaa20979b4571c13ba7694d62ba172e89"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-verify-sha256-download.md",
+        "sha256": "a02472e4b5cee1b828fd8e7ab6960d10510fd9a9b321a0dc7a1763b7d9badb70"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-verify-sha256-download.diagram.json",
+        "sha256": "15640e757e2362c0ee76d7308c4c74725d9b1d6d38fc8d968861898ad56656a7"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-verify-sha256-download.svg",
+        "sha256": "68a322b1c4111e7b95b7dc9a25173ca99a3d2672b570a22d9ea1fcea1cc4267b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2026-10-30-verify-sha256-download",
+      "language": "de",
+      "translationKey": "2026-10-30-verify-sha256-download",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-verify-sha256-download.md",
+        "sha256": "9c91eef87fd5390b5be8f867c298bdaaaa20979b4571c13ba7694d62ba172e89"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-verify-sha256-download.md",
+        "sha256": "e8d86546a23eb9cac7db41a745b58c59d985ea815049cbc4cba0e9ea13183623"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-verify-sha256-download.diagram.json",
+        "sha256": "8ad4ed5f76a15998c6d8150582bca6febe1e48fffe331091f30f30535e7e87dc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-verify-sha256-download.svg",
+        "sha256": "e9f88ee716af1f96376e3afe367f17969278f1628ec9b3c052664ca597c4b3bd"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2026-10-30-verify-sha256-download",
+      "language": "fr",
+      "translationKey": "2026-10-30-verify-sha256-download",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-verify-sha256-download.md",
+        "sha256": "9c91eef87fd5390b5be8f867c298bdaaaa20979b4571c13ba7694d62ba172e89"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-verify-sha256-download.md",
+        "sha256": "f62509603636cc8e26e5d7bb1b04cf1349c2a669b45114ee83fffe1a1a8a3572"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-verify-sha256-download.diagram.json",
+        "sha256": "5ada6437048f43a38b32b1083a80689f53b2eaee7bcc355afa70c525282cf688"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-verify-sha256-download.svg",
+        "sha256": "25993d99c77283f2a75aa7a3febb2bad0086983699d014e11b5bf770b2d6e095"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2026-10-30-verify-sha256-download",
+      "language": "ru",
+      "translationKey": "2026-10-30-verify-sha256-download",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-verify-sha256-download.md",
+        "sha256": "9c91eef87fd5390b5be8f867c298bdaaaa20979b4571c13ba7694d62ba172e89"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-verify-sha256-download.md",
+        "sha256": "5c5bac8c7f3d73268f0c1e8dc83828e30bc640dc7dbe6af3c9ff8567fa968eec"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-verify-sha256-download.diagram.json",
+        "sha256": "447efbf9ee0c8fc466e4b37a940a8e89465b72c95eeb304b66e93947fbb9ea61"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-verify-sha256-download.svg",
+        "sha256": "4a6f8e1535b7cf6113f3b0759eccf574ac451172685fa898fb90c7cfd2784c42"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2026-10-30-verify-sha256-download",
+      "language": "es",
+      "translationKey": "2026-10-30-verify-sha256-download",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-verify-sha256-download.md",
+        "sha256": "9c91eef87fd5390b5be8f867c298bdaaaa20979b4571c13ba7694d62ba172e89"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-verify-sha256-download.md",
+        "sha256": "e2e74dddd3a2838bdcc3b7c9e7f2ca1e61afe665bb612ad1776c6749610ebfcf"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-verify-sha256-download.diagram.json",
+        "sha256": "766efd88ffb8599fb6ddbb8b7d7ca07f294a67457cd9c3d93d457c051476e875"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-verify-sha256-download.svg",
+        "sha256": "cd562e4f4ab2813dfcaa2d3b2e3951dfe436e4124bd63d2855cf687a17fa8a8b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-30-webclient-timeout-retry",
+      "language": "zh-CN",
+      "translationKey": "2026-10-30-webclient-timeout-retry",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "757c2335d2f6b40391fa299791d6c6e6bade0e499c599b451be06be4eee77e3b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "d25e8f86bbf2a5dc22fb5e2e75e93e31c5daefd5037d582a650b705a803c3f76"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-webclient-timeout-retry.diagram.json",
+        "sha256": "af3ed193b024cad7b9d0d84375ee4e60bf5848e5abd063d60904b4cb763029c3"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-webclient-timeout-retry.svg",
+        "sha256": "8b0a5fd9450f82ae172f0231527445c0a8d4bb0c600995a4babe113b4ecdebeb"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2026-10-30-webclient-timeout-retry",
+      "language": "ja",
+      "translationKey": "2026-10-30-webclient-timeout-retry",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "757c2335d2f6b40391fa299791d6c6e6bade0e499c599b451be06be4eee77e3b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "5f63bbbc87607eb3b7dc2c608d5e9afb1891a2ac20918227b0147dd3f32b35c8"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-webclient-timeout-retry.diagram.json",
+        "sha256": "9401e20d1b3f58bf8c1f4449e56978aa84b50cf621c12454084fe8745f50180a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-webclient-timeout-retry.svg",
+        "sha256": "69205ffdc258e0f4132cec649075f02e611353935510d260ef5149212dc81713"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2026-10-30-webclient-timeout-retry",
+      "language": "de",
+      "translationKey": "2026-10-30-webclient-timeout-retry",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "757c2335d2f6b40391fa299791d6c6e6bade0e499c599b451be06be4eee77e3b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "e12ac339a53913c7c650252170a4efecd6beb558ae2406140ff2440b059046f5"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-webclient-timeout-retry.diagram.json",
+        "sha256": "518125e5e0acabad24004212287bccc2e352f39f3ed07abcf821fc19ed9c41a1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-webclient-timeout-retry.svg",
+        "sha256": "d298a6247ebe373d5a80c18e22801ac12b2fb65c77cf60f8703a5301aad735bc"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2026-10-30-webclient-timeout-retry",
+      "language": "fr",
+      "translationKey": "2026-10-30-webclient-timeout-retry",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "757c2335d2f6b40391fa299791d6c6e6bade0e499c599b451be06be4eee77e3b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "109938c7c742a93479fc217aa568dd0b7270901fb545b0090963a891cb7294c6"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-webclient-timeout-retry.diagram.json",
+        "sha256": "9897e809e922d1003b35a2c163cc560c5f1f67d8dd68ed18c3382464a7e8dea1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-webclient-timeout-retry.svg",
+        "sha256": "8470aebd591210e9784da40f23070483bf237b99af4e52c933914fbab946b659"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2026-10-30-webclient-timeout-retry",
+      "language": "ru",
+      "translationKey": "2026-10-30-webclient-timeout-retry",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "757c2335d2f6b40391fa299791d6c6e6bade0e499c599b451be06be4eee77e3b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "a7e78009c0f10eb96655dcc537ae87607a2122e9669dec9468e3524bf448d45d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-webclient-timeout-retry.diagram.json",
+        "sha256": "8e4ded3ff5f4687237174a3c4df50d0229da16335506b1bb7aef7b2650962b79"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-webclient-timeout-retry.svg",
+        "sha256": "565b93c3797695dea81667789e87d720d70bfb9dc7c3c264cb3de8c302cae642"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2026-10-30-webclient-timeout-retry",
+      "language": "es",
+      "translationKey": "2026-10-30-webclient-timeout-retry",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "757c2335d2f6b40391fa299791d6c6e6bade0e499c599b451be06be4eee77e3b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "7f7c27be38a4f974b2e39f4cf9b98191ff7c27dd80536d72cc6e23d88f74af50"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-webclient-timeout-retry.diagram.json",
+        "sha256": "28f489b39e3ae905f7c637a797408675a0e10f8db191300cd30c3624e3b14bc0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-webclient-timeout-retry.svg",
+        "sha256": "9f1fcb1d0edb356682a4163e754775778350d5508dbc84841aed5b74ef133e48"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-30-php2shell-runtime-patching",
+      "language": "zh-CN",
+      "translationKey": "2026-10-30-php2shell-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "f4aa334e127facad6b41b0eb19920466d78f78d25c9065c6faf85c584c63115c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "4a0aed6128b5751f45ce7d25a94f909e4f47393ed64adc80ec884cbb809a8a9d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-php2shell-runtime-patching.diagram.json",
+        "sha256": "93d32d68d0115f9377e444d880726da93beb3a66bb12ddd9135f03f41c802eca"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-php2shell-runtime-patching.svg",
+        "sha256": "3aeb2973b1224606a066bd9c9cf060c6a82c2161a3bd1e9843784e3ec8f7752a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2026-10-30-php2shell-runtime-patching",
+      "language": "ja",
+      "translationKey": "2026-10-30-php2shell-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "f4aa334e127facad6b41b0eb19920466d78f78d25c9065c6faf85c584c63115c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "15b639e41a346b17c4614f8ae76bb0346da4f58b874581e2fd9edaf4fc27b3a0"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-php2shell-runtime-patching.diagram.json",
+        "sha256": "e34f42a9adc7648440d2d271c35cf90d3e37e005e8f9294006fb7de7bc16988e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-php2shell-runtime-patching.svg",
+        "sha256": "3b9676c091cfbe4593a6625a6f79689550560aa747290f895eb1cb9fde7e56ab"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2026-10-30-php2shell-runtime-patching",
+      "language": "de",
+      "translationKey": "2026-10-30-php2shell-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "f4aa334e127facad6b41b0eb19920466d78f78d25c9065c6faf85c584c63115c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "1c24d08cc0164454dfa1514fcd1f856dd07b2dd7b20753e5c8a6e01724084745"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-php2shell-runtime-patching.diagram.json",
+        "sha256": "e4c7d7a95890fbcdb063b5abbfb791bfb147794648bde1fcf52ca72a3baa6d35"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-php2shell-runtime-patching.svg",
+        "sha256": "d6c9d74c8fa62257329080e2081c64956364fd44b66f5cbb3bf187a0804a0543"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2026-10-30-php2shell-runtime-patching",
+      "language": "fr",
+      "translationKey": "2026-10-30-php2shell-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "f4aa334e127facad6b41b0eb19920466d78f78d25c9065c6faf85c584c63115c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "5f26fdfc35424eaa33cc4927b79d4509ee97691d763f3451f02f29a26428b0c5"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-php2shell-runtime-patching.diagram.json",
+        "sha256": "4595e139f6e5015de3e6e2a9eb8dcbf2fe3859382e6b469bd27330ca9d1b0ddb"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-php2shell-runtime-patching.svg",
+        "sha256": "d83ec51c3fe86f0d5ff51698ca19bc16b3c95c39d5e8aca56e8b8755cd4eb62d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2026-10-30-php2shell-runtime-patching",
+      "language": "ru",
+      "translationKey": "2026-10-30-php2shell-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "f4aa334e127facad6b41b0eb19920466d78f78d25c9065c6faf85c584c63115c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "e4ea1a385236cd9af64d3868e1413fe253a36165dab12bcbbc4cad3838e495d0"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-php2shell-runtime-patching.diagram.json",
+        "sha256": "6c1c6664e0252ba202ac1be82820f5d189f4473e6543dcaa301a5d4762da3fa1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-php2shell-runtime-patching.svg",
+        "sha256": "5cb6aefd831e3486943b3fb7931be5f1c584462614ced7c6ba385a9fa3b38016"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2026-10-30-php2shell-runtime-patching",
+      "language": "es",
+      "translationKey": "2026-10-30-php2shell-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "f4aa334e127facad6b41b0eb19920466d78f78d25c9065c6faf85c584c63115c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-php2shell-runtime-patching.md",
+        "sha256": "de46500dd70706bb22ce67289c3af9d28243e062d3aca20fb3328b3b5f51faa9"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-php2shell-runtime-patching.diagram.json",
+        "sha256": "239d73482765beb7a3386c83abcb78946d8cca65af3abd130b8d37267eee7eb8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-php2shell-runtime-patching.svg",
+        "sha256": "9de8cccc944b67eb1ba5296297f6bd956cb7bf08e156835d5820e09d39f2fe0f"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-30-node2shell-brotli-runtime-patching",
+      "language": "zh-CN",
+      "translationKey": "2026-10-30-node2shell-brotli-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "9f8abe774ed0a87c0a07284163ad858f1f4ff629708131dff5f1b6088b23b959"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "94a44817fef1d5bad9b07a888751bf39afdb60b34449241da9bbe84d33ed8728"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-node2shell-brotli-runtime-patching.diagram.json",
+        "sha256": "e627cca13be0e77c165a31f8fabce99a1117d6395e58770cbe963a450192d187"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-node2shell-brotli-runtime-patching.svg",
+        "sha256": "4e1c1b245c45ab297ca66caaf9a3b66eb4e6dfe0fb43a4f78e6ef5f379b13c0c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2026-10-30-node2shell-brotli-runtime-patching",
+      "language": "ja",
+      "translationKey": "2026-10-30-node2shell-brotli-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "9f8abe774ed0a87c0a07284163ad858f1f4ff629708131dff5f1b6088b23b959"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "12df17770a5afc2451e9a55972714253f297186a0f32b702285f379267699f03"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-node2shell-brotli-runtime-patching.diagram.json",
+        "sha256": "7229cb3788ac0ce3834c062a56d53b2df83e778702f997533a8cff559c90933e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-node2shell-brotli-runtime-patching.svg",
+        "sha256": "6c388e78e53e4892bd10463cfb88b9e645700ae4fcc61b4033e20b71fd1cee46"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2026-10-30-node2shell-brotli-runtime-patching",
+      "language": "de",
+      "translationKey": "2026-10-30-node2shell-brotli-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "9f8abe774ed0a87c0a07284163ad858f1f4ff629708131dff5f1b6088b23b959"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "6cc2661a0b326f8ab6438e367166bd7bff1fbee6fd89a494baf68872a4d50be6"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-node2shell-brotli-runtime-patching.diagram.json",
+        "sha256": "622e46b410265be971bef3c7d886f4b0f01add0713a8b63f976f97041214ec5a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-node2shell-brotli-runtime-patching.svg",
+        "sha256": "a53bda5d0d22f31a0d4a3ae281f36536a2c7808de4c7f3355e71fc4982b9663f"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2026-10-30-node2shell-brotli-runtime-patching",
+      "language": "fr",
+      "translationKey": "2026-10-30-node2shell-brotli-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "9f8abe774ed0a87c0a07284163ad858f1f4ff629708131dff5f1b6088b23b959"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "16020e84ca6a88133feb38febdaa2ff1b5ea56f7f5516e291b983781f6cc5ffb"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-node2shell-brotli-runtime-patching.diagram.json",
+        "sha256": "984f85412db9c54c9eec04450c1a2a9d8e8431b67a7c97d53477d46b7e9b0ec6"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-node2shell-brotli-runtime-patching.svg",
+        "sha256": "aee19ee8a0398c079361c49191344d3dd3d2623b4128e01cb52a3fbef4db04f6"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2026-10-30-node2shell-brotli-runtime-patching",
+      "language": "ru",
+      "translationKey": "2026-10-30-node2shell-brotli-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "9f8abe774ed0a87c0a07284163ad858f1f4ff629708131dff5f1b6088b23b959"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "b0d6ea395aaf8afd168bdeca4ce6ca6b8468f178e83090c9d47ce58a4e67e52b"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-node2shell-brotli-runtime-patching.diagram.json",
+        "sha256": "69ebd90e21a744e08ce25a7d711744c93b39d675d7436e0c1bf94b34980dfddf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-node2shell-brotli-runtime-patching.svg",
+        "sha256": "d531a272a26c7e0357221e3c8f4e05f0b01d85b245353edf990285a36b3daa58"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2026-10-30-node2shell-brotli-runtime-patching",
+      "language": "es",
+      "translationKey": "2026-10-30-node2shell-brotli-runtime-patching",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "9f8abe774ed0a87c0a07284163ad858f1f4ff629708131dff5f1b6088b23b959"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-node2shell-brotli-runtime-patching.md",
+        "sha256": "a4287c9d46dd2144fbd30a9395f0c7768e132e981b83f32acc7a1f415cd9aeb0"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-node2shell-brotli-runtime-patching.diagram.json",
+        "sha256": "eb26a487985f37db3140fda668e1e3bf085e92b5a00c08d62c2384fd4aa73497"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-node2shell-brotli-runtime-patching.svg",
+        "sha256": "dace660c0b5b9ca2ab3e3b148ca365bd6ec8a5ba6aed00ea3285a5db1974134b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-30-gitlab2shell-cve-2026-110264",
+      "language": "zh-CN",
+      "translationKey": "2026-10-30-gitlab2shell-cve-2026-110264",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "e82e5c142578027e209b24cd05267e840b1988b27684891f646b8e25af5576a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "38a23ef2b11428f5e3f9cfd3ee2ca8b215b9a58833ba45a651a6e812a9661850"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-gitlab2shell-cve-2026-110264.diagram.json",
+        "sha256": "4c581ca8a518cb24a3220222b54e1755e2f31df6cb4eb1cf5f04bf66cbe3aa38"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-gitlab2shell-cve-2026-110264.svg",
+        "sha256": "33e03291f9df5001dc54f3e37778cf248b7bace7c02ad078eef568dc55af77df"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2026-10-30-gitlab2shell-cve-2026-110264",
+      "language": "ja",
+      "translationKey": "2026-10-30-gitlab2shell-cve-2026-110264",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "e82e5c142578027e209b24cd05267e840b1988b27684891f646b8e25af5576a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "e4321817f9e00d6923260b720d2fb8dccd35ca23ce769b1b765c71a00088e343"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-gitlab2shell-cve-2026-110264.diagram.json",
+        "sha256": "5f9182e0c7d9177647da68c35bb7ec8fdc7ea4c4b0da33fba41a4d43a7d334bc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-gitlab2shell-cve-2026-110264.svg",
+        "sha256": "d6caf2dc21bbf9efff3f0b0e71f1a62f99dac8ec3dc367b0bb08167eb8d438f0"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2026-10-30-gitlab2shell-cve-2026-110264",
+      "language": "de",
+      "translationKey": "2026-10-30-gitlab2shell-cve-2026-110264",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "e82e5c142578027e209b24cd05267e840b1988b27684891f646b8e25af5576a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "79fb09b96230764927a7a99a8e6e4dddae256091ba86f9be957ca3ca12e9c0ed"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-gitlab2shell-cve-2026-110264.diagram.json",
+        "sha256": "9ac33bb3c4af6d29ac73b0ddb785bac7f2579da8bc363538bcaf82eec0dd9d3f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-gitlab2shell-cve-2026-110264.svg",
+        "sha256": "8b9a01cb34579f3851cb39880d0ee75ab9a1c293f8370a84dddc26aaa58e2b1c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2026-10-30-gitlab2shell-cve-2026-110264",
+      "language": "fr",
+      "translationKey": "2026-10-30-gitlab2shell-cve-2026-110264",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "e82e5c142578027e209b24cd05267e840b1988b27684891f646b8e25af5576a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "34b4d71311aa99d26f094aa2d1f7ba5461ad459b80dae50e80cadbb4f4b4f40c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-gitlab2shell-cve-2026-110264.diagram.json",
+        "sha256": "c8df16a6ddafd29b152092325c0ff1cd22eb1065583acf1188cbe53fa58cc79a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-gitlab2shell-cve-2026-110264.svg",
+        "sha256": "0cbf1bed16ef21b3a551d58bcdae59ffe4807a037e75fd5b38e715c700c01e68"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2026-10-30-gitlab2shell-cve-2026-110264",
+      "language": "ru",
+      "translationKey": "2026-10-30-gitlab2shell-cve-2026-110264",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "e82e5c142578027e209b24cd05267e840b1988b27684891f646b8e25af5576a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "6fb36f613cedb7ef1141356b1ed51bf943aa83b719a902ea91f28b0bb6d9651d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-gitlab2shell-cve-2026-110264.diagram.json",
+        "sha256": "83c4399a79f03c06f91ad48766e6b0b46c5f54b3f6c9f52ebb6c8f6b0caf0187"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-gitlab2shell-cve-2026-110264.svg",
+        "sha256": "6e615de3f9fed2576accd7a43d0281bd58afc8827a3711fd68eb8465826109fa"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2026-10-30-gitlab2shell-cve-2026-110264",
+      "language": "es",
+      "translationKey": "2026-10-30-gitlab2shell-cve-2026-110264",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "e82e5c142578027e209b24cd05267e840b1988b27684891f646b8e25af5576a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-gitlab2shell-cve-2026-110264.md",
+        "sha256": "be2cf75027b48da49898eff8db8680367ce82fed80b2ebe338401a71b3f84f1e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-gitlab2shell-cve-2026-110264.diagram.json",
+        "sha256": "b4943c220a3847ff4127d3604fbf6db97fc6966729c531a7f18535965975a354"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-gitlab2shell-cve-2026-110264.svg",
+        "sha256": "ae69d59d021d8e3476b157d6fb0f8aa39878475f8b1ff5c522514f3fa43ee233"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-30-jdk-emudhra-truststore",
+      "language": "zh-CN",
+      "translationKey": "2026-10-30-jdk-emudhra-truststore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "abdc8cf489bcb34919f036e665475c6dd2f939c07f1a4c42ffe10c86e32761e3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "7d0dcb79f672f9d13d502a553403f936f3a7e8edc1ebd1407dad3ea4e73f3c62"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-jdk-emudhra-truststore.diagram.json",
+        "sha256": "6f3662fbccf3655781b646631b5bde8f17fc0c613f139dd1de028964a5e8f761"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-jdk-emudhra-truststore.svg",
+        "sha256": "c7a3ed40af73c587b83092345517345f54d73c9e444daa9cdc150076bbd239df"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2026-10-30-jdk-emudhra-truststore",
+      "language": "ja",
+      "translationKey": "2026-10-30-jdk-emudhra-truststore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "abdc8cf489bcb34919f036e665475c6dd2f939c07f1a4c42ffe10c86e32761e3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "688f51d8cf3a1f206f312735afd25e3208de4225df44716a19cae6c44d56e6ca"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-jdk-emudhra-truststore.diagram.json",
+        "sha256": "0896f0275b10e899697d7ae5cbf70b576a2600d7a9f76e48028fd3ef49d27e8e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-jdk-emudhra-truststore.svg",
+        "sha256": "e9d16f6c1a068d11cd8ac128c60a2d65aa71f27e3ac3befb76bcfadee557f974"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2026-10-30-jdk-emudhra-truststore",
+      "language": "de",
+      "translationKey": "2026-10-30-jdk-emudhra-truststore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "abdc8cf489bcb34919f036e665475c6dd2f939c07f1a4c42ffe10c86e32761e3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "3d642ab82b1ff796d04d425fefd4812d352507de41750628cfba74c3a5789b23"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-jdk-emudhra-truststore.diagram.json",
+        "sha256": "c7dd8edb4efa6f592cfa591ab669ac70e476853e1a686dd9bbb9c4bf589ff1f2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-jdk-emudhra-truststore.svg",
+        "sha256": "9c00abff36b517bf90facf12c4bdf1c8d8867ec1c1cf2f702c57a0bffe004686"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2026-10-30-jdk-emudhra-truststore",
+      "language": "fr",
+      "translationKey": "2026-10-30-jdk-emudhra-truststore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "abdc8cf489bcb34919f036e665475c6dd2f939c07f1a4c42ffe10c86e32761e3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "788ac1af9b0bc7c8b7328792916c9e03b887a54992f0f19dd917c55cda1feba7"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-jdk-emudhra-truststore.diagram.json",
+        "sha256": "a140d3724ae5a6681a0eb40818911a8075514e2b504295239ee6bbf35af2e3d5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-30-jdk-emudhra-truststore.svg",
+        "sha256": "3910e1242454cc9defd914040ff0d14ffa9133e3b60ec817e4aa2a0a2eee1d70"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2026-10-30-jdk-emudhra-truststore",
+      "language": "ru",
+      "translationKey": "2026-10-30-jdk-emudhra-truststore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "abdc8cf489bcb34919f036e665475c6dd2f939c07f1a4c42ffe10c86e32761e3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "5046cff72a259d0b1cae1b4853b2571dfbcdca6828e8c707a3206049eff4d914"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-jdk-emudhra-truststore.diagram.json",
+        "sha256": "b1c25246ed93b4e7ae5e808f5f11a9de7169daef4e41ce82629ae6c1f62db192"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-jdk-emudhra-truststore.svg",
+        "sha256": "4753e8059dd247a32f4b47b2f88ca82de1ac8960d6efe4fc7e3e4586fe2cfb2b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2026-10-30-jdk-emudhra-truststore",
+      "language": "es",
+      "translationKey": "2026-10-30-jdk-emudhra-truststore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "abdc8cf489bcb34919f036e665475c6dd2f939c07f1a4c42ffe10c86e32761e3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "ea44d61a122bad0b5d376c6d2e20db76d92d1928163ebc5bba6cf93c392328e2"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-jdk-emudhra-truststore.diagram.json",
+        "sha256": "560f4d82f0ad6b95d61c9ad354fcd494821bf1843cfcf35130787a65f96629e3"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-jdk-emudhra-truststore.svg",
+        "sha256": "cb757b7aa7d0c759d4ea808c9eedc7b693a477d5c9598220ac970bc2debf767b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-31-project-valhalla-value-objects",
+      "language": "zh-CN",
+      "translationKey": "2026-10-31-project-valhalla-value-objects",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "968baa237b71cc3150d9567aa1806bf8c87cba83d609d596231fb057c1242360"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-project-valhalla-value-objects.diagram.json",
+        "sha256": "f9eb3c08d9977abb84146ccef1da22736314bbda629b3fe78428d16b3963e735"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-project-valhalla-value-objects.svg",
+        "sha256": "8aa325c2c79b50e1923d96986ef6c45d93d4fcb94449a3b6073b90a273796f5e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2026-10-31-project-valhalla-value-objects",
+      "language": "ja",
+      "translationKey": "2026-10-31-project-valhalla-value-objects",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "da93129b14f39ec5754fe5aeac6a350cc456005b3b6d15723fa1983db9d0ab6c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-project-valhalla-value-objects.diagram.json",
+        "sha256": "ae6c8147bf9dc8aba7744f28ffa68dbdae22bd2d45cf3c2238d5aa8db1ab9869"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-project-valhalla-value-objects.svg",
+        "sha256": "82cc1b13947145e694112a8f7529ee26bd839b41141692704ea1f74f066c4aaa"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2026-10-31-project-valhalla-value-objects",
+      "language": "de",
+      "translationKey": "2026-10-31-project-valhalla-value-objects",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "08d95912c14213378bb6043bd1d3927c46b055206dd171e873218f41c7a7d9bc"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-project-valhalla-value-objects.diagram.json",
+        "sha256": "8950e5623e729e893e805abf70a4fe98f8f85436d7f3e39f0201d4dfd21b68ff"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-project-valhalla-value-objects.svg",
+        "sha256": "64c595b0b33c0b389a2b64d94aa30893e381f51855fad726e806298ae7e0323b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2026-10-31-project-valhalla-value-objects",
+      "language": "fr",
+      "translationKey": "2026-10-31-project-valhalla-value-objects",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "f089edc9129d13902f8daae6b2a40d7fe9134409bf01c3d72fe74014a28a3611"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.diagram.json",
+        "sha256": "819d86b97ab46d23177da9384e3db82434a5773caa06848b81341dd01eacb2e1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.svg",
+        "sha256": "ff148354cacaf94a12dd8bedba3c3d1ab80f4192b584f2a507ff69c9baa4bdf3"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2026-10-31-project-valhalla-value-objects",
+      "language": "ru",
+      "translationKey": "2026-10-31-project-valhalla-value-objects",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "580f25b6cf2150231f7d82f274e8f8ec56a69a5e79cca21e19155f97cc6b9801"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-project-valhalla-value-objects.diagram.json",
+        "sha256": "f7f6d47f30bb7b065935efba5a625d16de5b91dd11797f14c44fd9c4ab081b59"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-project-valhalla-value-objects.svg",
+        "sha256": "8cccf54e5b82dde599de8222d6815bf92b253b6769fec59d016e3825ef08bd62"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2026-10-31-project-valhalla-value-objects",
+      "language": "es",
+      "translationKey": "2026-10-31-project-valhalla-value-objects",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "a910ef65e9f9d5ef45c39ec865deb4fba7facbefce10656d8f769a17b39dcdf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.md",
+        "sha256": "03a4d294168e088935b2face8a1b91869f459809e842a0b58f043d3ec5eb4756"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.diagram.json",
+        "sha256": "9cdaddbc77d0039b07428c8a1aba9708b9e67f54dd5730bf15220af0d1180f54"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.svg",
+        "sha256": "c1d7e2706c29bcf3107cb5c755434c8cbb36379d80d72836dc4dc9ea47c1057a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-31-jdk25-scopedvalue",
+      "language": "zh-CN",
+      "translationKey": "2026-10-31-jdk25-scopedvalue",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "b1b2085e75caffb25a2838a9d99da8e4b63dd107657a94ad5e08730bb04fbf66"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "5227a4e6b07fe52f1cbb0181797c06a75a188f3155afe47a4f486e00c9b06d44"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk25-scopedvalue.diagram.json",
+        "sha256": "8811073461d927a1fd7a4691aeb6452b0883ad6a3c220acf2457975b9471a9c1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk25-scopedvalue.svg",
+        "sha256": "623ec6429323031598990f8324d37fdff2cbbefaeccead2d4ab99614d74df225"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2026-10-31-jdk25-scopedvalue",
+      "language": "ja",
+      "translationKey": "2026-10-31-jdk25-scopedvalue",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "b1b2085e75caffb25a2838a9d99da8e4b63dd107657a94ad5e08730bb04fbf66"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "81af1b3ff5c954fbe96c6e31e3a65b5f2022ff53026a220112c6a46b71281c75"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk25-scopedvalue.diagram.json",
+        "sha256": "0cfc42931ee793c71f269bb4f61d3b263dc476c1d172274a0dea619d607efe11"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk25-scopedvalue.svg",
+        "sha256": "fea8ef93889cf4ca86dad0f2027e56fe3823966f178621f67ac787a334bb40f7"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2026-10-31-jdk25-scopedvalue",
+      "language": "de",
+      "translationKey": "2026-10-31-jdk25-scopedvalue",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "b1b2085e75caffb25a2838a9d99da8e4b63dd107657a94ad5e08730bb04fbf66"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "5911b43fbeb4d71108a9b180b4db5bbb7645051c8b031097050b98c3cc1339c8"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk25-scopedvalue.diagram.json",
+        "sha256": "68bc6391194eae76768d9d8d3d8452205b3420b7d1e3025bda867c6489ac8cfe"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk25-scopedvalue.svg",
+        "sha256": "47bd52eeeef571de6d6c0374b6d0dd0b06ced9d243f40d9257cf8710b846f082"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2026-10-31-jdk25-scopedvalue",
+      "language": "fr",
+      "translationKey": "2026-10-31-jdk25-scopedvalue",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "b1b2085e75caffb25a2838a9d99da8e4b63dd107657a94ad5e08730bb04fbf66"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "07c402ed161d01763cc19dc16c6c86a69cce61a4d6ceefc42a6fd4423db06106"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk25-scopedvalue.diagram.json",
+        "sha256": "6d11feffc64868654a9d5ad5a022818a42a81b87edd7822b9f2cebd367e6db4b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk25-scopedvalue.svg",
+        "sha256": "160264644b5f61caa88753e2ae47a3b7d673c1c8d8740b332e00609e79cf8ee6"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2026-10-31-jdk25-scopedvalue",
+      "language": "ru",
+      "translationKey": "2026-10-31-jdk25-scopedvalue",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "b1b2085e75caffb25a2838a9d99da8e4b63dd107657a94ad5e08730bb04fbf66"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "790373887c06b7f16490d5cc1cf9e7c39232c8df1adcef69eb853a9f07d7814b"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk25-scopedvalue.diagram.json",
+        "sha256": "53ee1a480105f4d87ecbc68d85f2f853e6a226766cdddc49b955d1dc02737a4e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk25-scopedvalue.svg",
+        "sha256": "525052b77c3f49e1266874d5d2174bbaf2d41f4299d382ecf4b03125964a58ba"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2026-10-31-jdk25-scopedvalue",
+      "language": "es",
+      "translationKey": "2026-10-31-jdk25-scopedvalue",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "b1b2085e75caffb25a2838a9d99da8e4b63dd107657a94ad5e08730bb04fbf66"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk25-scopedvalue.md",
+        "sha256": "eddffa4d1d526647f890976034555329211cd0a4af415e907690bd559370619a"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk25-scopedvalue.diagram.json",
+        "sha256": "40c8f981e3ac9c248d88ce882b4dfc9b508971dd82ea8cc1c4b4ddb3de84cc4c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk25-scopedvalue.svg",
+        "sha256": "439b3c9e3af6436c11ff89a90a8b6b4a21fcbbbd8c01883cb97b91bac31888a6"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-31-virtual-threads-jdk21-jdk25",
+      "language": "zh-CN",
+      "translationKey": "2026-10-31-virtual-threads-jdk21-jdk25",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "4b100d81b2721e31e0a765676927aa48165b4b60c224dff2ba5846ba70dec8db"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "55de7c26935c9020dcd0e21b7242efb99128030d1935018f1f879454a3f456e4"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-virtual-threads-jdk21-jdk25.diagram.json",
+        "sha256": "1022740f670676919ec3beb5b6d4c6209e8661ff4f032a511295198a6f579d18"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-virtual-threads-jdk21-jdk25.svg",
+        "sha256": "e42a87cbd663d1ac42455f36825e2d1138cb3f4af9f3e82665d5cabc2c2d98df"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2026-10-31-virtual-threads-jdk21-jdk25",
+      "language": "ja",
+      "translationKey": "2026-10-31-virtual-threads-jdk21-jdk25",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "4b100d81b2721e31e0a765676927aa48165b4b60c224dff2ba5846ba70dec8db"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "8883a98ed3b0505f29fc167a00ef4315bc8e792343d8453202c783e9d48e1fe0"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-virtual-threads-jdk21-jdk25.diagram.json",
+        "sha256": "3133fbe30641617294968574bc024a4638658e6899f396551a2076b0e3732ace"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-virtual-threads-jdk21-jdk25.svg",
+        "sha256": "fe995b8aa98d0ec566a916a6506eba74c40fd071b42b48a8e863726fbf1ab69b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2026-10-31-virtual-threads-jdk21-jdk25",
+      "language": "de",
+      "translationKey": "2026-10-31-virtual-threads-jdk21-jdk25",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "4b100d81b2721e31e0a765676927aa48165b4b60c224dff2ba5846ba70dec8db"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "75c1e6f35dd3f7fae383cfe13226ce60fd20dcd549283821b91862829609ae81"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-virtual-threads-jdk21-jdk25.diagram.json",
+        "sha256": "69d6d306d1767f8a9301bedf57603047870aebb85cb42616e2523ee4bf0534ec"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-virtual-threads-jdk21-jdk25.svg",
+        "sha256": "a6bd801d4e56d7e147838bc7f8a7738bb36f5d6eac133f10e6eeda0dbd051cc3"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2026-10-31-virtual-threads-jdk21-jdk25",
+      "language": "fr",
+      "translationKey": "2026-10-31-virtual-threads-jdk21-jdk25",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "4b100d81b2721e31e0a765676927aa48165b4b60c224dff2ba5846ba70dec8db"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "441c9be7fb457ebb48a3db3d2e1d6a25caeea7d2e356c87a1be4d4550faff10a"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-virtual-threads-jdk21-jdk25.diagram.json",
+        "sha256": "03d3e5752af819cc36e0bfa13887894e1e48e780355110f60af47f1f1558d922"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-virtual-threads-jdk21-jdk25.svg",
+        "sha256": "281787476fc111d329f89889fa8a6f387d9d836b744d10fd92ac8ef887a87f7b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2026-10-31-virtual-threads-jdk21-jdk25",
+      "language": "ru",
+      "translationKey": "2026-10-31-virtual-threads-jdk21-jdk25",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "4b100d81b2721e31e0a765676927aa48165b4b60c224dff2ba5846ba70dec8db"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "47e5e2b7ea861b3ed970d62310b9b43eb0c3707c2a3f55c3f0d489d5ba503b8c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-virtual-threads-jdk21-jdk25.diagram.json",
+        "sha256": "f035c3b5bc5911d0f292856704637fe4e3b7b54e06d383721bc942ad939339c5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-virtual-threads-jdk21-jdk25.svg",
+        "sha256": "ce6b19319068cf6e0d76752ba8f315fbb9058efa063fe4257c3db2b6bac9b888"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2026-10-31-virtual-threads-jdk21-jdk25",
+      "language": "es",
+      "translationKey": "2026-10-31-virtual-threads-jdk21-jdk25",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "4b100d81b2721e31e0a765676927aa48165b4b60c224dff2ba5846ba70dec8db"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-virtual-threads-jdk21-jdk25.md",
+        "sha256": "c599234ec0c90f97ada8bae14b04461686dc556b9d8d8594019151e70c2bbd53"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-virtual-threads-jdk21-jdk25.diagram.json",
+        "sha256": "26b7e929d41df57cad957e9076c45dfa947b359a5100a0382dad7a191e71c3b1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-virtual-threads-jdk21-jdk25.svg",
+        "sha256": "70d7f63b07da23fe33c8d9aa62a99a663429236cf32827713bc0b36b5a791f84"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-31-jdk-10k-rps-architecture",
+      "language": "zh-CN",
+      "translationKey": "2026-10-31-jdk-10k-rps-architecture",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "c4bdc1984dacdabdaeabacf9e889b26a76991cbb44d19263a3a2bfb0b8e1e1bf"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "f8be232d9474a42a3dfa6377e4457f7c65dc9f38b879013b281ed258221ccada"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+        "sha256": "da91fcd7d09db713d6fbddeb6fb955e0ec87899719b3e3d8ab4ce7627b48aa3f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk-10k-rps-architecture.svg",
+        "sha256": "189069d433f13c50b97e3ce23b8f7be8383882ea0a60a2460389a5b808d68b06"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/10k-rps-en.svg",
+            "sha256": "b293551d2d9f092ad9e32e4bd58737c8278095f4ac37a2ffb2306fe538199a46"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+            "sha256": "52b928236b3dd94620ec9ddde3ed4790e6b51d600f99c32cbd4f26b8bf61f848"
+          }
+        }
+      ]
+    },
+    {
+      "key": "ja-2026-10-31-jdk-10k-rps-architecture",
+      "language": "ja",
+      "translationKey": "2026-10-31-jdk-10k-rps-architecture",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "c4bdc1984dacdabdaeabacf9e889b26a76991cbb44d19263a3a2bfb0b8e1e1bf"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "4a5b8ea4cb14e4d5fbc1052472811aabbd93278a1316065d5293aa11e633e6c8"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+        "sha256": "40ef1de597efb5989e353b6bdd5ff76d7127248a174cde86989f2db852a768aa"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk-10k-rps-architecture.svg",
+        "sha256": "dbb30294675535b1fb2a090ad6e1ae6cda0de07facc7e7bbbc6dcb1dae7797e9"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/10k-rps-en.svg",
+            "sha256": "b293551d2d9f092ad9e32e4bd58737c8278095f4ac37a2ffb2306fe538199a46"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+            "sha256": "265944ec8f983fda0911ae41d34626920d7031607b9c508e3c3b05fcc899e87a"
+          }
+        }
+      ]
+    },
+    {
+      "key": "de-2026-10-31-jdk-10k-rps-architecture",
+      "language": "de",
+      "translationKey": "2026-10-31-jdk-10k-rps-architecture",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "c4bdc1984dacdabdaeabacf9e889b26a76991cbb44d19263a3a2bfb0b8e1e1bf"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "4a7e6609c66078f5260cfadfc4f9ab0d9db336649713da5ab9b22927aaf9843c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+        "sha256": "2b74eb3d750114c285968bd6fb2464241304b10557e5c026c7d6bf43a2b0d734"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture.svg",
+        "sha256": "8f1d1db0c0064fc144f6f69b2bc587606d2545797a16cfac51d5c7b3feef8063"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/10k-rps-en.svg",
+            "sha256": "b293551d2d9f092ad9e32e4bd58737c8278095f4ac37a2ffb2306fe538199a46"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+            "sha256": "2688685f2f0eae4a5663050e742019830d4a581d03a6638432ba410c0329257e"
+          }
+        }
+      ]
+    },
+    {
+      "key": "fr-2026-10-31-jdk-10k-rps-architecture",
+      "language": "fr",
+      "translationKey": "2026-10-31-jdk-10k-rps-architecture",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "c4bdc1984dacdabdaeabacf9e889b26a76991cbb44d19263a3a2bfb0b8e1e1bf"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "33599865eae2a45f851fc431cd321410ed23e4ae47ddd5ebe95f168d757f79d8"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+        "sha256": "430c42d7613e4b49373492c7d931ee5382eafe42adce4323647aecef3fc39990"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture.svg",
+        "sha256": "0aba7fa62ce4ed38cb1e802d474a4074b73fec46f8ad90696ab11c039908cddb"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/10k-rps-en.svg",
+            "sha256": "b293551d2d9f092ad9e32e4bd58737c8278095f4ac37a2ffb2306fe538199a46"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+            "sha256": "94b6803a5b74321dbb6a7e565a7439f11a173face204936867ab69a7c9de177b"
+          }
+        }
+      ]
+    },
+    {
+      "key": "ru-2026-10-31-jdk-10k-rps-architecture",
+      "language": "ru",
+      "translationKey": "2026-10-31-jdk-10k-rps-architecture",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "c4bdc1984dacdabdaeabacf9e889b26a76991cbb44d19263a3a2bfb0b8e1e1bf"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "20023e2c353c815d68830ea755e5a928f8a8fb577555d2c0206cb910c8bc6b39"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+        "sha256": "046a2fd3a0421470b1d38096926de1a4840117f6b5b07444f90d8d0b8ec8030e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture.svg",
+        "sha256": "6e78d73e561880226198f3edfe8555fc8b0b2084ed55d724ecae579d47e1c1b8"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/10k-rps-en.svg",
+            "sha256": "b293551d2d9f092ad9e32e4bd58737c8278095f4ac37a2ffb2306fe538199a46"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+            "sha256": "2a5201a5ea3786d1ce304160fb20c33a1b1a2a73104be4320c565cbcbccf8035"
+          }
+        }
+      ]
+    },
+    {
+      "key": "es-2026-10-31-jdk-10k-rps-architecture",
+      "language": "es",
+      "translationKey": "2026-10-31-jdk-10k-rps-architecture",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "c4bdc1984dacdabdaeabacf9e889b26a76991cbb44d19263a3a2bfb0b8e1e1bf"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "2befc0bf27793a35cf88d095a5a735652618426cd62e555e129dc88c7bb2be38"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+        "sha256": "98da9f24286b3cc6786e0e9b2a09b5932db3fd27bf8c5323c766b1c2d857d91e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk-10k-rps-architecture.svg",
+        "sha256": "e03efc33c64b90864fd21fdd84f2abdb8ee6bb4673cae4a7854d64a0d480cfff"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/10k-rps-en.svg",
+            "sha256": "b293551d2d9f092ad9e32e4bd58737c8278095f4ac37a2ffb2306fe538199a46"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+            "sha256": "afd5c98b8227e8123eaa3deffbf74d3cf49e543ef8d85a0be76c3e84dea4b66e"
+          }
+        }
+      ]
+    },
+    {
+      "key": "zh-CN-2026-10-31-webclient-restclient-comparison",
+      "language": "zh-CN",
+      "translationKey": "2026-10-31-webclient-restclient-comparison",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "66635549fdfb330bbeabd658046b28dcb1566bef58dbf033b35e22e387806d15"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "18ea812ff981a8caee8cce9f5b10e99aa9e6f06a64328fb2edf2d54d7c03a2a2"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-webclient-restclient-comparison.diagram.json",
+        "sha256": "c1f6a2578870b78728acdabb7b5d6bcda428f66ec9ba3dd1c63cea6110d1c28f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-webclient-restclient-comparison.svg",
+        "sha256": "11f000194f8b4312cea764b3f42a179ff29e52b868c3372feb729a5aa667f707"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2026-10-31-webclient-restclient-comparison",
+      "language": "ja",
+      "translationKey": "2026-10-31-webclient-restclient-comparison",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "66635549fdfb330bbeabd658046b28dcb1566bef58dbf033b35e22e387806d15"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "e88d6b76b26bfbc125f28db9d04c25afd999d83a3fef43bb97b0250b75619737"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-webclient-restclient-comparison.diagram.json",
+        "sha256": "1138d7c3209e67d1e6ecd21304bf09eb3184a3b1bbe8acd7ef297ab35d4153f8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-webclient-restclient-comparison.svg",
+        "sha256": "539c95875b2adc2af0c975756ff51b8e799c44b38b661134f6dbc13ceeb0cb2a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2026-10-31-webclient-restclient-comparison",
+      "language": "de",
+      "translationKey": "2026-10-31-webclient-restclient-comparison",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "66635549fdfb330bbeabd658046b28dcb1566bef58dbf033b35e22e387806d15"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "728fed77af86f4e53ba765ee96fa18c2a1450303a723cf2591244933b98970a6"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-webclient-restclient-comparison.diagram.json",
+        "sha256": "d507af9aacb9534c2a157ab3f0ffe003910a832d6e36b0e3143d118a682125d9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-webclient-restclient-comparison.svg",
+        "sha256": "0f4f28df30df5aa94814b20db2da5d17a6b87ffd60a18dd2ce219d3e2d25f136"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2026-10-31-webclient-restclient-comparison",
+      "language": "fr",
+      "translationKey": "2026-10-31-webclient-restclient-comparison",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "66635549fdfb330bbeabd658046b28dcb1566bef58dbf033b35e22e387806d15"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "63dead6a4827f35443ff54cf5cc5d84bd0a214bd542f278aaad32da6876d8a4c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-webclient-restclient-comparison.diagram.json",
+        "sha256": "9aa93737d83d653a41112f4062a3d51e4a647729eac20c9a7fb879600fbc9cdf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-webclient-restclient-comparison.svg",
+        "sha256": "661972e85ff3a3e822e513b6a4a75b5143e64a41ef4c8ad131d4c26e9a9159b6"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2026-10-31-webclient-restclient-comparison",
+      "language": "ru",
+      "translationKey": "2026-10-31-webclient-restclient-comparison",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "66635549fdfb330bbeabd658046b28dcb1566bef58dbf033b35e22e387806d15"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "e32bbb9e707047c77a03d8b4344c5fcb8a0007d5e73025bd0dd60f5b16cc9de1"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-webclient-restclient-comparison.diagram.json",
+        "sha256": "0faabb1491dd14cced52497bbfa0b987f45ba583c72f9b9a122bc6ced1a1a7d7"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-webclient-restclient-comparison.svg",
+        "sha256": "6074db0272b4db4d15511ca61c9763a52f115dea9fdb070bd3376b0e3b83ed6d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2026-10-31-webclient-restclient-comparison",
+      "language": "es",
+      "translationKey": "2026-10-31-webclient-restclient-comparison",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "66635549fdfb330bbeabd658046b28dcb1566bef58dbf033b35e22e387806d15"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-webclient-restclient-comparison.md",
+        "sha256": "538f5933a06c7026267a8ad1883cbeac4c69098911c447bcebf9e091c0fa82c3"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-webclient-restclient-comparison.diagram.json",
+        "sha256": "8f8a93701333c93fa01ff3fd16ae959b03bc4e40fea9b2d3ea393bee23e05327"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-webclient-restclient-comparison.svg",
+        "sha256": "2018efe582adecdea3c764bf6c59ae48688a818d30f9f63a4c27bd080876ee74"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-31-fragnesia-cve-2026-46300",
+      "language": "zh-CN",
+      "translationKey": "2026-10-31-fragnesia-cve-2026-46300",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "2b6a0636f8b8548cd521e4b65a4e442d1b5ae7be9312de2165629bdd43de55a8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "89772d4f0d2e5d19fb775dbf56fbaeb5d69c9a67cfc065b0a878bf04af13c577"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-fragnesia-cve-2026-46300.diagram.json",
+        "sha256": "8db29a6c30a44944aa5336b69eca9b963d13f931d758f571a70f8a784294ae52"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-fragnesia-cve-2026-46300.svg",
+        "sha256": "13a756a7ff2e394c6df403eb8c10cf5dc8fb0e955460f68596fd59008904d75c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2026-10-31-fragnesia-cve-2026-46300",
+      "language": "ja",
+      "translationKey": "2026-10-31-fragnesia-cve-2026-46300",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "2b6a0636f8b8548cd521e4b65a4e442d1b5ae7be9312de2165629bdd43de55a8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "a813fa7904dc4f4295e05659b4ff857f19847baf614d5bacfd3c97952633445b"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-fragnesia-cve-2026-46300.diagram.json",
+        "sha256": "ff312566045e4cba3651b756950469ca1427c7597de828f8e9568c71bb4b8980"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-fragnesia-cve-2026-46300.svg",
+        "sha256": "5968643fa82dc1dbd45dd9878d6cdd31cb7cfa3b041a078d45aeba65a5278faf"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2026-10-31-fragnesia-cve-2026-46300",
+      "language": "de",
+      "translationKey": "2026-10-31-fragnesia-cve-2026-46300",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "2b6a0636f8b8548cd521e4b65a4e442d1b5ae7be9312de2165629bdd43de55a8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "735c9111ca74dafce6ae3202041d4eca6dff388acd12b0d501c69a0be394d1fd"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-fragnesia-cve-2026-46300.diagram.json",
+        "sha256": "1fbbf5ca0947d174e797404f73e7e10455af4e53f018f86b7c6c69c034853069"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-fragnesia-cve-2026-46300.svg",
+        "sha256": "8d10881b1e6c83fe838d9ccd1cb06795b274b983a200d6f93b90df8b05d93bd4"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2026-10-31-fragnesia-cve-2026-46300",
+      "language": "fr",
+      "translationKey": "2026-10-31-fragnesia-cve-2026-46300",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "2b6a0636f8b8548cd521e4b65a4e442d1b5ae7be9312de2165629bdd43de55a8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "ac7fead80b972ad033df77a4ad1f3f2bb62757bb4919636cc1388877add7cd53"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-fragnesia-cve-2026-46300.diagram.json",
+        "sha256": "020cc8d226b03df103442c14a4cc3418eb3be8a6606c436a7c4ae1345b9f75a8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-fragnesia-cve-2026-46300.svg",
+        "sha256": "70ce917261ce7ed7f905358d2bf8d484935f474451ce960eff6e0c3d62b0ebc2"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2026-10-31-fragnesia-cve-2026-46300",
+      "language": "ru",
+      "translationKey": "2026-10-31-fragnesia-cve-2026-46300",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "2b6a0636f8b8548cd521e4b65a4e442d1b5ae7be9312de2165629bdd43de55a8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "d5e5f886f84feaacc2ecb83bd87e8846d6991b28af6d25bb9569d01e506ce728"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-fragnesia-cve-2026-46300.diagram.json",
+        "sha256": "bb1a5e0cebf7b50a104fb77bc4d71db1c31cd44dada1d77722f60555907664b2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-fragnesia-cve-2026-46300.svg",
+        "sha256": "7d34d38baee589dc58585457016629793283d50865b13bd09bab47143754f33e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2026-10-31-fragnesia-cve-2026-46300",
+      "language": "es",
+      "translationKey": "2026-10-31-fragnesia-cve-2026-46300",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "2b6a0636f8b8548cd521e4b65a4e442d1b5ae7be9312de2165629bdd43de55a8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-fragnesia-cve-2026-46300.md",
+        "sha256": "03c87b827ec2c06bd36790197c690af6f62dd2b74296d0e3b9cfc0bae7566710"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-fragnesia-cve-2026-46300.diagram.json",
+        "sha256": "86c4322d5cf80be99ce9db08438b116246c7e2ea83e2a6f5be136c79ef4d0d81"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-fragnesia-cve-2026-46300.svg",
+        "sha256": "170c29ada68d09a95d69d9f0be1bce5e6c17b86cf02306240508442ea918d6ff"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    }
+  ]
+}

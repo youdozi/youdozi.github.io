@@ -1,0 +1,205 @@
+{
+  "language": "de",
+  "reviewerSession": "/root/review078_de",
+  "scope": {
+    "task": "12개 기술 글의 독일어 완전 번역 독립 AI 검토",
+    "targetOnlyRead": "12 Markdown 본문/제목/설명/대체텍스트, 12 workflow JSON, 13 SVG 표시 문자열",
+    "sourceComparison": "동일 key의 English 본문 전체, workflows.json의 해당 English 12항목, assets/img/architecture/10k-rps-en.svg",
+    "checks": "39개 fenced block 전체 원문 일치; 본문 링크 전체 순서/URL 일치; JSON/XML 구문 파싱 및 각 flow JSON 표시 문자열의 SVG 포함 확인. 보안 범위/부정/예외/버전/수치/검증한계와 JDK preview/final 구분 의미대조.",
+    "assessment": "중간 심각도 수치 표기 문제 2건이 미해결이므로 해당 범위를 통과로 판정하지 않음. 그 외 본문 정보 누락·추가·요약이나 코드 변경은 발견하지 않음."
+  },
+  "files": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-gitlab2shell-cve-2026-110264.diagram.json",
+      "sha256": "9ac33bb3c4af6d29ac73b0ddb785bac7f2579da8bc363538bcaf82eec0dd9d3f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "sha256": "79fb09b96230764927a7a99a8e6e4dddae256091ba86f9be957ca3ca12e9c0ed"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-gitlab2shell-cve-2026-110264.svg",
+      "sha256": "8b9a01cb34579f3851cb39880d0ee75ab9a1c293f8370a84dddc26aaa58e2b1c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-jdk-emudhra-truststore.diagram.json",
+      "sha256": "c7dd8edb4efa6f592cfa591ab669ac70e476853e1a686dd9bbb9c4bf589ff1f2"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-jdk-emudhra-truststore.md",
+      "sha256": "3d642ab82b1ff796d04d425fefd4812d352507de41750628cfba74c3a5789b23"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-jdk-emudhra-truststore.svg",
+      "sha256": "9c00abff36b517bf90facf12c4bdf1c8d8867ec1c1cf2f702c57a0bffe004686"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-node2shell-brotli-runtime-patching.diagram.json",
+      "sha256": "622e46b410265be971bef3c7d886f4b0f01add0713a8b63f976f97041214ec5a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "sha256": "6cc2661a0b326f8ab6438e367166bd7bff1fbee6fd89a494baf68872a4d50be6"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-node2shell-brotli-runtime-patching.svg",
+      "sha256": "a53bda5d0d22f31a0d4a3ae281f36536a2c7808de4c7f3355e71fc4982b9663f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-php2shell-runtime-patching.diagram.json",
+      "sha256": "e4c7d7a95890fbcdb063b5abbfb791bfb147794648bde1fcf52ca72a3baa6d35"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "1c24d08cc0164454dfa1514fcd1f856dd07b2dd7b20753e5c8a6e01724084745"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-php2shell-runtime-patching.svg",
+      "sha256": "d6c9d74c8fa62257329080e2081c64956364fd44b66f5cbb3bf187a0804a0543"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-verify-sha256-download.diagram.json",
+      "sha256": "8ad4ed5f76a15998c6d8150582bca6febe1e48fffe331091f30f30535e7e87dc"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-verify-sha256-download.md",
+      "sha256": "8884d8668fe3dee259965ab0fa5f6dac95902c439395709feb22c804c0610151"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-verify-sha256-download.svg",
+      "sha256": "e9f88ee716af1f96376e3afe367f17969278f1628ec9b3c052664ca597c4b3bd"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-webclient-timeout-retry.diagram.json",
+      "sha256": "518125e5e0acabad24004212287bccc2e352f39f3ed07abcf821fc19ed9c41a1"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "ad329043ee374f270b9f6d2024dc1b8842eff5cd35b51973a379ba44d2d61238"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-webclient-timeout-retry.svg",
+      "sha256": "d298a6247ebe373d5a80c18e22801ac12b2fb65c77cf60f8703a5301aad735bc"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-fragnesia-cve-2026-46300.diagram.json",
+      "sha256": "1fbbf5ca0947d174e797404f73e7e10455af4e53f018f86b7c6c69c034853069"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "735c9111ca74dafce6ae3202041d4eca6dff388acd12b0d501c69a0be394d1fd"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-fragnesia-cve-2026-46300.svg",
+      "sha256": "8d10881b1e6c83fe838d9ccd1cb06795b274b983a200d6f93b90df8b05d93bd4"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+      "sha256": "687ca7e79b1a896c61e18841122cb25eebd188d661027414b2769edbea7d5ed0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+      "sha256": "2b74eb3d750114c285968bd6fb2464241304b10557e5c026c7d6bf43a2b0d734"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "0f1984fb64205592b57e9cad9625222557c893080c4a9383e48761ad15370ada"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture.svg",
+      "sha256": "8f1d1db0c0064fc144f6f69b2bc587606d2545797a16cfac51d5c7b3feef8063"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk25-scopedvalue.diagram.json",
+      "sha256": "8fc9d0de71aff6ae218ea9b70ca427de40282ee86ca87b501c46225521074a09"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "5911b43fbeb4d71108a9b180b4db5bbb7645051c8b031097050b98c3cc1339c8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk25-scopedvalue.svg",
+      "sha256": "438dd295c57e53897f0e328019b6e3612c0c2a00f4f7f1dd6ecfe60d627cda73"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-project-valhalla-value-objects.diagram.json",
+      "sha256": "8950e5623e729e893e805abf70a4fe98f8f85436d7f3e39f0201d4dfd21b68ff"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "08d95912c14213378bb6043bd1d3927c46b055206dd171e873218f41c7a7d9bc"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-project-valhalla-value-objects.svg",
+      "sha256": "64c595b0b33c0b389a2b64d94aa30893e381f51855fad726e806298ae7e0323b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-virtual-threads-jdk21-jdk25.diagram.json",
+      "sha256": "69d6d306d1767f8a9301bedf57603047870aebb85cb42616e2523ee4bf0534ec"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "75c1e6f35dd3f7fae383cfe13226ce60fd20dcd549283821b91862829609ae81"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-virtual-threads-jdk21-jdk25.svg",
+      "sha256": "a6bd801d4e56d7e147838bc7f8a7738bb36f5d6eac133f10e6eeda0dbd051cc3"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-webclient-restclient-comparison.diagram.json",
+      "sha256": "d507af9aacb9534c2a157ab3f0ffe003910a832d6e36b0e3143d118a682125d9"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "728fed77af86f4e53ba765ee96fa18c2a1450303a723cf2591244933b98970a6"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-webclient-restclient-comparison.svg",
+      "sha256": "0f4f28df30df5aa94814b20db2da5d17a6b87ffd60a18dd2ce219d3e2d25f136"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "medium",
+      "location": ".pipeline/technical-translations/batch-078/de/2026-10-30-webclient-timeout-retry.md:62",
+      "sourceQuote": "the 1,000 ms TCP connection timeout",
+      "targetQuote": "das TCP-Verbindungszeitlimit von 1,000 ms",
+      "reason": "의미/수치 표기: 독일어 산문에서 쉼표는 소수점이므로 1,000 ms는 1 ms로 읽힐 수 있다. 원문의 의도는 1000 ms이며 코드의 설정값도 1000이다.",
+      "suggestion": "산문을 „1000 ms“ 또는 „1 000 ms“로 바꾼다. 코드/로그의 원문 숫자는 유지한다.",
+      "confidence": 0.97
+    },
+    {
+      "severity": "medium",
+      "location": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture.md:5,10,22,29,153; .pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture-architecture.svg:2",
+      "sourceQuote": "10,000-requests-per-second; 10,000 iterations/s",
+      "targetQuote": "10,000 Anfragen pro Sekunde; 10,000 Iterationen/s; Referenzaufbau einer API mit 10,000 RPS",
+      "reason": "의미/수치 표기: 영문 천단위 쉼표가 독일어 산문·표·그림 제목에 남아 10000 대신 10으로 읽힐 여지가 있다. 같은 글의 10k와 계산 결과가 문맥으로 의미를 보충하지만 수치 표기는 독일어로 명확하지 않다.",
+      "suggestion": "설명문, 표, SVG 제목의 10,000을 „10 000“ 또는 „10000“으로 통일한다. 원문 보존 대상인 코드 및 인라인 수식은 변경 대상과 구분한다.",
+      "confidence": 0.96
+    },
+    {
+      "severity": "low",
+      "location": ".pipeline/technical-translations/batch-078/de/2026-10-30-verify-sha256-download.md:26",
+      "sourceQuote": "rather than a checksum manifest, filename or URL",
+      "targetQuote": "statt eines Prüfsummenverzeichnisses, Dateinamens oder einer URL",
+      "reason": "용어 정확성: checksum manifest는 일반적으로 여러 파일의 체크섬을 열거한 파일/목록이다. Prüfsummenverzeichnis는 디렉터리 또는 색인으로 읽혀 허용하지 않는 입력 형식을 불명확하게 한다.",
+      "suggestion": "„statt einer Prüfsummenliste, eines Dateinamens oder einer URL“ 또는 „statt einer Prüfsummen-Manifestdatei …“로 명확히 한다.",
+      "confidence": 0.89
+    },
+    {
+      "severity": "low",
+      "location": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk25-scopedvalue.diagram.json:37; .pipeline/technical-translations/batch-078/de/2026-10-31-jdk25-scopedvalue.svg:1",
+      "sourceQuote": "Start a plain virtual child",
+      "targetQuote": "Gewöhnlichen virtuellen Kind starten",
+      "reason": "대상어 문법/자연스러움: Kind는 중성이므로 형용사 어미가 맞지 않는다. 기술 문맥에서는 Kind-Thread를 명시하는 편이 지시 대상도 명확하다. 의미 구조를 바꾸는 문제는 아니다.",
+      "suggestion": "„Gewöhnlichen virtuellen Kind-Thread starten“ 또는 „Einfachen virtuellen Kind-Thread starten“로 바꾸고 SVG 표시 폭도 확인한다.",
+      "confidence": 0.99
+    }
+  ],
+  "unverified": [
+    "실행 예제를 재실행하지 않았고 원문의 실행 기록을 독립 실험으로 검증하지 않았음.",
+    "외부 사실·벤더 문서의 최신성은 재조사하지 않았음.",
+    "사이트 빌드/브라우저 렌더링/배포 후 이미지 표시와 시각적 잘림은 확인하지 않았음.",
+    "원어민 또는 사람 검토가 아닌 별도 세션 AI 검토임."
+  ]
+}
