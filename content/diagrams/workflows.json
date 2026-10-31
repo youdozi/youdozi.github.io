@@ -2345,6 +2345,103 @@
           ]
         }
       ]
+    },
+    {
+      "key": "2026-10-31-webclient-restclient-comparison",
+      "title": {
+        "ko": "HTTP 호출: 종료 연산과 구독",
+        "en": "HTTP calls: terminals and subscriptions"
+      },
+      "steps": [
+        {
+          "kind": "process",
+          "en": [
+            "Build RestClient.retrieve()",
+            "Request count 0"
+          ],
+          "ko": [
+            "RestClient.retrieve() 구성",
+            "요청 수 0"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Wait with body(String.class)",
+            "First request complete: 1"
+          ],
+          "ko": [
+            "body(String.class)로 응답 대기",
+            "첫 요청 완료: 1"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Build WebClient Mono",
+            "Not subscribed yet: 1"
+          ],
+          "ko": [
+            "WebClient Mono 구성",
+            "아직 구독하지 않음: 1"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "First block subscribes and waits",
+            "Request count 2"
+          ],
+          "ko": [
+            "첫 block으로 구독·응답 대기",
+            "요청 수 2"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Second block subscribes again",
+            "Request count 3"
+          ],
+          "ko": [
+            "두 번째 block으로 다시 구독",
+            "요청 수 3"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Check each client’s 404 and 503",
+            "4 more requests; final count 7"
+          ],
+          "ko": [
+            "각 클라이언트의 404·503 확인",
+            "추가 4요청, 최종 7"
+          ]
+        }
+      ],
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "response.body(String.class)"
+        },
+        {
+          "language": "java",
+          "contains": "pending.block(Duration.ofSeconds(5))"
+        },
+        {
+          "language": "java",
+          "contains": "catch (RestClientResponseException error)"
+        },
+        {
+          "language": "java",
+          "contains": "catch (WebClientResponseException error)"
+        }
+      ],
+      "description": {
+        "en": "Core main checks only; server setup, configuration and cleanup omitted.",
+        "ko": "main의 핵심 검증만 표시하며 서버 준비·설정·종료 정리는 생략합니다."
+      }
     }
   ]
 }
