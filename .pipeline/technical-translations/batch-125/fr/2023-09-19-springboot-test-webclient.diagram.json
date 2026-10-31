@@ -1,0 +1,54 @@
+{
+  "key": "2023-09-19-springboot-test-webclient",
+  "language": "fr",
+  "title": "Valider la réponse HTTP",
+  "description": "Le client vérifie le statut avant le type de média, libère les corps refusés et décode le JSON compatible. StepVerifier vérifie valeurs et signal terminal.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Préparer la réponse simulée locale",
+        "Souscrire à la requête client"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Statut HTTP d’erreur ?",
+        "Oui : émettre l’exception et arrêter"
+      ],
+      "branch": {
+        "exit": "Oui",
+        "continue": "Non",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "application/json ou",
+        "application/*+json ?",
+        "Sinon : libérer le corps, puis erreur"
+      ],
+      "branch": {
+        "exit": "Autre",
+        "continue": "JSON",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Décoder seulement les types permis",
+        "Observer corps vide ou mal formé"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Vérifier valeurs et signal terminal",
+        "Inspecter méthode, chemin et Accept"
+      ]
+    }
+  ]
+}

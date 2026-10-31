@@ -1,0 +1,75 @@
+{
+  "key": "2026-10-31-failure-fallback",
+  "language": "ja",
+  "title": "公開読取の代替",
+  "description": "受付制限、主系読取、障害分類、スナップショットの鮮度方針です。取得した許可は終了時に解放します。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "tryAcquire()：許可取得？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "拒否",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "primary.get()：主系読取"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "主系は結果を返した？"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "主系",
+        "continue": "例外"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "error は Unavailable？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "例外伝播",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "snapshot は存在？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "拒否",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "age は 0～60s？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "拒否",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "snapshot、source、age を返す"
+      ]
+    }
+  ]
+}

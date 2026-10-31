@@ -1,0 +1,66 @@
+{
+  "key": "2026-10-31-cache-aside",
+  "language": "fr",
+  "title": "Lecture Cache-Aside",
+  "description": "Chercher l’entrée, vérifier le TTL, charger si absente, stocker un résultat réussi, limiter la capacité et retourner. Propager les échecs sans stockage.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Chercher la clé ; lire le chronomètre"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Entrée présente et durée < TTL ?"
+      ],
+      "branch": {
+        "exit": "du cache",
+        "continue": "non",
+        "outcome": "complete"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Retirer l’ancienne entrée"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "loader.apply(key) : charger la source"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Résultat réussi et non null ?"
+      ],
+      "branch": {
+        "exit": "propager",
+        "continue": "oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Stocker valeur et date de fin"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Capacité dépassée ? Évincer un LRU"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Retourner la valeur chargée"
+      ]
+    }
+  ]
+}

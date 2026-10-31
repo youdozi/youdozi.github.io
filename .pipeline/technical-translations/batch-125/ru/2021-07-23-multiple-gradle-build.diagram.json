@@ -1,0 +1,43 @@
+{
+  "key": "2021-07-23-multiple-gradle-build",
+  "language": "ru",
+  "title": "Ресурсы в JAR",
+  "description": "Каждое приложение Vue создаёт свой результат. Gradle Sync собирает только эти файлы, затем bootJar размещает их в отдельных статических путях.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Сохранить lockfile приложений",
+        "Закрепить зависимости проекта"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Для каждого: npm ci",
+        "Затем npm run build"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Sync двух каталогов dist",
+        "Отдельно static/project1 и project2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "bootJar зависит от сбора",
+        "Копия в BOOT-INF/classes"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Запустить JAR, открыть оба пути",
+        "Проверить актуальные пакеты"
+      ]
+    }
+  ]
+}

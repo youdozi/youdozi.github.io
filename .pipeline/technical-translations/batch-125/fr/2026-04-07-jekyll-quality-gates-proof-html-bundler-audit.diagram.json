@@ -1,0 +1,52 @@
+{
+  "key": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+  "language": "fr",
+  "title": "Validation et déploiement",
+  "description": "L’exemple hors ligne vérifie les contrats YAML et un modèle de politique borné. Il n’exécute pas le moteur Actions et ne déploie pas Pages.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Vérifier la ref du commit d’entrée",
+        "Exécuter la validation partagée"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Dépendance de construction réussie ?"
+      ],
+      "branch": {
+        "exit": "Non : arrêt",
+        "continue": "Oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Ref main et événement autorisé ?",
+        "push ou workflow_dispatch"
+      ],
+      "branch": {
+        "exit": "Non : passer",
+        "continue": "Oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Déployer l’artefact Pages vérifié",
+        "Étape hébergée hors du modèle"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Inspecter URL publiques et sitemap",
+        "Vérifier IndexNow séparément"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "key": "2021-07-23-multiple-gradle-build",
+  "language": "fr",
+  "title": "Intégrer les assets au JAR",
+  "description": "Chaque application Vue construit sa propre sortie. Une tâche Gradle Sync ne rassemble que ces sorties, puis bootJar les place sous des chemins statiques distincts.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Versionner chaque verrouillage",
+        "Figer les dépendances du projet"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Par application : npm ci",
+        "Puis npm run build"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Sync des deux répertoires dist",
+        "Séparer static/project1 et project2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "bootJar dépend de la collecte",
+        "Copier dans BOOT-INF/classes"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Lancer le JAR ; lire les deux URL",
+        "Vérifier les bundles actuels"
+      ]
+    }
+  ]
+}

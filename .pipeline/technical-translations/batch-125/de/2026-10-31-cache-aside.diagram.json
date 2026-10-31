@@ -1,0 +1,66 @@
+{
+  "key": "2026-10-31-cache-aside",
+  "language": "de",
+  "title": "Cache-Aside-Leseablauf",
+  "description": "Eintrag suchen, TTL prüfen, bei Fehlen laden, erfolgreiche Werte speichern, Kapazität begrenzen und zurückgeben. Ladefehler ohne Speicherung weitergeben.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Schlüssel suchen, Zeitgeber lesen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Eintrag vorhanden und Zeit < TTL?"
+      ],
+      "branch": {
+        "exit": "Cache-Wert",
+        "continue": "nein",
+        "outcome": "complete"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Alten Eintrag entfernen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "loader.apply(key): Quelle laden"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Erfolgreiches Ergebnis, nicht null?"
+      ],
+      "branch": {
+        "exit": "weitergeben",
+        "continue": "ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Wert und Abschlusszeit speichern"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Über Kapazität? Ein LRU verdrängen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Geladenen Wert zurückgeben"
+      ]
+    }
+  ]
+}

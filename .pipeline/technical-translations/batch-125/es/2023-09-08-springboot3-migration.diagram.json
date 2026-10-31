@@ -1,0 +1,50 @@
+{
+  "key": "2023-09-08-springboot3-migration",
+  "language": "es",
+  "title": "Verificar migración Boot 3",
+  "description": "Orden propuesto de comprobaciones. Los comandos inspeccionan el entorno; no migran automáticamente aplicación ni base de datos.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Establecer base 2.7 correcta",
+        "Registrar pruebas y ejecución"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Comprobar JDK y Gradle",
+        "Preparar base Java 17"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Revisar Java EE → Jakarta",
+        "Conservar API javax de Java SE"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Alinear dependencias y APT",
+        "Compilar y ejecutar consultas"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Revisar propiedades y seguridad",
+        "Retirar auxiliar de migración"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Probar comportamiento",
+        "Después valorar nuevas opciones"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-04-jekyll-install",
+  "language": "ja",
+  "title": "Jekyll ビルド層を分離",
+  "description": "宣言した旧 bundle で二つの一時ページを描画します。全アーカイブの構築やサポート中 Ruby の選択はしません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "選択済み Ruby と Bundler を確認"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "別の fixture Gemfile を使う",
+        "Jekyll と GFM parser を宣言"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "bundle 依存を解決",
+        "生成 lockfile を保つ"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "二つの一時ページを構築",
+        "実パスと独自設定を使う"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "見出し、リンク、先を検証",
+        "その後に実サイトを調べる"
+      ]
+    }
+  ]
+}

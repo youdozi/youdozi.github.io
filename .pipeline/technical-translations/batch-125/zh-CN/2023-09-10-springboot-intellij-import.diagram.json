@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-10-springboot-intellij-import",
+  "language": "zh-CN",
+  "title": "区分构建与 IDE 故障",
+  "description": "用 Wrapper 构建区分项目和 IDE 配置故障。HTTP 测试使用随机端口，手动 bootRun 使用配置端口。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "打开 Gradle 项目根目录",
+        "检查 JDK 与 Wrapper"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Wrapper 构建失败？",
+        "修复构建、依赖、源码"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Wrapper 通过而 IDE 失败？",
+        "重载 Gradle，检查运行设置"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "HTTP 测试检查 JSON 和 404",
+        "使用随机服务器端口"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "运行应用，访问 /greeting",
+        "检查路由和配置端口"
+      ]
+    }
+  ]
+}

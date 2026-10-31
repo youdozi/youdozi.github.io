@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-05-querydsl-no-release",
+  "language": "zh-CN",
+  "title": "比较查询契约",
+  "description": "测试写入相同数据，分别对照明确预期列表。替换决策还需应用专属案例。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "向 H2 写入五行",
+        "包括重复值与 null"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "构建 Querydsl 与 Criteria 过滤",
+        "明确相等与 null 策略"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "各结果按名称排序",
+        "对照预期列表"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "检查八种契约场景",
+        "clean 后重新生成 Q 类型"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "再评估真实查询形式",
+        "测试本身不决定切换"
+      ]
+    }
+  ]
+}

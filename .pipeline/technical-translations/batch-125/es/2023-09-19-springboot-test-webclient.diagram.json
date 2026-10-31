@@ -1,0 +1,54 @@
+{
+  "key": "2023-09-19-springboot-test-webclient",
+  "language": "es",
+  "title": "Validar respuesta HTTP",
+  "description": "El cliente comprueba estado antes del tipo, libera cuerpos rechazados y decodifica JSON. StepVerifier comprueba valores y finalización o error.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Preparar respuesta mock local",
+        "Suscribirse a solicitud"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Estado HTTP de error?",
+        "Sí: emitir excepción y parar"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Sí",
+        "continue": "No"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿application/json o",
+        "application/*+json?",
+        "Otro: liberar cuerpo y error"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Otro",
+        "continue": "JSON"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Tipo admitido: decodificar Payload",
+        "Observar cuerpo vacío o inválido"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Verificar valores y final",
+        "Inspeccionar método, ruta y Accept"
+      ]
+    }
+  ]
+}

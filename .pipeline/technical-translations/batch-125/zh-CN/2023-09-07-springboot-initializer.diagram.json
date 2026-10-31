@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-07-springboot-initializer",
+  "language": "zh-CN",
+  "title": "生成、检查、测试",
+  "description": "运行 Wrapper 前先生成完整归档。上下文测试与单独运行 HTTP 应用证明不同内容。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "选择兼容的 Boot、JDK、Gradle"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "生成并解压完整归档",
+        "保留 Gradle Wrapper 文件"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "检查 build.gradle 和工具链",
+        "运行 ./gradlew --version"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "运行 ./gradlew test",
+        "检查上下文初始化"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "单独运行 bootRun",
+        "尚无控制器：/ 可能返回 404"
+      ]
+    }
+  ]
+}

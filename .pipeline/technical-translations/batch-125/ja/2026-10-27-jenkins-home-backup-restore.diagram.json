@@ -1,0 +1,57 @@
+{
+  "key": "2026-10-27-jenkins-home-backup-restore",
+  "language": "ja",
+  "title": "別の home volume へ復元",
+  "description": "archive と別保存の master.key を戻して HTTP、選んだファイルを確認します。本番処理や外部の復旧証明ではありません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "新規 controller を準備し停止"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "master.key を除き archive",
+        "key は別 path に copy"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "master.key は除外済み？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "いいえ：失敗",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "新 volume に展開",
+        "master.key を別に復元"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "HTTP、marker、password 一致？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "いいえ：失敗",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "限定した復旧検査を報告",
+        "実験データと一時ファイル削除"
+      ]
+    }
+  ]
+}

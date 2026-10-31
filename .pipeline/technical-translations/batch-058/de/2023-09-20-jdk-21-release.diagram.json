@@ -35,7 +35,8 @@
     {
       "kind": "result",
       "lines": [
-        "Virtuellen Thread starten und join aufrufen",
+        "Virtuellen Thread starten",
+        "und join aufrufen",
         "Vor der Rückkehr auf die Ausgabe warten"
       ]
     }

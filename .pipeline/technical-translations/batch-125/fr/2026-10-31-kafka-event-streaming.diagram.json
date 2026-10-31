@@ -1,0 +1,62 @@
+{
+  "key": "2026-10-31-kafka-event-streaming",
+  "language": "fr",
+  "title": "Groupes Kafka et rejeu",
+  "description": "Créer un broker et un topic jetables, publier deux événements, lire avec deux groupes, rejouer directement et supprimer le conteneur. En cas d’échec de commande, arrêter et nettoyer.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Démarrer le broker jetable"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Broker prêt dans les essais prévus ?",
+        "Échec : nettoyer"
+      ],
+      "branch": {
+        "exit": "échec",
+        "continue": "oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Créer orders.v1, une partition"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Publier deux événements de même clé"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "projection-v1 lit les deux entrées"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "audit-v1 lit les deux entrées"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Rejouer partition 0 depuis offset 0"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Supprimer conteneur et données"
+      ]
+    }
+  ]
+}

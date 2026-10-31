@@ -1,0 +1,49 @@
+{
+  "key": "2023-10-27-springbatch5-migration",
+  "language": "es",
+  "title": "Reiniciar instancia v5",
+  "description": "Prueba v5 de esquema nuevo, no migración v4. Otra ejecución repite el paso fallido y mantiene completo el ya completado.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Crear esquema H2 Batch 5",
+        "Parámetros identificadores"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lanzar job: paso 1 completo"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Paso 2 falla una vez",
+        "Estado FAILED"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Mismos parámetros al lanzar",
+        "Misma instancia, nueva ejecución"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Saltar paso 1 completado",
+        "Repetir paso 2 → COMPLETED"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Verificar recuentos: 1 y 2",
+        "Sin garantía de recuperar JVM"
+      ]
+    }
+  ]
+}

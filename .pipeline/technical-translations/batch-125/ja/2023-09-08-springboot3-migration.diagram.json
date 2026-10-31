@@ -1,0 +1,50 @@
+{
+  "key": "2023-09-08-springboot3-migration",
+  "language": "ja",
+  "title": "Boot 3 移行の確認",
+  "description": "提案する確認順序です。コマンドは環境を調べ、アプリや DB の自動移行はしません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "成功する 2.7 の基準を作る",
+        "test と実行設定を記録"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "JDK と Gradle 実行を確認",
+        "Java 17 の基準を準備"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Java EE → Jakarta を確認",
+        "Java SE javax API は維持"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "依存と processor をそろえる",
+        "コンパイルと query を実行"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "property と security を確認",
+        "一時移行 helper を除去"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "アプリ動作をテスト",
+        "次に新しい実行機能を検討"
+      ]
+    }
+  ]
+}

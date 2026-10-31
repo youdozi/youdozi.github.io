@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-09-springboot3-querydsl",
+  "language": "ja",
+  "title": "Q 型の生成とクエリ",
+  "description": "main のコンパイルで QEmployee を生成し、H2 テストでその型を使って問い合わせます。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "JPA と Querydsl Jakarta を設定"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "annotationProcessor を設定",
+        "BOM と Jakarta API を含める"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "注釈付き Employee を compile",
+        "QEmployee の source/class を生成"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "H2 で JPA test を開始",
+        "テスト用 Employee を保存"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "型付き query を実行",
+        "結果を確認し clean test を再実行"
+      ]
+    }
+  ]
+}

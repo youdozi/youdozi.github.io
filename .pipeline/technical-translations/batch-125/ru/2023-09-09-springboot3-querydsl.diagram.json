@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-09-springboot3-querydsl",
+  "language": "ru",
+  "title": "Q-типы и запросы",
+  "description": "Процессор создаёт QEmployee при основной компиляции. Затем H2-тест выполняет запрос с этими типами.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Настроить JPA, Querydsl Jakarta"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Настроить annotationProcessor",
+        "Его BOM и Jakarta API"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Компилировать Employee",
+        "Создать исходник и класс QEmployee"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Запустить JPA-тест с H2",
+        "Сохранить тестовых сотрудников"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Выполнить типизированные запросы",
+        "Проверить, повторить clean test"
+      ]
+    }
+  ]
+}

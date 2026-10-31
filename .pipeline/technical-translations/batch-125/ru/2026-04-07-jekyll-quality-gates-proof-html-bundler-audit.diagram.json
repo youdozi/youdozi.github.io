@@ -1,0 +1,52 @@
+{
+  "key": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+  "language": "ru",
+  "title": "Проверка и развёртывание",
+  "description": "Офлайн-пример проверяет контракты YAML и ограниченную модель политики. Он не исполняет движок Actions и не развёртывает Pages.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Проверить входной ref",
+        "Запустить общую проверку"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Зависимая сборка успешна?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Нет: стоп",
+        "continue": "Да"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Ref main и допустимое событие?",
+        "push или workflow_dispatch"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Нет: пропуск",
+        "continue": "Да"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Deploy проверенного артефакта",
+        "Размещённый шаг вне модели"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Проверить публичные URL, sitemap",
+        "IndexNow проверить отдельно"
+      ]
+    }
+  ]
+}

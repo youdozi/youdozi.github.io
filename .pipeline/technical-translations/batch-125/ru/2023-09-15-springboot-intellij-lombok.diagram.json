@@ -1,0 +1,50 @@
+{
+  "key": "2023-09-15-springboot-intellij-lombok",
+  "language": "ru",
+  "title": "Сначала компиляция Lombok",
+  "description": "Отдельно проверьте сгенерированные конструкторы и getter main и test. Исправляйте IDE после успешных тестов Wrapper.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Добавить compileOnly и APT",
+        "Настроить main и test"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Компилировать конструктор",
+        "и getter основных исходников"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Компилировать Lombok тестов",
+        "Оба теста генерации"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Все пять тестов и bootJar",
+        "Прежний JSON HTTP"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Ошибки только в IDE?",
+        "Перезагрузить, проверить поддержку"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Убрать Lombok из runtime",
+        "Готовые члены работают без него"
+      ]
+    }
+  ]
+}

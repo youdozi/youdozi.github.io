@@ -1,0 +1,43 @@
+{
+  "key": "2021-07-23-multiple-gradle-build",
+  "language": "de",
+  "title": "Assets in die JAR bauen",
+  "description": "Jede Vue-App erzeugt ihre eigene Ausgabe. Eine Gradle-Sync-Aufgabe sammelt nur diese Ausgaben; anschließend legt bootJar sie unter getrennten statischen Pfaden ab.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "App-Lockdateien versionieren",
+        "Projektabhängigkeiten fixieren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Je App: npm ci",
+        "Danach npm run build"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Beide dist-Verzeichnisse per Sync",
+        "static/project1 und project2 trennen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "bootJar hängt vom Sammeln ab",
+        "Nach BOOT-INF/classes kopieren"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "JAR starten; beide Pfade abrufen",
+        "Aktuelle Bundles prüfen"
+      ]
+    }
+  ]
+}

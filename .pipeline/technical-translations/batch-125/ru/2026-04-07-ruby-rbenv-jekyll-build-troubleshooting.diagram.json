@@ -1,0 +1,50 @@
+{
+  "key": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+  "language": "ru",
+  "title": "Runtime и компилятор",
+  "description": "Ruby-скрипт сравнивает настройки компилятора и собирает временную C++-программу. Успех не подтверждает сборку нативных gem.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Проверить запуск Ruby и RbConfig"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Выбрать компилятор проверки",
+        "Разобрать флаги одной команды"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Временная сборка C++17 успешна?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Нет: стоп",
+        "continue": "Да"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Успешный запуск с выводом 42?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Нет: стоп",
+        "continue": "Да"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Сообщить результат проверки",
+        "Вернуться к журналу gem"
+      ]
+    }
+  ]
+}

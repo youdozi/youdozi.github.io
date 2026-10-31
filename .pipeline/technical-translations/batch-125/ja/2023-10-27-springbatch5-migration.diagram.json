@@ -1,0 +1,49 @@
+{
+  "key": "2023-10-27-springbatch5-migration",
+  "language": "ja",
+  "title": "失敗した v5 を再実行",
+  "description": "新規 schema の v5 再実行で v4 DB 移行ではありません。同 instance の失敗 Step を再実行し完了分は維持します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "新規 H2 Batch 5 schema",
+        "識別 job parameter を作る"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "job 開始：step 1 が完了"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "step 2 が一度失敗",
+        "実行状態は FAILED"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "同じ parameter で開始",
+        "同 instance、新 execution"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "完了した step 1 を skip",
+        "step 2 再実行 → COMPLETED"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "step 回数 1 と 2 を確認",
+        "JVM 復旧の保証ではない"
+      ]
+    }
+  ]
+}

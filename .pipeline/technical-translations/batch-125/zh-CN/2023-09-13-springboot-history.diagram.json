@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-13-springboot-history",
+  "language": "zh-CN",
+  "title": "确定实际组件版本",
+  "description": "流程概括依赖检查而非发布时间线。Boot、Framework、Lombok 版本和依赖配置各自独立。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "确定选中的 Boot 版本"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "检查依赖管理",
+        "不等同 Boot 与 Framework 版本"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: spring-core",
+        "检查 runtimeClasspath"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: lombok",
+        "检查 annotationProcessor"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "记录解析后的版本",
+        "评估该组合的兼容性"
+      ]
+    }
+  ]
+}

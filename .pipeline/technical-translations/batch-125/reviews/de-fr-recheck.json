@@ -1,0 +1,120 @@
+{
+  "reviewType": "focused read-only separate AI translation recheck",
+  "initialReport": "/tmp/review125-de-fr.json",
+  "languages": [
+    "de",
+    "fr"
+  ],
+  "disposition": "all_initial_findings_resolved",
+  "findingDispositions": [
+    {
+      "id": "de-shipping-thousands",
+      "status": "resolved",
+      "note": "Locale-appropriate thousands notation preserves the quantities in authored prose/prompts and diagrams; protected executable text remains unchanged."
+    },
+    {
+      "id": "de-cache-thousands",
+      "status": "resolved",
+      "note": "Locale-appropriate thousands notation preserves the quantities in authored prose/prompts and diagrams; protected executable text remains unchanged."
+    },
+    {
+      "id": "de-kafka-cleanup",
+      "status": "resolved",
+      "note": "Failure exit plus adjacent condition-node line explicitly retains cleanup; concise branch label does not lose meaning."
+    },
+    {
+      "id": "fr-shipping-thousands",
+      "status": "resolved",
+      "note": "Locale-appropriate thousands notation preserves the quantities in authored prose/prompts and diagrams; protected executable text remains unchanged."
+    },
+    {
+      "id": "fr-cache-thousands",
+      "status": "resolved",
+      "note": "Locale-appropriate thousands notation preserves the quantities in authored prose/prompts and diagrams; protected executable text remains unchanged."
+    },
+    {
+      "id": "fr-kafka-cleanup",
+      "status": "resolved",
+      "note": "Failure exit plus adjacent condition-node line explicitly retains cleanup; concise branch label does not lose meaning."
+    },
+    {
+      "id": "de-sensitive-redaction",
+      "status": "resolved",
+      "note": "Sensitive-data masking is now explicit through geschwärzt."
+    },
+    {
+      "id": "de-same-error-branch",
+      "status": "resolved",
+      "note": "Condition node now explicitly says Sonst: gleicher Fehler and the exit is labeled Fehler."
+    }
+  ],
+  "reviewedChangedFiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "bfd5d4fc61690958f2c42ffe946cf10ef4ab271b8f4e684d0ee567004c46ebc3"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-cache-aside.md",
+      "sha256": "753bdf12219a08ab28515fb02e61aa24cb8a4d37d1dfb127193db2e8ccf8ec73"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "e275aa15369d81dd215b81a9a01eadcc9db4f530752d5e5bcfe0e504b7a800a5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-cache-aside.md",
+      "sha256": "262b644f78b04873908bc25e786a5328ec327d869f3fcd5ce31abbfc3d9a7929"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-ai-agent-operations.md",
+      "sha256": "62b8166c5193faee5be14a047d5874f836d2dbdbaa0648b15f9f208c2b40bcde"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-ai-agent-refactoring.diagram.json",
+      "sha256": "3da0e17f642a84de7031e37a5defb2a8b03990b0024162f54eca805f2c190d14"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-ai-agent-refactoring.svg",
+      "sha256": "f5e9a2b4d10eb1099e314a2b4917dfcb6de07e46ff93023f47a17aa897d37f1f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-ai-agent-refactoring.diagram.json",
+      "sha256": "c9a2be7c0158754d1f8e066c46395a9d1eab6180d34306db9ced087287e09162"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-ai-agent-refactoring.svg",
+      "sha256": "f25870a01509796d2ea68560d09d273f0a2b55b83b3aeff3d6c1cc56f822eb28"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-kafka-event-streaming.diagram.json",
+      "sha256": "2cc292acef24326a0b1838dad48399a910e649c84b6e1fbbcb2e496733978f38"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-kafka-event-streaming.svg",
+      "sha256": "1b1c55c2b0f13675cdfb3c767c612cd5f95e687ce9ec373a606f2c228afb473b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-kafka-event-streaming.diagram.json",
+      "sha256": "7e2feb2386ad9fda6d9576b9a6ac7241d71aa95a59a89282e1dd68bbcda0a444"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-kafka-event-streaming.svg",
+      "sha256": "871ce2728816b74e91cf28419d2477671147eaa9b204f2c6d703e6564a13bd69"
+    }
+  ],
+  "changedFileCount": 13,
+  "unexpectedChangesSinceInitialReview": [],
+  "newIssues": [],
+  "checks": [
+    "Read each changed prose/table/prompt passage and complete changed flow definition/SVG text against the initial source meaning.",
+    "Verified German dots and French U+202F separators preserve the 50000/3000 KRW and 10000/1000 RPS quantities.",
+    "Rechecked protected fences and inline-code literals for changed manuscripts.",
+    "Parsed changed JSON/SVG and verified every title, description, node line and branch label is present in its SVG.",
+    "Confirmed all other reviewed DE/FR files retain their initial hashes."
+  ],
+  "limitations": [
+    "Focused AI semantic/readability recheck only; no native-speaker, human or different-model consensus claim.",
+    "No live examples/tests, browser rendering, clipping checks or deployment executed by this reviewer.",
+    "Initial report preserved unchanged; all review artifacts remain outside repository."
+  ]
+}

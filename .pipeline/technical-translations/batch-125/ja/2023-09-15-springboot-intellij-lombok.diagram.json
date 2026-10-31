@@ -1,0 +1,50 @@
+{
+  "key": "2023-09-15-springboot-intellij-lombok",
+  "language": "ja",
+  "title": "IDE 修正前に Lombok を確認",
+  "description": "main と test の生成 constructor/getter を別に確認し、Wrapper 成功後に IDE 認識を直します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "compileOnly と processor を追加",
+        "main と test の範囲を設定"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "main source で生成した",
+        "constructor と getter を compile"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "test source の Lombok を compile",
+        "両方の生成 test を確認"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "全五 test と bootJar を実行",
+        "HTTP JSON が同じか確認"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "IDE だけまだ error？",
+        "再読込し IDE 支援を確認"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "runtime classpath から除外",
+        "compile 済み member は単独動作"
+      ]
+    }
+  ]
+}

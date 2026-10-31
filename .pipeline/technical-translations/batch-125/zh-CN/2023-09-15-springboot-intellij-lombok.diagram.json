@@ -1,0 +1,50 @@
+{
+  "key": "2023-09-15-springboot-intellij-lombok",
+  "language": "zh-CN",
+  "title": "先编译 Lombok 再修 IDE",
+  "description": "分别检查 main 和 test 编译中的生成构造器和 getter。Wrapper 测试通过后修复 IDE 识别。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "添加 compileOnly 与处理器",
+        "配置 main 和 test 范围"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "在 main 源码中编译",
+        "生成构造器与 getter"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "test 源码使用 Lombok",
+        "检查两项生成测试"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "运行五项测试与 bootJar",
+        "检查 HTTP JSON 不变"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "只有 IDE 仍报错？",
+        "重载项目并检查 IDE 支持"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Lombok 不进运行时类路径",
+        "编译后成员无需它也能运行"
+      ]
+    }
+  ]
+}

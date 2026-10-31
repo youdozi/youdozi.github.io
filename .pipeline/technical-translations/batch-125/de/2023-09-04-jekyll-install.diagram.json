@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-04-jekyll-install",
+  "language": "de",
+  "title": "Jekyll-Build isolieren",
+  "description": "Der Code rendert zwei temporäre Seiten in einem deklarierten alten Bundle. Er baut nicht das vollständige Archiv und wählt keine unterstützte Ruby-Version.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Ruby- und Bundler-Auswahl prüfen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Separates Test-Gemfile verwenden",
+        "Jekyll und GFM-Parser deklarieren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Bundle-Abhängigkeiten auflösen",
+        "Erzeugte Lockdatei bewahren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Zwei temporäre Seiten bauen",
+        "Reale Pfade und eigene Konfiguration"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Überschrift, Link und Ziel prüfen",
+        "Danach echte Website untersuchen"
+      ]
+    }
+  ]
+}

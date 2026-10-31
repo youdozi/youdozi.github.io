@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-13-springboot-history",
+  "language": "de",
+  "title": "Echte Versionen auflösen",
+  "description": "Der Ablauf fasst die Abhängigkeitsprüfung statt einer Release-Zeitleiste zusammen. Boot, Framework und Lombok haben eigene Versionsidentitäten und Konfigurationen.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Gewählte Boot-Version bestimmen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Abhängigkeitsverwaltung prüfen",
+        "Boot-/Framework-IDs nicht gleichsetzen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: spring-core",
+        "runtimeClasspath prüfen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: lombok",
+        "annotationProcessor prüfen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Aufgelöste Versionen erfassen",
+        "Kompatibilität dieser Auswahl prüfen"
+      ]
+    }
+  ]
+}

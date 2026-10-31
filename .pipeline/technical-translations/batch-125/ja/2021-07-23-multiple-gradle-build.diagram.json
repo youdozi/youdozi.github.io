@@ -1,0 +1,43 @@
+{
+  "key": "2021-07-23-multiple-gradle-build",
+  "language": "ja",
+  "title": "成果物を JAR に格納",
+  "description": "各 Vue アプリの出力だけを Gradle Sync で集め、bootJar が別々の静的パスに置きます。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "各アプリの lockfile を commit",
+        "固定した依存を使う"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "アプリ別に npm ci",
+        "次に npm run build"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "両方の dist を Sync",
+        "static/project1 と project2 を分離"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "bootJar は収集タスクに依存",
+        "BOOT-INF/classes へコピー"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "JAR 起動後に両パスを要求",
+        "現在の bundle の配信を確認"
+      ]
+    }
+  ]
+}

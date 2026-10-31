@@ -1,0 +1,75 @@
+{
+  "key": "2026-10-31-failure-fallback",
+  "language": "es",
+  "title": "Fallback de lectura pública",
+  "description": "Admisión, lectura del origen, clasificación y edad de copia. Todo permiso adquirido se libera al salir.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "tryAcquire(): ¿hay permiso?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "rechazo",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "primary.get(): leer origen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Respondió el origen?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "origen",
+        "continue": "excepción"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Es error Unavailable?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "propagar",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Existe una copia?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "rechazo",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Edad entre 0 y 60s?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "rechazo",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Devolver copia, origen y edad"
+      ]
+    }
+  ]
+}

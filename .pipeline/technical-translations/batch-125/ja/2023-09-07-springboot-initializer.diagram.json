@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-07-springboot-initializer",
+  "language": "ja",
+  "title": "生成、確認、テスト",
+  "description": "Wrapper の前に全アーカイブを生成します。コンテキストテストと別の HTTP アプリ起動は別のことを確認します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "互換な Boot、JDK、Gradle を選択"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "全アーカイブを生成、展開",
+        "Gradle Wrapper を保つ"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "build.gradle と toolchain を確認",
+        "./gradlew --version を実行"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "./gradlew test を実行",
+        "context 初期化を確認"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "別に bootRun を実行",
+        "controller なし：/ は 404 も可"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "key": "2023-09-19-springboot-test-webclient",
+  "language": "zh-CN",
+  "title": "验证 HTTP 响应",
+  "description": "先检查状态再检查媒体类型，释放被拒绝正文，解码支持的 JSON。StepVerifier 检查值与完成或错误。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "排入本地模拟响应",
+        "订阅客户端请求"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "HTTP 错误状态？",
+        "是：发出异常并停止"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "是",
+        "continue": "否"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "application/json 或",
+        "application/*+json？",
+        "其他：释放正文后报错"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "其他",
+        "continue": "JSON"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "仅对支持类型解码 Payload",
+        "观察空正文和错误正文"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "验证值与终止信号",
+        "检查方法、路径和 Accept"
+      ]
+    }
+  ]
+}

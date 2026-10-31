@@ -88,7 +88,7 @@ Un resultado correcto es un objeto JSON con `tag_name` y `download_url`. Los val
 | Ningún recurso coincidente o varios | Fallar en lugar de elegir arbitrariamente. |
 | Sintaxis del argumento del repositorio no válida | Mensaje de uso, código 2. |
 
-Si la solicitud HTTP tiene éxito pero ningún archivo coincide, revise los nombres de los archivos de la versión antes de cambiar el filtro `jq`: este ejemplo selecciona Java 17 para Linux x64, no cualquier paquete JDK. Para Java 21, utilice el [ejemplo de metadatos de plataforma de Temurin](/en/posts/2023-10-10-temurin-jdk21-delay/). Si los valores del repositorio o la plataforma proceden de YAML, [analice y valide la configuración como datos](/en/posts/2021-07-27-parse-yaml/) antes de pasarlos a un comando.
+Si la solicitud HTTP tiene éxito pero ningún archivo coincide, revisa los nombres de los archivos de la versión antes de cambiar el filtro `jq`: este ejemplo selecciona Java 17 para Linux x64, no cualquier paquete JDK. Para Java 21, usa el [ejemplo de metadatos de plataforma de Temurin](/en/posts/2023-10-10-temurin-jdk21-delay/). Si los valores del repositorio o la plataforma proceden de YAML, [analiza y valida la configuración como datos](/en/posts/2021-07-27-parse-yaml/) antes de pasarlos a un comando.
 
 Se usaron respuestas HTTP locales para comprobar el éxito, los errores HTTP, el JSON no válido, los recursos ausentes y los duplicados. `GITHUB_API_URL` apunta por defecto a la API pública y puede dirigirse a un servidor de prueba que implemente el mismo contrato de respuesta.
 

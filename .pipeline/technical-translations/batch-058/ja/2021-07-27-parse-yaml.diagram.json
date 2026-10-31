@@ -31,7 +31,8 @@
     {
       "kind": "result",
       "lines": [
-        "有効なポートだけ SERVER_PORT に export",
+        "有効なポートだけ SERVER_PORT",
+        "に export",
         "引数を引用してコマンドを exec"
       ]
     }

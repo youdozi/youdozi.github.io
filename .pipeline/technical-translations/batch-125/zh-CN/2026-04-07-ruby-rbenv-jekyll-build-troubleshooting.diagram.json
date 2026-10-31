@@ -1,0 +1,50 @@
+{
+  "key": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+  "language": "zh-CN",
+  "title": "区分运行时与编译器探针",
+  "description": "Ruby 脚本比较编译器配置并构建临时 C++ 程序。探针通过不证明原生 gem 编译成功。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "检查 Ruby 启动与 RbConfig"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "选择探针编译器",
+        "解析单命令标志"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "临时 C++17 编译成功？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "否：停止",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "执行成功且输出 42？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "否：停止",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "报告探针结果",
+        "回到 gem 构建日志"
+      ]
+    }
+  ]
+}

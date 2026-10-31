@@ -1,0 +1,1563 @@
+{
+  "schemaVersion": 1,
+  "state": "approved-for-publication",
+  "scope": "All251 missing technical language editions:5 English and246 six-language editions. Completes all53 technical topics in8languages. News/digest drafts are outside this request.",
+  "reviewPullRequest": 125,
+  "approval": {
+    "kind": "human",
+    "reviewedBy": "youdozi",
+    "pullRequest": 125,
+    "basis": "Explicit user request to apply missing development-post languages, review, verify and deploy, plus standing PR merge authorization. Publication authorization is distinct from AI language review; no human/native proofreading claimed."
+  },
+  "manifests": [
+    {
+      "path": ".pipeline/technical-translations/batch-050/manifest.json",
+      "sha256": "e57f8d6a3aeeb6da0cb9abf684356147993428fb695af669351ebfcfd6c865aa"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-052/manifest.json",
+      "sha256": "3d0fe88e42da93129f62cd5dba401357ffe96d3d01f3038c35211f5afff754c7"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-055/manifest.json",
+      "sha256": "1fe8bbde2d19f5780ba08f158519bd2d55fdec1dc863ec3bd9126705ddda372f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-056/manifest.json",
+      "sha256": "5c3bd2ee5ccb0b59bad65322a026d7b2ef52cfac963e0236a497f74510717e42"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-058/manifest.json",
+      "sha256": "ddb52115d3c0de8ef810b654b7cab3396580933aec400022723b4ba51b5e8d96"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/manifest.json",
+      "sha256": "1934910c02dbe893b786124f1d296d7adf9efbe921d40b3d2cfbceb8f70b4b33"
+    }
+  ],
+  "sourceTopics": 53,
+  "newEnglishEditions": 5,
+  "approvedEditions": 246,
+  "totalNewEditions": 251,
+  "languages": [
+    "en",
+    "ko",
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "reviewReports": [
+    {
+      "path": ".pipeline/technical-translations/batch-125/review-existing.json",
+      "sha256": "e21758c6c840afef3e50cd473bbc56502549c8bcc399ec0957b2378f50964c1c"
+    }
+  ],
+  "english": [
+    {
+      "path": "src/content/posts/en/2026-10-31-failure-fallback.md",
+      "sha256": "93196b5c0ce64194996df961642c87053d74ea5be5c63b2b776cdd598dc7effd",
+      "url": "/en/posts/2026-10-31-failure-fallback/"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-cache-aside.md",
+      "sha256": "2c4422c55f14e7b5452f8b286bf5d6f986617fe624e229b7bd74462afe525ad9",
+      "url": "/en/posts/2026-10-31-cache-aside/"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-kafka-event-streaming.md",
+      "sha256": "b5cac22382f44d1bdada1b264df07a6f746ee31761c0268ef2313e7f86eee118",
+      "url": "/en/posts/2026-10-31-kafka-event-streaming/"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "efd733fd275675221deef4ebffa545ba2f54a6819e72fed217917d6708e3e4b9",
+      "url": "/en/posts/2026-10-31-ai-agent-refactoring/"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-ai-agent-operations.md",
+      "sha256": "671fc15fe228c1e812d5ae95a16d5092a66fbbf55edf53f21c353c91c91e796f",
+      "url": "/en/posts/2026-10-31-ai-agent-operations/"
+    }
+  ],
+  "editions": [
+    {
+      "key": "zh-CN-2021-07-19-new-id",
+      "path": "src/content/technical-translations/zh-CN/2021-07-19-new-id.md",
+      "sha256": "bf4b802f1e0edfaa769d7651ff95531935c322bcaa6c5460f63dc1e23c6c26a3",
+      "url": "/zh-CN/posts/2021-07-19-new-id/"
+    },
+    {
+      "key": "zh-CN-2021-07-20-http-status-test",
+      "path": "src/content/technical-translations/zh-CN/2021-07-20-http-status-test.md",
+      "sha256": "6f55c61d15ce17122c45b5697e0fec8264cc0b3f8014579f4626e2f900808cfc",
+      "url": "/zh-CN/posts/2021-07-20-http-status-test/"
+    },
+    {
+      "key": "zh-CN-2021-07-20-pair-delete",
+      "path": "src/content/technical-translations/zh-CN/2021-07-20-pair-delete.md",
+      "sha256": "83e017548befe2356e3bfc5804426e0cde6daec45e108d3616c86e2987231742",
+      "url": "/zh-CN/posts/2021-07-20-pair-delete/"
+    },
+    {
+      "key": "zh-CN-2021-07-22-dot-product",
+      "path": "src/content/technical-translations/zh-CN/2021-07-22-dot-product.md",
+      "sha256": "bab80f5f301d61ec7329f21585b037c384ac11e1a94e16d34e2467a14b9849e5",
+      "url": "/zh-CN/posts/2021-07-22-dot-product/"
+    },
+    {
+      "key": "zh-CN-2021-07-22-plus-minus",
+      "path": "src/content/technical-translations/zh-CN/2021-07-22-plus-minus.md",
+      "sha256": "063e338d1b950fbb80e63330b18fcb1fcd0297c3576fa0468b7e4f59b9e6dd32",
+      "url": "/zh-CN/posts/2021-07-22-plus-minus/"
+    },
+    {
+      "key": "zh-CN-2021-07-23-app-diagrams.net",
+      "path": "src/content/technical-translations/zh-CN/2021-07-23-app-diagrams.net.md",
+      "sha256": "66b09771c4ca65dfaebf46fc44aebda9c416f50d0b6b560ca78450e1338bbe27",
+      "url": "/zh-CN/posts/2021-07-23-app-diagrams.net/"
+    },
+    {
+      "key": "zh-CN-2021-07-23-multiple-gradle-build",
+      "path": "src/content/technical-translations/zh-CN/2021-07-23-multiple-gradle-build.md",
+      "sha256": "6d41e6c947b565283da884e0e68293ae54c995c560dfa1cf84aedeb9941414a5",
+      "url": "/zh-CN/posts/2021-07-23-multiple-gradle-build/"
+    },
+    {
+      "key": "zh-CN-2021-07-23-number-word",
+      "path": "src/content/technical-translations/zh-CN/2021-07-23-number-word.md",
+      "sha256": "7cdbd0e6d9f59bc6e028135474800c18006bac0c02bcd1ddd5d40af6ae929ceb",
+      "url": "/zh-CN/posts/2021-07-23-number-word/"
+    },
+    {
+      "key": "zh-CN-2021-07-23-unsuccessful-runner",
+      "path": "src/content/technical-translations/zh-CN/2021-07-23-unsuccessful-runner.md",
+      "sha256": "07e5f65bf93d583ea6919392020049a65764181f76bb8b3d833642017dbb2c9b",
+      "url": "/zh-CN/posts/2021-07-23-unsuccessful-runner/"
+    },
+    {
+      "key": "zh-CN-2021-07-24-fail-percentage",
+      "path": "src/content/technical-translations/zh-CN/2021-07-24-fail-percentage.md",
+      "sha256": "87742e120ecdbaf711ab10db6e2778c935fe94fbb8c44d59c3d1c38e66ee59ab",
+      "url": "/zh-CN/posts/2021-07-24-fail-percentage/"
+    },
+    {
+      "key": "zh-CN-2021-07-27-parse-yaml",
+      "path": "src/content/technical-translations/zh-CN/2021-07-27-parse-yaml.md",
+      "sha256": "a963f57ed7eebd1239250f5af75f718ed4191e996152c5c059fcdcfd87741107",
+      "url": "/zh-CN/posts/2021-07-27-parse-yaml/"
+    },
+    {
+      "key": "zh-CN-2021-07-29-interval-num",
+      "path": "src/content/technical-translations/zh-CN/2021-07-29-interval-num.md",
+      "sha256": "bf855a99be123a036f7b175855a6229312aeacfb0141d9831bf05498053d8b61",
+      "url": "/zh-CN/posts/2021-07-29-interval-num/"
+    },
+    {
+      "key": "zh-CN-2021-07-29-ponkemon",
+      "path": "src/content/technical-translations/zh-CN/2021-07-29-ponkemon.md",
+      "sha256": "e3a2ec70a7c136f9c940bd93b19dc1b388a37772e0053c81358769c2069f2ef7",
+      "url": "/zh-CN/posts/2021-07-29-ponkemon/"
+    },
+    {
+      "key": "zh-CN-2021-08-06-search-github",
+      "path": "src/content/technical-translations/zh-CN/2021-08-06-search-github.md",
+      "sha256": "45baeabd220994360d00a148b99fa9369b5ae460d5c55ed9fbc18f333d33009f",
+      "url": "/zh-CN/posts/2021-08-06-search-github/"
+    },
+    {
+      "key": "zh-CN-2021-08-17-cache",
+      "path": "src/content/technical-translations/zh-CN/2021-08-17-cache.md",
+      "sha256": "ed7c6df47ce557b55abc96b4597279d65db25e5ce895073b55d4f73fb5f919bd",
+      "url": "/zh-CN/posts/2021-08-17-cache/"
+    },
+    {
+      "key": "zh-CN-2023-09-04-jekyll-install",
+      "path": "src/content/technical-translations/zh-CN/2023-09-04-jekyll-install.md",
+      "sha256": "afa84d23578f24258d155d5c297c10e5f27d289cb45dcf7f1aecee3fd5584db0",
+      "url": "/zh-CN/posts/2023-09-04-jekyll-install/"
+    },
+    {
+      "key": "zh-CN-2023-09-05-querydsl-no-release",
+      "path": "src/content/technical-translations/zh-CN/2023-09-05-querydsl-no-release.md",
+      "sha256": "3aa384756f0571a66d8dfdc16fa0c9803056e1c2d776a883e9b0b902bb52b6d9",
+      "url": "/zh-CN/posts/2023-09-05-querydsl-no-release/"
+    },
+    {
+      "key": "zh-CN-2023-09-07-springboot-initializer",
+      "path": "src/content/technical-translations/zh-CN/2023-09-07-springboot-initializer.md",
+      "sha256": "cbf1fd91eb92a4c04e5a2a1de57206a90c0588a3140b11e266106598474e5e8c",
+      "url": "/zh-CN/posts/2023-09-07-springboot-initializer/"
+    },
+    {
+      "key": "zh-CN-2023-09-08-springboot3-migration",
+      "path": "src/content/technical-translations/zh-CN/2023-09-08-springboot3-migration.md",
+      "sha256": "062e706592357431be13de0084b211804a8f78b58f540bb0d04ca930120c056e",
+      "url": "/zh-CN/posts/2023-09-08-springboot3-migration/"
+    },
+    {
+      "key": "zh-CN-2023-09-09-springboot3-querydsl",
+      "path": "src/content/technical-translations/zh-CN/2023-09-09-springboot3-querydsl.md",
+      "sha256": "2c864e81d9d79e7237509ffbe50a1680a668baeb730d664d3333a62aa3591fb7",
+      "url": "/zh-CN/posts/2023-09-09-springboot3-querydsl/"
+    },
+    {
+      "key": "zh-CN-2023-09-10-springboot-intellij-import",
+      "path": "src/content/technical-translations/zh-CN/2023-09-10-springboot-intellij-import.md",
+      "sha256": "0b98694c7c22aeb5345041e16a5b4f7b2d9640bbae471c7aaa91f7a8be942e22",
+      "url": "/zh-CN/posts/2023-09-10-springboot-intellij-import/"
+    },
+    {
+      "key": "zh-CN-2023-09-13-springboot-history",
+      "path": "src/content/technical-translations/zh-CN/2023-09-13-springboot-history.md",
+      "sha256": "e966bf46e16aa74e579ae62bfe3051317ce7a3d9e8b3bf1024eb8b382add60f8",
+      "url": "/zh-CN/posts/2023-09-13-springboot-history/"
+    },
+    {
+      "key": "zh-CN-2023-09-15-springboot-intellij-lombok",
+      "path": "src/content/technical-translations/zh-CN/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "85d183b1cd850ff46336310c29b23af46f644f03260579c30a2130517c9182c9",
+      "url": "/zh-CN/posts/2023-09-15-springboot-intellij-lombok/"
+    },
+    {
+      "key": "zh-CN-2023-09-19-springboot-test-webclient",
+      "path": "src/content/technical-translations/zh-CN/2023-09-19-springboot-test-webclient.md",
+      "sha256": "384469aedb295f6510c7bd43b2777b1260bffa0daf3895196e3ef7aabc1214bb",
+      "url": "/zh-CN/posts/2023-09-19-springboot-test-webclient/"
+    },
+    {
+      "key": "zh-CN-2023-09-20-jdk-21-release",
+      "path": "src/content/technical-translations/zh-CN/2023-09-20-jdk-21-release.md",
+      "sha256": "a6643bd6d427d9a4a0bbd5c19615498e8970d612d5dca85c2b365ffb568e6b03",
+      "url": "/zh-CN/posts/2023-09-20-jdk-21-release/"
+    },
+    {
+      "key": "zh-CN-2023-09-20-linux-shellscript-function-error",
+      "path": "src/content/technical-translations/zh-CN/2023-09-20-linux-shellscript-function-error.md",
+      "sha256": "fd80738a0c11b405de44a712e5d2abe89a1d158c0c0c3c042be5ffcbf2d2cc91",
+      "url": "/zh-CN/posts/2023-09-20-linux-shellscript-function-error/"
+    },
+    {
+      "key": "zh-CN-2023-09-23-jdk-21-string-templates",
+      "path": "src/content/technical-translations/zh-CN/2023-09-23-jdk-21-string-templates.md",
+      "sha256": "3cd8d6acedb59e78fccd20fd004aeb70422f79898d691e6134215861eb82897f",
+      "url": "/zh-CN/posts/2023-09-23-jdk-21-string-templates/"
+    },
+    {
+      "key": "zh-CN-2023-09-23-linux-shellscript-github-latest",
+      "path": "src/content/technical-translations/zh-CN/2023-09-23-linux-shellscript-github-latest.md",
+      "sha256": "45ee64776072b6cbece1240f348a4a90c835723cff2b7ddbb416cf8d9035ba7f",
+      "url": "/zh-CN/posts/2023-09-23-linux-shellscript-github-latest/"
+    },
+    {
+      "key": "zh-CN-2023-09-28-jenkins-docker-install",
+      "path": "src/content/technical-translations/zh-CN/2023-09-28-jenkins-docker-install.md",
+      "sha256": "268988a5ba848b93d8cf33ebac722249e38b520faf791e95ef87bfe0208191ca",
+      "url": "/zh-CN/posts/2023-09-28-jenkins-docker-install/"
+    },
+    {
+      "key": "zh-CN-2023-10-10-temurin-jdk21-delay",
+      "path": "src/content/technical-translations/zh-CN/2023-10-10-temurin-jdk21-delay.md",
+      "sha256": "65c48018c9ccd6c8d6390895fcd0fbf03dc44574946c33c37ec4ab32f2b5b9c8",
+      "url": "/zh-CN/posts/2023-10-10-temurin-jdk21-delay/"
+    },
+    {
+      "key": "zh-CN-2023-10-27-springbatch5-migration",
+      "path": "src/content/technical-translations/zh-CN/2023-10-27-springbatch5-migration.md",
+      "sha256": "6db8ca3b41e37f1432c78c2ece5a6412ece2a5f40d930c3318f443798cbbc9d2",
+      "url": "/zh-CN/posts/2023-10-27-springbatch5-migration/"
+    },
+    {
+      "key": "zh-CN-2023-11-17-linux-shellscript-version-compare",
+      "path": "src/content/technical-translations/zh-CN/2023-11-17-linux-shellscript-version-compare.md",
+      "sha256": "c0678f4ad97c3ed0fb6b287566ac4b1f945e9d3bfe66e733c43167fb0ed350f7",
+      "url": "/zh-CN/posts/2023-11-17-linux-shellscript-version-compare/"
+    },
+    {
+      "key": "zh-CN-2026-04-07-jekyll-github-actions-content-pipeline",
+      "path": "src/content/technical-translations/zh-CN/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "a1ab661f1c5bbb60a7d2e97df1d98de6d1781b2312c144ca0d96edef4d38e5c6",
+      "url": "/zh-CN/posts/2026-04-07-jekyll-github-actions-content-pipeline/"
+    },
+    {
+      "key": "zh-CN-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "path": "src/content/technical-translations/zh-CN/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "25934326e2c84f4e94a8c8d937bba949adeb90332b6c9a0d0664a74186a2cc4f",
+      "url": "/zh-CN/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/"
+    },
+    {
+      "key": "zh-CN-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "path": "src/content/technical-translations/zh-CN/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "38ac0abf9824ec80c291db0be774a10fbcc25c355185b97f8f334052780f419b",
+      "url": "/zh-CN/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/"
+    },
+    {
+      "key": "zh-CN-2026-10-27-jenkins-home-backup-restore",
+      "path": "src/content/technical-translations/zh-CN/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "0c85b5f80f1d60331606c1d828f1a110c36328d7c8f5eba6b435bd083bc9d5b7",
+      "url": "/zh-CN/posts/2026-10-27-jenkins-home-backup-restore/"
+    },
+    {
+      "key": "zh-CN-2026-10-31-ai-agent-operations",
+      "path": "src/content/technical-translations/zh-CN/2026-10-31-ai-agent-operations.md",
+      "sha256": "f9599743cb125cae49ae3590fe2c91124aa309fde501703065f957cec4be5456",
+      "url": "/zh-CN/posts/2026-10-31-ai-agent-operations/"
+    },
+    {
+      "key": "zh-CN-2026-10-31-ai-agent-refactoring",
+      "path": "src/content/technical-translations/zh-CN/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "162193579cfbf96c0e430040cc0694002d80c21932e078453153e0d9f90714ba",
+      "url": "/zh-CN/posts/2026-10-31-ai-agent-refactoring/"
+    },
+    {
+      "key": "zh-CN-2026-10-31-cache-aside",
+      "path": "src/content/technical-translations/zh-CN/2026-10-31-cache-aside.md",
+      "sha256": "da6800d901cf59ca0e4fd036396d66fa3d9efbe08b1978467f86fce1060192df",
+      "url": "/zh-CN/posts/2026-10-31-cache-aside/"
+    },
+    {
+      "key": "zh-CN-2026-10-31-failure-fallback",
+      "path": "src/content/technical-translations/zh-CN/2026-10-31-failure-fallback.md",
+      "sha256": "fd613629d75075ae66360f3160c3a1fa31af6a24ac4c3b0d8658c4566a6bb21a",
+      "url": "/zh-CN/posts/2026-10-31-failure-fallback/"
+    },
+    {
+      "key": "zh-CN-2026-10-31-kafka-event-streaming",
+      "path": "src/content/technical-translations/zh-CN/2026-10-31-kafka-event-streaming.md",
+      "sha256": "58ea611f0520641d343c8c5043bb3e04aa7b00768933fd5f8c8ca47cd3917e95",
+      "url": "/zh-CN/posts/2026-10-31-kafka-event-streaming/"
+    },
+    {
+      "key": "ja-2021-07-19-new-id",
+      "path": "src/content/technical-translations/ja/2021-07-19-new-id.md",
+      "sha256": "467783ce15848a87f7cad0c387fbad7bf28498a2d2a0dea90e273343d671c29a",
+      "url": "/ja/posts/2021-07-19-new-id/"
+    },
+    {
+      "key": "ja-2021-07-20-http-status-test",
+      "path": "src/content/technical-translations/ja/2021-07-20-http-status-test.md",
+      "sha256": "e01af08bdb2aebbeb915f36e11d25e2c553c6c27f696df4bc11e5dbc6af3c0f2",
+      "url": "/ja/posts/2021-07-20-http-status-test/"
+    },
+    {
+      "key": "ja-2021-07-20-pair-delete",
+      "path": "src/content/technical-translations/ja/2021-07-20-pair-delete.md",
+      "sha256": "39c2473adaf066c081b82bf6026f160c5d09365478c8bbdffe209e8adf608326",
+      "url": "/ja/posts/2021-07-20-pair-delete/"
+    },
+    {
+      "key": "ja-2021-07-22-dot-product",
+      "path": "src/content/technical-translations/ja/2021-07-22-dot-product.md",
+      "sha256": "38c6f817f175b477147e82a8b261caf3ac91d8ecbcb31b9f9b7c723575676ffe",
+      "url": "/ja/posts/2021-07-22-dot-product/"
+    },
+    {
+      "key": "ja-2021-07-22-plus-minus",
+      "path": "src/content/technical-translations/ja/2021-07-22-plus-minus.md",
+      "sha256": "eb2332bb2d060ebde59805a598a6d4b094b75548eb6bc1e5bfa0f49502d66102",
+      "url": "/ja/posts/2021-07-22-plus-minus/"
+    },
+    {
+      "key": "ja-2021-07-23-app-diagrams.net",
+      "path": "src/content/technical-translations/ja/2021-07-23-app-diagrams.net.md",
+      "sha256": "92b7a63dfdf37bd03f52b979d61a1c254c1a4b82dc3141dff7eee359196b1489",
+      "url": "/ja/posts/2021-07-23-app-diagrams.net/"
+    },
+    {
+      "key": "ja-2021-07-23-multiple-gradle-build",
+      "path": "src/content/technical-translations/ja/2021-07-23-multiple-gradle-build.md",
+      "sha256": "ea42d2bda021977597f190ebf5a20637fbc8d1716d3ba001b999716b02eff367",
+      "url": "/ja/posts/2021-07-23-multiple-gradle-build/"
+    },
+    {
+      "key": "ja-2021-07-23-number-word",
+      "path": "src/content/technical-translations/ja/2021-07-23-number-word.md",
+      "sha256": "c2df33594a1d34880c4d8a5ea140c44cfc682507501a7dd576037c4e3121cc3d",
+      "url": "/ja/posts/2021-07-23-number-word/"
+    },
+    {
+      "key": "ja-2021-07-23-unsuccessful-runner",
+      "path": "src/content/technical-translations/ja/2021-07-23-unsuccessful-runner.md",
+      "sha256": "77a867c107bcc62c79acfb817f847b6c6aeb23c82ccbabcc4a9a4b5d96b28e91",
+      "url": "/ja/posts/2021-07-23-unsuccessful-runner/"
+    },
+    {
+      "key": "ja-2021-07-24-fail-percentage",
+      "path": "src/content/technical-translations/ja/2021-07-24-fail-percentage.md",
+      "sha256": "db1cf20b83bdc32abb23de4f267aaa506f8105b2cdd5e459513088b7c068eb15",
+      "url": "/ja/posts/2021-07-24-fail-percentage/"
+    },
+    {
+      "key": "ja-2021-07-27-parse-yaml",
+      "path": "src/content/technical-translations/ja/2021-07-27-parse-yaml.md",
+      "sha256": "7c762a4c31513965bbecc56b10d2ddcf5adbeda593f5faaa53ab3b5ee8b6456d",
+      "url": "/ja/posts/2021-07-27-parse-yaml/"
+    },
+    {
+      "key": "ja-2021-07-29-interval-num",
+      "path": "src/content/technical-translations/ja/2021-07-29-interval-num.md",
+      "sha256": "889a4e3ec0f00722922757844cab4f1b06d377914e45424d997ca11083e92deb",
+      "url": "/ja/posts/2021-07-29-interval-num/"
+    },
+    {
+      "key": "ja-2021-07-29-ponkemon",
+      "path": "src/content/technical-translations/ja/2021-07-29-ponkemon.md",
+      "sha256": "bf8b76f9399b8840c579584457186944f34797988530aa72ed785a71cb037e54",
+      "url": "/ja/posts/2021-07-29-ponkemon/"
+    },
+    {
+      "key": "ja-2021-08-06-search-github",
+      "path": "src/content/technical-translations/ja/2021-08-06-search-github.md",
+      "sha256": "c9843d5cead40f91afdd6fa7afc9ba6f4ad9e72de2352aa0b91ca0b609b3119b",
+      "url": "/ja/posts/2021-08-06-search-github/"
+    },
+    {
+      "key": "ja-2021-08-17-cache",
+      "path": "src/content/technical-translations/ja/2021-08-17-cache.md",
+      "sha256": "b5fcb30cfd545db07f0daf6c7a8c3e258909ceeea40a375be898e3bd82040d94",
+      "url": "/ja/posts/2021-08-17-cache/"
+    },
+    {
+      "key": "ja-2023-09-04-jekyll-install",
+      "path": "src/content/technical-translations/ja/2023-09-04-jekyll-install.md",
+      "sha256": "72664c766e56d1dd3235d47a5e39a3384d37be68e91e35fff00f2b4e1b0aa504",
+      "url": "/ja/posts/2023-09-04-jekyll-install/"
+    },
+    {
+      "key": "ja-2023-09-05-querydsl-no-release",
+      "path": "src/content/technical-translations/ja/2023-09-05-querydsl-no-release.md",
+      "sha256": "cd054d96696b7a05499799966ca02699d763a3d9d62e3dd481480ebc37df0c2d",
+      "url": "/ja/posts/2023-09-05-querydsl-no-release/"
+    },
+    {
+      "key": "ja-2023-09-07-springboot-initializer",
+      "path": "src/content/technical-translations/ja/2023-09-07-springboot-initializer.md",
+      "sha256": "dc90086e40065461813048c77bf5be94d8229bb18700dbe27e06568d611297c9",
+      "url": "/ja/posts/2023-09-07-springboot-initializer/"
+    },
+    {
+      "key": "ja-2023-09-08-springboot3-migration",
+      "path": "src/content/technical-translations/ja/2023-09-08-springboot3-migration.md",
+      "sha256": "9cd23d079220c92dac0da60e4eb5b7b194e96ec3b368e28eb410c00ad85d5888",
+      "url": "/ja/posts/2023-09-08-springboot3-migration/"
+    },
+    {
+      "key": "ja-2023-09-09-springboot3-querydsl",
+      "path": "src/content/technical-translations/ja/2023-09-09-springboot3-querydsl.md",
+      "sha256": "d94db6cb304bc2d121ad1472347eb2f3cf1507577b9626427878eab988f1a4a4",
+      "url": "/ja/posts/2023-09-09-springboot3-querydsl/"
+    },
+    {
+      "key": "ja-2023-09-10-springboot-intellij-import",
+      "path": "src/content/technical-translations/ja/2023-09-10-springboot-intellij-import.md",
+      "sha256": "53ab8a62b1b9712a3874906bfcdc1a5b94dd4aef71627aa7db911093702375d8",
+      "url": "/ja/posts/2023-09-10-springboot-intellij-import/"
+    },
+    {
+      "key": "ja-2023-09-13-springboot-history",
+      "path": "src/content/technical-translations/ja/2023-09-13-springboot-history.md",
+      "sha256": "00d9d3b58c4c466ced7559f6c55d84ff7435782b25fa9df2249011c716d9af33",
+      "url": "/ja/posts/2023-09-13-springboot-history/"
+    },
+    {
+      "key": "ja-2023-09-15-springboot-intellij-lombok",
+      "path": "src/content/technical-translations/ja/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "530a12eb46090cff57643207fc2e5a8e332412222e6abd8c074473985d084bd6",
+      "url": "/ja/posts/2023-09-15-springboot-intellij-lombok/"
+    },
+    {
+      "key": "ja-2023-09-19-springboot-test-webclient",
+      "path": "src/content/technical-translations/ja/2023-09-19-springboot-test-webclient.md",
+      "sha256": "9480539dbc72ca5e2124c5ec4baf26c36a31449cee0a3d4d0ccb633538527bbf",
+      "url": "/ja/posts/2023-09-19-springboot-test-webclient/"
+    },
+    {
+      "key": "ja-2023-09-20-jdk-21-release",
+      "path": "src/content/technical-translations/ja/2023-09-20-jdk-21-release.md",
+      "sha256": "acb1da2fb19e06f3c1b9bff6897adeda70be099a0e18cb455bb4f612313af215",
+      "url": "/ja/posts/2023-09-20-jdk-21-release/"
+    },
+    {
+      "key": "ja-2023-09-20-linux-shellscript-function-error",
+      "path": "src/content/technical-translations/ja/2023-09-20-linux-shellscript-function-error.md",
+      "sha256": "d52ec9e212a01f6ef956c0d1310524cfd8a47438216c7c23bea1a8de4a02448e",
+      "url": "/ja/posts/2023-09-20-linux-shellscript-function-error/"
+    },
+    {
+      "key": "ja-2023-09-23-jdk-21-string-templates",
+      "path": "src/content/technical-translations/ja/2023-09-23-jdk-21-string-templates.md",
+      "sha256": "8aab6aca3ba49483c1cdcb8e294117dc50fafcdcb40410e4fb18559ddde58c93",
+      "url": "/ja/posts/2023-09-23-jdk-21-string-templates/"
+    },
+    {
+      "key": "ja-2023-09-23-linux-shellscript-github-latest",
+      "path": "src/content/technical-translations/ja/2023-09-23-linux-shellscript-github-latest.md",
+      "sha256": "48d955bcd34d108184a54ee9371dc6f6fa051dd75acf465bdceb1d7a6b51a36c",
+      "url": "/ja/posts/2023-09-23-linux-shellscript-github-latest/"
+    },
+    {
+      "key": "ja-2023-09-28-jenkins-docker-install",
+      "path": "src/content/technical-translations/ja/2023-09-28-jenkins-docker-install.md",
+      "sha256": "20eaefde5b5357c433f8c122b9075667bcc0c4f685120bc06333436812274570",
+      "url": "/ja/posts/2023-09-28-jenkins-docker-install/"
+    },
+    {
+      "key": "ja-2023-10-10-temurin-jdk21-delay",
+      "path": "src/content/technical-translations/ja/2023-10-10-temurin-jdk21-delay.md",
+      "sha256": "ecac409add90972739c276f04194c708cb1ca0c8c6e9a66f75404728d3db4ab9",
+      "url": "/ja/posts/2023-10-10-temurin-jdk21-delay/"
+    },
+    {
+      "key": "ja-2023-10-27-springbatch5-migration",
+      "path": "src/content/technical-translations/ja/2023-10-27-springbatch5-migration.md",
+      "sha256": "f2aa49c57c7dceb588ddaeb047935617d56ced294e5167a07eb3ae6e6ef1f3e2",
+      "url": "/ja/posts/2023-10-27-springbatch5-migration/"
+    },
+    {
+      "key": "ja-2023-11-17-linux-shellscript-version-compare",
+      "path": "src/content/technical-translations/ja/2023-11-17-linux-shellscript-version-compare.md",
+      "sha256": "af34f72e7ffc86678c8494c6a6ab50f1949650f0d5fb0b76c10485835c4885fc",
+      "url": "/ja/posts/2023-11-17-linux-shellscript-version-compare/"
+    },
+    {
+      "key": "ja-2026-04-07-jekyll-github-actions-content-pipeline",
+      "path": "src/content/technical-translations/ja/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "81e5b474f1a24c9b18cd6b4fa709f73dd936a16ed6a7b4b1880f712fd8ae7f72",
+      "url": "/ja/posts/2026-04-07-jekyll-github-actions-content-pipeline/"
+    },
+    {
+      "key": "ja-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "path": "src/content/technical-translations/ja/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "c92c6a4a69cb01b3dc1f6ac8c3ef4f7261b0dc88605def54487e7c7fd8fbe765",
+      "url": "/ja/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/"
+    },
+    {
+      "key": "ja-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "path": "src/content/technical-translations/ja/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "be4cd318e5d04f1ca4f048f6835fc806d349a01f186a2cdf2ec1ee2b61153dba",
+      "url": "/ja/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/"
+    },
+    {
+      "key": "ja-2026-10-27-jenkins-home-backup-restore",
+      "path": "src/content/technical-translations/ja/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "3ee4e433116f49d1f78dbf622e68022abcd63ec337d1fdaa0bd928b788ab3195",
+      "url": "/ja/posts/2026-10-27-jenkins-home-backup-restore/"
+    },
+    {
+      "key": "ja-2026-10-31-ai-agent-operations",
+      "path": "src/content/technical-translations/ja/2026-10-31-ai-agent-operations.md",
+      "sha256": "3cc9757a2867ce3053e15e910038eece266a77f921b05142d221484ee01313ad",
+      "url": "/ja/posts/2026-10-31-ai-agent-operations/"
+    },
+    {
+      "key": "ja-2026-10-31-ai-agent-refactoring",
+      "path": "src/content/technical-translations/ja/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "7dad0c6b55126f5f3e6c50815b288da942d9091a5fdafe2f1156b87884b4427a",
+      "url": "/ja/posts/2026-10-31-ai-agent-refactoring/"
+    },
+    {
+      "key": "ja-2026-10-31-cache-aside",
+      "path": "src/content/technical-translations/ja/2026-10-31-cache-aside.md",
+      "sha256": "f620ed32afd344e833b04468df7452f5ef15ccc8d87ee610e445594339c72803",
+      "url": "/ja/posts/2026-10-31-cache-aside/"
+    },
+    {
+      "key": "ja-2026-10-31-failure-fallback",
+      "path": "src/content/technical-translations/ja/2026-10-31-failure-fallback.md",
+      "sha256": "eda9e735edc1dc80e3439b4e55d7b4eb1f26e2f01bb74159118804fc142c3539",
+      "url": "/ja/posts/2026-10-31-failure-fallback/"
+    },
+    {
+      "key": "ja-2026-10-31-kafka-event-streaming",
+      "path": "src/content/technical-translations/ja/2026-10-31-kafka-event-streaming.md",
+      "sha256": "bb6159c66cd823f6cf83ef2325f47aab5126a56fe73221d68c25e65afa91c5e5",
+      "url": "/ja/posts/2026-10-31-kafka-event-streaming/"
+    },
+    {
+      "key": "de-2021-07-19-new-id",
+      "path": "src/content/technical-translations/de/2021-07-19-new-id.md",
+      "sha256": "e63035d8c6524bff00003fa99dbc733cc736eabcf66045acc3fd46eee0e4d241",
+      "url": "/de/posts/2021-07-19-new-id/"
+    },
+    {
+      "key": "de-2021-07-20-http-status-test",
+      "path": "src/content/technical-translations/de/2021-07-20-http-status-test.md",
+      "sha256": "f152a1c01ea89ff899debbfcb99b283db0f21dcaac3ce63e816ee8b75c073268",
+      "url": "/de/posts/2021-07-20-http-status-test/"
+    },
+    {
+      "key": "de-2021-07-20-pair-delete",
+      "path": "src/content/technical-translations/de/2021-07-20-pair-delete.md",
+      "sha256": "d802f269d9b30a24c906a71ac5346d2b8a3e6352e473de0ff8c6c9eb1dad5551",
+      "url": "/de/posts/2021-07-20-pair-delete/"
+    },
+    {
+      "key": "de-2021-07-22-dot-product",
+      "path": "src/content/technical-translations/de/2021-07-22-dot-product.md",
+      "sha256": "361f40c0047faf9fadc5f4dfed66a62706a4181255032d05ff54ae1d17ccf177",
+      "url": "/de/posts/2021-07-22-dot-product/"
+    },
+    {
+      "key": "de-2021-07-22-plus-minus",
+      "path": "src/content/technical-translations/de/2021-07-22-plus-minus.md",
+      "sha256": "662e62cce8efba7860348601ba2dd3deb7aafd8f8f80e0f1122534297d842312",
+      "url": "/de/posts/2021-07-22-plus-minus/"
+    },
+    {
+      "key": "de-2021-07-23-app-diagrams.net",
+      "path": "src/content/technical-translations/de/2021-07-23-app-diagrams.net.md",
+      "sha256": "fbc6c12a98c0b13cb866aabfe8e62cb8af329c907ae52e6b56f97f2da9b4d756",
+      "url": "/de/posts/2021-07-23-app-diagrams.net/"
+    },
+    {
+      "key": "de-2021-07-23-multiple-gradle-build",
+      "path": "src/content/technical-translations/de/2021-07-23-multiple-gradle-build.md",
+      "sha256": "868ab485cf0ee778e3a4ea9bf0477a938c1efef1be7265dd458dde97bde4514a",
+      "url": "/de/posts/2021-07-23-multiple-gradle-build/"
+    },
+    {
+      "key": "de-2021-07-23-number-word",
+      "path": "src/content/technical-translations/de/2021-07-23-number-word.md",
+      "sha256": "38daf362e620527d5df1cfb67e0b74781685d94e3a77629ad779a29962943795",
+      "url": "/de/posts/2021-07-23-number-word/"
+    },
+    {
+      "key": "de-2021-07-23-unsuccessful-runner",
+      "path": "src/content/technical-translations/de/2021-07-23-unsuccessful-runner.md",
+      "sha256": "17e36376832c0ab392d1b416bcc6c2a8cfa45850381406afe6bf9be397a78023",
+      "url": "/de/posts/2021-07-23-unsuccessful-runner/"
+    },
+    {
+      "key": "de-2021-07-24-fail-percentage",
+      "path": "src/content/technical-translations/de/2021-07-24-fail-percentage.md",
+      "sha256": "55783f598a8074dcd5471bf0d770a5ae98b125ba6c12ffd02bf017b0ad72a2ef",
+      "url": "/de/posts/2021-07-24-fail-percentage/"
+    },
+    {
+      "key": "de-2021-07-27-parse-yaml",
+      "path": "src/content/technical-translations/de/2021-07-27-parse-yaml.md",
+      "sha256": "67d91d3fd162312deaf7eb04ca1f41a522e8a38038759c3180f9965bce18ab86",
+      "url": "/de/posts/2021-07-27-parse-yaml/"
+    },
+    {
+      "key": "de-2021-07-29-interval-num",
+      "path": "src/content/technical-translations/de/2021-07-29-interval-num.md",
+      "sha256": "b1f3829d03bef0383531116a4dab1c547fe50edf655b3b680e9a4a94d05d9668",
+      "url": "/de/posts/2021-07-29-interval-num/"
+    },
+    {
+      "key": "de-2021-07-29-ponkemon",
+      "path": "src/content/technical-translations/de/2021-07-29-ponkemon.md",
+      "sha256": "1a8c63d21272e051948691016ad797a9e8e46e691e5667649b7ca5174a61f00a",
+      "url": "/de/posts/2021-07-29-ponkemon/"
+    },
+    {
+      "key": "de-2021-08-06-search-github",
+      "path": "src/content/technical-translations/de/2021-08-06-search-github.md",
+      "sha256": "8e9701a19bb9174b1c530cdc50fb331ecce4c5d6ec63fab470506079c69699c0",
+      "url": "/de/posts/2021-08-06-search-github/"
+    },
+    {
+      "key": "de-2021-08-17-cache",
+      "path": "src/content/technical-translations/de/2021-08-17-cache.md",
+      "sha256": "7de4ecaadd8b2eb53fa839219b96d6f1e04c265f113057b32c6ea0af223db9f8",
+      "url": "/de/posts/2021-08-17-cache/"
+    },
+    {
+      "key": "de-2023-09-04-jekyll-install",
+      "path": "src/content/technical-translations/de/2023-09-04-jekyll-install.md",
+      "sha256": "37960244476842c12ce021dec0aa5df88d605d1ab14dd80169d86276198db82b",
+      "url": "/de/posts/2023-09-04-jekyll-install/"
+    },
+    {
+      "key": "de-2023-09-05-querydsl-no-release",
+      "path": "src/content/technical-translations/de/2023-09-05-querydsl-no-release.md",
+      "sha256": "dcde1c53255eda82c8da2feda300ca43aeccb2fccdf98a163be7823a0495a21d",
+      "url": "/de/posts/2023-09-05-querydsl-no-release/"
+    },
+    {
+      "key": "de-2023-09-07-springboot-initializer",
+      "path": "src/content/technical-translations/de/2023-09-07-springboot-initializer.md",
+      "sha256": "09db1e1cc31f951d925d454d1d4d8e7c96165c9f394316dbbbe8dff23a4d942c",
+      "url": "/de/posts/2023-09-07-springboot-initializer/"
+    },
+    {
+      "key": "de-2023-09-08-springboot3-migration",
+      "path": "src/content/technical-translations/de/2023-09-08-springboot3-migration.md",
+      "sha256": "bd6243c82d2b6fa72332f54e10aeadfb63001fc0ebfe9e4e15132fff1b61623e",
+      "url": "/de/posts/2023-09-08-springboot3-migration/"
+    },
+    {
+      "key": "de-2023-09-09-springboot3-querydsl",
+      "path": "src/content/technical-translations/de/2023-09-09-springboot3-querydsl.md",
+      "sha256": "085134fbe384fd4c463a846f874755ebf0601e7dd44df4f3cfbd98aab1f2b112",
+      "url": "/de/posts/2023-09-09-springboot3-querydsl/"
+    },
+    {
+      "key": "de-2023-09-10-springboot-intellij-import",
+      "path": "src/content/technical-translations/de/2023-09-10-springboot-intellij-import.md",
+      "sha256": "534da41669f2124c67ee0aeb1680f23dab7977ffa64393c780a5c9b7eac1c38d",
+      "url": "/de/posts/2023-09-10-springboot-intellij-import/"
+    },
+    {
+      "key": "de-2023-09-13-springboot-history",
+      "path": "src/content/technical-translations/de/2023-09-13-springboot-history.md",
+      "sha256": "cca65768d8217f69bd17392fa504a40be16cca08c5f77aa0fc82cfa8deb0820c",
+      "url": "/de/posts/2023-09-13-springboot-history/"
+    },
+    {
+      "key": "de-2023-09-15-springboot-intellij-lombok",
+      "path": "src/content/technical-translations/de/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "8aee6aa8e412ef9e825463673e82e92caf7511d92f10fe16bdf15cc2f35df979",
+      "url": "/de/posts/2023-09-15-springboot-intellij-lombok/"
+    },
+    {
+      "key": "de-2023-09-19-springboot-test-webclient",
+      "path": "src/content/technical-translations/de/2023-09-19-springboot-test-webclient.md",
+      "sha256": "ec78c3b86c3d72d660bf7b58d58b88d41500bcb8cfb471ab0913f114e3950b4d",
+      "url": "/de/posts/2023-09-19-springboot-test-webclient/"
+    },
+    {
+      "key": "de-2023-09-20-jdk-21-release",
+      "path": "src/content/technical-translations/de/2023-09-20-jdk-21-release.md",
+      "sha256": "e64076870711d3edf34ddbc5f6e816d170af7235c3b14e4250c1b8efd092abc6",
+      "url": "/de/posts/2023-09-20-jdk-21-release/"
+    },
+    {
+      "key": "de-2023-09-20-linux-shellscript-function-error",
+      "path": "src/content/technical-translations/de/2023-09-20-linux-shellscript-function-error.md",
+      "sha256": "61f44738f20b6fa83cef78a7b67be67e2b210cc58d491fdc71967dd2940715f6",
+      "url": "/de/posts/2023-09-20-linux-shellscript-function-error/"
+    },
+    {
+      "key": "de-2023-09-23-jdk-21-string-templates",
+      "path": "src/content/technical-translations/de/2023-09-23-jdk-21-string-templates.md",
+      "sha256": "1cbbfc7312d6a3243b6c9a6a2f6d0b60fc75cf1a778d772040aa30c5344d9784",
+      "url": "/de/posts/2023-09-23-jdk-21-string-templates/"
+    },
+    {
+      "key": "de-2023-09-23-linux-shellscript-github-latest",
+      "path": "src/content/technical-translations/de/2023-09-23-linux-shellscript-github-latest.md",
+      "sha256": "fca4d7cdeff547e12bc1a0d3132261c81c091fad0197daaa6b8f33acb55fc889",
+      "url": "/de/posts/2023-09-23-linux-shellscript-github-latest/"
+    },
+    {
+      "key": "de-2023-09-28-jenkins-docker-install",
+      "path": "src/content/technical-translations/de/2023-09-28-jenkins-docker-install.md",
+      "sha256": "366c038bff26b5a738463038937d8b2e666e1e639acd22a4aac0b51cc0d2761f",
+      "url": "/de/posts/2023-09-28-jenkins-docker-install/"
+    },
+    {
+      "key": "de-2023-10-10-temurin-jdk21-delay",
+      "path": "src/content/technical-translations/de/2023-10-10-temurin-jdk21-delay.md",
+      "sha256": "68e74c336bb85bb411ffe6072a0f17b06dc6dbdb084caaea830ec16fce076384",
+      "url": "/de/posts/2023-10-10-temurin-jdk21-delay/"
+    },
+    {
+      "key": "de-2023-10-27-springbatch5-migration",
+      "path": "src/content/technical-translations/de/2023-10-27-springbatch5-migration.md",
+      "sha256": "485542fcb70cdc5a0bd5e3a4dbd832035bc353dfa749e52f3643884250c6840b",
+      "url": "/de/posts/2023-10-27-springbatch5-migration/"
+    },
+    {
+      "key": "de-2023-11-17-linux-shellscript-version-compare",
+      "path": "src/content/technical-translations/de/2023-11-17-linux-shellscript-version-compare.md",
+      "sha256": "a428ecd75e811dbb453d51e34ae0563e8e8e5d0c1da431de7587c73cf251700f",
+      "url": "/de/posts/2023-11-17-linux-shellscript-version-compare/"
+    },
+    {
+      "key": "de-2026-04-07-jekyll-github-actions-content-pipeline",
+      "path": "src/content/technical-translations/de/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "d7e462e183f02541690e79d767e17ebf0654488d68e9c48d4c72f40db1f18909",
+      "url": "/de/posts/2026-04-07-jekyll-github-actions-content-pipeline/"
+    },
+    {
+      "key": "de-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "path": "src/content/technical-translations/de/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "aff9bd06bc40730d0eea105b88549e33a365328690be2ca43816e4ad44c8573e",
+      "url": "/de/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/"
+    },
+    {
+      "key": "de-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "path": "src/content/technical-translations/de/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "43bcefa03cecf1ab7860566cb8af66326cb649c9b753baa9dcfe332d94438855",
+      "url": "/de/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/"
+    },
+    {
+      "key": "de-2026-10-27-jenkins-home-backup-restore",
+      "path": "src/content/technical-translations/de/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "5c54a83ad87754c746201369b000ac555b843cbae1549a877803ff8525c777c6",
+      "url": "/de/posts/2026-10-27-jenkins-home-backup-restore/"
+    },
+    {
+      "key": "de-2026-10-31-ai-agent-operations",
+      "path": "src/content/technical-translations/de/2026-10-31-ai-agent-operations.md",
+      "sha256": "32d552e5ee4a9c1b481ea06f5b69919859e75ad51c519019725dd5008be94a40",
+      "url": "/de/posts/2026-10-31-ai-agent-operations/"
+    },
+    {
+      "key": "de-2026-10-31-ai-agent-refactoring",
+      "path": "src/content/technical-translations/de/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "2245e1f1f32b8cab5cd87d30c3bfc0730e30738413a35b9d0b86acd4151ab9bc",
+      "url": "/de/posts/2026-10-31-ai-agent-refactoring/"
+    },
+    {
+      "key": "de-2026-10-31-cache-aside",
+      "path": "src/content/technical-translations/de/2026-10-31-cache-aside.md",
+      "sha256": "34399f006493e1392cb1cca05787047516bf0590a0a66e0b789bc7451b44f885",
+      "url": "/de/posts/2026-10-31-cache-aside/"
+    },
+    {
+      "key": "de-2026-10-31-failure-fallback",
+      "path": "src/content/technical-translations/de/2026-10-31-failure-fallback.md",
+      "sha256": "9ad77bfc9752abce1eeee12b09ba52d1064af3bc0e4b7c2b6a486f8b8f3fd6a2",
+      "url": "/de/posts/2026-10-31-failure-fallback/"
+    },
+    {
+      "key": "de-2026-10-31-kafka-event-streaming",
+      "path": "src/content/technical-translations/de/2026-10-31-kafka-event-streaming.md",
+      "sha256": "5d2f4b34988ccd5cd9f7dc535eee1bed1f630a4a70059d01105bd0bfdfe2bab6",
+      "url": "/de/posts/2026-10-31-kafka-event-streaming/"
+    },
+    {
+      "key": "fr-2021-07-19-new-id",
+      "path": "src/content/technical-translations/fr/2021-07-19-new-id.md",
+      "sha256": "e842cf8452422dabbb84804a276078e6cc1f13af62af70aec36864430486c81e",
+      "url": "/fr/posts/2021-07-19-new-id/"
+    },
+    {
+      "key": "fr-2021-07-20-http-status-test",
+      "path": "src/content/technical-translations/fr/2021-07-20-http-status-test.md",
+      "sha256": "76746c5efe486bc4c0ed20929121e5d54916621e18e6683c51f20aa47016b55d",
+      "url": "/fr/posts/2021-07-20-http-status-test/"
+    },
+    {
+      "key": "fr-2021-07-20-pair-delete",
+      "path": "src/content/technical-translations/fr/2021-07-20-pair-delete.md",
+      "sha256": "361e1f62307a2861a778eec26af1612a1ce4a777b517be70eb695395b92ed88b",
+      "url": "/fr/posts/2021-07-20-pair-delete/"
+    },
+    {
+      "key": "fr-2021-07-22-dot-product",
+      "path": "src/content/technical-translations/fr/2021-07-22-dot-product.md",
+      "sha256": "7a6dd3e137df2956c19ffe1aed398febbc2e29a8cbf229a87d219024ec21d2a1",
+      "url": "/fr/posts/2021-07-22-dot-product/"
+    },
+    {
+      "key": "fr-2021-07-22-plus-minus",
+      "path": "src/content/technical-translations/fr/2021-07-22-plus-minus.md",
+      "sha256": "1dd58cd1ee3a80fec6a1e5cf2ef8f1a7963bc18490eebf70670fac23ca6815a8",
+      "url": "/fr/posts/2021-07-22-plus-minus/"
+    },
+    {
+      "key": "fr-2021-07-23-app-diagrams.net",
+      "path": "src/content/technical-translations/fr/2021-07-23-app-diagrams.net.md",
+      "sha256": "f363717cac24c1736b4409b9caf572aeb1b66a522103cfaa122273586ca9006f",
+      "url": "/fr/posts/2021-07-23-app-diagrams.net/"
+    },
+    {
+      "key": "fr-2021-07-23-multiple-gradle-build",
+      "path": "src/content/technical-translations/fr/2021-07-23-multiple-gradle-build.md",
+      "sha256": "3acc2a63479139a25dc05ce1eed53a12ea2262081a149e9dc109f6dc195f0e16",
+      "url": "/fr/posts/2021-07-23-multiple-gradle-build/"
+    },
+    {
+      "key": "fr-2021-07-23-number-word",
+      "path": "src/content/technical-translations/fr/2021-07-23-number-word.md",
+      "sha256": "468280a12ae2ea811bb750e804dd68dec3d685d8faea78dc6ab08e1c174f8888",
+      "url": "/fr/posts/2021-07-23-number-word/"
+    },
+    {
+      "key": "fr-2021-07-23-unsuccessful-runner",
+      "path": "src/content/technical-translations/fr/2021-07-23-unsuccessful-runner.md",
+      "sha256": "8af4fa9c0d2aae49fc143c719878c92532dc8f85a89cc6ffcef020d278f1ad8e",
+      "url": "/fr/posts/2021-07-23-unsuccessful-runner/"
+    },
+    {
+      "key": "fr-2021-07-24-fail-percentage",
+      "path": "src/content/technical-translations/fr/2021-07-24-fail-percentage.md",
+      "sha256": "3c94bd398da6d5367b275d3bd0060806bd58a5a23b1381e7f7886367f983fbc1",
+      "url": "/fr/posts/2021-07-24-fail-percentage/"
+    },
+    {
+      "key": "fr-2021-07-27-parse-yaml",
+      "path": "src/content/technical-translations/fr/2021-07-27-parse-yaml.md",
+      "sha256": "b50372dea37f463e1569475837b7dbf61f1810dfe3fbc7571bcf8e01f8e7cc69",
+      "url": "/fr/posts/2021-07-27-parse-yaml/"
+    },
+    {
+      "key": "fr-2021-07-29-interval-num",
+      "path": "src/content/technical-translations/fr/2021-07-29-interval-num.md",
+      "sha256": "f2645d5108ec0fb381b5cd21501d6f885361248ec88e7397aad1d62c3a04a466",
+      "url": "/fr/posts/2021-07-29-interval-num/"
+    },
+    {
+      "key": "fr-2021-07-29-ponkemon",
+      "path": "src/content/technical-translations/fr/2021-07-29-ponkemon.md",
+      "sha256": "b1840324312b2248d979323c912c39065c0e2f3ab5e7f5b4d44f7b818736002c",
+      "url": "/fr/posts/2021-07-29-ponkemon/"
+    },
+    {
+      "key": "fr-2021-08-06-search-github",
+      "path": "src/content/technical-translations/fr/2021-08-06-search-github.md",
+      "sha256": "3392d94bb059aaa1d2141c2e0476e4b5246110174874753b2eacfedf252a0fa8",
+      "url": "/fr/posts/2021-08-06-search-github/"
+    },
+    {
+      "key": "fr-2021-08-17-cache",
+      "path": "src/content/technical-translations/fr/2021-08-17-cache.md",
+      "sha256": "8d5b45911a1cfc7830200d267f459a9a17cc16826145f2fdb85fd544f8b7db8f",
+      "url": "/fr/posts/2021-08-17-cache/"
+    },
+    {
+      "key": "fr-2023-09-04-jekyll-install",
+      "path": "src/content/technical-translations/fr/2023-09-04-jekyll-install.md",
+      "sha256": "eba6681234ab71ff9764b0e00b44cc8c130e13f8f62a71279b11789a89001a42",
+      "url": "/fr/posts/2023-09-04-jekyll-install/"
+    },
+    {
+      "key": "fr-2023-09-05-querydsl-no-release",
+      "path": "src/content/technical-translations/fr/2023-09-05-querydsl-no-release.md",
+      "sha256": "ab0b4c656b7df3c23439e0f28aa50a07b0d88b4af5b2d35e6e7ea58aadab92b9",
+      "url": "/fr/posts/2023-09-05-querydsl-no-release/"
+    },
+    {
+      "key": "fr-2023-09-07-springboot-initializer",
+      "path": "src/content/technical-translations/fr/2023-09-07-springboot-initializer.md",
+      "sha256": "5342f0fe474098b5e45b75285ed9ca41f2b6cd5a352b2a9f89fc767afa4d1ec8",
+      "url": "/fr/posts/2023-09-07-springboot-initializer/"
+    },
+    {
+      "key": "fr-2023-09-08-springboot3-migration",
+      "path": "src/content/technical-translations/fr/2023-09-08-springboot3-migration.md",
+      "sha256": "a15011b52b7a1ba7411bc2f9c66c0cf6ca06ef5864ec94fcde83173ea3d83c53",
+      "url": "/fr/posts/2023-09-08-springboot3-migration/"
+    },
+    {
+      "key": "fr-2023-09-09-springboot3-querydsl",
+      "path": "src/content/technical-translations/fr/2023-09-09-springboot3-querydsl.md",
+      "sha256": "33a3e9ba8ecd3c092fdf66100fce305b48534f02804858e584da7000d2be6ada",
+      "url": "/fr/posts/2023-09-09-springboot3-querydsl/"
+    },
+    {
+      "key": "fr-2023-09-10-springboot-intellij-import",
+      "path": "src/content/technical-translations/fr/2023-09-10-springboot-intellij-import.md",
+      "sha256": "f30c8d4f9bbcb01b7a9aeee522c52cb62a907f406fa737ba481c8b54ee554a0c",
+      "url": "/fr/posts/2023-09-10-springboot-intellij-import/"
+    },
+    {
+      "key": "fr-2023-09-13-springboot-history",
+      "path": "src/content/technical-translations/fr/2023-09-13-springboot-history.md",
+      "sha256": "13ddf576e80514e72d0bacf4ef6ca6039707915b97d4d1e4987d398344d60ed2",
+      "url": "/fr/posts/2023-09-13-springboot-history/"
+    },
+    {
+      "key": "fr-2023-09-15-springboot-intellij-lombok",
+      "path": "src/content/technical-translations/fr/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "7b8f1b15a93cfb8de550fd9aa155a96da324edb50dcdd5678b5be2ec4955b8b9",
+      "url": "/fr/posts/2023-09-15-springboot-intellij-lombok/"
+    },
+    {
+      "key": "fr-2023-09-19-springboot-test-webclient",
+      "path": "src/content/technical-translations/fr/2023-09-19-springboot-test-webclient.md",
+      "sha256": "66b68e83f60967569c50dc3bd384fdaab188d212d909915d45e3bbd892247d85",
+      "url": "/fr/posts/2023-09-19-springboot-test-webclient/"
+    },
+    {
+      "key": "fr-2023-09-20-jdk-21-release",
+      "path": "src/content/technical-translations/fr/2023-09-20-jdk-21-release.md",
+      "sha256": "093afa7c426e00f1433d5c492da748d07a00cc6bfc63c9266f742dec47b4c352",
+      "url": "/fr/posts/2023-09-20-jdk-21-release/"
+    },
+    {
+      "key": "fr-2023-09-20-linux-shellscript-function-error",
+      "path": "src/content/technical-translations/fr/2023-09-20-linux-shellscript-function-error.md",
+      "sha256": "5e711e73bfc5edd5e040b9927feacaa7feac9a72006d2cb9b62f0653897f9998",
+      "url": "/fr/posts/2023-09-20-linux-shellscript-function-error/"
+    },
+    {
+      "key": "fr-2023-09-23-jdk-21-string-templates",
+      "path": "src/content/technical-translations/fr/2023-09-23-jdk-21-string-templates.md",
+      "sha256": "bf32b8d7892e58ac656a854c124782fac989e49f7709866eedd9749c57eaa737",
+      "url": "/fr/posts/2023-09-23-jdk-21-string-templates/"
+    },
+    {
+      "key": "fr-2023-09-23-linux-shellscript-github-latest",
+      "path": "src/content/technical-translations/fr/2023-09-23-linux-shellscript-github-latest.md",
+      "sha256": "3f84f27149db420b33a8283728f1265f9239060f49a8f69c94153d6ac6626710",
+      "url": "/fr/posts/2023-09-23-linux-shellscript-github-latest/"
+    },
+    {
+      "key": "fr-2023-09-28-jenkins-docker-install",
+      "path": "src/content/technical-translations/fr/2023-09-28-jenkins-docker-install.md",
+      "sha256": "1aee0a73baae74dce794f4689aed54d364b5899a6f3aa94eebb6839977ea194c",
+      "url": "/fr/posts/2023-09-28-jenkins-docker-install/"
+    },
+    {
+      "key": "fr-2023-10-10-temurin-jdk21-delay",
+      "path": "src/content/technical-translations/fr/2023-10-10-temurin-jdk21-delay.md",
+      "sha256": "806c898b6b9fa8318dc4c7e092c1e00cbe65fd481bef35d85162b2b8263a7693",
+      "url": "/fr/posts/2023-10-10-temurin-jdk21-delay/"
+    },
+    {
+      "key": "fr-2023-10-27-springbatch5-migration",
+      "path": "src/content/technical-translations/fr/2023-10-27-springbatch5-migration.md",
+      "sha256": "44a9134fc4f5ddf8d33fe173ec992f6ab81f3d1223ac2b511994e8fce9603710",
+      "url": "/fr/posts/2023-10-27-springbatch5-migration/"
+    },
+    {
+      "key": "fr-2023-11-17-linux-shellscript-version-compare",
+      "path": "src/content/technical-translations/fr/2023-11-17-linux-shellscript-version-compare.md",
+      "sha256": "44bb3d20f2b349c28806a42853574338902c51d6311fa3edbf059bc5e3727d51",
+      "url": "/fr/posts/2023-11-17-linux-shellscript-version-compare/"
+    },
+    {
+      "key": "fr-2026-04-07-jekyll-github-actions-content-pipeline",
+      "path": "src/content/technical-translations/fr/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "381a735c42d040b569a56798040980b6a826b804c6cfc2735e7abe93e440cf6a",
+      "url": "/fr/posts/2026-04-07-jekyll-github-actions-content-pipeline/"
+    },
+    {
+      "key": "fr-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "path": "src/content/technical-translations/fr/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "70e1ee79f6310e73525b4d23a94d46c9c41c148c785db78a1e635b908149ba2d",
+      "url": "/fr/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/"
+    },
+    {
+      "key": "fr-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "path": "src/content/technical-translations/fr/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "8df8eae5793dfb695f114d219fc8ef38305bb4aea9a2b94d45f5d144c2685b50",
+      "url": "/fr/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/"
+    },
+    {
+      "key": "fr-2026-10-27-jenkins-home-backup-restore",
+      "path": "src/content/technical-translations/fr/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "9c573819382aa062142d88b9c53ac689e2d543e4931ce4cf1f121bbe4ebe3af8",
+      "url": "/fr/posts/2026-10-27-jenkins-home-backup-restore/"
+    },
+    {
+      "key": "fr-2026-10-31-ai-agent-operations",
+      "path": "src/content/technical-translations/fr/2026-10-31-ai-agent-operations.md",
+      "sha256": "77343461361a05910a5cb4cbb41a2ef3c906be419b30c632416c3e95fd25a270",
+      "url": "/fr/posts/2026-10-31-ai-agent-operations/"
+    },
+    {
+      "key": "fr-2026-10-31-ai-agent-refactoring",
+      "path": "src/content/technical-translations/fr/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "67bdb945e255e1f79b9886a980c525313f38e213d917aa579d9e35b702250747",
+      "url": "/fr/posts/2026-10-31-ai-agent-refactoring/"
+    },
+    {
+      "key": "fr-2026-10-31-cache-aside",
+      "path": "src/content/technical-translations/fr/2026-10-31-cache-aside.md",
+      "sha256": "c78a60369dc91ecba2cb7e77d61fdc5e56d71b5c95ae861a6f2f4430b0785cbf",
+      "url": "/fr/posts/2026-10-31-cache-aside/"
+    },
+    {
+      "key": "fr-2026-10-31-failure-fallback",
+      "path": "src/content/technical-translations/fr/2026-10-31-failure-fallback.md",
+      "sha256": "26b357c7a57726d5350574f64b0acc18693e8b8b4f5c2e24ef4c4d0d301cb3cb",
+      "url": "/fr/posts/2026-10-31-failure-fallback/"
+    },
+    {
+      "key": "fr-2026-10-31-kafka-event-streaming",
+      "path": "src/content/technical-translations/fr/2026-10-31-kafka-event-streaming.md",
+      "sha256": "7340d909098597275a67ded05f9ea639c06ba7712041d1734da6f0e337acb11b",
+      "url": "/fr/posts/2026-10-31-kafka-event-streaming/"
+    },
+    {
+      "key": "ru-2021-07-19-new-id",
+      "path": "src/content/technical-translations/ru/2021-07-19-new-id.md",
+      "sha256": "c6c7eca5f3b03f4afda671602cd654b992baca334ad14a6a0ae0c55efeb31ccc",
+      "url": "/ru/posts/2021-07-19-new-id/"
+    },
+    {
+      "key": "ru-2021-07-20-http-status-test",
+      "path": "src/content/technical-translations/ru/2021-07-20-http-status-test.md",
+      "sha256": "c6cf3541491759eb548c5c8ea6669a7aa7a9166f07c74ecd9b757ee27aa8b90c",
+      "url": "/ru/posts/2021-07-20-http-status-test/"
+    },
+    {
+      "key": "ru-2021-07-20-pair-delete",
+      "path": "src/content/technical-translations/ru/2021-07-20-pair-delete.md",
+      "sha256": "8f88e947ed9638513f476f7bfa8cfe02b7bafbc035fe5af92a375d40208b2716",
+      "url": "/ru/posts/2021-07-20-pair-delete/"
+    },
+    {
+      "key": "ru-2021-07-22-dot-product",
+      "path": "src/content/technical-translations/ru/2021-07-22-dot-product.md",
+      "sha256": "0bfea608057f462c344314718905a7c5397bd7806e26622cbf1a32d803502c48",
+      "url": "/ru/posts/2021-07-22-dot-product/"
+    },
+    {
+      "key": "ru-2021-07-22-plus-minus",
+      "path": "src/content/technical-translations/ru/2021-07-22-plus-minus.md",
+      "sha256": "7270c9e4e751eb466f120fffc4df0b36006edcbc8ca7c3e76a75da4159ee1647",
+      "url": "/ru/posts/2021-07-22-plus-minus/"
+    },
+    {
+      "key": "ru-2021-07-23-app-diagrams.net",
+      "path": "src/content/technical-translations/ru/2021-07-23-app-diagrams.net.md",
+      "sha256": "2520db2d989bbeb8d3e5e3afc3e9e6a6fb683b2378c9c7858a6cd86d916a83ac",
+      "url": "/ru/posts/2021-07-23-app-diagrams.net/"
+    },
+    {
+      "key": "ru-2021-07-23-multiple-gradle-build",
+      "path": "src/content/technical-translations/ru/2021-07-23-multiple-gradle-build.md",
+      "sha256": "0b6c00473c11972a658f8fa17eaea910ea73cf52175d5b24c69d06367965a354",
+      "url": "/ru/posts/2021-07-23-multiple-gradle-build/"
+    },
+    {
+      "key": "ru-2021-07-23-number-word",
+      "path": "src/content/technical-translations/ru/2021-07-23-number-word.md",
+      "sha256": "7bcc2cc9b38a52f76ae7232e589e21526268495e2c185e7f64ed14626a1943ac",
+      "url": "/ru/posts/2021-07-23-number-word/"
+    },
+    {
+      "key": "ru-2021-07-23-unsuccessful-runner",
+      "path": "src/content/technical-translations/ru/2021-07-23-unsuccessful-runner.md",
+      "sha256": "7784ce605e1005b894324614183972c940563381f21327eb28c2fec7f143b93f",
+      "url": "/ru/posts/2021-07-23-unsuccessful-runner/"
+    },
+    {
+      "key": "ru-2021-07-24-fail-percentage",
+      "path": "src/content/technical-translations/ru/2021-07-24-fail-percentage.md",
+      "sha256": "45a3139497a6f4285e59d42be923ea4156e651c51363e2b46f455616a4af2a9e",
+      "url": "/ru/posts/2021-07-24-fail-percentage/"
+    },
+    {
+      "key": "ru-2021-07-27-parse-yaml",
+      "path": "src/content/technical-translations/ru/2021-07-27-parse-yaml.md",
+      "sha256": "63a603c395e212d8723268fffd1cb70159fc29afc86f7fcb49964c74974c7d58",
+      "url": "/ru/posts/2021-07-27-parse-yaml/"
+    },
+    {
+      "key": "ru-2021-07-29-interval-num",
+      "path": "src/content/technical-translations/ru/2021-07-29-interval-num.md",
+      "sha256": "4eeef5b5c966f7da5ebeb8428a7cc3dd1ee8ff0ced6f42ceed63161a3b5dea56",
+      "url": "/ru/posts/2021-07-29-interval-num/"
+    },
+    {
+      "key": "ru-2021-07-29-ponkemon",
+      "path": "src/content/technical-translations/ru/2021-07-29-ponkemon.md",
+      "sha256": "c4b8eabb021e5029cbbf468f20fe9e859a2c31efeb95341cee3bdcd67bed14f3",
+      "url": "/ru/posts/2021-07-29-ponkemon/"
+    },
+    {
+      "key": "ru-2021-08-06-search-github",
+      "path": "src/content/technical-translations/ru/2021-08-06-search-github.md",
+      "sha256": "ebd4816e9a1198d0d07e23a5a1ad4a9d1118bbdf15dad2cb671a633348a16b91",
+      "url": "/ru/posts/2021-08-06-search-github/"
+    },
+    {
+      "key": "ru-2021-08-17-cache",
+      "path": "src/content/technical-translations/ru/2021-08-17-cache.md",
+      "sha256": "3d4248899843de81ed4099ca624341056bcfc77117ab10e47dc81c339484731f",
+      "url": "/ru/posts/2021-08-17-cache/"
+    },
+    {
+      "key": "ru-2023-09-04-jekyll-install",
+      "path": "src/content/technical-translations/ru/2023-09-04-jekyll-install.md",
+      "sha256": "4c49f59be20294f9f9d0ea19d3ad7393737b1ceea9e114d1d60efe243d864021",
+      "url": "/ru/posts/2023-09-04-jekyll-install/"
+    },
+    {
+      "key": "ru-2023-09-05-querydsl-no-release",
+      "path": "src/content/technical-translations/ru/2023-09-05-querydsl-no-release.md",
+      "sha256": "3b4c2aea82a8999aa2fdbb50e2775fdd5aabefb18542b083ad17049a120bd87e",
+      "url": "/ru/posts/2023-09-05-querydsl-no-release/"
+    },
+    {
+      "key": "ru-2023-09-07-springboot-initializer",
+      "path": "src/content/technical-translations/ru/2023-09-07-springboot-initializer.md",
+      "sha256": "6c8b1e1292a9360baa1a285b075ca8887f6df5aab0ac2636b06df16221e81b82",
+      "url": "/ru/posts/2023-09-07-springboot-initializer/"
+    },
+    {
+      "key": "ru-2023-09-08-springboot3-migration",
+      "path": "src/content/technical-translations/ru/2023-09-08-springboot3-migration.md",
+      "sha256": "af67d24514309c32dd3954f2633180330e1ee1b10148f1a89a02276db34589b3",
+      "url": "/ru/posts/2023-09-08-springboot3-migration/"
+    },
+    {
+      "key": "ru-2023-09-09-springboot3-querydsl",
+      "path": "src/content/technical-translations/ru/2023-09-09-springboot3-querydsl.md",
+      "sha256": "a5c6a2a10f886ad3b29f4a4e7aec955ba804deb15fd9defb0971915a492e875d",
+      "url": "/ru/posts/2023-09-09-springboot3-querydsl/"
+    },
+    {
+      "key": "ru-2023-09-10-springboot-intellij-import",
+      "path": "src/content/technical-translations/ru/2023-09-10-springboot-intellij-import.md",
+      "sha256": "36455a498819523294ce831cc95268ac0011f06bd2eeddc99ffcb8cab6ea60d0",
+      "url": "/ru/posts/2023-09-10-springboot-intellij-import/"
+    },
+    {
+      "key": "ru-2023-09-13-springboot-history",
+      "path": "src/content/technical-translations/ru/2023-09-13-springboot-history.md",
+      "sha256": "c9fb10b3c78aadcb7dcae50bdf97e80c4e6120152ac600dea2bcebb3d43c34fc",
+      "url": "/ru/posts/2023-09-13-springboot-history/"
+    },
+    {
+      "key": "ru-2023-09-15-springboot-intellij-lombok",
+      "path": "src/content/technical-translations/ru/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "dd342bd4d6eec736c128b0f1d3a19d82e9eab21ec51c876212d2b91ad3eb823f",
+      "url": "/ru/posts/2023-09-15-springboot-intellij-lombok/"
+    },
+    {
+      "key": "ru-2023-09-19-springboot-test-webclient",
+      "path": "src/content/technical-translations/ru/2023-09-19-springboot-test-webclient.md",
+      "sha256": "e09b92d3462037478b86aaa7b88891d1a4499449084d92400b1e02018bef91ca",
+      "url": "/ru/posts/2023-09-19-springboot-test-webclient/"
+    },
+    {
+      "key": "ru-2023-09-20-jdk-21-release",
+      "path": "src/content/technical-translations/ru/2023-09-20-jdk-21-release.md",
+      "sha256": "029daeb4b25d650bab0cfbf277edf91bb5faa315d7403f6df5c2943efbaf6859",
+      "url": "/ru/posts/2023-09-20-jdk-21-release/"
+    },
+    {
+      "key": "ru-2023-09-20-linux-shellscript-function-error",
+      "path": "src/content/technical-translations/ru/2023-09-20-linux-shellscript-function-error.md",
+      "sha256": "d274fcfa22941905c5b14f04be55981a5ce8859d2580f0c71211277f18b10e61",
+      "url": "/ru/posts/2023-09-20-linux-shellscript-function-error/"
+    },
+    {
+      "key": "ru-2023-09-23-jdk-21-string-templates",
+      "path": "src/content/technical-translations/ru/2023-09-23-jdk-21-string-templates.md",
+      "sha256": "64273074533b2ebf275b1c5b5e6dad436a06d232e9729031f892a293747746d3",
+      "url": "/ru/posts/2023-09-23-jdk-21-string-templates/"
+    },
+    {
+      "key": "ru-2023-09-23-linux-shellscript-github-latest",
+      "path": "src/content/technical-translations/ru/2023-09-23-linux-shellscript-github-latest.md",
+      "sha256": "9f8531e406a615e86e77b867751d04a0b00717170c2b0eb110626acc36f6ad2d",
+      "url": "/ru/posts/2023-09-23-linux-shellscript-github-latest/"
+    },
+    {
+      "key": "ru-2023-09-28-jenkins-docker-install",
+      "path": "src/content/technical-translations/ru/2023-09-28-jenkins-docker-install.md",
+      "sha256": "39ecb339bcdaf279f23c8c518ebc5f7a03fcfe785e933287da83aee0020fa24f",
+      "url": "/ru/posts/2023-09-28-jenkins-docker-install/"
+    },
+    {
+      "key": "ru-2023-10-10-temurin-jdk21-delay",
+      "path": "src/content/technical-translations/ru/2023-10-10-temurin-jdk21-delay.md",
+      "sha256": "8fd7fd790bea31a32002d5f70746a71f5de15774b8d8811ec9dd9bbee6f1bdfb",
+      "url": "/ru/posts/2023-10-10-temurin-jdk21-delay/"
+    },
+    {
+      "key": "ru-2023-10-27-springbatch5-migration",
+      "path": "src/content/technical-translations/ru/2023-10-27-springbatch5-migration.md",
+      "sha256": "fce4844edf17dc0b8029bd13725298d2e917ed3760762ea39ef34d79a22dab99",
+      "url": "/ru/posts/2023-10-27-springbatch5-migration/"
+    },
+    {
+      "key": "ru-2023-11-17-linux-shellscript-version-compare",
+      "path": "src/content/technical-translations/ru/2023-11-17-linux-shellscript-version-compare.md",
+      "sha256": "63a6e036b1f83775a9c4f2d951ded4794177e434a53b092c65acaa4123b57656",
+      "url": "/ru/posts/2023-11-17-linux-shellscript-version-compare/"
+    },
+    {
+      "key": "ru-2026-04-07-jekyll-github-actions-content-pipeline",
+      "path": "src/content/technical-translations/ru/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "00642a7f3638bf4587fad370dd3558e8ed07fb4d61678ea0fbe8e97be8ffa11d",
+      "url": "/ru/posts/2026-04-07-jekyll-github-actions-content-pipeline/"
+    },
+    {
+      "key": "ru-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "path": "src/content/technical-translations/ru/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "24ae3582caf6be78c4baaef89582397ca24cd3288a6d81916de6b80b9f4e3230",
+      "url": "/ru/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/"
+    },
+    {
+      "key": "ru-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "path": "src/content/technical-translations/ru/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "be119e08448cb8abc905678d99857e53277cc1f9646d497e47fc4e9985796c45",
+      "url": "/ru/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/"
+    },
+    {
+      "key": "ru-2026-10-27-jenkins-home-backup-restore",
+      "path": "src/content/technical-translations/ru/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "cf0dcd0b72f6760ec963e6207d7a841361146241989c3b35e71cdf1215a39782",
+      "url": "/ru/posts/2026-10-27-jenkins-home-backup-restore/"
+    },
+    {
+      "key": "ru-2026-10-31-ai-agent-operations",
+      "path": "src/content/technical-translations/ru/2026-10-31-ai-agent-operations.md",
+      "sha256": "33aa4a42d0cd11136596330595b7aa86b2934010e13728ebe55ec2846c9dd33d",
+      "url": "/ru/posts/2026-10-31-ai-agent-operations/"
+    },
+    {
+      "key": "ru-2026-10-31-ai-agent-refactoring",
+      "path": "src/content/technical-translations/ru/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "fd37db68ad18842f960446ab299ce3f8606c7c584ce13d0ef8f7d1c4b2bb1bee",
+      "url": "/ru/posts/2026-10-31-ai-agent-refactoring/"
+    },
+    {
+      "key": "ru-2026-10-31-cache-aside",
+      "path": "src/content/technical-translations/ru/2026-10-31-cache-aside.md",
+      "sha256": "32906b464b5badf4e707c87ec441e78a4625ab8c6cd98b0ace1f48bbd1bfb4e9",
+      "url": "/ru/posts/2026-10-31-cache-aside/"
+    },
+    {
+      "key": "ru-2026-10-31-failure-fallback",
+      "path": "src/content/technical-translations/ru/2026-10-31-failure-fallback.md",
+      "sha256": "be2dc3eb5ecfe4e2608f2c90ac6369e7acf6df89c882ec2f54d056d31db02f2e",
+      "url": "/ru/posts/2026-10-31-failure-fallback/"
+    },
+    {
+      "key": "ru-2026-10-31-kafka-event-streaming",
+      "path": "src/content/technical-translations/ru/2026-10-31-kafka-event-streaming.md",
+      "sha256": "2cc92fe1e122a5f9569695864f4f387ef61f76c1fd1d66537e6a01432c9b3524",
+      "url": "/ru/posts/2026-10-31-kafka-event-streaming/"
+    },
+    {
+      "key": "es-2021-07-19-new-id",
+      "path": "src/content/technical-translations/es/2021-07-19-new-id.md",
+      "sha256": "90059f25932a8824238b04e8c59cc7c8c12301bbd8372623e897103ab8d91dd1",
+      "url": "/es/posts/2021-07-19-new-id/"
+    },
+    {
+      "key": "es-2021-07-20-http-status-test",
+      "path": "src/content/technical-translations/es/2021-07-20-http-status-test.md",
+      "sha256": "692dbe358650b6f0b1bcd7e9f42dfc92fd46653a4af7256f5e8277d9b1ad4b5e",
+      "url": "/es/posts/2021-07-20-http-status-test/"
+    },
+    {
+      "key": "es-2021-07-20-pair-delete",
+      "path": "src/content/technical-translations/es/2021-07-20-pair-delete.md",
+      "sha256": "9c2dbb03e200bf543da3f5b0da9355b451d5e7051f7d84e0368e0677a6f9a17d",
+      "url": "/es/posts/2021-07-20-pair-delete/"
+    },
+    {
+      "key": "es-2021-07-22-dot-product",
+      "path": "src/content/technical-translations/es/2021-07-22-dot-product.md",
+      "sha256": "789d64283f7865cb9652d51c476c8bfb4841a77b4fc5d45c231afa5d4be3c79a",
+      "url": "/es/posts/2021-07-22-dot-product/"
+    },
+    {
+      "key": "es-2021-07-22-plus-minus",
+      "path": "src/content/technical-translations/es/2021-07-22-plus-minus.md",
+      "sha256": "5a864efcc4d7e82d4e7503e078c513d684bada5195142722212f3689523eccab",
+      "url": "/es/posts/2021-07-22-plus-minus/"
+    },
+    {
+      "key": "es-2021-07-23-app-diagrams.net",
+      "path": "src/content/technical-translations/es/2021-07-23-app-diagrams.net.md",
+      "sha256": "a06aabc7c7b6d5eddd8437a9c5a1d96fa3c87c3e324a28ce10d251ca28cc73ee",
+      "url": "/es/posts/2021-07-23-app-diagrams.net/"
+    },
+    {
+      "key": "es-2021-07-23-multiple-gradle-build",
+      "path": "src/content/technical-translations/es/2021-07-23-multiple-gradle-build.md",
+      "sha256": "360ef699a111d5f48d21346afb3ef38b76640e86c22b5367835c4306beb2f777",
+      "url": "/es/posts/2021-07-23-multiple-gradle-build/"
+    },
+    {
+      "key": "es-2021-07-23-number-word",
+      "path": "src/content/technical-translations/es/2021-07-23-number-word.md",
+      "sha256": "d34a7e7a47d6f6d1ccf3511878ea078656edf33973847b51881816c44f0ca0b8",
+      "url": "/es/posts/2021-07-23-number-word/"
+    },
+    {
+      "key": "es-2021-07-23-unsuccessful-runner",
+      "path": "src/content/technical-translations/es/2021-07-23-unsuccessful-runner.md",
+      "sha256": "c326a7ea3de282ed55925a9fe29b5495000f1df6ef6fe9917d696bef2bab840d",
+      "url": "/es/posts/2021-07-23-unsuccessful-runner/"
+    },
+    {
+      "key": "es-2021-07-24-fail-percentage",
+      "path": "src/content/technical-translations/es/2021-07-24-fail-percentage.md",
+      "sha256": "5a86e7b58465e3081bdebd3b4bd756045ee447a6eadca29399577adefdcdd7ce",
+      "url": "/es/posts/2021-07-24-fail-percentage/"
+    },
+    {
+      "key": "es-2021-07-27-parse-yaml",
+      "path": "src/content/technical-translations/es/2021-07-27-parse-yaml.md",
+      "sha256": "67f33a5bb7ce4c06c375da8e9003844b22699049ab104dd58778cfd81e85e140",
+      "url": "/es/posts/2021-07-27-parse-yaml/"
+    },
+    {
+      "key": "es-2021-07-29-interval-num",
+      "path": "src/content/technical-translations/es/2021-07-29-interval-num.md",
+      "sha256": "2294c4a721742f3922e32dae0cbc365c100a20b41803ae9e874e75007f22065b",
+      "url": "/es/posts/2021-07-29-interval-num/"
+    },
+    {
+      "key": "es-2021-07-29-ponkemon",
+      "path": "src/content/technical-translations/es/2021-07-29-ponkemon.md",
+      "sha256": "c8c310570740eba2e320b4e60927a039d678f2f32013afcac221dd8b346672f9",
+      "url": "/es/posts/2021-07-29-ponkemon/"
+    },
+    {
+      "key": "es-2021-08-06-search-github",
+      "path": "src/content/technical-translations/es/2021-08-06-search-github.md",
+      "sha256": "012132c787fa16716a785ed018219a651466f5f98a36bc5b4b3109b2ef088f45",
+      "url": "/es/posts/2021-08-06-search-github/"
+    },
+    {
+      "key": "es-2021-08-17-cache",
+      "path": "src/content/technical-translations/es/2021-08-17-cache.md",
+      "sha256": "a79dcb16e19364fd8b13f40cab947a32a640c5240be555c0da461220c0fad772",
+      "url": "/es/posts/2021-08-17-cache/"
+    },
+    {
+      "key": "es-2023-09-04-jekyll-install",
+      "path": "src/content/technical-translations/es/2023-09-04-jekyll-install.md",
+      "sha256": "75946afe78f4a23f7233fcdbd008504913463dcfce1bf0d75bffcd91e61798a0",
+      "url": "/es/posts/2023-09-04-jekyll-install/"
+    },
+    {
+      "key": "es-2023-09-05-querydsl-no-release",
+      "path": "src/content/technical-translations/es/2023-09-05-querydsl-no-release.md",
+      "sha256": "d458f0f80820e94a4d949a8ce81cc4f1c4867ff3088b7dfe9b3a701ac0dabc80",
+      "url": "/es/posts/2023-09-05-querydsl-no-release/"
+    },
+    {
+      "key": "es-2023-09-07-springboot-initializer",
+      "path": "src/content/technical-translations/es/2023-09-07-springboot-initializer.md",
+      "sha256": "24f372b7635fd2f12f76dc9f399ad0bdcfad7ddeff9fd1f2c768140a64726c01",
+      "url": "/es/posts/2023-09-07-springboot-initializer/"
+    },
+    {
+      "key": "es-2023-09-08-springboot3-migration",
+      "path": "src/content/technical-translations/es/2023-09-08-springboot3-migration.md",
+      "sha256": "bdf46bac8c8c10cd5d5f193eb452f141e5e2f56b3a2b3223a67570f853ec30bf",
+      "url": "/es/posts/2023-09-08-springboot3-migration/"
+    },
+    {
+      "key": "es-2023-09-09-springboot3-querydsl",
+      "path": "src/content/technical-translations/es/2023-09-09-springboot3-querydsl.md",
+      "sha256": "d6f08a7e4a7d7f114c206a2d9de6a6b90cf54014611747f83f90ec2d68f06b35",
+      "url": "/es/posts/2023-09-09-springboot3-querydsl/"
+    },
+    {
+      "key": "es-2023-09-10-springboot-intellij-import",
+      "path": "src/content/technical-translations/es/2023-09-10-springboot-intellij-import.md",
+      "sha256": "b7432141414e9311789a19fbc4542401dd730374de918712b8588c0db0694eb8",
+      "url": "/es/posts/2023-09-10-springboot-intellij-import/"
+    },
+    {
+      "key": "es-2023-09-13-springboot-history",
+      "path": "src/content/technical-translations/es/2023-09-13-springboot-history.md",
+      "sha256": "3085315396276d84d6a7868a3a4886c12ae77aca8d774919d1611cb6cf1427b0",
+      "url": "/es/posts/2023-09-13-springboot-history/"
+    },
+    {
+      "key": "es-2023-09-15-springboot-intellij-lombok",
+      "path": "src/content/technical-translations/es/2023-09-15-springboot-intellij-lombok.md",
+      "sha256": "4f7739b848aa17bae64e202213b2b60e27816dbba871f2289bde0750dac5ad57",
+      "url": "/es/posts/2023-09-15-springboot-intellij-lombok/"
+    },
+    {
+      "key": "es-2023-09-19-springboot-test-webclient",
+      "path": "src/content/technical-translations/es/2023-09-19-springboot-test-webclient.md",
+      "sha256": "adfb01e53edf67f5a6f14934f27b0869c126770eabe72f1409df8e39c1951766",
+      "url": "/es/posts/2023-09-19-springboot-test-webclient/"
+    },
+    {
+      "key": "es-2023-09-20-jdk-21-release",
+      "path": "src/content/technical-translations/es/2023-09-20-jdk-21-release.md",
+      "sha256": "5743c9c535bc138a862ec5bbe015398167478e4b92e5c9be1e8c96616c591ae9",
+      "url": "/es/posts/2023-09-20-jdk-21-release/"
+    },
+    {
+      "key": "es-2023-09-20-linux-shellscript-function-error",
+      "path": "src/content/technical-translations/es/2023-09-20-linux-shellscript-function-error.md",
+      "sha256": "68408919ad4c231d38db25d1e8f9c21474a8c5bbe838f4e71e0630c786bdeefb",
+      "url": "/es/posts/2023-09-20-linux-shellscript-function-error/"
+    },
+    {
+      "key": "es-2023-09-23-jdk-21-string-templates",
+      "path": "src/content/technical-translations/es/2023-09-23-jdk-21-string-templates.md",
+      "sha256": "c1c0f3e567a617287e1526cf5e066be831d98a732ae7b28070c561a74d2ab406",
+      "url": "/es/posts/2023-09-23-jdk-21-string-templates/"
+    },
+    {
+      "key": "es-2023-09-23-linux-shellscript-github-latest",
+      "path": "src/content/technical-translations/es/2023-09-23-linux-shellscript-github-latest.md",
+      "sha256": "78a3d606653e6f8f648c9ef82ef3e17a949f4d035d509356cf4b48d3b82ed4c5",
+      "url": "/es/posts/2023-09-23-linux-shellscript-github-latest/"
+    },
+    {
+      "key": "es-2023-09-28-jenkins-docker-install",
+      "path": "src/content/technical-translations/es/2023-09-28-jenkins-docker-install.md",
+      "sha256": "5d3c10bd713484d75913776db1650992ca60b9a59dff1f37dd875b9af2cc8f18",
+      "url": "/es/posts/2023-09-28-jenkins-docker-install/"
+    },
+    {
+      "key": "es-2023-10-10-temurin-jdk21-delay",
+      "path": "src/content/technical-translations/es/2023-10-10-temurin-jdk21-delay.md",
+      "sha256": "4c51e33d71287b4cef86730e1f2c479bd2f09bd2144b3ef7bc8ed6e2f12bf98d",
+      "url": "/es/posts/2023-10-10-temurin-jdk21-delay/"
+    },
+    {
+      "key": "es-2023-10-27-springbatch5-migration",
+      "path": "src/content/technical-translations/es/2023-10-27-springbatch5-migration.md",
+      "sha256": "f9c7b74db4d805ec2554fa614964ad56bb0df693f46a268d2499909f7dd16441",
+      "url": "/es/posts/2023-10-27-springbatch5-migration/"
+    },
+    {
+      "key": "es-2023-11-17-linux-shellscript-version-compare",
+      "path": "src/content/technical-translations/es/2023-11-17-linux-shellscript-version-compare.md",
+      "sha256": "bb9aa2e4af56271587f2b82d344f55dd10b8fd82fed0caa46a422817c7ca8e81",
+      "url": "/es/posts/2023-11-17-linux-shellscript-version-compare/"
+    },
+    {
+      "key": "es-2026-04-07-jekyll-github-actions-content-pipeline",
+      "path": "src/content/technical-translations/es/2026-04-07-jekyll-github-actions-content-pipeline.md",
+      "sha256": "0de93e6b21b5b035bd89f4ca6f6a5cece1f3abc79fcfe36c9c54aeb4058ee87a",
+      "url": "/es/posts/2026-04-07-jekyll-github-actions-content-pipeline/"
+    },
+    {
+      "key": "es-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "path": "src/content/technical-translations/es/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+      "sha256": "f03ff15a1b072a4207ecbf2e064b1dff7ca2ae5a3891d6026d79a564838c2735",
+      "url": "/es/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/"
+    },
+    {
+      "key": "es-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "path": "src/content/technical-translations/es/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+      "sha256": "df020d26d5f325384b08d7175d52e43418ff286eec70c29b00abdd2050a325f6",
+      "url": "/es/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/"
+    },
+    {
+      "key": "es-2026-10-27-jenkins-home-backup-restore",
+      "path": "src/content/technical-translations/es/2026-10-27-jenkins-home-backup-restore.md",
+      "sha256": "a2991a14f168bdd1e9460fb1d626a78c23d87a4447d0b58b6566bcbe0b584c7d",
+      "url": "/es/posts/2026-10-27-jenkins-home-backup-restore/"
+    },
+    {
+      "key": "es-2026-10-31-ai-agent-operations",
+      "path": "src/content/technical-translations/es/2026-10-31-ai-agent-operations.md",
+      "sha256": "46430ce9e3ff8c98d03c9256511fed3a4eb4a24c54e64c1b42b19441478df2b8",
+      "url": "/es/posts/2026-10-31-ai-agent-operations/"
+    },
+    {
+      "key": "es-2026-10-31-ai-agent-refactoring",
+      "path": "src/content/technical-translations/es/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "e693d1d9a8952e21db85be7bcef262c877a641a70184173f3672d40021640f50",
+      "url": "/es/posts/2026-10-31-ai-agent-refactoring/"
+    },
+    {
+      "key": "es-2026-10-31-cache-aside",
+      "path": "src/content/technical-translations/es/2026-10-31-cache-aside.md",
+      "sha256": "25aa0d38aa0ca1e0c471f88afbac474f5d90924f27dd48fb8b2dff1580674acd",
+      "url": "/es/posts/2026-10-31-cache-aside/"
+    },
+    {
+      "key": "es-2026-10-31-failure-fallback",
+      "path": "src/content/technical-translations/es/2026-10-31-failure-fallback.md",
+      "sha256": "096ad2b53aa54886f1bd518d6ec002717aa498e68259a6df10be4d49fa6503ba",
+      "url": "/es/posts/2026-10-31-failure-fallback/"
+    },
+    {
+      "key": "es-2026-10-31-kafka-event-streaming",
+      "path": "src/content/technical-translations/es/2026-10-31-kafka-event-streaming.md",
+      "sha256": "af6ecda9f9fa9bc3e3a578b2398ade4d49952c631371b6a10999715a1265ad22",
+      "url": "/es/posts/2026-10-31-kafka-event-streaming/"
+    }
+  ]
+}

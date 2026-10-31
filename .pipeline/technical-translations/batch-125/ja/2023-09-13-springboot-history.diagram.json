@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-13-springboot-history",
+  "language": "ja",
+  "title": "実際のコンポーネント版を確認",
+  "description": "年表でなく依存調査です。Boot、Framework、Lombok は版と依存設定がそれぞれ別です。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "選んだ Boot の版を特定"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "依存管理を確認",
+        "Boot/Framework 番号を同一視しない"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: spring-core",
+        "runtimeClasspath を確認"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: lombok",
+        "annotationProcessor を確認"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "解決した版を記録",
+        "その組合せの互換性を評価"
+      ]
+    }
+  ]
+}

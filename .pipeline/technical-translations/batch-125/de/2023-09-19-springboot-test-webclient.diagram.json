@@ -1,0 +1,54 @@
+{
+  "key": "2023-09-19-springboot-test-webclient",
+  "language": "de",
+  "title": "HTTP-Antwort validieren",
+  "description": "Der Client prüft den Status vor dem Medientyp, gibt abgelehnte Bodys frei und dekodiert unterstütztes JSON. StepVerifier prüft Werte und Abschlusssignal.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Lokale Mock-Antwort einreihen",
+        "Clientanfrage abonnieren"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "HTTP-Fehlerstatus?",
+        "Ja: Ausnahme ausgeben und stoppen"
+      ],
+      "branch": {
+        "exit": "Ja",
+        "continue": "Nein",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "application/json oder",
+        "application/*+json?",
+        "Sonst: Body freigeben, dann Fehler"
+      ],
+      "branch": {
+        "exit": "Andere",
+        "continue": "JSON",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Nur unterstützte Typen dekodieren",
+        "Leeren/fehlerhaften Body beobachten"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Werte und Endsignal prüfen",
+        "Methode, Pfad und Accept prüfen"
+      ]
+    }
+  ]
+}

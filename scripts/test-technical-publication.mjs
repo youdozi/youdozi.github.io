@@ -14,7 +14,7 @@ async function project(work){
     const registryPath='.pipeline/technical-translations/batches.json';
     const registry=JSON.parse(await readFile(join(root,registryPath),'utf8'));
     const manifests=await Promise.all(registry.manifests.map(async path=>JSON.parse(await readFile(join(root,path),'utf8'))));
-    const paths=new Set([registryPath,...registry.manifests,...manifests.flatMap(m=>m.editions.flatMap(r=>[r.source.path,r.draft.path,r.diagramSource.path,r.diagram.path,r.sourceDiagram.path,...(r.additionalVisuals??[]).flatMap(v=>[v.source.path,v.draft.path])]))]);
+    const paths=new Set([registryPath,...registry.manifests,...manifests.flatMap(m=>m.editions.flatMap(r=>[r.source.path,r.draft.path,r.diagramSource.path,r.diagram.path,r.sourceDiagram.path,...(r.mainVisual?[r.mainVisual.path]:[]),...(r.additionalVisuals??[]).flatMap(v=>[v.source.path,v.draft.path])]))]);
     for(const path of paths){await mkdir(dirname(join(base,path)),{recursive:true});await copyFile(join(root,path),join(base,path));}
     await mkdir(join(base,'src/content/technical-translations'),{recursive:true});
     await work(base,folder);
@@ -152,5 +152,24 @@ test('recent batch keeps all supplementary figures private until exact approval,
     const extra=architectures[0].additionalDiagrams[0];
     await writeFile(join(base,extra.path),'changed image');
     await assert.rejects(prepareTechnicalAssets(base),/Pinned file changed/);
+  });
+});
+
+test('architecture primary pins protect the English visual and publish both operations diagrams',async()=>{
+  await project(async base=>{
+    const selected='.pipeline/technical-translations/batch-125/manifest.json';
+    const batch=await inspectTechnicalBatch(base,selected);
+    assert.equal(batch.editions.length,126);
+    const operations=batch.editions.filter(e=>e.data.translationKey==='2026-10-31-ai-agent-operations');
+    assert.equal(operations.length,6);
+    for(const edition of operations){
+      assert.equal(edition.additionalDiagrams.length,1);
+      assert.match(edition.body,/\/assets\/diagrams\/technical\/[^)]+-architecture\.svg/);
+      assert.doesNotMatch(edition.body,/\/assets\/img\/architecture\//);
+    }
+    const manifest=JSON.parse(await readFile(join(base,selected),'utf8'));
+    const primary=manifest.editions.find(e=>e.mainVisual).mainVisual;
+    await writeFile(join(base,primary.path),'changed primary SVG');
+    await assert.rejects(inspectTechnicalTranslations(base,selected),/Pinned file changed/);
   });
 });

@@ -1,0 +1,65 @@
+{
+  "key": "2026-10-31-ai-agent-operations",
+  "language": "ja",
+  "title": "証拠準備のゲート",
+  "description": "coverage、shape、identity、age、fail、unknown を確認し、実行許可は与えません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "証拠、信頼する対象、現在時刻"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "必須の六分野と完全一致？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "形式、identity、時刻は有効？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "有効 signal に fail がある？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "STOP",
+        "continue": "いいえ"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "unknown signal がある？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "HOLD",
+        "continue": "いいえ"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "READY_FOR_REVIEW を返す",
+        "review 用で実行用ではない"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "key": "2026-04-07-jekyll-github-actions-content-pipeline",
+  "language": "de",
+  "title": "Vom Kandidaten zur Freigabe",
+  "description": "Das Offline-Beispiel prüft Auswahl ausstehender PRs und simulierte Review-Aufrufe. Generierung, Freigabe, Merge und Deployment sind separate gehostete oder redaktionelle Schritte.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Passender Digest-PR bereits offen?"
+      ],
+      "branch": {
+        "exit": "Ja: warten",
+        "continue": "Nein",
+        "outcome": "complete"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Zweisprachigen Kandidaten erzeugen",
+        "Lokal vor dem Commit prüfen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Kandidatenbranch pushen",
+        "Seine Commit-SHA validieren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Draft-PR und Vorschau öffnen",
+        "Prüfungen auf Review-Branch starten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Fakten und Sprache prüfen",
+        "Freigeben und bei Bereitschaft mergen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Main-Workflow prüft und deployt",
+        "Öffentliches Ergebnis prüfen"
+      ]
+    }
+  ]
+}

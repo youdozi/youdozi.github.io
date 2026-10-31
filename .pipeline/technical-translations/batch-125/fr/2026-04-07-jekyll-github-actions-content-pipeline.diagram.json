@@ -1,0 +1,54 @@
+{
+  "key": "2026-04-07-jekyll-github-actions-content-pipeline",
+  "language": "fr",
+  "title": "Du candidat à la publication",
+  "description": "L’exemple hors ligne vérifie la sélection des PR en attente et des appels de revue simulés. Génération, approbation, fusion et déploiement sont des étapes hébergées ou éditoriales distinctes.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "PR digest correspondant déjà ouvert ?"
+      ],
+      "branch": {
+        "exit": "Oui : pause",
+        "continue": "Non",
+        "outcome": "complete"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Générer le candidat bilingue",
+        "Vérifier localement avant commit"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Pousser la branche du candidat",
+        "Valider son SHA de commit"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Ouvrir Draft PR et aperçu",
+        "Déclencher les contrôles de revue"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Examiner faits et langues",
+        "Approuver, puis fusionner si prêt"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Le workflow main vérifie et déploie",
+        "Vérifier le résultat public"
+      ]
+    }
+  ]
+}

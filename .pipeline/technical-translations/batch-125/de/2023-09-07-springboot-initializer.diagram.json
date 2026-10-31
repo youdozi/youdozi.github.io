@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-07-springboot-initializer",
+  "language": "de",
+  "title": "Erzeugen, prüfen, testen",
+  "description": "Erzeugen Sie das vollständige Archiv vor der Wrapper-Ausführung. Ein Kontexttest und eine separat laufende HTTP-Anwendung belegen unterschiedliche Dinge.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Boot, JDK, Gradle passend wählen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Vollständiges Archiv entpacken",
+        "Gradle-Wrapper-Dateien bewahren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "build.gradle und Toolchain prüfen",
+        "./gradlew --version ausführen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "./gradlew test ausführen",
+        "Kontextinitialisierung prüfen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "bootRun separat ausführen",
+        "Noch kein Controller: / kann 404 sein"
+      ]
+    }
+  ]
+}

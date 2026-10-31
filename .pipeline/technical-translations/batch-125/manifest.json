@@ -1,0 +1,3399 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-125",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "880895e5bde0f217388608fdf463c93ff7edc994",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Complete language-pair translation and self-review followed by fresh-context read-only AI target-language and full-source comparison, root corrections, and focused reviewer rechecks.",
+    "independentReviewer": true,
+    "reviewerContexts": [
+      "review125_zh_ja",
+      "review125_de_fr",
+      "review125_ru_es"
+    ],
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "scope": "All126 complete manuscripts, metadata, tables, captions, localized prompts,126 primary diagrams and6 supplementary diagrams. Runnable code/output, inline literals, URLs and numerical values preserved. Historical execution evidence translated without claiming new integration runs.",
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-125/reviews/zh-ja-initial.json",
+        "sha256": "0fa07195939a27f91ebd31356839a94c8eca4df26166a590c769898e21d031c0"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-125/reviews/zh-ja-recheck.json",
+        "sha256": "a65a3a2ce7a46b2ed24ad59795ba4bfda39d66005a61cd3ad705df8efe6f4fca"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-125/reviews/de-fr-initial.json",
+        "sha256": "8f3a43c37a2c036714cb8d2f6a58181c6570612427cc840d3d3e49f97ba61731"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-125/reviews/de-fr-recheck.json",
+        "sha256": "995aa82d9fbc384c10129bf6ac2209e8f0819c164d8031fb3f95d5d8220238ab"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-125/reviews/ru-es-initial.json",
+        "sha256": "a7fd8319630c5bca6c1482cffa122a1cedb53b96ad2999c6605cf86980b36482"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-125/reviews/ru-es-recheck.json",
+        "sha256": "39c16c44112d6a008b88482d34d5f141fcba1609a75efd3e3a7f2eb4946c9182"
+      }
+    ]
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2021-07-23-multiple-gradle-build",
+      "language": "zh-CN",
+      "translationKey": "2021-07-23-multiple-gradle-build",
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
+        "sha256": "2af4402a72130c6c53faa9d34008be0c7bc63b78b82a680f5675bdd70532ec4d"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2021-07-23-multiple-gradle-build.md",
+        "sha256": "7a707a58dc42919f1a1012976057d4592403796320113314445f4860a1167c4a"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2021-07-23-multiple-gradle-build.diagram.json",
+        "sha256": "5fc31f115f774736e5d4bcacd64dc8fdb48a3a9357b9b27046c7ab5036f8ca11"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2021-07-23-multiple-gradle-build.svg",
+        "sha256": "038a4c86dbb15e665fd4b129d59180b65e098a3921ad54ae990c4b7faf8a51d0"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2021-07-23-multiple-gradle-build",
+      "language": "ja",
+      "translationKey": "2021-07-23-multiple-gradle-build",
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
+        "sha256": "2af4402a72130c6c53faa9d34008be0c7bc63b78b82a680f5675bdd70532ec4d"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2021-07-23-multiple-gradle-build.md",
+        "sha256": "1d40efa942ecdcf9c596231a7253810fd8af8638bb5ba9349f225b3d072812d7"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2021-07-23-multiple-gradle-build.diagram.json",
+        "sha256": "526ea991b2a403a563485ea11dedd65029a1462ab95b124cf6f4ef4721115dac"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2021-07-23-multiple-gradle-build.svg",
+        "sha256": "56df1c91c15980814deb2fe2d3497f8f98a3d421b8f6c17df299b8907a8bd482"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2021-07-23-multiple-gradle-build",
+      "language": "de",
+      "translationKey": "2021-07-23-multiple-gradle-build",
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
+        "sha256": "2af4402a72130c6c53faa9d34008be0c7bc63b78b82a680f5675bdd70532ec4d"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2021-07-23-multiple-gradle-build.md",
+        "sha256": "8568e0d3aacb68ab471732e8922590673c2a60978a23bdab288f4cb5a33e4166"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2021-07-23-multiple-gradle-build.diagram.json",
+        "sha256": "4cbb2d41fbe03440f65d89764e9394226e5a52df626b22d4ab02af5a210773b7"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2021-07-23-multiple-gradle-build.svg",
+        "sha256": "776e82003b5723757bb5b33c9729b65ccbdbdad8eac3dd1c08c3f7d3b306ff9d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2021-07-23-multiple-gradle-build",
+      "language": "fr",
+      "translationKey": "2021-07-23-multiple-gradle-build",
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
+        "sha256": "2af4402a72130c6c53faa9d34008be0c7bc63b78b82a680f5675bdd70532ec4d"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2021-07-23-multiple-gradle-build.md",
+        "sha256": "8a85627d1ba68d656862ba0ca7ed3df0d902d150a9dbf727f2f448ec360e718a"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2021-07-23-multiple-gradle-build.diagram.json",
+        "sha256": "c9da3ae497e04dde1efe7eefed96f4fd03ac986ecbdeb3f963a60b10f7dfc14f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2021-07-23-multiple-gradle-build.svg",
+        "sha256": "ca7b169fb25ff36e6b8a0a5eb42181e52512f504beb603552387a7c277ae3229"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2021-07-23-multiple-gradle-build",
+      "language": "ru",
+      "translationKey": "2021-07-23-multiple-gradle-build",
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
+        "sha256": "2af4402a72130c6c53faa9d34008be0c7bc63b78b82a680f5675bdd70532ec4d"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2021-07-23-multiple-gradle-build.md",
+        "sha256": "0893b14a1e03342a7db4af33d168ced60c0ab33d275fc6ec3da84e0003eb6808"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2021-07-23-multiple-gradle-build.diagram.json",
+        "sha256": "acb14cc3be78217eab680b6124a97c8f52614e12770ca8f8be1a53fffbff9ebf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2021-07-23-multiple-gradle-build.svg",
+        "sha256": "478f653da7717b0671ff36ba5a3db165766d18fdaa2091f3536acc31f2f1a6fc"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2021-07-23-multiple-gradle-build",
+      "language": "es",
+      "translationKey": "2021-07-23-multiple-gradle-build",
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
+        "sha256": "2af4402a72130c6c53faa9d34008be0c7bc63b78b82a680f5675bdd70532ec4d"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2021-07-23-multiple-gradle-build.md",
+        "sha256": "46f64ecec4e83059c0c1592f79a57aa32643a0ccbae6279d6a06efe943b8f243"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2021-07-23-multiple-gradle-build.diagram.json",
+        "sha256": "acaebc29903717013f561a17405e0311316794f7aa454d2068ecd6d51baf494e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2021-07-23-multiple-gradle-build.svg",
+        "sha256": "1178d35f2e94adbde873dd91c160ddae59a6dddc57668d2a9706e86836a08157"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-04-jekyll-install",
+      "language": "zh-CN",
+      "translationKey": "2023-09-04-jekyll-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-04-jekyll-install.md",
+        "sha256": "0dbe6c1bad26411bc78aabc17773da808b4c74fe9cdc098a9bada2cfb2873e08"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-04-jekyll-install.md",
+        "sha256": "2dc99cc5580e8e431a99da29c794ae9057bccf34687523b29f2721c5ce1742e0"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-04-jekyll-install.diagram.json",
+        "sha256": "54ef79754ad6a74b599ac3c0dffde5266e1fd44ee1db7972f42f96c98b15e85a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-04-jekyll-install.svg",
+        "sha256": "17b6428da971da8969613a2f8744437d33b4c21b1f79ffea998b6bd955c99fc0"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "ja-2023-09-04-jekyll-install",
+      "language": "ja",
+      "translationKey": "2023-09-04-jekyll-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-04-jekyll-install.md",
+        "sha256": "0dbe6c1bad26411bc78aabc17773da808b4c74fe9cdc098a9bada2cfb2873e08"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-04-jekyll-install.md",
+        "sha256": "e2ddacb54440e87040bf45a3b344453a252fe14134698809bc17167d3874fc42"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-04-jekyll-install.diagram.json",
+        "sha256": "f88269f2074ce361fce0ee0c2c460032449a7dc4d5213cf14929f1b840ec3b20"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-04-jekyll-install.svg",
+        "sha256": "6b0a0539b930d0449d4f03b56f4ad8c64a8a670d30658964a979154540f18076"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "de-2023-09-04-jekyll-install",
+      "language": "de",
+      "translationKey": "2023-09-04-jekyll-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-04-jekyll-install.md",
+        "sha256": "0dbe6c1bad26411bc78aabc17773da808b4c74fe9cdc098a9bada2cfb2873e08"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-04-jekyll-install.md",
+        "sha256": "1bbc26b79760e5af302c2a12f37801fc7f8ec0baa8f63d6591aaafd39d86985e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-04-jekyll-install.diagram.json",
+        "sha256": "62fff238443c314f982601a7e5ffa4f80c15e0859bb268d34ef39ac967d2faa6"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-04-jekyll-install.svg",
+        "sha256": "4df5a2d6a67aa654a2ed24d38842276cf64e34b3726d2f1e696432eccedae657"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "fr-2023-09-04-jekyll-install",
+      "language": "fr",
+      "translationKey": "2023-09-04-jekyll-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-04-jekyll-install.md",
+        "sha256": "0dbe6c1bad26411bc78aabc17773da808b4c74fe9cdc098a9bada2cfb2873e08"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-04-jekyll-install.md",
+        "sha256": "ec63b6bc850aa24737b3a7aba8dc4fe9431a0bbbd80dfe708fe35b2edb30ca53"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-04-jekyll-install.diagram.json",
+        "sha256": "39867a2a9142fdea8d94ba1b3236299abfe4b5eda8ea73285ba90022e6630aa8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-04-jekyll-install.svg",
+        "sha256": "622c4037f768ce9b30bb55b5109e4378737547847f4df2964f67847a96a2d1fa"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "ru-2023-09-04-jekyll-install",
+      "language": "ru",
+      "translationKey": "2023-09-04-jekyll-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-04-jekyll-install.md",
+        "sha256": "0dbe6c1bad26411bc78aabc17773da808b4c74fe9cdc098a9bada2cfb2873e08"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-04-jekyll-install.md",
+        "sha256": "6e76bd6852ff7dd137e3275ceca4a053b58e6ff02cdb7b57cec7ca740311eb53"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-04-jekyll-install.diagram.json",
+        "sha256": "1cac707f411e52f7a7f94745d9eb8927b8da484758e6224a7266655ee3f17ff0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-04-jekyll-install.svg",
+        "sha256": "11a42758783b0e64efd111e61c330827e84b1be97709a0135bdb4d6ffbdb6321"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "es-2023-09-04-jekyll-install",
+      "language": "es",
+      "translationKey": "2023-09-04-jekyll-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-04-jekyll-install.md",
+        "sha256": "0dbe6c1bad26411bc78aabc17773da808b4c74fe9cdc098a9bada2cfb2873e08"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-04-jekyll-install.md",
+        "sha256": "de4354fc6c8b4804c67f2ed4dbae57e7be017526030ad65bf5d4ed08a9dbfa86"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-04-jekyll-install.diagram.json",
+        "sha256": "537ad2388cf3155986bb81a46fd2941d35d6cf90d0faafed1c5fba442bc67792"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-04-jekyll-install.svg",
+        "sha256": "26636beab467e84f483f61729d76b77d8347ac9ac0cf56222f8c9a977308954a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-05-querydsl-no-release",
+      "language": "zh-CN",
+      "translationKey": "2023-09-05-querydsl-no-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-05-querydsl-no-release.md",
+        "sha256": "23fe3b60bb4735a72a59a7bcc0dfabd76d68df0af84bdd636d79f15699cfc798"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-05-querydsl-no-release.md",
+        "sha256": "8a48e6ed90a3fe8ee307860284c467c3af9763ed4b7fdd826770a100dee99108"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-05-querydsl-no-release.diagram.json",
+        "sha256": "5613acf0f4350d95e9a7af6f517737d434120f98531dfa49c7a6d1c02eb2c73f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-05-querydsl-no-release.svg",
+        "sha256": "a6b5313b932cab466b5a2c6a76d55d75518d9091745dafd50457acfa271dfe35"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/query-strategies.json",
+        "sha256": "c4e231fd5d357ca060889f607aeb4291f73eb9ff3b665ea2414a10a9034f3ef6"
+      }
+    },
+    {
+      "key": "ja-2023-09-05-querydsl-no-release",
+      "language": "ja",
+      "translationKey": "2023-09-05-querydsl-no-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-05-querydsl-no-release.md",
+        "sha256": "23fe3b60bb4735a72a59a7bcc0dfabd76d68df0af84bdd636d79f15699cfc798"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-05-querydsl-no-release.md",
+        "sha256": "4368197efa92018b5966676e4c71a7abc1a3e3f615c5f635cdcabb8c6d4da0eb"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-05-querydsl-no-release.diagram.json",
+        "sha256": "96b4ffde0373c7e87a307c266e436ab471cff56bbfdeae39a2f6864799fea66d"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-05-querydsl-no-release.svg",
+        "sha256": "6547a3412213ccc7709015de6fe3fa0c89708ac338ff60b177783bda47672661"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/query-strategies.json",
+        "sha256": "c4e231fd5d357ca060889f607aeb4291f73eb9ff3b665ea2414a10a9034f3ef6"
+      }
+    },
+    {
+      "key": "de-2023-09-05-querydsl-no-release",
+      "language": "de",
+      "translationKey": "2023-09-05-querydsl-no-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-05-querydsl-no-release.md",
+        "sha256": "23fe3b60bb4735a72a59a7bcc0dfabd76d68df0af84bdd636d79f15699cfc798"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-05-querydsl-no-release.md",
+        "sha256": "a7da6e03595de11e8feed315708ee1ac432e6c21b01a10cf1acf0b0a8aba7813"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-05-querydsl-no-release.diagram.json",
+        "sha256": "fb8747c632510c5197219e226e91adf31c9db005f7d82dfe6cec6fd661ba02bb"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-05-querydsl-no-release.svg",
+        "sha256": "85924ff7326f1a254bb0ffe44c3cbc67335039e6020865141de9f039a1377d7b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/query-strategies.json",
+        "sha256": "c4e231fd5d357ca060889f607aeb4291f73eb9ff3b665ea2414a10a9034f3ef6"
+      }
+    },
+    {
+      "key": "fr-2023-09-05-querydsl-no-release",
+      "language": "fr",
+      "translationKey": "2023-09-05-querydsl-no-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-05-querydsl-no-release.md",
+        "sha256": "23fe3b60bb4735a72a59a7bcc0dfabd76d68df0af84bdd636d79f15699cfc798"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-05-querydsl-no-release.md",
+        "sha256": "38d550949193a991732a5eed911cbc47f763a4ffd4329724efe871ff724ecfff"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-05-querydsl-no-release.diagram.json",
+        "sha256": "9408a95c402574ff55bf5dfc5bb2f70659f7a6a866e66638c9f0fcfebed7ffcf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-05-querydsl-no-release.svg",
+        "sha256": "9e6bded7fa4de740ab9e9d6c9d972d07850984ca0c39b1cebebb249760d9d517"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/query-strategies.json",
+        "sha256": "c4e231fd5d357ca060889f607aeb4291f73eb9ff3b665ea2414a10a9034f3ef6"
+      }
+    },
+    {
+      "key": "ru-2023-09-05-querydsl-no-release",
+      "language": "ru",
+      "translationKey": "2023-09-05-querydsl-no-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-05-querydsl-no-release.md",
+        "sha256": "23fe3b60bb4735a72a59a7bcc0dfabd76d68df0af84bdd636d79f15699cfc798"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-05-querydsl-no-release.md",
+        "sha256": "d8a7f41338ae0e8e63209381aefe395f14806b983c97cc0fdd58b488a410cafe"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-05-querydsl-no-release.diagram.json",
+        "sha256": "89f96145224feaa04885ca0f415b791275a14d1c27971641db6f87f982d7cae5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-05-querydsl-no-release.svg",
+        "sha256": "c8e3ef4511b31a1a5873bbd4b579d0e2a50baaf63e28a7ac6abace4f376615e8"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/query-strategies.json",
+        "sha256": "c4e231fd5d357ca060889f607aeb4291f73eb9ff3b665ea2414a10a9034f3ef6"
+      }
+    },
+    {
+      "key": "es-2023-09-05-querydsl-no-release",
+      "language": "es",
+      "translationKey": "2023-09-05-querydsl-no-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-05-querydsl-no-release.md",
+        "sha256": "23fe3b60bb4735a72a59a7bcc0dfabd76d68df0af84bdd636d79f15699cfc798"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-05-querydsl-no-release.md",
+        "sha256": "f1f34f885dda4acf05c35515740cb50b554cb90cc149c3f10bb16b7c801a1dca"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-05-querydsl-no-release.diagram.json",
+        "sha256": "b3cc4e416b2bd6af85f2099561497d738ca35a07092151f5a4ff6afe0522ca04"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-05-querydsl-no-release.svg",
+        "sha256": "9f5629862693fccfc3d487c2c1c585bf6a6cac9903b8741340c650ecda8394da"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/query-strategies.json",
+        "sha256": "c4e231fd5d357ca060889f607aeb4291f73eb9ff3b665ea2414a10a9034f3ef6"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-07-springboot-initializer",
+      "language": "zh-CN",
+      "translationKey": "2023-09-07-springboot-initializer",
+      "source": {
+        "path": "src/content/posts/en/2023-09-07-springboot-initializer.md",
+        "sha256": "97a876012a6c3d2dbf40856ed6360dc850f12741aecbd5ee7bd96023fb05275f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-07-springboot-initializer.md",
+        "sha256": "09ba18393cbf0040b28f7adc82be8ecfde58dc358232bfd67c872fba77d483d4"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-07-springboot-initializer.diagram.json",
+        "sha256": "6e4f9ea86db8382ed12ec0a8398a1e2b18b0118563481a0b41e4d921e01c68b5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-07-springboot-initializer.svg",
+        "sha256": "7935a0107bc01d0a8b9ed69de17b51015b8597d2b01be074421912aebe6fe20b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2023-09-07-springboot-initializer",
+      "language": "ja",
+      "translationKey": "2023-09-07-springboot-initializer",
+      "source": {
+        "path": "src/content/posts/en/2023-09-07-springboot-initializer.md",
+        "sha256": "97a876012a6c3d2dbf40856ed6360dc850f12741aecbd5ee7bd96023fb05275f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-07-springboot-initializer.md",
+        "sha256": "1949e36c36428aad5407162ae219432807b7bc94e36168a06ac8c33c4a4b04d5"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-07-springboot-initializer.diagram.json",
+        "sha256": "05511f93f68ba4b319995eec6c8c1ccab55293c79ddfc14de35ddd11a17b2749"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-07-springboot-initializer.svg",
+        "sha256": "4cfa1dd9c9b09d012876995a484d8b560cf92c79dbe4a76916c0a8d3e0397399"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2023-09-07-springboot-initializer",
+      "language": "de",
+      "translationKey": "2023-09-07-springboot-initializer",
+      "source": {
+        "path": "src/content/posts/en/2023-09-07-springboot-initializer.md",
+        "sha256": "97a876012a6c3d2dbf40856ed6360dc850f12741aecbd5ee7bd96023fb05275f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-07-springboot-initializer.md",
+        "sha256": "75b3038b674616f66ec885618e6c7afad353769a7740613fe70fad5393bbb812"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-07-springboot-initializer.diagram.json",
+        "sha256": "52d157940f9ee7c20d9f1bcc90a1d9d7a44165b2ce169c9073d95e85caccf8fc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-07-springboot-initializer.svg",
+        "sha256": "41cd79669436a98c734859be3186bdfdefd996e04b321d642d659319a13267dc"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2023-09-07-springboot-initializer",
+      "language": "fr",
+      "translationKey": "2023-09-07-springboot-initializer",
+      "source": {
+        "path": "src/content/posts/en/2023-09-07-springboot-initializer.md",
+        "sha256": "97a876012a6c3d2dbf40856ed6360dc850f12741aecbd5ee7bd96023fb05275f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-07-springboot-initializer.md",
+        "sha256": "09ce716460be98ba4f85d28e1e292539476814c41d097b53baa55f8c7bfa08c9"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-07-springboot-initializer.diagram.json",
+        "sha256": "5803b9fc60cf3ea36610ac16a9f3bab272ac11b92d6f12fbe92a6912e7fd66a5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-07-springboot-initializer.svg",
+        "sha256": "ab3805fd48825d9438bcd03281ca8ae695ea3bb1e19ab1f50e8087e9121d6eae"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2023-09-07-springboot-initializer",
+      "language": "ru",
+      "translationKey": "2023-09-07-springboot-initializer",
+      "source": {
+        "path": "src/content/posts/en/2023-09-07-springboot-initializer.md",
+        "sha256": "97a876012a6c3d2dbf40856ed6360dc850f12741aecbd5ee7bd96023fb05275f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-07-springboot-initializer.md",
+        "sha256": "9217d7fb797eab36d25b574de62b4eb7cee467b58958075fff5e39ad3bfb447f"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-07-springboot-initializer.diagram.json",
+        "sha256": "2d0aacc0c307838c172744459fb4c0ec15d4cef0ca4c9051ed3622e792f3fa8c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-07-springboot-initializer.svg",
+        "sha256": "d21fea632e470434a909187fc3bfcc174309dbf6ef0c1b7a9a13ac6f78d5d721"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2023-09-07-springboot-initializer",
+      "language": "es",
+      "translationKey": "2023-09-07-springboot-initializer",
+      "source": {
+        "path": "src/content/posts/en/2023-09-07-springboot-initializer.md",
+        "sha256": "97a876012a6c3d2dbf40856ed6360dc850f12741aecbd5ee7bd96023fb05275f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-07-springboot-initializer.md",
+        "sha256": "c694cdc13b2030ef27f4450b53cc3f375f82e7728844533d10844feee4eb5fcf"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-07-springboot-initializer.diagram.json",
+        "sha256": "137cda7a365fcabeec98d2350889c9a4aee73bcd5230495ef04cde1a3f0f68a9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-07-springboot-initializer.svg",
+        "sha256": "2e1f5fcbb9d0d90c216ec6138b9442bf0d28829f22c3680128aab9b188cfedf8"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-08-springboot3-migration",
+      "language": "zh-CN",
+      "translationKey": "2023-09-08-springboot3-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-09-08-springboot3-migration.md",
+        "sha256": "4939fec22f416da9344b529b0e428c91a700920a27c10fdba00bdfd32e8a53a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-08-springboot3-migration.md",
+        "sha256": "303ede0f7b2375c8b4dca43138a6781bf402f1b9c571ac1adc00c9abb3c216d8"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-08-springboot3-migration.diagram.json",
+        "sha256": "dbce6a53242935ec2a65a145023f4874c5e98c00a9ad097f8568ff13aee7aa14"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-08-springboot3-migration.svg",
+        "sha256": "7dd40ce4d7621f56a014d004bfa9ae0730692e1f8c8227261b7e9b216adc39db"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2023-09-08-springboot3-migration",
+      "language": "ja",
+      "translationKey": "2023-09-08-springboot3-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-09-08-springboot3-migration.md",
+        "sha256": "4939fec22f416da9344b529b0e428c91a700920a27c10fdba00bdfd32e8a53a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-08-springboot3-migration.md",
+        "sha256": "3f03a1653c7d388c8b9f3c3305ccc2068c8bf31aeef77e9b6ed16f408113cf91"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-08-springboot3-migration.diagram.json",
+        "sha256": "5bf41cfe1a361afd88827ad7f9781afbf0db0751d85e33004763a6ccea655611"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-08-springboot3-migration.svg",
+        "sha256": "5b297cccd79835fb309a2e9364f925ec9642576f53341ef3d85dfae88dd89ba7"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2023-09-08-springboot3-migration",
+      "language": "de",
+      "translationKey": "2023-09-08-springboot3-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-09-08-springboot3-migration.md",
+        "sha256": "4939fec22f416da9344b529b0e428c91a700920a27c10fdba00bdfd32e8a53a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-08-springboot3-migration.md",
+        "sha256": "66176526db73c5a492900e264a8faa3da56e13725be4cdb27b967b8249ca918e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-08-springboot3-migration.diagram.json",
+        "sha256": "bd6ea8ffb6f2934eeb733653134dc53d0713e24ae1585dacd0cb49c4a1f20a59"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-08-springboot3-migration.svg",
+        "sha256": "394fcbf940c8a34687715d3a4a97dbd7c06d0966afee1f324f387a778d9bec16"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2023-09-08-springboot3-migration",
+      "language": "fr",
+      "translationKey": "2023-09-08-springboot3-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-09-08-springboot3-migration.md",
+        "sha256": "4939fec22f416da9344b529b0e428c91a700920a27c10fdba00bdfd32e8a53a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-08-springboot3-migration.md",
+        "sha256": "a5be186dbf58bda33329ca07aebae4bc8bb83f7bcd87821c5fc7086343b5cbdc"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-08-springboot3-migration.diagram.json",
+        "sha256": "780e67658f08e8d72e8b51ce824af9bd7300dad810a1565888a241bc6ef93573"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-08-springboot3-migration.svg",
+        "sha256": "1e12a80381efe311aab8c36e2e14509287e46b50932febf148d61d89a16a974d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2023-09-08-springboot3-migration",
+      "language": "ru",
+      "translationKey": "2023-09-08-springboot3-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-09-08-springboot3-migration.md",
+        "sha256": "4939fec22f416da9344b529b0e428c91a700920a27c10fdba00bdfd32e8a53a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-08-springboot3-migration.md",
+        "sha256": "6e3ef9d78edc84ec301911208b5d218a7fc73139c54fde9590b0ebdbe36793b9"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-08-springboot3-migration.diagram.json",
+        "sha256": "43cc000328638cb3c7400e6242f46eec70fe53126654b25435876ae5e2f4cc86"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-08-springboot3-migration.svg",
+        "sha256": "c235c5a25f6c55f8c393a3dcf0fcfdc0b02478834ffb2126a0edf506b42a2a35"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2023-09-08-springboot3-migration",
+      "language": "es",
+      "translationKey": "2023-09-08-springboot3-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-09-08-springboot3-migration.md",
+        "sha256": "4939fec22f416da9344b529b0e428c91a700920a27c10fdba00bdfd32e8a53a7"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-08-springboot3-migration.md",
+        "sha256": "41b4933bf4c3d14783b0f477dd3261cae58e8a81fc2b3973fc7c46e5f424ec04"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-08-springboot3-migration.diagram.json",
+        "sha256": "4a8f298b9c3f9b7653c0f160ab8b9af71fe8304e268a363d2303a4cf4b3ca819"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-08-springboot3-migration.svg",
+        "sha256": "90d609b393322b073bfc7b8f0e4514fac9679967da0703995fc1e8fbab34eb61"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-09-springboot3-querydsl",
+      "language": "zh-CN",
+      "translationKey": "2023-09-09-springboot3-querydsl",
+      "source": {
+        "path": "src/content/posts/en/2023-09-09-springboot3-querydsl.md",
+        "sha256": "17f0353d5a048f80291207543b7abbb29e1d987ab0435009b82a4e1c16a7d953"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-09-springboot3-querydsl.md",
+        "sha256": "8e22d456d887cbe38c99d10ec298903dacdd7eaecd1f4aadc278b08d6f157339"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-09-springboot3-querydsl.diagram.json",
+        "sha256": "c0e8c6ccb4d9438be1178f9d2d1b884a006909141fa35618c0d6517e1cb64d66"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-09-springboot3-querydsl.svg",
+        "sha256": "4c165234aeff555b2d69cb0ca4319d31cf45c1ac987f4820beb2eb159c4af962"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2023-09-09-springboot3-querydsl",
+      "language": "ja",
+      "translationKey": "2023-09-09-springboot3-querydsl",
+      "source": {
+        "path": "src/content/posts/en/2023-09-09-springboot3-querydsl.md",
+        "sha256": "17f0353d5a048f80291207543b7abbb29e1d987ab0435009b82a4e1c16a7d953"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-09-springboot3-querydsl.md",
+        "sha256": "7bc73038e32fd8a9b7c649dbbffe1bb49b465c60e6d4186feabd58e298fe48ca"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-09-springboot3-querydsl.diagram.json",
+        "sha256": "7f5687067366e858ec2d621fdf5f5a68055d8868cc897328cea6f24661767d83"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-09-springboot3-querydsl.svg",
+        "sha256": "ccccbc3d790baccc2b2f6fb023e78b961261a775db7e011283c2510e7d4ad6a1"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2023-09-09-springboot3-querydsl",
+      "language": "de",
+      "translationKey": "2023-09-09-springboot3-querydsl",
+      "source": {
+        "path": "src/content/posts/en/2023-09-09-springboot3-querydsl.md",
+        "sha256": "17f0353d5a048f80291207543b7abbb29e1d987ab0435009b82a4e1c16a7d953"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-09-springboot3-querydsl.md",
+        "sha256": "9ca879b988d4b75e463c71d47a788b7235b6cbe89cf942c42d0446ac9d20b447"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-09-springboot3-querydsl.diagram.json",
+        "sha256": "e80fed69cf72e864ded212eb2fa47faf864b428b145e2bab4efd70c7db5754d8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-09-springboot3-querydsl.svg",
+        "sha256": "56aee3b13259bcfd085f6665a1194627e2dd7b85d24832fbd9e88fce2a1f3504"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2023-09-09-springboot3-querydsl",
+      "language": "fr",
+      "translationKey": "2023-09-09-springboot3-querydsl",
+      "source": {
+        "path": "src/content/posts/en/2023-09-09-springboot3-querydsl.md",
+        "sha256": "17f0353d5a048f80291207543b7abbb29e1d987ab0435009b82a4e1c16a7d953"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-09-springboot3-querydsl.md",
+        "sha256": "8081832d6ca2b892ac44d877788bdb36384acf64e9db59120460fa2b3d6d8012"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-09-springboot3-querydsl.diagram.json",
+        "sha256": "724cc3fafd271f34c630a9b5ff755f9d0577da84251cfac5bbd3aab0c06109cf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-09-springboot3-querydsl.svg",
+        "sha256": "46577a1bf6f2dbc081e752bd5209b6fcfc7e2667d6356465d723bab11958c097"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2023-09-09-springboot3-querydsl",
+      "language": "ru",
+      "translationKey": "2023-09-09-springboot3-querydsl",
+      "source": {
+        "path": "src/content/posts/en/2023-09-09-springboot3-querydsl.md",
+        "sha256": "17f0353d5a048f80291207543b7abbb29e1d987ab0435009b82a4e1c16a7d953"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-09-springboot3-querydsl.md",
+        "sha256": "ab30c62eeaefd138a082150e95a40e5c020b4c4d3e25f90dcfa47894611c4227"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-09-springboot3-querydsl.diagram.json",
+        "sha256": "5e6585e8480cd5f14542c81ea87777d387ba072fe84c987ad90a96b2a9ac7b5f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-09-springboot3-querydsl.svg",
+        "sha256": "535dd357e6771fb2215fff723caa1ea2129326254a1fb801bc774c99b8ab87ee"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2023-09-09-springboot3-querydsl",
+      "language": "es",
+      "translationKey": "2023-09-09-springboot3-querydsl",
+      "source": {
+        "path": "src/content/posts/en/2023-09-09-springboot3-querydsl.md",
+        "sha256": "17f0353d5a048f80291207543b7abbb29e1d987ab0435009b82a4e1c16a7d953"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-09-springboot3-querydsl.md",
+        "sha256": "b98fdaa47600e25ba3b757304fe59801a9009537a9299ec00b09ef8b61640c12"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-09-springboot3-querydsl.diagram.json",
+        "sha256": "21b0993d19c5c4925a5587d0d726f77b06f41dcf58f4dbf76eacc75f717564ef"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-09-springboot3-querydsl.svg",
+        "sha256": "107d8a7c563fc360dd06433be2e1c050bc4c811cf57b01e5a4739d865dcfe291"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-10-springboot-intellij-import",
+      "language": "zh-CN",
+      "translationKey": "2023-09-10-springboot-intellij-import",
+      "source": {
+        "path": "src/content/posts/en/2023-09-10-springboot-intellij-import.md",
+        "sha256": "5b3c970364e92d3672967197986ea67769f45094ca27f6c9f8bfbd0779645bc2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-10-springboot-intellij-import.md",
+        "sha256": "4f8d35e0721252ac70459ee7a29ed097a48b0fb7c58e276980538c6193224034"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-10-springboot-intellij-import.diagram.json",
+        "sha256": "4d6d8ab87104ecbb76c8b80e9d71b015dbb6c5f6a75f8d0b1e429d949f1fe0ba"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-10-springboot-intellij-import.svg",
+        "sha256": "01a012de46b55e53da046a3a8d9bff0fa85dba40d93ea5c885e2e07929c74fe4"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2023-09-10-springboot-intellij-import",
+      "language": "ja",
+      "translationKey": "2023-09-10-springboot-intellij-import",
+      "source": {
+        "path": "src/content/posts/en/2023-09-10-springboot-intellij-import.md",
+        "sha256": "5b3c970364e92d3672967197986ea67769f45094ca27f6c9f8bfbd0779645bc2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-10-springboot-intellij-import.md",
+        "sha256": "cb38bb606ec4e270e2b4fb15f3357aae0eb1fe42879cba8eabb71718973712ad"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-10-springboot-intellij-import.diagram.json",
+        "sha256": "5d525da49cda900978b033499181d0b83775ef90c79df9ac230a6e29a0b4663c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-10-springboot-intellij-import.svg",
+        "sha256": "406b3338f2f1788b0fd2e282a99554993090cb986e6a3b0a163e10b6348373fc"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2023-09-10-springboot-intellij-import",
+      "language": "de",
+      "translationKey": "2023-09-10-springboot-intellij-import",
+      "source": {
+        "path": "src/content/posts/en/2023-09-10-springboot-intellij-import.md",
+        "sha256": "5b3c970364e92d3672967197986ea67769f45094ca27f6c9f8bfbd0779645bc2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-10-springboot-intellij-import.md",
+        "sha256": "e7a48bd942d6b4c4c74c00c141cc0bf1a515f2df8fd98ea7c287fab01c0d3ee4"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-10-springboot-intellij-import.diagram.json",
+        "sha256": "e72bfddabb6d2c173c852e9d241e919a57cc7f296f7b1dc3d0532f22324674ff"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-10-springboot-intellij-import.svg",
+        "sha256": "0e53191edbd7f269d0f744e58defeabea23ecdd00896e4e3ff469a87d478addb"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2023-09-10-springboot-intellij-import",
+      "language": "fr",
+      "translationKey": "2023-09-10-springboot-intellij-import",
+      "source": {
+        "path": "src/content/posts/en/2023-09-10-springboot-intellij-import.md",
+        "sha256": "5b3c970364e92d3672967197986ea67769f45094ca27f6c9f8bfbd0779645bc2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-10-springboot-intellij-import.md",
+        "sha256": "3dc917236302622f65ea4313c2746e92f8b695b3358147409420792043325ca1"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-10-springboot-intellij-import.diagram.json",
+        "sha256": "e017fc5de787e9e9f0261923b037d3de14012d4ba6b81150c9b51f2c7c4a5ee3"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-10-springboot-intellij-import.svg",
+        "sha256": "f66cfcd97a4ffec943eb849ab3fb12c961776ace7199fd76ccf0e35ab1aaea69"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2023-09-10-springboot-intellij-import",
+      "language": "ru",
+      "translationKey": "2023-09-10-springboot-intellij-import",
+      "source": {
+        "path": "src/content/posts/en/2023-09-10-springboot-intellij-import.md",
+        "sha256": "5b3c970364e92d3672967197986ea67769f45094ca27f6c9f8bfbd0779645bc2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-10-springboot-intellij-import.md",
+        "sha256": "c2b11dda1b540e6be2a63c0024f3755f1c275a24d7dd3cf67d78af554daf227b"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-10-springboot-intellij-import.diagram.json",
+        "sha256": "96f443a48dc6f08714b542f0e5c809e35b4077014e8f3b169b8fa2d1917d63ff"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-10-springboot-intellij-import.svg",
+        "sha256": "e761e8c71ba78287ed3b6df6e86a18b08b31969b0aabdd2c4519ce05fd78ca93"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2023-09-10-springboot-intellij-import",
+      "language": "es",
+      "translationKey": "2023-09-10-springboot-intellij-import",
+      "source": {
+        "path": "src/content/posts/en/2023-09-10-springboot-intellij-import.md",
+        "sha256": "5b3c970364e92d3672967197986ea67769f45094ca27f6c9f8bfbd0779645bc2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-10-springboot-intellij-import.md",
+        "sha256": "15a87fdcf9abbad2dfa84a2119ab72a77383116150bf62ccb3ede16ce75bafac"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-10-springboot-intellij-import.diagram.json",
+        "sha256": "031b3b1e4c3398d4344f2c5120bcd6fcc432533a849ee70f31601b59356303d2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-10-springboot-intellij-import.svg",
+        "sha256": "db4da6c69924f6b88abb36be04410ee98f3b1df472038407f68f40d6ab075d13"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-13-springboot-history",
+      "language": "zh-CN",
+      "translationKey": "2023-09-13-springboot-history",
+      "source": {
+        "path": "src/content/posts/en/2023-09-13-springboot-history.md",
+        "sha256": "8f97cfe96eb4ed1a36dae63a187c6f28960c327ff6cba276c45537a1e7745da2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-13-springboot-history.md",
+        "sha256": "ec52615443a2849a1ae11b8937814b498acf83d6b16a737790c7f764f0e70887"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-13-springboot-history.diagram.json",
+        "sha256": "202dd3920eb9d8467feb60a1ad74bfa6f2fdd5cee2903a3f0237684789f48b8b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-13-springboot-history.svg",
+        "sha256": "f13b1dacf7ed147c08261d8efb1d3fd050cef29abaa425310d76a4b335a2607d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2023-09-13-springboot-history",
+      "language": "ja",
+      "translationKey": "2023-09-13-springboot-history",
+      "source": {
+        "path": "src/content/posts/en/2023-09-13-springboot-history.md",
+        "sha256": "8f97cfe96eb4ed1a36dae63a187c6f28960c327ff6cba276c45537a1e7745da2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-13-springboot-history.md",
+        "sha256": "95f0f87e56134e312322b0c843b6636b810580ffeaf2246d66fd339e09695aca"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-13-springboot-history.diagram.json",
+        "sha256": "7d35e3ef93328c11dbf82c24ede3b3f65c791544af5180495b5cf3ccdaedd2fc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-13-springboot-history.svg",
+        "sha256": "7523472f9ec4cbf7737905f04a4b39f1566c64ca22ddabea2d5a7d547d6cfa3e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2023-09-13-springboot-history",
+      "language": "de",
+      "translationKey": "2023-09-13-springboot-history",
+      "source": {
+        "path": "src/content/posts/en/2023-09-13-springboot-history.md",
+        "sha256": "8f97cfe96eb4ed1a36dae63a187c6f28960c327ff6cba276c45537a1e7745da2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-13-springboot-history.md",
+        "sha256": "b18d65addb6d912402dab4af86f61410942a3c8325ce944fba4c55801126f07f"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-13-springboot-history.diagram.json",
+        "sha256": "34c399f6159b8dfc673196c55ff466c534f0d6232bd84ded4dcbfc7371a46203"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-13-springboot-history.svg",
+        "sha256": "2475edb2f482a772ca7f4662757a53a304180e0ffcae5911ef8ffb0fcae25dbe"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2023-09-13-springboot-history",
+      "language": "fr",
+      "translationKey": "2023-09-13-springboot-history",
+      "source": {
+        "path": "src/content/posts/en/2023-09-13-springboot-history.md",
+        "sha256": "8f97cfe96eb4ed1a36dae63a187c6f28960c327ff6cba276c45537a1e7745da2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-13-springboot-history.md",
+        "sha256": "568ca1ceaf875432a858bf27fb384c0198b0dfe15313e03cd48019541f72ea3e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-13-springboot-history.diagram.json",
+        "sha256": "1e4f5facc2d5ce87f0ec26c7fdab3cc11054d8c1e927f4007cca182006fcd252"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-13-springboot-history.svg",
+        "sha256": "2b4b55cf9d47ae46ef9d99bcfadaa9b89c1638397e966b5b65929194c543ead1"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2023-09-13-springboot-history",
+      "language": "ru",
+      "translationKey": "2023-09-13-springboot-history",
+      "source": {
+        "path": "src/content/posts/en/2023-09-13-springboot-history.md",
+        "sha256": "8f97cfe96eb4ed1a36dae63a187c6f28960c327ff6cba276c45537a1e7745da2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-13-springboot-history.md",
+        "sha256": "8aaa38df75048da4047c325c2b048cd58027d047d3213d9f014cd74d824c742d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-13-springboot-history.diagram.json",
+        "sha256": "ac939e21fea8803a0bb1875b8cc5992f593db3a660d75c535567d78701afaddc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-13-springboot-history.svg",
+        "sha256": "f98454e64f9b55698cb857f0499c93fffc107b29498fdb30b106a010900075d0"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2023-09-13-springboot-history",
+      "language": "es",
+      "translationKey": "2023-09-13-springboot-history",
+      "source": {
+        "path": "src/content/posts/en/2023-09-13-springboot-history.md",
+        "sha256": "8f97cfe96eb4ed1a36dae63a187c6f28960c327ff6cba276c45537a1e7745da2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-13-springboot-history.md",
+        "sha256": "c437829791d20e149827f05f98984b273f92682097153bc890efd93588eb84f6"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-13-springboot-history.diagram.json",
+        "sha256": "1ff60f208743f8bea3442f79d015b915638744736e81fa005f3d1373f7c78d0f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-13-springboot-history.svg",
+        "sha256": "8b66525a82601ec636b53afe64cd21c1322af94f187cdfc405a9071e9123133c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-15-springboot-intellij-lombok",
+      "language": "zh-CN",
+      "translationKey": "2023-09-15-springboot-intellij-lombok",
+      "source": {
+        "path": "src/content/posts/en/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "9fe45995bdaea610316410d2b79746c008656c5d20256f9de7d66bc47499dda1"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "b0ba13a31bdc550cf9e6090a6f270682b55b99d9385019a70f9e93f64dd1bc1b"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-15-springboot-intellij-lombok.diagram.json",
+        "sha256": "811ab63328218514f56ac2e2d1d35a243b628d258f591318e52bc59d534777d0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-15-springboot-intellij-lombok.svg",
+        "sha256": "ffa2f05114d59e20136637944dfd572cefab1d40293086cacf676d7c37fa1fac"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2023-09-15-springboot-intellij-lombok",
+      "language": "ja",
+      "translationKey": "2023-09-15-springboot-intellij-lombok",
+      "source": {
+        "path": "src/content/posts/en/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "9fe45995bdaea610316410d2b79746c008656c5d20256f9de7d66bc47499dda1"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "c4f3f5deaf1fe449c881d82789e81877fe0dee785ad164a3c5cbd4bc2d56046e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-15-springboot-intellij-lombok.diagram.json",
+        "sha256": "1b13ae06a1d4e29e8e9a44a25f0757904617458b32d007d7b19eb42e22baa0df"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-15-springboot-intellij-lombok.svg",
+        "sha256": "c3c0e13c1bd42e26fdc7cf1d73525897164a546449a984ce46b8e4f9cafa8126"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2023-09-15-springboot-intellij-lombok",
+      "language": "de",
+      "translationKey": "2023-09-15-springboot-intellij-lombok",
+      "source": {
+        "path": "src/content/posts/en/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "9fe45995bdaea610316410d2b79746c008656c5d20256f9de7d66bc47499dda1"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "3ccf4670f6f554b8bdb8b957b22326ed2905fd0c248c6bc4d609f0f419a4da0a"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-15-springboot-intellij-lombok.diagram.json",
+        "sha256": "61c14615788a1e0b22a1ac230718e18e0ac56e7ee02b2d276859a1570e8dc7c8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-15-springboot-intellij-lombok.svg",
+        "sha256": "af367dcbff80e2fbb078c8849ac93d6f58383696129853f543ac8876b9355f2a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2023-09-15-springboot-intellij-lombok",
+      "language": "fr",
+      "translationKey": "2023-09-15-springboot-intellij-lombok",
+      "source": {
+        "path": "src/content/posts/en/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "9fe45995bdaea610316410d2b79746c008656c5d20256f9de7d66bc47499dda1"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "b8bc2c6136f99aabdb96a3549ac49aa762b22eecf6398517d5710d40b06b3aba"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-15-springboot-intellij-lombok.diagram.json",
+        "sha256": "355b4ee9155be7a7f4a9e39c865294df599ab541bb584adc0218dd5757e08ecb"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-15-springboot-intellij-lombok.svg",
+        "sha256": "288782783992362163806a079d62854e9029d6a07dcf82bf8570e5ab8f7f807a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2023-09-15-springboot-intellij-lombok",
+      "language": "ru",
+      "translationKey": "2023-09-15-springboot-intellij-lombok",
+      "source": {
+        "path": "src/content/posts/en/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "9fe45995bdaea610316410d2b79746c008656c5d20256f9de7d66bc47499dda1"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "9c8efbdd2ece010efd2e69ca3035d00ce65ed298f627f004cfabdf26f81f80f6"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-15-springboot-intellij-lombok.diagram.json",
+        "sha256": "9c58c1ed349a1463126400655a2454e5f81768b5a09170ae03b9b58acd3d3164"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-15-springboot-intellij-lombok.svg",
+        "sha256": "8e3b0ef655f9967d2200416cb923a2fe3385b91277fa3b928540fd6fafc18ac9"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2023-09-15-springboot-intellij-lombok",
+      "language": "es",
+      "translationKey": "2023-09-15-springboot-intellij-lombok",
+      "source": {
+        "path": "src/content/posts/en/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "9fe45995bdaea610316410d2b79746c008656c5d20256f9de7d66bc47499dda1"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-15-springboot-intellij-lombok.md",
+        "sha256": "d82abb5e1ec89d4b96c2bea28280b18eb35ccabe6b04777b10d7213abbbd8a78"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-15-springboot-intellij-lombok.diagram.json",
+        "sha256": "62abd45c5b57125d666ac34b780e41cc4a86a49cca62223daaded96dc2594cc5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-15-springboot-intellij-lombok.svg",
+        "sha256": "652bcfc7da8d17b6f91b205e6a86c5e812cf00d1589c221b60b4a968d7414b8b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-19-springboot-test-webclient",
+      "language": "zh-CN",
+      "translationKey": "2023-09-19-springboot-test-webclient",
+      "source": {
+        "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+        "sha256": "f0a277b8719dc886c37dd8cbeb15f1e68228dce2f44d7fac53a97fee9cb5f885"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-19-springboot-test-webclient.md",
+        "sha256": "c09948aa62718c0acf862705b34e829813ede998128fb5116d8de4e8ea611f79"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-19-springboot-test-webclient.diagram.json",
+        "sha256": "3a2179f633082f608426feb763642f80c79743a400ef5fb93827e5d465eafdf8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-19-springboot-test-webclient.svg",
+        "sha256": "f9359830e323c9fe3cb434822dc86431920eaab9011322fa54b0bc2af96c4329"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2023-09-19-springboot-test-webclient",
+      "language": "ja",
+      "translationKey": "2023-09-19-springboot-test-webclient",
+      "source": {
+        "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+        "sha256": "f0a277b8719dc886c37dd8cbeb15f1e68228dce2f44d7fac53a97fee9cb5f885"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-19-springboot-test-webclient.md",
+        "sha256": "761915fb81fde062f116024ab9bf8f5d1b42f487ba1e286a830e0096ff7b84f3"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-19-springboot-test-webclient.diagram.json",
+        "sha256": "070a0d3a5fe35757f358ceef6d5f8b3b31fd6679eb42bcd01a092d65a45e9e80"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-19-springboot-test-webclient.svg",
+        "sha256": "bc266985b3da4ee06344b128763987c88f829c3876b2ac97692fe7861a4a594a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2023-09-19-springboot-test-webclient",
+      "language": "de",
+      "translationKey": "2023-09-19-springboot-test-webclient",
+      "source": {
+        "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+        "sha256": "f0a277b8719dc886c37dd8cbeb15f1e68228dce2f44d7fac53a97fee9cb5f885"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-19-springboot-test-webclient.md",
+        "sha256": "c65dff6edfdcdbf861112660dedd6ebd6b6c64111c65ac7555cb0e6337195198"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-19-springboot-test-webclient.diagram.json",
+        "sha256": "8f9aaf3752ffdfe29060be1ca004413a1cb8f1b4adcbe4119b76f12573aa51eb"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-19-springboot-test-webclient.svg",
+        "sha256": "506d31e5bd40d69b6e32a46ea9076bcc76ff0527ce6549f7f238e0b116c08fe9"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2023-09-19-springboot-test-webclient",
+      "language": "fr",
+      "translationKey": "2023-09-19-springboot-test-webclient",
+      "source": {
+        "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+        "sha256": "f0a277b8719dc886c37dd8cbeb15f1e68228dce2f44d7fac53a97fee9cb5f885"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-19-springboot-test-webclient.md",
+        "sha256": "77f939d0d9409c5bbc844164444a179c54eb5be1a862e5bd410c7c46700fc842"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-19-springboot-test-webclient.diagram.json",
+        "sha256": "3da915a7a53c219fa7cbf60092818ae44fb4493d099b013f31bb9ba9d324fbad"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-19-springboot-test-webclient.svg",
+        "sha256": "0f93433bbe83f4a070b5053e905d51430643222610b66b793f08b5b859651908"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2023-09-19-springboot-test-webclient",
+      "language": "ru",
+      "translationKey": "2023-09-19-springboot-test-webclient",
+      "source": {
+        "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+        "sha256": "f0a277b8719dc886c37dd8cbeb15f1e68228dce2f44d7fac53a97fee9cb5f885"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-19-springboot-test-webclient.md",
+        "sha256": "20022b20e80be03255cb749ce642878c91b02972791873e23483693018fe17d3"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-19-springboot-test-webclient.diagram.json",
+        "sha256": "487b3da5b296695e36b5ea279bdbad9a33ce7d2d9bb98ac454d69ee573c4487c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-19-springboot-test-webclient.svg",
+        "sha256": "68e6ffed609db11b25fda2a4879410590e7ca6b938cfd62cdce594e7e607ee8d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2023-09-19-springboot-test-webclient",
+      "language": "es",
+      "translationKey": "2023-09-19-springboot-test-webclient",
+      "source": {
+        "path": "src/content/posts/en/2023-09-19-springboot-test-webclient.md",
+        "sha256": "f0a277b8719dc886c37dd8cbeb15f1e68228dce2f44d7fac53a97fee9cb5f885"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-19-springboot-test-webclient.md",
+        "sha256": "83a654cfd0c5de0dd28b0701663a66aa83b360abc6a445264683f1da09bd8046"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-19-springboot-test-webclient.diagram.json",
+        "sha256": "74801b7693432bcda71d90a56e7600a38912012c01c2f4ab85e136a91c7f67d1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-19-springboot-test-webclient.svg",
+        "sha256": "5a3502a246e87ae020d45143659471b80c8d8b0717d6b6fb369caa3b20944878"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2023-09-28-jenkins-docker-install",
+      "language": "zh-CN",
+      "translationKey": "2023-09-28-jenkins-docker-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+        "sha256": "ed131abbe5537f6f1828891ac35483b44e96395c554a52b53f5c1ab6c4ff895e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-28-jenkins-docker-install.md",
+        "sha256": "e9a838de7f1f1414bb3fa8c6ee651b5d1b26b483c59ada2622791279d67e7e0e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-28-jenkins-docker-install.diagram.json",
+        "sha256": "e9035a658093fd3f6a1cf130edd4fb0b7bf751e5edc4a9056572bcda3509eaad"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-09-28-jenkins-docker-install.svg",
+        "sha256": "d4837cf5a78c4eb8214863acb884fb55808c708510aa042996e0c80198c59218"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "ja-2023-09-28-jenkins-docker-install",
+      "language": "ja",
+      "translationKey": "2023-09-28-jenkins-docker-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+        "sha256": "ed131abbe5537f6f1828891ac35483b44e96395c554a52b53f5c1ab6c4ff895e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-28-jenkins-docker-install.md",
+        "sha256": "7927722419d5a545b80330ef1bec576b934b3f8af6d3787bbe36ec304e4b6d0e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-28-jenkins-docker-install.diagram.json",
+        "sha256": "eed2b3a810ae614f8c5cad80243e532f3828b5a6f63a42203a1384099241fc51"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-09-28-jenkins-docker-install.svg",
+        "sha256": "021cc31d2938a9bec443c78768e94c59f3ae4a78db4333dc878adcbec763668d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "de-2023-09-28-jenkins-docker-install",
+      "language": "de",
+      "translationKey": "2023-09-28-jenkins-docker-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+        "sha256": "ed131abbe5537f6f1828891ac35483b44e96395c554a52b53f5c1ab6c4ff895e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-28-jenkins-docker-install.md",
+        "sha256": "1b742d07e7a4a38e9c20d1a3dae3b075c807c479af133129659ab4f146e7a600"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-28-jenkins-docker-install.diagram.json",
+        "sha256": "997aa0f48aa6a0df270836661dc3ca0332decfbde76ac74496c5f739c1bc4e30"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-09-28-jenkins-docker-install.svg",
+        "sha256": "16657c61366261386efccf7f649734cc1793e112f221e7ef4e1c83a4f434f64e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "fr-2023-09-28-jenkins-docker-install",
+      "language": "fr",
+      "translationKey": "2023-09-28-jenkins-docker-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+        "sha256": "ed131abbe5537f6f1828891ac35483b44e96395c554a52b53f5c1ab6c4ff895e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-28-jenkins-docker-install.md",
+        "sha256": "baaaf17473733e22adc4b19895212ddae10fa98b17fd1c7c4591715daea55a18"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-28-jenkins-docker-install.diagram.json",
+        "sha256": "683c1556172234eec3d4c9d353e3b2f310c221152892bcb42ca929559c37b609"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-09-28-jenkins-docker-install.svg",
+        "sha256": "9955ab5f78819e38ef4ee416167f559a0356a05ebb0ecfda31001e70c57a1249"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "ru-2023-09-28-jenkins-docker-install",
+      "language": "ru",
+      "translationKey": "2023-09-28-jenkins-docker-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+        "sha256": "ed131abbe5537f6f1828891ac35483b44e96395c554a52b53f5c1ab6c4ff895e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-28-jenkins-docker-install.md",
+        "sha256": "958301d5dc25cc9763b8cd1bb1906e6dbc11e368ed5749bc8ec47012babd85c9"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-28-jenkins-docker-install.diagram.json",
+        "sha256": "6edb9925048e652cd0a8b2f762f5c201624fe58dee13f3b83a9067641094e2fa"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-09-28-jenkins-docker-install.svg",
+        "sha256": "88c5fe46779874e2cf4250dadffebf6b5e44b03e73adb8590735dc79c833b333"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "es-2023-09-28-jenkins-docker-install",
+      "language": "es",
+      "translationKey": "2023-09-28-jenkins-docker-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+        "sha256": "ed131abbe5537f6f1828891ac35483b44e96395c554a52b53f5c1ab6c4ff895e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-28-jenkins-docker-install.md",
+        "sha256": "42f14c9f305797c8220e797bd60c49d90c6dc9f7e40b9d3b0eb5603ce171d45c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-28-jenkins-docker-install.diagram.json",
+        "sha256": "6acb95880ec3660e1728e9bc59734c3033db95afe562767948c4b78075b7db58"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-09-28-jenkins-docker-install.svg",
+        "sha256": "bce3e42af4085f39e2a0ae73d0db9b54c28871c620f9be49ffa4efa834122ac5"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "zh-CN-2023-10-27-springbatch5-migration",
+      "language": "zh-CN",
+      "translationKey": "2023-10-27-springbatch5-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+        "sha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-10-27-springbatch5-migration.md",
+        "sha256": "1f454dca3c992fe911b5146e9e682a3449bd29e7e8c27f98f4c497c4df548927"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-10-27-springbatch5-migration.diagram.json",
+        "sha256": "5189962d0c9ff05a87b3c61f7e2c67632c751a3352225369871d6655a5aabeff"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2023-10-27-springbatch5-migration.svg",
+        "sha256": "f4f80cba0c85f0409ab0d731f3023c11a2c44051d60479b538fc8316cd87d748"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ja-2023-10-27-springbatch5-migration",
+      "language": "ja",
+      "translationKey": "2023-10-27-springbatch5-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+        "sha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-10-27-springbatch5-migration.md",
+        "sha256": "d571b028238562b7c32a30c45d762374c30b1baa1bfa835a9cc78e034490f2da"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-10-27-springbatch5-migration.diagram.json",
+        "sha256": "7eef8dc4557247694de322112dcfdb0dd966f8b586dc00e78996faf38998a078"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2023-10-27-springbatch5-migration.svg",
+        "sha256": "9ef7a1542a0ca656a0b0c2f73d00101227eb6f5f0dbe24a9d9e010466566880f"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "de-2023-10-27-springbatch5-migration",
+      "language": "de",
+      "translationKey": "2023-10-27-springbatch5-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+        "sha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-10-27-springbatch5-migration.md",
+        "sha256": "d2311634479800870d92bd31e48f70c11687d8dd0386fd219a74280063c686c5"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-10-27-springbatch5-migration.diagram.json",
+        "sha256": "2e58c60980b09cb36107497833602fcc8ab6b8000f734621f1a977f5a80aaff3"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2023-10-27-springbatch5-migration.svg",
+        "sha256": "3d2ab28781f2171b5e0a5856dd9f7c5dd3014cad196635c2ef779144bdd45872"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "fr-2023-10-27-springbatch5-migration",
+      "language": "fr",
+      "translationKey": "2023-10-27-springbatch5-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+        "sha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-10-27-springbatch5-migration.md",
+        "sha256": "aa764e8cf37953b8c0ce875d84358245d0249c91a7916bd19383ea9285108ada"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-10-27-springbatch5-migration.diagram.json",
+        "sha256": "457b8ea2c5a02936b54e3eba107939b7b5a09d6e2004eb8854e82bfe46698aea"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2023-10-27-springbatch5-migration.svg",
+        "sha256": "0ab8d92101ab60937c8943645af35ac58184b4edd389cb847443848fcbd4f97c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "ru-2023-10-27-springbatch5-migration",
+      "language": "ru",
+      "translationKey": "2023-10-27-springbatch5-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+        "sha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-10-27-springbatch5-migration.md",
+        "sha256": "48142deb783cd2721be3246c5be3cca7ebf5cdddd2d1b155f160eeeae6851317"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-10-27-springbatch5-migration.diagram.json",
+        "sha256": "78900602b0a971847c5d62172c98e177b0c86a06b8a2ae5c854205cc3bb75f95"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2023-10-27-springbatch5-migration.svg",
+        "sha256": "eb057bcc9d929da3829eb3eaed066b5f96c3b977f5d9dfd3bf7d43ec129e28d8"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "es-2023-10-27-springbatch5-migration",
+      "language": "es",
+      "translationKey": "2023-10-27-springbatch5-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+        "sha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-10-27-springbatch5-migration.md",
+        "sha256": "b1e649972737a608910d76ed43e21932dcee746dc2c040090df64a7ec02577a0"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-10-27-springbatch5-migration.diagram.json",
+        "sha256": "54c8162413933caa980e1a5be579cbef5c018379f9379fa60376a3a04a46be31"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2023-10-27-springbatch5-migration.svg",
+        "sha256": "def87648c702dcec4abdc2450679adc5db74b6ae00bdc409cdbd26f5a56108c3"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-04-07-jekyll-github-actions-content-pipeline",
+      "language": "zh-CN",
+      "translationKey": "2026-04-07-jekyll-github-actions-content-pipeline",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "12226531a63ffece862798351d0562f1f29cc2b14f9731dad4dd5fece0e77637"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "1858d5961f8edd0bbbcdafe81b2d15749175895cfdd46971923c1d2467798e99"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-github-actions-content-pipeline.diagram.json",
+        "sha256": "a47537b97ef768272c20ef0b3ba8d78049cf6507df051ebb725944a95aa9b448"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-github-actions-content-pipeline.svg",
+        "sha256": "8b337b51f91a102326973a7084b985e4826cecad64d84f2841f2fefcb0114c0a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "ja-2026-04-07-jekyll-github-actions-content-pipeline",
+      "language": "ja",
+      "translationKey": "2026-04-07-jekyll-github-actions-content-pipeline",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "12226531a63ffece862798351d0562f1f29cc2b14f9731dad4dd5fece0e77637"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "cb52e9c8a07d2058002c1f1b8795ebacead290f38026f1c4e24b38c6c7f814fe"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-github-actions-content-pipeline.diagram.json",
+        "sha256": "dda963e2be6fbc88e04fa3276a4147b0a1269a3d3d542e76d78bc54ea9fed647"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-github-actions-content-pipeline.svg",
+        "sha256": "1526cf4cec49b4563881b392da8f82eac720909db0a8989afe3395c02c208583"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "de-2026-04-07-jekyll-github-actions-content-pipeline",
+      "language": "de",
+      "translationKey": "2026-04-07-jekyll-github-actions-content-pipeline",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "12226531a63ffece862798351d0562f1f29cc2b14f9731dad4dd5fece0e77637"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "696d2e8b608a5dca46f809aaf8e9d6f4b3b712f03d287ef90896fe422a6355f3"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-04-07-jekyll-github-actions-content-pipeline.diagram.json",
+        "sha256": "815716b32766ef159aafcd1e063a8b9b7937ba699fb3bd7d42dd8bd7d636c3c0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-04-07-jekyll-github-actions-content-pipeline.svg",
+        "sha256": "c197446bafbc0e4c551e2a2b6873a7a9cd2bbbb042da45327ba09322c043a7d5"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "fr-2026-04-07-jekyll-github-actions-content-pipeline",
+      "language": "fr",
+      "translationKey": "2026-04-07-jekyll-github-actions-content-pipeline",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "12226531a63ffece862798351d0562f1f29cc2b14f9731dad4dd5fece0e77637"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "95a12dcbb13e99e9a11421ccbb31b36ce220cc240f5032b9199859196e3c5418"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-04-07-jekyll-github-actions-content-pipeline.diagram.json",
+        "sha256": "0352962e79c38a571265a2a4a00eb780f960ed98569f8cc1d0189cd34e79da34"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-04-07-jekyll-github-actions-content-pipeline.svg",
+        "sha256": "25e654330adbb7b1a85478ed5a8395a55aebbccf340819f01a2c4db9ab4a63af"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "ru-2026-04-07-jekyll-github-actions-content-pipeline",
+      "language": "ru",
+      "translationKey": "2026-04-07-jekyll-github-actions-content-pipeline",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "12226531a63ffece862798351d0562f1f29cc2b14f9731dad4dd5fece0e77637"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "dd836fad047fead6dc3fb16f205f38b50edd68a2a9d3f36d4ef202047b2dff80"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-github-actions-content-pipeline.diagram.json",
+        "sha256": "8ffb260d350f938d6640385af61405236e7ecaf7026361225955000886fa8c90"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-github-actions-content-pipeline.svg",
+        "sha256": "3cdccc5279f9a2178ba7c98f22d7947f6990f222a81d09a7d6566f17f68a66dc"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "es-2026-04-07-jekyll-github-actions-content-pipeline",
+      "language": "es",
+      "translationKey": "2026-04-07-jekyll-github-actions-content-pipeline",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "12226531a63ffece862798351d0562f1f29cc2b14f9731dad4dd5fece0e77637"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "cdd1e3f82e8082af00930f0926799b7c1b777af22feffd060312adfb682787e1"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-github-actions-content-pipeline.diagram.json",
+        "sha256": "00bfe57b6aceffc3e39ad08d15d9d10d9e13498c692fb43f36411de1564086c1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-github-actions-content-pipeline.svg",
+        "sha256": "18fbcf61d9b96e606497c950350ac99544a21f7e73d66b7b79ed63b1beecb31a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "zh-CN-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "language": "zh-CN",
+      "translationKey": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "f5c09678ab191654be64bc9fd457df828066c7f199625a6b32c5d94a02200363"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "54d727c45d5f6916b14af5ee3248649b22067aa85587a88c33976d664774d799"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.diagram.json",
+        "sha256": "71481748ba7f1df661ea58f526019f79e2a107ef45313a11e1e7fffb52622531"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.svg",
+        "sha256": "f72bfa15be7ca3178aa2b839d33acff89b1936c5e7a7de0e02b1f4fce5be1814"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "ja-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "language": "ja",
+      "translationKey": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "f5c09678ab191654be64bc9fd457df828066c7f199625a6b32c5d94a02200363"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "3278ec8bd6293a8379e19d215a9c501aaca1a1051e1e7f0bb5987046cce7760b"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.diagram.json",
+        "sha256": "7dede84af05e3e0908d690162039962cbb4adf67fd0458ae55ac95e3cb0f5a46"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.svg",
+        "sha256": "3af7d8cedba2b3d688bdc09da65549258ef4625640b3ebfffe79939abd2561c3"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "de-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "language": "de",
+      "translationKey": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "f5c09678ab191654be64bc9fd457df828066c7f199625a6b32c5d94a02200363"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "3bb8d96491ac756684299a40381aed31c2d495e18c714828859d7845a05f1847"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.diagram.json",
+        "sha256": "5e2ff7248a21969c90275df7200a2e203999a98864442e4841fb151983e55111"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.svg",
+        "sha256": "6cea63d7456b4b019503b08d7bdeb9cd7949175db11f352d6a7d606dbb75d6fa"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "fr-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "language": "fr",
+      "translationKey": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "f5c09678ab191654be64bc9fd457df828066c7f199625a6b32c5d94a02200363"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "02ef1819b96938d047581d487b889bb078b6f0cc9c58b537f5be6be0b58ddf4b"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.diagram.json",
+        "sha256": "611f1ce93edac341b1a3fdb1ff36418425288dc2d8849a9a9256efe0c9cae292"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.svg",
+        "sha256": "8e8847f362fb25c9202030cac5151bc0d13870d68ec91080a9990afddffbcf16"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "ru-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "language": "ru",
+      "translationKey": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "f5c09678ab191654be64bc9fd457df828066c7f199625a6b32c5d94a02200363"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "1a8a299c3cd203f37886a116abd881920230728a0e7add4c0f802923fbe6ecb3"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.diagram.json",
+        "sha256": "50b60e92f831be1b9db58d1faf30d134b201ee303be52f8219ab1ea6c711e0af"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.svg",
+        "sha256": "328ae6615e754c934599ce322a1d80f51b0229b3441aad36f0884e0039cef869"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "es-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "language": "es",
+      "translationKey": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "f5c09678ab191654be64bc9fd457df828066c7f199625a6b32c5d94a02200363"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "dfb665d0db7f893f4017d2534c6fd7f88170fccce93e9f76ac60fc940fc344f8"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.diagram.json",
+        "sha256": "6a6203107d89f616bef150b2085545ea29bb8b4cce08879971f8093a2b2cc97e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.svg",
+        "sha256": "5b3fd78017838942191785c29d7ae561f0a96d5645ac05b55b442f1a28006cb5"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "zh-CN-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "language": "zh-CN",
+      "translationKey": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "b186e8b9ffc0b623a12d82e49d3428adc274669397a7a207f235d80673b0759a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "c174a7ca498ec81e6675ae22313bf439e818598d7ff854bb5f7cb416f872e071"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.diagram.json",
+        "sha256": "5f6cf63238338c240cb5509591bc0e093ebc0bc3064016dea5923e2e18980eaf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.svg",
+        "sha256": "08bbd86debbfd6d38d786ca40744a4e72cabf84f285722e7cd52fcbe94db3650"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "ja-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "language": "ja",
+      "translationKey": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "b186e8b9ffc0b623a12d82e49d3428adc274669397a7a207f235d80673b0759a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "e471d4b8427a4b866a47d665bebe3052b3d89277f025710fde5615aed52ae61e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.diagram.json",
+        "sha256": "952abd1744f6dce5de58ef9c2078bceab48900aae37414607bb9903892771329"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.svg",
+        "sha256": "93f5178872024439c1a8731a2616c22eb927a48e37c2bd65aab9cd3f6c86defd"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "de-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "language": "de",
+      "translationKey": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "b186e8b9ffc0b623a12d82e49d3428adc274669397a7a207f235d80673b0759a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "4e97dffc5d36c1c417f3541aaa3895bbd976601b1bd4184ffbbf9fea1424d18e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.diagram.json",
+        "sha256": "c8f3b44ccf81e7ef160433451485dab44c2f77212ed3e3049acbbc1698fca14b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.svg",
+        "sha256": "6a330cf29e3cd99f8a0b8939a8a083f4226904487fc13d6be089379171c1aed2"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "fr-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "language": "fr",
+      "translationKey": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "b186e8b9ffc0b623a12d82e49d3428adc274669397a7a207f235d80673b0759a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "47c88389dcd0875ef140d29cbd0d547316c3f3eddfcb5a49d9eba1b3e8f90bef"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.diagram.json",
+        "sha256": "ccf94a8b15c2bd3ad54340b7e23cc1823acba84328e01f8a11cb368817713ecf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.svg",
+        "sha256": "4b0195dfc4e919fc9020f17bee5f1a72164068e1add9ea459c7a6e557c650164"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "ru-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "language": "ru",
+      "translationKey": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "b186e8b9ffc0b623a12d82e49d3428adc274669397a7a207f235d80673b0759a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "b753390a247ae7b0d948e435bc5522578e38f3ea30e8a559e6a7e6a0579a734c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.diagram.json",
+        "sha256": "8b3b818049529de54829d00850782feda8c88193339db4b52da7e6e80d2b93d0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.svg",
+        "sha256": "dbac2d636e1c4f5c7e93c8b68fc5bbfcea6622e5c11e007f88b1bdea27679740"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "es-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "language": "es",
+      "translationKey": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "b186e8b9ffc0b623a12d82e49d3428adc274669397a7a207f235d80673b0759a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "e618e330395c881c1ecfc5b30ccf42d29291f82c2071ec168cb2c933e4144578"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.diagram.json",
+        "sha256": "c8031aff5eed22ddd2ce92aa210d836200a34caaa6834239b4ae435590724c80"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.svg",
+        "sha256": "81fc3c67843b1ea694cfdf220634705884fa41c0d340c00ced31f8c1279f3680"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-27-jenkins-home-backup-restore",
+      "language": "zh-CN",
+      "translationKey": "2026-10-27-jenkins-home-backup-restore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "f6fcbb37f82b9829ef3535f5fee0b0fdf0b7b0ebe4e8b4f96bb3f2ff104a59b4"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "a154f7726d113aad4061e0bd02f607926a1f808fba7b35f3654fa547a90f4e12"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-27-jenkins-home-backup-restore.diagram.json",
+        "sha256": "7ca4d0a747c7d505fc8e66ec37b78c71d53feaa43a6a0a5e25caa89f5ddffad4"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-27-jenkins-home-backup-restore.svg",
+        "sha256": "026898e3d2eec64c61e599fdfa43971dc8363261a684c402ca1640558a6fe7af"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "ja-2026-10-27-jenkins-home-backup-restore",
+      "language": "ja",
+      "translationKey": "2026-10-27-jenkins-home-backup-restore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "f6fcbb37f82b9829ef3535f5fee0b0fdf0b7b0ebe4e8b4f96bb3f2ff104a59b4"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "3833ffc0155943a14f5830030a28cd9db19eb0a20d770a82c3cf98f1552497dd"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-27-jenkins-home-backup-restore.diagram.json",
+        "sha256": "3448168b2f1001ada58e60bb7bdac6ef3faf790fc5bd91d69182b54897693b91"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-27-jenkins-home-backup-restore.svg",
+        "sha256": "8ecb2ce48b14dd6f1bea8e5695ed1d582b892fc154ff2bd1eb347e1967a00e4b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "de-2026-10-27-jenkins-home-backup-restore",
+      "language": "de",
+      "translationKey": "2026-10-27-jenkins-home-backup-restore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "f6fcbb37f82b9829ef3535f5fee0b0fdf0b7b0ebe4e8b4f96bb3f2ff104a59b4"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "cf86c4ed0bbf58aa72e3065d08ac66763b2dd82f18159b3ed90c6b9b5ea6b52f"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-27-jenkins-home-backup-restore.diagram.json",
+        "sha256": "6f1c90bb75ee8590f278be154043d76c9534dcf1b1ed73d26eba1b798fa680e1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-27-jenkins-home-backup-restore.svg",
+        "sha256": "9f974b11401004e1d5074840f47d1058db0418500458ca4bc03c6f542599545b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "fr-2026-10-27-jenkins-home-backup-restore",
+      "language": "fr",
+      "translationKey": "2026-10-27-jenkins-home-backup-restore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "f6fcbb37f82b9829ef3535f5fee0b0fdf0b7b0ebe4e8b4f96bb3f2ff104a59b4"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "fbdffdd2bbf615624358f47ebe24d3b6e4e235ec34dd15bfb7dc4d26218174a6"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-27-jenkins-home-backup-restore.diagram.json",
+        "sha256": "39a456aab2ff1ca33cf750364f285cf6a41d51410c02739af8f60f4a6e26daed"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-27-jenkins-home-backup-restore.svg",
+        "sha256": "f7120237976e1770e0e5d55866833c7dbc4aa75fc081ac60d2f97e5ed956f695"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "ru-2026-10-27-jenkins-home-backup-restore",
+      "language": "ru",
+      "translationKey": "2026-10-27-jenkins-home-backup-restore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "f6fcbb37f82b9829ef3535f5fee0b0fdf0b7b0ebe4e8b4f96bb3f2ff104a59b4"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "a78e0f9b333cabbbf4ffffb3c9a9fbb2c77264f64f5e2e45d322ba8cdcf2630f"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-27-jenkins-home-backup-restore.diagram.json",
+        "sha256": "c903ae52994c6faf28835735a512dcf33ef0bcb831e27745a150a8f2a173682e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-27-jenkins-home-backup-restore.svg",
+        "sha256": "168bc573029e600aa5f2c1c9d4dfa16dddfeacd4f8db1c6dbf1ab232c894ac38"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "es-2026-10-27-jenkins-home-backup-restore",
+      "language": "es",
+      "translationKey": "2026-10-27-jenkins-home-backup-restore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "f6fcbb37f82b9829ef3535f5fee0b0fdf0b7b0ebe4e8b4f96bb3f2ff104a59b4"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "fa27ac6bcd8d2c312295d7b81f83a240a6dff8fe49ef053ef2e8a00eb2f95a95"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-27-jenkins-home-backup-restore.diagram.json",
+        "sha256": "cb80fd67f44ec230a60c5d3da880290b68c763e04094079abfd0c1f943f192d4"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-27-jenkins-home-backup-restore.svg",
+        "sha256": "01915e20bf7701257fc2ab9d27a5e02418930f2f6b8bd08063ce2b3f9abde8ff"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-31-ai-agent-operations",
+      "language": "zh-CN",
+      "translationKey": "2026-10-31-ai-agent-operations",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-operations.md",
+        "sha256": "671fc15fe228c1e812d5ae95a16d5092a66fbbf55edf53f21c353c91c91e796f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-operations.md",
+        "sha256": "72d977b83c2194b7355df7db71178c13617d6d078cb114daa9b3ea59b1d4bd3f"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-operations.diagram.json",
+        "sha256": "a95c715d5ad94f96ee681bd44b1a8c9ea8f3f9d1010d6ab508e4366d191c7c5a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-operations.svg",
+        "sha256": "ec585f20a2f37609e7fd899b8e536658eb1071e5fba784c4f2cf68c54d70c73e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-operations-gate-en.svg",
+        "sha256": "d4a5a34dcf4c6b27e46705cdfe898e1e2ac3a96dd29b4e36386380019b78923d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/ai-agent-operations-overview-en.svg",
+            "sha256": "45ae8fd23f363870d0b1b17046e62e447e7655dea94d9c7e39b0113c76734ff4"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-operations-architecture.svg",
+            "sha256": "566e82a12362cb0212cf251c66ddab0e26c6e551bfdf338c0085bffbcdfd08e2"
+          }
+        }
+      ]
+    },
+    {
+      "key": "ja-2026-10-31-ai-agent-operations",
+      "language": "ja",
+      "translationKey": "2026-10-31-ai-agent-operations",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-operations.md",
+        "sha256": "671fc15fe228c1e812d5ae95a16d5092a66fbbf55edf53f21c353c91c91e796f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-operations.md",
+        "sha256": "3ec6ccf66ada737f22ab0acfb1a45532b2a3f07cba672bc5839ca2c5eec1406d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-operations.diagram.json",
+        "sha256": "a1ff74a7e6d34a3aa4e6dc5bbb47ef54b8f498abe02a677187b33f51b5704c8a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-operations.svg",
+        "sha256": "32e36871aea2c9893fc1c353428a57e54e52c2d98c59def7c49ac10b98e8aad3"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-operations-gate-en.svg",
+        "sha256": "d4a5a34dcf4c6b27e46705cdfe898e1e2ac3a96dd29b4e36386380019b78923d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/ai-agent-operations-overview-en.svg",
+            "sha256": "45ae8fd23f363870d0b1b17046e62e447e7655dea94d9c7e39b0113c76734ff4"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-operations-architecture.svg",
+            "sha256": "4efd169a885d7f6788ce928196b6892bae2f7e085576980e52383e6ad39ba421"
+          }
+        }
+      ]
+    },
+    {
+      "key": "de-2026-10-31-ai-agent-operations",
+      "language": "de",
+      "translationKey": "2026-10-31-ai-agent-operations",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-operations.md",
+        "sha256": "671fc15fe228c1e812d5ae95a16d5092a66fbbf55edf53f21c353c91c91e796f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-ai-agent-operations.md",
+        "sha256": "62b8166c5193faee5be14a047d5874f836d2dbdbaa0648b15f9f208c2b40bcde"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-ai-agent-operations.diagram.json",
+        "sha256": "28f75596180c99fb4848824c27702a2ebc076dd9af3d8db147ae68a48ba7b350"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-ai-agent-operations.svg",
+        "sha256": "021a33e93486257cfee3aa5bf1cb190ff9299eabd7eb61ea03bd9085f3c0d57d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-operations-gate-en.svg",
+        "sha256": "d4a5a34dcf4c6b27e46705cdfe898e1e2ac3a96dd29b4e36386380019b78923d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/ai-agent-operations-overview-en.svg",
+            "sha256": "45ae8fd23f363870d0b1b17046e62e447e7655dea94d9c7e39b0113c76734ff4"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-ai-agent-operations-architecture.svg",
+            "sha256": "297c9b720f988926538070b029d08e08ead60b9e1ac53a941f1be3ab627ab42f"
+          }
+        }
+      ]
+    },
+    {
+      "key": "fr-2026-10-31-ai-agent-operations",
+      "language": "fr",
+      "translationKey": "2026-10-31-ai-agent-operations",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-operations.md",
+        "sha256": "671fc15fe228c1e812d5ae95a16d5092a66fbbf55edf53f21c353c91c91e796f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-ai-agent-operations.md",
+        "sha256": "36ca00defa2e13994ab590d05a2f21e2ff4d3a86188884b434a49cd13281afbe"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-ai-agent-operations.diagram.json",
+        "sha256": "64200149698026f7789d56dd0ca6081bf3f83d769626b93102a7dbbc78fd2035"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-ai-agent-operations.svg",
+        "sha256": "932c326eaab4dd6ce81e06de2dd0d08f049e441d38b558a3c34e64fc15580813"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-operations-gate-en.svg",
+        "sha256": "d4a5a34dcf4c6b27e46705cdfe898e1e2ac3a96dd29b4e36386380019b78923d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/ai-agent-operations-overview-en.svg",
+            "sha256": "45ae8fd23f363870d0b1b17046e62e447e7655dea94d9c7e39b0113c76734ff4"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-ai-agent-operations-architecture.svg",
+            "sha256": "e1aaeaf0139b630de1424b5128e76cccc868183511e106420364ee4d5276b759"
+          }
+        }
+      ]
+    },
+    {
+      "key": "ru-2026-10-31-ai-agent-operations",
+      "language": "ru",
+      "translationKey": "2026-10-31-ai-agent-operations",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-operations.md",
+        "sha256": "671fc15fe228c1e812d5ae95a16d5092a66fbbf55edf53f21c353c91c91e796f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-operations.md",
+        "sha256": "a21efde9ca6b0eabb72ad714a93f7b97f45e658b6888f675740ed52ee7923c4b"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-operations.diagram.json",
+        "sha256": "4f447b601f55999bb7132b45e5c1be0724e423645664bd276a5dc2c76fb3287b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-operations.svg",
+        "sha256": "950cc2daecc0dc092585959cbd8addbe2c8b69f6970cfc05373a1fcca0cdb746"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-operations-gate-en.svg",
+        "sha256": "d4a5a34dcf4c6b27e46705cdfe898e1e2ac3a96dd29b4e36386380019b78923d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/ai-agent-operations-overview-en.svg",
+            "sha256": "45ae8fd23f363870d0b1b17046e62e447e7655dea94d9c7e39b0113c76734ff4"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-operations-architecture.svg",
+            "sha256": "1a9489d641e91a5600315458820e8b7fd1dce287c7bfb1c59e45d7353ec2c3d5"
+          }
+        }
+      ]
+    },
+    {
+      "key": "es-2026-10-31-ai-agent-operations",
+      "language": "es",
+      "translationKey": "2026-10-31-ai-agent-operations",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-operations.md",
+        "sha256": "671fc15fe228c1e812d5ae95a16d5092a66fbbf55edf53f21c353c91c91e796f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.md",
+        "sha256": "b61d2128808360b36f271c9b90fd5ec452cce1f4c13617a059af7b9c7eb973e8"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.diagram.json",
+        "sha256": "ba26953d4b105596dd6c100e512600ce8b45a3a370406bd43ffc7a52c1a7e5e2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.svg",
+        "sha256": "5d2af791d1f33f0d74e4df223c8e195c19390dde2880b3047efb995365c066bf"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-operations-gate-en.svg",
+        "sha256": "d4a5a34dcf4c6b27e46705cdfe898e1e2ac3a96dd29b4e36386380019b78923d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/ai-agent-operations-overview-en.svg",
+            "sha256": "45ae8fd23f363870d0b1b17046e62e447e7655dea94d9c7e39b0113c76734ff4"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations-architecture.svg",
+            "sha256": "57eae6b7241b4703d7823c1f514212ce57464c451cc4f2dc44225cefb48e9fdb"
+          }
+        }
+      ]
+    },
+    {
+      "key": "zh-CN-2026-10-31-ai-agent-refactoring",
+      "language": "zh-CN",
+      "translationKey": "2026-10-31-ai-agent-refactoring",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "efd733fd275675221deef4ebffa545ba2f54a6819e72fed217917d6708e3e4b9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "808ccbe7248bff4f9e9f5866403f1a923a82a40df07915f31b342fe6e0400b67"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-refactoring.diagram.json",
+        "sha256": "82cc4073db945749914b32b5b35d40fd43fdbe1345dadab9d48d2ac3a16e6a88"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-ai-agent-refactoring.svg",
+        "sha256": "2ec278d0d7d48c8c351c6194fb83b5830e543f1ba8d7108a3f28203862bbc4e0"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-refactoring-en.svg",
+        "sha256": "78ada9d7a7189f00ac22d027288b463bc6c3578c452defd254af482d0a925519"
+      }
+    },
+    {
+      "key": "ja-2026-10-31-ai-agent-refactoring",
+      "language": "ja",
+      "translationKey": "2026-10-31-ai-agent-refactoring",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "efd733fd275675221deef4ebffa545ba2f54a6819e72fed217917d6708e3e4b9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "a2a8dfb0f507f3db34e16024d512c8479a4f17dfdd338917f5d738f0a367a41c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-refactoring.diagram.json",
+        "sha256": "bc366246022255049d26cb755379003227d8dfa8fe9b41a45b99894ecfc92b17"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-refactoring.svg",
+        "sha256": "7afa36d9e9b441591915a285f00e1a2939494b293775969caa2d68fb6b813c2c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-refactoring-en.svg",
+        "sha256": "78ada9d7a7189f00ac22d027288b463bc6c3578c452defd254af482d0a925519"
+      }
+    },
+    {
+      "key": "de-2026-10-31-ai-agent-refactoring",
+      "language": "de",
+      "translationKey": "2026-10-31-ai-agent-refactoring",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "efd733fd275675221deef4ebffa545ba2f54a6819e72fed217917d6708e3e4b9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "bfd5d4fc61690958f2c42ffe946cf10ef4ab271b8f4e684d0ee567004c46ebc3"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-ai-agent-refactoring.diagram.json",
+        "sha256": "3da0e17f642a84de7031e37a5defb2a8b03990b0024162f54eca805f2c190d14"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-ai-agent-refactoring.svg",
+        "sha256": "f5e9a2b4d10eb1099e314a2b4917dfcb6de07e46ff93023f47a17aa897d37f1f"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-refactoring-en.svg",
+        "sha256": "78ada9d7a7189f00ac22d027288b463bc6c3578c452defd254af482d0a925519"
+      }
+    },
+    {
+      "key": "fr-2026-10-31-ai-agent-refactoring",
+      "language": "fr",
+      "translationKey": "2026-10-31-ai-agent-refactoring",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "efd733fd275675221deef4ebffa545ba2f54a6819e72fed217917d6708e3e4b9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "e275aa15369d81dd215b81a9a01eadcc9db4f530752d5e5bcfe0e504b7a800a5"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-ai-agent-refactoring.diagram.json",
+        "sha256": "c9a2be7c0158754d1f8e066c46395a9d1eab6180d34306db9ced087287e09162"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-ai-agent-refactoring.svg",
+        "sha256": "f25870a01509796d2ea68560d09d273f0a2b55b83b3aeff3d6c1cc56f822eb28"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-refactoring-en.svg",
+        "sha256": "78ada9d7a7189f00ac22d027288b463bc6c3578c452defd254af482d0a925519"
+      }
+    },
+    {
+      "key": "ru-2026-10-31-ai-agent-refactoring",
+      "language": "ru",
+      "translationKey": "2026-10-31-ai-agent-refactoring",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "efd733fd275675221deef4ebffa545ba2f54a6819e72fed217917d6708e3e4b9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "c1c3857f0f5b74fb728fed16bd6de139e093b221080be40d77bdfba7884b52f7"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-refactoring.diagram.json",
+        "sha256": "ce0cc14f029bd8f5273c9eb0eabce0f2db3390e48462a87c2b2a4d007dcbb271"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-refactoring.svg",
+        "sha256": "d3c7a53079eeeaf0ee255c7c2fb4e9a01ea4b74c2c7d05d80e5e7fd8cec4a73c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-refactoring-en.svg",
+        "sha256": "78ada9d7a7189f00ac22d027288b463bc6c3578c452defd254af482d0a925519"
+      }
+    },
+    {
+      "key": "es-2026-10-31-ai-agent-refactoring",
+      "language": "es",
+      "translationKey": "2026-10-31-ai-agent-refactoring",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "efd733fd275675221deef4ebffa545ba2f54a6819e72fed217917d6708e3e4b9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "42d10a64f223821c629b2c46736d722b5c81c56a4dc02060b787d089e01e1c59"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-refactoring.diagram.json",
+        "sha256": "7332e219630c6084e8b67152c1ce8fd5d6903792161c095bfada037b2f421f8b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-refactoring.svg",
+        "sha256": "d0496377aa46a8ffa272b1790c0b18627b68791b6a711601ef5f7c783afc8e3f"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-refactoring-en.svg",
+        "sha256": "78ada9d7a7189f00ac22d027288b463bc6c3578c452defd254af482d0a925519"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-31-cache-aside",
+      "language": "zh-CN",
+      "translationKey": "2026-10-31-cache-aside",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-cache-aside.md",
+        "sha256": "2c4422c55f14e7b5452f8b286bf5d6f986617fe624e229b7bd74462afe525ad9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-cache-aside.md",
+        "sha256": "0676c4dd9408b27050fa3aa6836b4556b67569415e09501aef64e3270ceb03ed"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-cache-aside.diagram.json",
+        "sha256": "72c61377a86fe2146af213844bdc8bc0ce43a41dbe332c2f5504d0412a7c4c90"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-cache-aside.svg",
+        "sha256": "7af6e2d7216d34eec7b3d8a1ef989596aa4a906b523d263a065b0058c5a522be"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cache-aside-en.svg",
+        "sha256": "694c85215addab56add5ac72a8c8c79330c46854ac1568e887497d3cbc53d856"
+      }
+    },
+    {
+      "key": "ja-2026-10-31-cache-aside",
+      "language": "ja",
+      "translationKey": "2026-10-31-cache-aside",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-cache-aside.md",
+        "sha256": "2c4422c55f14e7b5452f8b286bf5d6f986617fe624e229b7bd74462afe525ad9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-cache-aside.md",
+        "sha256": "0e192a977b9ea38cd42cc7c234c243dc4227a946352e752e56b37e47e913fcae"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-cache-aside.diagram.json",
+        "sha256": "1eed2125244e88668ba63fdbd00a68dd3b8a1a0f20b508ab33c9da1fd41c9566"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-cache-aside.svg",
+        "sha256": "6aff88f29bcc454393d8f61407acfbbd4de7452648b6ddba4e678a69568c0fb8"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cache-aside-en.svg",
+        "sha256": "694c85215addab56add5ac72a8c8c79330c46854ac1568e887497d3cbc53d856"
+      }
+    },
+    {
+      "key": "de-2026-10-31-cache-aside",
+      "language": "de",
+      "translationKey": "2026-10-31-cache-aside",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-cache-aside.md",
+        "sha256": "2c4422c55f14e7b5452f8b286bf5d6f986617fe624e229b7bd74462afe525ad9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-cache-aside.md",
+        "sha256": "753bdf12219a08ab28515fb02e61aa24cb8a4d37d1dfb127193db2e8ccf8ec73"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-cache-aside.diagram.json",
+        "sha256": "b0de9e8897c617b920d5f6170a329af50d314f34063717a4d787c67c32d557d9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-cache-aside.svg",
+        "sha256": "26ddfcfd33289b8df6db0d765095b7aa1850465a43d10c54b13e2ec6f5bf59b3"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cache-aside-en.svg",
+        "sha256": "694c85215addab56add5ac72a8c8c79330c46854ac1568e887497d3cbc53d856"
+      }
+    },
+    {
+      "key": "fr-2026-10-31-cache-aside",
+      "language": "fr",
+      "translationKey": "2026-10-31-cache-aside",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-cache-aside.md",
+        "sha256": "2c4422c55f14e7b5452f8b286bf5d6f986617fe624e229b7bd74462afe525ad9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-cache-aside.md",
+        "sha256": "262b644f78b04873908bc25e786a5328ec327d869f3fcd5ce31abbfc3d9a7929"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-cache-aside.diagram.json",
+        "sha256": "ee6a6e7f6133b16bc990bd44628fd61d3de5343bab6d9f20fa610b609608c190"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-cache-aside.svg",
+        "sha256": "28ca5fbb06d942ead7c02149dc49f37f2354e82a7bea3749e227eeccf72f7b61"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cache-aside-en.svg",
+        "sha256": "694c85215addab56add5ac72a8c8c79330c46854ac1568e887497d3cbc53d856"
+      }
+    },
+    {
+      "key": "ru-2026-10-31-cache-aside",
+      "language": "ru",
+      "translationKey": "2026-10-31-cache-aside",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-cache-aside.md",
+        "sha256": "2c4422c55f14e7b5452f8b286bf5d6f986617fe624e229b7bd74462afe525ad9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-cache-aside.md",
+        "sha256": "67a95c3fde60f929016477b2a8e8fb1f1c8e96994a998facf9983fa3f75d9ed5"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-cache-aside.diagram.json",
+        "sha256": "d6c360801b9bc86dd0c9896da1777674ba1f765b9a9f3466bdc37304a001af6b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-cache-aside.svg",
+        "sha256": "0ce256171320cb73da063d431bee3caba117a0381790229f57596f1102982451"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cache-aside-en.svg",
+        "sha256": "694c85215addab56add5ac72a8c8c79330c46854ac1568e887497d3cbc53d856"
+      }
+    },
+    {
+      "key": "es-2026-10-31-cache-aside",
+      "language": "es",
+      "translationKey": "2026-10-31-cache-aside",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-cache-aside.md",
+        "sha256": "2c4422c55f14e7b5452f8b286bf5d6f986617fe624e229b7bd74462afe525ad9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-cache-aside.md",
+        "sha256": "353ab8835dcf70bae1b3bd354e02cc3b9ab95c9d8a0f5aa835db31c4bb887709"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-cache-aside.diagram.json",
+        "sha256": "60632b9f1b8b16df00aa6a59580fa8b4cafdc27cc0c2918b63378a00f4eadebf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-cache-aside.svg",
+        "sha256": "0805fa8b5b6260ab5c968db6a2d23ca44bf6421651d3903a0784d385f992fc7d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cache-aside-en.svg",
+        "sha256": "694c85215addab56add5ac72a8c8c79330c46854ac1568e887497d3cbc53d856"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-31-failure-fallback",
+      "language": "zh-CN",
+      "translationKey": "2026-10-31-failure-fallback",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-failure-fallback.md",
+        "sha256": "93196b5c0ce64194996df961642c87053d74ea5be5c63b2b776cdd598dc7effd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-failure-fallback.md",
+        "sha256": "9039ebf0d680cc86fdc8091d89c59f9096a1c1369234a24df525db950ed93ecf"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-failure-fallback.diagram.json",
+        "sha256": "75a9f9cdffee4765b499dc2eec8995b03b7495f51195993f111be88a1717dfe9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-failure-fallback.svg",
+        "sha256": "26c1cb2bf306f848f2b68e1518ce981533994d46969aaeadc871a2448afe6875"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/fallback-en.svg",
+        "sha256": "589d2d6b5c16363c48ad224622cc95e35c70773727166cfa3e8133dd0f00fe59"
+      }
+    },
+    {
+      "key": "ja-2026-10-31-failure-fallback",
+      "language": "ja",
+      "translationKey": "2026-10-31-failure-fallback",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-failure-fallback.md",
+        "sha256": "93196b5c0ce64194996df961642c87053d74ea5be5c63b2b776cdd598dc7effd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-failure-fallback.md",
+        "sha256": "df9e3d7fa8adbaea717055090b9d10fc8c53d2bb008d1e50d4805f366ddce007"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-failure-fallback.diagram.json",
+        "sha256": "885ada12a0135423ab97c08ef9282b06aecf3ee3d09a60d74d9b99cd7c8c19a9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-failure-fallback.svg",
+        "sha256": "9d3c4f25d09fb2b0e214d8db63f81817adaccae39a9c8435d34cd1b0683177e4"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/fallback-en.svg",
+        "sha256": "589d2d6b5c16363c48ad224622cc95e35c70773727166cfa3e8133dd0f00fe59"
+      }
+    },
+    {
+      "key": "de-2026-10-31-failure-fallback",
+      "language": "de",
+      "translationKey": "2026-10-31-failure-fallback",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-failure-fallback.md",
+        "sha256": "93196b5c0ce64194996df961642c87053d74ea5be5c63b2b776cdd598dc7effd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-failure-fallback.md",
+        "sha256": "3dbcfaa8e924ecbd1a15e8f8c43843dec56b1817d52540962d78f15001aa6854"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-failure-fallback.diagram.json",
+        "sha256": "3466a373f32f504b14945b473c4808274577e9dc1e63c2d6a108265ea5d8d92e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-failure-fallback.svg",
+        "sha256": "3a7df7837bc7b7fcd8e384aecb4f1b7c4c3974f7b9437df57acef81c9eca64fe"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/fallback-en.svg",
+        "sha256": "589d2d6b5c16363c48ad224622cc95e35c70773727166cfa3e8133dd0f00fe59"
+      }
+    },
+    {
+      "key": "fr-2026-10-31-failure-fallback",
+      "language": "fr",
+      "translationKey": "2026-10-31-failure-fallback",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-failure-fallback.md",
+        "sha256": "93196b5c0ce64194996df961642c87053d74ea5be5c63b2b776cdd598dc7effd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-failure-fallback.md",
+        "sha256": "6ffacc71885c933f7e49cf3b3121da40be6bca7a10dc1333fb296bd49abbf9bd"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-failure-fallback.diagram.json",
+        "sha256": "0a256696fab2d989bdd6cf7c29bc68b6d643686f1723cf7d35249e6137988ba2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-failure-fallback.svg",
+        "sha256": "c70c5d2f39b7bd1e68ae72cefb2cf3a42bc766e67ef58335095df467c5782b03"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/fallback-en.svg",
+        "sha256": "589d2d6b5c16363c48ad224622cc95e35c70773727166cfa3e8133dd0f00fe59"
+      }
+    },
+    {
+      "key": "ru-2026-10-31-failure-fallback",
+      "language": "ru",
+      "translationKey": "2026-10-31-failure-fallback",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-failure-fallback.md",
+        "sha256": "93196b5c0ce64194996df961642c87053d74ea5be5c63b2b776cdd598dc7effd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-failure-fallback.md",
+        "sha256": "41478e905862a7291543a6e6bc326e8732d440efb02541c48f40818149adcb42"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-failure-fallback.diagram.json",
+        "sha256": "dfa68e7a8a6f4d3e9a9e726c559763a1ff05a861a6993647a838a37d2727f235"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-failure-fallback.svg",
+        "sha256": "445c9d500ed350e4431691a2f4aa5c30f907d42c1d6a87722b3c82ebb686ecd4"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/fallback-en.svg",
+        "sha256": "589d2d6b5c16363c48ad224622cc95e35c70773727166cfa3e8133dd0f00fe59"
+      }
+    },
+    {
+      "key": "es-2026-10-31-failure-fallback",
+      "language": "es",
+      "translationKey": "2026-10-31-failure-fallback",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-failure-fallback.md",
+        "sha256": "93196b5c0ce64194996df961642c87053d74ea5be5c63b2b776cdd598dc7effd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-failure-fallback.md",
+        "sha256": "bc112a5a111e1e274817358c53721a59a2645ff3a0937ec3fee6b12e05a79dfe"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-failure-fallback.diagram.json",
+        "sha256": "516a932228f4024adc72a7d1a931c46c7012cdec1757430cbc1aec5f7d8e498c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-failure-fallback.svg",
+        "sha256": "6b470986947e3da4126c8ff235e5a04d99a2d75dac1745accee7abbb92e18f1e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/fallback-en.svg",
+        "sha256": "589d2d6b5c16363c48ad224622cc95e35c70773727166cfa3e8133dd0f00fe59"
+      }
+    },
+    {
+      "key": "zh-CN-2026-10-31-kafka-event-streaming",
+      "language": "zh-CN",
+      "translationKey": "2026-10-31-kafka-event-streaming",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-kafka-event-streaming.md",
+        "sha256": "b5cac22382f44d1bdada1b264df07a6f746ee31761c0268ef2313e7f86eee118"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-kafka-event-streaming.md",
+        "sha256": "db1096d72b7b6477946012e7422e3a799e6f851584b339c85789091b80398a09"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-kafka-event-streaming.diagram.json",
+        "sha256": "329a14dedcae1517a905dd314c72b39cfffb8359c1b5f304451dc8e3798ef176"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/zh-CN/2026-10-31-kafka-event-streaming.svg",
+        "sha256": "741eab4d4245094c2bc9342844eeba3228381e5e6920c5c58886b738060de734"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/kafka-event-streaming-en.svg",
+        "sha256": "c85bf2128b81b147b5425644d898bbc77fa90e242ed82c3696d4f6e22e3e2895"
+      }
+    },
+    {
+      "key": "ja-2026-10-31-kafka-event-streaming",
+      "language": "ja",
+      "translationKey": "2026-10-31-kafka-event-streaming",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-kafka-event-streaming.md",
+        "sha256": "b5cac22382f44d1bdada1b264df07a6f746ee31761c0268ef2313e7f86eee118"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-kafka-event-streaming.md",
+        "sha256": "10ec562b1e75408afd0f549ff2a63bcba66f45084b9d7f440cab45ca46595d08"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-kafka-event-streaming.diagram.json",
+        "sha256": "c1bfa1df3099baa8d7b42afd1f430878fbc9b89600637043039d00de75fadc8e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-kafka-event-streaming.svg",
+        "sha256": "8c6e81c6e7af7c1f0e2c72c3174bd9dceeb904f4fc9516bac7d83a436d2cbfbd"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/kafka-event-streaming-en.svg",
+        "sha256": "c85bf2128b81b147b5425644d898bbc77fa90e242ed82c3696d4f6e22e3e2895"
+      }
+    },
+    {
+      "key": "de-2026-10-31-kafka-event-streaming",
+      "language": "de",
+      "translationKey": "2026-10-31-kafka-event-streaming",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-kafka-event-streaming.md",
+        "sha256": "b5cac22382f44d1bdada1b264df07a6f746ee31761c0268ef2313e7f86eee118"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-kafka-event-streaming.md",
+        "sha256": "ea8bbfc7b2439baa83c64383b8ec630bf98d0f8b201164fe04d9d2dd9bdfec6b"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-kafka-event-streaming.diagram.json",
+        "sha256": "2cc292acef24326a0b1838dad48399a910e649c84b6e1fbbcb2e496733978f38"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/de/2026-10-31-kafka-event-streaming.svg",
+        "sha256": "1b1c55c2b0f13675cdfb3c767c612cd5f95e687ce9ec373a606f2c228afb473b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/kafka-event-streaming-en.svg",
+        "sha256": "c85bf2128b81b147b5425644d898bbc77fa90e242ed82c3696d4f6e22e3e2895"
+      }
+    },
+    {
+      "key": "fr-2026-10-31-kafka-event-streaming",
+      "language": "fr",
+      "translationKey": "2026-10-31-kafka-event-streaming",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-kafka-event-streaming.md",
+        "sha256": "b5cac22382f44d1bdada1b264df07a6f746ee31761c0268ef2313e7f86eee118"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-kafka-event-streaming.md",
+        "sha256": "4086639279f4ef1db5fc617bf657b62c7aa34d3614064539624b86c189c40544"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-kafka-event-streaming.diagram.json",
+        "sha256": "7e2feb2386ad9fda6d9576b9a6ac7241d71aa95a59a89282e1dd68bbcda0a444"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/fr/2026-10-31-kafka-event-streaming.svg",
+        "sha256": "871ce2728816b74e91cf28419d2477671147eaa9b204f2c6d703e6564a13bd69"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/kafka-event-streaming-en.svg",
+        "sha256": "c85bf2128b81b147b5425644d898bbc77fa90e242ed82c3696d4f6e22e3e2895"
+      }
+    },
+    {
+      "key": "ru-2026-10-31-kafka-event-streaming",
+      "language": "ru",
+      "translationKey": "2026-10-31-kafka-event-streaming",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-kafka-event-streaming.md",
+        "sha256": "b5cac22382f44d1bdada1b264df07a6f746ee31761c0268ef2313e7f86eee118"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-kafka-event-streaming.md",
+        "sha256": "103327dc9484514c4b363d3fc7f20e358af9cc570b4a392381d2221ac2c92caf"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-kafka-event-streaming.diagram.json",
+        "sha256": "bdd48ab07fc0dd4c50a504cedcde484c391db401b08cfced752a4758f6d5a001"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-kafka-event-streaming.svg",
+        "sha256": "2b7db4fe235fc7a4a1d6ef654ebe4c1c42a931de0a0ecb0cfba4af9f7a6f4203"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/kafka-event-streaming-en.svg",
+        "sha256": "c85bf2128b81b147b5425644d898bbc77fa90e242ed82c3696d4f6e22e3e2895"
+      }
+    },
+    {
+      "key": "es-2026-10-31-kafka-event-streaming",
+      "language": "es",
+      "translationKey": "2026-10-31-kafka-event-streaming",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-kafka-event-streaming.md",
+        "sha256": "b5cac22382f44d1bdada1b264df07a6f746ee31761c0268ef2313e7f86eee118"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-kafka-event-streaming.md",
+        "sha256": "9bfbb341e6a848add60439994d55a16264cd93206ce560ae47703265ddd1259c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-kafka-event-streaming.diagram.json",
+        "sha256": "8840c183b649282b69fec65a017fea75be739dad28f8a41579ae6c9b2cdfcfd4"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-kafka-event-streaming.svg",
+        "sha256": "0a0d2f185d31b67b9b8d0fcd1164d64279e8b5db4417272262512efd1dd87853"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/kafka-event-streaming-en.svg",
+        "sha256": "c85bf2128b81b147b5425644d898bbc77fa90e242ed82c3696d4f6e22e3e2895"
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "key": "2023-09-28-jenkins-docker-install",
+  "language": "es",
+  "title": "Verificar Jenkins",
+  "description": "El script verifica contratos HTTP y volumen seleccionados y limpia sus recursos. Completar configuración y ejecutar trabajos quedan fuera.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Descargar imagen, resolver digest",
+        "Crear volumen home con nombre"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Arrancar puerto en loopback"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿HTTP login listo en 180s?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "No: fallo",
+        "continue": "Sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Guardar contraseña sin imprimir",
+        "Escribir marca y recrear"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Marca y contraseña iguales?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "No: fallo",
+        "continue": "Sí"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Informar resultado y digest",
+        "Limpiar recursos propios"
+      ]
+    }
+  ]
+}

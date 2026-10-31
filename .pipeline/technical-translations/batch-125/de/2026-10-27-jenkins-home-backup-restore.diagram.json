@@ -1,0 +1,57 @@
+{
+  "key": "2026-10-27-jenkins-home-backup-restore",
+  "language": "de",
+  "title": "Separates Home wiederherstellen",
+  "description": "Das Labor stellt ein Archiv und einen separat gespeicherten master.key wieder her und prüft HTTP sowie ausgewählte Dateien. Es belegt keine Wiederherstellung von Produktionslasten oder externen Systemen.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Frischen Controller befüllen; stoppen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Home ohne master.key archivieren",
+        "Schlüssel separat kopieren"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Archiv schließt master.key aus?"
+      ],
+      "branch": {
+        "exit": "Nein: Fehler",
+        "continue": "Ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "In ein neues Volume entpacken",
+        "master.key separat wiederherstellen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "HTTP, Markierung, Passwort korrekt?"
+      ],
+      "branch": {
+        "exit": "Nein: Fehler",
+        "continue": "Ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Begrenzte Wiederherstellung melden",
+        "Labordaten und Testdateien löschen"
+      ]
+    }
+  ]
+}

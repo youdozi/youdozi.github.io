@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-10-springboot-intellij-import",
+  "language": "fr",
+  "title": "Échecs de build et d’IDE",
+  "description": "La construction Wrapper distingue les échecs du projet du réglage de l’IDE. Les tests HTTP utilisent un port aléatoire ; bootRun manuel utilise le port configuré.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Ouvrir la racine du projet Gradle",
+        "Vérifier JDK et Wrapper"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "La construction Wrapper échoue ?",
+        "Corriger build, dépendances, code"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Wrapper réussi, IDE en échec ?",
+        "Recharger Gradle ; vérifier le lancement"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Les tests HTTP vérifient JSON et 404",
+        "Utiliser un port serveur aléatoire"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Lancer l’app ; demander /greeting",
+        "Vérifier route et port configuré"
+      ]
+    }
+  ]
+}

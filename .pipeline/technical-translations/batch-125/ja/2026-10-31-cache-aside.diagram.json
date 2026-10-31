@@ -1,0 +1,66 @@
+{
+  "key": "2026-10-31-cache-aside",
+  "language": "ja",
+  "title": "Cache-Aside の読取",
+  "description": "entry と TTL を確認し、miss は load して成功だけ保存、容量を制限して返します。失敗は保存せず伝播します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "key を検索し ticker を読む"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "存在し経過時間 < TTL？"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "キャッシュ",
+        "continue": "いいえ"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "旧 entry を除去"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "loader.apply(key)：元を読む"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "成功し結果は non-null？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "例外伝播",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "値と完了時刻を保存"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "容量超過？LRU を一件除去"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "load した値を返す"
+      ]
+    }
+  ]
+}

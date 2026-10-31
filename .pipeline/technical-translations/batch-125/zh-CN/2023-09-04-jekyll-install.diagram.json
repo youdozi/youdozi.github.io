@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-04-jekyll-install",
+  "language": "zh-CN",
+  "title": "隔离 Jekyll 构建层",
+  "description": "代码在声明的旧版 bundle 内渲染两个临时页面，不构建完整归档，也不选择受支持的 Ruby 版本。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "检查选中的 Ruby 与 Bundler"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "使用独立测试 Gemfile",
+        "声明 Jekyll 与 GFM 解析器"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "解析 bundle 依赖",
+        "保留生成的锁文件"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "构建两个临时页面",
+        "使用真实路径与专用配置"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "断言标题、链接与目标",
+        "再检查真实网站"
+      ]
+    }
+  ]
+}

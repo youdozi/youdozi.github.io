@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-10-springboot-intellij-import",
+  "language": "es",
+  "title": "Separar compilación e IDE",
+  "description": "Wrapper distingue fallos del proyecto y del IDE. HTTP usa puerto aleatorio en pruebas; bootRun manual usa el configurado.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Abrir raíz del proyecto Gradle",
+        "Comprobar JDK y Wrapper"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Falla compilación Wrapper?",
+        "Corregir build, dependencias, código"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Wrapper pasa e IDE falla?",
+        "Recargar y revisar ejecución"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Pruebas HTTP: JSON y 404",
+        "Puerto aleatorio de servidor"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Arrancar y solicitar /greeting",
+        "Comprobar ruta y puerto"
+      ]
+    }
+  ]
+}

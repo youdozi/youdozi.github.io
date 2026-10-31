@@ -1,0 +1,52 @@
+{
+  "key": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+  "language": "ja",
+  "title": "検証と配備のゲート",
+  "description": "offline 例は YAML 契約と限定した方針モデルを検査し、Actions engine や Pages 配備は実行しません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "入力 commit ref を確認",
+        "共通検証を実行"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "依存 build は成功？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "いいえ：停止",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "main ref と許可 event？",
+        "push または workflow_dispatch"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "いいえ：省略",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "検査済み Pages artifact を配備",
+        "実処理はモデル外"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "公開 URL と sitemap を確認",
+        "IndexNow は別に検査"
+      ]
+    }
+  ]
+}

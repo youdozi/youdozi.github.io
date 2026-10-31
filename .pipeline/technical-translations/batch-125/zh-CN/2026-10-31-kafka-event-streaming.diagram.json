@@ -1,0 +1,61 @@
+{
+  "key": "2026-10-31-kafka-event-streaming",
+  "language": "zh-CN",
+  "title": "Kafka 组与重放",
+  "description": "创建一次性 broker 和主题，发布两个事件，两组消费后直接重放，最后删容器。命令失败则停止清理。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "启动一次性 broker"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "尝试次数内 broker 就绪？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "失败并清理",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "创建单分区 orders.v1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "发布两个同键事件"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "projection-v1 读两条记录"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "audit-v1 读两条记录"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "分区 0 从偏移量 0 重放"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "删除演示容器与数据"
+      ]
+    }
+  ]
+}

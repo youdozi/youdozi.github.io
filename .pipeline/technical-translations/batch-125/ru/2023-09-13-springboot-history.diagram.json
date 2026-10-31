@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-13-springboot-history",
+  "language": "ru",
+  "title": "Реальные версии компонентов",
+  "description": "Схема показывает проверку зависимостей, не хронологию. У Boot, Framework и Lombok отдельные версии и конфигурации.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Определить версию Boot"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Проверить управление версиями",
+        "Boot и Framework не равны"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: spring-core",
+        "Проверить runtimeClasspath"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight: lombok",
+        "Проверить annotationProcessor"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Записать разрешённые версии",
+        "Проверить их совместимость"
+      ]
+    }
+  ]
+}

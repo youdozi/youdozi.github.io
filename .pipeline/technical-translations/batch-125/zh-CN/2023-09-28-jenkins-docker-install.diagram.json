@@ -1,0 +1,57 @@
+{
+  "key": "2023-09-28-jenkins-docker-install",
+  "language": "zh-CN",
+  "title": "验证一次性 Jenkins 控制器",
+  "description": "检查所选 HTTP 与卷契约，然后删除自身实验资源。不涵盖设置完成与作业执行。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "拉取镜像并解析摘要",
+        "新建命名 home 卷"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "绑定回环主机端口启动"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "180 秒内登录 HTTP 就绪？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "否：失败",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "记录密码而不打印",
+        "写标记并更换容器"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "标记与密码未变？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "否：失败",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "报告结果与镜像摘要",
+        "清理全部自建实验资源"
+      ]
+    }
+  ]
+}

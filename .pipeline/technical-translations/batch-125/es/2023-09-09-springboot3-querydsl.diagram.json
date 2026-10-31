@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-09-springboot3-querydsl",
+  "language": "es",
+  "title": "Generar tipos Q y consultar",
+  "description": "El procesador genera QEmployee en la compilación principal. Después H2 ejecuta una consulta con esos tipos.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Configurar JPA, Querydsl Jakarta"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Configurar annotationProcessor",
+        "Incluir su BOM y API Jakarta"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Compilar Employee anotado",
+        "Generar fuente/clase QEmployee"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Iniciar prueba JPA con H2",
+        "Persistir empleados de prueba"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Ejecutar consultas tipadas",
+        "Verificar y repetir clean test"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-05-querydsl-no-release",
+  "language": "fr",
+  "title": "Comparer les contrats",
+  "description": "Les tests insèrent les mêmes données et comparent chaque implémentation à des listes attendues explicites. Choisir un remplacement exige d’autres cas propres à l’application.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Insérer cinq lignes dans H2",
+        "Inclure doublons et null"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Construire filtres Querydsl/Criteria",
+        "Clarifier égalité et politique null"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Trier chaque résultat par nom",
+        "Comparer à la liste attendue"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Vérifier huit scénarios de contrat",
+        "Régénérer les types Q après clean"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Évaluer les vraies requêtes",
+        "Les tests ne décident pas du choix"
+      ]
+    }
+  ]
+}

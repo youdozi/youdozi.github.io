@@ -1,0 +1,49 @@
+{
+  "key": "2023-10-27-springbatch5-migration",
+  "language": "fr",
+  "title": "Redémarrer l’instance v5",
+  "description": "Résumé du test de redémarrage v5 sur schéma neuf, pas d’une migration de base v4. Une seconde exécution relance l’étape en échec ; l’étape achevée le reste.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Créer le schéma H2 Batch 5 neuf",
+        "Construire les paramètres identifiants"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lancer le job : étape 1 achevée"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "L’étape 2 échoue une fois",
+        "L’état d’exécution devient FAILED"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Relancer avec les mêmes paramètres",
+        "Même instance, nouvelle exécution"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Ignorer l’étape 1 achevée",
+        "Relancer l’étape 2 → COMPLETED"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Vérifier les comptes : 1 et 2",
+        "Pas de garantie de reprise JVM"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "reviewType": "Focused read-only AI recheck",
+  "initialReport": "/tmp/review125-ru-es.json",
+  "initialReportSha256": "a7fd8319630c5bca6c1482cffa122a1cedb53b96ad2999c6605cf86980b36482",
+  "scope": "The five initial findings and the additional Spanish Kafka failure/cleanup label change; all nine changed Russian/Spanish target files inspected.",
+  "dispositions": [
+    {
+      "id": "RU-OPS-IMAGE-DIGEST",
+      "disposition": "resolved",
+      "evidence": "The new Russian sentence explicitly identifies the image digest and the commit from which that image was built once."
+    },
+    {
+      "id": "ES-RESTORE-PASSWORD",
+      "disposition": "resolved",
+      "evidence": "The JSON condition and regenerated SVG both say contraseña. Splitting the complete question over two lines preserves its meaning."
+    },
+    {
+      "id": "RU-BATCH-PER-TYPE",
+      "disposition": "resolved",
+      "evidence": "The production migration checks now explicitly require значения каждого типа, preserving per-type values."
+    },
+    {
+      "id": "ES-OPS-REDACTION",
+      "disposition": "resolved",
+      "evidence": "The instruction now uses enmascarar for sensitive log data and SQL values before transmission."
+    },
+    {
+      "id": "ES-OPS-EXACT-DOMAINS",
+      "disposition": "resolved",
+      "evidence": "The condition now explicitly says Exactamente las seis áreas requeridas in both JSON and SVG. The two-line split preserves the exact-set requirement."
+    }
+  ],
+  "additionalChangesReviewed": [
+    {
+      "id": "ES-KAFKA-FAILURE-CLEANUP-RECHECK",
+      "disposition": "accepted",
+      "sourceQuote": "Broker ready within attempts? / fail/cleanup",
+      "targetQuote": "¿Broker listo dentro de intentos? / Fallo: limpiar / branch exit: fallo",
+      "reason": "The failure branch exits as fallo and its condition explicitly instructs cleanup upon failure. Together they preserve failure and cleanup semantics without placing the entire phrase in the constrained branch label."
+    }
+  ],
+  "reviewedChangedFiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2026-10-31-ai-agent-operations.md",
+      "sha256": "a21efde9ca6b0eabb72ad714a93f7b97f45e658b6888f675740ed52ee7923c4b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ru/2023-10-27-springbatch5-migration.md",
+      "sha256": "48142deb783cd2721be3246c5be3cca7ebf5cdddd2d1b155f160eeeae6851317"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.md",
+      "sha256": "b61d2128808360b36f271c9b90fd5ec452cce1f4c13617a059af7b9c7eb973e8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-27-jenkins-home-backup-restore.diagram.json",
+      "sha256": "cb80fd67f44ec230a60c5d3da880290b68c763e04094079abfd0c1f943f192d4"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-27-jenkins-home-backup-restore.svg",
+      "sha256": "01915e20bf7701257fc2ab9d27a5e02418930f2f6b8bd08063ce2b3f9abde8ff"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.diagram.json",
+      "sha256": "ba26953d4b105596dd6c100e512600ce8b45a3a370406bd43ffc7a52c1a7e5e2"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-ai-agent-operations.svg",
+      "sha256": "5d2af791d1f33f0d74e4df223c8e195c19390dde2880b3047efb995365c066bf"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-kafka-event-streaming.diagram.json",
+      "sha256": "8840c183b649282b69fec65a017fea75be739dad28f8a41579ae6c9b2cdfcfd4"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/es/2026-10-31-kafka-event-streaming.svg",
+      "sha256": "0a0d2f185d31b67b9b8d0fcd1164d64279e8b5db4417272262512efd1dd87853"
+    }
+  ],
+  "sourceHashesUnchangedFromInitialReview": true,
+  "unresolvedFindings": [],
+  "newMaterialIssues": [],
+  "limitations": [
+    "Focused semantic recheck only; no execution, build, deployment, or browser rendering.",
+    "SVG textual content and XML parsing checked; visual clipping not independently assessed.",
+    "AI review; no human/native-speaker certification or model consensus claimed."
+  ],
+  "result": "All five findings resolved; additional Kafka label change preserves source cleanup meaning."
+}

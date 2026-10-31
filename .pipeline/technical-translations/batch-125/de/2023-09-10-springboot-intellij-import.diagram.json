@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-10-springboot-intellij-import",
+  "language": "de",
+  "title": "Build- und IDE-Fehler",
+  "description": "Der Wrapper-Build trennt Projektfehler von IDE-Einrichtung. HTTP-Tests verwenden einen zufälligen Port; manuelles bootRun den konfigurierten Port.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Gradle-Projektstamm öffnen",
+        "JDK und Wrapper prüfen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Wrapper-Build scheitert?",
+        "Build, Abhängigkeiten, Code prüfen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Wrapper besteht, IDE scheitert?",
+        "Gradle neu laden; Start prüfen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "HTTP-Tests prüfen JSON und 404",
+        "Zufälligen Serverport verwenden"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "App starten; /greeting abrufen",
+        "Route und eingestellten Port prüfen"
+      ]
+    }
+  ]
+}

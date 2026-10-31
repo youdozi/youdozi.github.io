@@ -1,0 +1,57 @@
+{
+  "key": "2026-10-27-jenkins-home-backup-restore",
+  "language": "zh-CN",
+  "title": "恢复到独立 home 卷",
+  "description": "恢复归档和单独保存的 master.key，检查 HTTP 与选定文件。不证明生产工作负载或外部系统可恢复。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "初始化新控制器并停止"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "归档 home，不含 master.key",
+        "将密钥复制到独立路径"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "归档确实排除 master.key？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "否：失败",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "解包至新卷",
+        "单独恢复 master.key"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "HTTP、标记、密码一致？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "否：失败",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "报告有限范围恢复检查",
+        "删除实验数据和临时文件"
+      ]
+    }
+  ]
+}

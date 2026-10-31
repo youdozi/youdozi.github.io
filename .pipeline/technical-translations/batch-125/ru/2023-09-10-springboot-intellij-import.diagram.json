@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-10-springboot-intellij-import",
+  "language": "ru",
+  "title": "Отделить сборку от IDE",
+  "description": "Wrapper отделяет ошибки проекта от IDE. HTTP-тесты используют случайный порт; ручной bootRun — настроенный.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Открыть корень Gradle-проекта",
+        "Проверить JDK и Wrapper"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Wrapper падает?",
+        "Исправить сборку, код, зависимости"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Wrapper успешен, IDE падает?",
+        "Перезагрузить, проверить запуск"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "HTTP-тесты: JSON и 404",
+        "Случайный порт сервера"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Запуск, запрос /greeting",
+        "Проверить маршрут и порт"
+      ]
+    }
+  ]
+}

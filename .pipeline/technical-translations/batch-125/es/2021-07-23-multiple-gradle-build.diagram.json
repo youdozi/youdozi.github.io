@@ -1,0 +1,43 @@
+{
+  "key": "2021-07-23-multiple-gradle-build",
+  "language": "es",
+  "title": "Recursos dentro del JAR",
+  "description": "Cada aplicación Vue produce su salida. Gradle Sync reúne solo esas salidas y bootJar las coloca en rutas estáticas separadas.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Guardar lockfile por aplicación",
+        "Fijar dependencias del proyecto"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Por aplicación: npm ci",
+        "Después npm run build"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Sync de ambos directorios dist",
+        "Separar static/project1 y project2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "bootJar depende de recopilación",
+        "Copiar en BOOT-INF/classes"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Ejecutar JAR y ambas rutas",
+        "Verificar paquetes actuales"
+      ]
+    }
+  ]
+}

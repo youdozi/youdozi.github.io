@@ -1,0 +1,50 @@
+{
+  "key": "2023-09-15-springboot-intellij-lombok",
+  "language": "es",
+  "title": "Compilar Lombok primero",
+  "description": "Comprueba constructores y getters de main y test por separado. Corrige reconocimiento IDE después de pasar Wrapper.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Añadir compileOnly y procesador",
+        "Configurar main y test"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Compilar constructor y getter",
+        "generados en fuentes main"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Compilar Lombok de test",
+        "Comprobar ambas pruebas"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Cinco pruebas y bootJar",
+        "Verificar JSON HTTP sin cambios"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Solo quedan errores IDE?",
+        "Recargar y revisar soporte"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Excluir Lombok del runtime",
+        "Miembros compilados sin él"
+      ]
+    }
+  ]
+}

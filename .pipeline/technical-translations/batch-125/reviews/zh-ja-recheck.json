@@ -1,0 +1,86 @@
+{
+  "reviewType": "focused read-only AI translation recheck",
+  "reviewer": "/root/review125_zh_ja",
+  "createdAt": "2026-10-31T15:34:49.023080+00:00",
+  "initialReport": "/tmp/review125-zh-ja.json",
+  "initialReportSha256": "0fa07195939a27f91ebd31356839a94c8eca4df26166a590c769898e21d031c0",
+  "status": "passed",
+  "dispositions": [
+    {
+      "id": "JA-TRANS-OPS",
+      "disposition": "resolved",
+      "confidence": "high",
+      "rationale": "トランザクション境界 now correctly names database transaction boundaries."
+    },
+    {
+      "id": "JA-TRANS-REFACTOR",
+      "disposition": "resolved",
+      "confidence": "high",
+      "rationale": "The established technical term now preserves the caller-observable transaction-boundary check."
+    },
+    {
+      "id": "JA-TRANS-KAFKA",
+      "disposition": "resolved",
+      "confidence": "high",
+      "rationale": "Kafka, same-DB and combined-transaction references consistently use トランザクション; atomicity and external-effect limitations remain intact."
+    },
+    {
+      "id": "JA-QUEUE",
+      "disposition": "resolved",
+      "confidence": "high",
+      "rationale": "同じキュー clearly preserves the shared work-queue isolation requirement."
+    },
+    {
+      "id": "JA-ADMISSION",
+      "disposition": "resolved",
+      "confidence": "high",
+      "rationale": "受付制限 naturally conveys admission control, スナップショット is localized, permit-release statement is preserved; JSON and SVG accessible descriptions agree."
+    }
+  ],
+  "changedFiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-operations.md",
+      "sha256": "3ec6ccf66ada737f22ab0acfb1a45532b2a3f07cba672bc5839ca2c5eec1406d",
+      "onlyExpectedFixes": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-ai-agent-refactoring.md",
+      "sha256": "a2a8dfb0f507f3db34e16024d512c8479a4f17dfdd338917f5d738f0a367a41c",
+      "onlyExpectedFixes": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-kafka-event-streaming.md",
+      "sha256": "10ec562b1e75408afd0f549ff2a63bcba66f45084b9d7f440cab45ca46595d08",
+      "onlyExpectedFixes": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-failure-fallback.md",
+      "sha256": "df9e3d7fa8adbaea717055090b9d10fc8c53d2bb008d1e50d4805f366ddce007",
+      "onlyExpectedFixes": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-failure-fallback.diagram.json",
+      "sha256": "885ada12a0135423ab97c08ef9282b06aecf3ee3d09a60d74d9b99cd7c8c19a9",
+      "onlyExpectedFixes": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-125/ja/2026-10-31-failure-fallback.svg",
+      "sha256": "9d3c4f25d09fb2b0e214d8db63f81817adaccae39a9c8435d34cd1b0683177e4",
+      "onlyExpectedFixes": true
+    }
+  ],
+  "unchangedPreviouslyReviewedFiles": 151,
+  "verification": [
+    "Read every changed sentence/table row and corrected diagram description against the corresponding English source.",
+    "Reverse-substitution hashing confirms all six changed JA files differ from initial versions only by the intended five finding corrections.",
+    "All other previously reviewed source/target file hashes remain identical.",
+    "Changed runnable fences still match English source except previously approved localized authored prompts.",
+    "Corrected JSON and SVG accessible descriptions match exactly."
+  ],
+  "unresolvedFindings": [],
+  "newMaterialIssues": [],
+  "limitations": [
+    "Focused semantic and file-integrity recheck only; no new code execution, browser rendering or deployment verification.",
+    "AI review, not human/native-speaker review or different-model consensus."
+  ]
+}

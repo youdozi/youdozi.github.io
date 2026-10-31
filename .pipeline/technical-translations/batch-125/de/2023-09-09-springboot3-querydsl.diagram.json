@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-09-springboot3-querydsl",
+  "language": "de",
+  "title": "Q-Typen und Abfragen",
+  "description": "Der Prozessor erzeugt QEmployee während der Hauptkompilierung. Der H2-Test führt danach eine Abfrage mit diesen generierten Typen aus.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "JPA und Querydsl Jakarta einrichten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "annotationProcessor einrichten",
+        "Dessen BOM/Jakarta-APIs ergänzen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Annotierten Employee kompilieren",
+        "QEmployee-Quelle/-Klasse erzeugen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "JPA-Test mit H2 starten",
+        "Testmitarbeiter speichern"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Typisierte Abfragen ausführen",
+        "Ergebnisse prüfen; clean test erneut"
+      ]
+    }
+  ]
+}

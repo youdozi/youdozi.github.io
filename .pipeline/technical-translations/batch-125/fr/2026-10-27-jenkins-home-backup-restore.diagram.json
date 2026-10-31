@@ -1,0 +1,57 @@
+{
+  "key": "2026-10-27-jenkins-home-backup-restore",
+  "language": "fr",
+  "title": "Restaurer un home distinct",
+  "description": "Le laboratoire restaure une archive et master.key stocké séparément, puis vérifie HTTP et certains fichiers. Il ne prouve pas la récupération des charges de production ou systèmes externes.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Peupler un contrôleur neuf ; l’arrêter"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Archiver home sans master.key",
+        "Copier cette clé séparément"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "L’archive exclut master.key ?"
+      ],
+      "branch": {
+        "exit": "Non : échec",
+        "continue": "Oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Extraire dans un nouveau volume",
+        "Restaurer master.key séparément"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "HTTP, marqueur, mot de passe corrects ?"
+      ],
+      "branch": {
+        "exit": "Non : échec",
+        "continue": "Oui",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Rapporter le contrôle de reprise limité",
+        "Supprimer données et fichiers de test"
+      ]
+    }
+  ]
+}

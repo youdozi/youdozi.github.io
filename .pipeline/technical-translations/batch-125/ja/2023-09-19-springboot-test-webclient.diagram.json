@@ -1,0 +1,54 @@
+{
+  "key": "2023-09-19-springboot-test-webclient",
+  "language": "ja",
+  "title": "HTTP 応答を検証",
+  "description": "状態、media type の順で確認し、拒否本文を解放して JSON を decode します。StepVerifier は値と完了、エラーを確認します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "local mock 応答を enqueue",
+        "client request を subscribe"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "HTTP error status？",
+        "はい：例外で停止"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "はい",
+        "continue": "いいえ"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "application/json または",
+        "application/*+json？",
+        "その他：本文解放後 error"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "その他",
+        "continue": "JSON"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "対応型だけ Payload を decode",
+        "空や不正本文を確認"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "値と終了 signal を検証",
+        "method、path、Accept を確認"
+      ]
+    }
+  ]
+}

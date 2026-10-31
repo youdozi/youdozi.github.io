@@ -1,0 +1,49 @@
+{
+  "key": "2023-10-27-springbatch5-migration",
+  "language": "de",
+  "title": "v5-Instanz neu starten",
+  "description": "Zusammenfassung des v5-Neustarttests mit neuem Schema, keiner v4-Datenbankmigration. Die zweite Ausführung derselben Instanz wiederholt nur den fehlgeschlagenen Schritt.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Neues H2-Batch-5-Schema erstellen",
+        "Identifizierende Jobparameter bauen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Job starten: Schritt 1 wird fertig"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Schritt 2 scheitert einmal",
+        "Ausführungsstatus wird FAILED"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Mit denselben Parametern starten",
+        "Gleiche Instanz, neue Ausführung"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Abgeschlossenen Schritt 1 auslassen",
+        "Schritt 2 erneut → COMPLETED"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Schrittanzahlen 1 und 2 prüfen",
+        "Keine JVM-Erholungsgarantie"
+      ]
+    }
+  ]
+}

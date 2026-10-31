@@ -1,0 +1,52 @@
+{
+  "key": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+  "language": "es",
+  "title": "Validación y despliegue",
+  "description": "El ejemplo offline comprueba YAML y un modelo acotado. No ejecuta el motor Actions ni despliega Pages.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Comprobar ref de entrada",
+        "Ejecutar validación común"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Compilación dependiente correcta?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "No: parar",
+        "continue": "Sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Main y evento permitido?",
+        "push o workflow_dispatch"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "No: omitir",
+        "continue": "Sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Desplegar artefacto comprobado",
+        "Paso alojado fuera del modelo"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Inspeccionar URL y sitemap",
+        "Comprobar IndexNow aparte"
+      ]
+    }
+  ]
+}

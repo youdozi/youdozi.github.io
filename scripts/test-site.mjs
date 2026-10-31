@@ -110,6 +110,15 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
   const source=JSON.parse(await readFile(`src/content/renewals/${batch.translations[0].renewalId}.json`,'utf8'));
   const translationFiles=[];
   const existingTranslations=new Map();
+  function recentFeedItem(feed,url,updatedAt){
+    const items=feed.match(/<item>[\s\S]*?<\/item>/g)||[];
+    assert.ok(items.length<=30);
+    const cutoff=Math.min(...items.map(item=>Date.parse(item.match(/<atom:updated>(.*?)<\/atom:updated>/)[1])));
+    const item=items.find(item=>item.includes(`<guid isPermaLink="true">${url}</guid>`));
+    if(items.length<30||Date.parse(updatedAt)>cutoff)assert.ok(item,`Recent article omitted from RSS: ${url}`);
+    if(items.length===30&&Date.parse(updatedAt)<cutoff)assert.equal(item,undefined,'Older articles stay outside the latest30 RSS entries');
+    return item;
+  }
 
   try {
     await writeFile(fixture,result.stdout,{flag:'wx'});
@@ -151,6 +160,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     const metadataRaw=metadataHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
     assert.equal(JSON.parse(metadataRaw).find(item=>item['@type']==='BlogPosting').headline,metadataTitle);
     assert.ok(!metadataRaw.includes('<'));
+    assert.ok(!metadataHtml.includes('hreflang="ja"'),'An untranslated fixture must not invent a Japanese counterpart');
     const metadataHeading=metadataHtml.match(/<h1>([\s\S]*?)<\/h1>/)[1];
     assert.ok(!metadataHeading.includes('<script>'));
     assert.ok(metadataHeading.includes('&lt;script&gt;'));
@@ -266,7 +276,20 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     assert.match(englishArticle,/<html lang="en">/);
     assert.match(englishArticle,/rel="canonical" href="https:\/\/youdozi.github.io\/en\/posts\/2023-09-19-springboot-test-webclient\/"/);
     assert.match(englishArticle,/hreflang="ko" href="https:\/\/youdozi.github.io\/ko\/posts\/2023-09-19-springboot-test-webclient\/"/);
-    assert.ok(!englishArticle.includes('hreflang="ja"'));assert.ok(englishArticle.includes('href="/ja/"'));
+    const {checkTechnicalPublications}=await import('./technical-publication.mjs');
+    const counterpartLanguages=new Set((await checkTechnicalPublications()).records
+      .filter(record=>record.data.translationKey==='2023-09-19-springboot-test-webclient')
+      .map(record=>record.data.language));
+    for(const lang of ['ja','zh-CN','de','fr','ru','es']){
+      const path=`/${lang}/posts/2023-09-19-springboot-test-webclient/`;
+      const published=counterpartLanguages.has(lang);
+      assert.equal(englishArticle.includes(`hreflang="${lang}" href="https://youdozi.github.io${path}"`),published);
+      assert.ok(englishArticle.includes(`href="${published?path:`/${lang}/`}"`));
+      if(published){
+        const localized=await readFile(`dist${path}index.html`,'utf8');
+        assert.ok(localized.includes('hreflang="en" href="https://youdozi.github.io/en/posts/2023-09-19-springboot-test-webclient/"'));
+      }
+    }
     const graph=JSON.parse(englishArticle.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
     const posting=graph.find(item=>item['@type']==='BlogPosting');
     assert.equal(posting.inLanguage,'en');assert.equal(posting.author.name,'youdozi');
@@ -396,7 +419,8 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.ok(index.find(entry=>entry.url===`/${lang}/digest/${source.slug}/`)?.content.includes(record.edition.claims[0]));
       const feed=await readFile(`dist/${lang}/feed.xml`,'utf8');
       assert.ok(feed.includes(`<language>${lang}</language>`));
-      assert.ok(feed.includes(record.edition.claims[0].replaceAll('&','&amp;').replaceAll("'",'&apos;')));
+      const item=recentFeedItem(feed,url,record.updatedAt);
+      if(item)assert.ok(item.includes(record.edition.claims[0].replaceAll('&','&amp;').replaceAll("'",'&apos;')));
       assert.ok(sitemap.includes(`<loc>${url}</loc>`));
       assert.equal(sitemap.includes(`<loc>https://youdozi.github.io/${lang}/posts/</loc>`),availability[lang]);
       assert.ok(!(await readFile(`dist/${lang}/index.html`,'utf8')).includes('noindex,follow'));
@@ -417,7 +441,10 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.ok(html.includes(`rel="canonical" href="${url}"`));
       assert.ok(html.includes('property="og:locale" content="es_ES"'));
       assert.ok(esIndex.some(entry=>entry.url===route&&entry.content.includes(draft.edition.claims[0])));
-      assert.ok(esFeed.includes(url));assert.ok(sitemap.includes(`<loc>${url}</loc>`));
+      const record=approvedTranslations.find(item=>item.language==='es'&&item.renewalId===draft.renewalId);
+      assert.ok(record);
+      recentFeedItem(esFeed,url,record.updatedAt);
+      assert.ok(sitemap.includes(`<loc>${url}</loc>`));
       for(const lang of ['en','ko','zh-CN','ja','de','fr','ru']){
         const counterpart=await readFile(`dist/${lang}/digest/${original.slug}/index.html`,'utf8');
         assert.ok(html.includes(`hreflang="${lang}" href="https://youdozi.github.io/${lang}/digest/${original.slug}/"`));

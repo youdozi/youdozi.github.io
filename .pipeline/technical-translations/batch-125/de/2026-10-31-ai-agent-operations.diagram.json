@@ -1,0 +1,65 @@
+{
+  "key": "2026-10-31-ai-agent-operations",
+  "language": "de",
+  "title": "Nachweisbereitschaft prüfen",
+  "description": "Abdeckung, Form, Identität, Alter, Fehler und Unbekanntes prüfen. Erteilt keine Ausführungsbefugnis.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Nachweise, vertrauenswürdiges Ziel, Zeit"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Exakt sechs erforderliche Bereiche?"
+      ],
+      "branch": {
+        "exit": "HOLD",
+        "continue": "ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Form, Identität und Zeit gültig?"
+      ],
+      "branch": {
+        "exit": "HOLD",
+        "continue": "ja",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Ein gültiges Signal mit fail markiert?"
+      ],
+      "branch": {
+        "exit": "STOP",
+        "continue": "nein",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Ein unbekanntes Signal vorhanden?"
+      ],
+      "branch": {
+        "exit": "HOLD",
+        "continue": "nein",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "READY_FOR_REVIEW zurückgeben",
+        "Prüfbereit, keine Ausführung"
+      ]
+    }
+  ]
+}

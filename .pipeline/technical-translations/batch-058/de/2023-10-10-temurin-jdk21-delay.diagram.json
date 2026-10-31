@@ -33,7 +33,8 @@
     {
       "kind": "result",
       "lines": [
-        "Version, Name, URL, Prüfsumme ausgeben",
+        "Version, Name, URL,",
+        "Prüfsumme ausgeben",
         "Kein Hash einer Download-Datei geprüft"
       ]
     }

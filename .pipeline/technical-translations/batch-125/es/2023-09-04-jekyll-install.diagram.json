@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-04-jekyll-install",
+  "language": "es",
+  "title": "Aislar compilación Jekyll",
+  "description": "El código renderiza dos páginas temporales dentro del bundle antiguo declarado. No compila todo el archivo ni selecciona Ruby soportado.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Inspeccionar Ruby y Bundler"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Gemfile de prueba separado",
+        "Declarar Jekyll y parser GFM"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Resolver dependencias bundle",
+        "Conservar lockfile generado"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Compilar dos páginas temporales",
+        "Rutas reales y config propia"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Verificar título, enlace y destino",
+        "Después inspeccionar sitio real"
+      ]
+    }
+  ]
+}
