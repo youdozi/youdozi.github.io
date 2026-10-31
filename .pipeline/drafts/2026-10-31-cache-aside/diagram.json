@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2026-10-31-cache-aside",
+      "title": {
+        "ko": "Cache-Aside 조회 흐름",
+        "en": "Cache-Aside read flow"
+      },
+      "description": {
+        "ko": "항목 조회와 TTL 검사, 미스 시 원본 조회, 성공 값 저장과 용량 축출을 수행한다. 로더 실패는 저장 없이 전달한다.",
+        "en": "Look up the entry, check TTL, load on a miss, store a successful result, enforce capacity and return. Propagate load failures without storing."
+      },
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "키로 항목 조회·현재 시간 확인"
+          ],
+          "en": [
+            "Look up key and read ticker"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "항목이 있고 경과 시간 < TTL?"
+          ],
+          "en": [
+            "Entry exists and elapsed < TTL?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "캐시 반환",
+              "en": "cached value"
+            },
+            "continue": {
+              "ko": "아니요",
+              "en": "no"
+            },
+            "outcome": "complete"
+          }
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "기존 항목 제거"
+          ],
+          "en": [
+            "Remove the old entry"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "loader.apply(key): 원본 조회"
+          ],
+          "en": [
+            "loader.apply(key): load origin"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "null이 아닌 정상 결과인가?"
+          ],
+          "en": [
+            "Successful non-null result?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "예외 전달",
+              "en": "propagate"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "값·완료 시각을 캐시에 저장"
+          ],
+          "en": [
+            "Store value and completion time"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "상한 초과 시 LRU 1개 제거"
+          ],
+          "en": [
+            "Over capacity? Evict one LRU"
+          ]
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "조회한 값 반환"
+          ],
+          "en": [
+            "Return the loaded value"
+          ]
+        }
+      ],
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "synchronized String get(Key key, Function<Key, String> loader)"
+        }
+      ]
+    }
+  ]
+}
