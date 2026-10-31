@@ -3,9 +3,9 @@ export const remainingGuideLocales = {
   "zh-CN": {
     "jdk": {
       "label": "JDK 功能指南",
-      "title": "JDK 指南：正式 API、预览历史与二进制检查",
+      "title": "JDK 指南：正式 API、运行时检查与预览功能",
       "eyebrow": "JDK",
-      "description": "区分 JDK 21 的正式功能与预览功能，了解 String Templates 的历史，并在各篇文章记录的范围内检查 JDK 二进制元数据。",
+      "description": "比较虚拟线程和请求上下文，规划 JDK 27 的容量，检查运行时二进制文件与信任，并区分 Valhalla 等预览功能。",
       "intro": "区分语言或 API 的状态与实际安装的运行时。这些文章包含历史发布事件与预览资料；请遵循记录的版本，不要根据旧版发布说明推断当前支持情况。",
       "groups": {
         "features": {
@@ -19,6 +19,26 @@ export const remainingGuideLocales = {
         "binaries": {
           "title": "检查运行时二进制文件",
           "description": "将历史上的 Temurin 发布延迟与平台及二进制元数据检查分开。"
+        },
+        "virtual": {
+          "title": "比较虚拟线程版本",
+          "description": "用 JFR 观察 JDK 21 和 25 的监视器固定现象，区分调度行为与吞吐量结论。"
+        },
+        "scoped": {
+          "title": "限定请求上下文",
+          "description": "使用 JDK 25 已定稿的 ScopedValue，区分绑定恢复与异步继承。"
+        },
+        "capacity": {
+          "title": "规划 API 容量",
+          "description": "定义 10k RPS 的边界，计算示例预算，并区分准入检查与负载测试证据。"
+        },
+        "trust": {
+          "title": "检查证书信任",
+          "description": "先识别 JVM 和供应商指南，再解读信任存储清单。"
+        },
+        "valhalla": {
+          "title": "试验值对象语义",
+          "description": "在 JDK 28 EA 上比较普通 record 与值对象，不据此推断有保证的内存布局。"
         }
       }
     },
@@ -77,9 +97,9 @@ export const remainingGuideLocales = {
   "ja": {
     "jdk": {
       "label": "JDK 機能ガイド",
-      "title": "JDK ガイド：正式 API・プレビューの経緯・バイナリーの確認",
+      "title": "JDKガイド：正式API・ランタイム確認・プレビュー",
       "eyebrow": "JDK",
-      "description": "JDK 21 の正式機能とプレビュー機能を区別し、String Templates の経緯を理解して、各記事に記録された範囲で JDK バイナリーのメタデータを調べます。",
+      "description": "仮想スレッドとリクエストコンテキストを比較し、JDK 27の容量を計画します。ランタイムのバイナリと信頼を確認し、Valhallaなどのプレビューを区別します。",
       "intro": "言語・API の状態と実際にインストールするランタイムを区別します。過去のリリースとプレビュー資料を含むため、記録されたバージョンに従い、古いリリースノートから現在のサポート状況を推測しないでください。",
       "groups": {
         "features": {
@@ -93,6 +113,26 @@ export const remainingGuideLocales = {
         "binaries": {
           "title": "ランタイムのバイナリーを調べる",
           "description": "過去の Temurin リリース遅延と、プラットフォーム・バイナリーメタデータの確認を区別します。"
+        },
+        "virtual": {
+          "title": "仮想スレッドのバージョン差",
+          "description": "JFRでJDK 21と25のモニターピンニングを観測し、スケジューリング動作とスループットの主張を区別します。"
+        },
+        "scoped": {
+          "title": "リクエストコンテキストの範囲",
+          "description": "JDK 25で正式化されたScopedValueを使い、バインディングの復元と非同期の継承を区別します。"
+        },
+        "capacity": {
+          "title": "API容量の計画",
+          "description": "10k RPSの境界を定め、例示の予算を計算し、リクエストの受付制御の確認と負荷試験の証拠を区別します。"
+        },
+        "trust": {
+          "title": "証明書の信頼を確認",
+          "description": "信頼ストアの一覧を解釈する前に、JVMとベンダーの案内を確認します。"
+        },
+        "valhalla": {
+          "title": "値オブジェクトの意味を試す",
+          "description": "JDK 28 EAで通常のレコードと値オブジェクトを比較し、メモリ配置が保証されるとは推論しません。"
         }
       }
     },
@@ -151,9 +191,9 @@ export const remainingGuideLocales = {
   "de": {
     "jdk": {
       "label": "Anleitungen zu JDK-Funktionen",
-      "title": "JDK: Finale APIs, Preview-Historie und Binärprüfungen",
+      "title": "JDK-Leitfäden: Finale APIs, Laufzeitprüfungen und Vorschauen",
       "eyebrow": "JDK",
-      "description": "Finale und Preview-Funktionen von JDK 21 unterscheiden, die Geschichte von String Templates verstehen und JDK-Binärmetadaten im dokumentierten Umfang des jeweiligen Artikels prüfen.",
+      "description": "Vergleichen Sie virtuelle Threads und Anfragekontext, planen Sie Kapazität mit JDK 27, prüfen Sie Laufzeit-Binärdateien und Vertrauen und unterscheiden Sie Vorschauen wie Valhalla.",
       "intro": "Trennen Sie den Status von Sprache und APIs von der tatsächlich installierten Laufzeit. Die Artikel enthalten historische Veröffentlichungen und Preview-Material; beachten Sie die angegebenen Versionen und leiten Sie aus alten Release Notes keinen aktuellen Supportstatus ab.",
       "groups": {
         "features": {
@@ -167,6 +207,26 @@ export const remainingGuideLocales = {
         "binaries": {
           "title": "Laufzeit-Binärdateien prüfen",
           "description": "Die historische Temurin-Verzögerung von Prüfungen der Plattform und Binärmetadaten trennen."
+        },
+        "virtual": {
+          "title": "Versionen virtueller Threads vergleichen",
+          "description": "Beobachten Sie Monitor-Pinning in JDK 21 und 25 mit JFR und trennen Sie Scheduler-Verhalten von Durchsatzaussagen."
+        },
+        "scoped": {
+          "title": "Anfragekontext begrenzen",
+          "description": "Verwenden Sie ScopedValue als finale API in JDK 25 und unterscheiden Sie die Wiederherstellung einer Bindung von asynchroner Vererbung."
+        },
+        "capacity": {
+          "title": "API-Kapazität planen",
+          "description": "Definieren Sie die Grenze für 10k RPS, berechnen Sie Beispielbudgets und trennen Sie Zulassungsprüfungen von Lasttestnachweisen."
+        },
+        "trust": {
+          "title": "Zertifikatsvertrauen prüfen",
+          "description": "Ermitteln Sie die JVM und die Anbieterhinweise, bevor Sie das Truststore-Inventar interpretieren."
+        },
+        "valhalla": {
+          "title": "Wertobjekt-Semantik erproben",
+          "description": "Vergleichen Sie Records und Wertobjekte unter JDK 28 EA, ohne daraus ein garantiertes Speicherlayout abzuleiten."
         }
       }
     },
@@ -225,9 +285,9 @@ export const remainingGuideLocales = {
   "fr": {
     "jdk": {
       "label": "Guides des fonctionnalités du JDK",
-      "title": "JDK : API définitives, historique des previews et binaires",
+      "title": "Guides JDK : API finalisées, vérifications du runtime et fonctionnalités en preview",
       "eyebrow": "JDK",
-      "description": "Distinguer les fonctionnalités définitives et en preview du JDK 21, comprendre l’historique des String Templates et examiner les métadonnées des binaires dans le périmètre consigné par chaque article.",
+      "description": "Comparez threads virtuels et contexte de requête, planifiez la capacité avec JDK 27, inspectez les binaires et la confiance du runtime, et distinguez les fonctionnalités en preview telles que Valhalla.",
       "intro": "Distinguez le statut du langage et des API de l’environnement d’exécution réellement installé. Ces articles comprennent des événements de publication historiques et des fonctionnalités en preview ; respectez les versions indiquées et ne déduisez pas le support actuel d’une ancienne note de version.",
       "groups": {
         "features": {
@@ -241,6 +301,26 @@ export const remainingGuideLocales = {
         "binaries": {
           "title": "Examiner les binaires d’exécution",
           "description": "Séparer le retard historique de Temurin des contrôles de plateforme et de métadonnées des binaires."
+        },
+        "virtual": {
+          "title": "Comparer les versions des threads virtuels",
+          "description": "Observez l’épinglage dû aux moniteurs dans JDK 21 et 25 avec JFR, en distinguant le comportement de l’ordonnanceur des affirmations sur le débit."
+        },
+        "scoped": {
+          "title": "Délimiter le contexte de requête",
+          "description": "Utilisez ScopedValue, finalisé dans JDK 25, et distinguez restauration d’une liaison et héritage asynchrone."
+        },
+        "capacity": {
+          "title": "Planifier la capacité de l’API",
+          "description": "Définissez le périmètre des 10k RPS, calculez des budgets illustratifs et distinguez tests d’admission et preuves de tests de charge."
+        },
+        "trust": {
+          "title": "Vérifier la confiance des certificats",
+          "description": "Identifiez la JVM et les consignes du fournisseur avant d’interpréter l’inventaire du magasin de confiance."
+        },
+        "valhalla": {
+          "title": "Essayer la sémantique des objets valeur",
+          "description": "Comparez records et objets valeur avec JDK 28 EA sans en déduire une disposition mémoire garantie."
         }
       }
     },
@@ -299,9 +379,9 @@ export const remainingGuideLocales = {
   "ru": {
     "jdk": {
       "label": "Руководства по возможностям JDK",
-      "title": "JDK: окончательные API, история preview и проверка бинарных файлов",
+      "title": "Руководства по JDK: окончательные API, проверки среды и предварительные возможности",
       "eyebrow": "JDK",
-      "description": "Различайте окончательные и предварительные возможности JDK 21, изучите историю String Templates и проверяйте метаданные бинарных файлов JDK в пределах, указанных в каждой статье.",
+      "description": "Сравните виртуальные потоки и контекст запроса, спланируйте ёмкость на JDK 27, проверьте двоичные файлы среды и доверие, отличая предварительные возможности вроде Valhalla.",
       "intro": "Отделяйте статус языка и API от фактически устанавливаемой среды выполнения. Статьи включают исторические выпуски и материалы о preview: используйте указанные версии и не определяйте текущую поддержку по старым примечаниям к выпуску.",
       "groups": {
         "features": {
@@ -315,6 +395,26 @@ export const remainingGuideLocales = {
         "binaries": {
           "title": "Проверить бинарные файлы среды",
           "description": "Отделяйте историческую задержку Temurin от проверок платформы и метаданных бинарных файлов."
+        },
+        "virtual": {
+          "title": "Сравнение версий виртуальных потоков",
+          "description": "Наблюдайте закрепление на мониторах в JDK 21 и 25 через JFR, отделяя поведение планировщика от утверждений о пропускной способности."
+        },
+        "scoped": {
+          "title": "Границы контекста запроса",
+          "description": "Используйте окончательный ScopedValue в JDK 25 и различайте восстановление привязки и асинхронное наследование."
+        },
+        "capacity": {
+          "title": "Планирование ёмкости API",
+          "description": "Определите границу 10k RPS, рассчитайте примерные бюджеты и отделяйте проверки допуска от результатов нагрузочных тестов."
+        },
+        "trust": {
+          "title": "Проверка доверия к сертификатам",
+          "description": "Определите JVM и указания поставщика, прежде чем интерпретировать инвентаризацию хранилища доверия."
+        },
+        "valhalla": {
+          "title": "Проверка семантики объектов-значений",
+          "description": "Сравните record и объекты-значения на JDK 28 EA, не делая выводов о гарантированной структуре памяти."
         }
       }
     },
@@ -373,9 +473,9 @@ export const remainingGuideLocales = {
   "es": {
     "jdk": {
       "label": "Guías de funciones del JDK",
-      "title": "JDK: API definitivas, historial de previews y binarios",
+      "title": "Guías de JDK: API definitivas, comprobaciones del runtime y vistas previas",
       "eyebrow": "JDK",
-      "description": "Distingue las funciones definitivas y en preview del JDK 21, conoce el historial de String Templates e inspecciona los metadatos de los binarios dentro del alcance registrado en cada artículo.",
+      "description": "Compara hilos virtuales y contexto de solicitud, planifica capacidad con JDK 27, inspecciona binarios y confianza del runtime y distingue vistas previas como Valhalla.",
       "intro": "Separa el estado del lenguaje y las API del entorno de ejecución que realmente instalas. Estos artículos incluyen publicaciones históricas y material de preview; respeta las versiones indicadas y no deduzcas el soporte actual de una nota de versión antigua.",
       "groups": {
         "features": {
@@ -389,6 +489,26 @@ export const remainingGuideLocales = {
         "binaries": {
           "title": "Inspeccionar binarios de ejecución",
           "description": "Separa el retraso histórico de Temurin de las comprobaciones de plataforma y metadatos de binarios."
+        },
+        "virtual": {
+          "title": "Comparar versiones de hilos virtuales",
+          "description": "Observa el anclaje por monitores en JDK 21 y 25 con JFR, separando el comportamiento del planificador de las afirmaciones sobre la tasa de procesamiento."
+        },
+        "scoped": {
+          "title": "Delimitar el contexto de solicitud",
+          "description": "Usa ScopedValue, definitivo en JDK 25, y distingue la restauración de un enlace de la herencia asíncrona."
+        },
+        "capacity": {
+          "title": "Planificar la capacidad de la API",
+          "description": "Define el límite de 10k RPS, calcula presupuestos ilustrativos y separa las comprobaciones de admisión de la evidencia de pruebas de carga."
+        },
+        "trust": {
+          "title": "Comprobar la confianza en certificados",
+          "description": "Identifica la JVM y las indicaciones del proveedor antes de interpretar el inventario del almacén de confianza."
+        },
+        "valhalla": {
+          "title": "Probar la semántica de objetos de valor",
+          "description": "Compara records y objetos de valor en JDK 28 EA sin inferir una disposición de memoria garantizada."
         }
       }
     },
@@ -445,4 +565,4 @@ export const remainingGuideLocales = {
     }
   }
 };
-export const remainingGuideLocalesUpdatedAt = new Date("2026-10-30T01:48:54.471595+00:00");
+export const remainingGuideLocalesUpdatedAt = new Date("2026-10-31T02:54:25.571477+00:00");

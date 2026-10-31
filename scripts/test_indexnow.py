@@ -79,7 +79,7 @@ class IndexNowTests(unittest.TestCase):
         self.page('/ko/guides/')
         self.sitemap([url])
         self.assertEqual(list(ix.build_manifest(self.dist)['pages']), [url])
-        for path in ['/ja/guides/', '/en/guides/private/', '/review/']:
+        for path in ['/xx/guides/', '/en/guides/private/', '/review/']:
             with self.subTest(path=path):
                 with self.assertRaises(ValueError): ix.public_url(ix.SITE + path)
         self.page('/en/guides/', canonical=ix.SITE + '/en/')
@@ -174,6 +174,15 @@ class IndexNowTests(unittest.TestCase):
         ix.run(self.dist, self.state, submit=True, fetch=fetch)
         self.assertEqual(json.loads(calls[1].data)['urlList'], [deleted])
         with self.assertRaises(ValueError): ix.validate_manifest({'schemaVersion':1,'site':ix.SITE,'pages':{keep:'bad'}})
+
+    def test_localized_guides_require_real_sitemap_entries_and_canonical_pages(self):
+        urls=[self.page('/'+lang+'/guides/') for lang in ('zh-CN','ja','de','fr','ru','es')]
+        self.sitemap(urls)
+        self.assertEqual(set(ix.build_manifest(self.dist)['pages']),set(urls))
+        self.page('/ja/guides/',extra='<meta name="robots" content="noindex,follow">')
+        with self.assertRaises(ValueError):ix.build_manifest(self.dist)
+        for path in ('/es/about/','/unknown/guides/','/ja/guides/private/'):
+            with self.assertRaises(ValueError):ix.public_url(ix.SITE+path)
 
 
 if __name__ == '__main__':
