@@ -122,3 +122,17 @@ test('runtime security guide connects the native pair without inventing translat
  }
  for(const language of ['zh-CN','ja','de','fr','ru','es'])assert.equal(categoryGuide('security',language,[entry(first,language,'security')]),undefined);
 });
+
+test('recent JDK guides localize all newly visible sections without English fallback',()=>{
+ const keys=['2026-10-31-virtual-threads-jdk21-jdk25','2026-10-31-jdk25-scopedvalue','2026-10-31-jdk-10k-rps-architecture','2026-10-30-jdk-emudhra-truststore','2026-10-31-project-valhalla-value-objects'];
+ const english=categoryGuide('jdk','en',keys.map(key=>entry(key,'en','jdk')));
+ for(const language of ['zh-CN','ja','de','fr','ru','es']){
+  const guide=categoryGuide('jdk',language,keys.map(key=>entry(key,language,'jdk')));
+  assert.deepEqual(guide.sections.map(s=>s.id),english.sections.map(s=>s.id));
+  for(const [i,section]of guide.sections.entries()){
+   assert.notEqual(section.title,english.sections[i].title);
+   assert.notEqual(section.description,english.sections[i].description);
+   assert.ok(section.entries.every(e=>e.language===language));
+  }
+ }
+});

@@ -76,14 +76,17 @@ def expected_paragraphs(body):
                 if text.strip(): yield prose_normalize(text)
 
 
-def check(base):
-    marker = json.loads((base / '.translation-preview-fixture.json').read_text())
-    keys = marker.get('technicalFixtureKeys')
-    if marker.get('fixtureOnly') is not True or not isinstance(keys, list) or not keys or any(not isinstance(k, str) or not re.fullmatch(r'(?:zh-CN|ja|de|fr|ru|es)-\d{4}-\d{2}-\d{2}-[a-z0-9.-]+', k) for k in keys) or len(set(keys)) != len(keys):
-        raise ValueError('Expected isolated technical fixture marker')
+def check(base, published=False):
     records = technical_records(base)
     selected = {f"{r['language']}-{r['translationKey']}": (url, r) for url, r in records.items()}
-    if set(keys) - selected.keys(): raise ValueError('Technical fixture missing')
+    if published:
+        keys = list(selected)
+    else:
+        marker = json.loads((base / '.translation-preview-fixture.json').read_text())
+        keys = marker.get('technicalFixtureKeys')
+        if marker.get('fixtureOnly') is not True or not isinstance(keys, list) or not keys or any(not isinstance(k, str) or not re.fullmatch(r'(?:zh-CN|ja|de|fr|ru|es)-\d{4}-\d{2}-\d{2}-[a-z0-9.-]+', k) for k in keys) or len(set(keys)) != len(keys):
+            raise ValueError('Expected isolated technical fixture marker')
+        if set(keys) - selected.keys(): raise ValueError('Technical fixture missing')
     inventory = dict(records)
     for path in (base/'src/content/translations').glob('*.json'):
         news = json.loads(path.read_text())
@@ -95,7 +98,10 @@ def check(base):
     code_languages=Counter()
     for key in keys:
         url, record = selected[key]
-        if record['approval']['kind'] != 'render-fixture' or record['approval']['reviewedBy'] != 'AUTOMATED_RENDER_FIXTURE_NOT_HUMAN_APPROVAL':
+        if published:
+            if record['approval']['kind'] != 'human' or record['approval']['reviewedBy'] == 'AUTOMATED_RENDER_FIXTURE_NOT_HUMAN_APPROVAL':
+                raise ValueError('Published technical validation requires actual publication approval')
+        elif record['approval']['kind'] != 'render-fixture' or record['approval']['reviewedBy'] != 'AUTOMATED_RENDER_FIXTURE_NOT_HUMAN_APPROVAL':
             raise ValueError('Technical preview cannot claim human approval')
         lang, slug = record['language'], record['routeSlug']
         if lang not in indexes:
@@ -147,8 +153,12 @@ def check(base):
                 raise ValueError('Technical counterpart missing or alternates changed')
         if 'AUTOMATED_RENDER_FIXTURE_NOT_HUMAN_APPROVAL' in html: raise ValueError('Internal approval leaked into HTML')
         topics.add(record['translationKey'])
-    return {'fixtureEditions':len(keys),'technicalTopics':len(topics),'completeParagraphsAndTableRows':paragraphs,'localizedJavaExamples':code_languages['java'],'codeBlocksChecked':sum(code_languages.values()),'codeLanguages':dict(code_languages),'localizedDiagrams':len(keys),'rssEditions':rss_count,'fixtureOnly':True}
+    return {('publishedEditions' if published else 'fixtureEditions'):len(keys),'technicalTopics':len(topics),'completeParagraphsAndTableRows':paragraphs,'localizedJavaExamples':code_languages['java'],'codeBlocksChecked':sum(code_languages.values()),'codeLanguages':dict(code_languages),'localizedDiagrams':len(keys),'rssEditions':rss_count,'fixtureOnly':not published}
 
 
 if __name__ == '__main__':
-    print('[ok] Isolated technical publication contracts:', json.dumps(check(Path('.'))))
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--published', action='store_true', help='Validate actual approved technical editions; never accepts synthetic approvals.')
+    args = parser.parse_args()
+    print('[ok] ' + ('Published' if args.published else 'Isolated') + ' technical publication contracts:', json.dumps(check(Path('.'), published=args.published)))

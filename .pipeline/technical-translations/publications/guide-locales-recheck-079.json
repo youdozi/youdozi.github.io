@@ -1,0 +1,48 @@
+{
+  "scope": "Read-only recheck of four original findings against current English paths.jdk.en and the changed target strings; no repository edits.",
+  "initialReport": "/tmp/review079-guide-locales.json",
+  "fileSHA256": {
+    "src/lib/remaining-guide-locales.ts": "a773b980c7f486e39530ee862f76e8706a55e0e18aa36bea8480027834204e3f",
+    "src/lib/technical-guides.ts": "7b3b0ea795f2c731888bf9e8496892f4d18c4f271b64b5dec1899d66f8436b37"
+  },
+  "sourceUnchangedSinceInitialReview": true,
+  "resolutions": [
+    {
+      "language": "ja",
+      "location": "jdk.groups.capacity.description",
+      "resolution": "resolved",
+      "targetQuote": "リクエストの受付制御の確認と負荷試験の証拠を区別します",
+      "reason": "Request admission control is now explicit, retaining the distinction from load-test evidence."
+    },
+    {
+      "language": "fr",
+      "location": "jdk.groups.virtual.description",
+      "resolution": "resolved",
+      "targetQuote": "Observez l’épinglage dû aux moniteurs dans JDK 21 et 25 avec JFR, en distinguant le comportement de l’ordonnanceur des affirmations sur le débit.",
+      "reason": "The wording preserves monitor pinning, both JDK versions and JFR, and explicitly separates scheduler behavior from claims about throughput."
+    },
+    {
+      "language": "fr",
+      "location": "jdk.title; jdk.description",
+      "resolution": "resolved",
+      "targetQuote": "fonctionnalités en preview; les fonctionnalités en preview telles que Valhalla",
+      "reason": "The pre-final feature status is now explicit and consistent with the existing intro."
+    },
+    {
+      "language": "es",
+      "location": "jdk.groups.virtual.description",
+      "resolution": "resolved",
+      "targetQuote": "las afirmaciones sobre la tasa de procesamiento",
+      "reason": "The specific throughput metric and its status as a claim are both retained."
+    }
+  ],
+  "unresolved": [],
+  "newFindings": [],
+  "result": "All four original findings resolved in the reviewed version.",
+  "unverified": [
+    "Recheck does not expand the initial review to article bodies or other guide content.",
+    "No browser/rendering, runtime, or CI checks performed.",
+    "No native-speaker or different-model agreement claimed.",
+    "No external verification of JDK behavior or status."
+  ]
+}

@@ -1,0 +1,475 @@
+{
+  "schemaVersion": 1,
+  "state": "approved-for-publication",
+  "scope": "Exactly the 72 editions of batch-078; older 120 technical drafts and 318 pending news translations excluded.",
+  "reviewPullRequest": 118,
+  "manifest": {
+    "path": ".pipeline/technical-translations/batch-078/manifest.json",
+    "sha256": "e685b2de5dafd8cfff8e8e996fa2b09613becb072bdd575b58b9eca9651474a3"
+  },
+  "approval": {
+    "kind": "human",
+    "reviewedBy": "youdozi",
+    "pullRequest": 118,
+    "approvedAt": "2026-10-31T02:49:44.828Z",
+    "basis": "2026-10-31 user instruction “진행해줘” immediately following delivery of the reviewed 72 complete translations in PR #118; interpreted as authorization to publish exactly batch-078 in all six languages. Separate AI language review is recorded in the manifest; this does not claim a human line-by-line review. Excludes the older 120 technical drafts and 318 pending news translations."
+  },
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "sourceTopics": 12,
+  "approvedEditions": 72,
+  "editions": [
+    {
+      "key": "zh-CN-2026-10-30-verify-sha256-download",
+      "path": "src/content/technical-translations/zh-CN/2026-10-30-verify-sha256-download.md",
+      "sha256": "fb0655f305f3ced0a3cda1a86849e02d68f404247380d4d73acab6b86233f59a",
+      "url": "/zh-CN/posts/2026-10-30-verify-sha256-download/"
+    },
+    {
+      "key": "ja-2026-10-30-verify-sha256-download",
+      "path": "src/content/technical-translations/ja/2026-10-30-verify-sha256-download.md",
+      "sha256": "e21e086c8a2e277fef6be2cab0726b41405884b4719e6867be214274c7907a54",
+      "url": "/ja/posts/2026-10-30-verify-sha256-download/"
+    },
+    {
+      "key": "de-2026-10-30-verify-sha256-download",
+      "path": "src/content/technical-translations/de/2026-10-30-verify-sha256-download.md",
+      "sha256": "55e4916991f4db020a335977da38445c1ab8778ba692c776b60adf9983635180",
+      "url": "/de/posts/2026-10-30-verify-sha256-download/"
+    },
+    {
+      "key": "fr-2026-10-30-verify-sha256-download",
+      "path": "src/content/technical-translations/fr/2026-10-30-verify-sha256-download.md",
+      "sha256": "fcabc40c341c3c353a71a29e7493ecfb9f2d77f6bc32752154c2d69bf04ebd4d",
+      "url": "/fr/posts/2026-10-30-verify-sha256-download/"
+    },
+    {
+      "key": "ru-2026-10-30-verify-sha256-download",
+      "path": "src/content/technical-translations/ru/2026-10-30-verify-sha256-download.md",
+      "sha256": "25f806db4b4688f5eed9beae45972cd89180ca6d922d1963f138267af58d0720",
+      "url": "/ru/posts/2026-10-30-verify-sha256-download/"
+    },
+    {
+      "key": "es-2026-10-30-verify-sha256-download",
+      "path": "src/content/technical-translations/es/2026-10-30-verify-sha256-download.md",
+      "sha256": "91d9dbe89601bc2ec163c424a5ccca3adb26dd0bc02ad068994609af975c485a",
+      "url": "/es/posts/2026-10-30-verify-sha256-download/"
+    },
+    {
+      "key": "zh-CN-2026-10-30-webclient-timeout-retry",
+      "path": "src/content/technical-translations/zh-CN/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "7d07c3b015598899cce774137ab5d77504086acf31daf37869d017eb44907f86",
+      "url": "/zh-CN/posts/2026-10-30-webclient-timeout-retry/"
+    },
+    {
+      "key": "ja-2026-10-30-webclient-timeout-retry",
+      "path": "src/content/technical-translations/ja/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "27d23495523f75519453db15350b3c2be335139b1d1799cc8e5d550a04ee3f2d",
+      "url": "/ja/posts/2026-10-30-webclient-timeout-retry/"
+    },
+    {
+      "key": "de-2026-10-30-webclient-timeout-retry",
+      "path": "src/content/technical-translations/de/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "46363074ac4787d658c9f7a593a8399cc95837b7715432ceb8f48ef5a04b49ac",
+      "url": "/de/posts/2026-10-30-webclient-timeout-retry/"
+    },
+    {
+      "key": "fr-2026-10-30-webclient-timeout-retry",
+      "path": "src/content/technical-translations/fr/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "57db87deeba2f5117ce6d85f47a3d4c2a6249c21982a9f9b337b5ca4b0e48fb7",
+      "url": "/fr/posts/2026-10-30-webclient-timeout-retry/"
+    },
+    {
+      "key": "ru-2026-10-30-webclient-timeout-retry",
+      "path": "src/content/technical-translations/ru/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "3c409b16926fc6a71d27d74999b23eec01c200e43b68464c5f9199fab4607f07",
+      "url": "/ru/posts/2026-10-30-webclient-timeout-retry/"
+    },
+    {
+      "key": "es-2026-10-30-webclient-timeout-retry",
+      "path": "src/content/technical-translations/es/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "ec0ced7b139a3c9cb80f31576e83df448aecf1a353991bd299c6b8bf083974ba",
+      "url": "/es/posts/2026-10-30-webclient-timeout-retry/"
+    },
+    {
+      "key": "zh-CN-2026-10-30-php2shell-runtime-patching",
+      "path": "src/content/technical-translations/zh-CN/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "ba12843914596f4ece48b707a72a633d083dc85dce2a19bd283847e005938ed9",
+      "url": "/zh-CN/posts/2026-10-30-php2shell-runtime-patching/"
+    },
+    {
+      "key": "ja-2026-10-30-php2shell-runtime-patching",
+      "path": "src/content/technical-translations/ja/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "2a9dac81ec7062235a75e12f491a4884d5748a4f92075e2121bc73566eba2ecf",
+      "url": "/ja/posts/2026-10-30-php2shell-runtime-patching/"
+    },
+    {
+      "key": "de-2026-10-30-php2shell-runtime-patching",
+      "path": "src/content/technical-translations/de/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "8b01c10ac26de363f429041b3735a9d1b6704a8e4191399129955e815a0d8539",
+      "url": "/de/posts/2026-10-30-php2shell-runtime-patching/"
+    },
+    {
+      "key": "fr-2026-10-30-php2shell-runtime-patching",
+      "path": "src/content/technical-translations/fr/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "9b14476e2857e4adf5e9fada05c87bd212c7789b7a402ef8b1ce8f3fd3645b69",
+      "url": "/fr/posts/2026-10-30-php2shell-runtime-patching/"
+    },
+    {
+      "key": "ru-2026-10-30-php2shell-runtime-patching",
+      "path": "src/content/technical-translations/ru/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "945cce2e1953ee09fb3416183bf830fba6ad80ff49f4b632d4ac8cf483cd3762",
+      "url": "/ru/posts/2026-10-30-php2shell-runtime-patching/"
+    },
+    {
+      "key": "es-2026-10-30-php2shell-runtime-patching",
+      "path": "src/content/technical-translations/es/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "076e56c5f19ddb2173aacade03ca19ec62027927d05880fe842571a777c6c694",
+      "url": "/es/posts/2026-10-30-php2shell-runtime-patching/"
+    },
+    {
+      "key": "zh-CN-2026-10-30-node2shell-brotli-runtime-patching",
+      "path": "src/content/technical-translations/zh-CN/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "sha256": "4d282277bbbed4f11ab173a6c2b7dbd504ec2af7ec50a6ffdec1dc760740894e",
+      "url": "/zh-CN/posts/2026-10-30-node2shell-brotli-runtime-patching/"
+    },
+    {
+      "key": "ja-2026-10-30-node2shell-brotli-runtime-patching",
+      "path": "src/content/technical-translations/ja/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "sha256": "976505f48f56b5f8c4fbf9293e10703b10fad3072dcb08008915aeff55140641",
+      "url": "/ja/posts/2026-10-30-node2shell-brotli-runtime-patching/"
+    },
+    {
+      "key": "de-2026-10-30-node2shell-brotli-runtime-patching",
+      "path": "src/content/technical-translations/de/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "sha256": "46c22a008536da1ab6098c4b085c7a22955e528d0c4234d0e6946a3d65c02b3b",
+      "url": "/de/posts/2026-10-30-node2shell-brotli-runtime-patching/"
+    },
+    {
+      "key": "fr-2026-10-30-node2shell-brotli-runtime-patching",
+      "path": "src/content/technical-translations/fr/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "sha256": "4492eabb2fec78116339fb49d66ad8dde2dff09d6e93841c8de9737be9367e0d",
+      "url": "/fr/posts/2026-10-30-node2shell-brotli-runtime-patching/"
+    },
+    {
+      "key": "ru-2026-10-30-node2shell-brotli-runtime-patching",
+      "path": "src/content/technical-translations/ru/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "sha256": "0cfb49f67d3f7c93a3f9fd0ae8e70718d0fdf0219feb449c6e69018faad48d00",
+      "url": "/ru/posts/2026-10-30-node2shell-brotli-runtime-patching/"
+    },
+    {
+      "key": "es-2026-10-30-node2shell-brotli-runtime-patching",
+      "path": "src/content/technical-translations/es/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "sha256": "f51bbea8f76ed8f9691b22444247c3544cac68280aa14eefb14b55f4624666c6",
+      "url": "/es/posts/2026-10-30-node2shell-brotli-runtime-patching/"
+    },
+    {
+      "key": "zh-CN-2026-10-30-gitlab2shell-cve-2026-110264",
+      "path": "src/content/technical-translations/zh-CN/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "sha256": "fd8d08fbc5df085954f396e02d8f5b77a56324283ca55377ee2bfe0adfb6e4d9",
+      "url": "/zh-CN/posts/2026-10-30-gitlab2shell-cve-2026-110264/"
+    },
+    {
+      "key": "ja-2026-10-30-gitlab2shell-cve-2026-110264",
+      "path": "src/content/technical-translations/ja/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "sha256": "2bd45015641af91d4ed4d42d6bd4cdb2b785dc2c71015829761cf6d4dc768886",
+      "url": "/ja/posts/2026-10-30-gitlab2shell-cve-2026-110264/"
+    },
+    {
+      "key": "de-2026-10-30-gitlab2shell-cve-2026-110264",
+      "path": "src/content/technical-translations/de/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "sha256": "eb844bcd904604fa27591066b79f3d86e1005efb58b6fc5b8bc1b6dd0f97ba1b",
+      "url": "/de/posts/2026-10-30-gitlab2shell-cve-2026-110264/"
+    },
+    {
+      "key": "fr-2026-10-30-gitlab2shell-cve-2026-110264",
+      "path": "src/content/technical-translations/fr/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "sha256": "4b09db92b14ec2c712e92855c5d44e85ab661e0b92dd567b9ce5c963377bfc63",
+      "url": "/fr/posts/2026-10-30-gitlab2shell-cve-2026-110264/"
+    },
+    {
+      "key": "ru-2026-10-30-gitlab2shell-cve-2026-110264",
+      "path": "src/content/technical-translations/ru/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "sha256": "54b3e13f17ed5e6ce0e95235d20fbc988d79e4dd4397e49bf7816265a22f90c7",
+      "url": "/ru/posts/2026-10-30-gitlab2shell-cve-2026-110264/"
+    },
+    {
+      "key": "es-2026-10-30-gitlab2shell-cve-2026-110264",
+      "path": "src/content/technical-translations/es/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "sha256": "5a5dba8a70bf4434647366ea3eb1c71f9a917cbc611c2629e3612594d0f166c0",
+      "url": "/es/posts/2026-10-30-gitlab2shell-cve-2026-110264/"
+    },
+    {
+      "key": "zh-CN-2026-10-30-jdk-emudhra-truststore",
+      "path": "src/content/technical-translations/zh-CN/2026-10-30-jdk-emudhra-truststore.md",
+      "sha256": "7f60cb299049a39fdf6f4d9e4890674879517f73f11b0d99ce146631cf6a1b75",
+      "url": "/zh-CN/posts/2026-10-30-jdk-emudhra-truststore/"
+    },
+    {
+      "key": "ja-2026-10-30-jdk-emudhra-truststore",
+      "path": "src/content/technical-translations/ja/2026-10-30-jdk-emudhra-truststore.md",
+      "sha256": "32bad5c9957de61acd4fd2648ed1e240288ba5a18fd5267eaab659121072a366",
+      "url": "/ja/posts/2026-10-30-jdk-emudhra-truststore/"
+    },
+    {
+      "key": "de-2026-10-30-jdk-emudhra-truststore",
+      "path": "src/content/technical-translations/de/2026-10-30-jdk-emudhra-truststore.md",
+      "sha256": "1c9c8ee16bd7d5a531ad30d706e4765412f5d49318d514a4c466557e30112a38",
+      "url": "/de/posts/2026-10-30-jdk-emudhra-truststore/"
+    },
+    {
+      "key": "fr-2026-10-30-jdk-emudhra-truststore",
+      "path": "src/content/technical-translations/fr/2026-10-30-jdk-emudhra-truststore.md",
+      "sha256": "8bc1318b47cd23c22ec0aaea8b8648b463b672b65f4fd664e42a58eb703cd4c3",
+      "url": "/fr/posts/2026-10-30-jdk-emudhra-truststore/"
+    },
+    {
+      "key": "ru-2026-10-30-jdk-emudhra-truststore",
+      "path": "src/content/technical-translations/ru/2026-10-30-jdk-emudhra-truststore.md",
+      "sha256": "963776dfccb8bc3bdb9dfd75dc77b2919d65d2ba11ad61aacf54571b0f5cde0f",
+      "url": "/ru/posts/2026-10-30-jdk-emudhra-truststore/"
+    },
+    {
+      "key": "es-2026-10-30-jdk-emudhra-truststore",
+      "path": "src/content/technical-translations/es/2026-10-30-jdk-emudhra-truststore.md",
+      "sha256": "87c775b775705300a8c9651fbeb326bbdd05883b9f97dd435df8405d5387cf0d",
+      "url": "/es/posts/2026-10-30-jdk-emudhra-truststore/"
+    },
+    {
+      "key": "zh-CN-2026-10-31-project-valhalla-value-objects",
+      "path": "src/content/technical-translations/zh-CN/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "6a2cc438e7abb44eb78c4ca321a0bdf2d1d4629ea4d3fa43f69dab4777af7f8a",
+      "url": "/zh-CN/posts/2026-10-31-project-valhalla-value-objects/"
+    },
+    {
+      "key": "ja-2026-10-31-project-valhalla-value-objects",
+      "path": "src/content/technical-translations/ja/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "a122bbbdf20e2aa27d0c7a18b6aa87cd581c302362a0fe6726a08b24a01d63f9",
+      "url": "/ja/posts/2026-10-31-project-valhalla-value-objects/"
+    },
+    {
+      "key": "de-2026-10-31-project-valhalla-value-objects",
+      "path": "src/content/technical-translations/de/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "54b9be78aaddbf38e708d9bd2b8d03bffa526298f2413efdf34903b6c40caba8",
+      "url": "/de/posts/2026-10-31-project-valhalla-value-objects/"
+    },
+    {
+      "key": "fr-2026-10-31-project-valhalla-value-objects",
+      "path": "src/content/technical-translations/fr/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "9977d6d7268590d69198bdccf3314f605054be011857ae45d9ed281717d327c5",
+      "url": "/fr/posts/2026-10-31-project-valhalla-value-objects/"
+    },
+    {
+      "key": "ru-2026-10-31-project-valhalla-value-objects",
+      "path": "src/content/technical-translations/ru/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "75e914f45c4b1f4a37ee5d4247a11a3eb84cbbfea5f9cf12a0a5fb27d3cef12a",
+      "url": "/ru/posts/2026-10-31-project-valhalla-value-objects/"
+    },
+    {
+      "key": "es-2026-10-31-project-valhalla-value-objects",
+      "path": "src/content/technical-translations/es/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "27a39b9085628ca9b258f804ca847caa6cf0f9c0724c222a09a20c48d3b2b913",
+      "url": "/es/posts/2026-10-31-project-valhalla-value-objects/"
+    },
+    {
+      "key": "zh-CN-2026-10-31-jdk25-scopedvalue",
+      "path": "src/content/technical-translations/zh-CN/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "a802260f79ac84f91e006901c8da89080a99e7286b24d4178bec86c24996fd05",
+      "url": "/zh-CN/posts/2026-10-31-jdk25-scopedvalue/"
+    },
+    {
+      "key": "ja-2026-10-31-jdk25-scopedvalue",
+      "path": "src/content/technical-translations/ja/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "9a45173219ada583661ae073e30fe1d2d692289e13ae47d0449989043f822bb3",
+      "url": "/ja/posts/2026-10-31-jdk25-scopedvalue/"
+    },
+    {
+      "key": "de-2026-10-31-jdk25-scopedvalue",
+      "path": "src/content/technical-translations/de/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "71c8920f9cf5db4ec20bcf46945d3dc45f77b92e36c3db561cc7c41b41b81343",
+      "url": "/de/posts/2026-10-31-jdk25-scopedvalue/"
+    },
+    {
+      "key": "fr-2026-10-31-jdk25-scopedvalue",
+      "path": "src/content/technical-translations/fr/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "8d2d2ac3ade0c8e014bac60445f64d3e3ed782b62526e1d768965b5e8434bb54",
+      "url": "/fr/posts/2026-10-31-jdk25-scopedvalue/"
+    },
+    {
+      "key": "ru-2026-10-31-jdk25-scopedvalue",
+      "path": "src/content/technical-translations/ru/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "a8868b597f76fcc0178bab0c4c075584d483fd04a4637ab58937f399b31e5a4c",
+      "url": "/ru/posts/2026-10-31-jdk25-scopedvalue/"
+    },
+    {
+      "key": "es-2026-10-31-jdk25-scopedvalue",
+      "path": "src/content/technical-translations/es/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "10c44113bb1653237865d0fb5edb5735da83c3019c63c564c7bc99fafcdccecb",
+      "url": "/es/posts/2026-10-31-jdk25-scopedvalue/"
+    },
+    {
+      "key": "zh-CN-2026-10-31-virtual-threads-jdk21-jdk25",
+      "path": "src/content/technical-translations/zh-CN/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "4857b31add92226478ae6db1caa9684e6594f4a4f39f60a9d35910df9b586c73",
+      "url": "/zh-CN/posts/2026-10-31-virtual-threads-jdk21-jdk25/"
+    },
+    {
+      "key": "ja-2026-10-31-virtual-threads-jdk21-jdk25",
+      "path": "src/content/technical-translations/ja/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "8ce9be6828ef766f9f640479706ec360e5fd0ae84e6e46de35bb340f8aa8e32b",
+      "url": "/ja/posts/2026-10-31-virtual-threads-jdk21-jdk25/"
+    },
+    {
+      "key": "de-2026-10-31-virtual-threads-jdk21-jdk25",
+      "path": "src/content/technical-translations/de/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "b85296c3c16ecf76d1561b8df9d83b6b34a839fb4833e00ee8b2b6bebac60324",
+      "url": "/de/posts/2026-10-31-virtual-threads-jdk21-jdk25/"
+    },
+    {
+      "key": "fr-2026-10-31-virtual-threads-jdk21-jdk25",
+      "path": "src/content/technical-translations/fr/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "b45c22c25c984cb3ee1a65a668dd82a8664a307b86aeaed107a4c708439541dc",
+      "url": "/fr/posts/2026-10-31-virtual-threads-jdk21-jdk25/"
+    },
+    {
+      "key": "ru-2026-10-31-virtual-threads-jdk21-jdk25",
+      "path": "src/content/technical-translations/ru/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "65e82ecdd0c1823509be65d42c99610dfbfb04be4ee2791681a5af6a63b2e3ad",
+      "url": "/ru/posts/2026-10-31-virtual-threads-jdk21-jdk25/"
+    },
+    {
+      "key": "es-2026-10-31-virtual-threads-jdk21-jdk25",
+      "path": "src/content/technical-translations/es/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "0589d5a2efc22a9925f57b27ad569c6fd7e51ce1ab1630e2f7cbefdcfeb60468",
+      "url": "/es/posts/2026-10-31-virtual-threads-jdk21-jdk25/"
+    },
+    {
+      "key": "zh-CN-2026-10-31-jdk-10k-rps-architecture",
+      "path": "src/content/technical-translations/zh-CN/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "27ed5757d1a6a30e86cf5613414d06e804d1c21c4fee260f000ce29d0ad5cf8e",
+      "url": "/zh-CN/posts/2026-10-31-jdk-10k-rps-architecture/"
+    },
+    {
+      "key": "ja-2026-10-31-jdk-10k-rps-architecture",
+      "path": "src/content/technical-translations/ja/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "f7e8145bfdbae5d40e402b491b199f8f7636c0d4bb7e1d760e5bc59095d17782",
+      "url": "/ja/posts/2026-10-31-jdk-10k-rps-architecture/"
+    },
+    {
+      "key": "de-2026-10-31-jdk-10k-rps-architecture",
+      "path": "src/content/technical-translations/de/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "861765eac05753a5b159092664209adc132d264fa7e21cc9542ac5d3fb684e96",
+      "url": "/de/posts/2026-10-31-jdk-10k-rps-architecture/"
+    },
+    {
+      "key": "fr-2026-10-31-jdk-10k-rps-architecture",
+      "path": "src/content/technical-translations/fr/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "65b9745db26de5b36e6e3f0a332b7f193e938ad275ea1f4afc1bc77d382c1594",
+      "url": "/fr/posts/2026-10-31-jdk-10k-rps-architecture/"
+    },
+    {
+      "key": "ru-2026-10-31-jdk-10k-rps-architecture",
+      "path": "src/content/technical-translations/ru/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "a7229c46d219a7deeb5ac105a91c885308fd85919619119dc50a432e520a155c",
+      "url": "/ru/posts/2026-10-31-jdk-10k-rps-architecture/"
+    },
+    {
+      "key": "es-2026-10-31-jdk-10k-rps-architecture",
+      "path": "src/content/technical-translations/es/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "90550e8c714dce952bd7d52311b9222b86717c87dd977984023157bbbef3aa50",
+      "url": "/es/posts/2026-10-31-jdk-10k-rps-architecture/"
+    },
+    {
+      "key": "zh-CN-2026-10-31-webclient-restclient-comparison",
+      "path": "src/content/technical-translations/zh-CN/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "8fa97eca1b520565b938adfad52509d3b33503cee323f0192fed310fe771916c",
+      "url": "/zh-CN/posts/2026-10-31-webclient-restclient-comparison/"
+    },
+    {
+      "key": "ja-2026-10-31-webclient-restclient-comparison",
+      "path": "src/content/technical-translations/ja/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "fe9b06298f0b35956d035fdca40341456e161f9585c562556369137152ee6079",
+      "url": "/ja/posts/2026-10-31-webclient-restclient-comparison/"
+    },
+    {
+      "key": "de-2026-10-31-webclient-restclient-comparison",
+      "path": "src/content/technical-translations/de/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "671578ac457b3da733be90f15142680ef671bdbf2c36319d8179378dea3ffcf5",
+      "url": "/de/posts/2026-10-31-webclient-restclient-comparison/"
+    },
+    {
+      "key": "fr-2026-10-31-webclient-restclient-comparison",
+      "path": "src/content/technical-translations/fr/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "0a84cd1c3b0131d4f34777f6408b60f840a33642248219e09f8c70e8ab45fffb",
+      "url": "/fr/posts/2026-10-31-webclient-restclient-comparison/"
+    },
+    {
+      "key": "ru-2026-10-31-webclient-restclient-comparison",
+      "path": "src/content/technical-translations/ru/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "9c775151716b378402ec65eefd5f6eb28b20c0085ac47fcfcb4905eb4d6c4b91",
+      "url": "/ru/posts/2026-10-31-webclient-restclient-comparison/"
+    },
+    {
+      "key": "es-2026-10-31-webclient-restclient-comparison",
+      "path": "src/content/technical-translations/es/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "2aad2075db10acbc37724b8db6c05906273264eacb95a44fa295c851dcf12a59",
+      "url": "/es/posts/2026-10-31-webclient-restclient-comparison/"
+    },
+    {
+      "key": "zh-CN-2026-10-31-fragnesia-cve-2026-46300",
+      "path": "src/content/technical-translations/zh-CN/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "9183f014e7390f9783c3484c9c7e8fd0a099ed172a01495b77b7f15216df85fb",
+      "url": "/zh-CN/posts/2026-10-31-fragnesia-cve-2026-46300/"
+    },
+    {
+      "key": "ja-2026-10-31-fragnesia-cve-2026-46300",
+      "path": "src/content/technical-translations/ja/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "1dcdfcaa852700ecee6ed247d52cb0c5b3807977b855ba1fa585d59bc9086136",
+      "url": "/ja/posts/2026-10-31-fragnesia-cve-2026-46300/"
+    },
+    {
+      "key": "de-2026-10-31-fragnesia-cve-2026-46300",
+      "path": "src/content/technical-translations/de/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "2ea628a1f05eaf88000212d701a4a6634ed5e3fdbc884627c327d36ec00194f9",
+      "url": "/de/posts/2026-10-31-fragnesia-cve-2026-46300/"
+    },
+    {
+      "key": "fr-2026-10-31-fragnesia-cve-2026-46300",
+      "path": "src/content/technical-translations/fr/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "72024be42c25ec0ce9d958fd2cce66a35ff507b91bf03aae7e33ab429c734cec",
+      "url": "/fr/posts/2026-10-31-fragnesia-cve-2026-46300/"
+    },
+    {
+      "key": "ru-2026-10-31-fragnesia-cve-2026-46300",
+      "path": "src/content/technical-translations/ru/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "815015f5997bfc170a111df5a6ede88015accf9bf2395e308caaaf39f100478b",
+      "url": "/ru/posts/2026-10-31-fragnesia-cve-2026-46300/"
+    },
+    {
+      "key": "es-2026-10-31-fragnesia-cve-2026-46300",
+      "path": "src/content/technical-translations/es/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "35d2f93b61875eb54e100ba58df042456d539c76e3a3995f5ef13ebf1c901279",
+      "url": "/es/posts/2026-10-31-fragnesia-cve-2026-46300/"
+    }
+  ],
+  "guideCopyReview": {
+    "scope": "Only JDK guide metadata and the five newly exposed group copies in six languages; separate from the prior full article reviews.",
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/publications/guide-locales-079.json",
+        "sha256": "7d3a7ee4e73ed637fb4698018d6def3f2012b97398fcea6c5a2c1384a794379e"
+      },
+      {
+        "path": ".pipeline/technical-translations/publications/guide-locales-recheck-079.json",
+        "sha256": "aae1a8a57592f82fa93a0b19279bca09ae89fb2e251232e70eeebf3df3a84960"
+      }
+    ],
+    "unresolved": 0
+  }
+}

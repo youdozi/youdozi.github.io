@@ -1,0 +1,110 @@
+{
+  "scope": {
+    "task": "Independent read-only AI translation review",
+    "type": "complete translation",
+    "audience": "developers; natural technical guide copy",
+    "targetFile": "src/lib/remaining-guide-locales.ts",
+    "sourceFile": "src/lib/technical-guides.ts",
+    "source": "paths.jdk.en",
+    "fields": [
+      "jdk.title",
+      "jdk.description",
+      "jdk.groups.virtual.title",
+      "jdk.groups.virtual.description",
+      "jdk.groups.scoped.title",
+      "jdk.groups.scoped.description",
+      "jdk.groups.capacity.title",
+      "jdk.groups.capacity.description",
+      "jdk.groups.trust.title",
+      "jdk.groups.trust.description",
+      "jdk.groups.valhalla.title",
+      "jdk.groups.valhalla.description"
+    ],
+    "languages": [
+      "zh-CN",
+      "ja",
+      "de",
+      "fr",
+      "ru",
+      "es"
+    ],
+    "method": "Read the target-language diff first, then compare the English source. Read translate skill, all five applicable language sections, and ai-review instructions. No author verdict or expected errors supplied."
+  },
+  "fileSHA256": {
+    "src/lib/remaining-guide-locales.ts": "6ffdd082650f95ce96b294d48566c73ce31a0b0c5eaa1d9d278e660a1f2e777c",
+    "src/lib/technical-guides.ts": "7b3b0ea795f2c731888bf9e8496892f4d18c4f271b64b5dec1899d66f8436b37"
+  },
+  "languages": {
+    "zh-CN": {
+      "findings": [],
+      "result": "No material translation issue found in the scoped strings."
+    },
+    "ja": {
+      "findings": [
+        {
+          "location": "jdk.groups.capacity.description",
+          "severity": "medium",
+          "kind": "terminology / meaning",
+          "confidence": "high",
+          "sourceQuote": "separate admission checks from load-test evidence",
+          "targetQuote": "受け入れ確認と負荷試験の証拠を区別します",
+          "reason": "受け入れ確認 normally denotes acceptance checking. In this API-capacity context admission checks concern request admission, and should remain distinct from acceptance testing. The target makes that technical boundary ambiguous.",
+          "suggestion": "10k RPSの境界を定め、例示の予算を計算し、リクエストの受付制御の確認と負荷試験の証拠を区別します。"
+        }
+      ]
+    },
+    "de": {
+      "findings": [],
+      "result": "No material translation issue found in the scoped strings. Version, final API status, illustrative budgets, and memory-layout non-guarantee are preserved."
+    },
+    "fr": {
+      "findings": [
+        {
+          "location": "jdk.groups.virtual.description",
+          "severity": "low",
+          "kind": "precision",
+          "confidence": "high",
+          "sourceQuote": "separating scheduler behavior from throughput claims",
+          "targetQuote": "sans confondre comportement de l’ordonnanceur et débit",
+          "reason": "The source distinguishes observed scheduler behavior from claims about throughput; the target names throughput directly and drops the explicit status as a claim. No guarantee is added, but retaining this distinction better preserves the stated evidential boundary.",
+          "suggestion": "Observez le blocage des porteurs par les moniteurs dans JDK 21 et 25 avec JFR, en distinguant le comportement de l’ordonnanceur des affirmations sur le débit."
+        },
+        {
+          "location": "jdk.title; jdk.description",
+          "severity": "low",
+          "kind": "optional terminology consistency",
+          "confidence": "medium",
+          "sourceQuote": "Previews; previews such as Valhalla",
+          "targetQuote": "aperçus; les aperçus tels que Valhalla",
+          "reason": "Aperçu can read as an overview rather than a pre-final feature status. Existing French intro already uses fonctionnalités en preview, which communicates the technical status more clearly.",
+          "suggestion": "Use « fonctionnalités en preview » consistently; for example « Guides JDK : API finalisées, vérifications du runtime et fonctionnalités en preview » and « distinguez les fonctionnalités en preview telles que Valhalla »."
+        }
+      ]
+    },
+    "ru": {
+      "findings": [],
+      "result": "No material translation issue found in the scoped strings."
+    },
+    "es": {
+      "findings": [
+        {
+          "location": "jdk.groups.virtual.description",
+          "severity": "low",
+          "kind": "technical precision",
+          "confidence": "high",
+          "sourceQuote": "throughput claims",
+          "targetQuote": "afirmaciones sobre rendimiento",
+          "reason": "Rendimiento is broader than the specific throughput metric. The distinction between scheduler observations and claims is retained, but the metric should remain explicit.",
+          "suggestion": "Observa el anclaje por monitores en JDK 21 y 25 con JFR, separando el comportamiento del planificador de las afirmaciones sobre la tasa de procesamiento."
+        }
+      ]
+    }
+  },
+  "unverified": [
+    "No article bodies or the other existing guide groups were reviewed.",
+    "No code was executed and no browser/rendering or CI checks were run; scope is displayed-string translation.",
+    "No native-speaker or different-model review is claimed.",
+    "Current source content is treated as the provided translation reference; no external verification of JDK status or behavior was performed.",
+    "No repository files were edited."
+  ]
+}

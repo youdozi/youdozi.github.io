@@ -200,12 +200,13 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       if(!['en','ko'].includes(lang)) {
         const header=home.match(/<header class="site-header[^>]*>([\s\S]*?)<\/header>/)[1];
         const footer=home.match(/<footer class="site-footer[^>]*>([\s\S]*?)<\/footer>/)[1];
-        assert.ok(!header.includes('href="/'+lang+'/posts/"'));
-        assert.ok(!footer.includes('href="/'+lang+'/tags/"'));
+        const hasPosts=index.some(entry=>entry.url.startsWith('/'+lang+'/posts/'));
+        assert.equal(header.includes('href="/'+lang+'/posts/"'),hasPosts);
+        assert.equal(footer.includes('href="/'+lang+'/tags/"'),hasPosts);
         for(const kind of ['posts','tags']) {
-          const empty=await readFile('dist/'+lang+'/'+kind+'/index.html','utf8');
-          assert.ok(empty.includes('class="empty"'));
-          assert.ok(empty.includes('href="/'+lang+'/archive/"'));
+          const listing=await readFile('dist/'+lang+'/'+kind+'/index.html','utf8');
+          assert.equal(listing.includes('class="empty"'),!hasPosts);
+          if(!hasPosts)assert.ok(listing.includes('href="/'+lang+'/archive/"'));
         }
       }
       const notFound=await readFile('dist/404.html','utf8');
@@ -220,16 +221,17 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.ok(search.includes('<noscript>'));
       assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/search/</loc>`));
     }
-    for (const lang of ['en','ko']) {
+    const postLanguages=['en','ko','zh-CN','ja','de','fr','ru','es'];
+    const availability=Object.fromEntries(await Promise.all(postLanguages.map(async lang=>{
+      const index=JSON.parse(await readFile(`dist/${lang}/search-index.json`,'utf8'));
+      return [lang,index.some(entry=>entry.url.startsWith(`/${lang}/posts/`))];
+    })));
+    for (const lang of postLanguages) {
       const listing=await readFile(`dist/${lang}/posts/index.html`,'utf8');
-      for (const other of ['en','ko']) assert.ok(listing.includes(`hreflang="${other}" href="https://youdozi.github.io/${other}/posts/"`));
-      for (const empty of ['zh-CN','ja','de','fr','ru','es']) assert.ok(!listing.includes(`hreflang="${empty}"`),'Empty post lists are not translation counterparts');
-    }
-    for (const lang of ['zh-CN','ja','de','fr','ru','es']) {
-      const listing=await readFile(`dist/${lang}/posts/index.html`,'utf8');
-      assert.ok(listing.includes('noindex,follow'));
-      assert.ok(!listing.includes('hreflang='));
-      assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/posts/</loc>`));
+      assert.equal(listing.includes('noindex,follow'),!availability[lang]);
+      assert.equal(sitemap.includes(`<loc>https://youdozi.github.io/${lang}/posts/</loc>`),availability[lang]);
+      if(availability[lang])for(const other of postLanguages)assert.equal(listing.includes(`hreflang="${other}" href="https://youdozi.github.io/${other}/posts/"`),availability[other]);
+      else assert.ok(!listing.includes('hreflang='),'Empty post lists are not translation counterparts');
     }
     assert.ok(!sitemap.includes('/ko/digest/2026-03-16/'));
     const reviewShell=await readFile('dist/review/index.html','utf8');
@@ -323,7 +325,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     }
     const japaneseHome=await readFile('dist/ja/index.html','utf8');
     assert.ok(!japaneseHome.includes('core-articles-heading'));
-    assert.ok(!japaneseHome.includes('href="/ja/guides/"'),'Do not link to an unavailable guide index');
+    assert.equal(japaneseHome.includes('href="/ja/guides/"'),sitemap.includes('<loc>https://youdozi.github.io/ja/guides/</loc>'),'Guide index links follow actual published availability');
 
 
     const renewals=await readdir('src/content/renewals');
@@ -390,20 +392,20 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.ok(!html.includes(record.reviewFocus));
       assert.ok(html.includes(source.url));
       const index=JSON.parse(await readFile(`dist/${lang}/search-index.json`,'utf8'));
-      assert.equal(index.length,approvedTranslations.filter(t=>t.language===lang).length);
+      assert.equal(index.filter(entry=>entry.url.startsWith(`/${lang}/digest/`)).length,approvedTranslations.filter(t=>t.language===lang).length);
       assert.ok(index.find(entry=>entry.url===`/${lang}/digest/${source.slug}/`)?.content.includes(record.edition.claims[0]));
       const feed=await readFile(`dist/${lang}/feed.xml`,'utf8');
       assert.ok(feed.includes(`<language>${lang}</language>`));
       assert.ok(feed.includes(record.edition.claims[0].replaceAll('&','&amp;').replaceAll("'",'&apos;')));
       assert.ok(sitemap.includes(`<loc>${url}</loc>`));
-      assert.ok(!sitemap.includes(`/${lang}/posts/`));
+      assert.equal(sitemap.includes(`<loc>https://youdozi.github.io/${lang}/posts/</loc>`),availability[lang]);
       assert.ok(!(await readFile(`dist/${lang}/index.html`,'utf8')).includes('noindex,follow'));
       const tagsPage=await readFile(`dist/${lang}/tags/index.html`,'utf8');
       assert.ok(!tagsPage.includes('archive-renewal'));
-      assert.match(tagsPage,/noindex,follow/);
-      assert.ok(!tagsPage.includes('hreflang='));
-      assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/tags/</loc>`));
-      assert.ok((await readFile(`dist/${lang}/posts/index.html`,'utf8')).includes('noindex,follow'));
+      assert.equal(tagsPage.includes('noindex,follow'),!availability[lang]);
+      assert.equal(tagsPage.includes('hreflang='),availability[lang]);
+      assert.equal(sitemap.includes(`<loc>https://youdozi.github.io/${lang}/tags/</loc>`),availability[lang]);
+      assert.equal((await readFile(`dist/${lang}/posts/index.html`,'utf8')).includes('noindex,follow'),!availability[lang]);
     }
     const esIndex=JSON.parse(await readFile('dist/es/search-index.json','utf8'));
     const esFeed=await readFile('dist/es/feed.xml','utf8');

@@ -151,3 +151,16 @@ class TechnicalPreviewTests(unittest.TestCase):
             self.assertEqual(check(base)['completeParagraphsAndTableRows'],3)
             p=base/('dist'+URL+'index.html');p.write_text(p.read_text().replace('List&lt;int&gt;','List'))
             with self.assertRaisesRegex(ValueError,'omits a paragraph'):check(base)
+
+    def test_publication_mode_requires_real_approval_and_no_fixture_marker(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base=Path(folder);self.fixture(base)
+            with self.assertRaisesRegex(ValueError,'actual publication approval'):check(base,published=True)
+            p=base/f'src/content/technical-translations/es/{SLUG}.md'
+            p.write_text(p.read_text().replace('render-fixture','human').replace('AUTOMATED_RENDER_FIXTURE_NOT_HUMAN_APPROVAL','Publication authorizer'))
+            (base/'.translation-preview-fixture.json').unlink()
+            result=check(base,published=True)
+            self.assertEqual(result['publishedEditions'],1)
+            self.assertFalse(result['fixtureOnly'])
+            p=base/('dist'+URL+'index.html');p.write_text(p.read_text().replace('antes de sumar.',''))
+            with self.assertRaisesRegex(ValueError,'omits a paragraph'):check(base,published=True)
