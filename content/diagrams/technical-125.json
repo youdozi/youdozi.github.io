@@ -1,0 +1,549 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2026-10-31-failure-fallback",
+      "title": {
+        "ko": "공개 조회 fallback 판단",
+        "en": "Public read fallback"
+      },
+      "description": {
+        "ko": "입장 제한, 원본 조회, 장애 분류, 사본 유무와 신선도 검사를 거쳐 응답한다. 획득한 허가는 모든 종료 경로에서 반환한다.",
+        "en": "Admission, primary read, failure classification and snapshot age policy. Every acquired permit is released on exit."
+      },
+      "steps": [
+        {
+          "kind": "condition",
+          "ko": [
+            "tryAcquire(): 허가 획득?"
+          ],
+          "en": [
+            "tryAcquire(): permit acquired?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "거절",
+              "en": "rejected"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "primary.get(): 원본 조회"
+          ],
+          "en": [
+            "primary.get(): primary read"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "정상 결과를 받았는가?"
+          ],
+          "en": [
+            "Did the primary return?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "원본 반환",
+              "en": "primary"
+            },
+            "continue": {
+              "ko": "예외",
+              "en": "exception"
+            },
+            "outcome": "complete"
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "Unavailable 예외인가?"
+          ],
+          "en": [
+            "Is the error Unavailable?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "예외 전달",
+              "en": "propagate"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "snapshot이 존재하는가?"
+          ],
+          "en": [
+            "Does a snapshot exist?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "거절",
+              "en": "rejected"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "나이가 0초 이상, 60초 이하?"
+          ],
+          "en": [
+            "Is age between 0 and 60s?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "거절",
+              "en": "rejected"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "사본·출처·나이 반환"
+          ],
+          "en": [
+            "Return snapshot, source and age"
+          ]
+        }
+      ],
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "Reply read(Supplier<String> primary, Snapshot snapshot)"
+        }
+      ]
+    },
+    {
+      "key": "2026-10-31-cache-aside",
+      "title": {
+        "ko": "Cache-Aside 조회 흐름",
+        "en": "Cache-Aside read flow"
+      },
+      "description": {
+        "ko": "항목 조회와 TTL 검사, 미스 시 원본 조회, 성공 값 저장과 용량 축출을 수행한다. 로더 실패는 저장 없이 전달한다.",
+        "en": "Look up the entry, check TTL, load on a miss, store a successful result, enforce capacity and return. Propagate load failures without storing."
+      },
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "키로 항목 조회·현재 시간 확인"
+          ],
+          "en": [
+            "Look up key and read ticker"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "항목이 있고 경과 시간 < TTL?"
+          ],
+          "en": [
+            "Entry exists and elapsed < TTL?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "캐시 반환",
+              "en": "cached value"
+            },
+            "continue": {
+              "ko": "아니요",
+              "en": "no"
+            },
+            "outcome": "complete"
+          }
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "기존 항목 제거"
+          ],
+          "en": [
+            "Remove the old entry"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "loader.apply(key): 원본 조회"
+          ],
+          "en": [
+            "loader.apply(key): load origin"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "null이 아닌 정상 결과인가?"
+          ],
+          "en": [
+            "Successful non-null result?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "예외 전달",
+              "en": "propagate"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "값·완료 시각을 캐시에 저장"
+          ],
+          "en": [
+            "Store value and completion time"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "상한 초과 시 LRU 1개 제거"
+          ],
+          "en": [
+            "Over capacity? Evict one LRU"
+          ]
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "조회한 값 반환"
+          ],
+          "en": [
+            "Return the loaded value"
+          ]
+        }
+      ],
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "synchronized String get(Key key, Function<Key, String> loader)"
+        }
+      ]
+    },
+    {
+      "key": "2026-10-31-kafka-event-streaming",
+      "title": {
+        "ko": "Kafka 그룹 소비와 재생",
+        "en": "Kafka groups and replay"
+      },
+      "description": {
+        "ko": "임시 브로커 준비, 토픽 생성, 두 이벤트 발행, 두 그룹의 독립 소비, 직접 재생, 컨테이너 정리 순서. 명령 실패 시 중단하고 생성된 컨테이너를 정리한다.",
+        "en": "Create a disposable broker and topic, publish two events, consume with two groups, replay directly and remove the container. On command failure, stop and clean up."
+      },
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "임시 브로커 컨테이너 시작"
+          ],
+          "en": [
+            "Start disposable broker"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "브로커 준비 확인에 성공?"
+          ],
+          "en": [
+            "Broker ready within attempts?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "실패·정리",
+              "en": "fail/cleanup"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "orders.v1: 파티션 1개 생성"
+          ],
+          "en": [
+            "Create orders.v1, one partition"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "같은 키의 이벤트 2개 발행"
+          ],
+          "en": [
+            "Publish two same-key events"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "projection-v1: 두 기록 읽기"
+          ],
+          "en": [
+            "projection-v1 reads both records"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "audit-v1: 두 기록 읽기"
+          ],
+          "en": [
+            "audit-v1 reads both records"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "파티션 0, 오프셋 0부터 재생"
+          ],
+          "en": [
+            "Replay partition 0 from offset 0"
+          ]
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "실습 컨테이너·데이터 정리"
+          ],
+          "en": [
+            "Remove demo container and data"
+          ]
+        }
+      ],
+      "codeContract": [
+        {
+          "language": "sh",
+          "contains": "for group in projection-v1 audit-v1; do"
+        }
+      ]
+    },
+    {
+      "key": "2026-10-31-ai-agent-refactoring",
+      "title": {
+        "ko": "리팩토링 후 배송비 계산",
+        "en": "Refactored shipping calculation"
+      },
+      "description": {
+        "ko": "금액·회원·배송 지역을 입력받아 음수를 거절하고, 기본 배송비와 도서산간 추가 요금을 계산해 합산 반환한다.",
+        "en": "Read subtotal, membership and shipping region, reject negative amounts, calculate base and remote fees, then return their sum."
+      },
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "금액·회원 여부·배송 지역 입력"
+          ],
+          "en": [
+            "Read subtotal, member and region"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "주문 금액이 0 이상인가?"
+          ],
+          "en": [
+            "Is subtotal nonnegative?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "같은 예외",
+              "en": "same error"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "회원 또는 금액 ≥ 50,000원?",
+            "기본 배송비: 0원 / 그 외 3,000원"
+          ],
+          "en": [
+            "Member or subtotal >= 50,000?",
+            "Base: 0; otherwise 3,000"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "도서산간이면 추가 3,000원",
+            "그 외 추가 요금 0원"
+          ],
+          "en": [
+            "Remote area? Add 3,000",
+            "Otherwise surcharge is 0"
+          ]
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "기본 배송비 + 추가 요금 반환"
+          ],
+          "en": [
+            "Return base + surcharge"
+          ]
+        }
+      ],
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "static long after(long subtotal, boolean member, boolean remote)"
+        }
+      ]
+    },
+    {
+      "key": "2026-10-31-ai-agent-operations",
+      "title": {
+        "ko": "증거 준비 상태 검사",
+        "en": "Evidence readiness gate"
+      },
+      "description": {
+        "ko": "누락·형식·연결·유효 시각을 검사하고 실패와 unknown을 분리한다. 실행 승인을 만들지 않는다.",
+        "en": "Check coverage, shape, identity, age, failures and unknowns. Does not authorize execution."
+      },
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "증거·신뢰 기준·현재 시각 입력"
+          ],
+          "en": [
+            "Evidence, trusted target and now"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "6개 영역이 정확히 존재하는가?"
+          ],
+          "en": [
+            "Exactly six required domains?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "HOLD",
+              "en": "HOLD"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "형식·릴리스·환경·시각 유효?"
+          ],
+          "en": [
+            "Valid shape, identity and time?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "HOLD",
+              "en": "HOLD"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "유효 증거에 fail이 있는가?"
+          ],
+          "en": [
+            "Any valid signal marked fail?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "STOP",
+              "en": "STOP"
+            },
+            "continue": {
+              "ko": "아니요",
+              "en": "no"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "unknown이 있는가?"
+          ],
+          "en": [
+            "Any unknown signal?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "HOLD",
+              "en": "HOLD"
+            },
+            "continue": {
+              "ko": "아니요",
+              "en": "no"
+            }
+          }
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "READY_FOR_REVIEW 반환",
+            "검토 준비 상태이며 실행 아님"
+          ],
+          "en": [
+            "Return READY_FOR_REVIEW",
+            "Ready for review, not execution"
+          ]
+        }
+      ],
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "def decide(evidence, expected, now):"
+        }
+      ]
+    }
+  ]
+}

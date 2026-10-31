@@ -95,3 +95,33 @@ test('supplementary localization permits readable font fitting while protecting 
   for(const changed of [draft.replace('M1 2V3','M1 2V4'),draft.replace('x="320"','x="321"')])assert.throws(()=>compareSupplementarySVG(source,changed,'de'),/geometry changed/);
   for(const size of ['17','25'])assert.throws(()=>compareSupplementarySVG(source,draft.replace('font-size="20"',`font-size="${size}"`),'de'),/font size/);
 });
+
+test('version 2 maps a pinned architecture flow as primary and rejects unplanned images',async()=>{
+  const f=await fixture(),key=f.row.translationKey;
+  const path='assets/img/architecture/fallback-en.svg';
+  const source=f.source.replace(`/assets/diagrams/${key}-en.svg`,'/'+path);
+  const options={formatVersion:2,mainVisual:{path}};
+  assert.doesNotThrow(()=>compareManuscript(source,f.draft,f.diagram,key,f.row.language,options));
+  assert.throws(()=>compareManuscript(source,f.draft,f.diagram,key,f.row.language,{formatVersion:2}),/Unmapped source image/);
+  assert.throws(()=>compareManuscript(source,f.draft.replace(`${key}.svg`,'other.svg'),f.diagram,key,f.row.language,options),/image order or coverage/);
+});
+test('supplementary diagrams preserve existing small labels without permitting further shrinkage',()=>{
+  const source='<svg xml:lang="en"><title>Flow</title><desc>Details</desc><text font-size="16">Step</text><text font-size="10">Stop</text></svg>';
+  const draft=source.replace('xml:lang="en"','xml:lang="ja"').replace('Step','手順').replace('Stop','停止');
+  assert.doesNotThrow(()=>compareSupplementarySVG(source,draft,'ja'));
+  for(const size of ['font-size="15"','font-size="17"'])assert.throws(()=>compareSupplementarySVG(source,draft.replace('font-size="16"',size),'ja'),/font size/);
+});
+
+test('authored prompts may be localized while executable blocks, outputs and prompt commands remain protected',async()=>{
+  const key='2026-10-31-ai-agent-refactoring';
+  const source=await readFile(join(root,`src/content/posts/en/${key}.md`),'utf8');
+  const body=source.split(/^---$/m).slice(2).join('---').replace('/assets/img/architecture/ai-agent-refactoring-en.svg',`${key}.svg`);
+  const draft=`---\n${JSON.stringify({state:'draft',language:'es',translationKey:key,title:'Refactorización',description:'Cambios verificables'})}\n---\n${body.replace('Do not modify files yet.','No modifiques los archivos todavía.')}`;
+  const options={formatVersion:2,mainVisual:{path:'assets/img/architecture/ai-agent-refactoring-en.svg'}};
+  const check=value=>compareManuscript(source,value,{},key,'es',options);
+  assert.doesNotThrow(()=>check(draft));
+  assert.throws(()=>check(draft.replace('Run javac --release 21','Ejecuta javac --release 22')),/Prompt numeric|Prompt identifier/);
+  assert.throws(()=>check(draft.replace('Refactor only after()','Refactor only changed()')),/Prompt identifier/);
+  assert.throws(()=>check(draft.replace('examples=8','examples=9')),/Executable code/);
+  assert.throws(()=>check(draft.replace('return base + surcharge;','return base - surcharge;')),/Executable code/);
+});

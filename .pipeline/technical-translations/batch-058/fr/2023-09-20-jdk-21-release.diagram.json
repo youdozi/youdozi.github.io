@@ -1,7 +1,7 @@
 {
   "key": "2023-09-20-jdk-21-release",
   "language": "fr",
-  "title": "Exécuter les fonctions définitives de Java 21",
+  "title": "Java 21 : fonctions définitives",
   "description": "Le flux suit Jdk21Example sans options de preview. La liste inversée est une vue et join attend la sortie du thread virtuel.",
   "steps": [
     {

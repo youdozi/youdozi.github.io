@@ -14,7 +14,7 @@ async function project(work){
     const registryPath='.pipeline/technical-translations/batches.json';
     const registry=JSON.parse(await readFile(join(root,registryPath),'utf8'));
     const manifests=await Promise.all(registry.manifests.map(async path=>JSON.parse(await readFile(join(root,path),'utf8'))));
-    const paths=new Set([registryPath,...registry.manifests,...manifests.flatMap(m=>m.editions.flatMap(r=>[r.source.path,r.draft.path,r.diagramSource.path,r.diagram.path,r.sourceDiagram.path,...(r.additionalVisuals??[]).flatMap(v=>[v.source.path,v.draft.path])]))]);
+    const paths=new Set([registryPath,...registry.manifests,...manifests.flatMap(m=>m.editions.flatMap(r=>[r.source.path,r.draft.path,r.diagramSource.path,r.diagram.path,r.sourceDiagram.path,...(r.mainVisual?[r.mainVisual.path]:[]),...(r.additionalVisuals??[]).flatMap(v=>[v.source.path,v.draft.path])]))]);
     for(const path of paths){await mkdir(dirname(join(base,path)),{recursive:true});await copyFile(join(root,path),join(base,path));}
     await mkdir(join(base,'src/content/technical-translations'),{recursive:true});
     await work(base,folder);

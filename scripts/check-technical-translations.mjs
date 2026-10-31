@@ -37,7 +37,21 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
   if(m.state!=='draft'||m.language!==language||m.translationKey!==key||!m.title?.trim()||!m.description?.trim())fail('Invalid draft identity or localized metadata');
   if(['publishedAt','updatedAt','approval','reviewedAt','reviewStatus'].some(k=>k in m))fail('Private draft must not claim publication or inherited review');
   if(source.meta.translationKey!==key||source.meta.language!=='en'||source.meta.kind!=='post'||source.meta.reviewStatus==='example')fail('Expected eligible English technical source');
-  same(code(source.body),code(draft.body),'Executable code changed during translation');
+  const sourceCode=code(source.body),draftCode=code(draft.body);
+  const promptFences=options.formatVersion===2 ? ({
+    '2026-10-31-ai-agent-refactoring':[0,4,5],
+    '2026-10-31-ai-agent-operations':[2],
+  }[key]??[]) : [];
+  same(sourceCode.length,draftCode.length,'Executable code changed during translation');
+  sourceCode.forEach((block,index)=>{
+    if(!promptFences.includes(index)){same(block,draftCode[index],'Executable code changed during translation');return;}
+    const translated=draftCode[index];
+    if(block[0]!=='text'||translated[0]!=='text'||!translated[1].trim())fail('Localized prompt missing');
+    same(numbers(block[1]),numbers(translated[1]),'Prompt numeric values changed');
+    const tokens=['ShippingRefactorDemo.java','before()','after()','main()','FREE_THRESHOLD',
+      'javac --release 21 ShippingRefactorDemo.java','java ShippingRefactorDemo','git diff --check'];
+    for(const token of tokens)same(block[1].split(token).length,translated[1].split(token).length,'Prompt identifier or command changed');
+  });
   same(inline(source.body),inline(draft.body),'Inline code changed or omitted');
   same(links(source.body),links(draft.body),'Source links changed, reordered or omitted');
   same(numbers(source.body),numbers(draft.body),'Numeric values changed or omitted');
@@ -56,7 +70,7 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
     const sourceImages=[...source.body.matchAll(/!\[([^\]\n]+)\]\(([^)]+)\)/g)];
     const extras=options.additionalVisuals??[];
     const expected=sourceImages.map(image=>{
-      if(image[2]===`/assets/diagrams/${key}-en.svg`)return `${key}.svg`;
+      if(image[2]===(options.mainVisual ? "/"+options.mainVisual.path : `/assets/diagrams/${key}-en.svg`))return `${key}.svg`;
       const visual=extras.find(v=>'/'+v.source.path===image[2]);
       if(!visual)fail('Unmapped source image');
       return `${key}-architecture.svg`;
@@ -74,7 +88,7 @@ export function compareSupplementarySVG(originalSVG,translatedSVG,language){
   translatedTags.forEach((tag,i)=>{
     const size=Number(/font-size="([0-9.]+)"/.exec(tag)?.[1]);
     const original=Number(/font-size="([0-9.]+)"/.exec(sourceTags[i])?.[1]);
-    if(!Number.isFinite(size)||size<18||size>original)fail('Unreadable supplementary SVG font size');
+    if(!Number.isFinite(size)||size<Math.min(18,original)||size>original)fail('Unreadable supplementary SVG font size');
   });
   // Only localized strings, language and reduced text font sizes may differ.
   const geometry=s=>s.trim().replace(/xml:lang="[^"]+"/,'xml:lang="LANG"')
@@ -127,15 +141,20 @@ export async function inspectTechnicalTranslations(base=root,manifestPath=defaul
     if(Boolean(original.loop)!==Boolean(diagram.loop))fail('Flow loop was added or omitted');
     if(original.loop&&(original.loop.from!==diagram.loop.from||original.loop.to!==diagram.loop.to||typeof diagram.loop.label!=='string'||!diagram.loop.label.trim()))fail('Flow loop endpoints or label changed');
     if(diagram.steps.some(s=>!Array.isArray(s.lines)||s.lines.length<1||s.lines.length>3||s.lines.some(line=>typeof line!=='string'||!line.trim())))fail('Empty or invalid translated flow step');
+    if(row.mainVisual){
+      if(manifest.formatVersion!==2||!/^assets\/img\/architecture\/[a-z0-9-]+-en\.svg$/.test(row.mainVisual.path))fail('Invalid primary visual identity');
+      const mainSVG=await pinned(row.mainVisual,'assets/img/architecture/');
+      if(!mainSVG.includes('xml:lang="en"'))fail('Expected English primary visual');
+    }
     const extras=row.additionalVisuals??[];
     if(!Array.isArray(extras)||extras.length>1||(extras.length&&manifest.formatVersion!==2))fail('Invalid additional visual plan');
     for(const visual of extras){
-      if(visual.source.path!=='assets/img/architecture/10k-rps-en.svg'||key!=='2026-10-31-jdk-10k-rps-architecture'||visual.draft.path!==`${prefix}${language}/${key}-architecture.svg`)fail('Invalid additional visual identity');
+      if(!/^assets\/img\/architecture\/[a-z0-9-]+-en\.svg$/.test(visual.source.path)||visual.source.path===row.mainVisual?.path||visual.draft.path!==`${prefix}${language}/${key}-architecture.svg`)fail('Invalid additional visual identity');
       const originalSVG=await pinned(visual.source,'assets/img/architecture/');
       const translatedSVG=await pinned(visual.draft,prefix);
       compareSupplementarySVG(originalSVG,translatedSVG,language);
     }
-    const {draft}=compareManuscript(sourceRaw,draftRaw,diagram,key,language,{formatVersion:manifest.formatVersion,additionalVisuals:extras});
+    const {draft}=compareManuscript(sourceRaw,draftRaw,diagram,key,language,{formatVersion:manifest.formatVersion,mainVisual:row.mainVisual,additionalVisuals:extras});
     if(draft.meta.sourcePath!==row.source.path||draft.meta.sourceSha256!==row.source.sha256)fail('Draft source pin mismatch');
     const labels=[diagram.title];
     diagram.steps.forEach((step,i)=>{

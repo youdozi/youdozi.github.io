@@ -85,11 +85,11 @@
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/de/2023-09-20-jdk-21-release.diagram.json",
-        "sha256": "7ee86c846ace31d39be2f38b1feca63115dde082c1ae47a12c79d0d62b296002"
+        "sha256": "5e8f07b9e49873de301cb85d4c602eef020011258878dd9bb1bee74a3c2605db"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-058/de/2023-09-20-jdk-21-release.svg",
-        "sha256": "e40369e0837bf09dd5ed51f1f07d9914997f47366b9ea863755ac7a57fc59bd6"
+        "sha256": "9ece59e5f6be21846dddd8c267261cef6efee0655048abf6463e0131642da20d"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
@@ -110,11 +110,11 @@
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/fr/2023-09-20-jdk-21-release.diagram.json",
-        "sha256": "71b8ab61a60bf0a98df9932e867280a45fe40ea41f7b887ce8d57bd93ddba284"
+        "sha256": "54b663fb24949cb74e1e09bf1687215ddeecde71fdfa5d6881f77d5919004fff"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-058/fr/2023-09-20-jdk-21-release.svg",
-        "sha256": "1087656262c0f45f8c17a5f780f721612d13f5d7fe6f4d3c360a309b0278a4e1"
+        "sha256": "a31f7c75e4b908d55420f2e4e463ce03c47dfc53cd657b2c72fa951db8204229"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
@@ -135,11 +135,11 @@
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/ru/2023-09-20-jdk-21-release.diagram.json",
-        "sha256": "e03ab08e0b4dbd9da834b11ade29e061177f8b2d484213852d4946d277a48c17"
+        "sha256": "bcafe844654ecfc13e65790217e59075b7f62184ea4697d6e2d3a0bf63072d77"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-058/ru/2023-09-20-jdk-21-release.svg",
-        "sha256": "0314ef575f32bef0dd4bee954f02677891ceea9860e15e55637091b02b55229d"
+        "sha256": "928c08a5c1f0ede5c6c33bcb693581ce2246655105a3daa47139b2c348866b32"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
@@ -285,11 +285,11 @@
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/ru/2023-09-23-jdk-21-string-templates.diagram.json",
-        "sha256": "37829449c18ee5c2343e13aa304636d6a693be6ecd3528cbd7b0b58726fa8e1a"
+        "sha256": "2630ada4719d438313e90bbf1f7303ab553dac30b8da6c7ed9302ec2fd493696"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-058/ru/2023-09-23-jdk-21-string-templates.svg",
-        "sha256": "d4c9e81a0cea1e87ec0e739ca1e5811d0457bcf66a4d9735242ceb04af728215"
+        "sha256": "2c92ebf6dea541c19b0f7c11370b4b28e3c5e67fe64c0f80f164250c274dfa1b"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
@@ -360,11 +360,11 @@
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/ja/2023-10-10-temurin-jdk21-delay.diagram.json",
-        "sha256": "80e7f23de35d3781d972f0d67fe1bd2b5547b0c53d8e827e741672cb45d2a1dd"
+        "sha256": "fc571fa0a53db12487194d74499f7ffac8aa66a6a8f800a2f896a41850f5d648"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-058/ja/2023-10-10-temurin-jdk21-delay.svg",
-        "sha256": "df9ca3f0f9bc49ff4d109e21fde6200b861b7ce8bfb562d5bddfb84db31fc2ad"
+        "sha256": "d050362972f8b47281f535756d80a9a6e50475d703ff0a6719dd5eef06598678"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
@@ -385,11 +385,11 @@
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/de/2023-10-10-temurin-jdk21-delay.diagram.json",
-        "sha256": "c53aa31fb28b570b22cdf4525f0c3fb6e517c7462b192ce602d6782277079575"
+        "sha256": "472fffdc6b3a320a3632fd3432020b9033eee733599ef781f39b70335a288189"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-058/de/2023-10-10-temurin-jdk21-delay.svg",
-        "sha256": "54641d35e7e7ba028e53f2d8da55aa043b67ac7e52a5b1999580fb24d423c96c"
+        "sha256": "c9c64286700f24360b2fda819035ad6b737f49057ffa1422a2ca7b30c977c6c9"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
@@ -410,11 +410,11 @@
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/fr/2023-10-10-temurin-jdk21-delay.diagram.json",
-        "sha256": "e6e782cfcded88ac3002351b6ee6b11897cca02dad2842cb0e6edbb4aba135d9"
+        "sha256": "7cc455b327b517a4633ab15f627f3e2cf6bf20d7fe77871f23fec9a8dc4d3a3b"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-058/fr/2023-10-10-temurin-jdk21-delay.svg",
-        "sha256": "3ef186f9c2d09b128afa90fd47b60cba20a6d3bfa84252355b1a01fd48c76a62"
+        "sha256": "2f1d73c563b1bb2696b2554f544b561938ac1ed8d5cddd2d3dbb39d17387722e"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
@@ -510,11 +510,11 @@
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/ja/2021-07-27-parse-yaml.diagram.json",
-        "sha256": "df382812bd73bcbeda7eb74ea5eb790d8ea847a74063efae855d2d76bab606c1"
+        "sha256": "67c8e33ae7c0f357731f60c78488367dbdf81648461c80f56b674984b770129b"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-058/ja/2021-07-27-parse-yaml.svg",
-        "sha256": "8b6045e5703d9fb9fc0fcdba5886a37b554cf8aef41a6b615dfee78f3327d900"
+        "sha256": "d3ccce90b388ce14c499d10eca6d898109a0c28473a8532e9654b23f012b8593"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
@@ -585,11 +585,11 @@
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/ru/2021-07-27-parse-yaml.diagram.json",
-        "sha256": "926c6e1a33e15f2a83b53c0de586dc9a3f006bb60867dd258fc7e225d42a8986"
+        "sha256": "92cc1fcdb942d3eb5e5c5fb0f2a4396ab1aacb74035955e1321433386dc6ed58"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-058/ru/2021-07-27-parse-yaml.svg",
-        "sha256": "9e9cefa25f2b1e79396a5663b36cec3319cd1ae952cfc010b59503af371e40b3"
+        "sha256": "13c4e4c36d61e78be2afd451f09549d06fac5b18668794e41c26949389156a01"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",
@@ -610,11 +610,11 @@
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-058/es/2021-07-27-parse-yaml.diagram.json",
-        "sha256": "097c30aea365bac82eafcfe612f073546efe81bfaeea3c58a60aa1aae23adf12"
+        "sha256": "45eafaa96edefbfa4cac7d1bb5d64367984d33f5cb76e433f25d137775c706cb"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-058/es/2021-07-27-parse-yaml.svg",
-        "sha256": "24dd0dabf74d49790e390b06de8c83bd7b479247e56d8b7ffb1f55d91ffd3d68"
+        "sha256": "5584f48fdd814ff0be4f553ef9ce4d39e2dfcd5c76962f8d82b2be43baa4b11c"
       },
       "sourceDiagram": {
         "path": "content/diagrams/workflows.json",

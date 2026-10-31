@@ -31,8 +31,9 @@
     {
       "kind": "result",
       "lines": [
-        "Solo puerto válido: exportar SERVER_PORT",
-        "Lanzar exec con argumentos entre comillas"
+        "Solo puerto válido:",
+        "exportar SERVER_PORT; lanzar exec",
+        "con argumentos entre comillas"
       ]
     }
   ]

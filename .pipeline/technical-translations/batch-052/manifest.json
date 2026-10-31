@@ -355,7 +355,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/ja/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "36bfbd115f36c026962b9001b74fbb2eee9703f573f2d7708bf9705e068ab371"
+        "sha256": "19657776f943b92a661a5d7156b2f234721f385f598e6d50ee3d12b8bc77bef8"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/ja/2023-09-23-linux-shellscript-github-latest.diagram.json",
@@ -455,7 +455,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-052/es/2023-09-23-linux-shellscript-github-latest.md",
-        "sha256": "031d34b3f526fb5147153100d83808a6e0e2d1566b1acf4d2fe16b46ae338afd"
+        "sha256": "274039fb651d0356a1621c636e581f42e58199abdea9a5d49bf5cf715c0caf64"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-052/es/2023-09-23-linux-shellscript-github-latest.diagram.json",

@@ -205,7 +205,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-050/ja/2021-07-22-plus-minus.md",
-        "sha256": "a29b193f789881396444b4f3c00174ffd38c0c3c136ccaeba471eb76eabd048c"
+        "sha256": "e9b8b4ceb095fa004e17653d10bc9a6e52663f865e20d64dc02ecfd5a5560124"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-050/ja/2021-07-22-plus-minus.diagram.json",

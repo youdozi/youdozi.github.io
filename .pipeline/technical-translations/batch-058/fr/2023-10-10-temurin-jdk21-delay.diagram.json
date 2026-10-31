@@ -7,7 +7,8 @@
     {
       "kind": "process",
       "lines": [
-        "Récupérer le JSON des artefacts avec curl"
+        "Récupérer le JSON des",
+        "artefacts avec curl"
       ]
     },
     {
@@ -34,7 +35,8 @@
       "kind": "result",
       "lines": [
         "Afficher version, nom, URL et somme",
-        "Aucun hachage du fichier téléchargé vérifié"
+        "Aucun hachage du fichier",
+        "téléchargé vérifié"
       ]
     }
   ]
