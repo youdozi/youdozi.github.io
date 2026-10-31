@@ -51,6 +51,8 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      - name: Check read-only Fragnesia kernel evidence with synthetic contracts
+        run: python3 -B scripts/check_fragnesia_example.py
       - name: Execute offline GitLab release comparisons and read-only JVM trust inventories
         run: python3 -B scripts/check_gitlab_jdk_examples.py
       - name: Execute Valhalla semantics with a checksum-pinned temporary JDK 28 EA
