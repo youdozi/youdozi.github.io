@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2026-10-31-kafka-event-streaming",
+      "title": {
+        "ko": "Kafka 그룹 소비와 재생",
+        "en": "Kafka groups and replay"
+      },
+      "description": {
+        "ko": "임시 브로커 준비, 토픽 생성, 두 이벤트 발행, 두 그룹의 독립 소비, 직접 재생, 컨테이너 정리 순서. 명령 실패 시 중단하고 생성된 컨테이너를 정리한다.",
+        "en": "Create a disposable broker and topic, publish two events, consume with two groups, replay directly and remove the container. On command failure, stop and clean up."
+      },
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "임시 브로커 컨테이너 시작"
+          ],
+          "en": [
+            "Start disposable broker"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "브로커 준비 확인에 성공?"
+          ],
+          "en": [
+            "Broker ready within attempts?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "실패·정리",
+              "en": "fail/cleanup"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "orders.v1: 파티션 1개 생성"
+          ],
+          "en": [
+            "Create orders.v1, one partition"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "같은 키의 이벤트 2개 발행"
+          ],
+          "en": [
+            "Publish two same-key events"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "projection-v1: 두 기록 읽기"
+          ],
+          "en": [
+            "projection-v1 reads both records"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "audit-v1: 두 기록 읽기"
+          ],
+          "en": [
+            "audit-v1 reads both records"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "파티션 0, 오프셋 0부터 재생"
+          ],
+          "en": [
+            "Replay partition 0 from offset 0"
+          ]
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "실습 컨테이너·데이터 정리"
+          ],
+          "en": [
+            "Remove demo container and data"
+          ]
+        }
+      ],
+      "codeContract": [
+        {
+          "language": "sh",
+          "contains": "for group in projection-v1 audit-v1; do"
+        }
+      ]
+    }
+  ]
+}
