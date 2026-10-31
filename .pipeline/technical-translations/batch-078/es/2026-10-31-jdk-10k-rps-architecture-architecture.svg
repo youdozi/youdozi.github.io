@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1070" viewBox="0 0 640 1070" role="img" aria-labelledby="title desc" xml:lang="es">
+<title id="title">Arquitectura de referencia para una API de 10000 RPS</title><desc id="desc">Las capas perimetrales y de balanceo distribuyen a réplicas de API sin estado entre zonas. Se limitan la admisión de solicitudes y la concurrencia de caché, base de datos y servicios externos. Un outbox de BD opcional alimenta una cola y trabajadores idempotentes.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#2d654c"/></marker></defs><rect width="640" height="1070" fill="#f7f7f2"/>
+<g stroke="#2d654c" stroke-width="3" fill="none" marker-end="url(#arrow)"><path d="M320 155V195"/><path d="M320 280V320"/><path d="M90 430V525H170"/><path d="M90 525V655H170"/><path d="M90 655V785H170"/><path d="M385 700H620V870H320V910" stroke-dasharray="8 7"/></g>
+<rect x="40" y="60" width="560" height="95" rx="12" fill="#eef2e9" stroke="#66836f" stroke-width="2"/>
+<text x="320.0" y="91.5" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">CDN / WAF / límites por cliente</text>
+<text x="320.0" y="123.5" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">Caché perimetral: respuestas públicas aptas</text>
+<rect x="40" y="195" width="560" height="85" rx="12" fill="#eef2e9" stroke="#66836f" stroke-width="2"/>
+<text x="320.0" y="221.5" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">Balanceador de carga</text>
+<text x="320.0" y="253.5" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">Salud y distribución entre zonas</text>
+<rect x="40" y="320" width="560" height="110" rx="12" fill="#eef2e9" stroke="#66836f" stroke-width="2"/>
+<text x="320.0" y="343.0" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">Réplicas de API JDK sin estado</text>
+<text x="320.0" y="375.0" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">Varias zonas / admisión de solicitudes</text>
+<text x="320.0" y="407.0" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">Hilos virtuales / plazos de solicitudes</text>
+<rect x="170" y="480" width="430" height="90" rx="12" fill="#eef2e9" stroke="#66836f" stroke-width="2"/>
+<text x="385.0" y="509.0" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">Caché de lectura (opcional)</text>
+<text x="385.0" y="541.0" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="20">Tasa de aciertos / TTL / coalescencia de misses</text>
+<rect x="170" y="610" width="430" height="90" rx="12" fill="#eef2e9" stroke="#66836f" stroke-width="2"/>
+<text x="385.0" y="639.0" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">Grupos BD / lectura y escritura</text>
+<text x="385.0" y="671.0" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="22">Conexiones globales / timeout de consultas</text>
+<rect x="170" y="740" width="430" height="90" rx="12" fill="#eef2e9" stroke="#66836f" stroke-width="2"/>
+<text x="385.0" y="769.0" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="23">Límites de concurrencia por dependencia</text>
+<text x="385.0" y="801.0" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">Plazos / presupuestos de reintentos</text>
+<rect x="40" y="910" width="560" height="100" rx="12" fill="#eef2e9" stroke="#66836f" stroke-width="2"/>
+<text x="320.0" y="944.0" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">Outbox BD → Cola → Trabajadores (opcional)</text>
+<text x="320.0" y="976.0" text-anchor="middle" dominant-baseline="middle" fill="#23362b" font-family="system-ui,sans-serif" font-size="24">Entrega tras commit / repetición / idempotencia</text>
+<text x="320" y="1044" text-anchor="middle" font-family="system-ui,sans-serif" font-size="19" fill="#35443a">Diseño de referencia: dimensionar instancias y límites con pruebas de carga</text></svg>

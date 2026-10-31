@@ -14,7 +14,7 @@ async function project(work){
     const registryPath='.pipeline/technical-translations/batches.json';
     const registry=JSON.parse(await readFile(join(root,registryPath),'utf8'));
     const manifests=await Promise.all(registry.manifests.map(async path=>JSON.parse(await readFile(join(root,path),'utf8'))));
-    const paths=new Set([registryPath,...registry.manifests,...manifests.flatMap(m=>m.editions.flatMap(r=>[r.source.path,r.draft.path,r.diagramSource.path,r.diagram.path,r.sourceDiagram.path]))]);
+    const paths=new Set([registryPath,...registry.manifests,...manifests.flatMap(m=>m.editions.flatMap(r=>[r.source.path,r.draft.path,r.diagramSource.path,r.diagram.path,r.sourceDiagram.path,...(r.additionalVisuals??[]).flatMap(v=>[v.source.path,v.draft.path])]))]);
     for(const path of paths){await mkdir(dirname(join(base,path)),{recursive:true});await copyFile(join(root,path),join(base,path));}
     await mkdir(join(base,'src/content/technical-translations'),{recursive:true});
     await work(base,folder);
@@ -38,7 +38,7 @@ test('human preparation creates twelve approved Markdown files without altering 
   await project(async base=>{
     const batch=await inspectTechnicalBatch(base),before=await readFile(join(base,manifestPath),'utf8');
     assert.equal(await prepareApprovedTechnicalBatch(base,approval,batch.manifestSha256),12);
-    const checked=await checkTechnicalPublications(base);assert.equal(checked.approvedEditions,12);assert.equal(checked.pendingEditions,108);
+    const checked=await checkTechnicalPublications(base);assert.equal(checked.approvedEditions,12);assert.equal(checked.pendingEditions,(await inspectTechnicalBatches(base)).editions.length-12);
     assert.equal(await readFile(join(base,manifestPath),'utf8'),before);
     assert.equal(await prepareTechnicalAssets(base),12);
   });
@@ -95,8 +95,8 @@ test('approval hash for the first batch cannot publish the separate shell batch'
     const second=await inspectTechnicalBatch(base,secondPath);
     assert.equal(await prepareApprovedTechnicalBatch(base,approval,second.manifestSha256,secondPath),18);
     assert.equal((await checkTechnicalPublications(base)).approvedEditions,18);
-    assert.equal((await checkTechnicalPublications(base)).pendingEditions,102);
-    assert.equal((await inspectTechnicalBatches(base)).editions.length,120);
+    assert.equal((await checkTechnicalPublications(base)).pendingEditions,(await inspectTechnicalBatches(base)).editions.length-18);
+    assert.equal((await inspectTechnicalBatches(base)).editions.length,(await inspectTechnicalBatches(root)).editions.length);
   });
 });
 test('unknown or duplicated manifest registrations are rejected before publication',async()=>{
@@ -130,5 +130,27 @@ test('distinct registry paths cannot disguise a duplicated batch identity',async
     const path=join(base,'.pipeline/technical-translations/batch-052/manifest.json'),manifest=JSON.parse(await readFile(path,'utf8'));
     manifest.batchId='technical-050';await writeFile(path,JSON.stringify(manifest));
     await assert.rejects(inspectTechnicalBatches(base),/Duplicate technical batch ID/);
+  });
+});
+
+test('recent batch keeps all supplementary figures private until exact approval, then copies both diagrams',async()=>{
+  await project(async base=>{
+    const selected='.pipeline/technical-translations/batch-078/manifest.json';
+    const batch=await inspectTechnicalBatch(base,selected);
+    assert.equal(batch.editions.length,72);
+    const architectures=batch.editions.filter(e=>e.additionalDiagrams?.length);
+    assert.equal(architectures.length,6);
+    assert.equal(await prepareTechnicalAssets(base),0);
+    await assert.rejects(readFile(join(base,'public',architectures[0].additionalDiagrams[0].url)),{code:'ENOENT'});
+    await prepareApprovedTechnicalBatch(base,approval,batch.manifestSha256,selected);
+    assert.equal(await prepareTechnicalAssets(base),72);
+    for(const edition of architectures){
+      assert.match(edition.body,/\/assets\/diagrams\/technical\/[^)]+-architecture\.svg/);
+      const extra=edition.additionalDiagrams[0];
+      assert.equal(sha(await readFile(join(base,'public',extra.url))),extra.sha256);
+    }
+    const extra=architectures[0].additionalDiagrams[0];
+    await writeFile(join(base,extra.path),'changed image');
+    await assert.rejects(prepareTechnicalAssets(base),/Pinned file changed/);
   });
 });

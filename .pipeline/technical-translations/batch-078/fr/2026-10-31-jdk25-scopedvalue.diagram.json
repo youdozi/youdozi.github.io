@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-jdk25-scopedvalue",
+  "title": "Contexte borné et restauration",
+  "description": "Suit handleRequest dans le thread virtuel ; les sorties imbriquées normales ou exceptionnelles restaurent la liaison externe. Un enfant ordinaire n’en hérite pas.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Démarrer sur un thread virtuel",
+        "Observer CONTEXT sans liaison"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "call() : tenant-a / trace-123",
+        "Lire le contexte dans service()"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "run() imbriqué : lire tenant-b",
+        "Revenir et observer tenant-a"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "run() imbriqué : lever une erreur",
+        "Intercepter ; tenant-a restauré"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Démarrer un enfant virtuel simple",
+        "Observer sans liaison ; attendre"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Quitter le call() externe",
+        "Sans liaison ; get() lève"
+      ]
+    }
+  ],
+  "language": "fr"
+}

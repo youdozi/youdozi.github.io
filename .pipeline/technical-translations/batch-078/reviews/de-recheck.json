@@ -1,0 +1,140 @@
+{
+  "language": "de",
+  "reviewerSession": "/root/review078_de",
+  "scope": "최초 지적 4건의 수정 범위와 원문 의미 재대조; 12편 전체 코드·인라인 리터럴·링크 보존 재확인",
+  "changedfiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-verify-sha256-download.md",
+      "previousSha256": "8884d8668fe3dee259965ab0fa5f6dac95902c439395709feb22c804c0610151",
+      "sha256": "e8d86546a23eb9cac7db41a745b58c59d985ea815049cbc4cba0e9ea13183623"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-webclient-timeout-retry.md",
+      "previousSha256": "ad329043ee374f270b9f6d2024dc1b8842eff5cd35b51973a379ba44d2d61238",
+      "sha256": "e12ac339a53913c7c650252170a4efecd6beb558ae2406140ff2440b059046f5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+      "previousSha256": "687ca7e79b1a896c61e18841122cb25eebd188d661027414b2769edbea7d5ed0",
+      "sha256": "2688685f2f0eae4a5663050e742019830d4a581d03a6638432ba410c0329257e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture.md",
+      "previousSha256": "0f1984fb64205592b57e9cad9625222557c893080c4a9383e48761ad15370ada",
+      "sha256": "4a7e6609c66078f5260cfadfc4f9ab0d9db336649713da5ab9b22927aaf9843c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk25-scopedvalue.diagram.json",
+      "previousSha256": "8fc9d0de71aff6ae218ea9b70ca427de40282ee86ca87b501c46225521074a09",
+      "sha256": "68bc6391194eae76768d9d8d3d8452205b3420b7d1e3025bda867c6489ac8cfe"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk25-scopedvalue.svg",
+      "previousSha256": "438dd295c57e53897f0e328019b6e3612c0c2a00f4f7f1dd6ecfe60d627cda73",
+      "sha256": "47bd52eeeef571de6d6c0374b6d0dd0b06ced9d243f40d9257cf8710b846f082"
+    }
+  ],
+  "resolutions": [
+    {
+      "finding": 1,
+      "status": "resolved",
+      "evidence": "TCP-Verbindungszeitlimit von 1000 ms가 원문의 1,000 ms 및 코드의 1000과 일치."
+    },
+    {
+      "finding": 2,
+      "status": "resolved",
+      "evidence": "설명·산문·표·SVG 제목의 10000이 원문의 ten thousand와 명확히 일치. 코드·인라인 수식은 원문 유지."
+    },
+    {
+      "finding": 3,
+      "status": "resolved",
+      "evidence": "statt einer Prüfsummenliste, eines Dateinamens oder einer URL가 원문의 checksum manifest 입력 형식을 명확하게 전달."
+    },
+    {
+      "finding": 4,
+      "status": "resolved",
+      "evidence": "Einfachen virtuellen / Kind-Thread starten는 올바른 남성 대격 구문으로 plain virtual child thread를 전달. JSON과 SVG의 줄별 표시 문자열 일치."
+    }
+  ],
+  "protectedElementChecks": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-jdk-emudhra-truststore.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-php2shell-runtime-patching.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-verify-sha256-download.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-30-webclient-timeout-retry.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-fragnesia-cve-2026-46300.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk-10k-rps-architecture.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-jdk25-scopedvalue.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-project-valhalla-value-objects.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-webclient-restclient-comparison.md",
+      "fencedBlocksUnchanged": true,
+      "inlineLiteralsUnchanged": true,
+      "linksUnchanged": true
+    }
+  ],
+  "unresolved": [],
+  "assessment": "검토한 수정 범위에서 최초 지적 4건 해결, 새 의미 문제 없음. 최초 검토와 본 재확인 범위의 번역 의미 검토 통과.",
+  "unverified": [
+    "예제 재실행 및 외부 사실 최신성 검증은 수행하지 않음.",
+    "브라우저 렌더링·사이트 배포 및 이미지 시각적 잘림은 검증하지 않음.",
+    "별도 세션 AI 검토이며 사람/원어민 검토가 아님."
+  ]
+}

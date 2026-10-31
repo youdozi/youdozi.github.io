@@ -1,0 +1,51 @@
+{
+  "key": "2026-10-31-jdk25-scopedvalue",
+  "title": "Anfragekontext und Wiederherstellung",
+  "description": "Folgt handleRequest im virtuellen Thread; normale und außergewöhnliche verschachtelte Ausstiege stellen die äußere Bindung wieder her. Ein gewöhnlicher Kind-Thread erbt sie nicht.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Anfrage im virtuellen Thread starten",
+        "CONTEXT ist ungebunden"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "call(): tenant-a / trace-123 binden",
+        "Kontext in service() lesen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Verschachteltes run(): tenant-b lesen",
+        "Rückkehr: tenant-a beobachten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Verschachteltes run(): Ausnahme",
+        "Außen abfangen; tenant-a wieder da"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Einfachen virtuellen",
+        "Kind-Thread starten",
+        "Ungebunden; auf Kind warten"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Äußeres call() verlassen",
+        "Ungebunden; get() wirft Ausnahme"
+      ]
+    }
+  ],
+  "language": "de"
+}

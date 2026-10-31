@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-jdk25-scopedvalue",
+  "title": "Contexto acotado y restauración",
+  "description": "Sigue handleRequest en el hilo virtual; las salidas anidadas normales y excepcionales restauran el enlace exterior. Un hilo hijo ordinario no lo hereda.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Iniciar solicitud en hilo virtual",
+        "Observar CONTEXT sin enlace"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "call(): enlazar tenant-a / trace-123",
+        "Leer contexto en service()"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "run() anidado: leer tenant-b",
+        "Volver y observar tenant-a"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "run() anidado: lanzar excepción",
+        "Capturar fuera; restaurar tenant-a"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Iniciar hijo virtual ordinario",
+        "Sin enlace; esperar al hijo"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Salir del call() exterior",
+        "Sin enlace; get() lanza excepción"
+      ]
+    }
+  ],
+  "language": "es"
+}

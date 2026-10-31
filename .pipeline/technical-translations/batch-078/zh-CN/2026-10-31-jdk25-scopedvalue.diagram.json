@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-jdk25-scopedvalue",
+  "title": "请求上下文的绑定与恢复",
+  "description": "沿虚拟线程中的 handleRequest 执行。嵌套作用域无论正常还是异常退出，都会恢复外层绑定。普通子线程不会继承绑定。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "在虚拟线程中开始请求",
+        "观察 CONTEXT 尚未绑定"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "call()：绑定 tenant-a / trace-123",
+        "在 service() 中读取上下文"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "嵌套 run()：读取 tenant-b",
+        "返回后观察 tenant-a"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "嵌套 run()：抛出异常",
+        "在外部捕获；恢复 tenant-a"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "启动普通虚拟子线程",
+        "观察未绑定；等待子线程"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "从外层 call() 返回",
+        "观察未绑定；get() 抛异常"
+      ]
+    }
+  ],
+  "language": "zh-CN"
+}

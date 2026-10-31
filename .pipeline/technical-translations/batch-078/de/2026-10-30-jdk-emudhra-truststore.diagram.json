@@ -1,0 +1,45 @@
+{
+  "key": "2026-10-30-jdk-emudhra-truststore",
+  "title": "JSSE-Standardvertrauen prüfen",
+  "description": "JVM-Identität lesen, Standard-Trustmanager initialisieren, Fingerabdrücke von CA-Kandidaten sammeln und nur den Bestand ausgeben.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Eigenschaften der laufenden JVM lesen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Standard-TrustManagerFactory starten"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Initialisierung erfolgreich?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Ausnahme",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Akzeptierte CA-Aussteller lesen",
+        "Namen abgleichen, Kandidaten hashen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Anzahlen und Bestand ausgeben",
+        "Kein Urteil zur TLS-Validierung"
+      ]
+    }
+  ],
+  "language": "de"
+}

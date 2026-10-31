@@ -1,0 +1,54 @@
+{
+  "key": "2026-10-30-verify-sha256-download",
+  "title": "验证 SHA-256 字节",
+  "description": "验证预期摘要，以二进制分块读取稳定的普通文件并比较。输入和读取错误返回 2，不匹配返回 1，匹配返回 0。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "64 个十六进制字符？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "无效：2",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "分块读取普通文件的二进制内容",
+        "更新 SHA-256 直至 EOF"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "所有文件读取均成功？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "读取：2",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "摘要与预期值匹配？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "不匹配：1",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "打印 OK；退出 0"
+      ]
+    }
+  ],
+  "language": "zh-CN"
+}

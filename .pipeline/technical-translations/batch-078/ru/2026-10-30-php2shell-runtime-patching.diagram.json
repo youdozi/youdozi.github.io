@@ -1,0 +1,38 @@
+{
+  "key": "2026-10-30-php2shell-runtime-patching",
+  "title": "Сбор сведений о CLI",
+  "description": "За пределами CLI завершиться без раскрытия данных. Прочитать сведения об этом процессе CLI и вывести JSON без вывода о наличии исправления.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "PHP_SAPI равен cli?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "web: 404",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Прочитать PID, версию и файл"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Прочитать ini и параметры сессии"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Вывести сведения CLI в JSON",
+        "Без оценки исправлений"
+      ]
+    }
+  ],
+  "language": "ru"
+}

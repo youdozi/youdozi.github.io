@@ -105,3 +105,49 @@ class TechnicalPreviewTests(unittest.TestCase):
                     p=base/('dist/es/feed.xml' if surface=='feed' else 'dist/ko/posts/'+SLUG+'/index.html' if surface=='alternate' else 'dist'+URL+'index.html')
                     p.write_text(p.read_text().replace('Calcula productos.','Wrong') if surface=='feed' else p.read_text().replace('hreflang="es"','hreflang="fr"') if surface=='alternate' else p.read_text().replace('<h1>Producto escalar</h1>','<h1>Wrong</h1>'))
                 with self.assertRaises(ValueError):check(base)
+
+    def test_supplementary_architecture_image_must_render_in_order_with_local_asset(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base=Path(folder);self.fixture(base)
+            extra='/assets/diagrams/technical/'+KEY+'-architecture.svg'
+            p=base/f'src/content/technical-translations/es/{SLUG}.md'
+            p.write_text(p.read_text()+'\n\n![Arquitectura]('+extra+')\n')
+            p=base/('dist'+URL+'index.html')
+            p.write_text(p.read_text().replace('</div></article>','<p><img src="'+extra+'" alt="Arquitectura"></p></div></article>'))
+            asset=base/('dist'+extra);asset.write_text('<svg/>')
+            self.assertEqual(check(base)['fixtureEditions'],1)
+            asset.unlink()
+            with self.assertRaisesRegex(ValueError,'diagram'):check(base)
+
+    def test_numbered_list_items_are_visible_without_html_list_markers(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base=Path(folder);self.fixture(base)
+            listing='\n\n1. 入力を1回確認する。\n2. 完了後に出力する。\n'
+            p=base/f'src/content/technical-translations/es/{SLUG}.md';p.write_text(p.read_text()+listing)
+            p=base/('dist'+URL+'index.html');p.write_text(p.read_text().replace('</div></article>','<ol><li>入力を1回確認する。</li><li>完了後に出力する。</li></ol></div></article>'))
+            p=base/'dist/es/search-index.json';rows=json.loads(p.read_text());rows[0]['content']+=listing;p.write_text(json.dumps(rows))
+            self.assertEqual(check(base)['completeParagraphsAndTableRows'],4)
+            p=base/('dist'+URL+'index.html');p.write_text(p.read_text().replace('<li>完了後に出力する。</li>',''))
+            with self.assertRaisesRegex(ValueError,'omits a paragraph'):check(base)
+
+    def test_api_fragment_parentheses_and_typographic_apostrophes_keep_complete_prose(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base=Path(folder);self.fixture(base)
+            paragraph="\n\nL'appel à [tryAcquire()](https://example.org/api#tryAcquire()) refuse le travail.\n"
+            p=base/f'src/content/technical-translations/es/{SLUG}.md';p.write_text(p.read_text()+paragraph)
+            p=base/('dist'+URL+'index.html');p.write_text(p.read_text().replace('</div></article>',"<p>L’appel à <a href='https://example.org/api#tryAcquire()'>tryAcquire()</a> refuse le travail.</p></div></article>"))
+            p=base/'dist/es/search-index.json';rows=json.loads(p.read_text());rows[0]['content']+=paragraph;p.write_text(json.dumps(rows))
+            self.assertEqual(check(base)['completeParagraphsAndTableRows'],3)
+            p=base/('dist'+URL+'index.html');p.write_text(p.read_text().replace('refuse le travail.',''))
+            with self.assertRaisesRegex(ValueError,'omits a paragraph'):check(base)
+
+    def test_generic_type_in_inline_code_must_remain_visible(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base=Path(folder);self.fixture(base)
+            heading='\n\n## Permite `List<int>`?\n'
+            p=base/f'src/content/technical-translations/es/{SLUG}.md';p.write_text(p.read_text()+heading)
+            p=base/('dist'+URL+'index.html');p.write_text(p.read_text().replace('</div></article>','<h2>Permite <code>List&lt;int&gt;</code>?</h2></div></article>'))
+            p=base/'dist/es/search-index.json';rows=json.loads(p.read_text());rows[0]['content']+=heading;p.write_text(json.dumps(rows))
+            self.assertEqual(check(base)['completeParagraphsAndTableRows'],3)
+            p=base/('dist'+URL+'index.html');p.write_text(p.read_text().replace('List&lt;int&gt;','List'))
+            with self.assertRaisesRegex(ValueError,'omits a paragraph'):check(base)

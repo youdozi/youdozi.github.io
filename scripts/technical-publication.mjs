@@ -30,9 +30,12 @@ export async function inspectTechnicalBatch(base=root,selectedManifest=manifestP
     const draft=readArticle(await readFile(resolve(base,row.draft.path),'utf8'));
     const source=readArticle(await readFile(resolve(base,row.source.path),'utf8'));
     const {language,translationKey:key}=row;
-    const body=draft.body.replace(`](${key}.svg)`,`](${assetURL(language,key)})`);
+    let body=draft.body.replace(`](${key}.svg)`,`](${assetURL(language,key)})`);
+    const additionalDiagrams=(row.additionalVisuals??[]).map(visual=>({path:visual.draft.path,sha256:visual.draft.sha256,url:assetURL(language,key+'-architecture')}));
+    for(const visual of additionalDiagrams)body=body.replace(`](${key}-architecture.svg)`,`](${visual.url})`);
     editions.push({key:row.key,path:`src/content/technical-translations/${language}/${key}.md`,body,
       diagramPath:row.diagram.path,diagramSha256:row.diagram.sha256,
+      ...(additionalDiagrams.length?{additionalDiagrams}:{}),
       data:{schemaVersion:1,state:'approved',language,translationKey:key,routeSlug:source.data.routeSlug,kind:'post',
         title:draft.data.title,description:draft.data.description,categories:source.data.categories??[],tags:source.data.tags??[],
         sourcePath:row.source.path,sourceSha256:row.source.sha256,draftSha256:row.draft.sha256,
@@ -150,6 +153,11 @@ export async function prepareTechnicalAssets(base=root){
     const svg=await readFile(resolve(base,edition.diagramPath));
     if(sha(svg)!==edition.diagramSha256)throw new Error('Reviewed technical SVG changed');
     await writeFile(resolve(base,'public'+assetURL(record.data.language,record.data.translationKey)),svg,{flag:'wx'});
+    for(const visual of edition.additionalDiagrams??[]){
+      const bytes=await readFile(resolve(base,visual.path));
+      if(sha(bytes)!==visual.sha256)throw new Error('Reviewed supplementary SVG changed');
+      await writeFile(resolve(base,'public'+visual.url),bytes,{flag:'wx'});
+    }
   }
   return result.records.length;
 }

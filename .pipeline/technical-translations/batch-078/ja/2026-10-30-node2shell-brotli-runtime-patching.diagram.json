@@ -1,0 +1,29 @@
+{
+  "key": "2026-10-30-node2shell-brotli-runtime-patching",
+  "title": "現在のプロセスを記録",
+  "description": "サンプルアプリが収集関数を読み込み、自身のランタイム情報を読み取ってJSONを出力します。展開や修正判定は行いません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "app.mjsを起動",
+        "runtimeEvidenceを読み込む"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "PID・実行ファイル・バージョンを読む",
+        "OSとアーキテクチャを読む"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "このプロセスをJSON出力",
+        "展開や修正判定は行わない"
+      ]
+    }
+  ],
+  "language": "ja"
+}

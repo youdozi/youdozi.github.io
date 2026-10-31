@@ -1,0 +1,38 @@
+{
+  "key": "2026-10-30-php2shell-runtime-patching",
+  "title": "CLI-Belege erfassen",
+  "description": "Außerhalb der CLI ohne Datenoffenlegung beenden. Diesen CLI-Prozess lesen und JSON ausgeben, ohne den Patchstatus zu bewerten.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "PHP_SAPI ist cli?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Web: 404",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "PID, Version und Programm lesen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Geladene ini und Sessionoptionen lesen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "CLI-Belege als JSON ausgeben",
+        "Keine Bewertung des Patchstatus"
+      ]
+    }
+  ],
+  "language": "de"
+}

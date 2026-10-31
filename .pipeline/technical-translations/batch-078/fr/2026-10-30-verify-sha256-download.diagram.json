@@ -1,0 +1,54 @@
+{
+  "key": "2026-10-30-verify-sha256-download",
+  "title": "Vérifier les octets SHA-256",
+  "description": "Valider l’empreinte attendue, lire un fichier ordinaire stable par blocs binaires et comparer. Les erreurs d’entrée et de lecture renvoient 2, une différence 1, une correspondance 0.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "64 caractères hexadécimaux ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "invalide : 2",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lire le fichier par blocs binaires",
+        "Actualiser SHA-256 jusqu’à EOF"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Toutes les lectures ont réussi ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "lecture : 2",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Empreinte conforme à l’attendu ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "écart : 1",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Afficher OK ; sortie 0"
+      ]
+    }
+  ],
+  "language": "fr"
+}

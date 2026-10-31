@@ -1,0 +1,198 @@
+{
+  "language": "ja",
+  "reviewerSession": "/root/review078_ja",
+  "scope": "Independent read-only AI review of all 12 Japanese Markdown translations, 12 workflow JSON translations and their 12 SVG outputs, plus the architecture SVG. Target-only reading followed by full English body/title/description, workflow and architecture-label comparison. All fenced code/command/output blocks compared byte-for-byte (identical in all 12); non-image Markdown link targets compared (identical). No major meaning omission, addition, condition/negation/numeric drift or final/preview confusion found in reviewed text. One minor wording ambiguity and three optional style improvements recorded.",
+  "files": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-gitlab2shell-cve-2026-110264.diagram.json",
+      "sha256": "5f9182e0c7d9177647da68c35bb7ec8fdc7ea4c4b0da33fba41a4d43a7d334bc"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "sha256": "e4321817f9e00d6923260b720d2fb8dccd35ca23ce769b1b765c71a00088e343"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-gitlab2shell-cve-2026-110264.svg",
+      "sha256": "d6caf2dc21bbf9efff3f0b0e71f1a62f99dac8ec3dc367b0bb08167eb8d438f0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-jdk-emudhra-truststore.diagram.json",
+      "sha256": "0896f0275b10e899697d7ae5cbf70b576a2600d7a9f76e48028fd3ef49d27e8e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-jdk-emudhra-truststore.md",
+      "sha256": "688f51d8cf3a1f206f312735afd25e3208de4225df44716a19cae6c44d56e6ca"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-jdk-emudhra-truststore.svg",
+      "sha256": "e9d16f6c1a068d11cd8ac128c60a2d65aa71f27e3ac3befb76bcfadee557f974"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-node2shell-brotli-runtime-patching.diagram.json",
+      "sha256": "7229cb3788ac0ce3834c062a56d53b2df83e778702f997533a8cff559c90933e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "sha256": "12df17770a5afc2451e9a55972714253f297186a0f32b702285f379267699f03"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-node2shell-brotli-runtime-patching.svg",
+      "sha256": "6c388e78e53e4892bd10463cfb88b9e645700ae4fcc61b4033e20b71fd1cee46"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-php2shell-runtime-patching.diagram.json",
+      "sha256": "e34f42a9adc7648440d2d271c35cf90d3e37e005e8f9294006fb7de7bc16988e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "15b639e41a346b17c4614f8ae76bb0346da4f58b874581e2fd9edaf4fc27b3a0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-php2shell-runtime-patching.svg",
+      "sha256": "3b9676c091cfbe4593a6625a6f79689550560aa747290f895eb1cb9fde7e56ab"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-verify-sha256-download.diagram.json",
+      "sha256": "15640e757e2362c0ee76d7308c4c74725d9b1d6d38fc8d968861898ad56656a7"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-verify-sha256-download.md",
+      "sha256": "a02472e4b5cee1b828fd8e7ab6960d10510fd9a9b321a0dc7a1763b7d9badb70"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-verify-sha256-download.svg",
+      "sha256": "68a322b1c4111e7b95b7dc9a25173ca99a3d2672b570a22d9ea1fcea1cc4267b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-webclient-timeout-retry.diagram.json",
+      "sha256": "9401e20d1b3f58bf8c1f4449e56978aa84b50cf621c12454084fe8745f50180a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "5f63bbbc87607eb3b7dc2c608d5e9afb1891a2ac20918227b0147dd3f32b35c8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-30-webclient-timeout-retry.svg",
+      "sha256": "69205ffdc258e0f4132cec649075f02e611353935510d260ef5149212dc81713"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-fragnesia-cve-2026-46300.diagram.json",
+      "sha256": "edf1e4ce958661d6a0dc6b7f6b02292fc0e0a80e49f34fb0902ee2d946c2b13e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "a813fa7904dc4f4295e05659b4ff857f19847baf614d5bacfd3c97952633445b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-fragnesia-cve-2026-46300.svg",
+      "sha256": "39f44fce604a1797bfebbfc7400b3aa0aa0c1b89829dc109ad835a5568656922"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+      "sha256": "265944ec8f983fda0911ae41d34626920d7031607b9c508e3c3b05fcc899e87a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+      "sha256": "40ef1de597efb5989e353b6bdd5ff76d7127248a174cde86989f2db852a768aa"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "4a5b8ea4cb14e4d5fbc1052472811aabbd93278a1316065d5293aa11e633e6c8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk-10k-rps-architecture.svg",
+      "sha256": "dbb30294675535b1fb2a090ad6e1ae6cda0de07facc7e7bbbc6dcb1dae7797e9"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk25-scopedvalue.diagram.json",
+      "sha256": "4cba0d50d0085849f58591bf1daa52fe1d550dc02c447abef4e7ef5c75a268b1"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "b36f3b7b429f41ed6838b0fff43b3b73ae06eac684a2f568d9a3ea465a04e82c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk25-scopedvalue.svg",
+      "sha256": "c88c84e15b70024a91cbcdbea5533408c94f9710f495eb3e510f656da0d34ec1"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-project-valhalla-value-objects.diagram.json",
+      "sha256": "ae6c8147bf9dc8aba7744f28ffa68dbdae22bd2d45cf3c2238d5aa8db1ab9869"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "da93129b14f39ec5754fe5aeac6a350cc456005b3b6d15723fa1983db9d0ab6c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-project-valhalla-value-objects.svg",
+      "sha256": "82cc1b13947145e694112a8f7529ee26bd839b41141692704ea1f74f066c4aaa"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-virtual-threads-jdk21-jdk25.diagram.json",
+      "sha256": "3133fbe30641617294968574bc024a4638658e6899f396551a2076b0e3732ace"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "8883a98ed3b0505f29fc167a00ef4315bc8e792343d8453202c783e9d48e1fe0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-virtual-threads-jdk21-jdk25.svg",
+      "sha256": "fe995b8aa98d0ec566a916a6506eba74c40fd071b42b48a8e863726fbf1ab69b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-webclient-restclient-comparison.diagram.json",
+      "sha256": "1138d7c3209e67d1e6ecd21304bf09eb3184a3b1bbe8acd7ef297ab35d4153f8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "e88d6b76b26bfbc125f28db9d04c25afd999d83a3fef43bb97b0250b75619737"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-webclient-restclient-comparison.svg",
+      "sha256": "539c95875b2adc2af0c975756ff51b8e799c44b38b661134f6dbc13ceeb0cb2a"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "minor",
+      "location": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk25-scopedvalue.diagram.json:31; corresponding .svg text",
+      "sourceQuote": "Catch outside; tenant-a restored",
+      "targetQuote": "外側で捕捉しtenant-aへ復元",
+      "reason": "「捕捉し…へ復元」だとcatch側で復元操作を行う順序にも読めます。原文は外側で例外を捕捉した時点で外側のバインディングが復元されている状態を表し、本文の自動復元の説明に合わせるとより正確です。",
+      "suggestion": "外側で捕捉し、tenant-aの復元を確認",
+      "confidence": 0.86
+    },
+    {
+      "severity": "style",
+      "location": ".pipeline/technical-translations/batch-078/ja/2026-10-31-fragnesia-cve-2026-46300.md:18",
+      "sourceQuote": "This is not a defect first introduced in October.",
+      "targetQuote": "十月に初めて導入された欠陥ではありません。",
+      "reason": "日付の意味は正確です。ただし同段落の「5月」「10月28日」「10月31日」と漢数字月が混在します。選択的な表記統一です。",
+      "suggestion": "10月に初めて導入された欠陥ではありません。",
+      "confidence": 0.99
+    },
+    {
+      "severity": "style",
+      "location": ".pipeline/technical-translations/batch-078/ja/2026-10-31-fragnesia-cve-2026-46300.diagram.json:4; corresponding .svg desc",
+      "sourceQuote": "OS failure exits with status 2.",
+      "targetQuote": "OSの失敗は状態2で終了し",
+      "reason": "数値・失敗条件は保たれていますが、終了ステータスを「状態」とするのは技術日本語として不自然です。本文との用語統一を推奨します。",
+      "suggestion": "OS情報の取得に失敗すると終了コード2で終了し",
+      "confidence": 0.98
+    },
+    {
+      "severity": "style",
+      "location": ".pipeline/technical-translations/batch-078/ja/2026-10-31-jdk25-scopedvalue.md:4",
+      "sourceQuote": "Request Context Beyond ThreadLocal",
+      "targetQuote": "ThreadLocalの先へ進むリクエストコンテキスト",
+      "reason": "情報欠落はありませんが、「コンテキスト」が先へ進むという係り方はやや翻訳調です。選択的な見出し改善です。",
+      "suggestion": "ThreadLocalを超えるリクエストコンテキスト",
+      "confidence": 0.88
+    }
+  ],
+  "unverified": [
+    "Browser rendering, clipping and deployed route/image availability were not checked; SVG XML and all translatable SVG text/title/desc were read.",
+    "No code was rerun, no external facts or linked source pages were independently verified. Execution claims are reviewed as translations of source records, not as this review session executions.",
+    "Source frontmatter operational metadata omitted by the draft translation format was not assessed as public-body translation content."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "key": "2026-10-30-webclient-timeout-retry",
+  "title": "Délais et opérateurs de réessai",
+  "description": "Lire la chaîne d’opérateurs de haut en bas. Le délai total englobe tentatives et attentes. Seul HTTP 503 autorise deux réessais.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "GET /value",
+        "retrieve → décoder String"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(attemptLimit)",
+        "Budget neuf à chaque tentative"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "retryWhen : HTTP 503 seulement",
+        "Attendre ; au plus deux réessais"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(totalLimit)",
+        "Englobe tentatives et attentes"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "L’abonné reçoit valeur / fin",
+        "ou erreur finale"
+      ]
+    }
+  ],
+  "language": "fr"
+}

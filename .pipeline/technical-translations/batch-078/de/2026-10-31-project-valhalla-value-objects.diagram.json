@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-project-valhalla-value-objects",
+  "title": "Identitäts- und Wertsemantik vergleichen",
+  "description": "Das Beispiel vergleicht Records und testet dann Referenzfelder, null-Speicherung und eine behandelte Monitorausnahme. Es untersucht kein Speicherlayout.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Zwei gewöhnliche Records erzeugen",
+        "Zwei gleiche Wert-Records erzeugen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "== und equals() vergleichen",
+        "Objects.hasIdentity() prüfen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Separate Strings mit gleichem Inhalt",
+        "Label: == und equals() vergleichen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Wert-Record-Array erzeugen",
+        "Ersten Platz auf null prüfen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Sperren über Object versuchen",
+        "Erwartete IdentityException abfangen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Semantische Beobachtungen beendet",
+        "Keine Layout- oder Leistungsmessung"
+      ]
+    }
+  ],
+  "language": "de"
+}

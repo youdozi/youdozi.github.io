@@ -1,0 +1,275 @@
+{
+  "language": "ru",
+  "reviewerSession": "/root/review078_ru",
+  "scope": "Read-only recheck of original two findings against English source, all changed target files, and protected literals in all 12 posts.",
+  "result": "pass within translation-review scope",
+  "resolutions": [
+    {
+      "originalFinding": 1,
+      "status": "resolved",
+      "evidence": "English thousands commas in ordinary Russian prose, metadata, table and architecture SVG title are replaced by actual U+00A0; no remaining comma-thousands patterns outside protected Markdown code/inline literals were found. 1 000 ms and 10 000 RPS preserve source magnitudes. Protected q_safe = 2,500 RPS and inline calculations retain exact English literals."
+    },
+    {
+      "originalFinding": 2,
+      "status": "resolved",
+      "evidence": "Both Gate diagram JSON and SVG now say Операция завершается / или выбрасывает исключение; this naturally expresses source Operation completes or throws. Acquisition-failure branch, finally permit return, and exception propagation remain intact."
+    }
+  ],
+  "changedfiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "a7e78009c0f10eb96655dcc537ae87607a2122e9669dec9468e3524bf448d45d",
+      "previousSha256": "ab38ceba147223f01ffae852d697dc79bc89aadd38f4010cdeeacb4776e246d9"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+      "sha256": "2a5201a5ea3786d1ce304160fb20c33a1b1a2a73104be4320c565cbcbccf8035",
+      "previousSha256": "1a1ae917b04ce8042c35764d72a48a8b9f164a93a3734d6530def348832e7c83"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+      "sha256": "046a2fd3a0421470b1d38096926de1a4840117f6b5b07444f90d8d0b8ec8030e",
+      "previousSha256": "a678956579e960d8eb67d77872d1b775b4bac36a0bc569bad7047cf4ae3bb90d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "20023e2c353c815d68830ea755e5a928f8a8fb577555d2c0206cb910c8bc6b39",
+      "previousSha256": "6d0d9afa57dc40c2509062dc2dd5e7a96251f9eb3bc74810abfbced34f09b087"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture.svg",
+      "sha256": "6e78d73e561880226198f3edfe8555fc8b0b2084ed55d724ecae579d47e1c1b8",
+      "previousSha256": "1910977242fb7890b4eca68424bd24409dc16a3c756756fa87cc7d8e31ed8f96"
+    }
+  ],
+  "files": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-gitlab2shell-cve-2026-110264.diagram.json",
+      "sha256": "83c4399a79f03c06f91ad48766e6b0b46c5f54b3f6c9f52ebb6c8f6b0caf0187"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "sha256": "6fb36f613cedb7ef1141356b1ed51bf943aa83b719a902ea91f28b0bb6d9651d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-gitlab2shell-cve-2026-110264.svg",
+      "sha256": "6e615de3f9fed2576accd7a43d0281bd58afc8827a3711fd68eb8465826109fa"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-jdk-emudhra-truststore.diagram.json",
+      "sha256": "b1c25246ed93b4e7ae5e808f5f11a9de7169daef4e41ce82629ae6c1f62db192"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-jdk-emudhra-truststore.md",
+      "sha256": "5046cff72a259d0b1cae1b4853b2571dfbcdca6828e8c707a3206049eff4d914"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-jdk-emudhra-truststore.svg",
+      "sha256": "4753e8059dd247a32f4b47b2f88ca82de1ac8960d6efe4fc7e3e4586fe2cfb2b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-node2shell-brotli-runtime-patching.diagram.json",
+      "sha256": "69ebd90e21a744e08ce25a7d711744c93b39d675d7436e0c1bf94b34980dfddf"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "sha256": "b0d6ea395aaf8afd168bdeca4ce6ca6b8468f178e83090c9d47ce58a4e67e52b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-node2shell-brotli-runtime-patching.svg",
+      "sha256": "d531a272a26c7e0357221e3c8f4e05f0b01d85b245353edf990285a36b3daa58"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-php2shell-runtime-patching.diagram.json",
+      "sha256": "6c1c6664e0252ba202ac1be82820f5d189f4473e6543dcaa301a5d4762da3fa1"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "e4ea1a385236cd9af64d3868e1413fe253a36165dab12bcbbc4cad3838e495d0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-php2shell-runtime-patching.svg",
+      "sha256": "5cb6aefd831e3486943b3fb7931be5f1c584462614ced7c6ba385a9fa3b38016"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-verify-sha256-download.diagram.json",
+      "sha256": "447efbf9ee0c8fc466e4b37a940a8e89465b72c95eeb304b66e93947fbb9ea61"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-verify-sha256-download.md",
+      "sha256": "5c5bac8c7f3d73268f0c1e8dc83828e30bc640dc7dbe6af3c9ff8567fa968eec"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-verify-sha256-download.svg",
+      "sha256": "4a6f8e1535b7cf6113f3b0759eccf574ac451172685fa898fb90c7cfd2784c42"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-webclient-timeout-retry.diagram.json",
+      "sha256": "8e4ded3ff5f4687237174a3c4df50d0229da16335506b1bb7aef7b2650962b79"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "a7e78009c0f10eb96655dcc537ae87607a2122e9669dec9468e3524bf448d45d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-webclient-timeout-retry.svg",
+      "sha256": "565b93c3797695dea81667789e87d720d70bfb9dc7c3c264cb3de8c302cae642"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-fragnesia-cve-2026-46300.diagram.json",
+      "sha256": "bb1a5e0cebf7b50a104fb77bc4d71db1c31cd44dada1d77722f60555907664b2"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "d5e5f886f84feaacc2ecb83bd87e8846d6991b28af6d25bb9569d01e506ce728"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-fragnesia-cve-2026-46300.svg",
+      "sha256": "7d34d38baee589dc58585457016629793283d50865b13bd09bab47143754f33e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+      "sha256": "2a5201a5ea3786d1ce304160fb20c33a1b1a2a73104be4320c565cbcbccf8035"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+      "sha256": "046a2fd3a0421470b1d38096926de1a4840117f6b5b07444f90d8d0b8ec8030e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "20023e2c353c815d68830ea755e5a928f8a8fb577555d2c0206cb910c8bc6b39"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture.svg",
+      "sha256": "6e78d73e561880226198f3edfe8555fc8b0b2084ed55d724ecae579d47e1c1b8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk25-scopedvalue.diagram.json",
+      "sha256": "53ee1a480105f4d87ecbc68d85f2f853e6a226766cdddc49b955d1dc02737a4e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "790373887c06b7f16490d5cc1cf9e7c39232c8df1adcef69eb853a9f07d7814b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk25-scopedvalue.svg",
+      "sha256": "525052b77c3f49e1266874d5d2174bbaf2d41f4299d382ecf4b03125964a58ba"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-project-valhalla-value-objects.diagram.json",
+      "sha256": "f7f6d47f30bb7b065935efba5a625d16de5b91dd11797f14c44fd9c4ab081b59"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "580f25b6cf2150231f7d82f274e8f8ec56a69a5e79cca21e19155f97cc6b9801"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-project-valhalla-value-objects.svg",
+      "sha256": "8cccf54e5b82dde599de8222d6815bf92b253b6769fec59d016e3825ef08bd62"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-virtual-threads-jdk21-jdk25.diagram.json",
+      "sha256": "f035c3b5bc5911d0f292856704637fe4e3b7b54e06d383721bc942ad939339c5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "47e5e2b7ea861b3ed970d62310b9b43eb0c3707c2a3f55c3f0d489d5ba503b8c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-virtual-threads-jdk21-jdk25.svg",
+      "sha256": "ce6b19319068cf6e0d76752ba8f315fbb9058efa063fe4257c3db2b6bac9b888"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-webclient-restclient-comparison.diagram.json",
+      "sha256": "0faabb1491dd14cced52497bbfa0b987f45ba583c72f9b9a122bc6ced1a1a7d7"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "e32bbb9e707047c77a03d8b4344c5fcb8a0007d5e73025bd0dd60f5b16cc9de1"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-webclient-restclient-comparison.svg",
+      "sha256": "6074db0272b4db4d15511ca61c9763a52f115dea9fdb070bd3376b0e3b83ed6d"
+    }
+  ],
+  "protectedElementChecks": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-jdk-emudhra-truststore.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-php2shell-runtime-patching.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-verify-sha256-download.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-30-webclient-timeout-retry.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-fragnesia-cve-2026-46300.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk-10k-rps-architecture.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-jdk25-scopedvalue.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-project-valhalla-value-objects.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-webclient-restclient-comparison.md",
+      "fencedCodeEqual": true,
+      "inlineLiteralsEqual": true,
+      "nonImageLinkDestinationsEqual": true
+    }
+  ],
+  "remainingUnprotectedThousandsCommas": [],
+  "unresolved": [],
+  "unverified": [
+    "No code re-execution or external factual verification; original source execution claims remain translated history.",
+    "SVG XML and localized text were inspected, but browser rendering, visual clipping and published deployment are outside this recheck."
+  ]
+}

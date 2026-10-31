@@ -1,0 +1,45 @@
+{
+  "key": "2026-10-30-jdk-emudhra-truststore",
+  "title": "检查默认 JSSE 信任",
+  "description": "读取 JVM 标识，初始化默认信任管理器，收集候选 CA 指纹，仅打印清单。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "读取运行中 JVM 的属性"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "初始化默认 TrustManagerFactory"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "初始化成功？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "异常",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "读取受信任 CA 颁发者",
+        "匹配名称并计算候选项哈希"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "打印数量与清单",
+        "不判定 TLS 验证结果"
+      ]
+    }
+  ],
+  "language": "zh-CN"
+}

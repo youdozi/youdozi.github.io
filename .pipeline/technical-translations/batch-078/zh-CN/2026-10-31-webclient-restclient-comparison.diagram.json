@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-webclient-restclient-comparison",
+  "title": "HTTP 调用：终结与订阅",
+  "description": "仅展示 main 的核心检查；省略服务器搭建、配置与清理。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "构造 RestClient.retrieve()",
+        "请求计数 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "通过 body(String.class) 等待",
+        "首个请求完成：1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "构造 WebClient Mono",
+        "尚未订阅：1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "首次 block 订阅并等待",
+        "请求计数 2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "第二次 block 再次订阅",
+        "请求计数 3"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "检查每个客户端的 404 和 503",
+        "再发 4 次请求；最终计数 7"
+      ]
+    }
+  ],
+  "language": "zh-CN"
+}

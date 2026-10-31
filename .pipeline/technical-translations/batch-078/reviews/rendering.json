@@ -1,0 +1,102 @@
+{
+  "reviewerSession": "/root/review078_rendering",
+  "scope": {
+    "baseCommit": "ddd29de05028c73513aa646ea806228123c1a393",
+    "kind": "Independent read-only review of current rendering fixes and technical-preview checker changes; source fidelity limited to the changed spans, not a complete retranslation review.",
+    "examined": [
+      "translate/SKILL.md and references/ai-review.md and references/languages.md",
+      "git diff, source/draft Markdown, /tmp/translations078-rendered.json",
+      "scripts/check_technical_preview.py and scripts/test_technical_preview.py"
+    ],
+    "validation": [
+      "python3 -m unittest discover -s scripts -p test_technical_preview.py: 10 tests passed",
+      "All changed Markdown retains the same body text after removing backticks and strong delimiters as base commit.",
+      "All changed draft bodies match rendered snapshot bodies; expected prose remains present; six translated Valhalla headings contain rendered <code>List&lt;int&gt;</code>.",
+      "All manifest source/draft/diagram hashes checked against current files."
+    ]
+  },
+  "files": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/de/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "7648de9311d0de496cd465630daf969a088157d78679a59626bed322c843ae6f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "7a8e0b8b6c1eba407bb5c62b0aaab654b5751047ef13923de06503662ced09c0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/fr/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "7ddbe379d0829db4862e3113a51cc6836a0d02fc815e57b7b1e35bcd9564d6e5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ja/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "c2f1e05dfe62e72107f540a91e366cde75a84036e781bf887fa0a6cfadce559e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/manifest.json",
+      "sha256": "b76270bbae2b5b3cc80dbf1d58a18c8f46141e7ca7c2794c63a5256dd90d7863"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/ru/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "62c183eb0e8aa1ac0f10226a42fc733cb5901c77354b14764d2f009bb0953869"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "a3bb95de71a35f769ce46a7bc7ad2d150f2523792c2a071846adfb1dcf43ef0a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "e15b60ce034e922ce1b25a30478119702b96a30bfab2b9959eab530d8db88f10"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "3ca6931ca9f741752022771f4cd7fd08a1f40092e90ad52fb05e891480b4b44b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "749cbfaa011a2406b3e1234c1c93d5485231000721abe3662be4fe84099f1cff"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "50e757cd9bb0eb3639554ef6856683f5676cec18de1ba4b70a8572547b6b6e6d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "6d41cd470e874a6b31a4ffde17478f8534eb826879d3045c6d3545fa14291810"
+    },
+    {
+      "path": ".pipeline/technical-translations/queue-078.json",
+      "sha256": "4d9abcf0023254cf13c06b27200772bcd48350fc95e88177a78b5c5a86f23461"
+    },
+    {
+      "path": "scripts/check_technical_preview.py",
+      "sha256": "00d9b16c33681eba795702cc7c570006647a1c485946a59581096f454580eee1"
+    },
+    {
+      "path": "scripts/test_technical_preview.py",
+      "sha256": "a342f3f16fb0b172604a0ad208d2140429465e8b871c1604db219c8cd4cfda43"
+    },
+    {
+      "path": "src/content/posts/en/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "28f39aa8186282dfb536d7054cb1df94683ddf593d1c9adea3387d1cdea9e345"
+    },
+    {
+      "path": "src/content/posts/ko/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "476b2fb774e656d3ee3cc353c46a2c1ce974819dd8ec4fdb70dc787763b8cde5"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "medium",
+      "location": ".pipeline/technical-translations/batch-078/zh-CN/2026-10-31-jdk-10k-rps-architecture.md:10",
+      "reason": "Moving the first sentence punctuation inside the closing strong delimiter makes that delimiter followed by 从 fail as a closer. The current rendered HTML is <strong>每秒 ... JDK。<strong>从跨 ... 设计指南</strong>，不是 ... 报告</strong>。 Thus the complete introductory paragraph becomes bold, with nested strong emphasis across the intervening ordinary explanation. The English source emphasizes only the opening claim and the final limitation. This is a rendering/structure regression, although information and numbers remain unchanged.",
+      "suggestion": "Restore the first closing delimiter before punctuation: **每秒 ... JDK**。从 ... . Retain the final comma inside its opening delimiter: 设计指南**，不是成功完成 10k RPS 负载测试的报告**。 Regenerate the HTML and confirm exactly two separate <strong> spans corresponding to the source."
+    }
+  ],
+  "unverified": [
+    "No production browser navigation, publication, or deployment performed.",
+    "No full-site fixture build/check command was run in this read-only review; actual supplied rendered HTML and isolated checker unit fixtures were examined.",
+    "No fresh external factual research or execution of article example programs; this review verifies preservation of supplied source facts and execution/measurement limitations in changed spans.",
+    "Unchanged diagram content and complete translations outside changed spans were not independently reviewed."
+  ]
+}

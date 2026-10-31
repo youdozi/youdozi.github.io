@@ -1,0 +1,45 @@
+{
+  "key": "2026-10-30-jdk-emudhra-truststore",
+  "title": "既定JSSEの信頼を確認",
+  "description": "JVM識別情報を読み、既定トラストマネージャーを初期化し、CA候補のフィンガープリントを集めて一覧だけを出力します。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "稼働JVMのプロパティを読む"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "既定のTrustManagerFactoryを初期化"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "初期化に成功？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "例外",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "受け入れるCA発行者を読む",
+        "名前を照合し候補をハッシュ化"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "件数と一覧を出力",
+        "TLS検証の判定は行わない"
+      ]
+    }
+  ],
+  "language": "ja"
+}

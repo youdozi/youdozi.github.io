@@ -32,7 +32,7 @@ function numbers(body){
 function shape(body){return prose(body).trim().split(/\n\n+/).map(block=>block.startsWith('## ')?'heading':block.startsWith('![')?'image':block.startsWith('| ')?'table':'paragraph');}
 const escape=value=>value.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 
-export function compareManuscript(sourceRaw,draftRaw,diagram,key,language){
+export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,options={}){
   const source=article(sourceRaw),draft=article(draftRaw),m=draft.meta;
   if(m.state!=='draft'||m.language!==language||m.translationKey!==key||!m.title?.trim()||!m.description?.trim())fail('Invalid draft identity or localized metadata');
   if(['publishedAt','updatedAt','approval','reviewedAt','reviewStatus'].some(k=>k in m))fail('Private draft must not claim publication or inherited review');
@@ -52,8 +52,37 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language){
     if(/^(?:true|false|[-+]?\d[\d, .]*|`[^`]+`)$/.test(cell)&&cell!==translated)fail('Table values changed or omitted');
   }));
   const images=[...draft.body.matchAll(/!\[([^\]\n]+)\]\(([^)]+)\)/g)];
-  if(images.length!==1||images[0][1]!==diagram.description||images[0][2]!==`${key}.svg`||!draft.body.includes(`\n\n${diagram.description}\n\n`))fail('Localized diagram, alt or adjacent caption missing');
+  if(options.formatVersion===2){
+    const sourceImages=[...source.body.matchAll(/!\[([^\]\n]+)\]\(([^)]+)\)/g)];
+    const extras=options.additionalVisuals??[];
+    const expected=sourceImages.map(image=>{
+      if(image[2]===`/assets/diagrams/${key}-en.svg`)return `${key}.svg`;
+      const visual=extras.find(v=>'/'+v.source.path===image[2]);
+      if(!visual)fail('Unmapped source image');
+      return `${key}-architecture.svg`;
+    });
+    same(images.map(image=>image[2]),expected,'Localized image order or coverage changed');
+    if(images.filter(image=>image[2]===`${key}.svg`).length!==1||images.some(image=>!image[1].trim()))fail('Localized flow or alt missing');
+  }else if(images.length!==1||images[0][1]!==diagram.description||images[0][2]!==`${key}.svg`||!draft.body.includes(`\n\n${diagram.description}\n\n`))fail('Localized diagram, alt or adjacent caption missing');
   return {source,draft};
+}
+
+export function compareSupplementarySVG(originalSVG,translatedSVG,language){
+  const textTags=svg=>[...svg.matchAll(/<text\b([^>]*)>/g)].map(m=>m[1]);
+  const sourceTags=textTags(originalSVG),translatedTags=textTags(translatedSVG);
+  same(sourceTags.length,translatedTags.length,'Supplementary SVG text count changed');
+  translatedTags.forEach((tag,i)=>{
+    const size=Number(/font-size="([0-9.]+)"/.exec(tag)?.[1]);
+    const original=Number(/font-size="([0-9.]+)"/.exec(sourceTags[i])?.[1]);
+    if(!Number.isFinite(size)||size<18||size>original)fail('Unreadable supplementary SVG font size');
+  });
+  // Only localized strings, language and reduced text font sizes may differ.
+  const geometry=s=>s.trim().replace(/xml:lang="[^"]+"/,'xml:lang="LANG"')
+    .replace(/(<text\b[^>]*?)font-size="[0-9.]+"/g,'$1font-size="SIZE"')
+    .replace(/(<(?:text|title|desc)\b[^>]*>)[\s\S]*?(<\/(?:text|title|desc)>)/g,'$1$2');
+  same(geometry(originalSVG),geometry(translatedSVG),'Supplementary SVG geometry changed');
+  if(!translatedSVG.includes(`xml:lang="${language}"`)||/<(?:script|image|foreignObject)\b|\b(?:href|onload)=/i.test(translatedSVG))fail('Invalid supplementary SVG');
+  if([...translatedSVG.matchAll(/<(?:text|title|desc)\b[^>]*>(.*?)<\//g)].some(m=>!m[1].trim()))fail('Empty supplementary SVG text');
 }
 
 export async function inspectTechnicalTranslations(base=root,manifestPath=defaultManifest){
@@ -68,6 +97,7 @@ export async function inspectTechnicalTranslations(base=root,manifestPath=defaul
   const manifestFile=await realpath(resolve(canonicalBase,manifestPath));
   if(relative(canonicalBase,manifestFile)!==manifestPath)fail('Manifest escapes private path');
   const manifest=JSON.parse(await readFile(manifestFile,'utf8'));
+  if(manifest.formatVersion!==undefined&&manifest.formatVersion!==2)fail('Unknown technical manuscript format');
   if(manifest.schemaVersion!==1||manifest.state!=='awaiting-publication-approval'||manifest.approval!==null||!manifest.editions?.length)fail('Expected unapproved translation manifest');
   same(manifest.languages,policy.translationLanguages,'Expected all six target languages');
   const seen=new Set(),byTopic=new Map();
@@ -97,7 +127,15 @@ export async function inspectTechnicalTranslations(base=root,manifestPath=defaul
     if(Boolean(original.loop)!==Boolean(diagram.loop))fail('Flow loop was added or omitted');
     if(original.loop&&(original.loop.from!==diagram.loop.from||original.loop.to!==diagram.loop.to||typeof diagram.loop.label!=='string'||!diagram.loop.label.trim()))fail('Flow loop endpoints or label changed');
     if(diagram.steps.some(s=>!Array.isArray(s.lines)||s.lines.length<1||s.lines.length>3||s.lines.some(line=>typeof line!=='string'||!line.trim())))fail('Empty or invalid translated flow step');
-    const {draft}=compareManuscript(sourceRaw,draftRaw,diagram,key,language);
+    const extras=row.additionalVisuals??[];
+    if(!Array.isArray(extras)||extras.length>1||(extras.length&&manifest.formatVersion!==2))fail('Invalid additional visual plan');
+    for(const visual of extras){
+      if(visual.source.path!=='assets/img/architecture/10k-rps-en.svg'||key!=='2026-10-31-jdk-10k-rps-architecture'||visual.draft.path!==`${prefix}${language}/${key}-architecture.svg`)fail('Invalid additional visual identity');
+      const originalSVG=await pinned(visual.source,'assets/img/architecture/');
+      const translatedSVG=await pinned(visual.draft,prefix);
+      compareSupplementarySVG(originalSVG,translatedSVG,language);
+    }
+    const {draft}=compareManuscript(sourceRaw,draftRaw,diagram,key,language,{formatVersion:manifest.formatVersion,additionalVisuals:extras});
     if(draft.meta.sourcePath!==row.source.path||draft.meta.sourceSha256!==row.source.sha256)fail('Draft source pin mismatch');
     const labels=[diagram.title];
     diagram.steps.forEach((step,i)=>{

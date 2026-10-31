@@ -1,0 +1,43 @@
+{
+  "key": "2026-10-30-webclient-timeout-retry",
+  "title": "Operadores de espera y reintento",
+  "description": "Lee el flujo de operadores de arriba abajo. El tiempo total engloba intentos y demoras. Solo HTTP 503 admite dos reintentos.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "GET /value",
+        "retrieve → decodificar String"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(attemptLimit)",
+        "Nuevo presupuesto por intento"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "retryWhen: solo HTTP 503",
+        "Demora; hasta dos reintentos"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(totalLimit)",
+        "Incluye intentos y demoras"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Suscriptor recibe valor / finalización",
+        "o error final"
+      ]
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,29 @@
+{
+  "key": "2026-10-30-node2shell-brotli-runtime-patching",
+  "title": "记录当前进程",
+  "description": "示例应用导入收集器，读取自身运行时属性并输出 JSON。不执行解压，也不判断补丁状态。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "启动 app.mjs",
+        "导入 runtimeEvidence"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "读取 PID、可执行文件和版本",
+        "读取操作系统与架构"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "以 JSON 打印此进程信息",
+        "不解压，不判定补丁状态"
+      ]
+    }
+  ],
+  "language": "zh-CN"
+}

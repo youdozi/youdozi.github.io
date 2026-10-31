@@ -69,3 +69,29 @@ test('full translated manuscripts accept localized dates and reject changed date
   assert.throws(()=>check(f,f.draft.replace('Java 21','Java 22')),/Numeric values/);
  }
 });
+
+test('version 2 preserves distinct image alt and adjacent prose without weakening legacy manuscripts',async()=>{
+  const f=await fixture();
+  const draft=f.draft.replace(`![${f.diagram.description}]`,`![Descripción visual accesible]`);
+  assert.notEqual(draft,f.draft);
+  assert.throws(()=>check(f,draft),/Localized diagram/);
+  assert.doesNotThrow(()=>compareManuscript(f.source,draft,f.diagram,f.row.translationKey,f.row.language,{formatVersion:2}));
+});
+test('version 2 requires every supplementary image in the original order',async()=>{
+  const f=await fixture(),key=f.row.translationKey;
+  const source=f.source+'\n\n![Architecture](/assets/img/architecture/10k-rps-en.svg)\n\nArchitecture description.\n';
+  const draft=f.draft+`\n\n![Arquitectura](${key}-architecture.svg)\n\nDescripción de arquitectura.\n`;
+  const options={formatVersion:2,additionalVisuals:[{source:{path:'assets/img/architecture/10k-rps-en.svg'}}]};
+  assert.doesNotThrow(()=>compareManuscript(source,draft,f.diagram,key,f.row.language,options));
+  assert.throws(()=>compareManuscript(source,draft,f.diagram,key,f.row.language,{formatVersion:2}),/Unmapped source image/);
+  assert.throws(()=>compareManuscript(source,draft.replace(`${key}-architecture.svg`,'wrong.svg'),f.diagram,key,f.row.language,options),/image order or coverage/);
+});
+
+import {compareSupplementarySVG} from './check-technical-translations.mjs';
+test('supplementary localization permits readable font fitting while protecting connections and layout',()=>{
+  const source='<svg xml:lang="en" viewBox="0 0 640 1070"><title>Layout</title><desc>Description</desc><text x="320" font-size="24">Budget</text><path d="M1 2V3"/></svg>';
+  const draft=source.replace('xml:lang="en"','xml:lang="de"').replace('Budget','Gesamtbudget').replace('font-size="24"','font-size="20"');
+  assert.doesNotThrow(()=>compareSupplementarySVG(source,draft,'de'));
+  for(const changed of [draft.replace('M1 2V3','M1 2V4'),draft.replace('x="320"','x="321"')])assert.throws(()=>compareSupplementarySVG(source,changed,'de'),/geometry changed/);
+  for(const size of ['17','25'])assert.throws(()=>compareSupplementarySVG(source,draft.replace('font-size="20"',`font-size="${size}"`),'de'),/font size/);
+});

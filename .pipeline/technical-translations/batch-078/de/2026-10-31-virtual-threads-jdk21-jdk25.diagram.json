@@ -1,0 +1,55 @@
+{
+  "key": "2026-10-31-virtual-threads-jdk21-jdk25",
+  "title": "Monitor- und freie Wartezeit beobachten",
+  "description": "Jeder Aufruf validiert Modus und Ziel, zeichnet einen virtuellen Worker auf und zählt nach dem Stopp nur dessen Pinning-Ereignisse.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Argument monitor/plain gültig?",
+        "Zieldatei existiert nicht?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "nein: Stopp",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "JFR-Aufzeichnung starten",
+        "Pinning-Ereignisschwelle = 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Eine virtuelle Thread-Aufgabe starten",
+        "isVirtual() ausgeben"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "monitor: Schlaf in synchronized",
+        "plain: Schlaf ohne Monitor"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Auf Future.get() warten",
+        "Aufzeichnung stoppen und schreiben"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Lesen; nach Worker-Thread-ID filtern",
+        "Passende Pinning-Ereignisse zählen"
+      ]
+    }
+  ],
+  "language": "de"
+}

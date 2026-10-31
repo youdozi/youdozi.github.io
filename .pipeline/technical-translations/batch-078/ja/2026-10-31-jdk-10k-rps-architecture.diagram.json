@@ -1,0 +1,40 @@
+{
+  "key": "2026-10-31-jdk-10k-rps-architecture",
+  "title": "Gate.call()：取得・実行・返却",
+  "description": "受け入れメソッドだけを示します。取得失敗時は処理せず拒否し、取得後は成功・失敗のいずれもfinallyで許可を返します。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "tryAcquire()は成功？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "いいえ：拒否",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "work.call()を実行",
+        "処理が完了または例外を投げる"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "finally：許可を返却",
+        "実際の処理が終わった後"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "結果を返す",
+        "または例外を伝える"
+      ]
+    }
+  ],
+  "language": "ja"
+}

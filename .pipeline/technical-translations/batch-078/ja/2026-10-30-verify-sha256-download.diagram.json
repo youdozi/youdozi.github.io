@@ -1,0 +1,54 @@
+{
+  "key": "2026-10-30-verify-sha256-download",
+  "title": "SHA-256 のバイト列検証",
+  "description": "期待するダイジェストを検証し、変更されない通常ファイルをバイナリのチャンクとして読んで比較します。入力・読み取りエラーは 2、不一致は 1、一致は 0 です。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "64 文字の 16 進数か"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "不正：2",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "通常ファイルをバイナリで分割読み取り",
+        "EOF まで SHA-256 を更新"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "すべての読み取りが成功したか"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "読取：2",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "ダイジェストが期待値と一致するか"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "不一致：1",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "OK を表示し 0 で終了"
+      ]
+    }
+  ],
+  "language": "ja"
+}

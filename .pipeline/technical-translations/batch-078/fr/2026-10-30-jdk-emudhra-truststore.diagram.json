@@ -1,0 +1,46 @@
+{
+  "key": "2026-10-30-jdk-emudhra-truststore",
+  "title": "Inspecter la confiance JSSE par défaut",
+  "description": "Lire l’identité JVM, initialiser le gestionnaire de confiance par défaut, recueillir les empreintes des autorités candidates et afficher seulement l’inventaire.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Lire les propriétés de la JVM active"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Initialiser TrustManagerFactory",
+        "avec les paramètres par défaut"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Initialisation réussie ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "exception",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Lire les autorités acceptées",
+        "Filtrer les noms, calculer les SHA"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Afficher nombres et inventaire",
+        "Aucun verdict de validation TLS"
+      ]
+    }
+  ],
+  "language": "fr"
+}

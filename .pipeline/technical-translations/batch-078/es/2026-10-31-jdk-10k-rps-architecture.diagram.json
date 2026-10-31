@@ -1,0 +1,40 @@
+{
+  "key": "2026-10-31-jdk-10k-rps-architecture",
+  "title": "Gate.call(): adquirir, ejecutar, liberar",
+  "description": "Solo se muestra el método de admisión. Si falla la adquisición, rechaza sin ejecutar trabajo. Tras adquirir, finally devuelve el permiso con éxito o fallo.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "¿tryAcquire() tuvo éxito?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "no: rechazar",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Ejecutar work.call()",
+        "La operación termina o lanza error"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "finally: devolver el permiso",
+        "Tras terminar la operación real"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Devolver el resultado",
+        "O propagar la excepción"
+      ]
+    }
+  ],
+  "language": "es"
+}

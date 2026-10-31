@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-project-valhalla-value-objects",
+  "title": "Comparer identité et valeurs",
+  "description": "L’exemple compare les records, puis teste les champs de référence, le stockage null et une exception de moniteur gérée. Il n’inspecte pas la disposition mémoire.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Créer deux records ordinaires",
+        "Créer deux records valeur égaux"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Comparer == et equals()",
+        "Examiner Objects.hasIdentity()"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "String distincts, contenus égaux",
+        "Comparer Label : == et equals()"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Créer un tableau de records valeur",
+        "Vérifier la première case null"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Tenter un verrou via Object",
+        "Intercepter IdentityException"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Observations sémantiques terminées",
+        "Aucune mesure mémoire ou vitesse"
+      ]
+    }
+  ],
+  "language": "fr"
+}

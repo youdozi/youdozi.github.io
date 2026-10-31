@@ -1,0 +1,187 @@
+{
+  "language": "es",
+  "reviewerSession": "/root/review078_es",
+  "scope": {
+    "task": "Independent AI review of full Spanish translations for developer-facing neutral Spanish, target-first reading then complete English prose comparison.",
+    "targets": "12 Markdown articles, 12 workflow JSON files, 12 workflow SVG files and 1 architecture SVG.",
+    "sources": "English Markdown counterparts under src/content/posts/en, English entries in content/diagrams/workflows.json and assets/img/architecture/10k-rps-en.svg.",
+    "checks": "Titles, descriptions, complete prose, tables, alt text, diagram display and accessibility strings, condition/negation/uncertainty/security caveats/numerics, final versus preview distinctions, local execution claims and their limits. Fenced code and inline literals compared exactly: all 12 matched. JSON and XML parsed successfully during inspection.",
+    "assessment": "No major omission, altered security conclusion, changed code or changed numerical threshold found. Architecture cache label needs correction; do not mark the complete diagram scope approved until that issue is resolved. Low-severity Valhalla label clarification is separate."
+  },
+  "files": [
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-gitlab2shell-cve-2026-110264.diagram.json",
+      "sha256": "b4943c220a3847ff4127d3604fbf6db97fc6966729c531a7f18535965975a354"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-gitlab2shell-cve-2026-110264.md",
+      "sha256": "be2cf75027b48da49898eff8db8680367ce82fed80b2ebe338401a71b3f84f1e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-gitlab2shell-cve-2026-110264.svg",
+      "sha256": "ae69d59d021d8e3476b157d6fb0f8aa39878475f8b1ff5c522514f3fa43ee233"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-jdk-emudhra-truststore.diagram.json",
+      "sha256": "560f4d82f0ad6b95d61c9ad354fcd494821bf1843cfcf35130787a65f96629e3"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-jdk-emudhra-truststore.md",
+      "sha256": "ea44d61a122bad0b5d376c6d2e20db76d92d1928163ebc5bba6cf93c392328e2"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-jdk-emudhra-truststore.svg",
+      "sha256": "cb757b7aa7d0c759d4ea808c9eedc7b693a477d5c9598220ac970bc2debf767b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-node2shell-brotli-runtime-patching.diagram.json",
+      "sha256": "eb26a487985f37db3140fda668e1e3bf085e92b5a00c08d62c2384fd4aa73497"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-node2shell-brotli-runtime-patching.md",
+      "sha256": "a4287c9d46dd2144fbd30a9395f0c7768e132e981b83f32acc7a1f415cd9aeb0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-node2shell-brotli-runtime-patching.svg",
+      "sha256": "dace660c0b5b9ca2ab3e3b148ca365bd6ec8a5ba6aed00ea3285a5db1974134b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-php2shell-runtime-patching.diagram.json",
+      "sha256": "239d73482765beb7a3386c83abcb78946d8cca65af3abd130b8d37267eee7eb8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-php2shell-runtime-patching.md",
+      "sha256": "de46500dd70706bb22ce67289c3af9d28243e062d3aca20fb3328b3b5f51faa9"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-php2shell-runtime-patching.svg",
+      "sha256": "9de8cccc944b67eb1ba5296297f6bd956cb7bf08e156835d5820e09d39f2fe0f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-verify-sha256-download.diagram.json",
+      "sha256": "766efd88ffb8599fb6ddbb8b7d7ca07f294a67457cd9c3d93d457c051476e875"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-verify-sha256-download.md",
+      "sha256": "e2e74dddd3a2838bdcc3b7c9e7f2ca1e61afe665bb612ad1776c6749610ebfcf"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-verify-sha256-download.svg",
+      "sha256": "cd562e4f4ab2813dfcaa2d3b2e3951dfe436e4124bd63d2855cf687a17fa8a8b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-webclient-timeout-retry.diagram.json",
+      "sha256": "28f489b39e3ae905f7c637a797408675a0e10f8db191300cd30c3624e3b14bc0"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-webclient-timeout-retry.md",
+      "sha256": "131fe627d0dfaff55a37508eaae693dd980f0c0275f4918390309c3ba98992f3"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-30-webclient-timeout-retry.svg",
+      "sha256": "9f1fcb1d0edb356682a4163e754775778350d5508dbc84841aed5b74ef133e48"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-fragnesia-cve-2026-46300.diagram.json",
+      "sha256": "86c4322d5cf80be99ce9db08438b116246c7e2ea83e2a6f5be136c79ef4d0d81"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-fragnesia-cve-2026-46300.md",
+      "sha256": "03c87b827ec2c06bd36790197c690af6f62dd2b74296d0e3b9cfc0bae7566710"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-fragnesia-cve-2026-46300.svg",
+      "sha256": "170c29ada68d09a95d69d9f0be1bce5e6c17b86cf02306240508442ea918d6ff"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+      "sha256": "118cda880a7193bbe80298bd12c04df9882041bad23f406bf868ed10c3898e21"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+      "sha256": "98da9f24286b3cc6786e0e9b2a09b5932db3fd27bf8c5323c766b1c2d857d91e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk-10k-rps-architecture.md",
+      "sha256": "ab23625ff0bc7635b1f015c253b8809077b208283e4d522db2294fb860602f1a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk-10k-rps-architecture.svg",
+      "sha256": "e03efc33c64b90864fd21fdd84f2abdb8ee6bb4673cae4a7854d64a0d480cfff"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk25-scopedvalue.diagram.json",
+      "sha256": "40c8f981e3ac9c248d88ce882b4dfc9b508971dd82ea8cc1c4b4ddb3de84cc4c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk25-scopedvalue.md",
+      "sha256": "eddffa4d1d526647f890976034555329211cd0a4af415e907690bd559370619a"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk25-scopedvalue.svg",
+      "sha256": "439b3c9e3af6436c11ff89a90a8b6b4a21fcbbbd8c01883cb97b91bac31888a6"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.diagram.json",
+      "sha256": "fa580b86edcb029e2ea5b0ed3026f2a80fec6d62bf9e2bcd2b4271e5a76d8a92"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.md",
+      "sha256": "03a4d294168e088935b2face8a1b91869f459809e842a0b58f043d3ec5eb4756"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.svg",
+      "sha256": "614c33d41a7eea02ec98641cfec92d28c77ed4a4ec73ce2f5fe69af6232a3e00"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-virtual-threads-jdk21-jdk25.diagram.json",
+      "sha256": "26b7e929d41df57cad957e9076c45dfa947b359a5100a0382dad7a191e71c3b1"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-virtual-threads-jdk21-jdk25.md",
+      "sha256": "c599234ec0c90f97ada8bae14b04461686dc556b9d8d8594019151e70c2bbd53"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-virtual-threads-jdk21-jdk25.svg",
+      "sha256": "70d7f63b07da23fe33c8d9aa62a99a663429236cf32827713bc0b36b5a791f84"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-webclient-restclient-comparison.diagram.json",
+      "sha256": "8f8a93701333c93fa01ff3fd16ae959b03bc4e40fea9b2d3ea393bee23e05327"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-webclient-restclient-comparison.md",
+      "sha256": "538f5933a06c7026267a8ad1883cbeac4c69098911c447bcebf9e091c0fa82c3"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-078/es/2026-10-31-webclient-restclient-comparison.svg",
+      "sha256": "2018efe582adecdea3c764bf6c59ae48688a818d30f9f63a4c27bd080876ee74"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "medium",
+      "location": ".pipeline/technical-translations/batch-078/es/2026-10-31-jdk-10k-rps-architecture-architecture.svg (read-cache label)",
+      "sourceQuote": "Hit rate / TTL / miss coalescing",
+      "targetQuote": "Aciertos / TTL / unificación de fallos",
+      "reason": "Meaning/terminology: miss coalescing means combining concurrent requests for the same absent cache item. The isolated diagram label instead reads as combining failures and drops the rate qualification of hit rate. This obscures the specific cache-load control mechanism. The prose explanation is clearer.",
+      "suggestion": "Tasa de aciertos / TTL / agrupación de solicitudes ante fallos de caché",
+      "confidence": "high"
+    },
+    {
+      "severity": "low",
+      "location": ".pipeline/technical-translations/batch-078/es/2026-10-31-project-valhalla-value-objects.diagram.json steps[2].lines[0], and matching SVG text",
+      "sourceQuote": "Wrap distinct equal-content Strings",
+      "targetQuote": "Envolver Strings distintos e iguales",
+      "reason": "Meaning/clarity: the source explicitly separates distinct object identities from matching contents. The Spanish label omits the contents qualifier and can sound self-contradictory, although the body explains the example correctly.",
+      "suggestion": "Envolver Strings distintos de igual contenido",
+      "confidence": "high"
+    }
+  ],
+  "unverified": [
+    "No external factual revalidation; source factual claims taken as translation inputs.",
+    "No source code executed or production operations performed by this reviewer.",
+    "No browser rendering or visual clipping/accessibility runtime test; SVG XML display strings and accessible title/description strings inspected.",
+    "This is an independent AI session review, not a human or native-speaker certification."
+  ]
+}

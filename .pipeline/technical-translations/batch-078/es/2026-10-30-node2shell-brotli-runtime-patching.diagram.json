@@ -1,0 +1,29 @@
+{
+  "key": "2026-10-30-node2shell-brotli-runtime-patching",
+  "title": "Registrar el proceso actual",
+  "description": "La aplicación de ejemplo importa un recopilador, lee sus propias propiedades de ejecución y emite JSON. Sin descompresión ni dictamen sobre el parche.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Iniciar app.mjs",
+        "Importar runtimeEvidence"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Leer PID, ejecutable y versiones",
+        "Leer SO y arquitectura"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Imprimir este proceso en JSON",
+        "Sin descompresión ni dictamen"
+      ]
+    }
+  ],
+  "language": "es"
+}

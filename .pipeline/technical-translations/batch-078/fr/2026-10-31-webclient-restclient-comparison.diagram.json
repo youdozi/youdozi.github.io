@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-webclient-restclient-comparison",
+  "title": "Appels HTTP : fin et abonnements",
+  "description": "Vérifications principales de main uniquement ; préparation du serveur, configuration et nettoyage omis.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Construire RestClient.retrieve()",
+        "Nombre de requêtes : 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Attendre body(String.class)",
+        "Première requête terminée : 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Construire le Mono WebClient",
+        "Pas encore d’abonnement : 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Premier block : abonner, attendre",
+        "Nombre de requêtes : 2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Second block : nouvel abonnement",
+        "Nombre de requêtes : 3"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Vérifier 404 et 503 de chacun",
+        "4 requêtes de plus ; total 7"
+      ]
+    }
+  ],
+  "language": "fr"
+}

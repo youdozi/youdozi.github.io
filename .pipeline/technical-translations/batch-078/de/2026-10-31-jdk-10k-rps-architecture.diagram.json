@@ -1,0 +1,40 @@
+{
+  "key": "2026-10-31-jdk-10k-rps-architecture",
+  "title": "Gate.call(): zulassen, arbeiten, freigeben",
+  "description": "Nur die Zulassungsmethode ist gezeigt. Fehlende Erlaubnis weist ohne Arbeitsausführung zurück. Nach Zulassung gibt finally die Erlaubnis bei Erfolg oder Fehler zurück.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "tryAcquire() erfolgreich?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "nein: Stopp",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "work.call() ausführen",
+        "Operation endet oder wirft Ausnahme"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "finally: Erlaubnis zurückgeben",
+        "Nach Ende der tatsächlichen Operation"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Ergebnis zurückgeben",
+        "Oder Ausnahme weiterreichen"
+      ]
+    }
+  ],
+  "language": "de"
+}

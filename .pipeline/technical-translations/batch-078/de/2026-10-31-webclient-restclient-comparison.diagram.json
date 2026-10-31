@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-webclient-restclient-comparison",
+  "title": "HTTP-Aufrufe: Abschluss und Subscription",
+  "description": "Nur zentrale main-Prüfungen; Serveraufbau, Konfiguration und Bereinigung sind ausgelassen.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "RestClient.retrieve() erstellen",
+        "Anfragezahl 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Mit body(String.class) warten",
+        "Erste Anfrage abgeschlossen: 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "WebClient-Mono erstellen",
+        "Noch nicht abonniert: 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Erstes block abonniert und wartet",
+        "Anfragezahl 2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Zweites block abonniert erneut",
+        "Anfragezahl 3"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "404 und 503 je Client prüfen",
+        "4 weitere Anfragen; Endzahl 7"
+      ]
+    }
+  ],
+  "language": "de"
+}

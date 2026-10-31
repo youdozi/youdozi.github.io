@@ -1,0 +1,55 @@
+{
+  "key": "2026-10-31-virtual-threads-jdk21-jdk25",
+  "title": "Observer les attentes avec ou sans moniteur",
+  "description": "Chaque invocation valide mode et destination, enregistre un worker virtuel, puis compte uniquement ses événements d’épinglage après l’arrêt de l’enregistrement.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Argument monitor/plain valide ?",
+        "Destination inexistante ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "non : rejet",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Démarrer l’enregistrement JFR",
+        "Seuil d’événement épinglé = 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Soumettre une tâche virtuelle",
+        "Afficher isVirtual()"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "monitor : dormir sous synchronized",
+        "plain : dormir sans moniteur"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Attendre Future.get()",
+        "Arrêter et écrire l’enregistrement"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Lire et filtrer par ID du worker",
+        "Afficher le nombre d’épinglages"
+      ]
+    }
+  ],
+  "language": "fr"
+}
