@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2026-10-31-ai-agent-refactoring",
+      "title": {
+        "ko": "리팩토링 후 배송비 계산",
+        "en": "Refactored shipping calculation"
+      },
+      "description": {
+        "ko": "금액·회원·배송 지역을 입력받아 음수를 거절하고, 기본 배송비와 도서산간 추가 요금을 계산해 합산 반환한다.",
+        "en": "Read subtotal, membership and shipping region, reject negative amounts, calculate base and remote fees, then return their sum."
+      },
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "금액·회원 여부·배송 지역 입력"
+          ],
+          "en": [
+            "Read subtotal, member and region"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "주문 금액이 0 이상인가?"
+          ],
+          "en": [
+            "Is subtotal nonnegative?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "같은 예외",
+              "en": "same error"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "회원 또는 금액 ≥ 50,000원?",
+            "기본 배송비: 0원 / 그 외 3,000원"
+          ],
+          "en": [
+            "Member or subtotal >= 50,000?",
+            "Base: 0; otherwise 3,000"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "도서산간이면 추가 3,000원",
+            "그 외 추가 요금 0원"
+          ],
+          "en": [
+            "Remote area? Add 3,000",
+            "Otherwise surcharge is 0"
+          ]
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "기본 배송비 + 추가 요금 반환"
+          ],
+          "en": [
+            "Return base + surcharge"
+          ]
+        }
+      ],
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "static long after(long subtotal, boolean member, boolean remote)"
+        }
+      ]
+    }
+  ]
+}
