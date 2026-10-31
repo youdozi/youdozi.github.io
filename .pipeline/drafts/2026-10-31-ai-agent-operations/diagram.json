@@ -1,0 +1,215 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2026-10-31-ai-agent-operations-overview",
+      "title": {
+        "ko": "AI 운영의 제안 흐름",
+        "en": "Proposed AI operations flow"
+      },
+      "description": {
+        "ko": "수집·분석·정책·실행·재검증을 분리하는 제안. 실제 연동을 구현한 그림이 아니다.",
+        "en": "Proposed collection, analysis, policy, execution and verification boundaries; not an implemented integration."
+      },
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "PR·배포·알림·정기 점검 시작"
+          ],
+          "en": [
+            "PR, deploy, alert or schedule"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "허용된 수집기로 6개 영역 조회"
+          ],
+          "en": [
+            "Bounded collectors: six domains"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "commit·image·환경·시각 연결"
+          ],
+          "en": [
+            "Bind commit, image, scope, time"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "AI: 사실·가설·누락 정리"
+          ],
+          "en": [
+            "AI: facts, hypotheses and gaps"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "정책·실행 권한이 충족됐는가?"
+          ],
+          "en": [
+            "Policy and authority satisfied?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "중단·보류",
+              "en": "stop / hold"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "보호된 runbook으로 제한 실행"
+          ],
+          "en": [
+            "Execute a protected runbook"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "사용자 경로·LGTM·DB 재관측"
+          ],
+          "en": [
+            "Recheck requests, LGTM and DB"
+          ]
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "종료 또는 정해진 후속 조사"
+          ],
+          "en": [
+            "Close or bounded investigation"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2026-10-31-ai-agent-operations-gate",
+      "title": {
+        "ko": "증거 준비 상태 검사",
+        "en": "Evidence readiness gate"
+      },
+      "description": {
+        "ko": "누락·형식·연결·유효 시각을 검사하고 실패와 unknown을 분리한다. 실행 승인을 만들지 않는다.",
+        "en": "Check coverage, shape, identity, age, failures and unknowns. Does not authorize execution."
+      },
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "증거·신뢰 기준·현재 시각 입력"
+          ],
+          "en": [
+            "Evidence, trusted target and now"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "6개 영역이 정확히 존재하는가?"
+          ],
+          "en": [
+            "Exactly six required domains?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "HOLD",
+              "en": "HOLD"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "형식·릴리스·환경·시각 유효?"
+          ],
+          "en": [
+            "Valid shape, identity and time?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "HOLD",
+              "en": "HOLD"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "유효 증거에 fail이 있는가?"
+          ],
+          "en": [
+            "Any valid signal marked fail?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "STOP",
+              "en": "STOP"
+            },
+            "continue": {
+              "ko": "아니요",
+              "en": "no"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "unknown이 있는가?"
+          ],
+          "en": [
+            "Any unknown signal?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "HOLD",
+              "en": "HOLD"
+            },
+            "continue": {
+              "ko": "아니요",
+              "en": "no"
+            }
+          }
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "READY_FOR_REVIEW 반환",
+            "검토 준비 상태이며 실행 아님"
+          ],
+          "en": [
+            "Return READY_FOR_REVIEW",
+            "Ready for review, not execution"
+          ]
+        }
+      ],
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "def decide(evidence, expected, now):"
+        }
+      ]
+    }
+  ]
+}
