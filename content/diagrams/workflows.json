@@ -2442,6 +2442,104 @@
         "en": "Core main checks only; server setup, configuration and cleanup omitted.",
         "ko": "main의 핵심 검증만 표시하며 서버 준비·설정·종료 정리는 생략합니다."
       }
+    },
+    {
+      "key": "2026-10-31-fragnesia-cve-2026-46300",
+      "title": {
+        "en": "Read-only running-kernel evidence",
+        "ko": "실행 커널의 읽기 전용 증거"
+      },
+      "description": {
+        "en": "Evidence only; no vulnerability or patch verdict. OS failure exits with status 2. Each package query can fail independently.",
+        "ko": "증거만 수집하며 취약·패치 판정은 하지 않습니다. OS 정보 실패는 종료 코드 2이며 패키지 조회는 각각 실패할 수 있습니다."
+      },
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "platform.system() != \"Linux\""
+        },
+        {
+          "language": "python",
+          "contains": "platform.freedesktop_os_release()"
+        },
+        {
+          "language": "python",
+          "contains": "shutil.which(\"dpkg-query\")"
+        },
+        {
+          "language": "python",
+          "contains": "subprocess.run("
+        },
+        {
+          "language": "python",
+          "contains": "\"patch_status\": \"not-assessed\""
+        }
+      ],
+      "steps": [
+        {
+          "kind": "condition",
+          "en": [
+            "Is this Linux?"
+          ],
+          "ko": [
+            "Linux 환경인가?"
+          ],
+          "branch": {
+            "exit": {
+              "en": "no: exit 2",
+              "ko": "아니오: 종료 2"
+            },
+            "continue": {
+              "en": "yes",
+              "ko": "예"
+            }
+          }
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Read running release and OS",
+            "OS evidence failure: exit 2"
+          ],
+          "ko": [
+            "실행 커널·OS 정보 읽기",
+            "OS 증거 실패 시 종료 2"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Look for dpkg-query",
+            "Missing: record unavailable"
+          ],
+          "ko": [
+            "dpkg-query 확인",
+            "없으면 조회 불가 기록"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "If available, query two names",
+            "Record installed / missing / errors"
+          ],
+          "ko": [
+            "있으면 두 이름 순서대로 조회",
+            "설치·없음·오류 상태 구분"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Print JSON evidence",
+            "patch_status: not-assessed"
+          ],
+          "ko": [
+            "JSON 증거 출력",
+            "패치 상태는 미판정 유지"
+          ]
+        }
+      ]
     }
   ]
 }

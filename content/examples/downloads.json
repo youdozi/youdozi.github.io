@@ -412,6 +412,25 @@
         "en": "Seven local HTTP requests verify terminal/subscription execution, repeated subscriptions without caching, and both clients’ 404/503 exceptions. No throughput/latency benchmark, timeout/TLS/cancellation test, Boot autoconfiguration or production server validation.",
         "ko": "로컬 HTTP 7요청으로 종료 연산·구독 시점, 캐시 없는 반복 구독과 양쪽의 404·503 예외를 확인합니다. 처리량/지연 벤치마크·타임아웃/TLS/취소 검사·Boot 자동 설정·운영 서버 검증은 하지 않습니다."
       }
+    },
+    {
+      "key": "2026-10-31-fragnesia-cve-2026-46300",
+      "files": [
+        {
+          "path": "kernel-evidence.py",
+          "language": "python",
+          "selector": "heading"
+        }
+      ],
+      "commands": "python3 kernel-evidence.py",
+      "environment": {
+        "en": "Python 3.10+ on Linux. dpkg-query is optional; no network or administrator privileges.",
+        "ko": "Linux·Python 3.10 이상. dpkg-query는 선택 사항이며 네트워크·관리자 권한은 사용하지 않습니다."
+      },
+      "scope": {
+        "en": "Reads current OS/kernel evidence and queries two Debian-style running-kernel package names. Synthetic fixture output is not a real Ubuntu host inventory. No vulnerability verdict, kernel update/reboot, exploit, package integrity or livepatch check.",
+        "ko": "현재 OS·실행 커널 정보를 읽고 Debian 계열의 실행 커널 패키지 이름 두 개를 조회합니다. 합성 출력은 실제 Ubuntu 호스트의 수집 결과가 아닙니다. 취약 판정·커널 업데이트/재부팅·공격 재현·패키지 무결성·라이브패치는 검사하지 않습니다."
+      }
     }
   ]
 }

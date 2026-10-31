@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "fragnesia-kernel-evidence-077",
+  "reviewedAt": "2026-10-31T01:09:59.002489+00:00",
+  "baseCommit": "03b8ed5c71c0fe539c372e94350815b196b069c9",
+  "scope": "KO original and complete EN translation of user-confirmed Fragnesia CVE-2026-46300; vendor-scoped fixes, safe read-only kernel inventory, localized flow, source-derived ZIP and social cards.",
+  "articleHashes": {
+    "en": "2b6a0636f8b8548cd521e4b65a4e442d1b5ae7be9312de2165629bdd43de55a8",
+    "ko": "7154f834e8c173ef4ddafa98658bcce91006f42aa07a39f0d189a2074cf97e71"
+  },
+  "primarySources": [
+    "https://ubuntu.com/security/CVE-2026-46300",
+    "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-46300",
+    "https://ubuntu.com/security/CVE-2026-43503",
+    "https://ubuntu.com/security/CVE-2026-43284",
+    "https://access.redhat.com/security/vulnerabilities/RHSB-2026-003",
+    "https://aws.amazon.com/security/security-bulletins/2026-030-aws/",
+    "https://ubuntu.com/security/notices/USN-8388-1",
+    "https://ubuntu.com/blog/dirty-frag-linux-vulnerability-fixes-available"
+  ],
+  "review": {
+    "method": "Separate-context technical and complete KO-to-EN review under writing and translation skills.",
+    "session": "/root/fragnesia077_review",
+    "findings": 0,
+    "unresolvedMajorOrCriticalFindings": 0,
+    "reviewerExecuted": "Twelve source-derived synthetic OS/package contracts; official sources and KEV item reviewed.",
+    "limits": "No actual Linux host inventory, package database, exploit, patch adoption or compromise assessment."
+  },
+  "validation": {
+    "nodeTests": 165,
+    "pythonTests": 335,
+    "astroFiles": 80,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "normalBuildPassed": true,
+    "publicArticles": 449,
+    "sitemapURLs": 507,
+    "diagramPairs": 48,
+    "exampleArchives": 38,
+    "readingPathArticles": 94,
+    "readingNeighborLinks": 154,
+    "localArticleImages": 98,
+    "articlesWithImages": 96,
+    "syntheticCollectorContracts": 12,
+    "actualZIPCodeExecuted": true,
+    "browserChecks": 4,
+    "widths": [
+      320,
+      1360
+    ],
+    "mobileFlowInspected": true,
+    "socialPNGsDecodedAndByteCompared": true,
+    "runtimeEvidence": "Synthetic fixtures only; no production execution"
+  },
+  "existingTechnicalDraftsUnpublished": 120,
+  "newAdditionalLanguageTasksNotStarted": 6,
+  "translationQueue": ".pipeline/technical-translations/queue-077.json",
+  "googleIndexingRankingOrAICitationGainEstablished": false
+}

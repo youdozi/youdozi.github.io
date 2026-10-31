@@ -4,6 +4,8 @@ import {chromePath} from './browser/chrome.mjs';
 import {isolatedContext} from './browser/isolated-context.mjs';
 
 // Editable SVG sources and checked-in PNGs; no remote assets or page requests.
+const topic=process.argv[2] || 'webclient-restclient';
+if(!['webclient-restclient','fragnesia-cve-2026-46300'].includes(topic))throw Error('Unknown social image topic');
 const directory=new URL('../assets/img/social/',import.meta.url);
 await mkdir(directory,{recursive:true});
 const browser=await chromium.launch({executablePath:await chromePath(),headless:true});
@@ -12,7 +14,7 @@ try {
   try {
     const page=await context.newPage();
     for(const language of ['en','ko']) {
-      const name=`webclient-restclient-${language}`;
+      const name=`${topic}-${language}`;
       const svg=await readFile(new URL(name+'.svg',directory),'utf8');
       await page.setContent(`<style>html,body{margin:0;width:1200px;height:630px}svg{display:block}</style>${svg}`);
       await page.evaluate(()=>document.fonts.ready);
