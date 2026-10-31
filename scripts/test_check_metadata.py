@@ -67,6 +67,34 @@ class MetadataTests(unittest.TestCase):
         self.assertIn('og:title', self.errors(self.document(extra='<meta property="og:title" content="duplicate">')))
         self.assertIn('twitter:title', self.errors(self.document().replace('twitter:title', 'missing')))
 
+    def social_document(self):
+        image = md.SITE + '/assets/img/social/example-en.png'
+        fields = {'twitter:card': 'summary_large_image', 'og:image': image, 'twitter:image': image,
+                  'og:image:type': 'image/png', 'og:image:width': '1200', 'og:image:height': '630',
+                  'og:image:alt': 'Synchronous and reactive calls', 'twitter:image:alt': 'Synchronous and reactive calls'}
+        extra = ''.join(f'<meta property="{k}" content="{v}">' for k, v in fields.items())
+        return self.document(extra=extra, graph_change={'image': image})
+
+    def test_large_image_metadata_agrees_with_article_and_local_asset(self):
+        source = self.social_document()
+        self.assertEqual(self.errors(source), '')
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            page = root / 'en/posts/example/index.html'
+            page.parent.mkdir(parents=True)
+            page.write_text(source)
+            self.assertIn('Social PNG must exist', '\n'.join(md.audit(root)[0]))
+            asset = root / 'assets/img/social/example-en.png'
+            asset.parent.mkdir(parents=True)
+            asset.write_bytes(b'\x89PNG\r\n\x1a\n' + b'\0\0\0\rIHDR' + (1200).to_bytes(4, 'big') + (630).to_bytes(4, 'big'))
+            self.assertEqual(md.audit(root)[0], [])
+
+    def test_large_image_missing_alt_or_mismatched_social_schema_fields_fail(self):
+        source = self.social_document()
+        self.assertIn('twitter:image', self.errors(source.replace('property="twitter:image"', 'property="missing"')))
+        self.assertIn('BlogPosting image', self.errors(source.replace('"image": "' + md.SITE, '"image": "https://other.invalid')))
+        self.assertIn('alternative text', self.errors(source.replace('content="Synchronous and reactive calls"', 'content=""')))
+
     def test_invalid_reversed_naive_and_mismatched_visible_dates_fail(self):
         for value in ['bad', '2000-01-01T00:00:00Z', '2026-10-27T05:23:47']:
             with self.subTest(value=value):

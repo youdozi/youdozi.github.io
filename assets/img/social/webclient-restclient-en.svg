@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" xml:lang="en" role="img" aria-labelledby="title desc">
+<title id="title">WebClient vs RestClient</title><desc id="desc">Choose by execution model: RestClient — Synchronous calls; WebClient — Reactive · Streaming.</desc>
+<rect width="1200" height="630" fill="#f5f5ee"/><rect x="0" y="0" width="18" height="630" fill="#28684e"/>
+<g font-family="system-ui,sans-serif" fill="#183d2d">
+<text x="64" y="72" font-size="22" font-weight="600" letter-spacing="2">SPRING HTTP CLIENTS</text>
+<text x="64" y="151" font-size="56" font-weight="750">WebClient vs RestClient</text>
+<text x="64" y="204" font-size="30" fill="#53665a">Choose by execution model</text>
+<rect x="64" y="250" width="524" height="235" rx="18" fill="#e1eddf"/>
+<rect x="612" y="250" width="524" height="235" rx="18" fill="#e3e9f1"/>
+<text x="96" y="310" font-size="37" font-weight="700">RestClient</text>
+<text x="96" y="367" font-size="30">Synchronous calls</text><text x="96" y="423" font-size="23" fill="#425b49">Wait for a response value</text>
+<text x="644" y="310" font-size="37" font-weight="700">WebClient</text>
+<text x="644" y="367" font-size="30">Reactive · Streaming</text><text x="644" y="423" font-size="23" fill="#425b49">Subscribe · Compose results</text>
+<text x="64" y="542" font-size="24">Working example · Errors · Virtual threads</text>
+<text x="64" y="592" font-size="20" fill="#607164">youdozi.github.io · Spring Framework 7.0.10</text>
+</g></svg>

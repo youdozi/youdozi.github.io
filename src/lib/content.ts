@@ -13,6 +13,7 @@ export type Entry = {
   title: string; language: Language; translationKey: string; slug: string; kind: 'post' | 'digest';
   publishedAt: Date; updatedAt?: Date; categories: string[]; tags: string[]; description: string; url: string;
   reviewStatus?: 'revised' | 'source-audited' | 'example';
+  socialImage?: {src:string;alt:string;width:1200;height:630};
   legacyUrl?: string; legacySource?: string; post?: CollectionEntry<'posts'> | CollectionEntry<'technicalTranslations'>; digest?: CollectionEntry<'digests'>;
   renewal?: CollectionEntry<'renewals'>;
   translation?: CollectionEntry<'translations'>;

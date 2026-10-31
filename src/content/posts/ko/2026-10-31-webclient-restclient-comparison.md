@@ -8,6 +8,7 @@ tags: ["spring", "webclient", "restclient", "http-client", "reactive", "virtual-
 publishedAt: "2026-10-30T23:49:15.271160+00:00"
 updatedAt: "2026-10-30T23:49:15.271160+00:00"
 title: "WebClient와 RestClient 비교: 동기 호출·반응형·스트리밍 선택 기준"
+socialImage: {"src": "/assets/img/social/webclient-restclient-ko.png", "alt": "RestClient의 동기 응답 대기와 WebClient의 반응형·스트리밍 선택 기준 비교", "width": 1200, "height": 630}
 description: "Spring WebClient와 RestClient의 실행 시점, block, 오류 처리와 가상 스레드 적용 기준을 비교합니다. 로컬 HTTP 예제로 구독별 요청과 404·503 처리를 확인합니다."
 reviewedAt: "2026-10-31"
 reviewStatus: "revised"

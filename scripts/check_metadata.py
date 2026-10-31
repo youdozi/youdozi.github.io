@@ -98,6 +98,22 @@ def validate(url, page):
             errors.append('Non-article route must not emit article metadata')
         return errors
     article = articles[0]
+    if page.meta.get('twitter:card') == ['summary_large_image']:
+        image = next(iter(page.meta.get('og:image', [])), '')
+        if not re.fullmatch(re.escape(SITE) + r'/assets/img/social/[a-z0-9-]+\.png', image):
+            errors.append('Large social image must use a local social PNG URL')
+        equal('og:image', image)
+        equal('twitter:image', image)
+        equal('og:image:type', 'image/png')
+        equal('og:image:width', '1200')
+        equal('og:image:height', '630')
+        alt = next(iter(page.meta.get('og:image:alt', [])), '')
+        if not alt.strip():
+            errors.append('Large social image needs descriptive alternative text')
+        equal('og:image:alt', alt)
+        equal('twitter:image:alt', alt)
+        if article.get('image') != image:
+            errors.append('BlogPosting image must match the social image')
     equal('og:type', 'article')
     if article.get('url') != url or article.get('mainEntityOfPage') != url or article.get('@id') != url + '#article':
         errors.append('BlogPosting URL identity must match canonical')
@@ -141,6 +157,16 @@ def audit(root):
         checked += 1
         articles += bool(re.fullmatch(r'https://youdozi\.github\.io/[^/]+/(posts|digest)/[^/]+/', url))
         errors.extend(f'{path}: {error}' for error in validate(url, page))
+        if page.meta.get('twitter:card') == ['summary_large_image']:
+            image = next(iter(page.meta.get('og:image', [])), '')
+            if re.fullmatch(re.escape(SITE) + r'/assets/img/social/[a-z0-9-]+\.png', image):
+                asset = Path(root) / image.removeprefix(SITE + '/')
+                try:
+                    header = asset.read_bytes()[:24]
+                    if header[:8] != b'\x89PNG\r\n\x1a\n' or header[12:16] != b'IHDR' or tuple(int.from_bytes(header[i:i+4], 'big') for i in (16, 20)) != (1200, 630):
+                        raise ValueError('Invalid PNG dimensions')
+                except (OSError, ValueError):
+                    errors.append(f'{path}: Social PNG must exist and measure 1200x630')
     if not checked:
         errors.append('No eligible pages found for metadata validation')
     return errors, {'pages': checked, 'articles': articles}

@@ -302,3 +302,5 @@ JDK 25 ScopedValue 예제는 `python3 -B scripts/check_scopedvalue_example.py --
 10k RPS 아키텍처 글의 입장 제어 예제는 `python3 -B scripts/check_admission_example.py --jdk <JDK 27 홈>`으로 실제 ZIP과 별도 게이트 계약을 실행합니다. 10,000 RPS 부하 시험이나 인프라 배포를 수행하지 않습니다. 참조 구성의 편집 가능한 SVG 원본은 `assets/img/architecture/`에 있습니다.
 
 WebClient·RestClient 비교는 `python3 -B scripts/check_http_client_comparison.py`로 실제 한영 ZIP의 콘솔 예제를 실행합니다. JDK 17·Gradle 8.4에서 로컬 HTTP 7요청과 종료 연산·구독·404/503 처리를 확인하며, 최초 Maven Central 다운로드가 필요합니다. 성능 비교나 타임아웃·TLS 검증은 아닙니다.
+
+게시글별 공유 카드는 선택적인 `socialImage`(로컬 PNG 경로·현지화한 alt·1200×630 크기)로 지정합니다. Open Graph·Twitter 대형 카드·BlogPosting 이미지가 같은 주소를 사용하며, 지정하지 않은 페이지는 기존 프로필 카드로 표시합니다. WebClient·RestClient 카드의 원본은 `assets/img/social/webclient-restclient-{en,ko}.svg`이며 `node scripts/render_client_social_images.mjs`로 PNG를 다시 만듭니다. Chrome과 설치된 Playwright가 필요하며 외부 이미지 요청은 없습니다. 빌드 검사는 메타데이터 일치·대체 텍스트·로컬 PNG 헤더 크기를 확인하고 실제 플랫폼의 공유 캐시나 카드 표시를 보장하지 않습니다.
