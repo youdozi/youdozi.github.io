@@ -71,6 +71,10 @@ jobs:
         run: python3 -B scripts/check_http_client_comparison.py
       - name: Execute published WebClient timeout and bounded retry contracts
         run: python3 -B scripts/check_webclient_retry_example.py
+      - name: Execute AI-assisted TDD stages and regression mutations
+        run: |
+          python3 -B scripts/build_algorithm_diagrams.py
+          python3 -B .pipeline/drafts/2026-11-02-ai-assisted-tdd/check.py
       - name: Generate Q types and compare Querydsl and Specification contracts twice from clean
         run: python3 -B scripts/check_query_strategies.py
       - name: Execute the published shell automation examples with local HTTP fixtures
