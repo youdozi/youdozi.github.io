@@ -12,6 +12,7 @@ STRATEGY_SOURCE = Path('content/diagrams/query-strategies.json')
 PUBLICATION_SOURCE = Path('content/diagrams/publication.json')
 RUBY_SOURCE = Path('content/diagrams/ruby-environment.json')
 JENKINS_SOURCE = Path('content/diagrams/jenkins.json')
+POST_SOURCE = Path('content/diagrams/post-workflows.json')
 OUTPUT = Path('public/assets/diagrams')
 LANGUAGES = ('en', 'ko')
 
@@ -121,7 +122,7 @@ def validate_articles(data, posts=Path('src/content/posts')):
                     raise ValueError(f'Missing required {contract["language"]} code: {lang}/{item["key"]}')
 
 
-def load_sources(paths=(SOURCE, WORKFLOW_SOURCE, STRATEGY_SOURCE, PUBLICATION_SOURCE, RUBY_SOURCE, JENKINS_SOURCE)):
+def load_sources(paths=(SOURCE, WORKFLOW_SOURCE, STRATEGY_SOURCE, PUBLICATION_SOURCE, RUBY_SOURCE, JENKINS_SOURCE, POST_SOURCE)):
     combined = {'version':1, 'diagrams':[]}
     for path in paths:
         combined['diagrams'].extend(validate(json.loads(Path(path).read_text()))['diagrams'])
