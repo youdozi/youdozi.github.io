@@ -4,8 +4,8 @@
     {
       "key": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
       "title": {
-        "ko": "WebFlux에서 MVC·가상 스레드로 옮기는 순서",
-        "en": "Migration path from WebFlux to MVC and virtual threads"
+        "ko": "Kotlin → Java 전환 흐름",
+        "en": "Kotlin to Java migration"
       },
       "description": {
         "ko": "리액티브 전용 경로를 식별한 다음 일반 요청 경로를 단계적으로 전환하고 관측 결과에 따라 확대하거나 되돌리는 흐름",
@@ -20,42 +20,101 @@
       "steps": [
         {
           "kind": "process",
-          "ko": ["스트리밍·backpressure", "전용 경로 분류"],
-          "en": ["Identify streaming and", "backpressure paths"]
+          "ko": [
+            "빠른 일정·학습 부담 고려",
+            "Java 목표 언어 선택"
+          ],
+          "en": [
+            "Tight schedule, learning curve",
+            "Choose Java as target language"
+          ]
         },
         {
           "kind": "process",
-          "ko": ["유한 API 하나 선택", "계약·기준선 기록"],
-          "en": ["Select one finite API", "record contract and baseline"]
+          "ko": [
+            "스트리밍·backpressure",
+            "전용 경로 분류"
+          ],
+          "en": [
+            "Identify streaming and",
+            "backpressure paths"
+          ]
         },
         {
           "kind": "process",
-          "ko": ["MVC·저장소 변경", "각각 테스트"],
-          "en": ["Change MVC and storage", "test each contract"]
+          "ko": [
+            "유한 API 하나 선택",
+            "계약·기준선 기록"
+          ],
+          "en": [
+            "Select one finite API",
+            "record contract and baseline"
+          ]
         },
         {
           "kind": "process",
-          "ko": ["가상 스레드 실행과", "DB 한도 확인"],
-          "en": ["Verify virtual threads", "and database limits"]
+          "ko": [
+            "Kotlin → Java·MVC 전환",
+            "필요한 저장소 변경 분리"
+          ],
+          "en": [
+            "Move Kotlin to Java MVC",
+            "Separate storage changes"
+          ]
         },
         {
           "kind": "process",
-          "ko": ["동일 부하에서", "지연·오류·대기 비교"],
-          "en": ["Compare latency, errors", "and waits under equal load"]
+          "ko": [
+            "가상 스레드 실행과",
+            "DB 한도 확인"
+          ],
+          "en": [
+            "Verify virtual threads",
+            "and database limits"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "동일 부하에서",
+            "지연·오류·대기 비교"
+          ],
+          "en": [
+            "Compare latency, errors",
+            "and waits under equal load"
+          ]
         },
         {
           "kind": "condition",
-          "ko": ["서비스 기준을", "충족하는가?"],
-          "en": ["Does it meet the", "service criteria?"],
+          "ko": [
+            "서비스 기준을",
+            "충족하는가?"
+          ],
+          "en": [
+            "Does it meet the",
+            "service criteria?"
+          ],
           "branch": {
-            "exit": { "ko": "중단", "en": "stop" },
-            "continue": { "ko": "예", "en": "yes" }
+            "exit": {
+              "ko": "중단",
+              "en": "stop"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
           }
         },
         {
           "kind": "result",
-          "ko": ["작은 단계로", "트래픽 확대"],
-          "en": ["Expand traffic", "in small steps"]
+          "ko": [
+            "작은 단계로",
+            "트래픽 확대"
+          ],
+          "en": [
+            "Expand traffic",
+            "in small steps"
+          ]
         }
       ]
     }
