@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2026-11-01-ai-agent-permission-boundaries",
+      "title": {
+        "ko": "게시 권한 판정",
+        "en": "Publish authorization"
+      },
+      "description": {
+        "ko": "승인 필요한 게시 경로의 정책·승인·범위·만료·재사용 검사 순서. 읽기·초안 편집 즉시 허용 분기는 생략한다.",
+        "en": "Policy, approval, scope, expiry and replay checks for publication. Immediate read and draft-edit allowance is omitted."
+      },
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "class Gate:"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "게시 요청·논리 자원 ID 입력"
+          ],
+          "en": [
+            "Structured publish request"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "정책에 등록된 작업인가?"
+          ],
+          "en": [
+            "Action and target in policy?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "정책거부",
+              "en": "deny policy"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "신뢰된 승인이 있는가?"
+          ],
+          "en": [
+            "Trusted approval available?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "승인대기",
+              "en": "approval"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "주체·요청·산출물이 같은가?"
+          ],
+          "en": [
+            "Worker and request match?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "범위거부",
+              "en": "deny scope"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "현재 시각 < 만료 시각인가?"
+          ],
+          "en": [
+            "Now before expiry?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "만료거부",
+              "en": "expired"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "아직 사용하지 않은 승인인가?"
+          ],
+          "en": [
+            "Approval not used before?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "재사용거부",
+              "en": "replay"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "yes"
+            }
+          }
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "승인 소비 후 ALLOW 반환"
+          ],
+          "en": [
+            "Consume approval, return ALLOW"
+          ]
+        }
+      ]
+    }
+  ]
+}

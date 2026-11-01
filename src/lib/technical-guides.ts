@@ -29,25 +29,27 @@ const crossCategoryKeys: Partial<Record<string, readonly string[]>> = {
 };
 const paths = {
   security: {
-    en: {label:'Runtime security guides',title:'Runtime Security Guides: PHP, Node.js, GitLab, Linux and JVM Trust',eyebrow:'Runtime patching',
-      description:'Check PHP, Node.js and GitLab upgrade evidence, distinguish supplier fixes from version labels, and inspect JVM certificate trust.',
-      intro:'Follow each product’s advisory and the runtime actually serving the workload. Local examples compare declared versions and collect runtime evidence; they do not discover services, reproduce exploits or certify patch status.',
+    en: {label:'Security guides',title:'Security Guides: Runtime Patches, JVM Trust and AI Agent Permissions',eyebrow:'Runtime and agent security',
+      description:'Check runtime upgrade evidence and JVM certificate trust, then constrain AI agent permissions and publication approvals.',
+      intro:'Follow product advisories and the runtime actually serving the workload, then define the authority of automated agents. Local examples collect runtime evidence or exercise authorization decisions; they do not certify patch status or implement a production security boundary.',
       groups:[
         {id:'php',title:'PHP engine and web workers',description:'Separate the PHP engine fixes, vendor backports, session follow-up and Windows package rebuild.',keys:['2026-10-30-php2shell-runtime-patching']},
         {id:'node',title:'Brotli paths and Node.js rollout',description:'Trace untrusted decompression and connect runtime fix evidence to every worker and replica.',keys:['2026-10-30-node2shell-brotli-runtime-patching']},
         {id:'gitlab',title:'GitLab server upgrade',description:'Compare the RCE release threshold and follow upgrade stops before verifying adoption.',keys:['2026-10-30-gitlab2shell-cve-2026-110264']},
         {id:'kernel',title:'Running host kernel',description:'Separate local privilege escalation from web entry and collect kernel/package evidence without declaring patch completion.',keys:['2026-10-31-fragnesia-cve-2026-46300']},
         {id:'trust',title:'JVM certificate trust',description:'Distinguish supplier distrust guidance from the CA inventory of a newly started JVM.',keys:['2026-10-30-jdk-emudhra-truststore']},
+        {id:'agent',title:'AI agent permissions',description:'Separate task instructions from enforced authority and test approval scope, expiration and replay rejection.',keys:['2026-11-01-ai-agent-permission-boundaries']},
       ]},
-    ko: {label:'런타임 보안 학습 안내',title:'런타임 보안 학습 안내: PHP·Node.js·GitLab·Linux·JVM 신뢰',eyebrow:'런타임 패치',
-      description:'PHP·Node.js·GitLab의 업그레이드 증거와 버전 이름표를 구분하고 JVM 인증서 신뢰 설정을 확인합니다.',
-      intro:'제품별 공지와 실제 작업을 처리하는 런타임을 함께 확인합니다. 로컬 예제는 선언된 버전 비교와 런타임 증거 수집을 돕습니다. 서비스 탐색·악용 재현·패치 상태 인증은 하지 않습니다.',
+    ko: {label:'보안 학습 안내',title:'보안 학습 안내: 런타임 패치·JVM 신뢰·AI 에이전트 권한',eyebrow:'런타임·에이전트 보안',
+      description:'런타임 업그레이드 증거와 JVM 인증서 신뢰를 확인하고 AI 에이전트의 권한·게시 승인 범위를 제한합니다.',
+      intro:'제품별 공지와 실제 작업을 처리하는 런타임을 확인한 뒤 자동화 에이전트의 권한 경계를 살펴봅니다. 로컬 예제는 런타임 증거를 수집하거나 권한 판정을 실행하며, 패치 상태를 인증하거나 운영 보안 경계를 구현하지 않습니다.',
       groups:[
         {id:'php',title:'PHP 엔진과 웹 워커',description:'PHP 엔진 수정·공급자 백포트·세션 후속 공지·Windows 패키지 재빌드를 구분합니다.',keys:['2026-10-30-php2shell-runtime-patching']},
         {id:'node',title:'Brotli 경로와 Node.js 반영',description:'신뢰할 수 없는 압축 해제 경로를 추적하고 모든 워커·복제본을 수정 런타임 증거와 연결합니다.',keys:['2026-10-30-node2shell-brotli-runtime-patching']},
         {id:'gitlab',title:'GitLab 서버 업그레이드',description:'RCE 수정 기준을 비교하고 필수 경유 지점을 거쳐 실행 반영을 확인합니다.',keys:['2026-10-30-gitlab2shell-cve-2026-110264']},
         {id:'kernel',title:'실행 중인 호스트 커널',description:'웹 침입과 로컬 권한 상승을 구분하고 패치 완료 판정 없이 커널·패키지 증거를 수집합니다.',keys:['2026-10-31-fragnesia-cve-2026-46300']},
         {id:'trust',title:'JVM 인증서 신뢰',description:'공급자 신뢰 해제 안내와 새 JVM에서 수집한 CA 목록을 구분합니다.',keys:['2026-10-30-jdk-emudhra-truststore']},
+        {id:'agent',title:'AI 에이전트 권한',description:'작업 지침과 실제 인가를 구분하고 승인 범위·만료·재사용 차단을 검사합니다.',keys:['2026-11-01-ai-agent-permission-boundaries']},
       ]},
   },
   jekyll: {

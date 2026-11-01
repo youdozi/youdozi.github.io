@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-11-01T13:09:09.133813+00:00",
+  "scope": "Korean private manuscript, primary-source comparison, executable teaching example and mobile SVG",
+  "reviewMethod": "self-review; no independent reviewer session",
+  "publicationRequested": true,
+  "checks": {
+    "syntheticCases": 10,
+    "regressionMutationsDetected": 3,
+    "pythonVersion": "3.13.0",
+    "svgSourceParity": true,
+    "mobileViewport": 360,
+    "horizontalOverflow": false,
+    "textOutsideSvgViewBox": []
+  },
+  "limitations": [
+    "No external action performed",
+    "No production sandbox, gateway, identity provider or cloud IAM deployment tested",
+    "Approval authentication, atomic cross-process consumption and side-effect idempotency are described requirements, not implemented features"
+  ],
+  "sources": [
+    "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/",
+    "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+    "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+    "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#permissions",
+    "https://kubernetes.io/docs/concepts/security/rbac-good-practices/"
+  ],
+  "publicationRequest": "게시해줘",
+  "bilingualReview": "self-review of Korean original and complete English translation; code and source links compared",
+  "publicationChecks": {
+    "checkedAt": "2026-11-01T13:15:07.377931+00:00",
+    "javascriptTests": 174,
+    "pythonSuiteTests": 343,
+    "typeErrors": 0,
+    "siteBuild": "passed",
+    "bilingualMobileSvg360px": "no clipped text",
+    "independentReview": false
+  }
+}
