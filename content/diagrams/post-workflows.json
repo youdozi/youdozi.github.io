@@ -249,6 +249,106 @@
           ]
         }
       ]
+    },
+    {
+      "key": "2026-11-02-ai-assisted-tdd",
+      "title": {
+        "ko": "AI·TDD 개발 반복",
+        "en": "AI-assisted TDD cycle"
+      },
+      "description": {
+        "ko": "다음 테스트 하나를 선택하고 실패 확인·최소 구현·통과·리팩토링·재실행을 반복하는 개발 흐름. 환경 오류와 실패 후 재시도 분기는 생략한다.",
+        "en": "Choose one test, verify failure, implement, pass, refactor and rerun. Setup-error and failure-retry branches are omitted."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "class StockPolicyTest"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "요구사항·테스트 목록",
+            "다음 동작 하나 선택"
+          ],
+          "en": [
+            "Requirements and test list",
+            "Choose one next behavior"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "AI가 테스트 하나 작성",
+            "기대값의 근거 확인"
+          ],
+          "en": [
+            "AI drafts one test",
+            "Check the expected result"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "Red: 의도한 실패 확인",
+            "환경 오류와 구분"
+          ],
+          "en": [
+            "Red: verify intended failure",
+            "Distinguish setup errors"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "AI가 최소 구현 추가",
+            "기대 동작 유지"
+          ],
+          "en": [
+            "AI adds minimal implementation",
+            "Preserve expected behavior"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "Green: 전체 테스트 통과"
+          ],
+          "en": [
+            "Green: all current tests pass"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "Refactor: 내부 구조 정리"
+          ],
+          "en": [
+            "Refactor internal structure"
+          ]
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "같은 테스트 재실행",
+            "결과·변경분 확인"
+          ],
+          "en": [
+            "Rerun the same tests",
+            "Check results and changes"
+          ]
+        }
+      ],
+      "loop": {
+        "from": 6,
+        "to": 0,
+        "label": {
+          "ko": "다음",
+          "en": "next"
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,100 @@
+{
+  "preparedLocalDate": "2026-11-02",
+  "checkedAt": "2026-11-01T23:11:27.016337+00:00",
+  "reviewMethod": "self-review; no independent AI review session",
+  "publicationRequested": true,
+  "articleSha256": "6bc0834d616c91787b33d2bdd03dc679b5ec97264e3bba5fa5150be23532f448",
+  "environment": {
+    "java": "Amazon Corretto 17.0.8.1",
+    "gradle": "8.4",
+    "junitJupiter": "5.12.2"
+  },
+  "execution": [
+    {
+      "stage": "first-red",
+      "tests": 1,
+      "failures": 1,
+      "skipped": 0,
+      "exitCode": 1
+    },
+    {
+      "stage": "first-green",
+      "tests": 1,
+      "failures": 0,
+      "skipped": 0,
+      "exitCode": 0
+    },
+    {
+      "stage": "expanded-red",
+      "tests": 9,
+      "failures": 6,
+      "skipped": 0,
+      "exitCode": 1
+    },
+    {
+      "stage": "expanded-green",
+      "tests": 9,
+      "failures": 0,
+      "skipped": 0,
+      "exitCode": 0
+    },
+    {
+      "stage": "refactor",
+      "tests": 9,
+      "failures": 0,
+      "skipped": 0,
+      "exitCode": 0
+    },
+    {
+      "stage": "mutant-equal-stock",
+      "tests": 9,
+      "failures": 1,
+      "skipped": 0,
+      "exitCode": 1
+    },
+    {
+      "stage": "mutant-zero-request",
+      "tests": 9,
+      "failures": 1,
+      "skipped": 0,
+      "exitCode": 1
+    },
+    {
+      "stage": "mutant-validation-order",
+      "tests": 9,
+      "failures": 1,
+      "skipped": 0,
+      "exitCode": 1
+    }
+  ],
+  "diagram": {
+    "sourceParity": true,
+    "mobileViewport": 360,
+    "horizontalOverflow": false,
+    "textOutsideViewBox": [],
+    "visualInspection": "local screenshot checked"
+  },
+  "limitations": [
+    "Authored prompts, not an AI product trial or transcript",
+    "Pure stock arithmetic policy, no persistence or concurrent reservation",
+    "No integration, production, productivity or performance benchmark",
+    "Nine named unit tests and three targeted mutations are not exhaustive correctness evidence"
+  ],
+  "sources": [
+    "https://www.martinfowler.com/bliki/TestDrivenDevelopment.html",
+    "https://docs.junit.org/5.12.2/user-guide/",
+    "https://docs.gradle.org/current/userguide/java_testing.html",
+    "https://docs.github.com/en/copilot/tutorials/review-ai-generated-code"
+  ],
+  "englishArticleSha256": "26eab0ef4f070a5d1e6cb8ca4417df87c3453ae3ae26c6e5ae7797d5f7652c4c",
+  "publicationValidation": {
+    "bilingualExecutableBlocks": true,
+    "publishedBodyParity": true,
+    "localizedDiagramParity": true,
+    "mobileDiagramLanguages": [
+      "en",
+      "ko"
+    ],
+    "mobileHorizontalOverflow": false
+  }
+}
