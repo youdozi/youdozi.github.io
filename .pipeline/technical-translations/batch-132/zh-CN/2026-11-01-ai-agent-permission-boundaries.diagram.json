@@ -1,0 +1,75 @@
+{
+  "key": "2026-11-01-ai-agent-permission-boundaries",
+  "language": "zh-CN",
+  "title": "发布授权判定",
+  "description": "需要审批的发布路径依次检查策略、审批、范围、过期与重放。省略读取和草稿编辑的直接允许分支。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "结构化发布请求"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "操作和目标在策略中？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "策略拒绝",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "是否有可信审批？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "等待审批",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "执行主体与请求匹配？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "范围拒绝",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "当前时间早于过期时间？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "已过期",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "审批尚未使用？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "重放拒绝",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "消费审批，返回 ALLOW"
+      ]
+    }
+  ]
+}

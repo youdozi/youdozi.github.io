@@ -1,0 +1,52 @@
+{
+  "key": "2026-11-02-ai-assisted-attack-defense",
+  "language": "zh-CN",
+  "title": "关联调查信号",
+  "description": "按时间处理批量事件并记录读取。同一主体与运行在 300 秒内的传输拒绝作为调查候选。跳过不代表安全。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "按时间戳排序事件"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "逐个处理事件",
+        "读取时按键保存",
+        "最近的读取时间"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "是否为传输拒绝事件？"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "跳过事件",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "同一主体和运行的读取",
+        "是否在 0 到 300 秒内？"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "跳过事件",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "添加调查候选",
+        "继续处理下个事件"
+      ]
+    }
+  ]
+}

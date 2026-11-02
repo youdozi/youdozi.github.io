@@ -1,0 +1,60 @@
+{
+  "key": "2026-11-02-ai-assisted-tdd",
+  "language": "ja",
+  "title": "AI 支援 TDD のサイクル",
+  "description": "テストを 1 つ選び、失敗確認、実装、成功、リファクタリング、再実行を繰り返します。環境エラーと失敗後の再試行分岐は省略しています。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "要件とテストリスト",
+        "次の振る舞いを 1 つ選ぶ"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "AI がテストを 1 つ作成",
+        "期待結果を確認"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Red：意図した失敗を確認",
+        "環境エラーと区別"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "AI が最小実装を追加",
+        "期待する振る舞いを維持"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Green：現在の全テスト成功"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Refactor：内部構造を整理"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "同じテストを再実行",
+        "結果と差分を確認"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 6,
+    "to": 0,
+    "label": "次へ"
+  }
+}

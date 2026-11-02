@@ -1,0 +1,60 @@
+{
+  "key": "2026-11-02-ai-assisted-tdd",
+  "language": "fr",
+  "title": "Cycle TDD assisté par IA",
+  "description": "Choisir un test, vérifier l’échec, implémenter, réussir, refactoriser et relancer. Les branches d’erreur de configuration et de nouvelle tentative après échec sont omises.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Exigences et liste de tests",
+        "Choisir le comportement suivant"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "L’IA rédige un test",
+        "Vérifier le résultat attendu"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Red : vérifier l’échec voulu",
+        "Distinguer erreurs de contexte"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "L’IA ajoute le minimum",
+        "Préserver le comportement"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Green : tous les tests passent"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Refactor : revoir la structure"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Relancer les mêmes tests",
+        "Vérifier résultats et diff"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 6,
+    "to": 0,
+    "label": "suite"
+  }
+}

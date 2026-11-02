@@ -1,0 +1,79 @@
+{
+  "key": "2026-11-01-ai-agent-permission-boundaries",
+  "language": "es",
+  "title": "Autorización para publicar",
+  "description": "Comprobar política, aprobación, alcance, vencimiento y reutilización. Se omite el permiso inmediato de lectura y edición de borradores.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Solicitud estructurada",
+        "de publicación"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Acción y destino",
+        "en la política?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "política",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Hay aprobación confiable?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "aprobación",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Coinciden ejecutor",
+        "y solicitud?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "no coincide",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Antes del vencimiento?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "vencida",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Aprobación aún sin usar?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "reutilizada",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Consumir aprobación",
+        "Devolver ALLOW"
+      ]
+    }
+  ]
+}

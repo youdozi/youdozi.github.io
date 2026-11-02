@@ -1,0 +1,80 @@
+{
+  "key": "2026-11-01-ai-agent-permission-boundaries",
+  "language": "fr",
+  "title": "Autoriser la publication",
+  "description": "Vérifications de politique, approbation, périmètre, expiration et réutilisation pour la publication. L’autorisation immédiate de lecture et modification de brouillon est omise.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Demande structurée",
+        "de publication"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Action et cible prévues",
+        "par la politique ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "refus règle",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Approbation fiable",
+        "disponible ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "approbation",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Identité et demande",
+        "concordent ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "refus portée",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Avant l’expiration ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "expiration",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Approbation encore inutilisée ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "réutilisée",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Consommer l’approbation",
+        "Renvoyer ALLOW"
+      ]
+    }
+  ]
+}

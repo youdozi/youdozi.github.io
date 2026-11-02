@@ -1,0 +1,69 @@
+{
+  "key": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+  "language": "fr",
+  "title": "Migration de Kotlin vers Java",
+  "description": "Repérer les chemins exclusivement réactifs, migrer progressivement les chemins ordinaires, puis élargir ou revenir en arrière selon les observations.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Délai serré, apprentissage",
+        "Choisir Java comme cible"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Repérer les chemins de flux",
+        "et de contre-pression"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Choisir une API finie",
+        "Noter contrat et référence"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Passer de Kotlin à Java MVC",
+        "Séparer le changement stockage"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Vérifier les threads virtuels",
+        "et les limites de la base"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Comparer latence, erreurs",
+        "et attentes à charge égale"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Les critères du service",
+        "sont-ils respectés ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "arrêt",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Augmenter le trafic",
+        "par petites étapes"
+      ]
+    }
+  ]
+}

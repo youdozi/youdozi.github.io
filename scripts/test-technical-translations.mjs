@@ -125,3 +125,21 @@ test('authored prompts may be localized while executable blocks, outputs and pro
   assert.throws(()=>check(draft.replace('examples=8','examples=9')),/Executable code/);
   assert.throws(()=>check(draft.replace('return base + surcharge;','return base - surcharge;')),/Executable code/);
 });
+
+async function tddPromptFixture(){
+ const key='2026-11-02-ai-assisted-tdd';
+ const source=await readFile(join(root,`src/content/posts/en/${key}.md`),'utf8');
+ const body=source.match(/^---\n[\s\S]*?\n---\n([\s\S]*)$/)[1].replace(`](/assets/diagrams/${key}-en.svg)`,`](${key}.svg)`);
+ const draft='---\n'+JSON.stringify({state:'draft',language:'es',translationKey:key,title:'TDD con IA',description:'Ejemplo de TDD'})+'\n---\n'+body;
+ return {key,source,draft,check:raw=>compareManuscript(source,raw,{},key,'es',{formatVersion:2})};
+}
+test('TDD authored prompts may be localized while identifiers remain protected',async()=>{
+ const f=await tddPromptFixture();
+ assert.doesNotThrow(()=>f.check(f.draft.replace('Do not implement anything yet.','Todavía no implementes nada.')));
+ assert.throws(()=>f.check(f.draft.replace('Change only StockPolicy.java to pass this test.','Change only OtherPolicy.java to pass this test.')),/Prompt identifier/);
+});
+test('TDD prompt localization does not permit changing Java or shell commands',async()=>{
+ const f=await tddPromptFixture();
+ assert.throws(()=>f.check(f.draft.replace('return stock - requested;','return stock + requested;')),/Executable code/);
+ assert.throws(()=>f.check(f.draft.replace('gradle --no-daemon','gradle --continue')),/Executable code/);
+});

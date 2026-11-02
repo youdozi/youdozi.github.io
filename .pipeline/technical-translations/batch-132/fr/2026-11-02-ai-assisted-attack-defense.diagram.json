@@ -1,0 +1,53 @@
+{
+  "key": "2026-11-02-ai-assisted-attack-defense",
+  "language": "fr",
+  "title": "Corréler les signaux d’enquête",
+  "description": "Trier les événements par lots, noter les lectures et signaler les sorties refusées sous 300 secondes pour le même acteur et la même exécution. Ignorer ne signifie pas sûr.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Trier par horodatage"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Traiter chaque événement",
+        "Lecture : noter la dernière",
+        "heure par clé"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Transfert sortant refusé ?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "ignorer",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Lecture : même acteur et",
+        "exécution, dans les",
+        "0 à 300 secondes ?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "ignorer",
+        "continue": "oui"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Ajouter un cas à examiner",
+        "Passer à l’événement suivant"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "key": "2026-11-02-ai-assisted-attack-defense",
+  "language": "es",
+  "title": "Correlacionar señales de investigación",
+  "description": "Ordenar eventos, registrar lecturas y marcar salidas denegadas dentro de 300 segundos para el mismo actor y ejecución. Omitir no implica seguridad.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Ordenar eventos por tiempo"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Procesar cada evento",
+        "Al leer, guardar la última",
+        "hora de lectura por clave"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Es una salida denegada?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "omitir",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Lectura del mismo actor",
+        "y ejecución dentro de",
+        "0 a 300 segundos?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "omitir",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Añadir candidato a investigar",
+        "Pasar al siguiente evento"
+      ]
+    }
+  ]
+}

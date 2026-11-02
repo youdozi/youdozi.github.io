@@ -1,0 +1,53 @@
+{
+  "key": "2026-11-02-ai-assisted-attack-defense",
+  "language": "de",
+  "title": "Untersuchungssignale verbinden",
+  "description": "Batch-Ereignisse sortieren, Lesezugriffe erfassen und verweigerte Übertragungen innerhalb von 300 Sekunden für denselben Akteur und Lauf markieren. Überspringen ist kein Sicherheitsurteil.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Ereignisse zeitlich sortieren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Jedes Ereignis verarbeiten",
+        "Bei Lesen: neueste Zeit je",
+        "Schlüssel speichern"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Verweigerte Übertragung?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "überspringen",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Lesen: gleicher Akteur, Lauf",
+        "innerhalb von 0 bis 300",
+        "Sekunden?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "überspringen",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Untersuchungsfall ergänzen",
+        "Nächstes Ereignis verarbeiten"
+      ]
+    }
+  ]
+}

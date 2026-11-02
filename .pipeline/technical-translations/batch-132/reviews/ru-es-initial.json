@@ -1,0 +1,114 @@
+{
+  "scope": {
+    "languages": [
+      "ru",
+      "es"
+    ],
+    "work": "Read-only independent AI review of 8 complete translated manuscripts and 8 translated diagram JSON files against four English source manuscripts and the English entries in content/diagrams/post-workflows.json. Target prose read standalone before source comparison; protected fences compared verbatim and localized authored prompts checked semantically.",
+    "keys": [
+      "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "2026-11-01-ai-agent-permission-boundaries",
+      "2026-11-02-ai-assisted-tdd",
+      "2026-11-02-ai-assisted-attack-defense"
+    ],
+    "excluded": [
+      "Other review and self-review results",
+      "External factual revalidation",
+      "Executing examples",
+      "Rendered SVG/browser validation"
+    ]
+  },
+  "context_name": "/root/review132_ru_es",
+  "target_versions": {
+    ".pipeline/technical-translations/batch-132/ru/2026-11-01-webflux-coroutines-mvc-virtual-threads.md": "c417fce6ddae2a34125ccd08f828415bf20c5754f81d5a1dc1fb8a1b37e40f65",
+    ".pipeline/technical-translations/batch-132/ru/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json": "3c58d99fa821722e758bf1ff4a5229ea18cd7b2a3333a2bebe4d2be0a83bc73e",
+    ".pipeline/technical-translations/batch-132/ru/2026-11-01-ai-agent-permission-boundaries.md": "5f2e904b79cc324946abb340f8a3363a77ef623e132a6be53e89b1dbabfdba5c",
+    ".pipeline/technical-translations/batch-132/ru/2026-11-01-ai-agent-permission-boundaries.diagram.json": "54de067a10517bef02f32a81b4f8200ac531acd53f2ce1231a747e820521bb2a",
+    ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-tdd.md": "d71ce33877ee364c023dbd5cb47f1a3b1fad207ab3f11b0060bd603c11f32527",
+    ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-tdd.diagram.json": "9f192bc82d2f1946cc677ac417d51757c93f7f87c069e63915980540d9ae57e0",
+    ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-attack-defense.md": "edb7f6e1a9289ea1c27ce1342ceea067306c4ec4a024f89de9bf2cb3bd184e74",
+    ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-attack-defense.diagram.json": "b3937735fa25dec6f56e0aef2e1f613d94db7b5f0dceef11d23fe2ff1bef6dd5",
+    ".pipeline/technical-translations/batch-132/es/2026-11-01-webflux-coroutines-mvc-virtual-threads.md": "e33a61f8b7e450e0ff52fec63aed6a917a198b5cef3c34dd0b608fc8f65eaca0",
+    ".pipeline/technical-translations/batch-132/es/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json": "07c89a26f3910d7e16c2337848e521250a79edc0f1a880937143474efd216a61",
+    ".pipeline/technical-translations/batch-132/es/2026-11-01-ai-agent-permission-boundaries.md": "78da5e752841263efbfe44d6b7fd4b7e51cb7e033e0c102db023daf32fa6c52b",
+    ".pipeline/technical-translations/batch-132/es/2026-11-01-ai-agent-permission-boundaries.diagram.json": "b6a91d1c557d3013722f1a4f7ae83495dd8ea93ae7fd5b90eb48dd51f567c2ca",
+    ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-tdd.md": "534f39cd74dae10370574db1c6e799988d16ca54481d7749ec7def363a2f7405",
+    ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-tdd.diagram.json": "d7b83944a59c2c3b5a4e7f21f00f01eb21fef5b907018131ecf2d3d00443c102",
+    ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-attack-defense.md": "bf78abe955470f0445b64a3a660be25321f07033c8ad7519db2a01bc0ca8e2fe",
+    ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-attack-defense.diagram.json": "719c78f0fe4eafd5f83796564a95fb0f626aa00844dfe3213fb2501d0b3dfedc"
+  },
+  "findings": [
+    {
+      "path": ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-attack-defense.md",
+      "location": "frontmatter.title and frontmatter.description",
+      "quote": "Защита от атак с помощью AI: проверка границ исполнения",
+      "severity": "medium",
+      "category": "metadata_fidelity",
+      "reason": "The source title explicitly names cyberattacks and the three topic areas (Phishing, Exploits and Agent Hijacking). The translation substitutes a new subtitle about verifying execution boundaries. The description also drops the source relationship between prevention, detection and recovery, and no longer says the example is runnable. The body retains these topics, but complete-translation metadata does not retain the same information scope.",
+      "proposed_correction": {
+        "title": "Защита от кибератак с помощью AI: фишинг, эксплуатация уязвимостей и перехват управления агентами",
+        "description": "Подготовьтесь к фишингу, эксплуатации уязвимостей и инъекциям промптов в агентов с помощью AI. Свяжите защиту учётных записей, исправления и ограничения инструментов с предотвращением, обнаружением и восстановлением на исполняемом примере корреляции журналов."
+      },
+      "confidence": "high"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-attack-defense.md",
+      "location": "frontmatter.title and frontmatter.description",
+      "quote": "Defensa ante ataques asistidos por IA: verificar los límites de ejecución",
+      "severity": "medium",
+      "category": "metadata_fidelity",
+      "reason": "The source title explicitly names cyberattacks and the three topic areas (Phishing, Exploits and Agent Hijacking). The translation substitutes a new subtitle about verifying execution boundaries. The description also omits connecting controls to prevention, detection and recovery, and omits the runnable-example qualifier. This changes the information scope of metadata in a complete translation.",
+      "proposed_correction": {
+        "title": "Defensa ante ciberataques asistidos por IA: phishing, explotación de vulnerabilidades y secuestro de agentes",
+        "description": "Prepárese para el phishing, la explotación de vulnerabilidades y la inyección de prompts en agentes asistidos por IA. Conecte los controles de identidad, parcheo y herramientas con la prevención, detección y recuperación mediante un ejemplo ejecutable de correlación de registros."
+      },
+      "confidence": "high"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/ru/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+      "location": "steps[2].lines[1]",
+      "quote": "Записать контракт и базу",
+      "severity": "low",
+      "category": "terminology_clarity",
+      "reason": "The source says record contract and baseline. База alone does not clearly mean a measured baseline and, in this database-migration context, can be read as a database. The manuscript consistently uses базовый уровень for the baseline.",
+      "proposed_correction": "Зафиксировать контракт и базовый уровень (split across lines if needed for rendering).",
+      "confidence": "high"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/es/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "location": "steps[3].branch.exit",
+      "quote": "sin alcance",
+      "severity": "low",
+      "category": "terminology_clarity",
+      "reason": "The source branch label deny scope identifies denial because the approval does not match the requested scope. Sin alcance literally indicates an absence of scope and does not clearly label this mismatch.",
+      "proposed_correction": "fuera de alcance",
+      "confidence": "high"
+    }
+  ],
+  "checks": {
+    "source_hashes": "All eight manuscript sourceSha256 values match their current English sources.",
+    "fences": "All runnable and output fences are byte-for-byte identical to English. Only permitted TDD authored-prompt indices 0, 7, 11 and 12 differ; those localized prompts preserve the substantive constraints.",
+    "links_and_identifiers": "Body URLs, identifiers, numerical values and version references checked; diagram image URLs use the corresponding local translated asset filenames.",
+    "diagrams": "All eight JSON files parse. Step order, condition polarity, branch outcomes, 0–300-second window and TDD loop align with source diagrams; two wording issues listed.",
+    "metadata": "Draft staging metadata reviewed as a staging format; absent production-only fields were not treated as translation omissions."
+  },
+  "unresolved_issues": [
+    {
+      "finding_index": 0,
+      "status": "unresolved; reviewer did not edit targets"
+    },
+    {
+      "finding_index": 1,
+      "status": "unresolved; reviewer did not edit targets"
+    },
+    {
+      "finding_index": 2,
+      "status": "unresolved; reviewer did not edit targets"
+    },
+    {
+      "finding_index": 3,
+      "status": "unresolved; reviewer did not edit targets"
+    }
+  ],
+  "conclusion": "Four unresolved findings within reviewed scope (two medium metadata-fidelity findings and two low diagram wording findings). No further issues identified in this AI review; this is not a human/native review or a claim of exhaustive correctness."
+}

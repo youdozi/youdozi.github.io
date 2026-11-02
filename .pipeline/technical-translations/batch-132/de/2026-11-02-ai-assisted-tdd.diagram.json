@@ -1,0 +1,60 @@
+{
+  "key": "2026-11-02-ai-assisted-tdd",
+  "language": "de",
+  "title": "KI-gestützter TDD-Zyklus",
+  "description": "Einen Test wählen, Fehler prüfen, implementieren, bestehen, refaktorieren und erneut ausführen. Zweige für Einrichtungsfehler und Wiederholungen nach Fehlern sind ausgelassen.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Anforderungen und Testliste",
+        "Nächstes Verhalten wählen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "KI entwirft einen Test",
+        "Erwartetes Ergebnis prüfen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Red: Sollfehler prüfen",
+        "Von Umgebungsfehlern trennen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "KI ergänzt minimale Umsetzung",
+        "Erwartetes Verhalten erhalten"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Green: Alle Tests bestehen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Refactor: Struktur verbessern"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Dieselben Tests erneut starten",
+        "Ergebnisse und Diff prüfen"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 6,
+    "to": 0,
+    "label": "neu"
+  }
+}
