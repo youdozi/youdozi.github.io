@@ -137,6 +137,10 @@ jobs:
         run: npm run check
       - name: Build and check generated pages, assets and internal links
         run: npm run build
+      - name: Report public technical translation coverage
+        run: npm run audit:content
+      - name: Verify mobile reading, keyboard navigation and reader script budget
+        run: node scripts/check_reader_experience.mjs
       - name: Verify multilingual search links, history, retry and input races
         run: node scripts/check_search_navigation.mjs
       - name: Verify root language selection, saved choices and explicit URLs

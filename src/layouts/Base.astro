@@ -87,7 +87,7 @@ const currentPath = Astro.url.pathname.startsWith(`/${lang}/`) ? Astro.url.pathn
         })}</ul></details>
       </nav>
     </header>
-    <main id="main" class="shell"><slot /></main>
+    <main id="main" class="shell" tabindex="-1"><slot /></main>
     <footer class="site-footer shell"><div><a class="brand" href={`/${lang}/`}>{SITE}</a><p>{t.footer}</p></div><div class="footer-links">{archiveLink && <a href={archiveLink.url} aria-current={current(archiveLink.url)}>{discoveryUi[lang].archive}</a>}<a href={authorPath(lang)} lang={lang==='ko'?'ko':'en'}>{profileCopy[lang==='ko'?'ko':'en'].label}</a>{hasSection(allEntries,lang,'categories') && <a href={`/${lang}/categories/`} aria-current={current(`/${lang}/categories/`)}>{t.categories}</a>}{hasSection(allEntries,lang,'tags') && <a href={`/${lang}/tags/`} aria-current={current(`/${lang}/tags/`)}>{t.tags}</a>}<a href={`/${lang}/feed.xml`}>RSS</a><a href="https://github.com/youdozi">GitHub ↗</a></div></footer>
     <script>import '../scripts/navigation';</script>
   </body>
