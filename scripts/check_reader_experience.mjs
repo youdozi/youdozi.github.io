@@ -39,6 +39,7 @@ try{
           code:[...document.querySelectorAll('.prose pre')].map(e=>({focusable:e.tabIndex===0,name:!!(e.getAttribute('aria-label')||e.getAttribute('aria-labelledby'))})),
           unnamedLinks:[...document.querySelectorAll('a')].filter(e=>!e.textContent.trim()&&!e.getAttribute('aria-label')&&!e.querySelector('img[alt]')).length,
           navigationMs:Math.round(performance.getEntriesByType('navigation')[0].duration),
+          inlineScriptBytes:[...document.scripts].filter(e=>!e.src&&(!e.type||['module','text/javascript'].includes(e.type))).reduce((n,e)=>n+new TextEncoder().encode(e.textContent).length,0),
           scriptBytes:performance.getEntriesByType('resource').filter(e=>/\.m?js$/.test(new URL(e.name).pathname)).reduce((n,e)=>n+e.decodedBodySize,0)};
       });
       assert.equal(result.overflow,false,path+' horizontal overflow');
@@ -46,7 +47,7 @@ try{
       assert.equal(result.unnamedLinks,0,path+' unnamed links');
       assert.ok(result.code.every(e=>e.focusable&&e.name),path+' keyboard-accessible code');
       // A project budget for reader scripts; this is not a Core Web Vitals threshold.
-      assert.ok(result.scriptBytes<64*1024,path+' reader script budget');
+      assert.ok(result.scriptBytes+result.inlineScriptBytes<64*1024,path+' reader script budget');
       await page.locator('.skip-link').focus();await page.keyboard.press('Enter');
       assert.equal(await page.evaluate(()=>document.activeElement.id),'main',path+' skip link focus');
       const menu=page.locator('.language-menu');
