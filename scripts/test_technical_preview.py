@@ -75,6 +75,22 @@ class TechnicalPreviewTests(unittest.TestCase):
             p=base/'dist/es/search-index.json';rows=json.loads(p.read_text());rows[0]['content']+=table;p.write_text(json.dumps(rows))
             self.assertEqual(check(base)['completeParagraphsAndTableRows'],4)
 
+    def test_literal_logql_pipe_is_preserved_in_search_prose_and_table_cells(self):
+        for table in (False, True):
+            with self.subTest(table=table), tempfile.TemporaryDirectory() as folder:
+                base=Path(folder);self.fixture(base)
+                markdown='\n\nConsulta `| json` primero.\n'
+                html='<p>Consulta <code>| json</code> primero.</p>'
+                if table:
+                    markdown='\n\n| Consulta |\n| --- |\n| `| json` |\n'
+                    html='<table><tr><th>Consulta</th></tr><tr><td><code>| json</code></td></tr></table>'
+                p=base/f'src/content/technical-translations/es/{SLUG}.md';p.write_text(p.read_text()+markdown)
+                p=base/('dist'+URL+'index.html');p.write_text(p.read_text().replace('</div></article>',html+'</div></article>'))
+                p=base/'dist/es/search-index.json';rows=json.loads(p.read_text());rows[0]['content']+=markdown;p.write_text(json.dumps(rows))
+                self.assertEqual(check(base)['fixtureEditions'],1)
+                rows[0]['content']=rows[0]['content'].replace('`| json`','`json`');p.write_text(json.dumps(rows))
+                with self.assertRaisesRegex(ValueError,'omits a paragraph'):check(base)
+
     def test_shell_and_json_fences_are_checked_instead_of_assuming_java(self):
         for language,code in [('sh',"printf 'ok'"),('json','{"ok":true}')]:
             with self.subTest(language=language),tempfile.TemporaryDirectory() as folder:

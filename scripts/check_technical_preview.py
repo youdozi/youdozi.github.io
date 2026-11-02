@@ -58,6 +58,10 @@ def strip_markdown_links(value):
     return re.sub(r'(?<!!)\[([^\]\n]*)\]\((?:[^()]|\([^()]*\))*\)', r'\1', value)
 
 
+def strip_table_delimiters(value):
+    return re.sub(r'`[^`\n]+`|\|', lambda match: match[0] if match[0].startswith('`') else ' ', value)
+
+
 def expected_paragraphs(body):
     body = re.sub(r'^```[^\n]*\n[\s\S]*?^```\s*$', '', body, flags=re.M)
     body = re.sub(r'!\[[^\]\n]*\]\([^)]+\)', '', body)
@@ -67,7 +71,7 @@ def expected_paragraphs(body):
         if chunk.startswith('| '):
             for row in chunk.splitlines():
                 if not re.fullmatch(r'[| :\-]+', row):
-                    yield prose_normalize(row.replace('|', ' ').replace('`', '').replace('**', ''))
+                    yield prose_normalize(strip_table_delimiters(row).replace('`', '').replace('**', ''))
         else:
             # HTML lists render item markers as layout, not visible text nodes.
             # Compare each complete item so the Markdown search index may keep its markers.
@@ -123,7 +127,7 @@ def check(base, published=False):
             raise ValueError('Technical search metadata changed')
         visible = prose_normalize(''.join(body.text))
         # readerMarkdown leaves inline Markdown in the search index; compare its prose with the same stripping.
-        search = prose_normalize(strip_markdown_links(row['content']).replace('**', '').replace('`', '').replace('|', ' '))
+        search = ' '.join(expected_paragraphs(row['content']))
         for paragraph in expected_paragraphs(record['body']):
             if paragraph not in visible or paragraph not in search:
                 raise ValueError(f'Technical preview omits a paragraph: {key}')
