@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-02",
+  "state": "draft-not-published",
+  "languages": [
+    "ko",
+    "en"
+  ],
+  "runtime": {
+    "python": "3.13.0",
+    "otel_python": "1.45.2",
+    "image": "grafana/otel-lgtm:0.39.0@sha256:4c8056c9c05fcb3c8fd93800e85334bfd79b4d0271b47a54a121a64af41fe1fe",
+    "grafana": "13.3.0",
+    "loki": "3.7.9",
+    "tempo": "3.1.1",
+    "collector": "0.164.0"
+  },
+  "actual_results": {
+    "trace_id": "b95b8ec2e8c6fa5a608f197d1cfe3691",
+    "log_count": 2,
+    "span_count": 2,
+    "parent_child_match": true,
+    "log_span_match": true,
+    "trace_id_and_span_id_not_index_labels": true,
+    "absent_trace_id_log_count": 0,
+    "grafana_browser_log_to_trace": true,
+    "grafana_browser_related_logs_to_loki": true
+  },
+  "rendering": {
+    "renderer": "project Satteri Markdown, isolated generic reader CSS (not deployed Astro page)",
+    "languages": [
+      "ko",
+      "en"
+    ],
+    "widths": [
+      320,
+      360,
+      1280
+    ],
+    "image_load_and_alt": true,
+    "page_overflow": false,
+    "same_eight_code_fences": true,
+    "svg_rendered_and_visually_inspected": true
+  },
+  "review": {
+    "type": "independent fresh-context AI, read-only",
+    "initial_findings": [
+      "missing check.py reader delivery",
+      "retry error scope",
+      "back-reference and retry time wording",
+      "log absence vs trace sampling wording"
+    ],
+    "resolutions": [
+      "removed check.py instructions from both public article bodies",
+      "added URLError and TimeoutError handling to auxiliary script",
+      "removed time guarantee and fixed back-reference",
+      "clarified failure to query logs or traces"
+    ],
+    "focused_recheck": "all four original findings resolved",
+    "ui_followup": "author verified actual Grafana 13.3 Related logs button; updated article wording"
+  },
+  "limitations": [
+    "single-process manually instrumented synthetic operations",
+    "not HTTP or cross-service propagation validation",
+    "no production load, TLS, auth, HA, retention, or recovery validation",
+    "foreign editions beyond English and Korean not prepared",
+    "not published or deployed"
+  ],
+  "startup_observation": "An initial producer invocation before readiness logged exporter failures; it was not treated as delivery evidence. Successful verification used the healthy final lab after changing Viewer to Editor for Explore.",
+  "sha256": {
+    "article.en.md": "79554f51758652b27dbbfb296033b96f0903d4c0692e43989f02adc823d700c8",
+    "article.ko.md": "273e550b349dc9b86cf3a7d22be8acac6c7371d3e8c026f8eeba217ca72878f1",
+    "check.py": "a476cec036a5876589b65731e9bb3f8cf9fd3e03eb90bb2a2697e923db89c8e0",
+    "compose.yaml": "b43224c1988e4639f18a7477733cb6e5502eca00bdac8fb13c5ed3f8e3e30a2f",
+    "datasources.yaml": "e15e1905a747a852e789a9bb3cdff5484d7ad367799243dacb472a476d334fcf",
+    "demo.py": "04a436fc72cd750be21dcf2f9d8a21194856dd370b48d6b398afe23eb0a95385",
+    "diagram.py": "3f39b1baf7f415bdf80acfe9fe6d8b5f1f2b912444f70221cf504a24d8fb3843",
+    "lgtm-log-trace-en.svg": "0accd6e2884e2c8d0d469250e3d62c3d7ba65b93d8c4a494bb08a79900cc1037",
+    "lgtm-log-trace-ko.svg": "f3392c4d1f5cb6b5a70accd7bda41e29bc21ee03e8f0d8544b461af095dac236",
+    "requirements.txt": "f988a93d763e163e465c60af12344eb10148b7aa02f7e8aa8a365cfdd2adf345"
+  },
+  "publication_preparation": "LogQL fence changed to plaintext because the site highlighter does not support logql; query text unchanged."
+}
