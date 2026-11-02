@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-135",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "04fff4b090541207031f13a538e4916915ce6cb6",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Complete language-pair translation and self-review followed by fresh-context target-only reading and full English-source read-only reviews; one focused Japanese metadata clarification recheck; parent code/flow/render integration checks.",
+    "independentReviewer": true,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "scope": "Six complete editions, localized metadata and primary diagrams. Full body conditions, limitations, code, literals, links and numeric values compared against the pinned published English source. Original execution evidence translated without claiming new runtime runs.",
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-135/reviews/de-fr-initial.json",
+        "sha256": "b0927e5f3e4d7c162bd87c094bb34ce45d5d18b72af501a4caf887b508cd26e3"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-135/reviews/integration.json",
+        "sha256": "f65e2b834bac7f28a6117c2ed46ea9a56c2c3e6db68be369b0138abf35e006c2"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-135/reviews/ru-es-initial.json",
+        "sha256": "700b91093b8a185f6acf4043beec6ece9826eba3aca1fe1dec158dce56ab7513"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-135/reviews/zh-ja-initial.json",
+        "sha256": "a200a20bca3e2be5e8f3b2dfabe171d9cd529f3ce9611800d23764174e73d736"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-135/reviews/zh-ja-recheck.json",
+        "sha256": "b8fd6bcfd92c98ad6a532a5b4b73b783294c7a780ae069a56783f7609c7c0a61"
+      }
+    ],
+    "reviewerContexts": [
+      "review135_zh_ja",
+      "review135_de_fr",
+      "review135_ru_es"
+    ]
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-02-grafana-lgtm-log-trace",
+      "language": "zh-CN",
+      "translationKey": "2026-11-02-grafana-lgtm-log-trace",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "ea19472a99523fa3e56c758e753b8333671691c4efd6f1dec67f9e59c3eaf558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-135/zh-CN/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "d3cd421fc98e9acc3a7ebae3836e54ea3f0ccf3afa3916306e5eb124fb74ef7b"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-135/zh-CN/2026-11-02-grafana-lgtm-log-trace.diagram.json",
+        "sha256": "7cb65916c9114d2d66e6831dd1c56711b6961eb1b4ca043ec6a2a19b7098ee91"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-135/zh-CN/2026-11-02-grafana-lgtm-log-trace.svg",
+        "sha256": "a521948decf8aec56e1c74b4568f8750ae284157ccce14c0067953225bde7f05"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-135.json",
+        "sha256": "28b220fc599a827152200086c749620b46df5f7052777ae02daf55f1fc45eeeb"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/lgtm-log-trace-en.svg",
+        "sha256": "717e7d5f9bc86046132cd3d589966a587a42f962da94a0afc5737d8579b03823"
+      }
+    },
+    {
+      "key": "ja-2026-11-02-grafana-lgtm-log-trace",
+      "language": "ja",
+      "translationKey": "2026-11-02-grafana-lgtm-log-trace",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "ea19472a99523fa3e56c758e753b8333671691c4efd6f1dec67f9e59c3eaf558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-135/ja/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "9fc5fc790999ea7130822973243315916654bf22361071d043b5dddd8aa44b05"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-135/ja/2026-11-02-grafana-lgtm-log-trace.diagram.json",
+        "sha256": "50893ab261707e66eea20178b028308ce98ebf73fec149dc70a4cab25716d40f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-135/ja/2026-11-02-grafana-lgtm-log-trace.svg",
+        "sha256": "dfa28364439c9905870268cd93fbda3d807365f0dc2c011e4e1b21642bfb1ff5"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-135.json",
+        "sha256": "28b220fc599a827152200086c749620b46df5f7052777ae02daf55f1fc45eeeb"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/lgtm-log-trace-en.svg",
+        "sha256": "717e7d5f9bc86046132cd3d589966a587a42f962da94a0afc5737d8579b03823"
+      }
+    },
+    {
+      "key": "de-2026-11-02-grafana-lgtm-log-trace",
+      "language": "de",
+      "translationKey": "2026-11-02-grafana-lgtm-log-trace",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "ea19472a99523fa3e56c758e753b8333671691c4efd6f1dec67f9e59c3eaf558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-135/de/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "606b93c67c975ca36ac890df94b21f6848534a5fa36c7110596b46b263a329a2"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-135/de/2026-11-02-grafana-lgtm-log-trace.diagram.json",
+        "sha256": "f55c1f79ab05c3b8a5c6c21fe48d1ee9af05ece296f710240e1ad02b08a6a761"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-135/de/2026-11-02-grafana-lgtm-log-trace.svg",
+        "sha256": "a76aeffb38fd233cd742c1d83d4d827021e9e6d2ee666d917690bed58aeb8734"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-135.json",
+        "sha256": "28b220fc599a827152200086c749620b46df5f7052777ae02daf55f1fc45eeeb"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/lgtm-log-trace-en.svg",
+        "sha256": "717e7d5f9bc86046132cd3d589966a587a42f962da94a0afc5737d8579b03823"
+      }
+    },
+    {
+      "key": "fr-2026-11-02-grafana-lgtm-log-trace",
+      "language": "fr",
+      "translationKey": "2026-11-02-grafana-lgtm-log-trace",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "ea19472a99523fa3e56c758e753b8333671691c4efd6f1dec67f9e59c3eaf558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-135/fr/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "f8d55ecaeee3794aa3a4049c63cf917a275067e97684b711338571860568e3a2"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-135/fr/2026-11-02-grafana-lgtm-log-trace.diagram.json",
+        "sha256": "919f0485e8d1d4c603d1750b29119cdcfef82e7ea8e06ea4fd0653832cc67c47"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-135/fr/2026-11-02-grafana-lgtm-log-trace.svg",
+        "sha256": "9baa3ddc5b828eb798d01b955bcea4cf86341dfefc839d5e7297570655f55b16"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-135.json",
+        "sha256": "28b220fc599a827152200086c749620b46df5f7052777ae02daf55f1fc45eeeb"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/lgtm-log-trace-en.svg",
+        "sha256": "717e7d5f9bc86046132cd3d589966a587a42f962da94a0afc5737d8579b03823"
+      }
+    },
+    {
+      "key": "ru-2026-11-02-grafana-lgtm-log-trace",
+      "language": "ru",
+      "translationKey": "2026-11-02-grafana-lgtm-log-trace",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "ea19472a99523fa3e56c758e753b8333671691c4efd6f1dec67f9e59c3eaf558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-135/ru/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "718dbe2b24692a09d3844950204f0e3d83a87f1fc22d9d7227d70aec94314440"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-135/ru/2026-11-02-grafana-lgtm-log-trace.diagram.json",
+        "sha256": "ebb9e2ce570370ef252e202d9d1d0a3f51c801be0dd214bdfb8f40e00f98091f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-135/ru/2026-11-02-grafana-lgtm-log-trace.svg",
+        "sha256": "231b415033cbbaf9a8f75652e61eb0ab5a9e22c91cccf089499fb34cd28dc7e7"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-135.json",
+        "sha256": "28b220fc599a827152200086c749620b46df5f7052777ae02daf55f1fc45eeeb"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/lgtm-log-trace-en.svg",
+        "sha256": "717e7d5f9bc86046132cd3d589966a587a42f962da94a0afc5737d8579b03823"
+      }
+    },
+    {
+      "key": "es-2026-11-02-grafana-lgtm-log-trace",
+      "language": "es",
+      "translationKey": "2026-11-02-grafana-lgtm-log-trace",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "ea19472a99523fa3e56c758e753b8333671691c4efd6f1dec67f9e59c3eaf558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-135/es/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "e913a6846415545be649bde67acd47a98d93db2879941a7a40ac1240a0376b7e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-135/es/2026-11-02-grafana-lgtm-log-trace.diagram.json",
+        "sha256": "c7dcab6f83f384d101a7a7768c8b878b56b8713db425d36b1850352e70e32568"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-135/es/2026-11-02-grafana-lgtm-log-trace.svg",
+        "sha256": "252d55b95bf021e46be8746df0a1881315195537ddf7b7d50129becd99f21e87"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-135.json",
+        "sha256": "28b220fc599a827152200086c749620b46df5f7052777ae02daf55f1fc45eeeb"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/lgtm-log-trace-en.svg",
+        "sha256": "717e7d5f9bc86046132cd3d589966a587a42f962da94a0afc5737d8579b03823"
+      }
+    }
+  ]
+}

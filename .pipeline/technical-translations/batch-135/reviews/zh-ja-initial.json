@@ -1,0 +1,77 @@
+{
+  "reviewer": "Separate-context AI translation review; not human/native-speaker review",
+  "task": {
+    "kind": "complete translation",
+    "languages": [
+      "zh-CN",
+      "ja"
+    ],
+    "audience": "Grafana beginner-to-intermediate developers",
+    "register": "technical explanatory prose",
+    "lengthLimit": null
+  },
+  "readingOrder": [
+    "translate/SKILL.md and references/ai-review.md; languages.md Chinese simplified section",
+    "zh-CN Markdown, diagram JSON, SVG only",
+    "ja Markdown, diagram JSON, SVG only",
+    "English Markdown, technical-135.json, English SVG",
+    "mechanical protected-content comparison"
+  ],
+  "versions": {
+    "src/content/posts/en/2026-11-02-grafana-lgtm-log-trace.md": "ea19472a99523fa3e56c758e753b8333671691c4efd6f1dec67f9e59c3eaf558",
+    "content/diagrams/technical-135.json": "28b220fc599a827152200086c749620b46df5f7052777ae02daf55f1fc45eeeb",
+    "assets/img/architecture/lgtm-log-trace-en.svg": "717e7d5f9bc86046132cd3d589966a587a42f962da94a0afc5737d8579b03823",
+    ".pipeline/technical-translations/batch-135/zh-CN/2026-11-02-grafana-lgtm-log-trace.md": "d3cd421fc98e9acc3a7ebae3836e54ea3f0ccf3afa3916306e5eb124fb74ef7b",
+    ".pipeline/technical-translations/batch-135/zh-CN/2026-11-02-grafana-lgtm-log-trace.diagram.json": "7cb65916c9114d2d66e6831dd1c56711b6961eb1b4ca043ec6a2a19b7098ee91",
+    ".pipeline/technical-translations/batch-135/zh-CN/2026-11-02-grafana-lgtm-log-trace.svg": "a521948decf8aec56e1c74b4568f8750ae284157ccce14c0067953225bde7f05",
+    ".pipeline/technical-translations/batch-135/ja/2026-11-02-grafana-lgtm-log-trace.md": "86308cb66f63a63f8306ffae285c5bcc22af5659bf5af41135af32660caa9b62",
+    ".pipeline/technical-translations/batch-135/ja/2026-11-02-grafana-lgtm-log-trace.diagram.json": "50893ab261707e66eea20178b028308ce98ebf73fec149dc70a4cab25716d40f",
+    ".pipeline/technical-translations/batch-135/ja/2026-11-02-grafana-lgtm-log-trace.svg": "dfa28364439c9905870268cd93fbda3d807365f0dc2c011e4e1b21642bfb1ff5"
+  },
+  "findings": [
+    {
+      "language": "ja",
+      "path": ".pipeline/technical-translations/batch-135/ja/2026-11-02-grafana-lgtm-log-trace.md",
+      "location": "frontmatter.description",
+      "severity": "low",
+      "type": "optional clarity/style",
+      "quote": "ID の欠落や空のクエリへの対処",
+      "reason": "空のクエリ can suggest an empty query string. The tutorial addresses a query returning no data. Body and troubleshooting table already explain the intended meaning, so this does not change the substantive instructions.",
+      "minimalCorrection": "ID の欠落や検索結果が空になる場合への対処",
+      "confidence": "high",
+      "blocking": false
+    }
+  ],
+  "results": {
+    "zh-CN": {
+      "semanticBlockingFindings": 0,
+      "completeBodyCompared": true,
+      "fencedCodeBlocks": 8,
+      "fencedCodeIdentical": true,
+      "inlineTokensIdenticalInOrder": true,
+      "linkAddressesIdenticalInOrder": true
+    },
+    "ja": {
+      "semanticBlockingFindings": 0,
+      "completeBodyCompared": true,
+      "fencedCodeBlocks": 8,
+      "fencedCodeIdentical": true,
+      "inlineTokensIdenticalInOrder": true,
+      "linkAddressesIdenticalInOrder": true
+    }
+  },
+  "actualScope": [
+    "Target-only reading checked flow, referents, simplified Chinese consistency and Japanese polite register; then full English-source comparison checked all prose sections, title, description, all five troubleshooting rows, negation, conditions, versions, ports, counts, emitted ID, UI names and sampling/retention cautions.",
+    "Both translations preserve two logs/two spans, parent-child/log-span ID matching, absence of trace_id/span_id index labels, nonexistent-ID empty result, and original browser-check claims as statements translated from source, not reviewer reruns.",
+    "Both preserve the single-process scope and explicit exclusions of HTTP server, cross-service calls, inventory database, real inventory outage/performance measurements, and production load/recovery.",
+    "Diagram JSON and SVG labels, accessibility text and branch geometry were compared textually to the source diagram; label-to-code flow is consistent. Target descriptions follow source diagram JSON, while source SVG uses an expanded description.",
+    "Draft state/language/key/sourcePath/sourceSha256 checked. Source hash matches. Relative <key>.svg and retained /en/ internal link are intentional pipeline transformations."
+  ],
+  "unverified": [
+    "Did not execute Docker/Python/LGTM, query backends, browse Grafana, or validate current upstream technical claims.",
+    "Did not render SVGs or check browser visual clipping/font availability.",
+    "Did not inspect translation author evaluations or other reviews.",
+    "Publication-generated metadata and final deployed pages were not available in these draft artifacts. Source reviewScope exclusions including cross-service propagation, authentication and HA should remain preserved when publication metadata is generated."
+  ],
+  "decision": "No blocking semantic issue in reviewed draft versions. One optional Japanese metadata clarity refinement."
+}

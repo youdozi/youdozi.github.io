@@ -1,0 +1,53 @@
+{
+  "key": "2026-11-02-grafana-lgtm-log-trace",
+  "language": "zh-CN",
+  "title": "通过 ID 关联日志与链路",
+  "description": "活跃 span 内的日志经 Collector 进入 Loki，链路进入 Tempo。Grafana 通过 trace_id 和 service_name 关联两者。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Python 示例",
+        "checkout → inventory.lookup",
+        "在活跃 span 内记录日志"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "OTel Collector",
+        "OTLP HTTP :4318",
+        "分别路由日志与链路"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Loki",
+        "日志 + trace_id"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Tempo",
+        "父 / 子 span"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Grafana Explore",
+        "日志 → 链路：derivedFields",
+        "Span → 日志：tracesToLogsV2"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "按 service_name 缩小范围",
+        "用 trace_id 筛选一次执行"
+      ]
+    }
+  ]
+}

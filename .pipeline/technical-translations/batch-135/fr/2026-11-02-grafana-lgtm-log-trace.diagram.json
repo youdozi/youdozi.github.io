@@ -1,0 +1,53 @@
+{
+  "key": "2026-11-02-grafana-lgtm-log-trace",
+  "language": "fr",
+  "title": "Relier logs et traces par ID",
+  "description": "Les logs des spans actifs passent par le Collector vers Loki ; les traces vont vers Tempo. Grafana relie les deux par trace_id et service_name.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Exemple Python",
+        "checkout → inventory.lookup",
+        "Log dans le span actif"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "OTel Collector",
+        "OTLP HTTP :4318",
+        "Acheminer logs et traces séparément"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Loki",
+        "Logs + trace_id"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Tempo",
+        "Spans parent/enfant"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Grafana Explore",
+        "Log → trace : derivedFields",
+        "Span → logs : tracesToLogsV2"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Restreindre par service_name",
+        "Filtrer une exécution par trace_id"
+      ]
+    }
+  ]
+}

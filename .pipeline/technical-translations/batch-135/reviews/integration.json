@@ -1,0 +1,43 @@
+{
+  "type": "parent integration verification",
+  "newRuntimeExecution": false,
+  "scope": "Six full translations of the previously executed and published English LGTM example. Existing native claims and limitations preserved.",
+  "checks": {
+    "localizedSVGsRenderedAt360px": [
+      {
+        "language": "zh-CN",
+        "outside": []
+      },
+      {
+        "language": "ja",
+        "outside": []
+      },
+      {
+        "language": "de",
+        "outside": []
+      },
+      {
+        "language": "fr",
+        "outside": []
+      },
+      {
+        "language": "ru",
+        "outside": []
+      },
+      {
+        "language": "es",
+        "outside": []
+      }
+    ],
+    "englishSVGChange": "Added xml:lang=en required for existing mainVisual publication pin; all visible labels and geometry match the original draft exactly.",
+    "paragraphAndTableStructure": "Compared by existing strict technical translation contract",
+    "codeFencesAndInlineTokens": "All eight fences and inline tokens preserved by existing contract",
+    "imageReferences": "Normalized draft image URL to pipeline-local filename before publication",
+    "japaneseNumberNotation": "Arabic count notation changed to corresponding Japanese written numbers to preserve numeric-value token contract, without changing values."
+  },
+  "limitations": [
+    "No new LGTM runtime or production test claimed",
+    "AI translation review only, no human/native-speaker review",
+    "Browser page and deployed route verification follow after publication staging"
+  ]
+}
