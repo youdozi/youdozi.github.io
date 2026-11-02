@@ -32,7 +32,8 @@
     "review:technical-translations": "node scripts/technical-translation-review.mjs",
     "check:technical-publications": "node scripts/technical-publication.mjs check",
     "check:technical-preview": "node scripts/technical-translation-preview.mjs",
-    "predev": "node scripts/prepare-public.mjs"
+    "predev": "node scripts/prepare-public.mjs",
+    "audit:content": "python3 -B scripts/content_maintenance.py"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "0.4.5",
