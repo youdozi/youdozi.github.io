@@ -1,0 +1,40 @@
+{
+  "key": "2026-11-02-open-source-game-engines",
+  "language": "fr",
+  "title": "Une étape de déplacement",
+  "description": "Recevoir la position, la direction et le temps écoulé, limiter la norme de la direction, appliquer la vitesse et le temps, contraindre le point aux limites et renvoyer la nouvelle position",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Position, direction, temps écoulé"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Limiter la norme de la direction",
+        "à 1 au maximum"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Appliquer la vitesse et le temps",
+        "Ajouter le déplacement à la position"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Contraindre le point aux limites"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Renvoyer la nouvelle position"
+      ]
+    }
+  ]
+}

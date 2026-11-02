@@ -75,6 +75,8 @@ jobs:
         run: |
           python3 -B scripts/build_algorithm_diagrams.py
           python3 -B .pipeline/drafts/2026-11-02-ai-assisted-tdd/check.py
+      - name: Execute published Godot movement checks with a checksum-pinned runtime
+        run: python3 -B scripts/check_game_engine_example.py --download
       - name: Generate Q types and compare Querydsl and Specification contracts twice from clean
         run: python3 -B scripts/check_query_strategies.py
       - name: Execute the published shell automation examples with local HTTP fixtures

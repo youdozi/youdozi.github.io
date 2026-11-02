@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-133",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "aeaad940fe2ed442b9f798b565ca5e79e78ff96a",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Separate native bilingual source review; complete language-pair translations followed by fresh-context read-only full source/target reviews and a focused diagram wording recheck; parent runtime and SVG integration checks.",
+    "independentReviewer": true,
+    "reviewerContexts": [
+      "review133_native",
+      "review133_zh_ja",
+      "review133_de_fr",
+      "review133_ru_es"
+    ],
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "scope": "Native en/ko comparison and six complete translated editions with localized diagrams. Official source facts checked in native review; translated claims, all executable fences, literals, URLs, numbers and limitations preserved.",
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-133/reviews/de-fr-initial.json",
+        "sha256": "fa5381158af7bfca14e3a563bc71403da6cfc22013217cdf15d0fd93ae318f63"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-133/reviews/integration.json",
+        "sha256": "dbc05aa5c3a2ded5bd20978d084fa9385faf49f01afaa91911b52cc6c90321ac"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-133/reviews/native-initial.json",
+        "sha256": "7ad1202b0af7c7688df4899ae26c558c2257641da67e7d6863c89b0ae45d5df6"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-133/reviews/ru-es-initial.json",
+        "sha256": "f346757851c261da66d8cdbf88759109b5a84c5229baafa046db6747b602c298"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-133/reviews/ru-es-recheck.json",
+        "sha256": "59c9ec5f1282bc188b6e18fa6254352d0c2907b0885392e4630be2b212aa4294"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-133/reviews/zh-ja-initial.json",
+        "sha256": "99714fc6714e2f77427b500acc0752af072ee826023104d696a02ab75daaf65e"
+      }
+    ]
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-02-open-source-game-engines",
+      "language": "zh-CN",
+      "translationKey": "2026-11-02-open-source-game-engines",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-open-source-game-engines.md",
+        "sha256": "a83f90ac45031156dd23d82e78c770e9d3254849fbf67e9594455bc58c54e153"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-133/zh-CN/2026-11-02-open-source-game-engines.md",
+        "sha256": "7f08864044527be22cdbbf6c87bff180cbec39ee90c690b2d7d4996921f0cdc4"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-133/zh-CN/2026-11-02-open-source-game-engines.diagram.json",
+        "sha256": "76466bb184ab899982f9b63f130c4d7f73d9352675b36a680eb4129a47382b87"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-133/zh-CN/2026-11-02-open-source-game-engines.svg",
+        "sha256": "9de7d628cb02e99093c50d00b94dbe68083c1d04c178d949a82588f151ef7218"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-133.json",
+        "sha256": "6aa87acaf1a5a0822f16b7e42a0aa8ce02e53a37b30e3f8fba4e086c4033bb5b"
+      }
+    },
+    {
+      "key": "ja-2026-11-02-open-source-game-engines",
+      "language": "ja",
+      "translationKey": "2026-11-02-open-source-game-engines",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-open-source-game-engines.md",
+        "sha256": "a83f90ac45031156dd23d82e78c770e9d3254849fbf67e9594455bc58c54e153"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-133/ja/2026-11-02-open-source-game-engines.md",
+        "sha256": "eba865d97b50ac4bddad7945b6868f9088ea786ed384c3e30db4d5f6db2a3908"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-133/ja/2026-11-02-open-source-game-engines.diagram.json",
+        "sha256": "e40a09777f6889b859f8395a872a1076ea400baf63720a10bac0338069f5d1e7"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-133/ja/2026-11-02-open-source-game-engines.svg",
+        "sha256": "22028962b7529f12f500d0bbfd564b8899fa967f9ad05c837519d3b8c6dfafae"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-133.json",
+        "sha256": "6aa87acaf1a5a0822f16b7e42a0aa8ce02e53a37b30e3f8fba4e086c4033bb5b"
+      }
+    },
+    {
+      "key": "de-2026-11-02-open-source-game-engines",
+      "language": "de",
+      "translationKey": "2026-11-02-open-source-game-engines",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-open-source-game-engines.md",
+        "sha256": "a83f90ac45031156dd23d82e78c770e9d3254849fbf67e9594455bc58c54e153"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-133/de/2026-11-02-open-source-game-engines.md",
+        "sha256": "33b63f852926b16ceafde8e41e6c715f44b52f0411bee16c78d864b0ad4e0425"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-133/de/2026-11-02-open-source-game-engines.diagram.json",
+        "sha256": "4aca1985f9c6cf490f09fdc919a9d8cb8329aadfefbfea517bf4f7ff9719c854"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-133/de/2026-11-02-open-source-game-engines.svg",
+        "sha256": "e831e5c97a2e11a6b970d1c2d754338a587f8569335d36aea40b215edba3dd6b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-133.json",
+        "sha256": "6aa87acaf1a5a0822f16b7e42a0aa8ce02e53a37b30e3f8fba4e086c4033bb5b"
+      }
+    },
+    {
+      "key": "fr-2026-11-02-open-source-game-engines",
+      "language": "fr",
+      "translationKey": "2026-11-02-open-source-game-engines",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-open-source-game-engines.md",
+        "sha256": "a83f90ac45031156dd23d82e78c770e9d3254849fbf67e9594455bc58c54e153"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-133/fr/2026-11-02-open-source-game-engines.md",
+        "sha256": "2fdff071e3d0d125f2ce33cde75f9afa4de3169bdf3f1f2611b018211a3663cb"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-133/fr/2026-11-02-open-source-game-engines.diagram.json",
+        "sha256": "c95ae07e0157a57dbabd0e68f2b289555bf7217e9c6b1913e592fa4af91b731d"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-133/fr/2026-11-02-open-source-game-engines.svg",
+        "sha256": "e11b8158e4d4b561007a047d6db57b636f950f40b73e760eb1ce3d5af799f65c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-133.json",
+        "sha256": "6aa87acaf1a5a0822f16b7e42a0aa8ce02e53a37b30e3f8fba4e086c4033bb5b"
+      }
+    },
+    {
+      "key": "ru-2026-11-02-open-source-game-engines",
+      "language": "ru",
+      "translationKey": "2026-11-02-open-source-game-engines",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-open-source-game-engines.md",
+        "sha256": "a83f90ac45031156dd23d82e78c770e9d3254849fbf67e9594455bc58c54e153"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-133/ru/2026-11-02-open-source-game-engines.md",
+        "sha256": "f365acf9321a60aa3e3b1325523db090069d0ab3490d213df44b3fa21d72eb50"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-133/ru/2026-11-02-open-source-game-engines.diagram.json",
+        "sha256": "179e517ef0936fd3006553a1915262b5f695895db90e22d8fde0b51c13cbfa48"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-133/ru/2026-11-02-open-source-game-engines.svg",
+        "sha256": "7660cf6fcbfa0d3002b1983e3b32f53ca2bf7f80b76a2bed54404a072e8a28bf"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-133.json",
+        "sha256": "6aa87acaf1a5a0822f16b7e42a0aa8ce02e53a37b30e3f8fba4e086c4033bb5b"
+      }
+    },
+    {
+      "key": "es-2026-11-02-open-source-game-engines",
+      "language": "es",
+      "translationKey": "2026-11-02-open-source-game-engines",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-open-source-game-engines.md",
+        "sha256": "a83f90ac45031156dd23d82e78c770e9d3254849fbf67e9594455bc58c54e153"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-133/es/2026-11-02-open-source-game-engines.md",
+        "sha256": "abb9b113ea2d540aab8e0072c460aab492930072e3b23bf5109e5c06ab3d320d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-133/es/2026-11-02-open-source-game-engines.diagram.json",
+        "sha256": "9d631bed6145c7f664fa94dd2b7d4bb5966e4a527118661d687d4bc996c3a433"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-133/es/2026-11-02-open-source-game-engines.svg",
+        "sha256": "4ea4cd67b88a4ae72a67f6737406c1b1d4f0d5e5a83cb5b98b9467ff7703a0bf"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-133.json",
+        "sha256": "6aa87acaf1a5a0822f16b7e42a0aa8ce02e53a37b30e3f8fba4e086c4033bb5b"
+      }
+    }
+  ]
+}

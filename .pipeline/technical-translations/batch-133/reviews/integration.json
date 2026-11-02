@@ -1,0 +1,26 @@
+{
+  "scope": "Parent integration checks, separate from independent linguistic/source reviews.",
+  "runtime": "Godot 4.7.2.stable.official.ed1daf0bf, standard macOS editor binary in headless mode",
+  "macOSArchiveSha256": "c58a24e31d720be9d62f60cb5627c4e695fb72f21b0cfe1bc9ccaa9a3b3ba63e",
+  "execution": {
+    "nativeCodeIdentical": true,
+    "movementCasesPassed": 9,
+    "regressionMutationsDetected": [
+      "direction magnitude",
+      "elapsed time",
+      "point bounds"
+    ],
+    "expectedOutput": "movement cases=9\n",
+    "networkDuringExample": false
+  },
+  "visual": {
+    "nativeSVGsAt320px": 2,
+    "translatedSVGsAt360px": 6,
+    "outsideViewboxText": 0,
+    "shortenedFontsPreserveLabels": true
+  },
+  "limits": [
+    "No other-engine hands-on, rendering benchmark, physics/obstacle check or target-device export.",
+    "Formal site build, SEO, browser article checks and production deployment are separate release checks."
+  ]
+}

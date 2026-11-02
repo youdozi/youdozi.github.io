@@ -1,0 +1,32 @@
+{
+  "reviewType": "independent AI translation review",
+  "stage": "initial",
+  "languages": [
+    "zh-CN",
+    "ja"
+  ],
+  "actualScope": {
+    "readingOrder": "Read both complete target manuscripts and diagram JSON files first, then compared the complete English manuscript and original diagram. Did not consult author verdicts or other reviews.",
+    "content": "Complete visible title/description, metadata, prose, headings, table, localized alt text, diagram title/description/all five steps, code and output explanations. Checked claims, conditions, uncertainty, host versus game-target support, licensing distinctions, proposed versus executed validation, dates, versions, numbers and units.",
+    "mechanicalChecks": "All four code fences (ini/gdscript/sh/text) are byte-identical to source. All prose external URL sequences match source. All inline-code tokens and counts are preserved; PATH is naturally reordered in the localized macOS sentence. Both diagram JSON files parse and retain the five process/result steps in source order. sourceSha256 matches the current English source."
+  },
+  "sourceHashes": {
+    "src/content/posts/en/2026-11-02-open-source-game-engines.md": "a83f90ac45031156dd23d82e78c770e9d3254849fbf67e9594455bc58c54e153",
+    "content/diagrams/technical-133.json": "6aa87acaf1a5a0822f16b7e42a0aa8ce02e53a37b30e3f8fba4e086c4033bb5b"
+  },
+  "targetHashes": {
+    ".pipeline/technical-translations/batch-133/zh-CN/2026-11-02-open-source-game-engines.md": "7f08864044527be22cdbbf6c87bff180cbec39ee90c690b2d7d4996921f0cdc4",
+    ".pipeline/technical-translations/batch-133/zh-CN/2026-11-02-open-source-game-engines.diagram.json": "76466bb184ab899982f9b63f130c4d7f73d9352675b36a680eb4129a47382b87",
+    ".pipeline/technical-translations/batch-133/ja/2026-11-02-open-source-game-engines.md": "eba865d97b50ac4bddad7945b6868f9088ea786ed384c3e30db4d5f6db2a3908",
+    ".pipeline/technical-translations/batch-133/ja/2026-11-02-open-source-game-engines.diagram.json": "e40a09777f6889b859f8395a872a1076ea400baf63720a10bac0338069f5d1e7"
+  },
+  "findings": [],
+  "assessment": "No actionable translation defect identified in the reviewed versions. Both translations retain the article’s limited Godot-only executed check and distinguish it from proposed engine evaluation.",
+  "limits": [
+    "AI review only; no human or native-speaker review claimed.",
+    "No engines, examples, target exports or rendering benchmarks were executed by this reviewer.",
+    "No independent verification of the underlying product/version/license claims against live vendor sources; reviewed fidelity to supplied English source.",
+    "No browser or rendered SVG layout inspection. Draft image references are local filenames intended for the translation pipeline; final routing and asset integration were not reviewed.",
+    "Draft frontmatter uses pipeline state/source tracking instead of published English publication/review fields; final publication metadata integration was not reviewed."
+  ]
+}

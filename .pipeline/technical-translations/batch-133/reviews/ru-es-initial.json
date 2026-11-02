@@ -1,0 +1,57 @@
+{
+  "reviewType": "independent AI translation review",
+  "actualScope": {
+    "languages": [
+      "ru",
+      "es"
+    ],
+    "coverage": "Read both complete target manuscripts and diagram JSON before reading the complete English source and original diagram. Compared titles, descriptions, all prose, section structure, table, image alt, diagram title/description/all five steps, license/platform distinctions, conditions/uncertainty, documented evaluation versus proposed evaluation, numbers/units, all code fences, links and inline code.",
+    "audience": "Developers comparing game engines",
+    "task": "Complete translation review",
+    "source": "src/content/posts/en/2026-11-02-open-source-game-engines.md",
+    "sourceDiagram": "content/diagrams/technical-133.json"
+  },
+  "targetHashes": {
+    ".pipeline/technical-translations/batch-133/ru/2026-11-02-open-source-game-engines.md": "f365acf9321a60aa3e3b1325523db090069d0ab3490d213df44b3fa21d72eb50",
+    ".pipeline/technical-translations/batch-133/ru/2026-11-02-open-source-game-engines.diagram.json": "bf2987162089eb71cbdeba76840a28e0fe5389fee40adec4ce1585162382e8e5",
+    ".pipeline/technical-translations/batch-133/es/2026-11-02-open-source-game-engines.md": "abb9b113ea2d540aab8e0072c460aab492930072e3b23bf5109e5c06ab3d320d",
+    ".pipeline/technical-translations/batch-133/es/2026-11-02-open-source-game-engines.diagram.json": "e2a3238764c33cb7e74c55fd3c67e36f13fc719defe1a0157d56b9fd6fdd6ecb"
+  },
+  "findings": [
+    {
+      "path": ".pipeline/technical-translations/batch-133/ru/2026-11-02-open-source-game-engines.diagram.json#/steps/1/lines",
+      "quote": "Ограничить длину вектора / направления значением 1",
+      "severity": "low",
+      "category": "optional precision",
+      "reason": "The English diagram explicitly says “to at most 1”. The Russian formulation is understandable as an upper bound, but spelling out the maximum makes it clearer that vectors below length 1 remain unchanged. This is a precision suggestion rather than a demonstrated semantic error.",
+      "proposedFix": "Ограничить длину вектора / направления максимумом 1",
+      "confidence": "medium"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-133/es/2026-11-02-open-source-game-engines.diagram.json#/steps/1/lines",
+      "quote": "Limitar la magnitud / de la dirección a 1",
+      "severity": "low",
+      "category": "optional precision",
+      "reason": "The English diagram explicitly says “to at most 1”. The Spanish wording is a normal way of expressing a limit, but adding “como máximo” makes the cap unmistakable rather than suggesting normalization. The manuscript correctly preserves partial input magnitude.",
+      "proposedFix": "Limitar la magnitud / de la dirección a un máximo de 1",
+      "confidence": "medium"
+    }
+  ],
+  "checks": {
+    "ini_gdscript_sh_text_fences_byte_identical_to_source": true,
+    "body_external_urls_identical_and_in_same_order": true,
+    "inline_code_identical_and_in_same_order": true,
+    "diagram_json_parse": true,
+    "target_sourceSha256_matches_source": true,
+    "material_translation_errors_found": false,
+    "image_reference_note": "Drafts use the local diagram SVG filename; English uses the published locale-qualified asset path. Localized alt text corresponds to the translated diagram descriptions."
+  },
+  "limits": [
+    "AI review only; no human or native-speaker validation claimed.",
+    "No engine, sample code, browser rendering or target export executed.",
+    "External references and current engine facts were not independently re-audited; this is a source-to-translation review.",
+    "No author verdicts or other reviews read.",
+    "Draft metadata was assessed as draft metadata; publication routing and full published metadata population were not verified.",
+    "Review covers the stated versions and is not a claim of exhaustive quality certification."
+  ]
+}

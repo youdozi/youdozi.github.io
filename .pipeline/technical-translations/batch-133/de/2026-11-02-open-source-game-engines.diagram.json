@@ -1,0 +1,40 @@
+{
+  "key": "2026-11-02-open-source-game-engines",
+  "language": "de",
+  "title": "Ein Bewegungsschritt",
+  "description": "Position, Richtung und verstrichene Zeit entgegennehmen, Richtungsbetrag begrenzen, Geschwindigkeit und Zeit anwenden, den Punkt auf die Grenzen beschränken und die neue Position zurückgeben",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Position, Richtung, verstrichene Zeit"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Richtungsbetrag begrenzen",
+        "auf höchstens 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Geschwindigkeit und Zeit anwenden",
+        "Verschiebung zur Position addieren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Punkt auf Grenzen beschränken"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Neue Position zurückgeben"
+      ]
+    }
+  ]
+}

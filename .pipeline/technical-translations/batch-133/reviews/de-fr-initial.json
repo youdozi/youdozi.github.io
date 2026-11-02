@@ -1,0 +1,33 @@
+{
+  "reviewType": "independent AI translation review",
+  "languages": [
+    "de",
+    "fr"
+  ],
+  "actualscope": [
+    "Read both complete target manuscripts and target diagram JSON files first, without source text or other reviews.",
+    "Compared complete prose, headings, bold summary, table headers and every table cell, translated title/description metadata, diagram alt text and every diagram label against the complete English source and its English diagram content.",
+    "Checked conditions, negatives, uncertainties, licensing and proprietary-game distinctions, development hosts versus export targets, source-available versus open-source distinction, proposed evaluation versus locally executed Godot-only evidence, finite/nonnegative input assumptions, version/date/numeric units, and test limitations.",
+    "Mechanically compared all four fenced blocks including language markers and contents, external Markdown link URL sequences and inline-code sequences against English: identical for both languages.",
+    "Checked structured diagram JSON validity, stable key, locale, step count, kinds and ordered operation correspondence. The diagram describes one advance call; repeated tests remain in the manuscript harness.",
+    "Checked staging metadata language, translationKey, sourcePath and sourceSha256. The source hash matches the read English file. Draft metadata differs from publication metadata by design; publication-field propagation is outside this translation review."
+  ],
+  "targethashes": {
+    ".pipeline/technical-translations/batch-133/de/2026-11-02-open-source-game-engines.md": "33b63f852926b16ceafde8e41e6c715f44b52f0411bee16c78d864b0ad4e0425",
+    ".pipeline/technical-translations/batch-133/de/2026-11-02-open-source-game-engines.diagram.json": "4aca1985f9c6cf490f09fdc919a9d8cb8329aadfefbfea517bf4f7ff9719c854",
+    ".pipeline/technical-translations/batch-133/fr/2026-11-02-open-source-game-engines.md": "2fdff071e3d0d125f2ce33cde75f9afa4de3169bdf3f1f2611b018211a3663cb",
+    ".pipeline/technical-translations/batch-133/fr/2026-11-02-open-source-game-engines.diagram.json": "c95ae07e0157a57dbabd0e68f2b289555bf7217e9c6b1913e592fa4af91b731d"
+  },
+  "sourcehashes": {
+    "src/content/posts/en/2026-11-02-open-source-game-engines.md": "a83f90ac45031156dd23d82e78c770e9d3254849fbf67e9594455bc58c54e153",
+    "content/diagrams/technical-133.json": "6aa87acaf1a5a0822f16b7e42a0aa8ce02e53a37b30e3f8fba4e086c4033bb5b"
+  },
+  "findings": [],
+  "assessment": "No material meaning, omission, protected-token, or language-consistency issues identified in the reviewed versions.",
+  "limits": [
+    "AI review only; no human or native-speaker review claimed and no guarantee of exhaustive error detection.",
+    "Did not execute Godot or other engines, recheck release/license/platform sources online, or independently validate factual claims of the English source.",
+    "Did not build the site, render SVGs or browse the published pages. Relative staging SVG references were assessed as staging references, not verified production assets.",
+    "Read no author verdicts or other reviewers findings. Target files remained read-only."
+  ]
+}
