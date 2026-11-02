@@ -39,7 +39,7 @@ try{
           code:[...document.querySelectorAll('.prose pre')].map(e=>({focusable:e.tabIndex===0,name:!!(e.getAttribute('aria-label')||e.getAttribute('aria-labelledby'))})),
           unnamedLinks:[...document.querySelectorAll('a')].filter(e=>!e.textContent.trim()&&!e.getAttribute('aria-label')&&!e.querySelector('img[alt]')).length,
           navigationMs:Math.round(performance.getEntriesByType('navigation')[0].duration),
-          scriptBytes:performance.getEntriesByType('resource').filter(e=>e.initiatorType==='script').reduce((n,e)=>n+e.decodedBodySize,0)};
+          scriptBytes:performance.getEntriesByType('resource').filter(e=>/\.m?js$/.test(new URL(e.name).pathname)).reduce((n,e)=>n+e.decodedBodySize,0)};
       });
       assert.equal(result.overflow,false,path+' horizontal overflow');
       assert.deepEqual(result.smallTargets,[],path+' touch targets');
