@@ -1,0 +1,68 @@
+{
+  "review_type": "separate-context AI translation review, initial",
+  "languages": [
+    "ru",
+    "es"
+  ],
+  "scope": "Complete translations for beginner-to-intermediate Grafana developers; technical explanatory style; no length limit. Target Markdown, diagram JSON and SVG compared in full with English source Markdown and diagram assets.",
+  "reading_order": [
+    "translate/SKILL.md, references/ai-review.md, references/languages.md (Spanish and Russian criteria)",
+    "Russian target Markdown, diagram JSON, SVG only",
+    "Spanish target Markdown, diagram JSON, SVG only",
+    "English source Markdown, technical-135.json, English SVG",
+    "Mechanical protected-content and format checks"
+  ],
+  "reviewed_files_sha256": {
+    "src/content/posts/en/2026-11-02-grafana-lgtm-log-trace.md": "ea19472a99523fa3e56c758e753b8333671691c4efd6f1dec67f9e59c3eaf558",
+    "content/diagrams/technical-135.json": "28b220fc599a827152200086c749620b46df5f7052777ae02daf55f1fc45eeeb",
+    "assets/img/architecture/lgtm-log-trace-en.svg": "717e7d5f9bc86046132cd3d589966a587a42f962da94a0afc5737d8579b03823",
+    ".pipeline/technical-translations/batch-135/ru/2026-11-02-grafana-lgtm-log-trace.md": "718dbe2b24692a09d3844950204f0e3d83a87f1fc22d9d7227d70aec94314440",
+    ".pipeline/technical-translations/batch-135/ru/2026-11-02-grafana-lgtm-log-trace.diagram.json": "ebb9e2ce570370ef252e202d9d1d0a3f51c801be0dd214bdfb8f40e00f98091f",
+    ".pipeline/technical-translations/batch-135/ru/2026-11-02-grafana-lgtm-log-trace.svg": "231b415033cbbaf9a8f75652e61eb0ab5a9e22c91cccf089499fb34cd28dc7e7",
+    ".pipeline/technical-translations/batch-135/es/2026-11-02-grafana-lgtm-log-trace.md": "e913a6846415545be649bde67acd47a98d93db2879941a7a40ac1240a0376b7e",
+    ".pipeline/technical-translations/batch-135/es/2026-11-02-grafana-lgtm-log-trace.diagram.json": "c7dcab6f83f384d101a7a7768c8b878b56b8713db425d36b1850352e70e32568",
+    ".pipeline/technical-translations/batch-135/es/2026-11-02-grafana-lgtm-log-trace.svg": "252d55b95bf021e46be8746df0a1881315195537ddf7b7d50129becd99f21e87"
+  },
+  "checks": {
+    "ru": {
+      "code_block_count": 8,
+      "code_blocks_exact": true,
+      "inline_tokens_exact": true,
+      "non_image_link_addresses_exact": true,
+      "expected_pipeline_image_url": true,
+      "diagram_json_parse": true,
+      "svg_xml_parse": true,
+      "diagram_step_count": 6,
+      "svg_text_matches_diagram": true,
+      "sourceSha256_matches": true
+    },
+    "es": {
+      "code_block_count": 8,
+      "code_blocks_exact": true,
+      "inline_tokens_exact": true,
+      "non_image_link_addresses_exact": true,
+      "expected_pipeline_image_url": true,
+      "diagram_json_parse": true,
+      "svg_xml_parse": true,
+      "diagram_step_count": 6,
+      "svg_text_matches_diagram": true,
+      "sourceSha256_matches": true
+    }
+  },
+  "semantic_review": [
+    "Complete article coverage, headings, troubleshooting table and localized image alternative text checked.",
+    "Negation, conditions, numeric versions and ports, parent/child spans, two logs/two spans, UI link names, sampling and ingestion caveats preserved.",
+    "Single-process manual-instrumentation scope and absence of production validation preserved in body.",
+    "Draft metadata includes correct language, translation key, source path and source hash. Source publication/review metadata is not duplicated in draft artifacts; final assembly of publication metadata was outside this review.",
+    "Both diagram translations preserve routing split, store roles, bidirectional Grafana query association, service_name and trace_id."
+  ],
+  "findings": [],
+  "conclusion": "No required translation corrections found in reviewed versions.",
+  "unverified": [
+    "No human or native-speaker review.",
+    "No LGTM, Python, Docker or Grafana runtime rerun; source execution claims were checked only for faithful translation.",
+    "No browser rendering, font clipping or deployed page checks; SVG XML and label contents checked.",
+    "No external source link freshness or independent factual re-audit.",
+    "No final publication metadata assembly reviewed."
+  ]
+}

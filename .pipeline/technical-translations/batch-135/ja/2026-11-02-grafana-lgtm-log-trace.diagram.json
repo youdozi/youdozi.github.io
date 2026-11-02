@@ -1,0 +1,53 @@
+{
+  "key": "2026-11-02-grafana-lgtm-log-trace",
+  "language": "ja",
+  "title": "ID でログとトレースを関連付け",
+  "description": "アクティブなスパン内のログは Collector を経由して Loki に、トレースは Tempo に届きます。Grafana が trace_id と service_name で両者を関連付けます。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Python の例",
+        "checkout → inventory.lookup",
+        "アクティブなスパン内でログ出力"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "OTel Collector",
+        "OTLP HTTP :4318",
+        "ログとトレースを別々に転送"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Loki",
+        "ログ + trace_id"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Tempo",
+        "親 / 子スパン"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Grafana Explore",
+        "ログ → トレース: derivedFields",
+        "スパン → ログ: tracesToLogsV2"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "service_name で範囲を絞る",
+        "trace_id で 1 回の実行を抽出"
+      ]
+    }
+  ]
+}

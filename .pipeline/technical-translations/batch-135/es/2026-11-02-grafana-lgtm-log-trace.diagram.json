@@ -1,0 +1,53 @@
+{
+  "key": "2026-11-02-grafana-lgtm-log-trace",
+  "language": "es",
+  "title": "Conecta logs y trazas por ID",
+  "description": "Los logs dentro de spans activos pasan por Collector a Loki; las trazas van a Tempo. Grafana los enlaza por trace_id y service_name.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Ejemplo de Python",
+        "checkout → inventory.lookup",
+        "Log dentro del span activo"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "OTel Collector",
+        "OTLP HTTP :4318",
+        "Separa logs y trazas"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Loki",
+        "Logs + trace_id"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Tempo",
+        "Spans padre / hijo"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Grafana Explore",
+        "Log → traza: derivedFields",
+        "Span → logs: tracesToLogsV2"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Acota por service_name",
+        "Una ejecución por trace_id"
+      ]
+    }
+  ]
+}

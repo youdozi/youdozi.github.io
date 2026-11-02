@@ -1,0 +1,72 @@
+{
+  "reviewer": "Separate-context AI translation review /root/review135_de_fr",
+  "reviewedAt": "2026-11-02T11:45:56.900450+00:00",
+  "task": {
+    "type": "complete translation",
+    "languages": [
+      "de",
+      "fr"
+    ],
+    "audience": "Grafana 초중급 개발자",
+    "tone": "기술 설명체",
+    "lengthLimit": null
+  },
+  "readOrder": [
+    "translate SKILL.md and ai-review.md and de/fr languages guidance",
+    "de Markdown, diagram JSON, SVG: target-language-only fluency and flow",
+    "fr Markdown, diagram JSON, SVG: target-language-only fluency and flow",
+    "English Markdown, source diagram JSON and SVG: complete source comparison",
+    "Mechanical comparison of eight code blocks, inline tokens and link destinations"
+  ],
+  "reviewedVersions": {
+    "src/content/posts/en/2026-11-02-grafana-lgtm-log-trace.md": {
+      "sha256": "ea19472a99523fa3e56c758e753b8333671691c4efd6f1dec67f9e59c3eaf558"
+    },
+    "content/diagrams/technical-135.json": {
+      "sha256": "28b220fc599a827152200086c749620b46df5f7052777ae02daf55f1fc45eeeb"
+    },
+    "assets/img/architecture/lgtm-log-trace-en.svg": {
+      "sha256": "717e7d5f9bc86046132cd3d589966a587a42f962da94a0afc5737d8579b03823"
+    },
+    ".pipeline/technical-translations/batch-135/de/2026-11-02-grafana-lgtm-log-trace.md": {
+      "sha256": "606b93c67c975ca36ac890df94b21f6848534a5fa36c7110596b46b263a329a2"
+    },
+    ".pipeline/technical-translations/batch-135/de/2026-11-02-grafana-lgtm-log-trace.diagram.json": {
+      "sha256": "f55c1f79ab05c3b8a5c6c21fe48d1ee9af05ece296f710240e1ad02b08a6a761"
+    },
+    ".pipeline/technical-translations/batch-135/de/2026-11-02-grafana-lgtm-log-trace.svg": {
+      "sha256": "a76aeffb38fd233cd742c1d83d4d827021e9e6d2ee666d917690bed58aeb8734"
+    },
+    ".pipeline/technical-translations/batch-135/fr/2026-11-02-grafana-lgtm-log-trace.md": {
+      "sha256": "f8d55ecaeee3794aa3a4049c63cf917a275067e97684b711338571860568e3a2"
+    },
+    ".pipeline/technical-translations/batch-135/fr/2026-11-02-grafana-lgtm-log-trace.diagram.json": {
+      "sha256": "919f0485e8d1d4c603d1750b29119cdcfef82e7ea8e06ea4fd0653832cc67c47"
+    },
+    ".pipeline/technical-translations/batch-135/fr/2026-11-02-grafana-lgtm-log-trace.svg": {
+      "sha256": "9baa3ddc5b828eb798d01b955bcea4cf86341dfefc839d5e7297570655f55b16"
+    }
+  },
+  "findings": [],
+  "result": {
+    "de": "No required correction identified in reviewed translation artifacts.",
+    "fr": "No required correction identified in reviewed translation artifacts."
+  },
+  "actualScope": [
+    "대상언어 글만 먼저 읽어 지시대상, 설명체, 용어, 흐름, 문법 및 자연스러움 점검",
+    "영문과 제목·요약·전체 본문·표 5개 증상행·그림 대체텍스트·JSON 및 SVG 텍스트 전체 대조",
+    "단일 프로세스 예제와 서비스 간 전파의 구별, 명시적 오류, force_flush의 한계, 실제 로컬 검증 결과와 운영 부하·복구 미검증 구별 확인",
+    "버전·포트·시간범위·표본수·부정·조건·링크/UI명칭 보존 확인",
+    "양쪽 언어의 8개 코드블록 원문 바이트 내용 일치, 인라인 코드 토큰 순서 일치, 이미지URL 의도변환을 제외한 링크주소 일치 확인",
+    "파이프라인 메타데이터 language, translationKey, sourcePath, sourceSha256, title, description 확인; state draft 및 키.svg 상대링크는 게시 이전 파이프라인 형식으로 취급",
+    "그림의 입력→Collector→Loki/Tempo→Grafana→서비스 및 trace_id 필터 흐름과 레이블이 원문과 일치하며 JSON/SVG 대응 확인"
+  ],
+  "unverified": [
+    "실제 LGTM 예제 재실행, Python/Docker 실행, Grafana 탐색 또는 운영 검증을 수행하지 않음",
+    "SVG의 브라우저 픽셀 렌더링과 텍스트 실측, 최종 사이트 게시 렌더링 미검증",
+    "최종 게시 파일의 routeSlug/categories/tags/게시일/검토 메타데이터 상속 및 reviewScope 현지화는 이 파이프라인 산출물에 없어 미검증",
+    "외부 링크의 현재 접근성이나 외부 기술문서의 최신성은 검증하지 않음",
+    "사람 또는 원어민 검토가 아닌 AI 검토"
+  ],
+  "changes": "Translation targets left unchanged; only this review JSON written."
+}

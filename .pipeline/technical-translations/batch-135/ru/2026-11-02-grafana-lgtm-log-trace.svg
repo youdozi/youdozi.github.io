@@ -1,0 +1,33 @@
+<svg xml:lang="ru" xmlns="http://www.w3.org/2000/svg" width="360" height="680" viewBox="0 0 360 680" role="img" aria-labelledby="title description">
+<title id="title">Связь логов и трасс по ID</title>
+<desc id="description">Логи внутри активных спанов проходят через Collector в Loki; трассы поступают в Tempo. Grafana связывает их по trace_id и service_name.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#64748b"/></marker></defs>
+<rect width="360" height="680" rx="16" fill="#f8fafc"/>
+<g font-family="system-ui,sans-serif" fill="#0f172a" text-anchor="middle">
+<text x="180" y="31" font-size="14" font-weight="700">Связь логов и трасс по ID</text>
+<rect x="20" y="55" width="320" height="105" rx="12" fill="#e0f2fe" stroke="#0284c7"/>
+<text x="180" y="82" font-size="14" font-weight="700">Пример на Python</text>
+<text x="180" y="111" font-size="14">checkout → inventory.lookup</text>
+<text x="180" y="139" font-size="14">Лог внутри активного спана</text>
+<path d="M180 160V200" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="20" y="200" width="320" height="105" rx="12" fill="#e0f2fe" stroke="#0284c7"/>
+<text x="180" y="227" font-size="14" font-weight="700">OTel Collector</text>
+<text x="180" y="256" font-size="14">OTLP HTTP :4318</text>
+<text x="180" y="284" font-size="14">Логи и трассы — раздельно</text>
+<path d="M180 305V330H95V355" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M180 330H265V355" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="20" y="355" width="150" height="85" rx="12" fill="#e0f2fe" stroke="#0284c7"/>
+<rect x="190" y="355" width="150" height="85" rx="12" fill="#e0f2fe" stroke="#0284c7"/>
+<text x="95" y="385" font-size="14" font-weight="700">Loki</text>
+<text x="95" y="413" font-size="14">Логи + trace_id</text>
+<text x="265" y="385" font-size="14" font-weight="700">Tempo</text>
+<text x="265" y="413" font-size="14">Спаны: род. / доч.</text>
+<path d="M95 440V470H155V490" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M265 440V470H205V490" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="20" y="490" width="320" height="125" rx="12" fill="#e0f2fe" stroke="#0284c7"/>
+<text x="180" y="518" font-size="14" font-weight="700">Grafana Explore</text>
+<text x="180" y="553" font-size="14">Лог → трасса: derivedFields</text>
+<text x="180" y="587" font-size="14">Спан → логи: tracesToLogsV2</text>
+<text x="180" y="642" font-size="14">Сузить по service_name</text>
+<text x="180" y="665" font-size="14">Одно выполнение по trace_id</text>
+</g></svg>

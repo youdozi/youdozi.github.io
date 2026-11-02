@@ -1,0 +1,53 @@
+{
+  "key": "2026-11-02-grafana-lgtm-log-trace",
+  "language": "ru",
+  "title": "Связь логов и трасс по ID",
+  "description": "Логи внутри активных спанов проходят через Collector в Loki; трассы поступают в Tempo. Grafana связывает их по trace_id и service_name.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Пример на Python",
+        "checkout → inventory.lookup",
+        "Лог внутри активного спана"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "OTel Collector",
+        "OTLP HTTP :4318",
+        "Логи и трассы — раздельно"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Loki",
+        "Логи + trace_id"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Tempo",
+        "Спаны: род. / доч."
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Grafana Explore",
+        "Лог → трасса: derivedFields",
+        "Спан → логи: tracesToLogsV2"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Сузить по service_name",
+        "Одно выполнение по trace_id"
+      ]
+    }
+  ]
+}

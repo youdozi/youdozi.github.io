@@ -1,0 +1,24 @@
+{
+  "reviewer": "Separate-context AI translation review",
+  "path": ".pipeline/technical-translations/batch-135/ja/2026-11-02-grafana-lgtm-log-trace.md",
+  "sha256": "9fc5fc790999ea7130822973243315916654bf22361071d043b5dddd8aa44b05",
+  "checks": [
+    {
+      "location": "frontmatter.description",
+      "previous": "ID の欠落や空のクエリへの対処",
+      "current": "ID の欠落や検索結果が空になる場合の対処",
+      "result": "resolved",
+      "reason": "Now clearly describes empty search results. Natural technical explanatory Japanese; source meaning retained."
+    },
+    {
+      "location": "Reported body numeric notation replacements and troubleshooting table empty-results row",
+      "result": "meaning preserved",
+      "reason": "一回/一つ/四つ/一時間/二件/二つ preserve the reviewed quantities. ログクエリの結果が空になる preserves the source zero-entry condition."
+    }
+  ],
+  "unverified": [
+    "Only reported changed passages were rechecked; no full second review.",
+    "No LGTM execution, rendered SVG/browser/deployment validation, or human/native-speaker review."
+  ],
+  "unresolvedFindings": []
+}
