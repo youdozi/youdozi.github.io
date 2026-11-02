@@ -349,6 +349,98 @@
           "en": "next"
         }
       }
+    },
+    {
+      "key": "2026-11-02-ai-assisted-attack-defense",
+      "title": {
+        "ko": "조사 후보를 찾는 로그 연결",
+        "en": "Correlate investigation signals"
+      },
+      "description": {
+        "ko": "배치 이벤트를 시간순 처리하고 읽기 시각을 저장한다. 같은 주체·실행의 300초 이내 전송 거부를 조사 후보로 추가한다. 건너뛰기는 안전 판정이 아니다.",
+        "en": "Sort batch events, record reads, and flag denied egress within 300 seconds for the same actor and run. Skipping is not a safety verdict."
+      },
+      "codeContract": [
+        {
+          "language": "python",
+          "contains": "def correlate("
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "이벤트를 시간순 정렬"
+          ],
+          "en": [
+            "Sort events by timestamp"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "이벤트마다 처리",
+            "읽기면 키별 최신 시각 저장"
+          ],
+          "en": [
+            "Process each event",
+            "On read, save latest time per key"
+          ]
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "외부 전송 거부인가?"
+          ],
+          "en": [
+            "Is this a denied egress event?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "다음 이벤트",
+              "en": "Skip event"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "Yes"
+            },
+            "outcome": "complete"
+          }
+        },
+        {
+          "kind": "condition",
+          "ko": [
+            "같은 주체·실행의 읽기가",
+            "0~300초 이내에 있는가?"
+          ],
+          "en": [
+            "Read for same actor and run",
+            "within 0 to 300 seconds?"
+          ],
+          "branch": {
+            "exit": {
+              "ko": "다음 이벤트",
+              "en": "Skip event"
+            },
+            "continue": {
+              "ko": "예",
+              "en": "Yes"
+            },
+            "outcome": "complete"
+          }
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "조사 후보 추가",
+            "다음 이벤트로 진행"
+          ],
+          "en": [
+            "Add investigation candidate",
+            "Continue to next event"
+          ]
+        }
+      ]
     }
   ]
 }
