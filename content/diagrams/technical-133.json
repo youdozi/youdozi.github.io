@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2026-11-02-open-source-game-engines",
+      "title": {
+        "ko": "이동 함수 한 번의 흐름",
+        "en": "One movement step"
+      },
+      "description": {
+        "ko": "위치·방향·경과 시간을 받아 방향 크기를 제한하고 속도와 시간을 적용한 뒤 영역 안으로 점을 제한해 새 위치를 반환하는 흐름",
+        "en": "Take position, direction and elapsed time, limit direction magnitude, apply speed and time, clamp the point to bounds and return the new position"
+      },
+      "codeContract": [
+        {
+          "language": "gdscript",
+          "contains": "func advance(pos: Vector2, direction: Vector2, delta: float) -> Vector2:"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "위치·방향·경과 시간 입력"
+          ],
+          "en": [
+            "Position, direction, elapsed time"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "방향 벡터 크기",
+            "최대 1로 제한"
+          ],
+          "en": [
+            "Limit direction magnitude",
+            "to at most 1"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "속도 × 경과 시간 적용",
+            "현재 위치에 더하기"
+          ],
+          "en": [
+            "Apply speed and elapsed time",
+            "Add displacement to position"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "점을 사각 영역 안으로 제한"
+          ],
+          "en": [
+            "Clamp the point to bounds"
+          ]
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "새 위치 반환"
+          ],
+          "en": [
+            "Return new position"
+          ]
+        }
+      ]
+    }
+  ]
+}

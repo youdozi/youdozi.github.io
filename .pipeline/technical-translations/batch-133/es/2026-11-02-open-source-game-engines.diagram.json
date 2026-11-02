@@ -1,0 +1,42 @@
+{
+  "key": "2026-11-02-open-source-game-engines",
+  "language": "es",
+  "title": "Un paso de movimiento",
+  "description": "Recibir posición, dirección y tiempo transcurrido, limitar la magnitud de la dirección, aplicar velocidad y tiempo, restringir el punto a los límites y devolver la nueva posición",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Posición, dirección,",
+        "tiempo transcurrido"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Limitar la magnitud",
+        "de la dirección a un máximo de 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Aplicar velocidad y tiempo",
+        "Sumar desplazamiento a posición"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Restringir el punto",
+        "a los límites"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Devolver la nueva posición"
+      ]
+    }
+  ]
+}

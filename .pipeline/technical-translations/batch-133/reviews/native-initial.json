@@ -1,0 +1,85 @@
+{
+  "review_type": "independent AI review in a separate review session",
+  "scope": "Standalone English and Korean readings, then full bilingual metadata/body/table/fence comparison; static code semantics and linked official source checks.",
+  "targets": [
+    {
+      "path": "src/content/posts/en/2026-11-02-open-source-game-engines.md",
+      "sha256": "a83f90ac45031156dd23d82e78c770e9d3254849fbf67e9594455bc58c54e153"
+    },
+    {
+      "path": "src/content/posts/ko/2026-11-02-open-source-game-engines.md",
+      "sha256": "e9fa5836d01fc2c8a9838170d5518e0cff723a392c7311018dbd5204152d7836"
+    }
+  ],
+  "audience": "Developers choosing an open-source engine without a specified genre/team; concise document-based comparison plus headless Godot movement probe.",
+  "standalone_assessment": {
+    "en": "Core conditional answer appears immediately. Release table, workflow comparisons, licensing/platform exceptions and limited Godot probe form a coherent document-based comparison. No material prose ambiguity identified.",
+    "ko": "Core conditional answer appears immediately. Korean prose preserves practical selection conditions and cleanly limits the movement check; no material clarity issue identified."
+  },
+  "bilingual_assessment": "Entire two 142-line articles compared. Titles/descriptions are localized within matching scope. Dates, releases, source links, table conditions, runtime assumptions, actual-output wording and limitations align. All four fenced blocks are byte-for-byte identical between languages (ini, gdscript, sh, text). Diagram alt text is localized and describes the same single-call operation.",
+  "findings": [],
+  "blocking_text_findings": [],
+  "static_code_assessment": "Eight table cases and one split-time equivalence check match the printed count nine. limit_length caps magnitude without normalizing smaller input; speed/time application and point clamp match prose. Finite-input/nonnegative-time assumptions and absent physics/render/export coverage are explicit. No engine execution was performed in this review.",
+  "official_sources_checked": [
+    {
+      "url": "https://godotengine.org/download/archive/",
+      "supports": "4.7.2 stable reference; distinguishes 4.8 prereleases"
+    },
+    {
+      "url": "https://godotengine.org/license/",
+      "supports": "MIT, proprietary game content, engine notice requirement"
+    },
+    {
+      "url": "https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_web.html",
+      "supports": "Godot 4 C# web export limitation"
+    },
+    {
+      "url": "https://godotengine.org/consoles/",
+      "supports": "Platform approval, SDKs and private export templates/provider path"
+    },
+    {
+      "url": "https://bevy.org/news/bevy-0-20/",
+      "supports": "0.20 released October 8, 2026"
+    },
+    {
+      "url": "https://bevy.org/learn/quick-start/introduction/",
+      "supports": "Engine classification, Rust/ECS, MIT or Apache 2.0, migration warning"
+    },
+    {
+      "url": "https://www.stride3d.net/blog/announcing-stride-4-4/",
+      "supports": "4.4 release and non-Windows build improvements"
+    },
+    {
+      "url": "https://www.stride3d.net/faq/",
+      "supports": "MIT, no engine royalties"
+    },
+    {
+      "url": "https://doc.stride3d.net/latest/en/manual/platforms/index.html",
+      "supports": "Windows full editor support, no native editor outside Windows, qualified Linux/macOS build/code-only workflows"
+    },
+    {
+      "url": "https://github.com/o3de/o3de/blob/2605.0/LICENSE.txt",
+      "supports": "Apache 2.0 default, MIT option and separate third-party terms"
+    },
+    {
+      "url": "https://o3de.org/download/",
+      "supports": "Host download/requirements source inspected"
+    },
+    {
+      "url": "https://www.docs.o3de.org/docs/release-notes/2605-0-release-notes/",
+      "supports": "26.05 release and particle gem experimental/production-discouraged status"
+    },
+    {
+      "url": "https://defold.com/open/",
+      "supports": "Source-available classification and distinction from open source"
+    }
+  ],
+  "verification_limits": [
+    "This review did not execute Godot or independently substantiate the author execution statement; parent must retain actual execution evidence.",
+    "Diagram SVG files were absent when searched using rg --files --hidden --no-ignore during review. Parent confirmed diagram source/assets were being prepared concurrently. Diagram generation, code-to-diagram semantic comparison, deployed rendering and mobile legibility remain parent verification items; this is not a final missing-asset verdict.",
+    "No rendering benchmark, other-engine hands-on, target-device export, built-page/browser or deployment check was performed in this review.",
+    "Godot Vector2/CLI API sources were not independently fetched in this review; code checked statically. This scope does not guarantee all engine/platform behavior."
+  ],
+  "conclusion": "No unresolved material text, bilingual-parity or checked-source contradiction found within reviewed scope. Publication still depends on actual execution and generated-diagram/build checks outside this review.",
+  "confidence": "high for bilingual parity and checked factual claims; static-only for executable behavior"
+}

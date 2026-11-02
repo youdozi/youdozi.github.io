@@ -1,0 +1,40 @@
+{
+  "key": "2026-11-02-open-source-game-engines",
+  "language": "zh-CN",
+  "title": "一次移动步骤",
+  "description": "接收位置、方向与经过的时间，限制方向向量的长度，应用速度与时间，将点限制在边界内并返回新位置",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "输入位置、方向与经过时间"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "限制方向向量长度",
+        "最大为 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "应用速度与经过时间",
+        "将位移加到位置上"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "将点限制在矩形边界内"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "返回新位置"
+      ]
+    }
+  ]
+}
