@@ -1,0 +1,69 @@
+{
+  "key": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+  "language": "es",
+  "title": "Migración Kotlin → Java",
+  "description": "Identificar rutas reactivas, migrar solicitudes normales gradualmente y ampliar o revertir según las observaciones.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Plazo y aprendizaje de Kotlin",
+        "Elegir Java como destino"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Identificar rutas de streaming",
+        "y contrapresión"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Elegir una API finita",
+        "Anotar contrato y referencia"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Migrar Kotlin a Java MVC",
+        "Separar cambios de almacén"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Verificar hilos virtuales",
+        "y límites de base de datos"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Con igual carga, comparar",
+        "latencia, errores y esperas"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "¿Cumple los criterios",
+        "del servicio?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "parar",
+        "continue": "sí"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Ampliar el tráfico",
+        "en pequeños pasos"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "key": "2026-11-02-ai-assisted-tdd",
+  "language": "zh-CN",
+  "title": "AI 辅助 TDD 循环",
+  "description": "选择一个测试，验证失败，最小实现，通过，重构并重新运行。省略环境错误与失败重试分支。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "需求与测试清单",
+        "选择下一个行为"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "AI 起草一个测试",
+        "核对预期结果"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Red：验证预期失败",
+        "区分环境错误"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "AI 添加最小实现",
+        "保留预期行为"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Green：当前测试全通过"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Refactor：整理内部结构"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "重新运行相同测试",
+        "检查结果与变更"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 6,
+    "to": 0,
+    "label": "下一"
+  }
+}

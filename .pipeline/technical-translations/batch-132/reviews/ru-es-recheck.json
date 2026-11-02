@@ -1,0 +1,39 @@
+{
+  "context_name": "/root/review132_ru_es",
+  "scope": "Focused read-only recheck of the four findings from ru-es-initial.json: attack-defense title/description in ru and es, Russian WebFlux baseline label, Spanish approval-scope exit label. Compared with English source frontmatter and source diagram entries.",
+  "final_affected_file_hashes": {
+    ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-attack-defense.md": "af54cb1d329366ffa45a23f6a149d4610e6dff319f8090394a56a28735c3e448",
+    ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-attack-defense.md": "57f287e66ed1282063259c16d1160d0840040330809c862d47069a6b60260556",
+    ".pipeline/technical-translations/batch-132/ru/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json": "f9767e74dc31658fe59a6a4ee27395a449df5abb82ac8da4fb2478f08bf667d8",
+    ".pipeline/technical-translations/batch-132/es/2026-11-01-ai-agent-permission-boundaries.diagram.json": "390d246ff0104b6d6dce70fcfe27c5f632af34519505ab5c9084892515c16b36"
+  },
+  "resolutions": [
+    {
+      "initial_finding_index": 0,
+      "status": "resolved",
+      "reason": "Russian title now retains cyberattacks, phishing, exploitation and agent hijacking; description restores prevention, detection, recovery and executable log-correlation example."
+    },
+    {
+      "initial_finding_index": 1,
+      "status": "resolved",
+      "reason": "Spanish title retains all named attack categories; description restores prevention, detection, recovery and executable example, and explicitly relates the attack techniques to AI use."
+    },
+    {
+      "initial_finding_index": 2,
+      "status": "resolved",
+      "reason": "The Russian label now explicitly says базовый уровень, consistent with measured baseline in the manuscript and source. Splitting over three lines does not alter meaning."
+    },
+    {
+      "initial_finding_index": 3,
+      "status": "resolved",
+      "reason": "The Spanish no coincide branch follows ¿Coinciden ejecutor y solicitud? and clearly denotes a mismatch with an error outcome. This preserves the scope-check denial meaning while fitting the stated length constraint."
+    }
+  ],
+  "unresolved_issues": [],
+  "limitations": [
+    "Focused textual recheck only; unchanged manuscripts and diagram content were not re-reviewed in full.",
+    "No rendered SVG/browser validation, external fact revalidation or example execution.",
+    "AI review, not human/native review or exhaustive correctness certification."
+  ],
+  "conclusion": "All four initial findings are resolved within the focused recheck scope."
+}

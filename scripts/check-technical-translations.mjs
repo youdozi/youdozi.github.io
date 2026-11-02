@@ -41,6 +41,7 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
   const promptFences=options.formatVersion===2 ? ({
     '2026-10-31-ai-agent-refactoring':[0,4,5],
     '2026-10-31-ai-agent-operations':[2],
+    '2026-11-02-ai-assisted-tdd':[0,7,11,12],
   }[key]??[]) : [];
   same(sourceCode.length,draftCode.length,'Executable code changed during translation');
   sourceCode.forEach((block,index)=>{
@@ -48,7 +49,9 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
     const translated=draftCode[index];
     if(block[0]!=='text'||translated[0]!=='text'||!translated[1].trim())fail('Localized prompt missing');
     same(numbers(block[1]),numbers(translated[1]),'Prompt numeric values changed');
-    const tokens=['ShippingRefactorDemo.java','before()','after()','main()','FREE_THRESHOLD',
+    const tokens=key==='2026-11-02-ai-assisted-tdd'
+      ? ['StockPolicy.remaining(int stock, int requested)','StockPolicy.java','reservesPartOfStock','expected=7','actual=10']
+      : ['ShippingRefactorDemo.java','before()','after()','main()','FREE_THRESHOLD',
       'javac --release 21 ShippingRefactorDemo.java','java ShippingRefactorDemo','git diff --check'];
     for(const token of tokens)same(block[1].split(token).length,translated[1].split(token).length,'Prompt identifier or command changed');
   });

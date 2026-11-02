@@ -1,0 +1,52 @@
+{
+  "key": "2026-11-02-ai-assisted-attack-defense",
+  "language": "ja",
+  "title": "調査シグナルの相関",
+  "description": "バッチイベントを時刻順に処理し、読み取りを記録します。同じ実行主体と実行の 300 秒以内の送信拒否を調査候補にします。スキップは安全判定ではありません。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "イベントを時刻順に並べる"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "イベントごとに処理",
+        "読み取り時にキー別の",
+        "最新時刻を保存"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "外部送信の拒否イベントか？"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "スキップ",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "同じ主体と実行での読み取りが",
+        "0〜300 秒以内か？"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "スキップ",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "調査候補を追加",
+        "次のイベントへ進む"
+      ]
+    }
+  ]
+}

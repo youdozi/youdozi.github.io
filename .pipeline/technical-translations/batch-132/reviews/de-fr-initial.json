@@ -1,0 +1,235 @@
+{
+  "review_type": "Separate-session AI initial translation review",
+  "created_at": "2026-11-02T03:02:01.194838+00:00",
+  "languages": [
+    "de",
+    "fr"
+  ],
+  "task": "Full translation review, not summary review",
+  "scope": {
+    "targets": "Eight full draft Markdown translations and eight diagram JSON files in batch-132/de and batch-132/fr.",
+    "source": "Four corresponding English posts in src/content/posts/en and English diagram entries in content/diagrams/technical-132.json.",
+    "coverage": "Read target prose first for fluency, then compared body, metadata titles/descriptions, tables, authored prompts, captions/alt text and diagram labels/conditions against source. Compared all executable/configuration/output fences mechanically and reviewed permitted prompt localization. Checked actor, negation, condition, chronology, uncertainty, numerical values, environment versions, scope and limitation preservation.",
+    "context": "Developer-facing technical posts; preserve technical identifiers and English internal destinations. Draft-local diagram image targets are expected to differ from published English assets.",
+    "skills_read": [
+      "/Users/youdozi/.agents/skills/translate/SKILL.md",
+      "/Users/youdozi/.agents/skills/translate/references/languages.md",
+      "/Users/youdozi/.agents/skills/translate/references/ai-review.md"
+    ]
+  },
+  "summary": {
+    "material_findings": 0,
+    "minor_findings": 4,
+    "conclusion": "No material meaning, performance-claim, numeric or protected-token drift identified in this review. Minor metadata and diagram wording corrections are proposed below."
+  },
+  "findings": [
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-attack-defense.md",
+      "location": "frontmatter.description",
+      "quote": "Se préparer au phishing, à l’exploitation de vulnérabilités et à l’injection de prompt assistés par IA.",
+      "source_quote": "Prepare for AI-assisted phishing, vulnerability exploitation and agent prompt injection.",
+      "severity": "minor",
+      "category": "meaning_omission",
+      "reason": "The summary drops the source’s explicit agent target for prompt injection. The body preserves that distinction, but the standalone description no longer says that the injection targets agents.",
+      "proposed_correction": "Se préparer au phishing assisté par IA, à l’exploitation de vulnérabilités et à l’injection de prompt ciblant les agents.",
+      "confidence": "high"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "location": "steps[1].branch.exit; steps[3].branch.exit",
+      "quote": "\"exit\": \"Richtlinie\"; \"exit\": \"Umfang\"",
+      "source_quote": "\"en\": \"deny policy\"; \"en\": \"deny scope\"",
+      "severity": "minor",
+      "category": "diagram_label_clarity",
+      "reason": "The source explicitly marks these exits as denials. The German labels only name the policy/scope, weakening the standalone explanation of the branch outcome. Error styling may provide context, so this is a minor clarity issue rather than a claim that the control flow is reversed.",
+      "proposed_correction": "Use \"Richtlinienverstoß\" and \"Umfang abgelehnt\", or other short labels explicitly conveying denial.",
+      "confidence": "high"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "location": "steps[1].branch.exit; steps[3].branch.exit",
+      "quote": "\"exit\": \"politique\"; \"exit\": \"périmètre\"",
+      "source_quote": "\"en\": \"deny policy\"; \"en\": \"deny scope\"",
+      "severity": "minor",
+      "category": "diagram_label_clarity",
+      "reason": "The source explicitly marks policy and scope exits as denials. The translated labels only name the concepts. Error styling may provide context, but an explicit refusal label would preserve the source outcome in the standalone diagram.",
+      "proposed_correction": "Use \"refus politique\" and \"refus périmètre\", or equivalent short labels explicitly indicating refusal.",
+      "confidence": "high"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "location": "steps[5].branch.exit",
+      "quote": "\"exit\": \"réutilisé\"",
+      "source_quote": "\"en\": \"replay\"",
+      "severity": "minor",
+      "category": "fluency_grammar",
+      "reason": "If this past participle describes the approval named in the immediately preceding condition (\"Approbation encore inutilisée ?\"), it needs feminine agreement. A noun label would also avoid the unspecified masculine referent.",
+      "proposed_correction": "\"exit\": \"réutilisation\" (or \"déjà utilisée\").",
+      "confidence": "high"
+    }
+  ],
+  "checks": [
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-ai-agent-permission-boundaries.md",
+      "sourceSha256_matches": true,
+      "fence_count_source": 3,
+      "fence_count_target": 3,
+      "changed_fences": [],
+      "protected_fences_equal": true,
+      "non_image_markdown_link_targets_equal": true,
+      "inline_code_token_sequence_equal": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+      "sourceSha256_matches": true,
+      "fence_count_source": 6,
+      "fence_count_target": 6,
+      "changed_fences": [],
+      "protected_fences_equal": true,
+      "non_image_markdown_link_targets_equal": true,
+      "inline_code_token_sequence_equal": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-attack-defense.md",
+      "sourceSha256_matches": true,
+      "fence_count_source": 3,
+      "fence_count_target": 3,
+      "changed_fences": [],
+      "protected_fences_equal": true,
+      "non_image_markdown_link_targets_equal": true,
+      "inline_code_token_sequence_equal": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-tdd.md",
+      "sourceSha256_matches": true,
+      "fence_count_source": 13,
+      "fence_count_target": 13,
+      "changed_fences": [
+        0,
+        7,
+        11,
+        12
+      ],
+      "protected_fences_equal": true,
+      "non_image_markdown_link_targets_equal": true,
+      "inline_code_token_sequence_equal": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.md",
+      "sourceSha256_matches": true,
+      "fence_count_source": 3,
+      "fence_count_target": 3,
+      "changed_fences": [],
+      "protected_fences_equal": true,
+      "non_image_markdown_link_targets_equal": true,
+      "inline_code_token_sequence_equal": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+      "sourceSha256_matches": true,
+      "fence_count_source": 6,
+      "fence_count_target": 6,
+      "changed_fences": [],
+      "protected_fences_equal": true,
+      "non_image_markdown_link_targets_equal": true,
+      "inline_code_token_sequence_equal": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-attack-defense.md",
+      "sourceSha256_matches": true,
+      "fence_count_source": 3,
+      "fence_count_target": 3,
+      "changed_fences": [],
+      "protected_fences_equal": true,
+      "non_image_markdown_link_targets_equal": true,
+      "inline_code_token_sequence_equal": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-tdd.md",
+      "sourceSha256_matches": true,
+      "fence_count_source": 13,
+      "fence_count_target": 13,
+      "changed_fences": [
+        0,
+        7,
+        11,
+        12
+      ],
+      "protected_fences_equal": true,
+      "non_image_markdown_link_targets_equal": true,
+      "inline_code_token_sequence_equal": true
+    }
+  ],
+  "artifacts": [
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "sha256": "0d0e5d38d3e50b2a8c2e18f30896e7233a33a7d28cfd3078a637c76dc4a4f49e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-ai-agent-permission-boundaries.md",
+      "sha256": "689315062f7c27e09b05eca85b9d3eb3ff4805119766fc4610bfcddf6719961d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+      "sha256": "eb2bfbf98f912c468c27140e0cd17f494a86bb820fb3022e8c28a44d2d041d70"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+      "sha256": "226b8b277582fee59fdc3cee098f71805ca4e33675a32a4ccdea3f289045b75f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-attack-defense.diagram.json",
+      "sha256": "576ca2a1501b14def774f9111bcebab767c2217659213c3bfa32522bd7620e37"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-attack-defense.md",
+      "sha256": "82426efc3fa9ea7cdcee22df569978d72d718278e3900a3a91f6eb6a73ab807c"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-tdd.diagram.json",
+      "sha256": "b12f5f6d0c8a870ae69d0cca36783a9d7f198dc8cd4cc15248841f585899dba5"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-tdd.md",
+      "sha256": "24faf4705592633ce604401cfdaa29add356fe5947736fef426ad1f81ad1de76"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "sha256": "f4234eee2d8a8c84a53ffe766ba1dd892d50875f7f4876255b35418d16612d62"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.md",
+      "sha256": "0e2911b447d2a8297e7f834188c826a10e3bf4900506dfc08069fb81a4f9f13e"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+      "sha256": "89d853512d662cb0e59038112857b45b8ff73b29b6cf69b09cac4e20ff8af1f2"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+      "sha256": "72dcb4ca668181004bc23b77c17b174ed0c54740ce0b3fcc3b5a74c8e2dbab55"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-attack-defense.diagram.json",
+      "sha256": "471fd441393008ccf6364f3055117929b9a8d79d9f14e7a94e16be5cb5fb72ca"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-attack-defense.md",
+      "sha256": "26c0cb69317c7c19e516d364188229b5d23c2a496567f167947280150663ad4b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-tdd.diagram.json",
+      "sha256": "dc978e83b8896538026ba91632cadb8a119e51a78b34122b80d7221f9d5a6726"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-tdd.md",
+      "sha256": "7aa97f1d70c307d211675a30613c7751c4d9072615d3821af2ded4be13114989"
+    }
+  ],
+  "remaining_limitations": [
+    "AI review; no human or native-speaker review and no exhaustive quality certification.",
+    "Did not execute code, render SVGs, run site/browser checks, or independently verify technical claims and external references. Execution claims were assessed as translated source statements.",
+    "Target files were not modified. No other reviewer reports were read.",
+    "Structural staging metadata intentionally differs from source publishing metadata; review compared translated title/description and recorded source binding, rather than requiring a byte-identical frontmatter schema."
+  ]
+}

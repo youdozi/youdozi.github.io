@@ -1,0 +1,104 @@
+{
+  "review_type": "Separate-session AI focused correction recheck",
+  "created_at": "2026-11-02T03:03:54.323785+00:00",
+  "source_context": "English source description and English diagram labels compared to corrected translations. Prior initial review is de-fr-initial.json.",
+  "resolutions": [
+    {
+      "original_finding": "FR attack-defense frontmatter.description omits agent target",
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-attack-defense.md",
+      "current_quote": "Se préparer au phishing assisté par IA, à l’exploitation de vulnérabilités et à l’injection de prompt ciblant les agents.",
+      "status": "resolved",
+      "reason": "Explicitly restores agents as the injection target and preserves source summary scope.",
+      "confidence": "high"
+    },
+    {
+      "original_finding": "DE policy/scope branch exits omit denial",
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "current_quote": [
+        "Regel: Veto",
+        "Umfang: Veto"
+      ],
+      "status": "resolved",
+      "reason": "Both short labels now explicitly convey refusal; they retain the source policy/scope distinction.",
+      "confidence": "high"
+    },
+    {
+      "original_finding": "FR policy/scope branch exits omit denial",
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "current_quote": [
+        "refus règle",
+        "refus portée"
+      ],
+      "status": "resolved",
+      "reason": "Both labels now explicitly convey refusal and distinguish policy from scope. Compact noun labels are acceptable in the diagram context.",
+      "confidence": "high"
+    },
+    {
+      "original_finding": "FR replay label masculine agreement",
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "current_quote": "réutilisée",
+      "status": "resolved",
+      "reason": "Feminine agreement now matches the preceding Approbation condition and retains the replay meaning.",
+      "confidence": "high"
+    }
+  ],
+  "unresolved_findings": [],
+  "new_findings": [],
+  "checks": [
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "exit_labels": [
+        "Regel: Veto",
+        "Freigabe",
+        "Umfang: Veto",
+        "abgelaufen",
+        "Wiederholung"
+      ],
+      "all_exit_labels_at_most_12_characters": true,
+      "valid_json": true,
+      "step_kinds_match_source": true
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "exit_labels": [
+        "refus règle",
+        "approbation",
+        "refus portée",
+        "expiration",
+        "réutilisée"
+      ],
+      "all_exit_labels_at_most_12_characters": true,
+      "valid_json": true,
+      "step_kinds_match_source": true
+    }
+  ],
+  "final_hashes": [
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-attack-defense.md",
+      "sha256": "c1976274998930374dcc79f5ce114121bba170c513c59cf7a22aeb72c6868a97"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "sha256": "c3a04df95d970d329411ff4c9f17944f96bb1995dc017b892f4253231c112ef8"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+      "sha256": "7fe54ffd7dd97445e93f41ec975f5164147b45133ed5a5567b6380a1c2de6ef6"
+    }
+  ],
+  "source_hashes": [
+    {
+      "path": "src/content/posts/en/2026-11-02-ai-assisted-attack-defense.md",
+      "sha256": "9790053a5455cba1fc2d1579a0a31554430ce20c5f8c00ccfa8fa94a0072189c"
+    },
+    {
+      "path": "content/diagrams/technical-132.json",
+      "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+    }
+  ],
+  "remaining_limitations": [
+    "Focused AI recheck of the corrected description and two complete affected diagram JSONs, using original English sources; not a new full review of all eight translations.",
+    "No human or native-speaker review, SVG rendering, browser/site check, code execution, or independent source fact audit.",
+    "Target files remain read-only; only this requested review artifact was written. No other reviewers’ reports were read."
+  ]
+}

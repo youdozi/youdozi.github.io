@@ -1,0 +1,79 @@
+{
+  "key": "2026-11-01-ai-agent-permission-boundaries",
+  "language": "ru",
+  "title": "Авторизация публикации",
+  "description": "Проверки политики, одобрения, области, срока и повторного использования для публикации. Немедленное разрешение чтения и правки черновика опущено.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Структурированный запрос",
+        "на публикацию"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Действие и цель в политике?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "политика",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Есть доверенное одобрение?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "одобрение",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Исполнитель и запрос",
+        "совпадают?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "вне области",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Срок ещё не истёк?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "истекло",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Одобрение ещё",
+        "не использовано?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "повтор",
+        "continue": "да"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Погасить одобрение",
+        "Вернуть ALLOW"
+      ]
+    }
+  ]
+}

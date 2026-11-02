@@ -1,0 +1,197 @@
+{
+  "review_type": "Focused AI translation recheck",
+  "initial_review": "zh-ja-initial.json",
+  "scope": {
+    "languages": [
+      "zh-CN",
+      "ja"
+    ],
+    "mode": "Focused recheck of reported identity terminology and writer-described numerical wording/order changes, against English source meaning; not a second full review",
+    "passages_checked": [
+      "Japanese permission article: database/task/service identities, binding approval to acting identity, administrator exception identity, Grant caveats, trusted context checks, inventory, rejected alternate identity, audit logging and alt text",
+      "Japanese attack-defense: execution identity in logging remains distinct from actor/run ID in correlation",
+      "Both languages: written cardinal quantities preserve their source values and scope; 13 checks and 3 mutations retain their limitations",
+      "Both TDD manuscripts: insufficient-stock table request 1 / stock 0, first authored prompt request 3 / stock 10 / result 7, 6 failures among 9 tests",
+      "Chinese TDD diagram: 下一 continues to express next loop iteration"
+    ],
+    "final_file_versions": [
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "initial_sha256": "b7db5bd7307594d02f8c0964c892e84d4f3b6fc86e4fd063e2208ac0224993f9",
+        "final_sha256": "b7db5bd7307594d02f8c0964c892e84d4f3b6fc86e4fd063e2208ac0224993f9",
+        "changed_since_initial": false
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+        "initial_sha256": "e15e82cb462ceae631c16cfdf318181e24dbb9c76c03477f37b4d9da024e248a",
+        "final_sha256": "e15e82cb462ceae631c16cfdf318181e24dbb9c76c03477f37b4d9da024e248a",
+        "changed_since_initial": false
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-ai-agent-permission-boundaries.md",
+        "initial_sha256": "dada2b8be70870a5e6ec49461e43ffeee121fd84b58897c5bcf122586165c3fa",
+        "final_sha256": "dada2b8be70870a5e6ec49461e43ffeee121fd84b58897c5bcf122586165c3fa",
+        "changed_since_initial": false
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+        "initial_sha256": "6c38ce1ded3591a478580443c4aecacfb87d256367c7a7f324430c98cf5f99ea",
+        "final_sha256": "6c38ce1ded3591a478580443c4aecacfb87d256367c7a7f324430c98cf5f99ea",
+        "changed_since_initial": false
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-tdd.md",
+        "initial_sha256": "3712014838441aaf792286483b013b68df21dc64fbbb272da796ae12a64a7a42",
+        "final_sha256": "2b7e250fe0d9081a15ba231dbb0a888c385416b19134e333ac4cc4051a0552f5",
+        "changed_since_initial": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-tdd.diagram.json",
+        "initial_sha256": "cee922b16b828ddb743a9681003804c81fbc267f5d8d913b579acd161146c58e",
+        "final_sha256": "3ccfcc522d870567f5b87d19a62606519efc5f8566fcc2fe0f877cdc4f3ef921",
+        "changed_since_initial": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-attack-defense.md",
+        "initial_sha256": "6f43e8781412cedff93ada2257e5ce00880232f0a41700deb64f60b321e8a89b",
+        "final_sha256": "2a4879eba62e6531f5db0b2b1e9bf7de8ad55f5c8e948432313642569b679a65",
+        "changed_since_initial": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-attack-defense.diagram.json",
+        "initial_sha256": "469cd68db6cbc656045e8a873816ca5db25721643ca32ca3c6d0c992127b5ab5",
+        "final_sha256": "469cd68db6cbc656045e8a873816ca5db25721643ca32ca3c6d0c992127b5ab5",
+        "changed_since_initial": false
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "initial_sha256": "19a85e546584a50aae3a1ce60c3a0374f0188a40d05b1e0413f757007430a755",
+        "final_sha256": "71ab84eacd1f709fe46c3f49eaf10b14c1147fb3735db236f300f2b7465fb0f4",
+        "changed_since_initial": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+        "initial_sha256": "1593d75635267ba3300228fe8036a7f9b1de6f837beea2af5c71258721dcee32",
+        "final_sha256": "1593d75635267ba3300228fe8036a7f9b1de6f837beea2af5c71258721dcee32",
+        "changed_since_initial": false
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-ai-agent-permission-boundaries.md",
+        "initial_sha256": "0abea3b5f542ace7fcff18db01c904c37999777ed3e9553310820d15eddce84b",
+        "final_sha256": "808f3d73805a328856881fa809d55b5493c4cf4686d3eef67a7541ca82e26283",
+        "changed_since_initial": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+        "initial_sha256": "746f8910ca5551f6d99717559d745617202f8ce897e2213cb31b2ea532aa6802",
+        "final_sha256": "746f8910ca5551f6d99717559d745617202f8ce897e2213cb31b2ea532aa6802",
+        "changed_since_initial": false
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-tdd.md",
+        "initial_sha256": "8bd8997b24bfb1c40c08fd1bf3f3419a956531a81ddb52a6c0647ac584b7ba18",
+        "final_sha256": "b8051a4746c48dc7c7b972f8ff014534158b47583f889f6bba2f7d7dcbec9765",
+        "changed_since_initial": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-tdd.diagram.json",
+        "initial_sha256": "5b82eaecb5930a7775d6690634b9e43fe87405b448bc37761cbcd7a2d05ca64b",
+        "final_sha256": "5b82eaecb5930a7775d6690634b9e43fe87405b448bc37761cbcd7a2d05ca64b",
+        "changed_since_initial": false
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-attack-defense.md",
+        "initial_sha256": "3b1548cb34064a0e415dbfc4c4800975402348ff16759a34e68afec22a74cc5a",
+        "final_sha256": "0fae76f110d77bb0387ff21f4926d439415612e7685fdfa572fe130fd60d9a97",
+        "changed_since_initial": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-attack-defense.diagram.json",
+        "initial_sha256": "77cdf2e8bc9b7844735bc2a778399fb0990bbc6a1810ebf5d451dbb03f6439af",
+        "final_sha256": "77cdf2e8bc9b7844735bc2a778399fb0990bbc6a1810ebf5d451dbb03f6439af",
+        "changed_since_initial": false
+      }
+    ],
+    "protected_content_checks": [
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "fence_counts_match": true,
+        "unexpected_fence_changes": [],
+        "non_image_urls_match": true,
+        "html_anchors_match": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-ai-agent-permission-boundaries.md",
+        "fence_counts_match": true,
+        "unexpected_fence_changes": [],
+        "non_image_urls_match": true,
+        "html_anchors_match": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-tdd.md",
+        "fence_counts_match": true,
+        "unexpected_fence_changes": [],
+        "non_image_urls_match": true,
+        "html_anchors_match": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-attack-defense.md",
+        "fence_counts_match": true,
+        "unexpected_fence_changes": [],
+        "non_image_urls_match": true,
+        "html_anchors_match": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "fence_counts_match": true,
+        "unexpected_fence_changes": [],
+        "non_image_urls_match": true,
+        "html_anchors_match": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-ai-agent-permission-boundaries.md",
+        "fence_counts_match": true,
+        "unexpected_fence_changes": [],
+        "non_image_urls_match": true,
+        "html_anchors_match": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-tdd.md",
+        "fence_counts_match": true,
+        "unexpected_fence_changes": [],
+        "non_image_urls_match": true,
+        "html_anchors_match": true
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-attack-defense.md",
+        "fence_counts_match": true,
+        "unexpected_fence_changes": [],
+        "non_image_urls_match": true,
+        "html_anchors_match": true
+      }
+    ]
+  },
+  "resolved_findings": [
+    {
+      "id": "JA-PERMISSION-IDENTITY",
+      "status": "resolved",
+      "reason": "Actor/identity references now use 実行主体 or explicit 主体; actual site, approval, request and operation identifiers remain identifiers."
+    },
+    {
+      "id": "JA-ATTACK-IDENTITY",
+      "status": "resolved",
+      "reason": "Logging sentence now requests 実行主体; correlation still distinguishes 実行主体 from 実行 ID."
+    }
+  ],
+  "findings": [],
+  "unresolved": {
+    "status": "none identified in focused recheck",
+    "finding_ids": []
+  },
+  "limitations": [
+    "No human or native-speaker review",
+    "No external verification of article source claims",
+    "No execution of examples, site build or rendered SVG review",
+    "Initial review plus this focused recheck do not guarantee exhaustive correctness"
+  ]
+}

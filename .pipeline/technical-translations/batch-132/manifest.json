@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-132",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "9a33f50bb362b875ab75dbb446312a04112e0349",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Complete language-pair translation and self-review followed by fresh-context read-only AI target-language and full-source comparison, author corrections, and focused reviewer rechecks.",
+    "independentReviewer": true,
+    "reviewerContexts": [
+      "review132_zh_ja",
+      "review132_de_fr",
+      "review132_ru_es"
+    ],
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "scope": "24 complete manuscripts, metadata, tables, captions, localized authored TDD prompts and 24 flow diagrams. Runnable code/output, inline literals, URLs, numerical values and source limitations preserved. SVG labels fitted and checked in local Chrome at 360px; no new example execution claimed.",
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-132/reviews/de-fr-initial.json",
+        "sha256": "5e0f40dbe750956cc010ed273e1283eaa86b5e6da0c1b7d4ad5bcbc760a6c39b"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/reviews/de-fr-recheck.json",
+        "sha256": "57500c5494203465abb45bfd60fea78f24b5fe804a1392ec27823ef342a9c634"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/reviews/ru-es-initial.json",
+        "sha256": "7adf3dc338d86682d673867ad57c9f494b96e2863e47d8f37ce55549f54ab1ae"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/reviews/ru-es-recheck.json",
+        "sha256": "1231aad37dad4460bd804205818860ca4985a7241f50640613ec6457caa5cae4"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/reviews/zh-ja-initial.json",
+        "sha256": "38c1d5e9edb53d4a8a855a205e2f7732ced89827a8e181d68f9cdaa349e4a8c4"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/reviews/zh-ja-recheck.json",
+        "sha256": "d1d0802e99dae17ebe35f4deba97d233c1dc12ac63f3c1498be4384b59cfe718"
+      }
+    ]
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "language": "zh-CN",
+      "translationKey": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "f0e4726741f1c91af86727ece0bfb5ff3cbd27354075d37e7de676b2e034f952"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "b7db5bd7307594d02f8c0964c892e84d4f3b6fc86e4fd063e2208ac0224993f9"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+        "sha256": "e15e82cb462ceae631c16cfdf318181e24dbb9c76c03477f37b4d9da024e248a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-webflux-coroutines-mvc-virtual-threads.svg",
+        "sha256": "ed43e06a061ce25ce41aac7bacf48e15f1cafbecc6ff4c7431430b35eba2a13a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "ja-2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "language": "ja",
+      "translationKey": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "f0e4726741f1c91af86727ece0bfb5ff3cbd27354075d37e7de676b2e034f952"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "71ab84eacd1f709fe46c3f49eaf10b14c1147fb3735db236f300f2b7465fb0f4"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+        "sha256": "1593d75635267ba3300228fe8036a7f9b1de6f837beea2af5c71258721dcee32"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-webflux-coroutines-mvc-virtual-threads.svg",
+        "sha256": "3341c70901c1e3dda41f271881ec698ac82beac29b74519ae11c28bc8aa657b2"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "de-2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "language": "de",
+      "translationKey": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "f0e4726741f1c91af86727ece0bfb5ff3cbd27354075d37e7de676b2e034f952"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "226b8b277582fee59fdc3cee098f71805ca4e33675a32a4ccdea3f289045b75f"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+        "sha256": "eb2bfbf98f912c468c27140e0cd17f494a86bb820fb3022e8c28a44d2d041d70"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-webflux-coroutines-mvc-virtual-threads.svg",
+        "sha256": "ddc1f2ba4721dfeb1780ddc696894d45792da6e6566d842c3b467bbe9322282e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "fr-2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "language": "fr",
+      "translationKey": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "f0e4726741f1c91af86727ece0bfb5ff3cbd27354075d37e7de676b2e034f952"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "72dcb4ca668181004bc23b77c17b174ed0c54740ce0b3fcc3b5a74c8e2dbab55"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+        "sha256": "89d853512d662cb0e59038112857b45b8ff73b29b6cf69b09cac4e20ff8af1f2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-webflux-coroutines-mvc-virtual-threads.svg",
+        "sha256": "6063df6aaa3e6a8fddcb8203bc86be7fad51ba9ab674984550caf7b5a15a1a0b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "ru-2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "language": "ru",
+      "translationKey": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "f0e4726741f1c91af86727ece0bfb5ff3cbd27354075d37e7de676b2e034f952"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "c417fce6ddae2a34125ccd08f828415bf20c5754f81d5a1dc1fb8a1b37e40f65"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+        "sha256": "f9767e74dc31658fe59a6a4ee27395a449df5abb82ac8da4fb2478f08bf667d8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-01-webflux-coroutines-mvc-virtual-threads.svg",
+        "sha256": "26c33647498549c11c385ee4edc0247046ed208d80a48c39dc8595941fea9a8d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "es-2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "language": "es",
+      "translationKey": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "f0e4726741f1c91af86727ece0bfb5ff3cbd27354075d37e7de676b2e034f952"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "e33a61f8b7e450e0ff52fec63aed6a917a198b5cef3c34dd0b608fc8f65eaca0"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+        "sha256": "07c89a26f3910d7e16c2337848e521250a79edc0f1a880937143474efd216a61"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-01-webflux-coroutines-mvc-virtual-threads.svg",
+        "sha256": "2910e9652c1b4741d31bc67cf8c1641b0e34d228596cf9408a3ddf669e1697e3"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-01-ai-agent-permission-boundaries",
+      "language": "zh-CN",
+      "translationKey": "2026-11-01-ai-agent-permission-boundaries",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "9610960800eb800a78e728fcc84d5cf2a790de1f6b051fe4a8ebb3dfdaec554b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "dada2b8be70870a5e6ec49461e43ffeee121fd84b58897c5bcf122586165c3fa"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+        "sha256": "6c38ce1ded3591a478580443c4aecacfb87d256367c7a7f324430c98cf5f99ea"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-ai-agent-permission-boundaries.svg",
+        "sha256": "ec0f688945f696e35fbbaf2ec11e311b6afb87e9c8e0444f0db3d70c6e31f9a7"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "ja-2026-11-01-ai-agent-permission-boundaries",
+      "language": "ja",
+      "translationKey": "2026-11-01-ai-agent-permission-boundaries",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "9610960800eb800a78e728fcc84d5cf2a790de1f6b051fe4a8ebb3dfdaec554b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "808f3d73805a328856881fa809d55b5493c4cf4686d3eef67a7541ca82e26283"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+        "sha256": "746f8910ca5551f6d99717559d745617202f8ce897e2213cb31b2ea532aa6802"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-ai-agent-permission-boundaries.svg",
+        "sha256": "ee6f60418dd892d26c24935da1c8bd7d18ceb51efee0bf680db5b656acbe0d50"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "de-2026-11-01-ai-agent-permission-boundaries",
+      "language": "de",
+      "translationKey": "2026-11-01-ai-agent-permission-boundaries",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "9610960800eb800a78e728fcc84d5cf2a790de1f6b051fe4a8ebb3dfdaec554b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "689315062f7c27e09b05eca85b9d3eb3ff4805119766fc4610bfcddf6719961d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+        "sha256": "c3a04df95d970d329411ff4c9f17944f96bb1995dc017b892f4253231c112ef8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-01-ai-agent-permission-boundaries.svg",
+        "sha256": "41837c8936506e192daebf5433569d7a8c70a20f5c348bce33131de9f7d84cb9"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "fr-2026-11-01-ai-agent-permission-boundaries",
+      "language": "fr",
+      "translationKey": "2026-11-01-ai-agent-permission-boundaries",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "9610960800eb800a78e728fcc84d5cf2a790de1f6b051fe4a8ebb3dfdaec554b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "0e2911b447d2a8297e7f834188c826a10e3bf4900506dfc08069fb81a4f9f13e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+        "sha256": "7fe54ffd7dd97445e93f41ec975f5164147b45133ed5a5567b6380a1c2de6ef6"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-01-ai-agent-permission-boundaries.svg",
+        "sha256": "c03605d6c18b49f52e7038d7764d044b45e9829e08687b962983b5cd14e2a30a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "ru-2026-11-01-ai-agent-permission-boundaries",
+      "language": "ru",
+      "translationKey": "2026-11-01-ai-agent-permission-boundaries",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "9610960800eb800a78e728fcc84d5cf2a790de1f6b051fe4a8ebb3dfdaec554b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "5f2e904b79cc324946abb340f8a3363a77ef623e132a6be53e89b1dbabfdba5c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+        "sha256": "54de067a10517bef02f32a81b4f8200ac531acd53f2ce1231a747e820521bb2a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-01-ai-agent-permission-boundaries.svg",
+        "sha256": "93c737b21adb2dec73ae98bd4e1c3d09db9b34d69006991f9ea27982a8eb9e7f"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "es-2026-11-01-ai-agent-permission-boundaries",
+      "language": "es",
+      "translationKey": "2026-11-01-ai-agent-permission-boundaries",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "9610960800eb800a78e728fcc84d5cf2a790de1f6b051fe4a8ebb3dfdaec554b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "78da5e752841263efbfe44d6b7fd4b7e51cb7e033e0c102db023daf32fa6c52b"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+        "sha256": "390d246ff0104b6d6dce70fcfe27c5f632af34519505ab5c9084892515c16b36"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-01-ai-agent-permission-boundaries.svg",
+        "sha256": "9ae3542486442894fb51167d0eda96faf13b428c5af76749ae7d9ef12a1ae03f"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-02-ai-assisted-tdd",
+      "language": "zh-CN",
+      "translationKey": "2026-11-02-ai-assisted-tdd",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "bfc69c72419b9b2b5ce2693c4111b12dd8f935ed3d1115dd350b837bed13bf80"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "2b7e250fe0d9081a15ba231dbb0a888c385416b19134e333ac4cc4051a0552f5"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-tdd.diagram.json",
+        "sha256": "3ccfcc522d870567f5b87d19a62606519efc5f8566fcc2fe0f877cdc4f3ef921"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-tdd.svg",
+        "sha256": "40e2157c01f482cc6d05999afe7b9cce7a2e7595e060f8dc021d3909f44185ab"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "ja-2026-11-02-ai-assisted-tdd",
+      "language": "ja",
+      "translationKey": "2026-11-02-ai-assisted-tdd",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "bfc69c72419b9b2b5ce2693c4111b12dd8f935ed3d1115dd350b837bed13bf80"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "b8051a4746c48dc7c7b972f8ff014534158b47583f889f6bba2f7d7dcbec9765"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-tdd.diagram.json",
+        "sha256": "5b82eaecb5930a7775d6690634b9e43fe87405b448bc37761cbcd7a2d05ca64b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-tdd.svg",
+        "sha256": "1ca5013b8b2650b1f092992faa4f6981df97cad642925622ca36ec06e98b81b4"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "de-2026-11-02-ai-assisted-tdd",
+      "language": "de",
+      "translationKey": "2026-11-02-ai-assisted-tdd",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "bfc69c72419b9b2b5ce2693c4111b12dd8f935ed3d1115dd350b837bed13bf80"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "24faf4705592633ce604401cfdaa29add356fe5947736fef426ad1f81ad1de76"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-tdd.diagram.json",
+        "sha256": "b12f5f6d0c8a870ae69d0cca36783a9d7f198dc8cd4cc15248841f585899dba5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-tdd.svg",
+        "sha256": "2521c5c746cea7f32e12175e911de142c50a14ec7e55d3a8d83c85d6b85ae7cd"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "fr-2026-11-02-ai-assisted-tdd",
+      "language": "fr",
+      "translationKey": "2026-11-02-ai-assisted-tdd",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "bfc69c72419b9b2b5ce2693c4111b12dd8f935ed3d1115dd350b837bed13bf80"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "7aa97f1d70c307d211675a30613c7751c4d9072615d3821af2ded4be13114989"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-tdd.diagram.json",
+        "sha256": "dc978e83b8896538026ba91632cadb8a119e51a78b34122b80d7221f9d5a6726"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-tdd.svg",
+        "sha256": "b3e1db941c04e6bdaf128e1c67ec30dcabea9cff7ced4115c9ba9ab201fe9921"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "ru-2026-11-02-ai-assisted-tdd",
+      "language": "ru",
+      "translationKey": "2026-11-02-ai-assisted-tdd",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "bfc69c72419b9b2b5ce2693c4111b12dd8f935ed3d1115dd350b837bed13bf80"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "d71ce33877ee364c023dbd5cb47f1a3b1fad207ab3f11b0060bd603c11f32527"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-tdd.diagram.json",
+        "sha256": "9f192bc82d2f1946cc677ac417d51757c93f7f87c069e63915980540d9ae57e0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-tdd.svg",
+        "sha256": "c361df0f99b53bb5077ef93dfbd6d88b4f6eab084bed1634e0d8724f9de5b1b7"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "es-2026-11-02-ai-assisted-tdd",
+      "language": "es",
+      "translationKey": "2026-11-02-ai-assisted-tdd",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "bfc69c72419b9b2b5ce2693c4111b12dd8f935ed3d1115dd350b837bed13bf80"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "534f39cd74dae10370574db1c6e799988d16ca54481d7749ec7def363a2f7405"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-tdd.diagram.json",
+        "sha256": "d7b83944a59c2c3b5a4e7f21f00f01eb21fef5b907018131ecf2d3d00443c102"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-tdd.svg",
+        "sha256": "a23eb6476af1c1c4bf19004ccfe7e041a7341f72e1525e9884f0a19232efe34a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-02-ai-assisted-attack-defense",
+      "language": "zh-CN",
+      "translationKey": "2026-11-02-ai-assisted-attack-defense",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "9790053a5455cba1fc2d1579a0a31554430ce20c5f8c00ccfa8fa94a0072189c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "2a4879eba62e6531f5db0b2b1e9bf7de8ad55f5c8e948432313642569b679a65"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-attack-defense.diagram.json",
+        "sha256": "469cd68db6cbc656045e8a873816ca5db25721643ca32ca3c6d0c992127b5ab5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-attack-defense.svg",
+        "sha256": "d032feca2316ae85580be767a26e93674c643d3fd5d302024a89b6afaa0e990d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "ja-2026-11-02-ai-assisted-attack-defense",
+      "language": "ja",
+      "translationKey": "2026-11-02-ai-assisted-attack-defense",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "9790053a5455cba1fc2d1579a0a31554430ce20c5f8c00ccfa8fa94a0072189c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "0fae76f110d77bb0387ff21f4926d439415612e7685fdfa572fe130fd60d9a97"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-attack-defense.diagram.json",
+        "sha256": "77cdf2e8bc9b7844735bc2a778399fb0990bbc6a1810ebf5d451dbb03f6439af"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-attack-defense.svg",
+        "sha256": "a4f8debb7014df51bb7f563135efc9a6c6058bb320df220bd4b155e7a1387362"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "de-2026-11-02-ai-assisted-attack-defense",
+      "language": "de",
+      "translationKey": "2026-11-02-ai-assisted-attack-defense",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "9790053a5455cba1fc2d1579a0a31554430ce20c5f8c00ccfa8fa94a0072189c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "82426efc3fa9ea7cdcee22df569978d72d718278e3900a3a91f6eb6a73ab807c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-attack-defense.diagram.json",
+        "sha256": "576ca2a1501b14def774f9111bcebab767c2217659213c3bfa32522bd7620e37"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/de/2026-11-02-ai-assisted-attack-defense.svg",
+        "sha256": "02f06ef24fcb6d4af4c9938a4d2a9fc521bb48e28072a06004e559eefbd95d5b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "fr-2026-11-02-ai-assisted-attack-defense",
+      "language": "fr",
+      "translationKey": "2026-11-02-ai-assisted-attack-defense",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "9790053a5455cba1fc2d1579a0a31554430ce20c5f8c00ccfa8fa94a0072189c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "c1976274998930374dcc79f5ce114121bba170c513c59cf7a22aeb72c6868a97"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-attack-defense.diagram.json",
+        "sha256": "471fd441393008ccf6364f3055117929b9a8d79d9f14e7a94e16be5cb5fb72ca"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/fr/2026-11-02-ai-assisted-attack-defense.svg",
+        "sha256": "3fe50cef92ebbed298cfc04fce5e33df5d6058259aaaff333657964b1661a47a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "ru-2026-11-02-ai-assisted-attack-defense",
+      "language": "ru",
+      "translationKey": "2026-11-02-ai-assisted-attack-defense",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "9790053a5455cba1fc2d1579a0a31554430ce20c5f8c00ccfa8fa94a0072189c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "af54cb1d329366ffa45a23f6a149d4610e6dff319f8090394a56a28735c3e448"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-attack-defense.diagram.json",
+        "sha256": "b3937735fa25dec6f56e0aef2e1f613d94db7b5f0dceef11d23fe2ff1bef6dd5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/ru/2026-11-02-ai-assisted-attack-defense.svg",
+        "sha256": "9080e9e57bccecc2ec258ab014b9dfc09fa42e53f51f9574554b90996adb1d6c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    },
+    {
+      "key": "es-2026-11-02-ai-assisted-attack-defense",
+      "language": "es",
+      "translationKey": "2026-11-02-ai-assisted-attack-defense",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "9790053a5455cba1fc2d1579a0a31554430ce20c5f8c00ccfa8fa94a0072189c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "57f287e66ed1282063259c16d1160d0840040330809c862d47069a6b60260556"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-attack-defense.diagram.json",
+        "sha256": "719c78f0fe4eafd5f83796564a95fb0f626aa00844dfe3213fb2501d0b3dfedc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-132/es/2026-11-02-ai-assisted-attack-defense.svg",
+        "sha256": "63bf5eb766508f7d1899c7c3ac68f0968d71ad374fe339156dddba38cb87ee49"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    }
+  ]
+}

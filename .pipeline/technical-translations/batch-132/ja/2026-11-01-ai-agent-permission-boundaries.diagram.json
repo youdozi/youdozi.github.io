@@ -1,0 +1,77 @@
+{
+  "key": "2026-11-01-ai-agent-permission-boundaries",
+  "language": "ja",
+  "title": "公開の認可",
+  "description": "承認が必要な公開について、ポリシー、承認、範囲、期限、再利用を検査します。読み取りと下書き編集の即時許可は省略しています。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "構造化した公開要求"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "操作と対象が",
+        "ポリシー内か？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "ポリシー拒否",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "信頼できる承認があるか？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "承認待ち",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "実行主体と要求が",
+        "一致するか？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "範囲拒否",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "現在時刻は有効期限前か？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "期限切れ",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "未使用の承認か？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "再利用拒否",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "承認を消費して ALLOW を返す"
+      ]
+    }
+  ]
+}

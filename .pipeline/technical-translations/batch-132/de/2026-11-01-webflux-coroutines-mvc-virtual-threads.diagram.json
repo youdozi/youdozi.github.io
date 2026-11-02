@@ -1,0 +1,69 @@
+{
+  "key": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+  "language": "de",
+  "title": "Kotlin nach Java migrieren",
+  "description": "Rein reaktive Pfade identifizieren, gewöhnliche Anfragepfade schrittweise migrieren und anhand der Beobachtungen ausweiten oder zurückkehren.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Enger Zeitplan, Lernaufwand",
+        "Java als Zielsprache wählen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Streaming- und",
+        "Backpressure-Pfade erkennen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Eine endliche API wählen",
+        "Vertrag und Basiswerte erfassen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Kotlin zu Java MVC migrieren",
+        "Speicheränderungen trennen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Virtuelle Threads prüfen",
+        "Datenbanklimits prüfen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Latenz, Fehler, Wartezeiten",
+        "unter gleicher Last vergleichen"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Sind die Kriterien",
+        "des Dienstes erfüllt?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Stopp",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Verkehr in kleinen",
+        "Schritten ausweiten"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "key": "2026-11-02-ai-assisted-tdd",
+  "language": "es",
+  "title": "Ciclo TDD con ayuda de IA",
+  "description": "Elegir una prueba, verificar su fallo, implementar, superar pruebas, refactorizar y repetir. Se omiten errores de entorno y reintentos tras fallos.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Requisitos y lista de pruebas",
+        "Elegir la próxima conducta"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "La IA redacta una prueba",
+        "Comprobar lo esperado"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Red: comprobar fallo previsto",
+        "Distinguir errores del entorno"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "La IA añade el mínimo código",
+        "Conservar lo esperado"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Green: pasan todas las",
+        "pruebas actuales"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Refactor: ordenar estructura"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Repetir las mismas pruebas",
+        "Revisar resultados y cambios"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 6,
+    "to": 0,
+    "label": "otro"
+  }
+}

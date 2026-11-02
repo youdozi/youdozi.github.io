@@ -1,0 +1,69 @@
+{
+  "key": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+  "language": "zh-CN",
+  "title": "Kotlin 到 Java 的迁移",
+  "description": "识别响应式专用路径，逐步迁移普通请求路径，再根据观测扩大流量或回滚。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "交付期限紧、学习负担大",
+        "选择 Java 为目标语言"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "识别流式处理与",
+        "背压专用路径"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "选择一个有限响应 API",
+        "记录契约与基线"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Kotlin 迁移到 Java MVC",
+        "单独处理存储变化"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "验证虚拟线程",
+        "及数据库上限"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "同等负载下比较",
+        "延迟、错误与等待"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "是否满足",
+        "服务标准？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "停止",
+        "continue": "是"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "小步扩大",
+        "流量"
+      ]
+    }
+  ]
+}

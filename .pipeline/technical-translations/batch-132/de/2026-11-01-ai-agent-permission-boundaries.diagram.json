@@ -1,0 +1,80 @@
+{
+  "key": "2026-11-01-ai-agent-permission-boundaries",
+  "language": "de",
+  "title": "Veröffentlichung autorisieren",
+  "description": "Richtlinie, Freigabe, Umfang, Ablauf und Wiederverwendung für die Veröffentlichung prüfen. Sofortige Erlaubnis für Lesen und Entwurfsänderungen ist ausgelassen.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Strukturierte Anfrage",
+        "zur Veröffentlichung"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Aktion und Ziel",
+        "in der Richtlinie?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Regel: Veto",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Vertrauenswürdige",
+        "Freigabe vorhanden?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Freigabe",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Stimmen Identität",
+        "und Anfrage überein?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Umfang: Veto",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Jetzt vor Ablauf?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "abgelaufen",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Freigabe noch unbenutzt?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "Wiederholung",
+        "continue": "ja"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Freigabe verbrauchen",
+        "ALLOW zurückgeben"
+      ]
+    }
+  ]
+}

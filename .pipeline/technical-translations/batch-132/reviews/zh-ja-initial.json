@@ -1,0 +1,144 @@
+{
+  "review_type": "fresh-context independent AI translation review",
+  "context": {
+    "languages": [
+      "zh-CN",
+      "ja"
+    ],
+    "task": "Full-manuscript translation and diagram-label fidelity review against English originals",
+    "constraints": [
+      "No writer self-review or other reviewer reports read",
+      "Read-only review of manuscripts and diagrams; only this findings JSON written",
+      "No external source verification, product claims verification, runnable example execution, site build or SVG rendering review",
+      "No human or native-speaker review claim"
+    ]
+  },
+  "scope": {
+    "manuscripts": 8,
+    "diagram_jsons": 8,
+    "source_manuscripts": [
+      "src/content/posts/en/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+      "src/content/posts/en/2026-11-01-ai-agent-permission-boundaries.md",
+      "src/content/posts/en/2026-11-02-ai-assisted-tdd.md",
+      "src/content/posts/en/2026-11-02-ai-assisted-attack-defense.md"
+    ],
+    "diagram_semantics_source": "content/diagrams/post-workflows.json",
+    "reviewed_files": [
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "b7db5bd7307594d02f8c0964c892e84d4f3b6fc86e4fd063e2208ac0224993f9"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+        "sha256": "e15e82cb462ceae631c16cfdf318181e24dbb9c76c03477f37b4d9da024e248a"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "dada2b8be70870a5e6ec49461e43ffeee121fd84b58897c5bcf122586165c3fa"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+        "sha256": "6c38ce1ded3591a478580443c4aecacfb87d256367c7a7f324430c98cf5f99ea"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "3712014838441aaf792286483b013b68df21dc64fbbb272da796ae12a64a7a42"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-tdd.diagram.json",
+        "sha256": "cee922b16b828ddb743a9681003804c81fbc267f5d8d913b579acd161146c58e"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "6f43e8781412cedff93ada2257e5ce00880232f0a41700deb64f60b321e8a89b"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/zh-CN/2026-11-02-ai-assisted-attack-defense.diagram.json",
+        "sha256": "469cd68db6cbc656045e8a873816ca5db25721643ca32ca3c6d0c992127b5ab5"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-webflux-coroutines-mvc-virtual-threads.md",
+        "sha256": "19a85e546584a50aae3a1ce60c3a0374f0188a40d05b1e0413f757007430a755"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-webflux-coroutines-mvc-virtual-threads.diagram.json",
+        "sha256": "1593d75635267ba3300228fe8036a7f9b1de6f837beea2af5c71258721dcee32"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "0abea3b5f542ace7fcff18db01c904c37999777ed3e9553310820d15eddce84b"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+        "sha256": "746f8910ca5551f6d99717559d745617202f8ce897e2213cb31b2ea532aa6802"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "8bd8997b24bfb1c40c08fd1bf3f3419a956531a81ddb52a6c0647ac584b7ba18"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-tdd.diagram.json",
+        "sha256": "5b82eaecb5930a7775d6690634b9e43fe87405b448bc37761cbcd7a2d05ca64b"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-attack-defense.md",
+        "sha256": "3b1548cb34064a0e415dbfc4c4800975402348ff16759a34e68afec22a74cc5a"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-attack-defense.diagram.json",
+        "sha256": "77cdf2e8bc9b7844735bc2a778399fb0990bbc6a1810ebf5d451dbb03f6439af"
+      }
+    ],
+    "reviewed_aspects": [
+      "Target-language standalone readability and technical terminology",
+      "Title, description, full prose, tables, captions and alt text against source",
+      "Conditions, uncertainty, limitations, values and claimed execution results as translated source claims",
+      "Diagram strings, branches and loop semantics against English diagram data",
+      "Exact non-image Markdown URLs and source HTML anchors",
+      "Code/output fence equality except authored TDD prompt fences 0, 7, 11 and 12; prompt meaning reviewed separately"
+    ],
+    "checks_observed": {
+      "non_image_markdown_urls_match": true,
+      "source_html_anchors_match": true,
+      "unexpected_code_or_output_fence_changes": false,
+      "diagram_json_parsed": true
+    },
+    "image_reference_note": "Staged manuscripts use their local sibling SVG references; rendering and final published asset URL assignment are outside this review."
+  },
+  "findings": [
+    {
+      "id": "JA-PERMISSION-IDENTITY",
+      "path": ".pipeline/technical-translations/batch-132/ja/2026-11-01-ai-agent-permission-boundaries.md",
+      "quote": "公開承認には、サイト ID、確認済み成果物のハッシュ、実行 ID、有効期限、1 回限りの承認 ID を結び付けられます。",
+      "source_quote": "A publication approval can bind the site ID, reviewed artifact hash, execution identity, expiration time and a one-use approval ID.",
+      "severity": "medium",
+      "category": "meaning / security terminology",
+      "reason": "Execution identity denotes the authenticated actor or service principal, whereas 実行 ID normally denotes an identifier for an execution/run. Binding approval to a run identifier does not express the source requirement to bind it to the acting identity. The article repeats 実行 ID for execution identity in the Grant limitation, trusted-context verification and rejection checklist, and uses ID alone for several other identity references. Its diagram already uses the clearer 実行主体.",
+      "proposed_correction": "Translate execution identity consistently as 実行主体 (or 実行主体の認証済み ID where an identifier is explicitly intended). For example: 公開承認には、サイト ID、確認済み成果物のハッシュ、実行主体、有効期限、1 回限りの承認 ID を結び付けられます。 Apply the same distinction to the later execution-identity references; preserve actual site IDs, approval IDs and operation IDs.",
+      "confidence": "high",
+      "status": "unresolved"
+    },
+    {
+      "id": "JA-ATTACK-IDENTITY",
+      "path": ".pipeline/technical-translations/batch-132/ja/2026-11-02-ai-assisted-attack-defense.md",
+      "quote": "タスク ID、実行 ID、ツール名、ポリシー判断、結果を記録します。",
+      "source_quote": "Record task IDs, execution identities, tool names, policy decisions and outcomes.",
+      "severity": "medium",
+      "category": "meaning / security terminology",
+      "reason": "The source requests logging the authenticated execution actor, while 実行 ID denotes a run identifier. Later in this same translation, 実行 ID correctly represents run ID in the correlation example, making the two distinct source concepts indistinguishable. Correlation uses both actor and run, so retaining this distinction matters.",
+      "proposed_correction": "Use タスク ID、実行主体、ツール名、ポリシー判断、結果を記録します。 Keep 実行 ID or 実行識別子 for the source run ID in the correlation example.",
+      "confidence": "high",
+      "status": "unresolved"
+    }
+  ],
+  "unresolved": {
+    "status": "changes_requested",
+    "finding_ids": [
+      "JA-PERMISSION-IDENTITY",
+      "JA-ATTACK-IDENTITY"
+    ],
+    "zh_CN": "No actionable meaning or fluency issue identified within this review scope. This is not an exhaustive correctness guarantee.",
+    "ja": "Two execution-identity terminology findings remain unresolved; no edits performed.",
+    "recheck_required": "Writer should correct the two terminology issues and recheck the affected sentences against source."
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "key": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+  "language": "ja",
+  "title": "Kotlin から Java への移行",
+  "description": "リアクティブ専用経路を識別し、通常のリクエスト経路を段階的に移行して、観測に基づき拡大またはロールバックします。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "短い納期と学習負担",
+        "移行先言語に Java を選択"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "ストリーミングと",
+        "バックプレッシャーの",
+        "経路を分類"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "有限の API を 1 つ選択",
+        "契約とベースラインを記録"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Kotlin から Java MVC へ",
+        "ストレージ変更は分離"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "仮想スレッドと",
+        "DB の上限を検証"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "同じ負荷で比較",
+        "遅延・エラー・待機"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "サービス基準を",
+        "満たすか？"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "停止",
+        "continue": "はい"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "小さな段階で",
+        "トラフィックを拡大"
+      ]
+    }
+  ]
+}
