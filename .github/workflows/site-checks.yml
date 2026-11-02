@@ -107,6 +107,10 @@ jobs:
         run: python3 -B scripts/check_ai_refactoring_example.py
       - name: Execute the offline AI operations evidence gate
         run: python3 -B scripts/check_ai_operations_example.py
+      - name: Execute AI attack defense correlation and regression mutations
+        run: |
+          python3 -B scripts/build_algorithm_diagrams.py
+          python3 -B .pipeline/drafts/2026-11-02-ai-assisted-attack-defense/check.py
       - name: Execute the AI agent permission example and approval regressions
         run: python3 -B .pipeline/drafts/2026-11-01-ai-agent-permission-boundaries/check.py
       - name: Observe JDK 21 monitor pinning with the published JFR probe

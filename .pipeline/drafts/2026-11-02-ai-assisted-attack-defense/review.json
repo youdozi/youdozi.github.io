@@ -1,0 +1,68 @@
+{
+  "preparedLocalDate": "2026-11-02",
+  "checkedAt": "2026-11-02T00:41:19.354791+00:00",
+  "reviewMethod": "two-pass self-review: reader clarity and evidence/code/diagram alignment; no independent review session",
+  "publicationRequested": true,
+  "articleSha256": "8519db60bf81081fc7a58640ab1956c7dc9eff60c3e6819360e510d47cb27cc2",
+  "environment": {
+    "python": "3.13.0",
+    "dependencies": "standard library only",
+    "network": "none in example or execution checks"
+  },
+  "execution": {
+    "syntheticCases": 13,
+    "passed": 13,
+    "regressionMutationsDetected": 3,
+    "stdout": "[('agent-a', 'run-1', 20)]"
+  },
+  "diagram": {
+    "sourceParity": true,
+    "mobileViewport": 360,
+    "horizontalOverflow": false,
+    "textOutsideViewBox": [],
+    "visualInspection": "local screenshot checked",
+    "languages": [
+      "ko",
+      "en"
+    ]
+  },
+  "selfReview": [
+    {
+      "issue": "AI attribution is probabilistic in the Microsoft campaign analysis",
+      "resolution": "Preserved uncertainty; no punctuation or comment heuristic presented as reliable attribution."
+    },
+    {
+      "issue": "Correlation and denial do not establish causality or absence of data loss",
+      "resolution": "Explicitly distinguished investigation candidates, external enforcement, false positives and missed successful egress."
+    },
+    {
+      "issue": "Diagram early completion could be mistaken for safety",
+      "resolution": "Caption explains skip-event meaning and that it is not a safety verdict."
+    },
+    {
+      "issue": "Runtime and production guarantees",
+      "resolution": "Verified exact article output and synthetic cases; no claims of production detection or mitigation effectiveness."
+    }
+  ],
+  "limitations": [
+    "No real incident, live attack, LLM, cloud account or production log tested",
+    "No network or tool enforcement implemented",
+    "Batch correlation only; streaming ordering, expiry, deduplication and recovery omitted",
+    "300 seconds is an illustrative window, not a validated threshold",
+    "Korean and English publication prepared; no live attack or production mitigation test."
+  ],
+  "sources": [
+    "https://www.ncsc.gov.uk/report/impact-ai-cyber-threat-now-2027",
+    "https://www.microsoft.com/en-us/security/blog/2026/09/10/protecting-organizations-ai-assisted-executive-impersonation-invoice-fraud/",
+    "https://learn.microsoft.com/en-us/security/zero-trust/sfi/phishing-resistant-mfa",
+    "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+    "https://www.ncsc.govt.nz/protect-your-organisation/careful-adoption-of-agentic-ai-services/"
+  ],
+  "englishArticleSha256": "5496aa53eed6af2f94af133d7db2d36ce7a632a1d280042cd9370b139c81ad4a",
+  "publicationValidation": {
+    "bilingualCodeCommandsOutputParity": true,
+    "publishedBodyParity": true,
+    "localizedDiagramParity": true,
+    "translationReview": "source-target self-review; no independent reviewer"
+  }
+}

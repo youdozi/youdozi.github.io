@@ -39,6 +39,7 @@ const paths = {
         {id:'kernel',title:'Running host kernel',description:'Separate local privilege escalation from web entry and collect kernel/package evidence without declaring patch completion.',keys:['2026-10-31-fragnesia-cve-2026-46300']},
         {id:'trust',title:'JVM certificate trust',description:'Distinguish supplier distrust guidance from the CA inventory of a newly started JVM.',keys:['2026-10-30-jdk-emudhra-truststore']},
         {id:'agent',title:'AI agent permissions',description:'Separate task instructions from enforced authority and test approval scope, expiration and replay rejection.',keys:['2026-11-01-ai-agent-permission-boundaries']},
+        {id:'attack-defense',title:'AI-assisted attack defense',description:'Connect phishing, vulnerability and agent defenses with synthetic log correlation and incident response.',keys:['2026-11-02-ai-assisted-attack-defense']},
       ]},
     ko: {label:'보안 학습 안내',title:'보안 학습 안내: 런타임 패치·JVM 신뢰·AI 에이전트 권한',eyebrow:'런타임·에이전트 보안',
       description:'런타임 업그레이드 증거와 JVM 인증서 신뢰를 확인하고 AI 에이전트의 권한·게시 승인 범위를 제한합니다.',
@@ -50,6 +51,7 @@ const paths = {
         {id:'kernel',title:'실행 중인 호스트 커널',description:'웹 침입과 로컬 권한 상승을 구분하고 패치 완료 판정 없이 커널·패키지 증거를 수집합니다.',keys:['2026-10-31-fragnesia-cve-2026-46300']},
         {id:'trust',title:'JVM 인증서 신뢰',description:'공급자 신뢰 해제 안내와 새 JVM에서 수집한 CA 목록을 구분합니다.',keys:['2026-10-30-jdk-emudhra-truststore']},
         {id:'agent',title:'AI 에이전트 권한',description:'작업 지침과 실제 인가를 구분하고 승인 범위·만료·재사용 차단을 검사합니다.',keys:['2026-11-01-ai-agent-permission-boundaries']},
+        {id:'attack-defense',title:'AI를 활용한 공격에 대비',description:'피싱·취약점·에이전트 방어를 합성 로그 연결과 사고 대응으로 이어갑니다.',keys:['2026-11-02-ai-assisted-attack-defense']},
       ]},
   },
   jekyll: {
