@@ -52,14 +52,18 @@
     {
       "finding": "Fixed-node SVG localization shifted downstream labels after wrapping",
       "disposition": "Replaced private generation logic with standard source renderer using real per-step line arrays. Full SVG/spec validator and independent focused recheck pass; earlier failed rechecks retained"
+    },
+    {
+      "finding": "CommonMark left punctuation-ending bold tokens literal when adjacent to CJK text",
+      "disposition": "Added separating spaces after three bold terms in zh-CN/ja; source comparison passes. Full rendering recheck follows."
     }
   ],
   "files": {
     ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.diagram.json": "ea39347576becd9d2b69bd8eb0af772ec53167869fafe61422c95e312e6469d3",
-    ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.md": "a2f2b10890b2e432f6fd9316929b802be940c6b43f5bf716fe021d1cd7b66a53",
+    ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.md": "1b602ecfdbf02ef3267553f4bba59f7cb3f6f2f40db1285634a7c78ed2f21ace",
     ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.svg": "67e8157efc92719034120d37d7a30ae97d426856bebe4fb3c69e8df5c8ad3d31",
     ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.diagram.json": "dbb5b0023f1949f3f9a47cac057e658316b1e85783105a9abc673d9487ef0682",
-    ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.md": "832289e197fca621ffef9c6fc71a4a096bf571a890f5a973e182bfb2251bed7e",
+    ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.md": "9f4a47ad249cd74745a1e60c7955179588b04305def4ecdfb556a59968e8c756",
     ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.svg": "2a116e5374e905b2bc37334807e738ac03c3ae7050b9ad7c8264520c4819deae",
     ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.diagram.json": "4b58ba2bffd7e6e4564aff4cf2d7feb4a7d9367096b5f7b5230b7b8cbfb80121",
     ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.md": "7b2b805f87507ba8793ced0fb4059e7fcccb92e86cc184ddc0f35b8002d2af8e",

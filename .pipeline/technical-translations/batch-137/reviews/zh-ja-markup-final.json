@@ -1,0 +1,34 @@
+{
+  "review": "Focused final markup review",
+  "scope": "Only parallel/concurrent/STW paragraph markup in zh-CN and ja",
+  "results": [
+    {
+      "language": "zh-CN",
+      "path": ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.md",
+      "sha256": "1b602ecfdbf02ef3267553f4bba59f7cb3f6f2f40db1285634a7c78ed2f21ace",
+      "line": 38,
+      "paragraph": "**并行（parallel）** 是指多个 GC 线程协同工作；**并发（concurrent）** 是指部分 GC 工作与应用执行在时间上重叠。两者属于不同维度。**Stop-the-world（STW）** 阶段会暂停应用执行。并发收集器仍可能发生短暂停顿或分配停滞；并发并不会消除请求延迟。",
+      "disposition": "Three ASCII spaces after bold CJK closing punctuation separate CommonMark emphasis boundaries. Technical parallel/concurrent/STW definitions and all caveats remain semantically unchanged.",
+      "findings": []
+    },
+    {
+      "language": "ja",
+      "path": ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.md",
+      "sha256": "9f4a47ad249cd74745a1e60c7955179588b04305def4ecdfb556a59968e8c756",
+      "line": 38,
+      "paragraph": "**並列（parallel）** は複数の GC スレッドが協調して動くこと、**並行（concurrent）** は一部の GC 処理がアプリケーションの実行と重なることを意味します。両者は別の観点です。**Stop-the-world（STW）** フェーズではアプリケーションの実行を停止します。並行コレクタにも短い停止や割り当ての停滞は起こり得ます。並行処理によってリクエストのレイテンシがなくなるわけではありません。",
+      "disposition": "Three ASCII spaces after bold CJK closing punctuation separate CommonMark emphasis boundaries. Technical parallel/concurrent/STW definitions and all caveats remain semantically unchanged.",
+      "findings": []
+    }
+  ],
+  "checks_actually_done": [
+    "Read both current paragraphs for meaning and punctuation.",
+    "Verified all three bold terms per paragraph are followed by ASCII space after ）**.",
+    "Computed current Markdown SHA-256 hashes."
+  ],
+  "limits": [
+    "Root handles Astro/browser rendering; this reviewer did not re-render.",
+    "No renewed full-document, code execution or external fact audit claimed."
+  ],
+  "result": "Markup boundary corrections preserve meaning; no new findings."
+}

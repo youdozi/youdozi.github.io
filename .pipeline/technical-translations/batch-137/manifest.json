@@ -35,7 +35,7 @@
       },
       {
         "path": ".pipeline/technical-translations/batch-137/reviews/integration.json",
-        "sha256": "e21b06ae7bcd234ed8219dea67db485f37470785067d2732995a6ebda90091da"
+        "sha256": "80bed7415d701e18289d08d1153a5e15d9defc39c0c7f8959f18416ec48300c4"
       },
       {
         "path": ".pipeline/technical-translations/batch-137/reviews/ru-es-initial.json",
@@ -52,6 +52,10 @@
       {
         "path": ".pipeline/technical-translations/batch-137/reviews/zh-ja-initial.json",
         "sha256": "1444ac8d2314ae1752d48e7c4bc34d33d914f9e2a77af8607cd82a078fec56e2"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-137/reviews/zh-ja-markup-final.json",
+        "sha256": "2421ddca7cb7c853c7b60b79a85d6093bd05e02056dfa2d235bf59968e521918"
       },
       {
         "path": ".pipeline/technical-translations/batch-137/reviews/zh-ja-recheck.json",
@@ -75,7 +79,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.md",
-        "sha256": "a2f2b10890b2e432f6fd9316929b802be940c6b43f5bf716fe021d1cd7b66a53"
+        "sha256": "1b602ecfdbf02ef3267553f4bba59f7cb3f6f2f40db1285634a7c78ed2f21ace"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.diagram.json",
@@ -100,7 +104,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.md",
-        "sha256": "832289e197fca621ffef9c6fc71a4a096bf571a890f5a973e182bfb2251bed7e"
+        "sha256": "9f4a47ad249cd74745a1e60c7955179588b04305def4ecdfb556a59968e8c756"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.diagram.json",

@@ -22,9 +22,9 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-03-jdk-gc-evolution.md",
   "sourceSha256": "01667d7b4b2824ee749cd29f79a08f74627c3725ff551aa08ed090d48f9fd693",
-  "draftSha256": "a2f2b10890b2e432f6fd9316929b802be940c6b43f5bf716fe021d1cd7b66a53",
+  "draftSha256": "1b602ecfdbf02ef3267553f4bba59f7cb3f6f2f40db1285634a7c78ed2f21ace",
   "manifestPath": ".pipeline/technical-translations/batch-137/manifest.json",
-  "manifestSha256": "a47db22796f8ae3ce1acbdd6162e7da37c5147ddcf9399188f2018d3829bfcf4",
+  "manifestSha256": "f244063fe26ffa61c98e9820e607a03a676e98093676337edb7a008b2bca8ff5",
   "publishedAt": "2026-11-03T01:49:36.356Z",
   "updatedAt": "2026-11-03T01:49:36.356Z",
   "approval": {
@@ -64,7 +64,7 @@
 
 GC 回收的是 **GC Roots 无法到达的对象**所占用的内存；GC Roots 的例子包括运行中线程持有的引用。即使应用已不再需要某些对象，缓存或全局集合仍可能使它们保持可达。分代回收利用了这样一种观察：许多对象很快死亡，而部分对象存活更久，因此对年轻对象和年老对象采用不同的回收方式。[HotSpot GC 实现](https://docs.oracle.com/en/java/javase/27/gctuning/garbage-collector-implementation.html)
 
-**并行（parallel）**是指多个 GC 线程协同工作；**并发（concurrent）**是指部分 GC 工作与应用执行在时间上重叠。两者属于不同维度。**Stop-the-world（STW）**阶段会暂停应用执行。并发收集器仍可能发生短暂停顿或分配停滞；并发并不会消除请求延迟。
+**并行（parallel）** 是指多个 GC 线程协同工作；**并发（concurrent）** 是指部分 GC 工作与应用执行在时间上重叠。两者属于不同维度。**Stop-the-world（STW）** 阶段会暂停应用执行。并发收集器仍可能发生短暂停顿或分配停滞；并发并不会消除请求延迟。
 
 标记用于识别存活对象；清扫使可回收空间能够再次使用。压缩通过移动存活对象来合并空闲空间，而转移则把选定区域中的存活对象复制到其他位置。各收集器在分代、区域划分、并行工作和并发工作方面，以不同方式组合这些任务。
 
