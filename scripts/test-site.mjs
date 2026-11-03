@@ -310,7 +310,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
 
 
     // Check emitted paths rather than assuming the registry is rendered correctly.
-    const guideCounts=[['coding-test',10],['springboot',12],['linux',5],['jdk',9],['util',4],['automation',2],['jenkins',2],['jekyll',2],['security',7]];
+    const guideCounts=[['coding-test',10],['springboot',12],['linux',5],['jdk',9,10],['util',4],['automation',2],['jenkins',2],['jekyll',2],['security',7]];
     for(const lang of ['en','ko']){
       const hubPath=`/${lang}/guides/`;
       const hub=await readFile(`dist${hubPath}index.html`,'utf8');
@@ -319,13 +319,13 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.deepEqual(hubList.itemListElement.map(x=>x.url),guideCounts.map(([term])=>`https://youdozi.github.io/${lang}/categories/${term}/`));
       assert.equal(hubList.numberOfItems,9);
       assert.ok(!hubData.some(x=>x['@type']==='BlogPosting'));
-      for(const [term,count] of guideCounts){
+      for(const [term,count,koreanCount=count] of guideCounts){
         const path=`/${lang}/categories/${term}/`;
         const html=await readFile(`dist${path}index.html`,'utf8');
         const data=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
         const collection=data.find(x=>x['@type']==='CollectionPage');
         const list=data.find(x=>x['@type']==='ItemList');
-        assert.equal(list.numberOfItems,count);assert.equal(collection.inLanguage,lang);
+        assert.equal(list.numberOfItems,lang==='ko'?koreanCount:count);assert.equal(collection.inLanguage,lang);
         const groups=html.match(/<div class="algorithm-groups"[^>]*>([\s\S]*?)<\/div>/)[1];
         const visible=[...groups.matchAll(/href="([^"]+)"/g)].map(m=>'https://youdozi.github.io'+m[1]);
         assert.deepEqual(visible,list.itemListElement.map(x=>x.url),'Visible order must match schema');
