@@ -96,7 +96,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '21.0.13+9'
+          java-version: '21.0.13+9.0.LTS'
       - name: Compile final JDK 21 features without preview flags
         run: python3 -B scripts/check_jvm_runtime_examples.py --part jdk
       - name: Execute the published fallback policy and verify its flow asset
@@ -120,7 +120,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '25.0.5+8'
+          java-version: '25.0.5+8.0.LTS'
       - name: Execute finalized ScopedValue ZIP and concurrency contracts without preview
         run: python3 -B scripts/check_scopedvalue_example.py
       - name: Observe JDK 25 monitor behavior with the same published JFR probe
