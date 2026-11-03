@@ -1,0 +1,119 @@
+{
+  "reviewType": "Read-only AI recheck of corrected ru/es passages and new virtual-thread guide-group copy",
+  "reviewedFiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-142/ru/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "a5f9e30cd8ef3fd2c4cb8aabc20974d8daf43e81d5b95ba80eac82e647873e78"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/ru/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+      "sha256": "75f54e998fc68e2bd694fcf96fe0554708cb8440125043b88109bcc6fbe33557"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/es/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "37c6d5cd2f512647020b6bc23f3af46bf003e859c391653efa4c1fb856fc90c6"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/es/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+      "sha256": "0d1e95e358bb8e08ec623df94fb8765639b8e23dab2c4f252d71a1dea817adf7"
+    },
+    {
+      "path": "src/lib/remaining-guide-locales.ts",
+      "sha256": "e98df32fe7e5ba201739f4c54c27defadcffa274828537e85eb81e4f6ba9ef7d"
+    },
+    {
+      "path": "src/lib/technical-guides.ts",
+      "sha256": "2ccf981045e94e8f2b07c71cb06874bf3111479d6e4f2fa858150d81a50180f7"
+    },
+    {
+      "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+    },
+    {
+      "path": "src/content/posts/ko/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "c42a4211a91ac63bcd7701f2acae31a5dfb436e79e059664f6cf9be3edaf2b7a"
+    }
+  ],
+  "priorReview": ".pipeline/technical-translations/batch-142/reviews/ru-es-cross-review.json",
+  "resolvedFindings": [
+    {
+      "language": "ru",
+      "location": {
+        "path": ".pipeline/technical-translations/batch-142/ru/2026-11-03-virtual-threads-db-semaphore.md",
+        "line": 32
+      },
+      "previousQuote": "с момента получения соединения",
+      "currentQuote": "с начала получения соединения",
+      "result": "Resolved. The boundary now starts at the beginning of acquisition, consistent with the source and later explanation that pool-acquisition waiting consumes an execution permit."
+    },
+    {
+      "language": "es",
+      "location": {
+        "path": ".pipeline/technical-translations/batch-142/es/2026-11-03-virtual-threads-db-semaphore.md",
+        "line": 130
+      },
+      "previousQuote": "mediante un mecanismo de sincronización",
+      "currentQuote": "mediante un latch",
+      "result": "Resolved. The specific synchronization mechanism is restored while preserving the coordination purpose and the warning against using this as a service-processing pattern."
+    },
+    {
+      "language": "es",
+      "location": {
+        "path": ".pipeline/technical-translations/batch-142/es/2026-11-03-virtual-threads-db-semaphore.md",
+        "line": 6
+      },
+      "previousQuote": "tras completar la transacción y sus recursos",
+      "currentQuote": "tras completar la transacción y liberar sus recursos",
+      "result": "Resolved optional style issue. The description now expresses transaction completion and resource release naturally without altering release timing."
+    }
+  ],
+  "guideCopyReview": {
+    "sourceLocation": "src/lib/technical-guides.ts:132, jdk.en.groups virtual",
+    "ruLocation": "src/lib/remaining-guide-locales.ts:415, ru.jdk.groups.virtual",
+    "esLocation": "src/lib/remaining-guide-locales.ts:513, es.jdk.groups.virtual",
+    "result": "Both localized titles and descriptions preserve virtual threads, DB admission, JDK 21–25, monitor pinning, DB waiting and concurrency limits, and use of semaphores. No changed technical claim or missing source condition found."
+  },
+  "openMeaningFindings": [],
+  "optionalStyleSuggestions": [
+    {
+      "language": "es",
+      "location": {
+        "path": "src/lib/remaining-guide-locales.ts",
+        "line": 515
+      },
+      "quote": "Observe el pinning de monitores en JDK 21–25 y limite",
+      "reason": "The new group uses formal singular imperatives whereas surrounding Spanish guide copy uses informal singular imperatives such as Compara, Separa and Usa. Meaning is accurate; matching the surrounding register is optional.",
+      "proposedCorrection": "Observa el pinning de monitores en JDK 21–25 y limita la espera y la concurrencia en la BD mediante semáforos.",
+      "severity": "style",
+      "confidence": "high"
+    }
+  ],
+  "checks": {
+    "ru": {
+      "sixCodeBlocksByteIdentical": true,
+      "inlineCodeTokensSameOrder": true,
+      "numericSequenceSameOrderExcludingImageFilename": true,
+      "nonimageLinkTargetsSameOrder": true,
+      "paragraphLineStructurePreserved": true
+    },
+    "es": {
+      "sixCodeBlocksByteIdentical": true,
+      "inlineCodeTokensSameOrder": true,
+      "numericSequenceSameOrderExcludingImageFilename": true,
+      "nonimageLinkTargetsSameOrder": true,
+      "paragraphLineStructurePreserved": true
+    }
+  },
+  "assessment": "All prior meaning findings are resolved. No newly affected meaning issue found in corrected passages. New ru/es virtual-thread guide-group copy is equivalent to the native English group; one optional Spanish register consistency edit remains.",
+  "scope": [
+    "Re-read changed passages and relevant surrounding paragraphs against the English baseline and previously reviewed complete Korean source context.",
+    "Reviewed new ru/es virtual-group title and description against native English and adjacent locale register.",
+    "Re-ran protected-token and structural comparisons against the frozen English body."
+  ],
+  "limitations": [
+    "This is an AI recheck, not human or native-speaker review.",
+    "No runtime code/database/HTTP or browser/SVG execution performed.",
+    "No target manuscript or diagram was edited.",
+    "Whole-file hashes bind the reviewed version; semantic recheck concentrated on the corrected passages and new guide-group copy, supplementing the earlier full review."
+  ]
+}

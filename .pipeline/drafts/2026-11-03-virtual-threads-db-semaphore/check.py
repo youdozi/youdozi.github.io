@@ -72,6 +72,11 @@ def main():
                 match = re.search(r'### `' + re.escape(filename) + r'`\n\n```' + language + r'\n(.*?)\n```', body, re.S)
                 assert match and match[1] + '\n' == (ROOT / filename).read_text(), filename
         site = ROOT.parents[2]
+        english = site / 'src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md'
+        if english.exists():
+            def fences(raw):
+                return re.findall(r'^```([^\n]*)\n([\s\S]*?)^```[ \t]*$', raw, re.M)
+            assert fences(english.read_text()) == fences(article.read_text()), 'Bilingual executable examples differ'
         published = site / 'src/content/posts/ko/2026-11-03-virtual-threads-db-semaphore.md'
         if published.exists():
             def body(raw):

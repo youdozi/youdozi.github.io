@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "state": "approved-for-publication",
+  "reviewPullRequest": 142,
+  "scope": "Seven full new editions (English and six existing translation languages), preserving the published Korean edition and all source executable examples.",
+  "approval": {
+    "kind": "human",
+    "reviewedBy": "youdozi",
+    "pullRequest": 142,
+    "basis": "User explicitly requested multilingual support for the already published article (다국어 지원도 해줘), within the continuing publication task and standing merge/deploy instruction. This records user publication authorization; it does not claim human or native-speaker proofreading."
+  },
+  "manifests": [
+    {
+      "path": ".pipeline/technical-translations/batch-142/manifest.json",
+      "sha256": "c9980c2893c26f4f01a8f1991ea314755050840c12c102f2e907891193acc59a"
+    }
+  ],
+  "newEnglishEditions": 1,
+  "approvedEditions": 6,
+  "totalNewEditions": 7,
+  "languages": [
+    "en",
+    "ko",
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ]
+}

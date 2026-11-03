@@ -6,6 +6,10 @@
       "guide": "jdk"
     },
     {
+      "key": "2026-11-03-virtual-threads-db-semaphore",
+      "guide": "jdk"
+    },
+    {
       "key": "2026-10-31-webclient-restclient-comparison",
       "guide": "springboot"
     },

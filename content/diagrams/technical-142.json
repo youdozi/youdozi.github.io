@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "diagrams": [
+    {
+      "key": "2026-11-03-virtual-threads-db-semaphore",
+      "title": {
+        "en": "DB admission and cleanup",
+        "ko": "DB 작업의 입장과 정리"
+      },
+      "description": {
+        "en": "Acquire admission and execution permits in order. Reject or release only admission on acquisition failure. After both are acquired, finish DB processing and cleanup attempts before releasing them.",
+        "ko": "입장·실행 허가를 순서대로 취득한다. 취득 실패 시 거절하거나 입장 허가만 반환한다. 두 허가를 얻으면 DB 처리와 정리 시도 종료 후 반환한다."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "if (acquired) running.release();"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "condition",
+          "en": [
+            "Try admission slot B+Q",
+            "Unavailable: reject"
+          ],
+          "ko": [
+            "입장 허가 B+Q 취득 시도",
+            "없으면 거절"
+          ],
+          "branch": {
+            "exit": {
+              "en": "Reject",
+              "ko": "거절"
+            },
+            "continue": {
+              "en": "Admitted",
+              "ko": "입장"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "condition",
+          "en": [
+            "Wait for execution permit B",
+            "Failure: release admission"
+          ],
+          "ko": [
+            "실행 허가 B 대기",
+            "실패: 입장 허가 반환"
+          ],
+          "branch": {
+            "exit": {
+              "en": "Fail",
+              "ko": "실패"
+            },
+            "continue": {
+              "en": "Acquired",
+              "ko": "취득"
+            },
+            "outcome": "error"
+          }
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Get connection; run transaction",
+            "Commit or attempt rollback",
+            "Attempt connection cleanup"
+          ],
+          "ko": [
+            "연결 취득·트랜잭션 처리",
+            "커밋 또는 롤백 시도",
+            "연결 정리 시도"
+          ]
+        },
+        {
+          "kind": "process",
+          "en": [
+            "Release acquired permits",
+            "After cleanup attempts finish"
+          ],
+          "ko": [
+            "획득한 허가 반환",
+            "정리 시도가 끝난 후"
+          ]
+        },
+        {
+          "kind": "result",
+          "en": [
+            "Return value or propagate error",
+            "No early release on cancellation"
+          ],
+          "ko": [
+            "값 반환 또는 예외 전파",
+            "취소 요청만으로 조기 반환 금지"
+          ]
+        }
+      ]
+    }
+  ]
+}

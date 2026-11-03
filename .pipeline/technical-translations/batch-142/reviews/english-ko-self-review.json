@@ -1,0 +1,31 @@
+{
+  "reviewer": "root English translator and self-review",
+  "independentReviewer": false,
+  "scope": "Full Korean-to-English translation, metadata, flow meaning and source-evidence boundaries",
+  "source": {
+    "path": "src/content/posts/ko/2026-11-03-virtual-threads-db-semaphore.md",
+    "sha256": "c42a4211a91ac63bcd7701f2acae31a5dfb436e79e059664f6cf9be3edaf2b7a"
+  },
+  "target": {
+    "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+    "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+  },
+  "checks": [
+    "All six executable/configuration/command/output fences exactly preserved",
+    "Full source paragraph, heading and table coverage preserved",
+    "Pool already bounds connections; extra gate is conditional, not mandatory",
+    "B+Q total admission and B progress bounds kept distinct; no universal Q waiter bound",
+    "Only acquired execution permit is released; interrupted wait returns admission only",
+    "Permit release follows transaction and connection cleanup attempts; caller cancellation cannot release early",
+    "Commit or post-commit close failure does not imply a write was not applied",
+    "Replica connection budgets include surge and other clients; arithmetic examples are not recommendations",
+    "Separate semaphore, pool, statement, lock, network and cleanup deadlines preserved",
+    "Synchronous materialized callback and Spring REQUIRES_NEW/nonreentrancy assumptions retained",
+    "Original JDK 21/25 45-check evidence translated; no new performance claims"
+  ],
+  "findings": [],
+  "limits": [
+    "Self-review is not independent or native-speaker review",
+    "Original runtime evidence is translated, not newly executed by this review"
+  ]
+}

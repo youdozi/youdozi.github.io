@@ -1,0 +1,139 @@
+{
+  "reviewType": "independent-ai-cross-review-recheck",
+  "status": "pass_within_reviewed_scope",
+  "reviewedFiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-142/de/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "f4cbce956c04be52e57fe3ddc81952cc9d38477cf3054f76f7389f5e451bfe19"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/de/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+      "sha256": "3ec68a553e60fb4c0a7445e9eb30dbe6c78f2e4b462dcb720fceeb84470e748b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "fa251c5ffef7659ddd19bcbd6f362a5718fa06183b30f69547e5f7d98aeb312f"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+      "sha256": "411990384276670db2323eafcc83a1b73fdc2900bd1706b26413a3378d8eef58"
+    },
+    {
+      "path": "src/lib/remaining-guide-locales.ts",
+      "sha256": "e98df32fe7e5ba201739f4c54c27defadcffa274828537e85eb81e4f6ba9ef7d"
+    },
+    {
+      "path": "src/lib/technical-guides.ts",
+      "sha256": "2ccf981045e94e8f2b07c71cb06874bf3111479d6e4f2fa858150d81a50180f7"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+    },
+    {
+      "path": "src/content/posts/ko/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "c42a4211a91ac63bcd7701f2acae31a5dfb436e79e059664f6cf9be3edaf2b7a"
+    },
+    {
+      "path": "content/diagrams/technical-142.json",
+      "sha256": "3fae429e61c6f5124a497623d2e7cbf30464a17db38e1f1195940e3345f4d6ea"
+    }
+  ],
+  "previousReview": {
+    "path": ".pipeline/technical-translations/batch-142/reviews/de-fr-cross-review.json",
+    "sha256": "fb6d57056838d7c4116b3f6a349ff6ebe4770049a314b81dfda4a005c5343d54"
+  },
+  "scope": [
+    "Focused recheck of all four prior finding/suggestion locations against complete English/Korean source context from the independent initial review.",
+    "Read the changed German and French passages and current French diagram JSON; checked that technical ownership, release and exception conditions remain intact.",
+    "Rechecked protected code, inline tokens, numeric order, links, paragraph count, heading levels and source hashes across both complete manuscripts.",
+    "Read the new German and French JDK virtual-thread group title/description in remaining-guide-locales.ts against the native English virtual group in technical-guides.ts for fluency, coverage and technical meaning."
+  ],
+  "resolvedFindings": [
+    {
+      "id": "fr-diagram-error-propagation",
+      "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+      "location": "/steps/4/lines/0",
+      "currentQuote": "Valeur rendue ou erreur propagée",
+      "status": "resolved",
+      "reason": "Now explicitly distinguishes the returned value from the propagated error; cancellation lines and permit-release order remain unchanged.",
+      "confidence": "high"
+    },
+    {
+      "id": "fr-pool-wait-style",
+      "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.md",
+      "location": "line 26",
+      "currentQuote": "Limiter l'attente du sémaphore à 20ms ne limite pas pour autant celle du pool à 20ms.",
+      "status": "resolved",
+      "reason": "Natural French phrasing retains the distinct semaphore and pool timeout budgets and both original values.",
+      "confidence": "high"
+    },
+    {
+      "id": "fr-race-terminology",
+      "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.md",
+      "location": "line 128",
+      "currentQuote": "crée une condition de concurrence (race condition)",
+      "status": "resolved",
+      "reason": "The race hazard is explicit and remains tied to reading availability and deciding admission separately.",
+      "confidence": "high"
+    },
+    {
+      "id": "de-connection-cleanup-style",
+      "path": ".pipeline/technical-translations/batch-142/de/2026-11-03-virtual-threads-db-semaphore.md",
+      "location": "line 39",
+      "currentQuote": "die erhaltene Verbindung zu bereinigen",
+      "status": "resolved",
+      "reason": "Natural wording preserves attempted cleanup after transaction setup failure.",
+      "confidence": "high"
+    }
+  ],
+  "guideCopyReview": {
+    "englishBaseline": {
+      "title": "Virtual threads and DB admission",
+      "description": "Observe JDK 21–25 monitor pinning and bound DB waiting and concurrency with semaphores."
+    },
+    "targets": {
+      "de": {
+        "title": "Virtuelle Threads und DB-Zulassung",
+        "description": "Monitor-Pinning in JDK 21–25 beobachten und DB-Wartezeiten sowie Nebenläufigkeit mit Semaphoren begrenzen."
+      },
+      "fr": {
+        "title": "Threads virtuels et admission en base",
+        "description": "Observer le pinning des moniteurs dans les JDK 21–25 et limiter l’attente et la concurrence en base avec des sémaphores."
+      }
+    },
+    "assessment": "Both localized groups preserve the monitor-pinning observation, JDK range, database waiting and concurrency limits, and semaphore mechanism. Titles and descriptions read naturally for the technical audience. No new implication of measured throughput or exact waiter count is introduced.",
+    "status": "pass",
+    "findings": []
+  },
+  "protectedElementChecks": {
+    "de": {
+      "sixIdenticalCodeFences": true,
+      "inlineCodeSequenceIdentical": true,
+      "numericSequenceIdenticalExcludingImagePath": true,
+      "linkTargetsIdenticalAfterRequiredImageMapping": true,
+      "paragraphCountIdentical": true,
+      "headingLevelsIdentical": true,
+      "sourceHashCurrent": true
+    },
+    "fr": {
+      "sixIdenticalCodeFences": true,
+      "inlineCodeSequenceIdentical": true,
+      "numericSequenceIdenticalExcludingImagePath": true,
+      "linkTargetsIdenticalAfterRequiredImageMapping": true,
+      "paragraphCountIdentical": true,
+      "headingLevelsIdentical": true,
+      "sourceHashCurrent": true
+    }
+  },
+  "openFindings": [],
+  "limitations": [
+    "AI textual recheck, not human or native-speaker review.",
+    "No runtime tests, benchmarks, Spring execution, deployment checks or browser tests executed.",
+    "Rendered SVG layout and geometry are outside this review; parent renders and checks those.",
+    "No manuscript, diagram or guide source files edited; only this report written.",
+    "File hashes bind the review to the observed bytes; subsequent edits require consideration of review scope."
+  ]
+}

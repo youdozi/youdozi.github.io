@@ -310,7 +310,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
 
 
     // Check emitted paths rather than assuming the registry is rendered correctly.
-    const guideCounts=[['coding-test',10],['springboot',12],['linux',5],['jdk',9,10],['util',4],['automation',2],['jenkins',2],['jekyll',2],['security',7]];
+    const guideCounts=[['coding-test',10],['springboot',12],['linux',5],['jdk',10],['util',4],['automation',2],['jenkins',2],['jekyll',2],['security',7]];
     for(const lang of ['en','ko']){
       const hubPath=`/${lang}/guides/`;
       const hub=await readFile(`dist${hubPath}index.html`,'utf8');
@@ -347,7 +347,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.deepEqual([...featured.matchAll(/href="([^"]+)"/g)].map(m=>m[1]),coreRegistry.articles.map(a=>`/${lang}/posts/${a.key}/`));
     }
     const runtimeRegistry=JSON.parse(await readFile('content/seo/runtime-articles.json','utf8'));
-    assert.equal(runtimeRegistry.articles.length,5);
+    assert.equal(runtimeRegistry.articles.length,6);
     for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es']){
       const home=await readFile(`dist/${lang}/index.html`,'utf8');
       const featured=home.match(/<section[^>]*data-guide-articles="runtime-articles"[^>]*>[\s\S]*?<\/section>/)?.[0];

@@ -1,0 +1,104 @@
+{
+  "scope": "Focused read-only AI review of punctuation-adjacent closing-emphasis whitespace repairs in Chinese and Japanese private manuscripts. No additional broad language review.",
+  "source": {
+    "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+    "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+  },
+  "reviewed_files": [
+    {
+      "path": ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "2d223f9f245f670b4ab926fbdf2a80abf7692633545cb0c71d9fe89f4bf495a9",
+      "affected_locations": [
+        {
+          "line": 32,
+          "quotation": "- **B 个执行许可：** 限制从获取连接到事务和连接清理结束期间，正在进行的操作数量。"
+        },
+        {
+          "line": 33,
+          "quotation": "- **B+Q 个准入许可：** 限制此关卡内的所有操作，包括等待执行许可的操作。没有剩余准入许可时立即拒绝。"
+        },
+        {
+          "line": 41,
+          "quotation": "如果准入失败，就没有需要释放的许可。如果执行许可获取失败，或等待线程被中断，仅释放准入许可。取得两个许可后，应等待获取连接、事务处理和清理流程正常结束或因异常退出后，再释放许可。** 不要仅因为调用方超时，就从另一个线程释放许可。** 如果实际数据库工作仍在继续，这样做可能突破配置的执行上限。"
+        },
+        {
+          "line": 280,
+          "quotation": "**区分等待超时与工作超时。** 示例中的 `queueWait` 仅限制等待执行许可的时间。连接池获取、SQL 和锁等待、网络以及清理都有各自的预算。要实现整体请求截止时间，还需要额外设计，将剩余时间传递给各个阶段。此示例未实现这种端到端的截止时间传递。"
+        },
+        {
+          "line": 286,
+          "quotation": "**使用 Spring 时，应在启动事务之前取得准入许可。** 可以在独立 bean 的非事务入口方法中先通过关卡，再调用事务代理；也可以在获准进入的范围内运行 `TransactionTemplate`。在代理调用或模板完成提交和清理并返回后，再释放许可。如果在事务已经开始的方法中等待，可能会继续占用外层事务的资源。不要将上面由代码负责管理 JDBC 资源的实现直接混入现有的 Spring 事务中。"
+        }
+      ],
+      "six_code_blocks": "Identical byte-for-byte to complete English source.",
+      "inline_code_tokens": "Identical to English in exact order."
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "69a509fab5140222fe91a1d11331403cf17e34109aeff4bbfdf2cffb42edf624",
+      "affected_locations": [
+        {
+          "line": 32,
+          "quotation": "- **B 個の実行許可：** 接続の取得からトランザクション処理と接続のクリーンアップまで、進行中の操作数を制限します。"
+        },
+        {
+          "line": 33,
+          "quotation": "- **B+Q 個の受け入れ許可：** 実行許可を待つ操作も含め、このゲート内のすべての操作数を制限します。受け入れ許可が残っていなければ即座に拒否します。"
+        },
+        {
+          "line": 41,
+          "quotation": "受け入れに失敗した場合、解放する許可はありません。実行許可の取得に失敗した場合や待機中のスレッドが割り込まれた場合は、受け入れ許可だけを解放します。両方の許可を取得した後は、接続の取得、トランザクション処理、クリーンアップが正常終了または例外で終了してから解放します。** 呼び出し元がタイムアウトしたという理由だけで、別のスレッドから許可を解放しないでください。** 実際の DB 処理が続いていると、設定した実行数の上限を超えるおそれがあります。"
+        },
+        {
+          "line": 280,
+          "quotation": "**待機のタイムアウトと処理のタイムアウトを分けてください。** この例の `queueWait` が制限するのは、実行許可を待つ時間だけです。プールからの接続取得、SQL とロックの待機、ネットワーク、クリーンアップには、それぞれ別の予算があります。リクエスト全体の期限を設けるには、残り時間を各段階に伝える追加の設計が必要です。この例では、そのような全段階への期限の伝播は実装していません。"
+        },
+        {
+          "line": 286,
+          "quotation": "**Spring では、トランザクションの開始前に受け入れ許可を取得してください。** 別の Bean にある非トランザクションの入口メソッドでゲートを通過してからトランザクションプロキシを呼ぶか、受け入れ済みのスコープ内で `TransactionTemplate` を実行できます。プロキシ呼び出しまたはテンプレートがコミットとクリーンアップを完了して戻った後で、許可を解放します。トランザクションがすでに始まっているメソッド内で待機すると、外側のトランザクションのリソースを保持したままになる場合があります。上記の JDBC リソースを管理するコードを、既存の Spring トランザクションに直接混ぜないでください。"
+        }
+      ],
+      "six_code_blocks": "Identical byte-for-byte to complete English source.",
+      "inline_code_tokens": "Identical to English in exact order."
+    }
+  ],
+  "issue": {
+    "id": "cjk-emphasis-delimiter",
+    "reported_by": "Parent full Astro build",
+    "description": "Closing emphasis delimiters immediately after full-width punctuation and before CJK text were reportedly emitted as literal asterisks.",
+    "resolution": "Separator spaces after intended closing markers preserve prose meaning and code. However, the punctuation-wide replacement also added whitespace after the opening marker in both warning paragraphs at line 41; this must be corrected before considering the markup repair complete.",
+    "status": "Partly resolved; opening-marker regression remains."
+  },
+  "resolved_findings": [
+    {
+      "severity": "low",
+      "category": "markup",
+      "confidence": "high",
+      "id": "cjk-emphasis-delimiter",
+      "suggested_correction": "Retain separators after actual closing markers, fix the opening-marker regression separately, and verify Astro output."
+    }
+  ],
+  "open_findings": [
+    {
+      "id": "warning-opening-marker-space",
+      "category": "markup",
+      "severity": "medium",
+      "confidence": "high",
+      "locations": [
+        ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.md:41",
+        ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.md:41"
+      ],
+      "quotations": [
+        "。** 不要仅因为调用方超时",
+        "。** 呼び出し元がタイムアウトした"
+      ],
+      "reason": "The marker after the previous sentence opens the bold warning. A space immediately after opening ** prevents it from being a left-flanking emphasis delimiter. The repair therefore leaves the warning emphasis syntactically invalid even though wording is intact.",
+      "suggested_correction": "Move the inserted separator before this opening delimiter: 。 **不要... and 。 **呼び出し元...; retain the separator after the warning’s closing delimiter. Parent should confirm actual Astro rendering."
+    }
+  ],
+  "limitations": [
+    "No Astro build, rendered HTML, SVG or browser verification executed by this reviewer.",
+    "New byte hashes are recorded; no prior byte-for-byte manuscript snapshot was available for a full delta proof. The affected current passages were compared with the English baseline and prior reviewed meaning.",
+    "AI review only; no native-speaker or human-review claim."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "key": "2026-11-03-virtual-threads-db-semaphore",
+  "language": "fr",
+  "title": "Admission DB et nettoyage",
+  "description": "Acquérir les permis d'admission puis d'exécution. En cas d'échec, rejeter ou libérer uniquement l'admission. Une fois les deux acquis, terminer le traitement en base et les tentatives de nettoyage avant de les libérer.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Tenter l'admission B+Q",
+        "Indisponible : rejeter"
+      ],
+      "branch": {
+        "exit": "Rejet",
+        "continue": "Admis",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Attendre le permis d'exécution B",
+        "Échec : libérer l'admission"
+      ],
+      "branch": {
+        "exit": "Échec",
+        "continue": "Acquis",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Connexion puis transaction",
+        "Commit ou tentative de rollback",
+        "Tenter de nettoyer la connexion"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Libérer les permis acquis",
+        "Après les tentatives de nettoyage"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Valeur rendue ou erreur propagée",
+        "Pas de libération anticipée",
+        "sur demande d'annulation"
+      ]
+    }
+  ]
+}
