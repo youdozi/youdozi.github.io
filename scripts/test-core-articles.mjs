@@ -36,12 +36,12 @@ test('answer evidence is exposed only when actually linked in a pilot introducti
 });
 
 test('runtime discovery selects published same-language articles in reading order',()=>{
- const keys=['2026-10-31-virtual-threads-jdk21-jdk25','2026-10-31-webclient-restclient-comparison','2026-11-01-webflux-coroutines-mvc-virtual-threads','2026-11-03-jdk-gc-evolution','2026-11-02-grafana-lgtm-log-trace'];
+ const keys=['2026-10-31-virtual-threads-jdk21-jdk25','2026-10-31-webclient-restclient-comparison','2026-11-01-webflux-coroutines-mvc-virtual-threads','2026-11-03-jdk-gc-evolution','2026-11-02-grafana-lgtm-log-trace','2026-11-03-virtual-threads-db-semaphore'];
  for(const language of ['en','ko','zh-CN','ja','de','fr','ru','es']){
   const make=(key,more={})=>({translationKey:key,language,kind:'post',publishedAt:new Date('2020-01-01Z'),...more});
-  const items=[make(keys[4]),make(keys[3],{publishedAt:new Date('2999-01-01Z')}),make(keys[2],{reviewStatus:'example'}),make(keys[1],{kind:'digest'}),make(keys[0]),make('unregistered'),make(keys[1],{language:'other'})];
+  const items=[make(keys[5]),make(keys[4]),make(keys[3],{publishedAt:new Date('2999-01-01Z')}),make(keys[2],{reviewStatus:'example'}),make(keys[1],{kind:'digest'}),make(keys[0]),make('unregistered'),make(keys[1],{language:'other'})];
   const before=[...items];
-  assert.deepEqual(runtimeArticles(language,items).map(e=>e.translationKey),[keys[0],keys[4]]);
+  assert.deepEqual(runtimeArticles(language,items).map(e=>e.translationKey),[keys[0],keys[5],keys[4]]);
   assert.deepEqual(items,before);
   assert.deepEqual(runtimeArticles(language,[]),[]);
  }
