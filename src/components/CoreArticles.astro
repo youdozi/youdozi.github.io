@@ -1,15 +1,19 @@
 ---
-import {coreArticles} from '../lib/core-articles';
+import {coreArticles,runtimeArticles} from '../lib/core-articles';
 import type {Entry,Language} from '../lib/content';
 interface Props {lang:Language;all:Entry[];}
 const {lang,all}=Astro.props;
-const items=coreArticles(lang,all);
+const headings={en:'Java Runtime and Operations',ko:'Java 런타임과 운영', 'zh-CN':'Java 运行时与运维',ja:'Java ランタイムと運用',de:'Java-Laufzeit und Betrieb',fr:'Exécution Java et exploitation',ru:'Среда выполнения Java и эксплуатация',es:'Entorno de ejecución Java y operaciones'};
+const groups=[
+  {id:'runtime-articles',heading:headings[lang],items:runtimeArticles(lang,all)},
+  {id:'core-articles',heading:lang==='ko'?'코드로 확인하는 기술 가이드':'Practical Guides with Code',items:coreArticles(lang,all)},
+].filter(group=>group.items.length>0);
 ---
-{items.length>0&&<section class="core-articles" aria-labelledby="core-articles-heading">
-  <h2 id="core-articles-heading">{lang==='ko'?'코드로 확인하는 기술 가이드':'Practical Guides with Code'}</h2>
-  <p>{lang==='ko'?'셸 입력 검증부터 Java·Spring 실행 예제까지, 해결하려는 문제에서 시작하세요. 각 글에서 재현 환경과 확인 범위를 설명합니다.':'Start with the problem you need to solve, from shell input checks to Java and Spring examples. Each guide records its reproduction environment and limits.'}</p>
-  <ol>{items.map(entry=><li><a href={entry.url}>{entry.title}</a></li>)}</ol>
-</section>}
+{groups.map(group=><section class="core-articles" aria-labelledby={`${group.id}-heading`} data-guide-articles={group.id}>
+  <h2 id={`${group.id}-heading`}>{group.heading}</h2>
+  {group.id==='core-articles'&&<p>{lang==='ko'?'셸 입력 검증부터 Java·Spring 실행 예제까지, 해결하려는 문제에서 시작하세요. 각 글에서 재현 환경과 확인 범위를 설명합니다.':'Start with the problem you need to solve, from shell input checks to Java and Spring examples. Each guide records its reproduction environment and limits.'}</p>}
+  <ol>{group.items.map(entry=><li><a href={entry.url}>{entry.title}</a></li>)}</ol>
+</section>)}
 <style>
 .core-articles{border-bottom:1px solid var(--line);padding-bottom:32px;margin-bottom:40px}
 h2{font-size:24px;line-height:1.5}p{color:var(--muted);line-height:1.8}

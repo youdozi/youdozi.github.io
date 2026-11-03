@@ -136,3 +136,19 @@ test('recent JDK guides localize all newly visible sections without English fall
   }
  }
 });
+
+test('GC and LGTM cross-category articles join localized guides and return paths',()=>{
+ for(const language of ['en','ko','zh-CN','ja','de','fr','ru','es']){
+  const gc=entry('2026-11-03-jdk-gc-evolution',language,'java');
+  const lgtm=entry('2026-11-02-grafana-lgtm-log-trace',language,'architecture');
+  const items=[gc,lgtm,entry('unrelated',language,'java')];
+  for(const [article,term,id] of [[gc,'jdk','gc'],[lgtm,'util','observability']]){
+   const guide=categoryGuide(term,language,items);
+   assert.deepEqual(guide.sections.map(s=>s.id),[id]);
+   assert.deepEqual(guide.ordered,[article]);
+   assert.ok(guide.sections[0].title&&guide.sections[0].description);
+   assert.deepEqual(additionalArticleGuides(article,items).map(g=>g.url),[`/${language}/categories/${term}/`]);
+   if(language!=='en')assert.notEqual(guide.sections[0].title,categoryGuide(term,'en',[{...article,language:'en'}]).sections[0].title);
+  }
+ }
+});

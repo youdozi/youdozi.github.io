@@ -63,6 +63,20 @@ def contextual_incoming(public, targets):
     return {url: len(rows) for url, rows in sorted(sources.items())}
 
 
+def runtime_discovery(public, graph, articles):
+    errors, checked = [], 0
+    for language in LANGUAGES:
+        for article in articles:
+            target = f'{SITE}/{language}/posts/{article["key"]}/'
+            if target not in public:
+                continue
+            checked += 1
+            for source in (f'{SITE}/{language}/', f'{SITE}/{language}/categories/{article["guide"]}/'):
+                if target not in graph.get(source, set()):
+                    errors.append(f'{target}: runtime guide article missing direct HTML link from {source}')
+    return errors, checked
+
+
 def inspect(root):
     root = Path(root)
     pages = {}
@@ -80,6 +94,9 @@ def inspect(root):
         raise ValueError('Expected a sitemap urlset')
     urls = [node.findtext(SM + 'loc', default='') for node in sitemap.findall(SM + 'url')]
     errors = []
+    runtime = json.loads((Path(__file__).resolve().parents[1] / 'content/seo/runtime-articles.json').read_text())
+    runtime_errors, runtime_count = runtime_discovery(public, graph, runtime['articles'])
+    errors.extend(runtime_errors)
     registry = json.loads((Path(__file__).resolve().parents[1] / 'content/seo/core-articles.json').read_text())
     incoming = contextual_incoming(public, [SITE + f'/{lang}/posts/{row["key"]}/'
         for row in registry['articles'] for lang in ('en', 'ko')])
@@ -113,7 +130,7 @@ def inspect(root):
         by_language[language] = {'sitemapURLs': len(expected), 'reachableSitemapURLs': len(expected) - len(missing),
                                  'articles': len(articles),
                                  'maxArticleLinkSteps': max((distances.get(url, -1) for url in articles), default=0)}
-    return errors, {'publicPages': len(public), 'coreContextualIncoming': incoming, 'emptyDestinations': len(empty),
+    return errors, {'publicPages': len(public), 'coreContextualIncoming': incoming, 'runtimeGuideArticles': runtime_count, 'emptyDestinations': len(empty),
                     'emptyDestinationLinks': len(empty_links), 'sitemapURLs': len(urls),
                     'articles': len(article_urls), 'languages': by_language}
 

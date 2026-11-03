@@ -26,6 +26,8 @@ const common = {
 };
 const crossCategoryKeys: Partial<Record<string, readonly string[]>> = {
   jekyll: ['2026-04-07-ruby-rbenv-jekyll-build-troubleshooting'],
+  jdk: ['2026-11-03-jdk-gc-evolution'],
+  util: ['2026-11-02-grafana-lgtm-log-trace'],
 };
 const paths = {
   security: {
@@ -128,6 +130,7 @@ const paths = {
         {id:'features',title:'Distinguish feature status',description:'Start with final APIs and the boundaries of preview features.',keys:['2023-09-20-jdk-21-release']},
         {id:'virtual',title:'Compare virtual-thread releases',description:'Observe monitor pinning in JDK 21 and 25 with JFR, separating scheduler behavior from throughput claims.',keys:['2026-10-31-virtual-threads-jdk21-jdk25']},
         {id:'scoped',title:'Bound request context',description:'Use finalized JDK 25 ScopedValue and distinguish binding restoration from asynchronous inheritance.',keys:['2026-10-31-jdk25-scopedvalue']},
+        {id:'gc',title:'Compare garbage collectors',description:'Compare collector availability across JDK versions and inspect allocation and GC logging examples.',keys:['2026-11-03-jdk-gc-evolution']},
         {id:'capacity',title:'Plan API capacity',description:'Define a 10k RPS boundary, calculate illustrative budgets and separate admission checks from load-test evidence.',keys:['2026-10-31-jdk-10k-rps-architecture']},
         {id:'preview',title:'Read preview history',description:'Understand String Templates and the standard formatting alternative shown in the article.',keys:['2023-09-23-jdk-21-string-templates']},
         {id:'binaries',title:'Inspect runtime binaries',description:'Keep the historical Temurin delay separate from platform and binary-metadata checks.',keys:['2023-10-10-temurin-jdk21-delay']},
@@ -141,6 +144,7 @@ const paths = {
         {id:'features',title:'기능의 상태 구분',description:'정식 API와 Preview 기능의 적용 범위부터 확인합니다.',keys:['2023-09-20-jdk-21-release']},
         {id:'virtual',title:'가상 스레드의 버전 차이',description:'JDK 21·25의 모니터 pinning을 JFR로 관측하고 스케줄러 동작과 처리량 주장을 구분합니다.',keys:['2026-10-31-virtual-threads-jdk21-jdk25']},
         {id:'scoped',title:'요청 컨텍스트의 범위',description:'JDK 25 정식 ScopedValue를 실행하고 바인딩 복원과 비동기 상속의 경계를 구분합니다.',keys:['2026-10-31-jdk25-scopedvalue']},
+        {id:'gc',title:'가비지 컬렉터 비교',description:'JDK 버전별 컬렉터 지원을 비교하고 할당·GC 로그 예제를 확인합니다.',keys:['2026-11-03-jdk-gc-evolution']},
         {id:'capacity',title:'API 용량 계획',description:'10k RPS의 경계를 정하고 예시 예산을 계산하며 입장 제어 검사와 부하 검증을 구분합니다.',keys:['2026-10-31-jdk-10k-rps-architecture']},
         {id:'preview',title:'Preview 이력 확인',description:'String Templates 이력과 본문이 제공하는 표준 포맷팅 대안을 살펴봅니다.',keys:['2023-09-23-jdk-21-string-templates']},
         {id:'binaries',title:'실행기 바이너리 확인',description:'과거 Temurin 출시 지연과 플랫폼·바이너리 메타데이터 검사를 구분합니다.',keys:['2023-10-10-temurin-jdk21-delay']},
@@ -155,6 +159,7 @@ const paths = {
       groups:[
         {id:'responses',title:'Check a response',description:'Use a local Python server to distinguish HTTP response cases.',keys:['2021-07-20-http-status-test']},
         {id:'search',title:'Find the implementation',description:'Narrow repository/path searches and verify a known checkout with Git.',keys:['2021-08-06-search-github']},
+        {id:'observability',title:'Connect logs and traces',description:'Follow trace_id from Loki to Tempo and distinguish configuration checks from live ingestion.',keys:['2026-11-02-grafana-lgtm-log-trace']},
         {id:'diagrams',title:'Keep diagrams editable',description:'Store draw.io source and inspect the XML relationships separately from a shared image.',keys:['2021-07-23-app-diagrams.net']},
       ]},
     ko: {label:'개발 도구 학습 안내',title:'개발 도구 학습 안내: HTTP 검사·코드 검색·다이어그램',eyebrow:'개발 도구',
@@ -163,6 +168,7 @@ const paths = {
       groups:[
         {id:'responses',title:'응답 확인',description:'로컬 Python 서버에서 HTTP 응답 사례를 구분합니다.',keys:['2021-07-20-http-status-test']},
         {id:'search',title:'구현 찾기',description:'저장소·경로로 검색을 좁히고 알고 있는 체크아웃을 Git으로 확인합니다.',keys:['2021-08-06-search-github']},
+        {id:'observability',title:'로그와 트레이스 연결',description:'Loki에서 Tempo로 trace_id를 따라가며 설정 검사와 실제 수집을 구분합니다.',keys:['2026-11-02-grafana-lgtm-log-trace']},
         {id:'diagrams',title:'편집 가능한 그림 보관',description:'draw.io 원본을 보관하고 공유 이미지와 별도로 XML 관계를 확인합니다.',keys:['2021-07-23-app-diagrams.net']},
       ]},
   },

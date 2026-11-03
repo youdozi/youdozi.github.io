@@ -39,6 +39,10 @@ export const remainingGuideLocales = {
         "valhalla": {
           "title": "试验值对象语义",
           "description": "在 JDK 28 EA 上比较普通 record 与值对象，不据此推断有保证的内存布局。"
+        },
+        "gc": {
+          "title": "比较垃圾收集器",
+          "description": "比较各 JDK 版本的收集器支持情况，并查看内存分配和 GC 日志示例。"
         }
       }
     },
@@ -133,6 +137,10 @@ export const remainingGuideLocales = {
         "valhalla": {
           "title": "値オブジェクトの意味を試す",
           "description": "JDK 28 EAで通常のレコードと値オブジェクトを比較し、メモリ配置が保証されるとは推論しません。"
+        },
+        "gc": {
+          "title": "ガベージコレクターを比較する",
+          "description": "JDK バージョンごとのコレクター対応状況を比較し、メモリー割り当てと GC ログの例を確認します。"
         }
       }
     },
@@ -227,6 +235,10 @@ export const remainingGuideLocales = {
         "valhalla": {
           "title": "Wertobjekt-Semantik erproben",
           "description": "Vergleichen Sie Records und Wertobjekte unter JDK 28 EA, ohne daraus ein garantiertes Speicherlayout abzuleiten."
+        },
+        "gc": {
+          "title": "Garbage Collectors vergleichen",
+          "description": "Vergleichen Sie die verfügbaren Kollektoren je JDK-Version und prüfen Sie Beispiele zur Speicherallokation und GC-Protokollierung."
         }
       }
     },
@@ -321,6 +333,10 @@ export const remainingGuideLocales = {
         "valhalla": {
           "title": "Essayer la sémantique des objets valeur",
           "description": "Comparez records et objets valeur avec JDK 28 EA sans en déduire une disposition mémoire garantie."
+        },
+        "gc": {
+          "title": "Comparer les ramasse-miettes",
+          "description": "Comparez les collecteurs disponibles selon la version du JDK et examinez les exemples d’allocation mémoire et de journalisation du GC."
         }
       }
     },
@@ -415,6 +431,10 @@ export const remainingGuideLocales = {
         "valhalla": {
           "title": "Проверка семантики объектов-значений",
           "description": "Сравните record и объекты-значения на JDK 28 EA, не делая выводов о гарантированной структуре памяти."
+        },
+        "gc": {
+          "title": "Сравнить сборщики мусора",
+          "description": "Сравните доступность сборщиков в разных версиях JDK и изучите примеры выделения памяти и журналирования GC."
         }
       }
     },
@@ -509,6 +529,10 @@ export const remainingGuideLocales = {
         "valhalla": {
           "title": "Probar la semántica de objetos de valor",
           "description": "Compara records y objetos de valor en JDK 28 EA sin inferir una disposición de memoria garantizada."
+        },
+        "gc": {
+          "title": "Comparar recolectores de basura",
+          "description": "Compara los recolectores disponibles en cada versión del JDK y revisa los ejemplos de asignación de memoria y registro del GC."
         }
       }
     },

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import YAML from 'yaml';
 import registry from '../content/seo/core-articles.json' with {type:'json'};
-import {coreArticles} from '../src/lib/core-articles.ts';
+import {coreArticles,runtimeArticles} from '../src/lib/core-articles.ts';
 
 test('core article registry preserves existing route identities and paired editions',()=>{
   assert.equal(new Set(registry.articles.map(a=>a.key)).size,10);
@@ -32,5 +32,17 @@ test('answer evidence is exposed only when actually linked in a pilot introducti
   assert.deepEqual(answerCitations(entry),article.evidence);
   for(const body of ['No supporting link.',`Intro without citation.\n\n[Later](${article.evidence[0]})`,`\`\`\`text\n[Not visible evidence](${article.evidence[0]})\n\`\`\``])assert.deepEqual(answerCitations({...entry,post:{body}}),[]);
   for(const patch of [{language:'ja'},{kind:'digest'},{translationKey:'unrelated'},{reviewStatus:'example'}])assert.deepEqual(answerCitations({...entry,...patch}),[]);
+ }
+});
+
+test('runtime discovery selects published same-language articles in reading order',()=>{
+ const keys=['2026-10-31-virtual-threads-jdk21-jdk25','2026-10-31-webclient-restclient-comparison','2026-11-01-webflux-coroutines-mvc-virtual-threads','2026-11-03-jdk-gc-evolution','2026-11-02-grafana-lgtm-log-trace'];
+ for(const language of ['en','ko','zh-CN','ja','de','fr','ru','es']){
+  const make=(key,more={})=>({translationKey:key,language,kind:'post',publishedAt:new Date('2020-01-01Z'),...more});
+  const items=[make(keys[4]),make(keys[3],{publishedAt:new Date('2999-01-01Z')}),make(keys[2],{reviewStatus:'example'}),make(keys[1],{kind:'digest'}),make(keys[0]),make('unregistered'),make(keys[1],{language:'other'})];
+  const before=[...items];
+  assert.deepEqual(runtimeArticles(language,items).map(e=>e.translationKey),[keys[0],keys[4]]);
+  assert.deepEqual(items,before);
+  assert.deepEqual(runtimeArticles(language,[]),[]);
  }
 });

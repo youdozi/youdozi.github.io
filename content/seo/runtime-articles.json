@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "articles": [
+    {
+      "key": "2026-10-31-virtual-threads-jdk21-jdk25",
+      "guide": "jdk"
+    },
+    {
+      "key": "2026-10-31-webclient-restclient-comparison",
+      "guide": "springboot"
+    },
+    {
+      "key": "2026-11-01-webflux-coroutines-mvc-virtual-threads",
+      "guide": "springboot"
+    },
+    {
+      "key": "2026-11-03-jdk-gc-evolution",
+      "guide": "jdk"
+    },
+    {
+      "key": "2026-11-02-grafana-lgtm-log-trace",
+      "guide": "util"
+    }
+  ]
+}

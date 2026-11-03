@@ -25,6 +25,23 @@ class DiscoveryTests(unittest.TestCase):
             '<aside><a href="/en/posts/target/">Related</a></aside>')
         self.assertEqual(discovery.contextual_incoming(public, [target]), {target: 0})
 
+    def test_runtime_articles_require_home_and_same_language_guide_links(self):
+        target = SITE + '/en/posts/runtime/'
+        home = SITE + '/en/'
+        guide = SITE + '/en/categories/jdk/'
+        articles = [{'key': 'runtime', 'guide': 'jdk'}]
+        public = {target: object(), home: object(), guide: object()}
+        graph = {home: {target}, guide: {target}}
+        self.assertEqual(discovery.runtime_discovery(public, graph, articles), ([], 1))
+        del graph[guide]
+        errors, count = discovery.runtime_discovery(public, graph, articles)
+        self.assertEqual(count, 1)
+        self.assertEqual(len(errors), 1)
+        self.assertIn(guide, errors[0])
+        graph[guide] = {SITE + '/ko/posts/runtime/'}
+        self.assertTrue(discovery.runtime_discovery(public, graph, articles)[0])
+        self.assertEqual(discovery.runtime_discovery({}, graph, articles), ([], 0))
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
