@@ -1,0 +1,55 @@
+{
+  "observedAt": "2026-11-03T08:03:39.038586+00:00",
+  "postgres": "17.11 (Debian 17.11-1.pgdg12+2)",
+  "image": "postgres@sha256:839fbb5a4942a7758dd93e18b42ea5649807491a0545b5eeeb8f0b8bb11857a5",
+  "results": [
+    {
+      "jdk": "openjdk 21.0.13 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.13+9 (build 21.0.13+9-LTS, mixed mode, sharing)",
+      "gradle": "8.14.3",
+      "demo": [
+        "overload=rejected",
+        "query=42",
+        "available=1"
+      ],
+      "contracts": [
+        "checks=45",
+        "connection-active=0",
+        "available=1,slots=2"
+      ]
+    },
+    {
+      "jdk": "openjdk 25.0.5 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)",
+      "gradle": "8.14.3",
+      "demo": [
+        "overload=rejected",
+        "query=42",
+        "available=1"
+      ],
+      "contracts": [
+        "checks=45",
+        "connection-active=0",
+        "available=1,slots=2"
+      ]
+    }
+  ],
+  "scope": "Real PostgreSQL and HikariCP correctness checks, not a load benchmark",
+  "checks": [
+    "commit",
+    "SQL rollback",
+    "runtime exception cleanup",
+    "bounded admission",
+    "timed wait",
+    "interrupted wait without permit inflation",
+    "cancellation with continuing work",
+    "server statement timeout and recovery",
+    "connection-pool exhaustion",
+    "repeated failure cleanup"
+  ],
+  "sha256": {
+    "DbBulkheadChecks.java": "4ab2c5d5e08155ed5fe79f6988128956eafb097e429a115bf76b699df0c3c314",
+    "DbBulkhead.java": "9deced8d087dddb1a80f4c9950e3482ddc953788b8dd413ba951490b651f8fe7",
+    "build.gradle": "3bf2c3b7518840868dd9a5c3c931e85cab50583e4d99fce2363bf32ef190ed1a",
+    "Demo.java": "4bc9e3565e2c5cd92e202353ecc1912a7bb9617aae422ceb3b6d46a766da905b",
+    "settings.gradle": "255e1d595e51217c2b40f1b86dc9e648f9d3046462d7453cfabdb029d90c6f9e"
+  }
+}

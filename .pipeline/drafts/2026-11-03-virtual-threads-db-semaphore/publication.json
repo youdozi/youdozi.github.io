@@ -1,0 +1,9 @@
+{
+  "status": "publication-prepared",
+  "authorization": "User explicitly requested publication: 게시해줘",
+  "article": "src/content/posts/ko/2026-11-03-virtual-threads-db-semaphore.md",
+  "diagramAsset": "assets/img/architecture/db-semaphore-ko.svg",
+  "language": "ko",
+  "scope": "Prepared Korean article only; translations are not included.",
+  "preparedAt": "2026-11-03T08:00:48.868478+00:00"
+}
