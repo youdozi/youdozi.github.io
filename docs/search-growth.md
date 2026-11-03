@@ -277,3 +277,43 @@ npm run check:browser-isolation
 실제 Google 태그 생성 여부를 검사해야 할 때만 `isolatedContext(browser, options, 'tag-verification')`을 사용합니다. 이 사이트의 정확한 HTTPS 태그 라이브러리만 허용하며, 생성된 이벤트의 전송은 계속 차단합니다. 페이지별 route로 공통 차단을 덮어쓰지 않습니다. [Playwright 요청 차단과 서비스 워커 제한](https://playwright.dev/docs/api/class-browsercontext#browser-context-route)을 따릅니다.
 
 CI의 로컬 브라우저 검사는 Google 서버에 접속하지 않고 일반 콘텐츠 요청이 통과하는 동안 GET·POST·프록시 본문·비콘·이미지·스크립트·워커·팝업의 수집 요청이 테스트 서버에 도달하지 않는지 확인합니다. 설치된 Chrome/Chromium을 사용하며 `CHROME_PATH`로 실행 파일을 지정할 수 있습니다. `playwright-core`만 설치하며 브라우저를 자동 다운로드하거나 사용자 브라우저 프로필을 재사용하지 않습니다.
+
+## 2026-11-03부터 예약 관측
+
+기존 수동 관측에 다음 예약 작업을 추가했습니다. 게시글 수정·자동 게시·색인 생성 요청은 수행하지 않습니다.
+
+| 작업 | 예정 시각 | 실행 위치 | 확인 범위 |
+| --- | --- | --- | --- |
+| 공개 기술 점검 | 매일 07:17 KST | GitHub Actions `search-monitor.yml` | 실제 사이트맵 전체의 HTTP·canonical·robots·언어 연결·구조화 데이터·현지 이미지 |
+| 비공개 검색·AI 출처 관측 | 매주 월요일 08:37 KST | 현재 Mac의 사용자 LaunchAgent | GSC·GA4의 최근 두 7일 구간, Bing 실적 응답, 핵심 글·최근 글·언어 홈의 최대 64개 URL 색인/크롤링 표본 |
+
+GitHub 예약 시각은 실행 예정 시각이며 지연될 수 있습니다. 공개 점검 결과만 Actions artifact에 30일 보관합니다. Google·Bing 인증과 주간 성과 데이터는 GitHub Secret·artifact·저장소에 전송하지 않습니다. 공개 점검은 일반 HTTP 요청만 사용하고 JavaScript와 Analytics 이벤트를 실행하지 않습니다. [GitHub 예약 실행](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
+
+주간 작업은 `~/Library/LaunchAgents/io.github.youdozi.search-performance.plist`에 등록합니다. 현재 Mac 시간대는 KST이며, 실행 여부는 Asia/Seoul의 월요일 08:37 슬롯으로 판단합니다. 로그인·잠자기 해제 후 놓친 작업을 확인하며, main이 아니거나 추적 파일에 미커밋 변경이 있으면 실행하지 않습니다. 매시간 실행 가능 여부를 재확인하지만 같은 주의 성공한 수집은 반복하지 않습니다. 수집 실패 후 재조회 간격은 최소 6시간입니다. 같은 주에 Bing만 실패했다면 실패한 Bing 관측만 다시 읽고 기존 GSC·GA4·Google 색인 자료의 원래 수집 시각을 유지합니다. Mac이 꺼져 있거나 로그아웃된 동안에는 실행할 수 없습니다. [Apple 예약 작업](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/ScheduledJobs.html)
+
+```sh
+# 미리보기: 인증·네트워크·예약 변경 없음
+python3 -B scripts/search_monitor.py daily
+python3 -B scripts/search_monitor.py weekly
+python3 -B scripts/install_search_monitor.py
+
+# Mac의 사용자 예약 등록
+.venv-search-console/bin/python scripts/install_search_monitor.py --install
+
+# 즉시 수동 관측: 저장소 밖에 새 결과 저장
+.venv-search-console/bin/python scripts/search_monitor.py daily --live
+.venv-search-console/bin/python scripts/search_monitor.py weekly --live
+
+# 인증이 만료됐을 때만 사용자 브라우저에서 다시 승인
+.venv-search-console/bin/python scripts/search_monitor.py authorize --live
+```
+
+비공개 결과는 `~/.local/share/blog-audits/search-monitor/`의 날짜별 JSON과 주간 텍스트 요약입니다. 디렉터리는 700, 보고서는 600 권한으로 생성하며 기존 결과는 덮어쓰지 않습니다. `weekly-state.json`에는 실행 시각·결과 상태·성공 슬롯과 재시도할 비공개 보고서의 파일명·슬롯만 저장합니다. `weekly.stdout.log`·`weekly.stderr.log`는 작업 상태와 결과 경로를 확인하는 로컬 로그입니다. 예약 해제는 `launchctl bootout gui/$(id -u)/io.github.youdozi.search-performance`로 수행합니다.
+
+주간 GSC 비교는 가장 최근 3개 PT 날짜를 제외한 확정 Web 데이터입니다. GA4는 확인한 속성 시간대에서 이에 대응하는 시간으로 필터링합니다. 페이지 행은 완전한 검색 실적 목록이 아니며, 사용자·세션을 페이지별로 합산해 전체 사용자로 만들지 않습니다. API 오류·미제공 값은 0으로 처리하지 않고 실패/미확인으로 보관합니다. Google URL Inspection은 현재 저장 색인 관측이며 새 크롤링 요청이 아닙니다. Bing GetUrlInfo는 크롤링 기록이며 색인 확정값이 아닙니다.
+
+AEO 관측은 공개 구조화 데이터·언어/발견 신호와 GA4의 AI 출처명 일치 행을 다룹니다. Google·Bing의 전용 AI 인용 보고서는 수집하지 않으며, AI 출처명이나 전후 증감을 실제 AI 답변 인용·사람 방문·개선의 인과효과로 해석하지 않습니다.
+
+Google 인증은 유효할 때 자동 갱신합니다. `invalid_grant` 등으로 갱신할 수 없으면 비대화형 예약 작업이 브라우저를 열지 않고 실패 결과를 저장합니다. Google Cloud OAuth 앱이 외부 사용자용 `Testing` 상태라면 기본 프로필 외 범위의 refresh token이 7일 후 만료될 수 있으므로 반복 재인증 시 앱 게시 상태를 확인합니다. 현재 앱의 게시 상태를 API 관측만으로 확정하지 않습니다. [Google 토큰 만료 조건](https://developers.google.com/identity/protocols/oauth2#expiration)
+
+공개 점검은 15분, 주간 API 수집은 10분이 지나면 신규 요청을 시작하지 않습니다. 이미 시작한 HTTP 요청은 개별 타임아웃까지 마무리될 수 있습니다. 조회를 끝내지 못한 대상은 미조회로 남기며, 제한을 풀기 위해 자동 색인 요청이나 추가 동시 호출을 하지 않습니다.
