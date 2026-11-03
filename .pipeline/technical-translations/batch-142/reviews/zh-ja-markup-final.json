@@ -1,0 +1,50 @@
+{
+  "scope": "Focused read-only AI recheck of complete Chinese and Japanese emphasis pairs, including line-41 permit-release warnings. Prior markup report retained as regression history.",
+  "reviewed_files": [
+    {
+      "path": ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "17df7ba15f17e8b177314af7487a7404ff4317ea876585735b16f37cccfec64d",
+      "emphasis_pairs_reviewed": 6,
+      "warning_location": ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.md:41",
+      "warning_quotation": "如果准入失败，就没有需要释放的许可。如果执行许可获取失败，或等待线程被中断，仅释放准入许可。取得两个许可后，应等待获取连接、事务处理和清理流程正常结束或因异常退出后，再释放许可。 **不要仅因为调用方超时，就从另一个线程释放许可。** 如果实际数据库工作仍在继续，这样做可能突破配置的执行上限。",
+      "assessment": "Warning now has a separator before its opening marker, no interior-edge whitespace, and a separator after its closing marker. The six complete emphasis pairs preserve wording, negation and scope. Code blocks and inline-code tokens remain identical to English."
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "3178abef8bf5ad2685c585acae619c4b2f6b4d4b6b3159392ecd85a97b8fb7f9",
+      "emphasis_pairs_reviewed": 6,
+      "warning_location": ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.md:41",
+      "warning_quotation": "受け入れに失敗した場合、解放する許可はありません。実行許可の取得に失敗した場合や待機中のスレッドが割り込まれた場合は、受け入れ許可だけを解放します。両方の許可を取得した後は、接続の取得、トランザクション処理、クリーンアップが正常終了または例外で終了してから解放します。 **呼び出し元がタイムアウトしたという理由だけで、別のスレッドから許可を解放しないでください。** 実際の DB 処理が続いていると、設定した実行数の上限を超えるおそれがあります。",
+      "assessment": "Warning now has a separator before its opening marker, no interior-edge whitespace, and a separator after its closing marker. The six complete emphasis pairs preserve wording, negation and scope. Code blocks and inline-code tokens remain identical to English."
+    }
+  ],
+  "source": {
+    "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+    "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+  },
+  "resolved_findings": [
+    {
+      "id": "cjk-emphasis-delimiter",
+      "status": "source-markup-resolved",
+      "confidence": "high",
+      "reason": "Closing markers after full-width punctuation retain an external separator. Added whitespace does not change prose meaning."
+    },
+    {
+      "id": "warning-opening-marker-space",
+      "status": "source-markup-resolved",
+      "confidence": "high",
+      "reason": "Both line-41 opening delimiters now follow an external separator and directly precede warning text. No whitespace remains inside any of the six emphasis pairs in either manuscript."
+    }
+  ],
+  "open_findings": [],
+  "checks": {
+    "code": "All six fenced blocks identical byte-for-byte to English for both targets.",
+    "inline_code": "Identical tokens and order to English for both targets.",
+    "fluency_and_fidelity": "Focused rereading confirms permit-release prohibition, B/B+Q distinctions, waiting/work timeout distinction and Spring admission-before-transaction emphasis remain unchanged."
+  },
+  "limitations": [
+    "No Markdown/Astro rendering, build or browser verification executed by this reviewer. Parent is responsible for actual rendering and literal-asterisk checks.",
+    "This is a focused markup recheck, not a new broad linguistic review.",
+    "AI review only; no native-speaker or human-review claim."
+  ]
+}

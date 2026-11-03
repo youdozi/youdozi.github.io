@@ -35,7 +35,7 @@
       },
       {
         "path": ".pipeline/technical-translations/batch-142/reviews/integration.json",
-        "sha256": "d4af89423773029e9d1c6205c161bbf95731466379fd412b6b2af467ce133a11"
+        "sha256": "1db2bb4f97b374a87130cd487362a111802ff563a4458282a00b1145d7ccc31d"
       },
       {
         "path": ".pipeline/technical-translations/batch-142/reviews/ru-es-cross-review.json",
@@ -48,6 +48,14 @@
       {
         "path": ".pipeline/technical-translations/batch-142/reviews/zh-ja-and-english-cross-review.json",
         "sha256": "c0f4934c96d68062c1f251546b0ecf59f6d0c8da0b85985329f0f2dee83736b8"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/reviews/zh-ja-markup-final.json",
+        "sha256": "639edfe85ba9c1f6ee379b3a298c1ca79d4a0f1d9fa3566e64969b67dcb9c79f"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/reviews/zh-ja-markup-recheck.json",
+        "sha256": "8fd23b93f97e358bb0eb9c975e138166672801c85c8594e5e07ed131490736ac"
       },
       {
         "path": ".pipeline/technical-translations/batch-142/reviews/zh-ja-recheck.json",
@@ -71,7 +79,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.md",
-        "sha256": "77401be57975626b192c8bef20f8f35e0d69ed311a556180631eb9f2e3fbb4b4"
+        "sha256": "17df7ba15f17e8b177314af7487a7404ff4317ea876585735b16f37cccfec64d"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.diagram.json",
@@ -100,7 +108,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.md",
-        "sha256": "3fee74b93ee1664e6d18e60afaf70338ca796b2b99268600c92bb6b9c9b0befe"
+        "sha256": "3178abef8bf5ad2685c585acae619c4b2f6b4d4b6b3159392ecd85a97b8fb7f9"
       },
       "diagramSource": {
         "path": ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.diagram.json",

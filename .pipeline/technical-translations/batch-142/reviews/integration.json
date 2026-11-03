@@ -6,7 +6,8 @@
     "Spanish latch detail and resource-cleanup description restored",
     "French diagram now distinguishes value return from exception propagation",
     "Chinese/Japanese private image URLs normalized to the publication asset mapping",
-    "Optional Japanese terminology and Spanish guide register aligned with reviewed recommendations"
+    "Optional Japanese terminology and Spanish guide register aligned with reviewed recommendations",
+    "Full-site check caught CJK punctuation-adjacent emphasis; delimiter-edge whitespace repaired and independently rechecked. Markdown render now explicitly rejects literal ** markers."
   ],
   "checks": {
     "protectedCode": "Six identical executable/configuration/command/output blocks across all eight languages",
@@ -344,7 +345,8 @@
         "allowedTag": 0
       }
     },
-    "diagramVisualInspection": "Eight-diagram contact sheet and browser text bounds checked; no clipped text or changed release-order branches"
+    "diagramVisualInspection": "Eight-diagram contact sheet and browser text bounds checked; no clipped text or changed release-order branches",
+    "literalEmphasisMarkers": "None in rendered Markdown across all eight editions"
   },
   "limits": [
     "AI cross-review; no human or native-speaker proofreading claimed",

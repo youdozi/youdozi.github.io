@@ -12,7 +12,7 @@
   "manifests": [
     {
       "path": ".pipeline/technical-translations/batch-142/manifest.json",
-      "sha256": "5fe9109b95b95e2b8170cf69c0858a600703961ffcef9978dece770bde39c49e"
+      "sha256": "c9980c2893c26f4f01a8f1991ea314755050840c12c102f2e907891193acc59a"
     }
   ],
   "newEnglishEditions": 1,

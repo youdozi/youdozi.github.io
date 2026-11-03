@@ -21,16 +21,16 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
   "sourceSha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a",
-  "draftSha256": "77401be57975626b192c8bef20f8f35e0d69ed311a556180631eb9f2e3fbb4b4",
+  "draftSha256": "17df7ba15f17e8b177314af7487a7404ff4317ea876585735b16f37cccfec64d",
   "manifestPath": ".pipeline/technical-translations/batch-142/manifest.json",
-  "manifestSha256": "5fe9109b95b95e2b8170cf69c0858a600703961ffcef9978dece770bde39c49e",
-  "publishedAt": "2026-11-03T09:05:06.170Z",
-  "updatedAt": "2026-11-03T09:05:06.170Z",
+  "manifestSha256": "c9980c2893c26f4f01a8f1991ea314755050840c12c102f2e907891193acc59a",
+  "publishedAt": "2026-11-03T09:13:33.711Z",
+  "updatedAt": "2026-11-03T09:13:33.711Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 142,
-    "approvedAt": "2026-11-03T09:05:06.170Z",
+    "approvedAt": "2026-11-03T09:13:33.711Z",
     "basis": "User explicitly requested multilingual support for the already published article (다국어 지원도 해줘), within the continuing publication task and standing merge/deploy instruction. This records user publication authorization; it does not claim human or native-speaker proofreading."
   }
 }
@@ -57,8 +57,8 @@ HikariCP 的 `maximumPoolSize` 限制池中的连接数。如果没有可用连�
 
 示例使用两个信号量。
 
-- **B 个执行许可：**限制从获取连接到事务和连接清理结束期间，正在进行的操作数量。
-- **B+Q 个准入许可：**限制此关卡内的所有操作，包括等待执行许可的操作。没有剩余准入许可时立即拒绝。
+- **B 个执行许可：** 限制从获取连接到事务和连接清理结束期间，正在进行的操作数量。
+- **B+Q 个准入许可：** 限制此关卡内的所有操作，包括等待执行许可的操作。没有剩余准入许可时立即拒绝。
 
 当 B 个执行许可全部被占用时，最多还能保留 Q 个额外获准进入的操作。不过，任务也可能在获取执行许可之前被调度，因此这不意味着每一时刻的等待者数量都严格限制在 Q 以内。仅限制等待时间的单个信号量，无法限制已获准进入的等待者数量。
 
@@ -66,7 +66,7 @@ HikariCP 的 `maximumPoolSize` 限制池中的连接数。如果没有可用连�
 
 数据库资源框概括了内部异常路径。如果获取连接失败，跳过工作并进入许可释放流程。如果事务初始化失败，尝试清理已获取的连接。如果工作或提交失败，尝试回滚。
 
-如果准入失败，就没有需要释放的许可。如果执行许可获取失败，或等待线程被中断，仅释放准入许可。取得两个许可后，应等待获取连接、事务处理和清理流程正常结束或因异常退出后，再释放许可。**不要仅因为调用方超时，就从另一个线程释放许可。**如果实际数据库工作仍在继续，这样做可能突破配置的执行上限。
+如果准入失败，就没有需要释放的许可。如果执行许可获取失败，或等待线程被中断，仅释放准入许可。取得两个许可后，应等待获取连接、事务处理和清理流程正常结束或因异常退出后，再释放许可。 **不要仅因为调用方超时，就从另一个线程释放许可。** 如果实际数据库工作仍在继续，这样做可能突破配置的执行上限。
 
 ## 如何选择 B、Q 和连接池大小？
 
@@ -305,13 +305,13 @@ available=1
 
 ## 超时和 Spring 事务中需要保留的边界
 
-**区分等待超时与工作超时。**示例中的 `queueWait` 仅限制等待执行许可的时间。连接池获取、SQL 和锁等待、网络以及清理都有各自的预算。要实现整体请求截止时间，还需要额外设计，将剩余时间传递给各个阶段。此示例未实现这种端到端的截止时间传递。
+**区分等待超时与工作超时。** 示例中的 `queueWait` 仅限制等待执行许可的时间。连接池获取、SQL 和锁等待、网络以及清理都有各自的预算。要实现整体请求截止时间，还需要额外设计，将剩余时间传递给各个阶段。此示例未实现这种端到端的截止时间传递。
 
 PostgreSQL 的 `statement_timeout` 限制服务器端的语句执行时间，而 `lock_timeout` 限制获取锁的等待时间。实验在事务内设置了 `SET LOCAL statement_timeout = '100ms'`，检查 `pg_sleep(2)` 是否以 SQLState `57014` 失败，并验证后续工作能够继续。实际配置值应根据查询和截止时间选择。[PostgreSQL 17 超时设置](https://www.postgresql.org/docs/17/runtime-config-client.html)
 
 无论是 `Future.cancel(true)`，还是结束 HTTP 请求，都不能保证立即终止 JDBC 查询。pgJDBC 对查询、取消信号发送和套接字读取分别设有限制。套接字超时后关闭连接，也不等于确认服务器端工作已经停止。在取消和清理期间，执行边界仍持有许可的所有权。如果写入结果不确定，应使用幂等键或查询结果，再决定是否重试。[pgJDBC 连接属性](https://jdbc.postgresql.org/documentation/use/)
 
-**使用 Spring 时，应在启动事务之前取得准入许可。**可以在独立 bean 的非事务入口方法中先通过关卡，再调用事务代理；也可以在获准进入的范围内运行 `TransactionTemplate`。在代理调用或模板完成提交和清理并返回后，再释放许可。如果在事务已经开始的方法中等待，可能会继续占用外层事务的资源。不要将上面由代码负责管理 JDBC 资源的实现直接混入现有的 Spring 事务中。
+**使用 Spring 时，应在启动事务之前取得准入许可。** 可以在独立 bean 的非事务入口方法中先通过关卡，再调用事务代理；也可以在获准进入的范围内运行 `TransactionTemplate`。在代理调用或模板完成提交和清理并返回后，再释放许可。如果在事务已经开始的方法中等待，可能会继续占用外层事务的资源。不要将上面由代码负责管理 JDBC 资源的实现直接混入现有的 Spring 事务中。
 
 `REQUIRES_NEW` 可能在保留外层事务连接的同时，还需要另一个连接。这打破了本示例中每个操作使用一个连接的假设，可能导致连接池耗尽或死锁等待。此关卡也不可重入；不要递归获取同一关卡。[Spring 事务传播与连接池耗尽警告](https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/tx-propagation.html)
 

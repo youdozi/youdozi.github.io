@@ -23,14 +23,14 @@
   "sourceSha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a",
   "draftSha256": "37c6d5cd2f512647020b6bc23f3af46bf003e859c391653efa4c1fb856fc90c6",
   "manifestPath": ".pipeline/technical-translations/batch-142/manifest.json",
-  "manifestSha256": "5fe9109b95b95e2b8170cf69c0858a600703961ffcef9978dece770bde39c49e",
-  "publishedAt": "2026-11-03T09:05:06.170Z",
-  "updatedAt": "2026-11-03T09:05:06.170Z",
+  "manifestSha256": "c9980c2893c26f4f01a8f1991ea314755050840c12c102f2e907891193acc59a",
+  "publishedAt": "2026-11-03T09:13:33.711Z",
+  "updatedAt": "2026-11-03T09:13:33.711Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 142,
-    "approvedAt": "2026-11-03T09:05:06.170Z",
+    "approvedAt": "2026-11-03T09:13:33.711Z",
     "basis": "User explicitly requested multilingual support for the already published article (다국어 지원도 해줘), within the continuing publication task and standing merge/deploy instruction. This records user publication authorization; it does not claim human or native-speaker proofreading."
   }
 }
