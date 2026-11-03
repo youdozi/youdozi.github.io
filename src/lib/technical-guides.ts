@@ -129,7 +129,7 @@ const paths = {
       intro:'Separate language/API status from the runtime you actually install. These articles include historical release events and preview material; use each recorded version and do not infer current support from an old release note.',
       groups:[
         {id:'features',title:'Distinguish feature status',description:'Start with final APIs and the boundaries of preview features.',keys:['2023-09-20-jdk-21-release']},
-        {id:'virtual',title:'Compare virtual-thread releases',description:'Observe monitor pinning in JDK 21 and 25 with JFR, separating scheduler behavior from throughput claims.',keys:['2026-10-31-virtual-threads-jdk21-jdk25']},
+        {id:'virtual',title:'Virtual threads and DB admission',description:'Observe JDK 21–25 monitor pinning and bound DB waiting and concurrency with semaphores.',keys:['2026-10-31-virtual-threads-jdk21-jdk25','2026-11-03-virtual-threads-db-semaphore']},
         {id:'scoped',title:'Bound request context',description:'Use finalized JDK 25 ScopedValue and distinguish binding restoration from asynchronous inheritance.',keys:['2026-10-31-jdk25-scopedvalue']},
         {id:'gc',title:'Compare garbage collectors',description:'Compare collector availability across JDK versions and inspect allocation and GC logging examples.',keys:['2026-11-03-jdk-gc-evolution']},
         {id:'capacity',title:'Plan API capacity',description:'Define a 10k RPS boundary, calculate illustrative budgets and separate admission checks from load-test evidence.',keys:['2026-10-31-jdk-10k-rps-architecture']},

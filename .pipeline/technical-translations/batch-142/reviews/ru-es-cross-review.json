@@ -1,0 +1,110 @@
+{
+  "reviewType": "Independent read-only AI cross-review of translations not authored by this reviewer",
+  "task": "Complete Russian and Spanish translations, including localized diagram source JSON",
+  "method": [
+    "Read complete target-language prose, frontmatter, headings, table, image alternative text and diagram labels for fluency before comparison in this review turn.",
+    "Compared all body paragraphs with the complete frozen English source and Korean original; compared all six fenced code blocks mechanically with English.",
+    "Compared diagram steps, branch outcomes and release ordering with the technical-142 source manifest."
+  ],
+  "reviewedFiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-142/ru/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "f47f8baa9f6de82896ad4157a881642bd82bfe829d255c83fcb016f18770ba49"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/ru/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+      "sha256": "75f54e998fc68e2bd694fcf96fe0554708cb8440125043b88109bcc6fbe33557"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/es/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "b2fd9b9267d7c7e1436ed07511b4fafd2355152835d174c0aff88d85f08894a2"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/es/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+      "sha256": "0d1e95e358bb8e08ec623df94fb8765639b8e23dab2c4f252d71a1dea817adf7"
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+    },
+    {
+      "path": "src/content/posts/ko/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "c42a4211a91ac63bcd7701f2acae31a5dfb436e79e059664f6cf9be3edaf2b7a"
+    },
+    {
+      "path": "content/diagrams/technical-142.json",
+      "sha256": "3fae429e61c6f5124a497623d2e7cbf30464a17db38e1f1195940e3345f4d6ea"
+    }
+  ],
+  "meaningFindings": [
+    {
+      "language": "ru",
+      "location": {
+        "path": ".pipeline/technical-translations/batch-142/ru/2026-11-03-virtual-threads-db-semaphore.md",
+        "line": 32,
+        "section": "Execution-permit bullet"
+      },
+      "quote": "с момента получения соединения",
+      "sourceQuote": "from connection acquisition through transaction and connection cleanup",
+      "reason": "This can read as starting when the connection has already been obtained. The execution permit is held before and during acquisition, including pool waits. The later paragraph explains that correctly, but the boundary in this bullet should agree.",
+      "proposedCorrection": "с начала получения соединения до завершения транзакции и освобождения ресурсов соединения",
+      "severity": "minor",
+      "confidence": "high"
+    },
+    {
+      "language": "es",
+      "location": {
+        "path": ".pipeline/technical-translations/batch-142/es/2026-11-03-virtual-threads-db-semaphore.md",
+        "line": 130,
+        "section": "Demo introduction"
+      },
+      "quote": "mediante un mecanismo de sincronización",
+      "sourceQuote": "with a latch",
+      "reason": "The full translation retains the coordination purpose but generalizes the specifically identified synchronization mechanism. Naming the latch preserves the source detail and its connection to CountDownLatch in the code.",
+      "proposedCorrection": "mediante un latch",
+      "severity": "minor",
+      "confidence": "high"
+    }
+  ],
+  "optionalStyleSuggestions": [
+    {
+      "language": "es",
+      "location": {
+        "path": ".pipeline/technical-translations/batch-142/es/2026-11-03-virtual-threads-db-semaphore.md",
+        "line": 6,
+        "section": "Frontmatter description"
+      },
+      "quote": "tras completar la transacción y sus recursos",
+      "reason": "Completar recursos is not a natural collocation and obscures the cleanup phrase. The body is clearer.",
+      "proposedCorrection": "tras completar la transacción y liberar sus recursos",
+      "severity": "style",
+      "confidence": "high"
+    }
+  ],
+  "checks": {
+    "bothTargets": {
+      "sixCodeBlocksByteIdenticalToEnglish": true,
+      "inlineCodeTokensSameOrder": true,
+      "numericSequenceSameOrderExcludingRequestedImageFilenameChange": true,
+      "nonimageLinkTargetsSameOrder": true,
+      "paragraphAndLineStructurePreserved": true,
+      "completeBodyCompared": true,
+      "draftFrontmatterAndSourceHashPresent": true
+    },
+    "diagrams": {
+      "bothJsonFilesParsed": true,
+      "sameFiveStepKindsAndTwoErrorBranches": true,
+      "permitReleaseAndCancellationSemanticsPreserved": true
+    }
+  },
+  "assessment": "Both translations preserve the article scope and all major safety conditions. Two minor fidelity clarifications are proposed, plus one optional Spanish description edit. No major omission or changed concurrency guarantee found in this review.",
+  "limitations": [
+    "AI review only; no human or native-speaker review claimed.",
+    "No code, database, Gradle, HTTP load or Spring integration execution performed.",
+    "Rendered SVG layout and browser display were not reviewed; the parent handles rendering.",
+    "This report covers only the file hashes listed above; later edits require rechecking affected text."
+  ],
+  "targetFilesEdited": false
+}

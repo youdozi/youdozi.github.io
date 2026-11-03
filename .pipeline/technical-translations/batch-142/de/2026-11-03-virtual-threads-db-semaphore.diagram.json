@@ -1,0 +1,54 @@
+{
+  "key": "2026-11-03-virtual-threads-db-semaphore",
+  "language": "de",
+  "title": "DB-Zulassung und Bereinigung",
+  "description": "Zulassungs- und Ausführungsberechtigungen nacheinander erwerben. Bei einem Fehlschlag abweisen oder nur die Zulassung freigeben. Nach Erwerb beider Berechtigungen erst DB-Verarbeitung und Bereinigungsversuche beenden, dann freigeben.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Zulassungsplatz B+Q anfordern",
+        "Nicht verfügbar: abweisen"
+      ],
+      "branch": {
+        "exit": "Abweisen",
+        "continue": "Zugelassen",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Auf Ausführungsfreigabe B warten",
+        "Fehler: Zulassung freigeben"
+      ],
+      "branch": {
+        "exit": "Fehler",
+        "continue": "Erworben",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Verbindung; Transaktion ausführen",
+        "Commit oder Rollback versuchen",
+        "Verbindungsbereinigung versuchen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Erworbene Berechtigungen freigeben",
+        "Nach Ende der Bereinigungsversuche"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Wert zurückgeben oder Fehler melden",
+        "Bei Abbruch keine frühe Freigabe"
+      ]
+    }
+  ]
+}

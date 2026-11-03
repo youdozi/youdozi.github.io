@@ -1,0 +1,104 @@
+{
+  "reviewer": "Independent AI cross-review session; reviewer authored German and French, not the reviewed English, Chinese or Japanese files.",
+  "scope": {
+    "translation_mode": "Complete translation, not summary",
+    "sequence": [
+      "Read complete Chinese and Japanese prose, frontmatter and diagram text for target-language fluency before source comparison.",
+      "Compared every prose paragraph, heading, list, table and all fenced code against the complete English and Korean sources.",
+      "Compared English independently against Korean for consequential meaning drift.",
+      "Compared Chinese and Japanese diagram structure and labels with the bilingual diagram baseline."
+    ],
+    "languages": [
+      "zh-CN",
+      "ja",
+      "en compared with ko"
+    ],
+    "reviewed_files": [
+      {
+        "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+      },
+      {
+        "path": "src/content/posts/ko/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "c42a4211a91ac63bcd7701f2acae31a5dfb436e79e059664f6cf9be3edaf2b7a"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "cff1d7c6ac22022397503b8cd949699bdc9402aa546fa1c6439e3655cbb70fec"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+        "sha256": "1e893ec518884a2d281e706a81f06a2f0efba4413ec62771813315a668dc33f2"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "d3bc1151e18e4fad8a291883d6905bf19ded24d7f80e49cb7e43025d1a284f73"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+        "sha256": "cca5a9420fbed1b033b0c9f7b7bad6dd749e06f50d4e39bcd8428a640628f1ac"
+      },
+      {
+        "path": "content/diagrams/technical-142.json",
+        "sha256": "3fae429e61c6f5124a497623d2e7cbf30464a17db38e1f1195940e3345f4d6ea"
+      }
+    ]
+  },
+  "findings": [],
+  "optional_style_suggestions": [],
+  "conclusion": "No correction requiring a meaning or fluency change was identified in this reviewed version. English retains the important conditions and evidence of the Korean original. Chinese and Japanese are complete and preserve the English baseline’s technical distinctions.",
+  "evidence": [
+    {
+      "location": "English, Chinese and Japanese: execution/admission section and corresponding diagram condition steps",
+      "quotations": [
+        "B+Q admission permits",
+        "B+Q 个准入许可",
+        "B+Q 個の受け入れ許可"
+      ],
+      "assessment": "Total admission B+Q and active execution B remain distinct. Each translation retains the qualification that Q is not a universal instantaneous bound on all waiting tasks."
+    },
+    {
+      "location": "Chinese/Japanese: permit-release paragraphs and paragraph following DbBulkhead.java",
+      "quotations": [
+        "仅释放准入许可",
+        "受け入れ許可だけを解放します",
+        "写入也可能已经生效",
+        "書き込みが反映済みの可能性があります"
+      ],
+      "assessment": "Conditional release, interruption, cleanup-before-release and uncertain write outcomes after commit/cleanup failure are retained."
+    },
+    {
+      "location": "English, Chinese and Japanese: timeout and Spring sections",
+      "quotations": [
+        "does not implement that end-to-end deadline propagation",
+        "此示例未实现这种端到端的截止时间传递",
+        "同じゲートを再帰的に取得しないでください"
+      ],
+      "assessment": "Waiting/work deadlines, cancellation not guaranteeing immediate termination, Spring admission before transaction, REQUIRES_NEW resource pressure, nonreentrancy and retry caution are preserved."
+    },
+    {
+      "location": "English, Chinese and Japanese: verification-environment paragraph",
+      "quotations": [
+        "45 conditions on each JDK",
+        "每个 JDK 上验证了 45 项条件",
+        "各 JDK で 45 項目を検証しました"
+      ],
+      "assessment": "JDK/dependency versions, per-JDK count, observed output and absence of HTTP load or production throughput measurement are preserved without new benchmark claims."
+    }
+  ],
+  "mechanical_checks": {
+    "english_korean_fenced_blocks": "All six identical byte-for-byte.",
+    "chinese_japanese_fenced_blocks": "Each has all six English blocks identical byte-for-byte.",
+    "inline_code_tokens": "Identical to English in exact order for each target.",
+    "prose_numeric_sequence": "Identical to English for each target after excluding the intentionally localized image target.",
+    "non_image_link_targets": "Identical to English in exact order for each target.",
+    "body_structure": "Each target has 44 blank-line-separated body blocks and 10 headings, matching English; complete table/list structure retained.",
+    "diagrams": "Both parse as JSON; five kinds condition/condition/process/process/result and two error branches match baseline; localized labels retain release and cancellation semantics."
+  },
+  "limitations": [
+    "AI review, not native-speaker or human review; no assertion of perfect linguistic quality.",
+    "No code, SQL, shell commands, Docker containers, Gradle builds or Spring integration were executed in this review. Source execution statements were assessed for translation fidelity only.",
+    "No final rendered SVG, layout, browser output or production deployment was inspected.",
+    "External documentation was not freshly re-audited; review concerns fidelity to supplied sources."
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "reviewType": "independent-ai-cross-review",
+  "languages": [
+    "de",
+    "fr"
+  ],
+  "translationType": "complete translation",
+  "status": "minor_correction_recommended",
+  "reviewedFiles": [
+    {
+      "path": ".pipeline/technical-translations/batch-142/de/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "813d6695e19fa9c8223d6f49deeca134781012abb21d109a6be01bb719df6a7d"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/de/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+      "sha256": "3ec68a553e60fb4c0a7445e9eb30dbe6c78f2e4b462dcb720fceeb84470e748b"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "1d94fd389e4fd998e7ea72740265f3234fb1c9a92bf32650bcb12207ee7f4281"
+    },
+    {
+      "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+      "sha256": "3dc4c15e1f6ffe8f93bc07be4f2e06cb903bb3aeb2cea2d75d11d5c706c14ddf"
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+    },
+    {
+      "path": "src/content/posts/ko/2026-11-03-virtual-threads-db-semaphore.md",
+      "sha256": "c42a4211a91ac63bcd7701f2acae31a5dfb436e79e059664f6cf9be3edaf2b7a"
+    },
+    {
+      "path": "content/diagrams/technical-142.json",
+      "sha256": "3fae429e61c6f5124a497623d2e7cbf30464a17db38e1f1195940e3345f4d6ea"
+    }
+  ],
+  "scope": [
+    "Read German and French target prose, frontmatter and diagram labels for fluency before the full source comparison.",
+    "Compared both complete manuscripts against the full English technical baseline and Korean original, including every paragraph, table row, heading and code block.",
+    "Reviewed admission B+Q versus execution B; non-exact instantaneous waiter bound; conditional permit release; cleanup and uncertain write outcomes; separate timeout budgets; cancellation ownership; Spring transaction ordering, REQUIRES_NEW and nonreentrant gate; measurement limitations.",
+    "Reviewed five-step/two-branch diagram semantics and localized labels against the English/Korean diagram baseline."
+  ],
+  "checks": {
+    "de": {
+      "fencedCodeBlocks": 6,
+      "fencedCodeBlocksByteIdentical": true,
+      "inlineCodeSequenceIdentical": true,
+      "numericSequenceIdenticalExcludingRequiredLocalizedImagePath": true,
+      "linkTargetsIdenticalAfterRequiredImageMapping": true,
+      "paragraphCountIdentical": true,
+      "headingLevelsIdentical": true,
+      "sourceHashMatches": true,
+      "diagramStepKindsPreserved": true,
+      "diagramBranchCount": 2
+    },
+    "fr": {
+      "fencedCodeBlocks": 6,
+      "fencedCodeBlocksByteIdentical": true,
+      "inlineCodeSequenceIdentical": true,
+      "numericSequenceIdenticalExcludingRequiredLocalizedImagePath": true,
+      "linkTargetsIdenticalAfterRequiredImageMapping": true,
+      "paragraphCountIdentical": true,
+      "headingLevelsIdentical": true,
+      "sourceHashMatches": true,
+      "diagramStepKindsPreserved": true,
+      "diagramBranchCount": 2
+    }
+  },
+  "findings": [
+    {
+      "language": "fr",
+      "location": {
+        "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+        "line": 49,
+        "jsonPointer": "/steps/4/lines/0"
+      },
+      "quote": "Renvoyer la valeur ou une erreur",
+      "reason": "The source distinguishes returning the value from propagating an error. This wording describes returning an error as an alternative value, which is less precise for the Java boundary that throws failures. The body and code retain the distinction.",
+      "correction": "Valeur rendue ou erreur propagée",
+      "severity": "low",
+      "confidence": "high",
+      "category": "meaning_precision"
+    }
+  ],
+  "optionalStyleSuggestions": [
+    {
+      "language": "fr",
+      "location": {
+        "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.md",
+        "line": 26
+      },
+      "quote": "Une attente de 20ms sur le sémaphore ne fait pas aussi terminer l'attente du pool en 20ms.",
+      "reason": "Understandable, but the construction is a literal and awkward rendering in French. The underlying timeout distinction is preserved.",
+      "correction": "Limiter l'attente du sémaphore à 20ms ne limite pas pour autant celle du pool à 20ms.",
+      "severity": "style",
+      "confidence": "high"
+    },
+    {
+      "language": "fr",
+      "location": {
+        "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.md",
+        "line": 128
+      },
+      "quote": "crée une situation de concurrence",
+      "reason": "The technical hazard would be more explicit with a recognized race-condition term, rather than the broad word concurrence. The adjacent separate-read/admission explanation preserves the intended scenario.",
+      "correction": "crée une condition de concurrence (race condition)",
+      "severity": "style_terminology",
+      "confidence": "medium"
+    },
+    {
+      "language": "de",
+      "location": {
+        "path": ".pipeline/technical-translations/batch-142/de/2026-11-03-virtual-threads-db-semaphore.md",
+        "line": 39
+      },
+      "quote": "die erworbene Verbindung aufzuräumen",
+      "reason": "The cleanup meaning is clear, but Verbindung bereinigen reads more naturally and aligns with Verbindungsbereinigung elsewhere in the manuscript.",
+      "correction": "die erhaltene Verbindung zu bereinigen",
+      "severity": "style",
+      "confidence": "high"
+    }
+  ],
+  "overallAssessment": "Both are complete translations with no omitted sections or substantive changes to the technical conditions found. German has no required meaning correction identified. French has one minor diagram error-propagation precision issue; the full body preserves the correct behavior. Optional prose polish is separate from meaning findings.",
+  "limitations": [
+    "AI cross-review by a reviewer that did not author the German or French translations; not a human or native-speaker review and not a claim of agreement by another model.",
+    "No runtime, JDBC, Spring integration, load or benchmark tests executed during this review.",
+    "Rendered SVG layout, visual geometry, clipping and published-page rendering were not checked; parent handles geometry review.",
+    "No manuscript or diagram edits performed. Proposed corrections have not been applied or reverified.",
+    "Protected-element equality supports structural fidelity and does not by itself establish semantic accuracy; semantic comparison was performed separately."
+  ]
+}

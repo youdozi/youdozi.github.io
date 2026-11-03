@@ -21,8 +21,8 @@ export const remainingGuideLocales = {
           "description": "将历史上的 Temurin 发布延迟与平台及二进制元数据检查分开。"
         },
         "virtual": {
-          "title": "比较虚拟线程版本",
-          "description": "用 JFR 观察 JDK 21 和 25 的监视器固定现象，区分调度行为与吞吐量结论。"
+          "title": "虚拟线程与 DB 准入控制",
+          "description": "观察 JDK 21–25 的监视器固定行为，并用信号量限制 DB 等待和并发。"
         },
         "scoped": {
           "title": "限定请求上下文",
@@ -119,8 +119,8 @@ export const remainingGuideLocales = {
           "description": "過去の Temurin リリース遅延と、プラットフォーム・バイナリーメタデータの確認を区別します。"
         },
         "virtual": {
-          "title": "仮想スレッドのバージョン差",
-          "description": "JFRでJDK 21と25のモニターピンニングを観測し、スケジューリング動作とスループットの主張を区別します。"
+          "title": "仮想スレッドと DB の受け入れ制御",
+          "description": "JDK 21〜25 のモニター pinning を観測し、セマフォで DB の待機と並行実行を制限します。"
         },
         "scoped": {
           "title": "リクエストコンテキストの範囲",
@@ -217,8 +217,8 @@ export const remainingGuideLocales = {
           "description": "Die historische Temurin-Verzögerung von Prüfungen der Plattform und Binärmetadaten trennen."
         },
         "virtual": {
-          "title": "Versionen virtueller Threads vergleichen",
-          "description": "Beobachten Sie Monitor-Pinning in JDK 21 und 25 mit JFR und trennen Sie Scheduler-Verhalten von Durchsatzaussagen."
+          "title": "Virtuelle Threads und DB-Zulassung",
+          "description": "Monitor-Pinning in JDK 21–25 beobachten und DB-Wartezeiten sowie Nebenläufigkeit mit Semaphoren begrenzen."
         },
         "scoped": {
           "title": "Anfragekontext begrenzen",
@@ -315,8 +315,8 @@ export const remainingGuideLocales = {
           "description": "Séparer le retard historique de Temurin des contrôles de plateforme et de métadonnées des binaires."
         },
         "virtual": {
-          "title": "Comparer les versions des threads virtuels",
-          "description": "Observez l’épinglage dû aux moniteurs dans JDK 21 et 25 avec JFR, en distinguant le comportement de l’ordonnanceur des affirmations sur le débit."
+          "title": "Threads virtuels et admission en base",
+          "description": "Observer le pinning des moniteurs dans les JDK 21–25 et limiter l’attente et la concurrence en base avec des sémaphores."
         },
         "scoped": {
           "title": "Délimiter le contexte de requête",
@@ -413,8 +413,8 @@ export const remainingGuideLocales = {
           "description": "Отделяйте историческую задержку Temurin от проверок платформы и метаданных бинарных файлов."
         },
         "virtual": {
-          "title": "Сравнение версий виртуальных потоков",
-          "description": "Наблюдайте закрепление на мониторах в JDK 21 и 25 через JFR, отделяя поведение планировщика от утверждений о пропускной способности."
+          "title": "Виртуальные потоки и допуск к БД",
+          "description": "Наблюдайте pinning мониторов в JDK 21–25 и ограничивайте ожидание и параллелизм работы с БД семафорами."
         },
         "scoped": {
           "title": "Границы контекста запроса",
@@ -511,8 +511,8 @@ export const remainingGuideLocales = {
           "description": "Separa el retraso histórico de Temurin de las comprobaciones de plataforma y metadatos de binarios."
         },
         "virtual": {
-          "title": "Comparar versiones de hilos virtuales",
-          "description": "Observa el anclaje por monitores en JDK 21 y 25 con JFR, separando el comportamiento del planificador de las afirmaciones sobre la tasa de procesamiento."
+          "title": "Hilos virtuales y admisión a la BD",
+          "description": "Observa el pinning de monitores en JDK 21–25 y limita la espera y la concurrencia en la BD mediante semáforos."
         },
         "scoped": {
           "title": "Delimitar el contexto de solicitud",

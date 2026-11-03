@@ -1,0 +1,54 @@
+{
+  "key": "2026-11-03-virtual-threads-db-semaphore",
+  "language": "zh-CN",
+  "title": "数据库准入与清理",
+  "description": "依次获取准入许可和执行许可。获取失败时拒绝，或仅释放准入许可。取得两个许可后，待数据库处理及清理尝试结束再释放。",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "尝试获取准入许可 B+Q",
+        "无许可：拒绝"
+      ],
+      "branch": {
+        "exit": "拒绝",
+        "continue": "已准入",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "等待执行许可 B",
+        "失败：释放准入许可"
+      ],
+      "branch": {
+        "exit": "失败",
+        "continue": "已获取",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "获取连接，执行事务",
+        "提交或尝试回滚",
+        "尝试清理连接"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "释放已取得的许可",
+        "在清理尝试结束后"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "返回值或传播错误",
+        "不因取消而提前释放"
+      ]
+    }
+  ]
+}

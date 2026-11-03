@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-142",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "757357a8eacc14715478ceae1f84a1cfb33c7b9d",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Language-pair translation and self-review; cross-language-pair read-only AI reviews and root technical/render integration.",
+    "independentReviewer": true,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "scope": "Six complete translations of the English DB semaphore edition with preserved source conditions, code, outputs and original execution evidence; no new performance measurements.",
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-142/reviews/de-fr-cross-review.json",
+        "sha256": "fb6d57056838d7c4116b3f6a349ff6ebe4770049a314b81dfda4a005c5343d54"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/reviews/de-fr-recheck.json",
+        "sha256": "f7b9523a05aa05aace832fa273b8ee46452e72cd82569864310a54a958a4479b"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/reviews/english-ko-self-review.json",
+        "sha256": "f18022fe17e25120daade1449a7a481f5c4701032aa101410bf41154b40f6d44"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/reviews/integration.json",
+        "sha256": "d4af89423773029e9d1c6205c161bbf95731466379fd412b6b2af467ce133a11"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/reviews/ru-es-cross-review.json",
+        "sha256": "b034b3f5ce621099903a69a473a4bb61afbcfaa435421157fb6cab1a6b1ee0ba"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/reviews/ru-es-recheck.json",
+        "sha256": "d0ae6e11f9cbd1f43c50f4d1692695ac4fefabb27239754b256da1d39c530b31"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/reviews/zh-ja-and-english-cross-review.json",
+        "sha256": "c0f4934c96d68062c1f251546b0ecf59f6d0c8da0b85985329f0f2dee83736b8"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/reviews/zh-ja-recheck.json",
+        "sha256": "db850bfcf3b6f1a2ac4f21d3d9fedf18e566e996ab0b263b2e2ad8f66ba90726"
+      }
+    ],
+    "reviewerContexts": [
+      "db142_de_fr reviewing zh-CN/ja and English/Korean",
+      "db142_zh_ja reviewing ru/es",
+      "db142_ru_es reviewing de/fr"
+    ]
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-03-virtual-threads-db-semaphore",
+      "language": "zh-CN",
+      "translationKey": "2026-11-03-virtual-threads-db-semaphore",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "77401be57975626b192c8bef20f8f35e0d69ed311a556180631eb9f2e3fbb4b4"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+        "sha256": "1e893ec518884a2d281e706a81f06a2f0efba4413ec62771813315a668dc33f2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.svg",
+        "sha256": "f5abe53f034a68d1f671e4caee3d2d4b29c006acfe7be73541585822ca1f8ccb"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-142.json",
+        "sha256": "3fae429e61c6f5124a497623d2e7cbf30464a17db38e1f1195940e3345f4d6ea"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/db-semaphore-en.svg",
+        "sha256": "1c0d35986a629fe65ccc644abdec18dd1bf032ad94d4fba5be96c7db497d55d8"
+      }
+    },
+    {
+      "key": "ja-2026-11-03-virtual-threads-db-semaphore",
+      "language": "ja",
+      "translationKey": "2026-11-03-virtual-threads-db-semaphore",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "3fee74b93ee1664e6d18e60afaf70338ca796b2b99268600c92bb6b9c9b0befe"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+        "sha256": "cca5a9420fbed1b033b0c9f7b7bad6dd749e06f50d4e39bcd8428a640628f1ac"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.svg",
+        "sha256": "510320e6a436f4ba76cf54b16bbe05f0239fbcea65b81c1f7ae1fd351d0eee1e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-142.json",
+        "sha256": "3fae429e61c6f5124a497623d2e7cbf30464a17db38e1f1195940e3345f4d6ea"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/db-semaphore-en.svg",
+        "sha256": "1c0d35986a629fe65ccc644abdec18dd1bf032ad94d4fba5be96c7db497d55d8"
+      }
+    },
+    {
+      "key": "de-2026-11-03-virtual-threads-db-semaphore",
+      "language": "de",
+      "translationKey": "2026-11-03-virtual-threads-db-semaphore",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-142/de/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "f4cbce956c04be52e57fe3ddc81952cc9d38477cf3054f76f7389f5e451bfe19"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-142/de/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+        "sha256": "3ec68a553e60fb4c0a7445e9eb30dbe6c78f2e4b462dcb720fceeb84470e748b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-142/de/2026-11-03-virtual-threads-db-semaphore.svg",
+        "sha256": "08c264bc19e65fd3de91f63dc064a3614eb01d7ee9e43b440257b6b12edfa701"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-142.json",
+        "sha256": "3fae429e61c6f5124a497623d2e7cbf30464a17db38e1f1195940e3345f4d6ea"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/db-semaphore-en.svg",
+        "sha256": "1c0d35986a629fe65ccc644abdec18dd1bf032ad94d4fba5be96c7db497d55d8"
+      }
+    },
+    {
+      "key": "fr-2026-11-03-virtual-threads-db-semaphore",
+      "language": "fr",
+      "translationKey": "2026-11-03-virtual-threads-db-semaphore",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "fa251c5ffef7659ddd19bcbd6f362a5718fa06183b30f69547e5f7d98aeb312f"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+        "sha256": "411990384276670db2323eafcc83a1b73fdc2900bd1706b26413a3378d8eef58"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-142/fr/2026-11-03-virtual-threads-db-semaphore.svg",
+        "sha256": "bb6580643a7df65b67793e4de525c0f9b3381033db8e6d44dd390d71fd851e69"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-142.json",
+        "sha256": "3fae429e61c6f5124a497623d2e7cbf30464a17db38e1f1195940e3345f4d6ea"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/db-semaphore-en.svg",
+        "sha256": "1c0d35986a629fe65ccc644abdec18dd1bf032ad94d4fba5be96c7db497d55d8"
+      }
+    },
+    {
+      "key": "ru-2026-11-03-virtual-threads-db-semaphore",
+      "language": "ru",
+      "translationKey": "2026-11-03-virtual-threads-db-semaphore",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-142/ru/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "a5f9e30cd8ef3fd2c4cb8aabc20974d8daf43e81d5b95ba80eac82e647873e78"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-142/ru/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+        "sha256": "75f54e998fc68e2bd694fcf96fe0554708cb8440125043b88109bcc6fbe33557"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-142/ru/2026-11-03-virtual-threads-db-semaphore.svg",
+        "sha256": "8d441c20cc9b332db310b97dc5d09bd78804802abdf4001281c1155ff1c929d6"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-142.json",
+        "sha256": "3fae429e61c6f5124a497623d2e7cbf30464a17db38e1f1195940e3345f4d6ea"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/db-semaphore-en.svg",
+        "sha256": "1c0d35986a629fe65ccc644abdec18dd1bf032ad94d4fba5be96c7db497d55d8"
+      }
+    },
+    {
+      "key": "es-2026-11-03-virtual-threads-db-semaphore",
+      "language": "es",
+      "translationKey": "2026-11-03-virtual-threads-db-semaphore",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-142/es/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "37c6d5cd2f512647020b6bc23f3af46bf003e859c391653efa4c1fb856fc90c6"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-142/es/2026-11-03-virtual-threads-db-semaphore.diagram.json",
+        "sha256": "0d1e95e358bb8e08ec623df94fb8765639b8e23dab2c4f252d71a1dea817adf7"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-142/es/2026-11-03-virtual-threads-db-semaphore.svg",
+        "sha256": "c29e309d594931eca2ddc73ae86fec2bb4b923c67f5962903d483806987be65a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-142.json",
+        "sha256": "3fae429e61c6f5124a497623d2e7cbf30464a17db38e1f1195940e3345f4d6ea"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/db-semaphore-en.svg",
+        "sha256": "1c0d35986a629fe65ccc644abdec18dd1bf032ad94d4fba5be96c7db497d55d8"
+      }
+    }
+  ]
+}

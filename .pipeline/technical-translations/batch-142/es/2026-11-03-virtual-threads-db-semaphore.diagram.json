@@ -1,0 +1,54 @@
+{
+  "key": "2026-11-03-virtual-threads-db-semaphore",
+  "language": "es",
+  "title": "Admisión a la BD y limpieza",
+  "description": "Adquirir por orden los permisos de admisión y ejecución. Si falla la adquisición, rechazar o liberar solo la admisión. Tras adquirir ambos, terminar el procesamiento de BD y los intentos de liberar recursos antes de liberar los permisos.",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "Intentar admisión B+Q",
+        "Sin permiso: rechazar"
+      ],
+      "branch": {
+        "exit": "Rechazar",
+        "continue": "Admitida",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Esperar permiso B",
+        "Fallo: liberar admisión"
+      ],
+      "branch": {
+        "exit": "Fallo",
+        "continue": "Adquirido",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Conexión; ejecutar transacción",
+        "Confirmar o intentar revertir",
+        "Intentar liberar conexión"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Liberar permisos adquiridos",
+        "Tras intentar liberar recursos"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Devolver valor o propagar error",
+        "No liberar antes por cancelación"
+      ]
+    }
+  ]
+}

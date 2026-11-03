@@ -1,0 +1,79 @@
+{
+  "scope": {
+    "review_type": "Read-only AI recheck after image-path normalization, plus independent review of newly localized JDK virtual-thread group titles/descriptions.",
+    "languages": [
+      "zh-CN",
+      "ja"
+    ],
+    "reviewed_files": [
+      {
+        "path": ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "77401be57975626b192c8bef20f8f35e0d69ed311a556180631eb9f2e3fbb4b4"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "3fee74b93ee1664e6d18e60afaf70338ca796b2b99268600c92bb6b9c9b0befe"
+      },
+      {
+        "path": "src/lib/remaining-guide-locales.ts",
+        "sha256": "e98df32fe7e5ba201739f4c54c27defadcffa274828537e85eb81e4f6ba9ef7d"
+      },
+      {
+        "path": "src/lib/technical-guides.ts",
+        "sha256": "2ccf981045e94e8f2b07c71cb06874bf3111479d6e4f2fa858150d81a50180f7"
+      },
+      {
+        "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+      },
+      {
+        "path": "src/content/posts/ko/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "c42a4211a91ac63bcd7701f2acae31a5dfb436e79e059664f6cf9be3edaf2b7a"
+      }
+    ],
+    "locations": [
+      "Chinese and Japanese manuscript image at line 37",
+      "remaining-guide-locales.ts zh-CN.jdk.groups.virtual, lines 23–26",
+      "remaining-guide-locales.ts ja.jdk.groups.virtual, lines 121–124",
+      "technical-guides.ts jdk.en.groups virtual, line 132"
+    ]
+  },
+  "resolved_findings": [
+    {
+      "id": "canonical-private-image-path",
+      "status": "verified",
+      "severity": "none",
+      "confidence": "high",
+      "locations": [
+        ".pipeline/technical-translations/batch-142/zh-CN/2026-11-03-virtual-threads-db-semaphore.md:37",
+        ".pipeline/technical-translations/batch-142/ja/2026-11-03-virtual-threads-db-semaphore.md:37"
+      ],
+      "quotation": "2026-11-03-virtual-threads-db-semaphore.svg",
+      "reason": "Both private manuscripts now reference exactly the required canonical private SVG filename with no absolute asset prefix. Localized alternative text remains present and semantically faithful. This was a parent-requested normalization, not an outstanding meaning finding from the initial report."
+    }
+  ],
+  "open_findings": [],
+  "optional_style_suggestions": [
+    {
+      "id": "ja-guide-admission-term",
+      "category": "style",
+      "severity": "low",
+      "confidence": "high",
+      "location": "src/lib/remaining-guide-locales.ts:122",
+      "quotation": "仮想スレッドと DB の入場制御",
+      "reason": "The title conveys admission control, but 入場 is more typical of physical entry. The reviewed Japanese article uses 受け入れ制御, which is clearer and consistent in this technical context. This does not change the underlying claim.",
+      "suggested_correction": "仮想スレッドと DB の受け入れ制御"
+    }
+  ],
+  "findings": [],
+  "conclusion": "The canonical image filenames are verified. Chinese and Japanese guide group copy preserves the English meanings: virtual threads and DB admission, observing JDK 21–25 monitor pinning, and bounding DB waiting and concurrency with semaphores. No mandatory meaning correction identified. One optional Japanese terminology improvement is recorded separately.",
+  "checks": {
+    "source_stability": "English and Korean complete file hashes match those recorded in the original independent cross-review.",
+    "guide_scope": "Reviewed only the newly changed virtual group title and description in each target language; other guide groups were contextual reading, not newly certified."
+  },
+  "limitations": [
+    "AI language review; no human or native-speaker review claimed.",
+    "No code execution, build, validator, rendered SVG or browser verification performed in this recheck.",
+    "The full manuscripts were not independently retranslated or fully rereviewed for this narrow path-only recheck; the prior full review applies to their unchanged body meaning."
+  ]
+}

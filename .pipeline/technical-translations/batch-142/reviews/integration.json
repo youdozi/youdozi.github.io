@@ -1,0 +1,355 @@
+{
+  "reviewer": "root integration",
+  "scope": "Eight-language code/flow integration; seven new full editions. Source execution evidence preserved without new performance measurements.",
+  "findingsResolved": [
+    "Russian execution boundary clarified to start before connection acquisition",
+    "Spanish latch detail and resource-cleanup description restored",
+    "French diagram now distinguishes value return from exception propagation",
+    "Chinese/Japanese private image URLs normalized to the publication asset mapping",
+    "Optional Japanese terminology and Spanish guide register aligned with reviewed recommendations"
+  ],
+  "checks": {
+    "protectedCode": "Six identical executable/configuration/command/output blocks across all eight languages",
+    "sixTranslations": "Full block shape, numeric sequence, inline tokens and ordered source links passed existing technical validator",
+    "preview": {
+      "results": [
+        {
+          "lang": "en",
+          "width": 320,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "en",
+          "width": 360,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "en",
+          "width": 1280,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "ko",
+          "width": 320,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "ko",
+          "width": 360,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "ko",
+          "width": 1280,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "zh-CN",
+          "width": 320,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "zh-CN",
+          "width": 360,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "zh-CN",
+          "width": 1280,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "ja",
+          "width": 320,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "ja",
+          "width": 360,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "ja",
+          "width": 1280,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "de",
+          "width": 320,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "de",
+          "width": 360,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "de",
+          "width": 1280,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "fr",
+          "width": 320,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "fr",
+          "width": 360,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "fr",
+          "width": 1280,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "ru",
+          "width": 320,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "ru",
+          "width": 360,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "ru",
+          "width": 1280,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "es",
+          "width": 320,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "es",
+          "width": 360,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        },
+        {
+          "lang": "es",
+          "width": 1280,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": true
+            }
+          ],
+          "codeBlocks": 6
+        }
+      ],
+      "diagrams": [
+        {
+          "lang": "en",
+          "overflow": []
+        },
+        {
+          "lang": "ko",
+          "overflow": []
+        },
+        {
+          "lang": "zh-CN",
+          "overflow": []
+        },
+        {
+          "lang": "ja",
+          "overflow": []
+        },
+        {
+          "lang": "de",
+          "overflow": []
+        },
+        {
+          "lang": "fr",
+          "overflow": []
+        },
+        {
+          "lang": "ru",
+          "overflow": []
+        },
+        {
+          "lang": "es",
+          "overflow": []
+        }
+      ],
+      "isolation": {
+        "mode": "verification",
+        "serviceWorkers": "block",
+        "blocked": 0,
+        "blockedCollection": 0,
+        "allowedTag": 0
+      }
+    },
+    "diagramVisualInspection": "Eight-diagram contact sheet and browser text bounds checked; no clipped text or changed release-order branches"
+  },
+  "limits": [
+    "AI cross-review; no human or native-speaker proofreading claimed",
+    "No new throughput benchmark or Spring integration run",
+    "Browser preview here is local rendered Markdown; deployed full-site checks follow"
+  ],
+  "openMeaningFindings": []
+}
