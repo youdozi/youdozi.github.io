@@ -1,0 +1,33 @@
+{
+  "review": "Focused recheck of adopted Japanese grammar fix",
+  "scope": "Only ja-grammar-001 wording correction; no new full-review claim. Current scoped targets read; no other reviewer reports read.",
+  "sha256": {
+    ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.md": "a2f2b10890b2e432f6fd9316929b802be940c6b43f5bf716fe021d1cd7b66a53",
+    ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.diagram.json": "ea39347576becd9d2b69bd8eb0af772ec53167869fafe61422c95e312e6469d3",
+    ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.svg": "67e8157efc92719034120d37d7a30ae97d426856bebe4fb3c69e8df5c8ad3d31",
+    ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.md": "832289e197fca621ffef9c6fc71a4a096bf571a890f5a973e182bfb2251bed7e",
+    ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.diagram.json": "dbb5b0023f1949f3f9a47cac057e658316b1e85783105a9abc673d9487ef0682",
+    ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.svg": "2a116e5374e905b2bc37334807e738ac03c3ae7050b9ad7c8264520c4819deae"
+  },
+  "dispositions": [
+    {
+      "id": "ja-grammar-001",
+      "status": "resolved",
+      "location": ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.md:36",
+      "current_quote": "アプリケーションが必要としなくなったオブジェクトでも",
+      "assessment": "Natural grammatical subject/object relationship and faithful to objects the application no longer needs.",
+      "confidence": "high"
+    }
+  ],
+  "new_findings": [],
+  "checks_actually_done": [
+    "Read current Japanese corrected sentence in context.",
+    "Read current scoped Markdown/diagram artifacts; JSON and SVG XML parse successfully.",
+    "Computed final SHA-256 hashes of both language Markdown, JSON and SVG targets."
+  ],
+  "limits": [
+    "Focused correction recheck only; original full-review limits remain.",
+    "No Java, shell example, browser or visual renderer execution."
+  ],
+  "result": "The initial minor finding is resolved."
+}

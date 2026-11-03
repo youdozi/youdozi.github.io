@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-137",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "6b65e99fc2b07a291f901aaec0a379b9364828c6",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Full language-pair translation and self-review, fresh-context target-first/source-comparison reviews, focused wording and SVG placement rechecks, parent structural/flow/render checks.",
+    "independentReviewer": true,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "scope": "Six complete JDK GC history editions with localized metadata and allocation-flow diagrams. Preserve source execution evidence and exclusions; no new GC performance measurements.",
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-137/reviews/de-fr-initial.json",
+        "sha256": "2fa0ea24eaea293e51177dfa6838e66acf4e44ac8b18a68dea6cc6ea6756f113"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-137/reviews/de-fr-recheck.json",
+        "sha256": "7c898f64bb56f0e100090cdac9eb89bb1b99f969f1fc8fd9875fee4930d3ccd5"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-137/reviews/de-fr-svg-final.json",
+        "sha256": "87f09932f7cf9c681fad429e3f967097702921f88b00a28ef2b452b8da6076ee"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-137/reviews/integration.json",
+        "sha256": "e21b06ae7bcd234ed8219dea67db485f37470785067d2732995a6ebda90091da"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-137/reviews/ru-es-initial.json",
+        "sha256": "402718ae40fcb33b44b2c2d8fbae5cf1857603198c34b510903e9b143b3852bd"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-137/reviews/ru-es-recheck.json",
+        "sha256": "5d76d7ab6fd2716fc8198a4a34656bf2d431b707fdb1833cdf0f28caf3d65dce"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-137/reviews/ru-es-svg-final.json",
+        "sha256": "736608d831ec4d15671ac9cefd736509470c21891038eadebdd8031f77a093ec"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-137/reviews/zh-ja-initial.json",
+        "sha256": "1444ac8d2314ae1752d48e7c4bc34d33d914f9e2a77af8607cd82a078fec56e2"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-137/reviews/zh-ja-recheck.json",
+        "sha256": "a0eb34f02836e604187095fe304a998e8c1aaa738023132ba82e8fff5f7f46e8"
+      }
+    ],
+    "reviewerContexts": [
+      "review137_zh_ja",
+      "review137_de_fr",
+      "review137_ru_es"
+    ]
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-03-jdk-gc-evolution",
+      "language": "zh-CN",
+      "translationKey": "2026-11-03-jdk-gc-evolution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "01667d7b4b2824ee749cd29f79a08f74627c3725ff551aa08ed090d48f9fd693"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "a2f2b10890b2e432f6fd9316929b802be940c6b43f5bf716fe021d1cd7b66a53"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.diagram.json",
+        "sha256": "ea39347576becd9d2b69bd8eb0af772ec53167869fafe61422c95e312e6469d3"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.svg",
+        "sha256": "67e8157efc92719034120d37d7a30ae97d426856bebe4fb3c69e8df5c8ad3d31"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-137.json",
+        "sha256": "be939fcfbf9aa8a338ff9074992a7245e9df36c37fdef7dcc833606f7fdffaa8"
+      }
+    },
+    {
+      "key": "ja-2026-11-03-jdk-gc-evolution",
+      "language": "ja",
+      "translationKey": "2026-11-03-jdk-gc-evolution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "01667d7b4b2824ee749cd29f79a08f74627c3725ff551aa08ed090d48f9fd693"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "832289e197fca621ffef9c6fc71a4a096bf571a890f5a973e182bfb2251bed7e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.diagram.json",
+        "sha256": "dbb5b0023f1949f3f9a47cac057e658316b1e85783105a9abc673d9487ef0682"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.svg",
+        "sha256": "2a116e5374e905b2bc37334807e738ac03c3ae7050b9ad7c8264520c4819deae"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-137.json",
+        "sha256": "be939fcfbf9aa8a338ff9074992a7245e9df36c37fdef7dcc833606f7fdffaa8"
+      }
+    },
+    {
+      "key": "de-2026-11-03-jdk-gc-evolution",
+      "language": "de",
+      "translationKey": "2026-11-03-jdk-gc-evolution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "01667d7b4b2824ee749cd29f79a08f74627c3725ff551aa08ed090d48f9fd693"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "7b2b805f87507ba8793ced0fb4059e7fcccb92e86cc184ddc0f35b8002d2af8e"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.diagram.json",
+        "sha256": "4b58ba2bffd7e6e4564aff4cf2d7feb4a7d9367096b5f7b5230b7b8cbfb80121"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.svg",
+        "sha256": "4985f3b4c0b576352082bb304365d527f10e6da1848ffa270462965f64dd3cac"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-137.json",
+        "sha256": "be939fcfbf9aa8a338ff9074992a7245e9df36c37fdef7dcc833606f7fdffaa8"
+      }
+    },
+    {
+      "key": "fr-2026-11-03-jdk-gc-evolution",
+      "language": "fr",
+      "translationKey": "2026-11-03-jdk-gc-evolution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "01667d7b4b2824ee749cd29f79a08f74627c3725ff551aa08ed090d48f9fd693"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "91b3ab7d74ff9183b92b96285a23159c5cd686faa1943bc019563cb0e8d86a77"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.diagram.json",
+        "sha256": "ec95fbfd5fd3dd5f697aaad982287e08ac62f29672f1c13746a00ac852a04bde"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.svg",
+        "sha256": "aac1b38f310f3077d696b31e4526a8c4308232abda9f945606cf7aeb8975b782"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-137.json",
+        "sha256": "be939fcfbf9aa8a338ff9074992a7245e9df36c37fdef7dcc833606f7fdffaa8"
+      }
+    },
+    {
+      "key": "ru-2026-11-03-jdk-gc-evolution",
+      "language": "ru",
+      "translationKey": "2026-11-03-jdk-gc-evolution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "01667d7b4b2824ee749cd29f79a08f74627c3725ff551aa08ed090d48f9fd693"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "7c6ce06a81640d262bffeb776800892746e634a92700671eac918df8109da37d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.diagram.json",
+        "sha256": "c8bc74e41b5c4c687b0bd1df1dbb1548292c01188ebdf889ea634b9b6635aa7f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.svg",
+        "sha256": "fa544d0c564942ccfe380b71052aea2a86b00ea08b33d85de93c6c74a17bc859"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-137.json",
+        "sha256": "be939fcfbf9aa8a338ff9074992a7245e9df36c37fdef7dcc833606f7fdffaa8"
+      }
+    },
+    {
+      "key": "es-2026-11-03-jdk-gc-evolution",
+      "language": "es",
+      "translationKey": "2026-11-03-jdk-gc-evolution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "01667d7b4b2824ee749cd29f79a08f74627c3725ff551aa08ed090d48f9fd693"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.md",
+        "sha256": "7a941ce0397bf778b7a3ddbe2014ade3f548eff18ce54d0e43b0731b251c8415"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.diagram.json",
+        "sha256": "62142d94f0805c59da763f574a39d00776c24c7b82f536935e28fc7832446ca4"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.svg",
+        "sha256": "11799b13c4eb830339e2c1647921c539bf7d77883c684bacba1dc228c3eaddd5"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-137.json",
+        "sha256": "be939fcfbf9aa8a338ff9074992a7245e9df36c37fdef7dcc833606f7fdffaa8"
+      }
+    }
+  ]
+}

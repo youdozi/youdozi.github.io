@@ -1,0 +1,47 @@
+{
+  "key": "2026-11-03-jdk-gc-evolution",
+  "language": "fr",
+  "title": "Allocation et rétention",
+  "description": "Créer 64 emplacements, répéter 8192 fois l’allocation, l’écriture du premier octet, le remplacement d’une référence et le cumul de la somme de contrôle, puis afficher le résultat. La JVM planifie la récupération ; ce n’est pas une étape explicite du code.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Créer 64 emplacements"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Allouer un tableau de 128 KiB"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Écrire le premier octet",
+        "Remplacer la référence",
+        "de l’emplacement tournant"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Cumuler la somme de contrôle",
+        "Répéter sur 8192 itérations"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Afficher nombre et somme",
+        "La JVM gère la récupération"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 3,
+    "to": 1,
+    "label": "↻"
+  }
+}

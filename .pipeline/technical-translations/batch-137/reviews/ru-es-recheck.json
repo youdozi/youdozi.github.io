@@ -1,0 +1,61 @@
+{
+  "review": "ru-es-recheck",
+  "scope": "Focused independent recheck of the three initial wording findings and changed loop labels; no target edits.",
+  "target_hashes": {
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.md": "7c6ce06a81640d262bffeb776800892746e634a92700671eac918df8109da37d",
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.diagram.json": "c8bc74e41b5c4c687b0bd1df1dbb1548292c01188ebdf889ea634b9b6635aa7f",
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.svg": "fa544d0c564942ccfe380b71052aea2a86b00ea08b33d85de93c6c74a17bc859",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.md": "7a941ce0397bf778b7a3ddbe2014ade3f548eff18ce54d0e43b0731b251c8415",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.diagram.json": "62142d94f0805c59da763f574a39d00776c24c7b82f536935e28fc7832446ca4",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.svg": "75feb97ef217350e832198a4cac6c94b4f09216653a244d087898f3cc08e2144"
+  },
+  "dispositions": [
+    {
+      "finding": "RU introductory baseline wording",
+      "status": "resolved",
+      "observed": "сначала соберите базовые показатели работы с G1"
+    },
+    {
+      "finding": "ES execution environment wording",
+      "status": "resolved",
+      "observed": "El entorno de ejecución utilizado fue"
+    },
+    {
+      "finding": "ES rotating slot label",
+      "status": "resolved_in_json_but_svg_regression",
+      "observed": "JSON step 2 has Fijar el primer byte / Sustituir la referencia / en la ranura rotativa; regenerated SVG shifts subsequent lines into wrong boxes."
+    },
+    {
+      "change": "RU loop label ↻",
+      "status": "acceptable",
+      "observed": "Loop bounds and 8192 repetition remain; SVG text matches JSON."
+    },
+    {
+      "change": "ES loop label ↻",
+      "status": "not_present_in_svg",
+      "observed": "JSON has ↻ but SVG loop text is La JVM decide la recuperación."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "high",
+      "location": ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.svg",
+      "quote": "en la ranura rotativa / Acumular suma de control; Repetir 8192 iteraciones / Imprimir posiciones y suma; loop La JVM decide la recuperación",
+      "reason": "SVG renderer shifted flattened labels after three-line step 2. Reference replacement is split between process boxes, iteration instruction is in result box, reclamation statement appears as loop label, and intended ↻ is omitted. SVG and diagram JSON no longer agree.",
+      "fix": "Regenerate SVG honoring per-step variable line counts and loop label; keep 5 steps and loop 3→1.",
+      "confidence": 1.0
+    }
+  ],
+  "checks_actually_done": [
+    "Read modified RU and ES introductory/environment sentences.",
+    "Parsed both diagram JSON files and SVG XML and compared flattened displayed text to intended title + per-step lines + loop label.",
+    "Inspected ES SVG XML grouping/coordinates to confirm shifted labels and incorrect loop.",
+    "Calculated SHA-256 of all six targets."
+  ],
+  "limits": [
+    "No renderer/browser execution or visual clipping check.",
+    "No Java execution.",
+    "Focused recheck; full initial fidelity findings remain documented in ru-es-initial.json."
+  ],
+  "result": "pending_ES_SVG_regeneration"
+}

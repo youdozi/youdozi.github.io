@@ -1,0 +1,68 @@
+{
+  "review": "Independent read-only full-translation initial review",
+  "reviewer": "separate AI review session; no human/native-speaker review claim",
+  "context": {
+    "task": "Complete translations, not summaries; no length cap",
+    "audience": "Java backend readers",
+    "languages": [
+      "zh-CN",
+      "ja"
+    ],
+    "source": "src/content/posts/en/2026-11-03-jdk-gc-evolution.md",
+    "sequence": "Target-language prose read first, then complete English source and diagram comparison",
+    "target_modifications": false
+  },
+  "sha256": {
+    "src/content/posts/en/2026-11-03-jdk-gc-evolution.md": "01667d7b4b2824ee749cd29f79a08f74627c3725ff551aa08ed090d48f9fd693",
+    "content/diagrams/technical-137.json": "be939fcfbf9aa8a338ff9074992a7245e9df36c37fdef7dcc833606f7fdffaa8",
+    ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.md": "a2f2b10890b2e432f6fd9316929b802be940c6b43f5bf716fe021d1cd7b66a53",
+    ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.diagram.json": "ea39347576becd9d2b69bd8eb0af772ec53167869fafe61422c95e312e6469d3",
+    ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.svg": "67e8157efc92719034120d37d7a30ae97d426856bebe4fb3c69e8df5c8ad3d31",
+    ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.md": "8d8e124d970761194ddd979217b1c0e3f7cbf3aceaaedb996f4547ab678fd27c",
+    ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.diagram.json": "dbb5b0023f1949f3f9a47cac057e658316b1e85783105a9abc673d9487ef0682",
+    ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.svg": "2a116e5374e905b2bc37334807e738ac03c3ae7050b9ad7c8264520c4819deae"
+  },
+  "findings": [
+    {
+      "id": "ja-grammar-001",
+      "language": "ja",
+      "severity": "minor",
+      "category": "grammar / reference clarity",
+      "location": ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.md:36",
+      "quote": "アプリケーションが不要になったオブジェクトでも",
+      "reason": "The subject marker が makes the application the entity that became unnecessary; the English refers to objects the application no longer needs. The surrounding context makes the intended meaning recoverable, but the phrasing is grammatically misleading.",
+      "fix": "アプリケーションにとって不要になったオブジェクトでも",
+      "confidence": "high",
+      "blocking": false
+    }
+  ],
+  "checks_actually_done": [
+    "Read both complete target prose bodies first for naturalness, terminology, Chinese simplified script/punctuation, Japanese polite register, referents, flow and unintended language mixing.",
+    "Compared complete English source paragraph by paragraph, including title, description, all tables, headings, caveats and production guidance. All 48 blank-line-separated body blocks, 9 headings and 26 table rows are represented in each language.",
+    "Compared JDK 28 Targeted/EA versus GA, JDK 27 defaults, historical introduction/product/deprecation/removal milestones, distributor/platform/support caveats, generation mode versus JVM-wide collector defaults, obsolete/remove distinctions, and removed-option observations.",
+    "Compared all quantities, dates, version/build strings, memory payload versus overhead, 12 execution configurations, actual-execution versus official-source-only scope, archived-security-version limitation and nonbenchmark/noncausality qualifications.",
+    "Programmatically confirmed all fenced code blocks and ordered inline-code tokens are byte-identical to source in each target; all ordered prose link destinations match source. Diagram paths intentionally use local SVG filenames.",
+    "Read localized diagram JSON and extracted SVG title/description/text; compared five steps and loop to source diagram and Java allocation/reference/checksum sequence. Parsed both JSON and SVG XML successfully; checked displayed SVG strings exactly match localized diagram JSON.",
+    {
+      "language": "zh-CN",
+      "diagram_structure": "same five stages, kinds, loop from 3 to 1 as source",
+      "svg_display_strings": "exactly match localized diagram JSON"
+    },
+    {
+      "language": "ja",
+      "diagram_structure": "same five stages, kinds, loop from 3 to 1 as source",
+      "svg_display_strings": "exactly match localized diagram JSON"
+    }
+  ],
+  "result": {
+    "zh-CN": "No meaning or naturalness issue requiring correction identified. Complete source coverage.",
+    "ja": "Complete source coverage; one minor grammar correction suggested. No material technical fidelity issue identified."
+  },
+  "limits": [
+    "No Java or shell example executed by this reviewer; execution statements were reviewed as translated source claims only.",
+    "No browser, screenshot or visual renderer verification; SVG validity and text/flow semantics inspected from XML. Root handles rendering.",
+    "No external fact re-audit of official links; scope is translation fidelity to published English source.",
+    "No manifest review sections or other reviewer reports read.",
+    "Review applies only to recorded hashes; revisions require appropriate recheck."
+  ]
+}

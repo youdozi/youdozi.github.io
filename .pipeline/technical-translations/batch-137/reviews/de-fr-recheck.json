@@ -1,0 +1,62 @@
+{
+  "review": "de-fr-recheck",
+  "reviewer": "independent AI review session /root/review137_de_fr",
+  "date": "2026-11-03",
+  "scope": "Focused recheck of four initial wording findings and regenerated SVG semantics; no target edits",
+  "target_hashes": {
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.md": "7b2b805f87507ba8793ced0fb4059e7fcccb92e86cc184ddc0f35b8002d2af8e",
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.diagram.json": "4b58ba2bffd7e6e4564aff4cf2d7feb4a7d9367096b5f7b5230b7b8cbfb80121",
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.svg": "4985f3b4c0b576352082bb304365d527f10e6da1848ffa270462965f64dd3cac",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.md": "91b3ab7d74ff9183b92b96285a23159c5cd686faa1943bc019563cb0e8d86a77",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.diagram.json": "ec95fbfd5fd3dd5f697aaad982287e08ac62f29672f1c13746a00ac852a04bde",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.svg": "f9e35502d6d3804ca54b9dfeee5a2feca93598c1a715979d82175defa4f3f7eb"
+  },
+  "dispositions": [
+    {
+      "id": "de-diagram-loop",
+      "status": "resolved",
+      "reason": "JSON and SVG now use ↻; correct loop endpoints and explicit 8192 iteration bound remain."
+    },
+    {
+      "id": "fr-diagram-loop",
+      "status": "resolved_in_json_but_svg_regressed",
+      "reason": "JSON uses ↻; SVG instead displays La JVM gère la récupération at loop label because extra step text shifted renderer assignments."
+    },
+    {
+      "id": "fr-diagram-reference",
+      "status": "resolved_in_json_but_svg_regressed",
+      "reason": "Three wrapped lines faithfully describe the first byte and rotating slot reference in JSON; rendered SVG moves the third line into the checksum box."
+    },
+    {
+      "id": "fr-feature-release",
+      "status": "resolved",
+      "reason": "la dernière version majeure en disponibilité générale preserves feature-release/GA distinction naturally enough for technical readership."
+    }
+  ],
+  "findings": [
+    {
+      "id": "fr-svg-step-text-shift",
+      "severity": "medium",
+      "category": "diagram_semantics",
+      "location": {
+        "file": ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.svg",
+        "elements": "step 3, step 4, result and loop label"
+      },
+      "quote": "Result box: Répéter sur 8192 itérations / Afficher nombre et somme; loop label: La JVM gère la récupération",
+      "reason": "SVG generation assigns the inserted third line to the next box and shifts every subsequent text. The 8192 bound appears in the result rather than repetition step, JVM scheduling becomes the loop label, and the intended ↻ is missing. JSON has correct five-step semantics but the visible SVG does not.",
+      "fix": "Regenerate with a renderer that respects each step’s line count, or keep the reference-replacement step to two lines and regenerate; verify SVG text assignments match JSON.",
+      "confidence": 1.0
+    }
+  ],
+  "result": "Changes resolve initial wording concerns at source JSON/article level; FR SVG requires correction before diagram semantic pass. DE passes focused recheck.",
+  "checks_performed": [
+    "Read changed French article reference-date paragraph",
+    "Parsed and read both diagram JSONs and every SVG title/desc/text node",
+    "Inspected final FR SVG XML elements and coordinates to confirm shifted step assignments",
+    "Recorded SHA256 of all six current target files"
+  ],
+  "limitations": [
+    "No browser/raster rendering, layout fit checks, Java execution or full repeated article review; root handles rendering",
+    "Hashes describe reviewed snapshot and must be superseded after FR SVG correction"
+  ]
+}

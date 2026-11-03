@@ -1,0 +1,102 @@
+{
+  "review": "ru-es-svg-final",
+  "scope": "Focused final SVG/JSON consistency and text placement recheck; earlier reports preserved.",
+  "result": "passed",
+  "target_hashes": {
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.md": "7c6ce06a81640d262bffeb776800892746e634a92700671eac918df8109da37d",
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.diagram.json": "c8bc74e41b5c4c687b0bd1df1dbb1548292c01188ebdf889ea634b9b6635aa7f",
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.svg": "fa544d0c564942ccfe380b71052aea2a86b00ea08b33d85de93c6c74a17bc859",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.md": "7a941ce0397bf778b7a3ddbe2014ade3f548eff18ce54d0e43b0731b251c8415",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.diagram.json": "62142d94f0805c59da763f574a39d00776c24c7b82f536935e28fc7832446ca4",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.svg": "11799b13c4eb830339e2c1647921c539bf7d77883c684bacba1dc228c3eaddd5"
+  },
+  "dispositions": [
+    {
+      "issue": "ES three-line-step label shift and incorrect loop text",
+      "status": "resolved",
+      "evidence": "All three ES step-2 lines now lie in y=328..414 box at baselines 353,377,401; checksum/repetition are in step 3, result/JVM note in result box; final loop text is ↻."
+    },
+    {
+      "issue": "RU SVG after ↻ change",
+      "status": "passed",
+      "evidence": "Exact title/step/loop text correspondence to JSON; five boxes and loop 3→1 retained."
+    }
+  ],
+  "checks_actually_done": {
+    "ru": {
+      "svg_text_exactly_matches_json": true,
+      "step_count": 5,
+      "all_step_text_baselines_within_own_box": true,
+      "step_baselines_y": [
+        [
+          125.0
+        ],
+        [
+          251.0
+        ],
+        [
+          365.0,
+          389.0
+        ],
+        [
+          491.0,
+          515.0
+        ],
+        [
+          617.0,
+          641.0
+        ]
+      ],
+      "loop_label": "↻",
+      "loop_from_to": [
+        3,
+        1
+      ],
+      "result_lines": [
+        "Вывести слоты и сумму",
+        "Освобождение планирует JVM"
+      ]
+    },
+    "es": {
+      "svg_text_exactly_matches_json": true,
+      "step_count": 5,
+      "all_step_text_baselines_within_own_box": true,
+      "step_baselines_y": [
+        [
+          125.0
+        ],
+        [
+          251.0
+        ],
+        [
+          353.0,
+          377.0,
+          401.0
+        ],
+        [
+          491.0,
+          515.0
+        ],
+        [
+          617.0,
+          641.0
+        ]
+      ],
+      "loop_label": "↻",
+      "loop_from_to": [
+        3,
+        1
+      ],
+      "result_lines": [
+        "Imprimir posiciones y suma",
+        "La JVM decide la recuperación"
+      ]
+    }
+  },
+  "findings": [],
+  "limits": [
+    "XML and coordinate checks only; reviewer did not run browser/rendered text-bounds checks. Root separately handles rendering.",
+    "No Java execution and no new full-prose review; earlier reports document full source comparison and prose dispositions.",
+    "Targets unchanged; only this final report written."
+  ]
+}

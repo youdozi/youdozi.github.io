@@ -1,0 +1,120 @@
+{
+  "review": "de-fr-initial",
+  "reviewer": "independent AI review session /root/review137_de_fr",
+  "date": "2026-11-03",
+  "context": {
+    "task": "Complete translations, not summaries; no length cap",
+    "languages": [
+      "de",
+      "fr"
+    ],
+    "audience": "Java backend readers",
+    "scope": "Target-only naturalness pass followed by full English-source fidelity comparison; article, diagram JSON and SVG text/structure only",
+    "instructions_read": [
+      "translate/SKILL.md",
+      "translate/references/ai-review.md",
+      "translate/references/languages.md (German and French criteria)"
+    ],
+    "source": "src/content/posts/en/2026-11-03-jdk-gc-evolution.md",
+    "diagram_source": "content/diagrams/technical-137.json",
+    "did_not_read": "Manifest review sections or other reviewer reports"
+  },
+  "hash_algorithm": "sha256",
+  "target_hashes": {
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.md": "7b2b805f87507ba8793ced0fb4059e7fcccb92e86cc184ddc0f35b8002d2af8e",
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.diagram.json": "2e0de6e172dad12de59acefa1f2f515f45c8733b51b2ce7f7c74112af8bded60",
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.svg": "44620fe72e7b5b1b68a8aaf0e6870019380234142c87ee68c5047adc092dc265",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.md": "1f6809bbd7f70cfba3888e7e02bb9e719e1db0e5e3f8074d5a38a03936b7b2f3",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.diagram.json": "504b9c2ba7353abf0fe96898380a199125d182da0b657c241cbdecc1884a2cdf",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.svg": "663654763c0c77996776b66983faa2360467f5dd85c5b2d485c5d0f7ad6f16a0"
+  },
+  "source_hashes": {
+    "src/content/posts/en/2026-11-03-jdk-gc-evolution.md": "01667d7b4b2824ee749cd29f79a08f74627c3725ff551aa08ed090d48f9fd693",
+    "content/diagrams/technical-137.json": "be939fcfbf9aa8a338ff9074992a7245e9df36c37fdef7dcc833606f7fdffaa8"
+  },
+  "result": "No blocking fidelity issue found; low-severity editorial diagram/terminology corrections recommended.",
+  "findings": [
+    {
+      "id": "de-diagram-loop",
+      "severity": "low",
+      "category": "target_language_clarity",
+      "location": {
+        "files": [
+          ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.diagram.json",
+          ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.svg"
+        ],
+        "jsonPath": "$.loop.label",
+        "svgText": "noch"
+      },
+      "quote": "noch",
+      "reason": "As a standalone arrow label, noch (still/more) is incomplete and does not naturally name the next iteration. The surrounding step correctly gives 8192 iterations, so the loop bound is preserved.",
+      "fix": "Use nächste Iteration (or weiter) in diagram JSON and regenerate the SVG.",
+      "confidence": 0.97
+    },
+    {
+      "id": "fr-diagram-loop",
+      "severity": "low",
+      "category": "target_language_naturalness",
+      "location": {
+        "files": [
+          ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.diagram.json",
+          ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.svg"
+        ],
+        "jsonPath": "$.loop.label",
+        "svgText": "bis"
+      },
+      "quote": "bis",
+      "reason": "Bis is used for repetitions in limited French contexts such as music or encores, but sounds unnatural as the next-iteration label in this allocation flowchart.",
+      "fix": "Use itération suivante or encore in diagram JSON and regenerate the SVG.",
+      "confidence": 0.94
+    },
+    {
+      "id": "fr-diagram-reference",
+      "severity": "low",
+      "category": "technical_clarity",
+      "location": {
+        "files": [
+          ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.diagram.json",
+          ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.svg"
+        ],
+        "jsonPath": "$.steps[2].lines[1]"
+      },
+      "quote": "Remplacer la référence cyclique",
+      "reason": "The source describes replacement of the reference in a rotating slot, not a cyclic reference. This condensed wording can imply a reference cycle, a distinct GC concept. The article and code themselves correctly explain rotating slots.",
+      "fix": "Use Remplacer la référence d’un emplacement, or a compact equivalent explicitly identifying a rotating slot, then regenerate SVG.",
+      "confidence": 0.96
+    },
+    {
+      "id": "fr-feature-release",
+      "severity": "low",
+      "category": "terminology_naturalness",
+      "location": {
+        "file": ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.md",
+        "line": 13
+      },
+      "quote": "la dernière version fonctionnelle généralement disponible",
+      "reason": "Version fonctionnelle is an awkward rendering of feature release and can be read as a working/functional version. The JDK version and GA/EA distinction remain explicit and correct.",
+      "fix": "Use la dernière version majeure disponible en disponibilité générale, or retain the recognized term version de fonctionnalités with a natural GA formulation.",
+      "confidence": 0.93
+    }
+  ],
+  "checks_performed": [
+    "Read full German and French targets before English source",
+    "Read and semantically compared every body paragraph, all milestone/collector/execution table rows and section headings",
+    "Checked reference date, JDK versions, latest GA vs EA, Targeted/product/experimental statuses, collector versus mode defaults, platform/distribution limitations, support qualifications and obsoletion/removal distinctions against supplied source",
+    "Checked all allocation sizes, iteration/slot/checksum values, heap/log options and interpretation, environment versions, 12-configuration claim and performance/production/historical execution limitations against supplied source",
+    "Python comparison: all 6 fenced blocks identical to English in each language",
+    "Python comparison: all inline-code literals identical and in identical order in both languages",
+    "Python comparison: all non-image body link URLs identical and in identical order in both languages; image references are expected local staged SVG paths",
+    "Python comparison: 47 paragraph blocks in English and in each target; manual semantic coverage review additionally performed",
+    "Parsed both diagram JSON and SVG XML; read all title/desc/text nodes and compared five-step sequence and loop from=3,to=1 with source/code",
+    "Checked localized image alternative text and diagram distinction between reference replacement and JVM-scheduled reclamation"
+  ],
+  "limitations": [
+    "Did not execute Java, JVM commands, shell examples or performance tests; execution claims assessed only for faithful translation of supplied source",
+    "Did not browse or independently fact-check JDK facts against external sites",
+    "Did not render SVG or browser-preview page; root agent handles rendering/visual verification",
+    "Did not review publication frontmatter transformation, final URLs, other languages or final integration",
+    "No human/native-speaker review claim; no target modifications made"
+  ]
+}

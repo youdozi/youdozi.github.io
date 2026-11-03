@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-03",
+  "reviewer": "root integration",
+  "scope": "Six translations, localized allocation flow and source protection. Runtime evidence is translated, not re-executed for these editions.",
+  "checks": {
+    "parity": "Six editions pass code, inline literals, links, ordered numeric values, paragraph and table structure comparison",
+    "diagramRenders": [
+      {
+        "language": "zh-CN",
+        "outside": []
+      },
+      {
+        "language": "ja",
+        "outside": []
+      },
+      {
+        "language": "de",
+        "outside": []
+      },
+      {
+        "language": "fr",
+        "outside": []
+      },
+      {
+        "language": "ru",
+        "outside": []
+      },
+      {
+        "language": "es",
+        "outside": []
+      }
+    ],
+    "visualInspection": "All six mobile SVG screenshots inspected; no clipped or overlapping text/arrows after final rendering"
+  },
+  "findingsAndDispositions": [
+    {
+      "finding": "Japanese application/object grammar",
+      "disposition": "Adopted and independently rechecked"
+    },
+    {
+      "finding": "Russian baseline wording and Spanish execution-environment wording",
+      "disposition": "Adopted and independently rechecked"
+    },
+    {
+      "finding": "German/French incomplete loop labels",
+      "disposition": "Used repeat icon because long full words exceed original right margin; repetition bound retained; independently rechecked"
+    },
+    {
+      "finding": "French/Spanish reference label ambiguously suggested rotating/cyclic reference",
+      "disposition": "Explicit rotating slot wording wrapped into three lines; independently rechecked"
+    },
+    {
+      "finding": "Fixed-node SVG localization shifted downstream labels after wrapping",
+      "disposition": "Replaced private generation logic with standard source renderer using real per-step line arrays. Full SVG/spec validator and independent focused recheck pass; earlier failed rechecks retained"
+    }
+  ],
+  "files": {
+    ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.diagram.json": "ea39347576becd9d2b69bd8eb0af772ec53167869fafe61422c95e312e6469d3",
+    ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.md": "a2f2b10890b2e432f6fd9316929b802be940c6b43f5bf716fe021d1cd7b66a53",
+    ".pipeline/technical-translations/batch-137/zh-CN/2026-11-03-jdk-gc-evolution.svg": "67e8157efc92719034120d37d7a30ae97d426856bebe4fb3c69e8df5c8ad3d31",
+    ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.diagram.json": "dbb5b0023f1949f3f9a47cac057e658316b1e85783105a9abc673d9487ef0682",
+    ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.md": "832289e197fca621ffef9c6fc71a4a096bf571a890f5a973e182bfb2251bed7e",
+    ".pipeline/technical-translations/batch-137/ja/2026-11-03-jdk-gc-evolution.svg": "2a116e5374e905b2bc37334807e738ac03c3ae7050b9ad7c8264520c4819deae",
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.diagram.json": "4b58ba2bffd7e6e4564aff4cf2d7feb4a7d9367096b5f7b5230b7b8cbfb80121",
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.md": "7b2b805f87507ba8793ced0fb4059e7fcccb92e86cc184ddc0f35b8002d2af8e",
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.svg": "4985f3b4c0b576352082bb304365d527f10e6da1848ffa270462965f64dd3cac",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.diagram.json": "ec95fbfd5fd3dd5f697aaad982287e08ac62f29672f1c13746a00ac852a04bde",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.md": "91b3ab7d74ff9183b92b96285a23159c5cd686faa1943bc019563cb0e8d86a77",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.svg": "aac1b38f310f3077d696b31e4526a8c4308232abda9f945606cf7aeb8975b782",
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.diagram.json": "c8bc74e41b5c4c687b0bd1df1dbb1548292c01188ebdf889ea634b9b6635aa7f",
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.md": "7c6ce06a81640d262bffeb776800892746e634a92700671eac918df8109da37d",
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.svg": "fa544d0c564942ccfe380b71052aea2a86b00ea08b33d85de93c6c74a17bc859",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.diagram.json": "62142d94f0805c59da763f574a39d00776c24c7b82f536935e28fc7832446ca4",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.md": "7a941ce0397bf778b7a3ddbe2014ade3f548eff18ce54d0e43b0731b251c8415",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.svg": "11799b13c4eb830339e2c1647921c539bf7d77883c684bacba1dc228c3eaddd5"
+  },
+  "limits": [
+    "AI reviews are separate-context, not human/native-speaker certification",
+    "No new GC performance or production workload validation",
+    "Site-wide publication/render checks follow"
+  ]
+}
