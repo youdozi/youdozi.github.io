@@ -347,7 +347,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.deepEqual([...featured.matchAll(/href="([^"]+)"/g)].map(m=>m[1]),coreRegistry.articles.map(a=>`/${lang}/posts/${a.key}/`));
     }
     const runtimeRegistry=JSON.parse(await readFile('content/seo/runtime-articles.json','utf8'));
-    assert.equal(runtimeRegistry.articles.length,5);
+    assert.equal(runtimeRegistry.articles.length,6);
     for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es']){
       const home=await readFile(`dist/${lang}/index.html`,'utf8');
       const featured=home.match(/<section[^>]*data-guide-articles="runtime-articles"[^>]*>[\s\S]*?<\/section>/)?.[0];
