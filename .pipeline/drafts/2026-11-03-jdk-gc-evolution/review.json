@@ -1,0 +1,328 @@
+{
+  "status": "draft-not-published",
+  "date": "2026-11-03",
+  "scope": "New ko/en HotSpot GC history article with allocation lab",
+  "files": {
+    "GcProbe.java": "910912671ca5d447dc796cb51b3e64b0dc2b5bf6780f3fc414e1e4852630396b",
+    "article.en.md": "80b417d9fb319614b1d99aaebdcdd4a4750cc6612c495748b8160fcecf3c1dae",
+    "article.ko.md": "d97dd36f7f4629b56fbcaf62ed7349cfd96fcf3db632b9cf5bd879bcefd8fbc5",
+    "check.py": "379a39228ab8e263ad002d9915b55525d11423185d6574737e164557d8d98389",
+    "diagram.json": "be939fcfbf9aa8a338ff9074992a7245e9df36c37fdef7dcc833606f7fdffaa8",
+    "gc-allocation-flow-en.svg": "ef553d1e7021e1aac20d80d7694ee7cc58d416b07ff755072ce0cafc9e456cb5",
+    "gc-allocation-flow-ko.svg": "979a83c18dd0e2cc1d570ec82ea69168c9e0f5e731d66c98f6ea318b97d8e79b",
+    "inspect-default.sh": "c482cbbe332260d44bee31d72fc45d1ae742ce027352929b7d811adbb9e7624a",
+    "run-jdk8.sh": "29afe1aa9c291959fdd244a8ed494eeb956780ecd73d2483365fc5b74e36f1d8",
+    "run-modern.sh": "72beb142951f2781e0713bad4271bb12af57327bad57eca3f7f76ccf1ec9f38c"
+  },
+  "sourceSnapshots": [
+    {
+      "url": "https://jdk.java.net/27/",
+      "sha256": "1f9fc615183e4fbeefe9c2c6ca29819521b08f66dba7dba2c11e5edec3625eef"
+    },
+    {
+      "url": "https://jdk.java.net/28/",
+      "sha256": "83902e7b6c35a4efb3924bfcd586400eaaef0ad148c9f94041d9495a804a55af"
+    },
+    {
+      "url": "https://openjdk.org/jeps/122",
+      "sha256": "36ef5efd6b21ef56c4602a41b3d0522b464ea610a7013ec3c74a8deb2fcdeb87"
+    },
+    {
+      "url": "https://openjdk.org/jeps/189",
+      "sha256": "df7f4e150b8ca2b5d05d9e4cfa39de68afa7495cc48740898f27a25b44a5c010"
+    },
+    {
+      "url": "https://openjdk.org/jeps/248",
+      "sha256": "c8a56e2ccccbe9d956466b13c8b1ce14313ea848b9ae0747cd34d34ec037e262"
+    },
+    {
+      "url": "https://openjdk.org/jeps/271",
+      "sha256": "6af5094507c9bfdc2cd7b614f71aabdf584b239ed4cee459eb599cf904437cbf"
+    },
+    {
+      "url": "https://openjdk.org/jeps/291",
+      "sha256": "1f77fe798e0e4e169f9e22fa6df6d9feff2841c756a91563f77df41fef2234db"
+    },
+    {
+      "url": "https://openjdk.org/jeps/318",
+      "sha256": "d416f94694cdb75596234975dd92921c437b976f21d6e95123cac62f5b042ea8"
+    },
+    {
+      "url": "https://openjdk.org/jeps/333",
+      "sha256": "0da727ace1b2dafd818b7aad18f0439e45a182f2af3fc4cda1ad89ef16de4aaa"
+    },
+    {
+      "url": "https://openjdk.org/jeps/363",
+      "sha256": "74c15c37c4c952c2133f15623c9c7a2a27594413632524f12a4b4590bb8a7554"
+    },
+    {
+      "url": "https://openjdk.org/jeps/377",
+      "sha256": "04807758c9920ad8171cff8b8a152d15da7a76f0910c4bb4d4e312488f61c250"
+    },
+    {
+      "url": "https://openjdk.org/jeps/379",
+      "sha256": "57961420a578e813dc7f6660d6d065e51aa3a9f4e2395b23de07e2ea64d9deb3"
+    },
+    {
+      "url": "https://openjdk.org/jeps/404",
+      "sha256": "168a1467479ab354843e7c0044aafc15ab21aabd83f3778bd0578c45706d79e5"
+    },
+    {
+      "url": "https://openjdk.org/jeps/439",
+      "sha256": "37596af7e9bc286df6b932d471c5e572a3d759167c3866653dd85fc8260fc84c"
+    },
+    {
+      "url": "https://openjdk.org/jeps/474",
+      "sha256": "d76cc526ad0cec1768c792da3e4a75bfafc03d570aae5ef3e6a8d261490f67b5"
+    },
+    {
+      "url": "https://openjdk.org/jeps/490",
+      "sha256": "c2c07a0be7e0ec6e0dd8ea74d7653400f088ca2538d95fd8267910e6a2f658d5"
+    },
+    {
+      "url": "https://openjdk.org/jeps/521",
+      "sha256": "2bb279f7eaa071e3c74efe45fe483f63ccfca5d965fbe7c3d1b4550f1cfc06e4"
+    },
+    {
+      "url": "https://openjdk.org/jeps/522",
+      "sha256": "8a2491c7aa9d0f558773c2e847e180af75656901483911d2e99368d185b243f4"
+    },
+    {
+      "url": "https://openjdk.org/jeps/523",
+      "sha256": "15c0f91b51a210b9a5779ff591f2abd734de0c7ff2072d11e6debb3beb8a3b29"
+    },
+    {
+      "url": "https://openjdk.org/jeps/535",
+      "sha256": "3711153923f427b7ab9086dfd418bc83717b0d8f217aeceb2ef460d55ea5c896"
+    }
+  ],
+  "runtimeEvidence": [
+    {
+      "jdk": "8",
+      "case": "default",
+      "stdout": [
+        "runtime=1.8.0_392-b08",
+        "collector=PS Scavenge",
+        "collector=PS MarkSweep",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 8215
+    },
+    {
+      "jdk": "8",
+      "case": "G1",
+      "stdout": [
+        "runtime=1.8.0_392-b08",
+        "collector=G1 Young Generation",
+        "collector=G1 Old Generation",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 26557
+    },
+    {
+      "jdk": "8",
+      "case": "CMS",
+      "stdout": [
+        "runtime=1.8.0_392-b08",
+        "collector=ParNew",
+        "collector=ConcurrentMarkSweep",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 10645
+    },
+    {
+      "jdk": "21",
+      "case": "Z-legacy",
+      "stdout": [
+        "runtime=21.0.13+9-LTS",
+        "collector=ZGC Cycles",
+        "collector=ZGC Pauses",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 52416
+    },
+    {
+      "jdk": "21",
+      "case": "Z-generational",
+      "stdout": [
+        "runtime=21.0.13+9-LTS",
+        "collector=ZGC Minor Cycles",
+        "collector=ZGC Minor Pauses",
+        "collector=ZGC Major Cycles",
+        "collector=ZGC Major Pauses",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 165085
+    },
+    {
+      "jdk": "25",
+      "case": "Z",
+      "stdout": [
+        "runtime=25.0.5+8-LTS",
+        "collector=ZGC Minor Cycles",
+        "collector=ZGC Minor Pauses",
+        "collector=ZGC Major Cycles",
+        "collector=ZGC Major Pauses",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 190810
+    },
+    {
+      "jdk": "27",
+      "case": "G1",
+      "stdout": [
+        "runtime=27.0.1.0.2+1",
+        "collector=G1 Young Generation",
+        "collector=G1 Concurrent GC",
+        "collector=G1 Old Generation",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 33578
+    },
+    {
+      "jdk": "27",
+      "case": "Parallel",
+      "stdout": [
+        "runtime=27.0.1.0.2+1",
+        "collector=PS MarkSweep",
+        "collector=PS Scavenge",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 46523
+    },
+    {
+      "jdk": "27",
+      "case": "Serial",
+      "stdout": [
+        "runtime=27.0.1.0.2+1",
+        "collector=Copy",
+        "collector=MarkSweepCompact",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 34640
+    },
+    {
+      "jdk": "27",
+      "case": "Z",
+      "stdout": [
+        "runtime=27.0.1.0.2+1",
+        "collector=ZGC Minor Cycles",
+        "collector=ZGC Minor Pauses",
+        "collector=ZGC Major Cycles",
+        "collector=ZGC Major Pauses",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 205046
+    },
+    {
+      "jdk": "27",
+      "case": "Shenandoah",
+      "stdout": [
+        "runtime=27.0.1.0.2+1",
+        "collector=Shenandoah Pauses",
+        "collector=Shenandoah Cycles",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 222781
+    },
+    {
+      "jdk": "27",
+      "case": "Shenandoah-gen",
+      "stdout": [
+        "runtime=27.0.1.0.2+1",
+        "collector=Shenandoah Pauses",
+        "collector=Shenandoah Cycles",
+        "iterations=8192 retainedSlots=64 checksum=1044480"
+      ],
+      "gcLogBytes": 325582
+    },
+    {
+      "jdk": "21",
+      "case": "one-cpu-default",
+      "stdout": "-XX:ActiveProcessorCount=1 -XX:InitialHeapSize=134217728 -XX:MaxHeapSize=134217728 -XX:MinHeapSize=134217728 -XX:+PrintCommandLineFlags -XX:ReservedCodeCacheSize=251658240 -XX:+SegmentedCodeCache -XX:+UseCompressedOops -XX:+UseSerialGC \n",
+      "stderr": "openjdk version \"21.0.13\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.13+9 (build 21.0.13+9-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "jdk": "27",
+      "case": "one-cpu-default",
+      "stdout": "-XX:-AOTAdapterCaching -XX:-AOTInvokeDynamicLinking -XX:-AOTRecordTraining -XX:-AOTReplayTraining -XX:-AOTStubCaching -XX:ActiveProcessorCount=1 -XX:ConcGCThreads=1 -XX:G1ConcRefinementThreads=1 -XX:InitialHeapSize=134217728 -XX:MarkStackSize=4194304 -XX:MaxHeapSize=134217728 -XX:MinHeapSize=134217728 -XX:+PrintCommandLineFlags -XX:ReservedCodeCacheSize=251658240 -XX:+SegmentedCodeCache -XX:+UseCompressedOops -XX:+UseG1GC \n",
+      "stderr": "openjdk version \"27.0.1.0.2\" 2026-10-21\nOpenJDK Runtime Environment Temurin-27.0.1.0.2+1 (build 27.0.1.0.2+1)\nOpenJDK 64-Bit Server VM Temurin-27.0.1.0.2+1 (build 27.0.1.0.2+1, mixed mode, sharing)\n"
+    },
+    {
+      "jdk": "27",
+      "case": "removed-flag",
+      "flag": "-XX:+ZGenerational",
+      "returncode": 1,
+      "stderr": "Unrecognized VM option 'ZGenerational'\nError: Could not create the Java Virtual Machine.\nError: A fatal exception has occurred. Program will exit.\n"
+    },
+    {
+      "jdk": "27",
+      "case": "removed-flag",
+      "flag": "-XX:+UseConcMarkSweepGC",
+      "returncode": 1,
+      "stderr": "Unrecognized VM option 'UseConcMarkSweepGC'\nError: Could not create the Java Virtual Machine.\nError: A fatal exception has occurred. Program will exit.\n"
+    }
+  ],
+  "quotedGcEvent": "GC(0) Pause Young (Normal) (G1 Evacuation Pause) 47M->10M(128M) 1.468ms",
+  "checks": {
+    "exactArticleShellExamples": "passed on JDK27 and JDK8; four modern collectors and CMS",
+    "codeFenceParity": "6 identical fences in en/ko; Java and three shell artifacts match",
+    "draftPreview": {
+      "widths": [
+        320,
+        360,
+        1280
+      ],
+      "languages": [
+        "ko",
+        "en"
+      ],
+      "pageOverflow": false,
+      "imagesLoadedWithAlt": true
+    },
+    "svgInspection": "Both localized SVGs rendered and visually inspected; no text out of bounds"
+  },
+  "independentAiReview": {
+    "session": "/root/gc136_review",
+    "context": "fresh; read-only",
+    "findings": [
+      {
+        "severity": "minor",
+        "issue": "GC definition should use GC roots instead of live objects",
+        "resolution": "Corrected in both articles and rechecked"
+      }
+    ],
+    "result": "No unresolved major or critical issue found within review scope",
+    "limits": "Reviewer inspected supplied runtime evidence and raw logs; writer performed JVM execution and visual checks. This is not human or native-language review."
+  },
+  "limitations": [
+    "Single-threaded allocation lab, not a performance benchmark",
+    "Historical versions not all executed; milestone claims use cited official documentation",
+    "Draft Markdown preview only; no Astro publication or live deployment verification"
+  ],
+  "publicationPreparation": {
+    "authorization": "User explicitly requested publication on 2026-11-03",
+    "editions": [
+      "en",
+      "ko"
+    ],
+    "checks": {
+      "nodeTests": 176,
+      "pythonTests": 346,
+      "astroErrors": 0,
+      "astroWarnings": 0,
+      "publishedCodeMatchesDraft": true,
+      "mobileAstroPages": {
+        "widths": [
+          320,
+          360
+        ],
+        "languages": [
+          "en",
+          "ko"
+        ],
+        "result": "passed"
+      }
+    }
+  }
+}

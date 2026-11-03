@@ -509,6 +509,84 @@
           ]
         }
       ]
+    },
+    {
+      "key": "2026-11-03-jdk-gc-evolution",
+      "title": {
+        "ko": "할당과 참조 교체",
+        "en": "Allocation and retention"
+      },
+      "description": {
+        "ko": "64개 참조 슬롯을 준비하고 배열 할당·바이트 설정·참조 교체·체크섬 누적을 8192회 반복한 뒤 결과를 출력한다. 객체 회수는 코드의 명시적 단계가 아니라 JVM이 결정한다.",
+        "en": "Create 64 slots, repeat allocation, byte setting, reference replacement and checksum accumulation 8192 times, then print results. Reclamation is scheduled by the JVM, not an explicit code step."
+      },
+      "codeContract": [
+        {
+          "language": "java",
+          "contains": "retained[i % retained.length] = block;"
+        }
+      ],
+      "steps": [
+        {
+          "kind": "process",
+          "ko": [
+            "64개 참조 슬롯 준비"
+          ],
+          "en": [
+            "Create 64 reference slots"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "128 KiB 배열 할당"
+          ],
+          "en": [
+            "Allocate a 128 KiB array"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "첫 바이트 설정",
+            "순환 슬롯의 참조 교체"
+          ],
+          "en": [
+            "Set the first byte",
+            "Replace a rotating slot reference"
+          ]
+        },
+        {
+          "kind": "process",
+          "ko": [
+            "체크섬 누적",
+            "총 8192회까지 반복"
+          ],
+          "en": [
+            "Accumulate checksum",
+            "Repeat for 8192 iterations"
+          ]
+        },
+        {
+          "kind": "result",
+          "ko": [
+            "슬롯 수·체크섬 출력",
+            "회수 시점은 JVM이 결정"
+          ],
+          "en": [
+            "Print slots and checksum",
+            "The JVM schedules reclamation"
+          ]
+        }
+      ],
+      "loop": {
+        "from": 3,
+        "to": 1,
+        "label": {
+          "ko": "반복",
+          "en": "next"
+        }
+      }
     }
   ]
 }
