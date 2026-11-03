@@ -1,0 +1,46 @@
+{
+  "key": "2026-11-03-jdk-gc-evolution",
+  "language": "de",
+  "title": "Allokation und Referenzen",
+  "description": "64 Slots anlegen, Allokation, Byte-Setzung, Referenztausch und Prüfsummenbildung 8192-mal wiederholen, dann das Ergebnis ausgeben. Die JVM bestimmt die Speicherfreigabe; sie ist kein expliziter Codeschritt.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "64 Referenzslots anlegen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Array mit 128 KiB allokieren"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Erstes Byte setzen",
+        "Zyklische Slotreferenz ersetzen"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Prüfsumme aufsummieren",
+        "8192 Iterationen durchlaufen"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Slots und Prüfsumme ausgeben",
+        "JVM bestimmt Speicherfreigabe"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 3,
+    "to": 1,
+    "label": "↻"
+  }
+}

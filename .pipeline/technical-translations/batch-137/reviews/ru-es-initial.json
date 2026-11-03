@@ -1,0 +1,77 @@
+{
+  "review": "ru-es-initial",
+  "review_type": "independent AI read-only translation review",
+  "context": {
+    "task": "Complete translations, not summaries; no length cap",
+    "audience": "Java backend developers",
+    "languages": [
+      "ru",
+      "es"
+    ],
+    "source": "src/content/posts/en/2026-11-03-jdk-gc-evolution.md",
+    "source_sha256": "01667d7b4b2824ee749cd29f79a08f74627c3725ff551aa08ed090d48f9fd693",
+    "diagram_source": "content/diagrams/technical-137.json",
+    "order": "Read targets for naturalness first, then read and compare the entire English source; inspected localized diagram JSON and extracted SVG text.",
+    "excluded_context": "No manifest review sections or other reviewer reports read."
+  },
+  "target_hashes": {
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.md": "4335be292ff21fbc2d0b1ca7319b3867a1bda70bbbb06c84cc55d630796379ff",
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.diagram.json": "d84cb2c256c7201f47ff53adf59bf27be67b17bc9f102227b2890e80bc41c6d8",
+    ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.svg": "68816b0335c9220b163e37d3c7876e9246e82cffe6ebc97d5977d8c7e93661f0",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.md": "6264234d9b3a31e9e091671610bc40a79dd3625bd33c234f4cf078e70d3cbfc4",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.diagram.json": "e8666dba577c9228dd1051083b60b41ebcf11640f792d0fac3ec1715e10c989a",
+    ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.svg": "48c5c0464aeb695fa1a127078e7b9f6ee9f207ad663a6c3bcee35201a7ce1f78"
+  },
+  "overall": "No substantive semantic, completeness, protected-token or execution-scope errors found. Low-priority wording suggestions only.",
+  "findings": [
+    {
+      "severity": "low",
+      "category": "optional_style",
+      "language": "ru",
+      "location": ".pipeline/technical-translations/batch-137/ru/2026-11-03-jdk-gc-evolution.md:11",
+      "quote": "сначала получите измеренную базовую картину с G1",
+      "reason": "Understandable, but «измеренная базовая картина» is a conspicuous calque for a measured baseline in otherwise readable Russian technical prose.",
+      "fix": "сначала соберите базовые показатели работы с G1",
+      "confidence": 0.96
+    },
+    {
+      "severity": "low",
+      "category": "optional_style",
+      "language": "es",
+      "location": ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.md:119",
+      "quote": "El entorno ejecutado fue",
+      "reason": "Spanish normally executes a program, not an environment. Meaning is recoverable and the environment details remain faithful.",
+      "fix": "El entorno de ejecución utilizado fue",
+      "confidence": 0.99
+    },
+    {
+      "severity": "low",
+      "category": "optional_clarity",
+      "language": "es",
+      "location": ".pipeline/technical-translations/batch-137/es/2026-11-03-jdk-gc-evolution.diagram.json steps[2].lines[1], and corresponding SVG text",
+      "quote": "Sustituir referencia rotativa",
+      "reason": "The English diagram says replace a rotating slot reference. This compressed label grammatically makes the reference itself rotative and omits the slot. Article and alt text retain the rotating-slot explanation, so this is not a body completeness blocker.",
+      "fix": "Sustituir referencia en ranura rotativa (or split across two SVG label lines to fit). Keep JSON and SVG synchronized.",
+      "confidence": 0.97
+    }
+  ],
+  "checks_actually_done": [
+    "Entire Russian and Spanish target prose read before the English source for grammaticality, references, register and terminology.",
+    "Entire English body compared to both targets, including opening/closing paragraphs, all table cells, historical milestones, collector behavior, mode selection, support/distribution qualifications, benchmark limitations and source-only verification qualifications.",
+    "Reference date and JDK 28 EA Targeted versus GA distinction, JVM-wide default versus within-collector mode default, JDK 21/23/24 ZGC mode history, JDK 25/27/28 Shenandoah state and historical server-class default qualifications compared.",
+    "Execution environment versions, all 12 claimed configurations, 8192 x 128 KiB, 64 slots, 1 GiB allocation, 8 MiB retained payload, 128 MiB heap, checksum and log interpretation compared; no target strengthens the article execution or performance claims.",
+    "Python comparison confirmed all fenced code/output blocks identical and all inline code literal sequences identical.",
+    "Python comparison confirmed all 32 non-image Markdown link destinations identical in order.",
+    "Python structural counts matched: 47 blank-separated body blocks, 9 headings and 26 table lines for each target and source. Manual semantic comparison supplements counts.",
+    "Localized diagram JSON parsed and SVG parsed as XML; all displayed SVG text exactly matches JSON title, step lines and loop label.",
+    "Diagram step kinds, 5-step order and loop from 3 to 1 agree with source. Localized title, description and Markdown alt text inspected; allocation, first-byte assignment, reference replacement, checksum, iteration total and JVM-controlled reclamation meanings preserved.",
+    "SHA-256 hashes calculated for all six target artifacts; embedded source hash matches the source file hash."
+  ],
+  "limits": [
+    "No Java commands or benchmark workloads executed by this reviewer; article execution statements reviewed for translation fidelity only.",
+    "No browser or renderer run and no visual clipping/layout judgment; root agent handles rendering.",
+    "No external fact audit or link availability requests made; authoritative-source claims compared to supplied English source.",
+    "No other language reviewed; this is an AI review, not a human/native-speaker certification.",
+    "Only report JSON written; target artifacts left unchanged."
+  ]
+}

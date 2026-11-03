@@ -1,0 +1,188 @@
+{
+  "review": "de-fr-svg-final",
+  "reviewer": "independent AI review session /root/review137_de_fr",
+  "date": "2026-11-03",
+  "scope": "Focused final SVG text placement/semantics against current diagram JSON",
+  "target_hashes": {
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.md": "7b2b805f87507ba8793ced0fb4059e7fcccb92e86cc184ddc0f35b8002d2af8e",
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.diagram.json": "4b58ba2bffd7e6e4564aff4cf2d7feb4a7d9367096b5f7b5230b7b8cbfb80121",
+    ".pipeline/technical-translations/batch-137/de/2026-11-03-jdk-gc-evolution.svg": "4985f3b4c0b576352082bb304365d527f10e6da1848ffa270462965f64dd3cac",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.md": "91b3ab7d74ff9183b92b96285a23159c5cd686faa1943bc019563cb0e8d86a77",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.diagram.json": "ec95fbfd5fd3dd5f697aaad982287e08ac62f29672f1c13746a00ac852a04bde",
+    ".pipeline/technical-translations/batch-137/fr/2026-11-03-jdk-gc-evolution.svg": "aac1b38f310f3077d696b31e4526a8c4308232abda9f945606cf7aeb8975b782"
+  },
+  "result": "pass",
+  "dispositions": [
+    {
+      "id": "fr-svg-step-text-shift",
+      "status": "resolved",
+      "reason": "All three first-byte/reference-replacement lines are now inside the third box; checksum and 8192 bound are in fourth box; output and JVM reclamation are in result; ↻ is the loop label."
+    },
+    {
+      "id": "de-diagram-loop",
+      "status": "resolved"
+    },
+    {
+      "id": "fr-diagram-loop",
+      "status": "resolved"
+    },
+    {
+      "id": "fr-diagram-reference",
+      "status": "resolved"
+    },
+    {
+      "id": "fr-feature-release",
+      "status": "resolved_in_prior_recheck"
+    }
+  ],
+  "findings": [],
+  "checks_performed": [
+    "Parsed both SVGs and diagram JSONs",
+    "Matched every step text node to its enclosing box by x/y coordinates and compared all lines exactly with corresponding JSON step",
+    "Confirmed five steps per diagram, correct result box text, explicit 8192 iteration bound, ↻ loop label and from=3/to=1 loop endpoints",
+    "Inspected SVG loop path from checksum box back to allocation box",
+    "Recorded current SHA256 of six target files"
+  ],
+  "details": {
+    "de": {
+      "steps": [
+        {
+          "step_index": 0,
+          "json_lines": [
+            "64 Referenzslots anlegen"
+          ],
+          "svg_lines": [
+            "64 Referenzslots anlegen"
+          ],
+          "equal": true
+        },
+        {
+          "step_index": 1,
+          "json_lines": [
+            "Array mit 128 KiB allokieren"
+          ],
+          "svg_lines": [
+            "Array mit 128 KiB allokieren"
+          ],
+          "equal": true
+        },
+        {
+          "step_index": 2,
+          "json_lines": [
+            "Erstes Byte setzen",
+            "Zyklische Slotreferenz ersetzen"
+          ],
+          "svg_lines": [
+            "Erstes Byte setzen",
+            "Zyklische Slotreferenz ersetzen"
+          ],
+          "equal": true
+        },
+        {
+          "step_index": 3,
+          "json_lines": [
+            "Prüfsumme aufsummieren",
+            "8192 Iterationen durchlaufen"
+          ],
+          "svg_lines": [
+            "Prüfsumme aufsummieren",
+            "8192 Iterationen durchlaufen"
+          ],
+          "equal": true
+        },
+        {
+          "step_index": 4,
+          "json_lines": [
+            "Slots und Prüfsumme ausgeben",
+            "JVM bestimmt Speicherfreigabe"
+          ],
+          "svg_lines": [
+            "Slots und Prüfsumme ausgeben",
+            "JVM bestimmt Speicherfreigabe"
+          ],
+          "equal": true
+        }
+      ],
+      "loop_label": "↻",
+      "loop_endpoints": {
+        "from": 3,
+        "to": 1,
+        "label": "↻"
+      },
+      "result": "pass"
+    },
+    "fr": {
+      "steps": [
+        {
+          "step_index": 0,
+          "json_lines": [
+            "Créer 64 emplacements"
+          ],
+          "svg_lines": [
+            "Créer 64 emplacements"
+          ],
+          "equal": true
+        },
+        {
+          "step_index": 1,
+          "json_lines": [
+            "Allouer un tableau de 128 KiB"
+          ],
+          "svg_lines": [
+            "Allouer un tableau de 128 KiB"
+          ],
+          "equal": true
+        },
+        {
+          "step_index": 2,
+          "json_lines": [
+            "Écrire le premier octet",
+            "Remplacer la référence",
+            "de l’emplacement tournant"
+          ],
+          "svg_lines": [
+            "Écrire le premier octet",
+            "Remplacer la référence",
+            "de l’emplacement tournant"
+          ],
+          "equal": true
+        },
+        {
+          "step_index": 3,
+          "json_lines": [
+            "Cumuler la somme de contrôle",
+            "Répéter sur 8192 itérations"
+          ],
+          "svg_lines": [
+            "Cumuler la somme de contrôle",
+            "Répéter sur 8192 itérations"
+          ],
+          "equal": true
+        },
+        {
+          "step_index": 4,
+          "json_lines": [
+            "Afficher nombre et somme",
+            "La JVM gère la récupération"
+          ],
+          "svg_lines": [
+            "Afficher nombre et somme",
+            "La JVM gère la récupération"
+          ],
+          "equal": true
+        }
+      ],
+      "loop_label": "↻",
+      "loop_endpoints": {
+        "from": 3,
+        "to": 1,
+        "label": "↻"
+      },
+      "result": "pass"
+    }
+  },
+  "limitations": [
+    "No raster/browser rendering or font-bound measurements performed by this review; root handles visual fit checks",
+    "No prose rereview or Java execution in this focused pass"
+  ]
+}

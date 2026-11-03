@@ -1,0 +1,46 @@
+{
+  "key": "2026-11-03-jdk-gc-evolution",
+  "language": "zh-CN",
+  "title": "分配与保留",
+  "description": "创建 64 个槽位，重复执行数组分配、字节设置、引用替换和校验和累加 8192 次，然后输出结果。回收由 JVM 调度，并非显式的代码步骤。",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "创建 64 个引用槽位"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "分配 128 KiB 数组"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "设置首字节",
+        "替换循环槽位的引用"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "累加校验和",
+        "共重复 8192 次"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "输出槽位数和校验和",
+        "回收时机由 JVM 决定"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 3,
+    "to": 1,
+    "label": "继续"
+  }
+}

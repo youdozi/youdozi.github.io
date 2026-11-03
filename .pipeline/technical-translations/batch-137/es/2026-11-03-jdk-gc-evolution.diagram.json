@@ -1,0 +1,47 @@
+{
+  "key": "2026-11-03-jdk-gc-evolution",
+  "language": "es",
+  "title": "Asignación y retención",
+  "description": "Crear 64 posiciones, repetir la asignación, el ajuste del byte, la sustitución de referencias y la acumulación de la suma de comprobación 8192 veces, y después imprimir los resultados. La JVM programa la recuperación; no es un paso explícito del código.",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Crear 64 ranuras de referencia"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Asignar un array de 128 KiB"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Fijar el primer byte",
+        "Sustituir la referencia",
+        "en la ranura rotativa"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Acumular suma de control",
+        "Repetir 8192 iteraciones"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Imprimir posiciones y suma",
+        "La JVM decide la recuperación"
+      ]
+    }
+  ],
+  "loop": {
+    "from": 3,
+    "to": 1,
+    "label": "↻"
+  }
+}
