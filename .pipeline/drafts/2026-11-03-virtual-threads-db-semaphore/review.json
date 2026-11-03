@@ -1,0 +1,404 @@
+{
+  "status": "publication-prepared",
+  "language": "ko",
+  "reviewer": "self-review; no independent reviewer",
+  "scope": "Synchronous single-owned-JDBC-connection transaction admission with two semaphores",
+  "verified": [
+    "Article code fences exactly match executed source files",
+    "Actual PostgreSQL/Hikari integration: 45 assertions on each of JDK 21 and JDK 25",
+    "SVG viewed at mobile width; no text outside viewBox",
+    "Markdown rendered at 320, 360, 1280px; no page overflow; image loaded with Korean alt"
+  ],
+  "limitations": [
+    "No HTTP throughput/load benchmark",
+    "No actual Spring transactional application test",
+    "No distributed fleet or autoscaling execution",
+    "JDBC cancellation is not a guarantee of immediate remote work termination"
+  ],
+  "browser": {
+    "results": [
+      {
+        "width": 320,
+        "pageOverflow": false,
+        "images": [
+          {
+            "loaded": true,
+            "alt": true
+          }
+        ],
+        "codeBlocks": 6
+      },
+      {
+        "width": 360,
+        "pageOverflow": false,
+        "images": [
+          {
+            "loaded": true,
+            "alt": true
+          }
+        ],
+        "codeBlocks": 6
+      },
+      {
+        "width": 1280,
+        "pageOverflow": false,
+        "images": [
+          {
+            "loaded": true,
+            "alt": true
+          }
+        ],
+        "codeBlocks": 6
+      }
+    ],
+    "svgTextOverflow": [],
+    "isolation": {
+      "mode": "verification",
+      "serviceWorkers": "block",
+      "blocked": 0,
+      "blockedCollection": 0,
+      "allowedTag": 0
+    }
+  },
+  "articleSha256": "a44ceaa573226dd16ab4932142d9c074400bd10027b702931d012756e9783d2f",
+  "diagramSha256": "e2ebdb051bfbe97fab290fb6660c6563f60c5f65fc47491a9cfd7b16546e1efc",
+  "publicationChecks": {
+    "astroCheck": "80 files; zero errors, warnings or hints",
+    "build": "Passed all configured checks, including SEO, metadata, discovery, reader content and image geometry",
+    "realPagePreview": {
+      "base": "http://127.0.0.1:8765",
+      "results": [
+        {
+          "width": 320,
+          "status": 200,
+          "title": "가상 스레드와 DB 세마포어: 커넥션 풀 앞에서 대기와 과부하 제어하기 · youdozi's memory",
+          "lang": "ko",
+          "h1": 1,
+          "canonical": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/",
+          "description": "가상 스레드에서 JDBC 커넥션 풀만으로 충분한 경우와 세마포어가 필요한 경우를 구분하고, 입장 제한·트랜잭션·타임아웃·허가 반환을 실제 PostgreSQL 예제로 확인합니다.",
+          "alternates": [
+            [
+              "ko",
+              "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/"
+            ]
+          ],
+          "images": [
+            {
+              "src": "/assets/img/architecture/db-semaphore-ko.svg",
+              "alt": "입장 허가와 실행 허가를 순서대로 얻고, DB 트랜잭션 및 연결 정리를 마친 뒤 획득한 허가만 반환하는 흐름",
+              "loaded": true
+            }
+          ],
+          "codeBlocks": 6,
+          "overflow": false,
+          "structured": [
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://youdozi.github.io/#website",
+              "url": "https://youdozi.github.io/",
+              "name": "youdozi's memory",
+              "inLanguage": [
+                "en",
+                "ko",
+                "zh-CN",
+                "ja",
+                "de",
+                "fr",
+                "ru",
+                "es"
+              ],
+              "publisher": {
+                "@type": "Person",
+                "@id": "https://youdozi.github.io/#author",
+                "name": "youdozi",
+                "url": "https://youdozi.github.io/ko/about/",
+                "sameAs": [
+                  "https://github.com/youdozi"
+                ]
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "@id": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/#article",
+              "mainEntityOfPage": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/",
+              "url": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/",
+              "headline": "가상 스레드와 DB 세마포어: 커넥션 풀 앞에서 대기와 과부하 제어하기",
+              "description": "가상 스레드에서 JDBC 커넥션 풀만으로 충분한 경우와 세마포어가 필요한 경우를 구분하고, 입장 제한·트랜잭션·타임아웃·허가 반환을 실제 PostgreSQL 예제로 확인합니다.",
+              "inLanguage": "ko",
+              "datePublished": "2026-11-03T08:00:48.868Z",
+              "dateModified": "2026-11-03T08:00:48.868Z",
+              "author": {
+                "@type": "Person",
+                "@id": "https://youdozi.github.io/#author",
+                "name": "youdozi",
+                "url": "https://youdozi.github.io/ko/about/",
+                "sameAs": [
+                  "https://github.com/youdozi"
+                ]
+              },
+              "publisher": {
+                "@type": "Person",
+                "@id": "https://youdozi.github.io/#author",
+                "name": "youdozi",
+                "url": "https://youdozi.github.io/ko/about/",
+                "sameAs": [
+                  "https://github.com/youdozi"
+                ]
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "홈",
+                  "item": "https://youdozi.github.io/ko/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "개발 기록",
+                  "item": "https://youdozi.github.io/ko/posts/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "가상 스레드와 DB 세마포어: 커넥션 풀 앞에서 대기와 과부하 제어하기",
+                  "item": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 360,
+          "status": 200,
+          "title": "가상 스레드와 DB 세마포어: 커넥션 풀 앞에서 대기와 과부하 제어하기 · youdozi's memory",
+          "lang": "ko",
+          "h1": 1,
+          "canonical": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/",
+          "description": "가상 스레드에서 JDBC 커넥션 풀만으로 충분한 경우와 세마포어가 필요한 경우를 구분하고, 입장 제한·트랜잭션·타임아웃·허가 반환을 실제 PostgreSQL 예제로 확인합니다.",
+          "alternates": [
+            [
+              "ko",
+              "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/"
+            ]
+          ],
+          "images": [
+            {
+              "src": "/assets/img/architecture/db-semaphore-ko.svg",
+              "alt": "입장 허가와 실행 허가를 순서대로 얻고, DB 트랜잭션 및 연결 정리를 마친 뒤 획득한 허가만 반환하는 흐름",
+              "loaded": true
+            }
+          ],
+          "codeBlocks": 6,
+          "overflow": false,
+          "structured": [
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://youdozi.github.io/#website",
+              "url": "https://youdozi.github.io/",
+              "name": "youdozi's memory",
+              "inLanguage": [
+                "en",
+                "ko",
+                "zh-CN",
+                "ja",
+                "de",
+                "fr",
+                "ru",
+                "es"
+              ],
+              "publisher": {
+                "@type": "Person",
+                "@id": "https://youdozi.github.io/#author",
+                "name": "youdozi",
+                "url": "https://youdozi.github.io/ko/about/",
+                "sameAs": [
+                  "https://github.com/youdozi"
+                ]
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "@id": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/#article",
+              "mainEntityOfPage": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/",
+              "url": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/",
+              "headline": "가상 스레드와 DB 세마포어: 커넥션 풀 앞에서 대기와 과부하 제어하기",
+              "description": "가상 스레드에서 JDBC 커넥션 풀만으로 충분한 경우와 세마포어가 필요한 경우를 구분하고, 입장 제한·트랜잭션·타임아웃·허가 반환을 실제 PostgreSQL 예제로 확인합니다.",
+              "inLanguage": "ko",
+              "datePublished": "2026-11-03T08:00:48.868Z",
+              "dateModified": "2026-11-03T08:00:48.868Z",
+              "author": {
+                "@type": "Person",
+                "@id": "https://youdozi.github.io/#author",
+                "name": "youdozi",
+                "url": "https://youdozi.github.io/ko/about/",
+                "sameAs": [
+                  "https://github.com/youdozi"
+                ]
+              },
+              "publisher": {
+                "@type": "Person",
+                "@id": "https://youdozi.github.io/#author",
+                "name": "youdozi",
+                "url": "https://youdozi.github.io/ko/about/",
+                "sameAs": [
+                  "https://github.com/youdozi"
+                ]
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "홈",
+                  "item": "https://youdozi.github.io/ko/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "개발 기록",
+                  "item": "https://youdozi.github.io/ko/posts/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "가상 스레드와 DB 세마포어: 커넥션 풀 앞에서 대기와 과부하 제어하기",
+                  "item": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 1280,
+          "status": 200,
+          "title": "가상 스레드와 DB 세마포어: 커넥션 풀 앞에서 대기와 과부하 제어하기 · youdozi's memory",
+          "lang": "ko",
+          "h1": 1,
+          "canonical": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/",
+          "description": "가상 스레드에서 JDBC 커넥션 풀만으로 충분한 경우와 세마포어가 필요한 경우를 구분하고, 입장 제한·트랜잭션·타임아웃·허가 반환을 실제 PostgreSQL 예제로 확인합니다.",
+          "alternates": [
+            [
+              "ko",
+              "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/"
+            ]
+          ],
+          "images": [
+            {
+              "src": "/assets/img/architecture/db-semaphore-ko.svg",
+              "alt": "입장 허가와 실행 허가를 순서대로 얻고, DB 트랜잭션 및 연결 정리를 마친 뒤 획득한 허가만 반환하는 흐름",
+              "loaded": true
+            }
+          ],
+          "codeBlocks": 6,
+          "overflow": false,
+          "structured": [
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://youdozi.github.io/#website",
+              "url": "https://youdozi.github.io/",
+              "name": "youdozi's memory",
+              "inLanguage": [
+                "en",
+                "ko",
+                "zh-CN",
+                "ja",
+                "de",
+                "fr",
+                "ru",
+                "es"
+              ],
+              "publisher": {
+                "@type": "Person",
+                "@id": "https://youdozi.github.io/#author",
+                "name": "youdozi",
+                "url": "https://youdozi.github.io/ko/about/",
+                "sameAs": [
+                  "https://github.com/youdozi"
+                ]
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "@id": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/#article",
+              "mainEntityOfPage": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/",
+              "url": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/",
+              "headline": "가상 스레드와 DB 세마포어: 커넥션 풀 앞에서 대기와 과부하 제어하기",
+              "description": "가상 스레드에서 JDBC 커넥션 풀만으로 충분한 경우와 세마포어가 필요한 경우를 구분하고, 입장 제한·트랜잭션·타임아웃·허가 반환을 실제 PostgreSQL 예제로 확인합니다.",
+              "inLanguage": "ko",
+              "datePublished": "2026-11-03T08:00:48.868Z",
+              "dateModified": "2026-11-03T08:00:48.868Z",
+              "author": {
+                "@type": "Person",
+                "@id": "https://youdozi.github.io/#author",
+                "name": "youdozi",
+                "url": "https://youdozi.github.io/ko/about/",
+                "sameAs": [
+                  "https://github.com/youdozi"
+                ]
+              },
+              "publisher": {
+                "@type": "Person",
+                "@id": "https://youdozi.github.io/#author",
+                "name": "youdozi",
+                "url": "https://youdozi.github.io/ko/about/",
+                "sameAs": [
+                  "https://github.com/youdozi"
+                ]
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "홈",
+                  "item": "https://youdozi.github.io/ko/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "개발 기록",
+                  "item": "https://youdozi.github.io/ko/posts/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "가상 스레드와 DB 세마포어: 커넥션 풀 앞에서 대기와 과부하 제어하기",
+                  "item": "https://youdozi.github.io/ko/posts/2026-11-03-virtual-threads-db-semaphore/"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sitemap": true,
+      "home": true,
+      "jdkGuide": true,
+      "isolation": {
+        "mode": "verification",
+        "serviceWorkers": "block",
+        "blocked": 0,
+        "blockedCollection": 0,
+        "allowedTag": 0
+      }
+    },
+    "gradle": "Dependency resolution repeated with Gradle 8.14.3 on JDK 21; direct javac/java checks passed on JDK 21 and 25",
+    "publicationParity": "Published body and SVG exactly match the draft except its public image URL"
+  }
+}

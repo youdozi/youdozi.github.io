@@ -97,6 +97,8 @@ jobs:
         with:
           distribution: temurin
           java-version: '21.0.13+9.0.LTS'
+      - name: Preserve JDK 21 for the JDBC admission example
+        run: echo "DB_SEMAPHORE_JDK21=$JAVA_HOME" >> "$GITHUB_ENV"
       - name: Compile final JDK 21 features without preview flags
         run: python3 -B scripts/check_jvm_runtime_examples.py --part jdk
       - name: Execute the published fallback policy and verify its flow asset
@@ -121,6 +123,12 @@ jobs:
         with:
           distribution: temurin
           java-version: '25.0.5+8.0.LTS'
+      - name: Select the JDBC example Gradle version with JDK 21 runtime support
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.14.3'
+      - name: Verify JDBC admission and cleanup against PostgreSQL on JDK 21 and 25
+        run: python3 -B .pipeline/drafts/2026-11-03-virtual-threads-db-semaphore/check.py --jdk "$DB_SEMAPHORE_JDK21" --jdk "$JAVA_HOME"
       - name: Execute finalized ScopedValue ZIP and concurrency contracts without preview
         run: python3 -B scripts/check_scopedvalue_example.py
       - name: Observe JDK 25 monitor behavior with the same published JFR probe

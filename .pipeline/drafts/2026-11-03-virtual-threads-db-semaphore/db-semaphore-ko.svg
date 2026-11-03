@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="820" viewBox="0 0 360 820" role="img" aria-labelledby="title desc">
+<title id="title">DB 작업의 입장과 허가 반환</title>
+<desc id="desc">입장 허가 실패는 즉시 거절한다. 실행 허가 대기 실패는 입장 허가만 반환한다. 둘 다 얻으면 DB 자원 처리와 정리 시도 후 두 허가를 반환한다.</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#475569"/></marker></defs>
+<rect width="360" height="820" fill="#f8fafc"/>
+<g font-family="system-ui, sans-serif" text-anchor="middle" fill="#0f172a">
+<text x="180" y="30" font-size="19">DB 작업의 입장과 정리</text>
+<rect x="16" y="52" width="328" height="96" rx="10" fill="#e0f2fe" stroke="#64748b"/>
+<text x="180" y="80" font-size="16">입장 허가 B+Q 중 하나 취득</text>
+<text x="180" y="104" font-size="16">실패: 즉시 거절</text>
+<text x="180" y="128" font-size="16">취득 성공 ↓</text>
+<path d="M180 148V177" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="184" width="328" height="120" rx="10" fill="#e0f2fe" stroke="#64748b"/>
+<text x="180" y="212" font-size="16">실행 허가 B 중 하나 대기</text>
+<text x="180" y="236" font-size="16">시간 초과·인터럽트:</text>
+<text x="180" y="260" font-size="16">입장 허가만 반환 후 실패</text>
+<text x="180" y="284" font-size="16">취득 성공 ↓</text>
+<path d="M180 304V333" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="340" width="328" height="192" rx="10" fill="#dcfce7" stroke="#64748b"/>
+<text x="180" y="368" font-size="16">DB 자원 처리 범위</text>
+<text x="180" y="392" font-size="16">연결 취득 → 트랜잭션 시작</text>
+<text x="180" y="416" font-size="16">작업 성공 → 커밋</text>
+<text x="180" y="440" font-size="16">작업·커밋 실패 → 롤백 시도</text>
+<text x="180" y="464" font-size="16">취득한 연결의 close() 시도</text>
+<text x="180" y="488" font-size="16">예외는 필요한 정리를 거쳐 전파</text>
+<path d="M180 532V561" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="568" width="328" height="96" rx="10" fill="#e0f2fe" stroke="#64748b"/>
+<text x="180" y="596" font-size="16">획득한 실행·입장 허가 반환</text>
+<text x="180" y="620" font-size="16">DB 처리와 정리 시도 종료 후</text>
+<text x="180" y="644" font-size="16">finally에서 실행</text>
+<path d="M180 664V693" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="700" width="328" height="72" rx="10" fill="#fef3c7" stroke="#64748b"/>
+<text x="180" y="728" font-size="16">값 반환 또는 예외 전파</text>
+<text x="180" y="752" font-size="16">취소 요청만으로 조기 반환 금지</text>
+</g></svg>

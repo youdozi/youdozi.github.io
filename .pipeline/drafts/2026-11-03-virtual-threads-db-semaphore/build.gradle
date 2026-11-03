@@ -1,0 +1,21 @@
+plugins { id 'application' }
+repositories { mavenCentral() }
+dependencies {
+    implementation 'com.zaxxer:HikariCP:7.1.0'
+    runtimeOnly 'org.postgresql:postgresql:42.7.14'
+    runtimeOnly 'org.slf4j:slf4j-simple:2.0.20'
+}
+sourceSets.main.java {
+    srcDirs = ['.']
+    include 'DbBulkhead.java', 'Demo.java', 'DbBulkheadChecks.java'
+}
+tasks.withType(JavaCompile).configureEach { options.release = 21 }
+application { mainClass = 'Demo' }
+tasks.register('copyDependencies', Copy) {
+    from configurations.runtimeClasspath
+    into layout.buildDirectory.dir('deps')
+}
+tasks.register('contracts', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'DbBulkheadChecks'
+}
