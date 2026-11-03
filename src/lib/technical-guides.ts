@@ -9,6 +9,7 @@ import { springGuide } from './spring-guide.ts';
 
 export const guideTerms = ['coding-test', 'springboot', 'linux', 'jdk', 'util', 'automation', 'jenkins', 'jekyll', 'security'] as const;
 const updatedAt = new Date('2026-10-30T10:10:46.396668+00:00');
+const pathUpdatedAt: Record<string,number> = {jdk:Date.parse('2026-11-03T05:43:22.606306+00:00'),util:Date.parse('2026-11-03T05:43:22.606306+00:00')};
 const nativeGuideIndexCopy = {
   en: { label: 'Guides', title: 'Technical Learning Guides',
     description: 'Choose a reading path through Java exercises, Spring Boot, shell automation, JDK features, development tools, reviewed publishing, Jenkins recovery, legacy Ruby diagnostics and runtime security, with code and scoped checks.',
@@ -194,7 +195,7 @@ export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGui
   const selected=new Set(sections.flatMap(s=>s.entries.map(e=>e.translationKey)));
   const extras=items.filter(e=>!selected.has(e.translationKey));const ordered=[...sections.flatMap(s=>s.entries),...extras];
   return {...definition,...(localized?.common||common[lang as 'en'|'ko']),lang,url:`/${lang}/categories/${term}/`,listAnchor:'articles',sections,extras,ordered,
-    updatedAt:new Date(Math.max(localized?copyUpdatedAt.getTime():updatedAt.getTime(),...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
+    updatedAt:new Date(Math.max(pathUpdatedAt[term]||0,localized?copyUpdatedAt.getTime():updatedAt.getTime(),...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
 }
 export function categoryGuideAlternates(term:string,all:Entry[]) {
   return ([...nativeLanguages,...translationLanguages]).flatMap(language=>{const guide=categoryGuide(term,language,all);return guide?[{language,url:guide.url}]:[];});
