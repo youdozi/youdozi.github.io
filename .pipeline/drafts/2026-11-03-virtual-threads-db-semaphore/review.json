@@ -399,6 +399,8 @@
       }
     },
     "gradle": "Dependency resolution repeated with Gradle 8.14.3 on JDK 21; direct javac/java checks passed on JDK 21 and 25",
-    "publicationParity": "Published body and SVG exactly match the draft except its public image URL"
+    "publicationParity": "Published body and SVG exactly match the draft except its public image URL",
+    "nodeTests": "178 passed; zero failures",
+    "jdkGuide": "The Korean virtual-thread section includes the new article; expected guide counts are English 9 and Korean 10."
   }
 }

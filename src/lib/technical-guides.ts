@@ -143,7 +143,7 @@ const paths = {
       intro:'언어·API의 상태와 실제 설치할 실행기를 구분합니다. 과거 릴리스와 Preview 자료를 포함하므로 기록한 버전을 따르고 오래된 릴리스 글만으로 현재 지원 상태를 판단하지 않습니다.',
       groups:[
         {id:'features',title:'기능의 상태 구분',description:'정식 API와 Preview 기능의 적용 범위부터 확인합니다.',keys:['2023-09-20-jdk-21-release']},
-        {id:'virtual',title:'가상 스레드의 버전 차이',description:'JDK 21·25의 모니터 pinning을 JFR로 관측하고 스케줄러 동작과 처리량 주장을 구분합니다.',keys:['2026-10-31-virtual-threads-jdk21-jdk25']},
+        {id:'virtual',title:'가상 스레드의 동작과 DB 입장 제어',description:'JDK 21·25의 모니터 pinning을 관측하고, DB 세마포어로 대기와 동시 실행을 제한하는 경계를 확인합니다.',keys:['2026-10-31-virtual-threads-jdk21-jdk25','2026-11-03-virtual-threads-db-semaphore']},
         {id:'scoped',title:'요청 컨텍스트의 범위',description:'JDK 25 정식 ScopedValue를 실행하고 바인딩 복원과 비동기 상속의 경계를 구분합니다.',keys:['2026-10-31-jdk25-scopedvalue']},
         {id:'gc',title:'가비지 컬렉터 비교',description:'JDK 버전별 컬렉터 지원을 비교하고 할당·GC 로그 예제를 확인합니다.',keys:['2026-11-03-jdk-gc-evolution']},
         {id:'capacity',title:'API 용량 계획',description:'10k RPS의 경계를 정하고 예시 예산을 계산하며 입장 제어 검사와 부하 검증을 구분합니다.',keys:['2026-10-31-jdk-10k-rps-architecture']},
