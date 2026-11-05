@@ -1,0 +1,9 @@
+{
+  "status": "publication-prepared",
+  "authorization": "User explicitly requested publication: 게시해줘",
+  "article": "src/content/posts/ko/2026-11-05-local-llm-at-home.md",
+  "diagramAsset": "assets/img/architecture/local-llm-flow-ko.svg",
+  "language": "ko",
+  "scope": "Prepared Korean tutorial only; no translations and no model installation or real inference.",
+  "preparedAt": "2026-11-05T00:30:25.703972+00:00"
+}
