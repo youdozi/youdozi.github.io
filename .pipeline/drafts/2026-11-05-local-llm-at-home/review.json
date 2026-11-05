@@ -1,0 +1,108 @@
+{
+  "status": "publication-prepared",
+  "language": "ko",
+  "reviewedAt": "2026-11-04T22:42:30.374678+00:00",
+  "method": "Source-grounded writing and self-review; no independent or native review claimed",
+  "sources": [
+    "https://docs.ollama.com/quickstart",
+    "https://ollama.com/library/qwen3:4b-instruct-2507-q4_K_M",
+    "https://docs.ollama.com/context-length",
+    "https://docs.ollama.com/macos",
+    "https://docs.ollama.com/windows",
+    "https://docs.ollama.com/gpu",
+    "https://ollama.com/download",
+    "https://docs.ollama.com/linux",
+    "https://docs.ollama.com/api/authentication",
+    "https://docs.ollama.com/faq#how-do-i-disable-ollamas-cloud-features",
+    "https://docs.ollama.com/linux#customizing",
+    "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507",
+    "https://docs.ollama.com/faq#how-can-i-tell-if-my-model-was-loaded-onto-the-gpu",
+    "https://docs.ollama.com/modelfile",
+    "https://docs.ollama.com/api/chat",
+    "https://docs.ollama.com/faq#how-can-i-expose-ollama-on-my-network"
+  ],
+  "checks": {
+    "httpClient": {
+      "checks": 19,
+      "python": "3.13.0",
+      "transport": "Actual HTTP on a temporary loopback server",
+      "actualModelInference": false
+    },
+    "embeddedSourceFiles": "summarize.py, Modelfile and notes.txt exactly match article fences",
+    "shellSyntaxBlocks": 6,
+    "cloudConfigJson": {
+      "disable_ollama_cloud": true
+    },
+    "renderedViewports": {
+      "checks": [
+        {
+          "width": 320,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": "설치와 모델 다운로드 후 맞춤 모델을 만들고, 선택한 메모를 검사해 로컬 API로 전달한 다음 응답을 검사하고 원문과 대조하는 흐름"
+            }
+          ],
+          "codeBlocks": 11
+        },
+        {
+          "width": 360,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": "설치와 모델 다운로드 후 맞춤 모델을 만들고, 선택한 메모를 검사해 로컬 API로 전달한 다음 응답을 검사하고 원문과 대조하는 흐름"
+            }
+          ],
+          "codeBlocks": 11
+        },
+        {
+          "width": 1280,
+          "overflow": false,
+          "images": [
+            {
+              "loaded": true,
+              "alt": "설치와 모델 다운로드 후 맞춤 모델을 만들고, 선택한 메모를 검사해 로컬 API로 전달한 다음 응답을 검사하고 원문과 대조하는 흐름"
+            }
+          ],
+          "codeBlocks": 11
+        }
+      ]
+    },
+    "svg": {
+      "textOverflow": [],
+      "arrows": 6
+    },
+    "visualInspection": "Local SVG image inspected; Aside verified local Markdown pages at 320/360/1280px. No public blog navigation or Analytics traffic."
+  },
+  "semanticReview": [
+    "Pinned explicit non-thinking model variant; moving short tags not assumed stable",
+    "Weight download size distinguished from total RAM/VRAM and KV-cache requirements",
+    "User-app configuration separated from Linux systemd service environment",
+    "Local endpoint does not by itself guarantee local inference; cloud disabled and local model selected",
+    "Modelfile instructions distinguished from fine-tuning and document retrieval",
+    "HTTP mock tests distinguished from real Ollama installation, model building and inference",
+    "Selected file only; no filesystem search or shell-execution tools; output compared with original",
+    "Character caps are not exact token budgets; socket timeout does not confirm server-side cancellation"
+  ],
+  "limitations": [
+    "Ollama is not installed on this machine; no model download or real inference performed",
+    "Modelfile compilation and OS installation commands not executed",
+    "No model quality, hardware performance or power-consumption benchmark",
+    "Document retrieval, multiuser LAN hosting and model fine-tuning not implemented"
+  ],
+  "sha256": {
+    "article.ko.md": "b5bb63e228ab650c4516754a0396a8916efcaee75275512458cfd8b869fda3da",
+    "summarize.py": "d10a20782560a59008ca140f862f68d4d11739af26a0683ab5809e19e1dc2462",
+    "Modelfile": "2a75fe2471ebefa1f7dff9a15b50a5f4fa0524e912e827037c20c751fbb2dfd7",
+    "notes.txt": "be306e78abf9708b2680481c83e920d179cc9245d0b9cff00a16dc78219b999f",
+    "local-llm-flow-ko.svg": "559a8bb835981e7a306a0599340ecf1e95a8d3f3eda572a6201e2c6f888d5f95"
+  },
+  "publicationChecks": {
+    "authorization": "User explicitly requested publication: 게시해줘",
+    "publishedBodyAndSvg": "Exact match with draft except the public SVG URL",
+    "ci": "Loopback-only client check, source parity and shell syntax added; no actual model installation or inference",
+    "scope": "Prepared Korean article only"
+  }
+}
