@@ -169,6 +169,8 @@ def weekly(now, urls, gsc, ga, bing, zone='Asia/Seoul', pause=time.sleep, budget
               'limitations': ['GSC final web data excludes the newest three PT dates; query/page rows are not exhaustive.',
                  'GA is filtered to corresponding property-timezone hours. GA sessions are not search clicks.',
                  'AI source-label matches are not proof of an AI citation, a human visitor or incremental impact.',
+                 'Country is traffic geolocation, not nationality; engagement does not establish a human reader.',
+                 'GA country/hour session rows can overlap. Do not sum them to reconstruct unique session totals.',
                  'Dedicated Google/Bing AI citation reports are not collected.',
                  'Index inspection is a current saved-state sample, not a live crawl or indexing request.',
                  'Bing GetUrlInfo observes crawl records and does not confirm index membership.',
@@ -183,13 +185,20 @@ def weekly(now, urls, gsc, ga, bing, zone='Asia/Seoul', pause=time.sleep, budget
                   'gaTotals': ga({**ga_base, 'metrics': [{'name': x} for x in ('totalUsers', 'sessions', 'engagedSessions', 'screenPageViews')]}),
                   'gaSources': paged(ga, {**ga_base, 'dimensions': [{'name': x} for x in ('landingPage', 'sessionSource', 'sessionMedium')],
                           'metrics': [{'name': x} for x in ('sessions', 'engagedSessions')], 'limit': 25000}, 'offset', 'rows')}
+        period['gscCountries'] = paged(lambda body: gsc('performance', body),
+                                      {**base, 'dimensions': ['country']}, 'startRow', 'rows')
+        for field, dimensions in [('gaCountries', ('country',)), ('gaCountryHours', ('country', 'hour')),
+                                  ('gaCountrySources', ('country', 'sessionSource', 'sessionMedium'))]:
+            period[field] = paged(ga, {**ga_base, 'dimensions': [{'name': x} for x in dimensions],
+                'metrics': [{'name': x} for x in ('sessions', 'engagedSessions', 'screenPageViews', 'userEngagementDuration')],
+                'limit': 25000}, 'offset', 'rows')
         sources = period['gaSources']
         rows = flat({'httpStatus': 200, 'data': sources}) if sources.get('dimensionHeaders') and sources.get('metricHeaders') else None
         period['aiDomainMatchedRows'] = [row for row in (rows or []) if ai_source(row.get('sessionSource'))]
         period['aiAttributionState'] = sources['state']
         for field in ('gscTotals', 'gaTotals'):
             if period[field].get('httpStatus') != 200 or period[field].get('error'): report['apiErrors'].append(name + ':' + field)
-        for field in ('gscPages', 'gaSources'):
+        for field in ('gscPages', 'gaSources', 'gscCountries', 'gaCountries', 'gaCountryHours', 'gaCountrySources'):
             if not period[field]['completePagination']: report['apiErrors'].append(name + ':' + field)
         report['periods'][name] = period
     report['changes'] = deltas(report['periods'])
@@ -314,6 +323,12 @@ def format_weekly(report):
         lines.append(f"{metric}: 이전 {change['previous']} → 현재 {change['current']}, 차이 {change['absoluteChange']}")
     for name, period in report['periods'].items():
         lines.append(f"{name} AI 출처명 일치 행: {len(period['aiDomainMatchedRows'])}; 조회 상태: {period['aiAttributionState']}")
+        for field in ('gscCountries', 'gaCountries', 'gaCountryHours', 'gaCountrySources'):
+            audience = period.get(field)
+            if audience is not None:
+                lines.append(f"{name} {field}: {audience['state']}, 반환 행 {len(audience['rows'])}, 페이지 수집 완료 {audience['completePagination']}")
+    if any('gaCountries' in period for period in report['periods'].values()):
+        lines.append('국가·시간별 원본은 JSON 보고서에 저장합니다. GA 시간대: ' + report['gaTimezone'] + '. 참여 세션은 사람 판정이 아니며 시간별 세션을 단순 합산하지 않습니다.')
     known = [r['google'].get('data', {}).get('inspectionResult', {}).get('indexStatusResult', {}) for r in report['indexSample']]
     passed = sum(s.get('verdict') == 'PASS' for s in known)
     unknown = sum(s.get('verdict') not in ('PASS', 'FAIL', 'NEUTRAL', 'PARTIAL') for s in known)

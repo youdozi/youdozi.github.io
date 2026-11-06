@@ -16,7 +16,7 @@ tags:
 legacyUrl: "/linux/linux-shellscript-github-latest/"
 legacySource: "_posts/linux/shell-script/github-latest/2023-09-23-linux-shellsc\
   ript-github-latest.markdown"
-updatedAt: "2026-10-30T10:10:46.396668+00:00"
+updatedAt: "2026-11-06T01:46:52.493673+00:00"
 reviewedAt: "2026-10-30"
 reviewStatus: "revised"
 reviewScope: "공식 문서 대조 및 원고 실행 예제 검증"
@@ -33,6 +33,19 @@ description: "curl과 jq로 GitHub 최신 릴리스에서 OS·CPU·형식에 맞
 `releases/latest`는 숫자로 가장 큰 Git 태그를 계산하는 API가 아닙니다. [공식 릴리스 API](https://docs.github.com/en/rest/releases/releases#get-the-latest-release)는 일반 태그·draft·prerelease와 게시 릴리스를 구분합니다.
 
 아래 예제는 공개 저장소 `adoptium/temurin17-binaries`의 Linux x64 HotSpot JDK tar.gz 메타데이터를 조회합니다. 토큰이나 실제 파일 다운로드는 필요하지 않습니다. 저장소 인자를 생략하면 이 기본값을 사용하고 명시적인 빈 인자는 거부합니다.
+
+## 최신 릴리스를 찾았는데 자산을 선택하지 못한다면
+
+HTTP 요청 성공과 다운로드 파일 선택 성공은 별개입니다. 먼저 요청한 저장소에 게시된 릴리스가 있는지 확인하고, 그 응답의 파일명이 예제의 Linux x64 JDK 조건과 맞는지 확인하세요. 다른 플랫폼을 찾는다면 자산 이름의 조건도 함께 바꿔야 합니다.
+
+| 나타난 결과 | 먼저 확인할 대상 |
+| --- | --- |
+| HTTP 오류 | 저장소 경로·공개 접근 가능 여부·응답의 요청 한도 헤더 |
+| JSON 파싱 실패 | 응답 본문이 비어 있거나 JSON 외의 내용인지 여부 |
+| 자산이 없거나 여러 개 | 릴리스의 실제 파일명과 OS·CPU·압축 형식 조건 |
+| URL 선택 성공 | 다운로드 후 신뢰하는 체크섬·서명과 실제 파일이 일치하는지 여부 |
+
+태그 목록에서 가장 큰 숫자를 찾는 작업이라면 이 API와 별도 문제입니다. [숫자 버전 비교의 입력 범위](/ko/posts/2023-11-17-linux-shellscript-version-compare/)를 먼저 확인하세요.
 
 ## 처리 흐름
 

@@ -12,7 +12,7 @@ tags:
   - migration
 legacyUrl: /spring/springbatch5-migration/
 legacySource: _posts/spring/migration/2023-10-27-springbatch5-migration.markdown
-updatedAt: 2026-10-30T05:22:10.381026+00:00
+updatedAt: "2026-11-06T01:46:52.493673+00:00"
 reviewedAt: "2026-10-30"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -50,6 +50,19 @@ Batch 5는 Java 17 이상을 요구합니다. Java EE API의 `javax.*`는 해당
 - **Batch Job이 있는 Boot 애플리케이션:** Boot와 명시적 Batch 구성 중 누가 설정과 스키마 초기화를 맡을지 정합니다. 예제는 Boot 자동 구성 대신 명시적 Spring 구성을 사용합니다.
 
 Boot 주 버전도 함께 바꾼다면 저장소 이관과 별도로 [Java·Jakarta 마이그레이션 기준선](/ko/posts/2023-09-08-springboot3-migration/)부터 확인하세요.
+
+## 재시작 오류가 나면 어디부터 확인하나
+
+완료된 Job을 같은 식별 파라미터로 실행하는 것과 실패한 실행을 재시작하는 것은 다릅니다. 아래 테스트는 두 경우를 분리합니다. 실패한 예전 실행을 새 버전에서 재시작하려는 상황이라면 먼저 그 실행이 기록된 Batch 버전과 저장소 이관 상태부터 확인하세요.
+
+| 상황 | 먼저 확인할 항목 |
+| --- | --- |
+| 완료된 인스턴스의 재실행 거부 | 같은 식별 파라미터로 완료한 이력이 있는지 여부 |
+| 실패한 인스턴스 재시작 | 실패한 Step과 이미 완료된 Step의 실행 이력 |
+| 과거 실행 이력 조회 실패 | 파라미터 저장 형식과 실행 컨텍스트의 호환성 |
+| Boot 스키마 초기화가 동작하지 않음 | 명시적 Batch 구성으로 자동 구성을 대신했는지 여부 |
+
+새 작업을 의도한다면 업무상 새 인스턴스의 식별 기준을 정해야 합니다. 재실행을 통과시키려고 식별 파라미터만 임의로 바꾸면 원래 실패 인스턴스의 재시작과 달라집니다.
 
 ## 새 Batch 5 저장소에서 동작 확인하기
 

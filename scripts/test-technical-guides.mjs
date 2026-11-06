@@ -21,7 +21,7 @@ test('shell paths preserve learning order, empty-section omission, extras and mo
 test('existing algorithm and Spring paths remain in the registry with actual counts',()=>{
  const items=[entry('2023-09-07-springboot-initializer','en','springboot'),entry('2021-07-22-plus-minus','en','coding-test'),entry('2021-07-20-http-status-test','en','util'),entry('2023-09-20-jdk-21-release','en','jdk')];
  const guides=technicalGuides('en',items);
- assert.deepEqual(guides.map(g=>g.url),['/en/categories/coding-test/','/en/categories/springboot/','/en/categories/jdk/','/en/categories/util/']);
+ assert.deepEqual(guides.map(g=>g.url),['/en/categories/coding-test/','/en/categories/jdk/','/en/categories/springboot/','/en/categories/util/']);
  assert.deepEqual(guides.map(g=>g.ordered.length),[1,1,1,1]);
  assert.equal(guideTerms.length,9);
 });
@@ -141,13 +141,14 @@ test('GC and LGTM cross-category articles join localized guides and return paths
  for(const language of ['en','ko','zh-CN','ja','de','fr','ru','es']){
   const gc=entry('2026-11-03-jdk-gc-evolution',language,'java');
   const lgtm=entry('2026-11-02-grafana-lgtm-log-trace',language,'architecture');
-  const items=[gc,lgtm,entry('unrelated',language,'java')];
   for(const [article,term,id] of [[gc,'jdk','gc'],[lgtm,'util','observability']]){
+   const items=[article,entry('unrelated',language,'java')];
    const guide=categoryGuide(term,language,items);
    assert.deepEqual(guide.sections.map(s=>s.id),[id]);
    assert.deepEqual(guide.ordered,[article]);
    assert.ok(guide.sections[0].title&&guide.sections[0].description);
-   assert.deepEqual(additionalArticleGuides(article,items).map(g=>g.url),[`/${language}/categories/${term}/`]);
+   const returnGuides=article===lgtm?['jdk','util']:[term];
+   assert.deepEqual(additionalArticleGuides(article,items).map(g=>g.url),returnGuides.map(t=>`/${language}/categories/${t}/`));
    if(language!=='en')assert.notEqual(guide.sections[0].title,categoryGuide(term,'en',[{...article,language:'en'}]).sections[0].title);
   }
  }

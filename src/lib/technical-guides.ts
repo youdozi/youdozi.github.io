@@ -7,9 +7,9 @@ import type { CategoryGuide } from './category-guide';
 import { algorithmGuide } from './algorithm-guide.ts';
 import { springGuide } from './spring-guide.ts';
 
-export const guideTerms = ['coding-test', 'springboot', 'linux', 'jdk', 'util', 'automation', 'jenkins', 'jekyll', 'security'] as const;
+export const guideTerms = ['coding-test', 'jdk', 'springboot', 'linux', 'util', 'automation', 'jenkins', 'jekyll', 'security'] as const;
 const updatedAt = new Date('2026-10-30T10:10:46.396668+00:00');
-const pathUpdatedAt: Record<string,number> = {jdk:Date.parse('2026-11-03T05:43:22.606306+00:00'),util:Date.parse('2026-11-03T05:43:22.606306+00:00')};
+const pathUpdatedAt: Record<string,number> = {jdk:Date.parse('2026-11-06T01:49:27.840067+00:00'),util:Date.parse('2026-11-03T05:43:22.606306+00:00')};
 const nativeGuideIndexCopy = {
   en: { label: 'Guides', title: 'Technical Learning Guides',
     description: 'Choose a reading path through Java exercises, Spring Boot, shell automation, JDK features, development tools, reviewed publishing, Jenkins recovery, legacy Ruby diagnostics and runtime security, with code and scoped checks.',
@@ -27,7 +27,7 @@ const common = {
 };
 const crossCategoryKeys: Partial<Record<string, readonly string[]>> = {
   jekyll: ['2026-04-07-ruby-rbenv-jekyll-build-troubleshooting'],
-  jdk: ['2026-11-03-jdk-gc-evolution'],
+  jdk: ['2026-11-03-jdk-gc-evolution','2026-11-01-webflux-coroutines-mvc-virtual-threads','2026-10-31-failure-fallback','2026-11-02-grafana-lgtm-log-trace'],
   util: ['2026-11-02-grafana-lgtm-log-trace'],
 };
 const paths = {
@@ -124,12 +124,12 @@ const paths = {
       ]},
   },
   jdk: {
-    en: {label:'JDK feature guides',title:'JDK Guides: Final APIs, Runtime Checks and Previews',eyebrow:'JDK',
-      description:'Compare virtual threads and request context, plan capacity on JDK 27, inspect runtime binaries and trust, and distinguish previews such as Valhalla.',
+    en: {label:'JDK feature guides',title:'Java Runtime Guides: Virtual Threads, MVC, Database Limits and Recovery',eyebrow:'JDK',
+      description:'Follow virtual threads, MVC migration, DB admission, fallback and LGTM tracing, then inspect request context, GC and runtime compatibility.',
       intro:'Separate language/API status from the runtime you actually install. These articles include historical release events and preview material; use each recorded version and do not infer current support from an old release note.',
       groups:[
         {id:'features',title:'Distinguish feature status',description:'Start with final APIs and the boundaries of preview features.',keys:['2023-09-20-jdk-21-release']},
-        {id:'virtual',title:'Virtual threads and DB admission',description:'Observe JDK 21–25 monitor pinning and bound DB waiting and concurrency with semaphores.',keys:['2026-10-31-virtual-threads-jdk21-jdk25','2026-11-03-virtual-threads-db-semaphore']},
+        {id:'virtual',title:'From virtual threads to operating an MVC service',description:'Compare JDK 21–25 behavior, evaluate the Kotlin/WebFlux to Java/MVC transition, bound DB admission, then connect failure policy with LGTM diagnosis.',keys:['2026-10-31-virtual-threads-jdk21-jdk25','2026-11-01-webflux-coroutines-mvc-virtual-threads','2026-11-03-virtual-threads-db-semaphore','2026-10-31-failure-fallback','2026-11-02-grafana-lgtm-log-trace']},
         {id:'scoped',title:'Bound request context',description:'Use finalized JDK 25 ScopedValue and distinguish binding restoration from asynchronous inheritance.',keys:['2026-10-31-jdk25-scopedvalue']},
         {id:'gc',title:'Compare garbage collectors',description:'Compare collector availability across JDK versions and inspect allocation and GC logging examples.',keys:['2026-11-03-jdk-gc-evolution']},
         {id:'capacity',title:'Plan API capacity',description:'Define a 10k RPS boundary, calculate illustrative budgets and separate admission checks from load-test evidence.',keys:['2026-10-31-jdk-10k-rps-architecture']},
@@ -138,12 +138,12 @@ const paths = {
         {id:'trust',title:'Check certificate trust',description:'Identify the JVM and supplier guidance before interpreting trust-store inventory.',keys:['2026-10-30-jdk-emudhra-truststore']},
         {id:'valhalla',title:'Try value-object semantics',description:'Compare records and value objects on JDK 28 EA without inferring a guaranteed memory layout.',keys:['2026-10-31-project-valhalla-value-objects']},
       ]},
-    ko: {label:'JDK 기능 학습 안내',title:'JDK 학습 안내: 정식 API·실행기 확인·미리보기',eyebrow:'JDK',
-      description:'가상 스레드·요청 컨텍스트를 비교하고 JDK 27의 용량 계획과 실행기·인증서 신뢰·Valhalla 미리보기를 살펴봅니다.',
+    ko: {label:'JDK 기능 학습 안내',title:'Java 실행 환경 학습 안내: 가상 스레드·MVC·DB 제어·장애 대응',eyebrow:'JDK',
+      description:'가상 스레드에서 MVC 전환·DB 입장 제어·fallback·LGTM 추적까지 연결하고 요청 컨텍스트·GC·실행기 호환성을 확인합니다.',
       intro:'언어·API의 상태와 실제 설치할 실행기를 구분합니다. 과거 릴리스와 Preview 자료를 포함하므로 기록한 버전을 따르고 오래된 릴리스 글만으로 현재 지원 상태를 판단하지 않습니다.',
       groups:[
         {id:'features',title:'기능의 상태 구분',description:'정식 API와 Preview 기능의 적용 범위부터 확인합니다.',keys:['2023-09-20-jdk-21-release']},
-        {id:'virtual',title:'가상 스레드의 동작과 DB 입장 제어',description:'JDK 21·25의 모니터 pinning을 관측하고, DB 세마포어로 대기와 동시 실행을 제한하는 경계를 확인합니다.',keys:['2026-10-31-virtual-threads-jdk21-jdk25','2026-11-03-virtual-threads-db-semaphore']},
+        {id:'virtual',title:'가상 스레드에서 MVC 서비스 운영까지',description:'JDK 21·25 동작과 Kotlin·WebFlux에서 Java·MVC로의 전환을 살펴보고, DB 입장 제어·장애 정책·LGTM 진단으로 이어갑니다.',keys:['2026-10-31-virtual-threads-jdk21-jdk25','2026-11-01-webflux-coroutines-mvc-virtual-threads','2026-11-03-virtual-threads-db-semaphore','2026-10-31-failure-fallback','2026-11-02-grafana-lgtm-log-trace']},
         {id:'scoped',title:'요청 컨텍스트의 범위',description:'JDK 25 정식 ScopedValue를 실행하고 바인딩 복원과 비동기 상속의 경계를 구분합니다.',keys:['2026-10-31-jdk25-scopedvalue']},
         {id:'gc',title:'가비지 컬렉터 비교',description:'JDK 버전별 컬렉터 지원을 비교하고 할당·GC 로그 예제를 확인합니다.',keys:['2026-11-03-jdk-gc-evolution']},
         {id:'capacity',title:'API 용량 계획',description:'10k RPS의 경계를 정하고 예시 예산을 계산하며 입장 제어 검사와 부하 검증을 구분합니다.',keys:['2026-10-31-jdk-10k-rps-architecture']},

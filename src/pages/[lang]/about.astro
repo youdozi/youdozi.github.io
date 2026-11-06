@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AnalyticsPreference from '../../components/AnalyticsPreference.astro';
 import {profileLanguages,profileCopy,profileAlternates,profileStructuredData} from '../../lib/author';
 export function getStaticPaths(){return profileLanguages.map(lang=>({params:{lang}}));}
 const lang=Astro.params.lang as 'en'|'ko';const copy=profileCopy[lang];
@@ -11,6 +12,7 @@ const lang=Astro.params.lang as 'en'|'ko';const copy=profileCopy[lang];
     <h2>{copy.workTitle}</h2><p>{copy.work}</p><p><a href={`/${lang}/guides/`}>{copy.guides}</a></p>
     <h2>{copy.processTitle}</h2><p>{copy.process}</p>
     <h2>{copy.limitsTitle}</h2><p>{copy.limits}</p><p>{copy.corrections}</p>
+    <AnalyticsPreference lang={lang} />
   </article>
 </Base>
 <style>.profile{max-width:760px;padding:64px 0}.profile h1{margin-top:0;overflow-wrap:anywhere}</style>
