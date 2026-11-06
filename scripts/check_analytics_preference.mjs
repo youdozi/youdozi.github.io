@@ -40,25 +40,29 @@ try{
   try{
    const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
    await page.goto(`${base}/${lang}/about/`);
-   const toggle=page.locator('[data-analytics-toggle]');await toggle.waitFor({state:'visible'});
+   assert.equal(await page.locator('[data-analytics-preference], [data-analytics-toggle]').count(),0,'About must not display measurement controls');
    assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),null);
-   const other=await context.newPage();await other.goto(`${base}/${lang}/about/`);await other.locator('[data-analytics-toggle]').waitFor({state:'visible'});
-   await toggle.click();await page.waitForFunction(key=>localStorage.getItem(key)==='true'&&window['ga-disable-G-XZVJ0K06M9']===true,key);
+   const other=await context.newPage();await other.goto(`${base}/${lang}/about/`);
+   await page.evaluate(key=>localStorage.setItem(key,'true'),key);
    await other.waitForFunction(()=>window['ga-disable-G-XZVJ0K06M9']===true);
+   await page.reload();assert.equal(await page.evaluate(flag=>window[flag],flag),true);
    await page.goto(`${base}/${lang}/categories/jdk/`);assert.equal(await page.evaluate(flag=>window[flag],flag),true);
-   await page.goto(`${base}/${lang}/about/`);await toggle.waitFor({state:'visible'});
-   await toggle.click();await page.waitForFunction(key=>localStorage.getItem(key)==='false'&&window['ga-disable-G-XZVJ0K06M9']===false,key);
+   await page.evaluate(key=>localStorage.setItem(key,'false'),key);
+   await other.waitForFunction(()=>window['ga-disable-G-XZVJ0K06M9']===false);
+   await page.goto(`${base}/${lang}/about/`);
+   assert.equal(await page.evaluate(flag=>window[flag],flag),false);
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
-   assert.deepEqual(errors,[]);checks.push({lang,width,togglePersistenceAndOtherTab:true});
+   assert.deepEqual(errors,[]);checks.push({lang,width,noAboutControls:true,storedPreferenceAndOtherTab:true});
   }finally{await context.close();}
  }
  const {context}=await isolatedContext(browser);
  try{
   await context.addInitScript(()=>{Object.defineProperty(Storage.prototype,'getItem',{value(){throw Error('storage denied');}});});
-  const page=await context.newPage();await page.goto(base+'/en/about/');
-  await page.locator('[data-analytics-status]').filter({hasText:'unavailable'}).waitFor();
-  assert.equal(await page.locator('[data-analytics-toggle]').isHidden(),true);
-  checks.push({storageDenied:'explicit-error-no-false-success'});
+  const page=await context.newPage(),errors=[];page.on('pageerror',error=>errors.push(error.message));
+  await page.goto(base+'/en/about/');
+  assert.equal(await page.locator('[data-analytics-preference], [data-analytics-toggle]').count(),0);
+  assert.equal(await page.locator('h1').count(),1);assert.deepEqual(errors,[]);
+  checks.push({storageDenied:'about-remains-readable'});
  }finally{await context.close();}
  console.log(JSON.stringify({bootstrapCases:5,browserChecks:checks}));
 }finally{if(browser)await browser.close();await new Promise(done=>server.close(done));}

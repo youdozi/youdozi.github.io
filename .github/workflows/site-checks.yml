@@ -159,7 +159,7 @@ jobs:
         run: node scripts/check_search_navigation.mjs
       - name: Verify root language selection, saved choices and explicit URLs
         run: node scripts/check_language_preference.mjs
-      - name: Verify browser Analytics opt-out, reload persistence and storage failures
+      - name: Verify stored Analytics preferences and About page without measurement controls
         run: node scripts/check_analytics_preference.mjs
       - name: Render pending translations in a disposable snapshot without publication
         run: npm run check:translation-preview
