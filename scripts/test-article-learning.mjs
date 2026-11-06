@@ -4,6 +4,20 @@ import {articleLearningPath,learningPathCopy} from '../src/lib/article-learning.
 const make=(key,language='en',more={})=>({translationKey:key,title:key,url:`/${language}/posts/${key}/`,language,kind:'post',categories:['linux'],tags:[],publishedAt:new Date('2020-01-01Z'),...more});
 const keys=['2023-09-20-linux-shellscript-function-error','2021-07-27-parse-yaml','2023-11-17-linux-shellscript-version-compare','2023-09-23-linux-shellscript-github-latest'];
 
+test('runtime reading sequence stays continuous across Spring, JDK and operations in every language',()=>{
+ const runtime=[['2026-10-31-virtual-threads-jdk21-jdk25','jdk'],['2026-11-01-webflux-coroutines-mvc-virtual-threads','springboot'],['2026-11-03-virtual-threads-db-semaphore','jdk'],['2026-10-31-failure-fallback','architecture'],['2026-11-02-grafana-lgtm-log-trace','architecture']];
+ for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es']){
+  const entries=runtime.map(([key,category])=>make(key,lang,{categories:[category]}));
+  for(const [i,entry] of entries.entries()){
+   const path=articleLearningPath(entry,entries);
+   assert.equal(path.guide.url,`/${lang}/categories/jdk/`);
+   assert.equal(path.position,i+1);assert.equal(path.total,5);
+   assert.equal(path.previous?.url,entries[i-1]?.url);
+   assert.equal(path.next?.url,entries[i+1]?.url);
+  }
+ }
+});
+
 test('reading neighbors follow curated sections instead of dates, input order or extras',()=>{
  const entries=[make(keys[3]),make('extra'),make(keys[1]),make(keys[0]),make(keys[2])];
  const before=structuredClone(entries);

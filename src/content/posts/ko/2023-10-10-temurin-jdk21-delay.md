@@ -13,7 +13,7 @@ tags:
   - temurin
 legacyUrl: /jdk/temurin-jdk21-delay/
 legacySource: _posts/jdk/temurin-jdk21-delay/2023-10-10-temurin-jdk21-delay.markdown
-updatedAt: "2026-10-30T10:10:46.396668+00:00"
+updatedAt: "2026-11-06T01:46:52.493673+00:00"
 reviewedAt: "2026-10-27"
 reviewStatus: revised
 reviewScope: Official sources checked; runnable examples checked separately from
@@ -35,6 +35,18 @@ Temurin 21의 2023년 첫 출시 지연은 OpenJDK 21 자체의 출시 지연과
 ![바이너리 메타데이터 확인 흐름도](/assets/diagrams/2023-10-10-temurin-jdk21-delay-ko.svg)
 
 설치가 아닌 메타데이터 선택 예제입니다. 플랫폼·Java 주 버전·체크섬 형식·URL 위치를 확인하며 압축 파일을 다운로드하거나 해시하지는 않습니다.
+
+## Temurin 다운로드와 설치 확인은 어디서 나누나
+
+현재 바이너리를 찾는다면 아래 API 예제에서 OS·CPU·패키지 유형을 선택하세요. 과거 출시 지연 공지는 당시 배포 경위를 설명하며, 현재 설치할 파일이나 실행 중인 JVM을 확인하는 절차를 대신하지 않습니다.
+
+| 확인 단계 | 여기서 알 수 있는 것 | 다음 확인 |
+| --- | --- | --- |
+| 메타데이터 선택 | 원하는 플랫폼과 Java 주 버전의 자산인지 여부 | 선택한 URL에서 파일 다운로드 |
+| 파일 검증 | 신뢰하는 기대값과 내려받은 파일의 해시 일치 여부 | 압축 해제 후 선택한 실행기의 버전 확인 |
+| 서비스 반영 | 실제 프로세스가 사용하는 실행기 | 서비스 재시작·배포 후 런타임 재확인 |
+
+메타데이터의 체크섬 형식을 검사한 것과 파일을 해시한 것은 다릅니다. 다운로드한 파일은 [SHA-256 검증 예제](/ko/posts/2026-10-30-verify-sha256-download/)로 이어서 확인할 수 있습니다.
 
 ## 공지와 릴리스 날짜 구분하기
 

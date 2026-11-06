@@ -35,7 +35,7 @@ def ga(body):
     dimensions = [d['name'] for d in body.get('dimensions', [])]
     metrics = [m['name'] for m in body['metrics']]
     row = {'metricValues': [{'value': '10'} for _ in metrics]}
-    if dimensions: row['dimensionValues'] = [{'value': {'landingPage': '/en/posts/example/', 'sessionSource': 'chatgpt.com', 'sessionMedium': 'referral'}[d]} for d in dimensions]
+    if dimensions: row['dimensionValues'] = [{'value': {'landingPage': '/en/posts/example/', 'sessionSource': 'chatgpt.com', 'sessionMedium': 'referral', 'country': 'South Korea', 'hour': '18'}[d]} for d in dimensions]
     return {'httpStatus': 200, 'data': {'dimensionHeaders': [{'name': d} for d in dimensions],
             'metricHeaders': [{'name': m} for m in metrics], 'rows': [row], 'metadata': {'timeZone': 'Asia/Seoul'}}}
 
@@ -144,6 +144,31 @@ class SearchMonitorTests(unittest.TestCase):
         self.assertEqual(failed['state'], 'partial-failure')
         self.assertIsNone(failed['changes']['clicks']['absoluteChange'])
         self.assertIsNone(failed['changes']['ga:sessions']['current'])
+
+    def test_weekly_audience_keeps_country_hour_sources_aligned_and_failures_unknown(self):
+        urls, _ = public_pages()
+        requests = []
+        def capture(body):
+            requests.append(body)
+            return ga(body)
+        report = monitor.weekly(datetime.now(timezone.utc), urls, gsc, capture, bing, pause=lambda _: None)
+        for period in report['periods'].values():
+            for field in ('gaCountries', 'gaCountryHours', 'gaCountrySources', 'gscCountries'):
+                self.assertTrue(period[field]['completePagination'])
+            self.assertEqual(period['gaCountryHours']['metadata']['timeZone'], 'Asia/Seoul')
+            self.assertEqual([d['name'] for d in period['gaCountryHours']['dimensionHeaders']], ['country', 'hour'])
+        audience = [body for body in requests if body.get('dimensions', [{}])[0].get('name') == 'country']
+        self.assertEqual(len(audience), 6)
+        self.assertTrue(all('userEngagementDuration' in [m['name'] for m in body['metrics']] for body in audience))
+        self.assertTrue(all('dateHour' in json.dumps(body['dimensionFilter']) and 'youdozi.github.io' in json.dumps(body['dimensionFilter']) for body in audience))
+        def failed_hours(body):
+            if [d['name'] for d in body.get('dimensions', [])] == ['country', 'hour']:
+                return {'httpStatus': 403, 'error': 'unavailable'}
+            return ga(body)
+        failed = monitor.weekly(datetime.now(timezone.utc), urls, gsc, failed_hours, bing, pause=lambda _: None)
+        self.assertEqual(failed['state'], 'partial-failure')
+        self.assertIn('current:gaCountryHours', failed['apiErrors'])
+        self.assertEqual(failed['periods']['current']['gaCountryHours']['state'], 'error')
 
     def test_bing_throttle_stops_further_url_calls(self):
         urls, _ = public_pages(); calls = []

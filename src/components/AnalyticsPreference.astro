@@ -1,0 +1,49 @@
+---
+const {lang} = Astro.props as {lang:'en'|'ko'};
+const copy = lang === 'ko' ? {
+  title:'이 브라우저의 방문 통계',
+  description:'본인 방문이나 점검을 통계에 포함하고 싶지 않다면 수집을 끄세요. 이 사이트의 현재 브라우저에만 적용되며, 다른 기기·브라우저에는 각각 설정해야 합니다. 사이트 데이터를 지우면 설정이 초기화됩니다. 이전에 수집한 기록은 삭제하지 않습니다.',
+  enabled:'방문 통계 수집이 켜져 있습니다.', disabled:'방문 통계 수집이 꺼져 있습니다.',
+  stop:'이 브라우저에서 수집 끄기', start:'이 브라우저에서 수집 켜기',
+  error:'브라우저 저장소에 접근할 수 없어 설정을 저장하지 못했습니다.',
+} : {
+  title:'Visit measurement in this browser',
+  description:'Turn collection off to keep your own visits or checks out of Analytics. This applies to this site in the current browser only; set it separately on other devices and browsers. Clearing site data resets the choice. Previously collected records are not deleted.',
+  enabled:'Visit measurement is on.', disabled:'Visit measurement is off.',
+  stop:'Turn collection off in this browser', start:'Turn collection on in this browser',
+  error:'Browser storage is unavailable. The preference could not be saved.',
+};
+---
+<section data-analytics-preference data-enabled={copy.enabled} data-disabled={copy.disabled} data-stop={copy.stop} data-start={copy.start} data-error={copy.error}>
+  <h2 id="visit-measurement">{copy.title}</h2><p>{copy.description}</p>
+  <p data-analytics-status role="status"></p>
+  <button type="button" data-analytics-toggle hidden>{copy.stop}</button>
+  <noscript><p>{lang==='ko'?'이 설정을 변경하려면 JavaScript가 필요합니다.':'JavaScript is needed to change this setting.'}</p></noscript>
+</section>
+<script>
+  const panel = document.querySelector<HTMLElement>('[data-analytics-preference]');
+  if (panel) {
+    const button = panel.querySelector<HTMLButtonElement>('[data-analytics-toggle]')!;
+    const status = panel.querySelector<HTMLElement>('[data-analytics-status]')!;
+    const key = 'youdozi-analytics-disabled';
+    const render = () => {
+      try {
+        const disabled = localStorage.getItem(key) === 'true';
+        button.textContent = panel.dataset[disabled ? 'start' : 'stop']!;
+        status.textContent = panel.dataset[disabled ? 'disabled' : 'enabled']!;
+        button.hidden = false;
+      } catch { status.textContent = panel.dataset.error!; button.hidden = true; }
+    };
+    button.addEventListener('click', () => {
+      try {
+        const disabled = localStorage.getItem(key) !== 'true';
+        localStorage.setItem(key, String(disabled));
+        (window as unknown as Record<string, unknown>)['ga-disable-G-XZVJ0K06M9'] = disabled;
+        location.reload();
+      } catch { status.textContent = panel.dataset.error!; }
+    });
+    window.addEventListener('storage', event => { if (event.key === key || event.key === null) render(); });
+    render();
+  }
+</script>
+<style>button{font:inherit;color:var(--accent);background:transparent;border:1px solid var(--line);border-radius:4px;padding:10px 14px;cursor:pointer}button:hover{border-color:var(--accent)}</style>

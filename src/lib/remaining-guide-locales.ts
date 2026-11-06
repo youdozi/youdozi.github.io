@@ -3,9 +3,9 @@ export const remainingGuideLocales = {
   "zh-CN": {
     "jdk": {
       "label": "JDK 功能指南",
-      "title": "JDK 指南：正式 API、运行时检查与预览功能",
+      "title": "Java 运行时指南：虚拟线程、MVC、数据库限制与故障恢复",
       "eyebrow": "JDK",
-      "description": "比较虚拟线程和请求上下文，规划 JDK 27 的容量，检查运行时二进制文件与信任，并区分 Valhalla 等预览功能。",
+      "description": "从虚拟线程到 MVC 迁移、DB 准入、降级和 LGTM 追踪，再检查请求上下文、GC 与运行时兼容性。",
       "intro": "区分语言或 API 的状态与实际安装的运行时。这些文章包含历史发布事件与预览资料；请遵循记录的版本，不要根据旧版发布说明推断当前支持情况。",
       "groups": {
         "features": {
@@ -21,8 +21,8 @@ export const remainingGuideLocales = {
           "description": "将历史上的 Temurin 发布延迟与平台及二进制元数据检查分开。"
         },
         "virtual": {
-          "title": "虚拟线程与 DB 准入控制",
-          "description": "观察 JDK 21–25 的监视器固定行为，并用信号量限制 DB 等待和并发。"
+          "title": "从虚拟线程到 MVC 服务运维",
+          "description": "比较 JDK 21–25 的行为，评估从 Kotlin/WebFlux 到 Java/MVC 的迁移，限制 DB 准入，再将故障策略与 LGTM 诊断连接起来。"
         },
         "scoped": {
           "title": "限定请求上下文",
@@ -101,9 +101,9 @@ export const remainingGuideLocales = {
   "ja": {
     "jdk": {
       "label": "JDK 機能ガイド",
-      "title": "JDKガイド：正式API・ランタイム確認・プレビュー",
+      "title": "Java 実行環境ガイド：仮想スレッド・MVC・DB 制限・障害復旧",
       "eyebrow": "JDK",
-      "description": "仮想スレッドとリクエストコンテキストを比較し、JDK 27の容量を計画します。ランタイムのバイナリと信頼を確認し、Valhallaなどのプレビューを区別します。",
+      "description": "仮想スレッドから MVC 移行、DB 入場制御、フォールバック、LGTM トレースへ進み、リクエストコンテキスト、GC、実行環境の互換性を確認します。",
       "intro": "言語・API の状態と実際にインストールするランタイムを区別します。過去のリリースとプレビュー資料を含むため、記録されたバージョンに従い、古いリリースノートから現在のサポート状況を推測しないでください。",
       "groups": {
         "features": {
@@ -119,8 +119,8 @@ export const remainingGuideLocales = {
           "description": "過去の Temurin リリース遅延と、プラットフォーム・バイナリーメタデータの確認を区別します。"
         },
         "virtual": {
-          "title": "仮想スレッドと DB の受け入れ制御",
-          "description": "JDK 21〜25 のモニター pinning を観測し、セマフォで DB の待機と並行実行を制限します。"
+          "title": "仮想スレッドから MVC サービスの運用へ",
+          "description": "JDK 21–25 の動作を比較し、Kotlin/WebFlux から Java/MVC への移行を検討します。DB 入場制御の後に障害方針と LGTM 診断をつなげます。"
         },
         "scoped": {
           "title": "リクエストコンテキストの範囲",
@@ -199,9 +199,9 @@ export const remainingGuideLocales = {
   "de": {
     "jdk": {
       "label": "Anleitungen zu JDK-Funktionen",
-      "title": "JDK-Leitfäden: Finale APIs, Laufzeitprüfungen und Vorschauen",
+      "title": "Java-Laufzeit: Virtuelle Threads, MVC, Datenbankgrenzen und Wiederherstellung",
       "eyebrow": "JDK",
-      "description": "Vergleichen Sie virtuelle Threads und Anfragekontext, planen Sie Kapazität mit JDK 27, prüfen Sie Laufzeit-Binärdateien und Vertrauen und unterscheiden Sie Vorschauen wie Valhalla.",
+      "description": "Von virtuellen Threads über MVC-Migration, DB-Zulassung und Fallback zur LGTM-Tracing-Diagnose; danach folgen Anfragekontext, GC und Laufzeitkompatibilität.",
       "intro": "Trennen Sie den Status von Sprache und APIs von der tatsächlich installierten Laufzeit. Die Artikel enthalten historische Veröffentlichungen und Preview-Material; beachten Sie die angegebenen Versionen und leiten Sie aus alten Release Notes keinen aktuellen Supportstatus ab.",
       "groups": {
         "features": {
@@ -217,8 +217,8 @@ export const remainingGuideLocales = {
           "description": "Die historische Temurin-Verzögerung von Prüfungen der Plattform und Binärmetadaten trennen."
         },
         "virtual": {
-          "title": "Virtuelle Threads und DB-Zulassung",
-          "description": "Monitor-Pinning in JDK 21–25 beobachten und DB-Wartezeiten sowie Nebenläufigkeit mit Semaphoren begrenzen."
+          "title": "Von virtuellen Threads zum Betrieb eines MVC-Dienstes",
+          "description": "JDK 21–25 vergleichen, den Wechsel von Kotlin/WebFlux zu Java/MVC bewerten, DB-Zulassung begrenzen und Fehlerstrategien mit LGTM-Diagnose verbinden."
         },
         "scoped": {
           "title": "Anfragekontext begrenzen",
@@ -297,9 +297,9 @@ export const remainingGuideLocales = {
   "fr": {
     "jdk": {
       "label": "Guides des fonctionnalités du JDK",
-      "title": "Guides JDK : API finalisées, vérifications du runtime et fonctionnalités en preview",
+      "title": "Exécution Java : threads virtuels, MVC, limites de base de données et reprise",
       "eyebrow": "JDK",
-      "description": "Comparez threads virtuels et contexte de requête, planifiez la capacité avec JDK 27, inspectez les binaires et la confiance du runtime, et distinguez les fonctionnalités en preview telles que Valhalla.",
+      "description": "Des threads virtuels à la migration MVC, au contrôle d’accès à la DB, au repli et au traçage LGTM, puis au contexte des requêtes, au GC et à la compatibilité.",
       "intro": "Distinguez le statut du langage et des API de l’environnement d’exécution réellement installé. Ces articles comprennent des événements de publication historiques et des fonctionnalités en preview ; respectez les versions indiquées et ne déduisez pas le support actuel d’une ancienne note de version.",
       "groups": {
         "features": {
@@ -315,8 +315,8 @@ export const remainingGuideLocales = {
           "description": "Séparer le retard historique de Temurin des contrôles de plateforme et de métadonnées des binaires."
         },
         "virtual": {
-          "title": "Threads virtuels et admission en base",
-          "description": "Observer le pinning des moniteurs dans les JDK 21–25 et limiter l’attente et la concurrence en base avec des sémaphores."
+          "title": "Des threads virtuels à l’exploitation d’un service MVC",
+          "description": "Comparer JDK 21–25, évaluer le passage de Kotlin/WebFlux à Java/MVC, limiter les admissions à la DB, puis relier les stratégies de panne au diagnostic LGTM."
         },
         "scoped": {
           "title": "Délimiter le contexte de requête",
@@ -395,9 +395,9 @@ export const remainingGuideLocales = {
   "ru": {
     "jdk": {
       "label": "Руководства по возможностям JDK",
-      "title": "Руководства по JDK: окончательные API, проверки среды и предварительные возможности",
+      "title": "Среда Java: виртуальные потоки, MVC, ограничения БД и восстановление",
       "eyebrow": "JDK",
-      "description": "Сравните виртуальные потоки и контекст запроса, спланируйте ёмкость на JDK 27, проверьте двоичные файлы среды и доверие, отличая предварительные возможности вроде Valhalla.",
+      "description": "От виртуальных потоков к миграции на MVC, допуску к БД, резервным сценариям и трассировке LGTM, затем к контексту запросов, GC и совместимости.",
       "intro": "Отделяйте статус языка и API от фактически устанавливаемой среды выполнения. Статьи включают исторические выпуски и материалы о preview: используйте указанные версии и не определяйте текущую поддержку по старым примечаниям к выпуску.",
       "groups": {
         "features": {
@@ -413,8 +413,8 @@ export const remainingGuideLocales = {
           "description": "Отделяйте историческую задержку Temurin от проверок платформы и метаданных бинарных файлов."
         },
         "virtual": {
-          "title": "Виртуальные потоки и допуск к БД",
-          "description": "Наблюдайте pinning мониторов в JDK 21–25 и ограничивайте ожидание и параллелизм работы с БД семафорами."
+          "title": "От виртуальных потоков к эксплуатации MVC-сервиса",
+          "description": "Сравните поведение JDK 21–25, оцените переход с Kotlin/WebFlux на Java/MVC, ограничьте допуск к БД и свяжите обработку сбоев с диагностикой LGTM."
         },
         "scoped": {
           "title": "Границы контекста запроса",
@@ -493,9 +493,9 @@ export const remainingGuideLocales = {
   "es": {
     "jdk": {
       "label": "Guías de funciones del JDK",
-      "title": "Guías de JDK: API definitivas, comprobaciones del runtime y vistas previas",
+      "title": "Ejecución Java: hilos virtuales, MVC, límites de base de datos y recuperación",
       "eyebrow": "JDK",
-      "description": "Compara hilos virtuales y contexto de solicitud, planifica capacidad con JDK 27, inspecciona binarios y confianza del runtime y distingue vistas previas como Valhalla.",
+      "description": "De los hilos virtuales a la migración MVC, la admisión a la DB, el fallback y las trazas LGTM; después, contexto de peticiones, GC y compatibilidad.",
       "intro": "Separa el estado del lenguaje y las API del entorno de ejecución que realmente instalas. Estos artículos incluyen publicaciones históricas y material de preview; respeta las versiones indicadas y no deduzcas el soporte actual de una nota de versión antigua.",
       "groups": {
         "features": {
@@ -511,8 +511,8 @@ export const remainingGuideLocales = {
           "description": "Separa el retraso histórico de Temurin de las comprobaciones de plataforma y metadatos de binarios."
         },
         "virtual": {
-          "title": "Hilos virtuales y admisión a la BD",
-          "description": "Observa el pinning de monitores en JDK 21–25 y limita la espera y la concurrencia en la BD mediante semáforos."
+          "title": "De los hilos virtuales a la operación de un servicio MVC",
+          "description": "Compare JDK 21–25, evalúe el paso de Kotlin/WebFlux a Java/MVC, limite la admisión a la DB y conecte la política de fallos con el diagnóstico LGTM."
         },
         "scoped": {
           "title": "Delimitar el contexto de solicitud",
@@ -589,4 +589,4 @@ export const remainingGuideLocales = {
     }
   }
 };
-export const remainingGuideLocalesUpdatedAt = new Date("2026-10-31T02:54:25.571477+00:00");
+export const remainingGuideLocalesUpdatedAt = new Date("2026-11-06T01:49:27.840067+00:00");
