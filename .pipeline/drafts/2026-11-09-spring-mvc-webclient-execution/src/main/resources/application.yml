@@ -1,0 +1,7 @@
+upstream:
+  base-url: http://127.0.0.1:9091
+  timeout: 3s
+spring:
+  mvc:
+    async:
+      request-timeout: 5s
