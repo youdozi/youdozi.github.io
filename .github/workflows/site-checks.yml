@@ -2,10 +2,18 @@ name: Reusable Site Checks
 
 on:
   workflow_call:
+    outputs:
+      source_run:
+        description: Successful PR run supplying the checked site, if reused
+        value: ${{ jobs.build.outputs.source_run }}
     inputs:
       ref:
         required: true
         type: string
+      base:
+        required: false
+        type: string
+        default: ""
       pages_artifact:
         required: false
         type: boolean
@@ -17,162 +25,321 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      source_run: ${{ steps.find.outputs.run_id }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ inputs.ref }}
+      - name: Find a trusted checked artifact for the exact merged source tree
+        id: find
+        if: inputs.pages_artifact && github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 -B scripts/ci_artifact.py find
+      - uses: actions/download-artifact@v4
+        if: steps.find.outputs.reuse == 'true'
+        with:
+          name: site-build-output
+          path: dist
+          run-id: ${{ steps.find.outputs.run_id }}
+          github-token: ${{ github.token }}
+      - name: Verify downloaded site bytes and merged source tree
+        if: steps.find.outputs.reuse == 'true'
+        env:
+          EXPECTED_TREE: ${{ steps.find.outputs.tree }}
+          EXPECTED_DIGEST: ${{ steps.find.outputs.site_digest }}
+        run: python3 -B scripts/ci_artifact.py verify --dist dist
       - uses: actions/setup-node@v4
+        if: steps.find.outputs.reuse != 'true'
         with:
           node-version-file: .nvmrc
           cache: npm
       - uses: actions/setup-python@v5
+        if: steps.find.outputs.reuse != 'true'
         with:
           python-version: '3.11'
       - run: npm ci
+        if: steps.find.outputs.reuse != 'true'
+      - name: Select checks for changed content
+        if: steps.find.outputs.reuse != 'true'
+        id: plan
+        env:
+          CI_BASE: ${{ inputs.base }}
+        run: node scripts/ci-plan.mjs
       - name: Python collection and bilingual evidence tests
+        if: steps.find.outputs.reuse != 'true'
         run: npm run test:python
       - name: Execute paired local HTTP, drawio XML and Git search examples
+        id: example_developer_tool_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_developer_tool_examples'))
         run: python3 -B scripts/check_developer_tool_examples.py
       - name: Run source-derived PHP and Node runtime evidence collectors in isolated containers
+        id: example_runtime_evidence_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_runtime_evidence_examples'))
         run: python3 -B scripts/check_runtime_evidence_examples.py
       - name: Select the archived Ruby example runtime
+        id: runtime_1
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'runtime_1'))
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2.2'
           bundler: '2.4.19'
       - name: Render the isolated legacy Jekyll bundle and run native compiler probes
+        id: example_ruby_environment_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_ruby_environment_examples'))
         run: python3 -B scripts/check_ruby_environment_examples.py --install
       - name: Start, recreate and restore disposable Jenkins Docker controllers
+        id: example_jenkins_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_jenkins_examples'))
         env:
           # Verified by the successful production run 40643062477; keep CI reproducible.
           JENKINS_IMAGE: jenkins/jenkins@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
         run: python3 -B scripts/check_jenkins_examples.py
       - uses: actions/setup-java@v4
+        id: runtime_2
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'runtime_2'))
         with:
           distribution: temurin
           java-version: '17'
       - name: Check read-only Fragnesia kernel evidence with synthetic contracts
+        id: example_fragnesia_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_fragnesia_example'))
         run: python3 -B scripts/check_fragnesia_example.py
       - name: Execute offline GitLab release comparisons and read-only JVM trust inventories
+        id: example_gitlab_jdk_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_gitlab_jdk_examples'))
         run: python3 -B scripts/check_gitlab_jdk_examples.py
       - name: Execute Valhalla semantics with a checksum-pinned temporary JDK 28 EA
+        id: example_valhalla_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_valhalla_example'))
         run: python3 -B scripts/check_valhalla_example.py --download-jdk
       - name: Compile and execute published algorithm examples
+        id: example_article_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_article_examples'))
         run: npm run test:articles
       - name: Compile and execute published standard string formatting example
+        id: example_string_formatting_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_string_formatting_examples'))
         run: python3 -B scripts/check_string_formatting_examples.py
       - name: Install the WebClient example's reproduction Gradle version
+        id: runtime_3
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'runtime_3'))
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.4'
       - name: Compile and execute published WebClient response contracts
+        id: example_webclient_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_webclient_example'))
         run: python3 -B scripts/check_webclient_example.py
       - name: Compare published RestClient and WebClient execution and status contracts
+        id: example_http_client_comparison
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_http_client_comparison'))
         run: python3 -B scripts/check_http_client_comparison.py
       - name: Execute published WebClient timeout and bounded retry contracts
+        id: example_webclient_retry_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_webclient_retry_example'))
         run: python3 -B scripts/check_webclient_retry_example.py
       - name: Execute AI-assisted TDD stages and regression mutations
+        id: example_ai_assisted_tdd
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_ai_assisted_tdd'))
         run: |
           python3 -B scripts/build_algorithm_diagrams.py
           python3 -B .pipeline/drafts/2026-11-02-ai-assisted-tdd/check.py
       - name: Execute published Godot movement checks with a checksum-pinned runtime
+        id: example_game_engine_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_game_engine_example'))
         run: python3 -B scripts/check_game_engine_example.py --download
       - name: Generate Q types and compare Querydsl and Specification contracts twice from clean
+        id: example_query_strategies
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_query_strategies'))
         run: python3 -B scripts/check_query_strategies.py
       - name: Execute the published shell automation examples with local HTTP fixtures
+        id: example_shell_automation_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_shell_automation_examples'))
         run: python3 -B scripts/check_shell_automation_examples.py
       - name: Build both Vue apps and verify the executable JAR serves current assets
+        id: example_multi_frontend_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_multi_frontend_example'))
         run: python3 -B scripts/check_multi_frontend_example.py
       - name: Check Batch 5 parameter persistence and failed-step restart
+        id: example_jvm_runtime_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_jvm_runtime_examples'))
         run: python3 -B scripts/check_jvm_runtime_examples.py --part batch
       - name: Install the YAML example's pinned parser
+        id: runtime_4
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'runtime_4'))
         run: python3 -m pip install -r scripts/requirements-config-examples.txt
       - name: Execute YAML and Temurin metadata input contracts offline
+        id: example_config_input_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_config_input_examples'))
         run: python3 -B scripts/check_config_input_examples.py
       - name: Verify published checksum ZIP examples with local byte fixtures
+        id: example_checksum_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_checksum_examples'))
         run: python3 -B scripts/check_checksum_examples.py
+      - name: Provision the pinned Boot Gradle without a redundant Wrapper bootstrap
+        id: boot_gradle
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'boot_gradle'))
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.8.2'
       - name: Verify Boot project stages, Lombok processors and executable HTTP JAR
-        run: python3 -B scripts/check_boot_workflow_examples.py
+        id: example_boot_workflow_examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_boot_workflow_examples'))
+        run: python3 -B scripts/check_boot_workflow_examples.py --gradle "$(command -v gradle)"
+      - name: Restore the archived Gradle for subsequent examples
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'boot_gradle'))
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.4'
       - uses: actions/setup-java@v4
+        id: runtime_5
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'runtime_5'))
         with:
           distribution: temurin
           java-version: '21.0.13+9.0.LTS'
       - name: Preserve JDK 21 for the JDBC admission example
+        id: runtime_6
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'runtime_6'))
         run: echo "DB_SEMAPHORE_JDK21=$JAVA_HOME" >> "$GITHUB_ENV"
       - name: Compile final JDK 21 features without preview flags
+        id: example_jvm_runtime_examples_2
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_jvm_runtime_examples_2'))
         run: python3 -B scripts/check_jvm_runtime_examples.py --part jdk
       - name: Execute the published fallback policy and verify its flow asset
+        id: example_failure_fallback
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_failure_fallback'))
         run: python3 -B .pipeline/drafts/2026-10-31-failure-fallback/check.py
       - name: Execute the published cache policy and verify its flow asset
+        id: example_cache_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_cache_example'))
         run: python3 -B scripts/check_cache_example.py
       - name: Check the published Kafka source, shell syntax and flow asset
+        id: example_kafka_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_kafka_example'))
         run: python3 -B scripts/check_kafka_example.py
       - name: Execute the published refactoring example and boundary mutation
+        id: example_ai_refactoring_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_ai_refactoring_example'))
         run: python3 -B scripts/check_ai_refactoring_example.py
       - name: Execute the offline AI operations evidence gate
+        id: example_ai_operations_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_ai_operations_example'))
         run: python3 -B scripts/check_ai_operations_example.py
       - name: Execute AI attack defense correlation and regression mutations
+        id: example_ai_assisted_attack_defense
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_ai_assisted_attack_defense'))
         run: |
           python3 -B scripts/build_algorithm_diagrams.py
           python3 -B .pipeline/drafts/2026-11-02-ai-assisted-attack-defense/check.py
       - name: Execute the AI agent permission example and approval regressions
+        id: example_ai_agent_permission_boundaries
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_ai_agent_permission_boundaries'))
         run: python3 -B .pipeline/drafts/2026-11-01-ai-agent-permission-boundaries/check.py
       - name: Observe JDK 21 monitor pinning with the published JFR probe
+        id: example_virtual_thread_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_virtual_thread_example'))
         run: python3 -B scripts/check_virtual_thread_example.py
       - uses: actions/setup-java@v4
+        id: runtime_7
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'runtime_7'))
         with:
           distribution: temurin
           java-version: '25.0.5+8.0.LTS'
       - name: Select the JDBC example Gradle version with JDK 21 runtime support
+        id: runtime_8
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'runtime_8'))
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.14.3'
       - name: Verify JDBC admission and cleanup against PostgreSQL on JDK 21 and 25
+        id: example_virtual_threads_db_semaphore
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_virtual_threads_db_semaphore'))
         run: python3 -B .pipeline/drafts/2026-11-03-virtual-threads-db-semaphore/check.py --jdk "$DB_SEMAPHORE_JDK21" --jdk "$JAVA_HOME"
       - name: Execute finalized ScopedValue ZIP and concurrency contracts without preview
+        id: example_scopedvalue_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_scopedvalue_example'))
         run: python3 -B scripts/check_scopedvalue_example.py
       - name: Observe JDK 25 monitor behavior with the same published JFR probe
+        id: example_virtual_thread_example_2
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_virtual_thread_example_2'))
         run: python3 -B scripts/check_virtual_thread_example.py
       - uses: actions/setup-java@v4
+        id: runtime_9
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'runtime_9'))
         with:
           distribution: temurin
           java-version: '27'
       - name: Execute published JDK GC allocation and logging examples
+        id: example_jdk_gc_evolution
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_jdk_gc_evolution'))
         run: python3 -B .pipeline/drafts/2026-11-03-jdk-gc-evolution/check.py --jdk27 "$JAVA_HOME"
       - name: Execute admission gate contracts without a 10k load test
+        id: example_admission_example
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_admission_example'))
         run: python3 -B scripts/check_admission_example.py
       - name: Verify the local LLM tutorial HTTP client without installing a model
+        id: example_local_llm_at_home
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_local_llm_at_home'))
         run: python3 -B .pipeline/drafts/2026-11-05-local-llm-at-home/check.py
       - name: Verify MVC WebClient blocking and Servlet async with platform and virtual request threads
+        id: example_spring_mvc_webclient_execution
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_spring_mvc_webclient_execution'))
         run: python3 -B .pipeline/drafts/2026-11-09-spring-mvc-webclient-execution/check.py --jdk "$DB_SEMAPHORE_JDK21"
       - name: Migration regression tests
+        if: steps.find.outputs.reuse != 'true'
         run: npm test
       - name: Verify local browser checks block Analytics collection
+        if: steps.find.outputs.reuse != 'true'
         run: npm run check:browser-isolation
       - name: Check Astro types and content schemas
+        if: steps.find.outputs.reuse != 'true'
         run: npm run check
       - name: Build and check generated pages, assets and internal links
+        if: steps.find.outputs.reuse != 'true'
         run: npm run build
       - name: Report public technical translation coverage
+        if: steps.find.outputs.reuse != 'true'
         run: npm run audit:content
       - name: Verify mobile reading, keyboard navigation and reader script budget
+        if: steps.find.outputs.reuse != 'true'
         run: node scripts/check_reader_experience.mjs
       - name: Verify multilingual search links, history, retry and input races
+        if: steps.find.outputs.reuse != 'true'
         run: node scripts/check_search_navigation.mjs
       - name: Verify root language selection, saved choices and explicit URLs
+        if: steps.find.outputs.reuse != 'true'
         run: node scripts/check_language_preference.mjs
       - name: Verify stored Analytics preferences and About page without measurement controls
+        if: steps.find.outputs.reuse != 'true'
         run: node scripts/check_analytics_preference.mjs
       - name: Render pending translations in a disposable snapshot without publication
+        if: steps.find.outputs.reuse != 'true' && (steps.plan.outputs.previews == 'true')
         run: npm run check:translation-preview
       - name: Render technical and news translations together without publication
+        if: steps.find.outputs.reuse != 'true' && (steps.plan.outputs.previews == 'true')
         run: npm run check:technical-preview
       - name: Check the committed translation review packet without writing an artifact
+        if: steps.find.outputs.reuse != 'true'
         run: npm run check:translation-review
+      - name: Bind the checked site to its source tree and file digests
+        if: steps.find.outputs.reuse != 'true'
+        run: python3 -B scripts/ci_artifact.py seal --dist dist --output "$RUNNER_TEMP/site-build-evidence.json"
       - uses: actions/upload-artifact@v4
+        if: steps.find.outputs.reuse != 'true'
+        with:
+          name: site-build-evidence
+          path: ${{ runner.temp }}/site-build-evidence.json
+      - uses: actions/upload-artifact@v4
+        if: steps.find.outputs.reuse != 'true'
         with:
           name: site-build-output
           path: dist
+          include-hidden-files: true
       - uses: actions/upload-pages-artifact@v3
         if: inputs.pages_artifact
         with:

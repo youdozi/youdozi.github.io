@@ -8,6 +8,7 @@ import shlex
 import subprocess
 import tempfile
 from urllib.request import urlopen
+from urllib.error import HTTPError
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,6 +43,19 @@ def execute(runtime, project, script, command, output):
         return result.returncode == 0 and result.stdout == output and not result.stderr, result
 
 
+
+def download_runtime(url):
+    try:
+        with urlopen(url, timeout=120) as response:
+            return response.read()
+    except HTTPError as error:
+        if error.code not in (502, 503, 504):
+            raise
+    # Request the same pinned release asset through a fresh public download URL.
+    with urlopen(url + '?download=1', timeout=120) as response:
+        return response.read()
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     runtime = parser.add_mutually_exclusive_group(required=True)
@@ -52,8 +66,7 @@ def main():
     with tempfile.TemporaryDirectory(prefix='godot-runtime-') as directory:
         if args.download:
             url = 'https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/' + ASSET
-            with urlopen(url, timeout=120) as response:
-                raw = response.read()
+            raw = download_runtime(url)
             if hashlib.sha256(raw).hexdigest() != DIGEST:
                 raise ValueError('Godot archive checksum mismatch')
             archive = Path(directory) / ASSET
