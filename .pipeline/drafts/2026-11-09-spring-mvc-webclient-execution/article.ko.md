@@ -237,13 +237,15 @@ WebClient를 MVC에서 호출했다는 이유만으로 뒤의 `map`도 MVC 요�
 
 ## 실제로 확인한 범위
 
-[동봉한 테스트](./src/test/java/example/ExecutionTest.java)는 임의 포트의 **실제 Tomcat과 로컬 HTTP 서버**로 실행했습니다. 일반 요청 스레드·가상 스레드 설정에서 각각 8개, 총 16개 검사를 통과했습니다.
+[검증 테스트 코드](https://github.com/youdozi/youdozi.github.io/blob/main/.pipeline/drafts/2026-11-09-spring-mvc-webclient-execution/src/test/java/example/ExecutionTest.java)는 임의 포트의 **실제 Tomcat과 로컬 HTTP 서버**로 실행했습니다. 일반 요청 스레드·가상 스레드 설정에서 각각 8개, 총 16개 검사를 통과했습니다.
 
 - 두 스타터가 함께 있을 때 Servlet 컨텍스트·Tomcat·DispatcherServlet 선택
 - 파이프라인 조립 시 요청하지 않고, 구독과 재구독 때 요청 발생
 - 외부 응답을 보류한 상태에서 `.block()`의 요청 스레드 대기와 `Mono`의 Servlet 비동기 진입
 - 요청 스레드의 가상 여부와 응답 콜백의 논블로킹·가상 여부
 - 두 경로의 HTTP 오류 502·파이프라인 시간 초과 504 매핑
+
+테스트를 직접 실행하려면 위 검증 코드를 `src/test/java/example/ExecutionTest.java`로 저장한 뒤 실행합니다.
 
 ```sh
 gradle clean test

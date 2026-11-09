@@ -1,0 +1,9 @@
+{
+  "status": "publication-prepared",
+  "authorization": "User explicitly requested publication: 게시해",
+  "article": "src/content/posts/ko/2026-11-09-spring-mvc-webclient-execution.md",
+  "diagramAsset": "assets/img/architecture/mvc-webclient-flow-ko.svg",
+  "language": "ko",
+  "scope": "Approved Korean MVC WebClient article only; no translations. Test source linked to the same repository on main.",
+  "preparedAt": "2026-11-09T04:58:17.626544+00:00"
+}

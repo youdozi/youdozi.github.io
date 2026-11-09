@@ -1,9 +1,9 @@
 {
-  "status": "draft-ready",
+  "status": "publication-prepared",
   "language": "ko",
-  "reviewedAt": "2026-11-09T04:53:42.141707+00:00",
+  "reviewedAt": "2026-11-09T05:01:33.385482+00:00",
   "method": "Source-grounded writing and self-review; no independent review claimed.",
-  "publication": "Not requested; no public article route or deployment added.",
+  "publication": "User explicitly requested publication; Korean manuscript and figure copied to public sources.",
   "sources": [
     "https://docs.spring.io/spring-boot/3.5/reference/web/reactive.html#web.reactive.webflux",
     "https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-ann-async.html",
@@ -105,18 +105,54 @@
       ],
       "preview": "Standalone draft rendered with the site Markdown processor; not a deployed article."
     },
-    "flowReview": "Self-reviewed Servlet waiting vs Netty I/O, MVC subscription/async overlap, redispatch and success/error prose against code. Text/arrows checked in rendered SVG."
+    "flowReview": "Self-reviewed Servlet waiting vs Netty I/O, MVC subscription/async overlap, redispatch and success/error prose against code. Text/arrows checked in rendered SVG.",
+    "publishedSitePreview": {
+      "checks": [
+        {
+          "width": 320,
+          "passed": true,
+          "codeBlocks": 10,
+          "imageLoaded": true,
+          "canonical": true,
+          "blogPosting": true
+        },
+        {
+          "width": 360,
+          "passed": true,
+          "codeBlocks": 10,
+          "imageLoaded": true,
+          "canonical": true,
+          "blogPosting": true
+        },
+        {
+          "width": 1280,
+          "passed": true,
+          "codeBlocks": 10,
+          "imageLoaded": true,
+          "canonical": true,
+          "blogPosting": true
+        }
+      ],
+      "isolation": {
+        "mode": "verification",
+        "serviceWorkers": "block",
+        "blocked": 0,
+        "blockedCollection": 0,
+        "allowedTag": 0
+      }
+    }
   },
   "limitations": [
     "No throughput benchmark, real external service/DB/TLS or remote side-effect cancellation tested.",
     "Standalone draft preview only; production site not changed."
   ],
   "files": {
-    "check.py": "e757a3347810fe5ece63b2263a1bf83a486ef1d0148336754a896b1f022dd899",
-    "article.ko.md": "974444e00076b38aa608dbd4c701c92c1b45ac2cd10d57404ec9826f0f2d82f7",
+    "check.py": "60e97c1c257954ba04943be7ae67cbcf6e5c49d9822dbf23141b603da748bff1",
+    "article.ko.md": "03ff947b4b6a5db57e9a15529885505c0986cf845e6afc82b30a809f900418ab",
     "build.gradle": "dff652114e3014f5ef19698d2636286ebceec3ffd2f67b9f5c096e6e66f7b53b",
     "mvc-webclient-flow-ko.svg": "441099f7d2d738ed73eaf90081e0780f0e78c001d4fff931b746dc6623473d91",
     "upstream.py": "ece88b19d04ebc1f82a7727e1cd05ece3b9598737e0b78a5599f988605e64869",
+    "publication.json": "47854d9bae215763e7431a94046502321c478bdce8bb0163d7cefeee3d3bc23e",
     "settings.gradle": "788e459efcd98e1d132bb9ec930ecbb483b307cda1ef231878b07813fdc353a3",
     "src/main/resources/application.yml": "7b906a7d59ab22f8dae6a2721f19c7c7c48ed27afeaf3ac6dfa86062cc73129f",
     "src/main/java/example/DemoApplication.java": "869cbfb8bdf98e2b64a54dcb3266f67bdaba401bd5e7e72ce9e058e9b2a9d368",

@@ -24,6 +24,11 @@ def main():
         pattern = r'^### `' + re.escape(path) + r'`\n\n```' + language + r'\n([\s\S]*?)\n```'
         blocks = re.findall(pattern, article, re.M)
         assert len(blocks) == 1 and blocks[0] + '\n' == (ROOT / path).read_text(), path
+    published = ROOT.parents[2] / 'src/content/posts/ko/2026-11-09-spring-mvc-webclient-execution.md'
+    if published.exists():
+        body = lambda text: text.split('---\n', 2)[2]
+        assert body(published.read_text()) == body(article).replace('./mvc-webclient-flow-ko.svg', '/assets/img/architecture/mvc-webclient-flow-ko.svg'), 'Published body differs from the reviewed draft'
+        assert (ROOT.parents[2] / 'assets/img/architecture/mvc-webclient-flow-ko.svg').read_bytes() == (ROOT / 'mvc-webclient-flow-ko.svg').read_bytes(), 'Published SVG differs'
     image = ElementTree.parse(ROOT / 'mvc-webclient-flow-ko.svg').getroot()
     assert image.attrib['{http://www.w3.org/XML/1998/namespace}lang'] == 'ko'
     assert './mvc-webclient-flow-ko.svg' in article
