@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1110" viewBox="0 0 360 1110" role="img" aria-labelledby="title desc" xml:lang="ko">
+<title id="title">Spring MVC의 WebClient 대기와 비동기 반환</title>
+<desc id="desc">block 경로는 Servlet 요청 스레드 대기와 Netty I/O를 구분한다. Mono 경로는 구독 후 Netty I/O와 Servlet 비동기 처리가 겹치며 결과를 MVC로 재디스패치한다.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#53675c"/></marker></defs>
+<rect width="360" height="1110" fill="#f7f8f4"/>
+<g font-family="sans-serif" text-anchor="middle" fill="#20342a">
+<text x="180" y="30" font-size="20">MVC + WebClient</text>
+<text x="180" y="58" font-size="16">같은 HTTP 클라이언트, 다른 대기 방식</text>
+<text x="180" y="96" font-size="17">① .block() 반환 경로</text>
+<rect x="30" y="114" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="140" font-size="16">Servlet 요청 스레드: fetch("block")</text>
+<path d="M180 162 L180 185" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="185" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="211" font-size="16">block()이 Mono 구독</text>
+<path d="M130 233 L90 263" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M230 233 L270 263" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="18" y="263" width="154" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="95.0" y="289" font-size="16">Servlet 요청 스레드</text>
+<text x="95.0" y="309" font-size="16">결과를 기다림</text>
+<rect x="188" y="263" width="154" height="68" rx="8" fill="#e5eef8" stroke="#53675c"/>
+<text x="265.0" y="289" font-size="16">Reactor Netty</text>
+<text x="265.0" y="309" font-size="16">외부 HTTP · map</text>
+<path d="M265 331 L265 353" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M265 353 L95 353" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M95 353 L95 376" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="376" width="300" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="402" font-size="16">요청 스레드 대기 해제</text>
+<text x="180.0" y="422" font-size="16">MVC가 응답 직렬화 · 쓰기</text>
+<text x="180" y="479" font-size="17">② Mono 반환 경로</text>
+<rect x="30" y="496" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="522" font-size="16">Servlet: fetch("async")의 Mono 반환</text>
+<path d="M180 544 L180 568" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="568" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="594" font-size="16">MVC가 반환 타입 적응 · Mono 구독</text>
+<path d="M130 616 L90 646" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M230 616 L270 646" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="18" y="646" width="154" height="68" rx="8" fill="#e5eef8" stroke="#53675c"/>
+<text x="95.0" y="672" font-size="16">Reactor Netty</text>
+<text x="95.0" y="692" font-size="16">외부 HTTP · map</text>
+<rect x="188" y="646" width="154" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="265.0" y="672" font-size="16">Servlet async 시작</text>
+<text x="265.0" y="692" font-size="16">초기 요청 스레드 반환</text>
+<text x="180" y="740" font-size="16">두 분기는 겹쳐 진행</text>
+<path d="M95 714 L95 769" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M265 714 L265 769" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M95 769 L180 797" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M265 769 L180 797" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="797" width="300" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="823" font-size="16">결과 또는 오류 신호</text>
+<text x="180.0" y="843" font-size="16">MVC 재디스패치</text>
+<path d="M180 865 L180 889" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="889" width="300" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="915" font-size="16">Servlet 컨테이너 스레드</text>
+<text x="180.0" y="935" font-size="16">응답 직렬화 · 쓰기</text>
+<text x="180" y="1005" font-size="16">초록: MVC / Servlet 역할</text>
+<text x="180" y="1030" font-size="16">파랑: Reactor Netty 콜백 역할</text>
+<text x="180" y="1070" font-size="13">색은 고정 스레드 이름을 뜻하지 않음</text>
+</g></svg>

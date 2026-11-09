@@ -7,7 +7,7 @@ import {springGuideLocales,springGuideLocalesUpdatedAt} from './spring-guide-loc
 const groups = [
   {id:'start',keys:['2023-09-07-springboot-initializer','2023-09-13-springboot-history','2023-09-10-springboot-intellij-import','2023-09-15-springboot-intellij-lombok']},
   {id:'data',keys:['2023-09-08-springboot3-migration','2023-09-05-querydsl-no-release','2023-09-09-springboot3-querydsl']},
-  {id:'deliver',keys:['2026-10-31-webclient-restclient-comparison','2026-11-01-webflux-coroutines-mvc-virtual-threads','2023-09-19-springboot-test-webclient','2026-10-30-webclient-timeout-retry','2021-07-23-multiple-gradle-build']},
+  {id:'deliver',keys:['2026-10-31-webclient-restclient-comparison','2026-11-09-spring-mvc-webclient-execution','2026-11-01-webflux-coroutines-mvc-virtual-threads','2023-09-19-springboot-test-webclient','2026-10-30-webclient-timeout-retry','2021-07-23-multiple-gradle-build']},
 ] as const;
 const copy = {
   en:{label:'Spring Boot guides',title:'Spring Boot Guides: Setup, Persistence, Testing and Packaging',

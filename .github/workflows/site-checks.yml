@@ -143,6 +143,8 @@ jobs:
         run: python3 -B scripts/check_admission_example.py
       - name: Verify the local LLM tutorial HTTP client without installing a model
         run: python3 -B .pipeline/drafts/2026-11-05-local-llm-at-home/check.py
+      - name: Verify MVC WebClient blocking and Servlet async with platform and virtual request threads
+        run: python3 -B .pipeline/drafts/2026-11-09-spring-mvc-webclient-execution/check.py --jdk "$DB_SEMAPHORE_JDK21"
       - name: Migration regression tests
         run: npm test
       - name: Verify local browser checks block Analytics collection
