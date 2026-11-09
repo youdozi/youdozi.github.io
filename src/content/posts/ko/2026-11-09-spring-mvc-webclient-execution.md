@@ -87,7 +87,7 @@ spring:
       request-timeout: 5s
 ```
 
-`WebClient`는 빈으로 재사용하고 커넥터를 Reactor Netty로 명시합니다. `callbackThread`는 응답 본문이 만들어진 뒤 실행하는 `map`의 스레드이며, 최종 Servlet 응답 쓰기 스레드를 뜻하지 않습니다. 이 코드에는 `publishOn` 같은 스케줄러 전환을 넣지 않았습니다. [WebClient 커넥터와 공유 자원](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-builder.html)
+`WebClient`는 빈으로 재사용하고 커넥터를 Reactor Netty로 명시합니다. 이 예제의 `HttpClient.create()`는 기본 공유 이벤트 루프와 연결 풀을 사용합니다. 외부 요청마다 전용 Netty 스레드가 하나씩 생기는 구조는 아닙니다. `callbackThread`는 응답 본문이 만들어진 뒤 실행하는 `map`의 스레드이며, 최종 Servlet 응답 쓰기 스레드를 뜻하지 않습니다. 이 코드에는 `publishOn` 같은 스케줄러 전환을 넣지 않았습니다. [WebClient 커넥터와 공유 자원](https://docs.spring.io/spring-framework/reference/6.2/web/webflux-webclient/client-builder.html)
 
 ### `src/main/java/example/DemoApplication.java`
 
