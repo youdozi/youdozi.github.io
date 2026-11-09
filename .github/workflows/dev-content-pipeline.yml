@@ -99,6 +99,7 @@ jobs:
     if: needs.generate.outputs.generated == 'true'
     permissions:
       contents: read
+      actions: read
     uses: ./.github/workflows/site-checks.yml
     with:
       ref: ${{ needs.generate.outputs.commit_sha }}

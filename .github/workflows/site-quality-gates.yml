@@ -9,12 +9,18 @@ on:
 
 permissions:
   contents: read
+  actions: read
+
+concurrency:
+  group: site-quality-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
     uses: ./.github/workflows/site-checks.yml
     with:
       ref: ${{ github.sha }}
+      base: ${{ github.event_name != 'workflow_dispatch' && (github.event.pull_request.base.sha || github.event.before) || '' }}
       pages_artifact: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}
 
   deploy:
@@ -52,6 +58,8 @@ jobs:
         with:
           name: site-build-output
           path: .indexnow-dist
+          run-id: ${{ needs.build.outputs.source_run || github.run_id }}
+          github-token: ${{ github.token }}
       - name: Restore last acknowledged IndexNow state
         id: indexnow_state
         continue-on-error: true
