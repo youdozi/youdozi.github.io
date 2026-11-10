@@ -1,0 +1,50 @@
+{
+  "status": "draft-ready",
+  "language": "ko",
+  "scope": "Korean article preparation only; not published and no PR created.",
+  "checkedAt": "2026-11-10T08:53:17.980529+00:00",
+  "reviewMode": "self-review; no independent agent review",
+  "execution": {
+    "passed": true,
+    "cases": 11,
+    "redisImage": "redis:8.2.1-alpine@sha256:987c376c727652f99625c7d205a1cba3cb2c53b92b0b62aade2bd48ee1593232",
+    "jdk": "/Users/youdozi/Library/Java/JavaVirtualMachines/azul-21.0.1/Contents/Home",
+    "concurrencyCase": {
+      "callers": 40,
+      "accepted": 3
+    },
+    "clusterFailoverTested": false,
+    "unresponsiveEndpointTested": true,
+    "primaryFailureTested": false,
+    "throughputMeasured": false
+  },
+  "contracts": {
+    "embeddedFilesEqual": true,
+    "files": 6,
+    "codeBlocks": 10,
+    "diagramLanguage": "ko",
+    "diagramAndScriptOrderCompared": true
+  },
+  "preview": {
+    "processor": "project readerMarkdownProcessor; Astro image marker resolved for local body preview",
+    "siteStyles": true,
+    "viewportWidth": 320,
+    "pageOverflow": false,
+    "imageLoaded": true,
+    "localizedAlt": true,
+    "fullAstroPageTested": false
+  },
+  "limitations": [
+    "Not a throughput benchmark",
+    "Single Redis; no Cluster failover or multi-region tests",
+    "Two limiter objects share one client; not separate JVMs",
+    "Actual Redis process outage and recovery not tested; an unresponsive TCP endpoint was tested"
+  ],
+  "sources": [
+    "https://redis.io/docs/latest/develop/programmability/eval-intro/",
+    "https://redis.io/docs/latest/commands/incr/",
+    "https://redis.io/docs/latest/commands/pttl/",
+    "https://docs.spring.io/spring-data/redis/reference/redis/scripting.html",
+    "https://www.rfc-editor.org/rfc/rfc6585#section-4"
+  ]
+}
