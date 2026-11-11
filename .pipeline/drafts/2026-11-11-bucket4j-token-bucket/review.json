@@ -1,0 +1,50 @@
+{
+  "status": "draft-ready",
+  "language": "ko",
+  "scope": "Korean article preparation only; no publication or PR",
+  "reviewMode": "Self-review of prose, technical claims and flow/code alignment; no independent review",
+  "checkedAt": "2026-11-11T12:36:22.832642+00:00",
+  "execution": {
+    "passed": true,
+    "bucket4j": "8.22.0",
+    "tests": 10,
+    "httpSmokeStatus": 200,
+    "concurrentCalls": 40,
+    "allowedWithFrozenClock": 5,
+    "clockControlledTests": true,
+    "mvcStatusTests": "MockMvc",
+    "distributedRedisTested": false,
+    "throughputMeasured": false
+  },
+  "contracts": {
+    "embeddedFilesMatch": true,
+    "files": 5,
+    "codeBlocks": 8,
+    "diagramLanguage": "ko",
+    "flowAndCodeCompared": true
+  },
+  "preview": {
+    "browser": "Orca built-in browser",
+    "width": 320,
+    "pageOverflow": false,
+    "imageLoaded": true,
+    "localizedAlt": true,
+    "visualScreenshotInspected": true,
+    "processor": "Project readerMarkdownProcessor with local preview image resolution",
+    "siteStyles": true,
+    "fullAstroPageTested": false
+  },
+  "sources": [
+    "https://bucket4j.com/8.22.0/toc.html",
+    "https://github.com/bucket4j/bucket4j/releases",
+    "https://github.com/bucket4j/bucket4j/blob/8.22.0/bucket4j-core/src/test/java/io/github/bucket4j/core_algorithms/FixedIntervalRefillTest.java",
+    "https://github.com/bucket4j/bucket4j/blob/8.22.0/bucket4j-core/src/main/java/io/github/bucket4j/distributed/ExpirationAfterWriteStrategy.java",
+    "https://www.rfc-editor.org/rfc/rfc6585#section-4"
+  ],
+  "limits": [
+    "Local Bucket4j only; Redis integration and failover not executed",
+    "Controlled clocks; no throughput benchmark",
+    "MockMvc verifies 429 and Retry-After; real HTTP smoke verifies 200 only",
+    "Independent bucket instances are in one JVM, not two server processes"
+  ]
+}
