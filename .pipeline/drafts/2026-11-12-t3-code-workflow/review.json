@@ -1,0 +1,71 @@
+{
+  "status": "draft-ready",
+  "scope": "Korean article and runnable examples only; no PR/publication",
+  "checkedAt": "2026-11-11T23:04:30.034430+00:00",
+  "reviewMode": "Self-review of tool facts, example contracts, prose and diagram; no independent agent review",
+  "tool": {
+    "version": "0.1.9",
+    "cliHelpVerified": true,
+    "serverHTTPStatus": 200,
+    "isolatedBaseDirectory": true,
+    "loopbackOnly": true,
+    "readOnlyLocalPairing": true,
+    "observedWelcomeScreen": true,
+    "observedProviderReady": "Codex",
+    "providerAgentTurnExecuted": false,
+    "providerAccountChanged": false,
+    "historyImportEnabled": false,
+    "temporaryServerStopped": true
+  },
+  "cliVersionOutput": "t3 v0.1.9",
+  "execution": {
+    "passed": true,
+    "node": "v24.13.0",
+    "starter": {
+      "tests": 19,
+      "pass": 11,
+      "fail": 8
+    },
+    "reference": {
+      "tests": 19,
+      "pass": 19,
+      "fail": 0
+    },
+    "testFileUnchanged": true,
+    "aiProviderInvoked": false,
+    "t3AgentTurnExecuted": false,
+    "networkRequestsInExample": 0
+  },
+  "contracts": {
+    "embeddedFilesMatch": true,
+    "embeddedFiles": 4,
+    "promptMatches": true,
+    "codeBlocks": 9,
+    "flowAndCodeCompared": true,
+    "diagramLanguage": "ko"
+  },
+  "preview": {
+    "browser": "Orca built-in browser",
+    "width": 320,
+    "overflow": false,
+    "localizedAlt": true,
+    "imageLoaded": true,
+    "screenshotInspected": true,
+    "fullAstroPageTested": false
+  },
+  "sources": [
+    "https://github.com/pingdotgg/t3code/tree/v0.1.9",
+    "https://github.com/pingdotgg/t3code/releases/tag/v0.1.9",
+    "https://github.com/pingdotgg/t3code/blob/v0.1.9/docs/user/install.md",
+    "https://github.com/pingdotgg/t3code/blob/v0.1.9/docs/user/permission-modes.md",
+    "https://github.com/pingdotgg/t3code/blob/v0.1.9/docs/user/source-control.md",
+    "https://github.com/pingdotgg/t3code/blob/v0.1.9/docs/user/thread-sidebar.md",
+    "https://www.rfc-editor.org/rfc/rfc9110.html#name-retry-after"
+  ],
+  "limits": [
+    "No provider AI turn was invoked; reference code was authored and tested directly",
+    "Read-only local UI pairing verified initial welcome and ready provider; no complete agent task/diff UI walkthrough",
+    "Remote access and automatic PR creation not tested",
+    "Parser supports integer delay-seconds only, not HTTP-date; it does not schedule retries"
+  ]
+}
