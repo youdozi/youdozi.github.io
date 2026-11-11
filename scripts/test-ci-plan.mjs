@@ -36,3 +36,13 @@ test('virtual thread article executes both JDK 21 and 25 probes', () => {
   assert.equal(matches.length, 2);
   for (const check of matches) for (const id of [check.id, ...check.dependencies]) assert.ok(result.steps.includes(id));
 });
+
+test('Redis publication uses its runner and saved JDK 21 without JDK 27', () => {
+  const redis = checks.find(check => check.keys.has('2026-11-10-redis-lua-rate-limit'));
+  const result = plan(['src/content/posts/ko/2026-11-10-redis-lua-rate-limit.md',
+    'assets/img/architecture/redis-rate-limit-ko.svg']);
+  assert.equal(result.full, false);
+  assert.deepEqual(result.steps.filter(id => id.startsWith('example_')), [redis.id]);
+  assert.deepEqual(redis.dependencies, mvc.dependencies);
+  assert.ok(!result.steps.includes('runtime_9'));
+});

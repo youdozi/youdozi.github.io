@@ -1,8 +1,8 @@
 {
-  "status": "draft-ready",
+  "status": "publication-prepared",
   "language": "ko",
-  "scope": "Korean article preparation only; not published and no PR created.",
-  "checkedAt": "2026-11-10T08:53:17.980529+00:00",
+  "scope": "Publication of the approved Korean article only",
+  "checkedAt": "2026-11-11T02:24:30.285494+00:00",
   "reviewMode": "self-review; no independent agent review",
   "execution": {
     "passed": true,

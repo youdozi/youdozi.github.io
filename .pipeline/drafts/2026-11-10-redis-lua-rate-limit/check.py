@@ -31,6 +31,11 @@ def main():
             assert len(blocks) == 1 and blocks[0] + '\n' == (ROOT / name).read_text(), name
         image = ElementTree.parse(ROOT / 'redis-rate-limit-ko.svg').getroot()
         assert image.attrib['{http://www.w3.org/XML/1998/namespace}lang'] == 'ko'
+    published = ROOT.parents[2] / 'src/content/posts/ko/2026-11-10-redis-lua-rate-limit.md'
+    if published.exists():
+        body = lambda value: value.split('---\n', 2)[2]
+        assert body(published.read_text()) == body(article.read_text()).replace('./redis-rate-limit-ko.svg', '/assets/img/architecture/redis-rate-limit-ko.svg'), 'Published body differs from draft'
+        assert (ROOT.parents[2] / 'assets/img/architecture/redis-rate-limit-ko.svg').read_bytes() == (ROOT / 'redis-rate-limit-ko.svg').read_bytes(), 'Published diagram differs'
     container = subprocess.check_output(['docker', 'run', '--rm', '-d', '-p', '127.0.0.1::6379',
                                          IMAGE, 'redis-server', '--save', '', '--appendonly', 'no'], text=True).strip()
     try:

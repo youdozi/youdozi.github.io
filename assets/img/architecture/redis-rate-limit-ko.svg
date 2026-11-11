@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1000" viewBox="0 0 360 1000" xml:lang="ko" role="img" aria-labelledby="title desc">
+<title id="title">Redis Lua 고정 윈도 요청 제한 흐름</title>
+<desc id="desc">요청의 신뢰한 주체로 키를 정하고 Lua에서 정책과 카운터 및 만료 시간을 확인한다. 한도 이내에는 최초 SET PX 또는 기존 INCR로 허용 횟수를 기록하고 200을 반환한다. 한도 초과에는 상태를 바꾸지 않고 429와 Retry-After를 반환한다. 연결이나 상태 오류는 503으로 처리한다.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#476455"/></marker></defs>
+<rect width="360" height="1000" rx="16" fill="#f5f7f2"/>
+<g font-family="system-ui,sans-serif" font-size="15" text-anchor="middle" fill="#203a2c">
+<text x="180" y="33" font-size="19" font-weight="700">Lua 한 번으로 판단·갱신</text>
+<rect x="24" y="54" width="312" height="66" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="180" y="80">요청 → 서버가 제한 키 선택</text><text x="180" y="103">데모는 모든 요청에 같은 계정</text>
+<path d="M180 120V149" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="24" y="153" width="312" height="78" rx="9" fill="#e5edf4" stroke="#839aae"/>
+<text x="180" y="180">Redis Lua 실행 시작</text><text x="180" y="203">정책 검증 → GET → 기존 키 PTTL</text><text x="180" y="222" font-size="12">스크립트 실행 중 다른 명령은 끼어들지 않음</text>
+<path d="M180 231V260" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="24" y="264" width="312" height="60" rx="9" fill="#e5edf4" stroke="#839aae"/>
+<text x="180" y="289">키 없음 또는 정상 카운터·TTL</text><text x="180" y="311">남은 한도가 있는가?</text>
+<path d="M112 324V365" stroke="#476455" marker-end="url(#arrow)"/><text x="87" y="350">있음</text>
+<path d="M270 324V365" stroke="#476455" marker-end="url(#arrow)"/><text x="296" y="350">없음</text>
+<rect x="16" y="370" width="185" height="113" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="108" y="396">키 없음: SET 1 PX</text><text x="108" y="419">키 있음: INCR</text><text x="108" y="443">기존 TTL은 연장하지 않음</text><text x="108" y="466">허용·남은 횟수·TTL 반환</text>
+<rect x="214" y="370" width="130" height="113" rx="9" fill="#fae8d8" stroke="#b58b60"/>
+<text x="279" y="399">쓰기 없음</text><text x="279" y="425">거절·0·TTL</text><text x="279" y="451">반환</text>
+<path d="M108 483V520" stroke="#476455" marker-end="url(#arrow)"/>
+<path d="M279 483V520" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="16" y="525" width="185" height="67" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="108" y="552">업무 처리로 진행</text><text x="108" y="576">데모: HTTP 200</text>
+<rect x="214" y="525" width="130" height="67" rx="9" fill="#fae8d8" stroke="#b58b60"/>
+<text x="279" y="552">HTTP 429</text><text x="279" y="576">Retry-After</text>
+<path d="M24 190H8V614H180V624" fill="none" stroke="#ba817c" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="24" y="628" width="312" height="112" rx="9" fill="#f5e1df" stroke="#ba817c"/>
+<text x="180" y="656" font-weight="700">오류 경로</text>
+<text x="180" y="681">연결 실패·응답 지연·비정상 카운터</text><text x="180" y="704">→ HTTP 503, 업무 처리는 진행하지 않음</text><text x="180" y="727" font-size="13">오류 시 기존 쓰기가 자동 롤백되지는 않음</text>
+<rect x="24" y="775" width="312" height="137" rx="9" fill="#fff" stroke="#a9b3a7"/>
+<text x="180" y="805" font-weight="700">10초 / 3회 예제의 경계</text><text x="180" y="833">처음 허용한 요청부터 윈도 시작</text><text x="180" y="859">TTL 만료 후 다음 요청이 새 윈도 시작</text><text x="180" y="885">임의의 연속 10초에 3회를 보장하지 않음</text>
+<text x="180" y="957" font-size="13">한 Redis의 정상 상태를 공유하는 요청 기준</text>
+</g></svg>

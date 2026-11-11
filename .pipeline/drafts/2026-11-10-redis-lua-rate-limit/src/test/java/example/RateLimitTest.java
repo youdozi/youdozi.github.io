@@ -123,7 +123,7 @@ class RateLimitTest {
     }
 
     @Test void unresponsiveRedisEndpointReturns503() throws Exception {
-        try (var stalled = new java.net.ServerSocket(0, 1, java.net.InetAddress.getLoopbackAddress())) {
+        try (var stalled = new java.net.ServerSocket(0, 1, java.net.InetAddress.getByName("127.0.0.1"))) {
             var configuration = org.springframework.data.redis.connection.lettuce.LettuceClientConfiguration.builder()
                     .commandTimeout(Duration.ofMillis(200)).shutdownTimeout(Duration.ZERO).build();
             var factory = new org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory(
