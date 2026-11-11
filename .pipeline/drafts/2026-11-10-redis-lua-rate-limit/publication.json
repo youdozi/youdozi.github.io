@@ -1,0 +1,8 @@
+{
+  "status": "publication-prepared",
+  "authorization": "User requested publication: 게시해줘",
+  "language": "ko",
+  "article": "src/content/posts/ko/2026-11-10-redis-lua-rate-limit.md",
+  "diagramAsset": "assets/img/architecture/redis-rate-limit-ko.svg",
+  "preparedAt": "2026-11-11T02:23:56.428119+00:00"
+}

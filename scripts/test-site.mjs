@@ -310,7 +310,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
 
 
     // Check emitted paths rather than assuming the registry is rendered correctly.
-    const guideCounts=[['coding-test',10],['jdk',13],['springboot',12,13],['linux',5],['util',4,5],['automation',2],['jenkins',2],['jekyll',2],['security',7]];
+    const guideCounts=[['coding-test',10],['jdk',13],['springboot',12,14],['linux',5],['util',4,5],['automation',2],['jenkins',2],['jekyll',2],['security',7]];
     for(const lang of ['en','ko']){
       const hubPath=`/${lang}/guides/`;
       const hub=await readFile(`dist${hubPath}index.html`,'utf8');
@@ -327,7 +327,10 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
         const list=data.find(x=>x['@type']==='ItemList');
         assert.equal(list.numberOfItems,lang==='ko'?koreanCount:count);assert.equal(collection.inLanguage,lang);
         const groups=html.match(/<div class="algorithm-groups"[^>]*>([\s\S]*?)<\/div>/)[1];
-        const visible=[...groups.matchAll(/href="([^"]+)"/g)].map(m=>'https://youdozi.github.io'+m[1]);
+        const extras=html.match(/<section class="algorithm-extras"[^>]*>([\s\S]*?)<\/section>/)?.[1]||'';
+        const visible=[...groups.matchAll(/href="([^"]+)"/g),
+          ...extras.matchAll(/<h2\b[^>]*>\s*<a\b[^>]*href="([^"]+)"/g)]
+          .map(m=>'https://youdozi.github.io'+m[1]);
         assert.deepEqual(visible,list.itemListElement.map(x=>x.url),'Visible order must match schema');
         assert.ok(html.includes(`href="${hubPath}"`));
         assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${path}</loc><lastmod>${collection.dateModified}</lastmod>`));

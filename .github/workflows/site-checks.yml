@@ -290,6 +290,10 @@ jobs:
         id: example_spring_mvc_webclient_execution
         if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_spring_mvc_webclient_execution'))
         run: python3 -B .pipeline/drafts/2026-11-09-spring-mvc-webclient-execution/check.py --jdk "$DB_SEMAPHORE_JDK21"
+      - name: Verify Redis Lua admission, TTL and HTTP failure contracts
+        id: example_redis_lua_rate_limit
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_redis_lua_rate_limit'))
+        run: python3 -B .pipeline/drafts/2026-11-10-redis-lua-rate-limit/check.py --jdk "$DB_SEMAPHORE_JDK21"
       - name: Migration regression tests
         if: steps.find.outputs.reuse != 'true'
         run: npm test

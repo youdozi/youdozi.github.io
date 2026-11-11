@@ -31,8 +31,8 @@ export function inventory() {
     if (command.includes('check_ruby_environment')) dependencies.push(ruby);
     if (command.includes('check_config_input')) dependencies.push(yaml);
     if (command.includes('DB_SEMAPHORE_JDK21')) dependencies.push(jdk21, preserved21);
-    // The MVC runner receives JDK 21 explicitly, independent of the current JDK.
-    if (command.includes('spring-mvc-webclient-execution')) {
+    // An explicit saved JDK 21 argument takes precedence over the current toolchain.
+    if (command.includes('--jdk "$DB_SEMAPHORE_JDK21"') && !command.includes('--jdk "$JAVA_HOME"')) {
       dependencies.splice(0, dependencies.length, jdk21, preserved21, gradle);
     }
     checks.push({id: step.id, name: step.name, source, keys: new Set(keys(command + '\n' + source)), dependencies: dependencies.filter(Boolean)});
