@@ -1,0 +1,8 @@
+{
+  "status": "publication-prepared",
+  "authorization": "User requested publication: 게시해줘",
+  "language": "ko",
+  "article": "src/content/posts/ko/2026-11-11-bucket4j-token-bucket.md",
+  "diagramAsset": "assets/img/architecture/bucket4j-flow-ko.svg",
+  "preparedAt": "2026-11-11T12:37:53.236854+00:00"
+}
