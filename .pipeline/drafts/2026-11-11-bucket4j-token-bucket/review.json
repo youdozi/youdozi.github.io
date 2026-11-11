@@ -1,9 +1,9 @@
 {
-  "status": "draft-ready",
+  "status": "publication-prepared",
   "language": "ko",
-  "scope": "Korean article preparation only; no publication or PR",
+  "scope": "Publication of the approved Korean Bucket4j article only",
   "reviewMode": "Self-review of prose, technical claims and flow/code alignment; no independent review",
-  "checkedAt": "2026-11-11T12:36:22.832642+00:00",
+  "checkedAt": "2026-11-11T12:37:53.236854+00:00",
   "execution": {
     "passed": true,
     "bucket4j": "8.22.0",

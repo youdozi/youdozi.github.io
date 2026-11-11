@@ -31,6 +31,11 @@ def main():
         assert len(blocks) == 1 and blocks[0] + '\n' == (ROOT / name).read_text(), name
     image = ElementTree.parse(ROOT / 'bucket4j-flow-ko.svg').getroot()
     assert image.attrib['{http://www.w3.org/XML/1998/namespace}lang'] == 'ko'
+    published = ROOT.parents[2] / 'src/content/posts/ko/2026-11-11-bucket4j-token-bucket.md'
+    if published.exists():
+        body = lambda value: value.split('---\n', 2)[2]
+        assert body(published.read_text()) == body(text).replace('./bucket4j-flow-ko.svg', '/assets/img/architecture/bucket4j-flow-ko.svg'), 'Published body differs from draft'
+        assert (ROOT.parents[2] / 'assets/img/architecture/bucket4j-flow-ko.svg').read_bytes() == (ROOT / 'bucket4j-flow-ko.svg').read_bytes(), 'Published diagram differs'
     env = {**os.environ, 'JAVA_HOME': str(args.jdk)}
     subprocess.run([args.gradle, '-p', str(ROOT), '--no-daemon', 'clean', 'test', 'installDist'],
                    env=env, check=True, timeout=300)

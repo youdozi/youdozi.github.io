@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1000" viewBox="0 0 360 1000" xml:lang="ko" role="img" aria-labelledby="title desc">
+<title id="title">Bucket4j 로컬 토큰 버킷 요청 제한</title>
+<desc id="desc">Spring 싱글턴으로 버킷 하나를 만들고 모든 데모 요청이 이를 재사용한다. 용량은 5개, Greedy 리필은 10초 동안 5개다. 경과 시간을 반영해 토큰 1개를 원자적으로 소비하고, 성공하면 200, 부족하면 리필 대기 시간을 초로 올림해 429와 Retry-After를 반환한다. 서로 다른 로컬 버킷 두 개는 한도를 공유하지 않는다.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1000" rx="16" fill="#f5f7f2"/>
+<g fill="#203a2c" font-family="system-ui,sans-serif" text-anchor="middle" font-size="15">
+<text x="180" y="35" font-size="20" font-weight="700">Bucket4j 토큰 버킷</text>
+<rect x="24" y="59" width="312" height="83" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="86">애플리케이션 시작 시 버킷 생성</text><text x="180" y="109">Spring 싱글턴 Bean으로 재사용</text><text x="180" y="132" font-size="13">모든 /demo 요청이 같은 버킷 공유</text>
+<path d="M180 142V174" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="179" width="312" height="89" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="205">용량 5개 · 초기 토큰 5개</text><text x="180" y="230">Greedy: 10초 동안 5개 보충</text><text x="180" y="254">t=0에 5개 소비 → t=2초에 1개</text>
+<path d="M180 268V302" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="307" width="312" height="98" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="335">요청 도착 → 경과 시간 반영</text><text x="180" y="361">토큰 1개 소비를 원자적으로 시도</text><text x="180" y="388" font-size="12">tryConsumeAndReturnRemaining(1)</text>
+<path d="M100 405V453" stroke="#496b57" marker-end="url(#arrow)"/><text x="74" y="435">성공</text>
+<path d="M265 405V453" stroke="#496b57" marker-end="url(#arrow)"/><text x="294" y="435">부족</text>
+<rect x="16" y="458" width="159" height="110" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="95" y="486">토큰 1개 차감</text><text x="95" y="513">업무 처리로 진행</text><text x="95" y="542">데모: HTTP 200</text>
+<rect x="187" y="458" width="157" height="110" rx="9" fill="#f9e8d9" stroke="#ba946e"/>
+<text x="265" y="486">리필까지 기다리지 않음</text><text x="265" y="513">HTTP 429</text><text x="265" y="542">Retry-After: 대기 초</text>
+<rect x="24" y="608" width="312" height="113" rx="9" fill="#fff" stroke="#a9b6a8"/>
+<text x="180" y="636" font-weight="700">리필은 시간 경과를 반영한 계산</text><text x="180" y="663">요청마다 새 버킷을 만들지 않음</text><text x="180" y="689">별도 스케줄러를 등록하지 않음</text><text x="180" y="710" font-size="12">이 그림은 단일 JVM 로컬 구현의 흐름</text>
+<rect x="24" y="759" width="312" height="147" rx="9" fill="#f4e2df" stroke="#b88880"/>
+<text x="180" y="789" font-weight="700">서로 다른 로컬 버킷 두 개</text><text x="180" y="817">버킷 A: 초기 5개 / 버킷 B: 초기 5개</text><text x="180" y="846">상태를 공유하지 않아 합계 10개 허용 가능</text><text x="180" y="875">전역 제한에는 분산 저장소 연동 필요</text>
+<text x="180" y="954" font-size="13">용량과 보충률은 서로 다른 정책 값</text>
+</g></svg>

@@ -294,6 +294,10 @@ jobs:
         id: example_redis_lua_rate_limit
         if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_redis_lua_rate_limit'))
         run: python3 -B .pipeline/drafts/2026-11-10-redis-lua-rate-limit/check.py --jdk "$DB_SEMAPHORE_JDK21"
+      - name: Verify Bucket4j token refill, concurrent admission and MVC responses
+        id: example_bucket4j_token_bucket
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_bucket4j_token_bucket'))
+        run: python3 -B .pipeline/drafts/2026-11-11-bucket4j-token-bucket/check.py --jdk "$DB_SEMAPHORE_JDK21"
       - name: Migration regression tests
         if: steps.find.outputs.reuse != 'true'
         run: npm test

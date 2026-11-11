@@ -46,3 +46,12 @@ test('Redis publication uses its runner and saved JDK 21 without JDK 27', () => 
   assert.deepEqual(redis.dependencies, mvc.dependencies);
   assert.ok(!result.steps.includes('runtime_9'));
 });
+
+test('Bucket4j publication selects only its example and JDK 21 toolchain', () => {
+  const bucket4j = checks.find(check => check.keys.has('2026-11-11-bucket4j-token-bucket'));
+  const result = plan(['src/content/posts/ko/2026-11-11-bucket4j-token-bucket.md',
+    'assets/img/architecture/bucket4j-flow-ko.svg']);
+  assert.equal(result.full, false);
+  assert.deepEqual(result.steps.filter(id => id.startsWith('example_')), [bucket4j.id]);
+  assert.deepEqual(bucket4j.dependencies, mvc.dependencies);
+});
