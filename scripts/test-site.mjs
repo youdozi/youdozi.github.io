@@ -327,7 +327,10 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
         const list=data.find(x=>x['@type']==='ItemList');
         assert.equal(list.numberOfItems,lang==='ko'?koreanCount:count);assert.equal(collection.inLanguage,lang);
         const groups=html.match(/<div class="algorithm-groups"[^>]*>([\s\S]*?)<\/div>/)[1];
-        const visible=[...groups.matchAll(/href="([^"]+)"/g)].map(m=>'https://youdozi.github.io'+m[1]);
+        const extras=html.match(/<section class="algorithm-extras"[^>]*>([\s\S]*?)<\/section>/)?.[1]||'';
+        const visible=[...groups.matchAll(/href="([^"]+)"/g),
+          ...extras.matchAll(/<h2\b[^>]*>\s*<a\b[^>]*href="([^"]+)"/g)]
+          .map(m=>'https://youdozi.github.io'+m[1]);
         assert.deepEqual(visible,list.itemListElement.map(x=>x.url),'Visible order must match schema');
         assert.ok(html.includes(`href="${hubPath}"`));
         assert.ok(sitemap.includes(`<loc>https://youdozi.github.io${path}</loc><lastmod>${collection.dateModified}</lastmod>`));
