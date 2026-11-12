@@ -1,0 +1,12 @@
+retry-after.mjs와 retry-after.test.mjs를 먼저 읽어 주세요.
+retryAfterMs(header)를 다음 계약에 맞게 고쳐 주세요.
+
+- 문자열의 앞뒤 공백을 제거한 뒤 ASCII 숫자로만 된 음이 아닌 정수 초를 허용합니다.
+- 결과는 밀리초이며, 초와 밀리초 모두 Number.isSafeInteger를 만족해야 합니다.
+- 빈 값, 문자열이 아닌 값, 음수, 소수, 지수 표기, 숫자 뒤 문자, 안전 범위를 넘는 값은 null입니다.
+- HTTP-date 형식은 이번 범위에서 지원하지 않으며 null을 반환합니다.
+- retry-after.mjs만 수정하세요. 테스트와 package.json은 바꾸지 마세요.
+- 의존성 설치, 네트워크 요청, Git 커밋·푸시·PR 생성은 하지 마세요.
+
+npm test로 확인하고, 변경 이유와 실제 실행한 명령·결과를 알려 주세요.
+실행하지 못한 명령은 실행하지 못했다고 명시해 주세요.

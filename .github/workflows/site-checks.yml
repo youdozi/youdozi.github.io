@@ -24,7 +24,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
       actions: read
@@ -73,6 +73,10 @@ jobs:
       - name: Python collection and bilingual evidence tests
         if: steps.find.outputs.reuse != 'true'
         run: npm run test:python
+      - name: Verify T3 Code exercise failure and reference without an AI provider
+        id: example_t3_code_workflow
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_t3_code_workflow'))
+        run: python3 -B .pipeline/drafts/2026-11-12-t3-code-workflow/check.py
       - name: Execute paired local HTTP, drawio XML and Git search examples
         id: example_developer_tool_examples
         if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_developer_tool_examples'))
