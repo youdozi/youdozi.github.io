@@ -1,7 +1,7 @@
 {
-  "status": "draft-ready",
-  "scope": "Korean article and runnable examples only; no PR/publication",
-  "checkedAt": "2026-11-11T23:04:30.034430+00:00",
+  "status": "publication-prepared",
+  "scope": "Publication of the approved Korean T3 Code guide and examples only",
+  "checkedAt": "2026-11-12T00:23:50.256390+00:00",
   "reviewMode": "Self-review of tool facts, example contracts, prose and diagram; no independent agent review",
   "tool": {
     "version": "0.1.9",

@@ -55,3 +55,12 @@ test('Bucket4j publication selects only its example and JDK 21 toolchain', () =>
   assert.deepEqual(result.steps.filter(id => id.startsWith('example_')), [bucket4j.id]);
   assert.deepEqual(bucket4j.dependencies, mvc.dependencies);
 });
+
+test('T3 Code guide selects only its dependency-free Node exercise', () => {
+  const exercise = checks.find(check => check.keys.has('2026-11-12-t3-code-workflow'));
+  const result = plan(['src/content/posts/ko/2026-11-12-t3-code-workflow.md',
+    'assets/img/architecture/t3-code-flow-ko.svg']);
+  assert.equal(result.full, false);
+  assert.deepEqual(result.steps, [exercise.id]);
+  assert.deepEqual(exercise.dependencies, []);
+});

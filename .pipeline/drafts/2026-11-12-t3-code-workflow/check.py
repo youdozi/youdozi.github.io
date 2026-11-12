@@ -36,13 +36,18 @@ def main():
         assert '```text\n' + (ROOT / 'prompt.txt').read_text() + '```' in text
         image = ElementTree.parse(ROOT / 't3-code-flow-ko.svg').getroot()
         assert image.attrib['{http://www.w3.org/XML/1998/namespace}lang'] == 'ko'
+    published = ROOT.parents[2] / 'src/content/posts/ko/2026-11-12-t3-code-workflow.md'
+    if published.exists():
+        body = lambda value: value.split('---\n', 2)[2]
+        assert body(published.read_text()) == body(text).replace('./t3-code-flow-ko.svg', '/assets/img/architecture/t3-code-flow-ko.svg'), 'Published body differs from draft'
+        assert (ROOT.parents[2] / 'assets/img/architecture/t3-code-flow-ko.svg').read_bytes() == (ROOT / 't3-code-flow-ko.svg').read_bytes(), 'Published diagram differs'
     with tempfile.TemporaryDirectory(prefix='t3-code-example-') as directory:
         project = Path(directory)
         for path in (ROOT / 'starter').iterdir():
             shutil.copyfile(path, project / path.name)
         before = (project / 'retry-after.test.mjs').read_bytes()
         broken_status, broken = run_tests(project)
-        assert broken_status != 0 and broken['tests'] == 19 and broken['fail'] > 0
+        assert broken_status != 0 and broken == {'tests': 19, 'pass': 11, 'fail': 8}
         shutil.copyfile(ROOT / 'reference/retry-after.mjs', project / 'retry-after.mjs')
         fixed_status, fixed = run_tests(project)
         assert fixed_status == 0 and fixed == {'tests': 19, 'pass': 19, 'fail': 0}
