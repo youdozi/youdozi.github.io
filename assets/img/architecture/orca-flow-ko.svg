@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1050" viewBox="0 0 360 1050" xml:lang="ko" role="img" aria-labelledby="title desc">
+<title id="title">Orca의 프로젝트·워크트리·터미널·브라우저 작업 흐름</title>
+<desc id="desc">예제 Git 저장소를 Orca에 열고 작업용 worktree를 만든다. 새 작업 폴더와 브랜치를 확인한 뒤 에이전트에 한 파일 수정을 요청한다. 같은 worktree의 터미널에서 고정 테스트를 실행하고 개발 서버의 포트를 내장 브라우저로 연다. 기준 브랜치와 diff를 비교해 조건을 만족하면 직접 커밋하고, 만족하지 않으면 실패 사례로 다시 수정 요청한다. worktree의 파일 분리와 실행 권한은 별개다.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1050" rx="16" fill="#f5f7f2"/>
+<g font-family="system-ui,sans-serif" text-anchor="middle" font-size="15" fill="#203a2c">
+<text x="180" y="36" font-size="20" font-weight="700">Orca 작업 흐름</text>
+<rect x="24" y="62" width="312" height="72" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="90">예제 Git 저장소를 Add Repo로 열기</text><text x="180" y="116">main: 시작 코드·고정 테스트 보관</text>
+<path d="M180 134V166" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="171" width="312" height="88" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="199">작업용 worktree 만들기</text><text x="180" y="224">새 작업 폴더·브랜치를 먼저 확인</text><text x="180" y="246" font-size="12">화면의 선택과 기존 셸의 cwd는 다를 수 있음</text>
+<path d="M180 259V291" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="296" width="312" height="83" rx="9" fill="#faecd6" stroke="#bca274"/>
+<text x="180" y="324">선택한 에이전트에 한 파일 수정 요청</text><text x="180" y="349">변경 범위·권한·완료 조건 명시</text><text x="180" y="370" font-size="12">프롬프트는 도구 실행 권한을 대신하지 않음</text>
+<path d="M180 379V412" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="417" width="312" height="108" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="447">같은 worktree의 터미널에서 npm test</text><text x="180" y="473">개발 서버 실행 → 포트 확인</text><text x="180" y="499">내장 브라우저로 실제 화면 확인</text>
+<path d="M180 525V558" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="563" width="312" height="82" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="592">기준 main 대비 diff·테스트 원본 대조</text><text x="180" y="620">요청한 파일·정책을 충족하는가?</text>
+<path d="M98 645V690" stroke="#496b57" marker-end="url(#arrow)"/><text x="70" y="674">충족</text>
+<path d="M268 645V690" stroke="#496b57" marker-end="url(#arrow)"/><text x="297" y="674">미충족</text>
+<rect x="16" y="695" width="158" height="77" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="95" y="724">변경 파일만</text><text x="95" y="751">직접 커밋</text>
+<rect x="187" y="695" width="157" height="77" rx="9" fill="#f5e1df" stroke="#b88880"/>
+<text x="265" y="724">실패 사례·범위를</text><text x="265" y="751">좁혀 다시 요청</text>
+<path d="M344 733H352V338H338" fill="none" stroke="#b88880" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="24" y="820" width="312" height="118" rx="9" fill="#fff" stroke="#a8b6a7"/>
+<text x="180" y="850" font-weight="700">작업 분리의 경계</text><text x="180" y="878">worktree: 파일·브랜치·작업 화면 분리</text><text x="180" y="906">포트·DB·계정·권한은 추가로 고려</text>
+<text x="180" y="992" font-size="13">프로젝트 선택 → 작업 경로 → 실행 결과 → 변경 검토</text>
+</g></svg>

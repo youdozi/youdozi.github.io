@@ -1,8 +1,8 @@
 {
-  "status": "draft-ready",
+  "status": "publication-prepared",
   "language": "ko",
-  "scope": "Korean usage article and examples only; no PR/publication",
-  "checkedAt": "2026-11-12T02:07:25.357578+00:00",
+  "scope": "Publication of the approved Korean Orca guide and examples only",
+  "checkedAt": "2026-11-12T07:30:55.462474+00:00",
   "reviewMode": "Self-review of current CLI/official docs, prose and example; no independent review",
   "appVersion": "1.4.256",
   "appIdentifier": "com.stablyai.orca",

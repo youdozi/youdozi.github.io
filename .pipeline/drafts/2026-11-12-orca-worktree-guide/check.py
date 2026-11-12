@@ -37,6 +37,11 @@ def main():
         assert '```text\n' + (ROOT / 'prompt.txt').read_text() + '```' in text
         image = ElementTree.parse(ROOT / 'orca-flow-ko.svg').getroot()
         assert image.attrib['{http://www.w3.org/XML/1998/namespace}lang'] == 'ko'
+    published = ROOT.parents[2] / 'src/content/posts/ko/2026-11-12-orca-worktree-guide.md'
+    if published.exists():
+        body = lambda value: value.split('---\n', 2)[2]
+        assert body(published.read_text()) == body(text).replace('./orca-flow-ko.svg', '/assets/img/architecture/orca-flow-ko.svg'), 'Published body differs from draft'
+        assert (ROOT.parents[2] / 'assets/img/architecture/orca-flow-ko.svg').read_bytes() == (ROOT / 'orca-flow-ko.svg').read_bytes(), 'Published diagram differs'
     with tempfile.TemporaryDirectory(prefix='orca-guide-example-') as directory:
         p = Path(directory)
         for path in (ROOT / 'starter').iterdir(): shutil.copyfile(path, p / path.name)
