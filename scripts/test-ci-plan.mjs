@@ -64,3 +64,12 @@ test('T3 Code guide selects only its dependency-free Node exercise', () => {
   assert.deepEqual(result.steps, [exercise.id]);
   assert.deepEqual(exercise.dependencies, []);
 });
+
+test('Orca guide selects its Node exercise without launching the app or an agent', () => {
+  const exercise = checks.find(check => check.keys.has('2026-11-12-orca-worktree-guide'));
+  const result = plan(['src/content/posts/ko/2026-11-12-orca-worktree-guide.md',
+    'assets/img/architecture/orca-flow-ko.svg']);
+  assert.equal(result.full, false);
+  assert.deepEqual(result.steps, [exercise.id]);
+  assert.deepEqual(exercise.dependencies, []);
+});
