@@ -1,0 +1,92 @@
+{
+  "status": "draft-validated",
+  "language": "ko",
+  "scope": "Korean Rust practical streaming log-summary CLI draft only; no publication",
+  "checkedAt": "2026-11-13T07:21:58.734445+00:00",
+  "execution": {
+    "passed": true,
+    "rustc": "rustc 1.100.0 (0ef1bc386 2026-11-09)",
+    "streamTestsPerProfile": 8,
+    "cliCasesPerProfile": 13,
+    "profiles": [
+      "debug",
+      "release"
+    ],
+    "brokenStdoutAndStderrTested": true,
+    "largeFixtureRecords": 100000,
+    "embeddedSourcesMatch": true,
+    "lineLimitBytes": 4096,
+    "readLimitConsumedVerifiedByCursor": 4097,
+    "performanceMeasured": false,
+    "externalDependencies": false
+  },
+  "independentReview": {
+    "mode": "Separate AI context, article read before code and official source snapshots; read-only review and correction recheck",
+    "agent": "rust_log_cli_review",
+    "unresolvedMajorFindings": 0,
+    "findingsResolved": [
+      {
+        "severity": "major",
+        "finding": "Diagnostic eprintln could panic on broken stderr instead of exiting with code 2",
+        "change": "Ignore failure of writeln on locked stderr and preserve code 2",
+        "recheck": "Reviewer reproduced exit 2 with closed stderr pipe in a fresh release build"
+      },
+      {
+        "severity": "minor",
+        "finding": "Exit 1 wording could imply at least one valid record",
+        "change": "Clarified completed analysis with invalid records and valid=0 possibility",
+        "recheck": "Reviewer confirmed all-invalid input returns valid=0, invalid=1 and code 1"
+      },
+      {
+        "severity": "minor",
+        "finding": "Current-line memory wording did not distinguish BufReader read-ahead",
+        "change": "Separated analysis Vec contents from BufReader prefetched bytes",
+        "recheck": "Reviewer confirmed corrected explanation"
+      }
+    ],
+    "initialExecution": "Rust 1.100.0 tests 8, fmt, clippy and release build; selected CLI normal/error cases and BufReader read-ahead probe",
+    "recheckExecution": "Fresh release build, broken stderr and all-invalid CLI cases",
+    "notIndependentlyRepeated": [
+      "Full author debug/release CLI matrix",
+      "100000-record fixture",
+      "Browser rendering"
+    ]
+  },
+  "preview": {
+    "viewportWidth": 320,
+    "pageOverflow": false,
+    "image": [
+      {
+        "loaded": true,
+        "width": 284,
+        "alt": "main이 파일 인자를 확인하고 BufReader로 분석을 시작한다. 현재 줄을 최대 4097바이트 읽고 EOF면 집계를 반환한다. 읽기 실패·4096바이트 초과·잘못된 UTF-8은 오류 반환이다. 형식이 맞으면 상태별 개수를 늘리고 틀리면 invalid를 늘린 뒤 다음 줄을 읽는다. main은 정렬된 집계를 출력하고 결과에 따라 종료 코드 0·1·2를 전달한다"
+      }
+    ],
+    "codeBlocks": 10,
+    "browser": "Aside",
+    "renderer": "Site Satteri Markdown renderer and site CSS with resolved image placeholder",
+    "fullAstroPageTested": false,
+    "screenshotInspected": true
+  },
+  "sources": [
+    "https://rust-lang.org/tools/install/",
+    "https://doc.rust-lang.org/std/io/struct.BufReader.html",
+    "https://doc.rust-lang.org/std/io/trait.BufRead.html#method.read_until",
+    "https://doc.rust-lang.org/std/io/trait.Read.html#method.take",
+    "https://doc.rust-lang.org/std/collections/struct.BTreeMap.html"
+  ],
+  "hashes": {
+    "article.ko.md": "fa80def029dfdbfefbb97c7498768d4e3bed92c47627fe9736aea877144d5a86",
+    "src/lib.rs": "1960a17ce89ab396dc30cec7aa84a24b171a40ab2bd8549e26cdc8d7bbc68ddf",
+    "src/main.rs": "810d68d3d3bf2d38f4e2abc013c8aa7297532c6c8ea44da90c3d8c0f9986a2bd",
+    "tests/stream.rs": "7f9ceecda7c95f1a943b0e203964f7fafd4b54ece2287c948e2bff2da19aaa57",
+    "log-cli-flow-ko.svg": "1365c1cda5fba6efbe500a86667e6982eaa382ce16281edac7a5ae02cd1b2b60"
+  },
+  "limits": [
+    "Unpublished Korean draft only",
+    "Simplified two-field log format; not an Nginx/Apache default log parser",
+    "Completed ordinary files assumed; no tailing, rotation or compressed input",
+    "No throughput or process memory benchmark",
+    "No translated versions prepared"
+  ]
+}
