@@ -81,6 +81,12 @@ jobs:
         id: example_orca_worktree_guide
         if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_orca_worktree_guide'))
         run: python3 -B .pipeline/drafts/2026-11-12-orca-worktree-guide/check.py
+      - name: Compile Rust ownership examples and check CLI output in debug and release
+        id: example_rust_ownership_guide
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_rust_ownership_guide'))
+        run: |
+          rustup toolchain install 1.100.0 --profile minimal --component rustfmt --component clippy
+          python3 -B .pipeline/drafts/2026-11-13-rust-ownership-guide/check.py
       - name: Execute paired local HTTP, drawio XML and Git search examples
         id: example_developer_tool_examples
         if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_developer_tool_examples'))

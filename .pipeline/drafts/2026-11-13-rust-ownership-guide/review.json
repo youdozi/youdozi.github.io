@@ -1,0 +1,68 @@
+{
+  "status": "publication-prepared",
+  "language": "ko",
+  "scope": "Publication of the approved Korean Rust introduction, executable examples and flow diagram",
+  "checkedAt": "2026-11-13T06:49:08.685311+00:00",
+  "execution": {
+    "passed": true,
+    "rustc": "rustc 1.100.0 (0ef1bc386 2026-11-09)",
+    "cliCasesPerProfile": 12,
+    "profiles": [
+      "debug",
+      "release"
+    ],
+    "cargoRunCases": 9,
+    "expectedCompileErrors": [
+      "E0382",
+      "E0502"
+    ],
+    "borrowingExamplePassed": true,
+    "embeddedSourcesMatch": true,
+    "diagramLanguage": "ko",
+    "performanceMeasured": false,
+    "externalDependencies": false
+  },
+  "reviewMode": "Independent AI read-only prose/code/diagram/source review followed by author corrections and reviewer recheck",
+  "independentReview": {
+    "agent": "rust_draft_review",
+    "majorUnresolved": 0,
+    "minorFindingsResolved": [
+      "Installation prerequisites moved before first compiler invocation",
+      "Vec wording distinguished from array",
+      "Diagram Err node clarified as function early return"
+    ],
+    "executionByReviewer": false,
+    "visualReviewByReviewer": false
+  },
+  "preview": {
+    "renderer": "site Satteri Markdown renderer with site CSS; Astro image placeholder resolved for local preview",
+    "fullAstroPageTested": false,
+    "browser": "Aside",
+    "viewportWidth": 320,
+    "pageOverflow": false,
+    "imageLoaded": true,
+    "localizedAlt": true,
+    "screenshotInspected": true,
+    "codeBlocks": 11,
+    "finalDiagramLabelSpacingAdjusted": true
+  },
+  "sources": [
+    "https://rust-lang.org/",
+    "https://rust-lang.org/tools/install/",
+    "https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html",
+    "https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html",
+    "https://doc.rust-lang.org/book/ch01-03-hello-cargo.html",
+    "https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html",
+    "https://doc.rust-lang.org/book/ch16-04-extensible-concurrency-sync-and-send.html",
+    "https://doc.rust-lang.org/book/ch20-01-unsafe-rust.html"
+  ],
+  "hashes": {
+    "article.ko.md": "877aef9459e1a035dbcf205f81a58b35402e9db479061637d61c0ea9015298af",
+    "src/main.rs": "e76d9aabedc11e8654eb8096551adaddbbbfb7a734f30589beb3e8522da9fb3a",
+    "rust-flow-ko.svg": "0edd7c5b2a08662d1b76fbb656e87780e2965b136a9e35b9d6aa8fe3cc1f5fbd"
+  },
+  "limits": [
+    "No throughput, comparative performance, web server or concurrency testing",
+    "No translated versions prepared"
+  ]
+}

@@ -73,3 +73,12 @@ test('Orca guide selects its Node exercise without launching the app or an agent
   assert.deepEqual(result.steps, [exercise.id]);
   assert.deepEqual(exercise.dependencies, []);
 });
+
+test('Rust guide selects its pinned compiler exercise without unrelated runtimes', () => {
+  const exercise = checks.find(check => check.keys.has('2026-11-13-rust-ownership-guide'));
+  const result = plan(['src/content/posts/ko/2026-11-13-rust-ownership-guide.md',
+    'assets/img/architecture/rust-flow-ko.svg']);
+  assert.equal(result.full, false);
+  assert.deepEqual(result.steps, [exercise.id]);
+  assert.deepEqual(exercise.dependencies, []);
+});
