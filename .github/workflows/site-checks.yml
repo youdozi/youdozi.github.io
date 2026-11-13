@@ -87,6 +87,12 @@ jobs:
         run: |
           rustup toolchain install 1.100.0 --profile minimal --component rustfmt --component clippy
           python3 -B .pipeline/drafts/2026-11-13-rust-ownership-guide/check.py
+      - name: Verify Rust streaming log CLI, bounded reads and failure exit codes
+        id: example_rust_log_cli
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_rust_log_cli'))
+        run: |
+          rustup toolchain install 1.100.0 --profile minimal --component rustfmt --component clippy
+          python3 -B .pipeline/drafts/2026-11-13-rust-log-cli/check.py
       - name: Execute paired local HTTP, drawio XML and Git search examples
         id: example_developer_tool_examples
         if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_developer_tool_examples'))

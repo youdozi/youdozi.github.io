@@ -82,3 +82,12 @@ test('Rust guide selects its pinned compiler exercise without unrelated runtimes
   assert.deepEqual(result.steps, [exercise.id]);
   assert.deepEqual(exercise.dependencies, []);
 });
+
+test('Rust log CLI selects its stream and failure contracts without unrelated runtimes', () => {
+  const exercise = checks.find(check => check.keys.has('2026-11-13-rust-log-cli'));
+  const result = plan(['src/content/posts/ko/2026-11-13-rust-log-cli.md',
+    'assets/img/architecture/log-cli-flow-ko.svg']);
+  assert.equal(result.full, false);
+  assert.deepEqual(result.steps, [exercise.id]);
+  assert.deepEqual(exercise.dependencies, []);
+});
