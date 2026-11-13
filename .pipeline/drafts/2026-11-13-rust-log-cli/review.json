@@ -1,8 +1,8 @@
 {
-  "status": "draft-validated",
+  "status": "publication-prepared",
   "language": "ko",
-  "scope": "Korean Rust practical streaming log-summary CLI draft only; no publication",
-  "checkedAt": "2026-11-13T07:21:58.734445+00:00",
+  "scope": "Publication of approved Korean Rust streaming log CLI guide and examples",
+  "checkedAt": "2026-11-13T11:57:37.221186+00:00",
   "execution": {
     "passed": true,
     "rustc": "rustc 1.100.0 (0ef1bc386 2026-11-09)",
@@ -83,7 +83,6 @@
     "log-cli-flow-ko.svg": "1365c1cda5fba6efbe500a86667e6982eaa382ce16281edac7a5ae02cd1b2b60"
   },
   "limits": [
-    "Unpublished Korean draft only",
     "Simplified two-field log format; not an Nginx/Apache default log parser",
     "Completed ordinary files assumed; no tailing, rotation or compressed input",
     "No throughput or process memory benchmark",

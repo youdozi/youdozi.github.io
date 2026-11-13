@@ -31,6 +31,11 @@ def main():
     svg = ElementTree.parse(ROOT / 'log-cli-flow-ko.svg').getroot()
     assert svg.attrib['{http://www.w3.org/XML/1998/namespace}lang'] == 'ko'
     assert re.search(r'!\[[^\]]+\]\(\./log-cli-flow-ko.svg\)', article)
+    published = ROOT.parents[2] / 'src/content/posts/ko/2026-11-13-rust-log-cli.md'
+    if published.exists():
+        body = lambda value: value.split('---\n', 2)[2]
+        assert body(published.read_text()) == body(article).replace('./log-cli-flow-ko.svg', '/assets/img/architecture/log-cli-flow-ko.svg'), 'Published body differs from draft'
+        assert (ROOT.parents[2] / 'assets/img/architecture/log-cli-flow-ko.svg').read_bytes() == (ROOT / 'log-cli-flow-ko.svg').read_bytes(), 'Published diagram differs'
     version = run(['rustc', '--version']).stdout.strip()
     assert version.startswith('rustc 1.100.0 '), version
     with tempfile.TemporaryDirectory(prefix='rust-log-guide-') as directory:
