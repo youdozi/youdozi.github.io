@@ -1,0 +1,8 @@
+{
+  "status": "publication-prepared",
+  "authorization": "User requested publication: 게시해줘",
+  "language": "ko",
+  "article": "src/content/posts/ko/2026-11-13-rust-ownership-guide.md",
+  "diagramAsset": "assets/img/architecture/rust-flow-ko.svg",
+  "preparedAt": "2026-11-13T06:49:08.685311+00:00"
+}

@@ -1,8 +1,8 @@
 {
-  "status": "draft-validated",
+  "status": "publication-prepared",
   "language": "ko",
-  "scope": "Korean Rust introduction draft, executable CLI and flow diagram; no publication",
-  "checkedAt": "2026-11-13T02:10:36.236291+00:00",
+  "scope": "Publication of the approved Korean Rust introduction, executable examples and flow diagram",
+  "checkedAt": "2026-11-13T06:49:08.685311+00:00",
   "execution": {
     "passed": true,
     "rustc": "rustc 1.100.0 (0ef1bc386 2026-11-09)",
@@ -62,7 +62,6 @@
     "rust-flow-ko.svg": "0edd7c5b2a08662d1b76fbb656e87780e2965b136a9e35b9d6aa8fe3cc1f5fbd"
   },
   "limits": [
-    "No publication or production deployment",
     "No throughput, comparative performance, web server or concurrency testing",
     "No translated versions prepared"
   ]

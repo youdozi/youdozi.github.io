@@ -35,6 +35,11 @@ def main():
     svg = ElementTree.parse(ROOT / 'rust-flow-ko.svg').getroot()
     assert svg.attrib['{http://www.w3.org/XML/1998/namespace}lang'] == 'ko'
     assert re.search(r'!\[[^\]]+\]\(\./rust-flow-ko.svg\)', text)
+    published = ROOT.parents[2] / 'src/content/posts/ko/2026-11-13-rust-ownership-guide.md'
+    if published.exists():
+        body = lambda value: value.split('---\n', 2)[2]
+        assert body(published.read_text()) == body(text).replace('./rust-flow-ko.svg', '/assets/img/architecture/rust-flow-ko.svg'), 'Published body differs from draft'
+        assert (ROOT.parents[2] / 'assets/img/architecture/rust-flow-ko.svg').read_bytes() == (ROOT / 'rust-flow-ko.svg').read_bytes(), 'Published diagram differs'
     version = run(['rustc', '--version']).stdout.strip()
     assert version.startswith('rustc 1.100.0 '), version
     run(['cargo', 'check', '--offline'])
