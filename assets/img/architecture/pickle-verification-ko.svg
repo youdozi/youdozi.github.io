@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640" viewBox="0 0 360 640" role="img" aria-labelledby="title desc" xml:lang="ko">
+  <title id="title">공개 프로그램과 릴리스 증명의 로컬 검증</title>
+  <desc id="desc">공개 프로그램 JS와 릴리스 증명을 공식 검증 도구에 입력한다. 도구가 파일 해시와 서명·투명성 로그 증명을 검사한다. 원본 v42 파일은 종료 코드 0, 한 바이트를 추가한 파일은 source_hash 불일치와 종료 코드 1을 반환한다. 이는 공개 파일 검증이며 실제 운영 노드나 설치 앱 전체의 검증은 아니다.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50"/></marker></defs>
+  <rect width="360" height="640" rx="16" fill="#f6f7f2"/>
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="18" font-weight="bold">공개 보안 프로그램 검증</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="18" y="65" width="151" height="76" rx="8"/>
+      <rect x="191" y="65" width="151" height="76" rx="8"/>
+      <rect x="25" y="205" width="310" height="110" rx="8"/>
+      <rect x="18" y="395" width="151" height="100" rx="8"/>
+      <rect x="191" y="395" width="151" height="100" rx="8" fill="#f8e8dd"/>
+    </g>
+    <text x="93" y="96">프로그램 JS</text><text x="93" y="121">원본 또는 변조본</text>
+    <text x="266" y="96">릴리스 증명 JSON</text><text x="266" y="121">공개 v42 자료</text>
+    <text x="180" y="232">credential-enclave-verify program</text>
+    <text x="180" y="257">파일 해시 · 릴리스 서명</text>
+    <text x="180" y="282">투명성 로그의 증명 검사</text>
+    <text x="180" y="305" font-size="12">순서대로 검사 · 실패 시 즉시 종료</text>
+    <text x="93" y="424">원본: 성공</text><text x="93" y="452">version 42 · ok</text><text x="93" y="479">종료 코드 0</text>
+    <text x="266" y="424">한 바이트 추가</text><text x="266" y="452">source_hash 실패</text><text x="266" y="479">종료 코드 1</text>
+    <text x="180" y="555">운영 노드 증명 확인은 별도 절차</text>
+    <text x="180" y="583">설치된 iOS 바이너리 검증도 별도 범위</text>
+    <text x="180" y="616" font-size="13">본문의 실제 로컬 실행과 같은 입력·분기·출력</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M93 141V170H180V205"/><path d="M266 141V170H180"/>
+    <path d="M180 315V355H93V395"/><path d="M180 355H266V395"/>
+  </g>
+</svg>

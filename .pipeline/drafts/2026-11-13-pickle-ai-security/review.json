@@ -1,8 +1,8 @@
 {
-  "status": "draft-validated",
+  "status": "publication-prepared",
   "language": "ko",
-  "scope": "Korean Pickle AI operation and credential protection analysis draft; no publication",
-  "checkedAt": "2026-11-13T12:29:40.923815+00:00",
+  "scope": "Publication of approved Korean Pickle AI security analysis and public release verification example",
+  "checkedAt": "2026-11-14T03:35:47.688383+00:00",
   "sourceCommit": "cff16a343bf5bb7953e5b65df6ab3600107e127d",
   "enclaveTag": "v2.3.0",
   "enclaveTagCommit": "29d450c2867b9c198c2f9680905a11120178d2b5",
@@ -23,7 +23,8 @@
     "originalExit": 0,
     "changedSourceExit": 1,
     "originalOutput": "program release secure-program-v42: version 42, sha256 31e7fa7fb51f87781313b1f97b60ae3c7b69ff8f2fbcee7de12b7a0ed034d8e8, log index 3761959022: ok",
-    "changedSourceOutput": "program release: failed: source_hash: the source is not the subject of the statement"
+    "changedSourceOutput": "program release: failed: source_hash: the source is not the subject of the statement",
+    "proofSHA256": "e6571cfcb2f4c16db9185fc34ba21137214308925b2ba37f366df83bb4964e4b"
   },
   "independentReview": {
     "agent": "pickle_security_review",
@@ -101,7 +102,6 @@
     "tamper-example.sh": "7510d3195162c2a94f4a4b5604180db2939cd9b509306f6efe595ebff1a77895"
   },
   "limits": [
-    "Draft only; no publication or translation",
     "Claims apply to the cited public source and official explanations; not a full product audit",
     "No live node attestation, iOS binary verification, account login or actual phone control",
     "No independent confirmation of worker UI masking or site-binding enforcement",

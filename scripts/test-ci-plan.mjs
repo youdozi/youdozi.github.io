@@ -91,3 +91,13 @@ test('Rust log CLI selects its stream and failure contracts without unrelated ru
   assert.deepEqual(result.steps, [exercise.id]);
   assert.deepEqual(exercise.dependencies, []);
 });
+
+test('Pickle article selects only its public artifact verification', () => {
+  const exercise = checks.find(check => check.keys.has('2026-11-13-pickle-ai-security'));
+  const result = plan(['src/content/posts/ko/2026-11-13-pickle-ai-security.md',
+    'assets/img/architecture/pickle-credentials-ko.svg',
+    'assets/img/architecture/pickle-verification-ko.svg']);
+  assert.equal(result.full, false);
+  assert.deepEqual(result.steps, [exercise.id]);
+  assert.deepEqual(exercise.dependencies, []);
+});

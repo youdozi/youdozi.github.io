@@ -93,6 +93,12 @@ jobs:
         run: |
           rustup toolchain install 1.100.0 --profile minimal --component rustfmt --component clippy
           python3 -B .pipeline/drafts/2026-11-13-rust-log-cli/check.py
+      - name: Verify Pickle public program release and reject changed source
+        id: example_pickle_ai_security
+        if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_pickle_ai_security'))
+        run: |
+          rustup toolchain install 1.100.0 --profile minimal
+          python3 -B .pipeline/drafts/2026-11-13-pickle-ai-security/check.py --download-verifier
       - name: Execute paired local HTTP, drawio XML and Git search examples
         id: example_developer_tool_examples
         if: steps.find.outputs.reuse != 'true' && (contains(fromJSON(steps.plan.outputs.steps), 'example_developer_tool_examples'))
