@@ -104,7 +104,7 @@ npm exec --yes --package=t3@0.1.9 -- t3 \
 
 CLI 启动本地服务器和 Web 应用程序。如果您已使用 T3 Code服务器，请在该环境中打开项目。桌面安装和远程访问遵循[此版本的安装指南](https://github.com/pingdotgg/t3code/blob/v0.1.9/docs/user/install.md) 中的单独路径。本指南不会配置后台服务或将其公开给外部网络。
 
-选择项目文件夹和线程，然后选择已安装并经过身份验证的提供程序。根据[线程指南](https://github.com/pingdotgg/t3code/blob/v0.1.9/docs/user/thread-sidebar.md)，**New worktree（新工作树）**创建一个单独的分支和工作目录。基本练习假设准备好的文件夹的现有工作目录。如果您选择新的工作树，也请在该文件夹中运行后续的 Git 和 npm 命令。首先检查线程的工作路径和分支。在消息输入区域，检查权限是否为 **Supervised（受监督）**。 [v0.1.9 权限指南](https://github.com/pingdotgg/t3code/blob/v0.1.9/docs/user/permission-modes.md) 表示初始默认值为 Full access（完全访问），而 Supervised 会请求批准命令和文件更改。允许哪些读取等详细信息因提供商而异。
+选择项目文件夹和线程，然后选择已安装并经过身份验证的提供程序。根据[线程指南](https://github.com/pingdotgg/t3code/blob/v0.1.9/docs/user/thread-sidebar.md)，New worktree（新工作树）创建一个单独的分支和工作目录。基本练习假设准备好的文件夹的现有工作目录。如果您选择新的工作树，也请在该文件夹中运行后续的 Git 和 npm 命令。首先检查线程的工作路径和分支。在消息输入区域，检查权限是否为 **Supervised（受监督）**。 [v0.1.9 权限指南](https://github.com/pingdotgg/t3code/blob/v0.1.9/docs/user/permission-modes.md) 表示初始默认值为 Full access（完全访问），而 Supervised 会请求批准命令和文件更改。允许哪些读取等详细信息因提供商而异。
 
 发送此提示：
 

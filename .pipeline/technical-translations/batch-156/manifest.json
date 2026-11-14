@@ -4,7 +4,7 @@
   "batchId": "technical-156",
   "state": "awaiting-publication-approval",
   "approval": null,
-  "baseCommit": "86d437af571aaf2449c5f7ce4559fed4402b37b3",
+  "baseCommit": "37205326431007226e3abf60fdab3c50c0fe97e2",
   "sourceLanguage": "en",
   "languages": [
     "zh-CN",
@@ -113,7 +113,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-11-bucket4j-token-bucket.md",
-        "sha256": "d3f9bc39998a9d5a9af605d026d08036af547da56eb029e37d6dfcf7bc077ffb"
+        "sha256": "117bb01a2b479e9d7c9a6e6b98837068ee9b7806cad45b85a4cc692dff949d50"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-11-bucket4j-token-bucket.svg",
@@ -155,7 +155,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-12-t3-code-workflow.md",
-        "sha256": "59d705644d24c100257782ec26618ced816821931ca780054a9e06e89afd018b"
+        "sha256": "4545d56ba297deedc9b00e52eec3d2224f7edfdd6e671367df0dd5e26a7e3dc7"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-12-t3-code-workflow.svg",
@@ -335,7 +335,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-156/ja/2026-11-12-orca-worktree-guide.md",
-        "sha256": "8403f1c5486ba374362da2e7666ad8abf76a322cb64b08c5c4a34e6b2a1b92ea"
+        "sha256": "70e7fffbd568b0ce768e59e53cadbb08f70dc31718334cb60e7fb79d3dcfd459"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-156/ja/2026-11-12-orca-worktree-guide.svg",
