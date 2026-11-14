@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640" viewBox="0 0 360 640" role="img" aria-labelledby="title desc" xml:lang="de">
+  <title id="title">Öffentliches Sicherheitsprogramm prüfen</title>
+  <desc id="desc">Das öffentliche Programm-JS und der Release-Nachweis gehen in das Prüfwerkzeug. Es prüft Hash, Signatur und Transparenzlog-Nachweis. Original v42 endet mit Code 0; ein zusätzliches Byte führt zu source_hash und Code 1. Produktionsknoten und installierte App werden separat geprüft.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="640" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="16.3" font-weight="bold">Öffentliches Programm prüfen</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="18" y="65" width="151" height="76" rx="8" />
+      <rect x="191" y="65" width="151" height="76" rx="8" />
+      <rect x="25" y="205" width="310" height="110" rx="8" />
+      <rect x="18" y="395" width="151" height="100" rx="8" />
+      <rect x="191" y="395" width="151" height="100" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="93" y="96">Programm-JS</text><text x="93" y="121" font-size="11.1" textLength="140" lengthAdjust="spacingAndGlyphs">Original oder verändert</text>
+    <text x="266" y="96" font-size="12.1">Release-Nachweis JSON</text><text x="266" y="121" font-size="12.1">Öffentliche v42-Daten</text>
+    <text x="180" y="232">credential-enclave-verify program</text>
+    <text x="180" y="257">Datei-Hash · Release-Signatur</text>
+    <text x="180" y="282">Transparenzlog-Nachweis</text>
+    <text x="180" y="305" font-size="12">Reihenfolge · Abbruch bei Fehler</text>
+    <text x="93" y="424">Original: Erfolg</text><text x="93" y="452">version 42 · ok</text><text x="93" y="479">Exit-Code 0</text>
+    <text x="266" y="424">Ein Byte ergänzt</text><text x="266" y="452" font-size="14.1">source_hash-Fehler</text><text x="266" y="479">Exit-Code 1</text>
+    <text x="180" y="555" font-size="13.8" textLength="280" lengthAdjust="spacingAndGlyphs">Produktionsknoten separat attestieren</text>
+    <text x="180" y="583" font-size="14.5">Installierte iOS-App separat prüfen</text>
+    <text x="180" y="616" font-size="11" textLength="280" lengthAdjust="spacingAndGlyphs">Gleiche Eingaben und Ausgaben wie der lokale Lauf</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M93 141V170H180V205" /><path d="M266 141V170H180" />
+    <path d="M180 315V355H93V395" /><path d="M180 355H266V395" />
+  </g>
+</svg>

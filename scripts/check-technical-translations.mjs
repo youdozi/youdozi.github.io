@@ -6,6 +6,7 @@ import {createHash} from 'node:crypto';
 import {resolve,relative,dirname} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {parse} from 'yaml';
+import sax from 'sax';
 import policy from '../src/lib/locales.json' with {type:'json'};
 
 const root=resolve(import.meta.dirname,'..');
@@ -38,10 +39,14 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
   if(['publishedAt','updatedAt','approval','reviewedAt','reviewStatus'].some(k=>k in m))fail('Private draft must not claim publication or inherited review');
   if(source.meta.translationKey!==key||source.meta.language!=='en'||source.meta.kind!=='post'||source.meta.reviewStatus==='example')fail('Expected eligible English technical source');
   const sourceCode=code(source.body),draftCode=code(draft.body);
-  const promptFences=options.formatVersion===2 ? ({
+  const promptFences=options.formatVersion>=2 ? ({
     '2026-10-31-ai-agent-refactoring':[0,4,5],
     '2026-10-31-ai-agent-operations':[2],
     '2026-11-02-ai-assisted-tdd':[0,7,11,12],
+    ...(options.formatVersion===3?{
+      '2026-11-12-orca-worktree-guide':[8],
+      '2026-11-12-t3-code-workflow':[5],
+    }:{}),
   }[key]??[]) : [];
   same(sourceCode.length,draftCode.length,'Executable code changed during translation');
   sourceCode.forEach((block,index)=>{
@@ -49,7 +54,11 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
     const translated=draftCode[index];
     if(block[0]!=='text'||translated[0]!=='text'||!translated[1].trim())fail('Localized prompt missing');
     same(numbers(block[1]),numbers(translated[1]),'Prompt numeric values changed');
-    const tokens=key==='2026-11-02-ai-assisted-tdd'
+    const tokens=key==='2026-11-12-orca-worktree-guide'
+      ? ['shipping.mjs','shipping.test.mjs','package.json','index.html','RangeError','npm test']
+      : key==='2026-11-12-t3-code-workflow'
+      ? ['retry-after.mjs','retry-after.test.mjs','retryAfterMs(header)','Number.isSafeInteger','null','HTTP-date','package.json','npm test']
+      : key==='2026-11-02-ai-assisted-tdd'
       ? ['StockPolicy.remaining(int stock, int requested)','StockPolicy.java','reservesPartOfStock','expected=7','actual=10']
       : ['ShippingRefactorDemo.java','before()','after()','main()','FREE_THRESHOLD',
       'javac --release 21 ShippingRefactorDemo.java','java ShippingRefactorDemo','git diff --check'];
@@ -69,7 +78,7 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
     if(/^(?:true|false|[-+]?\d[\d, .]*|`[^`]+`)$/.test(cell)&&cell!==translated)fail('Table values changed or omitted');
   }));
   const images=[...draft.body.matchAll(/!\[([^\]\n]+)\]\(([^)]+)\)/g)];
-  if(options.formatVersion===2){
+  if(options.formatVersion>=2){
     const sourceImages=[...source.body.matchAll(/!\[([^\]\n]+)\]\(([^)]+)\)/g)];
     const extras=options.additionalVisuals??[];
     const expected=sourceImages.map(image=>{
@@ -102,6 +111,46 @@ export function compareSupplementarySVG(originalSVG,translatedSVG,language){
   if([...translatedSVG.matchAll(/<(?:text|title|desc)\b[^>]*>(.*?)<\//g)].some(m=>!m[1].trim()))fail('Empty supplementary SVG text');
 }
 
+/** Keep an existing hand-drawn diagram's paths and boxes while localizing its text. */
+export function compareLocalizedSVG(originalSVG,translatedSVG,language){
+  function validXML(svg){
+    if(/<!DOCTYPE|<!ENTITY/i.test(svg))fail('SVG declarations are not permitted');
+    const forbidden=/[^\u0009\u000a\u000d\u0020-\ud7ff\ue000-\ufffd\u{10000}-\u{10ffff}]/u;
+    const characters=value=>{if(forbidden.test(value))fail('Invalid SVG XML');};
+    characters(svg);
+    const parser=sax.parser(true,{xmlns:true,strictEntities:true});
+    let root;
+    parser.onopentag=node=>{if(!root)root=node;};
+    parser.ontext=characters;
+    parser.onattribute=attribute=>characters(attribute.value);
+    try{parser.write(svg).close();}catch{fail('Invalid SVG XML');}
+    if(root?.local!=='svg'||root.uri!=='http://www.w3.org/2000/svg')fail('Invalid SVG root');
+  }
+  validXML(originalSVG);validXML(translatedSVG);
+  const strings=svg=>[...svg.matchAll(/<(?:text|title|desc)\b[^>]*>([^<]*)<\/(?:text|title|desc)>/g)].map(m=>m[1]);
+  const originalText=strings(originalSVG),localizedText=strings(translatedSVG);
+  if(!originalSVG.includes('xml:lang="en"')||!translatedSVG.includes(`xml:lang="${language}"`))fail('Invalid SVG language');
+  if(!originalText.length||originalText.length!==localizedText.length||localizedText.some(text=>!text.trim()))fail('Localized SVG text count changed');
+  if(/<(?:script|image|foreignObject)\b|\b(?:href|onload)=/i.test(translatedSVG))fail('Invalid or externally dependent SVG');
+  const textTags=svg=>[...svg.matchAll(/<text\b[^>]*>/g)].map(m=>m[0]);
+  const sourceTags=textTags(originalSVG),localizedTags=textTags(translatedSVG);
+  const textValues=[...translatedSVG.matchAll(/<text\b[^>]*>([^<]*)<\/text>/g)].map(m=>m[1]);
+  const viewport=Number(/\bviewBox="[\d.\-]+[ ,]+[\d.\-]+[ ,]+([\d.]+)[ ,]+[\d.]+"/.exec(translatedSVG)?.[1]);
+  if(sourceTags.length!==localizedTags.length)fail('Localized SVG text count changed');
+  localizedTags.forEach((tag,i)=>{
+    const font=/\bfont-size="([^"]+)"/.exec(tag),original=/\bfont-size="([^"]+)"/.exec(sourceTags[i]);
+    if(font&&(!Number.isFinite(Number(font[1]))||Number(font[1])<11||Number(font[1])>Number(original?.[1]??24)))fail('Unreadable localized SVG font size');
+    const length=/\btextLength="([^"]+)"/.exec(tag),adjust=/\blengthAdjust="([^"]+)"/.exec(tag);
+    const characters=Array.from((textValues[i]??'').replace(/&(?:amp|lt|gt|quot|apos|#\d+|#x[\da-f]+);/gi,'X')).filter(c=>!(/\s/u).test(c)).length;
+    if(length&&(!Number.isFinite(Number(length[1]))||Number(length[1])<Math.max(12,3*characters)||(Number.isFinite(viewport)&&Number(length[1])>viewport))||adjust&&!['spacing','spacingAndGlyphs'].includes(adjust[1]))fail('Invalid localized SVG text fitting');
+  });
+  const geometry=svg=>svg.trim().replace(/xml:lang="[^"]+"/,'xml:lang="LANG"')
+    .replace(/<text\b[^>]*>/g,tag=>tag.replace(/\s+(?:font-size|textLength|lengthAdjust)="[^"]*"/g,''))
+    .replace(/\s+\/>/g,'/>')
+    .replace(/(<(?:text|title|desc)\b[^>]*>)[^<]*(<\/(?:text|title|desc)>)/g,'$1$2');
+  same(geometry(originalSVG),geometry(translatedSVG),'Localized SVG geometry changed');
+}
+
 export async function inspectTechnicalTranslations(base=root,manifestPath=defaultManifest){
   const canonicalBase=await realpath(base);
   async function pinned(record,prefix){
@@ -114,7 +163,7 @@ export async function inspectTechnicalTranslations(base=root,manifestPath=defaul
   const manifestFile=await realpath(resolve(canonicalBase,manifestPath));
   if(relative(canonicalBase,manifestFile)!==manifestPath)fail('Manifest escapes private path');
   const manifest=JSON.parse(await readFile(manifestFile,'utf8'));
-  if(manifest.formatVersion!==undefined&&manifest.formatVersion!==2)fail('Unknown technical manuscript format');
+  if(manifest.formatVersion!==undefined&&![2,3].includes(manifest.formatVersion))fail('Unknown technical manuscript format');
   if(manifest.schemaVersion!==1||manifest.state!=='awaiting-publication-approval'||manifest.approval!==null||!manifest.editions?.length)fail('Expected unapproved translation manifest');
   same(manifest.languages,policy.translationLanguages,'Expected all six target languages');
   const seen=new Set(),byTopic=new Map();
@@ -126,6 +175,21 @@ export async function inspectTechnicalTranslations(base=root,manifestPath=defaul
     const sourceRaw=await pinned(row.source,'src/content/posts/en/');
     if(row.source.path!==`src/content/posts/en/${key}.md`)fail('Wrong English source');
     const draftRaw=await pinned(row.draft,prefix),svg=await pinned(row.diagram,prefix);
+    if(manifest.formatVersion===3){
+      if(row.draft.path!==`${prefix}${language}/${key}.md`||row.diagram.path!==`${prefix}${language}/${key}.svg`)fail('Noncanonical draft asset path');
+      if(!/^assets\/img\/architecture\/[a-z0-9-]+-en\.svg$/.test(row.mainVisual?.path??''))fail('Invalid primary visual identity');
+      const mainSVG=await pinned(row.mainVisual,'assets/img/architecture/');
+      compareLocalizedSVG(mainSVG,svg,language);
+      const extras=row.additionalVisuals??[];
+      if(!Array.isArray(extras)||extras.length>1)fail('Invalid additional visual plan');
+      for(const visual of extras){
+        if(!/^assets\/img\/architecture\/[a-z0-9-]+-en\.svg$/.test(visual.source.path)||visual.source.path===row.mainVisual.path||visual.draft.path!==`${prefix}${language}/${key}-architecture.svg`)fail('Invalid additional visual identity');
+        compareLocalizedSVG(await pinned(visual.source,'assets/img/architecture/'),await pinned(visual.draft,prefix),language);
+      }
+      const {draft}=compareManuscript(sourceRaw,draftRaw,null,key,language,{formatVersion:3,mainVisual:row.mainVisual,additionalVisuals:extras});
+      if(draft.meta.sourcePath!==row.source.path||draft.meta.sourceSha256!==row.source.sha256)fail('Draft source pin mismatch');
+      continue;
+    }
     const diagram=JSON.parse(await pinned(row.diagramSource,prefix));
     for(const [record,ext] of [[row.draft,'md'],[row.diagram,'svg'],[row.diagramSource,'diagram.json']]){
       if(record.path!==`${prefix}${language}/${key}.${ext}`)fail('Noncanonical draft asset path');

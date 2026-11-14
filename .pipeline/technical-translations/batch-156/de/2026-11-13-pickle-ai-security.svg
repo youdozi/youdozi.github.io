@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1120" viewBox="0 0 360 1120" role="img" aria-labelledby="title desc" xml:lang="de">
+  <title id="title">Schlüsselübergabe und Zugangsdaten bei Pickle</title>
+  <desc id="desc">Bei der Einrichtung verifiziert das iPhone den Knoten und delegiert einen verschlüsselten Benutzerschlüssel an eine Nitro Enclave. Bei Nutzung werden Delegation und Protokollspeicherung geprüft. OAuth-Token bleiben für API-Aufrufe im Knoten; Vault-Passwörter und Kartenwerte gelangen nach release im Klartext zum Worker. Maskierung danach ist eine separate Grenze.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1120" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="17.6" font-weight="bold" textLength="280" lengthAdjust="spacingAndGlyphs">Schlüsselübergabe und Nutzung</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="25" y="60" width="310" height="85" rx="8" />
+      <rect x="25" y="185" width="310" height="85" rx="8" />
+      <rect x="25" y="310" width="310" height="85" rx="8" />
+      <rect x="25" y="480" width="310" height="110" rx="8" />
+      <rect x="18" y="655" width="151" height="105" rx="8" />
+      <rect x="191" y="655" width="151" height="105" rx="8" fill="#f8e8dd" />
+      <rect x="18" y="805" width="151" height="85" rx="8" />
+      <rect x="191" y="805" width="151" height="85" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="180" y="86">iPhone: Master-Schlüssel erzeugen</text>
+    <text x="180" y="112">In iCloud Keychain speichern</text>
+    <text x="180" y="135" font-size="13">Protokoll trennt abgeleitete Schlüssel</text>
+    <text x="180" y="212" font-size="11.8">Attestierung, Messwert und Schlüssel prüfen</text>
+    <text x="180" y="238">Fehler → keine Schlüsselübergabe</text>
+    <text x="180" y="260" font-size="13">Schlüssel nur für geprüften Knoten</text>
+    <text x="180" y="337">Server: verschlüsselte Datensätze</text>
+    <text x="180" y="365" font-size="13.4" textLength="280" lengthAdjust="spacingAndGlyphs">Enclave: zeitlich begrenzter Schlüssel</text>
+    <text x="180" y="386" font-size="13">Master-Schlüssel selbst nicht delegiert</text>
+    <text x="180" y="451" font-size="12.1">Der Ablauf setzt gültige Delegation voraus</text>
+    <text x="180" y="508" font-size="12.4">Anfrage → Delegation und Datensatz prüfen</text>
+    <text x="180" y="535" font-size="14.1">Enclave entschlüsselt · erstellt Log</text>
+    <text x="180" y="562" font-size="15.0">Nutzung nach bestätigtem Log</text>
+    <text x="180" y="582" font-size="13">Fehler → keine Nutzung oder Freigabe</text>
+    <text x="93" y="682">OAuth: forward</text>
+    <text x="93" y="710" font-size="11.6" textLength="140" lengthAdjust="spacingAndGlyphs">Token bleibt im Knoten</text>
+    <text x="93" y="738" font-size="13.7">Für erlaubte API</text>
+    <text x="266" y="682">Vault: release</text>
+    <text x="266" y="710" font-size="12.1">Passwort · Kartenwert</text>
+    <text x="266" y="738" font-size="13.4" textLength="140" lengthAdjust="spacingAndGlyphs">Klartext zum Worker</text>
+    <text x="93" y="834" font-size="12.7">TLS zum API-Anbieter</text><text x="93" y="861" font-size="12.5">Antwortdaten zurück</text>
+    <text x="266" y="834" font-size="12.7">Worker → Webformular</text><text x="266" y="861" font-size="12.1">Außerhalb des Knotens</text>
+    <text x="180" y="951" font-size="13.2" font-weight="bold">Maskierung vor KI: Dienstangabe</text>
+    <text x="180" y="983">Durchsetzung in Worker und App</text>
+    <text x="180" y="1008" font-size="13.4" textLength="280" lengthAdjust="spacingAndGlyphs">durch Enclave-Repo allein nicht belegt</text>
+    <text x="180" y="1060" font-size="13">Konzeptskizze des öffentlichen Codes</text>
+    <text x="180" y="1086" font-size="13">Keine Live-Prüfung von Betrieb oder App</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M180 145V185" /><path d="M180 270V310" />
+    <path d="M180 590V620H93V655" /><path d="M180 620H266V655" />
+    <path d="M93 760V805" /><path d="M266 760V805" />
+  </g>
+  <path d="M20 420H340" stroke="#a7b7ac" stroke-dasharray="5 5" />
+</svg>

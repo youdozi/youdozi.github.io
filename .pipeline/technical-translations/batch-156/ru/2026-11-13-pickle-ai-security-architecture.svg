@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640" viewBox="0 0 360 640" role="img" aria-labelledby="title desc" xml:lang="ru">
+  <title id="title">Проверка публичной программы безопасности</title>
+  <desc id="desc">Инструмент проверяет хеш публичного JS, подпись релиза и доказательство прозрачности. Оригинал v42 возвращает код 0; при добавлении байта source_hash даёт ошибку и код 1. Аттестация production-узла и проверка установленного приложения выполняются отдельно.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="640" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="16.3" font-weight="bold" textLength="320" lengthAdjust="spacingAndGlyphs">Проверка публичной программы безопасности</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="18" y="65" width="151" height="76" rx="8" />
+      <rect x="191" y="65" width="151" height="76" rx="8" />
+      <rect x="25" y="205" width="310" height="110" rx="8" />
+      <rect x="18" y="395" width="151" height="100" rx="8" />
+      <rect x="191" y="395" width="151" height="100" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="93" y="96">Программа JS</text><text x="93" y="121" font-size="13.7" textLength="145" lengthAdjust="spacingAndGlyphs">Оригинал или изменение</text>
+    <text x="266" y="96" textLength="145" lengthAdjust="spacingAndGlyphs">JSON-доказательство релиза</text><text x="266" y="121" textLength="140" lengthAdjust="spacingAndGlyphs">Публичные данные v42</text>
+    <text x="180" y="232">credential-enclave-verify program</text>
+    <text x="180" y="257">Хеш файла · подпись релиза</text>
+    <text x="180" y="282">Доказательство журнала прозрачности</text>
+    <text x="180" y="305" font-size="12">Проверка по порядку · стоп при ошибке</text>
+    <text x="93" y="424">Оригинал: успех</text><text x="93" y="452">version 42 · ok</text><text x="93" y="479">Код завершения 0</text>
+    <text x="266" y="424">Добавлен один байт</text><text x="266" y="452" font-size="14.5">Ошибка source_hash</text><text x="266" y="479">Код завершения 1</text>
+    <text x="180" y="555" font-size="14.2">Аттестация production-узла отдельно</text>
+    <text x="180" y="583" font-size="15.0">Установленный бинарный iOS — отдельно</text>
+    <text x="180" y="616" font-size="11.1" textLength="300" lengthAdjust="spacingAndGlyphs">Те же входы, ветви и вывод локального теста</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M93 141V170H180V205" /><path d="M266 141V170H180" />
+    <path d="M180 315V355H93V395" /><path d="M180 355H266V395" />
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1040" viewBox="0 0 360 1040" role="img" aria-labelledby="title desc" xml:lang="fr">
+  <title id="title">Flux de la CLI Rust de somme des montants</title>
+  <desc id="desc">main possède les arguments et les prête à summarize. Une entrée vide échoue. Chaque valeur est analysée en u64 puis additionnée avec checked_add ; une erreur revient immédiatement. En cas de succès, Summary est renvoyé. main envoie le succès sur stdout avec le code 0 et les erreurs sur stderr avec le code 1.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1040" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" font-size="15" text-anchor="middle" fill="#1e352d">
+    <text x="180" y="31" font-size="17.0" font-weight="bold" textLength="280" lengthAdjust="spacingAndGlyphs">Propriété → emprunt → résultat</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="20" y="55" width="215" height="68" rx="8" />
+      <rect x="20" y="155" width="215" height="68" rx="8" />
+      <rect x="20" y="270" width="215" height="64" rx="8" />
+      <rect x="20" y="385" width="215" height="64" rx="8" />
+      <rect x="20" y="505" width="215" height="64" rx="8" />
+      <rect x="20" y="625" width="215" height="64" rx="8" />
+      <rect x="20" y="745" width="215" height="64" rx="8" />
+      <rect x="20" y="865" width="215" height="68" rx="8" />
+      <rect x="250" y="736" width="96" height="78" rx="8" fill="#f8e8dd" />
+      <rect x="250" y="865" width="96" height="68" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="127" y="82">main : collecter les arguments</text><text x="127" y="106">Possède Vec&lt;String&gt;</text>
+    <text x="127" y="181">summarize(&amp;inputs)</text><text x="127" y="205">Emprunter le slice de chaînes</text>
+    <text x="127" y="308">Entrée vide ?</text>
+    <text x="127" y="411">Une valeur suivante ?</text><text x="127" y="434">Lire les chaînes par référence</text>
+    <text x="127" y="531">Analyser en u64</text><text x="127" y="554">Vérifier nombre et intervalle</text>
+    <text x="127" y="651">Ajouter avec checked_add</text><text x="127" y="674">Vérifier le débordement</text>
+    <text x="127" y="772">Renvoyer Ok(Summary)</text><text x="127" y="795">Nombre et total</text>
+    <text x="127" y="891">main : sortie standard</text><text x="127" y="916">Code de sortie 0</text>
+    <text x="298" y="763">Renvoyer Err</text><text x="298" y="788" font-size="12">Retour anticipé</text>
+    <text x="298" y="891" font-size="12" textLength="82" lengthAdjust="spacingAndGlyphs">stderr</text><text x="298" y="916" font-size="12.7">Code de sortie 1</text>
+    <text x="148" y="362">Non</text><text x="148" y="479">Oui</text>
+    <text x="148" y="598">Succès</text><text x="283" y="296">Oui</text>
+    <text x="288" y="495">Échec</text><text x="288" y="617">Échec</text>
+    <text x="88" y="704" font-size="13">Succès : répéter</text>
+    <text x="55" y="740" font-size="12.1">Plus de valeurs</text>
+    <text x="116" y="975" font-size="11" textLength="140" lengthAdjust="spacingAndGlyphs">Répéter pour la valeur suivante</text>
+    <text x="180" y="1006" font-size="11" textLength="280" lengthAdjust="spacingAndGlyphs">Tous les chemins d’erreur rejoignent Err dans main.</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M127 123V155" /><path d="M127 223V270" /><path d="M127 334V385" />
+    <path d="M127 449V505" /><path d="M127 569V625" />
+    <path d="M20 417H8V777H20" />
+    <path d="M127 689V710H3V365H127V385" />
+    <path d="M235 302H337V736" />
+    <path d="M235 537H309V736" /><path d="M235 657H280V736" />
+    <path d="M127 809V865" /><path d="M298 814V865" />
+  </g>
+</svg>

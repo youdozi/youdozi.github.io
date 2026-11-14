@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1050" viewBox="0 0 360 1050" xml:lang="es" role="img" aria-labelledby="title desc">
+<title id="title">Flujo de proyectos, worktrees y navegador en Orca</title>
+<desc id="desc">Abre el repositorio en Orca, crea un worktree y comprueba ruta y rama. Pide al agente cambiar un archivo; ejecuta las pruebas en ese worktree y abre el servidor en el navegador. Compara el diff con la base y haz commit si cumple las condiciones; de lo contrario pide una corrección. Aislar archivos no equivale a limitar permisos.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1050" rx="16" fill="#f5f7f2"/>
+<g font-family="system-ui,sans-serif" text-anchor="middle" font-size="15" fill="#203a2c">
+<text x="180" y="36" font-size="20" font-weight="700">Flujo de trabajo en Orca</text>
+<rect x="24" y="62" width="312" height="72" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="90">Abrir repositorio Git con Add Repo</text><text x="180" y="116">main: código inicial y pruebas fijas</text>
+<path d="M180 134V166" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="171" width="312" height="88" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="199">Crear worktree para la tarea</text><text x="180" y="224">Comprobar carpeta y rama</text><text x="180" y="246" font-size="12" textLength="280" lengthAdjust="spacingAndGlyphs">La interfaz puede diferir del cwd del shell</text>
+<path d="M180 259V291" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="296" width="312" height="83" rx="9" fill="#faecd6" stroke="#bca274"/>
+<text x="180" y="324" textLength="280" lengthAdjust="spacingAndGlyphs">Pedir al agente cambiar un archivo</text><text x="180" y="349" textLength="280" lengthAdjust="spacingAndGlyphs">Definir alcance, permisos y finalización</text><text x="180" y="370" font-size="12" textLength="300" lengthAdjust="spacingAndGlyphs">El prompt no concede permisos de herramientas</text>
+<path d="M180 379V412" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="417" width="312" height="108" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="447">Ejecutar npm test en el mismo worktree</text><text x="180" y="473">Iniciar servidor → comprobar puerto</text><text x="180" y="499">Comprobar pantalla en navegador integrado</text>
+<path d="M180 525V558" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="563" width="312" height="82" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="592">Comparar diff y pruebas frente a main</text><text x="180" y="620">¿Cumplen los cambios la política?</text>
+<path d="M98 645V690" stroke="#496b57" marker-end="url(#arrow)"/><text x="70" y="674">Sí</text>
+<path d="M268 645V690" stroke="#496b57" marker-end="url(#arrow)"/><text x="297" y="674">No</text>
+<rect x="16" y="695" width="158" height="77" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="95" y="724" textLength="130" lengthAdjust="spacingAndGlyphs">Solo archivo cambiado</text><text x="95" y="751">Commit manual</text>
+<rect x="187" y="695" width="157" height="77" rx="9" fill="#f5e1df" stroke="#b88880"/>
+<text x="265" y="724">Concretar fallo</text><text x="265" y="751">Pedir corrección</text>
+<path d="M344 733H352V338H338" fill="none" stroke="#b88880" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="24" y="820" width="312" height="118" rx="9" fill="#fff" stroke="#a8b6a7"/>
+<text x="180" y="850" font-weight="700">Límites del aislamiento</text><text x="180" y="878">Worktree: archivos, rama y vista</text><text x="180" y="906" textLength="280" lengthAdjust="spacingAndGlyphs">Considerar puertos, DB, cuentas y permisos</text>
+<text x="180" y="992" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">Proyecto → ruta → resultados → revisión</text>
+</g></svg>

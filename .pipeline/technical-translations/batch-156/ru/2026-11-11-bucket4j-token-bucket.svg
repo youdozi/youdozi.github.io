@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1000" viewBox="0 0 360 1000" xml:lang="ru" role="img" aria-labelledby="title desc">
+<title id="title">Локальный лимит запросов Bucket4j</title>
+<desc id="desc">Создаётся singleton bucket Spring, используемый всеми демонстрационными запросами. Ёмкость и начальные токены равны 5; Greedy пополняет 5 за 10 секунд. Каждый запрос атомарно пытается расходовать токен с учётом времени. Успех возвращает 200, отказ — 429 и Retry-After с округлением вверх до секунд. Разные локальные корзины не разделяют лимит.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1000" rx="16" fill="#f5f7f2"/>
+<g fill="#203a2c" font-family="system-ui,sans-serif" text-anchor="middle" font-size="15">
+<text x="180" y="35" font-size="20" font-weight="700">Bucket4j: корзина токенов</text>
+<rect x="24" y="59" width="312" height="83" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="86">Создать bucket при запуске приложения</text><text x="180" y="109" textLength="300" lengthAdjust="spacingAndGlyphs">Повторно использовать singleton bean Spring</text><text x="180" y="132" font-size="13">Все запросы /demo делят одну корзину</text>
+<path d="M180 142V174" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="179" width="312" height="89" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="205">Ёмкость 5 · начальные токены 5</text><text x="180" y="230">Greedy: пополнение 5 за 10 секунд</text><text x="180" y="254">Расход 5 в t=0 → 1 в t=2s</text>
+<path d="M180 268V302" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="307" width="312" height="98" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="335">Пришёл запрос → учесть время</text><text x="180" y="361">Атомарно попытаться расходовать 1 токен</text><text x="180" y="388" font-size="12">tryConsumeAndReturnRemaining(1)</text>
+<path d="M100 405V453" stroke="#496b57" marker-end="url(#arrow)"/><text x="74" y="435">Успех</text>
+<path d="M265 405V453" stroke="#496b57" marker-end="url(#arrow)"/><text x="294" y="435">Недостаточно</text>
+<rect x="16" y="458" width="159" height="110" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="95" y="486">Расход 1 токена</text><text x="95" y="513">Перейти к работе</text><text x="95" y="542">Демо: HTTP 200</text>
+<rect x="187" y="458" width="157" height="110" rx="9" fill="#f9e8d9" stroke="#ba946e"/>
+<text x="265" y="486" textLength="126" lengthAdjust="spacingAndGlyphs">Не ждать пополнения</text><text x="265" y="513">HTTP 429</text><text x="265" y="542" textLength="126" lengthAdjust="spacingAndGlyphs">Retry-After: ожидание в секундах</text>
+<rect x="24" y="608" width="312" height="113" rx="9" fill="#fff" stroke="#a9b6a8"/>
+<text x="180" y="636" font-weight="700">Пополнение вычисляется по времени</text><text x="180" y="663">Не создавать корзину на каждый запрос</text><text x="180" y="689">Отдельный планировщик не нужен</text><text x="180" y="710" font-size="12">Диаграмма для одной локальной JVM</text>
+<rect x="24" y="759" width="312" height="147" rx="9" fill="#f4e2df" stroke="#b88880"/>
+<text x="180" y="789" font-weight="700">Две разные локальные корзины</text><text x="180" y="817" textLength="280" lengthAdjust="spacingAndGlyphs">Bucket A: начально 5 / Bucket B: 5</text><text x="180" y="846">Состояние не общее: до 10 разрешений</text><text x="180" y="875" textLength="300" lengthAdjust="spacingAndGlyphs">Для глобального лимита нужно общее хранилище</text>
+<text x="180" y="954" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">Ёмкость и скорость пополнения различаются</text>
+</g></svg>

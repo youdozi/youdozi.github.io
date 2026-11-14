@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1120" viewBox="0 0 360 1120" role="img" aria-labelledby="title desc" xml:lang="zh-CN">
+  <title id="title">Pickle 密钥委派和两个凭证使用边界</title>
+  <desc id="desc">在设置过程中，公共 iPhone 安全程序会创建密钥、验证节点证明并加密经过验证的 Nitro Enclave 的用户密钥。记录以加密方式存储。在使用过程中，节点在凭证使用之前验证主动委派和日志持久性。 OAuth 令牌保留在 API 请求的节点中；保管库密码和卡值以明文形式交给 worker，用于填写网页表单。后来的工作人员和人工智能结果屏蔽是一个单独的边界。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1120" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="18" font-weight="bold">密钥委派与使用</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="25" y="60" width="310" height="85" rx="8" />
+      <rect x="25" y="185" width="310" height="85" rx="8" />
+      <rect x="25" y="310" width="310" height="85" rx="8" />
+      <rect x="25" y="480" width="310" height="110" rx="8" />
+      <rect x="18" y="655" width="151" height="105" rx="8" />
+      <rect x="191" y="655" width="151" height="105" rx="8" fill="#f8e8dd" />
+      <rect x="18" y="805" width="151" height="85" rx="8" />
+      <rect x="191" y="805" width="151" height="85" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="180" y="86">iPhone：创建主密钥</text>
+    <text x="180" y="112">存储在 iCloud 钥匙串中</text>
+    <text x="180" y="135" font-size="13">协议区分派生密钥</text>
+    <text x="180" y="212" font-size="15.0">验证证明、度量和密钥</text>
+    <text x="180" y="238">失败 → 无密钥委派</text>
+    <text x="180" y="260" font-size="13">仅为已验证节点加密密钥</text>
+    <text x="180" y="337">服务器存储：加密记录</text>
+    <text x="180" y="365" font-size="15.0">Enclave 内存：有期限的用户密钥</text>
+    <text x="180" y="386" font-size="13">主密钥本身不被委托</text>
+    <text x="180" y="451" font-size="12.6">以下使用流程需要有效委托</text>
+    <text x="180" y="508" font-size="15.0">请求→检查委托并记录</text>
+    <text x="180" y="535">Enclave 解密 · 创建使用日志</text>
+    <text x="180" y="562" font-size="15.0">确认日志后使用或释放</text>
+    <text x="180" y="582" font-size="13">失败 → 不使用或释放凭证</text>
+    <text x="93" y="682">OAuth：转发</text>
+    <text x="93" y="710" font-size="14.5">令牌保留在节点中</text>
+    <text x="93" y="738" font-size="13.7">用于允许的 API</text>
+    <text x="266" y="682">Vault：release</text>
+    <text x="266" y="710" font-size="13.1">密码·卡值</text>
+    <text x="266" y="738" font-size="14.5">明文传给 worker</text>
+    <text x="93" y="834" font-size="14.5" textLength="139" lengthAdjust="spacingAndGlyphs">经 TLS 访问 API 提供商</text><text x="93" y="861" font-size="12.5">返回的响应数据</text>
+    <text x="266" y="834">worker → 网页表单</text><text x="266" y="861">节点外</text>
+    <text x="180" y="951" font-size="13.2" font-weight="bold">对 AI 结果屏蔽值：服务声明</text>
+    <text x="180" y="983">覆盖 worker 与整个应用</text>
+    <text x="180" y="1008" font-size="14.2">不能仅凭 Enclave 仓库证明</text>
+    <text x="180" y="1060" font-size="13">公共代码的概念总结</text>
+    <text x="180" y="1086" font-size="13">不是生产或应用实测</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M180 145V185" /><path d="M180 270V310" />
+    <path d="M180 590V620H93V655" /><path d="M180 620H266V655" />
+    <path d="M93 760V805" /><path d="M266 760V805" />
+  </g>
+  <path d="M20 420H340" stroke="#a7b7ac" stroke-dasharray="5 5" />
+</svg>

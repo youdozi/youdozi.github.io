@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1120" viewBox="0 0 360 1120" role="img" aria-labelledby="title desc" xml:lang="ja">
+  <title id="title">Pickle キーの委任と 二 つの資格情報の使用境界</title>
+  <desc id="desc">セットアップ中に、パブリック iPhone セキュリティ プログラムがキーを作成し、ノード構成証明を検証し、検証済みの Nitro Enclave のユーザー キーを暗号化します。記録は暗号化されて保存されます。使用中、ノードは資格情報を使用する前にアクティブな委任とログの永続性を検証します。 OAuth トークンは API リクエストのためにノードに残ります。ボールトのパスワードとカードの値は、Web フォームに入力する worker に平文で渡されます。後のワーカーと AI 結果のマスキングは別の境界になります。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1120" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="18" font-weight="bold">キーの委任と使用</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="25" y="60" width="310" height="85" rx="8" />
+      <rect x="25" y="185" width="310" height="85" rx="8" />
+      <rect x="25" y="310" width="310" height="85" rx="8" />
+      <rect x="25" y="480" width="310" height="110" rx="8" />
+      <rect x="18" y="655" width="151" height="105" rx="8" />
+      <rect x="191" y="655" width="151" height="105" rx="8" fill="#f8e8dd" />
+      <rect x="18" y="805" width="151" height="85" rx="8" />
+      <rect x="191" y="805" width="151" height="85" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="180" y="86">iPhone: マスターキーを作成する</text>
+    <text x="180" y="112">iCloud キーチェーンに保存する</text>
+    <text x="180" y="135" font-size="13">プロトコルは派生キーを区別します</text>
+    <text x="180" y="212" font-size="15.0">アテステーション・測定・キーを検証</text>
+    <text x="180" y="238">失敗 → キーの委任なし</text>
+    <text x="180" y="260" font-size="13">検証済みノードだけにキーを暗号化</text>
+    <text x="180" y="337" textLength="139" lengthAdjust="spacingAndGlyphs">サーバーストレージ: 暗号化されたレコード</text>
+    <text x="180" y="365" font-size="15.0">Enclave 内：期限付きユーザーキー</text>
+    <text x="180" y="386" font-size="13">マスターキー自体は委任されません</text>
+    <text x="180" y="451" font-size="12.6">以下の使用フローには有効な委任が必要です</text>
+    <text x="180" y="508" font-size="15.0">リクエスト → 委任の確認と記録</text>
+    <text x="180" y="535">Enclave が復号・利用ログ作成</text>
+    <text x="180" y="562" font-size="15.0">ログ確認後に使用・解放</text>
+    <text x="180" y="582" font-size="13">失敗 → 使用・解放なし</text>
+    <text x="93" y="682">OAuth: 転送</text>
+    <text x="93" y="710" font-size="14.5" textLength="139" lengthAdjust="spacingAndGlyphs">トークンはノード内に残る</text>
+    <text x="93" y="738" font-size="13.7" textLength="139" lengthAdjust="spacingAndGlyphs">許可された API に使用される</text>
+    <text x="266" y="682">Vault：release</text>
+    <text x="266" y="710" font-size="13.1">パスワード・カード値</text>
+    <text x="266" y="738" font-size="14.5">平文を worker に渡す</text>
+    <text x="93" y="834" font-size="14.5">TLS で API 提供者へ</text><text x="93" y="861" font-size="12.5">返される応答データ</text>
+    <text x="266" y="834" textLength="139" lengthAdjust="spacingAndGlyphs">worker → Web フォーム</text><text x="266" y="861">ノードの外側</text>
+    <text x="180" y="951" font-size="13.2" font-weight="bold">AI 結果の値をマスク：サービスの説明</text>
+    <text x="180" y="983">worker とアプリ全体への適用は</text>
+    <text x="180" y="1008" font-size="14.2">Enclave リポジトリだけでは証明不可</text>
+    <text x="180" y="1060" font-size="13">公共コードの概念的な概要</text>
+    <text x="180" y="1086" font-size="13">本番環境やアプリの検証ではありません</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M180 145V185" /><path d="M180 270V310" />
+    <path d="M180 590V620H93V655" /><path d="M180 620H266V655" />
+    <path d="M93 760V805" /><path d="M266 760V805" />
+  </g>
+  <path d="M20 420H340" stroke="#a7b7ac" stroke-dasharray="5 5" />
+</svg>

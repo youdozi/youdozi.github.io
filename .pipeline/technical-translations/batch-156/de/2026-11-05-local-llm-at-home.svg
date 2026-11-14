@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="936" viewBox="0 0 360 936" role="img" aria-labelledby="title description" xml:lang="de">
+<title id="title">Ein lokales LLM zu Hause</title>
+<desc id="description">Ollama und Modell installieren, wobei externe Kommunikation nötig ist. Eine eigene Konfiguration erstellen, eine gewählte Notiz prüfen und an die lokale API senden. Antwort validieren und mit dem Original vergleichen. Ein lokales Modell und deaktivierte Cloud-Funktionen werden vorausgesetzt.</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#475569" /></marker></defs>
+<rect width="360" height="936" rx="12" fill="#f8fafc" />
+<g font-family="system-ui,sans-serif" text-anchor="middle" fill="#0f172a">
+<text x="180" y="32" font-size="12" font-weight="600">Lokales LLM zu Hause</text>
+<rect x="16" y="64" width="328" height="86" rx="10" fill="#dbeafe" stroke="#64748b" />
+<text x="180" y="99" font-size="12">Ollama installieren / Modell laden</text>
+<text x="180" y="123" font-size="12">Vorbereitung: externe Kommunikation</text>
+<path d="M180 150V176" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+<rect x="16" y="183" width="328" height="86" rx="10" fill="#dbeafe" stroke="#64748b" />
+<text x="180" y="218" font-size="12">Eigene Konfiguration mit Modelfile</text>
+<text x="180" y="242" font-size="12">home-assistant</text>
+<path d="M180 269V295" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+<rect x="16" y="302" width="328" height="86" rx="10" fill="#fef3c7" stroke="#64748b" />
+<text x="180" y="337" font-size="12">Notiz: UTF-8, höchstens 2000 Zeichen</text>
+<text x="180" y="361" font-size="12">Leer oder zu lang: Fehler beenden</text>
+<path d="M180 388V414" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+<rect x="16" y="421" width="328" height="86" rx="10" fill="#dcfce7" stroke="#64748b" />
+<text x="180" y="456" font-size="12">POST an lokale API</text>
+<text x="180" y="480" font-size="12">127.0.0.1:11434/api/chat</text>
+<path d="M180 507V533" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+<rect x="16" y="540" width="328" height="86" rx="10" fill="#dcfce7" stroke="#64748b" />
+<text x="180" y="575" font-size="12">Inferenz des lokalen Modells</text>
+<text x="180" y="599" font-size="12">CPU/GPU-Nutzung geräteabhängig</text>
+<path d="M180 626V652" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+<rect x="16" y="659" width="328" height="86" rx="10" fill="#fef3c7" stroke="#64748b" />
+<text x="180" y="694" font-size="12">HTTP, Abschluss und Ausgabelänge prüfen</text>
+<text x="180" y="718" font-size="12">Bei Fehler beenden</text>
+<path d="M180 745V771" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+<rect x="16" y="778" width="328" height="86" rx="10" fill="#dcfce7" stroke="#64748b" />
+<text x="180" y="813" font-size="12">Ergebnis mit Originalnotiz vergleichen</text>
+<text x="180" y="837" font-size="12">Keine Dateiänderung oder Befehle</text>
+<text x="180" y="918" font-size="13">Lokales Modell und Cloud aus nötig</text>
+</g></svg>

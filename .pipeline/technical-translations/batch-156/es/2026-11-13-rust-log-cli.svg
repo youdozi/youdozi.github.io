@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1170" viewBox="0 0 360 1170" role="img" aria-labelledby="title desc" xml:lang="es">
+  <title id="title">CLI de Rust para agregar estados HTTP</title>
+  <desc id="desc">main abre un archivo y analyze lee cada línea con un límite de 4097 bytes. Si hay error de lectura, UTF-8 inválido o longitud superior a 4096 bytes, falla. Los registros válidos incrementan el estado y los inválidos su contador; al llegar a EOF main imprime los totales ordenados y devuelve 0, 1 o 2 según el resultado.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1170" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="19" font-weight="bold">Archivo → recuento → salida</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="25" y="60" width="310" height="74" rx="8" />
+      <rect x="25" y="174" width="310" height="100" rx="8" />
+      <rect x="25" y="314" width="310" height="100" rx="8" />
+      <rect x="25" y="454" width="310" height="74" rx="8" />
+      <rect x="25" y="568" width="145" height="90" rx="8" />
+      <rect x="190" y="568" width="145" height="90" rx="8" />
+      <rect x="25" y="740" width="310" height="82" rx="8" />
+      <rect x="25" y="862" width="310" height="82" rx="8" />
+      <rect x="25" y="1010" width="310" height="100" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="180" y="90">main: comprobar argumento y abrir archivo</text>
+    <text x="180" y="116">File → BufReader → analyze</text>
+    <text x="180" y="202">Leer hasta 4097 bytes de la línea</text>
+    <text x="180" y="229">Fallo: Err · cero: EOF</text>
+    <text x="180" y="255">Si no, comprobar longitud y UTF-8 ↓</text>
+    <text x="180" y="342">¿Más de 4096 bytes?</text>
+    <text x="180" y="369">¿UTF-8 inválido?</text>
+    <text x="180" y="396">Cualquiera devuelve Err</text>
+    <text x="180" y="484">Comprobar estado y ruta</text>
+    <text x="180" y="510">Estado 100–599 · ruta empieza por /</text>
+    <text x="97" y="595">Formato válido</text><text x="97" y="620">valid + 1</text><text x="97" y="644">Estado + 1</text>
+    <text x="262" y="595">Formato inválido</text><text x="262" y="620">invalid + 1</text><text x="262" y="644">No guardar línea</text>
+    <text x="180" y="698">Ambas rutas leen la línea siguiente ↑</text>
+    <text x="180" y="768">EOF: Ok(Stats) → main</text><text x="180" y="797">Solo entonces iniciar la salida</text>
+    <text x="180" y="890">Estados en orden · flush</text><text x="180" y="919">invalid = 0: código 0 / resto: código 1</text>
+    <text x="180" y="1040" font-size="13.2" textLength="300" lengthAdjust="spacingAndGlyphs">Error: argumento · archivo · análisis · salida</text>
+    <text x="180" y="1069">main informa por stderr · código 2</text>
+    <text x="180" y="1095">Sin resumen si falla el análisis</text>
+    <text x="180" y="1144" font-size="13">EOF y errores se resumen por separado</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M180 134V174" /><path d="M180 274V314" /><path d="M180 414V454" />
+    <path d="M180 528V548H97V568" /><path d="M180 548H262V568" />
+    <path d="M97 658V675H12V224H25" /><path d="M262 658V675H97" />
+    <path d="M335 250H348V781H335" /><path d="M180 822V862" />
+  </g>
+</svg>

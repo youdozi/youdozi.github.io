@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1170" viewBox="0 0 360 1170" role="img" aria-labelledby="title desc" xml:lang="ja">
+  <title id="title">Rust ログ CLI 処理フロー</title>
+  <desc id="desc">main は 一 つのファイル引数をチェックし、それを開いて分析するために BufReader を渡します。各反復は最大で 4097 バイトを消費します。読み取りエラー、長すぎる行、無効な UTF-8 は失敗します。有効なレコードと無効なレコードは別々にカウントされます。 EOF で、メインはソートされた合計を出力し、コード 0 または 1 を返します。失敗の戻りコード 2。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1170" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="19" font-weight="bold">ファイル → カウント → 終了ステータス</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="25" y="60" width="310" height="74" rx="8" />
+      <rect x="25" y="174" width="310" height="100" rx="8" />
+      <rect x="25" y="314" width="310" height="100" rx="8" />
+      <rect x="25" y="454" width="310" height="74" rx="8" />
+      <rect x="25" y="568" width="145" height="90" rx="8" />
+      <rect x="190" y="568" width="145" height="90" rx="8" />
+      <rect x="25" y="740" width="310" height="82" rx="8" />
+      <rect x="25" y="862" width="310" height="82" rx="8" />
+      <rect x="25" y="1010" width="310" height="100" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="180" y="90">main：引数を確認・ファイルを開く</text>
+    <text x="180" y="116">ファイル → BufReader → 分析</text>
+    <text x="180" y="202">行から最大 4097 バイトを読み取る</text>
+    <text x="180" y="229">読取失敗：Err・ゼロ：EOF</text>
+    <text x="180" y="255">それ以外の場合は長さを確認し、UTF-8 ↓</text>
+    <text x="180" y="342">4096 バイトを超えていますか?</text>
+    <text x="180" y="369">UTF-8 が無効ですか?</text>
+    <text x="180" y="396">どちらの条件も Err を返す</text>
+    <text x="180" y="484">ステータスコードとパスを確認する</text>
+    <text x="180" y="510" textLength="298" lengthAdjust="spacingAndGlyphs">ステータス 100 ～ 599 · パスは / で始まります</text>
+    <text x="97" y="595">有効な形式</text><text x="97" y="620">valid + 1</text><text x="97" y="644">ステータス数 + 1</text>
+    <text x="262" y="595">無効な形式</text><text x="262" y="620">invalid + 1</text><text x="262" y="644">行は保存しない</text>
+    <text x="180" y="698">どちらのパスも次の行を読み取ります ↑</text>
+    <text x="180" y="768">EOF：Ok(Stats) → main</text><text x="180" y="797">その後のみ出力を開始します</text>
+    <text x="180" y="890">状態別件数を順に出力・flush</text><text x="180" y="919">invalid = 0：コード 0 / 他：1</text>
+    <text x="180" y="1040" font-size="13.2">エラー: 引数 · ファイル · 分析 · 出力</text>
+    <text x="180" y="1069">main が stderr に報告・コード 2</text>
+    <text x="180" y="1095">解析失敗後は合計を出力しない</text>
+    <text x="180" y="1144" font-size="13">EOF とエラーは個別にまとめられます</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M180 134V174" /><path d="M180 274V314" /><path d="M180 414V454" />
+    <path d="M180 528V548H97V568" /><path d="M180 548H262V568" />
+    <path d="M97 658V675H12V224H25" /><path d="M262 658V675H97" />
+    <path d="M335 250H348V781H335" /><path d="M180 822V862" />
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640" viewBox="0 0 360 640" role="img" aria-labelledby="title desc" xml:lang="fr">
+  <title id="title">Vérifier le programme de sécurité public</title>
+  <desc id="desc">Le JS public et la preuve de version sont soumis au vérificateur. Il vérifie hachage, signature et preuve du journal de transparence. L’original v42 renvoie 0 ; un octet ajouté provoque source_hash et le code 1. Le nœud de production et l’app installée sont vérifiés séparément.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="640" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="16.3" font-weight="bold">Vérifier le programme public</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="18" y="65" width="151" height="76" rx="8" />
+      <rect x="191" y="65" width="151" height="76" rx="8" />
+      <rect x="25" y="205" width="310" height="110" rx="8" />
+      <rect x="18" y="395" width="151" height="100" rx="8" />
+      <rect x="191" y="395" width="151" height="100" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="93" y="96">Programme JS</text><text x="93" y="121" font-size="13.4" textLength="140" lengthAdjust="spacingAndGlyphs">Original ou modifié</text>
+    <text x="266" y="96" font-size="11.6" textLength="140" lengthAdjust="spacingAndGlyphs">Preuve de version JSON</text><text x="266" y="121" font-size="12.1">Données publiques v42</text>
+    <text x="180" y="232">credential-enclave-verify program</text>
+    <text x="180" y="257">Hachage · signature de version</text>
+    <text x="180" y="282">Preuve du journal de transparence</text>
+    <text x="180" y="305" font-size="12">Dans l’ordre · arrêt à l’échec</text>
+    <text x="93" y="424" font-size="15.0" textLength="140" lengthAdjust="spacingAndGlyphs">Original : succès</text><text x="93" y="452">version 42 · ok</text><text x="93" y="479">Code de sortie 0</text>
+    <text x="266" y="424">Un octet ajouté</text><text x="266" y="452" font-size="14.5">Échec source_hash</text><text x="266" y="479">Code de sortie 1</text>
+    <text x="180" y="555" font-size="14.2">Attestation de production séparée</text>
+    <text x="180" y="583" font-size="13.4" textLength="280" lengthAdjust="spacingAndGlyphs">Binaire iOS installé : contrôle séparé</text>
+    <text x="180" y="616" font-size="11.1">Mêmes entrées et sorties que le test local</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M93 141V170H180V205" /><path d="M266 141V170H180" />
+    <path d="M180 315V355H93V395" /><path d="M180 355H266V395" />
+  </g>
+</svg>

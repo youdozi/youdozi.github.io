@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1000" viewBox="0 0 360 1000" xml:lang="ja" role="img" aria-labelledby="title desc">
+<title id="title">Bucket4j ローカル トークン バケット レート制限</title>
+<desc id="desc">すべてのデモリクエストで再利用される Spring シングルトンバケットを作成します。容量と初期トークンは 5 です。 Greedy は 10 秒かけて 5 を補充します。各リクエストは、経過時間を使用してアトミックに 一 つのトークンの消費を試みます。成功すると 200 が返されます。拒否された場合は 429 が返され、Retry-After は秒単位に切り上げられます。独立したローカル バケットは制限を共有しません。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1000" rx="16" fill="#f5f7f2"/>
+<g fill="#203a2c" font-family="system-ui,sans-serif" text-anchor="middle" font-size="15">
+<text x="180" y="35" font-size="20" font-weight="700">Bucket4j トークンバケット</text>
+<rect x="24" y="59" width="312" height="83" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="86">起動時にバケットを作成</text><text x="180" y="109">Spring シングルトン Bean として再利用する</text><text x="180" y="132" font-size="13">すべての /demo リクエストはバケットを共有します</text>
+<path d="M180 142V174" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="179" width="312" height="89" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="205">容量 5 · 初期トークン 5</text><text x="180" y="230">Greedy：10 秒で 5 を補充</text><text x="180" y="254">t=0 で 5 を消費 → t=2s で 1</text>
+<path d="M180 268V302" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="307" width="312" height="98" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="335">リクエスト到着 → 経過時間を適用</text><text x="180" y="361">1 トークンの消費をアトミックに試行します</text><text x="180" y="388" font-size="12">tryConsumeAndReturnRemaining(1)</text>
+<path d="M100 405V453" stroke="#496b57" marker-end="url(#arrow)"/><text x="74" y="435">成功</text>
+<path d="M265 405V453" stroke="#496b57" marker-end="url(#arrow)"/><text x="294" y="435">不十分</text>
+<rect x="16" y="458" width="159" height="110" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="95" y="486">1 トークンを消費する</text><text x="95" y="513">業務処理に進む</text><text x="95" y="542">デモ: HTTP 200</text>
+<rect x="187" y="458" width="157" height="110" rx="9" fill="#f9e8d9" stroke="#ba946e"/>
+<text x="265" y="486" textLength="126" lengthAdjust="spacingAndGlyphs">補充を待たずに拒否</text><text x="265" y="513">HTTP 429</text><text x="265" y="542" textLength="126" lengthAdjust="spacingAndGlyphs">Retry-After：待機秒数</text>
+<rect x="24" y="608" width="312" height="113" rx="9" fill="#fff" stroke="#a9b6a8"/>
+<text x="180" y="636" font-weight="700">補充は経過時間から計算されます</text><text x="180" y="663">リクエストごとにバケットを作成しない</text><text x="180" y="689">個別のスケジューラは登録されていません</text><text x="180" y="710" font-size="12">この図は単一のローカル JVM をカバーしています。</text>
+<rect x="24" y="759" width="312" height="147" rx="9" fill="#f4e2df" stroke="#b88880"/>
+<text x="180" y="789" font-weight="700">二つの独立したローカルバケット</text><text x="180" y="817" textLength="280" lengthAdjust="spacingAndGlyphs">バケット A: 初期 5 / バケット B: 初期 5</text><text x="180" y="846">共有状態なし: 合計 10 まで許可されます</text><text x="180" y="875">全体の制限には分散ストアが必要</text>
+<text x="180" y="954" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">容量と補充率は別のポリシー値です</text>
+</g></svg>

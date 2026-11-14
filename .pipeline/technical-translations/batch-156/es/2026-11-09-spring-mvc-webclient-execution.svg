@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1110" viewBox="0 0 360 1110" role="img" aria-labelledby="title desc" xml:lang="es">
+<title id="title">Spring MVC y rutas WebClient</title>
+<desc id="desc">La ruta block deja esperando al hilo Servlet mientras Reactor Netty realiza HTTP. Al devolver Mono, MVC se suscribe y comienza el procesamiento asíncrono; las ramas pueden solaparse y el resultado se vuelve a despachar para escribir la respuesta.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#53675c"/></marker></defs>
+<rect width="360" height="1110" fill="#f7f8f4"/>
+<g font-family="sans-serif" text-anchor="middle" fill="#20342a">
+<text x="180" y="30" font-size="12">MVC + WebClient</text>
+<text x="180" y="58" font-size="12">Mismo cliente HTTP, distinta espera</text>
+<text x="180" y="96" font-size="12">① Ruta que devuelve .block()</text>
+<rect x="30" y="114" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="140" font-size="12">Hilo Servlet: fetch(&quot;block&quot;)</text>
+<path d="M180 162 L180 185" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="185" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="211" font-size="12">block() se suscribe a Mono</text>
+<path d="M130 233 L90 263" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M230 233 L270 263" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="18" y="263" width="154" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="95.0" y="289" font-size="12" textLength="130" lengthAdjust="spacingAndGlyphs">Hilo de solicitud Servlet</text>
+<text x="95.0" y="309" font-size="12" textLength="130" lengthAdjust="spacingAndGlyphs">espera el resultado</text>
+<rect x="188" y="263" width="154" height="68" rx="8" fill="#e5eef8" stroke="#53675c"/>
+<text x="265.0" y="289" font-size="12">Reactor Netty</text>
+<text x="265.0" y="309" font-size="12">HTTP externo · map</text>
+<path d="M265 331 L265 353" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M265 353 L95 353" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M95 353 L95 376" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="376" width="300" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="402" font-size="12">El hilo de solicitud se reanuda</text>
+<text x="180.0" y="422" font-size="12">MVC serializa y escribe la respuesta</text>
+<text x="180" y="479" font-size="12">② Ruta que devuelve Mono</text>
+<rect x="30" y="496" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="522" font-size="12">Servlet: Mono de fetch(&quot;async&quot;)</text>
+<path d="M180 544 L180 568" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="568" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="594" font-size="12">MVC adapta el tipo · suscripción a Mono</text>
+<path d="M130 616 L90 646" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M230 616 L270 646" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="18" y="646" width="154" height="68" rx="8" fill="#e5eef8" stroke="#53675c"/>
+<text x="95.0" y="672" font-size="12">Reactor Netty</text>
+<text x="95.0" y="692" font-size="12">HTTP externo · map</text>
+<rect x="188" y="646" width="154" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="265.0" y="672" font-size="12" textLength="130" lengthAdjust="spacingAndGlyphs">Iniciar Servlet async</text>
+<text x="265.0" y="692" font-size="12" textLength="130" lengthAdjust="spacingAndGlyphs">Se libera el hilo inicial</text>
+<text x="180" y="740" font-size="12">Ambas ramas pueden solaparse</text>
+<path d="M95 714 L95 769" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M265 714 L265 769" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M95 769 L180 797" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M265 769 L180 797" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="797" width="300" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="823" font-size="12">Señal de resultado o error</text>
+<text x="180.0" y="843" font-size="12">MVC vuelve a despachar</text>
+<path d="M180 865 L180 889" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="889" width="300" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="915" font-size="12">Hilo del contenedor Servlet</text>
+<text x="180.0" y="935" font-size="12">Serializar y escribir respuesta</text>
+<text x="180" y="1005" font-size="12">Verde: MVC / Servlet</text>
+<text x="180" y="1030" font-size="12">Azul: callback Reactor Netty</text>
+<text x="180" y="1070" font-size="13" textLength="300" lengthAdjust="spacingAndGlyphs">Los colores no indican nombres de hilo fijos</text>
+</g></svg>

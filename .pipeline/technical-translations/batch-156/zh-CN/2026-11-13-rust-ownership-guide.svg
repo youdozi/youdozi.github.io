@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1040" viewBox="0 0 360 1040" role="img" aria-labelledby="title desc" xml:lang="zh-CN">
+  <title id="title">Rust 量 CLI 处理流程</title>
+  <desc id="desc">main 拥有其参数字符串并借用它们进行总结。空输入失败。每个值被解析为u64并用checked_add累加；错误立即返回。成功时返回摘要。 main 将成功发送到 stdout，并退出 0；将错误发送到 stderr，并退出 1。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1040" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" font-size="15" text-anchor="middle" fill="#1e352d">
+    <text x="180" y="31" font-size="19" font-weight="bold">所有权→借用→结果</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="20" y="55" width="215" height="68" rx="8" />
+      <rect x="20" y="155" width="215" height="68" rx="8" />
+      <rect x="20" y="270" width="215" height="64" rx="8" />
+      <rect x="20" y="385" width="215" height="64" rx="8" />
+      <rect x="20" y="505" width="215" height="64" rx="8" />
+      <rect x="20" y="625" width="215" height="64" rx="8" />
+      <rect x="20" y="745" width="215" height="64" rx="8" />
+      <rect x="20" y="865" width="215" height="68" rx="8" />
+      <rect x="250" y="736" width="96" height="78" rx="8" fill="#f8e8dd" />
+      <rect x="250" y="865" width="96" height="68" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="127" y="82">main：收集参数</text><text x="127" y="106">拥有 Vec&lt;String&gt;</text>
+    <text x="127" y="181">summarize(&amp;inputs)</text><text x="127" y="205">借用字符串切片</text>
+    <text x="127" y="308">输入内容是否为空？</text>
+    <text x="127" y="411">还有下一个值吗？</text><text x="127" y="434">通过引用读取每个字符串</text>
+    <text x="127" y="531">解析为 u64</text><text x="127" y="554">检查数值和范围</text>
+    <text x="127" y="651">用 checked_add 累加</text><text x="127" y="674">检查总和溢出</text>
+    <text x="127" y="772">返回 Ok(Summary)</text><text x="127" y="795">计数和总计</text>
+    <text x="127" y="891">main：标准输出</text><text x="127" y="916">退出代码 0</text>
+    <text x="298" y="763">返回 Err</text><text x="298" y="788" font-size="12">提前返回</text>
+    <text x="298" y="891">标准错误</text><text x="298" y="916">退出代码 1</text>
+    <text x="148" y="362">不</text><text x="148" y="479">是的</text>
+    <text x="148" y="598">成功</text><text x="283" y="296">是的</text>
+    <text x="288" y="495">失败</text><text x="288" y="617">失败</text>
+    <text x="88" y="704" font-size="13">成功：重复</text>
+    <text x="55" y="740" font-size="13">没有更多值</text>
+    <text x="116" y="975">重复下一个值</text>
+    <text x="180" y="1006" font-size="12.6">所有错误路径汇入 main 的 Err 分支</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M127 123V155" /><path d="M127 223V270" /><path d="M127 334V385" />
+    <path d="M127 449V505" /><path d="M127 569V625" />
+    <path d="M20 417H8V777H20" />
+    <path d="M127 689V710H3V365H127V385" />
+    <path d="M235 302H337V736" />
+    <path d="M235 537H309V736" /><path d="M235 657H280V736" />
+    <path d="M127 809V865" /><path d="M298 814V865" />
+  </g>
+</svg>
