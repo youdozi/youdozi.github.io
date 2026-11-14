@@ -25,3 +25,37 @@ test('public RSS retains news and follow-up facts while excluding editorial revi
   for(const value of ['A qualified statement.','A later restriction applies.','2025-12-01','https://example.com/source'])assert.ok(feed.includes(value));
   assert.ok(!feed.includes('PRIVATE_REVIEW_ADVICE'));
 });
+
+test('body links select published local editions and preserve unavailable, section and external links',async()=>{
+  const {mkdtemp,mkdir,writeFile,rm}=await import('node:fs/promises');
+  const {tmpdir}=await import('node:os');
+  const {join}=await import('node:path');
+  const {pathToFileURL}=await import('node:url');
+  const {satteri}=await import('@astrojs/markdown-satteri');
+  const {localizedArticleLinks}=await import('./localized-article-links.mjs');
+  const base=await mkdtemp(join(tmpdir(),'localized-article-links-'));
+  async function article(lang,key,slug,extra={}){
+    const directory=lang==='en'?'posts':'technical-translations';
+    const path=join(base,'src/content',directory,lang,`${key}.md`);
+    await mkdir(join(base,'src/content',directory,lang),{recursive:true});
+    await writeFile(path,`---\n${JSON.stringify({kind:'post',language:lang,translationKey:key,routeSlug:slug,publishedAt:'2026-01-01',state:'approved',...extra})}\n---\nBody`);
+    return pathToFileURL(path);
+  }
+  try{
+    const fileURL=await article('ja','source','source');
+    await article('en','topic','original');await article('ja','topic','localized');
+    await article('en','missing','missing');
+    await article('en','future','future');await article('ja','future','future',{publishedAt:'2999-01-01'});
+    await article('en','example','example');await article('ja','example','example',{reviewStatus:'example'});
+    await article('en','unapproved','unapproved');await article('ja','unapproved','unapproved',{state:'draft'});
+    const renderer=await satteri({hastPlugins:[localizedArticleLinks(base,new Date('2026-11-14'))]}).createRenderer({syntaxHighlight:false});
+    const input='[local](/en/posts/original/?from=guide)\n\n[absolute](https://youdozi.github.io/en/posts/original/)\n\n[section](/en/posts/original/#setup)\n\n[missing](/en/posts/missing/)\n\n[future](/en/posts/future/)\n\n[example](/en/posts/example/)\n\n[draft](/en/posts/unapproved/)\n\n[external](https://example.com/en/posts/original/)\n\n[relative](//example.com/en/posts/original/)\n\n`[literal](/en/posts/original/)`\n\n```html\n<a href="/en/posts/original/">literal</a>\n```';
+    const html=(await renderer.render(input,{fileURL})).code;
+    assert.ok(html.includes('href="/ja/posts/localized/?from=guide"'));
+    assert.ok(html.includes('href="https://youdozi.github.io/ja/posts/localized/"'));
+    for(const href of ['/en/posts/original/#setup','/en/posts/missing/','/en/posts/future/','/en/posts/example/','/en/posts/unapproved/','https://example.com/en/posts/original/','//example.com/en/posts/original/'])assert.ok(html.includes(`href="${href}"`),href);
+    assert.ok(html.includes('[literal](/en/posts/original/)'));
+    assert.ok(html.includes('href="/en/posts/original/"'));
+    assert.ok((await renderer.render('[kept](/en/posts/original/)')).code.includes('href="/en/posts/original/"'));
+  }finally{await rm(base,{recursive:true,force:true});}
+});

@@ -1,9 +1,10 @@
 import {satteri} from '@astrojs/markdown-satteri';
 import {readerMarkdown} from '../src/lib/reader-markdown.ts';
 import {articleImagePlugin} from './article-images.mjs';
+import {localizedArticleLinks} from './localized-article-links.mjs';
 
 export function readerMarkdownProcessor() {
-  const processor = satteri({hastPlugins:[articleImagePlugin()]});
+  const processor = satteri({hastPlugins:[articleImagePlugin(),localizedArticleLinks()]});
   return {
     name: 'reader-markdown',
     options: processor.options,
