@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1170" viewBox="0 0 360 1170" role="img" aria-labelledby="title desc" xml:lang="en">
+  <title id="title">Rust log CLI processing flow</title>
+  <desc id="desc">main checks one file argument, opens it and passes a BufReader to analyze. Each iteration consumes at most 4097 bytes; read errors, overlong lines and invalid UTF-8 fail. Valid and invalid records are counted separately. At EOF main prints sorted totals and returns code 0 or 1; failures return code 2.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1170" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="19" font-weight="bold">File → count → exit status</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="25" y="60" width="310" height="74" rx="8" />
+      <rect x="25" y="174" width="310" height="100" rx="8" />
+      <rect x="25" y="314" width="310" height="100" rx="8" />
+      <rect x="25" y="454" width="310" height="74" rx="8" />
+      <rect x="25" y="568" width="145" height="90" rx="8" />
+      <rect x="190" y="568" width="145" height="90" rx="8" />
+      <rect x="25" y="740" width="310" height="82" rx="8" />
+      <rect x="25" y="862" width="310" height="82" rx="8" />
+      <rect x="25" y="1010" width="310" height="100" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="180" y="90">main: check argument · open file</text>
+    <text x="180" y="116">File → BufReader → analyze</text>
+    <text x="180" y="202">Read up to 4097 bytes of line</text>
+    <text x="180" y="229">Read failure: Err · zero: EOF</text>
+    <text x="180" y="255">Otherwise check length and UTF-8 ↓</text>
+    <text x="180" y="342">Over 4096 bytes?</text>
+    <text x="180" y="369">Invalid UTF-8?</text>
+    <text x="180" y="396">Either condition returns Err</text>
+    <text x="180" y="484">Check status code and path</text>
+    <text x="180" y="510">Status 100–599 · path starts with /</text>
+    <text x="97" y="595">Valid format</text><text x="97" y="620">valid + 1</text><text x="97" y="644">Status count + 1</text>
+    <text x="262" y="595">Invalid format</text><text x="262" y="620">invalid + 1</text><text x="262" y="644">Do not store line</text>
+    <text x="180" y="698">Both paths read the next line ↑</text>
+    <text x="180" y="768">EOF: Ok(Stats) → main</text><text x="180" y="797">Only then start output</text>
+    <text x="180" y="890">Print status counts in order · flush</text><text x="180" y="919">invalid = 0: code 0 / else: code 1</text>
+    <text x="180" y="1040" font-size="13.2">Error: argument · file · analysis · output</text>
+    <text x="180" y="1069">main reports to stderr · code 2</text>
+    <text x="180" y="1095">No totals after analysis failure</text>
+    <text x="180" y="1144" font-size="13">EOF and errors are summarized separately</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M180 134V174" /><path d="M180 274V314" /><path d="M180 414V454" />
+    <path d="M180 528V548H97V568" /><path d="M180 548H262V568" />
+    <path d="M97 658V675H12V224H25" /><path d="M262 658V675H97" />
+    <path d="M335 250H348V781H335" /><path d="M180 822V862" />
+  </g>
+</svg>

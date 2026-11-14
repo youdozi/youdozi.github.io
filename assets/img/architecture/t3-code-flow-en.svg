@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1050" viewBox="0 0 360 1050" xml:lang="en" role="img" aria-labelledby="title desc">
+<title id="title">Verifying a small code change in T3 Code</title>
+<desc id="desc">Save starter code and fixed tests in Git and observe the failures. Select a project and authenticated provider in T3 Code and send a bounded prompt in Supervised mode. Check and approve the agent’s file changes and test commands. Compare the diff, original tests and actual results; request corrections or commit yourself. AI output is illustrative and the reference solution was tested separately.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1050" rx="16" fill="#f5f7f2"/>
+<g font-family="system-ui,sans-serif" text-anchor="middle" font-size="15" fill="#203a2c">
+<text x="180" y="35" font-size="20" font-weight="700">T3 Code exercise flow</text>
+<rect x="24" y="58" width="312" height="88" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="86">Starter code + fixed tests + Git</text><text x="180" y="111">npm test: 8 of 19 fail</text><text x="180" y="134" font-size="12">Actual run before the reference solution</text>
+<path d="M180 146V179" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="184" width="312" height="96" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="212">T3 Code: select project and provider</text><text x="180" y="238">Check Supervised permission mode</text><text x="180" y="263" textLength="280" lengthAdjust="spacingAndGlyphs">Prompt with scope and completion criteria</text>
+<path d="M180 280V315" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="320" width="312" height="105" rx="9" fill="#faecd6" stroke="#bca274"/>
+<text x="180" y="349">Provider agent: read and edit code</text><text x="180" y="376">Check file-change and command scope</text><text x="180" y="403">Approve work and run npm test</text>
+<path d="M180 425V461" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="466" width="312" height="105" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="495">User: compare diff and fixed tests</text><text x="180" y="523">Check actual output and exit status</text><text x="180" y="549">Are tests and configuration unchanged?</text>
+<path d="M95 571V617" stroke="#496b57" marker-end="url(#arrow)"/><text x="68" y="600">Yes</text>
+<path d="M272 571V617" stroke="#496b57" marker-end="url(#arrow)"/><text x="301" y="600">No</text>
+<rect x="16" y="622" width="157" height="86" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="94" y="652">Recheck full diff</text><text x="94" y="681">Commit in Git</text>
+<rect x="186" y="622" width="158" height="86" rx="9" fill="#f5e1df" stroke="#b88880"/>
+<text x="265" y="652">Specify failures</text><text x="265" y="681">Request a fix</text>
+<path d="M344 665H352V371H338" fill="none" stroke="#b88880" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="24" y="755" width="312" height="137" rx="9" fill="#fff" stroke="#a8b6a7"/>
+<text x="180" y="786" font-weight="700">Example verification scope</text><text x="180" y="814">Starter: 8 fail / reference: 19 pass</text><text x="180" y="841">Tests unchanged · no external API calls</text><text x="180" y="870" textLength="280" lengthAdjust="spacingAndGlyphs">No provider AI turn generated the solution</text>
+<text x="180" y="949" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">T3 Code connects task, permission and review</text>
+<text x="180" y="981" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">Selected agent writes code and runs tools</text>
+</g></svg>
