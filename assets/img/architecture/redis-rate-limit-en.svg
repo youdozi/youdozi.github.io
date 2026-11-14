@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1000" viewBox="0 0 360 1000" xml:lang="en" role="img" aria-labelledby="title desc">
+<title id="title">Redis Lua fixed window request limiting flow</title>
+<desc id="desc">Set the key as the trusted subject of the request and check the policy, counter, and expiration time in Lua. If within the limit, record the allowed number with the initial SET PX or existing INCR and return 200. If the limit is exceeded, 429 and Retry-After are returned without changing the state. Connection or status errors are handled as 503.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#476455"/></marker></defs>
+<rect width="360" height="1000" rx="16" fill="#f5f7f2"/>
+<g font-family="system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#203a2c">
+<text x="180" y="33" font-size="12" font-weight="700">Determine and update once with Lua</text>
+<rect x="24" y="54" width="312" height="66" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="180" y="80">Request → server selects limit key</text><text x="180" y="103">Demo: one account for all requests</text>
+<path d="M180 120V149" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="24" y="153" width="312" height="78" rx="9" fill="#e5edf4" stroke="#839aae"/>
+<text x="180" y="180">Start running Redis Lua</text><text x="180" y="203">Validate policy → GET → PTTL</text><text x="180" y="222" font-size="12">Other commands cannot interleave</text>
+<path d="M180 231V260" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="24" y="264" width="312" height="60" rx="9" fill="#e5edf4" stroke="#839aae"/>
+<text x="180" y="289">No key, or valid counter and TTL</text><text x="180" y="311">Remaining allowance?</text>
+<path d="M112 324V365" stroke="#476455" marker-end="url(#arrow)"/><text x="87" y="350">Yes</text>
+<path d="M270 324V365" stroke="#476455" marker-end="url(#arrow)"/><text x="296" y="350">No</text>
+<rect x="16" y="370" width="185" height="113" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="108" y="396">No key: SET 1 PX</text><text x="108" y="419">Has key: INCR</text><text x="108" y="443">TTL is not extended</text><text x="108" y="466">Return allow / left / TTL</text>
+<rect x="214" y="370" width="130" height="113" rx="9" fill="#fae8d8" stroke="#b58b60"/>
+<text x="279" y="399">No write</text><text x="279" y="425">Reject·0·TTL</text><text x="279" y="451">return</text>
+<path d="M108 483V520" stroke="#476455" marker-end="url(#arrow)"/>
+<path d="M279 483V520" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="16" y="525" width="185" height="67" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="108" y="552">Proceed with work</text><text x="108" y="576">Demo: HTTP 200</text>
+<rect x="214" y="525" width="130" height="67" rx="9" fill="#fae8d8" stroke="#b58b60"/>
+<text x="279" y="552">HTTP 429</text><text x="279" y="576">Retry-After</text>
+<path d="M24 190H8V614H180V624" fill="none" stroke="#ba817c" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="24" y="628" width="312" height="112" rx="9" fill="#f5e1df" stroke="#ba817c"/>
+<text x="180" y="656" font-weight="700">Error path</text>
+<text x="180" y="681">Connection failure, timeout or invalid counter</text><text x="180" y="704">→ HTTP 503; work is not processed</text><text x="180" y="727" font-size="12">Existing writes are not rolled back on error</text>
+<rect x="24" y="775" width="312" height="137" rx="9" fill="#fff" stroke="#a9b3a7"/>
+<text x="180" y="805" font-weight="700">Limits of the 3-per-10-second example</text><text x="180" y="833">Window starts at first allowed request</text><text x="180" y="859">After TTL expires, next request starts a window</text><text x="180" y="885">Not a limit on every rolling 10-second interval</text>
+<text x="180" y="957" font-size="12">Assumes requests share one healthy Redis</text>
+</g></svg>
