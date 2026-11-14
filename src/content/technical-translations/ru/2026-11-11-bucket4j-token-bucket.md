@@ -1,0 +1,243 @@
+---
+{
+  "schemaVersion": 1,
+  "state": "approved",
+  "language": "ru",
+  "translationKey": "2026-11-11-bucket4j-token-bucket",
+  "routeSlug": "2026-11-11-bucket4j-token-bucket",
+  "kind": "post",
+  "title": "Ограничение запросов с Bucket4j: локальная корзина токенов и распределённый лимит",
+  "description": "Реализуйте token bucket с Spring MVC и Bucket4j и разберите ёмкость, пополнение, Retry-After и границы распределённого лимита Redis.",
+  "categories": [
+    "springboot"
+  ],
+  "tags": [
+    "bucket4j",
+    "rate-limit",
+    "token-bucket",
+    "spring-mvc",
+    "redis"
+  ],
+  "sourcePath": "src/content/posts/en/2026-11-11-bucket4j-token-bucket.md",
+  "sourceSha256": "3026360c1ee1f4cc06667cd53ebded53b1bfebf3c0c29658e6eb58affffbdf8f",
+  "draftSha256": "2f5f7bebe48baac11ef83e04ffef3b06d3eddc2f7b599ca629b5b371fba65d80",
+  "manifestPath": ".pipeline/technical-translations/batch-156/manifest.json",
+  "manifestSha256": "ed48dc20825daff8725d8eba3418b1ad885276b52c9752ba958f7a1705b24430",
+  "publishedAt": "2026-11-14T15:16:43.783Z",
+  "updatedAt": "2026-11-14T15:16:43.783Z",
+  "approval": {
+    "kind": "human",
+    "reviewedBy": "youdozi",
+    "pullRequest": 158,
+    "approvedAt": "2026-11-14T15:16:43.783Z",
+    "basis": "User requested all 63 language editions and instructed completed PRs to be merged; AI translation and independent AI review were performed, with no claim of human text review."
+  }
+}
+---
+
+**Bucket4j — Java-библиотека ограничения запросов, которая рассчитывает пополнение и расход корзины токенов и управляет конкурентным доступом.** Общий bucket в Spring и попытка расхода токена на каждый запрос позволяют отдельно задать допустимый всплеск и последующую скорость пополнения. Локальные корзины независимы в каждой JVM, поэтому добавление библиотеки само по себе не создаёт глобальный лимит для нескольких серверов.
+
+[Предыдущая статья об ограничении запросов с Redis Lua](/ko/posts/2026-11-10-redis-lua-rate-limit/) реализовала фиксированное окно, которое считает запросы в течение периода от первого разрешённого запроса. Здесь реализуется **token bucket в одной JVM с ёмкостью 5 и пополнением 5 токенов за 10 секунд**, а затем рассматриваются изменения при переходе к распределённому режиму Redis.
+
+Среда воспроизведения: Bucket4j **8.22.0**, Spring Boot 3.5.16, JDK 21 и Gradle 8.14.3. Версия Bucket4j зафиксирована по [официальным выпускам](https://github.com/bucket4j/bucket4j/releases) и [справочнику 8.22.0](https://bucket4j.com/8.22.0/toc.html). `jdk17` в имени зависимости обозначает артефакт для семейства JDK 17; пример запускает его на JDK 21.
+
+## Чем отличаются ёмкость и скорость пополнения?
+
+`capacity(5)` — максимальное число накопленных токенов. Изначально по умолчанию также доступны пять токенов, поэтому сначала можно одновременно разрешить пять запросов. `refillGreedy(5, Duration.ofSeconds(10))` задаёт пополнение пяти токенов за десять секунд. Если запрос расходует один токен, после расхода всех токенов в `t=0` один новый будет доступен в `t=2 seconds`.
+
+Поэтому неверно описывать эту политику как **«не более пяти запросов в любые последовательные десять секунд»**: она допускает и начальный всплеск из пяти запросов, и последующее пополнение. Даже после долгого простоя корзина не накопит больше своей ёмкости — пяти токенов.
+
+| Метод пополнения при одинаковой ёмкости и количестве | `refillGreedy(5, 10 seconds)` | `refillIntervally(5, 10 seconds)` |
+| --- | --- | --- |
+| Израсходовать все пять в `t=0` | Осталось 0 | Осталось 0 |
+| Проверить в `t=2 seconds` без дальнейшего расхода | Доступен 1 | 0 |
+| Проверить в `t=10 seconds` без дальнейшего расхода | 5 | 5 |
+
+Greedy пополняет постепенно по мере времени; Intervally — пачкой после окончания периода. Таблица проверена управляемыми часами, начинающимися с нуля. Отдельный планировщик для периодического добавления токенов не нужен: прошедшее время учитывается при запросе состояния или расходе токена. Подробности API приведены в [справочнике Bucket4j о пополнении](https://bucket4j.com/8.22.0/toc.html).
+
+## Как ограничить запросы Spring MVC?
+
+![Повторно используется singleton bucket, созданный при запуске приложения. На каждый запрос учитывается прошедшее время и атомарно запрашивается расход одного токена. Успех возвращает 200; нехватка токенов — 429 и Retry-After, округлённый вверх до секунд. Разные локальные корзины не разделяют лимит.](/assets/diagrams/technical/ru-2026-11-11-bucket4j-token-bucket.svg)
+
+Контроллер использует результат `tryConsumeAndReturnRemaining(1)`, а не отдельно получает число токенов и предполагает, можно ли разрешить запрос. `ConsumptionProbe` возвращает успех, оставшиеся токены и при нехватке время ожидания для той же попытки расхода.
+
+Сохраните следующие пять файлов в одном проекте. Все запросы `/demo` используют одну корзину. Аутентификация по пользователям и хранилище корзин не реализованы; сервер слушает только локальный адрес.
+
+### `settings.gradle`
+
+```groovy
+rootProject.name = 'bucket4j-token-bucket'
+```
+
+### `build.gradle`
+
+```groovy
+plugins {
+    id 'java'
+    id 'application'
+}
+repositories { mavenCentral() }
+java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:3.5.16')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.bucket4j:bucket4j_jdk17-core:8.22.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+application { mainClass = 'example.RateLimitApplication' }
+test { useJUnitPlatform() }
+```
+
+### `src/main/resources/application.yml`
+
+```yaml
+server:
+  address: 127.0.0.1
+```
+
+### `src/main/java/example/BucketPolicy.java`
+
+```java
+package example;
+
+import java.time.Duration;
+import io.github.bucket4j.Bucket;
+import io.github.bucket4j.TimeMeter;
+
+public final class BucketPolicy {
+    private BucketPolicy() {}
+
+    public static Bucket local(TimeMeter clock) {
+        return Bucket.builder()
+                .withCustomTimePrecision(clock)
+                .addLimit(limit -> limit.capacity(5).refillGreedy(5, Duration.ofSeconds(10)))
+                .build();
+    }
+}
+```
+
+### `src/main/java/example/RateLimitApplication.java`
+
+```java
+package example;
+
+import io.github.bucket4j.Bucket;
+import io.github.bucket4j.TimeMeter;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+public class RateLimitApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(RateLimitApplication.class, args);
+    }
+
+    @Bean
+    Bucket demoBucket() {
+        return BucketPolicy.local(TimeMeter.SYSTEM_NANOTIME);
+    }
+
+    @RestController
+    public static class DemoController {
+        private final Bucket bucket;
+
+        public DemoController(Bucket bucket) {
+            this.bucket = bucket;
+        }
+
+        @GetMapping("/demo")
+        public ResponseEntity<String> demo() {
+            var probe = bucket.tryConsumeAndReturnRemaining(1);
+            if (probe.isConsumed()) {
+                return ResponseEntity.ok("ok\n");
+            }
+            long seconds = Math.max(1, Math.ceilDiv(probe.getNanosToWaitForRefill(), 1_000_000_000L));
+            return ResponseEntity.status(429)
+                    .header("Retry-After", Long.toString(seconds))
+                    .body("rate limit exceeded\n");
+        }
+    }
+}
+```
+
+`Bucket` создан как стандартный singleton bean Spring, чтобы сохранять состояние между запросами. Если каждый раз вызывать `Bucket.builder()` внутри метода контроллера, каждый запрос получит новые начальные токены. Само наличие проверки не обеспечит реального ограничения.
+
+При нехватке токенов `tryConsumeAndReturnRemaining` возвращает отказ, а не заставляет поток запроса ждать пополнения. Это не делает весь сервер MVC неблокирующим. Если выбрать отдельный ожидающий API, нужно заново рассмотреть ожидание потоков и тайм-ауты запросов.
+
+## Какие ответы ожидать?
+
+Запустите пример с установленными JDK 21 и Gradle 8.14.3 и свободным портом 8080. Плагин Boot Gradle и отдельный Redis не нужны. При первом запуске зависимости загружаются из Maven Central.
+
+```sh
+gradle run
+```
+
+После готовности сервера выполните вызовы из другого терминала. Предполагается новая корзина без других вызовов и завершение всех шести запросов до следующего пополнения.
+
+```sh
+for attempt in 1 2 3 4 5 6; do
+  curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8080/demo
+done
+curl -i http://127.0.0.1:8080/demo
+```
+
+Ниже приведены ожидаемые статусы. Если выполнение затянется или поступят другие запросы, пополнение и расход могут изменить результат.
+
+```text
+200
+200
+200
+200
+200
+429
+```
+
+`Retry-After` в ответе об отказе — это `getNanosToWaitForRefill()`, округлённое вверх до целых секунд, минимум одна секунда. При управляемых часах сразу после расхода пяти токенов значение было `2`, а спустя 1.5 секунды — `1`. Согласно [семантике Retry-After в HTTP 429](https://www.rfc-editor.org/rfc/rfc6585#section-4), оно сообщает клиенту время ожидания перед повторной попыткой. Другой запрос может первым израсходовать следующий токен, поэтому ожидание не резервирует разрешение.
+
+Остановите пример через `Ctrl+C` в терминале с `gradle run`.
+
+Поскольку токен расходуется до начала работы, код не возвращает его при последующей ошибке. Различайте ограничение числа начатых запросов и числа успешных операций.
+
+## Как проверялись одновременные запросы и время?
+
+Десять воспроизводимых тестов используют реальный Bucket4j 8.22.0 и управляемые часы в `TimeMeter`. `Thread.sleep` для ожидания времени не используется. В [официальном тесте Intervally](https://github.com/bucket4j/bucket4j/blob/8.22.0/bucket4j-core/src/test/java/io/github/bucket4j/core_algorithms/FixedIntervalRefillTest.java) также показана подстановка времени.
+
+| Условие проверки | Наблюдаемый результат |
+| --- | --- |
+| 40 вызовов из 8 потоков к одной корзине при фиксированных часах | Ровно 5 разрешены |
+| Непосредственно до и ровно через 2 секунды после расхода 5 | До — отказ; разрешён 1 ровно через 2 секунды |
+| Прошло много времени | Ёмкость 5 не превышается |
+| Одинаковые часы для Greedy и Intervally | Различие соответствует таблице выше |
+| После отказа проходит время | Отказ не откладывает начало пополнения |
+| Две независимые корзины | Можно расходовать по 5, всего 10 |
+| Создавать корзину на каждый запрос | 40 запросов разрешены 40 новыми корзинами, обход воспроизведён |
+| Отдельная корзина с двумя лимитами пропускной способности | Для расхода должны соблюдаться оба ограничения |
+| Вызовы Spring MVC `MockMvc` | Проверены 200, 429 и округление ожидания до секунд |
+
+Проверка `MockMvc` отличается от реального сетевого запроса. Отдельно упакованное приложение было запущено на встроенном Tomcat, и фактический HTTP `200` был подтверждён. Число одновременных вызовов — вход функционального теста, а не измерение пропускной способности.
+
+## Когда выбирать Redis Lua или Bucket4j?
+
+| Критерий | Предыдущий пример Redis Lua | Локальный пример Bucket4j |
+| --- | --- | --- |
+| Политика | Разрешённые запросы за период от первого запроса | Начальный всплеск и последующая скорость пополнения |
+| Общее состояние | Запросы с одним Redis и ключом | Запросы к одному объекту bucket в одной JVM |
+| Вызов внешнего хранилища на запрос | Требуется выполнение в Redis | Нет |
+| Влияние добавления серверов | Предполагается общее состояние одного ключа | Независимые корзины увеличивают общий лимит |
+
+Это не утверждение, что Redis поддерживает только фиксированные окна или Bucket4j — только локальный режим. Сравниваются политики и места хранения, реализованные в этих двух статьях.
+
+Для глобального лимита рассмотрите интеграцию Bucket4j с распределённым хранилищем. [Справочник 8.22.0 по Redis](https://bucket4j.com/8.22.0/toc.html) использует `ProxyManager` и состояние корзины по общему ключу через Lettuce или другой клиент. В описанном подходе CAS клиент читает и рассчитывает состояние, затем сравнивает и заменяет его в Redis; при конфликте сравнение повторяется. Это отличается от предыдущего примера, где весь расчёт выполняется одним вызовом Redis Lua.
+
+Истечение распределённого состояния также является частью политики. Если короткий TTL удалит корзину при нехватке токенов, следующий доступ может создать новую с начальными токенами и разрешить дополнительные запросы. Как в [официальной стратегии истечения](https://github.com/bucket4j/bucket4j/blob/8.22.0/bucket4j-core/src/main/java/io/github/bucket4j/distributed/ExpirationAfterWriteStrategy.java), учитывайте время полного пополнения и запас. Это не даёт тех же гарантий при принудительном вытеснении или потере данных.
+
+Использованный здесь `SYSTEM_NANOTIME` предназначен для локальных корзин. Нельзя произвольно применять его как распределённый источник времени между JVM. В распределённой реализации следуйте настройкам источника времени, тайм-аутов и повторов CAS конкретной интеграции. Отдельно решите, блокировать ли запросы при отказе Redis или временно допускать их по ограниченной локальной политике. Код статьи не выполняет интеграцию Redis или восстановление после отказа.
+
+Для лимитов по пользователю выводите ключ корзины из аутентифицированного субъекта и области политики. Слепое доверие произвольному идентификатору в заголовке позволяет обходить лимит его заменой. Постоянное добавление корзин пользователей в локальный `Map` увеличивает расход памяти, а неосторожное удаление или пересоздание может многократно выдавать начальные токены. Определите, где и как долго сохраняется состояние.
+
+Ограничение начала запросов не ограничивает число длительных операций, одновременно занимающих ресурсы. Если нужно защитить подключения к БД или одновременные вызовы внешнего API, отдельно спроектируйте ограничение конкурентности.
