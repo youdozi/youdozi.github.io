@@ -1,0 +1,110 @@
+{
+  "status": "publication-prepared",
+  "language": "ko",
+  "scope": "Publication of approved Korean Pickle AI security analysis and public release verification example",
+  "checkedAt": "2026-11-14T03:35:47.688383+00:00",
+  "sourceCommit": "cff16a343bf5bb7953e5b65df6ab3600107e127d",
+  "enclaveTag": "v2.3.0",
+  "enclaveTagCommit": "29d450c2867b9c198c2f9680905a11120178d2b5",
+  "criticalFilesUnchangedFromEnclaveTag": [
+    "enclave/src/vault.rs",
+    "enclave/src/api/release.rs",
+    "protocol/src/record.rs"
+  ],
+  "publicProgramTag": "secure-program-v42",
+  "verification": {
+    "draftContractsPassed": true,
+    "sourceCommit": "cff16a343bf5bb7953e5b65df6ab3600107e127d",
+    "programSHA256": "31e7fa7fb51f87781313b1f97b60ae3c7b69ff8f2fbcee7de12b7a0ed034d8e8",
+    "verificationExecuted": true,
+    "liveServiceAttestationChecked": false,
+    "iOSBinaryChecked": false,
+    "phoneAppControlExecuted": false,
+    "originalExit": 0,
+    "changedSourceExit": 1,
+    "originalOutput": "program release secure-program-v42: version 42, sha256 31e7fa7fb51f87781313b1f97b60ae3c7b69ff8f2fbcee7de12b7a0ed034d8e8, log index 3761959022: ok",
+    "changedSourceOutput": "program release: failed: source_hash: the source is not the subject of the statement",
+    "proofSHA256": "e6571cfcb2f4c16db9185fc34ba21137214308925b2ba37f366df83bb4964e4b"
+  },
+  "independentReview": {
+    "agent": "pickle_security_review",
+    "mode": "Independent read-only article-first review and scoped correction recheck",
+    "unresolvedMajorFindings": 0,
+    "findingsResolved": [
+      {
+        "severity": "major",
+        "change": "Explicitly states operator trust in subsequent device-side secure-program releases, zero notice period and that release proof does not prove harmless code"
+      },
+      {
+        "severity": "minor",
+        "change": "Removed generic local iPhone-data row from confirmed execution-route table"
+      },
+      {
+        "severity": "minor",
+        "change": "Diagram states ordered checks and immediate stop on failure"
+      }
+    ],
+    "execution": "Reviewer independently reproduced original exit 0 and one-byte changed-source exit 1 using the public verifier and artifacts",
+    "officialPrivacyClaimCheckedByReviewer": true,
+    "notChecked": [
+      "Installed iOS app",
+      "Live service attestation",
+      "Actual credentials or phone control",
+      "Worker masking enforcement",
+      "Mobile SVG display"
+    ]
+  },
+  "preview": {
+    "width": 320,
+    "overflow": false,
+    "images": [
+      {
+        "loaded": true,
+        "alt": "설정 단계에서 iPhone이 키를 만들고 검증한 Enclave에 사용자 키를 암호화해 위임한다. 사용 단계에서는 활성 위임과 암호화 레코드를 확인하고 로그 저장 확인 후 두 경로로 나뉜다. OAuth 토큰은 노드 내부에서 API에 사용하지만 Vault 비밀번호·카드 값은 release 응답으로 worker에 평문 전달되어 웹 폼에 사용된다. 이후 결과 마스킹은 별도 보호 경계다",
+        "width": 284
+      },
+      {
+        "loaded": true,
+        "alt": "공개 프로그램 JS와 릴리스 증명을 공식 검증 도구에 입력한다. 도구가 파일 해시·서명·투명성 로그 증명을 검사하며 원본 v42는 종료 코드 0을, 한 바이트를 추가한 파일은 source_hash 오류와 종료 코드 1을 반환한다. 운영 서버와 설치 앱의 검증은 별도다",
+        "width": 284
+      }
+    ],
+    "codeBlocks": 3,
+    "browser": "Orca built-in browser",
+    "renderer": "Site Satteri Markdown renderer and site CSS with resolved image placeholders",
+    "fullAstroPageTested": false,
+    "screenshotInspected": true
+  },
+  "sources": [
+    "https://pickle.com/",
+    "https://www.pickle.com/help/connect/save-login",
+    "https://www.pickle.com/help/tasks/delegate",
+    "https://support.apple.com/en-gb/guide/security/sec15bfe098e/web",
+    "https://www.pickle.com/privacy",
+    "https://github.com/pickle-com/credential-enclave/blob/cff16a343bf5bb7953e5b65df6ab3600107e127d/docs/protocol.md#3-keys",
+    "https://docs.aws.amazon.com/enclaves/latest/user/",
+    "https://github.com/pickle-com/credential-enclave/blob/cff16a343bf5bb7953e5b65df6ab3600107e127d/README.md#structure",
+    "https://github.com/pickle-com/credential-enclave/blob/cff16a343bf5bb7953e5b65df6ab3600107e127d/enclave/src/api/forward.rs",
+    "https://github.com/pickle-com/credential-enclave/blob/cff16a343bf5bb7953e5b65df6ab3600107e127d/docs/egress-policy.md",
+    "https://github.com/pickle-com/credential-enclave/blob/cff16a343bf5bb7953e5b65df6ab3600107e127d/enclave/src/vault.rs",
+    "https://github.com/pickle-com/credential-enclave/blob/cff16a343bf5bb7953e5b65df6ab3600107e127d/enclave/src/api/release.rs",
+    "https://pickle.com/help/privacy/activity",
+    "https://pickle.com/en",
+    "https://github.com/pickle-com/credential-enclave/blob/cff16a343bf5bb7953e5b65df6ab3600107e127d/secure-program/README.md",
+    "https://github.com/pickle-com/credential-enclave/blob/cff16a343bf5bb7953e5b65df6ab3600107e127d/README.md#what-it-does-not-guarantee",
+    "https://github.com/pickle-com/credential-enclave/blob/cff16a343bf5bb7953e5b65df6ab3600107e127d/secure-program/README.md#limits"
+  ],
+  "hashes": {
+    "article.ko.md": "329f93ae5fb1ed5d0129604728a210ebf8f05f0ebbefb115c5cf7e72579ce1fe",
+    "pickle-credentials-ko.svg": "0cf42b6df8b23bb1307613be0f518b0abb13afc56d008a2928d8a0750c5788f7",
+    "pickle-verification-ko.svg": "d4a721f5fea42e4c6c8684b28f063ff74ad07e529c1032b81a411dbb80799962",
+    "verify-example.sh": "ae17dc591d181f4fd4102a3c5c30d2a9862d22c96f4bbfc48a7de53c0222c1f5",
+    "tamper-example.sh": "7510d3195162c2a94f4a4b5604180db2939cd9b509306f6efe595ebff1a77895"
+  },
+  "limits": [
+    "Claims apply to the cited public source and official explanations; not a full product audit",
+    "No live node attestation, iOS binary verification, account login or actual phone control",
+    "No independent confirmation of worker UI masking or site-binding enforcement",
+    "Release-proof verification is not a semantic safety proof"
+  ]
+}
