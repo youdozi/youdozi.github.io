@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1110" viewBox="0 0 360 1110" role="img" aria-labelledby="title desc" xml:lang="ja">
+<title id="title">Spring MVC の WebClient 待機と非同期返却</title>
+<desc id="desc">block 経路は Servlet リクエストスレッドの待機と Netty I/O を区別します。Mono 経路では購読後、Netty I/O と Servlet 非同期処理が重なり、結果を MVC に再ディスパッチします。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#53675c"/></marker></defs>
+<rect width="360" height="1110" fill="#f7f8f4"/>
+<g font-family="sans-serif" text-anchor="middle" fill="#20342a">
+<text x="180" y="30" font-size="12">MVC + WebClient</text>
+<text x="180" y="58" font-size="12">同じ HTTP クライアント、異なる待機</text>
+<text x="180" y="96" font-size="12">① .block() 返却経路</text>
+<rect x="30" y="114" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="140" font-size="12">Servlet 要求スレッド：fetch("block")</text>
+<path d="M180 162 L180 185" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="185" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="211" font-size="12">block() が Mono を購読</text>
+<path d="M130 233 L90 263" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M230 233 L270 263" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="18" y="263" width="154" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="95.0" y="289" font-size="12">Servlet 要求スレッド</text>
+<text x="95.0" y="309" font-size="12">結果を待つ</text>
+<rect x="188" y="263" width="154" height="68" rx="8" fill="#e5eef8" stroke="#53675c"/>
+<text x="265.0" y="289" font-size="12">Reactor Netty</text>
+<text x="265.0" y="309" font-size="12">外部 HTTP · map</text>
+<path d="M265 331 L265 353" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M265 353 L95 353" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M95 353 L95 376" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="376" width="300" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="402" font-size="12">要求スレッドが再開</text>
+<text x="180.0" y="422" font-size="12">MVC が応答を直列化・書き込み</text>
+<text x="180" y="479" font-size="12">② Mono 返却経路</text>
+<rect x="30" y="496" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="522" font-size="12">Servlet：fetch("async") の Mono を返す</text>
+<path d="M180 544 L180 568" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="568" width="300" height="48" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="594" font-size="12">MVC が戻り型を適応し Mono を購読</text>
+<path d="M130 616 L90 646" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M230 616 L270 646" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="18" y="646" width="154" height="68" rx="8" fill="#e5eef8" stroke="#53675c"/>
+<text x="95.0" y="672" font-size="12">Reactor Netty</text>
+<text x="95.0" y="692" font-size="12">外部 HTTP · map</text>
+<rect x="188" y="646" width="154" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="265.0" y="672" font-size="12">Servlet 非同期を開始</text>
+<text x="265.0" y="692" font-size="12">初期スレッドを返す</text>
+<text x="180" y="740" font-size="12">二つの分岐は重なり得る</text>
+<path d="M95 714 L95 769" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M265 714 L265 769" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M95 769 L180 797" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M265 769 L180 797" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="797" width="300" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="823" font-size="12">結果またはエラー信号</text>
+<text x="180.0" y="843" font-size="12">MVC 再ディスパッチ</text>
+<path d="M180 865 L180 889" fill="none" stroke="#53675c" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="30" y="889" width="300" height="68" rx="8" fill="#e6f0e8" stroke="#53675c"/>
+<text x="180.0" y="915" font-size="12">Servlet コンテナスレッド</text>
+<text x="180.0" y="935" font-size="12">応答を直列化・書き込み</text>
+<text x="180" y="1005" font-size="12">緑：MVC / Servlet の役割</text>
+<text x="180" y="1030" font-size="12">青：Reactor Netty の役割</text>
+<text x="180" y="1070" font-size="13">色は固定のスレッド名を示さない</text>
+</g></svg>

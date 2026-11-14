@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1000" viewBox="0 0 360 1000" xml:lang="de" role="img" aria-labelledby="title desc">
+<title id="title">Redis-Lua-Rate-Limit</title>
+<desc id="desc">Die Anwendung wählt einen Schlüssel, dann prüft Redis Lua Zähler und TTL. Bei Erlaubnis schreibt SET PX oder INCR; die Anwendung gibt 200 aus. Bei Limitüberschreitung folgen 429 und Retry-After ohne Zustandsänderung. Verbindungs- oder Zustandsfehler führen zu 503.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#476455" /></marker></defs>
+<rect width="360" height="1000" rx="16" fill="#f5f7f2" />
+<g font-family="system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#203a2c">
+<text x="180" y="33" font-size="12" font-weight="700">Entscheidung und Update mit Lua</text>
+<rect x="24" y="54" width="312" height="66" rx="9" fill="#e0ecdf" stroke="#829b83" />
+<text x="180" y="80">Anfrage → Server wählt Schlüssel</text><text x="180" y="103">Demo: ein Konto für alle Anfragen</text>
+<path d="M180 120V149" stroke="#476455" marker-end="url(#arrow)" />
+<rect x="24" y="153" width="312" height="78" rx="9" fill="#e5edf4" stroke="#839aae" />
+<text x="180" y="180">Redis Lua ausführen</text><text x="180" y="203">Regel prüfen → GET → PTTL</text><text x="180" y="222" font-size="12">Andere Befehle nicht dazwischen</text>
+<path d="M180 231V260" stroke="#476455" marker-end="url(#arrow)" />
+<rect x="24" y="264" width="312" height="60" rx="9" fill="#e5edf4" stroke="#839aae" />
+<text x="180" y="289" font-size="13.1" textLength="280" lengthAdjust="spacingAndGlyphs">Kein Schlüssel oder gültiger Zähler/TTL</text><text x="180" y="311">Zulassung übrig?</text>
+<path d="M112 324V365" stroke="#476455" marker-end="url(#arrow)" /><text x="87" y="350">Ja</text>
+<path d="M270 324V365" stroke="#476455" marker-end="url(#arrow)" /><text x="296" y="350">Nein</text>
+<rect x="16" y="370" width="185" height="113" rx="9" fill="#e0ecdf" stroke="#829b83" />
+<text x="108" y="396" font-size="11" textLength="130" lengthAdjust="spacingAndGlyphs">Ohne Schlüssel: SET 1 PX</text><text x="108" y="419" font-size="12.4">Mit Schlüssel: INCR</text><text x="108" y="443" font-size="11" textLength="130" lengthAdjust="spacingAndGlyphs">TTL wird nicht verlängert</text><text x="108" y="466" font-size="11.3" textLength="130" lengthAdjust="spacingAndGlyphs">Zulassen / Rest / TTL</text>
+<rect x="214" y="370" width="130" height="113" rx="9" fill="#fae8d8" stroke="#b58b60" />
+<text x="279" y="399">Kein Schreiben</text><text x="279" y="425" font-size="13.1">Ablehnen · 0 · TTL</text><text x="279" y="451">zurück</text>
+<path d="M108 483V520" stroke="#476455" marker-end="url(#arrow)" />
+<path d="M279 483V520" stroke="#476455" marker-end="url(#arrow)" />
+<rect x="16" y="525" width="185" height="67" rx="9" fill="#e0ecdf" stroke="#829b83" />
+<text x="108" y="552" font-size="13.9">Arbeit fortsetzen</text><text x="108" y="576">Demo: HTTP 200</text>
+<rect x="214" y="525" width="130" height="67" rx="9" fill="#fae8d8" stroke="#b58b60" />
+<text x="279" y="552">HTTP 429</text><text x="279" y="576">Retry-After</text>
+<path d="M24 190H8V614H180V624" fill="none" stroke="#ba817c" stroke-dasharray="4 4" marker-end="url(#arrow)" />
+<rect x="24" y="628" width="312" height="112" rx="9" fill="#f5e1df" stroke="#ba817c" />
+<text x="180" y="656" font-weight="700">Fehlerpfad</text>
+<text x="180" y="681" font-size="13.8" textLength="280" lengthAdjust="spacingAndGlyphs">Verbindung, Timeout oder Zählerfehler</text><text x="180" y="704">→ HTTP 503; keine Verarbeitung</text><text x="180" y="727" font-size="11.3">Vorheriges Schreiben wird nicht zurückgerollt</text>
+<rect x="24" y="775" width="312" height="137" rx="9" fill="#fff" stroke="#a9b3a7" />
+<text x="180" y="805" font-weight="700">Grenzen: 3 pro 10 Sekunden</text><text x="180" y="833" font-size="14.1">Fenster beginnt mit erster Zulassung</text><text x="180" y="859">Nach TTL beginnt nächstes Fenster</text><text x="180" y="885" font-size="11.3">Kein Limit für jedes gleitende 10-s-Intervall</text>
+<text x="180" y="957" font-size="12">Alle Anfragen nutzen ein gesundes Redis</text>
+</g></svg>

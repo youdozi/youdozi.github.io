@@ -1,0 +1,13 @@
+{
+  "languages": [
+    "de",
+    "fr"
+  ],
+  "reviewer": "independent AI session review_de_fr",
+  "scope": "All 18 article bodies and tables compared in sequence with English; code blocks, links and SVG text checked.",
+  "findings": "Corrected localized thousands separators in prose/prompts, explained protected inline number, restored SVG access boundary, corrected TOTP generation delegation; reviewer rechecked.",
+  "limits": "No native-speaker review, new source fact-check, diagram rendering or code execution by this reviewer. Mobile rendering checked separately.",
+  "reviewedAt": "2026-11-14T15:08:48.775153+00:00",
+  "humanOrNativeSpeakerReview": false,
+  "scopeIsNotGuarantee": true
+}

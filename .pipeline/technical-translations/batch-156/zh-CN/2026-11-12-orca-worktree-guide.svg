@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1050" viewBox="0 0 360 1050" xml:lang="zh-CN" role="img" aria-labelledby="title desc">
+<title id="title">Orca 项目、工作树、终端和浏览器工作流程</title>
+<desc id="desc">在 Orca 中打开示例 Git 存储库并创建工作树。检查其路径和分支，然后要求代理修改一个文件。在同一工作树中运行固定测试，在嵌入式浏览器中打开其开发服务器，将差异与基本分支进行比较，如果满足条件则提交，否则请求更正。工作树文件隔离与执行权限分开。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1050" rx="16" fill="#f5f7f2"/>
+<g font-family="system-ui,sans-serif" text-anchor="middle" font-size="15" fill="#203a2c">
+<text x="180" y="36" font-size="20" font-weight="700">Orca 任务工作流程</text>
+<rect x="24" y="62" width="312" height="72" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="90">使用 Add Repo 打开 Git 存储库</text><text x="180" y="116">main：起始代码与固定测试</text>
+<path d="M180 134V166" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="171" width="312" height="88" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="199">创建任务工作树</text><text x="180" y="224">首先检查它的文件夹和分支</text><text x="180" y="246" font-size="12" textLength="280" lengthAdjust="spacingAndGlyphs">UI 选择可能与现有 shell cwd 不同</text>
+<path d="M180 259V291" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="296" width="312" height="83" rx="9" fill="#faecd6" stroke="#bca274"/>
+<text x="180" y="324" textLength="280" lengthAdjust="spacingAndGlyphs">要求选定的代理更改一个文件</text><text x="180" y="349" textLength="280" lengthAdjust="spacingAndGlyphs">指定范围、权限和完成情况</text><text x="180" y="370" font-size="12">提示未授予工具权限</text>
+<path d="M180 379V412" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="417" width="312" height="108" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="447">在同一工作树中运行 npm test</text><text x="180" y="473">启动开发服务器→检查端口</text><text x="180" y="499">检查嵌入式浏览器中的实际 UI</text>
+<path d="M180 525V558" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="563" width="312" height="82" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="592">将 diff 和测试与 main 进行比较</text><text x="180" y="620">文件更改符合策略吗？</text>
+<path d="M98 645V690" stroke="#496b57" marker-end="url(#arrow)"/><text x="70" y="674">是</text>
+<path d="M268 645V690" stroke="#496b57" marker-end="url(#arrow)"/><text x="297" y="674">不</text>
+<rect x="16" y="695" width="158" height="77" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="95" y="724">已更改的文件</text><text x="95" y="751">自己提交</text>
+<rect x="187" y="695" width="157" height="77" rx="9" fill="#f5e1df" stroke="#b88880"/>
+<text x="265" y="724">缩小失败范围</text><text x="265" y="751">请求修复</text>
+<path d="M344 733H352V338H338" fill="none" stroke="#b88880" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="24" y="820" width="312" height="118" rx="9" fill="#fff" stroke="#a8b6a7"/>
+<text x="180" y="850" font-weight="700">任务隔离边界</text><text x="180" y="878">工作树：文件、分支、工作视图</text><text x="180" y="906" textLength="280" lengthAdjust="spacingAndGlyphs">还要考虑端口、数据库、帐户和访问权限</text>
+<text x="180" y="992" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">项目 → 工作路径 → 结果 → 检查</text>
+</g></svg>

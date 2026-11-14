@@ -1,0 +1,9 @@
+{
+  "reviewer": "independent AI session review_translation_pipeline",
+  "scope": "Review of v3 translation, immutable source/diagram validation and compatibility with v2.",
+  "findings": "Added strict XML parsing and XML 1.0 character validation, rejected pathological textLength, restricted new prompt exceptions to v3, and added regression tests; reviewer rechecked.",
+  "limits": "No guarantee of absence of all defects; sentence meaning remains a separate translation review.",
+  "reviewedAt": "2026-11-14T15:08:48.775153+00:00",
+  "humanOrNativeSpeakerReview": false,
+  "scopeIsNotGuarantee": true
+}

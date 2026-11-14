@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1040" viewBox="0 0 360 1040" role="img" aria-labelledby="title desc" xml:lang="de">
+  <title id="title">Ablauf der Rust-CLI zur Betragssumme</title>
+  <desc id="desc">main besitzt die Argumente und leiht sie an summarize aus. Leere Eingabe schlägt fehl. Jeder Wert wird als u64 geparst und mit checked_add addiert; Fehler werden sofort zurückgegeben. Bei Erfolg folgt Summary. main gibt Erfolg auf stdout mit Code 0 und Fehler auf stderr mit Code 1 aus.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1040" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" font-size="15" text-anchor="middle" fill="#1e352d">
+    <text x="180" y="31" font-size="16.4" font-weight="bold">Ownership → Ausleihe → Ergebnis</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="20" y="55" width="215" height="68" rx="8" />
+      <rect x="20" y="155" width="215" height="68" rx="8" />
+      <rect x="20" y="270" width="215" height="64" rx="8" />
+      <rect x="20" y="385" width="215" height="64" rx="8" />
+      <rect x="20" y="505" width="215" height="64" rx="8" />
+      <rect x="20" y="625" width="215" height="64" rx="8" />
+      <rect x="20" y="745" width="215" height="64" rx="8" />
+      <rect x="20" y="865" width="215" height="68" rx="8" />
+      <rect x="250" y="736" width="96" height="78" rx="8" fill="#f8e8dd" />
+      <rect x="250" y="865" width="96" height="68" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="127" y="82">main: Argumente sammeln</text><text x="127" y="106">Besitzt Vec&lt;String&gt;</text>
+    <text x="127" y="181">summarize(&amp;inputs)</text><text x="127" y="205">Slice der Strings ausleihen</text>
+    <text x="127" y="308">Eingabe leer?</text>
+    <text x="127" y="411">Gibt es einen nächsten Wert?</text><text x="127" y="434">Strings per Referenz lesen</text>
+    <text x="127" y="531">Als u64 parsen</text><text x="127" y="554">Zahl und Bereich prüfen</text>
+    <text x="127" y="651">Mit checked_add addieren</text><text x="127" y="674">Summenüberlauf prüfen</text>
+    <text x="127" y="772">Ok(Summary) zurückgeben</text><text x="127" y="795">Anzahl und Summe</text>
+    <text x="127" y="891">main: Standardausgabe</text><text x="127" y="916">Exit-Code 0</text>
+    <text x="298" y="763" font-size="12" textLength="82" lengthAdjust="spacingAndGlyphs">Err zurück</text><text x="298" y="788" font-size="12" textLength="82" lengthAdjust="spacingAndGlyphs">Früh zurück</text>
+    <text x="298" y="891" font-size="14.5">Standardfehler</text><text x="298" y="916">Exit-Code 1</text>
+    <text x="148" y="362">Nein</text><text x="148" y="479">Ja</text>
+    <text x="148" y="598">Erfolg</text><text x="283" y="296">Ja</text>
+    <text x="288" y="495">Fehler</text><text x="288" y="617">Fehler</text>
+    <text x="88" y="704" font-size="13">Erfolg: wiederholen</text>
+    <text x="55" y="740" font-size="11.4" textLength="100" lengthAdjust="spacingAndGlyphs">Keine Werte mehr</text>
+    <text x="116" y="975" font-size="11" textLength="140" lengthAdjust="spacingAndGlyphs">Beim nächsten Wert wiederholen</text>
+    <text x="180" y="1006" font-size="11.3">Alle Fehlerpfade enden im Err-Zweig von main.</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M127 123V155" /><path d="M127 223V270" /><path d="M127 334V385" />
+    <path d="M127 449V505" /><path d="M127 569V625" />
+    <path d="M20 417H8V777H20" />
+    <path d="M127 689V710H3V365H127V385" />
+    <path d="M235 302H337V736" />
+    <path d="M235 537H309V736" /><path d="M235 657H280V736" />
+    <path d="M127 809V865" /><path d="M298 814V865" />
+  </g>
+</svg>

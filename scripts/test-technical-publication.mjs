@@ -14,7 +14,7 @@ async function project(work){
     const registryPath='.pipeline/technical-translations/batches.json';
     const registry=JSON.parse(await readFile(join(root,registryPath),'utf8'));
     const manifests=await Promise.all(registry.manifests.map(async path=>JSON.parse(await readFile(join(root,path),'utf8'))));
-    const paths=new Set([registryPath,...registry.manifests,...manifests.flatMap(m=>m.editions.flatMap(r=>[r.source.path,r.draft.path,r.diagramSource.path,r.diagram.path,r.sourceDiagram.path,...(r.mainVisual?[r.mainVisual.path]:[]),...(r.additionalVisuals??[]).flatMap(v=>[v.source.path,v.draft.path])]))]);
+    const paths=new Set([registryPath,...registry.manifests,...manifests.flatMap(m=>m.editions.flatMap(r=>[r.source.path,r.draft.path,r.diagram.path,...(r.diagramSource?[r.diagramSource.path]:[]),...(r.sourceDiagram?[r.sourceDiagram.path]:[]),...(r.mainVisual?[r.mainVisual.path]:[]),...(r.additionalVisuals??[]).flatMap(v=>[v.source.path,v.draft.path])]))]);
     for(const path of paths){await mkdir(dirname(join(base,path)),{recursive:true});await copyFile(join(root,path),join(base,path));}
     await mkdir(join(base,'src/content/technical-translations'),{recursive:true});
     await work(base,folder);
@@ -41,6 +41,23 @@ test('human preparation creates twelve approved Markdown files without altering 
     const checked=await checkTechnicalPublications(base);assert.equal(checked.approvedEditions,12);assert.equal(checked.pendingEditions,(await inspectTechnicalBatches(base)).editions.length-12);
     assert.equal(await readFile(join(base,manifestPath),'utf8'),before);
     assert.equal(await prepareTechnicalAssets(base),12);
+  });
+});
+test('version 3 prepares pinned hand-drawn diagrams, including supplementary figures',async()=>{
+  await project(async base=>{
+    const path='.pipeline/technical-translations/batch-156/manifest.json';
+    const batch=await inspectTechnicalBatch(base,path);
+    assert.equal(batch.editions.length,54);
+    assert.equal(await prepareApprovedTechnicalBatch(base,approval,batch.manifestSha256,path),54);
+    const checked=await checkTechnicalPublications(base);
+    assert.equal(checked.approvedEditions,54);
+    assert.equal(await prepareTechnicalAssets(base),54);
+    assert.equal((await readdir(join(base,'public/assets/diagrams/technical'))).length,60);
+    const pickle=checked.records.find(row=>row.data.translationKey==='2026-11-13-pickle-ai-security'&&row.data.language==='ja');
+    assert.ok(pickle.body.includes('/assets/diagrams/technical/ja-2026-11-13-pickle-ai-security-architecture.svg'));
+    const svg=join(base,batch.editions[0].diagramPath);
+    await writeFile(svg,(await readFile(svg,'utf8')).replace('</svg>','<path d="M0 0"/></svg>'));
+    await assert.rejects(checkTechnicalPublications(base),/Pinned file changed/);
   });
 });
 test('published prose, title, identity and source hash cannot diverge from the reviewed batch',async()=>{

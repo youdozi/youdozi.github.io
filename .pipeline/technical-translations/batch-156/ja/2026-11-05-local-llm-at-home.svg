@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="936" viewBox="0 0 360 936" role="img" aria-labelledby="title description" xml:lang="ja">
+<title id="title">家庭で使うローカル LLM の流れ</title>
+<desc id="description">オンラインでのインストール・ダウンロードとカスタムモデル作成後、選択したメモを検査してローカル API とモデルへ渡します。応答を確認してから人が原文と比較します。検証失敗時はエラー終了し、結果を実行するツールはありません。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#475569"/></marker></defs>
+<rect width="360" height="936" rx="12" fill="#f8fafc"/>
+<g font-family="system-ui,sans-serif" text-anchor="middle" fill="#0f172a">
+<text x="180" y="32" font-size="12" font-weight="600">自宅で使うローカル LLM</text>
+<rect x="16" y="64" width="328" height="86" rx="10" fill="#dbeafe" stroke="#64748b"/>
+<text x="180" y="99" font-size="12">Ollama の導入・モデル取得</text>
+<text x="180" y="123" font-size="12">準備段階：外部通信あり</text>
+<path d="M180 150V176" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="183" width="328" height="86" rx="10" fill="#dbeafe" stroke="#64748b"/>
+<text x="180" y="218" font-size="12">Modelfile でカスタム設定を作成</text>
+<text x="180" y="242" font-size="12">home-assistant</text>
+<path d="M180 269V295" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="302" width="328" height="86" rx="10" fill="#fef3c7" stroke="#64748b"/>
+<text x="180" y="337" font-size="12">選択メモ：UTF-8・2000 文字以下</text>
+<text x="180" y="361" font-size="12">空または長すぎる入力はエラー終了</text>
+<path d="M180 388V414" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="421" width="328" height="86" rx="10" fill="#dcfce7" stroke="#64748b"/>
+<text x="180" y="456" font-size="12">ローカル API へ POST</text>
+<text x="180" y="480" font-size="12">127.0.0.1:11434/api/chat</text>
+<path d="M180 507V533" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="540" width="328" height="86" rx="10" fill="#dcfce7" stroke="#64748b"/>
+<text x="180" y="575" font-size="12">選択したローカルモデルで推論</text>
+<text x="180" y="599" font-size="12">機器に応じて CPU/GPU を使用</text>
+<path d="M180 626V652" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="659" width="328" height="86" rx="10" fill="#fef3c7" stroke="#64748b"/>
+<text x="180" y="694" font-size="12">HTTP・完了状態・出力長を確認</text>
+<text x="180" y="718" font-size="12">失敗ならエラー終了</text>
+<path d="M180 745V771" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="778" width="328" height="86" rx="10" fill="#dcfce7" stroke="#64748b"/>
+<text x="180" y="813" font-size="12">結果を元のメモと比較</text>
+<text x="180" y="837" font-size="12">ファイル変更・コマンドの自動実行なし</text>
+<text x="180" y="918" font-size="13">前提：ローカルモデルとクラウド無効化</text>
+</g></svg>

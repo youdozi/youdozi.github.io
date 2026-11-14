@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1050" viewBox="0 0 360 1050" xml:lang="de" role="img" aria-labelledby="title desc">
+<title id="title">Eine kleine Codeänderung in T3 Code prüfen</title>
+<desc id="desc">Startcode und feste Tests in Git speichern und Fehler beobachten. Projekt und authentifizierten Anbieter in T3 Code auswählen und einen begrenzten Prompt im Supervised-Modus senden. Dateiänderungen und Testbefehle prüfen und genehmigen; Diff, Tests und Ergebnisse vergleichen und selbst committen oder Korrektur verlangen.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57" /></marker></defs>
+<rect width="360" height="1050" rx="16" fill="#f5f7f2" />
+<g font-family="system-ui,sans-serif" text-anchor="middle" font-size="15" fill="#203a2c">
+<text x="180" y="35" font-size="20" font-weight="700">T3 Code: Übungsablauf</text>
+<rect x="24" y="58" width="312" height="88" rx="9" fill="#deebdf" stroke="#86a18b" />
+<text x="180" y="86">Startcode + feste Tests + Git</text><text x="180" y="111">npm test: 8 von 19 fehlgeschlagen</text><text x="180" y="134" font-size="12">Tatsächlicher Lauf vor der Referenzlösung</text>
+<path d="M180 146V179" stroke="#496b57" marker-end="url(#arrow)" />
+<rect x="24" y="184" width="312" height="96" rx="9" fill="#e5edf4" stroke="#839bae" />
+<text x="180" y="212" font-size="14.1">T3 Code: Projekt und Anbieter wählen</text><text x="180" y="238">Berechtigung Supervised prüfen</text><text x="180" y="263" textLength="280" lengthAdjust="spacingAndGlyphs" font-size="13.8">Prompt: Umfang und Abschlusskriterien</text>
+<path d="M180 280V315" stroke="#496b57" marker-end="url(#arrow)" />
+<rect x="24" y="320" width="312" height="105" rx="9" fill="#faecd6" stroke="#bca274" />
+<text x="180" y="349">Agent: Code lesen und bearbeiten</text><text x="180" y="376" font-size="15.0" textLength="280" lengthAdjust="spacingAndGlyphs">Dateiänderungen und Befehle prüfen</text><text x="180" y="403" font-size="12.7">Arbeit genehmigen und npm test ausführen</text>
+<path d="M180 425V461" stroke="#496b57" marker-end="url(#arrow)" />
+<rect x="24" y="466" width="312" height="105" rx="9" fill="#deebdf" stroke="#86a18b" />
+<text x="180" y="495" font-size="12.7">Person: Diff und feste Tests vergleichen</text><text x="180" y="523" font-size="13.4" textLength="280" lengthAdjust="spacingAndGlyphs">Tatsächliche Ausgabe und Status prüfen</text><text x="180" y="549" font-size="14.1">Tests und Konfiguration unverändert?</text>
+<path d="M95 571V617" stroke="#496b57" marker-end="url(#arrow)" /><text x="68" y="600">Ja</text>
+<path d="M272 571V617" stroke="#496b57" marker-end="url(#arrow)" /><text x="301" y="600">Nein</text>
+<rect x="16" y="622" width="157" height="86" rx="9" fill="#deebdf" stroke="#86a18b" />
+<text x="94" y="652" font-size="11.8">Gesamtes Diff prüfen</text><text x="94" y="681" font-size="11" textLength="130" lengthAdjust="spacingAndGlyphs">Selbst in Git committen</text>
+<rect x="186" y="622" width="158" height="86" rx="9" fill="#f5e1df" stroke="#b88880" />
+<text x="265" y="652" font-size="13.9">Fehler eingrenzen</text><text x="265" y="681" font-size="12.4">Korrektur anfordern</text>
+<path d="M344 665H352V371H338" fill="none" stroke="#b88880" stroke-dasharray="4 4" marker-end="url(#arrow)" />
+<rect x="24" y="755" width="312" height="137" rx="9" fill="#fff" stroke="#a8b6a7" />
+<text x="180" y="786" font-weight="700">Prüfumfang des Beispiels</text><text x="180" y="814" font-size="13.8" textLength="280" lengthAdjust="spacingAndGlyphs">Start: 8 Fehler / Referenz: 19 Erfolg</text><text x="180" y="841" font-size="13.1" textLength="280" lengthAdjust="spacingAndGlyphs">Tests unverändert · keine externen APIs</text><text x="180" y="870" textLength="280" lengthAdjust="spacingAndGlyphs" font-size="13.8">Keine Anbieter-KI erzeugte die Lösung</text>
+<text x="180" y="949" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">T3 Code verbindet Arbeit und Prüfung</text>
+<text x="180" y="981" font-size="12.4" textLength="280" lengthAdjust="spacingAndGlyphs">Agent schreibt Code und startet Werkzeuge</text>
+</g></svg>

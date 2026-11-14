@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1000" viewBox="0 0 360 1000" xml:lang="ja" role="img" aria-labelledby="title desc">
+<title id="title">Redis Lua 固定ウィンドウ制限の流れ</title>
+<desc id="desc">信頼済み主体からキーを選び、Lua でポリシー、カウンター、有効期限を確認します。上限内なら初回 SET PX または既存 INCR で記録して 200、超過なら状態を変えず 429 と Retry-After を返します。接続または状態エラーは 503 です。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#476455"/></marker></defs>
+<rect width="360" height="1000" rx="16" fill="#f5f7f2"/>
+<g font-family="system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#203a2c">
+<text x="180" y="33" font-size="12" font-weight="700">Lua で一度に判断と更新</text>
+<rect x="24" y="54" width="312" height="66" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="180" y="80">リクエスト → 制限キーを選択</text><text x="180" y="103">例：全リクエストが同一アカウント</text>
+<path d="M180 120V149" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="24" y="153" width="312" height="78" rx="9" fill="#e5edf4" stroke="#839aae"/>
+<text x="180" y="180">Redis Lua の実行開始</text><text x="180" y="203">ポリシー確認 → GET → PTTL</text><text x="180" y="222" font-size="12">実行中に他のコマンドは割り込まない</text>
+<path d="M180 231V260" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="24" y="264" width="312" height="60" rx="9" fill="#e5edf4" stroke="#839aae"/>
+<text x="180" y="289">キーなし、または正常な値と TTL</text><text x="180" y="311">残り枠があるか？</text>
+<path d="M112 324V365" stroke="#476455" marker-end="url(#arrow)"/><text x="87" y="350">ある</text>
+<path d="M270 324V365" stroke="#476455" marker-end="url(#arrow)"/><text x="296" y="350">ない</text>
+<rect x="16" y="370" width="185" height="113" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="108" y="396">キーなし：SET 1 PX</text><text x="108" y="419">キーあり：INCR</text><text x="108" y="443">TTL は延長しない</text><text x="108" y="466">許可・残数・TTL を返す</text>
+<rect x="214" y="370" width="130" height="113" rx="9" fill="#fae8d8" stroke="#b58b60"/>
+<text x="279" y="399">書き込みなし</text><text x="279" y="425">拒否・0・TTL</text><text x="279" y="451">を返す</text>
+<path d="M108 483V520" stroke="#476455" marker-end="url(#arrow)"/>
+<path d="M279 483V520" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="16" y="525" width="185" height="67" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="108" y="552">業務処理へ進む</text><text x="108" y="576">例：HTTP 200</text>
+<rect x="214" y="525" width="130" height="67" rx="9" fill="#fae8d8" stroke="#b58b60"/>
+<text x="279" y="552">HTTP 429</text><text x="279" y="576">Retry-After</text>
+<path d="M24 190H8V614H180V624" fill="none" stroke="#ba817c" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="24" y="628" width="312" height="112" rx="9" fill="#f5e1df" stroke="#ba817c"/>
+<text x="180" y="656" font-weight="700">エラー経路</text>
+<text x="180" y="681">接続失敗・タイムアウト・値異常</text><text x="180" y="704">→ HTTP 503、業務処理は行わない</text><text x="180" y="727" font-size="12">エラー時に既存の書き込みは戻らない</text>
+<rect x="24" y="775" width="312" height="137" rx="9" fill="#fff" stroke="#a9b3a7"/>
+<text x="180" y="805" font-weight="700">10 秒に 3 回の例の限界</text><text x="180" y="833">最初の許可リクエストで開始</text><text x="180" y="859">TTL 切れ後の次の要求で新規開始</text><text x="180" y="885">任意の連続 10 秒は制限しない</text>
+<text x="180" y="957" font-size="12">正常な一台の Redis を共有する前提</text>
+</g></svg>

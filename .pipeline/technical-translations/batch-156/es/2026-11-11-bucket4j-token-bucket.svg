@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1000" viewBox="0 0 360 1000" xml:lang="es" role="img" aria-labelledby="title desc">
+<title id="title">Límite local de solicitudes con Bucket4j</title>
+<desc id="desc">Se crea un bucket singleton de Spring compartido por las solicitudes. Su capacidad y tokens iniciales son 5; Greedy recarga 5 durante 10 segundos. Cada solicitud intenta consumir un token atómicamente según el tiempo transcurrido. El éxito devuelve 200; el rechazo devuelve 429 y Retry-After redondeado hacia arriba a segundos. Buckets locales independientes no comparten límite.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1000" rx="16" fill="#f5f7f2"/>
+<g fill="#203a2c" font-family="system-ui,sans-serif" text-anchor="middle" font-size="15">
+<text x="180" y="35" font-size="20" font-weight="700">Bucket4j: token bucket</text>
+<rect x="24" y="59" width="312" height="83" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="86">Crear bucket al iniciar la aplicación</text><text x="180" y="109">Reutilizar como bean singleton de Spring</text><text x="180" y="132" font-size="13" textLength="300" lengthAdjust="spacingAndGlyphs">Todas las solicitudes /demo comparten bucket</text>
+<path d="M180 142V174" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="179" width="312" height="89" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="205">Capacidad 5 · tokens iniciales 5</text><text x="180" y="230">Greedy: recargar 5 en 10 segundos</text><text x="180" y="254">Consumir 5 en t=0 → 1 en t=2s</text>
+<path d="M180 268V302" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="307" width="312" height="98" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="335">Llega solicitud → aplicar tiempo</text><text x="180" y="361">Intentar consumir 1 token atómicamente</text><text x="180" y="388" font-size="12">tryConsumeAndReturnRemaining(1)</text>
+<path d="M100 405V453" stroke="#496b57" marker-end="url(#arrow)"/><text x="74" y="435">Éxito</text>
+<path d="M265 405V453" stroke="#496b57" marker-end="url(#arrow)"/><text x="294" y="435">Insuficiente</text>
+<rect x="16" y="458" width="159" height="110" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="95" y="486">Consumir 1 token</text><text x="95" y="513">Continuar trabajo</text><text x="95" y="542">Demo: HTTP 200</text>
+<rect x="187" y="458" width="157" height="110" rx="9" fill="#f9e8d9" stroke="#ba946e"/>
+<text x="265" y="486" textLength="126" lengthAdjust="spacingAndGlyphs">No esperar recarga</text><text x="265" y="513">HTTP 429</text><text x="265" y="542" textLength="126" lengthAdjust="spacingAndGlyphs">Retry-After: espera en segundos</text>
+<rect x="24" y="608" width="312" height="113" rx="9" fill="#fff" stroke="#a9b6a8"/>
+<text x="180" y="636" font-weight="700" textLength="300" lengthAdjust="spacingAndGlyphs">La recarga se calcula por tiempo transcurrido</text><text x="180" y="663">No crear un bucket por solicitud</text><text x="180" y="689" textLength="300" lengthAdjust="spacingAndGlyphs">No se registra un planificador independiente</text><text x="180" y="710" font-size="12">Este diagrama cubre una sola JVM local</text>
+<rect x="24" y="759" width="312" height="147" rx="9" fill="#f4e2df" stroke="#b88880"/>
+<text x="180" y="789" font-weight="700">Dos buckets locales separados</text><text x="180" y="817" textLength="280" lengthAdjust="spacingAndGlyphs">Bucket A: inicial 5 / Bucket B: inicial 5</text><text x="180" y="846">Sin estado compartido: hasta 10 permitidas</text><text x="180" y="875" textLength="300" lengthAdjust="spacingAndGlyphs">Un límite global requiere estado distribuido</text>
+<text x="180" y="954" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">Capacidad y tasa de recarga son políticas distintas</text>
+</g></svg>

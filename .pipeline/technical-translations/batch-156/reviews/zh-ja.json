@@ -1,0 +1,13 @@
+{
+  "languages": [
+    "zh-CN",
+    "ja"
+  ],
+  "reviewer": "independent AI session review_zh_ja",
+  "scope": "All 18 article bodies and tables compared in sequence with English; SVG text compared. Code/output blocks compared automatically. Original Korean sample input retained.",
+  "findings": "Corrected unsafe negation, TOTP egress, Korean won thresholds, fixed tests, original product names, atomicity, rounding, flow labels and other identified errors. Two final Japanese SVG label suggestions applied by integrator.",
+  "limits": "No native-speaker review, new source fact-check or code execution by this reviewer. Mobile rendering was checked separately.",
+  "reviewedAt": "2026-11-14T15:08:48.775153+00:00",
+  "humanOrNativeSpeakerReview": false,
+  "scopeIsNotGuarantee": true
+}

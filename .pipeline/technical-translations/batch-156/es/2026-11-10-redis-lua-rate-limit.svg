@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1000" viewBox="0 0 360 1000" xml:lang="es" role="img" aria-labelledby="title desc">
+<title id="title">Límite de solicitudes con Redis Lua</title>
+<desc id="desc">El servidor elige la clave a partir de un sujeto de la solicitud considerado fiable; Lua comprueba la política, el contador y el vencimiento. Si se admite, registra la solicitud con SET PX inicial o INCR y devuelve 200. Si se supera el límite, devuelve 429 con Retry-After sin cambiar el estado. Los errores de conexión o estado producen 503.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#476455"/></marker></defs>
+<rect width="360" height="1000" rx="16" fill="#f5f7f2"/>
+<g font-family="system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#203a2c">
+<text x="180" y="33" font-size="12" font-weight="700">Decidir y actualizar con Lua</text>
+<rect x="24" y="54" width="312" height="66" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="180" y="80">Solicitud → elegir clave de límite</text><text x="180" y="103">Demo: una cuenta para todas</text>
+<path d="M180 120V149" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="24" y="153" width="312" height="78" rx="9" fill="#e5edf4" stroke="#839aae"/>
+<text x="180" y="180">Iniciar Redis Lua</text><text x="180" y="203">Validar política → GET → PTTL</text><text x="180" y="222" font-size="12">Otros comandos no se intercalan</text>
+<path d="M180 231V260" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="24" y="264" width="312" height="60" rx="9" fill="#e5edf4" stroke="#839aae"/>
+<text x="180" y="289">Sin clave o contador y TTL válidos</text><text x="180" y="311">¿Queda capacidad?</text>
+<path d="M112 324V365" stroke="#476455" marker-end="url(#arrow)"/><text x="87" y="350">Sí</text>
+<path d="M270 324V365" stroke="#476455" marker-end="url(#arrow)"/><text x="296" y="350">No</text>
+<rect x="16" y="370" width="185" height="113" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="108" y="396" textLength="130" lengthAdjust="spacingAndGlyphs">Sin clave: SET 1 PX</text><text x="108" y="419">Con clave: INCR</text><text x="108" y="443" textLength="130" lengthAdjust="spacingAndGlyphs">El TTL no se amplía</text><text x="108" y="466" textLength="130" lengthAdjust="spacingAndGlyphs">Devolver permiso / resto / TTL</text>
+<rect x="214" y="370" width="130" height="113" rx="9" fill="#fae8d8" stroke="#b58b60"/>
+<text x="279" y="399">Sin escritura</text><text x="279" y="425">Rechazo · 0 · TTL</text><text x="279" y="451">devolver</text>
+<path d="M108 483V520" stroke="#476455" marker-end="url(#arrow)"/>
+<path d="M279 483V520" stroke="#476455" marker-end="url(#arrow)"/>
+<rect x="16" y="525" width="185" height="67" rx="9" fill="#e0ecdf" stroke="#829b83"/>
+<text x="108" y="552">Continuar trabajo</text><text x="108" y="576">Demo: HTTP 200</text>
+<rect x="214" y="525" width="130" height="67" rx="9" fill="#fae8d8" stroke="#b58b60"/>
+<text x="279" y="552">HTTP 429</text><text x="279" y="576">Retry-After</text>
+<path d="M24 190H8V614H180V624" fill="none" stroke="#ba817c" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="24" y="628" width="312" height="112" rx="9" fill="#f5e1df" stroke="#ba817c"/>
+<text x="180" y="656" font-weight="700">Ruta de error</text>
+<text x="180" y="681" textLength="300" lengthAdjust="spacingAndGlyphs">Fallo de conexión, espera o contador inválido</text><text x="180" y="704">→ HTTP 503; no se ejecuta el trabajo</text><text x="180" y="727" font-size="12" textLength="300" lengthAdjust="spacingAndGlyphs">Las escrituras existentes no revierten al fallar</text>
+<rect x="24" y="775" width="312" height="137" rx="9" fill="#fff" stroke="#a9b3a7"/>
+<text x="180" y="805" font-weight="700">Límites del ejemplo de 3 cada 10 segundos</text><text x="180" y="833">La ventana empieza con la primera admisión</text><text x="180" y="859" textLength="300" lengthAdjust="spacingAndGlyphs">Tras caducar el TTL, el siguiente inicia ventana</text><text x="180" y="885" textLength="300" lengthAdjust="spacingAndGlyphs">No limita cualquier intervalo móvil de 10 segundos</text>
+<text x="180" y="957" font-size="12" textLength="300" lengthAdjust="spacingAndGlyphs">Supone solicitudes que comparten un Redis sano</text>
+</g></svg>

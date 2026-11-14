@@ -1,0 +1,1250 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-156",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "37205326431007226e3abf60fdab3c50c0fe97e2",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Independent AI review by language pair, source and SVG-text comparison; corrective rechecks and separate 360px layout checks.",
+    "independentReviewer": true,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "machineTranslation": "Initial zh-CN/ja drafts for six topics used machine translation; all other added-language editions were translated by AI without that service.",
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-156/reviews/de-fr.json",
+        "sha256": "e4795d5949a492a7947f66daf87621b8c03073fb239326ff587eacf6f32ed151"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-156/reviews/pipeline.json",
+        "sha256": "76155278109f8aec93c250de3c9020f54011ccf03fa5e11c346a104ab0d38e7b"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-156/reviews/ru-es.json",
+        "sha256": "25e8e45a11b773954e3513af30842483093b485eef5dfcd0e909bea777b5aa26"
+      },
+      {
+        "path": ".pipeline/technical-translations/batch-156/reviews/zh-ja.json",
+        "sha256": "6ad920871abf4e36e84f880ef5dc239676df25ff44c85fe5a42daacc8f672159"
+      }
+    ]
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-05-local-llm-at-home",
+      "language": "zh-CN",
+      "translationKey": "2026-11-05-local-llm-at-home",
+      "source": {
+        "path": "src/content/posts/en/2026-11-05-local-llm-at-home.md",
+        "sha256": "7fc88005f66f084ebbd02871b81f65430f7c33e62f41e3609715599a2ded8509"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-05-local-llm-at-home.md",
+        "sha256": "72fe9bb6ddae534619205602a010cf96fe6323e21eb09b17e09b97509b4ea1dc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-05-local-llm-at-home.svg",
+        "sha256": "e45f32fc0867eb906c0e524b87f3043226e3ab7860277ecd722eb6cbcce722f2"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/local-llm-flow-en.svg",
+        "sha256": "96a4f8d0ee40450b01f7638a49f8dfb06cbfd6897264a65f8a9e57e210007625"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-09-spring-mvc-webclient-execution",
+      "language": "zh-CN",
+      "translationKey": "2026-11-09-spring-mvc-webclient-execution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "6f81dd9e98a391f7b05ca1d0fef8c01ca8288550531caf852ae518c60843dba8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "1a001beb0f13fcba3b340813ba9105cadd10c7722823186905ee29b98f32e4dd"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-09-spring-mvc-webclient-execution.svg",
+        "sha256": "771b74fd9ea895a14d2a5381376e386ae59cee4b509ac1f624f0945595184e10"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mvc-webclient-flow-en.svg",
+        "sha256": "37859bc50c40722aa272a8281dfb4037b10112ad5595dfd8ee994fe590c3206e"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-10-redis-lua-rate-limit",
+      "language": "zh-CN",
+      "translationKey": "2026-11-10-redis-lua-rate-limit",
+      "source": {
+        "path": "src/content/posts/en/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "bffe243d3ec0d2693086eb4d708c74490b34a27af7c1735cf6a41c81eea561d5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "9913276a85d3a1e66da506bf5dc6497807a6e881871abfff26d8fafb11d00734"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-10-redis-lua-rate-limit.svg",
+        "sha256": "bbc63b361f30476daebdf01dd5620e1a6fb226699775bd122b28683c5e5cca16"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/redis-rate-limit-en.svg",
+        "sha256": "67d2d84fecfc726ef204daf9624518da516232b0a5184bd3b90bcab91d77bd6a"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-11-bucket4j-token-bucket",
+      "language": "zh-CN",
+      "translationKey": "2026-11-11-bucket4j-token-bucket",
+      "source": {
+        "path": "src/content/posts/en/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "3026360c1ee1f4cc06667cd53ebded53b1bfebf3c0c29658e6eb58affffbdf8f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "117bb01a2b479e9d7c9a6e6b98837068ee9b7806cad45b85a4cc692dff949d50"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-11-bucket4j-token-bucket.svg",
+        "sha256": "38a2088f27461d7ac632cc912bd123c4b9141f2aead87a8bc6dff04bfcc4e387"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/bucket4j-flow-en.svg",
+        "sha256": "9a26c0d7a42e0e4339d384eb1ef6ac03dac998465946f187b0992015f8b60820"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-12-orca-worktree-guide",
+      "language": "zh-CN",
+      "translationKey": "2026-11-12-orca-worktree-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-orca-worktree-guide.md",
+        "sha256": "4214532491f859b28104e614442c9bc3c33ecc9a00a62567a96d927bc90cffb6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-12-orca-worktree-guide.md",
+        "sha256": "fbb1f93ed275cdf03e4dc092822f73b3f8dadc2a749c123b1450168b6b0343b7"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-12-orca-worktree-guide.svg",
+        "sha256": "fc3c0f4410e25131bc3413bd5c6df94766f5e99f226831a3a793777b5a4a6895"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-flow-en.svg",
+        "sha256": "178cefcacb3b68e339f26621ac0dc269a3c10a5864ee14f92acd49005fc7c959"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-12-t3-code-workflow",
+      "language": "zh-CN",
+      "translationKey": "2026-11-12-t3-code-workflow",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-t3-code-workflow.md",
+        "sha256": "da83ebd4864d4a4b015af522789e363b4a8695b6424368db9bfd1652f7761089"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-12-t3-code-workflow.md",
+        "sha256": "4545d56ba297deedc9b00e52eec3d2224f7edfdd6e671367df0dd5e26a7e3dc7"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-12-t3-code-workflow.svg",
+        "sha256": "11cafd10e2cfa7ce1d662d63bd9cc14688bae5bb678d06d2d898a57aaff6c98f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/t3-code-flow-en.svg",
+        "sha256": "cd6136bf67979ee9e823f106e5c5206b8160d0ca5a28b8fe9a500537df031b58"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-13-rust-log-cli",
+      "language": "zh-CN",
+      "translationKey": "2026-11-13-rust-log-cli",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-log-cli.md",
+        "sha256": "4d2fd4771a2fa07143e52582adf4beccc6662d6b6cbba32538ca807a509c86f0"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-13-rust-log-cli.md",
+        "sha256": "4a44d6e0cacb9f57a53591477dd45ecebc9122a923e07db684c20a09ec4a1943"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-13-rust-log-cli.svg",
+        "sha256": "1258d359b5684ce39276fc97f3e89a6ccbe392142290fca27de524113e83e93d"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/log-cli-flow-en.svg",
+        "sha256": "1fa93e2786e4d59c5bbd4c081077f1a28abb98cd4e60b33c11a0fd674e682c63"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-13-rust-ownership-guide",
+      "language": "zh-CN",
+      "translationKey": "2026-11-13-rust-ownership-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-ownership-guide.md",
+        "sha256": "b6f336e010d9bfad88b7108ccfb60a6c7f30048a3bb7e54fa94483e719e26d40"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-13-rust-ownership-guide.md",
+        "sha256": "1c82284fad298c175755b31431d474a428d41bcb568efaaf07798f4fd4c12719"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-13-rust-ownership-guide.svg",
+        "sha256": "78934bf44e4c9a49f79ab5f2cccf02d06e7c4f7009f9c396f0260cbf4a210785"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/rust-flow-en.svg",
+        "sha256": "79055a18150586f3e7a79d9adf381be8075bfbdfe91abcea9d8e0692e66ad71e"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-13-pickle-ai-security",
+      "language": "zh-CN",
+      "translationKey": "2026-11-13-pickle-ai-security",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-pickle-ai-security.md",
+        "sha256": "4973bca9ea9b81ec4e068b4f530a2b82742c427074c36836639b0c2db1a811e2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-13-pickle-ai-security.md",
+        "sha256": "df4da1581a9d32edc87349d60e7ebdbc257b26c667ebab066d1b9f14f7748b52"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-13-pickle-ai-security.svg",
+        "sha256": "f3e6cc54bc1d92f7280a9e1cdafa28db3e9f6ca866414544866c1b77e635dc31"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/pickle-credentials-en.svg",
+        "sha256": "dbc118d901e8e8cc1c7955adc2e168b376950c09afac52eab8ad59cc93c8e7bc"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/pickle-verification-en.svg",
+            "sha256": "5688ec0633ec7c11771ba52d4c46855895e9f427181c01e236cc5c46e011f8f3"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-156/zh-CN/2026-11-13-pickle-ai-security-architecture.svg",
+            "sha256": "b359198ac4f6483bb6203a92d5c3006d599db9c02b37142f0e787ee47c9883da"
+          }
+        }
+      ]
+    },
+    {
+      "key": "ja-2026-11-05-local-llm-at-home",
+      "language": "ja",
+      "translationKey": "2026-11-05-local-llm-at-home",
+      "source": {
+        "path": "src/content/posts/en/2026-11-05-local-llm-at-home.md",
+        "sha256": "7fc88005f66f084ebbd02871b81f65430f7c33e62f41e3609715599a2ded8509"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-05-local-llm-at-home.md",
+        "sha256": "1bedffb9de88f30b923784b6b102e7565377b6cee8c67d6ca649633636a7ca45"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-05-local-llm-at-home.svg",
+        "sha256": "146b74ec9fa75548fefe6912bf4b385200645ad2fb6a20ceb64da0b96a103d6b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/local-llm-flow-en.svg",
+        "sha256": "96a4f8d0ee40450b01f7638a49f8dfb06cbfd6897264a65f8a9e57e210007625"
+      }
+    },
+    {
+      "key": "ja-2026-11-09-spring-mvc-webclient-execution",
+      "language": "ja",
+      "translationKey": "2026-11-09-spring-mvc-webclient-execution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "6f81dd9e98a391f7b05ca1d0fef8c01ca8288550531caf852ae518c60843dba8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "b9650ece5ad04e4f0adb9be4c9b33d702ef86c02b7fc4d27da7e29c83ddabfcd"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-09-spring-mvc-webclient-execution.svg",
+        "sha256": "64a234b3245a6fc46de0f4ac052a6e298c4f03b90fed162250feb13bfb120741"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mvc-webclient-flow-en.svg",
+        "sha256": "37859bc50c40722aa272a8281dfb4037b10112ad5595dfd8ee994fe590c3206e"
+      }
+    },
+    {
+      "key": "ja-2026-11-10-redis-lua-rate-limit",
+      "language": "ja",
+      "translationKey": "2026-11-10-redis-lua-rate-limit",
+      "source": {
+        "path": "src/content/posts/en/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "bffe243d3ec0d2693086eb4d708c74490b34a27af7c1735cf6a41c81eea561d5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "bec0717f9e0f5638fd68d438280010e0354510b855956091268ebbf166c563cb"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-10-redis-lua-rate-limit.svg",
+        "sha256": "01de9c6a99a6103f4cc8bc19f966052de651ef0a2dde19fb62c29b2167e3c760"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/redis-rate-limit-en.svg",
+        "sha256": "67d2d84fecfc726ef204daf9624518da516232b0a5184bd3b90bcab91d77bd6a"
+      }
+    },
+    {
+      "key": "ja-2026-11-11-bucket4j-token-bucket",
+      "language": "ja",
+      "translationKey": "2026-11-11-bucket4j-token-bucket",
+      "source": {
+        "path": "src/content/posts/en/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "3026360c1ee1f4cc06667cd53ebded53b1bfebf3c0c29658e6eb58affffbdf8f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "1920c8ad13ee85db597c23bbf4a46c8a9d2f090d4471cd9fba86afa5d5e94384"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-11-bucket4j-token-bucket.svg",
+        "sha256": "0f8c8eb14b874d175c972a2faf1308ef6294c1c9b07d16383b6244e6774fadbd"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/bucket4j-flow-en.svg",
+        "sha256": "9a26c0d7a42e0e4339d384eb1ef6ac03dac998465946f187b0992015f8b60820"
+      }
+    },
+    {
+      "key": "ja-2026-11-12-orca-worktree-guide",
+      "language": "ja",
+      "translationKey": "2026-11-12-orca-worktree-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-orca-worktree-guide.md",
+        "sha256": "4214532491f859b28104e614442c9bc3c33ecc9a00a62567a96d927bc90cffb6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-12-orca-worktree-guide.md",
+        "sha256": "70e7fffbd568b0ce768e59e53cadbb08f70dc31718334cb60e7fb79d3dcfd459"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-12-orca-worktree-guide.svg",
+        "sha256": "63dbb6e389394f2116505158a87e1d6c6a1694864e0cebea0f95cb4fcb6da457"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-flow-en.svg",
+        "sha256": "178cefcacb3b68e339f26621ac0dc269a3c10a5864ee14f92acd49005fc7c959"
+      }
+    },
+    {
+      "key": "ja-2026-11-12-t3-code-workflow",
+      "language": "ja",
+      "translationKey": "2026-11-12-t3-code-workflow",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-t3-code-workflow.md",
+        "sha256": "da83ebd4864d4a4b015af522789e363b4a8695b6424368db9bfd1652f7761089"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-12-t3-code-workflow.md",
+        "sha256": "32cf0518100f0b1673de5a15d243ed6fa5571481906304932dbc1d9c2c624698"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-12-t3-code-workflow.svg",
+        "sha256": "8125046d7d33ce0540453f02eb602d4814c5e16a7ed46f3d1e606033d69c0af1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/t3-code-flow-en.svg",
+        "sha256": "cd6136bf67979ee9e823f106e5c5206b8160d0ca5a28b8fe9a500537df031b58"
+      }
+    },
+    {
+      "key": "ja-2026-11-13-rust-log-cli",
+      "language": "ja",
+      "translationKey": "2026-11-13-rust-log-cli",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-log-cli.md",
+        "sha256": "4d2fd4771a2fa07143e52582adf4beccc6662d6b6cbba32538ca807a509c86f0"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-13-rust-log-cli.md",
+        "sha256": "f5b76cf76d70d83b75603682b2cc54ab9221c36531420821f472a6f9f3413341"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-13-rust-log-cli.svg",
+        "sha256": "a7d667b8b25e453d8a4b884a481d9c68bf8feea40b70d6dea3f1c2d6b30c7cba"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/log-cli-flow-en.svg",
+        "sha256": "1fa93e2786e4d59c5bbd4c081077f1a28abb98cd4e60b33c11a0fd674e682c63"
+      }
+    },
+    {
+      "key": "ja-2026-11-13-rust-ownership-guide",
+      "language": "ja",
+      "translationKey": "2026-11-13-rust-ownership-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-ownership-guide.md",
+        "sha256": "b6f336e010d9bfad88b7108ccfb60a6c7f30048a3bb7e54fa94483e719e26d40"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-13-rust-ownership-guide.md",
+        "sha256": "2d5c7a4fe11b4af820d63dcac7b2cb5e473b007364863009967dd2a8119a1005"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-13-rust-ownership-guide.svg",
+        "sha256": "61232619b854310663060ffb8db5531156dd9a7cb27bddf6e308ac38ec075d9b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/rust-flow-en.svg",
+        "sha256": "79055a18150586f3e7a79d9adf381be8075bfbdfe91abcea9d8e0692e66ad71e"
+      }
+    },
+    {
+      "key": "ja-2026-11-13-pickle-ai-security",
+      "language": "ja",
+      "translationKey": "2026-11-13-pickle-ai-security",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-pickle-ai-security.md",
+        "sha256": "4973bca9ea9b81ec4e068b4f530a2b82742c427074c36836639b0c2db1a811e2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-13-pickle-ai-security.md",
+        "sha256": "ca16b1fafb696a6a545c0016c816b1536fdc6231f1998457953f0f6aac5bdca7"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ja/2026-11-13-pickle-ai-security.svg",
+        "sha256": "b2ab8bba19f9eb86530fd9cf0684431f51c19e68ca9bcb5e97f6aeca3b04b5ff"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/pickle-credentials-en.svg",
+        "sha256": "dbc118d901e8e8cc1c7955adc2e168b376950c09afac52eab8ad59cc93c8e7bc"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/pickle-verification-en.svg",
+            "sha256": "5688ec0633ec7c11771ba52d4c46855895e9f427181c01e236cc5c46e011f8f3"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-156/ja/2026-11-13-pickle-ai-security-architecture.svg",
+            "sha256": "ec1e9a8352a0ea2dfd02e7792433d8fec656dcedc95c1f93f473205da873bb45"
+          }
+        }
+      ]
+    },
+    {
+      "key": "de-2026-11-05-local-llm-at-home",
+      "language": "de",
+      "translationKey": "2026-11-05-local-llm-at-home",
+      "source": {
+        "path": "src/content/posts/en/2026-11-05-local-llm-at-home.md",
+        "sha256": "7fc88005f66f084ebbd02871b81f65430f7c33e62f41e3609715599a2ded8509"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-05-local-llm-at-home.md",
+        "sha256": "c1e750a140ea817ee72f8015019d75b39de8886635c8fa537fd588ea8da38e8c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-05-local-llm-at-home.svg",
+        "sha256": "231f740d08fcca4995c4bea323f3415badc8609c9f339e1ee5a71f7733d7a57f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/local-llm-flow-en.svg",
+        "sha256": "96a4f8d0ee40450b01f7638a49f8dfb06cbfd6897264a65f8a9e57e210007625"
+      }
+    },
+    {
+      "key": "de-2026-11-09-spring-mvc-webclient-execution",
+      "language": "de",
+      "translationKey": "2026-11-09-spring-mvc-webclient-execution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "6f81dd9e98a391f7b05ca1d0fef8c01ca8288550531caf852ae518c60843dba8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "d2ed3d144edec9530d5752f65d776e571ae1d4f1172f5fefad391f06fad5daec"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-09-spring-mvc-webclient-execution.svg",
+        "sha256": "cfcdd8a3fbbff4d35b53186ae6fd510c77dd6ceffe0e044aee091e9ea999ed8f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mvc-webclient-flow-en.svg",
+        "sha256": "37859bc50c40722aa272a8281dfb4037b10112ad5595dfd8ee994fe590c3206e"
+      }
+    },
+    {
+      "key": "de-2026-11-10-redis-lua-rate-limit",
+      "language": "de",
+      "translationKey": "2026-11-10-redis-lua-rate-limit",
+      "source": {
+        "path": "src/content/posts/en/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "bffe243d3ec0d2693086eb4d708c74490b34a27af7c1735cf6a41c81eea561d5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "eba61f4931cbb54aa8dad5e9047ce2ef53d38d90af96002113abee6023f74b43"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-10-redis-lua-rate-limit.svg",
+        "sha256": "506dc4fc0883cd28c782ff5361c16f7973df0e959588d850e0ddd5469db744f1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/redis-rate-limit-en.svg",
+        "sha256": "67d2d84fecfc726ef204daf9624518da516232b0a5184bd3b90bcab91d77bd6a"
+      }
+    },
+    {
+      "key": "de-2026-11-11-bucket4j-token-bucket",
+      "language": "de",
+      "translationKey": "2026-11-11-bucket4j-token-bucket",
+      "source": {
+        "path": "src/content/posts/en/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "3026360c1ee1f4cc06667cd53ebded53b1bfebf3c0c29658e6eb58affffbdf8f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "6641c3b0a7895659cbc29fc53fa76331285c749839aefb3cce8531525d8cbdff"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-11-bucket4j-token-bucket.svg",
+        "sha256": "8ac66116751f06905a66d2013274655f48cdebbb3a6e9bf9f43d2bb3f6a129e5"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/bucket4j-flow-en.svg",
+        "sha256": "9a26c0d7a42e0e4339d384eb1ef6ac03dac998465946f187b0992015f8b60820"
+      }
+    },
+    {
+      "key": "de-2026-11-12-orca-worktree-guide",
+      "language": "de",
+      "translationKey": "2026-11-12-orca-worktree-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-orca-worktree-guide.md",
+        "sha256": "4214532491f859b28104e614442c9bc3c33ecc9a00a62567a96d927bc90cffb6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-12-orca-worktree-guide.md",
+        "sha256": "f7f7cf97caa00d3812ac0713c7c58ff6c3122c42625cefaac44e67fab96ce293"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-12-orca-worktree-guide.svg",
+        "sha256": "46626652c9a72306fc82b2757e4b8987ca34b8bc67a244bd6ea6454a29cf3fab"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-flow-en.svg",
+        "sha256": "178cefcacb3b68e339f26621ac0dc269a3c10a5864ee14f92acd49005fc7c959"
+      }
+    },
+    {
+      "key": "de-2026-11-12-t3-code-workflow",
+      "language": "de",
+      "translationKey": "2026-11-12-t3-code-workflow",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-t3-code-workflow.md",
+        "sha256": "da83ebd4864d4a4b015af522789e363b4a8695b6424368db9bfd1652f7761089"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-12-t3-code-workflow.md",
+        "sha256": "450adfbc69f403ef8119b0536fba3b59b79238d6559cc6fbf58f8f7dd9fdefaf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-12-t3-code-workflow.svg",
+        "sha256": "0adfb09abdcdd41c4230f2f94384e2ea32a13cf839e7f2624671d3abe88aad88"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/t3-code-flow-en.svg",
+        "sha256": "cd6136bf67979ee9e823f106e5c5206b8160d0ca5a28b8fe9a500537df031b58"
+      }
+    },
+    {
+      "key": "de-2026-11-13-rust-log-cli",
+      "language": "de",
+      "translationKey": "2026-11-13-rust-log-cli",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-log-cli.md",
+        "sha256": "4d2fd4771a2fa07143e52582adf4beccc6662d6b6cbba32538ca807a509c86f0"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-13-rust-log-cli.md",
+        "sha256": "1dfd9142bd6d077913787ebafaedbb107b6ddd10489fda020b98e4114f142ba0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-13-rust-log-cli.svg",
+        "sha256": "ce61ce81653e322adaa58a87aca9f28c7e5b4fbe286aa5b04533603be85cd4f1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/log-cli-flow-en.svg",
+        "sha256": "1fa93e2786e4d59c5bbd4c081077f1a28abb98cd4e60b33c11a0fd674e682c63"
+      }
+    },
+    {
+      "key": "de-2026-11-13-rust-ownership-guide",
+      "language": "de",
+      "translationKey": "2026-11-13-rust-ownership-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-ownership-guide.md",
+        "sha256": "b6f336e010d9bfad88b7108ccfb60a6c7f30048a3bb7e54fa94483e719e26d40"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-13-rust-ownership-guide.md",
+        "sha256": "b4b946bc8f056ef46b046af1cd4ab17bfa712690e2b423c1a3ba7cb9ed84adb3"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-13-rust-ownership-guide.svg",
+        "sha256": "d02d1f915ef9f6f15665644ed383c06f4a38d6c62e163cf3d680eb782848f3ea"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/rust-flow-en.svg",
+        "sha256": "79055a18150586f3e7a79d9adf381be8075bfbdfe91abcea9d8e0692e66ad71e"
+      }
+    },
+    {
+      "key": "de-2026-11-13-pickle-ai-security",
+      "language": "de",
+      "translationKey": "2026-11-13-pickle-ai-security",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-pickle-ai-security.md",
+        "sha256": "4973bca9ea9b81ec4e068b4f530a2b82742c427074c36836639b0c2db1a811e2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-13-pickle-ai-security.md",
+        "sha256": "ba97279da8e207d708ffd76d573c651fa6f8cedea631197abaff89745c75739e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/de/2026-11-13-pickle-ai-security.svg",
+        "sha256": "4244c3b32cd9c3587fc5d73db08b5a64da0c3ed18c86f34e9d9a7cfc592facdb"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/pickle-credentials-en.svg",
+        "sha256": "dbc118d901e8e8cc1c7955adc2e168b376950c09afac52eab8ad59cc93c8e7bc"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/pickle-verification-en.svg",
+            "sha256": "5688ec0633ec7c11771ba52d4c46855895e9f427181c01e236cc5c46e011f8f3"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-156/de/2026-11-13-pickle-ai-security-architecture.svg",
+            "sha256": "f23bcdaf23263fcdb38e48df312f2f6062e50ed4dc6e3a2956b8586a5492362b"
+          }
+        }
+      ]
+    },
+    {
+      "key": "fr-2026-11-05-local-llm-at-home",
+      "language": "fr",
+      "translationKey": "2026-11-05-local-llm-at-home",
+      "source": {
+        "path": "src/content/posts/en/2026-11-05-local-llm-at-home.md",
+        "sha256": "7fc88005f66f084ebbd02871b81f65430f7c33e62f41e3609715599a2ded8509"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-05-local-llm-at-home.md",
+        "sha256": "a8b4f5ff73b1a72b9406eee35f15e51da9bd29151f3256d33f0c206f7f524caf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-05-local-llm-at-home.svg",
+        "sha256": "1b49cc032e63a186725ea5b251e22ebf3263d9954d2e4bcba9d89d04e62b1d34"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/local-llm-flow-en.svg",
+        "sha256": "96a4f8d0ee40450b01f7638a49f8dfb06cbfd6897264a65f8a9e57e210007625"
+      }
+    },
+    {
+      "key": "fr-2026-11-09-spring-mvc-webclient-execution",
+      "language": "fr",
+      "translationKey": "2026-11-09-spring-mvc-webclient-execution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "6f81dd9e98a391f7b05ca1d0fef8c01ca8288550531caf852ae518c60843dba8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "4e564e1dffe80014460d19d681851f083f27df79c3bd5c415a83475cca14b59f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-09-spring-mvc-webclient-execution.svg",
+        "sha256": "ee042bdada3aac831dc8a9cbcda8fb4059786bbcaadb2a4a3424ddf3d5a4b9f7"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mvc-webclient-flow-en.svg",
+        "sha256": "37859bc50c40722aa272a8281dfb4037b10112ad5595dfd8ee994fe590c3206e"
+      }
+    },
+    {
+      "key": "fr-2026-11-10-redis-lua-rate-limit",
+      "language": "fr",
+      "translationKey": "2026-11-10-redis-lua-rate-limit",
+      "source": {
+        "path": "src/content/posts/en/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "bffe243d3ec0d2693086eb4d708c74490b34a27af7c1735cf6a41c81eea561d5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "010eec190ab9d7ffd04d7c5f984f81bd75bc75b02b681aa5f2d91cbb37fd4221"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-10-redis-lua-rate-limit.svg",
+        "sha256": "8d7bf76a4ded71eca5069a635e2dca80938beeb229235f2cc251b8af59b1387f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/redis-rate-limit-en.svg",
+        "sha256": "67d2d84fecfc726ef204daf9624518da516232b0a5184bd3b90bcab91d77bd6a"
+      }
+    },
+    {
+      "key": "fr-2026-11-11-bucket4j-token-bucket",
+      "language": "fr",
+      "translationKey": "2026-11-11-bucket4j-token-bucket",
+      "source": {
+        "path": "src/content/posts/en/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "3026360c1ee1f4cc06667cd53ebded53b1bfebf3c0c29658e6eb58affffbdf8f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "e5bb46c0601962fb17b90f15ef666c49731e5954c856d4e6c4e384b322a27f12"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-11-bucket4j-token-bucket.svg",
+        "sha256": "87ff4018da1c01d6c552bdb86a4af652822e9b3b08eebcb0e922dfb0707cc47b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/bucket4j-flow-en.svg",
+        "sha256": "9a26c0d7a42e0e4339d384eb1ef6ac03dac998465946f187b0992015f8b60820"
+      }
+    },
+    {
+      "key": "fr-2026-11-12-orca-worktree-guide",
+      "language": "fr",
+      "translationKey": "2026-11-12-orca-worktree-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-orca-worktree-guide.md",
+        "sha256": "4214532491f859b28104e614442c9bc3c33ecc9a00a62567a96d927bc90cffb6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-12-orca-worktree-guide.md",
+        "sha256": "b39cf2ef726512b747d4d37a3bc9694a198b1930ca9da685b8c032363e5d7da3"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-12-orca-worktree-guide.svg",
+        "sha256": "4148bf6373266472dcad12b61c60128de3e3d02df52c5f2aacbd3974579a5401"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-flow-en.svg",
+        "sha256": "178cefcacb3b68e339f26621ac0dc269a3c10a5864ee14f92acd49005fc7c959"
+      }
+    },
+    {
+      "key": "fr-2026-11-12-t3-code-workflow",
+      "language": "fr",
+      "translationKey": "2026-11-12-t3-code-workflow",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-t3-code-workflow.md",
+        "sha256": "da83ebd4864d4a4b015af522789e363b4a8695b6424368db9bfd1652f7761089"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-12-t3-code-workflow.md",
+        "sha256": "7929cab47ad9f67742d4212d76c317892eafcf8b0b26b80d965917c219fd00aa"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-12-t3-code-workflow.svg",
+        "sha256": "62b687328ebcb4849fcd127f2c38cb0e4da50f4355603d05cabd36d9a863859f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/t3-code-flow-en.svg",
+        "sha256": "cd6136bf67979ee9e823f106e5c5206b8160d0ca5a28b8fe9a500537df031b58"
+      }
+    },
+    {
+      "key": "fr-2026-11-13-rust-log-cli",
+      "language": "fr",
+      "translationKey": "2026-11-13-rust-log-cli",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-log-cli.md",
+        "sha256": "4d2fd4771a2fa07143e52582adf4beccc6662d6b6cbba32538ca807a509c86f0"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-13-rust-log-cli.md",
+        "sha256": "1742d9c567c1b2865a2ffa5174b08edb94c6a0fadd9516483f17dde10107ca9f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-13-rust-log-cli.svg",
+        "sha256": "e9fae6edbd3da3ab984a882b1e6f3fa69659bd4926d2cdcee05d92701a06c767"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/log-cli-flow-en.svg",
+        "sha256": "1fa93e2786e4d59c5bbd4c081077f1a28abb98cd4e60b33c11a0fd674e682c63"
+      }
+    },
+    {
+      "key": "fr-2026-11-13-rust-ownership-guide",
+      "language": "fr",
+      "translationKey": "2026-11-13-rust-ownership-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-ownership-guide.md",
+        "sha256": "b6f336e010d9bfad88b7108ccfb60a6c7f30048a3bb7e54fa94483e719e26d40"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-13-rust-ownership-guide.md",
+        "sha256": "5559f7084e1a741b0f081e53eae2f5823e4fd9e808d2c34ccda673a6b988f154"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-13-rust-ownership-guide.svg",
+        "sha256": "6f9b8f4c8e6dfb5c5ae6d600703f23a97750bdead7e1ece33a2accccf91904da"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/rust-flow-en.svg",
+        "sha256": "79055a18150586f3e7a79d9adf381be8075bfbdfe91abcea9d8e0692e66ad71e"
+      }
+    },
+    {
+      "key": "fr-2026-11-13-pickle-ai-security",
+      "language": "fr",
+      "translationKey": "2026-11-13-pickle-ai-security",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-pickle-ai-security.md",
+        "sha256": "4973bca9ea9b81ec4e068b4f530a2b82742c427074c36836639b0c2db1a811e2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-13-pickle-ai-security.md",
+        "sha256": "91a4a70db997832a55c823c8ee63ce93b20032e40a2303bb89529a339f94970a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/fr/2026-11-13-pickle-ai-security.svg",
+        "sha256": "13b90cdb7bc08aa4f05eb14c66f0800a7f31592387ceb54e6bc90e7886aaea36"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/pickle-credentials-en.svg",
+        "sha256": "dbc118d901e8e8cc1c7955adc2e168b376950c09afac52eab8ad59cc93c8e7bc"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/pickle-verification-en.svg",
+            "sha256": "5688ec0633ec7c11771ba52d4c46855895e9f427181c01e236cc5c46e011f8f3"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-156/fr/2026-11-13-pickle-ai-security-architecture.svg",
+            "sha256": "63759d8d378672dc717d2d4284418d104d6e9b86698b578428621f4eb0e19fc5"
+          }
+        }
+      ]
+    },
+    {
+      "key": "ru-2026-11-05-local-llm-at-home",
+      "language": "ru",
+      "translationKey": "2026-11-05-local-llm-at-home",
+      "source": {
+        "path": "src/content/posts/en/2026-11-05-local-llm-at-home.md",
+        "sha256": "7fc88005f66f084ebbd02871b81f65430f7c33e62f41e3609715599a2ded8509"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-05-local-llm-at-home.md",
+        "sha256": "ae8396d7a0256c4557e7eadd9a9565977f9daac1fea40b4f80dd9f1669fb3e61"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-05-local-llm-at-home.svg",
+        "sha256": "d364074fae079700810c8a0b5c76aa098794674b4c1f9cf2b3f4fa09f629ea53"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/local-llm-flow-en.svg",
+        "sha256": "96a4f8d0ee40450b01f7638a49f8dfb06cbfd6897264a65f8a9e57e210007625"
+      }
+    },
+    {
+      "key": "ru-2026-11-09-spring-mvc-webclient-execution",
+      "language": "ru",
+      "translationKey": "2026-11-09-spring-mvc-webclient-execution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "6f81dd9e98a391f7b05ca1d0fef8c01ca8288550531caf852ae518c60843dba8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "a377223ae255c8d93773f07869a9aaf7b3a742b3f15c666412bbdb31958bc252"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-09-spring-mvc-webclient-execution.svg",
+        "sha256": "653934a7e35d02b58f4026908b6f887a3f6f3906ac4484008cb666b33f91d314"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mvc-webclient-flow-en.svg",
+        "sha256": "37859bc50c40722aa272a8281dfb4037b10112ad5595dfd8ee994fe590c3206e"
+      }
+    },
+    {
+      "key": "ru-2026-11-10-redis-lua-rate-limit",
+      "language": "ru",
+      "translationKey": "2026-11-10-redis-lua-rate-limit",
+      "source": {
+        "path": "src/content/posts/en/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "bffe243d3ec0d2693086eb4d708c74490b34a27af7c1735cf6a41c81eea561d5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "3e47982b13c9f2e46f9e2bd2ab76b22a0d7590dd003dc5da8cb29752e121b494"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-10-redis-lua-rate-limit.svg",
+        "sha256": "aa2df42efebb503b0110fe895129f68f81d2f093eb7245895c0a379a65d46f22"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/redis-rate-limit-en.svg",
+        "sha256": "67d2d84fecfc726ef204daf9624518da516232b0a5184bd3b90bcab91d77bd6a"
+      }
+    },
+    {
+      "key": "ru-2026-11-11-bucket4j-token-bucket",
+      "language": "ru",
+      "translationKey": "2026-11-11-bucket4j-token-bucket",
+      "source": {
+        "path": "src/content/posts/en/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "3026360c1ee1f4cc06667cd53ebded53b1bfebf3c0c29658e6eb58affffbdf8f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "2f5f7bebe48baac11ef83e04ffef3b06d3eddc2f7b599ca629b5b371fba65d80"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-11-bucket4j-token-bucket.svg",
+        "sha256": "4339f38ea02ba8010c639b59f4a9065d7d8ca0ea43ddefbfca71ec5d55ea60bc"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/bucket4j-flow-en.svg",
+        "sha256": "9a26c0d7a42e0e4339d384eb1ef6ac03dac998465946f187b0992015f8b60820"
+      }
+    },
+    {
+      "key": "ru-2026-11-12-orca-worktree-guide",
+      "language": "ru",
+      "translationKey": "2026-11-12-orca-worktree-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-orca-worktree-guide.md",
+        "sha256": "4214532491f859b28104e614442c9bc3c33ecc9a00a62567a96d927bc90cffb6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-12-orca-worktree-guide.md",
+        "sha256": "4b3806e969cfb8c37da077a2e52a3365d7e7b0fd6afb3a3837829fff217f8472"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-12-orca-worktree-guide.svg",
+        "sha256": "cc861f04518a873385bd4a4fbc4a2433b13ae16a2bda110b2245ab03e2624d26"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-flow-en.svg",
+        "sha256": "178cefcacb3b68e339f26621ac0dc269a3c10a5864ee14f92acd49005fc7c959"
+      }
+    },
+    {
+      "key": "ru-2026-11-12-t3-code-workflow",
+      "language": "ru",
+      "translationKey": "2026-11-12-t3-code-workflow",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-t3-code-workflow.md",
+        "sha256": "da83ebd4864d4a4b015af522789e363b4a8695b6424368db9bfd1652f7761089"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-12-t3-code-workflow.md",
+        "sha256": "eb5686f58a5eb373d1403ed8b637561c814cdf1a77ecc7b93b44b75096ed1193"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-12-t3-code-workflow.svg",
+        "sha256": "6925ca91b5abfb2591b6fbf6023c134bd5ba67f8cee99a4b50a4d29cc12b9f9a"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/t3-code-flow-en.svg",
+        "sha256": "cd6136bf67979ee9e823f106e5c5206b8160d0ca5a28b8fe9a500537df031b58"
+      }
+    },
+    {
+      "key": "ru-2026-11-13-rust-log-cli",
+      "language": "ru",
+      "translationKey": "2026-11-13-rust-log-cli",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-log-cli.md",
+        "sha256": "4d2fd4771a2fa07143e52582adf4beccc6662d6b6cbba32538ca807a509c86f0"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-13-rust-log-cli.md",
+        "sha256": "63aff6734f1782b5fb4279922620f591ff8acde899b1b911ec2d344db6056809"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-13-rust-log-cli.svg",
+        "sha256": "1553a858f56aa20998d26fd1b98fc98c4e43c52bbd62343daa5092f7b6d407c7"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/log-cli-flow-en.svg",
+        "sha256": "1fa93e2786e4d59c5bbd4c081077f1a28abb98cd4e60b33c11a0fd674e682c63"
+      }
+    },
+    {
+      "key": "ru-2026-11-13-rust-ownership-guide",
+      "language": "ru",
+      "translationKey": "2026-11-13-rust-ownership-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-ownership-guide.md",
+        "sha256": "b6f336e010d9bfad88b7108ccfb60a6c7f30048a3bb7e54fa94483e719e26d40"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-13-rust-ownership-guide.md",
+        "sha256": "fa027f2aa125fb7dbb397661d16b401b27b3a46da163099a5f1c6def11accd1b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-13-rust-ownership-guide.svg",
+        "sha256": "3c9f1c10615a5c8a0913ff31a33a823fe801ccdccb302995cdcf77dbe883cd61"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/rust-flow-en.svg",
+        "sha256": "79055a18150586f3e7a79d9adf381be8075bfbdfe91abcea9d8e0692e66ad71e"
+      }
+    },
+    {
+      "key": "ru-2026-11-13-pickle-ai-security",
+      "language": "ru",
+      "translationKey": "2026-11-13-pickle-ai-security",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-pickle-ai-security.md",
+        "sha256": "4973bca9ea9b81ec4e068b4f530a2b82742c427074c36836639b0c2db1a811e2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-13-pickle-ai-security.md",
+        "sha256": "cf9e2a26f1ceec0bba7d353866f47cab7e41bc4306716e1cd99abc347544f48a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/ru/2026-11-13-pickle-ai-security.svg",
+        "sha256": "a685948b739314a450657ebb31813461256cc7a36c5a584c86890769b8c1d5a9"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/pickle-credentials-en.svg",
+        "sha256": "dbc118d901e8e8cc1c7955adc2e168b376950c09afac52eab8ad59cc93c8e7bc"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/pickle-verification-en.svg",
+            "sha256": "5688ec0633ec7c11771ba52d4c46855895e9f427181c01e236cc5c46e011f8f3"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-156/ru/2026-11-13-pickle-ai-security-architecture.svg",
+            "sha256": "e4cb7c24897252fb44df7749389233b1ebec2a34d1bdb5cde8af12f8c4f38e5a"
+          }
+        }
+      ]
+    },
+    {
+      "key": "es-2026-11-05-local-llm-at-home",
+      "language": "es",
+      "translationKey": "2026-11-05-local-llm-at-home",
+      "source": {
+        "path": "src/content/posts/en/2026-11-05-local-llm-at-home.md",
+        "sha256": "7fc88005f66f084ebbd02871b81f65430f7c33e62f41e3609715599a2ded8509"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-05-local-llm-at-home.md",
+        "sha256": "36a219a11f82480558732064e6f4f2238137ca40ac3cbc954c9faf1649a9768c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-05-local-llm-at-home.svg",
+        "sha256": "6a71c1eb367bfc1acc25179ff8ea66b34bb7b41089a32a5eb55b06b8efc2f59a"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/local-llm-flow-en.svg",
+        "sha256": "96a4f8d0ee40450b01f7638a49f8dfb06cbfd6897264a65f8a9e57e210007625"
+      }
+    },
+    {
+      "key": "es-2026-11-09-spring-mvc-webclient-execution",
+      "language": "es",
+      "translationKey": "2026-11-09-spring-mvc-webclient-execution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "6f81dd9e98a391f7b05ca1d0fef8c01ca8288550531caf852ae518c60843dba8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "f8662437437bada9658be755fa8d82a49026d97eb50c22d06354baf235c5bb39"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-09-spring-mvc-webclient-execution.svg",
+        "sha256": "b4d52e2e78a9193bf03361593f17a0763f513aaddcfbc096443328791e681097"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mvc-webclient-flow-en.svg",
+        "sha256": "37859bc50c40722aa272a8281dfb4037b10112ad5595dfd8ee994fe590c3206e"
+      }
+    },
+    {
+      "key": "es-2026-11-10-redis-lua-rate-limit",
+      "language": "es",
+      "translationKey": "2026-11-10-redis-lua-rate-limit",
+      "source": {
+        "path": "src/content/posts/en/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "bffe243d3ec0d2693086eb4d708c74490b34a27af7c1735cf6a41c81eea561d5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "6acfd8ec59c809d0edcbbb707458ee59f2742f96b7d8636468067fc6b39ed51f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-10-redis-lua-rate-limit.svg",
+        "sha256": "c94d819d62ee15fe41d4453f1f88e965a5924167cb187a7007c7d4011abccfa9"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/redis-rate-limit-en.svg",
+        "sha256": "67d2d84fecfc726ef204daf9624518da516232b0a5184bd3b90bcab91d77bd6a"
+      }
+    },
+    {
+      "key": "es-2026-11-11-bucket4j-token-bucket",
+      "language": "es",
+      "translationKey": "2026-11-11-bucket4j-token-bucket",
+      "source": {
+        "path": "src/content/posts/en/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "3026360c1ee1f4cc06667cd53ebded53b1bfebf3c0c29658e6eb58affffbdf8f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "9270cb8415fcc70890a874c89abfa38d046e04f432f1f3576c31d6556dbc2e8c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-11-bucket4j-token-bucket.svg",
+        "sha256": "324ce770c13c867226dd592934e9d965c5d7c0343f901c030b390e64835002ef"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/bucket4j-flow-en.svg",
+        "sha256": "9a26c0d7a42e0e4339d384eb1ef6ac03dac998465946f187b0992015f8b60820"
+      }
+    },
+    {
+      "key": "es-2026-11-12-orca-worktree-guide",
+      "language": "es",
+      "translationKey": "2026-11-12-orca-worktree-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-orca-worktree-guide.md",
+        "sha256": "4214532491f859b28104e614442c9bc3c33ecc9a00a62567a96d927bc90cffb6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-12-orca-worktree-guide.md",
+        "sha256": "58b102d4b2241e1e4532bb1aa8cd585be2b0df399c4aaabeca7458bdb4504d8c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-12-orca-worktree-guide.svg",
+        "sha256": "e480c30edab598425917a6dc0dc175c986c9d251ccdc35a2fc30de36b5b504a4"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-flow-en.svg",
+        "sha256": "178cefcacb3b68e339f26621ac0dc269a3c10a5864ee14f92acd49005fc7c959"
+      }
+    },
+    {
+      "key": "es-2026-11-12-t3-code-workflow",
+      "language": "es",
+      "translationKey": "2026-11-12-t3-code-workflow",
+      "source": {
+        "path": "src/content/posts/en/2026-11-12-t3-code-workflow.md",
+        "sha256": "da83ebd4864d4a4b015af522789e363b4a8695b6424368db9bfd1652f7761089"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-12-t3-code-workflow.md",
+        "sha256": "24e9195c3314e290d3a747c0b5272104d582e8bc6f6f1578c12029a0a50bd0a1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-12-t3-code-workflow.svg",
+        "sha256": "461eb3b3c8cdfdf1997c74b61a4fc4d0196db4f330465d2c7b095926828a87fa"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/t3-code-flow-en.svg",
+        "sha256": "cd6136bf67979ee9e823f106e5c5206b8160d0ca5a28b8fe9a500537df031b58"
+      }
+    },
+    {
+      "key": "es-2026-11-13-rust-log-cli",
+      "language": "es",
+      "translationKey": "2026-11-13-rust-log-cli",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-log-cli.md",
+        "sha256": "4d2fd4771a2fa07143e52582adf4beccc6662d6b6cbba32538ca807a509c86f0"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-13-rust-log-cli.md",
+        "sha256": "9f90e9d008bad9ccbc6ff57b276d40d4702843db7515a2c775e59c68a521328e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-13-rust-log-cli.svg",
+        "sha256": "fc8e8f32e31273623e3d8f5c84d2b4bf68c37a4b715f21d005c32ccc565670c0"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/log-cli-flow-en.svg",
+        "sha256": "1fa93e2786e4d59c5bbd4c081077f1a28abb98cd4e60b33c11a0fd674e682c63"
+      }
+    },
+    {
+      "key": "es-2026-11-13-rust-ownership-guide",
+      "language": "es",
+      "translationKey": "2026-11-13-rust-ownership-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-ownership-guide.md",
+        "sha256": "b6f336e010d9bfad88b7108ccfb60a6c7f30048a3bb7e54fa94483e719e26d40"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-13-rust-ownership-guide.md",
+        "sha256": "0c4676d51956de7d7b07c5f67c0064881ef1050da81dc8c1eec191e9410c96ba"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-13-rust-ownership-guide.svg",
+        "sha256": "48d97af69cedda90cccf620182ba14d081735de644c120d5bc6958002f0f5191"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/rust-flow-en.svg",
+        "sha256": "79055a18150586f3e7a79d9adf381be8075bfbdfe91abcea9d8e0692e66ad71e"
+      }
+    },
+    {
+      "key": "es-2026-11-13-pickle-ai-security",
+      "language": "es",
+      "translationKey": "2026-11-13-pickle-ai-security",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-pickle-ai-security.md",
+        "sha256": "4973bca9ea9b81ec4e068b4f530a2b82742c427074c36836639b0c2db1a811e2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-13-pickle-ai-security.md",
+        "sha256": "ea11db186c2d29cbdc5a30e86cdbf44b9cc8d86a5da7994c387994032d39997d"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-156/es/2026-11-13-pickle-ai-security.svg",
+        "sha256": "96ef5bd2dfe6a1490a945020fcee25ff66420a5aef4b77d6b0d18142fb36da8e"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/pickle-credentials-en.svg",
+        "sha256": "dbc118d901e8e8cc1c7955adc2e168b376950c09afac52eab8ad59cc93c8e7bc"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/pickle-verification-en.svg",
+            "sha256": "5688ec0633ec7c11771ba52d4c46855895e9f427181c01e236cc5c46e011f8f3"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-156/es/2026-11-13-pickle-ai-security-architecture.svg",
+            "sha256": "05226232b097b91e93282566bdd752a9e1aeb7ad27a3994579d016d95e036fff"
+          }
+        }
+      ]
+    }
+  ]
+}

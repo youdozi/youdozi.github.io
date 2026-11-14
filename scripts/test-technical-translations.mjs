@@ -87,7 +87,31 @@ test('version 2 requires every supplementary image in the original order',async(
   assert.throws(()=>compareManuscript(source,draft.replace(`${key}-architecture.svg`,'wrong.svg'),f.diagram,key,f.row.language,options),/image order or coverage/);
 });
 
-import {compareSupplementarySVG} from './check-technical-translations.mjs';
+import {compareSupplementarySVG,compareLocalizedSVG} from './check-technical-translations.mjs';
+test('hand-drawn diagram translation keeps branches and layout while localizing text',()=>{
+  const source='<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" viewBox="0 0 360 600"><title>Flow</title><desc>Explanation</desc><g font-size="15"><text x="20">Allow</text><text x="20">Deny</text></g><path d="M1 2V3"/></svg>';
+  const draft=source.replace('xml:lang="en"','xml:lang="ja"').replace('Flow','流れ').replace('Explanation','説明').replace('Allow','許可').replace('Deny','拒否');
+  assert.doesNotThrow(()=>compareLocalizedSVG(source,draft,'ja'));
+  assert.throws(()=>compareLocalizedSVG(source,draft.replace('M1 2V3','M1 2V4'),'ja'),/geometry changed/);
+  assert.throws(()=>compareLocalizedSVG(source,draft.replace('拒否',''),'ja'),/text count changed/);
+  assert.throws(()=>compareLocalizedSVG(source,draft.replace('xml:lang="ja"','xml:lang="en"'),'ja'),/language/);
+  assert.throws(()=>compareLocalizedSVG(source,draft.replace('許可','&bogus;'),'ja'),/Invalid SVG XML/);
+  assert.throws(()=>compareLocalizedSVG(source,draft.replace('許可','\u0001'),'ja'),/Invalid SVG XML/);
+  assert.throws(()=>compareLocalizedSVG(source,draft.replace('許可','&#1;'),'ja'),/Invalid SVG XML/);
+  assert.throws(()=>compareLocalizedSVG(source,draft.replace('<text x="20">','<text x="20" textLength="0.001">'),'ja'),/text fitting/);
+  assert.throws(()=>compareLocalizedSVG(source,draft.replace('<text x="20">','<text x="20" textLength="500">'),'ja'),/text fitting/);
+});
+
+test('new localized prompt exceptions do not relax version 2 code checks',()=>{
+  const key='2026-11-12-orca-worktree-guide';
+  const prompt='Read shipping.mjs, shipping.test.mjs, package.json and index.html; run npm test; preserve RangeError.\n';
+  const blocks=Array.from({length:8},()=> '```js\nconst x = 1;\n```\n\n').join('');
+  const body=blocks+'```text\n'+prompt+'```\n\n![Flow](/assets/diagrams/'+key+'-en.svg)\n';
+  const source='---\nlanguage: en\nkind: post\ntranslationKey: '+key+'\n---\n'+body;
+  const draft='---\nstate: draft\nlanguage: es\ntranslationKey: '+key+'\ntitle: Título\ndescription: Descripción\n---\n'+body.replace('Read shipping.mjs','Lea shipping.mjs').replace(`/assets/diagrams/${key}-en.svg`,`${key}.svg`);
+  assert.throws(()=>compareManuscript(source,draft,{},key,'es',{formatVersion:2}),/Executable code changed/);
+  assert.doesNotThrow(()=>compareManuscript(source,draft,{},key,'es',{formatVersion:3}));
+});
 test('supplementary localization permits readable font fitting while protecting connections and layout',()=>{
   const source='<svg xml:lang="en" viewBox="0 0 640 1070"><title>Layout</title><desc>Description</desc><text x="320" font-size="24">Budget</text><path d="M1 2V3"/></svg>';
   const draft=source.replace('xml:lang="en"','xml:lang="de"').replace('Budget','Gesamtbudget').replace('font-size="24"','font-size="20"');

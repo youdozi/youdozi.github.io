@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1050" viewBox="0 0 360 1050" xml:lang="ru" role="img" aria-labelledby="title desc">
+<title id="title">Проверка небольшого изменения в T3 Code</title>
+<desc id="desc">Сохраните исходный код и фиксированные тесты в Git и убедитесь в их первоначальном сбое. В T3 Code выберите проект и авторизованного провайдера и отправьте ограниченный запрос в режиме Supervised. Проверьте и одобрите изменения файлов и тестовые команды агента. Сравните diff, исходные тесты и фактические результаты; запросите исправление или выполните коммит самостоятельно. Вывод ИИ показан для примера, эталонное решение тестировалось отдельно.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1050" rx="16" fill="#f5f7f2"/>
+<g font-family="system-ui,sans-serif" text-anchor="middle" font-size="15" fill="#203a2c">
+<text x="180" y="35" font-size="20" font-weight="700">Процесс упражнения T3 Code</text>
+<rect x="24" y="58" width="312" height="88" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="86">Исходный код + тесты + Git</text><text x="180" y="111">npm test: 8 ошибок из 19</text><text x="180" y="134" font-size="12">Реальный запуск до эталонного решения</text>
+<path d="M180 146V179" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="184" width="312" height="96" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="212">T3 Code: выбрать проект и провайдера</text><text x="180" y="238">Проверить режим Supervised</text><text x="180" y="263" textLength="280" lengthAdjust="spacingAndGlyphs">Передать область и критерии готовности</text>
+<path d="M180 280V315" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="320" width="312" height="105" rx="9" fill="#faecd6" stroke="#bca274"/>
+<text x="180" y="349">Агент: читать и менять код</text><text x="180" y="376">Проверить файлы и область команд</text><text x="180" y="403">Подтвердить действия и npm test</text>
+<path d="M180 425V461" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="466" width="312" height="105" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="495">Пользователь: сравнить diff и тесты</text><text x="180" y="523">Проверить реальный вывод и код выхода</text><text x="180" y="549">Тесты и настройки не изменены?</text>
+<path d="M95 571V617" stroke="#496b57" marker-end="url(#arrow)"/><text x="68" y="600">Да</text>
+<path d="M272 571V617" stroke="#496b57" marker-end="url(#arrow)"/><text x="301" y="600">Нет</text>
+<rect x="16" y="622" width="157" height="86" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="94" y="652" textLength="130" lengthAdjust="spacingAndGlyphs">Повторить проверку diff</text><text x="94" y="681">Коммит вручную</text>
+<rect x="186" y="622" width="158" height="86" rx="9" fill="#f5e1df" stroke="#b88880"/>
+<text x="265" y="652">Уточнить ошибки</text><text x="265" y="681" textLength="130" lengthAdjust="spacingAndGlyphs">Запросить исправление</text>
+<path d="M344 665H352V371H338" fill="none" stroke="#b88880" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="24" y="755" width="312" height="137" rx="9" fill="#fff" stroke="#a8b6a7"/>
+<text x="180" y="786" font-weight="700">Область проверки примера</text><text x="180" y="814">Исходный: 8 ошибок / эталон: 19 прошли</text><text x="180" y="841">Тесты сохранены · без внешних API</text><text x="180" y="870" textLength="280" lengthAdjust="spacingAndGlyphs">Решение не получено в ходе ИИ-задачи</text>
+<text x="180" y="949" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">T3 Code объединяет задачу и проверку</text>
+<text x="180" y="981" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">Код и команды выполняет выбранный агент</text>
+</g></svg>

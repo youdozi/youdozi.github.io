@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1050" viewBox="0 0 360 1050" xml:lang="zh-CN" role="img" aria-labelledby="title desc">
+<title id="title">验证 T3 Code中的小代码更改</title>
+<desc id="desc">在 Git 中保存起始代码和固定测试并观察失败情况。在 T3 Code中选择项目和经过身份验证的提供商，并在监督模式下发送有界提示。检查并批准代理的文件更改和测试命令。比较差异、原始测试和实际结果；请求更正或自行提交。 AI 输出具有说明性，参考解决方案已单独测试。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1050" rx="16" fill="#f5f7f2"/>
+<g font-family="system-ui,sans-serif" text-anchor="middle" font-size="15" fill="#203a2c">
+<text x="180" y="35" font-size="20" font-weight="700">T3 Code 练习流程</text>
+<rect x="24" y="58" width="312" height="88" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="86">起始代码 + 固定测试 + Git</text><text x="180" y="111">npm test：19 项中 8 项失败</text><text x="180" y="134" font-size="12">参考解法之前的实际运行</text>
+<path d="M180 146V179" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="184" width="312" height="96" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="212">T3 Code：选择项目和提供商</text><text x="180" y="238">检查 Supervised 权限模式</text><text x="180" y="263" textLength="280" lengthAdjust="spacingAndGlyphs">提示范围和完成标准</text>
+<path d="M180 280V315" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="320" width="312" height="105" rx="9" fill="#faecd6" stroke="#bca274"/>
+<text x="180" y="349">提供商代理：读取并编辑代码</text><text x="180" y="376">检查文件更改和命令范围</text><text x="180" y="403">批准工作并运行 npm test</text>
+<path d="M180 425V461" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="466" width="312" height="105" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="495">用户：比较 diff 与固定测试</text><text x="180" y="523">检查实际输出和退出状态</text><text x="180" y="549">测试和配置是否保持不变？</text>
+<path d="M95 571V617" stroke="#496b57" marker-end="url(#arrow)"/><text x="68" y="600">是的</text>
+<path d="M272 571V617" stroke="#496b57" marker-end="url(#arrow)"/><text x="301" y="600">不</text>
+<rect x="16" y="622" width="157" height="86" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="94" y="652">重新检查完整差异</text><text x="94" y="681">在 Git 中提交</text>
+<rect x="186" y="622" width="158" height="86" rx="9" fill="#f5e1df" stroke="#b88880"/>
+<text x="265" y="652">说明失败内容</text><text x="265" y="681">请求修复</text>
+<path d="M344 665H352V371H338" fill="none" stroke="#b88880" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="24" y="755" width="312" height="137" rx="9" fill="#fff" stroke="#a8b6a7"/>
+<text x="180" y="786" font-weight="700">验证范围示例</text><text x="180" y="814">起始：8 失败 / 参考：19 通过</text><text x="180" y="841">测试不变 · 没有外部 API 调用</text><text x="180" y="870" textLength="280" lengthAdjust="spacingAndGlyphs">没有提供商的 AI 轮次生成解法</text>
+<text x="180" y="949" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">T3 Code 连接任务、权限和审查</text>
+<text x="180" y="981" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">选定的代理编写代码并运行工具</text>
+</g></svg>

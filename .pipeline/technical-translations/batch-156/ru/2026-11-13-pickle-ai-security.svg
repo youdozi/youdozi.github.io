@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1120" viewBox="0 0 360 1120" role="img" aria-labelledby="title desc" xml:lang="ru">
+  <title id="title">Делегирование ключей и границы учётных данных Pickle</title>
+  <desc id="desc">Во время настройки публичная программа безопасности iPhone создаёт ключи, проверяет аттестацию узла и шифрует пользовательский ключ для проверенного Nitro Enclave. Записи хранятся зашифрованными. Перед использованием узел проверяет активную делегацию и сохранение журнала. OAuth-токены остаются внутри узла для API-запросов; пароли и данные карт Vault выходят открытым текстом к операционному worker для веб-формы. Последующее маскирование worker и результатов ИИ — отдельная граница.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1120" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="18" font-weight="bold" textLength="320" lengthAdjust="spacingAndGlyphs">Делегирование и использование ключей</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="25" y="60" width="310" height="85" rx="8" />
+      <rect x="25" y="185" width="310" height="85" rx="8" />
+      <rect x="25" y="310" width="310" height="85" rx="8" />
+      <rect x="25" y="480" width="310" height="110" rx="8" />
+      <rect x="18" y="655" width="151" height="105" rx="8" />
+      <rect x="191" y="655" width="151" height="105" rx="8" fill="#f8e8dd" />
+      <rect x="18" y="805" width="151" height="85" rx="8" />
+      <rect x="191" y="805" width="151" height="85" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="180" y="86">iPhone: создать мастер-ключ</text>
+    <text x="180" y="112">Хранить в iCloud Keychain</text>
+    <text x="180" y="135" font-size="13">Протокол различает производные ключи</text>
+    <text x="180" y="212" font-size="15.0">Проверить аттестацию, измерение и ключ</text>
+    <text x="180" y="238">Ошибка → нет делегирования</text>
+    <text x="180" y="260" font-size="13">Шифровать ключ проверенному узлу</text>
+    <text x="180" y="337">Сервер: зашифрованные записи</text>
+    <text x="180" y="365" font-size="15.0">Память Enclave: временный ключ</text>
+    <text x="180" y="386" font-size="13">Сам мастер-ключ не делегируется</text>
+    <text x="180" y="451" font-size="12.6">Для использования нужна делегация</text>
+    <text x="180" y="508" font-size="15.0">Запрос → проверить делегацию и запись</text>
+    <text x="180" y="535">Enclave расшифровывает · создаёт журнал</text>
+    <text x="180" y="562" font-size="15.0">Применить после подтверждения журнала</text>
+    <text x="180" y="582" font-size="13">Ошибка → нет использования или выдачи</text>
+    <text x="93" y="682">OAuth: forward</text>
+    <text x="93" y="710" font-size="14.5">Токен внутри узла</text>
+    <text x="93" y="738" font-size="13.7" textLength="130" lengthAdjust="spacingAndGlyphs">Для разрешённого API</text>
+    <text x="266" y="682">Vault: release</text>
+    <text x="266" y="710" font-size="13.1" textLength="130" lengthAdjust="spacingAndGlyphs">Пароль · данные карты</text>
+    <text x="266" y="738" font-size="14.5" textLength="130" lengthAdjust="spacingAndGlyphs">Открытый текст к worker</text>
+    <text x="93" y="834" font-size="14.5" textLength="130" lengthAdjust="spacingAndGlyphs">TLS к API провайдера</text><text x="93" y="861" font-size="12.5">Возвращается ответ</text>
+    <text x="266" y="834">worker → веб-форма</text><text x="266" y="861">За пределами узла</text>
+    <text x="180" y="951" font-size="13.2" font-weight="bold">Маскирование для ИИ: утверждение сервиса</text>
+    <text x="180" y="983">Применение в worker и приложении</text>
+    <text x="180" y="1008" font-size="14.2">не доказано одним репозиторием Enclave</text>
+    <text x="180" y="1060" font-size="13">Концепция публичного кода</text>
+    <text x="180" y="1086" font-size="13">Не проверка production и приложения</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M180 145V185" /><path d="M180 270V310" />
+    <path d="M180 590V620H93V655" /><path d="M180 620H266V655" />
+    <path d="M93 760V805" /><path d="M266 760V805" />
+  </g>
+  <path d="M20 420H340" stroke="#a7b7ac" stroke-dasharray="5 5" />
+</svg>

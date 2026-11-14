@@ -1,7 +1,7 @@
 ---
 kind: "post"
 publishedAt: "2026-11-05T00:30:25.703972+00:00"
-updatedAt: "2026-11-05T00:30:25.703972+00:00"
+updatedAt: "2026-11-14T14:54:42+00:00"
 reviewedAt: "2026-11-05"
 reviewStatus: "source-audited"
 reviewScope: "Official Ollama and Qwen documentation checked; self-reviewed Korean tutorial with static flow and matching Python/Modelfile/text examples. Python 3.13.0 loopback HTTP fixture: 19 checks. Six shell blocks syntax checked. No actual Ollama installation, Modelfile compilation, model download, inference-quality or performance measurements."
@@ -80,7 +80,7 @@ ollama pull qwen3:4b-instruct-2507-q4_K_M
 ollama run qwen3:4b-instruct-2507-q4_K_M
 ```
 
-A first question could be: “Answer in Korean. Give me three criteria to check when summarizing a note I wrote.” Check whether the answer is in Korean and stays within the requested scope, then end the conversation with `/bye`. In another terminal, check the model ID with `ollama list` and CPU/GPU placement and memory status with `ollama ps`. Record the installed Ollama version and model ID along with the model tag to make later differences easier to compare. [Check model execution status](https://docs.ollama.com/faq#how-can-i-tell-if-my-model-was-loaded-onto-the-gpu)
+A first question could be: “한국어로 답해 줘. 내가 적은 메모를 요약할 때 확인할 기준 세 가지를 알려 줘” (“Answer in Korean. Give me three criteria to check when summarizing a note I wrote.”). Check whether the answer is in Korean and stays within the requested scope, then end the conversation with `/bye`. In another terminal, check the model ID with `ollama list` and CPU/GPU placement and memory status with `ollama ps`. Record the installed Ollama version and model ID along with the model tag to make later differences easier to compare. [Check model execution status](https://docs.ollama.com/faq#how-can-i-tell-if-my-model-was-loaded-onto-the-gpu)
 
 ## Set default instructions for your own use
 

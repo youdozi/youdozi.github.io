@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1170" viewBox="0 0 360 1170" role="img" aria-labelledby="title desc" xml:lang="zh-CN">
+  <title id="title">Rust 日志 CLI 处理流程</title>
+  <desc id="desc">main 检查一个文件参数，打开它并传递一个 BufReader 进行分析。每次迭代最多消耗4097字节；读取错误、行过长和无效 UTF-8 失败。有效记录和无效记录分别统计。在 EOF 主打印排序总计并返回代码 0 或 1；失败返回代码 2。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1170" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="19" font-weight="bold">文件→计数→退出状态</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="25" y="60" width="310" height="74" rx="8" />
+      <rect x="25" y="174" width="310" height="100" rx="8" />
+      <rect x="25" y="314" width="310" height="100" rx="8" />
+      <rect x="25" y="454" width="310" height="74" rx="8" />
+      <rect x="25" y="568" width="145" height="90" rx="8" />
+      <rect x="190" y="568" width="145" height="90" rx="8" />
+      <rect x="25" y="740" width="310" height="82" rx="8" />
+      <rect x="25" y="862" width="310" height="82" rx="8" />
+      <rect x="25" y="1010" width="310" height="100" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="180" y="90">main：检查参数 · 打开文件</text>
+    <text x="180" y="116">文件→BufReader→分析</text>
+    <text x="180" y="202">读取最多 4097 字节的行</text>
+    <text x="180" y="229">读取失败：Err · 零：EOF</text>
+    <text x="180" y="255">否则检查长度和 UTF-8 ↓</text>
+    <text x="180" y="342">超过 4096 字节？</text>
+    <text x="180" y="369">UTF-8 无效？</text>
+    <text x="180" y="396">任一条件返回 Err</text>
+    <text x="180" y="484">检查状态码和路径</text>
+    <text x="180" y="510">状态 100–599 · 路径以 / 开头</text>
+    <text x="97" y="595">有效格式</text><text x="97" y="620">valid + 1</text><text x="97" y="644">状态计数 + 1</text>
+    <text x="262" y="595">格式无效</text><text x="262" y="620">invalid + 1</text><text x="262" y="644">不保存行内容</text>
+    <text x="180" y="698">两条路径都读取下一行 ↑</text>
+    <text x="180" y="768">EOF：Ok(Stats) → main</text><text x="180" y="797">然后才开始输出</text>
+    <text x="180" y="890">按状态顺序打印并 flush</text><text x="180" y="919">invalid = 0：代码 0 / 否则：1</text>
+    <text x="180" y="1040" font-size="13.2">错误：参数·文件·分析·输出</text>
+    <text x="180" y="1069">main 写入 stderr · 代码 2</text>
+    <text x="180" y="1095">分析失败后没有总计</text>
+    <text x="180" y="1144" font-size="13">EOF和错误分别总结</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M180 134V174" /><path d="M180 274V314" /><path d="M180 414V454" />
+    <path d="M180 528V548H97V568" /><path d="M180 548H262V568" />
+    <path d="M97 658V675H12V224H25" /><path d="M262 658V675H97" />
+    <path d="M335 250H348V781H335" /><path d="M180 822V862" />
+  </g>
+</svg>

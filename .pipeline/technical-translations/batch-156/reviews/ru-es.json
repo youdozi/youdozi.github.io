@@ -1,0 +1,13 @@
+{
+  "languages": [
+    "ru",
+    "es"
+  ],
+  "reviewer": "independent AI session review_ru_es",
+  "scope": "All 18 article bodies and tables compared in sequence with English; code blocks and SVG text compared.",
+  "findings": "Corrected Retry-After rounding, trusted principal, production server distinction, LLM failure boundary, T3 approval and illustrative output, and Pickle encrypted-storage/worker boundaries; reviewer rechecked.",
+  "limits": "No native-speaker review, new source fact-check, diagram rendering or code execution by this reviewer. Mobile rendering checked separately.",
+  "reviewedAt": "2026-11-14T15:08:48.775153+00:00",
+  "humanOrNativeSpeakerReview": false,
+  "scopeIsNotGuarantee": true
+}

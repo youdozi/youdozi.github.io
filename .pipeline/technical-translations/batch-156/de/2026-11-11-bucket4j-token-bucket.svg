@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1000" viewBox="0 0 360 1000" xml:lang="de" role="img" aria-labelledby="title desc">
+<title id="title">Lokales Bucket4j-Token-Bucket-Limit</title>
+<desc id="desc">Ein Spring-Singleton-Bucket mit Kapazität und Anfangsbestand 5 wird für alle Demo-Anfragen wiederverwendet. Greedy füllt 5 in 10 Sekunden nach. Jede Anfrage versucht atomar ein Token zu verbrauchen. Erfolg liefert 200; Ablehnung liefert 429 und aufgerundetes Retry-After. Lokale Buckets teilen kein Limit.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57" /></marker></defs>
+<rect width="360" height="1000" rx="16" fill="#f5f7f2" />
+<g fill="#203a2c" font-family="system-ui,sans-serif" text-anchor="middle" font-size="15">
+<text x="180" y="35" font-size="20" font-weight="700">Bucket4j-Token-Bucket</text>
+<rect x="24" y="59" width="312" height="83" rx="9" fill="#deebdf" stroke="#86a18b" />
+<text x="180" y="86">Bucket beim Start erstellen</text><text x="180" y="109" font-size="14.1">Als Spring-Singleton wiederverwenden</text><text x="180" y="132" font-size="13">Alle /demo-Anfragen teilen den Bucket</text>
+<path d="M180 142V174" stroke="#496b57" marker-end="url(#arrow)" />
+<rect x="24" y="179" width="312" height="89" rx="9" fill="#e5edf4" stroke="#839bae" />
+<text x="180" y="205">Kapazität 5 · Anfangsbestand 5</text><text x="180" y="230" font-size="14.5">Greedy: 5 in 10 Sekunden nachfüllen</text><text x="180" y="254" font-size="15.0" textLength="280" lengthAdjust="spacingAndGlyphs">5 bei t=0 verbrauchen → 1 bei t=2s</text>
+<path d="M180 268V302" stroke="#496b57" marker-end="url(#arrow)" />
+<rect x="24" y="307" width="312" height="98" rx="9" fill="#e5edf4" stroke="#839bae" />
+<text x="180" y="335" font-size="15.0" textLength="280" lengthAdjust="spacingAndGlyphs">Anfrage → vergangene Zeit anwenden</text><text x="180" y="361" font-size="13.1" textLength="280" lengthAdjust="spacingAndGlyphs">Atomar 1 Token zu verbrauchen versuchen</text><text x="180" y="388" font-size="12">tryConsumeAndReturnRemaining(1)</text>
+<path d="M100 405V453" stroke="#496b57" marker-end="url(#arrow)" /><text x="74" y="435">Erfolg</text>
+<path d="M265 405V453" stroke="#496b57" marker-end="url(#arrow)" /><text x="294" y="435">Mangel</text>
+<rect x="16" y="458" width="159" height="110" rx="9" fill="#deebdf" stroke="#86a18b" />
+<text x="95" y="486" font-size="12.9">1 Token verbrauchen</text><text x="95" y="513" font-size="14.4">Arbeit fortsetzen</text><text x="95" y="542">Demo: HTTP 200</text>
+<rect x="187" y="458" width="157" height="110" rx="9" fill="#f9e8d9" stroke="#ba946e" />
+<text x="265" y="486" textLength="135" lengthAdjust="spacingAndGlyphs" font-size="11">Nicht auf Nachfüllung warten</text><text x="265" y="513">HTTP 429</text><text x="265" y="542" textLength="135" lengthAdjust="spacingAndGlyphs" font-size="11">Retry-After: Sekunden warten</text>
+<rect x="24" y="608" width="312" height="113" rx="9" fill="#fff" stroke="#a9b6a8" />
+<text x="180" y="636" font-weight="700">Nachfüllung aus vergangener Zeit</text><text x="180" y="663" font-size="15.0" textLength="280" lengthAdjust="spacingAndGlyphs">Bucket nicht pro Anfrage erstellen</text><text x="180" y="689">Kein separater Scheduler</text><text x="180" y="710" font-size="12">Die Grafik zeigt eine lokale JVM</text>
+<rect x="24" y="759" width="312" height="147" rx="9" fill="#f4e2df" stroke="#b88880" />
+<text x="180" y="789" font-weight="700">Zwei getrennte lokale Buckets</text><text x="180" y="817" textLength="280" lengthAdjust="spacingAndGlyphs" font-size="12.4">Bucket A: initial 5 / Bucket B: initial 5</text><text x="180" y="846" font-size="14.5">Kein gemeinsamer Zustand: bis zu 10</text><text x="180" y="875" font-size="12.1">Globales Limit braucht verteilten Speicher</text>
+<text x="180" y="954" font-size="11" textLength="280" lengthAdjust="spacingAndGlyphs">Kapazität und Nachfüllrate sind getrennte Werte</text>
+</g></svg>
