@@ -5,6 +5,7 @@ updatedAt: "2026-11-15T01:59:13.180695+00:00"
 reviewedAt: "2026-11-15"
 reviewStatus: source-audited
 reviewScope: "Official product help reviewed for the Korean locale; no live task execution or independent audit."
+reviewSources: ["https://www.pickle.com/help/credits/plans", "https://www.pickle.com/help/start/what-is-pickle", "https://www.pickle.com/help/tasks/delegate", "https://www.pickle.com/help/connect/save-login", "https://www.pickle.com/help/tasks/scheduled", "https://pickle.com/help/privacy/activity", "https://pickle.com/privacy"]
 language: ko
 translationKey: 2026-11-15-pickle-ai-guide
 routeSlug: 2026-11-15-pickle-ai-guide
