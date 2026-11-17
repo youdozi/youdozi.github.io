@@ -46,6 +46,9 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
     ...(options.formatVersion===3?{
       '2026-11-12-orca-worktree-guide':[8],
       '2026-11-12-t3-code-workflow':[5],
+      '2026-11-15-pickle-ai-guide':[0,1,2],
+      '2026-11-16-aside-browser-introduction':[0],
+      '2026-11-17-aside-browser-guide':[0,4,5],
     }:{}),
   }[key]??[]) : [];
   same(sourceCode.length,draftCode.length,'Executable code changed during translation');
@@ -54,7 +57,13 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
     const translated=draftCode[index];
     if(block[0]!=='text'||translated[0]!=='text'||!translated[1].trim())fail('Localized prompt missing');
     same(numbers(block[1]),numbers(translated[1]),'Prompt numeric values changed');
-    const tokens=key==='2026-11-12-orca-worktree-guide'
+    const tokens=key==='2026-11-15-pickle-ai-guide'
+      ? ['Pickle']
+      : key==='2026-11-16-aside-browser-introduction'
+      ? []
+      : key==='2026-11-17-aside-browser-guide'
+      ? ['report.csv','UTF-8','topic','summary','source_url','tasks','automation','devices']
+      : key==='2026-11-12-orca-worktree-guide'
       ? ['shipping.mjs','shipping.test.mjs','package.json','index.html','RangeError','npm test']
       : key==='2026-11-12-t3-code-workflow'
       ? ['retry-after.mjs','retry-after.test.mjs','retryAfterMs(header)','Number.isSafeInteger','null','HTTP-date','package.json','npm test']

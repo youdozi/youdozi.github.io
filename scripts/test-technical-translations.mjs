@@ -167,3 +167,19 @@ test('TDD prompt localization does not permit changing Java or shell commands',a
  assert.throws(()=>f.check(f.draft.replace('return stock - requested;','return stock + requested;')),/Executable code/);
  assert.throws(()=>f.check(f.draft.replace('gradle --no-daemon','gradle --continue')),/Executable code/);
 });
+
+test('browser guide prompt localization preserves CSV identifiers and executable validation',async()=>{
+ const key='2026-11-17-aside-browser-guide';
+ const source=await readFile(join(root,`src/content/posts/en/${key}.md`),'utf8');
+ const path='assets/img/architecture/aside-browser-guide-en.svg';
+ const body=source.match(/^---\n[\s\S]*?\n---\n([\s\S]*)$/)[1].replace('/'+path,`${key}.svg`);
+ const draft='---\n'+JSON.stringify({state:'draft',language:'es',translationKey:key,title:'Guía',description:'Uso del navegador'})+'\n---\n'+body;
+ const check=(raw,formatVersion=3)=>compareManuscript(source,raw,{},key,'es',{formatVersion,mainVisual:{path}});
+ const localized=draft.replace('Read only these three official pages','Lee solo estas tres páginas oficiales');
+ assert.notEqual(localized,draft);
+ assert.doesNotThrow(()=>check(localized));
+ assert.throws(()=>check(localized,2),/Executable code/);
+ assert.throws(()=>check(localized.replace('UTF-8','UTF-16')),/Prompt numeric/);
+ assert.throws(()=>check(localized.replace('report.csv','other.csv')),/Prompt identifier/);
+ assert.throws(()=>check(localized.replace('import csv','import csv2')),/Executable code/);
+});

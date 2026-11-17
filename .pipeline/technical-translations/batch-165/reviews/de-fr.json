@@ -1,0 +1,99 @@
+{
+  "reviewType": "independent AI translation review in a separate agent session",
+  "reviewer": "review_de_fr_five",
+  "reviewedAt": "2026-11-17T06:08:27.664728+00:00",
+  "status": "passed-after-corrections",
+  "scope": {
+    "languages": [
+      "de",
+      "fr"
+    ],
+    "translationKeys": [
+      "2026-11-15-orca-herdr-comparison",
+      "2026-11-15-pickle-ai-guide",
+      "2026-11-16-aside-browser-introduction",
+      "2026-11-16-t3code-orca-herdr",
+      "2026-11-17-aside-browser-guide"
+    ],
+    "coverage": "Full titles, descriptions, article bodies, tables, prompts, code/output, image alt text and all localized SVG title/desc/text; compared to the published Korean articles and Korean SVGs. English source used by the structural comparator. Writer verdicts were not read."
+  },
+  "checks": [
+    "Full meaning, omissions/additions, negation, conditions, security and privacy limits.",
+    "Korea-specific Pickle free-use and daily-limit facts remain explicitly regional.",
+    "Aside summary prompt still requires one Korean sentence; synthetic CSV input is distinguished from real Aside output.",
+    "Actual shell/Python code and recorded output blocks compared directly with Korean sources and are identical.",
+    "Article prose retains original limits on product execution, measurements, Windows support and server/process restoration.",
+    "Localized SVG labels and descriptions preserve the source flow and limits."
+  ],
+  "findings": [
+    {
+      "language": "fr",
+      "file": "fr/2026-11-15-pickle-ai-guide.md",
+      "location": "Paragraph citing the delegation guide",
+      "severity": "minor",
+      "type": "meaning / scope of possibility",
+      "confidence": "high",
+      "before": "Pickle peut demander les informations nécessaires puis afficher une carte",
+      "reason": "The Korean source describes asking needed information, while possibility applies to displaying a confirmation card. French had extended the possibility qualifier to both.",
+      "fix": "Pickle demande les informations nécessaires et peut ensuite afficher une carte",
+      "recheck": "Corrected text preserves both the information request and the optional card."
+    },
+    {
+      "language": "fr",
+      "file": "fr/2026-11-17-aside-browser-guide.md",
+      "location": "title",
+      "severity": "minor",
+      "type": "fluency",
+      "confidence": "high",
+      "before": "organiser les résultats de recherche en fichier",
+      "fix": "organiser les résultats de recherche dans un fichier",
+      "recheck": "Title now uses natural French without changing its meaning."
+    }
+  ],
+  "fixes": [
+    "Changed only the two French manuscript phrases listed above. No German or SVG content changes were needed."
+  ],
+  "validation": {
+    "command": "node /tmp/blog-en-five/compare.mjs",
+    "result": "All 30 emitted manuscript/SVG pairs passed, including all 10 DE/FR pairs.",
+    "additional": "Direct Python equality check of actual shell/Python blocks and recorded output against Korean sources passed for all ten DE/FR articles. Pseudocode and authored prompts are intentionally localized."
+  },
+  "limits": [
+    "AI source-to-translation review; no human or native-speaker validation.",
+    "No external product fact revalidation or website browsing.",
+    "No new execution of the published shell, Python, Aside, Pickle or workflow examples; the report only checks preservation of the source’s recorded execution claims.",
+    "SVG XML text and structure reviewed; no rendered-layout or browser visual inspection.",
+    "No commit or publication performed."
+  ],
+  "versions": {
+    "koreanSources": {
+      "src/content/posts/ko/2026-11-15-orca-herdr-comparison.md": "9d175fe083dcc3cee0a3b7fe6eec79775424c2f6f763a5cc8da19d902c1a7122",
+      "src/content/posts/ko/2026-11-15-pickle-ai-guide.md": "e034af4b5f3a69c086849aa32e88d0ab373d3cee96e521ba2c73a339e2de63e8",
+      "src/content/posts/ko/2026-11-16-aside-browser-introduction.md": "e285596edc220a1a6cedf2cb3e091904595c7a5a85259ef4903667524a78d21a",
+      "src/content/posts/ko/2026-11-16-t3code-orca-herdr.md": "c0534ba07d664a8aea2e232e5a0cdba69d1348ee09c0ee8726b58c152146b422",
+      "src/content/posts/ko/2026-11-17-aside-browser-guide.md": "db56bdba6efd07019c71cfb973045f5d7d2cbce36fd4bad457d16deacd2b7444"
+    },
+    "reviewedTargets": {
+      ".pipeline/technical-translations/batch-165/de/2026-11-15-orca-herdr-comparison.md": "b6179e4a89434ff4ed717dbb8cd17ae5abf66ac5bf9597c6d03459094908200d",
+      ".pipeline/technical-translations/batch-165/de/2026-11-15-orca-herdr-comparison.svg": "6a031c47034c9b50f6583c6d9491ec60e47d5c82eb74d190b36905ce2f8af125",
+      ".pipeline/technical-translations/batch-165/de/2026-11-15-pickle-ai-guide.md": "ae6c11cf47a528224d58f28b619a418268efc536e6afedbe2b85f0db5fd434b6",
+      ".pipeline/technical-translations/batch-165/de/2026-11-15-pickle-ai-guide.svg": "94a1a63fab6cf06d982d2af128961a7c4f9a027a82f66709250ddedd368fcbbe",
+      ".pipeline/technical-translations/batch-165/de/2026-11-16-aside-browser-introduction.md": "a5cc547644b873c45e91d10111b5cf07777aa035c1eca58516739d394836d62f",
+      ".pipeline/technical-translations/batch-165/de/2026-11-16-aside-browser-introduction.svg": "203e0090bea66fcf03cd31c6f8606e76603888d85e0f07ea798f78a94f896d52",
+      ".pipeline/technical-translations/batch-165/de/2026-11-16-t3code-orca-herdr.md": "e2df9ae6fef134fb466e27b7bbfaa2e9774fe2c57c853fc53d44cacd9eb5e305",
+      ".pipeline/technical-translations/batch-165/de/2026-11-16-t3code-orca-herdr.svg": "6a031c47034c9b50f6583c6d9491ec60e47d5c82eb74d190b36905ce2f8af125",
+      ".pipeline/technical-translations/batch-165/de/2026-11-17-aside-browser-guide.md": "387bbc4883e38d6dc393b9ce37db51d1559b420216adff1c00d958be1d0ef2aa",
+      ".pipeline/technical-translations/batch-165/de/2026-11-17-aside-browser-guide.svg": "d62c142342de02870b24180dc1fcddc738ce2c1ca041af734800629a2281447d",
+      ".pipeline/technical-translations/batch-165/fr/2026-11-15-orca-herdr-comparison.md": "7304931f1f5b8a1023a803e4712c1349c7ece694973ed2dff542808e7890725b",
+      ".pipeline/technical-translations/batch-165/fr/2026-11-15-orca-herdr-comparison.svg": "f503dc3ca0165acf25e50de4ba8762e35f91658a9b8d32cff3e4edb0f3d80598",
+      ".pipeline/technical-translations/batch-165/fr/2026-11-15-pickle-ai-guide.md": "8ec761ae58f43f72c70e173aeca589160aa30a7399a21199dec07921b2696ca5",
+      ".pipeline/technical-translations/batch-165/fr/2026-11-15-pickle-ai-guide.svg": "53891910ae5c7fcb725cdd99590c06d2e1ccbc5e8709cfcd9592caab9ab0ce77",
+      ".pipeline/technical-translations/batch-165/fr/2026-11-16-aside-browser-introduction.md": "d1f12e7efa8df66d84abcc3d6894ca2b2f17f490c93ae8f9de1e63837cbafb8f",
+      ".pipeline/technical-translations/batch-165/fr/2026-11-16-aside-browser-introduction.svg": "b49a84e377f83d22c1552233991db7d7125a8eb69100aeb47f5d06913a13d34c",
+      ".pipeline/technical-translations/batch-165/fr/2026-11-16-t3code-orca-herdr.md": "7335adbd97d1bc7380e4640593f681ee7f46dae5e6da82d31651a4fe2fc50f84",
+      ".pipeline/technical-translations/batch-165/fr/2026-11-16-t3code-orca-herdr.svg": "f503dc3ca0165acf25e50de4ba8762e35f91658a9b8d32cff3e4edb0f3d80598",
+      ".pipeline/technical-translations/batch-165/fr/2026-11-17-aside-browser-guide.md": "4afff87efacbe12b9cebb8af6489a8ebb495738fa7f05f559bc96cb5e0418008",
+      ".pipeline/technical-translations/batch-165/fr/2026-11-17-aside-browser-guide.svg": "79ca5d6856b277e66f4e11cea840edb04b98adfc7d6edbe51d48b9ba488d70a0"
+    }
+  }
+}
