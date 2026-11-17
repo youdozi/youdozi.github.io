@@ -41,19 +41,21 @@ export function inventory() {
 }
 
 export function plan(files, checks = inventory()) {
+  const siteOnly = new Set(JSON.parse(readFileSync('content/ci/site-only-files.json', 'utf8')));
   const all = steps.map(step => step.id).filter(id => id?.startsWith('runtime_') || id?.startsWith('example_') || id === 'boot_gradle');
   const full = reason => ({steps: all, previews: true, full: true, reason});
   if (!files?.length) return full('No reliable content diff; run the complete suite');
   const selected = new Set();
   let previews = false;
   for (const file of files) {
+    if (file === 'content/ci/site-only-files.json') continue;
     if (/^(?:\.github\/|scripts\/|package(?:-lock)?\.json$|\.nvmrc$|astro\.config|tsconfig|src\/content\.config)/.test(file)) return full(`Shared validation or schema changed: ${file}`);
     const article = file.match(/^src\/content\/posts\/(en|ko)\/(.+)\.md$/);
     const draft = file.match(/^\.pipeline\/drafts\/([^/]+)\//);
     if (article || draft) {
       const key = article ? article[2] : draft[1];
       const matches = checks.filter(check => check.keys.has(key));
-      if (!matches.length) return full(`No registered runtime for ${key}`);
+      if (!matches.length && !siteOnly.has(file)) return full(`No registered runtime for ${key}`);
       for (const check of matches) for (const id of [check.id, ...check.dependencies]) selected.add(id);
       continue;
     }
@@ -62,7 +64,7 @@ export function plan(files, checks = inventory()) {
     if (/^src\/content\//.test(file)) { previews = true; continue; }
     if (/^assets\//.test(file)) {
       const matches = checks.filter(check => check.source.includes(file.split('/').at(-1)));
-      if (!matches.length) return full(`Shared or unregistered asset changed: ${file}`);
+      if (!matches.length && !siteOnly.has(file)) return full(`Shared or unregistered asset changed: ${file}`);
       for (const check of matches) for (const id of [check.id, ...check.dependencies]) selected.add(id);
       continue;
     }
