@@ -1,0 +1,121 @@
+{
+  "reviewer": "independent AI translation review session /root/review_ru_es_five",
+  "reviewedAt": "2026-11-17T06:07:55.401526+00:00",
+  "status": "passed-after-corrections",
+  "scope": {
+    "sourceLanguage": "ko",
+    "targetLanguages": [
+      "ru",
+      "es"
+    ],
+    "keys": [
+      "2026-11-15-orca-herdr-comparison",
+      "2026-11-15-pickle-ai-guide",
+      "2026-11-16-aside-browser-introduction",
+      "2026-11-16-t3code-orca-herdr",
+      "2026-11-17-aside-browser-guide"
+    ],
+    "manuscripts": 10,
+    "localizedSVGs": 10,
+    "additionalEnglishArticles": 5,
+    "review": "Read all target manuscripts for fluency; compared all against Korean source information, caveats, conditions, dates, prompt requirements and figures. Examined all SVG title/desc/text strings and XML. No writer review reports were used."
+  },
+  "fixes": [
+    {
+      "file": "ru/2026-11-15-pickle-ai-guide.md",
+      "severity": "minor meaning qualification",
+      "confidence": "high",
+      "before": "доступ к календарю необязателен",
+      "after": "доступ к календарю не всегда необходим",
+      "reason": "Preserve Korean not-necessarily-needed qualification instead of implying calendar access is always optional.",
+      "recheck": "Source and corrected sentence compared."
+    },
+    {
+      "file": "ru/2026-11-16-aside-browser-introduction.md",
+      "severity": "minor modality",
+      "confidence": "high",
+      "before": "агент прочитает несколько страниц и продолжит задачу",
+      "after": "агент сможет прочитать несколько страниц и продолжить задачу",
+      "reason": "Preserve source capability rather than unconditional future execution.",
+      "recheck": "Source and corrected sentence compared."
+    }
+  ],
+  "englishFindings": [
+    {
+      "file": "src/content/posts/en/2026-11-16-t3code-orca-herdr.md",
+      "section": "Which tool should you try first?",
+      "severity": "meaning ambiguity",
+      "confidence": "high",
+      "quote": "Fix a failing test before edits",
+      "source": "파일 수정보다 먼저 실패하는 테스트를 고정하고",
+      "suggestion": "Establish a reproducible failing test before editing files",
+      "reason": "Fix can mean repair the test failure; source asks to establish/pin the failing test before implementation.",
+      "action": "Corrected by parent and independently rechecked; English files not edited by this reviewer.",
+      "status": "resolved",
+      "correction": "Establish a reproducible failing test before editing files",
+      "recheck": "Confirmed root correction in English file against Korean source; accurately establishes the failing test before implementation rather than repairing the failure beforehand."
+    }
+  ],
+  "checks": [
+    {
+      "command": "node /tmp/blog-en-five/compare.mjs",
+      "result": "exit 0; all 30 manuscripts and corresponding localized SVG checks returned OK, including all 10 RU/ES targets"
+    },
+    {
+      "check": "Korean vs EN/RU/ES executable sh/python fence exact comparison across five topics",
+      "result": "passed"
+    },
+    {
+      "check": "Localized SVG XML parsing and all title/desc/text content review",
+      "result": "passed for 10 RU/ES SVGs"
+    },
+    {
+      "check": "Aside guide authored prompt retains Korean summary output requirement",
+      "result": "passed EN/RU/ES"
+    },
+    {
+      "check": "Parent English correction vs Korean source",
+      "result": "passed; no unresolved English meaning findings identified in assessed five articles"
+    }
+  ],
+  "limitations": [
+    "AI review only; no native-speaker or human review.",
+    "No external fact verification or source-site browsing.",
+    "No code execution or authenticated product workflows by this reviewer; source execution claims were preserved, not independently replicated.",
+    "No browser rendering or SVG clipping/layout validation by this reviewer."
+  ],
+  "sha256": {
+    "src/content/posts/ko/2026-11-15-orca-herdr-comparison.md": "9d175fe083dcc3cee0a3b7fe6eec79775424c2f6f763a5cc8da19d902c1a7122",
+    "src/content/posts/ko/2026-11-15-pickle-ai-guide.md": "e034af4b5f3a69c086849aa32e88d0ab373d3cee96e521ba2c73a339e2de63e8",
+    "src/content/posts/ko/2026-11-16-aside-browser-introduction.md": "e285596edc220a1a6cedf2cb3e091904595c7a5a85259ef4903667524a78d21a",
+    "src/content/posts/ko/2026-11-16-t3code-orca-herdr.md": "c0534ba07d664a8aea2e232e5a0cdba69d1348ee09c0ee8726b58c152146b422",
+    "src/content/posts/ko/2026-11-17-aside-browser-guide.md": "db56bdba6efd07019c71cfb973045f5d7d2cbce36fd4bad457d16deacd2b7444",
+    "src/content/posts/en/2026-11-15-orca-herdr-comparison.md": "0ea3992bed06f710050fb085ef58c601249972b0da8b2dfd127306af71833162",
+    "src/content/posts/en/2026-11-15-pickle-ai-guide.md": "4f1eb4aa17fdd841a18ecc17405de9d7a4bd7c9dcd216b414147c2cd6f35803a",
+    "src/content/posts/en/2026-11-16-aside-browser-introduction.md": "28b13e8d7ffe39227deb95b285e7f9ca2bf044eccfe223389b409c74453575e8",
+    "src/content/posts/en/2026-11-16-t3code-orca-herdr.md": "efade8e88dc1cc022a8738a7b9b2bf6c910ecec8aa32864108cf647d76da283d",
+    "src/content/posts/en/2026-11-17-aside-browser-guide.md": "7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab",
+    ".pipeline/technical-translations/batch-165/ru/2026-11-15-orca-herdr-comparison.md": "105b5eff6a5904c02925c1a8cf1274787938286af07e72a7d79f211fafa10455",
+    ".pipeline/technical-translations/batch-165/ru/2026-11-15-orca-herdr-comparison.svg": "cc34cc232f42aab2bf3538c1c728c0b562e4dd4be539215e044dff6896490e23",
+    ".pipeline/technical-translations/batch-165/ru/2026-11-15-pickle-ai-guide.md": "9f7f94e79fb89652ec0b70bce3690eb95272f561a545d00232d8117b1f00f179",
+    ".pipeline/technical-translations/batch-165/ru/2026-11-15-pickle-ai-guide.svg": "ecefa34aac189b1730ccd0ed2b6b39e5c2b40b938788000d90d89d89b4a998b3",
+    ".pipeline/technical-translations/batch-165/ru/2026-11-16-aside-browser-introduction.md": "8dcc86b632751e75267226e8826062407e0ab73068cd7ec7e36e15ef50a4a4e0",
+    ".pipeline/technical-translations/batch-165/ru/2026-11-16-aside-browser-introduction.svg": "425953ffed1eb9fea0a82e26804f3b36ef88e973aa8169ebcf129944c670cb57",
+    ".pipeline/technical-translations/batch-165/ru/2026-11-16-t3code-orca-herdr.md": "dea6593dd84a68592f0c26dbafa7d15e82b35797c99287748037f16853284fc8",
+    ".pipeline/technical-translations/batch-165/ru/2026-11-16-t3code-orca-herdr.svg": "cc34cc232f42aab2bf3538c1c728c0b562e4dd4be539215e044dff6896490e23",
+    ".pipeline/technical-translations/batch-165/ru/2026-11-17-aside-browser-guide.md": "df06e8ae3469f36b56ba4029493105655e3cf4b10ee28d309ebd22ae37ae56ac",
+    ".pipeline/technical-translations/batch-165/ru/2026-11-17-aside-browser-guide.svg": "09c780c54981f4146044951f6ff146da1e276e3c264916a0ec335d3cc0157fb1",
+    ".pipeline/technical-translations/batch-165/es/2026-11-15-orca-herdr-comparison.md": "77d6f82f66246377d2f8486d11b6f0290c56080dc20d0914ec44999223fc0f95",
+    ".pipeline/technical-translations/batch-165/es/2026-11-15-orca-herdr-comparison.svg": "8c22205c5f7e94178b4702a086909e95a237f8186009c64cba14c7cb60122b82",
+    ".pipeline/technical-translations/batch-165/es/2026-11-15-pickle-ai-guide.md": "7a3c11c6d63377eb75674c00423257861a9da0b1f6d54fc03b05565c68022acf",
+    ".pipeline/technical-translations/batch-165/es/2026-11-15-pickle-ai-guide.svg": "0cb5605454ed33ccf8b47ff5536e85e7eb5e489f5c4ea1b2a57c86cd26bb1f04",
+    ".pipeline/technical-translations/batch-165/es/2026-11-16-aside-browser-introduction.md": "60d512aceb11767fb8042b03be1160a13d32badf777b6459727f3ad9240d8f94",
+    ".pipeline/technical-translations/batch-165/es/2026-11-16-aside-browser-introduction.svg": "b51ea36a098131b7b5d5d72de7fef3d846f42e0aa512fb3a4f3572663f202a57",
+    ".pipeline/technical-translations/batch-165/es/2026-11-16-t3code-orca-herdr.md": "5762e5a941c48cc3e29238d1e4e5c8c62bec6803f7489ec6ad0acbc09bfdf149",
+    ".pipeline/technical-translations/batch-165/es/2026-11-16-t3code-orca-herdr.svg": "8c22205c5f7e94178b4702a086909e95a237f8186009c64cba14c7cb60122b82",
+    ".pipeline/technical-translations/batch-165/es/2026-11-17-aside-browser-guide.md": "99860111da104aeae7969b244c4b530844f99044d76eac527b0c7bfe76ac38c1",
+    ".pipeline/technical-translations/batch-165/es/2026-11-17-aside-browser-guide.svg": "9abbac1b6e4d71210a9984626090dbededb1a839e2ad4d5c030acfab5d16e878"
+  },
+  "recheckedAt": "2026-11-17T06:09:13.351779+00:00",
+  "versionNote": "Manuscript hashes identify assessed versions; later source-pin metadata-only updates are outside this substantive body/SVG review."
+}
