@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {inventory, plan} from './ci-plan.mjs';
 
 const checks = inventory();
@@ -100,4 +101,47 @@ test('Pickle article selects only its public artifact verification', () => {
   assert.equal(result.full, false);
   assert.deepEqual(result.steps, [exercise.id]);
   assert.deepEqual(exercise.dependencies, []);
+});
+
+test('registered introductions and their diagrams keep site gates without unrelated runtimes', () => {
+  const pairs = [
+    ['2026-11-15-pickle-ai-guide', 'pickle-ai-guide-ko.svg'],
+    ['2026-11-15-orca-herdr-comparison', 'orca-herdr-workflow-ko.svg'],
+    ['2026-11-16-t3code-orca-herdr', 't3code-orca-herdr-ko.svg'],
+    ['2026-11-17-aside-browser-guide', 'aside-browser-guide-ko.svg'],
+    ['2026-11-16-aside-browser-introduction', 'aside-browser-introduction-ko.svg'],
+  ];
+  for (const [key, asset] of pairs) {
+    const result = plan([`src/content/posts/ko/${key}.md`, `assets/img/architecture/${asset}`]);
+    assert.equal(result.full, false);
+    assert.equal(result.previews, false);
+    assert.deepEqual(result.steps, []);
+    assert.deepEqual(plan([`src/content/posts/ko/${key}.md`, `assets/img/architecture/${asset}`,
+      'content/ci/site-only-files.json']).steps, []);
+  }
+});
+
+test('site-only content cannot suppress unknown assets, validation changes or affected examples', () => {
+  const guide = 'src/content/posts/ko/2026-11-16-aside-browser-introduction.md';
+  for (const path of ['assets/img/architecture/unknown.svg', 'scripts/ci-plan.mjs',
+    'src/content/posts/ko/2026-11-17-new-guide.md']) {
+    assert.equal(plan([guide, path]).full, true, path);
+  }
+  const result = plan([guide, 'src/content/posts/ko/2026-11-10-redis-lua-rate-limit.md']);
+  assert.equal(result.full, false);
+  assert.ok(result.steps.includes('example_redis_lua_rate_limit'));
+  assert.equal(plan([guide, 'src/layouts/Base.astro']).previews, true);
+});
+
+test('site-only registry contains existing articles and their referenced local diagrams', () => {
+  const files = JSON.parse(readFileSync('content/ci/site-only-files.json', 'utf8'));
+  assert.equal(files.length, new Set(files).size);
+  const articles = files.filter(path => /^src\/content\/posts\/(?:en|ko)\/\d{4}-\d{2}-\d{2}-[a-z0-9-]+\.md$/.test(path));
+  const assets = files.filter(path => /^assets\/img\/architecture\/[a-z0-9-]+\.svg$/.test(path));
+  assert.equal(files.length, articles.length + assets.length);
+  const bodies = articles.map(path => readFileSync(path, 'utf8'));
+  for (const path of assets) {
+    assert.ok(readFileSync(path).length > 0);
+    assert.ok(bodies.some(body => body.includes(`](/${path})`)), path);
+  }
 });
