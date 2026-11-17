@@ -16,7 +16,7 @@ tags:
   - ai-agent
   - git-worktree
 sourcePath: src/content/posts/en/2026-11-16-t3code-orca-herdr.md
-sourceSha256: efade8e88dc1cc022a8738a7b9b2bf6c910ecec8aa32864108cf647d76da283d
+sourceSha256: 94725dbdc4ab213e11a438cbe4dbe69f888ffe3750e5d7c351e92178279c388e
 ---
 
 **T3 Code convient pour suivre tâches, autorisations et modifications dans un fil de discussion. Orca se distingue par un parcours réunissant terminal, éditeur, navigateur et diff par worktree. Herdr mérite d’être étudié si vous souhaitez maintenir les terminaux en cours d’exécution tout en configurant vous-même les vues de travail et l’automatisation.** Les fonctions des trois outils se recoupent ; mieux vaut comparer le parcours de lancement, de revue et de retour après interruption que les classer sur la présence d’une seule fonction.

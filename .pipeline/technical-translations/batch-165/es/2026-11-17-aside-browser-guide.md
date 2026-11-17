@@ -17,7 +17,7 @@ tags:
   - python
   - csv
 sourcePath: src/content/posts/en/2026-11-17-aside-browser-guide.md
-sourceSha256: 7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab
+sourceSha256: 9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c
 ---
 
 **Conviene indicar a Aside las páginas, el formato de salida y las condiciones de finalización, en lugar de pedir simplemente «investiga por tu cuenta».** Empieza organizando unos pocos documentos públicos, compara los resultados con las fuentes y después amplía el alcance a páginas autenticadas o tareas recurrentes.

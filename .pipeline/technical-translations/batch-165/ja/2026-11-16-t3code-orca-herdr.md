@@ -15,7 +15,7 @@ tags:
   - git-worktree
 state: draft
 sourcePath: src/content/posts/en/2026-11-16-t3code-orca-herdr.md
-sourceSha256: efade8e88dc1cc022a8738a7b9b2bf6c910ecec8aa32864108cf647d76da283d
+sourceSha256: 94725dbdc4ab213e11a438cbe4dbe69f888ffe3750e5d7c351e92178279c388e
 ---
 
 **T3 Code は会話スレッドで作業・承認・変更を追いやすく、Orca は worktree ごとのターミナル・エディター・ブラウザー・diff をまとめて扱う流れが特徴です。Herdr はターミナルの実行を維持しながら、作業画面や自動化を自分で構成したい場合に検討できます。** 三つのツールには重なる機能があるため、一つの機能の有無で優劣を決めるより、作業の開始、レビュー、中断後の復帰までの流れを比較するほうがよいでしょう。

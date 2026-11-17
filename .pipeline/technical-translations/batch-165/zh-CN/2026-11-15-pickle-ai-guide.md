@@ -14,7 +14,7 @@ tags:
   - privacy
 state: draft
 sourcePath: src/content/posts/en/2026-11-15-pickle-ai-guide.md
-sourceSha256: 4f1eb4aa17fdd841a18ecc17405de9d7a4bd7c9dcd216b414147c2cd6f35803a
+sourceSha256: 14e4d005498c53673a0240cfc0c6b8392223b8b04375e824d04a56b8aa51f6d8
 ---
 
 Pickle AI 是一款个人 AI 智能体，可以通过聊天请求调查、预约等任务，并查看进度。初次使用时，适合先委托无需付款或连接账号的调查，再亲自核对结果。扩展到预约或购买时，应一并写明日期、预算和批准条件。

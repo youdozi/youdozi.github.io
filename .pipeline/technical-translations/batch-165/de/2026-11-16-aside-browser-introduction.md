@@ -16,7 +16,7 @@ tags:
   - privacy
   - mcp
 sourcePath: src/content/posts/en/2026-11-16-aside-browser-introduction.md
-sourceSha256: 28b13e8d7ffe39227deb95b285e7f9ca2bf044eccfe223389b409c74453575e8
+sourceSha256: 633c19745dfd802e65de403f2bfe9cf8c2ad7bdc234871ced911a6e0a65cc42c
 ---
 
 **Aside ist ein KI-Browser, der mehrstufige Aufgaben mithilfe angemeldeter Websites und des Browserkontexts ausführt.** Sie können mit Zusammenfassungen geöffneter Seiten und Recherchen beginnen und im erlaubten Umfang auch Formulareingaben und Dateiaufgaben delegieren. Entscheidend ist, neben dem Antworttext auch zu prüfen, auf welcher Seite was erledigt wurde.

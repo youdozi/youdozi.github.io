@@ -15,7 +15,7 @@ tags:
   - csv
 state: draft
 sourcePath: src/content/posts/en/2026-11-17-aside-browser-guide.md
-sourceSha256: 7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab
+sourceSha256: 9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c
 ---
 
 **Aside には「適当に調べて」よりも、使うページ、結果の形式、完了条件をまとめて伝えるほうがよいでしょう。** 少数の公開文書を整理する小さな作業から始め、原文と結果を照合してから、ログイン済みページの参照や繰り返し作業へ範囲を広げてみましょう。

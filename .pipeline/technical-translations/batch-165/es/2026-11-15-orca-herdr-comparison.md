@@ -16,7 +16,7 @@ tags:
   - git-worktree
   - developer-tools
 sourcePath: src/content/posts/en/2026-11-15-orca-herdr-comparison.md
-sourceSha256: 0ea3992bed06f710050fb085ef58c601249972b0da8b2dfd127306af71833162
+sourceSha256: 2a0f1ca513f60e49bad64d71689d7e59effe22e995582b05d6e1688572f172e4
 ---
 
 **Orca resulta cómoda para ver los cambios por worktree y manejar navegador, diff y PR en una misma interfaz. Herdr merece atención si quieres una organización centrada en el terminal y ampliar tú mismo la interfaz de la aplicación.** Ambas herramientas permiten ejecutar varios agentes de programación y usar Git worktree. El criterio de elección es cómo gestionan el entorno y los resultados, más que si permiten ejecución paralela.

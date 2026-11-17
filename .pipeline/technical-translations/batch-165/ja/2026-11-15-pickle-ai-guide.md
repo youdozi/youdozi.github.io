@@ -14,7 +14,7 @@ tags:
   - privacy
 state: draft
 sourcePath: src/content/posts/en/2026-11-15-pickle-ai-guide.md
-sourceSha256: 4f1eb4aa17fdd841a18ecc17405de9d7a4bd7c9dcd216b414147c2cd6f35803a
+sourceSha256: 14e4d005498c53673a0240cfc0c6b8392223b8b04375e824d04a56b8aa51f6d8
 ---
 
 Pickle AI は、チャットで調査や予約などの作業を依頼し、進捗を確認できる個人向け AI エージェントです。最初は決済やアカウント連携が不要な調査から任せ、結果が正しいか自分で確認するとよいでしょう。予約や購入へ範囲を広げる際は、日付・予算・承認条件も一緒に記載します。

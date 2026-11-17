@@ -25,7 +25,7 @@
       },
       {
         "path": ".pipeline/technical-translations/batch-165/reviews/pipeline.json",
-        "sha256": "8b9cf9f7b4095da86e034f684c1d30e92d4428a3b1835501b546cbcac00ba4ae"
+        "sha256": "10a300e744b502e873e749e29fcddba9cedc74c79281cdd4cdf1f4731be2321e"
       },
       {
         "path": ".pipeline/technical-translations/batch-165/reviews/ru-es.json",
@@ -44,11 +44,11 @@
       "translationKey": "2026-11-15-orca-herdr-comparison",
       "source": {
         "path": "src/content/posts/en/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "0ea3992bed06f710050fb085ef58c601249972b0da8b2dfd127306af71833162"
+        "sha256": "2a0f1ca513f60e49bad64d71689d7e59effe22e995582b05d6e1688572f172e4"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/zh-CN/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "e9c44b82387fa0c7be87593e83c2c4dffd5f413aaa3df210818069e3ce73b43c"
+        "sha256": "bf616267b102c89db6e36de84b5b8964687ded45bd265bdd1756a93808605be2"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/zh-CN/2026-11-15-orca-herdr-comparison.svg",
@@ -65,11 +65,11 @@
       "translationKey": "2026-11-15-pickle-ai-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-15-pickle-ai-guide.md",
-        "sha256": "4f1eb4aa17fdd841a18ecc17405de9d7a4bd7c9dcd216b414147c2cd6f35803a"
+        "sha256": "14e4d005498c53673a0240cfc0c6b8392223b8b04375e824d04a56b8aa51f6d8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/zh-CN/2026-11-15-pickle-ai-guide.md",
-        "sha256": "6019218770fbff288a35ad1bf0d8ee051637eba5ce8bd328e14b0ebae4249a32"
+        "sha256": "69a327f1989476d68a5c9f5f049a3b312044dbac61fe1d34eac3205b98f85bdf"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/zh-CN/2026-11-15-pickle-ai-guide.svg",
@@ -86,11 +86,11 @@
       "translationKey": "2026-11-16-aside-browser-introduction",
       "source": {
         "path": "src/content/posts/en/2026-11-16-aside-browser-introduction.md",
-        "sha256": "28b13e8d7ffe39227deb95b285e7f9ca2bf044eccfe223389b409c74453575e8"
+        "sha256": "633c19745dfd802e65de403f2bfe9cf8c2ad7bdc234871ced911a6e0a65cc42c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/zh-CN/2026-11-16-aside-browser-introduction.md",
-        "sha256": "eacc5e11bf6b6f8466c935dc25d0328c038e8225d7d276653188a157cff83372"
+        "sha256": "04cb351d40d2458c91b5e6618d725c5928823bedff5bdc0b3ef79c56f6e4cd71"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/zh-CN/2026-11-16-aside-browser-introduction.svg",
@@ -107,11 +107,11 @@
       "translationKey": "2026-11-16-t3code-orca-herdr",
       "source": {
         "path": "src/content/posts/en/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "efade8e88dc1cc022a8738a7b9b2bf6c910ecec8aa32864108cf647d76da283d"
+        "sha256": "94725dbdc4ab213e11a438cbe4dbe69f888ffe3750e5d7c351e92178279c388e"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/zh-CN/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "7e7aae9636ca9398cc93adfe774fb21fff8bb13a27e6f85d4f30a5152e57ad8c"
+        "sha256": "514ff10f055d437d33b6982655e1f068500487910a4986df3419a0888de60224"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/zh-CN/2026-11-16-t3code-orca-herdr.svg",
@@ -128,11 +128,11 @@
       "translationKey": "2026-11-17-aside-browser-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-17-aside-browser-guide.md",
-        "sha256": "7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab"
+        "sha256": "9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/zh-CN/2026-11-17-aside-browser-guide.md",
-        "sha256": "d0ad4befd4da9282bdd64e019cb0d20ec0d0ab391f0d15c9066907ce6beebad5"
+        "sha256": "d49edcbd8f284718c56f0b62a04a735e9b75fdeca0b3a802f9ed8a28126d5275"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/zh-CN/2026-11-17-aside-browser-guide.svg",
@@ -149,11 +149,11 @@
       "translationKey": "2026-11-15-orca-herdr-comparison",
       "source": {
         "path": "src/content/posts/en/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "0ea3992bed06f710050fb085ef58c601249972b0da8b2dfd127306af71833162"
+        "sha256": "2a0f1ca513f60e49bad64d71689d7e59effe22e995582b05d6e1688572f172e4"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/ja/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "b6c0eb487ac5c1bb6f362f3acca6572cff740fc10d7ad2aaabed0317bbc512df"
+        "sha256": "5fa7b368eae48ac1e817c118f2789585d8a65b5a5264ec97feb2883903917471"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/ja/2026-11-15-orca-herdr-comparison.svg",
@@ -170,11 +170,11 @@
       "translationKey": "2026-11-15-pickle-ai-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-15-pickle-ai-guide.md",
-        "sha256": "4f1eb4aa17fdd841a18ecc17405de9d7a4bd7c9dcd216b414147c2cd6f35803a"
+        "sha256": "14e4d005498c53673a0240cfc0c6b8392223b8b04375e824d04a56b8aa51f6d8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/ja/2026-11-15-pickle-ai-guide.md",
-        "sha256": "0b408372e85d2977a15426ea174c0c487bcd011dc22ac7f767f7664e131613b2"
+        "sha256": "ec910ed0845052258efff7f38b45c26bc7bde9abcf88685cc577e26b54e6eb3d"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/ja/2026-11-15-pickle-ai-guide.svg",
@@ -191,11 +191,11 @@
       "translationKey": "2026-11-16-aside-browser-introduction",
       "source": {
         "path": "src/content/posts/en/2026-11-16-aside-browser-introduction.md",
-        "sha256": "28b13e8d7ffe39227deb95b285e7f9ca2bf044eccfe223389b409c74453575e8"
+        "sha256": "633c19745dfd802e65de403f2bfe9cf8c2ad7bdc234871ced911a6e0a65cc42c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/ja/2026-11-16-aside-browser-introduction.md",
-        "sha256": "054c945bf68ed9e9d1ed2a74c15b539770af182b1fa090ca781db9890aac1099"
+        "sha256": "8e610450765a8a76a343d384f918162406bbc94ecaf2c3f05b88ca4b392a9be5"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/ja/2026-11-16-aside-browser-introduction.svg",
@@ -212,11 +212,11 @@
       "translationKey": "2026-11-16-t3code-orca-herdr",
       "source": {
         "path": "src/content/posts/en/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "efade8e88dc1cc022a8738a7b9b2bf6c910ecec8aa32864108cf647d76da283d"
+        "sha256": "94725dbdc4ab213e11a438cbe4dbe69f888ffe3750e5d7c351e92178279c388e"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/ja/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "09e5d87206e9b3fea6f7bd6ceee7794380a43666350c552bab2b0babb673c886"
+        "sha256": "23f5d80b2165a8ea0b48770dba9bd64c2134a301913b52c8b56b9f1c81df9d8d"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/ja/2026-11-16-t3code-orca-herdr.svg",
@@ -233,11 +233,11 @@
       "translationKey": "2026-11-17-aside-browser-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-17-aside-browser-guide.md",
-        "sha256": "7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab"
+        "sha256": "9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/ja/2026-11-17-aside-browser-guide.md",
-        "sha256": "61dfa6315441a60e4956e07d6aa150af91bc70597c864a541760edf201f40fa9"
+        "sha256": "53684fd347ad22d5ba11bda22e3506b4c07580e98a0a1f94b796a502dfe08a83"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/ja/2026-11-17-aside-browser-guide.svg",
@@ -254,11 +254,11 @@
       "translationKey": "2026-11-15-orca-herdr-comparison",
       "source": {
         "path": "src/content/posts/en/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "0ea3992bed06f710050fb085ef58c601249972b0da8b2dfd127306af71833162"
+        "sha256": "2a0f1ca513f60e49bad64d71689d7e59effe22e995582b05d6e1688572f172e4"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/de/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "b6179e4a89434ff4ed717dbb8cd17ae5abf66ac5bf9597c6d03459094908200d"
+        "sha256": "5a51a856b2e911ddef7c48e0a99c73565b5a0be4f61a65442f5038becb821699"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/de/2026-11-15-orca-herdr-comparison.svg",
@@ -275,11 +275,11 @@
       "translationKey": "2026-11-15-pickle-ai-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-15-pickle-ai-guide.md",
-        "sha256": "4f1eb4aa17fdd841a18ecc17405de9d7a4bd7c9dcd216b414147c2cd6f35803a"
+        "sha256": "14e4d005498c53673a0240cfc0c6b8392223b8b04375e824d04a56b8aa51f6d8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/de/2026-11-15-pickle-ai-guide.md",
-        "sha256": "ae6c11cf47a528224d58f28b619a418268efc536e6afedbe2b85f0db5fd434b6"
+        "sha256": "2eb89ec19a5aff73af5c17f59321791b25ce9ed59000809a0c8f39e9bb5ad2bd"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/de/2026-11-15-pickle-ai-guide.svg",
@@ -296,11 +296,11 @@
       "translationKey": "2026-11-16-aside-browser-introduction",
       "source": {
         "path": "src/content/posts/en/2026-11-16-aside-browser-introduction.md",
-        "sha256": "28b13e8d7ffe39227deb95b285e7f9ca2bf044eccfe223389b409c74453575e8"
+        "sha256": "633c19745dfd802e65de403f2bfe9cf8c2ad7bdc234871ced911a6e0a65cc42c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/de/2026-11-16-aside-browser-introduction.md",
-        "sha256": "a5cc547644b873c45e91d10111b5cf07777aa035c1eca58516739d394836d62f"
+        "sha256": "b3df722496ed3cf9e1c6a32e02bf9f8e7b30059e87e226421d147debc8f0005f"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/de/2026-11-16-aside-browser-introduction.svg",
@@ -317,11 +317,11 @@
       "translationKey": "2026-11-16-t3code-orca-herdr",
       "source": {
         "path": "src/content/posts/en/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "efade8e88dc1cc022a8738a7b9b2bf6c910ecec8aa32864108cf647d76da283d"
+        "sha256": "94725dbdc4ab213e11a438cbe4dbe69f888ffe3750e5d7c351e92178279c388e"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/de/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "e2df9ae6fef134fb466e27b7bbfaa2e9774fe2c57c853fc53d44cacd9eb5e305"
+        "sha256": "0a1cffa8763d4b2ecc65342da2db917f71193720ce31c52a7070705188202bd6"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/de/2026-11-16-t3code-orca-herdr.svg",
@@ -338,11 +338,11 @@
       "translationKey": "2026-11-17-aside-browser-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-17-aside-browser-guide.md",
-        "sha256": "7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab"
+        "sha256": "9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/de/2026-11-17-aside-browser-guide.md",
-        "sha256": "387bbc4883e38d6dc393b9ce37db51d1559b420216adff1c00d958be1d0ef2aa"
+        "sha256": "92c981abcb2e1ba42b8651e349e518b2e263d50525e9920355ab1f7f6039cd1e"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/de/2026-11-17-aside-browser-guide.svg",
@@ -359,11 +359,11 @@
       "translationKey": "2026-11-15-orca-herdr-comparison",
       "source": {
         "path": "src/content/posts/en/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "0ea3992bed06f710050fb085ef58c601249972b0da8b2dfd127306af71833162"
+        "sha256": "2a0f1ca513f60e49bad64d71689d7e59effe22e995582b05d6e1688572f172e4"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/fr/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "7304931f1f5b8a1023a803e4712c1349c7ece694973ed2dff542808e7890725b"
+        "sha256": "5012d5c8b1aa61b1ce9e54d9ae74d3ce9256e6b472aed55d2930818c085b5290"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/fr/2026-11-15-orca-herdr-comparison.svg",
@@ -380,11 +380,11 @@
       "translationKey": "2026-11-15-pickle-ai-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-15-pickle-ai-guide.md",
-        "sha256": "4f1eb4aa17fdd841a18ecc17405de9d7a4bd7c9dcd216b414147c2cd6f35803a"
+        "sha256": "14e4d005498c53673a0240cfc0c6b8392223b8b04375e824d04a56b8aa51f6d8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/fr/2026-11-15-pickle-ai-guide.md",
-        "sha256": "8ec761ae58f43f72c70e173aeca589160aa30a7399a21199dec07921b2696ca5"
+        "sha256": "94c094a78f940cb9c769f9843f0f9df75d5c7a11d6419242cc45a6a62d621d06"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/fr/2026-11-15-pickle-ai-guide.svg",
@@ -401,11 +401,11 @@
       "translationKey": "2026-11-16-aside-browser-introduction",
       "source": {
         "path": "src/content/posts/en/2026-11-16-aside-browser-introduction.md",
-        "sha256": "28b13e8d7ffe39227deb95b285e7f9ca2bf044eccfe223389b409c74453575e8"
+        "sha256": "633c19745dfd802e65de403f2bfe9cf8c2ad7bdc234871ced911a6e0a65cc42c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/fr/2026-11-16-aside-browser-introduction.md",
-        "sha256": "d1f12e7efa8df66d84abcc3d6894ca2b2f17f490c93ae8f9de1e63837cbafb8f"
+        "sha256": "d615d7cae2112b013f59d617846314188b8e9dbd329499347d9ecfc0df930c79"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/fr/2026-11-16-aside-browser-introduction.svg",
@@ -422,11 +422,11 @@
       "translationKey": "2026-11-16-t3code-orca-herdr",
       "source": {
         "path": "src/content/posts/en/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "efade8e88dc1cc022a8738a7b9b2bf6c910ecec8aa32864108cf647d76da283d"
+        "sha256": "94725dbdc4ab213e11a438cbe4dbe69f888ffe3750e5d7c351e92178279c388e"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/fr/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "7335adbd97d1bc7380e4640593f681ee7f46dae5e6da82d31651a4fe2fc50f84"
+        "sha256": "81200acda1909292e0d912d7d7c31e6478df63a75d1b24fb70019c7f028b0c3a"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/fr/2026-11-16-t3code-orca-herdr.svg",
@@ -443,11 +443,11 @@
       "translationKey": "2026-11-17-aside-browser-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-17-aside-browser-guide.md",
-        "sha256": "7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab"
+        "sha256": "9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/fr/2026-11-17-aside-browser-guide.md",
-        "sha256": "4afff87efacbe12b9cebb8af6489a8ebb495738fa7f05f559bc96cb5e0418008"
+        "sha256": "2f7174bb163592aa66e026e859a5472401a1169db64c3e6162a01a8af9019cc3"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/fr/2026-11-17-aside-browser-guide.svg",
@@ -464,11 +464,11 @@
       "translationKey": "2026-11-15-orca-herdr-comparison",
       "source": {
         "path": "src/content/posts/en/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "0ea3992bed06f710050fb085ef58c601249972b0da8b2dfd127306af71833162"
+        "sha256": "2a0f1ca513f60e49bad64d71689d7e59effe22e995582b05d6e1688572f172e4"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/ru/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "105b5eff6a5904c02925c1a8cf1274787938286af07e72a7d79f211fafa10455"
+        "sha256": "fc30510afc6068890a2575f982db5370df0cd0c08da9ed386e24f3073d55198b"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/ru/2026-11-15-orca-herdr-comparison.svg",
@@ -485,11 +485,11 @@
       "translationKey": "2026-11-15-pickle-ai-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-15-pickle-ai-guide.md",
-        "sha256": "4f1eb4aa17fdd841a18ecc17405de9d7a4bd7c9dcd216b414147c2cd6f35803a"
+        "sha256": "14e4d005498c53673a0240cfc0c6b8392223b8b04375e824d04a56b8aa51f6d8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/ru/2026-11-15-pickle-ai-guide.md",
-        "sha256": "9f7f94e79fb89652ec0b70bce3690eb95272f561a545d00232d8117b1f00f179"
+        "sha256": "5983f2b4d69450a7d1bee04c73036111239360c639ebd914a1d893fdef3aa4e5"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/ru/2026-11-15-pickle-ai-guide.svg",
@@ -506,11 +506,11 @@
       "translationKey": "2026-11-16-aside-browser-introduction",
       "source": {
         "path": "src/content/posts/en/2026-11-16-aside-browser-introduction.md",
-        "sha256": "28b13e8d7ffe39227deb95b285e7f9ca2bf044eccfe223389b409c74453575e8"
+        "sha256": "633c19745dfd802e65de403f2bfe9cf8c2ad7bdc234871ced911a6e0a65cc42c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/ru/2026-11-16-aside-browser-introduction.md",
-        "sha256": "8dcc86b632751e75267226e8826062407e0ab73068cd7ec7e36e15ef50a4a4e0"
+        "sha256": "fb470081e386235456d4d90e349fd4eed573c128c248042b9f410c4f2fa3cb0f"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/ru/2026-11-16-aside-browser-introduction.svg",
@@ -527,11 +527,11 @@
       "translationKey": "2026-11-16-t3code-orca-herdr",
       "source": {
         "path": "src/content/posts/en/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "efade8e88dc1cc022a8738a7b9b2bf6c910ecec8aa32864108cf647d76da283d"
+        "sha256": "94725dbdc4ab213e11a438cbe4dbe69f888ffe3750e5d7c351e92178279c388e"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/ru/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "dea6593dd84a68592f0c26dbafa7d15e82b35797c99287748037f16853284fc8"
+        "sha256": "13aad53a9fa2fca5e3cc05104188056fac9bafea6b7c705c5c48250635e087af"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/ru/2026-11-16-t3code-orca-herdr.svg",
@@ -548,11 +548,11 @@
       "translationKey": "2026-11-17-aside-browser-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-17-aside-browser-guide.md",
-        "sha256": "7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab"
+        "sha256": "9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/ru/2026-11-17-aside-browser-guide.md",
-        "sha256": "df06e8ae3469f36b56ba4029493105655e3cf4b10ee28d309ebd22ae37ae56ac"
+        "sha256": "457cfc53afba8477ac4483c924978d9e6d4f9f93dec0cb871b4d3ac53f4a5568"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/ru/2026-11-17-aside-browser-guide.svg",
@@ -569,11 +569,11 @@
       "translationKey": "2026-11-15-orca-herdr-comparison",
       "source": {
         "path": "src/content/posts/en/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "0ea3992bed06f710050fb085ef58c601249972b0da8b2dfd127306af71833162"
+        "sha256": "2a0f1ca513f60e49bad64d71689d7e59effe22e995582b05d6e1688572f172e4"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/es/2026-11-15-orca-herdr-comparison.md",
-        "sha256": "77d6f82f66246377d2f8486d11b6f0290c56080dc20d0914ec44999223fc0f95"
+        "sha256": "8b23aa44a043f8ea2099960ea059b6dd07ac4ebbff124656bbe382d0e11f7eab"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/es/2026-11-15-orca-herdr-comparison.svg",
@@ -590,11 +590,11 @@
       "translationKey": "2026-11-15-pickle-ai-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-15-pickle-ai-guide.md",
-        "sha256": "4f1eb4aa17fdd841a18ecc17405de9d7a4bd7c9dcd216b414147c2cd6f35803a"
+        "sha256": "14e4d005498c53673a0240cfc0c6b8392223b8b04375e824d04a56b8aa51f6d8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/es/2026-11-15-pickle-ai-guide.md",
-        "sha256": "7a3c11c6d63377eb75674c00423257861a9da0b1f6d54fc03b05565c68022acf"
+        "sha256": "4b1ae4cdb6c868af7cba2b2f728877c3af11820336d32c778561c31d971bed77"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/es/2026-11-15-pickle-ai-guide.svg",
@@ -611,11 +611,11 @@
       "translationKey": "2026-11-16-aside-browser-introduction",
       "source": {
         "path": "src/content/posts/en/2026-11-16-aside-browser-introduction.md",
-        "sha256": "28b13e8d7ffe39227deb95b285e7f9ca2bf044eccfe223389b409c74453575e8"
+        "sha256": "633c19745dfd802e65de403f2bfe9cf8c2ad7bdc234871ced911a6e0a65cc42c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/es/2026-11-16-aside-browser-introduction.md",
-        "sha256": "60d512aceb11767fb8042b03be1160a13d32badf777b6459727f3ad9240d8f94"
+        "sha256": "9dbdaa514989c9c62b0f8a75df93eb4f05a60560f745b5dde3674b61d6fc3906"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/es/2026-11-16-aside-browser-introduction.svg",
@@ -632,11 +632,11 @@
       "translationKey": "2026-11-16-t3code-orca-herdr",
       "source": {
         "path": "src/content/posts/en/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "efade8e88dc1cc022a8738a7b9b2bf6c910ecec8aa32864108cf647d76da283d"
+        "sha256": "94725dbdc4ab213e11a438cbe4dbe69f888ffe3750e5d7c351e92178279c388e"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/es/2026-11-16-t3code-orca-herdr.md",
-        "sha256": "5762e5a941c48cc3e29238d1e4e5c8c62bec6803f7489ec6ad0acbc09bfdf149"
+        "sha256": "e85c3470e6148bebbcf65a5a7e077135191274c4f7c331e246e3155ee1208900"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/es/2026-11-16-t3code-orca-herdr.svg",
@@ -653,11 +653,11 @@
       "translationKey": "2026-11-17-aside-browser-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-17-aside-browser-guide.md",
-        "sha256": "7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab"
+        "sha256": "9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-165/es/2026-11-17-aside-browser-guide.md",
-        "sha256": "99860111da104aeae7969b244c4b530844f99044d76eac527b0c7bfe76ac38c1"
+        "sha256": "939aaa9311cf75c5381b7dc470b7f3b92477a83462df06ce750fc9a38dcc2f54"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-165/es/2026-11-17-aside-browser-guide.svg",

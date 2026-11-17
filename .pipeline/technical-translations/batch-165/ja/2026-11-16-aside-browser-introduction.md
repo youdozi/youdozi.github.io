@@ -15,7 +15,7 @@ tags:
   - mcp
 state: draft
 sourcePath: src/content/posts/en/2026-11-16-aside-browser-introduction.md
-sourceSha256: 28b13e8d7ffe39227deb95b285e7f9ca2bf044eccfe223389b409c74453575e8
+sourceSha256: 633c19745dfd802e65de403f2bfe9cf8c2ad7bdc234871ced911a6e0a65cc42c
 ---
 
 **Aside は、ログイン済みの Web サイトとブラウザーの文脈を活用し、複数段階の作業を行う AI ブラウザーです。** 開いているページの要約や資料収集から始め、許可した範囲でフォーム入力やファイル作業まで任せられます。大切なのは回答の文章だけでなく、どのページで何を処理したかを確認することです。

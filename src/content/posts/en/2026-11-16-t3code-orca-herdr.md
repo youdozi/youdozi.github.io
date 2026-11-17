@@ -2,7 +2,7 @@
 kind: post
 publishedAt: 2026-11-17T06:00:28.593Z
 updatedAt: 2026-11-17T06:00:28.593Z
-reviewedAt: 2026-11-17
+reviewedAt: "2026-11-17"
 reviewStatus: source-audited
 reviewScope: English translation checked against the Korean original; source
   execution claims retained, no new external product validation.

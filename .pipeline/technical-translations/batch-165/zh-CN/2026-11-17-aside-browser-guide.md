@@ -15,7 +15,7 @@ tags:
   - csv
 state: draft
 sourcePath: src/content/posts/en/2026-11-17-aside-browser-guide.md
-sourceSha256: 7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab
+sourceSha256: 9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c
 ---
 
 **向 Aside 提交请求时，与其只说“帮我自行调查”，更适合一并提供要使用的页面、结果格式和完成条件。** 先从整理少量公开文档的小任务开始，将原文与结果对照后，再扩展到查询登录页面或重复任务。

@@ -17,7 +17,7 @@ tags:
   - privacy
   - mcp
 sourcePath: src/content/posts/en/2026-11-16-aside-browser-introduction.md
-sourceSha256: 28b13e8d7ffe39227deb95b285e7f9ca2bf044eccfe223389b409c74453575e8
+sourceSha256: 633c19745dfd802e65de403f2bfe9cf8c2ad7bdc234871ced911a6e0a65cc42c
 ---
 
 **Aside est un navigateur IA qui réalise des tâches en plusieurs étapes à partir des sites où vous êtes connecté et du contexte du navigateur.** Vous pouvez commencer par résumer une page ouverte ou recueillir des informations, puis lui confier la saisie de formulaires ou des opérations sur fichiers dans le périmètre autorisé. L’essentiel est de vérifier les pages et les actions effectuées, au-delà du seul texte de la réponse.

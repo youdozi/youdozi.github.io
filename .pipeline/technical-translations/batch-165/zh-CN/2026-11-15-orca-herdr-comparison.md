@@ -15,7 +15,7 @@ tags:
   - developer-tools
 state: draft
 sourcePath: src/content/posts/en/2026-11-15-orca-herdr-comparison.md
-sourceSha256: 0ea3992bed06f710050fb085ef58c601249972b0da8b2dfd127306af71833162
+sourceSha256: 2a0f1ca513f60e49bad64d71689d7e59effe22e995582b05d6e1688572f172e4
 ---
 
 **如果想按 worktree 查看代码变更，并在同一界面中处理浏览器、diff 和 PR，Orca 更方便。如果偏重终端配置，想自行扩展应用界面，可以看看 Herdr。** 两款工具都能运行多个编码智能体并使用 Git worktree。选择的关键与其说是能否并行运行，不如说是如何管理工作环境和结果。

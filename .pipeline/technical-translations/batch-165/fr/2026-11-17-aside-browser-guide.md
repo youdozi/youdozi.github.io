@@ -17,7 +17,7 @@ tags:
   - python
   - csv
 sourcePath: src/content/posts/en/2026-11-17-aside-browser-guide.md
-sourceSha256: 7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab
+sourceSha256: 9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c
 ---
 
 **Mieux vaut préciser à Aside les pages à utiliser, le format attendu et les conditions de fin plutôt que lui demander simplement de « faire des recherches ».** Commencez par organiser quelques documents publics, comparez les résultats aux originaux, puis élargissez le périmètre aux pages connectées ou aux tâches récurrentes.

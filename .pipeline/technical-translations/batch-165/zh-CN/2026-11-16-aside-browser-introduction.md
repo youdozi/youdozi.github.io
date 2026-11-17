@@ -15,7 +15,7 @@ tags:
   - mcp
 state: draft
 sourcePath: src/content/posts/en/2026-11-16-aside-browser-introduction.md
-sourceSha256: 28b13e8d7ffe39227deb95b285e7f9ca2bf044eccfe223389b409c74453575e8
+sourceSha256: 633c19745dfd802e65de403f2bfe9cf8c2ad7bdc234871ced911a6e0a65cc42c
 ---
 
 **Aside 是一款 AI 浏览器，利用用户已登录的网站和浏览器上下文执行多步骤任务。** 可以从总结当前页面、收集资料开始，在允许的范围内进一步委托表单填写和文件操作。重点不仅是回答的文字，还在于确认它在哪些页面处理了什么。

@@ -16,7 +16,7 @@ tags:
   - ai-agent
   - git-worktree
 sourcePath: src/content/posts/en/2026-11-16-t3code-orca-herdr.md
-sourceSha256: efade8e88dc1cc022a8738a7b9b2bf6c910ecec8aa32864108cf647d76da283d
+sourceSha256: 94725dbdc4ab213e11a438cbe4dbe69f888ffe3750e5d7c351e92178279c388e
 ---
 
 **T3 Code facilita seguir tareas, aprobaciones y cambios en un hilo de conversación; Orca destaca por reunir terminal, editor, navegador y diff por worktree. Herdr merece atención si quieres mantener terminales en ejecución y configurar tú mismo la interfaz y la automatización.** Las tres herramientas comparten funciones, por lo que conviene comparar cómo se inicia y revisa una tarea y cómo se vuelve tras una interrupción, en lugar de decidir por una sola función.

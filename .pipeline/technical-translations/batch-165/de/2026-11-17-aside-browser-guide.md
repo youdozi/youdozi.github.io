@@ -17,7 +17,7 @@ tags:
   - python
   - csv
 sourcePath: src/content/posts/en/2026-11-17-aside-browser-guide.md
-sourceSha256: 7739e334f8c0bc64f02e46c1219df769a095089fb647ed0ec6195cc8b76e7bab
+sourceSha256: 9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c
 ---
 
 **Geben Sie Aside besser die zu nutzenden Seiten, das Ergebnisformat und die Abschlussbedingungen vor, statt nur „Recherchiere das für mich“ zu schreiben.** Beginnen Sie mit einer kleinen Aufgabe zu wenigen öffentlichen Dokumenten, gleichen Sie Original und Ergebnis ab und erweitern Sie den Umfang erst dann auf angemeldete Seiten oder wiederkehrende Aufgaben.

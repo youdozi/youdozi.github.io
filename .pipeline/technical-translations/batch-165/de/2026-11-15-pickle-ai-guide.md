@@ -16,7 +16,7 @@ tags:
   - automation
   - privacy
 sourcePath: src/content/posts/en/2026-11-15-pickle-ai-guide.md
-sourceSha256: 4f1eb4aa17fdd841a18ecc17405de9d7a4bd7c9dcd216b414147c2cd6f35803a
+sourceSha256: 14e4d005498c53673a0240cfc0c6b8392223b8b04375e824d04a56b8aa51f6d8
 ---
 
 Pickle AI ist ein persönlicher KI-Agent, bei dem Sie per Chat Aufgaben wie Recherchen oder Reservierungen anfragen und den Fortschritt verfolgen können. Beginnen Sie am besten mit einer Recherche, die weder eine Zahlung noch eine Kontoverbindung erfordert, und prüfen Sie selbst, ob das Ergebnis stimmt. Wenn Sie den Umfang auf Reservierungen oder Einkäufe erweitern, geben Sie Datum, Budget und Bedingungen für Ihre Zustimmung mit an.
