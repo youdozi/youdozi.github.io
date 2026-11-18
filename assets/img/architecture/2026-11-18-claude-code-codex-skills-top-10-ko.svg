@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ko" width="400" height="550" viewBox="0 0 400 550" role="img" aria-labelledby="title desc">
+  <title id="title">두 코딩 에이전트에서 같은 스킬 사용하기</title>
+  <desc id="desc">새 실습 폴더를 만들고 스킬 원본을 작성한다. Claude Code와 Codex 프로젝트 경로에 각각 복사하고 cmp로 파일을 대조한 다음, 두 도구에서 공통 입력으로 결과를 확인한다.</desc>
+  <rect width="400" height="550" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="34" y="18" width="332" height="62" rx="10"/>
+    <rect x="34" y="116" width="332" height="62" rx="10"/>
+    <rect x="34" y="214" width="332" height="82" rx="10"/>
+    <rect x="34" y="332" width="332" height="62" rx="10"/>
+    <rect x="34" y="430" width="332" height="84" rx="10"/>
+  </g>
+  <path d="M200 80v32m-6-7 6 7 6-7M200 178v32m-6-7 6 7 6-7M200 296v32m-6-7 6 7 6-7M200 394v32m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="56">새 실습 폴더 만들기</text>
+    <text x="200" y="154">릴리스 노트 스킬 원본 작성</text>
+    <text x="200" y="242">두 프로젝트 스킬 경로에 복사</text>
+    <text x="200" y="272">.claude/skills · .agents/skills</text>
+    <text x="200" y="370">cmp로 복사본 일치 확인</text>
+    <text x="200" y="460">두 도구에 같은 변경·검증 기록 입력</text>
+    <text x="200" y="489">통과와 미확인이 구분되는지 확인</text>
+  </g>
+</svg>
