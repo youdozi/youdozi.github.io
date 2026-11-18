@@ -1,0 +1,6 @@
+{
+  "scope": "All seven new editions compared to the published Korean guide, including CPU scope, versions, scores, mitigation, diagnostic limitations, source URLs and five code/output blocks.",
+  "method": "Independent AI content comparison and automated manuscript and SVG checks. Original examples and observed output retained.",
+  "corrections": "Clarified memory disclosure in Chinese and French, the diagnostic scope in English, Spanish and Russian, and the advisory month in link labels.",
+  "limits": "No new upstream fact audit, native-speaker review, or exploit or mitigation experiment."
+}
