@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-167",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "6c451585f138911a99f1920b63acbdeae45f7353",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "AI translation, Korean source comparison, structural checks, and SVG text fitting.",
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-167/reviews/language-review.json",
+        "sha256": "c644029bf75d7f83704ac069965fa4fc87eb41029c453fb56e3268eecf602ce9"
+      }
+    ]
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-18-java4shell-cve-2026-114938",
+      "language": "zh-CN",
+      "translationKey": "2026-11-18-java4shell-cve-2026-114938",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "97bd39093c9d08aaab40c9f7f99bc2ea9205d422464aaee2229302eea8b10451"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-167/zh-CN/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "902d2bd626066e636ce9129dae17fc9fed77b217f9092f5f12d8d742954a9688"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-167/zh-CN/2026-11-18-java4shell-cve-2026-114938.svg",
+        "sha256": "110148a11febba1fd01c77bd63ed66dbf7445d641e6d8f33c9aa8abc959620e8"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-java4shell-cve-2026-114938-en.svg",
+        "sha256": "32340355ba1fa7a923775d6b93a809555d672fd811ab8f77aa5e3bc87acd69ca"
+      }
+    },
+    {
+      "key": "ja-2026-11-18-java4shell-cve-2026-114938",
+      "language": "ja",
+      "translationKey": "2026-11-18-java4shell-cve-2026-114938",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "97bd39093c9d08aaab40c9f7f99bc2ea9205d422464aaee2229302eea8b10451"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-167/ja/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "4634b5aec285f9914e6eb195d702a0c18d995805a402331ea61325bf64f241d2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-167/ja/2026-11-18-java4shell-cve-2026-114938.svg",
+        "sha256": "d5a1b4137ae26bd2b414b6f2cd8e1e9be4378984cc48634724859f61444baa38"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-java4shell-cve-2026-114938-en.svg",
+        "sha256": "32340355ba1fa7a923775d6b93a809555d672fd811ab8f77aa5e3bc87acd69ca"
+      }
+    },
+    {
+      "key": "de-2026-11-18-java4shell-cve-2026-114938",
+      "language": "de",
+      "translationKey": "2026-11-18-java4shell-cve-2026-114938",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "97bd39093c9d08aaab40c9f7f99bc2ea9205d422464aaee2229302eea8b10451"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-167/de/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "d1ab7400d5fa60718687e8219960a45db77e048cc666cf7a81e02140c4de9261"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-167/de/2026-11-18-java4shell-cve-2026-114938.svg",
+        "sha256": "66da7daf037b77a679f2d61f28b836e789105c18e6562094a8e7657590628a82"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-java4shell-cve-2026-114938-en.svg",
+        "sha256": "32340355ba1fa7a923775d6b93a809555d672fd811ab8f77aa5e3bc87acd69ca"
+      }
+    },
+    {
+      "key": "fr-2026-11-18-java4shell-cve-2026-114938",
+      "language": "fr",
+      "translationKey": "2026-11-18-java4shell-cve-2026-114938",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "97bd39093c9d08aaab40c9f7f99bc2ea9205d422464aaee2229302eea8b10451"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-167/fr/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "c52c4589126efdd4600fd194943e63a9b5c688d444057ee3a64fd19d07d315e0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-167/fr/2026-11-18-java4shell-cve-2026-114938.svg",
+        "sha256": "0827b9e54b7239bf6730c5a55519aa86dad394db8e1e46ffbf58d79b57f0663b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-java4shell-cve-2026-114938-en.svg",
+        "sha256": "32340355ba1fa7a923775d6b93a809555d672fd811ab8f77aa5e3bc87acd69ca"
+      }
+    },
+    {
+      "key": "ru-2026-11-18-java4shell-cve-2026-114938",
+      "language": "ru",
+      "translationKey": "2026-11-18-java4shell-cve-2026-114938",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "97bd39093c9d08aaab40c9f7f99bc2ea9205d422464aaee2229302eea8b10451"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-167/ru/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "fefb151368eb30a6d29aa773256549d49d839e38b1b43c7e6342601f0e8185ca"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-167/ru/2026-11-18-java4shell-cve-2026-114938.svg",
+        "sha256": "869168e43916d87546b711ada1691755046f68f49bfb6b3c26f498db1c73630a"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-java4shell-cve-2026-114938-en.svg",
+        "sha256": "32340355ba1fa7a923775d6b93a809555d672fd811ab8f77aa5e3bc87acd69ca"
+      }
+    },
+    {
+      "key": "es-2026-11-18-java4shell-cve-2026-114938",
+      "language": "es",
+      "translationKey": "2026-11-18-java4shell-cve-2026-114938",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "97bd39093c9d08aaab40c9f7f99bc2ea9205d422464aaee2229302eea8b10451"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-167/es/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "730de7a7bc81535e116e47b498f742494119e59d695845595aca290a50aaebc0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-167/es/2026-11-18-java4shell-cve-2026-114938.svg",
+        "sha256": "39e1f2d925eb8a13b68f491dd357165200e4d75c683fba0d8c217894df1374a8"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-java4shell-cve-2026-114938-en.svg",
+        "sha256": "32340355ba1fa7a923775d6b93a809555d672fd811ab8f77aa5e3bc87acd69ca"
+      }
+    }
+  ]
+}
