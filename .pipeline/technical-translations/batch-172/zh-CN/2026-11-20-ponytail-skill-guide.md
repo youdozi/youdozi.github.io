@@ -7,7 +7,7 @@
   "title": "Ponytail 技能使用指南：用 Codex 完成小改动和回归测试",
   "description": "了解如何在 Codex 和 Claude Code 中调用 Ponytail，比较 Lite、Full 和 Ultra，并在 Codex CLI 中练习复用已有函数和运行 Node.js 回归测试。",
   "sourcePath": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
-  "sourceSha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5"
+  "sourceSha256": "7b1777565ade628aa9381193123b7b19f84ba4c91e57779cba53f40b8b19b6de"
 }
 ---
 
@@ -45,14 +45,13 @@ codex plugin add ponytail@ponytail
 
 ## 练习：库存只有一件时显示 `1 item`
 
-练习使用 Node.js 22.17.0 和 Codex CLI 0.169.0，在一个空白练习仓库中运行。要重建初始状态，可将下方最终代码中 `stockLabel` 的返回行改为 ``return `${count} items`;``。
-`stock.test.mjs` 的第一项测试在初始状态下已有，第二项是这次新增的。
+练习使用 Node.js 22.17.0 和 Codex CLI 0.169.0，在一个空白练习仓库中运行。要重建初始状态，请在 `stockLabel` 中使用下面的返回语句。`stock.test.mjs` 的第一项测试在初始状态下已有，第二项是这次新增的。
 
-> $ponytail full\
-> 修复 stockLabel(1) 返回 1 items 的问题。\
-> 0 和 2 仍用 items。复用现有的 formatCount，\
-> 为 stockLabel 添加回归测试，然后运行 node --test。\
-> 不要修改练习仓库外的文件，也不要提交。
+```javascript
+return `${count} items`;
+```
+
+**提示示例** `$ponytail full` 修复 stockLabel(1) 返回 1 items 的问题。 0 和 2 仍用 items。复用现有的 formatCount， 为 stockLabel 添加回归测试，然后运行 `node --test`。 不要修改练习仓库外的文件，也不要提交。
 
 ![收到库存标签修复请求后，检查 stockLabel 和 formatCount。复用 formatCount，用回归测试检查 0、1、2 件时的显示，并记录结果。](2026-11-20-ponytail-skill-guide.svg)
 

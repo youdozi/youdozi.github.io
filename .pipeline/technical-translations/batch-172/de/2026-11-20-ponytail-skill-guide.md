@@ -7,7 +7,7 @@
   "title": "Der Ponytail-Skill in Codex und Claude Code — kleine Änderungen mit Regressionstests",
   "description": "So rufen Sie Ponytail in Codex und Claude Code auf, wählen zwischen Lite, Full und Ultra und testen in Codex CLI eine kleine Korrektur mit Node.js.",
   "sourcePath": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
-  "sourceSha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5"
+  "sourceSha256": "7b1777565ade628aa9381193123b7b19f84ba4c91e57779cba53f40b8b19b6de"
 }
 ---
 
@@ -45,14 +45,13 @@ Halten Sie im Auftrag fest, **was sich ändern soll, was erhalten bleiben muss u
 
 ## Übung — `1 item` anzeigen, wenn ein Artikel auf Lager ist
 
-Die Übung lief in einem leeren Übungsrepository mit Node.js 22.17.0 und Codex CLI 0.169.0. Setzen Sie für den Ausgangszustand die Rückgabe in `stockLabel` im folgenden Code auf ``return `${count} items`;``. Der erste Test in
-`stock.test.mjs` war bereits vorhanden. Der zweite kam bei dieser Änderung hinzu.
+Die Übung lief in einem leeren Übungsrepository mit Node.js 22.17.0 und Codex CLI 0.169.0. Für den Ausgangszustand verwenden Sie in `stockLabel` die folgende Rückgabezeile. Der erste Test in `stock.test.mjs` war bereits vorhanden. Der zweite kam bei dieser Änderung hinzu.
 
-> $ponytail full\
-> Behebe den Fehler, dass stockLabel(1) den Text 1 items zurückgibt.\
-> Für 0 und 2 soll items erhalten bleiben. Verwende formatCount erneut,\
-> ergänze einen Regressionstest für stockLabel und führe node --test aus.\
-> Ändere keine Dateien außerhalb dieses Übungsrepositorys und erstelle keinen Commit.
+```javascript
+return `${count} items`;
+```
+
+**Beispielprompt** `$ponytail full` Behebe den Fehler, dass stockLabel(1) den Text 1 items zurückgibt. Für 0 und 2 soll items erhalten bleiben. Verwende formatCount erneut, ergänze einen Regressionstest für stockLabel und führe `node --test` aus. Ändere keine Dateien außerhalb dieses Übungsrepositorys und erstelle keinen Commit.
 
 ![Nach dem Korrekturauftrag stockLabel und formatCount prüfen. formatCount wiederverwenden, die Anzeigen für 0, 1 und 2 Artikel testen und die Ergebnisse festhalten.](2026-11-20-ponytail-skill-guide.svg)
 

@@ -7,7 +7,7 @@
   "title": "Zehn Skills für Claude Code und Codex und ihr Einsatz im Alltag",
   "description": "Vergleichen Sie zehn Skills für Claude Code und Codex CLI, erfahren Sie mehr über Installation und Aufruf und probieren Sie denselben Release-Notes-Skill in beiden Tools aus.",
   "sourcePath": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
-  "sourceSha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993"
+  "sourceSha256": "9338932f68b3342b8eee987674b733a84d8f24684b44e978ff027618dab08d68"
 }
 ---
 
@@ -89,10 +89,7 @@ Skill copies match.
 
 Starten Sie von `skills-demo` aus `claude` und `codex` jeweils in einem eigenen Terminal. Wählen Sie `/release-note-draft` in Claude Code und `$release-note-draft` in Codex CLI. Senden Sie den Skill-Namen zusammen mit den folgenden Angaben zu Änderung und Tests in einer Nachricht.
 
-> Änderung: Wenn das E-Mail-Feld auf der Einstellungsseite geleert wird, ist Speichern deaktiviert.\
-> Geprüft: 3 Unit-Tests für die Einstellungsseite ausgeführt. Alle bestanden.\
-> Geplant: Das Verhalten in einem mobilen Browser prüfen.\
-> Erstelle aus diesen Angaben einen Entwurf für die Release Notes.
+**Beispielprompt** Änderung: Wenn das E-Mail-Feld auf der Einstellungsseite geleert wird, ist Speichern deaktiviert. Geprüft: 3 Unit-Tests für die Einstellungsseite ausgeführt. Alle bestanden. Geplant: Das Verhalten in einem mobilen Browser prüfen. Erstelle aus diesen Angaben einen Entwurf für die Release Notes.
 
 Das erwartete Ergebnis nennt das Verhalten der Schaltfläche als Änderung für Nutzer, die 3 bestandenen Unit-Tests unter den geprüften Punkten und den mobilen Browsertest unter den offenen Prüfungen.
 

@@ -21,17 +21,17 @@
     "playwright"
   ],
   "sourcePath": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
-  "sourceSha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a",
-  "draftSha256": "42d1b0ca6726cdecfeecc3a53353e39544325555b379f996a792e2f911fd724a",
+  "sourceSha256": "2fa2cdf9d087643f65deb61063a994cdd75549bf0b412379d831fa97c01906e2",
+  "draftSha256": "af371a400b46952a2999a7e2aa2795205b8aa9271e062bb39cde99cd829778f8",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -76,12 +76,7 @@ Claude Code では、Anthropic の `frontend-design` は公式マーケットプ
 
 実装を担当するエージェントに、操作と判定の基準を次のように渡す。
 
-> 予約詳細にキャンセル確認ダイアログを設計してください。既存のダイアログとボタンを再利用してください。\
-> 初期フォーカスは「予約を維持」に置き、Escape で閉じた場合は予約の状態を保ち、\
-> 「キャンセルオプションを開く」にフォーカスを戻してください。\
-> キャンセル要求の送信後は、処理中、成功、失敗の状態をそれぞれ表現してください。\
-> 失敗画面には再試行やサポートへの問い合わせなど、次に取れる行動を表示してください。\
-> 画面と状態表をレビューしてから実装できるよう、フレームと状態の対応を示してください。
+**プロンプト例** 予約詳細にキャンセル確認ダイアログを設計してください。既存のダイアログとボタンを再利用してください。 初期フォーカスは「予約を維持」に置き、Escape で閉じた場合は予約の状態を保ち、 「キャンセルオプションを開く」にフォーカスを戻してください。 キャンセル要求の送信後は、処理中、成功、失敗の状態をそれぞれ表現してください。 失敗画面には再試行やサポートへの問い合わせなど、次に取れる行動を表示してください。 画面と状態表をレビューしてから実装できるよう、フレームと状態の対応を示してください。
 
 ## 実習 — 確認ダイアログのフォーカスと二つの結果を確認する
 

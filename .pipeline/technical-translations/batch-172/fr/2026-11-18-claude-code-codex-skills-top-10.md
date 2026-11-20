@@ -7,7 +7,7 @@
   "title": "Dix skills recommandés pour Claude Code et Codex et leurs usages au quotidien",
   "description": "Comparez dix skills pour Claude Code et Codex CLI, découvrez comment les installer et les appeler, puis essayez le même skill de notes de version dans les deux outils.",
   "sourcePath": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
-  "sourceSha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993"
+  "sourceSha256": "9338932f68b3342b8eee987674b733a84d8f24684b44e978ff027618dab08d68"
 }
 ---
 
@@ -89,10 +89,7 @@ Skill copies match.
 
 Depuis `skills-demo`, lancez `claude` et `codex` dans deux terminaux distincts. Sélectionnez `/release-note-draft` dans Claude Code et `$release-note-draft` dans Codex CLI. Envoyez le nom du skill et les informations suivantes dans un même message.
 
-> Changement : vider le champ d’e-mail de l’écran des réglages désactive le bouton Enregistrer.\
-> Vérification : 3 tests unitaires de l’écran des réglages ont été exécutés. Tous ont réussi.\
-> Prévu : vérifier le comportement dans un navigateur mobile.\
-> Rédige une première version des notes de version à partir de ces informations.
+**Exemple de prompt** Changement : vider le champ d’e-mail de l’écran des réglages désactive le bouton Enregistrer. Vérification : 3 tests unitaires de l’écran des réglages ont été exécutés. Tous ont réussi. Prévu : vérifier le comportement dans un navigateur mobile. Rédige une première version des notes de version à partir de ces informations.
 
 Le résultat attendu présente le comportement du bouton dans les changements visibles, les 3 tests unitaires réussis dans les vérifications et le contrôle du navigateur mobile parmi les points à vérifier.
 

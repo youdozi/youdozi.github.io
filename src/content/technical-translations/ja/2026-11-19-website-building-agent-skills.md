@@ -19,17 +19,17 @@
     "playwright"
   ],
   "sourcePath": "src/content/posts/en/2026-11-19-website-building-agent-skills.md",
-  "sourceSha256": "5a054cc2358bab13553028e7a2e4183feefa7849d49e57e026c8849e15dd65df",
-  "draftSha256": "69abc5ec4bf4d88c34a2474555ddbd90e9c4b362a3b97572a3f6f7659320f5c9",
+  "sourceSha256": "f7eb2b67f71eb23934048777fc9d7ffed4a983fc580e1b4d9a7b2cf3c8a3180e",
+  "draftSha256": "b982af917dade3e82737c726f00cc9920ecef4693633db4f07cd6a18d49d7254",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -64,14 +64,7 @@
 
 制作依頼は長くなくてよい。次のようにサービスの概要、画面構成、確認する行動を一緒に伝えると、企画・実装・テストで同じ基準を使える。
 
-> 架空の写真スタジオの紹介ページを作ってください。\
-> 訪問者は撮影場所と相談方法を知りたい人です。\
-> 同じページに紹介と相談案内を置き、最初に見える画面の「問い合わせ」リンクを\
-> ページ内の相談案内につなげてください。紹介、問い合わせリンク、相談案内の順に並べてください。\
-> 360px の狭い画面とキーボード操作を考慮してください。\
-> 実装後、360px と 1280px で横方向のはみ出しを確認し、\
-> Tab で問い合わせリンクに移動して Enter で相談案内を開いてください。\
-> 各工程の結果と確認できなかった項目を記録してください。
+**プロンプト例** 架空の写真スタジオの紹介ページを作ってください。 訪問者は撮影場所と相談方法を知りたい人です。 同じページに紹介と相談案内を置き、最初に見える画面の「問い合わせ」リンクを ページ内の相談案内につなげてください。紹介、問い合わせリンク、相談案内の順に並べてください。 360px の狭い画面とキーボード操作を考慮してください。 実装後、360px と 1280px で横方向のはみ出しを確認し、 Tab で問い合わせリンクに移動して Enter で相談案内を開いてください。 各工程の結果と確認できなかった項目を記録してください。
 
 紹介と問い合わせリンクは画面実装に渡し、画面幅とキーボード操作の条件はテストの判定基準として使う。失敗したら、そのときの画面幅と操作を実装担当のエージェントに伝え、修正後に同じ条件で再実行する。アクセシビリティレビューでは、コントラスト、スクリーンリーダーが読む名前、別ページに移動した後のフォーカス位置も確認する。
 

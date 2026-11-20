@@ -73,12 +73,7 @@ For a dialog that confirms a difficult-to-reverse action, it can be appropriate 
 
 Give the implementation agent the desired behavior and acceptance criteria.
 
-> Design a cancellation dialog in the booking details. Reuse the existing dialog and buttons.\
-> Move initial focus to “Keep booking”. When Escape closes the dialog,\
-> keep the booking status and return focus to “Open cancellation options”.\
-> After submitting the cancellation request, represent processing, success, and failure separately.\
-> On failure, show the next action for retrying or getting help.\
-> Map the frames to the states so we can review the screen and state table before implementation.
+**Example prompt** Design a cancellation dialog in the booking details. Reuse the existing dialog and buttons. Move initial focus to “Keep booking”. When Escape closes the dialog, keep the booking status and return focus to “Open cancellation options”. After submitting the cancellation request, represent processing, success, and failure separately. On failure, show the next action for retrying or getting help. Map the frames to the states so we can review the screen and state table before implementation.
 
 ## Exercise — check dialog focus and both outcomes
 

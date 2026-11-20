@@ -21,17 +21,17 @@
     "playwright"
   ],
   "sourcePath": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
-  "sourceSha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a",
-  "draftSha256": "3cad1708850dc7029c2d7d0920796c75d4adda2ddc03f1d16f0ce4656164a653",
+  "sourceSha256": "2fa2cdf9d087643f65deb61063a994cdd75549bf0b412379d831fa97c01906e2",
+  "draftSha256": "26b01809ba90763c61e4401f02b874cf0c75f6999b701b74c2603340b46afe85",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -76,12 +76,7 @@
 
 可以按以下方式把操作及其验收标准交给负责实现的代理。
 
-> 请为预订详情设计取消确认对话框，复用现有的对话框和按钮。\
-> 将初始焦点放在“保留预订”。按 Escape 关闭时，保留预订状态，\
-> 并将焦点还给“打开取消选项”。\
-> 发送取消请求后，分别呈现处理中、成功和失败状态。\
-> 失败页面应给出重试或获取帮助的下一步操作。\
-> 请说明各帧与状态的对应关系，以便审查界面和状态表后开始实现。
+**提示示例** 请为预订详情设计取消确认对话框，复用现有的对话框和按钮。 将初始焦点放在“保留预订”。按 Escape 关闭时，保留预订状态， 并将焦点还给“打开取消选项”。 发送取消请求后，分别呈现处理中、成功和失败状态。 失败页面应给出重试或获取帮助的下一步操作。 请说明各帧与状态的对应关系，以便审查界面和状态表后开始实现。
 
 ## 练习：检查确认对话框的焦点和两种结果
 

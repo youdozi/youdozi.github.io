@@ -19,17 +19,17 @@
     "developer-tools"
   ],
   "sourcePath": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
-  "sourceSha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993",
-  "draftSha256": "2d533060742e684f4474bde2e5b1c343214be01bd594914169c865e039479115",
+  "sourceSha256": "9338932f68b3342b8eee987674b733a84d8f24684b44e978ff027618dab08d68",
+  "draftSha256": "1c201bdfa792e1d8baaaca06e69abc324e53bb0c3b04434e4029511272d1142e",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -113,10 +113,7 @@ Skill copies match.
 
 Starten Sie von `skills-demo` aus `claude` und `codex` jeweils in einem eigenen Terminal. Wählen Sie `/release-note-draft` in Claude Code und `$release-note-draft` in Codex CLI. Senden Sie den Skill-Namen zusammen mit den folgenden Angaben zu Änderung und Tests in einer Nachricht.
 
-> Änderung: Wenn das E-Mail-Feld auf der Einstellungsseite geleert wird, ist Speichern deaktiviert.\
-> Geprüft: 3 Unit-Tests für die Einstellungsseite ausgeführt. Alle bestanden.\
-> Geplant: Das Verhalten in einem mobilen Browser prüfen.\
-> Erstelle aus diesen Angaben einen Entwurf für die Release Notes.
+**Beispielprompt** Änderung: Wenn das E-Mail-Feld auf der Einstellungsseite geleert wird, ist Speichern deaktiviert. Geprüft: 3 Unit-Tests für die Einstellungsseite ausgeführt. Alle bestanden. Geplant: Das Verhalten in einem mobilen Browser prüfen. Erstelle aus diesen Angaben einen Entwurf für die Release Notes.
 
 Das erwartete Ergebnis nennt das Verhalten der Schaltfläche als Änderung für Nutzer, die 3 bestandenen Unit-Tests unter den geprüften Punkten und den mobilen Browsertest unter den offenen Prüfungen.
 

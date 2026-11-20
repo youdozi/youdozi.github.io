@@ -19,17 +19,17 @@
     "playwright"
   ],
   "sourcePath": "src/content/posts/en/2026-11-19-website-building-agent-skills.md",
-  "sourceSha256": "5a054cc2358bab13553028e7a2e4183feefa7849d49e57e026c8849e15dd65df",
-  "draftSha256": "25b13a681df612fadc24a564dde0e0d66e7a63bad6cfbbfa8e6c9100701af93e",
+  "sourceSha256": "f7eb2b67f71eb23934048777fc9d7ffed4a983fc580e1b4d9a7b2cf3c8a3180e",
+  "draftSha256": "7a14bb343090322f0ce5515075e19f9c1b7d8daab2d9caa08b3bbf018ee09344",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -64,14 +64,7 @@ Les deux premières lignes donnent des exemples de rôles à décrire dans le pr
 
 Une demande courte suffit. En donnant ensemble le contexte du service, la structure des écrans et les gestes à vérifier, vous pouvez utiliser les mêmes critères pendant la planification, la réalisation et les tests.
 
-> Crée une page de présentation pour un studio photo fictif.\
-> Les visiteurs veulent savoir où ont lieu les prises de vue et comment obtenir un rendez-vous.\
-> Place la présentation et les informations de consultation sur une seule page. Relie le lien de contact\
-> du premier écran à la section de consultation. Garde l’ordre présentation, lien de contact, consultation.\
-> Prends en compte un écran étroit de 360px et l’utilisation au clavier.\
-> Après la réalisation, vérifie les débordements horizontaux à 360px et 1280px.\
-> Atteins le lien de contact avec Tab, puis ouvre la section de consultation avec Enter (Entrée).\
-> Note le résultat de chaque étape et les points qui n’ont pas été vérifiés.
+**Exemple de prompt** Crée une page de présentation pour un studio photo fictif. Les visiteurs veulent savoir où ont lieu les prises de vue et comment obtenir un rendez-vous. Place la présentation et les informations de consultation sur une seule page. Relie le lien de contact du premier écran à la section de consultation. Garde l’ordre présentation, lien de contact, consultation. Prends en compte un écran étroit de 360px et l’utilisation au clavier. Après la réalisation, vérifie les débordements horizontaux à 360px et 1280px. Atteins le lien de contact avec Tab, puis ouvre la section de consultation avec Enter (Entrée). Note le résultat de chaque étape et les points qui n’ont pas été vérifiés.
 
 Transmettez la présentation et le lien de contact à la réalisation. Les largeurs d’écran et les gestes au clavier servent de critères pour les tests. En cas d’échec, communiquez à l’agent chargé de la réalisation la largeur et l’action concernées, puis relancez le test dans les mêmes conditions après correction. La revue d’accessibilité couvre aussi le contraste, les noms lus par les lecteurs d’écran et la position du focus après un changement de page.
 

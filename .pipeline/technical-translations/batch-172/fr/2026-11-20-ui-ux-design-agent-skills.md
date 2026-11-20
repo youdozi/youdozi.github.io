@@ -7,7 +7,7 @@
   "title": "Concevoir l’UI et l’UX avec Claude Code et Codex — parcours, Figma et accessibilité",
   "description": "Concevez un parcours, un système de design Figma et des textes d’interface avec Claude Code et Codex. Vérifiez avec Playwright le clavier et le focus d’une boîte de confirmation d’annulation.",
   "sourcePath": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
-  "sourceSha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a"
+  "sourceSha256": "2fa2cdf9d087643f65deb61063a994cdd75549bf0b412379d831fa97c01906e2"
 }
 ---
 
@@ -50,11 +50,7 @@ Lorsqu’une boîte de dialogue confirme une action difficile à annuler, placer
 
 Donnez à l’agent chargé de la réalisation le comportement attendu et les critères qui permettront de le vérifier.
 
-> Conçois une boîte de confirmation d’annulation dans le détail de la réservation. Réutilise les boîtes de dialogue et les boutons existants.\
-> Place le focus initial sur « Conserver la réservation ». À la fermeture avec Escape (Échap), conserve la réservation et rends le focus à « Ouvrir les options d’annulation ».\
-> Après l’envoi de la demande, montre séparément les états de traitement, de réussite et d’échec.\
-> En cas d’échec, propose de réessayer ou d’obtenir de l’aide.\
-> Associe les frames à leurs états pour que nous puissions examiner l’écran et le tableau des états avant la réalisation.
+**Exemple de prompt** Conçois une boîte de confirmation d’annulation dans le détail de la réservation. Réutilise les boîtes de dialogue et les boutons existants. Place le focus initial sur « Conserver la réservation ». À la fermeture avec Escape (Échap), conserve la réservation et rends le focus à « Ouvrir les options d’annulation ». Après l’envoi de la demande, montre séparément les états de traitement, de réussite et d’échec. En cas d’échec, propose de réessayer ou d’obtenir de l’aide. Associe les frames à leurs états pour que nous puissions examiner l’écran et le tableau des états avant la réalisation.
 
 ## Exercice — vérifier le focus et les deux résultats de la boîte de dialogue
 

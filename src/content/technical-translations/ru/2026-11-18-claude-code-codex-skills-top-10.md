@@ -19,17 +19,17 @@
     "developer-tools"
   ],
   "sourcePath": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
-  "sourceSha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993",
-  "draftSha256": "b8731d51a15e2d58444f666648930717d82d313b70912d74621365616811f82c",
+  "sourceSha256": "9338932f68b3342b8eee987674b733a84d8f24684b44e978ff027618dab08d68",
+  "draftSha256": "325d44b2a1897f265c6f6561a7636a2da018f71a874a00625ee089b8adc991cb",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -113,10 +113,7 @@ Skill copies match.
 
 Из `skills-demo` запустите `claude` и `codex` в отдельных сеансах терминала. В Claude Code выберите `/release-note-draft`, а в Codex CLI — `$release-note-draft`. Отправьте имя навыка и запись об изменении и проверках одним сообщением.
 
-> Изменение: Если очистить поле электронной почты в настройках, кнопка «Сохранить» станет недоступной.\
-> Проверка: Запущены 3 модульных теста экрана настроек. Все прошли.\
-> Запланировано: Проверить поведение в мобильном браузере.\
-> Составь черновик заметок о релизе по этим данным.
+**Пример запроса** Изменение: Если очистить поле электронной почты в настройках, кнопка «Сохранить» станет недоступной. Проверка: Запущены 3 модульных теста экрана настроек. Все прошли. Запланировано: Проверить поведение в мобильном браузере. Составь черновик заметок о релизе по этим данным.
 
 Ожидаемый результат содержит поведение кнопки в изменениях для пользователя, 3 успешных модульных теста в разделе проверки и ещё не проведённую проверку в мобильном браузере.
 

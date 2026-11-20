@@ -7,7 +7,7 @@
   "title": "Diseñar UI y UX con Claude Code y Codex — flujos, Figma y accesibilidad",
   "description": "Diseña flujos de usuario, sistemas de diseño en Figma, textos de interfaz y accesibilidad con Claude Code y Codex. Comprueba el teclado y el foco de un diálogo de cancelación con Playwright.",
   "sourcePath": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
-  "sourceSha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a"
+  "sourceSha256": "2fa2cdf9d087643f65deb61063a994cdd75549bf0b412379d831fa97c01906e2"
 }
 ---
 
@@ -50,12 +50,7 @@ En un diálogo que confirma una acción difícil de revertir, puede convenir pon
 
 Pasa las acciones y los criterios de aceptación al agente encargado de implementar el flujo. Por ejemplo:
 
-> Diseña un diálogo de cancelación en el detalle de la reserva. Reutiliza el diálogo y los botones existentes.\
-> Pon el foco inicial en «Conservar reserva». Al cerrar con Escape, conserva la reserva\
-> y devuelve el foco a «Abrir opciones de cancelación».\
-> Tras enviar la solicitud, representa por separado los estados en curso, de éxito y de error.\
-> En el estado de error, indica cómo reintentar o pedir ayuda.\
-> Explica qué marco corresponde a cada estado para revisar las pantallas y la tabla antes de implementar.
+**Ejemplo de prompt** Diseña un diálogo de cancelación en el detalle de la reserva. Reutiliza el diálogo y los botones existentes. Pon el foco inicial en «Conservar reserva». Al cerrar con Escape, conserva la reserva y devuelve el foco a «Abrir opciones de cancelación». Tras enviar la solicitud, representa por separado los estados en curso, de éxito y de error. En el estado de error, indica cómo reintentar o pedir ayuda. Explica qué marco corresponde a cada estado para revisar las pantallas y la tabla antes de implementar.
 
 ## Ejercicio — comprobar el foco del diálogo y los dos resultados posibles
 

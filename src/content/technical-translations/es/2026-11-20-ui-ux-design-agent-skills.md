@@ -21,17 +21,17 @@
     "playwright"
   ],
   "sourcePath": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
-  "sourceSha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a",
-  "draftSha256": "72c827456ba127e186a31af1d8798f77ddf0aa2fbdcf8ffac48d92b25a25f55c",
+  "sourceSha256": "2fa2cdf9d087643f65deb61063a994cdd75549bf0b412379d831fa97c01906e2",
+  "draftSha256": "fe6fa76ee4916ee3a7f17bbebfb44bf3a8424901e818c68a9281de9e52b254d6",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -76,12 +76,7 @@ En un diálogo que confirma una acción difícil de revertir, puede convenir pon
 
 Pasa las acciones y los criterios de aceptación al agente encargado de implementar el flujo. Por ejemplo:
 
-> Diseña un diálogo de cancelación en el detalle de la reserva. Reutiliza el diálogo y los botones existentes.\
-> Pon el foco inicial en «Conservar reserva». Al cerrar con Escape, conserva la reserva\
-> y devuelve el foco a «Abrir opciones de cancelación».\
-> Tras enviar la solicitud, representa por separado los estados en curso, de éxito y de error.\
-> En el estado de error, indica cómo reintentar o pedir ayuda.\
-> Explica qué marco corresponde a cada estado para revisar las pantallas y la tabla antes de implementar.
+**Ejemplo de prompt** Diseña un diálogo de cancelación en el detalle de la reserva. Reutiliza el diálogo y los botones existentes. Pon el foco inicial en «Conservar reserva». Al cerrar con Escape, conserva la reserva y devuelve el foco a «Abrir opciones de cancelación». Tras enviar la solicitud, representa por separado los estados en curso, de éxito y de error. En el estado de error, indica cómo reintentar o pedir ayuda. Explica qué marco corresponde a cada estado para revisar las pantallas y la tabla antes de implementar.
 
 ## Ejercicio — comprobar el foco del diálogo y los dos resultados posibles
 

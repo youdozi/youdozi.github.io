@@ -20,17 +20,17 @@
     "nodejs"
   ],
   "sourcePath": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
-  "sourceSha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5",
-  "draftSha256": "5eb2dcc639e90da4d474b30921f21a261a37f39fd0124e11041a75a93e737bcb",
+  "sourceSha256": "7b1777565ade628aa9381193123b7b19f84ba4c91e57779cba53f40b8b19b6de",
+  "draftSha256": "5cf2d5c0a87311b926d2b34bda6487a8805b5b96138cba744ae0bb4802fdb771",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -70,14 +70,13 @@ Halten Sie im Auftrag fest, **was sich ändern soll, was erhalten bleiben muss u
 
 ## Übung — `1 item` anzeigen, wenn ein Artikel auf Lager ist
 
-Die Übung lief in einem leeren Übungsrepository mit Node.js 22.17.0 und Codex CLI 0.169.0. Setzen Sie für den Ausgangszustand die Rückgabe in `stockLabel` im folgenden Code auf ``return `${count} items`;``. Der erste Test in
-`stock.test.mjs` war bereits vorhanden. Der zweite kam bei dieser Änderung hinzu.
+Die Übung lief in einem leeren Übungsrepository mit Node.js 22.17.0 und Codex CLI 0.169.0. Für den Ausgangszustand verwenden Sie in `stockLabel` die folgende Rückgabezeile. Der erste Test in `stock.test.mjs` war bereits vorhanden. Der zweite kam bei dieser Änderung hinzu.
 
-> $ponytail full\
-> Behebe den Fehler, dass stockLabel(1) den Text 1 items zurückgibt.\
-> Für 0 und 2 soll items erhalten bleiben. Verwende formatCount erneut,\
-> ergänze einen Regressionstest für stockLabel und führe node --test aus.\
-> Ändere keine Dateien außerhalb dieses Übungsrepositorys und erstelle keinen Commit.
+```javascript
+return `${count} items`;
+```
+
+**Beispielprompt** `$ponytail full` Behebe den Fehler, dass stockLabel(1) den Text 1 items zurückgibt. Für 0 und 2 soll items erhalten bleiben. Verwende formatCount erneut, ergänze einen Regressionstest für stockLabel und führe `node --test` aus. Ändere keine Dateien außerhalb dieses Übungsrepositorys und erstelle keinen Commit.
 
 ![Nach dem Korrekturauftrag stockLabel und formatCount prüfen. formatCount wiederverwenden, die Anzeigen für 0, 1 und 2 Artikel testen und die Ergebnisse festhalten.](/assets/diagrams/technical/de-2026-11-20-ponytail-skill-guide.svg)
 

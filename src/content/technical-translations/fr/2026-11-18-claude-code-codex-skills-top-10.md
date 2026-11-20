@@ -19,17 +19,17 @@
     "developer-tools"
   ],
   "sourcePath": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
-  "sourceSha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993",
-  "draftSha256": "33a47e22a2f33af815c42e5d882e631a56c4d84b9c7468373d8b8147bd1eecd9",
+  "sourceSha256": "9338932f68b3342b8eee987674b733a84d8f24684b44e978ff027618dab08d68",
+  "draftSha256": "ac3eb1a8b8e4ad7231185af360a314a5bb511d224cafcf0bb7a273e5062b6cf9",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -113,10 +113,7 @@ Skill copies match.
 
 Depuis `skills-demo`, lancez `claude` et `codex` dans deux terminaux distincts. Sélectionnez `/release-note-draft` dans Claude Code et `$release-note-draft` dans Codex CLI. Envoyez le nom du skill et les informations suivantes dans un même message.
 
-> Changement : vider le champ d’e-mail de l’écran des réglages désactive le bouton Enregistrer.\
-> Vérification : 3 tests unitaires de l’écran des réglages ont été exécutés. Tous ont réussi.\
-> Prévu : vérifier le comportement dans un navigateur mobile.\
-> Rédige une première version des notes de version à partir de ces informations.
+**Exemple de prompt** Changement : vider le champ d’e-mail de l’écran des réglages désactive le bouton Enregistrer. Vérification : 3 tests unitaires de l’écran des réglages ont été exécutés. Tous ont réussi. Prévu : vérifier le comportement dans un navigateur mobile. Rédige une première version des notes de version à partir de ces informations.
 
 Le résultat attendu présente le comportement du bouton dans les changements visibles, les 3 tests unitaires réussis dans les vérifications et le contrôle du navigateur mobile parmi les points à vérifier.
 

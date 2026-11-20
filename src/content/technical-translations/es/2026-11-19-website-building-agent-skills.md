@@ -19,17 +19,17 @@
     "playwright"
   ],
   "sourcePath": "src/content/posts/en/2026-11-19-website-building-agent-skills.md",
-  "sourceSha256": "5a054cc2358bab13553028e7a2e4183feefa7849d49e57e026c8849e15dd65df",
-  "draftSha256": "2bcd792a79379826688880a4bd7a560ff35cb46be322ee32cce4a95d584d6e8e",
+  "sourceSha256": "f7eb2b67f71eb23934048777fc9d7ffed4a983fc580e1b4d9a7b2cf3c8a3180e",
+  "draftSha256": "293a7e1d33343c5d23fe32eed43d806dd65e87f7a3b68f33015c20eec7269535",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -64,15 +64,7 @@ Las dos primeras filas son ejemplos de funciones que se pueden documentar en el 
 
 El encargo puede ser breve. Si incluyes la información del servicio, la estructura de la página y la acción que se va a comprobar, podrás aplicar los mismos criterios al planificar, implementar y probar.
 
-> Crea un sitio de presentación para un estudio fotográfico ficticio.\
-> Los visitantes quieren consultar el lugar de la sesión y cómo solicitar asesoramiento.\
-> Pon la presentación y la información de contacto en una sola página. Enlaza\
-> «Contactar», en la primera pantalla, con la sección de contacto de esa página.\
-> Conserva el orden: presentación, enlace de contacto y sección de contacto.\
-> Ten en cuenta una pantalla estrecha de 360px y el uso del teclado.\
-> Tras implementar, comprueba el desbordamiento horizontal a 360px y 1280px.\
-> Llega al enlace de contacto con Tab y usa Enter para abrir la sección.\
-> Registra el resultado de cada paso y lo que no hayas podido verificar.
+**Ejemplo de prompt** Crea un sitio de presentación para un estudio fotográfico ficticio. Los visitantes quieren consultar el lugar de la sesión y cómo solicitar asesoramiento. Pon la presentación y la información de contacto en una sola página. Enlaza «Contactar», en la primera pantalla, con la sección de contacto de esa página. Conserva el orden: presentación, enlace de contacto y sección de contacto. Ten en cuenta una pantalla estrecha de 360px y el uso del teclado. Tras implementar, comprueba el desbordamiento horizontal a 360px y 1280px. Llega al enlace de contacto con Tab y usa Enter para abrir la sección. Registra el resultado de cada paso y lo que no hayas podido verificar.
 
 Pasa la presentación y el enlace de contacto a la implementación. Usa los tamaños de pantalla y las condiciones de teclado como criterios de prueba. Si falla una prueba, indica al agente que implementa el ancho y la acción que produjeron el fallo. Repite la prueba en las mismas condiciones cuando se corrija. En la revisión de accesibilidad, añade el contraste, el nombre que anuncia el lector de pantalla y la posición del foco tras navegar a otra página.
 

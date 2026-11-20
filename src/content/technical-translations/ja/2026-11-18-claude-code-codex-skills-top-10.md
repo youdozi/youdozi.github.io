@@ -19,17 +19,17 @@
     "developer-tools"
   ],
   "sourcePath": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
-  "sourceSha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993",
-  "draftSha256": "a2a953bdca20ea119f37fad128a0246be75a6f62b79cf8e3e97166b29f8165d9",
+  "sourceSha256": "9338932f68b3342b8eee987674b733a84d8f24684b44e978ff027618dab08d68",
+  "draftSha256": "3c2739a88b25f7ed006732c5e255438b87365d46ae6446dc0ace4e978a8c03ec",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -113,10 +113,7 @@ Skill copies match.
 
 `skills-demo` を作業ディレクトリとし、別のターミナルセッションで `claude` と `codex` をそれぞれ起動する。Claude Code では `/release-note-draft`、Codex CLI では `$release-note-draft` を選ぶ。スキル名と次の変更・テスト記録を一つのメッセージで送る。
 
-> 変更: 設定画面のメールアドレス入力を消すと保存ボタンが無効になります。\
-> 検証記録: 設定画面の単体テストを 3 件実行し、すべて合格しました。\
-> 予定: モバイルブラウザーでの動作も確認する予定です。\
-> 以上の記録からリリースノートの下書きを作ってください。
+**プロンプト例** 変更: 設定画面のメールアドレス入力を消すと保存ボタンが無効になります。 検証記録: 設定画面の単体テストを 3 件実行し、すべて合格しました。 予定: モバイルブラウザーでの動作も確認する予定です。 以上の記録からリリースノートの下書きを作ってください。
 
 期待する結果は、ユーザーに見える変更にボタンの動作、検証に単体テスト 3 件の合格、未確認事項にモバイルブラウザーでの確認がそれぞれ入ることだ。
 

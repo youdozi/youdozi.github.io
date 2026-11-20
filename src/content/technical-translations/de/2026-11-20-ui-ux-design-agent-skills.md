@@ -21,17 +21,17 @@
     "playwright"
   ],
   "sourcePath": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
-  "sourceSha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a",
-  "draftSha256": "5dc93adfed0ad78aa9a355771dead91357d4ba3b3fa677e4cef5a2545cd9f82b",
+  "sourceSha256": "2fa2cdf9d087643f65deb61063a994cdd75549bf0b412379d831fa97c01906e2",
+  "draftSha256": "3acaaa5bce8c9121a212c023be9fb98baffcf9dd6d74081aae70d4ef4f812ec7",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -76,11 +76,7 @@ Bei einem Dialog für schwer rückgängig zu machende Aktionen kann die Option m
 
 Geben Sie dem Agenten für die Umsetzung das gewünschte Verhalten und die Prüfkriterien mit.
 
-> Entwirf einen Bestätigungsdialog für die Stornierung in den Buchungsdetails und verwende die vorhandenen Dialoge und Schaltflächen wieder.\
-> Setze den Anfangsfokus auf „Buchung behalten“. Beim Schließen mit Escape soll die Buchung bestehen bleiben und der Fokus zu „Stornooptionen öffnen“ zurückkehren.\
-> Zeige nach dem Absenden der Stornierungsanfrage die Zustände Verarbeitung, Erfolg und Fehler getrennt an.\
-> Biete im Fehlerzustand eine Wiederholung oder einen Weg zur Hilfe an.\
-> Ordne Frames und Zustände einander zu, damit wir Entwurf und Zustandstabelle vor der Umsetzung prüfen können.
+**Beispielprompt** Entwirf einen Bestätigungsdialog für die Stornierung in den Buchungsdetails und verwende die vorhandenen Dialoge und Schaltflächen wieder. Setze den Anfangsfokus auf „Buchung behalten“. Beim Schließen mit Escape soll die Buchung bestehen bleiben und der Fokus zu „Stornooptionen öffnen“ zurückkehren. Zeige nach dem Absenden der Stornierungsanfrage die Zustände Verarbeitung, Erfolg und Fehler getrennt an. Biete im Fehlerzustand eine Wiederholung oder einen Weg zur Hilfe an. Ordne Frames und Zustände einander zu, damit wir Entwurf und Zustandstabelle vor der Umsetzung prüfen können.
 
 ## Übung — Dialogfokus und beide Ergebnisse prüfen
 

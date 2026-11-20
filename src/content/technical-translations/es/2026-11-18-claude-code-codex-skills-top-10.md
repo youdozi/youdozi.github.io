@@ -19,17 +19,17 @@
     "developer-tools"
   ],
   "sourcePath": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
-  "sourceSha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993",
-  "draftSha256": "21ca1c7cbdb41af5b870cb73347c1aa393b2116296ba5f402942cf37ea59a980",
+  "sourceSha256": "9338932f68b3342b8eee987674b733a84d8f24684b44e978ff027618dab08d68",
+  "draftSha256": "cefb775b31416e6b4e9ca669be112423f9dc6a322d1a7cd144945be75c025737",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -113,10 +113,7 @@ Skill copies match.
 
 Desde `skills-demo`, ejecuta `claude` y `codex` en sesiones de terminal independientes. En Claude Code elige `/release-note-draft`; en Codex CLI, `$release-note-draft`. Envía el nombre de la habilidad junto con este registro de cambios y pruebas en un solo mensaje.
 
-> Cambio: Al borrar el correo electrónico en la pantalla de ajustes se deshabilita el botón Guardar.\
-> Verificación: Se ejecutaron 3 pruebas unitarias de la pantalla de ajustes. Todas pasaron.\
-> Pendiente: Se comprobará el comportamiento en un navegador móvil.\
-> Redacta un borrador de notas de versión con este registro.
+**Ejemplo de prompt** Cambio: Al borrar el correo electrónico en la pantalla de ajustes se deshabilita el botón Guardar. Verificación: Se ejecutaron 3 pruebas unitarias de la pantalla de ajustes. Todas pasaron. Pendiente: Se comprobará el comportamiento en un navegador móvil. Redacta un borrador de notas de versión con este registro.
 
 El resultado esperado incluye el comportamiento del botón en los cambios visibles para el usuario, las 3 pruebas unitarias superadas en la verificación y la comprobación en un navegador móvil en lo pendiente.
 

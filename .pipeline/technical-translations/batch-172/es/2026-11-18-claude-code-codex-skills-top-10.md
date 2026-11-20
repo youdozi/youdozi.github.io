@@ -7,7 +7,7 @@
   "title": "Diez habilidades recomendadas para Claude Code y Codex y cómo usarlas",
   "description": "Compara diez habilidades prácticas para Claude Code y Codex CLI. Aprende a instalarlas, invocarlas y usar la misma habilidad de notas de versión en ambas herramientas.",
   "sourcePath": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
-  "sourceSha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993"
+  "sourceSha256": "9338932f68b3342b8eee987674b733a84d8f24684b44e978ff027618dab08d68"
 }
 ---
 
@@ -89,10 +89,7 @@ Skill copies match.
 
 Desde `skills-demo`, ejecuta `claude` y `codex` en sesiones de terminal independientes. En Claude Code elige `/release-note-draft`; en Codex CLI, `$release-note-draft`. Envía el nombre de la habilidad junto con este registro de cambios y pruebas en un solo mensaje.
 
-> Cambio: Al borrar el correo electrónico en la pantalla de ajustes se deshabilita el botón Guardar.\
-> Verificación: Se ejecutaron 3 pruebas unitarias de la pantalla de ajustes. Todas pasaron.\
-> Pendiente: Se comprobará el comportamiento en un navegador móvil.\
-> Redacta un borrador de notas de versión con este registro.
+**Ejemplo de prompt** Cambio: Al borrar el correo electrónico en la pantalla de ajustes se deshabilita el botón Guardar. Verificación: Se ejecutaron 3 pruebas unitarias de la pantalla de ajustes. Todas pasaron. Pendiente: Se comprobará el comportamiento en un navegador móvil. Redacta un borrador de notas de versión con este registro.
 
 El resultado esperado incluye el comportamiento del botón en los cambios visibles para el usuario, las 3 pruebas unitarias superadas en la verificación y la comprobación en un navegador móvil en lo pendiente.
 

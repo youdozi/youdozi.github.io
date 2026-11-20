@@ -7,7 +7,7 @@
   "title": "Ponytail スキルの使い方 — Codex で小さな修正と回帰テストを完了する",
   "description": "Codex と Claude Code での Ponytail の呼び出し方と Lite・Full・Ultra の違いを紹介する。Codex CLI で既存の関数を再利用し、Node.js の回帰テストを実行する。",
   "sourcePath": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
-  "sourceSha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5"
+  "sourceSha256": "7b1777565ade628aa9381193123b7b19f84ba4c91e57779cba53f40b8b19b6de"
 }
 ---
 
@@ -45,14 +45,13 @@ Codex の単体版スキルでは、`$ponytail` だけを入力すると既定�
 
 ## 実習 — 在庫が一件なら `1 item` と表示する
 
-Node.js 22.17.0 と Codex CLI 0.169.0 を使い、空の実習用リポジトリで実行した。以下の完成コードにある `stockLabel` の return 行を ``return `${count} items`;`` に置き換えると初期状態を再現できる。
-`stock.test.mjs` の最初のテストは初めからあり、二番目は今回追加した。
+Node.js 22.17.0 と Codex CLI 0.169.0 を使い、空の実習用リポジトリで実行した。初期状態を再現するには、`stockLabel` の return 行を下の行に差し替える。`stock.test.mjs` の最初のテストは初めからあり、二番目は今回追加した。
 
-> $ponytail full\
-> stockLabel(1) が 1 items を返す問題を修正してください。\
-> 0 と 2 では items を維持してください。既存の formatCount を再利用し、\
-> stockLabel の回帰テストを追加したら node --test を実行してください。\
-> この実習用リポジトリの外は変更せず、コミットもしないでください。
+```javascript
+return `${count} items`;
+```
+
+**プロンプト例** `$ponytail full` stockLabel(1) が 1 items を返す問題を修正してください。 0 と 2 では items を維持してください。既存の formatCount を再利用し、 stockLabel の回帰テストを追加したら `node --test` を実行してください。 この実習用リポジトリの外は変更せず、コミットもしないでください。
 
 ![在庫表示の修正依頼を受けて stockLabel と formatCount を確認する。formatCount を再利用し、0、1、2 件の表示を回帰テストで検証して結果を記録する。](2026-11-20-ponytail-skill-guide.svg)
 

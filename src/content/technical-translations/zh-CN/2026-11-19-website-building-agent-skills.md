@@ -19,17 +19,17 @@
     "playwright"
   ],
   "sourcePath": "src/content/posts/en/2026-11-19-website-building-agent-skills.md",
-  "sourceSha256": "5a054cc2358bab13553028e7a2e4183feefa7849d49e57e026c8849e15dd65df",
-  "draftSha256": "43b6de9c5569013cf203c8f249736fabbdc4ef13d78f197c410d1802ec771895",
+  "sourceSha256": "f7eb2b67f71eb23934048777fc9d7ffed4a983fc580e1b4d9a7b2cf3c8a3180e",
+  "draftSha256": "e496e4117015b1b4b041ed14eed3ba0eedccfb254f631cd8179531518dd19cfa",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -64,14 +64,7 @@
 
 制作请求不必很长。像下面这样提供服务信息、页面结构和需要验证的操作，就能在规划、实现和测试阶段采用同一套标准。
 
-> 为一家虚构的摄影工作室制作展示页面。\
-> 访客想了解拍摄地点和咨询方式。\
-> 在同一页面布置简介和咨询说明，将首屏的“咨询”链接\
-> 连到页面内的咨询说明。按简介、咨询链接、咨询说明的顺序排列。\
-> 考虑 360px 窄屏和键盘操作。\
-> 实现后，检查 360px 和 1280px 下是否有横向溢出，\
-> 用 Tab 移到咨询链接，再按 Enter 打开咨询说明。\
-> 记录每一步的结果和未能验证的项目。
+**提示示例** 为一家虚构的摄影工作室制作展示页面。 访客想了解拍摄地点和咨询方式。 在同一页面布置简介和咨询说明，将首屏的“咨询”链接 连到页面内的咨询说明。按简介、咨询链接、咨询说明的顺序排列。 考虑 360px 窄屏和键盘操作。 实现后，检查 360px 和 1280px 下是否有横向溢出， 用 Tab 移到咨询链接，再按 Enter 打开咨询说明。 记录每一步的结果和未能验证的项目。
 
 把简介和咨询链接交给界面实现阶段，将视口大小和键盘条件用作测试判定标准。如果测试失败，把失败时的视口宽度和操作交给负责实现的代理。修复后用相同条件重新运行。无障碍审查还可检查对比度、屏幕阅读器读出的名称，以及进入其他页面后的焦点位置。
 

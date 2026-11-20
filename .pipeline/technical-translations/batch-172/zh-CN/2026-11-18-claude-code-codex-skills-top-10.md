@@ -7,7 +7,7 @@
   "title": "Claude Code 和 Codex 推荐技能 10 选及实战用法",
   "description": "比较 Claude Code 和 Codex CLI 的 10 项实用技能，介绍安装和调用方法，并在两款工具里练习使用同一项发布说明技能。",
   "sourcePath": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
-  "sourceSha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993"
+  "sourceSha256": "9338932f68b3342b8eee987674b733a84d8f24684b44e978ff027618dab08d68"
 }
 ---
 
@@ -89,10 +89,7 @@ Skill copies match.
 
 以 `skills-demo` 为工作目录，在不同终端会话中分别运行 `claude` 和 `codex`。在 Claude Code 中选择 `/release-note-draft`，在 Codex CLI 中选择 `$release-note-draft`。将技能名称和以下变更及测试记录放在同一条消息里发出。
 
-> 变更：在设置页面清空邮箱输入后，保存按钮会禁用。\
-> 验证记录：运行了设置页面的 3 项单元测试，全部通过。\
-> 计划：之后还会在移动浏览器中检查。\
-> 请根据以上记录起草发布说明。
+**提示示例** 变更：在设置页面清空邮箱输入后，保存按钮会禁用。 验证记录：运行了设置页面的 3 项单元测试，全部通过。 计划：之后还会在移动浏览器中检查。 请根据以上记录起草发布说明。
 
 预期结果应把按钮行为写入用户可见变更，把 3 项通过的单元测试写入验证，把移动浏览器检查写入待验证事项。
 

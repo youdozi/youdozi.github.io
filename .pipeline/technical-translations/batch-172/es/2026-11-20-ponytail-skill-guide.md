@@ -7,7 +7,7 @@
   "title": "Cómo usar Ponytail — cambios pequeños y pruebas de regresión en Codex",
   "description": "Aprende a invocar Ponytail en Codex y Claude Code, distinguir Lite, Full y Ultra y reutilizar una función con una prueba de regresión en Node.js desde Codex CLI.",
   "sourcePath": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
-  "sourceSha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5"
+  "sourceSha256": "7b1777565ade628aa9381193123b7b19f84ba4c91e57779cba53f40b8b19b6de"
 }
 ---
 
@@ -45,14 +45,13 @@ Para mantener acotado el cambio, especifica **qué debe cambiar, qué debe mante
 
 ## Ejercicio — mostrar `1 item` cuando queda un artículo
 
-El ejercicio se ejecutó en un repositorio de práctica vacío con Node.js 22.17.0 y Codex CLI 0.169.0. Para reproducir el estado inicial, sustituye la línea de retorno de `stockLabel` en el código final por ``return `${count} items`;``. La primera prueba de
-`stock.test.mjs` ya existía. La segunda se añadió para este cambio.
+El ejercicio se ejecutó en un repositorio de práctica vacío con Node.js 22.17.0 y Codex CLI 0.169.0. Para reproducir el estado inicial, usa en `stockLabel` la línea de retorno de abajo. La primera prueba de `stock.test.mjs` ya existía. La segunda se añadió para este cambio.
 
-> $ponytail full\
-> Corrige el caso stockLabel(1), que devuelve 1 items.\
-> Conserva items para 0 y 2. Reutiliza la función formatCount existente,\
-> añade una prueba de regresión para stockLabel y ejecuta node --test.\
-> No hagas cambios fuera de este repositorio de práctica ni crees un commit.
+```javascript
+return `${count} items`;
+```
+
+**Ejemplo de prompt** `$ponytail full` Corrige el caso stockLabel(1), que devuelve 1 items. Conserva items para 0 y 2. Reutiliza la función formatCount existente, añade una prueba de regresión para stockLabel y ejecuta `node --test`. No hagas cambios fuera de este repositorio de práctica ni crees un commit.
 
 ![Tras recibir la solicitud, revisar stockLabel y formatCount. Reutilizar formatCount, comprobar las etiquetas para 0, 1 y 2 artículos y registrar el resultado.](2026-11-20-ponytail-skill-guide.svg)
 

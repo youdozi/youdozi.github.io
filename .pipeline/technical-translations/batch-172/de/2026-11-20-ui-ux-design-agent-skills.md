@@ -7,7 +7,7 @@
   "title": "UI und UX mit Claude Code und Codex entwerfen — Nutzerführung, Figma und Barrierefreiheit",
   "description": "Entwerfen Sie mit Claude Code und Codex Nutzerabläufe, Figma-Designsysteme und Oberflächentexte. Prüfen Sie mit Playwright Tastatur und Fokus im Dialog zur Stornierung einer Buchung.",
   "sourcePath": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
-  "sourceSha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a"
+  "sourceSha256": "2fa2cdf9d087643f65deb61063a994cdd75549bf0b412379d831fa97c01906e2"
 }
 ---
 
@@ -50,11 +50,7 @@ Bei einem Dialog für schwer rückgängig zu machende Aktionen kann die Option m
 
 Geben Sie dem Agenten für die Umsetzung das gewünschte Verhalten und die Prüfkriterien mit.
 
-> Entwirf einen Bestätigungsdialog für die Stornierung in den Buchungsdetails und verwende die vorhandenen Dialoge und Schaltflächen wieder.\
-> Setze den Anfangsfokus auf „Buchung behalten“. Beim Schließen mit Escape soll die Buchung bestehen bleiben und der Fokus zu „Stornooptionen öffnen“ zurückkehren.\
-> Zeige nach dem Absenden der Stornierungsanfrage die Zustände Verarbeitung, Erfolg und Fehler getrennt an.\
-> Biete im Fehlerzustand eine Wiederholung oder einen Weg zur Hilfe an.\
-> Ordne Frames und Zustände einander zu, damit wir Entwurf und Zustandstabelle vor der Umsetzung prüfen können.
+**Beispielprompt** Entwirf einen Bestätigungsdialog für die Stornierung in den Buchungsdetails und verwende die vorhandenen Dialoge und Schaltflächen wieder. Setze den Anfangsfokus auf „Buchung behalten“. Beim Schließen mit Escape soll die Buchung bestehen bleiben und der Fokus zu „Stornooptionen öffnen“ zurückkehren. Zeige nach dem Absenden der Stornierungsanfrage die Zustände Verarbeitung, Erfolg und Fehler getrennt an. Biete im Fehlerzustand eine Wiederholung oder einen Weg zur Hilfe an. Ordne Frames und Zustände einander zu, damit wir Entwurf und Zustandstabelle vor der Umsetzung prüfen können.
 
 ## Übung — Dialogfokus und beide Ergebnisse prüfen
 

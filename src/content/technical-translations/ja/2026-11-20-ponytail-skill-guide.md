@@ -20,17 +20,17 @@
     "nodejs"
   ],
   "sourcePath": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
-  "sourceSha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5",
-  "draftSha256": "a35cb0209c1fe23801bea45b323479479c410dc715a033b6b26edf67bc5b952a",
+  "sourceSha256": "7b1777565ade628aa9381193123b7b19f84ba4c91e57779cba53f40b8b19b6de",
+  "draftSha256": "031aa7cf4e5a363591226f0bedc0186e6619227fe680184c45b694146780f038",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -70,14 +70,13 @@ Codex の単体版スキルでは、`$ponytail` だけを入力すると既定�
 
 ## 実習 — 在庫が一件なら `1 item` と表示する
 
-Node.js 22.17.0 と Codex CLI 0.169.0 を使い、空の実習用リポジトリで実行した。以下の完成コードにある `stockLabel` の return 行を ``return `${count} items`;`` に置き換えると初期状態を再現できる。
-`stock.test.mjs` の最初のテストは初めからあり、二番目は今回追加した。
+Node.js 22.17.0 と Codex CLI 0.169.0 を使い、空の実習用リポジトリで実行した。初期状態を再現するには、`stockLabel` の return 行を下の行に差し替える。`stock.test.mjs` の最初のテストは初めからあり、二番目は今回追加した。
 
-> $ponytail full\
-> stockLabel(1) が 1 items を返す問題を修正してください。\
-> 0 と 2 では items を維持してください。既存の formatCount を再利用し、\
-> stockLabel の回帰テストを追加したら node --test を実行してください。\
-> この実習用リポジトリの外は変更せず、コミットもしないでください。
+```javascript
+return `${count} items`;
+```
+
+**プロンプト例** `$ponytail full` stockLabel(1) が 1 items を返す問題を修正してください。 0 と 2 では items を維持してください。既存の formatCount を再利用し、 stockLabel の回帰テストを追加したら `node --test` を実行してください。 この実習用リポジトリの外は変更せず、コミットもしないでください。
 
 ![在庫表示の修正依頼を受けて stockLabel と formatCount を確認する。formatCount を再利用し、0、1、2 件の表示を回帰テストで検証して結果を記録する。](/assets/diagrams/technical/ja-2026-11-20-ponytail-skill-guide.svg)
 

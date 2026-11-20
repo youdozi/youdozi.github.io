@@ -19,17 +19,17 @@
     "developer-tools"
   ],
   "sourcePath": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
-  "sourceSha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993",
-  "draftSha256": "67b52265200875fb5f6b6adc48e72ccf0debb21cbca788dbc6e06e956dfae874",
+  "sourceSha256": "9338932f68b3342b8eee987674b733a84d8f24684b44e978ff027618dab08d68",
+  "draftSha256": "cb00a9340fcfd6fa0ba398f52f2eebf2fb68e7ab49466143ebb5cdb148c46590",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -113,10 +113,7 @@ Skill copies match.
 
 以 `skills-demo` 为工作目录，在不同终端会话中分别运行 `claude` 和 `codex`。在 Claude Code 中选择 `/release-note-draft`，在 Codex CLI 中选择 `$release-note-draft`。将技能名称和以下变更及测试记录放在同一条消息里发出。
 
-> 变更：在设置页面清空邮箱输入后，保存按钮会禁用。\
-> 验证记录：运行了设置页面的 3 项单元测试，全部通过。\
-> 计划：之后还会在移动浏览器中检查。\
-> 请根据以上记录起草发布说明。
+**提示示例** 变更：在设置页面清空邮箱输入后，保存按钮会禁用。 验证记录：运行了设置页面的 3 项单元测试，全部通过。 计划：之后还会在移动浏览器中检查。 请根据以上记录起草发布说明。
 
 预期结果应把按钮行为写入用户可见变更，把 3 项通过的单元测试写入验证，把移动浏览器检查写入待验证事项。
 

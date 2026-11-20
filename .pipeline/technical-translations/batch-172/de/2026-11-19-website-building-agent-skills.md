@@ -7,7 +7,7 @@
   "title": "Websites mit Claude Code und Codex bauen — Skills von der Planung bis zur Bereitstellung",
   "description": "Welche Skills helfen bei Websites und Web-Apps mit Claude Code und Codex? Ein Beispiel führt von der Umsetzung über Playwright-Tests bis zur Prüfung der Bereitstellung.",
   "sourcePath": "src/content/posts/en/2026-11-19-website-building-agent-skills.md",
-  "sourceSha256": "5a054cc2358bab13553028e7a2e4183feefa7849d49e57e026c8849e15dd65df"
+  "sourceSha256": "f7eb2b67f71eb23934048777fc9d7ffed4a983fc580e1b4d9a7b2cf3c8a3180e"
 }
 ---
 
@@ -40,14 +40,7 @@ Die ersten beiden Zeilen zeigen Rollen, für die Sie eigene Vorgaben im Projekt 
 
 Ein kurzer Auftrag genügt. Wenn Sie Informationen zum Dienst, die Seitenstruktur und die zu prüfenden Aktionen gemeinsam angeben, gelten für Planung, Umsetzung und Tests dieselben Kriterien.
 
-> Erstelle eine Seite für ein fiktives Fotostudio.\
-> Die Besucher möchten wissen, wo fotografiert wird und wie sie sich beraten lassen können.\
-> Zeige die Vorstellung und die Beratung auf einer Seite. Verlinke den Kontaktlink\
-> im ersten Bildschirm mit dem Beratungsabschnitt. Halte die Reihenfolge Vorstellung, Kontaktlink, Beratung ein.\
-> Berücksichtige eine schmale Ansicht mit 360px und die Bedienung per Tastatur.\
-> Prüfe nach der Umsetzung bei 360px und 1280px, ob es horizontalen Überlauf gibt.\
-> Erreiche den Kontaktlink mit Tab und öffne den Beratungsabschnitt mit Enter.\
-> Halte das Ergebnis jedes Schritts und die ungeprüften Punkte fest.
+**Beispielprompt** Erstelle eine Seite für ein fiktives Fotostudio. Die Besucher möchten wissen, wo fotografiert wird und wie sie sich beraten lassen können. Zeige die Vorstellung und die Beratung auf einer Seite. Verlinke den Kontaktlink im ersten Bildschirm mit dem Beratungsabschnitt. Halte die Reihenfolge Vorstellung, Kontaktlink, Beratung ein. Berücksichtige eine schmale Ansicht mit 360px und die Bedienung per Tastatur. Prüfe nach der Umsetzung bei 360px und 1280px, ob es horizontalen Überlauf gibt. Erreiche den Kontaktlink mit Tab und öffne den Beratungsabschnitt mit Enter. Halte das Ergebnis jedes Schritts und die ungeprüften Punkte fest.
 
 Übergeben Sie die Vorstellung und den Kontaktlink an die Umsetzung. Verwenden Sie Bildschirmbreiten und Tastaturbedingungen als Prüfkriterien. Wenn der Test fehlschlägt, geben Sie dem Agenten für die Umsetzung die betroffene Breite und die fehlgeschlagene Aktion. Wiederholen Sie nach der Korrektur den Test unter denselben Bedingungen. Prüfen Sie bei der Barrierefreiheit zusätzlich Kontrast, die von Screenreadern ausgegebenen Namen und die Fokusposition nach einem Seitenwechsel.
 

@@ -110,10 +110,7 @@ Skill copies match.
 
 From `skills-demo`, run `claude` and `codex` in separate terminal sessions. In Claude Code, select `/release-note-draft`. In Codex CLI, select `$release-note-draft`. Send the skill name and the following change and test record in one message.
 
-> Change: Clearing the email field on the settings page disables Save.\
-> Verification: Ran 3 unit tests for the settings page. All passed.\
-> Planned: Check the behavior in a mobile browser.\
-> Draft a release note from this record.
+**Example prompt** Change: Clearing the email field on the settings page disables Save. Verification: Ran 3 unit tests for the settings page. All passed. Planned: Check the behavior in a mobile browser. Draft a release note from this record.
 
 The expected result lists the button behavior under user-facing changes, all 3 passing unit tests under verification, and the pending mobile browser check under unverified items.
 

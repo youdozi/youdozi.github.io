@@ -20,17 +20,17 @@
     "nodejs"
   ],
   "sourcePath": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
-  "sourceSha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5",
-  "draftSha256": "4f9e75fb0d6ba8371edbc34da782c8c1848a27d692ab1d7e4bf97dd58326cea8",
+  "sourceSha256": "7b1777565ade628aa9381193123b7b19f84ba4c91e57779cba53f40b8b19b6de",
+  "draftSha256": "e57493b40a925d253cdf7394bc9b761af74d45c164520cd8ed92f8d4edabd83f",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -70,14 +70,13 @@ Para mantener acotado el cambio, especifica **qué debe cambiar, qué debe mante
 
 ## Ejercicio — mostrar `1 item` cuando queda un artículo
 
-El ejercicio se ejecutó en un repositorio de práctica vacío con Node.js 22.17.0 y Codex CLI 0.169.0. Para reproducir el estado inicial, sustituye la línea de retorno de `stockLabel` en el código final por ``return `${count} items`;``. La primera prueba de
-`stock.test.mjs` ya existía. La segunda se añadió para este cambio.
+El ejercicio se ejecutó en un repositorio de práctica vacío con Node.js 22.17.0 y Codex CLI 0.169.0. Para reproducir el estado inicial, usa en `stockLabel` la línea de retorno de abajo. La primera prueba de `stock.test.mjs` ya existía. La segunda se añadió para este cambio.
 
-> $ponytail full\
-> Corrige el caso stockLabel(1), que devuelve 1 items.\
-> Conserva items para 0 y 2. Reutiliza la función formatCount existente,\
-> añade una prueba de regresión para stockLabel y ejecuta node --test.\
-> No hagas cambios fuera de este repositorio de práctica ni crees un commit.
+```javascript
+return `${count} items`;
+```
+
+**Ejemplo de prompt** `$ponytail full` Corrige el caso stockLabel(1), que devuelve 1 items. Conserva items para 0 y 2. Reutiliza la función formatCount existente, añade una prueba de regresión para stockLabel y ejecuta `node --test`. No hagas cambios fuera de este repositorio de práctica ni crees un commit.
 
 ![Tras recibir la solicitud, revisar stockLabel y formatCount. Reutilizar formatCount, comprobar las etiquetas para 0, 1 y 2 artículos y registrar el resultado.](/assets/diagrams/technical/es-2026-11-20-ponytail-skill-guide.svg)
 

@@ -20,17 +20,17 @@
     "nodejs"
   ],
   "sourcePath": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
-  "sourceSha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5",
-  "draftSha256": "c6aaa76f8777a394c975335cdfc32a2c4f9479435b013f3bc9b85223915d0336",
+  "sourceSha256": "7b1777565ade628aa9381193123b7b19f84ba4c91e57779cba53f40b8b19b6de",
+  "draftSha256": "a37d69a77386047d6270aad620e0fe26fb0c0e3c81c01ddae34dfbaa6cb5fe1d",
   "manifestPath": ".pipeline/technical-translations/batch-172/manifest.json",
-  "manifestSha256": "91fb61de3a3d1c432b5f074da43348e5ad1ab92b61742481f1cd4ac05bc2994e",
-  "publishedAt": "2026-11-20T14:37:06.595Z",
-  "updatedAt": "2026-11-20T14:37:06.595Z",
+  "manifestSha256": "9fbed8219e1f64a1b7901da9450c566e1c2c7b0ed64840e56f60a1b726fd39df",
+  "publishedAt": "2026-11-20T14:40:06.354Z",
+  "updatedAt": "2026-11-20T14:40:06.354Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 172,
-    "approvedAt": "2026-11-20T14:37:06.595Z",
+    "approvedAt": "2026-11-20T14:40:06.354Z",
     "basis": "User requested seven new language editions for each of four already published guides and approved parallel AI translation and verification. This records publication authorization."
   }
 }
@@ -70,14 +70,13 @@ codex plugin add ponytail@ponytail
 
 ## 练习：库存只有一件时显示 `1 item`
 
-练习使用 Node.js 22.17.0 和 Codex CLI 0.169.0，在一个空白练习仓库中运行。要重建初始状态，可将下方最终代码中 `stockLabel` 的返回行改为 ``return `${count} items`;``。
-`stock.test.mjs` 的第一项测试在初始状态下已有，第二项是这次新增的。
+练习使用 Node.js 22.17.0 和 Codex CLI 0.169.0，在一个空白练习仓库中运行。要重建初始状态，请在 `stockLabel` 中使用下面的返回语句。`stock.test.mjs` 的第一项测试在初始状态下已有，第二项是这次新增的。
 
-> $ponytail full\
-> 修复 stockLabel(1) 返回 1 items 的问题。\
-> 0 和 2 仍用 items。复用现有的 formatCount，\
-> 为 stockLabel 添加回归测试，然后运行 node --test。\
-> 不要修改练习仓库外的文件，也不要提交。
+```javascript
+return `${count} items`;
+```
+
+**提示示例** `$ponytail full` 修复 stockLabel(1) 返回 1 items 的问题。 0 和 2 仍用 items。复用现有的 formatCount， 为 stockLabel 添加回归测试，然后运行 `node --test`。 不要修改练习仓库外的文件，也不要提交。
 
 ![收到库存标签修复请求后，检查 stockLabel 和 formatCount。复用 formatCount，用回归测试检查 0、1、2 件时的显示，并记录结果。](/assets/diagrams/technical/zh-CN-2026-11-20-ponytail-skill-guide.svg)
 

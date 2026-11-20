@@ -7,7 +7,7 @@
   "title": "Utiliser le skill Ponytail — corrections ciblées et tests de régression avec Codex",
   "description": "Découvrez comment appeler Ponytail dans Codex et Claude Code, choisir entre Lite, Full et Ultra, puis réutiliser une fonction et lancer un test de régression Node.js avec Codex CLI.",
   "sourcePath": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
-  "sourceSha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5"
+  "sourceSha256": "7b1777565ade628aa9381193123b7b19f84ba4c91e57779cba53f40b8b19b6de"
 }
 ---
 
@@ -45,14 +45,13 @@ Pour limiter le changement, précisez **quoi modifier, quoi préserver et commen
 
 ## Exercice — afficher `1 item` pour un seul article en stock
 
-L’exercice a été exécuté dans un dépôt d’essai vide avec Node.js 22.17.0 et Codex CLI 0.169.0. Pour recréer l’état de départ, remplacez la ligne de retour de `stockLabel` dans le code ci-dessous par ``return `${count} items`;``. Le premier test de
-`stock.test.mjs` était déjà présent au départ. Le second a été ajouté pour ce changement.
+L’exercice a été exécuté dans un dépôt d’essai vide avec Node.js 22.17.0 et Codex CLI 0.169.0. Pour recréer l’état de départ, utilisez la ligne de retour ci-dessous dans `stockLabel`. Le premier test de `stock.test.mjs` était déjà présent au départ. Le second a été ajouté pour ce changement.
 
-> $ponytail full\
-> Corrige le fait que stockLabel(1) renvoie 1 items.\
-> Garde items pour 0 et 2. Réutilise la fonction formatCount existante,\
-> ajoute un test de régression pour stockLabel et exécute node --test.\
-> Ne modifie rien en dehors de ce dépôt d’essai et ne crée pas de commit.
+```javascript
+return `${count} items`;
+```
+
+**Exemple de prompt** `$ponytail full` Corrige le fait que stockLabel(1) renvoie 1 items. Garde items pour 0 et 2. Réutilise la fonction formatCount existante, ajoute un test de régression pour stockLabel et exécute `node --test`. Ne modifie rien en dehors de ce dépôt d’essai et ne crée pas de commit.
 
 ![Après la demande de correction, examiner stockLabel et formatCount. Réutiliser formatCount, tester les libellés pour 0, 1 et 2 articles, puis noter les résultats.](2026-11-20-ponytail-skill-guide.svg)
 

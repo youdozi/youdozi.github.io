@@ -60,15 +60,7 @@ The first two entries are examples of roles you define within a project. For pub
 
 The build request can be short. Include the service details, page structure, and behavior to verify so that planning, implementation, and testing share the same criteria.
 
-> Build an informational page for a fictional photography studio.\
-> Visitors want to find out where the shoots take place and learn how to arrange a consultation.\
-> Put the introduction and consultation information on one page and link\
-> the first screen's Contact link to the consultation section.\
-> Keep the introduction, contact link, and consultation information in that order.\
-> Account for a narrow 360px viewport and keyboard use.\
-> After implementation, check for horizontal overflow at 360px and 1280px.\
-> Use Tab to reach the Contact link and Enter to open the consultation section.\
-> Record the result of each step and anything you could not verify.
+**Example prompt** Build an informational page for a fictional photography studio. Visitors want to find out where the shoots take place and learn how to arrange a consultation. Put the introduction and consultation information on one page and link the first screen's Contact link to the consultation section. Keep the introduction, contact link, and consultation information in that order. Account for a narrow 360px viewport and keyboard use. After implementation, check for horizontal overflow at 360px and 1280px. Use Tab to reach the Contact link and Enter to open the consultation section. Record the result of each step and anything you could not verify.
 
 Give the introduction and contact link to the implementation stage, then use viewport and keyboard requirements as test criteria. If a test fails, report the failing viewport and interaction to the implementation agent, and rerun the same conditions after the fix. Extend the accessibility review to contrast, the names read by screen readers, and where focus lands after navigation to another page.
 
