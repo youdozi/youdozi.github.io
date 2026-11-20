@@ -21,11 +21,11 @@
     <path d="M200 315v14"/>
   </g>
   <g fill="#183b32" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" font-weight="650">
-    <text x="200" y="46">Request a stock label fix</text>
-    <text x="200" y="124">Inspect the code and tests</text>
-    <text x="200" y="202">Reuse the existing function</text>
-    <text x="200" y="280">Run the regression test</text>
-    <text x="200" y="358">Check the diff and results</text>
+    <text x="200" y="46" font-size="16">Request a stock label fix</text>
+    <text x="200" y="124" font-size="16">Inspect the code and tests</text>
+    <text x="200" y="202" font-size="16">Reuse the existing function</text>
+    <text x="200" y="280" font-size="16">Run the regression test</text>
+    <text x="200" y="358" font-size="16">Check the diff and results</text>
   </g>
   <g fill="#35594e" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14">
     <text x="200" y="66">1 items → 1 item</text>

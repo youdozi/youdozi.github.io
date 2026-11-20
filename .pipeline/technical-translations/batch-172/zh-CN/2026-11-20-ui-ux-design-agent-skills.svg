@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="zh-CN" width="400" height="478" viewBox="0 0 400 478" role="img" aria-labelledby="title desc">
+  <title id="title">取消预订对话框的验证流程</title>
+  <desc id="desc">从预订详情打开对话框，确认焦点落在“保留预订”。按 Escape 或保留预订能维持状态；按 Tab 后用 Enter 确认取消，则更新状态。每个分支都要检查关闭后焦点是否回到按钮。</desc>
+  <rect width="400" height="478" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="30" y="20" width="340" height="63" rx="10"/>
+    <rect x="30" y="111" width="340" height="63" rx="10"/>
+    <rect x="15" y="218" width="177" height="108" rx="10"/>
+    <rect x="208" y="218" width="177" height="108" rx="10" fill="#f4e8d7"/>
+    <rect x="30" y="376" width="340" height="66" rx="10"/>
+  </g>
+  <path d="M200 83v24m-5-6 5 6 5-6M200 174v19H103v21m-5-6 5 6 5-6M200 193h97v21m-5-6 5 6 5-6M103 326v24h97v22m-5-6 5 6 5-6M297 326v24h-97" fill="none" stroke="#397955" stroke-width="2.5"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="16" text-anchor="middle">
+    <text x="200" y="57">在预订详情打开对话框</text>
+    <text x="200" y="148">检查焦点是否在“保留预订”</text>
+    <text x="103" y="250">按 Escape，或</text>
+    <text x="103" y="273">在“保留预订”按 Enter</text>
+    <text x="103" y="304">预订仍有效</text>
+    <text x="297" y="250">Tab 到确认按钮</text>
+    <text x="297" y="273">按 Enter 确认取消</text>
+    <text x="297" y="304">预订已取消</text>
+    <text x="200" y="403">确认对话框关闭</text>
+    <text x="200" y="426">焦点回到“打开取消选项”</text>
+  </g>
+</svg>

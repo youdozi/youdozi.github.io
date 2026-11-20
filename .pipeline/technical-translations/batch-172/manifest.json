@@ -1,0 +1,534 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-172",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "4552da44cbd1cc434b14a5dc7151633e43fc0a53",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "AI translation and Korean source comparison with structural and rendering checks.",
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-172/reviews/language-review.json",
+        "sha256": "8f4320458741b1c2d77e31aac831ea59e22196e596ded50a32695c0e58bdce80"
+      }
+    ]
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-18-claude-code-codex-skills-top-10",
+      "language": "zh-CN",
+      "translationKey": "2026-11-18-claude-code-codex-skills-top-10",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/zh-CN/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "67b52265200875fb5f6b6adc48e72ccf0debb21cbca788dbc6e06e956dfae874"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/zh-CN/2026-11-18-claude-code-codex-skills-top-10.svg",
+        "sha256": "8313e7890599ab5f33ecc37c5b9a34da9397c178d50e8ea2eb039cb6202244c4"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-claude-code-codex-skills-top-10-en.svg",
+        "sha256": "f67bb0fb89186a3858b17f6769ab659a18c36d6ff8f5c32fd83242e6c0cf28da"
+      }
+    },
+    {
+      "key": "ja-2026-11-18-claude-code-codex-skills-top-10",
+      "language": "ja",
+      "translationKey": "2026-11-18-claude-code-codex-skills-top-10",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/ja/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "a2a953bdca20ea119f37fad128a0246be75a6f62b79cf8e3e97166b29f8165d9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/ja/2026-11-18-claude-code-codex-skills-top-10.svg",
+        "sha256": "c97b4c39280dedc0e1d89a57138cec98d139936bafcfddaaa7eaf6008f6731ae"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-claude-code-codex-skills-top-10-en.svg",
+        "sha256": "f67bb0fb89186a3858b17f6769ab659a18c36d6ff8f5c32fd83242e6c0cf28da"
+      }
+    },
+    {
+      "key": "de-2026-11-18-claude-code-codex-skills-top-10",
+      "language": "de",
+      "translationKey": "2026-11-18-claude-code-codex-skills-top-10",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/de/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "2d533060742e684f4474bde2e5b1c343214be01bd594914169c865e039479115"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/de/2026-11-18-claude-code-codex-skills-top-10.svg",
+        "sha256": "ec5e6571ac9b9914d6a59635b6e54214c4008b31076082e4dbf5793189c49db1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-claude-code-codex-skills-top-10-en.svg",
+        "sha256": "f67bb0fb89186a3858b17f6769ab659a18c36d6ff8f5c32fd83242e6c0cf28da"
+      }
+    },
+    {
+      "key": "fr-2026-11-18-claude-code-codex-skills-top-10",
+      "language": "fr",
+      "translationKey": "2026-11-18-claude-code-codex-skills-top-10",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/fr/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "33a47e22a2f33af815c42e5d882e631a56c4d84b9c7468373d8b8147bd1eecd9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/fr/2026-11-18-claude-code-codex-skills-top-10.svg",
+        "sha256": "c97554df6e1fc2acf3e26523c71495e90224083f647694abafd7eda05538596b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-claude-code-codex-skills-top-10-en.svg",
+        "sha256": "f67bb0fb89186a3858b17f6769ab659a18c36d6ff8f5c32fd83242e6c0cf28da"
+      }
+    },
+    {
+      "key": "ru-2026-11-18-claude-code-codex-skills-top-10",
+      "language": "ru",
+      "translationKey": "2026-11-18-claude-code-codex-skills-top-10",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/ru/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "b8731d51a15e2d58444f666648930717d82d313b70912d74621365616811f82c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/ru/2026-11-18-claude-code-codex-skills-top-10.svg",
+        "sha256": "a74870310facaf553a6f69bb98137fc86445c3dff778eb23f14ce2a7967ee485"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-claude-code-codex-skills-top-10-en.svg",
+        "sha256": "f67bb0fb89186a3858b17f6769ab659a18c36d6ff8f5c32fd83242e6c0cf28da"
+      }
+    },
+    {
+      "key": "es-2026-11-18-claude-code-codex-skills-top-10",
+      "language": "es",
+      "translationKey": "2026-11-18-claude-code-codex-skills-top-10",
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "6e3aca2da19c8f558c9fdaaa5afcc7403a9fedfb528d5e3a58eb0ee33c0fd993"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/es/2026-11-18-claude-code-codex-skills-top-10.md",
+        "sha256": "21ca1c7cbdb41af5b870cb73347c1aa393b2116296ba5f402942cf37ea59a980"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/es/2026-11-18-claude-code-codex-skills-top-10.svg",
+        "sha256": "04e1c6d2c3bc2578c709b3022a8d47bc9eefac1e9ea65f3ab357d1ce7c4f8a03"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-claude-code-codex-skills-top-10-en.svg",
+        "sha256": "f67bb0fb89186a3858b17f6769ab659a18c36d6ff8f5c32fd83242e6c0cf28da"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-19-website-building-agent-skills",
+      "language": "zh-CN",
+      "translationKey": "2026-11-19-website-building-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-19-website-building-agent-skills.md",
+        "sha256": "5a054cc2358bab13553028e7a2e4183feefa7849d49e57e026c8849e15dd65df"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/zh-CN/2026-11-19-website-building-agent-skills.md",
+        "sha256": "43b6de9c5569013cf203c8f249736fabbdc4ef13d78f197c410d1802ec771895"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/zh-CN/2026-11-19-website-building-agent-skills.svg",
+        "sha256": "29b9b03ae2094e9945f407d9c12ecb0c703b84d196e9b29452e387d8be145037"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-19-website-building-agent-skills-en.svg",
+        "sha256": "f6c59f06db20b5d6ebe4135769d6eeee154ca949167dd04aeefa88e39cdd0b02"
+      }
+    },
+    {
+      "key": "ja-2026-11-19-website-building-agent-skills",
+      "language": "ja",
+      "translationKey": "2026-11-19-website-building-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-19-website-building-agent-skills.md",
+        "sha256": "5a054cc2358bab13553028e7a2e4183feefa7849d49e57e026c8849e15dd65df"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/ja/2026-11-19-website-building-agent-skills.md",
+        "sha256": "69abc5ec4bf4d88c34a2474555ddbd90e9c4b362a3b97572a3f6f7659320f5c9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/ja/2026-11-19-website-building-agent-skills.svg",
+        "sha256": "75c0997a969cff9325ea063af05e1f21578048d43c8882156c0757a90f3fc2e1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-19-website-building-agent-skills-en.svg",
+        "sha256": "f6c59f06db20b5d6ebe4135769d6eeee154ca949167dd04aeefa88e39cdd0b02"
+      }
+    },
+    {
+      "key": "de-2026-11-19-website-building-agent-skills",
+      "language": "de",
+      "translationKey": "2026-11-19-website-building-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-19-website-building-agent-skills.md",
+        "sha256": "5a054cc2358bab13553028e7a2e4183feefa7849d49e57e026c8849e15dd65df"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/de/2026-11-19-website-building-agent-skills.md",
+        "sha256": "97ff038042bd69ccf6c5c4daa3aeb5f95d6be38316e07121ed5646b3229995ef"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/de/2026-11-19-website-building-agent-skills.svg",
+        "sha256": "d7d130f7a1896118826f3cc754332854fd7407b407f2bf5762f7603feb84ba61"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-19-website-building-agent-skills-en.svg",
+        "sha256": "f6c59f06db20b5d6ebe4135769d6eeee154ca949167dd04aeefa88e39cdd0b02"
+      }
+    },
+    {
+      "key": "fr-2026-11-19-website-building-agent-skills",
+      "language": "fr",
+      "translationKey": "2026-11-19-website-building-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-19-website-building-agent-skills.md",
+        "sha256": "5a054cc2358bab13553028e7a2e4183feefa7849d49e57e026c8849e15dd65df"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/fr/2026-11-19-website-building-agent-skills.md",
+        "sha256": "25b13a681df612fadc24a564dde0e0d66e7a63bad6cfbbfa8e6c9100701af93e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/fr/2026-11-19-website-building-agent-skills.svg",
+        "sha256": "6f6b829588926a98328c3304b0218fc0ebf08d391ce8720d10c5d2bf66b343de"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-19-website-building-agent-skills-en.svg",
+        "sha256": "f6c59f06db20b5d6ebe4135769d6eeee154ca949167dd04aeefa88e39cdd0b02"
+      }
+    },
+    {
+      "key": "ru-2026-11-19-website-building-agent-skills",
+      "language": "ru",
+      "translationKey": "2026-11-19-website-building-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-19-website-building-agent-skills.md",
+        "sha256": "5a054cc2358bab13553028e7a2e4183feefa7849d49e57e026c8849e15dd65df"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/ru/2026-11-19-website-building-agent-skills.md",
+        "sha256": "84235867d5924bcc680ad6101fd91900aee80ac68c2c6fd61534288fb9fe3bc8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/ru/2026-11-19-website-building-agent-skills.svg",
+        "sha256": "de371ad665607d3e666999bf4d936189a7d67d05f50e2ab0a654e1a971833792"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-19-website-building-agent-skills-en.svg",
+        "sha256": "f6c59f06db20b5d6ebe4135769d6eeee154ca949167dd04aeefa88e39cdd0b02"
+      }
+    },
+    {
+      "key": "es-2026-11-19-website-building-agent-skills",
+      "language": "es",
+      "translationKey": "2026-11-19-website-building-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-19-website-building-agent-skills.md",
+        "sha256": "5a054cc2358bab13553028e7a2e4183feefa7849d49e57e026c8849e15dd65df"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/es/2026-11-19-website-building-agent-skills.md",
+        "sha256": "2bcd792a79379826688880a4bd7a560ff35cb46be322ee32cce4a95d584d6e8e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/es/2026-11-19-website-building-agent-skills.svg",
+        "sha256": "9b186cc45fcab3901a1a115e6297e10088445738feda4fb8340eb4acdeffd8ef"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-19-website-building-agent-skills-en.svg",
+        "sha256": "f6c59f06db20b5d6ebe4135769d6eeee154ca949167dd04aeefa88e39cdd0b02"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-20-ponytail-skill-guide",
+      "language": "zh-CN",
+      "translationKey": "2026-11-20-ponytail-skill-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/zh-CN/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "c6aaa76f8777a394c975335cdfc32a2c4f9479435b013f3bc9b85223915d0336"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/zh-CN/2026-11-20-ponytail-skill-guide.svg",
+        "sha256": "14b7a8487acee118945ad1caacb4f68f48eedd00d2507debdb3acee1a2f82e50"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ponytail-skill-guide-en.svg",
+        "sha256": "a8d0432ca52977ba44a081687865ea75f878b1f58f5f4109e6b54009c312d385"
+      }
+    },
+    {
+      "key": "ja-2026-11-20-ponytail-skill-guide",
+      "language": "ja",
+      "translationKey": "2026-11-20-ponytail-skill-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/ja/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "a35cb0209c1fe23801bea45b323479479c410dc715a033b6b26edf67bc5b952a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/ja/2026-11-20-ponytail-skill-guide.svg",
+        "sha256": "36987a582f2cebf746466cdcda76b736ef0608279a331bbc405d6005229e5a6b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ponytail-skill-guide-en.svg",
+        "sha256": "a8d0432ca52977ba44a081687865ea75f878b1f58f5f4109e6b54009c312d385"
+      }
+    },
+    {
+      "key": "de-2026-11-20-ponytail-skill-guide",
+      "language": "de",
+      "translationKey": "2026-11-20-ponytail-skill-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/de/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "5eb2dcc639e90da4d474b30921f21a261a37f39fd0124e11041a75a93e737bcb"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/de/2026-11-20-ponytail-skill-guide.svg",
+        "sha256": "7129b2cc12e24b40400cd4413be70c4ac1b4ba73eb05efa3d41fded17e1729b4"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ponytail-skill-guide-en.svg",
+        "sha256": "a8d0432ca52977ba44a081687865ea75f878b1f58f5f4109e6b54009c312d385"
+      }
+    },
+    {
+      "key": "fr-2026-11-20-ponytail-skill-guide",
+      "language": "fr",
+      "translationKey": "2026-11-20-ponytail-skill-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/fr/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "ad3bcc717d453804acb190e04b9d44f5982314ae3b8595c558caa582d1b8f983"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/fr/2026-11-20-ponytail-skill-guide.svg",
+        "sha256": "87ff776d4f42b0ec37f37b464e2f8bbe68666b17ebdf3b0838ec3f91a0995cdd"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ponytail-skill-guide-en.svg",
+        "sha256": "a8d0432ca52977ba44a081687865ea75f878b1f58f5f4109e6b54009c312d385"
+      }
+    },
+    {
+      "key": "ru-2026-11-20-ponytail-skill-guide",
+      "language": "ru",
+      "translationKey": "2026-11-20-ponytail-skill-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/ru/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "5b39b60f252309df110adc1112a394b46480827d73183b72de3a08de51b4dc5b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/ru/2026-11-20-ponytail-skill-guide.svg",
+        "sha256": "f00e3426f0f3e5b2cc670931e817499146936cf8e6a10ae6f1d13c2aeb32eba8"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ponytail-skill-guide-en.svg",
+        "sha256": "a8d0432ca52977ba44a081687865ea75f878b1f58f5f4109e6b54009c312d385"
+      }
+    },
+    {
+      "key": "es-2026-11-20-ponytail-skill-guide",
+      "language": "es",
+      "translationKey": "2026-11-20-ponytail-skill-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "51597fdb68c31cae936e748ddf6719dce0d443cd28dabfb4a97b1ff62f991cf5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/es/2026-11-20-ponytail-skill-guide.md",
+        "sha256": "4f9e75fb0d6ba8371edbc34da782c8c1848a27d692ab1d7e4bf97dd58326cea8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/es/2026-11-20-ponytail-skill-guide.svg",
+        "sha256": "c843b5afeac8f6cd777ba9f1a9402d75e1a0a99013b36087f454f0ecd2f23840"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ponytail-skill-guide-en.svg",
+        "sha256": "a8d0432ca52977ba44a081687865ea75f878b1f58f5f4109e6b54009c312d385"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-20-ui-ux-design-agent-skills",
+      "language": "zh-CN",
+      "translationKey": "2026-11-20-ui-ux-design-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/zh-CN/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "3cad1708850dc7029c2d7d0920796c75d4adda2ddc03f1d16f0ce4656164a653"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/zh-CN/2026-11-20-ui-ux-design-agent-skills.svg",
+        "sha256": "d393b50697833a52de26df7455ad6d652b504b0e1b7ce9bea47c7f694645ef0a"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ui-ux-design-agent-skills-en.svg",
+        "sha256": "a774eac9244d5643a21d25d123e15dfead25b63c00195b5a1cc9cc083358b91f"
+      }
+    },
+    {
+      "key": "ja-2026-11-20-ui-ux-design-agent-skills",
+      "language": "ja",
+      "translationKey": "2026-11-20-ui-ux-design-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/ja/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "42d1b0ca6726cdecfeecc3a53353e39544325555b379f996a792e2f911fd724a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/ja/2026-11-20-ui-ux-design-agent-skills.svg",
+        "sha256": "6d40302f607efc1ffbe396e6881111958e05f8a8f9b58f757067d9eb62a2ee7e"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ui-ux-design-agent-skills-en.svg",
+        "sha256": "a774eac9244d5643a21d25d123e15dfead25b63c00195b5a1cc9cc083358b91f"
+      }
+    },
+    {
+      "key": "de-2026-11-20-ui-ux-design-agent-skills",
+      "language": "de",
+      "translationKey": "2026-11-20-ui-ux-design-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/de/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "5dc93adfed0ad78aa9a355771dead91357d4ba3b3fa677e4cef5a2545cd9f82b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/de/2026-11-20-ui-ux-design-agent-skills.svg",
+        "sha256": "21a62994ef3c4552c18313fa5355433c436d5d789c7599dd4f9580148884aa9f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ui-ux-design-agent-skills-en.svg",
+        "sha256": "a774eac9244d5643a21d25d123e15dfead25b63c00195b5a1cc9cc083358b91f"
+      }
+    },
+    {
+      "key": "fr-2026-11-20-ui-ux-design-agent-skills",
+      "language": "fr",
+      "translationKey": "2026-11-20-ui-ux-design-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/fr/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "672e255957c9763688ed9f7b84d68aa8f545c9ea62f7805204153e38c45d7390"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/fr/2026-11-20-ui-ux-design-agent-skills.svg",
+        "sha256": "a0331568234db5970161b9fc2e871d98113278a633bfdea53b47192ff9816ea0"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ui-ux-design-agent-skills-en.svg",
+        "sha256": "a774eac9244d5643a21d25d123e15dfead25b63c00195b5a1cc9cc083358b91f"
+      }
+    },
+    {
+      "key": "ru-2026-11-20-ui-ux-design-agent-skills",
+      "language": "ru",
+      "translationKey": "2026-11-20-ui-ux-design-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/ru/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "83e37739d3cd27385b72d607bdd24038f20bb8952d4e6872251f12950b1c6967"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/ru/2026-11-20-ui-ux-design-agent-skills.svg",
+        "sha256": "6393465899f0dff6958613bb1860eba9a426d51bbfef961cdec707b7d6376754"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ui-ux-design-agent-skills-en.svg",
+        "sha256": "a774eac9244d5643a21d25d123e15dfead25b63c00195b5a1cc9cc083358b91f"
+      }
+    },
+    {
+      "key": "es-2026-11-20-ui-ux-design-agent-skills",
+      "language": "es",
+      "translationKey": "2026-11-20-ui-ux-design-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "b548a40ceebcfb72b0b19df913a07279080b56efc21e2264764c3cddd259e65a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-172/es/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "72c827456ba127e186a31af1d8798f77ddf0aa2fbdcf8ffac48d92b25a25f55c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-172/es/2026-11-20-ui-ux-design-agent-skills.svg",
+        "sha256": "9648d4bd20306b273b9765b7bce9d88b5af564d11c92f1325ed5a189eacbb3d2"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ui-ux-design-agent-skills-en.svg",
+        "sha256": "a774eac9244d5643a21d25d123e15dfead25b63c00195b5a1cc9cc083358b91f"
+      }
+    }
+  ]
+}

@@ -64,7 +64,8 @@ To keep the change small, state **what to change, what to preserve, and how to v
 
 ## Exercise — display `1 item` when one item is in stock
 
-The exercise ran in an empty practice repository with Node.js 22.17.0 and Codex CLI 0.169.0. To recreate the starting state, replace the return line in `stockLabel` below with ``return `${count} items`;``. The first test in `stock.test.mjs` was already present at the start. The second was added for this change.
+The exercise ran in an empty practice repository with Node.js 22.17.0 and Codex CLI 0.169.0. To recreate the starting state, replace the return line in `stockLabel` below with ``return `${count} items`;``. The first test in
+`stock.test.mjs` was already present at the start. The second was added for this change.
 
 > $ponytail full\
 > Fix stockLabel(1) returning 1 items.\

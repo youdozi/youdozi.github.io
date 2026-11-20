@@ -36,14 +36,14 @@ Turn repeated requests into skills. Instead of retyping the scope of your change
 
 This guide covers **Claude Code** in the terminal and **Codex CLI**. On November 18, 2026, I checked the candidates against official sources and ranked them by **frequency of reuse, ease of verification, and setup and integration effort**. The ranking is a practical recommendation and uses those criteria in place of installation counts or performance statistics. OpenAI recommends moving away from its old skills catalog, so the installation sources for Codex refer to its current docs and plugins. [Claude Code skill documentation](https://code.claude.com/docs/en/skills) · [Codex skill documentation](https://learn.chatgpt.com/docs/build-skills) · [Previous catalog notice](https://github.com/openai/skills) · [OpenAI plugin repository](https://github.com/openai/plugins)
 
-## Ten skills for everyday work
+## 10 skills for everyday work
 
 The source and environment column lists where each skill is officially provided or distributed. When moving a Claude Code example to Codex, you can reuse the shared `SKILL.md` format. Check the bundled scripts, tool names, and host-specific settings separately.
 
 | Rank | Skill | Source and environment | Example request and what to check |
 | --- | --- | --- | --- |
 | 1 | `skill-creator` | Built into Codex / [Claude Code example](https://github.com/anthropics/skills/tree/main/skills/skill-creator) | “Create a skill for writing PR descriptions. Give it one input example for a code fix PR and one for a documentation PR.” Check the scope with one request that should invoke it and one that should pass it by. |
-| 2 | `webapp-testing` | [Claude Code example](https://github.com/anthropics/skills/tree/main/skills/webapp-testing) | “Use Playwright to check successful submission and a missing required field on the local order page.” Record the actual page state and run logs. The browser and app need to be running. |
+| 2 | `webapp-testing` | [Claude Code example](https://github.com/anthropics/skills/tree/main/skills/webapp-testing) | “Use Playwright to check successful submission and a missing required field on the local order page.” Record the actual page state and run logs. You need a browser and an environment that can run the app. |
 | 3 | `frontend-design` | [Claude Code example](https://github.com/anthropics/skills/tree/main/skills/frontend-design) | “Design a mobile view for an incident response dashboard. Put status and the next action first.” Check empty states, long text, and keyboard navigation. |
 | 4 | `openai-docs` | Built into Codex / [OpenAI Developers guide](https://developers.openai.com/learn/developers-codex-plugin) | “Use official documentation to confirm where Codex CLI stores project skills and how to invoke them.” Check that the sources directly support what you see in the CLI and how the feature is described. |
 | 5 | `xlsx` | [Claude Code document skill](https://github.com/anthropics/skills/tree/main/skills/xlsx) | “Turn the order CSV into a monthly summary workbook. Separate canceled orders and use formulas for totals.” Compare the source row count, aggregation range, and totals, and check for formula errors. |

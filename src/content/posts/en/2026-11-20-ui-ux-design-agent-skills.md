@@ -36,7 +36,7 @@
 
 **Before drawing a screen, decide what users need to accomplish and where they can back out.** In a booking cancellation flow, users need to understand what canceling will do and be able to keep or cancel the booking. Define what the dialog says, where initial focus lands, and where it returns after closing so that implementation and testing use the same criteria.
 
-This guide expands on the UI/UX stage of the [website-building guide](/ko/posts/2026-11-19-website-building-agent-skills/). It takes a booking cancellation flow from planning to browser verification using public Claude Code and Codex skills and resources from Figma, Vercel, and W3C checked on November 20, 2026.
+This guide expands on the UI/UX stage of the [website-building guide](/ko/posts/2026-11-19-website-building-agent-skills/). It takes a booking cancellation flow from planning to browser verification, drawing on sources I checked on November 20, 2026, including public Claude Code and Codex skills and resources from Figma, Vercel, and W3C.
 
 ## Choose skills based on what you need to produce
 
@@ -53,7 +53,7 @@ This guide expands on the UI/UX stage of the [website-building guide](/ko/posts/
 
 The two project-specific guidelines show how a team can turn its screen design and copy rules into reusable skills. If someone can review the booking flow, show the prototype first, incorporate feedback into the state table, then hand it off for implementation. If the Figma frames and code components are already agreed on, you can start with implementation and accessibility review.
 
-In Claude Code, Anthropic includes `frontend-design` in the official marketplace's `example-skills` bundle. Using Figma skills in Codex requires the Figma tools connected through the plugin and access to the file. For work that creates screens or components in Figma, apply the plugin's `figma-use` guidelines alongside the relevant creation skill. Provide the target frame link when reading an approved design for implementation. For new frames, provide a file that can be edited and the library to reuse. [Anthropic installation instructions](https://github.com/anthropics/skills#claude-code) · [Figma plugin for Codex](https://github.com/openai/plugins/tree/main/plugins/figma)
+In Claude Code, Anthropic includes `frontend-design` in the official marketplace's `example-skills` bundle. Using Figma skills in Codex requires the Figma tools connected through the plugin and access to the file. For work that creates screens or components in Figma, apply the plugin's `figma-use` guidelines alongside the relevant creation skill. Provide the target frame link when reading a design for implementation. For new frames, provide a file that can be edited and the library to reuse. [Anthropic installation instructions](https://github.com/anthropics/skills#claude-code) · [Figma plugin for Codex](https://github.com/openai/plugins/tree/main/plugins/figma)
 
 If you have brand guidelines, supply the actual logos, colors, and fonts, plus examples of prohibited use. Applying Anthropic's `brand-guidelines` by name alone can bring Anthropic colors and typography into your team's work. Its default material is for Anthropic's brand. [`brand-guidelines` source](https://github.com/anthropics/skills/tree/main/skills/brand-guidelines)
 
@@ -78,7 +78,7 @@ Give the implementation agent the desired behavior and acceptance criteria.
 > keep the booking status and return focus to “Open cancellation options”.\
 > After submitting the cancellation request, represent processing, success, and failure separately.\
 > On failure, show the next action for retrying or getting help.\
-> Map the frames to the states so we can review both before implementation.
+> Map the frames to the states so we can review the screen and state table before implementation.
 
 ## Exercise — check dialog focus and both outcomes
 

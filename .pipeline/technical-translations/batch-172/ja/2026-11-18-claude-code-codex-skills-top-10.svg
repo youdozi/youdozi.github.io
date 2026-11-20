@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ja" width="400" height="550" viewBox="0 0 400 550" role="img" aria-labelledby="title desc">
+  <title id="title">同じスキルを二つのエージェントで使う</title>
+  <desc id="desc">新しい実習用フォルダーを作ってスキルの原本を書く。Claude Code と Codex のプロジェクトパスにコピーし、cmp でファイルを照合する。両ツールに共通の入力を渡して結果を確認する。</desc>
+  <rect width="400" height="550" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="34" y="18" width="332" height="62" rx="10"/>
+    <rect x="34" y="116" width="332" height="62" rx="10"/>
+    <rect x="34" y="214" width="332" height="82" rx="10"/>
+    <rect x="34" y="332" width="332" height="62" rx="10"/>
+    <rect x="34" y="430" width="332" height="84" rx="10"/>
+  </g>
+  <path d="M200 80v32m-6-7 6 7 6-7M200 178v32m-6-7 6 7 6-7M200 296v32m-6-7 6 7 6-7M200 394v32m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="56">実習フォルダーを作る</text>
+    <text x="200" y="154">リリースノート用スキルを書く</text>
+    <text x="200" y="242">両方のプロジェクトパスへコピー</text>
+    <text x="200" y="272">.claude/skills · .agents/skills</text>
+    <text x="200" y="370">cmp でコピーが一致するか確認</text>
+    <text x="200" y="460">両ツールに同じ変更・検証記録を渡す</text>
+    <text x="200" y="489">合格と未確認を区別できたか確認</text>
+  </g>
+</svg>

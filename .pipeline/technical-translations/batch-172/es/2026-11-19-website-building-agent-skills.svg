@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="es" width="400" height="520" viewBox="0 0 400 520" role="img" aria-labelledby="title desc">
+  <title id="title">Prueba del recorrido al contacto</title>
+  <desc id="desc">Abre la página a dos anchos. Comprueba que no desborde en horizontal, llega al enlace de contacto con Tab y verifica que Enter abra la información. Si se cumplen los tres criterios, imprime el resultado. Corrige los fallos y repite la prueba.</desc>
+  <rect width="400" height="520" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="28" y="18" width="344" height="60" rx="9"/>
+    <rect x="28" y="111" width="344" height="60" rx="9"/>
+    <rect x="28" y="204" width="344" height="60" rx="9"/>
+    <rect x="28" y="297" width="344" height="64" rx="9"/>
+    <rect x="28" y="394" width="344" height="60" rx="9"/>
+  </g>
+  <path d="M200 78v29m-6-7 6 7 6-7M200 171v29m-6-7 6 7 6-7M200 264v29m-6-7 6 7 6-7M200 361v29m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="55">Abrir la página a 360px y 1280px</text>
+    <text x="200" y="148">Revisar el desbordamiento horizontal</text>
+    <text x="200" y="241">Llegar al enlace de contacto con Tab</text>
+    <text x="200" y="323">Activar el enlace con Enter</text>
+    <text x="200" y="346">Comprobar fragmento y título</text>
+    <text x="200" y="430">Imprimir PASS para cada ancho</text>
+    <text x="200" y="489">Corregir y repetir si falla</text>
+  </g>
+</svg>

@@ -61,7 +61,7 @@ The first two entries are examples of roles you define within a project. For pub
 The build request can be short. Include the service details, page structure, and behavior to verify so that planning, implementation, and testing share the same criteria.
 
 > Build an informational page for a fictional photography studio.\
-> Visitors want to find the studio location and learn how to arrange a consultation.\
+> Visitors want to find out where the shoots take place and learn how to arrange a consultation.\
 > Put the introduction and consultation information on one page and link\
 > the first screen's Contact link to the consultation section.\
 > Keep the introduction, contact link, and consultation information in that order.\
