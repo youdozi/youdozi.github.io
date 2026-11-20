@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" width="400" height="550" viewBox="0 0 400 550" role="img" aria-labelledby="title desc">
+  <title id="title">Using one skill across two coding agents</title>
+  <desc id="desc">Create a fresh practice directory and write the source skill. Copy it to the Claude Code and Codex project paths, use cmp to compare the files, and check both tools with the same input.</desc>
+  <rect width="400" height="550" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="34" y="18" width="332" height="62" rx="10"/>
+    <rect x="34" y="116" width="332" height="62" rx="10"/>
+    <rect x="34" y="214" width="332" height="82" rx="10"/>
+    <rect x="34" y="332" width="332" height="62" rx="10"/>
+    <rect x="34" y="430" width="332" height="84" rx="10"/>
+  </g>
+  <path d="M200 80v32m-6-7 6 7 6-7M200 178v32m-6-7 6 7 6-7M200 296v32m-6-7 6 7 6-7M200 394v32m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="56">Create a practice directory</text>
+    <text x="200" y="154">Write the release-note skill</text>
+    <text x="200" y="242">Copy it to both project paths</text>
+    <text x="200" y="272">.claude/skills · .agents/skills</text>
+    <text x="200" y="370">Compare both copies with cmp</text>
+    <text x="200" y="460">Give both tools the same records</text>
+    <text x="200" y="489">Check verified and pending items</text>
+  </g>
+</svg>
