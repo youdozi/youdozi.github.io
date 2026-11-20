@@ -5,6 +5,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote, urljoin
 import json
+import re
 
 ROOT = Path('dist').resolve()
 SITE = 'https://youdozi.github.io'
@@ -43,7 +44,9 @@ def main():
             errors.append(f'{lang}: language routes must match approved translations')
     pages = {}
     for file in ROOT.rglob('*.html'):
-        if file.parent == ROOT and file.name.startswith(('google', 'naver')):
+        if file.parent == ROOT and (
+            file.name.startswith(('google', 'naver')) or re.fullmatch(r'yandex_[0-9a-f]{16}\.html', file.name)
+        ):
             continue  # Search-engine ownership files intentionally contain only verification text.
         page = Page(); page.feed(file.read_text(encoding='utf-8'))
         pages[file] = page
