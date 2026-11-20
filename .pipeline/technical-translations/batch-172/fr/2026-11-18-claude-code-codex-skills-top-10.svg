@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="fr" width="400" height="550" viewBox="0 0 400 550" role="img" aria-labelledby="title desc">
+  <title id="title">Utiliser un skill dans deux agents de programmation</title>
+  <desc id="desc">Créer un nouveau dossier d’essai et écrire le skill. Le copier aux emplacements de Claude Code et de Codex, comparer les fichiers avec cmp et vérifier les résultats avec la même entrée.</desc>
+  <rect width="400" height="550" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="34" y="18" width="332" height="62" rx="10"/>
+    <rect x="34" y="116" width="332" height="62" rx="10"/>
+    <rect x="34" y="214" width="332" height="82" rx="10"/>
+    <rect x="34" y="332" width="332" height="62" rx="10"/>
+    <rect x="34" y="430" width="332" height="84" rx="10"/>
+  </g>
+  <path d="M200 80v32m-6-7 6 7 6-7M200 178v32m-6-7 6 7 6-7M200 296v32m-6-7 6 7 6-7M200 394v32m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="56">Créer le dossier d’essai</text>
+    <text x="200" y="154">Écrire le skill de notes de version</text>
+    <text x="200" y="242">Copier dans les deux projets</text>
+    <text x="200" y="272">.claude/skills · .agents/skills</text>
+    <text x="200" y="370">Comparer les copies avec cmp</text>
+    <text x="200" y="460">Donner les mêmes données aux outils</text>
+    <text x="200" y="489">Distinguer les tests faits et prévus</text>
+  </g>
+</svg>

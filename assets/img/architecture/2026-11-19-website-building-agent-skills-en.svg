@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" width="400" height="520" viewBox="0 0 400 520" role="img" aria-labelledby="title desc">
+  <title id="title">Browser test for the contact path</title>
+  <desc id="desc">Open the page at two widths. Check for horizontal overflow, reach the contact link with Tab, and press Enter to open the consultation details. Print the result for each width if all three checks pass. Fix any failures and rerun.</desc>
+  <rect width="400" height="520" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="28" y="18" width="344" height="60" rx="9"/>
+    <rect x="28" y="111" width="344" height="60" rx="9"/>
+    <rect x="28" y="204" width="344" height="60" rx="9"/>
+    <rect x="28" y="297" width="344" height="64" rx="9"/>
+    <rect x="28" y="394" width="344" height="60" rx="9"/>
+  </g>
+  <path d="M200 78v29m-6-7 6 7 6-7M200 171v29m-6-7 6 7 6-7M200 264v29m-6-7 6 7 6-7M200 361v29m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="55">Open at 360px and 1280px</text>
+    <text x="200" y="148">Check for horizontal overflow</text>
+    <text x="200" y="241">Reach the Contact link with Tab</text>
+    <text x="200" y="323">Press Enter on the link</text>
+    <text x="200" y="346">Check the fragment and heading</text>
+    <text x="200" y="430">Print PASS for each width</text>
+    <text x="200" y="489">Fix the failing condition and rerun</text>
+  </g>
+</svg>

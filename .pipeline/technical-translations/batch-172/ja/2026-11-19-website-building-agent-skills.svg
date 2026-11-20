@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ja" width="400" height="520" viewBox="0 0 400 520" role="img" aria-labelledby="title desc">
+  <title id="title">問い合わせ導線のブラウザーテスト</title>
+  <desc id="desc">二つの画面幅で紹介ページを開く。横方向のはみ出しを調べ、Tab で問い合わせリンクに移り、Enter で相談案内を開けるか確認する。条件をすべて満たせば画面幅ごとに結果を出す。失敗したら修正して再実行する。</desc>
+  <rect width="400" height="520" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="28" y="18" width="344" height="60" rx="9"/>
+    <rect x="28" y="111" width="344" height="60" rx="9"/>
+    <rect x="28" y="204" width="344" height="60" rx="9"/>
+    <rect x="28" y="297" width="344" height="64" rx="9"/>
+    <rect x="28" y="394" width="344" height="60" rx="9"/>
+  </g>
+  <path d="M200 78v29m-6-7 6 7 6-7M200 171v29m-6-7 6 7 6-7M200 264v29m-6-7 6 7 6-7M200 361v29m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="55">360px と 1280px で開く</text>
+    <text x="200" y="148">横方向のはみ出しを確認</text>
+    <text x="200" y="241">Tab で問い合わせリンクへ</text>
+    <text x="200" y="323">Enter でリンクを開く</text>
+    <text x="200" y="346">URL フラグメントと見出しを確認</text>
+    <text x="200" y="430">画面幅ごとに PASS を出力</text>
+    <text x="200" y="489">失敗した条件を直して再実行</text>
+  </g>
+</svg>

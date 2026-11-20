@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="de" width="400" height="520" viewBox="0 0 400 520" role="img" aria-labelledby="title desc">
+  <title id="title">Browserprüfung für den Kontaktweg</title>
+  <desc id="desc">Die Seite bei zwei Breiten öffnen. Auf horizontalen Überlauf prüfen, den Kontaktlink mit Tab erreichen und den Beratungsabschnitt mit Enter öffnen. Wenn alle drei Prüfungen bestehen, das Ergebnis für die Breite ausgeben. Bei Fehlern korrigieren und erneut testen.</desc>
+  <rect width="400" height="520" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="28" y="18" width="344" height="60" rx="9"/>
+    <rect x="28" y="111" width="344" height="60" rx="9"/>
+    <rect x="28" y="204" width="344" height="60" rx="9"/>
+    <rect x="28" y="297" width="344" height="64" rx="9"/>
+    <rect x="28" y="394" width="344" height="60" rx="9"/>
+  </g>
+  <path d="M200 78v29m-6-7 6 7 6-7M200 171v29m-6-7 6 7 6-7M200 264v29m-6-7 6 7 6-7M200 361v29m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="55">Seite bei 360px und 1280px öffnen</text>
+    <text x="200" y="148">Horizontalen Überlauf prüfen</text>
+    <text x="200" y="241">Mit Tab zum Kontaktlink</text>
+    <text x="200" y="323">Link mit Enter öffnen</text>
+    <text x="200" y="346">URL-Fragment und Überschrift prüfen</text>
+    <text x="200" y="430">PASS je Bildschirmbreite</text>
+    <text x="200" y="489">Bei Fehlern korrigieren und erneut testen</text>
+  </g>
+</svg>

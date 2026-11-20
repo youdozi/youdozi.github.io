@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ru" width="400" height="550" viewBox="0 0 400 550" role="img" aria-labelledby="title desc">
+  <title id="title">Один навык для двух агентов</title>
+  <desc id="desc">Создайте учебную папку и исходный файл навыка. Скопируйте его в папки Claude Code и Codex, сравните через cmp и проверьте оба результата по одним данным.</desc>
+  <rect width="400" height="550" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="34" y="18" width="332" height="62" rx="10"/>
+    <rect x="34" y="116" width="332" height="62" rx="10"/>
+    <rect x="34" y="214" width="332" height="82" rx="10"/>
+    <rect x="34" y="332" width="332" height="62" rx="10"/>
+    <rect x="34" y="430" width="332" height="84" rx="10"/>
+  </g>
+  <path d="M200 80v32m-6-7 6 7 6-7M200 178v32m-6-7 6 7 6-7M200 296v32m-6-7 6 7 6-7M200 394v32m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="56">Создать учебную папку</text>
+    <text x="200" y="154">Написать навык для заметок</text>
+    <text x="200" y="242">Скопировать в обе папки</text>
+    <text x="200" y="272">.claude/skills · .agents/skills</text>
+    <text x="200" y="370">Сравнить копии через cmp</text>
+    <text x="200" y="460">Передать одинаковые записи</text>
+    <text x="200" y="489">Разделить проверки и планы</text>
+  </g>
+</svg>

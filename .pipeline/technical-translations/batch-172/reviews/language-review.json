@@ -1,0 +1,5 @@
+{
+  "scope": "Four Korean originals and all seven new language editions per topic. Compared headings, paragraphs, table cells, prompts, source references and diagram labels.",
+  "method": "Parallel AI translation and comparison with the Korean originals. Additional AI review of all four English editions and a sample of French and Spanish editions. Structural verification of code, commands and recorded output. Browser checks for all 28 localized diagrams at a 360-pixel viewport.",
+  "limits": "No new upstream fact audit or human or native-speaker language review."
+}

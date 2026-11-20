@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="zh-CN" width="400" height="550" viewBox="0 0 400 550" role="img" aria-labelledby="title desc">
+  <title id="title">在两款编程代理中使用同一技能</title>
+  <desc id="desc">创建练习目录并编写技能源文件，分别复制到 Claude Code 和 Codex 的项目路径，再用 cmp 对照文件，最后给两款工具相同输入并核对结果。</desc>
+  <rect width="400" height="550" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="34" y="18" width="332" height="62" rx="10"/>
+    <rect x="34" y="116" width="332" height="62" rx="10"/>
+    <rect x="34" y="214" width="332" height="82" rx="10"/>
+    <rect x="34" y="332" width="332" height="62" rx="10"/>
+    <rect x="34" y="430" width="332" height="84" rx="10"/>
+  </g>
+  <path d="M200 80v32m-6-7 6 7 6-7M200 178v32m-6-7 6 7 6-7M200 296v32m-6-7 6 7 6-7M200 394v32m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="56">创建练习目录</text>
+    <text x="200" y="154">编写发布说明技能</text>
+    <text x="200" y="242">复制到两个项目路径</text>
+    <text x="200" y="272">.claude/skills · .agents/skills</text>
+    <text x="200" y="370">用 cmp 对照副本</text>
+    <text x="200" y="460">给两款工具相同的变更和验证记录</text>
+    <text x="200" y="489">确认是否区分已通过和待验证</text>
+  </g>
+</svg>

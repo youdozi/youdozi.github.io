@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ja" width="400" height="478" viewBox="0 0 400 478" role="img" aria-labelledby="title desc">
+  <title id="title">予約キャンセルの確認ダイアログを検証する</title>
+  <desc id="desc">予約詳細からダイアログを開くと「予約を維持」にフォーカスが当たる。Escape と予約維持では状態を保つ。Tab の後に Enter で確定すると状態が変わる。各分岐で、閉じた後にボタンへフォーカスが戻るかを確認する。</desc>
+  <rect width="400" height="478" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="30" y="20" width="340" height="63" rx="10"/>
+    <rect x="30" y="111" width="340" height="63" rx="10"/>
+    <rect x="15" y="218" width="177" height="108" rx="10"/>
+    <rect x="208" y="218" width="177" height="108" rx="10" fill="#f4e8d7"/>
+    <rect x="30" y="376" width="340" height="66" rx="10"/>
+  </g>
+  <path d="M200 83v24m-5-6 5 6 5-6M200 174v19H103v21m-5-6 5 6 5-6M200 193h97v21m-5-6 5 6 5-6M103 326v24h97v22m-5-6 5 6 5-6M297 326v24h-97" fill="none" stroke="#397955" stroke-width="2.5"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="16" text-anchor="middle">
+    <text x="200" y="57">予約詳細からダイアログを開く</text>
+    <text x="200" y="148">初期フォーカスが「予約を維持」か確認</text>
+    <text x="103" y="250">Escape または</text>
+    <text x="103" y="273" font-size="14">「予約を維持」で Enter</text>
+    <text x="103" y="304">予約は維持</text>
+    <text x="297" y="250">Tab で確定ボタンへ</text>
+    <text x="297" y="273">Enter で確定</text>
+    <text x="297" y="304">キャンセル済み</text>
+    <text x="200" y="403">ダイアログを閉じる</text>
+    <text x="200" y="426">開いたボタンにフォーカスが戻る</text>
+  </g>
+</svg>
