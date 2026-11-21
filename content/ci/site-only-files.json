@@ -42,5 +42,9 @@
   "src/content/posts/ko/2026-11-21-nginx4shell-http2.md",
   "assets/img/architecture/2026-11-21-nginx4shell-http2-ko.svg",
   "src/content/posts/en/2026-11-21-nginx4shell-http2.md",
-  "assets/img/architecture/2026-11-21-nginx4shell-http2-en.svg"
+  "assets/img/architecture/2026-11-21-nginx4shell-http2-en.svg",
+  "src/content/posts/ko/2026-11-22-spring-boot-4-2-restclient-migration.md",
+  "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-migration-ko.svg",
+  "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-migration.md",
+  "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-migration-en.svg"
 ]
