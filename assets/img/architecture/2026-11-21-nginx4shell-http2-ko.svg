@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ko" width="400" height="485" viewBox="0 0 400 485" role="img" aria-labelledby="title desc">
+  <title id="title">NGINX HTTP/2 패치 우선순위 판단</title>
+  <desc id="desc">제품 출처를 확인한다. 공급업체 제품이거나 출처를 모르면 공급업체 공지를 확인한다. 공식 원본은 버전표와 대조하고 영향 범위에 들면 HTTP/2 상태로 조치 순서를 정한다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 7 3.5 0 7Z" fill="#4e7567"/>
+    </marker>
+  </defs>
+  <rect width="400" height="485" rx="16" fill="#f4f8f6"/>
+  <g fill="#fff" stroke="#afc9be">
+    <rect x="96" y="20" width="208" height="58" rx="9"/>
+    <rect x="20" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="331" width="360" height="130" rx="9" fill="#dcefe5"/>
+  </g>
+  <g fill="none" stroke="#4e7567" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M200 78V96H106V115"/>
+    <path d="M200 78V96H294V115"/>
+    <path d="M294 182V202H106V221"/>
+    <path d="M294 182V221"/>
+    <path d="M294 288V328"/>
+  </g>
+  <g fill="#193c31" font-family="system-ui, sans-serif" font-size="16" font-weight="650" text-anchor="middle">
+    <text x="200" y="47">제품 출처와 버전 입력</text>
+    <text x="106" y="144">공급업체 제품·미확인</text>
+    <text x="294" y="144">NGINX 공식 원본</text>
+    <text x="106" y="250">수정·범위 밖·신규 버전</text>
+    <text x="294" y="250">버전상 영향 후보</text>
+    <text x="200" y="358">HTTP/2 상태로 대응 순서 결정</text>
+  </g>
+  <g fill="#35584d" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">
+    <text x="200" y="65">HTTP/2 상태도 입력</text>
+    <text x="106" y="166">공급업체 공지 확인</text>
+    <text x="294" y="166">공개된 버전표 대조</text>
+    <text x="106" y="272">버전 기준 결과 출력</text>
+    <text x="294" y="272">해당 CVE 목록 선택</text>
+    <text x="200" y="385">켜짐 → 패치 우선</text>
+    <text x="200" y="409">꺼짐 → 패치 계획 유지</text>
+    <text x="200" y="433">미확인 → HTTP/2 확인과 패치</text>
+  </g>
+</svg>
