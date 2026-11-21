@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="zh-CN" width="400" height="485" viewBox="0 0 400 485" role="img" aria-labelledby="title desc">
+  <title id="title">NGINX HTTP/2 补丁优先级</title>
+  <desc id="desc">确认产品来源。如果是供应商产品或来源未知，请查看供应商公告。如果是 NGINX 上游原版，则核对版本范围，并根据 HTTP/2 状态确定修复顺序。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 7 3.5 0 7Z" fill="#4e7567"/>
+    </marker>
+  </defs>
+  <rect width="400" height="485" rx="16" fill="#f4f8f6"/>
+  <g fill="#fff" stroke="#afc9be">
+    <rect x="96" y="20" width="208" height="58" rx="9"/>
+    <rect x="20" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="331" width="360" height="130" rx="9" fill="#dcefe5"/>
+  </g>
+  <g fill="none" stroke="#4e7567" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M200 78V96H106V115"/>
+    <path d="M200 78V96H294V115"/>
+    <path d="M294 182V202H106V221"/>
+    <path d="M294 182V221"/>
+    <path d="M294 288V328"/>
+  </g>
+  <g fill="#193c31" font-family="system-ui, sans-serif" font-size="16" font-weight="650" text-anchor="middle">
+    <text x="200" y="47" font-size="14">输入产品来源和版本</text>
+    <text x="106" y="144">供应商产品或未知</text>
+    <text x="294" y="144">NGINX 上游原版</text>
+    <text x="106" y="250" font-size="15">已修复、范围外或更新</text>
+    <text x="294" y="250">版本可能受影响</text>
+    <text x="200" y="358">根据 HTTP/2 状态确定修复顺序</text>
+  </g>
+  <g fill="#35584d" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">
+    <text x="200" y="65">同时输入 HTTP/2 状态</text>
+    <text x="106" y="166">查看供应商公告</text>
+    <text x="294" y="166">核对公开版本范围</text>
+    <text x="106" y="272">输出版本核查结果</text>
+    <text x="294" y="272">选出符合条件的 CVE</text>
+    <text x="200" y="385">开启 → 优先打补丁</text>
+    <text x="200" y="409">关闭 → 保留补丁计划</text>
+    <text x="200" y="433">未知 → 核查 HTTP/2 并打补丁</text>
+  </g>
+</svg>

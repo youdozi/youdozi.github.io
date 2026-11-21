@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ru" width="400" height="485" viewBox="0 0 400 485" role="img" aria-labelledby="title desc">
+  <title id="title">Приоритет обновления NGINX HTTP/2</title>
+  <desc id="desc">Проверьте происхождение продукта. Для продукта поставщика или неизвестного происхождения проверьте уведомление поставщика. Для оригинальной сборки сверьте версию с диапазонами и определите приоритет по состоянию HTTP/2.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 7 3.5 0 7Z" fill="#4e7567"/>
+    </marker>
+  </defs>
+  <rect width="400" height="485" rx="16" fill="#f4f8f6"/>
+  <g fill="#fff" stroke="#afc9be">
+    <rect x="96" y="20" width="208" height="58" rx="9"/>
+    <rect x="20" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="331" width="360" height="130" rx="9" fill="#dcefe5"/>
+  </g>
+  <g fill="none" stroke="#4e7567" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M200 78V96H106V115"/>
+    <path d="M200 78V96H294V115"/>
+    <path d="M294 182V202H106V221"/>
+    <path d="M294 182V221"/>
+    <path d="M294 288V328"/>
+  </g>
+  <g fill="#193c31" font-family="system-ui, sans-serif" font-size="16" font-weight="650" text-anchor="middle">
+    <text x="200" y="47" font-size="14">Источник и версия</text>
+    <text x="106" y="144">Поставщик или ?</text>
+    <text x="294" y="144">Оригинал NGINX</text>
+    <text x="106" y="250">Другая версия</text>
+    <text x="294" y="250">Возможен риск</text>
+    <text x="200" y="358">Приоритет по состоянию HTTP/2</text>
+  </g>
+  <g fill="#35584d" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">
+    <text x="200" y="65">Укажите состояние HTTP/2</text>
+    <text x="106" y="166">См. уведомление</text>
+    <text x="294" y="166">Сверьте версии</text>
+    <text x="106" y="272">Вывод по версии</text>
+    <text x="294" y="272">Подберите CVE</text>
+    <text x="200" y="385">Включён → исправить в первую очередь</text>
+    <text x="200" y="409">Выключен → сохранить план обновления</text>
+    <text x="200" y="433">Неизвестно → проверить HTTP/2 и обновить</text>
+  </g>
+</svg>

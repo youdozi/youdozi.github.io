@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="es" width="400" height="485" viewBox="0 0 400 485" role="img" aria-labelledby="title desc">
+  <title id="title">Prioridad de parche para NGINX HTTP/2</title>
+  <desc id="desc">Comprueba el origen del producto. Para un producto de proveedor o de origen desconocido, consulta el aviso del proveedor. Si es una versión original, coteja la versión y prioriza las que estén afectadas según el estado de HTTP/2.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 7 3.5 0 7Z" fill="#4e7567"/>
+    </marker>
+  </defs>
+  <rect width="400" height="485" rx="16" fill="#f4f8f6"/>
+  <g fill="#fff" stroke="#afc9be">
+    <rect x="96" y="20" width="208" height="58" rx="9"/>
+    <rect x="20" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="331" width="360" height="130" rx="9" fill="#dcefe5"/>
+  </g>
+  <g fill="none" stroke="#4e7567" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M200 78V96H106V115"/>
+    <path d="M200 78V96H294V115"/>
+    <path d="M294 182V202H106V221"/>
+    <path d="M294 182V221"/>
+    <path d="M294 288V328"/>
+  </g>
+  <g fill="#193c31" font-family="system-ui, sans-serif" font-size="16" font-weight="650" text-anchor="middle">
+    <text x="200" y="47" font-size="14">Origen y versión</text>
+    <text x="106" y="144" font-size="15">Proveedor o sin datos</text>
+    <text x="294" y="144">NGINX original</text>
+    <text x="106" y="250">Otra versión</text>
+    <text x="294" y="250">Posible afectación</text>
+    <text x="200" y="358">Priorizar según el estado de HTTP/2</text>
+  </g>
+  <g fill="#35584d" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">
+    <text x="200" y="65">Indica el estado de HTTP/2</text>
+    <text x="106" y="166">Consulta el aviso</text>
+    <text x="294" y="166">Compara versiones</text>
+    <text x="106" y="272">Muestra el resultado</text>
+    <text x="294" y="272">Elige las CVE posibles</text>
+    <text x="200" y="385">Activo → prioriza el parche</text>
+    <text x="200" y="409">Inactivo → mantén el plan de parcheo</text>
+    <text x="200" y="433">Sin datos → verifica HTTP/2 y aplica el parche</text>
+  </g>
+</svg>

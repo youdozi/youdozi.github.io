@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-175",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "84a3d88eeba2afe7263edf780d71e2dd5cd61627",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Korean source comparison, structural checks and mobile diagram rendering.",
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-175/reviews/language-review.json",
+        "sha256": "96c3467b7ae68ae3bf05db012a7546f54da6a49d8301b1f63021e8f197f94d88"
+      }
+    ]
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-21-nginx4shell-http2",
+      "language": "zh-CN",
+      "translationKey": "2026-11-21-nginx4shell-http2",
+      "source": {
+        "path": "src/content/posts/en/2026-11-21-nginx4shell-http2.md",
+        "sha256": "51daac7a022b582074f762f0ce0c07d617f4af8535152688b060235117af16c2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-175/zh-CN/2026-11-21-nginx4shell-http2.md",
+        "sha256": "b4bf54a3b3cf15a4e73c367c7158a0a9bb51ed47b01d2936527addc6c80d3621"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-175/zh-CN/2026-11-21-nginx4shell-http2.svg",
+        "sha256": "86b88c68aa5e891ad8517fd9b3e6bce69d8523cdf5b9aec46d3418d62e12146f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-21-nginx4shell-http2-en.svg",
+        "sha256": "d711ec9a08cf45f1e7fac67e34399f0ae1302e261872143258c5005bab5a362a"
+      }
+    },
+    {
+      "key": "ja-2026-11-21-nginx4shell-http2",
+      "language": "ja",
+      "translationKey": "2026-11-21-nginx4shell-http2",
+      "source": {
+        "path": "src/content/posts/en/2026-11-21-nginx4shell-http2.md",
+        "sha256": "51daac7a022b582074f762f0ce0c07d617f4af8535152688b060235117af16c2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-175/ja/2026-11-21-nginx4shell-http2.md",
+        "sha256": "6b03bdcda53842c049092eca7194e36d5744b6b9497bfe795c08a9867ac8ac30"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-175/ja/2026-11-21-nginx4shell-http2.svg",
+        "sha256": "6721c630232fc94f5caad4ccbbddac021aeebc3145469f9dbac54b36e1919599"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-21-nginx4shell-http2-en.svg",
+        "sha256": "d711ec9a08cf45f1e7fac67e34399f0ae1302e261872143258c5005bab5a362a"
+      }
+    },
+    {
+      "key": "de-2026-11-21-nginx4shell-http2",
+      "language": "de",
+      "translationKey": "2026-11-21-nginx4shell-http2",
+      "source": {
+        "path": "src/content/posts/en/2026-11-21-nginx4shell-http2.md",
+        "sha256": "51daac7a022b582074f762f0ce0c07d617f4af8535152688b060235117af16c2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-175/de/2026-11-21-nginx4shell-http2.md",
+        "sha256": "d365220cd7f6d4657af832527322662639fe542b32958ac809c94cea6d24411f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-175/de/2026-11-21-nginx4shell-http2.svg",
+        "sha256": "409f976bae696be722f6c08015cb08d02f988d5fdd25659a8e8ecc027af61233"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-21-nginx4shell-http2-en.svg",
+        "sha256": "d711ec9a08cf45f1e7fac67e34399f0ae1302e261872143258c5005bab5a362a"
+      }
+    },
+    {
+      "key": "fr-2026-11-21-nginx4shell-http2",
+      "language": "fr",
+      "translationKey": "2026-11-21-nginx4shell-http2",
+      "source": {
+        "path": "src/content/posts/en/2026-11-21-nginx4shell-http2.md",
+        "sha256": "51daac7a022b582074f762f0ce0c07d617f4af8535152688b060235117af16c2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-175/fr/2026-11-21-nginx4shell-http2.md",
+        "sha256": "ec75a71abb3c95724d9001dd4dad4b796c73cf81c67cb7325bdb4a7a09aac299"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-175/fr/2026-11-21-nginx4shell-http2.svg",
+        "sha256": "881830c86a26140e6660475539388d89f66d5232badb4d3d1a519dda3ec4fbb1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-21-nginx4shell-http2-en.svg",
+        "sha256": "d711ec9a08cf45f1e7fac67e34399f0ae1302e261872143258c5005bab5a362a"
+      }
+    },
+    {
+      "key": "ru-2026-11-21-nginx4shell-http2",
+      "language": "ru",
+      "translationKey": "2026-11-21-nginx4shell-http2",
+      "source": {
+        "path": "src/content/posts/en/2026-11-21-nginx4shell-http2.md",
+        "sha256": "51daac7a022b582074f762f0ce0c07d617f4af8535152688b060235117af16c2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-175/ru/2026-11-21-nginx4shell-http2.md",
+        "sha256": "6185691d50143d73f73b9e86c73cf8508b48e1f3dd79c3a32273f56a4d99ddb9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-175/ru/2026-11-21-nginx4shell-http2.svg",
+        "sha256": "3f29808dfe768230a63d36158a601d2bb7d2c406567477d99f6a9623a4f62c40"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-21-nginx4shell-http2-en.svg",
+        "sha256": "d711ec9a08cf45f1e7fac67e34399f0ae1302e261872143258c5005bab5a362a"
+      }
+    },
+    {
+      "key": "es-2026-11-21-nginx4shell-http2",
+      "language": "es",
+      "translationKey": "2026-11-21-nginx4shell-http2",
+      "source": {
+        "path": "src/content/posts/en/2026-11-21-nginx4shell-http2.md",
+        "sha256": "51daac7a022b582074f762f0ce0c07d617f4af8535152688b060235117af16c2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-175/es/2026-11-21-nginx4shell-http2.md",
+        "sha256": "cc598dcc32e5f5edc3b153e3587974cf2230bc0881e515bac8d492af5b512fdc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-175/es/2026-11-21-nginx4shell-http2.svg",
+        "sha256": "6e09dd8fad2bbe541409af6f81c26121478529cc651c36abb9e9ae54eb10ac3e"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-21-nginx4shell-http2-en.svg",
+        "sha256": "d711ec9a08cf45f1e7fac67e34399f0ae1302e261872143258c5005bab5a362a"
+      }
+    }
+  ]
+}
