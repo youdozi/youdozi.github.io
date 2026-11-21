@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ja" width="400" height="485" viewBox="0 0 400 485" role="img" aria-labelledby="title desc">
+  <title id="title">NGINX HTTP/2 パッチ優先順位</title>
+  <desc id="desc">製品の提供元を確認する。ベンダー製品や提供元が不明な場合は公告を確認する。公式版は公開バージョン範囲と照合し、影響範囲なら HTTP/2 の状態で対応順を決める。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 7 3.5 0 7Z" fill="#4e7567"/>
+    </marker>
+  </defs>
+  <rect width="400" height="485" rx="16" fill="#f4f8f6"/>
+  <g fill="#fff" stroke="#afc9be">
+    <rect x="96" y="20" width="208" height="58" rx="9"/>
+    <rect x="20" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="331" width="360" height="130" rx="9" fill="#dcefe5"/>
+  </g>
+  <g fill="none" stroke="#4e7567" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M200 78V96H106V115"/>
+    <path d="M200 78V96H294V115"/>
+    <path d="M294 182V202H106V221"/>
+    <path d="M294 182V221"/>
+    <path d="M294 288V328"/>
+  </g>
+  <g fill="#193c31" font-family="system-ui, sans-serif" font-size="16" font-weight="650" text-anchor="middle">
+    <text x="200" y="47" font-size="14">提供元とバージョンを入力</text>
+    <text x="106" y="144">ベンダー版・不明</text>
+    <text x="294" y="144">NGINX 公式版</text>
+    <text x="106" y="250" font-size="14">修正済み・範囲外・新版</text>
+    <text x="294" y="250">影響を受ける可能性</text>
+    <text x="200" y="358">HTTP/2 の状態で対応順を決める</text>
+  </g>
+  <g fill="#35584d" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">
+    <text x="200" y="65">HTTP/2 の状態も入力</text>
+    <text x="106" y="166">提供元の公告を確認</text>
+    <text x="294" y="166">公開バージョン表と照合</text>
+    <text x="106" y="272">バージョン判定を出力</text>
+    <text x="294" y="272">該当する CVE を選択</text>
+    <text x="200" y="385">有効 → パッチ優先</text>
+    <text x="200" y="409">無効 → パッチ計画を継続</text>
+    <text x="200" y="433">不明 → HTTP/2 を確認しパッチ</text>
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="fr" width="400" height="485" viewBox="0 0 400 485" role="img" aria-labelledby="title desc">
+  <title id="title">Priorité des correctifs NGINX HTTP/2</title>
+  <desc id="desc">Vérifier l’origine du produit. Si elle est inconnue ou s’il s’agit d’un produit fournisseur, lire l’avis du fournisseur. Pour NGINX d’origine, comparer la version aux plages publiées et prioriser selon l’état de HTTP/2.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 7 3.5 0 7Z" fill="#4e7567"/>
+    </marker>
+  </defs>
+  <rect width="400" height="485" rx="16" fill="#f4f8f6"/>
+  <g fill="#fff" stroke="#afc9be">
+    <rect x="96" y="20" width="208" height="58" rx="9"/>
+    <rect x="20" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="118" width="172" height="64" rx="9"/>
+    <rect x="208" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="224" width="172" height="64" rx="9"/>
+    <rect x="20" y="331" width="360" height="130" rx="9" fill="#dcefe5"/>
+  </g>
+  <g fill="none" stroke="#4e7567" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M200 78V96H106V115"/>
+    <path d="M200 78V96H294V115"/>
+    <path d="M294 182V202H106V221"/>
+    <path d="M294 182V221"/>
+    <path d="M294 288V328"/>
+  </g>
+  <g fill="#193c31" font-family="system-ui, sans-serif" font-size="16" font-weight="650" text-anchor="middle">
+    <text x="200" y="47" font-size="14">Origine et version</text>
+    <text x="106" y="144" font-size="14">Fournisseur ou inconnu</text>
+    <text x="294" y="144">NGINX d’origine</text>
+    <text x="106" y="250">Autre version</text>
+    <text x="294" y="250">Version à risque</text>
+    <text x="200" y="358">Priorité selon l’état de HTTP/2</text>
+  </g>
+  <g fill="#35584d" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">
+    <text x="200" y="65">Saisir aussi l’état de HTTP/2</text>
+    <text x="106" y="166">Vérifier l’avis fournisseur</text>
+    <text x="294" y="166">Comparer les versions</text>
+    <text x="106" y="272">Afficher le résultat</text>
+    <text x="294" y="272">Choisir les CVE possibles</text>
+    <text x="200" y="385">Actif → corriger en priorité</text>
+    <text x="200" y="409">Inactif → maintenir le correctif prévu</text>
+    <text x="200" y="433">Inconnu → vérifier HTTP/2 et corriger</text>
+  </g>
+</svg>
