@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="446" viewBox="0 0 400 446" role="img" aria-labelledby="title desc">
+  <title id="title">기존 결제 조회 결과와 재고 예약에 따른 처리 흐름</title>
+  <desc id="desc">결제가 미확인인 주문의 기존 PG 거래를 조회한다. 응답이 없으면 기존 상태를 유지한다. 결제 완료가 확인되면 연결된 재고 예약이 해제됐는지 확인해 환불 요청을 기록하거나 재고를 출고에 할당한다.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0 0l10 5-10 5z" fill="#456581"/>
+    </marker>
+  </defs>
+  <rect width="400" height="446" rx="15" fill="#f3f6f9"/>
+  <g fill="none" stroke="#456581" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)">
+    <path d="M200 81V104"/>
+    <path d="M96 157v28h-59v92h18"/>
+    <path d="M275 157v20"/>
+    <path d="M238 229v86"/>
+    <path d="M355 229h20v169h-28"/>
+  </g>
+  <g stroke-width="1">
+    <rect x="30" y="24" width="340" height="57" rx="6" fill="#e4effa" stroke="#a8c3dc"/>
+    <rect x="30" y="104" width="340" height="53" rx="6" fill="#fff" stroke="#b5c6d6"/>
+    <rect x="138" y="177" width="232" height="52" rx="6" fill="#fff" stroke="#b5c6d6"/>
+    <rect x="55" y="251" width="151" height="52" rx="6" fill="#fff" stroke="#b5c6d6"/>
+    <rect x="55" y="315" width="292" height="50" rx="6" fill="#fff1da" stroke="#dab175"/>
+    <rect x="55" y="374" width="292" height="50" rx="6" fill="#e4f3eb" stroke="#97c5af"/>
+  </g>
+  <g font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, sans-serif" font-size="16" fill="#182d41" text-anchor="middle">
+    <text x="200" y="48" font-weight="700">결제 미확인 주문의 기존 PG 거래 조회</text>
+    <text x="200" y="68" font-size="13">주문에 연결된 거래 번호 사용</text>
+    <text x="200" y="136" font-weight="700">결제 완료가 확인됐나요?</text>
+    <text x="254" y="208" font-weight="700">연결된 재고 예약 확인</text>
+    <text x="130" y="272" font-size="14" font-weight="700">결제 미확인 유지</text>
+    <text x="130" y="290" font-size="13">예약·출고 상태 유지</text>
+    <text x="201" y="337" font-weight="700">환불 요청 기록</text>
+    <text x="201" y="354" font-size="13">주문 취소와 출고 보류 유지</text>
+    <text x="201" y="396" font-weight="700">주문 확정 · 결제 완료</text>
+    <text x="201" y="413" font-size="13">재고 할당 후 출고 대기로 전환</text>
+  </g>
+  <g font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, sans-serif" font-size="13" font-weight="700" fill="#385771">
+    <text x="44" y="204">응답 없음</text>
+    <text x="283" y="172">확인됨</text>
+    <text x="244" y="270">해제됨</text>
+    <text x="367" y="267" text-anchor="end">유지 중</text>
+  </g>
+</svg>
