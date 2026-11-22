@@ -1,0 +1,22 @@
+<svg xml:lang="en" xmlns="http://www.w3.org/2000/svg" width="420" height="382" viewBox="0 0 420 382" role="img" aria-labelledby="title desc">
+  <title id="title">Claude model access by account and task</title>
+  <desc id="desc">Paid subscribers can select Fable 5.2. Enterprise repository reviews use Claude Security. Direct use of Mythos requires approved account access.</desc>
+  <rect width="420" height="382" rx="16" fill="#f6f5f1"/>
+  <g fill="#fff" stroke="#c9c5bb">
+    <rect x="18" y="16" width="384" height="49" rx="8"/>
+    <rect x="44" y="84" width="358" height="80" rx="8"/>
+    <rect x="44" y="178" width="358" height="80" rx="8"/>
+    <rect x="44" y="272" width="358" height="91" rx="8"/>
+  </g>
+  <path d="M29 65V307 M29 123H44 M29 217H44 M29 307H44" fill="none" stroke="#8d7763" stroke-width="1.6"/>
+  <g fill="#241e19" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+    <text x="38" y="47" font-size="18" font-weight="700">What do you want to do?</text>
+    <text x="62" y="111" font-size="17" font-weight="700">General coding on a paid plan</text>
+    <text x="62" y="140" font-size="16">Look for Fable 5.2 in the model picker</text>
+    <text x="62" y="205" font-size="17" font-weight="700">Enterprise repository security review</text>
+    <text x="62" y="234" font-size="16">Use Claude Security if enabled</text>
+    <text x="62" y="300" font-size="17" font-weight="700">Use the Mythos model directly</text>
+    <text x="62" y="327" font-size="16">Check account approval and channel</text>
+    <text x="62" y="349" font-size="14">For example, Claude Code or Claude API</text>
+  </g>
+</svg>
