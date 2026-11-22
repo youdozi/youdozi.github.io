@@ -1,0 +1,37 @@
+<svg xml:lang="en" xmlns="http://www.w3.org/2000/svg" width="420" height="370" viewBox="0 0 420 370" role="img" aria-labelledby="title desc">
+  <title id="title">Reserving stock for an order line in PostgreSQL</title>
+  <desc id="desc">Read the SKU and quantity from the order line and conditionally update its inventory row. If the update changes a row, insert the reservation and return true. If no row changes, return false without a reservation.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#536983"/>
+    </marker>
+  </defs>
+  <rect width="420" height="370" rx="16" fill="#f4f7fb"/>
+  <g fill="none" stroke="#536983" stroke-width="1.6" marker-end="url(#arrow)">
+    <path d="M210 74V106"/>
+    <path d="M210 178V202H110V220"/>
+    <path d="M210 178V202H310V220"/>
+    <path d="M110 280V304"/>
+    <path d="M310 280V304"/>
+  </g>
+  <g stroke-width="1.2">
+    <rect x="35" y="16" width="350" height="58" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="35" y="109" width="350" height="69" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="15" y="223" width="190" height="57" rx="10" fill="#e7f5eb" stroke="#7ca98e"/>
+    <rect x="215" y="223" width="190" height="57" rx="10" fill="#fff0df" stroke="#cfa671"/>
+    <rect x="15" y="307" width="190" height="45" rx="10" fill="#fff" stroke="#7ca98e"/>
+    <rect x="215" y="307" width="190" height="45" rx="10" fill="#fff" stroke="#cfa671"/>
+  </g>
+  <g fill="#172f48" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif" text-anchor="middle" font-size="16">
+    <text x="210" y="40" font-weight="700">order_item · Order line</text>
+    <text x="210" y="62">Read SKU and quantity</text>
+    <text x="210" y="136" font-weight="700">inventory · Conditional UPDATE</text>
+    <text x="210" y="161">Increase held if enough stock is available</text>
+    <text x="110" y="247" font-weight="700">1 row updated</text>
+    <text x="110" y="269">Insert reservation</text>
+    <text x="310" y="247" font-weight="700">0 rows updated</text>
+    <text x="310" y="269">No reservation</text>
+    <text x="110" y="334" font-weight="700">true · Stock reserved</text>
+    <text x="310" y="334" font-weight="700">false · Hold failed</text>
+  </g>
+</svg>
