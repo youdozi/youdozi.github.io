@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="461" viewBox="0 0 420 461" role="img" aria-labelledby="title desc">
+  <title id="title">결제창에서 돌아온 구매자에게 보여줄 주문 상태</title>
+  <desc id="desc">기존 주문을 조회한다. 조회 중에는 대기 메시지를, 조회 실패에는 다시 불러오기를 제공한다. 주문을 읽으면 결제와 주문의 확인 여부에 따라 상태 조회, 배송 추적, 상품 목록, 환불 상태 또는 환불 내역으로 안내한다.</desc>
+  <rect width="420" height="461" rx="16" fill="#f4f7fb"/>
+  <path d="M25 66V426 M25 100H44 M25 158H44 M25 225H44 M25 283H44 M25 341H44 M25 399H44" fill="none" stroke="#7185a0" stroke-width="1.6"/>
+  <g stroke="#b5c4d6">
+    <rect x="15" y="14" width="390" height="52" rx="9" fill="#fff"/>
+    <rect x="44" y="80" width="360" height="47" rx="8" fill="#fff"/>
+    <rect x="44" y="138" width="360" height="47" rx="8" fill="#fff2e5"/>
+    <rect x="44" y="197" width="360" height="56" rx="8" fill="#eef4ff"/>
+    <rect x="44" y="263" width="360" height="42" rx="8" fill="#e9f5ec"/>
+    <rect x="44" y="321" width="360" height="42" rx="8" fill="#fff"/>
+    <rect x="44" y="379" width="360" height="64" rx="8" fill="#eef4ff"/>
+  </g>
+  <g fill="#203951" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16">
+    <text x="34" y="46" font-size="18" font-weight="700">결제창 복귀 후 기존 주문 조회</text>
+    <text x="61" y="109">조회 중 · 대기 안내</text>
+    <text x="61" y="167">조회 실패 · 주문 상태 다시 불러오기</text>
+    <text x="61" y="220" font-weight="700">결제 미확인 또는 주문 확인 중</text>
+    <text x="61" y="243">주문 상태 새로고침</text>
+    <text x="61" y="289">결제·주문 확정 · 배송 상태 보기</text>
+    <text x="61" y="347">과금 없이 취소 · 상품 다시 보기</text>
+    <text x="61" y="403">환불 처리 중 · 환불 상태 새로고침</text>
+    <text x="61" y="428">환불 완료 · 환불 내역 보기</text>
+  </g>
+</svg>
