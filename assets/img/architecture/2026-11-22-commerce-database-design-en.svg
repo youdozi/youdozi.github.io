@@ -32,6 +32,6 @@
     <text x="310" y="247" font-weight="700">0 rows updated</text>
     <text x="310" y="269">No reservation</text>
     <text x="110" y="334" font-weight="700">true · Stock reserved</text>
-    <text x="310" y="334" font-weight="700">false · Reservation failed</text>
+    <text x="310" y="334" font-weight="700">false · Hold failed</text>
   </g>
 </svg>
