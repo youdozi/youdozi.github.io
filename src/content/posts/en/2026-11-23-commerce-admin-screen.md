@@ -3,6 +3,13 @@
   "kind": "post",
   "publishedAt": "2026-11-23T00:00:00+09:00",
   "updatedAt": "2026-11-23T00:00:00+09:00",
+  "reviewedAt": "2026-11-22",
+  "reviewStatus": "source-audited",
+  "reviewScope": "Cross-checked payment reconciliation and stock reservations against the preceding commerce system and database guides and verified the three fictional order outcomes on Node.js 24.13.0. Provider queries, authentication, actual refunds, and warehouse integration require separate production validation.",
+  "reviewSources": [
+    "https://youdozi.github.io/en/posts/2026-11-22-commerce-system-design-last-unit-of-stock/",
+    "https://youdozi.github.io/en/posts/2026-11-22-commerce-database-design/"
+  ],
   "translationKey": "2026-11-23-commerce-admin-screen",
   "routeSlug": "2026-11-23-commerce-admin-screen",
   "categories": [

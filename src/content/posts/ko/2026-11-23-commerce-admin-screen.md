@@ -3,6 +3,13 @@
   "kind": "post",
   "publishedAt": "2026-11-23T00:00:00+09:00",
   "updatedAt": "2026-11-23T00:00:00+09:00",
+  "reviewedAt": "2026-11-22",
+  "reviewStatus": "source-audited",
+  "reviewScope": "앞선 커머스 시스템·DB 설계의 결제 대사와 재고 예약 흐름을 대조했고 Node.js 24.13.0에서 가상 주문의 세 가지 결과를 확인했습니다. 실제 결제대행사 조회, 인증, 환불 실행, 창고 연동은 운영 구현에서 별도로 검증해야 합니다.",
+  "reviewSources": [
+    "https://youdozi.github.io/ko/posts/2026-11-22-commerce-system-design-last-unit-of-stock/",
+    "https://youdozi.github.io/ko/posts/2026-11-22-commerce-database-design/"
+  ],
   "translationKey": "2026-11-23-commerce-admin-screen",
   "routeSlug": "2026-11-23-commerce-admin-screen",
   "categories": [
