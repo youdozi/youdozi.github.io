@@ -1,10 +1,10 @@
 ---
 {
   "kind": "post",
-  "publishedAt": "2026-11-22T14:46:00+00:00",
-  "updatedAt": "2026-11-22T14:46:00+00:00",
-  "translationKey": "2026-11-22-commerce-admin-screen",
-  "routeSlug": "2026-11-22-commerce-admin-screen",
+  "publishedAt": "2026-11-23T00:00:00+09:00",
+  "updatedAt": "2026-11-23T00:00:00+09:00",
+  "translationKey": "2026-11-23-commerce-admin-screen",
+  "routeSlug": "2026-11-23-commerce-admin-screen",
   "categories": [
     "architecture"
   ],
@@ -59,7 +59,7 @@ In the order detail, put the purchase-time amount, SKU and quantity, linked rese
 
 The response to the payment request for `O-42` was lost. The result remained unknown long enough for a staff member to approve an exception, release reservation `R-42`, and cancel the order. The payments operator opens the order and checks the existing transaction `PG-DEMO-42`. When payment is confirmed, record a **refund request**. Keep the order canceled, leave shipment on hold, and leave the reservation released. Record the refund as complete once the provider confirms it.
 
-![Look up the existing provider transaction for an order with an unknown payment result. With no response, keep the payment, inventory, and fulfillment states. If payment is confirmed, request a refund when the reservation has been released, or allocate the stock and move the order to awaiting fulfillment when the reservation is active.](/assets/img/architecture/2026-11-22-commerce-admin-screen-en.svg)
+![Look up the existing provider transaction for an order with an unknown payment result. With no response, keep the payment, inventory, and fulfillment states. If payment is confirmed, request a refund when the reservation has been released, or allocate the stock and move the order to awaiting fulfillment when the reservation is active.](/assets/img/architecture/2026-11-23-commerce-admin-screen-en.svg)
 
 The diagram shows the branches for three fictional orders. The lookup for `O-43` gets no response, so **payment stays unknown, the reservation stays active, and shipment stays on hold**. For `O-44`, payment is confirmed and the reservation is active, so **the order is confirmed, payment is marked paid, stock is allocated, and the order moves to awaiting fulfillment**. The diagram covers missing responses and confirmed payments. In production, a confirmed unpaid closure can lead to releasing the reservation and canceling the order. If transaction details disagree, record a reconciliation exception before changing any state.
 
