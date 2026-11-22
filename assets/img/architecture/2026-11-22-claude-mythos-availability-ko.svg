@@ -1,0 +1,22 @@
+<svg xml:lang="ko" xmlns="http://www.w3.org/2000/svg" width="420" height="382" viewBox="0 0 420 382" role="img" aria-labelledby="title desc">
+  <title id="title">Claude 계정과 작업에 따른 모델 접근 경로</title>
+  <desc id="desc">개인 유료 계정에서는 Fable 5.2를 선택한다. Enterprise의 저장소 검토는 Claude Security를 쓴다. Mythos 직접 사용에는 승인된 계정 권한이 필요하다.</desc>
+  <rect width="420" height="382" rx="16" fill="#f6f5f1"/>
+  <g fill="#fff" stroke="#c9c5bb">
+    <rect x="18" y="16" width="384" height="49" rx="8"/>
+    <rect x="44" y="84" width="358" height="80" rx="8"/>
+    <rect x="44" y="178" width="358" height="80" rx="8"/>
+    <rect x="44" y="272" width="358" height="91" rx="8"/>
+  </g>
+  <path d="M29 65V307 M29 123H44 M29 217H44 M29 307H44" fill="none" stroke="#8d7763" stroke-width="1.6"/>
+  <g fill="#241e19" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+    <text x="38" y="47" font-size="18" font-weight="700">어떤 작업을 하려는가?</text>
+    <text x="62" y="111" font-size="17" font-weight="700">개인 유료 계정의 일반 개발</text>
+    <text x="62" y="140" font-size="16">모델 선택기에서 Fable 5.2 확인</text>
+    <text x="62" y="205" font-size="17" font-weight="700">Enterprise의 저장소 보안 검토</text>
+    <text x="62" y="234" font-size="16">활성화된 Claude Security 사용</text>
+    <text x="62" y="300" font-size="17" font-weight="700">Mythos 모델 직접 사용</text>
+    <text x="62" y="327" font-size="16">계정 승인과 이용 채널 확인</text>
+    <text x="62" y="349" font-size="14">예시 · Claude Code, Claude API</text>
+  </g>
+</svg>
