@@ -17,17 +17,17 @@
     "home-server"
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb",
-  "draftSha256": "554090f8efd94c10100d071e84b2d9519a837f53e9cdb3fee1479a90e591e9f7",
+  "sourceSha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c",
+  "draftSha256": "5e339e5d2b879684c8cb8023bb2d965c504d035cb8d20f39c256005e321abacf",
   "manifestPath": ".pipeline/technical-translations/batch-187/manifest.json",
-  "manifestSha256": "c51f7d644197e6f5041d0c4b28929075533822bf2a8dfed8c991eb3d93efc752",
-  "publishedAt": "2026-11-23T09:54:23.607Z",
-  "updatedAt": "2026-11-23T09:54:23.607Z",
+  "manifestSha256": "16cf5d86265526a00a784d17066969999aef1b60a87d1737a2da7c9de9e1f8d7",
+  "publishedAt": "2026-11-23T10:04:19.784Z",
+  "updatedAt": "2026-11-23T10:04:19.784Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 188,
-    "approvedAt": "2026-11-23T09:54:23.607Z",
+    "approvedAt": "2026-11-23T10:04:19.784Z",
     "basis": "Owner explicitly requested publication in eight languages; translations were self-reviewed without independent or native-speaker review."
   }
 }
@@ -43,7 +43,7 @@ Le schéma résume la requête et la réponse ; l’authentification et le netto
 
 Utilisez deux ordinateurs sur un réseau privé que vous contrôlez. Un réseau partagé ou public peut contenir des appareils non fiables ; une adresse privée ne suffit pas à contrôler l’accès. Ne redirigez aucun port du routeur. Utilisez un compte macOS standard distinct pour cette tâche et ne lui donnez accès qu’aux fichiers nécessaires. Sur le Mac, ouvrez Réglages Système → Général → Partage → Connexion à distance, activez-la et choisissez « Seulement ces utilisateurs » pour autoriser ce compte. Laissez l’accès complet au disque désactivé pour les utilisateurs distants, sauf besoin distinct. Le panneau Connexion à distance affiche l’adresse SSH du Mac. Les réglages peuvent varier selon la version de macOS ou la gestion de l’appareil. [Apple : connexion à distance](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
 
-Sur le client, créez une clé dédiée et choisissez une phrase secrète et un nouveau nom de fichier lorsque le programme le demande :
+Sur le client, créez une clé dédiée et choisissez une phrase secrète lorsque le programme le demande. Si le fichier existe déjà, ne l’écrasez pas ; choisissez un autre chemin libre et utilisez-le dans les commandes suivantes :
 
 ```sh
 ssh-keygen -t ed25519 -f ~/.ssh/macbook_demo

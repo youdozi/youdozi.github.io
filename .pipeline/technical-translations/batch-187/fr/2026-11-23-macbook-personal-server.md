@@ -6,7 +6,7 @@
   "title": "Utiliser un MacBook comme serveur personnel sur un réseau privé",
   "description": "Testez un serveur HTTP local par un tunnel SSH et comprenez les limites de disponibilité du Mac.",
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
+  "sourceSha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c"
 }
 ---
 
@@ -20,7 +20,7 @@ Le schéma résume la requête et la réponse ; l’authentification et le netto
 
 Utilisez deux ordinateurs sur un réseau privé que vous contrôlez. Un réseau partagé ou public peut contenir des appareils non fiables ; une adresse privée ne suffit pas à contrôler l’accès. Ne redirigez aucun port du routeur. Utilisez un compte macOS standard distinct pour cette tâche et ne lui donnez accès qu’aux fichiers nécessaires. Sur le Mac, ouvrez Réglages Système → Général → Partage → Connexion à distance, activez-la et choisissez « Seulement ces utilisateurs » pour autoriser ce compte. Laissez l’accès complet au disque désactivé pour les utilisateurs distants, sauf besoin distinct. Le panneau Connexion à distance affiche l’adresse SSH du Mac. Les réglages peuvent varier selon la version de macOS ou la gestion de l’appareil. [Apple : connexion à distance](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
 
-Sur le client, créez une clé dédiée et choisissez une phrase secrète et un nouveau nom de fichier lorsque le programme le demande :
+Sur le client, créez une clé dédiée et choisissez une phrase secrète lorsque le programme le demande. Si le fichier existe déjà, ne l’écrasez pas ; choisissez un autre chemin libre et utilisez-le dans les commandes suivantes :
 
 ```sh
 ssh-keygen -t ed25519 -f ~/.ssh/macbook_demo

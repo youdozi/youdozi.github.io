@@ -17,17 +17,17 @@
     "home-server"
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb",
-  "draftSha256": "9ccccd344723d9d59610fefe683a37e0fbfea63127fc4d8b40cc095fbcd8f7c4",
+  "sourceSha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c",
+  "draftSha256": "a91066395f02b9870b0a7311c9493252b19b89a5675acb3950cea547fff747bb",
   "manifestPath": ".pipeline/technical-translations/batch-187/manifest.json",
-  "manifestSha256": "c51f7d644197e6f5041d0c4b28929075533822bf2a8dfed8c991eb3d93efc752",
-  "publishedAt": "2026-11-23T09:54:23.607Z",
-  "updatedAt": "2026-11-23T09:54:23.607Z",
+  "manifestSha256": "16cf5d86265526a00a784d17066969999aef1b60a87d1737a2da7c9de9e1f8d7",
+  "publishedAt": "2026-11-23T10:04:19.784Z",
+  "updatedAt": "2026-11-23T10:04:19.784Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 188,
-    "approvedAt": "2026-11-23T09:54:23.607Z",
+    "approvedAt": "2026-11-23T10:04:19.784Z",
     "basis": "Owner explicitly requested publication in eight languages; translations were self-reviewed without independent or native-speaker review."
   }
 }
@@ -43,7 +43,7 @@ Das Diagramm fasst Anfrage und Antwort zusammen; Authentifizierung und Aufräume
 
 Verwenden Sie zwei Rechner in einem privaten Netzwerk, das Sie kontrollieren. Ein gemeinsam genutztes oder öffentliches Netzwerk kann nicht vertrauenswürdige Geräte enthalten; eine private Adresse allein begrenzt den Zugriff nicht. Richten Sie keine Portweiterleitung am Router ein. Verwenden Sie ein separates macOS-Standardkonto für diese Aufgabe und erlauben Sie nur Zugriff auf benötigte Dateien. Öffnen Sie auf dem Mac Systemeinstellungen → Allgemein → Freigaben → Entfernte Anmeldung, aktivieren Sie die Funktion und wählen Sie „Nur diese Benutzer“, um das Konto zuzulassen. Lassen Sie den vollen Festplattenzugriff für entfernte Benutzer deaktiviert, sofern er nicht gesondert benötigt wird. Der Bereich „Entfernte Anmeldung“ zeigt die SSH-Adresse des Macs. Einstellungen können je nach macOS-Version oder Geräteverwaltung abweichen. [Apple: entfernte Anmeldung](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
 
-Erstellen Sie auf dem Client einen eigenen Schlüssel und wählen Sie bei der Aufforderung eine Passphrase und einen neuen Dateinamen:
+Erstellen Sie auf dem Client einen eigenen Schlüssel und wählen Sie bei der Aufforderung eine Passphrase. Falls die Datei bereits existiert, überschreiben Sie sie nicht; wählen Sie einen anderen freien Pfad und verwenden Sie ihn in den folgenden Befehlen:
 
 ```sh
 ssh-keygen -t ed25519 -f ~/.ssh/macbook_demo

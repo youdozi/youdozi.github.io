@@ -17,17 +17,17 @@
     "home-server"
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb",
-  "draftSha256": "b24cb5b752bfda49108d9609487712088333d71937984c0fdc333ea71f63548f",
+  "sourceSha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c",
+  "draftSha256": "cdc6da779b23c1462e199b0ed5062ba00a1c8263e25a4581b0e7fa30d87225f4",
   "manifestPath": ".pipeline/technical-translations/batch-187/manifest.json",
-  "manifestSha256": "c51f7d644197e6f5041d0c4b28929075533822bf2a8dfed8c991eb3d93efc752",
-  "publishedAt": "2026-11-23T09:54:23.607Z",
-  "updatedAt": "2026-11-23T09:54:23.607Z",
+  "manifestSha256": "16cf5d86265526a00a784d17066969999aef1b60a87d1737a2da7c9de9e1f8d7",
+  "publishedAt": "2026-11-23T10:04:19.784Z",
+  "updatedAt": "2026-11-23T10:04:19.784Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 188,
-    "approvedAt": "2026-11-23T09:54:23.607Z",
+    "approvedAt": "2026-11-23T10:04:19.784Z",
     "basis": "Owner explicitly requested publication in eight languages; translations were self-reviewed without independent or native-speaker review."
   }
 }
@@ -43,7 +43,7 @@ MacBook 可以在可信的私人网络上向另一台电脑提供短暂的开发
 
 在自己控制的私人网络上使用两台电脑。共享或公共网络可能包含不可信设备；私有地址本身不能限制访问。不要在路由器上转发端口。为此任务使用单独的 macOS 标准账户，仅授予所需文件的访问权限。在 Mac 上打开“系统设置”→“通用”→“共享”→“远程登录”，启用该功能并选择“仅这些用户”以允许该账户。除非另有需要，不要允许远程用户完全访问磁盘。远程登录面板会显示 Mac 的 SSH 地址。设置可能因 macOS 版本或设备管理而异。[Apple：远程登录](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
 
-在客户端创建专用密钥，出现提示时选择密码短语和新的文件名：
+在客户端创建专用密钥，出现提示时选择密码短语。如果文件已存在，请勿覆盖；请选择另一个未使用的路径，并在后续命令中使用该路径：
 
 ```sh
 ssh-keygen -t ed25519 -f ~/.ssh/macbook_demo

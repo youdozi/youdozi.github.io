@@ -17,17 +17,17 @@
     "home-server"
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb",
-  "draftSha256": "71c2bda9e838eadd3fd5e655787cda52eba5013ab02751d55223ea42c5a6816d",
+  "sourceSha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c",
+  "draftSha256": "8e0cea4047a931093dc54c70adeeb4b9631aecc8ace039d35580af1fc6de6bf7",
   "manifestPath": ".pipeline/technical-translations/batch-187/manifest.json",
-  "manifestSha256": "c51f7d644197e6f5041d0c4b28929075533822bf2a8dfed8c991eb3d93efc752",
-  "publishedAt": "2026-11-23T09:54:23.607Z",
-  "updatedAt": "2026-11-23T09:54:23.607Z",
+  "manifestSha256": "16cf5d86265526a00a784d17066969999aef1b60a87d1737a2da7c9de9e1f8d7",
+  "publishedAt": "2026-11-23T10:04:19.784Z",
+  "updatedAt": "2026-11-23T10:04:19.784Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 188,
-    "approvedAt": "2026-11-23T09:54:23.607Z",
+    "approvedAt": "2026-11-23T10:04:19.784Z",
     "basis": "Owner explicitly requested publication in eight languages; translations were self-reviewed without independent or native-speaker review."
   }
 }
@@ -43,7 +43,7 @@ MacBook は、信頼できるプライベートネットワーク上の別のコ
 
 自分で管理するプライベートネットワークで、二台のコンピュータを使用します。共有または公共のネットワークには信頼できない機器が存在する可能性があり、プライベートアドレスだけではアクセスを制限できません。ルーターのポート転送は行いません。この作業用に別の macOS 標準アカウントを用意し、必要なファイルだけにアクセスを許可します。Mac の「システム設定」→「一般」→「共有」→「リモートログイン」を開いて有効にし、「これらのユーザのみ」でそのアカウントを許可します。別途必要な場合を除き、リモートユーザへのフルディスクアクセスはオフのままにします。リモートログインのパネルには Mac の SSH アドレスが表示されます。macOS のバージョンやデバイス管理によって設定画面は異なる場合があります。[Apple: リモートログイン](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
 
-クライアントで専用の鍵を作り、求められたらパスフレーズと新しいファイル名を選びます。
+クライアントで専用の鍵を作り、求められたらパスフレーズを入力します。ファイルが既に存在する場合は上書きせず、別の未使用のパスを選び、以降のコマンドでも使用します。
 
 ```sh
 ssh-keygen -t ed25519 -f ~/.ssh/macbook_demo

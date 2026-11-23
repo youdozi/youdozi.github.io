@@ -6,7 +6,7 @@
   "title": "Ein MacBook als persönlichen Server im privaten Netzwerk nutzen",
   "description": "Einen lokalen HTTP-Server per SSH-Tunnel testen und Grenzen der Mac-Verfügbarkeit verstehen.",
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
+  "sourceSha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c"
 }
 ---
 
@@ -20,7 +20,7 @@ Das Diagramm fasst Anfrage und Antwort zusammen; Authentifizierung und Aufräume
 
 Verwenden Sie zwei Rechner in einem privaten Netzwerk, das Sie kontrollieren. Ein gemeinsam genutztes oder öffentliches Netzwerk kann nicht vertrauenswürdige Geräte enthalten; eine private Adresse allein begrenzt den Zugriff nicht. Richten Sie keine Portweiterleitung am Router ein. Verwenden Sie ein separates macOS-Standardkonto für diese Aufgabe und erlauben Sie nur Zugriff auf benötigte Dateien. Öffnen Sie auf dem Mac Systemeinstellungen → Allgemein → Freigaben → Entfernte Anmeldung, aktivieren Sie die Funktion und wählen Sie „Nur diese Benutzer“, um das Konto zuzulassen. Lassen Sie den vollen Festplattenzugriff für entfernte Benutzer deaktiviert, sofern er nicht gesondert benötigt wird. Der Bereich „Entfernte Anmeldung“ zeigt die SSH-Adresse des Macs. Einstellungen können je nach macOS-Version oder Geräteverwaltung abweichen. [Apple: entfernte Anmeldung](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
 
-Erstellen Sie auf dem Client einen eigenen Schlüssel und wählen Sie bei der Aufforderung eine Passphrase und einen neuen Dateinamen:
+Erstellen Sie auf dem Client einen eigenen Schlüssel und wählen Sie bei der Aufforderung eine Passphrase. Falls die Datei bereits existiert, überschreiben Sie sie nicht; wählen Sie einen anderen freien Pfad und verwenden Sie ihn in den folgenden Befehlen:
 
 ```sh
 ssh-keygen -t ed25519 -f ~/.ssh/macbook_demo

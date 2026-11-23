@@ -2,7 +2,7 @@
 {
   "kind": "post",
   "publishedAt": "2026-11-23T09:45:00Z",
-  "updatedAt": "2026-11-23T09:54:05Z",
+  "updatedAt": "2026-11-23T10:04:18Z",
   "reviewedAt": "2026-11-23",
   "reviewStatus": "source-audited",
   "reviewScope": "Official documentation self-review; loopback HTTP checked locally; SSH and tunnel not tested.",
@@ -37,7 +37,7 @@ The diagram summarizes the request and response; authentication and cleanup are 
 
 Use two computers on a private network you control. A shared or public network may contain untrusted devices; a private address alone is not an access-control boundary. Do not forward router ports. Use a separate standard macOS account for this task and grant it only the files it needs. On the Mac, open System Settings → General → Sharing → Remote Login, enable it and choose “Only these users” to allow that account. Leave full disk access for remote users off unless separately needed. The Remote Login panel shows the Mac's SSH address. Settings can differ with macOS version or device management. [Apple: Remote Login](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
 
-On the client, create a dedicated key, choosing a passphrase and a new filename when prompted:
+On the client, create a dedicated key and choose a passphrase when prompted. If the file already exists, do not overwrite it; choose a different unused path and use it in the later commands:
 
 ```sh
 ssh-keygen -t ed25519 -f ~/.ssh/macbook_demo

@@ -6,7 +6,7 @@
   "title": "在私人网络上将 MacBook 用作个人服务器",
   "description": "通过 SSH 隧道测试回环 HTTP 服务，并了解 Mac 的可用性限制。",
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
+  "sourceSha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c"
 }
 ---
 
@@ -20,7 +20,7 @@ MacBook 可以在可信的私人网络上向另一台电脑提供短暂的开发
 
 在自己控制的私人网络上使用两台电脑。共享或公共网络可能包含不可信设备；私有地址本身不能限制访问。不要在路由器上转发端口。为此任务使用单独的 macOS 标准账户，仅授予所需文件的访问权限。在 Mac 上打开“系统设置”→“通用”→“共享”→“远程登录”，启用该功能并选择“仅这些用户”以允许该账户。除非另有需要，不要允许远程用户完全访问磁盘。远程登录面板会显示 Mac 的 SSH 地址。设置可能因 macOS 版本或设备管理而异。[Apple：远程登录](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
 
-在客户端创建专用密钥，出现提示时选择密码短语和新的文件名：
+在客户端创建专用密钥，出现提示时选择密码短语。如果文件已存在，请勿覆盖；请选择另一个未使用的路径，并在后续命令中使用该路径：
 
 ```sh
 ssh-keygen -t ed25519 -f ~/.ssh/macbook_demo

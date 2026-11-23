@@ -2,7 +2,7 @@
 {
   "kind": "post",
   "publishedAt": "2026-11-23T09:45:00Z",
-  "updatedAt": "2026-11-23T09:54:05Z",
+  "updatedAt": "2026-11-23T10:04:18Z",
   "reviewedAt": "2026-11-23",
   "reviewStatus": "source-audited",
   "reviewScope": "Official documentation self-review; loopback HTTP checked locally; SSH and tunnel not tested.",
@@ -37,7 +37,7 @@
 
 관리하는 사설 네트워크에서 두 컴퓨터를 사용합니다. 공유 또는 공용 네트워크에는 신뢰할 수 없는 기기가 있을 수 있으며 사설 주소만으로 접근이 제한되지는 않습니다. 공유기 포트 포워딩은 하지 않습니다. 별도의 macOS 표준 계정을 만들고 필요한 파일에만 접근을 허용합니다. 맥에서 시스템 설정 → 일반 → 공유 → 원격 로그인을 켜고 “다음 사용자만”을 선택해 그 계정을 허용합니다. 별도로 필요하지 않다면 원격 사용자의 전체 디스크 접근은 끕니다. 원격 로그인 패널에서 맥의 SSH 주소를 확인합니다. macOS 버전이나 기기 관리 정책에 따라 화면이 다를 수 있습니다. [Apple: 원격 로그인](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
 
-클라이언트에서 전용 키를 만들고 암호와 새 파일 이름을 선택합니다.
+클라이언트에서 전용 키를 만들고 요청하면 암호를 입력합니다. 파일이 이미 있으면 덮어쓰지 말고 사용하지 않는 다른 경로를 정해 이후 명령에도 적용합니다.
 
 ```sh
 ssh-keygen -t ed25519 -f ~/.ssh/macbook_demo

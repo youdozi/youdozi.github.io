@@ -17,17 +17,17 @@
     "home-server"
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb",
-  "draftSha256": "aa8b0a6d6a87627de21b41b197f6fb5c6048f61138a76fd256391b19db799e77",
+  "sourceSha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c",
+  "draftSha256": "96a43be3051e853dfad7f897260a7f224b4089a82913ae2c2baf2afbf199fb8b",
   "manifestPath": ".pipeline/technical-translations/batch-187/manifest.json",
-  "manifestSha256": "c51f7d644197e6f5041d0c4b28929075533822bf2a8dfed8c991eb3d93efc752",
-  "publishedAt": "2026-11-23T09:54:23.607Z",
-  "updatedAt": "2026-11-23T09:54:23.607Z",
+  "manifestSha256": "16cf5d86265526a00a784d17066969999aef1b60a87d1737a2da7c9de9e1f8d7",
+  "publishedAt": "2026-11-23T10:04:19.784Z",
+  "updatedAt": "2026-11-23T10:04:19.784Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 188,
-    "approvedAt": "2026-11-23T09:54:23.607Z",
+    "approvedAt": "2026-11-23T10:04:19.784Z",
     "basis": "Owner explicitly requested publication in eight languages; translations were self-reviewed without independent or native-speaker review."
   }
 }
@@ -43,7 +43,7 @@ MacBook может предоставить короткую демонстра�
 
 Используйте два компьютера в частной сети, которую вы контролируете. В общей или публичной сети могут быть недоверенные устройства; частный адрес сам по себе не ограничивает доступ. Не настраивайте переадресацию портов на маршрутизаторе. Используйте отдельную стандартную учётную запись macOS и предоставьте ей доступ только к необходимым файлам. На Mac откройте «Системные настройки» → «Основные» → «Общий доступ» → «Удалённый вход», включите его и выберите «Только эти пользователи», разрешив эту учётную запись. Не включайте полный доступ удалённых пользователей к диску без отдельной необходимости. В панели удалённого входа показан адрес SSH Mac. Настройки могут отличаться в зависимости от версии macOS и управления устройством. [Apple: удалённый вход](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
 
-На клиенте создайте отдельный ключ, при запросе выбрав парольную фразу и новое имя файла:
+На клиенте создайте отдельный ключ и при запросе выберите парольную фразу. Если файл уже существует, не перезаписывайте его; выберите другой свободный путь и используйте его в последующих командах:
 
 ```sh
 ssh-keygen -t ed25519 -f ~/.ssh/macbook_demo

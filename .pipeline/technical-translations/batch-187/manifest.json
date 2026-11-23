@@ -28,11 +28,11 @@
       "translationKey": "2026-11-23-macbook-personal-server",
       "source": {
         "path": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-        "sha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
+        "sha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-187/zh-CN/2026-11-23-macbook-personal-server.md",
-        "sha256": "b24cb5b752bfda49108d9609487712088333d71937984c0fdc333ea71f63548f"
+        "sha256": "cdc6da779b23c1462e199b0ed5062ba00a1c8263e25a4581b0e7fa30d87225f4"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-187/zh-CN/2026-11-23-macbook-personal-server.svg",
@@ -49,11 +49,11 @@
       "translationKey": "2026-11-23-macbook-personal-server",
       "source": {
         "path": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-        "sha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
+        "sha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-187/ja/2026-11-23-macbook-personal-server.md",
-        "sha256": "71c2bda9e838eadd3fd5e655787cda52eba5013ab02751d55223ea42c5a6816d"
+        "sha256": "8e0cea4047a931093dc54c70adeeb4b9631aecc8ace039d35580af1fc6de6bf7"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-187/ja/2026-11-23-macbook-personal-server.svg",
@@ -70,11 +70,11 @@
       "translationKey": "2026-11-23-macbook-personal-server",
       "source": {
         "path": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-        "sha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
+        "sha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-187/de/2026-11-23-macbook-personal-server.md",
-        "sha256": "9ccccd344723d9d59610fefe683a37e0fbfea63127fc4d8b40cc095fbcd8f7c4"
+        "sha256": "a91066395f02b9870b0a7311c9493252b19b89a5675acb3950cea547fff747bb"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-187/de/2026-11-23-macbook-personal-server.svg",
@@ -91,11 +91,11 @@
       "translationKey": "2026-11-23-macbook-personal-server",
       "source": {
         "path": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-        "sha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
+        "sha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-187/fr/2026-11-23-macbook-personal-server.md",
-        "sha256": "554090f8efd94c10100d071e84b2d9519a837f53e9cdb3fee1479a90e591e9f7"
+        "sha256": "5e339e5d2b879684c8cb8023bb2d965c504d035cb8d20f39c256005e321abacf"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-187/fr/2026-11-23-macbook-personal-server.svg",
@@ -112,11 +112,11 @@
       "translationKey": "2026-11-23-macbook-personal-server",
       "source": {
         "path": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-        "sha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
+        "sha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-187/ru/2026-11-23-macbook-personal-server.md",
-        "sha256": "aa8b0a6d6a87627de21b41b197f6fb5c6048f61138a76fd256391b19db799e77"
+        "sha256": "96a43be3051e853dfad7f897260a7f224b4089a82913ae2c2baf2afbf199fb8b"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-187/ru/2026-11-23-macbook-personal-server.svg",
@@ -133,11 +133,11 @@
       "translationKey": "2026-11-23-macbook-personal-server",
       "source": {
         "path": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-        "sha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
+        "sha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-187/es/2026-11-23-macbook-personal-server.md",
-        "sha256": "a672f871bd6aacc178f14f83e1782d03e347dbe49d9e77f8867b4a4562efb39a"
+        "sha256": "7598f3b852e63c3a8dd789c74901f9d967707bae698a2ce5b180220364cff663"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-187/es/2026-11-23-macbook-personal-server.svg",

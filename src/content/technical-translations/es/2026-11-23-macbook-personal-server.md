@@ -17,17 +17,17 @@
     "home-server"
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb",
-  "draftSha256": "a672f871bd6aacc178f14f83e1782d03e347dbe49d9e77f8867b4a4562efb39a",
+  "sourceSha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c",
+  "draftSha256": "7598f3b852e63c3a8dd789c74901f9d967707bae698a2ce5b180220364cff663",
   "manifestPath": ".pipeline/technical-translations/batch-187/manifest.json",
-  "manifestSha256": "c51f7d644197e6f5041d0c4b28929075533822bf2a8dfed8c991eb3d93efc752",
-  "publishedAt": "2026-11-23T09:54:23.607Z",
-  "updatedAt": "2026-11-23T09:54:23.607Z",
+  "manifestSha256": "16cf5d86265526a00a784d17066969999aef1b60a87d1737a2da7c9de9e1f8d7",
+  "publishedAt": "2026-11-23T10:04:19.784Z",
+  "updatedAt": "2026-11-23T10:04:19.784Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 188,
-    "approvedAt": "2026-11-23T09:54:23.607Z",
+    "approvedAt": "2026-11-23T10:04:19.784Z",
     "basis": "Owner explicitly requested publication in eight languages; translations were self-reviewed without independent or native-speaker review."
   }
 }
@@ -43,7 +43,7 @@ El diagrama resume la solicitud y la respuesta; la autenticación y la limpieza 
 
 Usa dos equipos en una red privada que controles. Una red compartida o pública puede contener dispositivos no fiables; una dirección privada por sí sola no restringe el acceso. No abras puertos en el router. Usa una cuenta estándar de macOS distinta para esta tarea y dale acceso solo a los archivos necesarios. En el Mac, abre Ajustes del Sistema → General → Compartir → Sesión remota, actívala y selecciona «Solo estos usuarios» para permitir esa cuenta. Mantén desactivado el acceso completo al disco para usuarios remotos salvo que se necesite por separado. El panel de sesión remota muestra la dirección SSH del Mac. Los ajustes pueden variar según la versión de macOS o la gestión del dispositivo. [Apple: sesión remota](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
 
-En el cliente, crea una clave dedicada y elige una frase de contraseña y un nombre de archivo nuevo cuando se soliciten:
+En el cliente, crea una clave dedicada y elige una frase de contraseña cuando se solicite. Si el archivo ya existe, no lo sobrescribas; elige otra ruta libre y úsala en los comandos siguientes:
 
 ```sh
 ssh-keygen -t ed25519 -f ~/.ssh/macbook_demo
