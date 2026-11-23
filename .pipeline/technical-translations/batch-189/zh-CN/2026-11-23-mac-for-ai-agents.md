@@ -10,7 +10,7 @@
 }
 ---
 
-如果您已经拥有笔记本电脑并希望 AI 代理运行浏览器测试或计划作业，我推荐 **Mac mini M6**。如果您希望在通勤和旅行中拥有相同的开发环境并且更喜欢一台计算机，那么 **13 英寸 MacBook Air M5** 更适合。如果您打算使用 Ollama 等工具自行运行模型，请首先检查所选模型和上下文所需的内存。对于需要 32GB 以上的固定机器，请考虑 **48GB 和 64GB Mac mini M5 Pro** 配置。 [Apple Mac mini 规格](https://www.apple.com/kr/mac-mini/specs/) · [Apple MacBook Air 规格](https://www.apple.com/kr/macbook-air/specs/)
+如果您已经拥有笔记本电脑并希望 AI 代理运行浏览器测试或计划作业，我推荐 **Mac mini M6**。如果您希望在通勤和旅行中拥有相同的开发环境并且更喜欢一台计算机，那么 **13 英寸 MacBook Air M5** 更适合。如果您打算使用 Ollama 等工具自行运行模型，请首先检查所选模型和上下文所需的内存。对于需要超过 32GB 的固定机器，请考虑 **48GB 和 64GB Mac mini M5 Pro** 配置。 [Apple Mac mini 规格](https://www.apple.com/kr/mac-mini/specs/) · [Apple MacBook Air 规格](https://www.apple.com/kr/macbook-air/specs/)
 
 ![决策流程：考虑针对固定代理的 Mac mini 或针对频繁旅行的 MacBook Air，并在其中运行本地模型时检查内存要求。](2026-11-23-mac-for-ai-agents.svg)
 

@@ -32,7 +32,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-189/zh-CN/2026-11-23-mac-for-ai-agents.md",
-        "sha256": "84f4592fb5ce0a50687967295f563952c6abb462c2a2177365d2877ed3f34829"
+        "sha256": "61241bb5b77f9696a8325c136d662e1bc0c8fcc56de9ac297983cadb0e5d1ae0"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-189/zh-CN/2026-11-23-mac-for-ai-agents.svg",
@@ -137,7 +137,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-189/es/2026-11-23-mac-for-ai-agents.md",
-        "sha256": "9e8c8ce716b2e617ea0962a87ad91e50df78f927f22009a6f6187e999183643a"
+        "sha256": "9e7625d919fa6fcdd1b7834ee1bcd083dd5d11d7b88d289946b6db1f465954e8"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-189/es/2026-11-23-mac-for-ai-agents.svg",

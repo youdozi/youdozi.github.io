@@ -18,22 +18,22 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-mac-for-ai-agents.md",
   "sourceSha256": "cf0a6f26766c7d6ada501ad70e444774995908e2d4c22f1683cddffe6211454a",
-  "draftSha256": "84f4592fb5ce0a50687967295f563952c6abb462c2a2177365d2877ed3f34829",
+  "draftSha256": "61241bb5b77f9696a8325c136d662e1bc0c8fcc56de9ac297983cadb0e5d1ae0",
   "manifestPath": ".pipeline/technical-translations/batch-189/manifest.json",
-  "manifestSha256": "c063da1bf76610754a85785f01e920e7388011df84c7cb69cbdc411bccd4f332",
-  "publishedAt": "2026-11-23T14:36:12.430Z",
-  "updatedAt": "2026-11-23T14:36:12.430Z",
+  "manifestSha256": "2ec2960a7749800829cf4dba332b1a2b1e8bb25a342c7e0a4ea731ed67d649bc",
+  "publishedAt": "2026-11-23T14:38:56.070Z",
+  "updatedAt": "2026-11-23T14:38:56.070Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 189,
-    "approvedAt": "2026-11-23T14:36:12.430Z",
+    "approvedAt": "2026-11-23T14:38:56.070Z",
     "basis": "Owner explicitly requested publication in eight languages; machine-assisted translations self-reviewed without independent or native-speaker review."
   }
 }
 ---
 
-如果您已经拥有笔记本电脑并希望 AI 代理运行浏览器测试或计划作业，我推荐 **Mac mini M6**。如果您希望在通勤和旅行中拥有相同的开发环境并且更喜欢一台计算机，那么 **13 英寸 MacBook Air M5** 更适合。如果您打算使用 Ollama 等工具自行运行模型，请首先检查所选模型和上下文所需的内存。对于需要 32GB 以上的固定机器，请考虑 **48GB 和 64GB Mac mini M5 Pro** 配置。 [Apple Mac mini 规格](https://www.apple.com/kr/mac-mini/specs/) · [Apple MacBook Air 规格](https://www.apple.com/kr/macbook-air/specs/)
+如果您已经拥有笔记本电脑并希望 AI 代理运行浏览器测试或计划作业，我推荐 **Mac mini M6**。如果您希望在通勤和旅行中拥有相同的开发环境并且更喜欢一台计算机，那么 **13 英寸 MacBook Air M5** 更适合。如果您打算使用 Ollama 等工具自行运行模型，请首先检查所选模型和上下文所需的内存。对于需要超过 32GB 的固定机器，请考虑 **48GB 和 64GB Mac mini M5 Pro** 配置。 [Apple Mac mini 规格](https://www.apple.com/kr/mac-mini/specs/) · [Apple MacBook Air 规格](https://www.apple.com/kr/macbook-air/specs/)
 
 ![决策流程：考虑针对固定代理的 Mac mini 或针对频繁旅行的 MacBook Air，并在其中运行本地模型时检查内存要求。](/assets/diagrams/technical/zh-CN-2026-11-23-mac-for-ai-agents.svg)
 

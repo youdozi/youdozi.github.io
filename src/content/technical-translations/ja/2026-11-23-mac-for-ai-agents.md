@@ -20,14 +20,14 @@
   "sourceSha256": "cf0a6f26766c7d6ada501ad70e444774995908e2d4c22f1683cddffe6211454a",
   "draftSha256": "5c3b55e9ce58ef1c314569772e35b27a725a559a42942dc1f928ff9c7b996d51",
   "manifestPath": ".pipeline/technical-translations/batch-189/manifest.json",
-  "manifestSha256": "c063da1bf76610754a85785f01e920e7388011df84c7cb69cbdc411bccd4f332",
-  "publishedAt": "2026-11-23T14:36:12.430Z",
-  "updatedAt": "2026-11-23T14:36:12.430Z",
+  "manifestSha256": "2ec2960a7749800829cf4dba332b1a2b1e8bb25a342c7e0a4ea731ed67d649bc",
+  "publishedAt": "2026-11-23T14:38:56.070Z",
+  "updatedAt": "2026-11-23T14:38:56.070Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 189,
-    "approvedAt": "2026-11-23T14:36:12.430Z",
+    "approvedAt": "2026-11-23T14:38:56.070Z",
     "basis": "Owner explicitly requested publication in eight languages; machine-assisted translations self-reviewed without independent or native-speaker review."
   }
 }

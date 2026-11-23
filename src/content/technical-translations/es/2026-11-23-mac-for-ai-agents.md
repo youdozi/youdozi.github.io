@@ -18,16 +18,16 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-mac-for-ai-agents.md",
   "sourceSha256": "cf0a6f26766c7d6ada501ad70e444774995908e2d4c22f1683cddffe6211454a",
-  "draftSha256": "9e8c8ce716b2e617ea0962a87ad91e50df78f927f22009a6f6187e999183643a",
+  "draftSha256": "9e7625d919fa6fcdd1b7834ee1bcd083dd5d11d7b88d289946b6db1f465954e8",
   "manifestPath": ".pipeline/technical-translations/batch-189/manifest.json",
-  "manifestSha256": "c063da1bf76610754a85785f01e920e7388011df84c7cb69cbdc411bccd4f332",
-  "publishedAt": "2026-11-23T14:36:12.430Z",
-  "updatedAt": "2026-11-23T14:36:12.430Z",
+  "manifestSha256": "2ec2960a7749800829cf4dba332b1a2b1e8bb25a342c7e0a4ea731ed67d649bc",
+  "publishedAt": "2026-11-23T14:38:56.070Z",
+  "updatedAt": "2026-11-23T14:38:56.070Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 189,
-    "approvedAt": "2026-11-23T14:36:12.430Z",
+    "approvedAt": "2026-11-23T14:38:56.070Z",
     "basis": "Owner explicitly requested publication in eight languages; machine-assisted translations self-reviewed without independent or native-speaker review."
   }
 }
@@ -48,7 +48,7 @@ Con inferencia local, el modelo también usa la memoria de su Mac. Incluso con e
 | Carga de trabajo principal | mi eleccion | Consultar antes de comprar |
 | --- | --- | --- |
 | Codificación con un modelo en la nube en un escritorio fijo y pruebas ocasionales | Mac mini M6 16GB | Compruebe si la base 256GB es suficiente. Si mantiene cachés de compilación e imágenes Docker con regularidad, compare las configuraciones comenzando en 512GB. |
-| Trabajar en cafeterías y oficinas. | 13 pulgadas MacBook Air M5 16GB · 512GB | Si las pruebas de contenedores y navegadores se superponen con frecuencia, primero considere 24GB. |
+| Trabajar en cafeterías y oficinas. | 13 pulgadas: MacBook Air M5 16GB · 512GB | Si las pruebas de contenedores y navegadores se superponen con frecuencia, primero considere 24GB. |
 | Ejecutar contenedores y pruebas simultáneamente en varias carpetas de trabajo | Mac mini M6 para uso estacionario, o MacBook Air M5 para uso móvil, con 24–32GB | Verifique la cantidad de servicios simultáneos y la presión de la memoria. Verifique también la memoria asignada a la máquina virtual de Docker Desktop. |
 | Ejecutando modelos locales diariamente y necesitando más de 32GB | Mac mini M5 Pro 48GB · 64GB para uso estacionario | Tenga en cuenta el navegador y el IDE que se ejecutan simultáneamente después de cargar el modelo. Si también necesita el mismo modelo fuera de casa, determine la capacidad requerida y compare las configuraciones de MacBook Pro con esa capacidad. |
 
@@ -61,7 +61,7 @@ Estos son los precios iniciales habituales de las configuraciones básicas consu
 | Modelo | Memoria base · SSD | Precio inicial |
 | --- | --- | ---: |
 | Mac mini M6 | 16GB · 256GB | KRW 1,499,000 |
-| 13-pulgadas MacBook Air M5 | 16GB · 512GB | KRW 2,190,000 |
+| 13 pulgadas: MacBook Air M5 | 16GB · 512GB | KRW 2,190,000 |
 | Mac mini M5 Pro | 24GB · 512GB | KRW 2,990,000 |
 
 Los precios iniciales de los dos modelos base 16GB difieren en KRW 691,000. El MacBook Air incluye pantalla, teclado y batería, y su base SSD es más grande. Si ya tiene un monitor y dispositivos de entrada, el Mac mini tiene una mayor ventaja de precio. Si planea ampliar el SSD o la memoria, compare las configuraciones deseadas en el carrito de compras. [Tienda Apple Korea](https://www.apple.com/kr/shop/buy-mac) · [Precios de lanzamiento Mac mini](https://www.apple.com/kr/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/) · [Especificaciones Mac mini](https://www.apple.com/kr/mac-mini/specs/) · [Especificaciones MacBook Air](https://www.apple.com/kr/macbook-air/specs/)
