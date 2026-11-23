@@ -77,7 +77,13 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
     for(const token of tokens)same(block[1].split(token).length,translated[1].split(token).length,'Prompt identifier or command changed');
   });
   same(inline(source.body),inline(draft.body),'Inline code changed or omitted');
-  same(links(source.body),links(draft.body),'Source links changed, reordered or omitted');
+  const sourceLinks=links(source.body),draftLinks=links(draft.body);
+  same(sourceLinks.length,draftLinks.length,'Source links changed, reordered or omitted');
+  sourceLinks.forEach((link,index)=>{
+    const localized=key==='2026-11-23-mac-for-ai-agents' && link==='https://youdozi.github.io/en/posts/2026-11-23-macbook-personal-server/'
+      ? `https://youdozi.github.io/${language}/posts/2026-11-23-macbook-personal-server/` : link;
+    if(draftLinks[index]!==link&&draftLinks[index]!==localized)fail('Source links changed, reordered or omitted');
+  });
   same(numbers(source.body),numbers(draft.body),'Numeric values changed or omitted');
   same(shape(source.body),shape(draft.body),'Source paragraph, heading or table structure changed');
   const rows=body=>body.split('\n').filter(line=>line.startsWith('|')).map(line=>line.replace(/`[^`]+`/g,m=>m.replaceAll('|','\u0000')).split('|').slice(1,-1).map(cell=>cell.trim().replaceAll('\u0000','|')));

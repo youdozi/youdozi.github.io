@@ -39,6 +39,14 @@ test('false sign mapped to a positive table value is rejected',async()=>{
 test('nonexistent localized link replacing a real English destination is rejected',async()=>{
   const f=await fixture();assert.throws(()=>check(f,f.draft.replace('/en/posts/','/es/posts/')),/Source links/);
 });
+test('Mac comparison links to the matching language of the existing server guide',async()=>{
+  const key='2026-11-23-mac-for-ai-agents';
+  const source=await readFile(join(root,`src/content/posts/en/${key}.md`),'utf8');
+  const draft=await readFile(join(root,`.pipeline/technical-translations/batch-189/es/${key}.md`),'utf8');
+  const options={formatVersion:3,mainVisual:{path:'assets/img/architecture/mac-for-ai-agents-en.svg'}};
+  assert.doesNotThrow(()=>compareManuscript(source,draft,null,key,'es',options));
+  assert.throws(()=>compareManuscript(source,draft.replace('/es/posts/','/ja/posts/'),null,key,'es',options),/Source links/);
+});
 test('inheriting an English publication date in a private translation is rejected',async()=>{
   const f=await fixture();assert.throws(()=>check(f,f.draft.replace('state: "draft"','state: "draft"\npublishedAt: "2026-10-29"')),/must not claim publication/);
 });

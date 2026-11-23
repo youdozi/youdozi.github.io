@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="626" viewBox="0 0 640 626" role="img" aria-labelledby="title desc" xml:lang="zh-CN">
+  <title id="title">为 AI 代理选择 Mac</title>
+  <desc id="desc">从 Mac mini M6 开始进行固定设置，或从 MacBook Air M5 开始进行移动设置。检查本地模型的内存需求。</desc>
+  <rect x="2" y="2" width="636" height="622" rx="24" fill="#f8fafc" stroke="#b7c7d7" stroke-width="4"/>
+  <g font-family="system-ui, Apple SD Gothic Neo, sans-serif" text-anchor="middle" fill="#132438">
+    <text x="320" y="62" font-size="28" font-weight="700">在哪里使用 AI 代理？</text>
+    <g fill="none" stroke="#526980" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M320 86v33H171v30m149-30h149v30"/>
+      <path d="m160 138 11 11 11-11m276 0 11 11 11-11"/>
+      <path d="M171 352v27h298v-27m-149 27v35m-11-11 11 11 11-11"/>
+    </g>
+    <rect x="29" y="157" width="284" height="187" rx="18" fill="#e1efeb" stroke="#397568" stroke-width="3"/>
+    <rect x="327" y="157" width="284" height="187" rx="18" fill="#e6eefb" stroke="#536f9c" stroke-width="3"/>
+    <text x="171" y="208" font-size="32">固定式</text>
+    <text x="171" y="259" font-size="25" font-weight="700">Mac mini M6</text>
+    <text x="171" y="307" font-size="22">预定·远程</text>
+    <text x="469" y="208" font-size="32">移动式</text>
+    <text x="469" y="259" font-size="25" font-weight="700">MacBook Air M5</text>
+    <text x="469" y="307" font-size="22">出差·远程工作</text>
+    <rect x="29" y="426" width="582" height="165" rx="18" fill="#fff3dc" stroke="#836b36" stroke-width="3"/>
+    <text x="320" y="477" font-size="28" font-weight="700">运行本地模型？</text>
+    <text x="320" y="526" font-size="23">使用实际模型和上下文</text>
+    <text x="320" y="563" font-size="23">检查内存需求</text>
+  </g>
+</svg>
