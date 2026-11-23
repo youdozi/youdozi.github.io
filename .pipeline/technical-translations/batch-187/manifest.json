@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-187",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "8ded0a8ff263bbd72e409bfa4e8a531c6a2463b1",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Self review against Korean and English sources; no independent language review.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-23-claude-mythos-defensive-review",
+      "language": "zh-CN",
+      "translationKey": "2026-11-23-claude-mythos-defensive-review",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "f2681dfbb0c7b7d09b2e0d0b566305cdaec11b271949b3a7aa2785e56013639e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-187/zh-CN/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "8abd5111ed9d76ec1c275f0a1c2cd9f4cfbadedb974779e2cf1a2deba5537615"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-187/zh-CN/2026-11-23-claude-mythos-defensive-review.svg",
+        "sha256": "9c2f3e878136d92047874cf076845ef044aa65979ac434d0fce795935246f322"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/claude-mythos-defensive-review-en.svg",
+        "sha256": "6a700b23d2e29a4251ee4cc935b0806457888ccd01a959eba2f2d3e5b3208a1f"
+      }
+    },
+    {
+      "key": "ja-2026-11-23-claude-mythos-defensive-review",
+      "language": "ja",
+      "translationKey": "2026-11-23-claude-mythos-defensive-review",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "f2681dfbb0c7b7d09b2e0d0b566305cdaec11b271949b3a7aa2785e56013639e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-187/ja/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "0c16a411b497ed624599dd4d6be3847bc1501d75fa6cadc74c88784235ddf898"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-187/ja/2026-11-23-claude-mythos-defensive-review.svg",
+        "sha256": "5a2eff88862cfc92ebd858319ae8a5f67e4b6418a68d54921edda8eedcd3c859"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/claude-mythos-defensive-review-en.svg",
+        "sha256": "6a700b23d2e29a4251ee4cc935b0806457888ccd01a959eba2f2d3e5b3208a1f"
+      }
+    },
+    {
+      "key": "de-2026-11-23-claude-mythos-defensive-review",
+      "language": "de",
+      "translationKey": "2026-11-23-claude-mythos-defensive-review",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "f2681dfbb0c7b7d09b2e0d0b566305cdaec11b271949b3a7aa2785e56013639e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-187/de/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "deb5fedfdc845713595ecb0a8223a9aba5cd7bcfba8080f0f4512f61e4c2737c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-187/de/2026-11-23-claude-mythos-defensive-review.svg",
+        "sha256": "a324ee8566b44ef97de891642949383519bfcf5a984f29fd5db6dfb3736b3828"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/claude-mythos-defensive-review-en.svg",
+        "sha256": "6a700b23d2e29a4251ee4cc935b0806457888ccd01a959eba2f2d3e5b3208a1f"
+      }
+    },
+    {
+      "key": "fr-2026-11-23-claude-mythos-defensive-review",
+      "language": "fr",
+      "translationKey": "2026-11-23-claude-mythos-defensive-review",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "f2681dfbb0c7b7d09b2e0d0b566305cdaec11b271949b3a7aa2785e56013639e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-187/fr/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "085c9e9cf2bf78629c17ced79040f447c92a08d8c6521a9aa6dca5be7806555c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-187/fr/2026-11-23-claude-mythos-defensive-review.svg",
+        "sha256": "3e4b75e0a15d23a04f30f80bbbb7b75ee3c43134728ea0676a229172e76cd8e9"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/claude-mythos-defensive-review-en.svg",
+        "sha256": "6a700b23d2e29a4251ee4cc935b0806457888ccd01a959eba2f2d3e5b3208a1f"
+      }
+    },
+    {
+      "key": "ru-2026-11-23-claude-mythos-defensive-review",
+      "language": "ru",
+      "translationKey": "2026-11-23-claude-mythos-defensive-review",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "f2681dfbb0c7b7d09b2e0d0b566305cdaec11b271949b3a7aa2785e56013639e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-187/ru/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "2ec82b5904989ac5d4df91700c9b5a10ee751f4f053af2072b987defe534b8bf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-187/ru/2026-11-23-claude-mythos-defensive-review.svg",
+        "sha256": "ac2f9be943400dea837a655c5dad9e833a07ee19bddb3b14a0792cceab26ca76"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/claude-mythos-defensive-review-en.svg",
+        "sha256": "6a700b23d2e29a4251ee4cc935b0806457888ccd01a959eba2f2d3e5b3208a1f"
+      }
+    },
+    {
+      "key": "es-2026-11-23-claude-mythos-defensive-review",
+      "language": "es",
+      "translationKey": "2026-11-23-claude-mythos-defensive-review",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "f2681dfbb0c7b7d09b2e0d0b566305cdaec11b271949b3a7aa2785e56013639e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-187/es/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "35a87f333c7cff58448a09b566b94b1f0bd532ef15cc37ba72168ac0004326de"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-187/es/2026-11-23-claude-mythos-defensive-review.svg",
+        "sha256": "fcf30a4b28100a1b84c7f04cc78038f24119ee551e4881e9c6ad263d4017c26f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/claude-mythos-defensive-review-en.svg",
+        "sha256": "6a700b23d2e29a4251ee4cc935b0806457888ccd01a959eba2f2d3e5b3208a1f"
+      }
+    }
+  ]
+}
