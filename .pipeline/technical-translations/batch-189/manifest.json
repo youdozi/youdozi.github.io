@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-189",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "258de411930750adb53084454d3fd3ff014852e2",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Machine-assisted translation and self-review against the English and Korean sources; no independent or native-speaker review.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-23-mac-for-ai-agents",
+      "language": "zh-CN",
+      "translationKey": "2026-11-23-mac-for-ai-agents",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "cf0a6f26766c7d6ada501ad70e444774995908e2d4c22f1683cddffe6211454a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-189/zh-CN/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "84f4592fb5ce0a50687967295f563952c6abb462c2a2177365d2877ed3f34829"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-189/zh-CN/2026-11-23-mac-for-ai-agents.svg",
+        "sha256": "d82390a253e27f394e70a6f5c40c34520dc68239e8323259f1903b24804b6275"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-for-ai-agents-en.svg",
+        "sha256": "f3f1d86f281c4b9972ec7c32fc1161f56142d98846a39fc8f0b6c281b3b6921b"
+      }
+    },
+    {
+      "key": "ja-2026-11-23-mac-for-ai-agents",
+      "language": "ja",
+      "translationKey": "2026-11-23-mac-for-ai-agents",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "cf0a6f26766c7d6ada501ad70e444774995908e2d4c22f1683cddffe6211454a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-189/ja/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "5c3b55e9ce58ef1c314569772e35b27a725a559a42942dc1f928ff9c7b996d51"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-189/ja/2026-11-23-mac-for-ai-agents.svg",
+        "sha256": "9163fe4f910a34d43d18888f66e63870379c10aac119a8cd0f288919bf54d1e7"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-for-ai-agents-en.svg",
+        "sha256": "f3f1d86f281c4b9972ec7c32fc1161f56142d98846a39fc8f0b6c281b3b6921b"
+      }
+    },
+    {
+      "key": "de-2026-11-23-mac-for-ai-agents",
+      "language": "de",
+      "translationKey": "2026-11-23-mac-for-ai-agents",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "cf0a6f26766c7d6ada501ad70e444774995908e2d4c22f1683cddffe6211454a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-189/de/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "871821a48c4411d2b2511bb9e1043995022828457f731f2fc3a2c1a7662c16a1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-189/de/2026-11-23-mac-for-ai-agents.svg",
+        "sha256": "42b930dead36032a36ee338206f6ea72066afdaa24f19e317f3149216be27af1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-for-ai-agents-en.svg",
+        "sha256": "f3f1d86f281c4b9972ec7c32fc1161f56142d98846a39fc8f0b6c281b3b6921b"
+      }
+    },
+    {
+      "key": "fr-2026-11-23-mac-for-ai-agents",
+      "language": "fr",
+      "translationKey": "2026-11-23-mac-for-ai-agents",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "cf0a6f26766c7d6ada501ad70e444774995908e2d4c22f1683cddffe6211454a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-189/fr/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "33ef671e81cc34ba95ef5e8d4afd5050360594225fa4cd451a0ff5d9b5bd330a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-189/fr/2026-11-23-mac-for-ai-agents.svg",
+        "sha256": "2094a527fce302bc5ade1d3190b0f4e1547f69a5b35a0b2f126420336f8a51ba"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-for-ai-agents-en.svg",
+        "sha256": "f3f1d86f281c4b9972ec7c32fc1161f56142d98846a39fc8f0b6c281b3b6921b"
+      }
+    },
+    {
+      "key": "ru-2026-11-23-mac-for-ai-agents",
+      "language": "ru",
+      "translationKey": "2026-11-23-mac-for-ai-agents",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "cf0a6f26766c7d6ada501ad70e444774995908e2d4c22f1683cddffe6211454a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-189/ru/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "ca0224ccb4087e3372769a63f29d85a65ac82ca5ecde769398b56450f5d1b9e8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-189/ru/2026-11-23-mac-for-ai-agents.svg",
+        "sha256": "77acf663181f511c1665ac2f4d8ab660c572db7bc210cf8b5b474d624525a281"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-for-ai-agents-en.svg",
+        "sha256": "f3f1d86f281c4b9972ec7c32fc1161f56142d98846a39fc8f0b6c281b3b6921b"
+      }
+    },
+    {
+      "key": "es-2026-11-23-mac-for-ai-agents",
+      "language": "es",
+      "translationKey": "2026-11-23-mac-for-ai-agents",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "cf0a6f26766c7d6ada501ad70e444774995908e2d4c22f1683cddffe6211454a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-189/es/2026-11-23-mac-for-ai-agents.md",
+        "sha256": "9e8c8ce716b2e617ea0962a87ad91e50df78f927f22009a6f6187e999183643a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-189/es/2026-11-23-mac-for-ai-agents.svg",
+        "sha256": "a800ab1ddab7b342e9075c2f572940a178ad99e3b4de36fd237db3b2e71de1bc"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-for-ai-agents-en.svg",
+        "sha256": "f3f1d86f281c4b9972ec7c32fc1161f56142d98846a39fc8f0b6c281b3b6921b"
+      }
+    }
+  ]
+}
