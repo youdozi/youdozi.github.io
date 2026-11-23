@@ -19,8 +19,8 @@
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
   "sourceSha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c",
   "draftSha256": "7598f3b852e63c3a8dd789c74901f9d967707bae698a2ce5b180220364cff663",
-  "manifestPath": ".pipeline/technical-translations/batch-187/manifest.json",
-  "manifestSha256": "16cf5d86265526a00a784d17066969999aef1b60a87d1737a2da7c9de9e1f8d7",
+  "manifestPath": ".pipeline/technical-translations/batch-188/manifest.json",
+  "manifestSha256": "0299e8051adcb92b1b0d8f83c7f973d232b9676d01fd9a79b6552df09c1e8612",
   "publishedAt": "2026-11-23T10:04:19.784Z",
   "updatedAt": "2026-11-23T10:04:19.784Z",
   "approval": {
