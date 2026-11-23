@@ -1,0 +1,39 @@
+<svg xml:lang="fr" xmlns="http://www.w3.org/2000/svg" width="420" height="380" viewBox="0 0 420 380" role="img" aria-labelledby="title desc">
+  <title id="title">Recherche de produits et traitement du statut 404</title>
+  <desc id="desc">L’application utilise RestClient pour rechercher l’identifiant transmis par RestTestClient. Le serveur en amont renvoie 200 et Keyboard pour l’identifiant 42, et 404 pour le 99. L’application renvoie 200 et Keyboard ou 404 avec un corps vide.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#51657e"/>
+    </marker>
+  </defs>
+  <rect width="420" height="380" rx="18" fill="#f4f7fb"/>
+  <g stroke="#51657e" stroke-width="1.6" fill="none" marker-end="url(#arrow)">
+    <path d="M210 79V108"/>
+    <path d="M210 171V194H109V213"/>
+    <path d="M210 171V194H311V213"/>
+    <path d="M109 273V305"/>
+    <path d="M311 273V305"/>
+  </g>
+  <g stroke-width="1.2">
+    <rect x="40" y="20" width="340" height="59" rx="10" fill="#fff" stroke="#b7c6d8"/>
+    <rect x="40" y="111" width="340" height="60" rx="10" fill="#fff" stroke="#b7c6d8"/>
+    <rect x="14" y="216" width="190" height="57" rx="10" fill="#e7f4ed" stroke="#74a68c"/>
+    <rect x="216" y="216" width="190" height="57" rx="10" fill="#fff2e2" stroke="#bd925f"/>
+    <rect x="14" y="308" width="190" height="52" rx="10" fill="#fff" stroke="#74a68c"/>
+    <rect x="216" y="308" width="190" height="52" rx="10" fill="#fff" stroke="#bd925f"/>
+  </g>
+  <g fill="#172c43" font-family="system-ui, sans-serif" text-anchor="middle" font-size="15">
+    <text x="210" y="43" font-weight="700">RestTestClient → application Spring MVC</text>
+    <text x="210" y="65">GET /products/{id}</text>
+    <text x="210" y="135" font-weight="700">RestClient de l’application → API en amont</text>
+    <text x="210" y="157">GET /items/{id}</text>
+    <text x="109" y="239" font-weight="700">ID 42 · amont : 200</text>
+    <text x="109" y="260">Corps : Keyboard</text>
+    <text x="311" y="239" font-weight="700">ID 99 · amont : 404</text>
+    <text x="311" y="260">Exception de RestClient</text>
+    <text x="109" y="331" font-weight="700" textLength="170" lengthAdjust="spacingAndGlyphs">L’application renvoie 200</text>
+    <text x="109" y="352">Corps : Keyboard</text>
+    <text x="311" y="331" font-weight="700" textLength="170" lengthAdjust="spacingAndGlyphs">Intercepte et renvoie 404</text>
+    <text x="311" y="352">Corps vide</text>
+  </g>
+</svg>

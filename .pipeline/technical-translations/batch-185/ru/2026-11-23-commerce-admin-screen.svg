@@ -1,0 +1,44 @@
+<svg xml:lang="ru" xmlns="http://www.w3.org/2000/svg" width="400" height="446" viewBox="0 0 400 446" role="img" aria-labelledby="title desc">
+  <title id="title">Проверка существующего платежа и резерва товара</title>
+  <desc id="desc">Для заказа с неизвестным итогом оплаты запросить существующую операцию у провайдера. При отсутствии ответа сохранить текущие состояния. При подтверждении оплаты проверить резерв и записать запрос на возврат либо выделить товар и поставить его на отгрузку.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0 0l10 5-10 5z" fill="#456581"/>
+    </marker>
+  </defs>
+  <rect width="400" height="446" rx="15" fill="#f3f6f9"/>
+  <g fill="none" stroke="#456581" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)">
+    <path d="M200 81V104"/>
+    <path d="M96 157v28h-59v92h18"/>
+    <path d="M275 157v20"/>
+    <path d="M238 229v86"/>
+    <path d="M355 229h20v169h-28"/>
+  </g>
+  <g stroke-width="1">
+    <rect x="30" y="24" width="340" height="57" rx="6" fill="#e4effa" stroke="#a8c3dc"/>
+    <rect x="30" y="104" width="340" height="53" rx="6" fill="#fff" stroke="#b5c6d6"/>
+    <rect x="138" y="177" width="232" height="52" rx="6" fill="#fff" stroke="#b5c6d6"/>
+    <rect x="55" y="251" width="151" height="52" rx="6" fill="#fff" stroke="#b5c6d6"/>
+    <rect x="55" y="315" width="292" height="50" rx="6" fill="#fff1da" stroke="#dab175"/>
+    <rect x="55" y="374" width="292" height="50" rx="6" fill="#e4f3eb" stroke="#97c5af"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="16" fill="#182d41" text-anchor="middle">
+    <text x="200" y="48" font-weight="700">Проверить существующий платёж</text>
+    <text x="200" y="68" font-size="13">Использовать ID операции провайдера из заказа</text>
+    <text x="200" y="136" font-weight="700">Платёж подтверждён?</text>
+    <text x="254" y="208" font-weight="700">Проверить резерв</text>
+    <text x="130" y="269" font-size="13" font-weight="700">Итог неизвестен</text>
+    <text x="130" y="283" font-size="11">Сохранить состояния</text>
+    <text x="130" y="296" font-size="11">резерва и отгрузки</text>
+    <text x="201" y="337" font-weight="700">Записать запрос на возврат</text>
+    <text x="201" y="354" font-size="13">Заказ отменён, отгрузка приостановлена</text>
+    <text x="201" y="396" font-weight="700">Подтвердить заказ и оплату</text>
+    <text x="201" y="413" font-size="13">Выделить товар и поставить на отгрузку</text>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#385771">
+    <text x="44" y="204">Нет ответа</text>
+    <text x="283" y="172">Подтверждён</text>
+    <text x="244" y="270">Снят</text>
+    <text x="367" y="267" text-anchor="end">Активен</text>
+  </g>
+</svg>

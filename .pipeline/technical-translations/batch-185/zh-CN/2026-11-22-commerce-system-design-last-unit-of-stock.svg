@@ -1,0 +1,46 @@
+<svg xml:lang="zh-CN" xmlns="http://www.w3.org/2000/svg" width="420" height="462" viewBox="0 0 420 462" role="img" aria-labelledby="title desc">
+  <title id="title">将支付结果应用于库存预留</title>
+  <desc id="desc">已支付或待退款的支付结果不产生新任务。结果未明时维持当前预留状态。确认交易关闭且未扣款后释放预留。如确认已付款，库存仍预留时发起履约，已释放时发起退款。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#546984"/>
+    </marker>
+  </defs>
+  <rect width="420" height="462" rx="16" fill="#f4f7fb"/>
+  <g fill="none" stroke="#546984" stroke-width="1.6" marker-end="url(#arrow)">
+    <path d="M210 64V82H101V101"/>
+    <path d="M210 64V82H303V101"/>
+    <path d="M303 160V183H72V203"/>
+    <path d="M303 160V183H210V203"/>
+    <path d="M303 160V183H348V203"/>
+    <path d="M348 269V298H109V322"/>
+    <path d="M348 269V298H311V322"/>
+  </g>
+  <g stroke-width="1.2">
+    <rect x="29" y="15" width="362" height="49" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="14" y="104" width="174" height="56" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="205" y="104" width="196" height="56" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="12" y="206" width="120" height="63" rx="10" fill="#fff0df" stroke="#cfa671"/>
+    <rect x="150" y="206" width="120" height="63" rx="10" fill="#fff0df" stroke="#cfa671"/>
+    <rect x="288" y="206" width="120" height="63" rx="10" fill="#e9f2ff" stroke="#7a9ec4"/>
+    <rect x="13" y="325" width="192" height="107" rx="10" fill="#e7f5eb" stroke="#7ca98e"/>
+    <rect x="215" y="325" width="192" height="107" rx="10" fill="#e9f2ff" stroke="#7a9ec4"/>
+  </g>
+  <g fill="#172f48" font-family="system-ui, sans-serif" text-anchor="middle" font-size="16">
+    <text x="210" y="45" font-weight="700">读取已核实的支付结果及订单状态</text>
+    <text x="101" y="128" font-size="14" font-weight="700">已支付或待退款</text>
+    <text x="101" y="149">不创建新任务</text>
+    <text x="303" y="139" font-weight="700">已核实的支付结果</text>
+    <text x="72" y="230" font-weight="700">结果未明</text>
+    <text x="72" y="252">维持预留状态</text>
+    <text x="210" y="230" font-weight="700">关闭且未扣款</text>
+    <text x="210" y="252">释放预留</text>
+    <text x="348" y="242" font-weight="700">已支付</text>
+    <text x="109" y="355" font-weight="700">库存仍预留</text>
+    <text x="109" y="380">确认并分配库存</text>
+    <text x="109" y="405">将履约加入队列</text>
+    <text x="311" y="355" font-weight="700">库存已释放</text>
+    <text x="311" y="380">订单保持取消</text>
+    <text x="311" y="405">将退款加入队列</text>
+  </g>
+</svg>

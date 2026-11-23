@@ -1,0 +1,26 @@
+<svg xml:lang="fr" xmlns="http://www.w3.org/2000/svg" width="468" height="461" viewBox="0 0 468 461" role="img" aria-labelledby="title desc">
+  <title id="title">État de la commande au retour du paiement</title>
+  <desc id="desc">Rechercher la commande existante. Afficher un message d’attente pendant le chargement et proposer de réessayer en cas d’échec. Selon l’état du paiement et de la commande, proposer d’actualiser le statut, de suivre l’envoi, de parcourir les produits, d’actualiser le remboursement ou d’en consulter les détails.</desc>
+  <rect width="468" height="461" rx="16" fill="#f4f7fb"/>
+  <path d="M25 66V426 M25 100H44 M25 158H44 M25 225H44 M25 283H44 M25 341H44 M25 399H44" fill="none" stroke="#7185a0" stroke-width="1.6"/>
+  <g stroke="#b5c4d6">
+    <rect x="15" y="14" width="438" height="52" rx="9" fill="#fff"/>
+    <rect x="44" y="80" width="408" height="47" rx="8" fill="#fff"/>
+    <rect x="44" y="138" width="408" height="47" rx="8" fill="#fff2e5"/>
+    <rect x="44" y="197" width="408" height="56" rx="8" fill="#eef4ff"/>
+    <rect x="44" y="263" width="408" height="42" rx="8" fill="#e9f5ec"/>
+    <rect x="44" y="321" width="408" height="42" rx="8" fill="#fff"/>
+    <rect x="44" y="379" width="408" height="64" rx="8" fill="#eef4ff"/>
+  </g>
+  <g fill="#203951" font-family="system-ui, sans-serif" font-size="16">
+    <text x="34" y="46" font-size="18" font-weight="700">Retour du paiement · rechercher la commande</text>
+    <text x="61" y="109">Chargement · afficher un message d’attente</text>
+    <text x="61" y="167">Échec de la recherche · recharger le statut</text>
+    <text x="61" y="220" font-weight="700" textLength="378" lengthAdjust="spacingAndGlyphs">Paiement indéterminé ou commande en vérification</text>
+    <text x="61" y="243">Actualiser l’état de la commande</text>
+    <text x="61" y="289">Paiement et commande confirmés · suivre l’envoi</text>
+    <text x="61" y="347">Annulée sans débit · parcourir les produits</text>
+    <text x="61" y="403">Remboursement en cours · actualiser son statut</text>
+    <text x="61" y="428">Remboursement terminé · voir les détails</text>
+  </g>
+</svg>

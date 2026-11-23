@@ -1,0 +1,46 @@
+<svg xml:lang="ru" xmlns="http://www.w3.org/2000/svg" width="420" height="462" viewBox="0 0 420 462" role="img" aria-labelledby="title desc">
+  <title id="title">Применение результата платежа к резерву товара</title>
+  <desc id="desc">Если оплата уже записана или ожидается возврат, новых задач нет. Если итог неизвестен, состояние резерва сохраняется. Закрытие операции без списания снимает резерв. При подтверждении платежа товар отправляют в обработку, если резерв активен, либо запрашивают возврат денег, если резерв уже снят.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#546984"/>
+    </marker>
+  </defs>
+  <rect width="420" height="462" rx="16" fill="#f4f7fb"/>
+  <g fill="none" stroke="#546984" stroke-width="1.6" marker-end="url(#arrow)">
+    <path d="M210 64V82H101V101"/>
+    <path d="M210 64V82H303V101"/>
+    <path d="M303 160V183H72V203"/>
+    <path d="M303 160V183H210V203"/>
+    <path d="M303 160V183H348V203"/>
+    <path d="M348 269V298H109V322"/>
+    <path d="M348 269V298H311V322"/>
+  </g>
+  <g stroke-width="1.2">
+    <rect x="29" y="15" width="362" height="49" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="14" y="104" width="174" height="56" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="205" y="104" width="196" height="56" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="12" y="206" width="120" height="63" rx="10" fill="#fff0df" stroke="#cfa671"/>
+    <rect x="150" y="206" width="120" height="63" rx="10" fill="#fff0df" stroke="#cfa671"/>
+    <rect x="288" y="206" width="120" height="63" rx="10" fill="#e9f2ff" stroke="#7a9ec4"/>
+    <rect x="13" y="325" width="192" height="107" rx="10" fill="#e7f5eb" stroke="#7ca98e"/>
+    <rect x="215" y="325" width="192" height="107" rx="10" fill="#e9f2ff" stroke="#7a9ec4"/>
+  </g>
+  <g fill="#172f48" font-family="system-ui, sans-serif" text-anchor="middle" font-size="16">
+    <text x="210" y="45" font-weight="700" textLength="342" lengthAdjust="spacingAndGlyphs">Прочитать итог платежа и состояние заказа</text>
+    <text x="101" y="128" font-size="14" font-weight="700" textLength="156" lengthAdjust="spacingAndGlyphs">Оплата / ждём возврат</text>
+    <text x="101" y="149">Без новых задач</text>
+    <text x="303" y="139" font-weight="700" textLength="178" lengthAdjust="spacingAndGlyphs">Проверенный итог оплаты</text>
+    <text x="72" y="230" font-weight="700">Неизвестен</text>
+    <text x="72" y="252" textLength="108" lengthAdjust="spacingAndGlyphs">Резерв прежний</text>
+    <text x="210" y="230" font-weight="700" textLength="108" lengthAdjust="spacingAndGlyphs">Без списания</text>
+    <text x="210" y="252">Снять резерв</text>
+    <text x="348" y="242" font-weight="700">Оплачено</text>
+    <text x="109" y="355" font-weight="700">Товар в резерве</text>
+    <text x="109" y="380" textLength="174" lengthAdjust="spacingAndGlyphs">Подтвердить и выделить</text>
+    <text x="109" y="405">Поставить на отгрузку</text>
+    <text x="311" y="355" font-weight="700">Резерв уже снят</text>
+    <text x="311" y="380">Оставить отмену</text>
+    <text x="311" y="405">Запросить возврат</text>
+  </g>
+</svg>

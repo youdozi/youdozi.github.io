@@ -102,6 +102,14 @@ test('hand-drawn diagram translation keeps branches and layout while localizing 
   assert.throws(()=>compareLocalizedSVG(source,draft.replace('<text x="20">','<text x="20" textLength="500">'),'ja'),/text fitting/);
 });
 
+test('hand-drawn diagrams with nested labels can be localized without changing the source SVG',()=>{
+  const source='<svg xmlns="http://www.w3.org/2000/svg"><title>Flow</title><text x="20">Start<tspan x="20" dy="18">Server</tspan></text></svg>';
+  const draft=source.replace('<svg ','<svg xml:lang="fr" ').replace('Flow','Flux').replace('Start','Démarrage').replace('Server','Serveur');
+  assert.doesNotThrow(()=>compareLocalizedSVG(source,draft,'fr'));
+  assert.throws(()=>compareLocalizedSVG(source,draft.replace('Serveur',''),'fr'),/text count changed/);
+  assert.throws(()=>compareLocalizedSVG(source,draft.replace('dy="18"','dy="19"'),'fr'),/geometry changed/);
+});
+
 test('new localized prompt exceptions do not relax version 2 code checks',()=>{
   const key='2026-11-12-orca-worktree-guide';
   const prompt='Read shipping.mjs, shipping.test.mjs, package.json and index.html; run npm test; preserve RangeError.\n';
