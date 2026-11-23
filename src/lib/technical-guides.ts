@@ -175,7 +175,24 @@ const paths = {
       ]},
   },
 };
+const tipsCopy: Record<Language, {label:string; description:string}> = {
+  ko:{label:'팁',description:'개발과 일상 작업에 활용할 수 있는 실용적인 방법을 살펴봅니다.'},
+  en:{label:'Tips',description:'Practical techniques for development and everyday work.'},
+  'zh-CN':{label:'技巧',description:'探索开发和日常工作中的实用方法。'},
+  ja:{label:'ヒント',description:'開発や日常の作業に役立つ実践的な方法を紹介します。'},
+  de:{label:'Tipps',description:'Praktische Methoden für Entwicklung und alltägliche Arbeit.'},
+  fr:{label:'Astuces',description:'Des méthodes pratiques pour le développement et le travail quotidien.'},
+  ru:{label:'Советы',description:'Практические приёмы для разработки и повседневной работы.'},
+  es:{label:'Consejos',description:'Técnicas prácticas para el desarrollo y el trabajo cotidiano.'},
+};
 export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGuide|undefined {
+  if(term==='tips') {
+    const ordered=all.filter(e=>e.language===lang&&e.kind==='post'&&e.categories.includes(term)&&e.reviewStatus!=='example'&&e.publishedAt.getTime()<=Date.now());
+    if(!ordered.length)return undefined;
+    const copy=tipsCopy[lang], localized=hasLocalizedGuide(lang)?guideLocales[lang].common:common[lang as 'en'|'ko'];
+    return {...copy,...localized,title:copy.label,intro:copy.description,lang,url:`/${lang}/categories/tips/`,listAnchor:'articles',sections:[],extras:ordered,ordered,updatedAt:new Date(Math.max(...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
+  }
+
   if(term==='security'&&lang!=='en'&&lang!=='ko')return undefined;
   if(term==='coding-test')return algorithmGuide(lang,all);
   if(term==='springboot')return springGuide(lang,all);
