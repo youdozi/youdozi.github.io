@@ -6,7 +6,7 @@
   "title": "Orca Botの使い方：ブログ用Botの作成から作業・自動化の確認まで",
   "description": "Orca Botに最初の仕事を依頼し、メモリと作業を確認して定期実行を設定します。",
   "sourcePath": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-  "sourceSha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+  "sourceSha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02"
 }
 ---
 

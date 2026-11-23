@@ -28,11 +28,11 @@
       "translationKey": "2026-11-23-orca-bot-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+        "sha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-186/zh-CN/2026-11-23-orca-bot-guide.md",
-        "sha256": "8586577d49442c8f2c0688ef46222af637fc4cb3d52db1791bcea2550f3c9472"
+        "sha256": "37a77e7c17174278c1ec7393d8a8b709ec5aa210c80f6258d181a8cef7221fc8"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-186/zh-CN/2026-11-23-orca-bot-guide.svg",
@@ -49,11 +49,11 @@
       "translationKey": "2026-11-23-orca-bot-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+        "sha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-186/ja/2026-11-23-orca-bot-guide.md",
-        "sha256": "48d563ea2b5eb2b23f0dd49599026c7aac4f08347a8452ff4357175894e84432"
+        "sha256": "a89f0ed915c9a868cac0bff72f3104475d52d4758f19c3d5cfbd2e553cc49196"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-186/ja/2026-11-23-orca-bot-guide.svg",
@@ -70,11 +70,11 @@
       "translationKey": "2026-11-23-orca-bot-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+        "sha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-186/de/2026-11-23-orca-bot-guide.md",
-        "sha256": "6bb4dae7af79a55bb83491359dae4c87724162b65e4c1040a184f36de13bb705"
+        "sha256": "4366f6fe0c2d123394c1e6f7186449363bc6abfa4d53ce2b7e79f138c36168be"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-186/de/2026-11-23-orca-bot-guide.svg",
@@ -91,11 +91,11 @@
       "translationKey": "2026-11-23-orca-bot-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+        "sha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-186/fr/2026-11-23-orca-bot-guide.md",
-        "sha256": "15593b192f53aca5fd604cc0dfd3abad149cce87ae41015dcc87faa34bca8b34"
+        "sha256": "ffa684fc6ad53c4707654600a32349b85c8af0cf7927d166e5d9eb504da486a4"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-186/fr/2026-11-23-orca-bot-guide.svg",
@@ -112,11 +112,11 @@
       "translationKey": "2026-11-23-orca-bot-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+        "sha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-186/ru/2026-11-23-orca-bot-guide.md",
-        "sha256": "2f60eae21ada61055e3b36da9c426529a1fc5c8b589cbf32e30051d69b5a33c3"
+        "sha256": "6c61b6e85e2edf741e197221b5f0faa5871c129945096bab45d030e012501cbe"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-186/ru/2026-11-23-orca-bot-guide.svg",
@@ -133,11 +133,11 @@
       "translationKey": "2026-11-23-orca-bot-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+        "sha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-186/es/2026-11-23-orca-bot-guide.md",
-        "sha256": "aa609c3766c884d4d43de2f0f13960b995b0a18db217364114b7c0ce68915c26"
+        "sha256": "8c1cdbaeca60a2ebd607aec3d3f44627f78c5174bf3ffa664214e045e1893255"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-186/es/2026-11-23-orca-bot-guide.svg",

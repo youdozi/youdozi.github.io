@@ -2,6 +2,10 @@
 kind: post
 publishedAt: "2026-11-23T05:09:29Z"
 updatedAt: "2026-11-23T05:09:29Z"
+reviewedAt: "2026-11-23"
+reviewStatus: source-audited
+reviewScope: "Self-reviewed against official Orca bot documentation; CLI 1.4.271 read-only queries checked with an existing bot. The examples are fictional; no bot or automation was created for this article."
+reviewSources: ["https://orca.dev/docs/bots", "https://orca.dev/docs/bots/connectors", "https://orca.dev/docs/bots/security"]
 language: ko
 translationKey: 2026-11-23-orca-bot-guide
 routeSlug: 2026-11-23-orca-bot-guide

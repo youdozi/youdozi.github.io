@@ -6,7 +6,7 @@
   "title": "Orca Bot: создание бота для блога и проверка задач и автоматизаций",
   "description": "Поручите Orca Bot первую задачу, проверьте память и работу и настройте повторяющиеся задачи.",
   "sourcePath": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-  "sourceSha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+  "sourceSha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02"
 }
 ---
 

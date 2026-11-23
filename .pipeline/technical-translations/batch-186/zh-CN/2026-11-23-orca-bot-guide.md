@@ -6,7 +6,7 @@
   "title": "使用 Orca Bot：创建博客机器人并检查任务与自动化",
   "description": "为 Orca Bot 分配第一个任务，检查记忆和工作，并设置重复任务。",
   "sourcePath": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-  "sourceSha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+  "sourceSha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02"
 }
 ---
 

@@ -6,7 +6,7 @@
   "title": "Cómo usar Orca Bot: crear un bot para el blog y revisar tareas y automatizaciones",
   "description": "Asigna una primera tarea a Orca Bot, revisa su memoria y trabajo, y configura tareas recurrentes.",
   "sourcePath": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-  "sourceSha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+  "sourceSha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02"
 }
 ---
 

@@ -6,7 +6,7 @@
   "title": "Orca Bot verwenden: Blog-Bot erstellen und Aufgaben und Automationen prüfen",
   "description": "Erste Aufgabe, Speicher und Arbeit eines Orca Bots prüfen und wiederkehrende Aufgaben einrichten.",
   "sourcePath": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-  "sourceSha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+  "sourceSha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02"
 }
 ---
 

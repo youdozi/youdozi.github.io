@@ -18,17 +18,17 @@
     "developer-tools"
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
-  "sourceSha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108",
-  "draftSha256": "6bb4dae7af79a55bb83491359dae4c87724162b65e4c1040a184f36de13bb705",
+  "sourceSha256": "96033cbac131a6cad800f9782a2ad820fcfba2e710c8628bb440b0af0c898e02",
+  "draftSha256": "4366f6fe0c2d123394c1e6f7186449363bc6abfa4d53ce2b7e79f138c36168be",
   "manifestPath": ".pipeline/technical-translations/batch-186/manifest.json",
-  "manifestSha256": "afce5bc713412c02f130b1062bfe7d5b9872d9d301b703639a476301c673d0af",
-  "publishedAt": "2026-11-23T05:18:32.011Z",
-  "updatedAt": "2026-11-23T05:18:32.011Z",
+  "manifestSha256": "dea1602a6cba39d65e40326263edd4383f93360e1169b9dd1cc36b7bda38be95",
+  "publishedAt": "2026-11-23T05:30:14.030Z",
+  "updatedAt": "2026-11-23T05:30:14.030Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 186,
-    "approvedAt": "2026-11-23T05:18:32.011Z",
+    "approvedAt": "2026-11-23T05:30:14.030Z",
     "basis": "Owner explicitly requested publication of the Orca Bot guide in all eight supported languages; translations were self-reviewed, not independently or natively reviewed."
   }
 }
