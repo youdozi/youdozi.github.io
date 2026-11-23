@@ -310,14 +310,14 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
 
 
     // Check emitted paths rather than assuming the registry is rendered correctly.
-    const guideCounts=[['coding-test',10],['jdk',13],['springboot',18],['linux',5],['util',8],['automation',2],['jenkins',2],['jekyll',2],['security',10]];
+    const guideCounts=[['coding-test',10],['jdk',13],['springboot',18],['linux',5],['util',8],['automation',2],['jenkins',2],['jekyll',2],['security',10],['tips',1]];
     for(const lang of ['en','ko']){
       const hubPath=`/${lang}/guides/`;
       const hub=await readFile(`dist${hubPath}index.html`,'utf8');
       const hubData=JSON.parse(hub.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
       const hubList=hubData.find(x=>x['@type']==='ItemList');
       assert.deepEqual(hubList.itemListElement.map(x=>x.url),guideCounts.map(([term])=>`https://youdozi.github.io/${lang}/categories/${term}/`));
-      assert.equal(hubList.numberOfItems,9);
+      assert.equal(hubList.numberOfItems,10);
       assert.ok(!hubData.some(x=>x['@type']==='BlogPosting'));
       for(const [term,count,koreanCount=count] of guideCounts){
         const path=`/${lang}/categories/${term}/`;
