@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ru" viewBox="0 0 640 440" role="img">
+<title>Запрос клиента</title>
+<desc>Запрос клиента → Локальная переадресация SSH → HTTP на loopback Mac → Ответ тестового файла</desc>
+<rect width="640" height="440" rx="24" fill="#f5f8fc"/>
+<rect x="55" y="20" width="530" height="65" rx="12" fill="#e0ecfa" stroke="#295981" stroke-width="2"/>
+<text x="320" y="61" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#153651">Запрос клиента</text>
+<path d="M320 85 v25 m-8 -8 8 8 8 -8" fill="none" stroke="#295981" stroke-width="3"/>
+<rect x="55" y="125" width="530" height="65" rx="12" fill="#e0ecfa" stroke="#295981" stroke-width="2"/>
+<text x="320" y="166" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#153651">Локальная переадресация SSH</text>
+<path d="M320 190 v25 m-8 -8 8 8 8 -8" fill="none" stroke="#295981" stroke-width="3"/>
+<rect x="55" y="230" width="530" height="65" rx="12" fill="#e0ecfa" stroke="#295981" stroke-width="2"/>
+<text x="320" y="271" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#153651">HTTP на loopback Mac</text>
+<path d="M320 295 v25 m-8 -8 8 8 8 -8" fill="none" stroke="#295981" stroke-width="3"/>
+<rect x="55" y="335" width="530" height="65" rx="12" fill="#e0ecfa" stroke="#295981" stroke-width="2"/>
+<text x="320" y="376" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#153651">Ответ тестового файла</text>
+</svg>
