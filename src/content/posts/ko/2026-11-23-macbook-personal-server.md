@@ -2,7 +2,7 @@
 {
   "kind": "post",
   "publishedAt": "2026-11-23T09:45:00Z",
-  "updatedAt": "2026-11-23T09:45:00Z",
+  "updatedAt": "2026-11-23T09:54:05Z",
   "reviewedAt": "2026-11-23",
   "reviewStatus": "source-audited",
   "reviewScope": "Official documentation self-review; loopback HTTP checked locally; SSH and tunnel not tested.",
@@ -71,7 +71,7 @@ ssh -i ~/.ssh/macbook_demo -o HostKeyAlgorithms=ssh-ed25519 demo@192.168.1.20
 
 ## 테스트 서버와 포워딩
 
-맥에서 허용된 계정의 터미널로 빈 임시 디렉터리와 무해한 파일을 만들고 Python 3 서버를 시작합니다. 서버는 맥의 IPv4 루프백 주소에만 바인딩됩니다. 이 터미널을 열어 둡니다.
+맥에서 허용된 계정의 터미널로 빈 임시 디렉터리와 무해한 파일을 만들고 Python 3.7+ 서버를 시작합니다. 서버는 맥의 IPv4 루프백 주소에만 바인딩됩니다. 이 터미널을 열어 둡니다.
 
 ```sh
 sample_dir=$(mktemp -d)

@@ -17,17 +17,17 @@
     "home-server"
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "bd4c8683623163f5f31589a1e1e1414c0c8947ff5622aef14a2544139945a193",
-  "draftSha256": "b31f70e3d1da06fe98e39c951f94a066f2e9942bc3120efaee28462efaf0beba",
+  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb",
+  "draftSha256": "a672f871bd6aacc178f14f83e1782d03e347dbe49d9e77f8867b4a4562efb39a",
   "manifestPath": ".pipeline/technical-translations/batch-187/manifest.json",
-  "manifestSha256": "d03d054b981e35da867bbad2a28b8b05e266caa702753c7ea49aa440bd3b3f75",
-  "publishedAt": "2026-11-23T09:52:10.853Z",
-  "updatedAt": "2026-11-23T09:52:10.853Z",
+  "manifestSha256": "c51f7d644197e6f5041d0c4b28929075533822bf2a8dfed8c991eb3d93efc752",
+  "publishedAt": "2026-11-23T09:54:23.607Z",
+  "updatedAt": "2026-11-23T09:54:23.607Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 188,
-    "approvedAt": "2026-11-23T09:52:10.853Z",
+    "approvedAt": "2026-11-23T09:54:23.607Z",
     "basis": "Owner explicitly requested publication in eight languages; translations were self-reviewed without independent or native-speaker review."
   }
 }
@@ -77,7 +77,7 @@ Comprueba que se inicia la sesión y escribe `exit`. La contraseña de la cuenta
 
 ## Iniciar y reenviar una prueba
 
-En el Mac, en un terminal con la cuenta autorizada, crea un directorio temporal vacío, añade un archivo sin datos sensibles e inicia Python 3. El servidor se vincula solo a la dirección IPv4 de bucle local del Mac. Mantén abierto este terminal.
+En el Mac, en un terminal con la cuenta autorizada, crea un directorio temporal vacío, añade un archivo sin datos sensibles e inicia Python 3.7+. El servidor se vincula solo a la dirección IPv4 de bucle local del Mac. Mantén abierto este terminal.
 
 ```sh
 sample_dir=$(mktemp -d)

@@ -2,7 +2,7 @@
 {
   "kind": "post",
   "publishedAt": "2026-11-23T09:45:00Z",
-  "updatedAt": "2026-11-23T09:45:00Z",
+  "updatedAt": "2026-11-23T09:54:05Z",
   "reviewedAt": "2026-11-23",
   "reviewStatus": "source-audited",
   "reviewScope": "Official documentation self-review; loopback HTTP checked locally; SSH and tunnel not tested.",
@@ -71,7 +71,7 @@ Verify that the login succeeds, then type `exit`. The account's password may sti
 
 ## Start a test and forward it
 
-On the Mac, in a terminal logged in as the allowed account, create an empty temporary directory, add one harmless file, and start Python 3. The server only binds to the Mac's IPv4 loopback address. Keep this terminal open.
+On the Mac, in a terminal logged in as the allowed account, create an empty temporary directory, add one harmless file, and start Python 3.7+. The server only binds to the Mac's IPv4 loopback address. Keep this terminal open.
 
 ```sh
 sample_dir=$(mktemp -d)

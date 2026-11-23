@@ -6,7 +6,7 @@
   "title": "在私人网络上将 MacBook 用作个人服务器",
   "description": "通过 SSH 隧道测试回环 HTTP 服务，并了解 Mac 的可用性限制。",
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "bd4c8683623163f5f31589a1e1e1414c0c8947ff5622aef14a2544139945a193"
+  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
 }
 ---
 
@@ -54,7 +54,7 @@ ssh -i ~/.ssh/macbook_demo -o HostKeyAlgorithms=ssh-ed25519 demo@192.168.1.20
 
 ## 启动测试并转发
 
-在 Mac 上以允许的账户打开终端，创建空的临时目录，添加一个无害文件，然后启动 Python 3。服务器仅绑定到 Mac 的 IPv4 回环地址。保持该终端打开。
+在 Mac 上以允许的账户打开终端，创建空的临时目录，添加一个无害文件，然后启动 Python 3.7+。服务器仅绑定到 Mac 的 IPv4 回环地址。保持该终端打开。
 
 ```sh
 sample_dir=$(mktemp -d)

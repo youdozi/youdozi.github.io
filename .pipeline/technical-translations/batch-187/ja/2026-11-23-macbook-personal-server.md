@@ -6,7 +6,7 @@
   "title": "MacBook をプライベートネットワークの個人サーバーとして使う",
   "description": "SSH トンネルでローカル HTTP を試し、Mac の可用性の限界を確認します。",
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "bd4c8683623163f5f31589a1e1e1414c0c8947ff5622aef14a2544139945a193"
+  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
 }
 ---
 
@@ -54,7 +54,7 @@ ssh -i ~/.ssh/macbook_demo -o HostKeyAlgorithms=ssh-ed25519 demo@192.168.1.20
 
 ## テストを起動して転送する
 
-Mac で許可されたアカウントのターミナルから、空の一時ディレクトリを作って無害なファイルを 一つ追加し、Python 3 を起動します。サーバーは Mac の IPv4 ループバックアドレスにのみバインドします。このターミナルは開いたままにします。
+Mac で許可されたアカウントのターミナルから、空の一時ディレクトリを作って無害なファイルを 一つ追加し、Python 3.7+ を起動します。サーバーは Mac の IPv4 ループバックアドレスにのみバインドします。このターミナルは開いたままにします。
 
 ```sh
 sample_dir=$(mktemp -d)

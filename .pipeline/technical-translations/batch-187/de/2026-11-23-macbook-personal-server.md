@@ -6,7 +6,7 @@
   "title": "Ein MacBook als persönlichen Server im privaten Netzwerk nutzen",
   "description": "Einen lokalen HTTP-Server per SSH-Tunnel testen und Grenzen der Mac-Verfügbarkeit verstehen.",
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "bd4c8683623163f5f31589a1e1e1414c0c8947ff5622aef14a2544139945a193"
+  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
 }
 ---
 
@@ -54,7 +54,7 @@ Prüfen Sie, ob die Anmeldung gelingt, und geben Sie dann `exit` ein. Das Kontop
 
 ## Test starten und weiterleiten
 
-Erstellen Sie auf dem Mac in einem Terminal des zugelassenen Kontos ein leeres temporäres Verzeichnis, fügen Sie eine harmlose Datei hinzu und starten Sie Python 3. Der Server bindet nur an die IPv4-Loopback-Adresse des Macs. Lassen Sie dieses Terminal geöffnet.
+Erstellen Sie auf dem Mac in einem Terminal des zugelassenen Kontos ein leeres temporäres Verzeichnis, fügen Sie eine harmlose Datei hinzu und starten Sie Python 3.7+. Der Server bindet nur an die IPv4-Loopback-Adresse des Macs. Lassen Sie dieses Terminal geöffnet.
 
 ```sh
 sample_dir=$(mktemp -d)

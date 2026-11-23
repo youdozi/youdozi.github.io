@@ -17,17 +17,17 @@
     "home-server"
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "bd4c8683623163f5f31589a1e1e1414c0c8947ff5622aef14a2544139945a193",
-  "draftSha256": "cc2bfa1be5b7e4d61b0e7028081dfdf04a7506d7fd0296757c72d767a0717914",
+  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb",
+  "draftSha256": "554090f8efd94c10100d071e84b2d9519a837f53e9cdb3fee1479a90e591e9f7",
   "manifestPath": ".pipeline/technical-translations/batch-187/manifest.json",
-  "manifestSha256": "d03d054b981e35da867bbad2a28b8b05e266caa702753c7ea49aa440bd3b3f75",
-  "publishedAt": "2026-11-23T09:52:10.853Z",
-  "updatedAt": "2026-11-23T09:52:10.853Z",
+  "manifestSha256": "c51f7d644197e6f5041d0c4b28929075533822bf2a8dfed8c991eb3d93efc752",
+  "publishedAt": "2026-11-23T09:54:23.607Z",
+  "updatedAt": "2026-11-23T09:54:23.607Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 188,
-    "approvedAt": "2026-11-23T09:52:10.853Z",
+    "approvedAt": "2026-11-23T09:54:23.607Z",
     "basis": "Owner explicitly requested publication in eight languages; translations were self-reviewed without independent or native-speaker review."
   }
 }
@@ -77,7 +77,7 @@ Vérifiez que la connexion réussit, puis saisissez `exit`. Le mot de passe du c
 
 ## Lancer un test et le transférer
 
-Sur le Mac, dans un terminal connecté au compte autorisé, créez un répertoire temporaire vide, ajoutez un fichier sans données sensibles et lancez Python 3. Le serveur se lie uniquement à l’adresse IPv4 de boucle locale du Mac. Gardez ce terminal ouvert.
+Sur le Mac, dans un terminal connecté au compte autorisé, créez un répertoire temporaire vide, ajoutez un fichier sans données sensibles et lancez Python 3.7+. Le serveur se lie uniquement à l’adresse IPv4 de boucle locale du Mac. Gardez ce terminal ouvert.
 
 ```sh
 sample_dir=$(mktemp -d)

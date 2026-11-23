@@ -6,7 +6,7 @@
   "title": "Utiliser un MacBook comme serveur personnel sur un réseau privé",
   "description": "Testez un serveur HTTP local par un tunnel SSH et comprenez les limites de disponibilité du Mac.",
   "sourcePath": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
-  "sourceSha256": "bd4c8683623163f5f31589a1e1e1414c0c8947ff5622aef14a2544139945a193"
+  "sourceSha256": "1f7cecd174ca16a5d160e958a0c11213101696af9d4c909bbadb9fe85e60fbfb"
 }
 ---
 
@@ -54,7 +54,7 @@ Vérifiez que la connexion réussit, puis saisissez `exit`. Le mot de passe du c
 
 ## Lancer un test et le transférer
 
-Sur le Mac, dans un terminal connecté au compte autorisé, créez un répertoire temporaire vide, ajoutez un fichier sans données sensibles et lancez Python 3. Le serveur se lie uniquement à l’adresse IPv4 de boucle locale du Mac. Gardez ce terminal ouvert.
+Sur le Mac, dans un terminal connecté au compte autorisé, créez un répertoire temporaire vide, ajoutez un fichier sans données sensibles et lancez Python 3.7+. Le serveur se lie uniquement à l’adresse IPv4 de boucle locale du Mac. Gardez ce terminal ouvert.
 
 ```sh
 sample_dir=$(mktemp -d)
