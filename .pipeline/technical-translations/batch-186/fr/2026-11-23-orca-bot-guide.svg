@@ -1,0 +1,33 @@
+<svg xml:lang="fr" xmlns="http://www.w3.org/2000/svg" width="420" height="384" viewBox="0 0 420 384" role="img" aria-labelledby="title desc">
+  <title id="title">Utiliser Orca Bot : créer un bot de blog et vérifier ses tâches et automatisations</title>
+  <desc id="desc">Créez un bot et confiez-lui une première tâche. Vérifiez le résultat et décidez dans Needs you si nécessaire. Pour une tâche récurrente, définissez une heure ou un événement et consultez l&#x27;historique d&#x27;exécution.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607797"/></marker></defs>
+  <rect width="420" height="384" rx="16" fill="#f4f7fb"/>
+  <g fill="none" stroke="#607797" stroke-width="1.6" marker-end="url(#arrow)">
+    <path d="M210 63V83"/>
+    <path d="M210 142V165"/>
+    <path d="M231 196H251"/>
+    <path d="M210 228V257"/>
+    <path d="M210 318V337"/>
+  </g>
+  <g stroke-width="1.2">
+    <rect x="25" y="14" width="370" height="49" rx="9" fill="#fff" stroke="#a8bdd6"/>
+    <rect x="25" y="86" width="370" height="56" rx="9" fill="#fff" stroke="#a8bdd6"/>
+    <rect x="25" y="168" width="206" height="60" rx="9" fill="#e9f4ed" stroke="#84ae94"/>
+    <rect x="254" y="168" width="141" height="60" rx="9" fill="#fff1e0" stroke="#caa574"/>
+    <rect x="25" y="260" width="370" height="58" rx="9" fill="#edf3fc" stroke="#9ab4d2"/>
+    <rect x="25" y="340" width="370" height="32" rx="9" fill="#fff" stroke="#a8bdd6"/>
+  </g>
+  <g text-anchor="middle" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#172f48">
+    <text font-size="16" x="210" y="45" font-weight="700">Créer le bot et choisir son contexte</text>
+    <text font-size="16" x="210" y="110" font-weight="700">Envoyer la première tâche</text>
+    <text font-size="16" x="210" y="132">Note et format du résultat</text>
+    <text font-size="14" x="128" y="192" font-weight="700">Comparer entrée et résultat</text>
+    <text font-size="14" x="128" y="214">Vérifier la tâche</text>
+    <text font-size="14" x="324" y="192" font-weight="700">Needs you</text>
+    <text font-size="14" x="324" y="214">Décider si nécessaire</text>
+    <text font-size="16" x="210" y="283" font-weight="700">Automatiser le travail récurrent</text>
+    <text font-size="16" x="210" y="306">Heure ou événement · destination</text>
+    <text font-size="16" x="210" y="361">Vérifier le premier historique</text>
+  </g>
+</svg>
