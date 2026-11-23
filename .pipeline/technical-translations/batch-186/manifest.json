@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-186",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "10a89ffafa775744796c318e65cfaa6fcb9fe760",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Self review against Korean and English sources; no independent language review.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-23-orca-bot-guide",
+      "language": "zh-CN",
+      "translationKey": "2026-11-23-orca-bot-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
+        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-186/zh-CN/2026-11-23-orca-bot-guide.md",
+        "sha256": "8586577d49442c8f2c0688ef46222af637fc4cb3d52db1791bcea2550f3c9472"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-186/zh-CN/2026-11-23-orca-bot-guide.svg",
+        "sha256": "0c3d43176cef211021a23addce0663a2e0c97216cbbba41992a65c76993acc54"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-bot-guide-en.svg",
+        "sha256": "db96a2a5a5f432fcbc8a9d46002d056d4925392f32f43808e23faa4cd1bea873"
+      }
+    },
+    {
+      "key": "ja-2026-11-23-orca-bot-guide",
+      "language": "ja",
+      "translationKey": "2026-11-23-orca-bot-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
+        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-186/ja/2026-11-23-orca-bot-guide.md",
+        "sha256": "48d563ea2b5eb2b23f0dd49599026c7aac4f08347a8452ff4357175894e84432"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-186/ja/2026-11-23-orca-bot-guide.svg",
+        "sha256": "f4d91d97cc2ddca3db05a0c47563c7a65e32815ad0a66b0018c48fdf7c667307"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-bot-guide-en.svg",
+        "sha256": "db96a2a5a5f432fcbc8a9d46002d056d4925392f32f43808e23faa4cd1bea873"
+      }
+    },
+    {
+      "key": "de-2026-11-23-orca-bot-guide",
+      "language": "de",
+      "translationKey": "2026-11-23-orca-bot-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
+        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-186/de/2026-11-23-orca-bot-guide.md",
+        "sha256": "6bb4dae7af79a55bb83491359dae4c87724162b65e4c1040a184f36de13bb705"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-186/de/2026-11-23-orca-bot-guide.svg",
+        "sha256": "b58a5aa2f0a5576d9a685740a2d3a396120da686e62cc96059dd0ebb170bbe85"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-bot-guide-en.svg",
+        "sha256": "db96a2a5a5f432fcbc8a9d46002d056d4925392f32f43808e23faa4cd1bea873"
+      }
+    },
+    {
+      "key": "fr-2026-11-23-orca-bot-guide",
+      "language": "fr",
+      "translationKey": "2026-11-23-orca-bot-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
+        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-186/fr/2026-11-23-orca-bot-guide.md",
+        "sha256": "15593b192f53aca5fd604cc0dfd3abad149cce87ae41015dcc87faa34bca8b34"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-186/fr/2026-11-23-orca-bot-guide.svg",
+        "sha256": "4583c9c4b82d05436b1a98688e3d074157be0c26b4cc900f7c43fd02a4d92dbc"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-bot-guide-en.svg",
+        "sha256": "db96a2a5a5f432fcbc8a9d46002d056d4925392f32f43808e23faa4cd1bea873"
+      }
+    },
+    {
+      "key": "ru-2026-11-23-orca-bot-guide",
+      "language": "ru",
+      "translationKey": "2026-11-23-orca-bot-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
+        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-186/ru/2026-11-23-orca-bot-guide.md",
+        "sha256": "2f60eae21ada61055e3b36da9c426529a1fc5c8b589cbf32e30051d69b5a33c3"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-186/ru/2026-11-23-orca-bot-guide.svg",
+        "sha256": "0dbe96efd4ea9387376154731d5a4ac72e96c8a849d00ee82a491f7f502158cf"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-bot-guide-en.svg",
+        "sha256": "db96a2a5a5f432fcbc8a9d46002d056d4925392f32f43808e23faa4cd1bea873"
+      }
+    },
+    {
+      "key": "es-2026-11-23-orca-bot-guide",
+      "language": "es",
+      "translationKey": "2026-11-23-orca-bot-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-orca-bot-guide.md",
+        "sha256": "00b9ff415bf1d0fddd82a856377211655f16ca6c010e833f68ed5639ee6d5108"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-186/es/2026-11-23-orca-bot-guide.md",
+        "sha256": "aa609c3766c884d4d43de2f0f13960b995b0a18db217364114b7c0ce68915c26"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-186/es/2026-11-23-orca-bot-guide.svg",
+        "sha256": "e9bbe3660f449af59ece89c5495eef1b235ea596e96dfd7b5f57e10ca03695dd"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-bot-guide-en.svg",
+        "sha256": "db96a2a5a5f432fcbc8a9d46002d056d4925392f32f43808e23faa4cd1bea873"
+      }
+    }
+  ]
+}

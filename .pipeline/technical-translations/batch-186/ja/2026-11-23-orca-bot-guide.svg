@@ -1,0 +1,33 @@
+<svg xml:lang="ja" xmlns="http://www.w3.org/2000/svg" width="420" height="384" viewBox="0 0 420 384" role="img" aria-labelledby="title desc">
+  <title id="title">Orca Botの使い方：ブログ用Botの作成から作業・自動化の確認まで</title>
+  <desc id="desc">Botを作成して最初の仕事を依頼し、結果を確認します。必要ならNeeds youで判断します。繰り返し作業には時刻またはイベントを設定し、実行履歴を確認します。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607797"/></marker></defs>
+  <rect width="420" height="384" rx="16" fill="#f4f7fb"/>
+  <g fill="none" stroke="#607797" stroke-width="1.6" marker-end="url(#arrow)">
+    <path d="M210 63V83"/>
+    <path d="M210 142V165"/>
+    <path d="M231 196H251"/>
+    <path d="M210 228V257"/>
+    <path d="M210 318V337"/>
+  </g>
+  <g stroke-width="1.2">
+    <rect x="25" y="14" width="370" height="49" rx="9" fill="#fff" stroke="#a8bdd6"/>
+    <rect x="25" y="86" width="370" height="56" rx="9" fill="#fff" stroke="#a8bdd6"/>
+    <rect x="25" y="168" width="206" height="60" rx="9" fill="#e9f4ed" stroke="#84ae94"/>
+    <rect x="254" y="168" width="141" height="60" rx="9" fill="#fff1e0" stroke="#caa574"/>
+    <rect x="25" y="260" width="370" height="58" rx="9" fill="#edf3fc" stroke="#9ab4d2"/>
+    <rect x="25" y="340" width="370" height="32" rx="9" fill="#fff" stroke="#a8bdd6"/>
+  </g>
+  <g text-anchor="middle" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#172f48">
+    <text font-size="16" x="210" y="45" font-weight="700">Botを作り実行環境を選ぶ</text>
+    <text font-size="16" x="210" y="110" font-weight="700">最初の仕事を送る</text>
+    <text font-size="16" x="210" y="132">メモと結果形式</text>
+    <text font-size="16" x="128" y="192" font-weight="700">入力と結果を照合</text>
+    <text font-size="16" x="128" y="214">作業項目を確認</text>
+    <text font-size="16" x="324" y="192" font-weight="700">Needs you</text>
+    <text font-size="16" x="324" y="214">必要なら判断</text>
+    <text font-size="16" x="210" y="283" font-weight="700">繰り返し作業を自動化</text>
+    <text font-size="16" x="210" y="306">時刻またはイベント・結果先</text>
+    <text font-size="16" x="210" y="361">初回の実行履歴を確認</text>
+  </g>
+</svg>
