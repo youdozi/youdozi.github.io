@@ -78,7 +78,7 @@
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-187/de/2026-11-23-claude-mythos-defensive-review.svg",
-        "sha256": "a324ee8566b44ef97de891642949383519bfcf5a984f29fd5db6dfb3736b3828"
+        "sha256": "bdc003d6ba80c8ef88017ec9a8b246b467161e414db39300f00543d790bab5f3"
       },
       "mainVisual": {
         "path": "assets/img/architecture/claude-mythos-defensive-review-en.svg",
@@ -120,7 +120,7 @@
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-187/ru/2026-11-23-claude-mythos-defensive-review.svg",
-        "sha256": "ac2f9be943400dea837a655c5dad9e833a07ee19bddb3b14a0792cceab26ca76"
+        "sha256": "4d83106632de3e2ac8a677a3372f25e04418fb2ffb9d2e79dce303add230f7b7"
       },
       "mainVisual": {
         "path": "assets/img/architecture/claude-mythos-defensive-review-en.svg",

@@ -25,6 +25,6 @@
     <text font-size="12" x="108" y="262">Bedarf dokumentieren</text>
     <text x="312" y="241" font-weight="700">Lücke bestätigt</text>
     <text font-size="12" x="312" y="262">Autorisierung korrigieren</text>
-    <text font-size="12" font-size="12" x="312" y="329" font-weight="700">Testen und dokumentieren</text>
+    <text font-size="12" x="312" y="329" font-weight="700">Testen und dokumentieren</text>
   </g>
 </svg>

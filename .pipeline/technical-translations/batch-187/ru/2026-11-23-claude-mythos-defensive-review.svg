@@ -25,6 +25,6 @@
     <text x="108" y="262">Записать, что нужно</text>
     <text x="312" y="241" font-weight="700">Пропуск найден</text>
     <text font-size="12" x="312" y="262">Исправить авторизацию</text>
-    <text font-size="12" font-size="12" x="312" y="329" font-weight="700">Проверить и записать</text>
+    <text font-size="12" x="312" y="329" font-weight="700">Проверить и записать</text>
   </g>
 </svg>
