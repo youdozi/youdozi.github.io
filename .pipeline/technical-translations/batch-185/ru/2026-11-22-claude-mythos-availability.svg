@@ -1,0 +1,22 @@
+<svg xml:lang="ru" xmlns="http://www.w3.org/2000/svg" width="420" height="382" viewBox="0 0 420 382" role="img" aria-labelledby="title desc">
+  <title id="title">Доступ к моделям Claude в зависимости от учётной записи и задачи</title>
+  <desc id="desc">С платной подпиской можно выбрать Fable 5.2. Для проверки репозиториев Enterprise используется Claude Security. Для прямой работы с Mythos нужно одобрение учётной записи.</desc>
+  <rect width="420" height="382" rx="16" fill="#f6f5f1"/>
+  <g fill="#fff" stroke="#c9c5bb">
+    <rect x="18" y="16" width="384" height="49" rx="8"/>
+    <rect x="44" y="84" width="358" height="80" rx="8"/>
+    <rect x="44" y="178" width="358" height="80" rx="8"/>
+    <rect x="44" y="272" width="358" height="91" rx="8"/>
+  </g>
+  <path d="M29 65V307 M29 123H44 M29 217H44 M29 307H44" fill="none" stroke="#8d7763" stroke-width="1.6"/>
+  <g fill="#241e19" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+    <text x="38" y="47" font-size="18" font-weight="700">Что вы хотите сделать?</text>
+    <text x="62" y="111" font-size="17" font-weight="700">Писать код на платном тарифе</text>
+    <text x="62" y="140" font-size="16">Найдите Fable 5.2 в списке моделей</text>
+    <text x="62" y="205" font-size="17" font-weight="700">Проверка репозитория Enterprise</text>
+    <text x="62" y="234" font-size="16" textLength="330" lengthAdjust="spacingAndGlyphs">Используйте Claude Security, если он включён</text>
+    <text x="62" y="300" font-size="17" font-weight="700" textLength="330" lengthAdjust="spacingAndGlyphs">Использовать модель Mythos напрямую</text>
+    <text x="62" y="327" font-size="16">Проверьте одобрение и канал доступа</text>
+    <text x="62" y="349" font-size="14">Например, Claude Code или Claude API</text>
+  </g>
+</svg>

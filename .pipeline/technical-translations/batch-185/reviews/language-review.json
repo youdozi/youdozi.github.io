@@ -1,0 +1,5 @@
+{
+  "scope": "Eight published bilingual articles and all 48 new locale editions, including titles, descriptions, complete prose, tables, image alternatives and SVG accessibility labels.",
+  "method": "Self-review against the English article for each edition, preserving code and outputs, source links, identifiers, monetary amounts, assumptions and limits of original execution evidence. Checked SVG geometry against the English figures and measured localized labels at a 360-pixel browser viewport.",
+  "limits": "No independent or native-speaker review. The editions preserve the original evidence scope."
+}

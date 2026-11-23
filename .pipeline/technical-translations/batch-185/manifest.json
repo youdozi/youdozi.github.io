@@ -1,0 +1,1039 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-185",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "bad828b899e3ca8fe7c1e7855f5a68071ac3a946",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Full comparison against the published English sources, structural checks, and localized diagram bounds in Chrome.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": [
+      {
+        "path": ".pipeline/technical-translations/batch-185/reviews/language-review.json",
+        "sha256": "f7a03f3095ac2ff8355a1bd714f11e835536ca9211c60f784b0454cb149d4615"
+      }
+    ]
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-22-spring-boot-4-2-restclient-migration",
+      "language": "zh-CN",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-migration",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "8859ad29e5643a2fc5112004d1582dceddbd10ea1ccfdc3bd1bfb21aacff6b33"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "3756d22660164b4cef5e3b72a8fa3174b42568adc406cc98f8f56fd64f12cd3a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-spring-boot-4-2-restclient-migration.svg",
+        "sha256": "d27598c97fae95e50952fd1bfa1fec4d82a6c21e0bf62fcec7f51af66184572f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-migration-en.svg",
+        "sha256": "672f681cb1fd2ee12960c9dbb45d07abdfabec49de01366a15048fc96655a56d"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "language": "zh-CN",
+      "translationKey": "2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "184d3ca3476cfc05571ad97d60ef35f2d4c93f54cb152df388401376edc0ef57"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "6a35d008247ecb0e37e56aa4387cdae1bd43de1ad8fae7c58261713994672875"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-spring-boot-4-2-otel-http-metrics.svg",
+        "sha256": "898e35365d3a5b8d5e3932abe1d03f45a0561cadaa5b603e056cc3b7549dd61b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-otel-http-metrics-en.svg",
+        "sha256": "db11d3cb5ef8ba96f2cfaa53439055fa88d5cb70e21f855ce96e4801cf7643c5"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "language": "zh-CN",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "79632a97012abbc73db2e3e1a0bbe924c261ceb52f4603146310d3e2c4f897f5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "02d4b4ace44fe110927a68465328d3a246652bb1911028ec4bfcc282a935bda1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-spring-boot-4-2-restclient-traceparent.svg",
+        "sha256": "a9303d215416bd31d26f6cfeb5967d2addc18b453d9ebc960bdf9fbe17163073"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-traceparent-en.svg",
+        "sha256": "8398eae468c387c1dbb92ddfdb6ed5c9c48b7fa5ad7846fe6441df0fcb2fd48a"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-22-claude-mythos-availability",
+      "language": "zh-CN",
+      "translationKey": "2026-11-22-claude-mythos-availability",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-claude-mythos-availability.md",
+        "sha256": "03f809cd5ff47c9929524f940e1ebf683dc5e75760fb062cfdb425ffbf4ff424"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-claude-mythos-availability.md",
+        "sha256": "bee9fcb975eeb95ed2cbd8aa250e486447f92870ff863e9f54d6866c90976eef"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-claude-mythos-availability.svg",
+        "sha256": "d66b5cc286207212d27d948d4b6dc212c0c049dc2a025f9451dc3cccf6df55f5"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-claude-mythos-availability-en.svg",
+        "sha256": "4c77a67311620116bc3a4dce4b22b163635f301bfb2bf889c9a77f8412adb5e5"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-22-commerce-system-design-last-unit-of-stock",
+      "language": "zh-CN",
+      "translationKey": "2026-11-22-commerce-system-design-last-unit-of-stock",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "63b33b1222e2cc6c885b4f2d63fb1a3f2727041b8710e7bf8ed7b335b6f8b9d6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "0dae46097317403db781869fc6d91c6306e1006a76c9b651eb107882fdb5716b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-commerce-system-design-last-unit-of-stock.svg",
+        "sha256": "78c018f9362f2d5a8143186b2ec18d134fed9d661be33edab15d036e0c9b7fb3"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-system-design-last-unit-of-stock-en.svg",
+        "sha256": "ad3172ea620762d59fb675e03f7489c23f2dc970568712c6103b0ca0b9c495f3"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-22-commerce-database-design",
+      "language": "zh-CN",
+      "translationKey": "2026-11-22-commerce-database-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-database-design.md",
+        "sha256": "da573ac023d969b02216c24993c872e842a6693607f8e3805fd988ce7d64bcf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-commerce-database-design.md",
+        "sha256": "64abd7cd9c50c1c9813c40aeeac182b04f331ae8d33c670a86e07063edfdd2b3"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-22-commerce-database-design.svg",
+        "sha256": "c1a9bf020a6ef4b8b9d1ceabf980ae7361069b33f1aad7215c7f4aebcb3d6ec7"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-database-design-en.svg",
+        "sha256": "22a85d42ec26bd84adbeee8ad3c8b612f635fd95eac3e99be355aa43de7ab9dc"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-23-commerce-admin-screen",
+      "language": "zh-CN",
+      "translationKey": "2026-11-23-commerce-admin-screen",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-admin-screen.md",
+        "sha256": "00692a737eb62a4f313f4adb76e503c7796c83e7a788f20151b7f09669719558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-23-commerce-admin-screen.md",
+        "sha256": "0b08493d9c5fe8d82492a3853c2f60983ce1aed3a7382505b00d000f048a58f9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-23-commerce-admin-screen.svg",
+        "sha256": "cb4a573945831a4726ea5979feece062dfaaa79eb5aec28eae93d88368f70bb3"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-admin-screen-en.svg",
+        "sha256": "97375d7d5e068d846fb4907eefd3808df8cc3155644627328451d6dfb65ada5c"
+      }
+    },
+    {
+      "key": "zh-CN-2026-11-23-commerce-storefront-design",
+      "language": "zh-CN",
+      "translationKey": "2026-11-23-commerce-storefront-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-storefront-design.md",
+        "sha256": "fde9deae56ab163d6fad0ea42a0136927d901a84ecd0111e5006b0eb21aa00ce"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-23-commerce-storefront-design.md",
+        "sha256": "982a634c4d1f2f780685fe5e0cce7473dbc5ffb59cacc80e1064ea13af3fef2b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/zh-CN/2026-11-23-commerce-storefront-design.svg",
+        "sha256": "a5e00e35bdf2f0a90935d7d6479b2d41c04034f9da1bcfe240cafec5b473f4b0"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-storefront-design-en.svg",
+        "sha256": "ea2900983f3c4023ef9770fb4edb067ec19f0b5bd9e004020e8fc0fd9480251a"
+      }
+    },
+    {
+      "key": "ja-2026-11-22-spring-boot-4-2-restclient-migration",
+      "language": "ja",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-migration",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "8859ad29e5643a2fc5112004d1582dceddbd10ea1ccfdc3bd1bfb21aacff6b33"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "72f29e70deb7ffdc134321ba4dd4aac45213a65ef00e6f6f52a3d84f3516f667"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-spring-boot-4-2-restclient-migration.svg",
+        "sha256": "b940d8b7e946302934d5ed66f2c4be2633cd521fa1a71617e69b21c085def513"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-migration-en.svg",
+        "sha256": "672f681cb1fd2ee12960c9dbb45d07abdfabec49de01366a15048fc96655a56d"
+      }
+    },
+    {
+      "key": "ja-2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "language": "ja",
+      "translationKey": "2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "184d3ca3476cfc05571ad97d60ef35f2d4c93f54cb152df388401376edc0ef57"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "52ae324adc209e84c899b5beccb449b53e5ca7a791857dcb8cf4f16f33668199"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-spring-boot-4-2-otel-http-metrics.svg",
+        "sha256": "183e2f5151a306ed8d08ff858cd8fac0229e2475f4f9f28cd649c740b51b255a"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-otel-http-metrics-en.svg",
+        "sha256": "db11d3cb5ef8ba96f2cfaa53439055fa88d5cb70e21f855ce96e4801cf7643c5"
+      }
+    },
+    {
+      "key": "ja-2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "language": "ja",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "79632a97012abbc73db2e3e1a0bbe924c261ceb52f4603146310d3e2c4f897f5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "7ccd803b69ccc963e60835a7c67efbbb2a6129aaf658b9c5d971e10497189290"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-spring-boot-4-2-restclient-traceparent.svg",
+        "sha256": "2222dca6a2710e9890e0bd948889e16e7a1fcf6e33cd1d36dfa3791402f7d4f6"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-traceparent-en.svg",
+        "sha256": "8398eae468c387c1dbb92ddfdb6ed5c9c48b7fa5ad7846fe6441df0fcb2fd48a"
+      }
+    },
+    {
+      "key": "ja-2026-11-22-claude-mythos-availability",
+      "language": "ja",
+      "translationKey": "2026-11-22-claude-mythos-availability",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-claude-mythos-availability.md",
+        "sha256": "03f809cd5ff47c9929524f940e1ebf683dc5e75760fb062cfdb425ffbf4ff424"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-claude-mythos-availability.md",
+        "sha256": "c5d8c7a9f544ef1df4c3af82c79f139895c3b8f95a56942682978209ae88ba5b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-claude-mythos-availability.svg",
+        "sha256": "67c3bdb642e54b491061c71df19cfe08b5314916643acf1c3db78b4303783865"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-claude-mythos-availability-en.svg",
+        "sha256": "4c77a67311620116bc3a4dce4b22b163635f301bfb2bf889c9a77f8412adb5e5"
+      }
+    },
+    {
+      "key": "ja-2026-11-22-commerce-system-design-last-unit-of-stock",
+      "language": "ja",
+      "translationKey": "2026-11-22-commerce-system-design-last-unit-of-stock",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "63b33b1222e2cc6c885b4f2d63fb1a3f2727041b8710e7bf8ed7b335b6f8b9d6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "dcea8310b56bde7223a032094357ac87863975d9d26efea8a76c15be227c9958"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-commerce-system-design-last-unit-of-stock.svg",
+        "sha256": "924fccc7f67b79246a8ccc700276fef43c89dc32ff9abcf2d826bc194b10401e"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-system-design-last-unit-of-stock-en.svg",
+        "sha256": "ad3172ea620762d59fb675e03f7489c23f2dc970568712c6103b0ca0b9c495f3"
+      }
+    },
+    {
+      "key": "ja-2026-11-22-commerce-database-design",
+      "language": "ja",
+      "translationKey": "2026-11-22-commerce-database-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-database-design.md",
+        "sha256": "da573ac023d969b02216c24993c872e842a6693607f8e3805fd988ce7d64bcf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-commerce-database-design.md",
+        "sha256": "d41ac9655eefff622ffa9033c5b21bc6e8d450c05422823950729c849d736a8c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-22-commerce-database-design.svg",
+        "sha256": "cbd2f7c1673ee46d870fde07fe161d381159241d9b689ef0e2922075c5317398"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-database-design-en.svg",
+        "sha256": "22a85d42ec26bd84adbeee8ad3c8b612f635fd95eac3e99be355aa43de7ab9dc"
+      }
+    },
+    {
+      "key": "ja-2026-11-23-commerce-admin-screen",
+      "language": "ja",
+      "translationKey": "2026-11-23-commerce-admin-screen",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-admin-screen.md",
+        "sha256": "00692a737eb62a4f313f4adb76e503c7796c83e7a788f20151b7f09669719558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-23-commerce-admin-screen.md",
+        "sha256": "8530daa65d2b17335a2c165c18cefe0b438a854089e3ae57964a5805d2cd080f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-23-commerce-admin-screen.svg",
+        "sha256": "a0e50ed02eb1f233bc3c942c025ea8c0d2f92e041386a9196ade09ec2d954af5"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-admin-screen-en.svg",
+        "sha256": "97375d7d5e068d846fb4907eefd3808df8cc3155644627328451d6dfb65ada5c"
+      }
+    },
+    {
+      "key": "ja-2026-11-23-commerce-storefront-design",
+      "language": "ja",
+      "translationKey": "2026-11-23-commerce-storefront-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-storefront-design.md",
+        "sha256": "fde9deae56ab163d6fad0ea42a0136927d901a84ecd0111e5006b0eb21aa00ce"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-23-commerce-storefront-design.md",
+        "sha256": "292748103b7287471cf886193ffb298cba02d76dcb105af78b4c85e05d187e32"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ja/2026-11-23-commerce-storefront-design.svg",
+        "sha256": "1f730ed26053a56496747cb680150431f848d31c9c04affab1b3097f2e7d3cc7"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-storefront-design-en.svg",
+        "sha256": "ea2900983f3c4023ef9770fb4edb067ec19f0b5bd9e004020e8fc0fd9480251a"
+      }
+    },
+    {
+      "key": "de-2026-11-22-spring-boot-4-2-restclient-migration",
+      "language": "de",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-migration",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "8859ad29e5643a2fc5112004d1582dceddbd10ea1ccfdc3bd1bfb21aacff6b33"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "cff19c52be99ac20dfd260d02fe9f2031e816bc31abe9605e796fdc154fab183"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-spring-boot-4-2-restclient-migration.svg",
+        "sha256": "93ad85ac639a5cd1c1457e6c55d7f4e388a9b03564619331ae10ae0bcf7ff488"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-migration-en.svg",
+        "sha256": "672f681cb1fd2ee12960c9dbb45d07abdfabec49de01366a15048fc96655a56d"
+      }
+    },
+    {
+      "key": "de-2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "language": "de",
+      "translationKey": "2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "184d3ca3476cfc05571ad97d60ef35f2d4c93f54cb152df388401376edc0ef57"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "d49c0427e85eb1ab06c39f0f47573a574199c4eba2cc5be7318dd2615105c6b8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-spring-boot-4-2-otel-http-metrics.svg",
+        "sha256": "bdf9dea908f91365fbe0e661795503f9e933e0e50618d176cc6367190dc51e89"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-otel-http-metrics-en.svg",
+        "sha256": "db11d3cb5ef8ba96f2cfaa53439055fa88d5cb70e21f855ce96e4801cf7643c5"
+      }
+    },
+    {
+      "key": "de-2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "language": "de",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "79632a97012abbc73db2e3e1a0bbe924c261ceb52f4603146310d3e2c4f897f5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "10d0dd872c49be9b1823e76d83dc59fc4fe6345552f3c7f994c61cf3e3133e65"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-spring-boot-4-2-restclient-traceparent.svg",
+        "sha256": "50b61d03fb55933bc03efe65e3fb1305b74ca2577b4bca26c782cbc261255cc1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-traceparent-en.svg",
+        "sha256": "8398eae468c387c1dbb92ddfdb6ed5c9c48b7fa5ad7846fe6441df0fcb2fd48a"
+      }
+    },
+    {
+      "key": "de-2026-11-22-claude-mythos-availability",
+      "language": "de",
+      "translationKey": "2026-11-22-claude-mythos-availability",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-claude-mythos-availability.md",
+        "sha256": "03f809cd5ff47c9929524f940e1ebf683dc5e75760fb062cfdb425ffbf4ff424"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-claude-mythos-availability.md",
+        "sha256": "df5e0c0062f56222137c3976a0953cb77cba348fc9cb41b7517726a9ac954d37"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-claude-mythos-availability.svg",
+        "sha256": "8c6f6eee2906a8cf527a15c153b2784ad49a852d5b1b2f681496d90ea33e0c2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-claude-mythos-availability-en.svg",
+        "sha256": "4c77a67311620116bc3a4dce4b22b163635f301bfb2bf889c9a77f8412adb5e5"
+      }
+    },
+    {
+      "key": "de-2026-11-22-commerce-system-design-last-unit-of-stock",
+      "language": "de",
+      "translationKey": "2026-11-22-commerce-system-design-last-unit-of-stock",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "63b33b1222e2cc6c885b4f2d63fb1a3f2727041b8710e7bf8ed7b335b6f8b9d6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "89b2cb9952f58e7c1e077b91513ef6ce8a3aea4218abef60bab5c6fe98cbceee"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-commerce-system-design-last-unit-of-stock.svg",
+        "sha256": "0fe774df33e2cbcb86312428a358771dd64f3abadf5c806c2179950558f246a5"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-system-design-last-unit-of-stock-en.svg",
+        "sha256": "ad3172ea620762d59fb675e03f7489c23f2dc970568712c6103b0ca0b9c495f3"
+      }
+    },
+    {
+      "key": "de-2026-11-22-commerce-database-design",
+      "language": "de",
+      "translationKey": "2026-11-22-commerce-database-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-database-design.md",
+        "sha256": "da573ac023d969b02216c24993c872e842a6693607f8e3805fd988ce7d64bcf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-commerce-database-design.md",
+        "sha256": "22423d5e7520d62b47cb89c042cc2ebf1bb64363bc0fd4e98bb3dc75322cdfab"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-22-commerce-database-design.svg",
+        "sha256": "6edfb0a3c7cd1554ead7b8800f81ff3563b8561712243b38d154e84f48f9ba76"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-database-design-en.svg",
+        "sha256": "22a85d42ec26bd84adbeee8ad3c8b612f635fd95eac3e99be355aa43de7ab9dc"
+      }
+    },
+    {
+      "key": "de-2026-11-23-commerce-admin-screen",
+      "language": "de",
+      "translationKey": "2026-11-23-commerce-admin-screen",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-admin-screen.md",
+        "sha256": "00692a737eb62a4f313f4adb76e503c7796c83e7a788f20151b7f09669719558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-23-commerce-admin-screen.md",
+        "sha256": "e9127f16c8ab35b7f98cff9bd0c43e746a06b904a1ec2d2c579313ac172ddb64"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-23-commerce-admin-screen.svg",
+        "sha256": "1167c429daed70add4518b544a71339bb17ea1e8ccb78ee08f353504a4bbbf4c"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-admin-screen-en.svg",
+        "sha256": "97375d7d5e068d846fb4907eefd3808df8cc3155644627328451d6dfb65ada5c"
+      }
+    },
+    {
+      "key": "de-2026-11-23-commerce-storefront-design",
+      "language": "de",
+      "translationKey": "2026-11-23-commerce-storefront-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-storefront-design.md",
+        "sha256": "fde9deae56ab163d6fad0ea42a0136927d901a84ecd0111e5006b0eb21aa00ce"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-23-commerce-storefront-design.md",
+        "sha256": "1487cca9ab7e4a173a682d1fd20322d99c1770654a23c65a7b49454e06270e05"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/de/2026-11-23-commerce-storefront-design.svg",
+        "sha256": "3e1ef714021d28da7363202e316f8d945d0ded677a36505ba80b866d478e763c"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-storefront-design-en.svg",
+        "sha256": "ea2900983f3c4023ef9770fb4edb067ec19f0b5bd9e004020e8fc0fd9480251a"
+      }
+    },
+    {
+      "key": "fr-2026-11-22-spring-boot-4-2-restclient-migration",
+      "language": "fr",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-migration",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "8859ad29e5643a2fc5112004d1582dceddbd10ea1ccfdc3bd1bfb21aacff6b33"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "9c42d0394266b35a7a23e07fdc22c29e994197901b5a1975c55553c790cdc88f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-spring-boot-4-2-restclient-migration.svg",
+        "sha256": "84ab08094583b6673592a70141e885bc1dade64c330a85909d2c1dcf8f5ebd38"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-migration-en.svg",
+        "sha256": "672f681cb1fd2ee12960c9dbb45d07abdfabec49de01366a15048fc96655a56d"
+      }
+    },
+    {
+      "key": "fr-2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "language": "fr",
+      "translationKey": "2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "184d3ca3476cfc05571ad97d60ef35f2d4c93f54cb152df388401376edc0ef57"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "2a5505ddf39962d8fe11c720d71403fd4b4743dca070dd4deb2d00eed53d166e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-spring-boot-4-2-otel-http-metrics.svg",
+        "sha256": "35a27905e7b20a13f722ae4e892fc104681504ee66cf891636086f7866d2bb1c"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-otel-http-metrics-en.svg",
+        "sha256": "db11d3cb5ef8ba96f2cfaa53439055fa88d5cb70e21f855ce96e4801cf7643c5"
+      }
+    },
+    {
+      "key": "fr-2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "language": "fr",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "79632a97012abbc73db2e3e1a0bbe924c261ceb52f4603146310d3e2c4f897f5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "b7d7b6d9d4a6c98db8bc42b87e2fed5839a3148d6c6d0b6bab898546d616a0a1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-spring-boot-4-2-restclient-traceparent.svg",
+        "sha256": "4a88ee419a2fb5bf16e6432da10bacd550199bfd9b532e49276cc965fb4d83a7"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-traceparent-en.svg",
+        "sha256": "8398eae468c387c1dbb92ddfdb6ed5c9c48b7fa5ad7846fe6441df0fcb2fd48a"
+      }
+    },
+    {
+      "key": "fr-2026-11-22-claude-mythos-availability",
+      "language": "fr",
+      "translationKey": "2026-11-22-claude-mythos-availability",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-claude-mythos-availability.md",
+        "sha256": "03f809cd5ff47c9929524f940e1ebf683dc5e75760fb062cfdb425ffbf4ff424"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-claude-mythos-availability.md",
+        "sha256": "db4336ce5b4af6cb9b1141e9ea2ed1d7b3d2670bcb8801ba28f92698ee07a258"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-claude-mythos-availability.svg",
+        "sha256": "ef4fd5c36329bbc693e59191f8981eda2157a2d8685ae2ca754de7948b76a0d0"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-claude-mythos-availability-en.svg",
+        "sha256": "4c77a67311620116bc3a4dce4b22b163635f301bfb2bf889c9a77f8412adb5e5"
+      }
+    },
+    {
+      "key": "fr-2026-11-22-commerce-system-design-last-unit-of-stock",
+      "language": "fr",
+      "translationKey": "2026-11-22-commerce-system-design-last-unit-of-stock",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "63b33b1222e2cc6c885b4f2d63fb1a3f2727041b8710e7bf8ed7b335b6f8b9d6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "b6bc68c6574a31be4abf6eeed8f0934e866b3c5fd1aba4681517c55cc601d54e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-commerce-system-design-last-unit-of-stock.svg",
+        "sha256": "17d15128165d8f715f1b4f55bf699aed9cd4144ae3e32ac7a0f310af36c5b0cf"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-system-design-last-unit-of-stock-en.svg",
+        "sha256": "ad3172ea620762d59fb675e03f7489c23f2dc970568712c6103b0ca0b9c495f3"
+      }
+    },
+    {
+      "key": "fr-2026-11-22-commerce-database-design",
+      "language": "fr",
+      "translationKey": "2026-11-22-commerce-database-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-database-design.md",
+        "sha256": "da573ac023d969b02216c24993c872e842a6693607f8e3805fd988ce7d64bcf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-commerce-database-design.md",
+        "sha256": "5eb9e557830230136770e618e6eaa3a111f741a416cbdcedb2e07885a44309f6"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-22-commerce-database-design.svg",
+        "sha256": "cee5a885fc248cd1d2748ab23e9a87585b9170655b85261bd695188c797575b6"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-database-design-en.svg",
+        "sha256": "22a85d42ec26bd84adbeee8ad3c8b612f635fd95eac3e99be355aa43de7ab9dc"
+      }
+    },
+    {
+      "key": "fr-2026-11-23-commerce-admin-screen",
+      "language": "fr",
+      "translationKey": "2026-11-23-commerce-admin-screen",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-admin-screen.md",
+        "sha256": "00692a737eb62a4f313f4adb76e503c7796c83e7a788f20151b7f09669719558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-23-commerce-admin-screen.md",
+        "sha256": "7880393dcad79665a84efcce4911a0b16a396ae63084bfd0b50bf4942e3662d8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-23-commerce-admin-screen.svg",
+        "sha256": "53616f7a1423663d1bab6ee9a3a65ba04455a7da80f34740108585356af0c8f6"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-admin-screen-en.svg",
+        "sha256": "97375d7d5e068d846fb4907eefd3808df8cc3155644627328451d6dfb65ada5c"
+      }
+    },
+    {
+      "key": "fr-2026-11-23-commerce-storefront-design",
+      "language": "fr",
+      "translationKey": "2026-11-23-commerce-storefront-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-storefront-design.md",
+        "sha256": "fde9deae56ab163d6fad0ea42a0136927d901a84ecd0111e5006b0eb21aa00ce"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-23-commerce-storefront-design.md",
+        "sha256": "c0005bb36d8567e92c5df5e8fae5c00fdb84944efbc17a83d2e89c8924e63218"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/fr/2026-11-23-commerce-storefront-design.svg",
+        "sha256": "c814860ac92a1ed2786ef76e99a44baf8b7ef114b857f76674f9674384345f40"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-storefront-design-en.svg",
+        "sha256": "ea2900983f3c4023ef9770fb4edb067ec19f0b5bd9e004020e8fc0fd9480251a"
+      }
+    },
+    {
+      "key": "ru-2026-11-22-spring-boot-4-2-restclient-migration",
+      "language": "ru",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-migration",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "8859ad29e5643a2fc5112004d1582dceddbd10ea1ccfdc3bd1bfb21aacff6b33"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "3a20c623b4302046c132ec69aa9cfece7d4ebfeec4a2fc576b8ddbd8348872fa"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-spring-boot-4-2-restclient-migration.svg",
+        "sha256": "6e854e537cebec0e9e2a98134f46e0c553c673a819d98dbc7c00f3cd87e6ad88"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-migration-en.svg",
+        "sha256": "672f681cb1fd2ee12960c9dbb45d07abdfabec49de01366a15048fc96655a56d"
+      }
+    },
+    {
+      "key": "ru-2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "language": "ru",
+      "translationKey": "2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "184d3ca3476cfc05571ad97d60ef35f2d4c93f54cb152df388401376edc0ef57"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "a5abf34296a3dbc001f98d007a2fe36746c18793188880f0492615d130242cba"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-spring-boot-4-2-otel-http-metrics.svg",
+        "sha256": "b78e97ca954387c0161a682ff450db15fdba604a64c789fc449a36b7ff4b9141"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-otel-http-metrics-en.svg",
+        "sha256": "db11d3cb5ef8ba96f2cfaa53439055fa88d5cb70e21f855ce96e4801cf7643c5"
+      }
+    },
+    {
+      "key": "ru-2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "language": "ru",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "79632a97012abbc73db2e3e1a0bbe924c261ceb52f4603146310d3e2c4f897f5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "ec4fafa693e2a78e909cb1172c3404dcbe1777df05ee8ffb93c383c108627f4c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-spring-boot-4-2-restclient-traceparent.svg",
+        "sha256": "f16b0099efc9c9428786fb0277fc3cb7ff0a995306ce6a96300802f45a8be7a7"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-traceparent-en.svg",
+        "sha256": "8398eae468c387c1dbb92ddfdb6ed5c9c48b7fa5ad7846fe6441df0fcb2fd48a"
+      }
+    },
+    {
+      "key": "ru-2026-11-22-claude-mythos-availability",
+      "language": "ru",
+      "translationKey": "2026-11-22-claude-mythos-availability",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-claude-mythos-availability.md",
+        "sha256": "03f809cd5ff47c9929524f940e1ebf683dc5e75760fb062cfdb425ffbf4ff424"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-claude-mythos-availability.md",
+        "sha256": "f19e52e17a8013361fecb06039765b3c1473e3e3e225fd222ab1ce86fd6855fa"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-claude-mythos-availability.svg",
+        "sha256": "d2d359da4333f76fc965ae50be75e7bdc236c8b1ac501bf931845e15191fb52b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-claude-mythos-availability-en.svg",
+        "sha256": "4c77a67311620116bc3a4dce4b22b163635f301bfb2bf889c9a77f8412adb5e5"
+      }
+    },
+    {
+      "key": "ru-2026-11-22-commerce-system-design-last-unit-of-stock",
+      "language": "ru",
+      "translationKey": "2026-11-22-commerce-system-design-last-unit-of-stock",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "63b33b1222e2cc6c885b4f2d63fb1a3f2727041b8710e7bf8ed7b335b6f8b9d6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "f3b9442e7986cc7863196f4d22cdc9b780c85b9fd3f6103fe04af48fc34704f0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-commerce-system-design-last-unit-of-stock.svg",
+        "sha256": "5b78a3541cea6d913c0e5940b2c4b48cafe2aec91481e4a755df036b305795b1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-system-design-last-unit-of-stock-en.svg",
+        "sha256": "ad3172ea620762d59fb675e03f7489c23f2dc970568712c6103b0ca0b9c495f3"
+      }
+    },
+    {
+      "key": "ru-2026-11-22-commerce-database-design",
+      "language": "ru",
+      "translationKey": "2026-11-22-commerce-database-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-database-design.md",
+        "sha256": "da573ac023d969b02216c24993c872e842a6693607f8e3805fd988ce7d64bcf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-commerce-database-design.md",
+        "sha256": "0f6c790f63724fd7c64d85015c02311df91cdb132e2023f1f68eabe31f807f47"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-22-commerce-database-design.svg",
+        "sha256": "9e32adfab6b58b04762510744f927c10b514aebb51dfb08fc541263b5da9d93d"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-database-design-en.svg",
+        "sha256": "22a85d42ec26bd84adbeee8ad3c8b612f635fd95eac3e99be355aa43de7ab9dc"
+      }
+    },
+    {
+      "key": "ru-2026-11-23-commerce-admin-screen",
+      "language": "ru",
+      "translationKey": "2026-11-23-commerce-admin-screen",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-admin-screen.md",
+        "sha256": "00692a737eb62a4f313f4adb76e503c7796c83e7a788f20151b7f09669719558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-23-commerce-admin-screen.md",
+        "sha256": "22a6e5656cf86b09b200eb05abc455efdf687c91721a8d3a99a803afc7b9f8e1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-23-commerce-admin-screen.svg",
+        "sha256": "0a45d6b8bbdcdab50ac5587e3eab3a7325b26403d4fee7b0994f8bf3ebf23ae2"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-admin-screen-en.svg",
+        "sha256": "97375d7d5e068d846fb4907eefd3808df8cc3155644627328451d6dfb65ada5c"
+      }
+    },
+    {
+      "key": "ru-2026-11-23-commerce-storefront-design",
+      "language": "ru",
+      "translationKey": "2026-11-23-commerce-storefront-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-storefront-design.md",
+        "sha256": "fde9deae56ab163d6fad0ea42a0136927d901a84ecd0111e5006b0eb21aa00ce"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-23-commerce-storefront-design.md",
+        "sha256": "41032733a887433c8f9631829973df0e17f41b21abc885fc9f237c81ecb0fa7f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/ru/2026-11-23-commerce-storefront-design.svg",
+        "sha256": "a1a7dcc9bb72399d2328f10ee89bf063baac7f1f7a6a665208eb0b95a7cfba82"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-storefront-design-en.svg",
+        "sha256": "ea2900983f3c4023ef9770fb4edb067ec19f0b5bd9e004020e8fc0fd9480251a"
+      }
+    },
+    {
+      "key": "es-2026-11-22-spring-boot-4-2-restclient-migration",
+      "language": "es",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-migration",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "8859ad29e5643a2fc5112004d1582dceddbd10ea1ccfdc3bd1bfb21aacff6b33"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-spring-boot-4-2-restclient-migration.md",
+        "sha256": "1fde2de56854ffdba705b204476b6827e5b85c6f0de1ec718a716080ea6480d1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-spring-boot-4-2-restclient-migration.svg",
+        "sha256": "d7e83028d3c113024ae0b56eda3ade37dab6c46cd7c712d78460d7c5fb8a6f7a"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-migration-en.svg",
+        "sha256": "672f681cb1fd2ee12960c9dbb45d07abdfabec49de01366a15048fc96655a56d"
+      }
+    },
+    {
+      "key": "es-2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "language": "es",
+      "translationKey": "2026-11-22-spring-boot-4-2-otel-http-metrics",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "184d3ca3476cfc05571ad97d60ef35f2d4c93f54cb152df388401376edc0ef57"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-spring-boot-4-2-otel-http-metrics.md",
+        "sha256": "cde6a9eddafbfd579397e5342c816ab480d42a3f5fee9ae4aa8c947251b4e115"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-spring-boot-4-2-otel-http-metrics.svg",
+        "sha256": "495f6e6511b0b27634f19d9038064a16851a9e20dfa619417a4ca5dc1c6db3db"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-otel-http-metrics-en.svg",
+        "sha256": "db11d3cb5ef8ba96f2cfaa53439055fa88d5cb70e21f855ce96e4801cf7643c5"
+      }
+    },
+    {
+      "key": "es-2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "language": "es",
+      "translationKey": "2026-11-22-spring-boot-4-2-restclient-traceparent",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "79632a97012abbc73db2e3e1a0bbe924c261ceb52f4603146310d3e2c4f897f5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-spring-boot-4-2-restclient-traceparent.md",
+        "sha256": "88ed0e410004e09f50a0a7aed2dcce180ffc003f798e9e21db408f174ed792fc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-spring-boot-4-2-restclient-traceparent.svg",
+        "sha256": "085bd6e175beb87bd305297be19e0da736afab67343a40807f79b7f54beb3ae0"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-spring-boot-4-2-restclient-traceparent-en.svg",
+        "sha256": "8398eae468c387c1dbb92ddfdb6ed5c9c48b7fa5ad7846fe6441df0fcb2fd48a"
+      }
+    },
+    {
+      "key": "es-2026-11-22-claude-mythos-availability",
+      "language": "es",
+      "translationKey": "2026-11-22-claude-mythos-availability",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-claude-mythos-availability.md",
+        "sha256": "03f809cd5ff47c9929524f940e1ebf683dc5e75760fb062cfdb425ffbf4ff424"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-claude-mythos-availability.md",
+        "sha256": "359345a7a8d907d01a27fcd29fb04672543070dbac4d947c2abf3e023b1f3ecc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-claude-mythos-availability.svg",
+        "sha256": "b3f10ec72704e760ed1c58936767c64eb6d3aecfc4a5199967c4e1a1dd22ed33"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-claude-mythos-availability-en.svg",
+        "sha256": "4c77a67311620116bc3a4dce4b22b163635f301bfb2bf889c9a77f8412adb5e5"
+      }
+    },
+    {
+      "key": "es-2026-11-22-commerce-system-design-last-unit-of-stock",
+      "language": "es",
+      "translationKey": "2026-11-22-commerce-system-design-last-unit-of-stock",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "63b33b1222e2cc6c885b4f2d63fb1a3f2727041b8710e7bf8ed7b335b6f8b9d6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "09b1ca7019083766dbd8f3637a8d2c30ad248e64e0e43eb879af4cb3f0dc7988"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-commerce-system-design-last-unit-of-stock.svg",
+        "sha256": "100eeb4b28bea6b64ddd19be846b01f5520de2d6ddeff81a99a9f73e36a06b10"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-system-design-last-unit-of-stock-en.svg",
+        "sha256": "ad3172ea620762d59fb675e03f7489c23f2dc970568712c6103b0ca0b9c495f3"
+      }
+    },
+    {
+      "key": "es-2026-11-22-commerce-database-design",
+      "language": "es",
+      "translationKey": "2026-11-22-commerce-database-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-database-design.md",
+        "sha256": "da573ac023d969b02216c24993c872e842a6693607f8e3805fd988ce7d64bcf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-commerce-database-design.md",
+        "sha256": "876d076b2970b35ac139128ca01dcac48c9a0b2544bd1b0db8a3966b72fffbee"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-22-commerce-database-design.svg",
+        "sha256": "c4cf9155b14585a09a1a8f4bf70751e60d432f713c1a341c639be74b2a7d0ee2"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-database-design-en.svg",
+        "sha256": "22a85d42ec26bd84adbeee8ad3c8b612f635fd95eac3e99be355aa43de7ab9dc"
+      }
+    },
+    {
+      "key": "es-2026-11-23-commerce-admin-screen",
+      "language": "es",
+      "translationKey": "2026-11-23-commerce-admin-screen",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-admin-screen.md",
+        "sha256": "00692a737eb62a4f313f4adb76e503c7796c83e7a788f20151b7f09669719558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-23-commerce-admin-screen.md",
+        "sha256": "5a9d244d1966036d66f1d969dbb0348ae9d71d50f184846e4e93b6b377a47696"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-23-commerce-admin-screen.svg",
+        "sha256": "b073333e0ad6e82a92d5a7492c097d5fe437b7074df218ee143a0cc78d8c44dc"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-admin-screen-en.svg",
+        "sha256": "97375d7d5e068d846fb4907eefd3808df8cc3155644627328451d6dfb65ada5c"
+      }
+    },
+    {
+      "key": "es-2026-11-23-commerce-storefront-design",
+      "language": "es",
+      "translationKey": "2026-11-23-commerce-storefront-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-commerce-storefront-design.md",
+        "sha256": "fde9deae56ab163d6fad0ea42a0136927d901a84ecd0111e5006b0eb21aa00ce"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-23-commerce-storefront-design.md",
+        "sha256": "0b11450043d299bab053645b599c3aa0d9645b50d6acb94f31d8d3ccced3be9b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-185/es/2026-11-23-commerce-storefront-design.svg",
+        "sha256": "a58205a08d3825c1c2835f90a665d3382be3b6eba96928dbfb2427d6e83a528f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-23-commerce-storefront-design-en.svg",
+        "sha256": "ea2900983f3c4023ef9770fb4edb067ec19f0b5bd9e004020e8fc0fd9480251a"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<svg xml:lang="ja" xmlns="http://www.w3.org/2000/svg" width="468" height="461" viewBox="0 0 468 461" role="img" aria-labelledby="title desc">
+  <title id="title">購入者が決済画面から戻った後の注文状態</title>
+  <desc id="desc">既存の注文を照会します。読み込み中は待機中と表示し、照会に失敗したら再試行できるようにします。読み込んだら、決済と注文の状態に応じて、状態の更新、配送追跡、商品一覧、返金状態の更新、返金明細へ案内します。</desc>
+  <rect width="468" height="461" rx="16" fill="#f4f7fb"/>
+  <path d="M25 66V426 M25 100H44 M25 158H44 M25 225H44 M25 283H44 M25 341H44 M25 399H44" fill="none" stroke="#7185a0" stroke-width="1.6"/>
+  <g stroke="#b5c4d6">
+    <rect x="15" y="14" width="438" height="52" rx="9" fill="#fff"/>
+    <rect x="44" y="80" width="408" height="47" rx="8" fill="#fff"/>
+    <rect x="44" y="138" width="408" height="47" rx="8" fill="#fff2e5"/>
+    <rect x="44" y="197" width="408" height="56" rx="8" fill="#eef4ff"/>
+    <rect x="44" y="263" width="408" height="42" rx="8" fill="#e9f5ec"/>
+    <rect x="44" y="321" width="408" height="42" rx="8" fill="#fff"/>
+    <rect x="44" y="379" width="408" height="64" rx="8" fill="#eef4ff"/>
+  </g>
+  <g fill="#203951" font-family="system-ui, sans-serif" font-size="16">
+    <text x="34" y="46" font-size="18" font-weight="700">決済から戻る · 注文を照会</text>
+    <text x="61" y="109">読み込み中 · 待機表示</text>
+    <text x="61" y="167">照会失敗 · 注文状態を再読み込み</text>
+    <text x="61" y="220" font-weight="700">決済結果未確定または注文確認中</text>
+    <text x="61" y="243">注文状態を更新</text>
+    <text x="61" y="289">決済と注文が確定 · 配送を追跡</text>
+    <text x="61" y="347">請求なしで取消 · 商品を見る</text>
+    <text x="61" y="403">返金処理中 · 返金状態を更新</text>
+    <text x="61" y="428">返金完了 · 返金の詳細を見る</text>
+  </g>
+</svg>

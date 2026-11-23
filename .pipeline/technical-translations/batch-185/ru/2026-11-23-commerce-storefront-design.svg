@@ -1,0 +1,26 @@
+<svg xml:lang="ru" xmlns="http://www.w3.org/2000/svg" width="468" height="461" viewBox="0 0 468 461" role="img" aria-labelledby="title desc">
+  <title id="title">Статус заказа после возврата со страницы оплаты</title>
+  <desc id="desc">Найти существующий заказ. Показать сообщение об ожидании при загрузке, а при ошибке предложить повторить запрос. После загрузки предложить обновить статус заказа, отследить отправление, вернуться к товарам, обновить статус возврата денег или посмотреть сведения о нём.</desc>
+  <rect width="468" height="461" rx="16" fill="#f4f7fb"/>
+  <path d="M25 66V426 M25 100H44 M25 158H44 M25 225H44 M25 283H44 M25 341H44 M25 399H44" fill="none" stroke="#7185a0" stroke-width="1.6"/>
+  <g stroke="#b5c4d6">
+    <rect x="15" y="14" width="438" height="52" rx="9" fill="#fff"/>
+    <rect x="44" y="80" width="408" height="47" rx="8" fill="#fff"/>
+    <rect x="44" y="138" width="408" height="47" rx="8" fill="#fff2e5"/>
+    <rect x="44" y="197" width="408" height="56" rx="8" fill="#eef4ff"/>
+    <rect x="44" y="263" width="408" height="42" rx="8" fill="#e9f5ec"/>
+    <rect x="44" y="321" width="408" height="42" rx="8" fill="#fff"/>
+    <rect x="44" y="379" width="408" height="64" rx="8" fill="#eef4ff"/>
+  </g>
+  <g fill="#203951" font-family="system-ui, sans-serif" font-size="16">
+    <text x="34" y="46" font-size="18" font-weight="700">Возврат с оплаты · запросить заказ</text>
+    <text x="61" y="109">Загрузка · показать сообщение об ожидании</text>
+    <text x="61" y="167">Ошибка запроса · загрузить статус заново</text>
+    <text x="61" y="220" font-weight="700" textLength="378" lengthAdjust="spacingAndGlyphs">Итог платежа неизвестен или заказ проверяется</text>
+    <text x="61" y="243">Обновить статус заказа</text>
+    <text x="61" y="289" textLength="378" lengthAdjust="spacingAndGlyphs">Оплата и заказ подтверждены · отследить отправление</text>
+    <text x="61" y="347">Отменено без списания · перейти к товарам</text>
+    <text x="61" y="403">Возврат в обработке · обновить статус возврата</text>
+    <text x="61" y="428">Возврат завершён · посмотреть детали</text>
+  </g>
+</svg>

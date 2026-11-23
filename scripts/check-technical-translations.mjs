@@ -136,14 +136,18 @@ export function compareLocalizedSVG(originalSVG,translatedSVG,language){
     if(root?.local!=='svg'||root.uri!=='http://www.w3.org/2000/svg')fail('Invalid SVG root');
   }
   validXML(originalSVG);validXML(translatedSVG);
-  const strings=svg=>[...svg.matchAll(/<(?:text|title|desc)\b[^>]*>([^<]*)<\/(?:text|title|desc)>/g)].map(m=>m[1]);
+  const labels=/<(?:text|tspan|title|desc)\b[^>]*>([^<]*)(?=<)/g;
+  const strings=svg=>[...svg.matchAll(labels)].map(m=>Boolean(m[1].trim()));
   const originalText=strings(originalSVG),localizedText=strings(translatedSVG);
-  if(!originalSVG.includes('xml:lang="en"')||!translatedSVG.includes(`xml:lang="${language}"`))fail('Invalid SVG language');
-  if(!originalText.length||originalText.length!==localizedText.length||localizedText.some(text=>!text.trim()))fail('Localized SVG text count changed');
+  const sourceLanguage=/<svg\b[^>]*\bxml:lang="([^"]+)"/.exec(originalSVG)?.[1];
+  const localizedLanguage=/<svg\b[^>]*\bxml:lang="([^"]+)"/.exec(translatedSVG)?.[1];
+  if((sourceLanguage&&sourceLanguage!=='en')||localizedLanguage!==language)fail('Invalid SVG language');
+  if(!originalText.some(Boolean))fail('Missing source SVG text');
+  same(originalText,localizedText,'Localized SVG text count changed');
   if(/<(?:script|image|foreignObject)\b|\b(?:href|onload)=/i.test(translatedSVG))fail('Invalid or externally dependent SVG');
-  const textTags=svg=>[...svg.matchAll(/<text\b[^>]*>/g)].map(m=>m[0]);
+  const textTags=svg=>[...svg.matchAll(/<(?:text|tspan)\b[^>]*>/g)].map(m=>m[0]);
   const sourceTags=textTags(originalSVG),localizedTags=textTags(translatedSVG);
-  const textValues=[...translatedSVG.matchAll(/<text\b[^>]*>([^<]*)<\/text>/g)].map(m=>m[1]);
+  const textValues=[...translatedSVG.matchAll(/<(?:text|tspan)\b[^>]*>([^<]*)(?=<)/g)].map(m=>m[1]);
   const viewport=Number(/\bviewBox="[\d.\-]+[ ,]+[\d.\-]+[ ,]+([\d.]+)[ ,]+[\d.]+"/.exec(translatedSVG)?.[1]);
   if(sourceTags.length!==localizedTags.length)fail('Localized SVG text count changed');
   localizedTags.forEach((tag,i)=>{
@@ -153,10 +157,10 @@ export function compareLocalizedSVG(originalSVG,translatedSVG,language){
     const characters=Array.from((textValues[i]??'').replace(/&(?:amp|lt|gt|quot|apos|#\d+|#x[\da-f]+);/gi,'X')).filter(c=>!(/\s/u).test(c)).length;
     if(length&&(!Number.isFinite(Number(length[1]))||Number(length[1])<Math.max(12,3*characters)||(Number.isFinite(viewport)&&Number(length[1])>viewport))||adjust&&!['spacing','spacingAndGlyphs'].includes(adjust[1]))fail('Invalid localized SVG text fitting');
   });
-  const geometry=svg=>svg.trim().replace(/xml:lang="[^"]+"/,'xml:lang="LANG"')
-    .replace(/<text\b[^>]*>/g,tag=>tag.replace(/\s+(?:font-size|textLength|lengthAdjust)="[^"]*"/g,''))
+  const geometry=svg=>svg.trim().replace(/(<svg\b[^>]*?)\s+xml:lang="[^"]+"/,'$1')
+    .replace(/<(?:text|tspan)\b[^>]*>/g,tag=>tag.replace(/\s+(?:font-size|textLength|lengthAdjust)="[^"]*"/g,''))
     .replace(/\s+\/>/g,'/>')
-    .replace(/(<(?:text|title|desc)\b[^>]*>)[^<]*(<\/(?:text|title|desc)>)/g,'$1$2');
+    .replace(/(<(?:text|tspan|title|desc)\b[^>]*>)[^<]*(?=<)/g,'$1');
   same(geometry(originalSVG),geometry(translatedSVG),'Localized SVG geometry changed');
 }
 

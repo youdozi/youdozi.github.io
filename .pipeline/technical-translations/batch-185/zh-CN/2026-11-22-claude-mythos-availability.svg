@@ -1,0 +1,22 @@
+<svg xml:lang="zh-CN" xmlns="http://www.w3.org/2000/svg" width="420" height="382" viewBox="0 0 420 382" role="img" aria-labelledby="title desc">
+  <title id="title">按账号与任务选择 Claude 模型</title>
+  <desc id="desc">付费订阅者可以选择 Fable 5.2。Enterprise 代码仓库审查使用 Claude Security。直接使用 Mythos 需要账号获批。</desc>
+  <rect width="420" height="382" rx="16" fill="#f6f5f1"/>
+  <g fill="#fff" stroke="#c9c5bb">
+    <rect x="18" y="16" width="384" height="49" rx="8"/>
+    <rect x="44" y="84" width="358" height="80" rx="8"/>
+    <rect x="44" y="178" width="358" height="80" rx="8"/>
+    <rect x="44" y="272" width="358" height="91" rx="8"/>
+  </g>
+  <path d="M29 65V307 M29 123H44 M29 217H44 M29 307H44" fill="none" stroke="#8d7763" stroke-width="1.6"/>
+  <g fill="#241e19" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+    <text x="38" y="47" font-size="18" font-weight="700">你想完成什么工作？</text>
+    <text x="62" y="111" font-size="17" font-weight="700">在付费方案中编写一般代码</text>
+    <text x="62" y="140" font-size="16">在模型选择器中查找 Fable 5.2</text>
+    <text x="62" y="205" font-size="17" font-weight="700">Enterprise 代码仓库安全审查</text>
+    <text x="62" y="234" font-size="16">功能已启用时使用 Claude Security</text>
+    <text x="62" y="300" font-size="17" font-weight="700">直接使用 Mythos 模型</text>
+    <text x="62" y="327" font-size="16">核对账号是否获批以及使用渠道</text>
+    <text x="62" y="349" font-size="14">例如 Claude Code 或 Claude API</text>
+  </g>
+</svg>

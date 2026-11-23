@@ -1,0 +1,22 @@
+<svg xml:lang="de" xmlns="http://www.w3.org/2000/svg" width="420" height="382" viewBox="0 0 420 382" role="img" aria-labelledby="title desc">
+  <title id="title">Claude-Modelle nach Konto und Aufgabe</title>
+  <desc id="desc">Zahlende Abonnenten können Fable 5.2 auswählen. Enterprise-Repositories werden mit Claude Security geprüft. Für die direkte Nutzung von Mythos ist eine Kontofreigabe nötig.</desc>
+  <rect width="420" height="382" rx="16" fill="#f6f5f1"/>
+  <g fill="#fff" stroke="#c9c5bb">
+    <rect x="18" y="16" width="384" height="49" rx="8"/>
+    <rect x="44" y="84" width="358" height="80" rx="8"/>
+    <rect x="44" y="178" width="358" height="80" rx="8"/>
+    <rect x="44" y="272" width="358" height="91" rx="8"/>
+  </g>
+  <path d="M29 65V307 M29 123H44 M29 217H44 M29 307H44" fill="none" stroke="#8d7763" stroke-width="1.6"/>
+  <g fill="#241e19" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+    <text x="38" y="47" font-size="18" font-weight="700">Was möchten Sie tun?</text>
+    <text x="62" y="111" font-size="17" font-weight="700">Programmieren im bezahlten Tarif</text>
+    <text x="62" y="140" font-size="16">Fable 5.2 in der Modellauswahl suchen</text>
+    <text x="62" y="205" font-size="17" font-weight="700" textLength="330" lengthAdjust="spacingAndGlyphs">Enterprise-Repository auf Sicherheit prüfen</text>
+    <text x="62" y="234" font-size="16">Falls aktiviert, Claude Security nutzen</text>
+    <text x="62" y="300" font-size="17" font-weight="700">Mythos als Modell direkt nutzen</text>
+    <text x="62" y="327" font-size="16">Kontofreigabe und Zugangsweg prüfen</text>
+    <text x="62" y="349" font-size="14">Etwa Claude Code oder Claude API</text>
+  </g>
+</svg>

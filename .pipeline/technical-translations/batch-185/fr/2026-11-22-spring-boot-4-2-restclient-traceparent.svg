@@ -1,0 +1,39 @@
+<svg xml:lang="fr" xmlns="http://www.w3.org/2000/svg" width="420" height="415" viewBox="0 0 420 415" role="img" aria-labelledby="title desc">
+  <title id="title">Propagation de la trace selon la création de RestClient</title>
+  <desc id="desc">L’application recherche le produit 42. À gauche, le builder de Boot envoie traceparent et le span du serveur de stock rejoint celui du client produit. À droite, le RestClient créé directement n’envoie aucun en-tête et le serveur de stock commence une trace distincte. Les deux requêtes renvoient HTTP 200.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#536781"/>
+    </marker>
+  </defs>
+  <rect width="420" height="415" rx="18" fill="#f3f7fb"/>
+  <g fill="none" stroke="#536781" stroke-width="1.6" marker-end="url(#arrow)">
+    <path d="M210 67V82H109V98"/>
+    <path d="M210 67V82H311V98"/>
+    <path d="M109 177V204"/>
+    <path d="M311 177V204"/>
+    <path d="M109 283V311H198V332"/>
+    <path d="M311 283V311H222V332"/>
+  </g>
+  <g stroke-width="1.2">
+    <rect x="27" y="16" width="366" height="51" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="14" y="101" width="190" height="76" rx="10" fill="#eaf3ff" stroke="#7a9ec4"/>
+    <rect x="216" y="101" width="190" height="76" rx="10" fill="#fff0de" stroke="#cfa671"/>
+    <rect x="14" y="207" width="190" height="76" rx="10" fill="#eaf3ff" stroke="#7a9ec4"/>
+    <rect x="216" y="207" width="190" height="76" rx="10" fill="#fff0de" stroke="#cfa671"/>
+    <rect x="27" y="335" width="366" height="57" rx="10" fill="#fff" stroke="#a6bdd5"/>
+  </g>
+  <g fill="#18324e" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif" text-anchor="middle" font-size="16">
+    <text x="210" y="47" font-weight="700">Application produit · GET /products/42</text>
+    <text x="109" y="130" font-weight="700">Builder de Boot</text>
+    <text x="109" y="156">Envoie traceparent</text>
+    <text x="311" y="130" font-weight="700">RestClient.create()</text>
+    <text x="311" y="156">Pas de traceparent</text>
+    <text x="109" y="237" font-weight="700">API de stock</text>
+    <text x="109" y="262">Rejoint la même trace</text>
+    <text x="311" y="237" font-weight="700">API de stock</text>
+    <text x="311" y="262" textLength="172" lengthAdjust="spacingAndGlyphs">Démarre une autre trace</text>
+    <text x="210" y="359" font-weight="700">Les deux renvoient 200 OK</text>
+    <text x="210" y="380">Produit 42 · Stock 7</text>
+  </g>
+</svg>
