@@ -7,6 +7,14 @@ import {inspectTechnicalTranslations,compareManuscript} from './check-technical-
 const root=resolve(import.meta.dirname,'..');
 const manifestPath='.pipeline/technical-translations/batch-050/manifest.json';
 const manifest=JSON.parse(await readFile(join(root,manifestPath),'utf8'));
+test('Mythos guide localizes its prompt while preserving executable policy code',async()=>{
+  const key='2026-11-23-claude-mythos-defensive-review';
+  const source=await readFile(join(root,`src/content/posts/en/${key}.md`),'utf8');
+  const draft=await readFile(join(root,`.pipeline/technical-translations/batch-187/es/${key}.md`),'utf8');
+  const options={formatVersion:3,mainVisual:{path:'assets/img/architecture/claude-mythos-defensive-review-en.svg'}};
+  assert.doesNotThrow(()=>compareManuscript(source,draft,null,key,'es',options));
+  assert.throws(()=>compareManuscript(source,draft.replace('actor.role === "REFUND_MANAGER"','actor.role !== "REFUND_MANAGER"'),null,key,'es',options),/Executable code changed/);
+});
 async function fixture(key='2021-07-22-dot-product'){
   const row=manifest.editions.find(r=>r.language==='es'&&r.translationKey===key);
   return {row,source:await readFile(join(root,row.source.path),'utf8'),draft:await readFile(join(root,row.draft.path),'utf8'),diagram:JSON.parse(await readFile(join(root,row.diagramSource.path),'utf8'))};

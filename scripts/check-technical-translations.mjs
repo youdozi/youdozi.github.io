@@ -49,6 +49,7 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
       '2026-11-15-pickle-ai-guide':[0,1,2],
       '2026-11-16-aside-browser-introduction':[0],
       '2026-11-17-aside-browser-guide':[0,4,5],
+      '2026-11-23-claude-mythos-defensive-review':[0],
     }:{}),
   }[key]??[]) : [];
   same(sourceCode.length,draftCode.length,'Executable code changed during translation');
@@ -57,7 +58,9 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
     const translated=draftCode[index];
     if(block[0]!=='text'||translated[0]!=='text'||!translated[1].trim())fail('Localized prompt missing');
     same(numbers(block[1]),numbers(translated[1]),'Prompt numeric values changed');
-    const tokens=key==='2026-11-15-pickle-ai-guide'
+    const tokens=key==='2026-11-23-claude-mythos-defensive-review'
+      ? []
+      : key==='2026-11-15-pickle-ai-guide'
       ? ['Pickle']
       : key==='2026-11-16-aside-browser-introduction'
       ? []
