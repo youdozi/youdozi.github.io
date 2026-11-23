@@ -10,7 +10,7 @@
 }
 ---
 
-Si vous possédez déjà un ordinateur portable et souhaitez que les agents IA exécutent des tests de navigateur ou des tâches planifiées, je recommande le **Mac mini M6**. Si vous souhaitez bénéficier du même environnement de développement lors de vos déplacements domicile-travail et que vous préférez un seul ordinateur, le **13-pouces MacBook Air M5** est un meilleur choix. Si vous envisagez d'exécuter des modèles vous-même avec un outil tel que Ollama, vérifiez d'abord la mémoire nécessaire pour le modèle et le contexte choisis. Pour une machine stationnaire nécessitant plus que 32GB, envisagez les configurations **48GB et 64GB Mac mini M5 Pro**. [Spécifications Apple Mac mini](https://www.apple.com/kr/mac-mini/specs/) · [Spécifications Apple MacBook Air](https://www.apple.com/kr/macbook-air/specs/)
+Si vous possédez déjà un ordinateur portable et souhaitez que les agents IA exécutent des tests de navigateur ou des tâches planifiées, je recommande le **Mac mini M6**. Si vous souhaitez bénéficier du même environnement de développement lors de vos déplacements domicile-travail et que vous préférez un seul ordinateur, le **modèle 13 pouces du MacBook Air M5** est un meilleur choix. Si vous envisagez d'exécuter des modèles vous-même avec un outil tel que Ollama, vérifiez d'abord la mémoire nécessaire pour le modèle et le contexte choisis. Pour une machine stationnaire nécessitant plus de 32GB, envisagez les configurations **48GB et 64GB Mac mini M5 Pro**. [Spécifications Apple Mac mini](https://www.apple.com/kr/mac-mini/specs/) · [Spécifications Apple MacBook Air](https://www.apple.com/kr/macbook-air/specs/)
 
 ![Flux de décision : envisagez un Mac mini pour les agents stationnaires ou un MacBook Air pour les déplacements fréquents, et vérifiez les besoins en mémoire lors de l'exécution de modèles locaux sur l'un ou l'autre.](2026-11-23-mac-for-ai-agents.svg)
 
@@ -25,9 +25,9 @@ Avec l'inférence locale, le modèle utilise également la mémoire de votre Mac
 | Charge de travail principale | Mon choix | Vérifiez avant d'acheter |
 | --- | --- | --- |
 | Codage avec un modèle cloud sur un bureau fixe et tests occasionnels | Mac mini M6 16GB | Vérifiez si la base 256GB est suffisante. Si vous conservez régulièrement des caches de build et des images Docker, comparez les configurations à partir de 512GB. |
-| Travailler dans des cafés et des bureaux | 13 pouces MacBook Air M5 16GB · 512GB | Si les tests de conteneurs et de navigateurs se chevauchent fréquemment, considérez d'abord 24GB. |
+| Travailler dans des cafés et des bureaux | modèle 13 pouces du MacBook Air M5 16GB · 512GB | Si les tests de conteneurs et de navigateurs se chevauchent fréquemment, considérez d'abord 24GB. |
 | Exécuter des conteneurs et des tests simultanément sur plusieurs dossiers de travail | Mac mini M6 pour une utilisation stationnaire, ou MacBook Air M5 pour une utilisation mobile, avec 24–32GB | Vérifiez le nombre de services simultanés et la pression de la mémoire. Vérifiez également la mémoire allouée à la machine virtuelle de Docker Desktop. |
-| Exécuter des modèles locaux quotidiennement et avoir besoin de plus que 32GB | Mac mini M5 Pro 48GB · 64GB pour utilisation stationnaire | Tenez compte du navigateur et de l’IDE exécutés simultanément après le chargement du modèle. Si vous avez également besoin du même modèle hors de chez vous, déterminez la capacité requise et comparez les configurations MacBook Pro avec cette capacité. |
+| Exécuter des modèles locaux quotidiennement et avoir besoin de plus de 32GB | Mac mini M5 Pro 48GB · 64GB pour utilisation stationnaire | Tenez compte du navigateur et de l’IDE exécutés simultanément après le chargement du modèle. Si vous avez également besoin du même modèle hors de chez vous, déterminez la capacité requise et comparez les configurations MacBook Pro avec cette capacité. |
 
 16GB, 24GB et 32GB sont des points de départ basés sur la charge de travail. Les besoins réels varient en fonction des méthodes de construction et du nombre de conteneurs. [Paramètres des ressources Docker Desktop](https://docs.docker.com/desktop/settings-and-maintenance/settings/#resources)
 
@@ -38,7 +38,7 @@ Il s'agit des prix de départ ordinaires des configurations de base vérifiés l
 | Modèle | Mémoire de base · SSD | Prix ​​initial |
 | --- | --- | ---: |
 | Mac mini M6 | 16GB · 256GB | KRW 1,499,000 |
-| 13 pouces MacBook Air M5 | 16GB · 512GB | KRW 2,190,000 |
+| modèle 13 pouces du MacBook Air M5 | 16GB · 512GB | KRW 2,190,000 |
 | Mac mini M5 Pro | 24GB · 512GB | KRW 2,990,000 |
 
 Les prix de départ des deux modèles de base 16GB diffèrent de KRW 691,000. Le MacBook Air comprend un écran, un clavier et une batterie, et sa base SSD est plus grande. Si vous possédez déjà un moniteur et des périphériques d'entrée, le Mac mini présente un avantage de prix plus important. Si vous envisagez d'augmenter le stockage SSD ou la mémoire, comparez les configurations souhaitées dans le panier. [Magasin Apple Korea](https://www.apple.com/kr/shop/buy-mac) · [Prix de lancement Mac mini](https://www.apple.com/kr/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/) · [Spécifications Mac mini](https://www.apple.com/kr/mac-mini/specs/) · [Spécifications MacBook Air](https://www.apple.com/kr/macbook-air/specs/)

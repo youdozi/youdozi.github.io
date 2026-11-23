@@ -74,7 +74,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-189/de/2026-11-23-mac-for-ai-agents.md",
-        "sha256": "871821a48c4411d2b2511bb9e1043995022828457f731f2fc3a2c1a7662c16a1"
+        "sha256": "3ac91582d1748e446d46a045a5378e1db7d0cb34f22374b0c7b38918ffeb8c59"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-189/de/2026-11-23-mac-for-ai-agents.svg",
@@ -95,7 +95,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-189/fr/2026-11-23-mac-for-ai-agents.md",
-        "sha256": "33ef671e81cc34ba95ef5e8d4afd5050360594225fa4cd451a0ff5d9b5bd330a"
+        "sha256": "8060df0fa475fee035e74cfecaa6b04603f31aa76511419837076f241a344465"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-189/fr/2026-11-23-mac-for-ai-agents.svg",
@@ -116,7 +116,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-189/ru/2026-11-23-mac-for-ai-agents.md",
-        "sha256": "ca0224ccb4087e3372769a63f29d85a65ac82ca5ecde769398b56450f5d1b9e8"
+        "sha256": "abdfb94214a5eeefda83e61bade885a1a6e2b893cce80f88262c2a8370f4ae0e"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-189/ru/2026-11-23-mac-for-ai-agents.svg",

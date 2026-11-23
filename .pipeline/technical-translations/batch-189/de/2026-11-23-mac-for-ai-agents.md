@@ -10,9 +10,9 @@
 }
 ---
 
-Wenn Sie bereits einen Laptop haben und möchten, dass KI-Agenten Browsertests oder geplante Jobs ausführen, empfehle ich **Mac mini M6**. Wenn Sie beim Pendeln und auf Reisen die gleiche Entwicklungsumgebung wünschen und einen Computer bevorzugen, ist der **13-Zoll-MacBook Air M5** die bessere Wahl. Wenn Sie planen, Modelle selbst mit einem Tool wie Ollama auszuführen, überprüfen Sie zunächst den Speicherbedarf für das von Ihnen gewählte Modell und den Kontext. Für eine stationäre Maschine, die mehr als 32GB benötigt, sollten Sie die Konfigurationen **48GB und 64GB Mac mini M5 Pro** in Betracht ziehen. [Apple Mac mini Spezifikationen](https://www.apple.com/kr/mac-mini/specs/) · [Apple MacBook Air Spezifikationen](https://www.apple.com/kr/macbook-air/specs/)
+Wenn Sie bereits einen Laptop haben und möchten, dass KI-Agenten Browsertests oder geplante Jobs ausführen, empfehle ich **Mac mini M6**. Wenn Sie beim Pendeln und auf Reisen die gleiche Entwicklungsumgebung wünschen und einen Computer bevorzugen, ist das **13-Zoll MacBook Air M5** die bessere Wahl. Wenn Sie planen, Modelle selbst mit einem Tool wie Ollama auszuführen, überprüfen Sie zunächst den Speicherbedarf für das von Ihnen gewählte Modell und den Kontext. Für eine stationäre Maschine, die mehr als 32GB benötigt, sollten Sie die Konfigurationen **48GB und 64GB Mac mini M5 Pro** in Betracht ziehen. [Apple Mac mini Spezifikationen](https://www.apple.com/kr/mac-mini/specs/) · [Apple MacBook Air Spezifikationen](https://www.apple.com/kr/macbook-air/specs/)
 
-![Entscheidungsablauf: Ziehen Sie einen Mac mini für stationäre Agenten oder einen MacBook Air für häufige Reisen in Betracht und überprüfen Sie den Speicherbedarf, wenn Sie lokale Modelle auf einem dieser Agenten ausführen.](2026-11-23-mac-for-ai-agents.svg)
+![Entscheidungsablauf: Ziehen Sie einen Mac mini für stationäre Agenten oder einen MacBook Air für häufige Reisen in Betracht und überprüfen Sie den Speicherbedarf, wenn Sie lokale Modelle auf einem dieser Geräte ausführen.](2026-11-23-mac-for-ai-agents.svg)
 
 ## Wo Agenten und Modelle laufen
 
@@ -55,6 +55,6 @@ sysctl -n hw.memsize | awk '{ printf "Unified memory: %.0f GiB\n", $1 / 10737418
 df -h "$HOME" | awk 'NR == 2 { print "Free storage:", $4 }'
 ```
 
-Auch wenn genügend Arbeitsspeicher und Festplatte vorhanden sind, muss eine Maschine für geplante Jobs noch einmal überprüft werden. Führen Sie nach der Arbeit einen geplanten Job einmal bei ausgeschaltetem Bildschirm aus und überprüfen Sie das Protokoll. Wenn Jobs nach dem Ruhezustand oder Neustart ausgeführt werden müssen, überprüfen Sie beide Bedingungen erneut. Wenn Sie bereits ein MacBook besitzen, kann Ihnen dieser Check bei der Entscheidung helfen, ob Sie ein dediziertes Mac mini benötigen. [Ein MacBook als persönlichen Server verwenden](https://youdozi.github.io/de/posts/2026-11-23-macbook-personal-server/)
+Auch wenn genügend Arbeitsspeicher und Festplatte vorhanden sind, muss eine Maschine für geplante Jobs noch einmal überprüft werden. Führen Sie nach der Arbeit einen geplanten Job einmal bei ausgeschaltetem Bildschirm aus und überprüfen Sie das Protokoll. Wenn Jobs nach dem Ruhezustand oder Neustart ausgeführt werden müssen, überprüfen Sie beide Bedingungen erneut. Wenn Sie bereits ein MacBook besitzen, kann Ihnen dieser Check bei der Entscheidung helfen, ob Sie einen dedizierten Mac mini benötigen. [Ein MacBook als persönlichen Server verwenden](https://youdozi.github.io/de/posts/2026-11-23-macbook-personal-server/)
 
 Ich habe die Spezifikationen und Preise auf den koreanischen Seiten von Apple überprüft und die drei oben genannten Befehle unter macOS ausgeführt. Ich habe die Build-Leistung zwischen Maschinen oder die Reaktionszeiten lokaler Modelle nicht gemessen.

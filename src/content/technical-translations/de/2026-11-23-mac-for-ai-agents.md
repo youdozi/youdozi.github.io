@@ -18,24 +18,24 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-23-mac-for-ai-agents.md",
   "sourceSha256": "cf0a6f26766c7d6ada501ad70e444774995908e2d4c22f1683cddffe6211454a",
-  "draftSha256": "871821a48c4411d2b2511bb9e1043995022828457f731f2fc3a2c1a7662c16a1",
+  "draftSha256": "3ac91582d1748e446d46a045a5378e1db7d0cb34f22374b0c7b38918ffeb8c59",
   "manifestPath": ".pipeline/technical-translations/batch-189/manifest.json",
-  "manifestSha256": "2ec2960a7749800829cf4dba332b1a2b1e8bb25a342c7e0a4ea731ed67d649bc",
-  "publishedAt": "2026-11-23T14:38:56.070Z",
-  "updatedAt": "2026-11-23T14:38:56.070Z",
+  "manifestSha256": "7d5309a7042c298d78a212508c1da5ec4694b99b5d3cd4fd6bd1c3734ac905fd",
+  "publishedAt": "2026-11-23T14:39:43.714Z",
+  "updatedAt": "2026-11-23T14:39:43.714Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 189,
-    "approvedAt": "2026-11-23T14:38:56.070Z",
+    "approvedAt": "2026-11-23T14:39:43.714Z",
     "basis": "Owner explicitly requested publication in eight languages; machine-assisted translations self-reviewed without independent or native-speaker review."
   }
 }
 ---
 
-Wenn Sie bereits einen Laptop haben und möchten, dass KI-Agenten Browsertests oder geplante Jobs ausführen, empfehle ich **Mac mini M6**. Wenn Sie beim Pendeln und auf Reisen die gleiche Entwicklungsumgebung wünschen und einen Computer bevorzugen, ist der **13-Zoll-MacBook Air M5** die bessere Wahl. Wenn Sie planen, Modelle selbst mit einem Tool wie Ollama auszuführen, überprüfen Sie zunächst den Speicherbedarf für das von Ihnen gewählte Modell und den Kontext. Für eine stationäre Maschine, die mehr als 32GB benötigt, sollten Sie die Konfigurationen **48GB und 64GB Mac mini M5 Pro** in Betracht ziehen. [Apple Mac mini Spezifikationen](https://www.apple.com/kr/mac-mini/specs/) · [Apple MacBook Air Spezifikationen](https://www.apple.com/kr/macbook-air/specs/)
+Wenn Sie bereits einen Laptop haben und möchten, dass KI-Agenten Browsertests oder geplante Jobs ausführen, empfehle ich **Mac mini M6**. Wenn Sie beim Pendeln und auf Reisen die gleiche Entwicklungsumgebung wünschen und einen Computer bevorzugen, ist das **13-Zoll MacBook Air M5** die bessere Wahl. Wenn Sie planen, Modelle selbst mit einem Tool wie Ollama auszuführen, überprüfen Sie zunächst den Speicherbedarf für das von Ihnen gewählte Modell und den Kontext. Für eine stationäre Maschine, die mehr als 32GB benötigt, sollten Sie die Konfigurationen **48GB und 64GB Mac mini M5 Pro** in Betracht ziehen. [Apple Mac mini Spezifikationen](https://www.apple.com/kr/mac-mini/specs/) · [Apple MacBook Air Spezifikationen](https://www.apple.com/kr/macbook-air/specs/)
 
-![Entscheidungsablauf: Ziehen Sie einen Mac mini für stationäre Agenten oder einen MacBook Air für häufige Reisen in Betracht und überprüfen Sie den Speicherbedarf, wenn Sie lokale Modelle auf einem dieser Agenten ausführen.](/assets/diagrams/technical/de-2026-11-23-mac-for-ai-agents.svg)
+![Entscheidungsablauf: Ziehen Sie einen Mac mini für stationäre Agenten oder einen MacBook Air für häufige Reisen in Betracht und überprüfen Sie den Speicherbedarf, wenn Sie lokale Modelle auf einem dieser Geräte ausführen.](/assets/diagrams/technical/de-2026-11-23-mac-for-ai-agents.svg)
 
 ## Wo Agenten und Modelle laufen
 
@@ -78,6 +78,6 @@ sysctl -n hw.memsize | awk '{ printf "Unified memory: %.0f GiB\n", $1 / 10737418
 df -h "$HOME" | awk 'NR == 2 { print "Free storage:", $4 }'
 ```
 
-Auch wenn genügend Arbeitsspeicher und Festplatte vorhanden sind, muss eine Maschine für geplante Jobs noch einmal überprüft werden. Führen Sie nach der Arbeit einen geplanten Job einmal bei ausgeschaltetem Bildschirm aus und überprüfen Sie das Protokoll. Wenn Jobs nach dem Ruhezustand oder Neustart ausgeführt werden müssen, überprüfen Sie beide Bedingungen erneut. Wenn Sie bereits ein MacBook besitzen, kann Ihnen dieser Check bei der Entscheidung helfen, ob Sie ein dediziertes Mac mini benötigen. [Ein MacBook als persönlichen Server verwenden](https://youdozi.github.io/de/posts/2026-11-23-macbook-personal-server/)
+Auch wenn genügend Arbeitsspeicher und Festplatte vorhanden sind, muss eine Maschine für geplante Jobs noch einmal überprüft werden. Führen Sie nach der Arbeit einen geplanten Job einmal bei ausgeschaltetem Bildschirm aus und überprüfen Sie das Protokoll. Wenn Jobs nach dem Ruhezustand oder Neustart ausgeführt werden müssen, überprüfen Sie beide Bedingungen erneut. Wenn Sie bereits ein MacBook besitzen, kann Ihnen dieser Check bei der Entscheidung helfen, ob Sie einen dedizierten Mac mini benötigen. [Ein MacBook als persönlichen Server verwenden](https://youdozi.github.io/de/posts/2026-11-23-macbook-personal-server/)
 
 Ich habe die Spezifikationen und Preise auf den koreanischen Seiten von Apple überprüft und die drei oben genannten Befehle unter macOS ausgeführt. Ich habe die Build-Leistung zwischen Maschinen oder die Reaktionszeiten lokaler Modelle nicht gemessen.
