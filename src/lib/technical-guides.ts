@@ -7,7 +7,7 @@ import type { CategoryGuide } from './category-guide';
 import { algorithmGuide } from './algorithm-guide.ts';
 import { springGuide } from './spring-guide.ts';
 
-export const guideTerms = ['coding-test', 'jdk', 'springboot', 'linux', 'util', 'automation', 'jenkins', 'jekyll', 'security'] as const;
+export const guideTerms = ['coding-test', 'jdk', 'springboot', 'linux', 'util', 'automation', 'jenkins', 'jekyll', 'security', 'tips'] as const;
 const updatedAt = new Date('2026-10-30T10:10:46.396668+00:00');
 const pathUpdatedAt: Record<string,number> = {jdk:Date.parse('2026-11-06T01:49:27.840067+00:00'),util:Date.parse('2026-11-03T05:43:22.606306+00:00')};
 const nativeGuideIndexCopy = {
@@ -190,7 +190,7 @@ export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGui
     const ordered=all.filter(e=>e.language===lang&&e.kind==='post'&&e.categories.includes(term)&&e.reviewStatus!=='example'&&e.publishedAt.getTime()<=Date.now());
     if(!ordered.length)return undefined;
     const copy=tipsCopy[lang], localized=hasLocalizedGuide(lang)?guideLocales[lang].common:common[lang as 'en'|'ko'];
-    return {...copy,...localized,title:copy.label,intro:copy.description,lang,url:`/${lang}/categories/tips/`,listAnchor:'articles',sections:[],extras:ordered,ordered,updatedAt:new Date(Math.max(...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
+    return {...copy,...localized,title:copy.label,eyebrow:copy.label,intro:copy.description,lang,url:`/${lang}/categories/tips/`,listAnchor:'articles',sections:[],extras:ordered,ordered,updatedAt:new Date(Math.max(...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
   }
 
   if(term==='security'&&lang!=='en'&&lang!=='ko')return undefined;
