@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-190",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "70eab32a9eeee79fd66979ef1d19bfa0d2e83ff6",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Self-review against Korean and English; no independent or native-speaker review.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-24-github-pages-ads-guide",
+      "language": "zh-CN",
+      "translationKey": "2026-11-24-github-pages-ads-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "884b5c639b2345ac6daac6b307db2cd0ec22e80801c8d5d2d5860b4ba12356d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-190/zh-CN/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "bad826be2122e517f91c27d12efe802b12b31cebc6247a29e9acddf8bd7cc035"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-190/zh-CN/2026-11-24-github-pages-ads-guide.svg",
+        "sha256": "59cc78e882d8227fb2f3fffe7cba43bf7ba7600b050556e05a90bcf367eb06d1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/github-pages-ads-guide-en.svg",
+        "sha256": "dfbfd719b6d48154ecfc8edfc429c7dd84b0c0461033735913709bf4b69e74d8"
+      }
+    },
+    {
+      "key": "ja-2026-11-24-github-pages-ads-guide",
+      "language": "ja",
+      "translationKey": "2026-11-24-github-pages-ads-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "884b5c639b2345ac6daac6b307db2cd0ec22e80801c8d5d2d5860b4ba12356d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-190/ja/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "0ae432a716d851e12a18876bf8279b4376ef4319289101eb45ce2e48a9c874f8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-190/ja/2026-11-24-github-pages-ads-guide.svg",
+        "sha256": "89e55c4b2a6787923f6db3756eefa7c07e971e3b2e4d2da396fe7178f30fd3ff"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/github-pages-ads-guide-en.svg",
+        "sha256": "dfbfd719b6d48154ecfc8edfc429c7dd84b0c0461033735913709bf4b69e74d8"
+      }
+    },
+    {
+      "key": "de-2026-11-24-github-pages-ads-guide",
+      "language": "de",
+      "translationKey": "2026-11-24-github-pages-ads-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "884b5c639b2345ac6daac6b307db2cd0ec22e80801c8d5d2d5860b4ba12356d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-190/de/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "bff409130917cb714a0f387f189b1f6243a0a8b91382bfada597ead37ed3e912"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-190/de/2026-11-24-github-pages-ads-guide.svg",
+        "sha256": "38cb47525a34b174150fd03b846b2ea0778b2dbe98d3bbddd3c0b2b5efbda21e"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/github-pages-ads-guide-en.svg",
+        "sha256": "dfbfd719b6d48154ecfc8edfc429c7dd84b0c0461033735913709bf4b69e74d8"
+      }
+    },
+    {
+      "key": "fr-2026-11-24-github-pages-ads-guide",
+      "language": "fr",
+      "translationKey": "2026-11-24-github-pages-ads-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "884b5c639b2345ac6daac6b307db2cd0ec22e80801c8d5d2d5860b4ba12356d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-190/fr/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "13511b80e2a6061c6cebebf45ffac99d2e7bb0ba9dfbbd927ef5d9a1ce1bc233"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-190/fr/2026-11-24-github-pages-ads-guide.svg",
+        "sha256": "7b787f4cb28644bd12ed435d9c86a2de8f6a816d37e83d59839c68a5d837809a"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/github-pages-ads-guide-en.svg",
+        "sha256": "dfbfd719b6d48154ecfc8edfc429c7dd84b0c0461033735913709bf4b69e74d8"
+      }
+    },
+    {
+      "key": "ru-2026-11-24-github-pages-ads-guide",
+      "language": "ru",
+      "translationKey": "2026-11-24-github-pages-ads-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "884b5c639b2345ac6daac6b307db2cd0ec22e80801c8d5d2d5860b4ba12356d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-190/ru/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "dfcfe2502616cc4e94505c2f6565483a4d9494daae862997e22224afe0a8cd8e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-190/ru/2026-11-24-github-pages-ads-guide.svg",
+        "sha256": "0751379200101b568cae4f1ece82e14d3de40de8fafb954ae1b0ec8bda06822f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/github-pages-ads-guide-en.svg",
+        "sha256": "dfbfd719b6d48154ecfc8edfc429c7dd84b0c0461033735913709bf4b69e74d8"
+      }
+    },
+    {
+      "key": "es-2026-11-24-github-pages-ads-guide",
+      "language": "es",
+      "translationKey": "2026-11-24-github-pages-ads-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "884b5c639b2345ac6daac6b307db2cd0ec22e80801c8d5d2d5860b4ba12356d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-190/es/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "5a20c0c436cc37c415f03461ab820e718200779939197d26f058081bdb868414"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-190/es/2026-11-24-github-pages-ads-guide.svg",
+        "sha256": "b2af6e23114a365f7e2a6442e539a87dc766dfcac3b97ba6ffe433db0c3061e2"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/github-pages-ads-guide-en.svg",
+        "sha256": "dfbfd719b6d48154ecfc8edfc429c7dd84b0c0461033735913709bf4b69e74d8"
+      }
+    }
+  ]
+}
