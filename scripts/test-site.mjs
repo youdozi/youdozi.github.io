@@ -272,6 +272,17 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.ok(home.includes('href="/en/about/" lang="en"'));
       assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/about/</loc>`));
     }
+    const socialImage='https://youdozi.github.io/assets/img/social/mac-for-ai-agents.png';
+    for(const lang of ['ko','en','zh-CN','ja','de','fr','ru','es']){
+      const html=await readFile(`dist/${lang}/posts/2026-11-23-mac-for-ai-agents/index.html`,'utf8');
+      assert.ok(html.includes(`property="og:image" content="${socialImage}"`));
+      assert.ok(html.includes(`name="twitter:image" content="${socialImage}"`));
+      assert.match(html, /property="og:image:alt" content="[^"]+"/);
+      const data=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      assert.equal(data.find(item=>item['@type']==='BlogPosting').image,socialImage);
+    }
+    const fixturePage=await readFile('dist/en/posts/2000-01-02-metadata-fixture/index.html','utf8');
+    assert.ok(fixturePage.includes('property="og:image" content="https://youdozi.github.io/assets/img/profile.jpg"'));
     const englishArticle=await readFile('dist/en/posts/2023-09-19-springboot-test-webclient/index.html','utf8');
     assert.match(englishArticle,/<html lang="en">/);
     assert.match(englishArticle,/rel="canonical" href="https:\/\/youdozi.github.io\/en\/posts\/2023-09-19-springboot-test-webclient\/"/);
