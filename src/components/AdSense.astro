@@ -1,0 +1,11 @@
+---
+---
+{import.meta.env.PROD && !/^\/review\/?$/.test(Astro.url.pathname) && <script is:inline>
+  if (location.hostname === 'youdozi.github.io') {
+    const adsense = document.createElement('script');
+    adsense.async = true;
+    adsense.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2488826942326109';
+    adsense.crossOrigin = 'anonymous';
+    document.head.append(adsense);
+  }
+</script>}

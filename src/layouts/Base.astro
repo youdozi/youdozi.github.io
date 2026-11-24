@@ -1,4 +1,6 @@
 ---
+import AdSense from '../components/AdSense.astro';
+import privacy from '../lib/privacy.json';
 import { SITE, text, localeInfo, publishedLanguages, type Language } from '../lib/content';
 import '../styles/global.css';
 import labels from '../lib/archive-ui.json';
@@ -36,6 +38,7 @@ const currentPath = Astro.url.pathname.startsWith(`/${lang}/`) ? Astro.url.pathn
   <head>
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
     <meta name="google-adsense-account" content="ca-pub-2488826942326109" />
+    <AdSense />
     <title>{title === SITE ? SITE : `${title} · ${SITE}`}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(canonical, Astro.site)} />
@@ -97,7 +100,7 @@ const currentPath = Astro.url.pathname.startsWith(`/${lang}/`) ? Astro.url.pathn
       </nav>
     </header>
     <main id="main" class="shell" tabindex="-1"><slot /></main>
-    <footer class="site-footer shell"><div><a class="brand" href={`/${lang}/`}>{SITE}</a><p>{t.footer}</p></div><div class="footer-links">{archiveLink && <a href={archiveLink.url} aria-current={current(archiveLink.url)}>{discoveryUi[lang].archive}</a>}<a href={authorPath(lang)} lang={lang==='ko'?'ko':'en'}>{profileCopy[lang==='ko'?'ko':'en'].label}</a>{hasSection(allEntries,lang,'categories') && <a href={`/${lang}/categories/`} aria-current={current(`/${lang}/categories/`)}>{t.categories}</a>}{hasSection(allEntries,lang,'tags') && <a href={`/${lang}/tags/`} aria-current={current(`/${lang}/tags/`)}>{t.tags}</a>}<a href={`/${lang}/feed.xml`}>RSS</a><a href="https://github.com/youdozi">GitHub ↗</a></div></footer>
+    <footer class="site-footer shell"><div><a class="brand" href={`/${lang}/`}>{SITE}</a><p>{t.footer}</p></div><div class="footer-links">{archiveLink && <a href={archiveLink.url} aria-current={current(archiveLink.url)}>{discoveryUi[lang].archive}</a>}<a href={authorPath(lang)} lang={lang==='ko'?'ko':'en'}>{profileCopy[lang==='ko'?'ko':'en'].label}</a><a href={`/${lang}/privacy/`} aria-current={current(`/${lang}/privacy/`)}>{privacy[lang].title}</a>{hasSection(allEntries,lang,'categories') && <a href={`/${lang}/categories/`} aria-current={current(`/${lang}/categories/`)}>{t.categories}</a>}{hasSection(allEntries,lang,'tags') && <a href={`/${lang}/tags/`} aria-current={current(`/${lang}/tags/`)}>{t.tags}</a>}<a href={`/${lang}/feed.xml`}>RSS</a><a href="https://github.com/youdozi">GitHub ↗</a></div></footer>
     <script>import '../scripts/navigation';</script>
   </body>
 </html>

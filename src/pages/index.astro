@@ -1,4 +1,5 @@
 ---
+import AdSense from '../components/AdSense.astro';
 import {publishedLanguages,localeInfo} from '../lib/content';
 import '../styles/global.css';
 const languages = await publishedLanguages();
@@ -8,6 +9,7 @@ const languages = await publishedLanguages();
   <head>
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width" />
     <meta name="google-adsense-account" content="ca-pub-2488826942326109" />
+    <AdSense />
     <title>Choose your language · youdozi's memory</title>
     <link rel="canonical" href={new URL('/en/',Astro.site)} />
     <meta name="robots" content="noindex,follow" />
