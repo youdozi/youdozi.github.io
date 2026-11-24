@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import {publishedLanguages, type Language} from '../../lib/content';
+import privacy from '../../lib/privacy.json';
+export async function getStaticPaths(){return (await publishedLanguages()).map(lang=>({params:{lang}}));}
+const lang=Astro.params.lang as Language;
+const copy=privacy[lang];
+const alternates=(await publishedLanguages()).map(language=>({language,url:`/${language}/privacy/`}));
+---
+<Base title={copy.title} description={copy.analytics} lang={lang} alternates={alternates}>
+  <article class="privacy prose">
+    <h1>{copy.title}</h1>
+    <p>{copy.analytics}</p>
+    <p>{copy.ads}</p>
+    <p><a href="https://policies.google.com/technologies/partner-sites">{copy.google}</a></p>
+  </article>
+</Base>
+<style>.privacy{max-width:760px;padding:64px 0}.privacy h1{margin-top:0}</style>
