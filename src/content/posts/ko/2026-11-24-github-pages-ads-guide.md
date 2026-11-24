@@ -14,6 +14,16 @@
     "github-pages",
     "adsense",
     "ads-txt"
+  ],
+  "reviewedAt": "2026-11-24",
+  "reviewStatus": "source-audited",
+  "reviewScope": "Self-reviewed against official publisher documentation and public HTML; no account review or live ad delivery was checked.",
+  "reviewSources": [
+    "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+    "https://www.carbonads.net/join?_hsmi=83378591",
+    "https://www.ethicalads.io/publisher-guide/",
+    "https://support.google.com/adsense/answer/12170421",
+    "https://support.google.com/adsense/answer/13554116"
   ]
 }
 ---
