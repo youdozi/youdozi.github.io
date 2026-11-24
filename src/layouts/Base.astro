@@ -1,4 +1,5 @@
 ---
+import AdSense from '../components/AdSense.astro';
 import { SITE, text, localeInfo, publishedLanguages, type Language } from '../lib/content';
 import '../styles/global.css';
 import labels from '../lib/archive-ui.json';
@@ -36,6 +37,7 @@ const currentPath = Astro.url.pathname.startsWith(`/${lang}/`) ? Astro.url.pathn
   <head>
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
     <meta name="google-adsense-account" content="ca-pub-2488826942326109" />
+    <AdSense />
     <title>{title === SITE ? SITE : `${title} · ${SITE}`}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(canonical, Astro.site)} />
