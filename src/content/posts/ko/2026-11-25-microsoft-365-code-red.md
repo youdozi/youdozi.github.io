@@ -1,6 +1,8 @@
 ---
 kind: "post"
 publishedAt: "2026-11-25T04:46:58Z"
+reviewScope: "사용자가 제공한 완성 원고를 자체 검토하고 영문 번역의 수치와 조건을 대조했습니다. 원자료의 사실 여부는 별도로 검증하지 않았습니다."
+reviewSources: ["https://www.365fanatic.com/wp-content/uploads/2026/11/postincidentreport-mo1550821.pdf", "https://learn.microsoft.com/en-us/azure/well-architected/design-guides/throttling", "https://news.hada.io/topic?id=37797", "https://www.investing.com/news/stock-market-news/exclusivemicrosoft-declares-code-red-after-historic-outage-internal-memos-show-5048702", "https://sre.google/sre-book/managing-incidents/#live-incident-state-document"]
 language: "ko"
 translationKey: "2026-11-25-microsoft-365-code-red"
 routeSlug: "2026-11-25-microsoft-365-code-red"
