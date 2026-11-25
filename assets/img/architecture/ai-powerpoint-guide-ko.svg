@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ko" viewBox="0 0 440 310" role="img" aria-labelledby="title desc">
+<title id="title">AI로 PPT 만들기 — 개요부터 편집 가능한 PowerPoint까지</title>
+<desc id="desc">청중과 요청할 결정을 정해 개요를 검토하고, 편집 가능한 슬라이드를 만든 뒤 원자료와 대조하고 발표 모드에서 확인한다.</desc>
+<rect width="440" height="310" rx="12" fill="#f3f6fa"/>
+<g font-family="system-ui, sans-serif" fill="#163849">
+<rect x="12" y="12" width="416" height="80" rx="9" fill="white" stroke="#76998e"/>
+<text x="28" y="44" font-size="22" font-weight="700">개요 기획</text>
+<text x="28" y="72" font-size="17">청중 · 요청할 결정 · 근거</text>
+<path d="M220 93v16m-6 -6 6 6 6 -6" fill="none" stroke="#26715b" stroke-width="2.5"/>
+<rect x="12" y="114" width="416" height="80" rx="9" fill="white" stroke="#76998e"/>
+<text x="28" y="146" font-size="22" font-weight="700">PowerPoint 제작</text>
+<text x="28" y="174" font-size="17">편집 가능한 표 · 도형 · 발표자 노트</text>
+<path d="M220 195v16m-6 -6 6 6 6 -6" fill="none" stroke="#26715b" stroke-width="2.5"/>
+<rect x="12" y="216" width="416" height="80" rx="9" fill="white" stroke="#76998e"/>
+<text x="28" y="248" font-size="22" font-weight="700">슬라이드 검수</text>
+<text x="28" y="276" font-size="17">원자료 대조 · 편집 및 발표 모드 확인</text>
+</g>
+</svg>

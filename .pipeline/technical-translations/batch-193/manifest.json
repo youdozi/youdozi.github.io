@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-193",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "22fb39e",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Self-review against Korean and English; no independent or native-speaker review.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-26-ai-powerpoint-guide",
+      "language": "zh-CN",
+      "translationKey": "2026-11-26-ai-powerpoint-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "859efd0ceeccfc1b46a9a9b1f8bbfb0235b50e0f4eee44c55f224a6a936c87cd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-193/zh-CN/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "404dc0d6b5f761b2f021901d6e26484163d3dc11422b30c987fa2a8d903336cf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-193/zh-CN/2026-11-26-ai-powerpoint-guide.svg",
+        "sha256": "805ef1f3c0709233aab2972f54c40b5e1367e64bfb40f1e5655245969063fc6e"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-powerpoint-guide-en.svg",
+        "sha256": "ea368c33e136f368e5a5c1db656a11f5d12f328fc2d5c1d3aa079922916d72fa"
+      }
+    },
+    {
+      "key": "ja-2026-11-26-ai-powerpoint-guide",
+      "language": "ja",
+      "translationKey": "2026-11-26-ai-powerpoint-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "859efd0ceeccfc1b46a9a9b1f8bbfb0235b50e0f4eee44c55f224a6a936c87cd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-193/ja/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "e388ded4caafc568ed04923f85df5cbbcea0afb17a220addaf8eb9b5b91362b4"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-193/ja/2026-11-26-ai-powerpoint-guide.svg",
+        "sha256": "b38e6e1c13c144b399e5a44e4c801237842630bb1d5a2c1badc9e38dff694a89"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-powerpoint-guide-en.svg",
+        "sha256": "ea368c33e136f368e5a5c1db656a11f5d12f328fc2d5c1d3aa079922916d72fa"
+      }
+    },
+    {
+      "key": "de-2026-11-26-ai-powerpoint-guide",
+      "language": "de",
+      "translationKey": "2026-11-26-ai-powerpoint-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "859efd0ceeccfc1b46a9a9b1f8bbfb0235b50e0f4eee44c55f224a6a936c87cd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-193/de/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "c12791a58e28e33b54b90a54bb1e1987fc6c8534901995a863ba40a968874881"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-193/de/2026-11-26-ai-powerpoint-guide.svg",
+        "sha256": "c56003a0c13242cd0b9ac5d9fa7607a77673146f61dbf81ac0fa2da18971458d"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-powerpoint-guide-en.svg",
+        "sha256": "ea368c33e136f368e5a5c1db656a11f5d12f328fc2d5c1d3aa079922916d72fa"
+      }
+    },
+    {
+      "key": "fr-2026-11-26-ai-powerpoint-guide",
+      "language": "fr",
+      "translationKey": "2026-11-26-ai-powerpoint-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "859efd0ceeccfc1b46a9a9b1f8bbfb0235b50e0f4eee44c55f224a6a936c87cd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-193/fr/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "c112ddbbbd8bec05dd6dc61bb12431332cbcf7b77f389bc330266cf998d585b8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-193/fr/2026-11-26-ai-powerpoint-guide.svg",
+        "sha256": "a707cb547d86fa6a117b9664b1b79590ad988cd2c16f66b7ccc0e0ff91978075"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-powerpoint-guide-en.svg",
+        "sha256": "ea368c33e136f368e5a5c1db656a11f5d12f328fc2d5c1d3aa079922916d72fa"
+      }
+    },
+    {
+      "key": "ru-2026-11-26-ai-powerpoint-guide",
+      "language": "ru",
+      "translationKey": "2026-11-26-ai-powerpoint-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "859efd0ceeccfc1b46a9a9b1f8bbfb0235b50e0f4eee44c55f224a6a936c87cd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-193/ru/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "4df49e048cb3fadd050786f5117274970abb6004feeaff1ac918d1e2d8beef7f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-193/ru/2026-11-26-ai-powerpoint-guide.svg",
+        "sha256": "4d97096ff83f736e46f84ea48b8b0231f05f46a28f97db0012200ed2c6b611c1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-powerpoint-guide-en.svg",
+        "sha256": "ea368c33e136f368e5a5c1db656a11f5d12f328fc2d5c1d3aa079922916d72fa"
+      }
+    },
+    {
+      "key": "es-2026-11-26-ai-powerpoint-guide",
+      "language": "es",
+      "translationKey": "2026-11-26-ai-powerpoint-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "859efd0ceeccfc1b46a9a9b1f8bbfb0235b50e0f4eee44c55f224a6a936c87cd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-193/es/2026-11-26-ai-powerpoint-guide.md",
+        "sha256": "272441b4883380d853cf518868f1ebc79f7800d65c891a2925d9cc5ed82879ef"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-193/es/2026-11-26-ai-powerpoint-guide.svg",
+        "sha256": "35d25a438a567a7ba84d4ff725e688e49e32e267ebfb260ad1d47ed7dc8de380"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-powerpoint-guide-en.svg",
+        "sha256": "ea368c33e136f368e5a5c1db656a11f5d12f328fc2d5c1d3aa079922916d72fa"
+      }
+    }
+  ]
+}
