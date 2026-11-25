@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="fr" viewBox="0 0 400 426" role="img" aria-labelledby="title desc">
+<title id="title">Comment trouver une mission</title><desc id="desc">Parcours pour obtenir une mission sur chaque plateforme. Déduire du prix les coûts du contrat, des propositions et du retrait, puis diviser le reste par le temps total de prospection, de réalisation et de recette.</desc>
+<rect width="400" height="426" rx="12" fill="#f2f6fa"/>
+<g font-family="system-ui, sans-serif" fill="#183345">
+<text x="16" y="34" font-size="23" font-weight="700">Comment trouver une mission</text>
+<rect x="12" y="49" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="73" font-size="18" font-weight="700">Upwork</text>
+<text x="24" y="97" font-size="17" font-weight="450">Répondre à une annonce</text>
+<rect x="12" y="116" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="140" font-size="18" font-weight="700">Fiverr</text>
+<text x="24" y="164" font-size="17" font-weight="450">Vendre une prestation définie</text>
+<rect x="12" y="183" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="207" font-size="18" font-weight="700">Contra</text>
+<text x="24" y="231" font-size="17" font-weight="450">Portfolio, recommandations ou Job Feed</text>
+<rect x="12" y="250" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="274" font-size="18" font-weight="700">Freelancer.com</text>
+<text x="24" y="298" font-size="17" font-weight="450">Proposer un prix et des étapes</text>
+<rect x="12" y="327" width="376" height="86" rx="7" fill="#d8eee7"/>
+<text x="22" y="358" font-size="15" font-weight="450">Prix − frais de service, d’offre et de retrait</text>
+<text x="22" y="391" font-size="20" font-weight="700">Solde ÷ total des heures</text>
+</g>
+</svg>

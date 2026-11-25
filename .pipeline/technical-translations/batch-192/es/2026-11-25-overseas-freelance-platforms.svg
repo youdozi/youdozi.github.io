@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="es" viewBox="0 0 400 426" role="img" aria-labelledby="title desc">
+<title id="title">Cómo conseguir un encargo</title><desc id="desc">Cómo se consigue trabajo en cada plataforma. Al importe del contrato se le restan la comisión, las propuestas y la retirada. El saldo se divide entre todas las horas de propuestas, entrega y revisión.</desc>
+<rect width="400" height="426" rx="12" fill="#f2f6fa"/>
+<g font-family="system-ui, sans-serif" fill="#183345">
+<text x="16" y="34" font-size="23" font-weight="700">Cómo conseguir un encargo</text>
+<rect x="12" y="49" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="73" font-size="18" font-weight="700">Upwork</text>
+<text x="24" y="97" font-size="17" font-weight="450">Responder a un anuncio</text>
+<rect x="12" y="116" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="140" font-size="18" font-weight="700">Fiverr</text>
+<text x="24" y="164" font-size="17" font-weight="450">Vender un servicio definido</text>
+<rect x="12" y="183" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="207" font-size="18" font-weight="700">Contra</text>
+<text x="24" y="231" font-size="17" font-weight="450">Portafolio, recomendaciones o Job Feed</text>
+<rect x="12" y="250" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="274" font-size="18" font-weight="700">Freelancer.com</text>
+<text x="24" y="298" font-size="17" font-weight="450">Pujar con un precio e hitos de entrega</text>
+<rect x="12" y="327" width="376" height="86" rx="7" fill="#d8eee7"/>
+<text x="22" y="358" font-size="15" font-weight="450">Precio − costes de contrato, oferta y retirada</text>
+<text x="22" y="391" font-size="20" font-weight="700">Saldo ÷ horas totales</text>
+</g>
+</svg>

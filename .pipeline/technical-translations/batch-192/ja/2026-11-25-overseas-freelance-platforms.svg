@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ja" viewBox="0 0 400 426" role="img" aria-labelledby="title desc">
+<title id="title">受注までの道筋</title><desc id="desc">各サイトでの受注方法。契約額から手数料、提案費、出金費を引き、提案・作業・検収の合計時間で割る。</desc>
+<rect width="400" height="426" rx="12" fill="#f2f6fa"/>
+<g font-family="system-ui, sans-serif" fill="#183345">
+<text x="16" y="34" font-size="23" font-weight="700">受注までの道筋</text>
+<rect x="12" y="49" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="73" font-size="18" font-weight="700">Upwork</text>
+<text x="24" y="97" font-size="17" font-weight="450">募集案件に提案</text>
+<rect x="12" y="116" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="140" font-size="18" font-weight="700">Fiverr</text>
+<text x="24" y="164" font-size="17" font-weight="450">範囲を決めて出品</text>
+<rect x="12" y="183" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="207" font-size="18" font-weight="700">Contra</text>
+<text x="24" y="231" font-size="17" font-weight="450">作品集・紹介・募集案件</text>
+<rect x="12" y="250" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="274" font-size="18" font-weight="700">Freelancer.com</text>
+<text x="24" y="298" font-size="17" font-weight="450">価格と納品段階を示して入札</text>
+<rect x="12" y="327" width="376" height="86" rx="7" fill="#d8eee7"/>
+<text x="22" y="358" font-size="15" font-weight="450">契約額 − 手数料 − 提案費 − 出金費</text>
+<text x="22" y="391" font-size="20" font-weight="700">残額 ÷ 総作業時間</text>
+</g>
+</svg>

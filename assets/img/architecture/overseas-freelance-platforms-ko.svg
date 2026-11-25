@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ko" viewBox="0 0 400 426" role="img" aria-labelledby="title desc">
+<title id="title">일감은 어디서 얻을까?</title><desc id="desc">플랫폼별 수주 방식을 비교한 뒤 계약금에서 계약 수수료, 제안 비용, 출금 비용을 빼고 남은 금액을 계산한다. 제안·작업·검수 시간을 합산한 뒤 비용 차감액을 총시간으로 나눈다.</desc>
+<rect width="400" height="426" rx="12" fill="#f2f6fa"/>
+<g font-family="system-ui, sans-serif" fill="#183345">
+<text x="16" y="34" font-size="23" font-weight="700">일감은 어디서 얻을까?</text>
+<rect x="12" y="49" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="73" font-size="18" font-weight="700">Upwork</text>
+<text x="24" y="97" font-size="17" font-weight="450">공고에 맞춰 제안</text>
+<rect x="12" y="116" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="140" font-size="18" font-weight="700">Fiverr</text>
+<text x="24" y="164" font-size="17" font-weight="450">정해진 서비스 판매</text>
+<rect x="12" y="183" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="207" font-size="18" font-weight="700">Contra</text>
+<text x="24" y="231" font-size="17" font-weight="450">포트폴리오·소개·공고</text>
+<rect x="12" y="250" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="274" font-size="18" font-weight="700">Freelancer.com</text>
+<text x="24" y="298" font-size="17" font-weight="450">가격과 납품 단계로 입찰</text>
+<rect x="12" y="327" width="376" height="86" rx="7" fill="#d8eee7"/>
+<text x="22" y="358" font-size="15" font-weight="450">계약금 − 수수료 − 제안비 − 출금비</text>
+<text x="22" y="391" font-size="20" font-weight="700">남은 금액 ÷ 총 투입 시간</text>
+</g>
+</svg>
