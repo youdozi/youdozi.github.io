@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="fr" viewBox="0 0 440 310" role="img" aria-labelledby="title desc">
+<title id="title">Créer un PowerPoint avec l’IA, du plan aux diapositives modifiables</title>
+<desc id="desc">Préciser le public et la décision attendue, valider le plan, créer des diapositives modifiables puis vérifier les sources et le rendu en mode diaporama.</desc>
+<rect width="440" height="310" rx="12" fill="#f3f6fa"/>
+<g font-family="system-ui, sans-serif" fill="#163849">
+<rect x="12" y="12" width="416" height="80" rx="9" fill="white" stroke="#76998e"/>
+<text x="28" y="44" font-size="22" font-weight="700">Préparer le plan</text>
+<text x="28" y="72" font-size="17">Public, décision attendue et sources</text>
+<path d="M220 93v16m-6 -6 6 6 6 -6" fill="none" stroke="#26715b" stroke-width="2.5"/>
+<rect x="12" y="114" width="416" height="80" rx="9" fill="white" stroke="#76998e"/>
+<text x="28" y="146" font-size="22" font-weight="700">Créer le PowerPoint</text>
+<text x="28" y="174" font-size="17">Tableaux et formes modifiables, notes</text>
+<path d="M220 195v16m-6 -6 6 6 6 -6" fill="none" stroke="#26715b" stroke-width="2.5"/>
+<rect x="12" y="216" width="416" height="80" rx="9" fill="white" stroke="#76998e"/>
+<text x="28" y="248" font-size="22" font-weight="700">Vérifier les diapositives</text>
+<text x="28" y="276" font-size="17">Sources, mode édition et diaporama</text>
+</g>
+</svg>

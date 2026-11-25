@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ja" viewBox="0 0 440 310" role="img" aria-labelledby="title desc">
+<title id="title">AIでPowerPointを作る ― 構成案から編集可能なスライドまで</title>
+<desc id="desc">聞き手と求める判断を決め、構成案を確認して編集可能なスライドを作り、元資料との照合とスライドショーでの確認を行う。</desc>
+<rect width="440" height="310" rx="12" fill="#f3f6fa"/>
+<g font-family="system-ui, sans-serif" fill="#163849">
+<rect x="12" y="12" width="416" height="80" rx="9" fill="white" stroke="#76998e"/>
+<text x="28" y="44" font-size="22" font-weight="700">構成を決める</text>
+<text x="28" y="72" font-size="17">聞き手・求める判断・根拠</text>
+<path d="M220 93v16m-6 -6 6 6 6 -6" fill="none" stroke="#26715b" stroke-width="2.5"/>
+<rect x="12" y="114" width="416" height="80" rx="9" fill="white" stroke="#76998e"/>
+<text x="28" y="146" font-size="22" font-weight="700">PowerPointを作る</text>
+<text x="28" y="174" font-size="17">編集可能な表と図形・発表者ノート</text>
+<path d="M220 195v16m-6 -6 6 6 6 -6" fill="none" stroke="#26715b" stroke-width="2.5"/>
+<rect x="12" y="216" width="416" height="80" rx="9" fill="white" stroke="#76998e"/>
+<text x="28" y="248" font-size="22" font-weight="700">スライドを確認する</text>
+<text x="28" y="276" font-size="17">元資料と照合し、編集・上映時の表示を確認</text>
+</g>
+</svg>
