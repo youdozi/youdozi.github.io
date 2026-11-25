@@ -19,9 +19,9 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-25-microsoft-365-code-red.md",
   "sourceSha256": "2df9b4039ebb04013f04e21b144e3cb3780236a74b97dd9dcd885df36569a389",
-  "draftSha256": "19505e83a152a6348c2a88413208bbca4cd6bba333c7ca36ceea071224d73b9f",
+  "draftSha256": "da636927c1bfa820fc9385f47a489a26e98e16a83b1ba1d91fad5217713e48d9",
   "manifestPath": ".pipeline/technical-translations/batch-191/manifest.json",
-  "manifestSha256": "6337cec9ff8c73af46ab943b0bb91b7955bfc4462acaa7176515d0edfb2d9310",
+  "manifestSha256": "13eb2aabee323374dc6b469884506ac02f5b5b183a0d4bac2d018771359c3160",
   "publishedAt": "2026-11-25T04:56:03.451Z",
   "updatedAt": "2026-11-25T04:56:03.451Z",
   "approval": {
@@ -60,4 +60,4 @@
 
 Следующую тренировку начните с **уменьшенной мощности одного региона в пиковое время**. Определите, сколько запросов способен принять оставшийся регион, какие функции сокращать первыми и с какой скоростью возвращать запросы восстановленным серверам. Критерий завершения должен выходить за рамки запуска серверов: пользователи снова могут пользоваться основными функциями, а накопившиеся запросы сокращаются. Тогда цель восстановления можно измерить.
 
-Читайте также · [Проверка передачи traceparent в RestClient в Spring Boot 4.2 (на английском)](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
+Читайте также · [Проверка передачи traceparent в RestClient в Spring Boot 4.2](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)

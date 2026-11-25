@@ -19,9 +19,9 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-25-microsoft-365-code-red.md",
   "sourceSha256": "2df9b4039ebb04013f04e21b144e3cb3780236a74b97dd9dcd885df36569a389",
-  "draftSha256": "d577c0b5fd6cdf7f745a3c0a7f3067a1916d3ed586fddedb80fbc08adcb4b66f",
+  "draftSha256": "93205d2aa3718105bb9f2ccd1c21ae9a04d35ecaec8285e4c7275dd7d1949d4f",
   "manifestPath": ".pipeline/technical-translations/batch-191/manifest.json",
-  "manifestSha256": "6337cec9ff8c73af46ab943b0bb91b7955bfc4462acaa7176515d0edfb2d9310",
+  "manifestSha256": "13eb2aabee323374dc6b469884506ac02f5b5b183a0d4bac2d018771359c3160",
   "publishedAt": "2026-11-25T04:56:03.451Z",
   "updatedAt": "2026-11-25T04:56:03.451Z",
   "approval": {
@@ -60,4 +60,4 @@ Même avec des canaux d'enquête par équipe, on peut tenir un document d'incide
 
 Pour le prochain exercice, partez d'une **capacité réduite dans une région à l'heure de pointe**. Décidez combien de requêtes la région restante peut accepter, quelles fonctions réduire en premier et à quelle vitesse renvoyer les requêtes vers les serveurs rétablis. Le critère de fin doit dépasser le simple démarrage des serveurs : les utilisateurs doivent pouvoir réutiliser les fonctions essentielles et les requêtes accumulées doivent diminuer. L'objectif de rétablissement devient alors mesurable.
 
-À lire aussi · [Vérifier la propagation de traceparent par RestClient dans Spring Boot 4.2 (anglais)](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
+À lire aussi · [Vérifier la propagation de traceparent par RestClient dans Spring Boot 4.2](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)

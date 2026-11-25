@@ -19,9 +19,9 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-25-microsoft-365-code-red.md",
   "sourceSha256": "2df9b4039ebb04013f04e21b144e3cb3780236a74b97dd9dcd885df36569a389",
-  "draftSha256": "3b42ab6b53a527ca959edcff312650c9a99026374b4e06adec0d05492add8b18",
+  "draftSha256": "a4bf069923312497027337c22cef691eed98a2def35d4a5fba4c5de253f9664a",
   "manifestPath": ".pipeline/technical-translations/batch-191/manifest.json",
-  "manifestSha256": "6337cec9ff8c73af46ab943b0bb91b7955bfc4462acaa7176515d0edfb2d9310",
+  "manifestSha256": "13eb2aabee323374dc6b469884506ac02f5b5b183a0d4bac2d018771359c3160",
   "publishedAt": "2026-11-25T04:56:03.451Z",
   "updatedAt": "2026-11-25T04:56:03.451Z",
   "approval": {
@@ -60,4 +60,4 @@ Reutersが確認した社内メモによると、対応者は11,000件以上の�
 
 次の障害訓練では、**ピーク時に一つのリージョンの容量が低下した状態**から始めてみてください。残るリージョンがどれだけの要求を受けられるか、どの機能を先に縮小するか、復旧したサーバーにどの速度で要求を戻すかを決めます。終了条件はサーバーの起動だけでなく、ユーザーが主要機能を再び使え、滞留した要求が減り始める時点に設定します。そうして初めて復旧目標を測定できます。
 
-関連記事 · [Spring Boot 4.2でRestClientのtraceparent伝播を確認する（英語）](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
+関連記事 · [Spring Boot 4.2でRestClientのtraceparent伝播を確認する](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)

@@ -19,9 +19,9 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-25-microsoft-365-code-red.md",
   "sourceSha256": "2df9b4039ebb04013f04e21b144e3cb3780236a74b97dd9dcd885df36569a389",
-  "draftSha256": "374d23c5e89f947185bbff2fc171a780ffb649ed206113e74b4e61d2a792bd86",
+  "draftSha256": "f5923e18eda5f54da3d8480057304ec46d349570d67885e69a80185102bfee1f",
   "manifestPath": ".pipeline/technical-translations/batch-191/manifest.json",
-  "manifestSha256": "6337cec9ff8c73af46ab943b0bb91b7955bfc4462acaa7176515d0edfb2d9310",
+  "manifestSha256": "13eb2aabee323374dc6b469884506ac02f5b5b183a0d4bac2d018771359c3160",
   "publishedAt": "2026-11-25T04:56:03.451Z",
   "updatedAt": "2026-11-25T04:56:03.451Z",
   "approval": {
@@ -60,4 +60,4 @@
 
 下次故障演练可以从**峰值时一个区域容量下降**开始。确定剩余区域能接收多少请求、先缩减哪些功能，以及以什么速度将请求送回恢复的服务器。结束条件应超越服务器启动：用户能再次使用核心功能，积压请求也在减少。这样才能实际衡量恢复目标。
 
-相关阅读 · [在 Spring Boot 4.2 中检查 RestClient 的 traceparent 传播（英文）](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
+相关阅读 · [在 Spring Boot 4.2 中检查 RestClient 的 traceparent 传播](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)

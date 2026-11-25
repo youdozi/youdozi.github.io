@@ -32,7 +32,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-191/zh-CN/2026-11-25-microsoft-365-code-red.md",
-        "sha256": "374d23c5e89f947185bbff2fc171a780ffb649ed206113e74b4e61d2a792bd86"
+        "sha256": "f5923e18eda5f54da3d8480057304ec46d349570d67885e69a80185102bfee1f"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-191/zh-CN/2026-11-25-microsoft-365-code-red.svg",
@@ -53,7 +53,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-191/ja/2026-11-25-microsoft-365-code-red.md",
-        "sha256": "3b42ab6b53a527ca959edcff312650c9a99026374b4e06adec0d05492add8b18"
+        "sha256": "a4bf069923312497027337c22cef691eed98a2def35d4a5fba4c5de253f9664a"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-191/ja/2026-11-25-microsoft-365-code-red.svg",
@@ -74,7 +74,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-191/de/2026-11-25-microsoft-365-code-red.md",
-        "sha256": "619ac4fd9fb965bfeb01d208f4fcfbb7fd8ea68818067867d61600eed713814f"
+        "sha256": "6e0d47ea1786fb2dec081d4a5fa2bed0b293452ac169be924ba858896da036ed"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-191/de/2026-11-25-microsoft-365-code-red.svg",
@@ -95,7 +95,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-191/fr/2026-11-25-microsoft-365-code-red.md",
-        "sha256": "d577c0b5fd6cdf7f745a3c0a7f3067a1916d3ed586fddedb80fbc08adcb4b66f"
+        "sha256": "93205d2aa3718105bb9f2ccd1c21ae9a04d35ecaec8285e4c7275dd7d1949d4f"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-191/fr/2026-11-25-microsoft-365-code-red.svg",
@@ -116,7 +116,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-191/ru/2026-11-25-microsoft-365-code-red.md",
-        "sha256": "19505e83a152a6348c2a88413208bbca4cd6bba333c7ca36ceea071224d73b9f"
+        "sha256": "da636927c1bfa820fc9385f47a489a26e98e16a83b1ba1d91fad5217713e48d9"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-191/ru/2026-11-25-microsoft-365-code-red.svg",
@@ -137,7 +137,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-191/es/2026-11-25-microsoft-365-code-red.md",
-        "sha256": "e55c3ccd9b06afe1cff63cd862280a019dea4acfd9f36d839e0f40306e37fcf0"
+        "sha256": "2fdcc637229a19bff8c15c6ad694496f55cf7f5743286c0ac0e82e8a66414b8c"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-191/es/2026-11-25-microsoft-365-code-red.svg",

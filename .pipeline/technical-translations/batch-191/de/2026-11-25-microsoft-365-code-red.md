@@ -36,4 +36,4 @@ Auch mit eigenen Untersuchungskanälen können Teams ein gemeinsames Störungsdo
 
 Beginnen Sie die nächste Übung mit **verminderter Kapazität einer Region zur Spitzenzeit**. Legen Sie fest, wie viele Anfragen die verbleibende Region annimmt, welche Funktionen zuerst eingeschränkt werden und wie schnell Anfragen zu wiederhergestellten Servern zurückkehren. Das Ende sollte nicht schon mit dem Start der Server erreicht sein: Nutzer sollen Kernfunktionen wieder verwenden können und der Rückstau soll abnehmen. So lässt sich das Wiederherstellungsziel messen.
 
-Weiterlesen · [RestClient-traceparent-Weitergabe in Spring Boot 4.2 prüfen (Englisch)](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
+Weiterlesen · [RestClient-traceparent-Weitergabe in Spring Boot 4.2 prüfen](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)

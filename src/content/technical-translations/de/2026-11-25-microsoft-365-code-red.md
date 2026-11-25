@@ -19,9 +19,9 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-25-microsoft-365-code-red.md",
   "sourceSha256": "2df9b4039ebb04013f04e21b144e3cb3780236a74b97dd9dcd885df36569a389",
-  "draftSha256": "619ac4fd9fb965bfeb01d208f4fcfbb7fd8ea68818067867d61600eed713814f",
+  "draftSha256": "6e0d47ea1786fb2dec081d4a5fa2bed0b293452ac169be924ba858896da036ed",
   "manifestPath": ".pipeline/technical-translations/batch-191/manifest.json",
-  "manifestSha256": "6337cec9ff8c73af46ab943b0bb91b7955bfc4462acaa7176515d0edfb2d9310",
+  "manifestSha256": "13eb2aabee323374dc6b469884506ac02f5b5b183a0d4bac2d018771359c3160",
   "publishedAt": "2026-11-25T04:56:03.451Z",
   "updatedAt": "2026-11-25T04:56:03.451Z",
   "approval": {
@@ -60,4 +60,4 @@ Auch mit eigenen Untersuchungskanälen können Teams ein gemeinsames Störungsdo
 
 Beginnen Sie die nächste Übung mit **verminderter Kapazität einer Region zur Spitzenzeit**. Legen Sie fest, wie viele Anfragen die verbleibende Region annimmt, welche Funktionen zuerst eingeschränkt werden und wie schnell Anfragen zu wiederhergestellten Servern zurückkehren. Das Ende sollte nicht schon mit dem Start der Server erreicht sein: Nutzer sollen Kernfunktionen wieder verwenden können und der Rückstau soll abnehmen. So lässt sich das Wiederherstellungsziel messen.
 
-Weiterlesen · [RestClient-traceparent-Weitergabe in Spring Boot 4.2 prüfen (Englisch)](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
+Weiterlesen · [RestClient-traceparent-Weitergabe in Spring Boot 4.2 prüfen](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
