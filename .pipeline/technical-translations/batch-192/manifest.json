@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-192",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "5443f50",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Self-review against Korean and English; no independent or native-speaker review.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-25-overseas-freelance-platforms",
+      "language": "zh-CN",
+      "translationKey": "2026-11-25-overseas-freelance-platforms",
+      "source": {
+        "path": "src/content/posts/en/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "459d7a14dff0b6e636f388225c92b5c5b2feacd82c5314c7ee576111648842aa"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-192/zh-CN/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "d7e021ebf97dffe42c66654536122306eaf168c0e4f40be8fe22479a29ad8dfb"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-192/zh-CN/2026-11-25-overseas-freelance-platforms.svg",
+        "sha256": "e73b9cf51baef0e6a825936541c2a6cbbbea8127680e041513995a99767d12e0"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/overseas-freelance-platforms-en.svg",
+        "sha256": "bde8f24c6e4ec6cefa7734bf26c5dc9beb8a3d47dc9062c1cecf66979abf4cb1"
+      }
+    },
+    {
+      "key": "ja-2026-11-25-overseas-freelance-platforms",
+      "language": "ja",
+      "translationKey": "2026-11-25-overseas-freelance-platforms",
+      "source": {
+        "path": "src/content/posts/en/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "459d7a14dff0b6e636f388225c92b5c5b2feacd82c5314c7ee576111648842aa"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-192/ja/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "535303c6ea1b30d6a80a01b622bbb0689dc35835d1e42e16cb3beece515766c0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-192/ja/2026-11-25-overseas-freelance-platforms.svg",
+        "sha256": "24c8de5edeb7ea99c7e98b8eb4cc4895b3e956bc430113b40f0eaef02d388262"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/overseas-freelance-platforms-en.svg",
+        "sha256": "bde8f24c6e4ec6cefa7734bf26c5dc9beb8a3d47dc9062c1cecf66979abf4cb1"
+      }
+    },
+    {
+      "key": "de-2026-11-25-overseas-freelance-platforms",
+      "language": "de",
+      "translationKey": "2026-11-25-overseas-freelance-platforms",
+      "source": {
+        "path": "src/content/posts/en/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "459d7a14dff0b6e636f388225c92b5c5b2feacd82c5314c7ee576111648842aa"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-192/de/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "9db0e2bed7aa7ba8dc253977a62b4ef1d0e8dc6b52a31213bdd068f00c6b39fd"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-192/de/2026-11-25-overseas-freelance-platforms.svg",
+        "sha256": "ed23f2ef68fa13984fde5f8ee4d153a7ce19f7654d8458e6d91f74ab36ca5722"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/overseas-freelance-platforms-en.svg",
+        "sha256": "bde8f24c6e4ec6cefa7734bf26c5dc9beb8a3d47dc9062c1cecf66979abf4cb1"
+      }
+    },
+    {
+      "key": "fr-2026-11-25-overseas-freelance-platforms",
+      "language": "fr",
+      "translationKey": "2026-11-25-overseas-freelance-platforms",
+      "source": {
+        "path": "src/content/posts/en/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "459d7a14dff0b6e636f388225c92b5c5b2feacd82c5314c7ee576111648842aa"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-192/fr/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "f10bacba5b26c3fdfeb0502536a99feb5e7770888deaa44871f4c4c291b2bba0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-192/fr/2026-11-25-overseas-freelance-platforms.svg",
+        "sha256": "b287456c13c0f190f387b752fcb23fce596e26e01b23f767f40a073b24113d5d"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/overseas-freelance-platforms-en.svg",
+        "sha256": "bde8f24c6e4ec6cefa7734bf26c5dc9beb8a3d47dc9062c1cecf66979abf4cb1"
+      }
+    },
+    {
+      "key": "ru-2026-11-25-overseas-freelance-platforms",
+      "language": "ru",
+      "translationKey": "2026-11-25-overseas-freelance-platforms",
+      "source": {
+        "path": "src/content/posts/en/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "459d7a14dff0b6e636f388225c92b5c5b2feacd82c5314c7ee576111648842aa"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-192/ru/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "051f269aee2ad98136e17d0297bfdf3ad4776f84185f1b8cbae31c8ef2de2436"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-192/ru/2026-11-25-overseas-freelance-platforms.svg",
+        "sha256": "c6240f9ef864bf506443ef178df95bd788c9930518d5efcf8ab3ebb921cf8f8e"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/overseas-freelance-platforms-en.svg",
+        "sha256": "bde8f24c6e4ec6cefa7734bf26c5dc9beb8a3d47dc9062c1cecf66979abf4cb1"
+      }
+    },
+    {
+      "key": "es-2026-11-25-overseas-freelance-platforms",
+      "language": "es",
+      "translationKey": "2026-11-25-overseas-freelance-platforms",
+      "source": {
+        "path": "src/content/posts/en/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "459d7a14dff0b6e636f388225c92b5c5b2feacd82c5314c7ee576111648842aa"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-192/es/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "7cf7676e6aa131e37211452e80dd68d4ad0d625576b35e5e6d999aa4a31f21f9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-192/es/2026-11-25-overseas-freelance-platforms.svg",
+        "sha256": "8db3961f796543a6b1f29572d9b6820bd6395ec0fbd80eca976ab4b32c0a0b38"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/overseas-freelance-platforms-en.svg",
+        "sha256": "bde8f24c6e4ec6cefa7734bf26c5dc9beb8a3d47dc9062c1cecf66979abf4cb1"
+      }
+    }
+  ]
+}
