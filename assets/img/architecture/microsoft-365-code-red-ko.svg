@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ko" viewBox="0 0 600 650" role="img" aria-labelledby="title desc">
+<title id="title">줄어든 게이트웨이 용량에 Teams 트래픽과 피크 이용량이 겹치고, 우회로 같은 결함이 있는 서버에 부하가 퍼집니다.</title>
+<desc id="desc">줄어든 게이트웨이 용량에 Teams 트래픽과 피크 이용량이 겹치고, 우회로 같은 결함이 있는 서버에 부하가 퍼집니다.</desc>
+<rect width="600" height="650" fill="#f5f8fc"/>
+<rect x="15" y="15" width="570" height="70" rx="12" fill="#e4eefb" stroke="#365f89"/>
+<text x="300" y="58" text-anchor="middle" font-family="sans-serif" font-size="22">게이트웨이 용량 감소</text>
+<path d="M300 85 V111 M292 103 L300 111 L308 103" fill="none" stroke="#365f89" stroke-width="3"/>
+<rect x="15" y="120" width="570" height="70" rx="12" fill="#e4eefb" stroke="#365f89"/>
+<text x="300" y="163" text-anchor="middle" font-family="sans-serif" font-size="22">Teams 트래픽 유입</text>
+<path d="M300 190 V216 M292 208 L300 216 L308 208" fill="none" stroke="#365f89" stroke-width="3"/>
+<rect x="15" y="225" width="570" height="70" rx="12" fill="#e4eefb" stroke="#365f89"/>
+<text x="300" y="268" text-anchor="middle" font-family="sans-serif" font-size="22">피크 이용량 증가</text>
+<path d="M300 295 V321 M292 313 L300 321 L308 313" fill="none" stroke="#365f89" stroke-width="3"/>
+<rect x="15" y="330" width="570" height="70" rx="12" fill="#e4eefb" stroke="#365f89"/>
+<text x="300" y="373" text-anchor="middle" font-family="sans-serif" font-size="22">서버 응답 중단</text>
+<path d="M300 400 V426 M292 418 L300 426 L308 418" fill="none" stroke="#365f89" stroke-width="3"/>
+<rect x="15" y="435" width="570" height="70" rx="12" fill="#e4eefb" stroke="#365f89"/>
+<text x="300" y="478" text-anchor="middle" font-family="sans-serif" font-size="22">남은 서버로 트래픽 이동</text>
+<path d="M300 505 V531 M292 523 L300 531 L308 523" fill="none" stroke="#365f89" stroke-width="3"/>
+<rect x="15" y="540" width="570" height="70" rx="12" fill="#e4eefb" stroke="#365f89"/>
+<text x="300" y="583" text-anchor="middle" font-family="sans-serif" font-size="22">지역 간 우회로 장애 확산</text>
+</svg>
