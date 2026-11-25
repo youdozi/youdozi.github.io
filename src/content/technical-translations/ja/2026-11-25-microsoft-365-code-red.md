@@ -19,9 +19,9 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-25-microsoft-365-code-red.md",
   "sourceSha256": "2df9b4039ebb04013f04e21b144e3cb3780236a74b97dd9dcd885df36569a389",
-  "draftSha256": "972eb354d09918246a0d7242d76810bbfdf34c726bee0a5aa746c9b0f1715b63",
+  "draftSha256": "3b42ab6b53a527ca959edcff312650c9a99026374b4e06adec0d05492add8b18",
   "manifestPath": ".pipeline/technical-translations/batch-191/manifest.json",
-  "manifestSha256": "3c11feea419e90c2b266ce8c92f61b8a1c397634ec1891b701c3c13c0a447504",
+  "manifestSha256": "6877756f499cf7012e5f91f7e124786194c8c1f60d4c471aac5a2cd4b42eece1",
   "publishedAt": "2026-11-25T04:56:03.451Z",
   "updatedAt": "2026-11-25T04:56:03.451Z",
   "approval": {
@@ -48,7 +48,7 @@ Microsoftの事後報告書によると、欠陥はMicrosoft 365ネットワー�
 
 ## フェイルオーバーにも受け入れ上限が必要
 
-フェイルオーバーを設計するときは、**受け入れ先が今どれだけ追加処理できるか**を確認します。例えば、リージョンAが同じ時間内に1,000件を移そうとしても、Bに300件分の余裕しかなければ、全量を迂回させることで両リージョンが障害に陥る可能性があります。重要な要求を優先し、遅延できる処理にはキューの上限を設けるか、一時的に拒否する方法があります。過負荷時に意図的に受け入れる要求を減らすことを**負荷遮断（load shedding）**と呼びます。[Microsoft Learnのスロットリングガイド](https://learn.microsoft.com/en-us/azure/well-architected/design-guides/throttling)
+フェイルオーバーを設計するときは、**受け入れ先が今どれだけ追加処理できるか**を確認します。例えば、リージョンAが同じ時間内に1,000件を移そうとしても、Bに300件分の余裕しかなければ、全量を迂回させることで両リージョンが障害に陥る可能性があります。重要な要求を優先し、遅延できる処理にはキューの上限を設けるか、一時的に拒否する方法があります。過負荷時に意図的に受け入れる要求を減らすことを負荷遮断（load shedding）と呼びます。[Microsoft Learnのスロットリングガイド](https://learn.microsoft.com/en-us/azure/well-architected/design-guides/throttling)
 
 復旧にも同じ原則が当てはまります。今回の障害ではサーバーがサービスに戻った瞬間、たまっていた再接続要求を受けて再び応答しなくなりました。運用チームは復旧したインスタンスに少しずつ要求を戻し、接続成功率、遅延、キューを併せて確認できます。負荷試験では本番と同じ世代のサーバーで、**ピークトラフィック、定期作業による容量低下、フェイルオーバー、再接続**を重ねる必要があります。個別の試験では、今回のように条件が重なったときの問題を見逃す可能性があります。[Microsoft事後報告書のコピー](https://www.365fanatic.com/wp-content/uploads/2026/11/postincidentreport-mo1550821.pdf)
 

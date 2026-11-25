@@ -53,7 +53,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-191/ja/2026-11-25-microsoft-365-code-red.md",
-        "sha256": "972eb354d09918246a0d7242d76810bbfdf34c726bee0a5aa746c9b0f1715b63"
+        "sha256": "3b42ab6b53a527ca959edcff312650c9a99026374b4e06adec0d05492add8b18"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-191/ja/2026-11-25-microsoft-365-code-red.svg",
