@@ -36,4 +36,4 @@ Aunque cada equipo tenga su canal de investigación, se puede mantener un docume
 
 En el próximo simulacro, empiece con **una región con capacidad reducida durante la hora pico**. Determine cuántas solicitudes puede aceptar la región restante, qué funciones reducir primero y a qué velocidad devolver las solicitudes a los servidores recuperados. El criterio de finalización debe ir más allá de que los servidores estén encendidos: los usuarios deben poder volver a usar las funciones principales y la acumulación de solicitudes debe disminuir. Así se puede medir el objetivo de recuperación.
 
-Lectura relacionada · [Comprobar la propagación de traceparent de RestClient en Spring Boot 4.2 (inglés)](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
+Lectura relacionada · [Comprobar la propagación de traceparent de RestClient en Spring Boot 4.2](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)

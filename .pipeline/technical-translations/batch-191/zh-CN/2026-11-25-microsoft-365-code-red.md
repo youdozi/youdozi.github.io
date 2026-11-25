@@ -36,4 +36,4 @@
 
 下次故障演练可以从**峰值时一个区域容量下降**开始。确定剩余区域能接收多少请求、先缩减哪些功能，以及以什么速度将请求送回恢复的服务器。结束条件应超越服务器启动：用户能再次使用核心功能，积压请求也在减少。这样才能实际衡量恢复目标。
 
-相关阅读 · [在 Spring Boot 4.2 中检查 RestClient 的 traceparent 传播（英文）](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
+相关阅读 · [在 Spring Boot 4.2 中检查 RestClient 的 traceparent 传播](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)

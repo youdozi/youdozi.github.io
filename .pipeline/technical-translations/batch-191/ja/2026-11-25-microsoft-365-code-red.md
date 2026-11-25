@@ -36,4 +36,4 @@ Reutersが確認した社内メモによると、対応者は11,000件以上の�
 
 次の障害訓練では、**ピーク時に一つのリージョンの容量が低下した状態**から始めてみてください。残るリージョンがどれだけの要求を受けられるか、どの機能を先に縮小するか、復旧したサーバーにどの速度で要求を戻すかを決めます。終了条件はサーバーの起動だけでなく、ユーザーが主要機能を再び使え、滞留した要求が減り始める時点に設定します。そうして初めて復旧目標を測定できます。
 
-関連記事 · [Spring Boot 4.2でRestClientのtraceparent伝播を確認する（英語）](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
+関連記事 · [Spring Boot 4.2でRestClientのtraceparent伝播を確認する](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)

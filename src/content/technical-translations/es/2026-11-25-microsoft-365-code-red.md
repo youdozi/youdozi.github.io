@@ -19,9 +19,9 @@
   ],
   "sourcePath": "src/content/posts/en/2026-11-25-microsoft-365-code-red.md",
   "sourceSha256": "2df9b4039ebb04013f04e21b144e3cb3780236a74b97dd9dcd885df36569a389",
-  "draftSha256": "e55c3ccd9b06afe1cff63cd862280a019dea4acfd9f36d839e0f40306e37fcf0",
+  "draftSha256": "2fdcc637229a19bff8c15c6ad694496f55cf7f5743286c0ac0e82e8a66414b8c",
   "manifestPath": ".pipeline/technical-translations/batch-191/manifest.json",
-  "manifestSha256": "6337cec9ff8c73af46ab943b0bb91b7955bfc4462acaa7176515d0edfb2d9310",
+  "manifestSha256": "13eb2aabee323374dc6b469884506ac02f5b5b183a0d4bac2d018771359c3160",
   "publishedAt": "2026-11-25T04:56:03.451Z",
   "updatedAt": "2026-11-25T04:56:03.451Z",
   "approval": {
@@ -60,4 +60,4 @@ Aunque cada equipo tenga su canal de investigación, se puede mantener un docume
 
 En el próximo simulacro, empiece con **una región con capacidad reducida durante la hora pico**. Determine cuántas solicitudes puede aceptar la región restante, qué funciones reducir primero y a qué velocidad devolver las solicitudes a los servidores recuperados. El criterio de finalización debe ir más allá de que los servidores estén encendidos: los usuarios deben poder volver a usar las funciones principales y la acumulación de solicitudes debe disminuir. Así se puede medir el objetivo de recuperación.
 
-Lectura relacionada · [Comprobar la propagación de traceparent de RestClient en Spring Boot 4.2 (inglés)](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
+Lectura relacionada · [Comprobar la propagación de traceparent de RestClient en Spring Boot 4.2](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)

@@ -36,4 +36,4 @@ Même avec des canaux d'enquête par équipe, on peut tenir un document d'incide
 
 Pour le prochain exercice, partez d'une **capacité réduite dans une région à l'heure de pointe**. Décidez combien de requêtes la région restante peut accepter, quelles fonctions réduire en premier et à quelle vitesse renvoyer les requêtes vers les serveurs rétablis. Le critère de fin doit dépasser le simple démarrage des serveurs : les utilisateurs doivent pouvoir réutiliser les fonctions essentielles et les requêtes accumulées doivent diminuer. L'objectif de rétablissement devient alors mesurable.
 
-À lire aussi · [Vérifier la propagation de traceparent par RestClient dans Spring Boot 4.2 (anglais)](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
+À lire aussi · [Vérifier la propagation de traceparent par RestClient dans Spring Boot 4.2](https://youdozi.github.io/en/posts/2026-11-22-spring-boot-4-2-restclient-traceparent/)
