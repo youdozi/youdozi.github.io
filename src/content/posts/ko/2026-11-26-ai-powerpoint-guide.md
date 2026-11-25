@@ -8,6 +8,8 @@ title: "AI로 PPT 만들기 — 개요부터 편집 가능한 PowerPoint까지"
 description: "회의에서 내릴 결정을 담은 개요, 편집 가능한 PowerPoint 파일 제작, 슬라이드별 검수를 위한 프롬프트를 배포 전 점검 시범 운영 사례로 살펴봅니다."
 categories: ["ai"]
 tags: ["powerpoint", "pptx", "pptxgenjs", "ai-agent", "presentation"]
+reviewScope: "공식 문서에서 스킬 설치 경로, 프레젠테이션 생성·편집 기능과 지원 조건을 확인했습니다. 예시 프롬프트를 실행하거나 PPTX를 생성하지 않았습니다."
+reviewSources: ["https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/SKILL.md", "https://github.com/gitbrent/PptxGenJS#-quick-start-guide", "https://github.com/anthropics/skills#claude-code", "https://support.microsoft.com/en-gb/powerpoint/copilot/create-a-new-presentation-with-copilot-in-powerpoint", "https://support.google.com/docs/answer/17111393", "https://support.google.com/a/users/answer/9310270", "https://gitbrent.github.io/PptxGenJS/docs/api-text.html"]
 ---
 
 AI에 발표 자료를 맡길 때는 **누가 듣는지, 발표가 끝나면 어떤 결정을 내려야 하는지**부터 알려 주세요. “보기 좋은 PPT를 만들어 줘”라고 하면 표지와 목차는 금방 나오지만, 정작 회의에서 결정할 내용은 마지막 장까지 나오지 않을 수 있습니다. 먼저 슬라이드별 제목과 근거를 정하고, 그 개요를 .pptx로 만든 다음, 발표할 앱에서 직접 열어 검수하면 수정할 곳을 찾기 쉽습니다.
