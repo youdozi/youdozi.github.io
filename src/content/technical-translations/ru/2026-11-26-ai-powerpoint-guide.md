@@ -22,7 +22,7 @@
   "sourceSha256": "859efd0ceeccfc1b46a9a9b1f8bbfb0235b50e0f4eee44c55f224a6a936c87cd",
   "draftSha256": "4df49e048cb3fadd050786f5117274970abb6004feeaff1ac918d1e2d8beef7f",
   "manifestPath": ".pipeline/technical-translations/batch-193/manifest.json",
-  "manifestSha256": "a54ee41212e4537256255e8c5a3c92386aff1f0228b7c74e991073c7b90d9b49",
+  "manifestSha256": "1602f24b3cdc88190ac8cbb05f9fa21d99c0a3957b2dc44d9e939c78944c8c28",
   "publishedAt": "2026-11-25T22:36:09.895Z",
   "updatedAt": "2026-11-25T22:36:09.895Z",
   "approval": {

@@ -78,7 +78,7 @@ deployment-check-pilot.pptxを作ってください。
 </確定した構成案>
 ```
 
-コーディングエージェントで毎週同じ形式の報告資料を作る場合は、**「PptxGenJSで作成し、次回も実行できるようにbuild-deck.jsとslides.jsonを一緒に残してください」**と加えます。翌週はデータを入れ替えるだけで同じレイアウトを再生成できます。表やグラフはなるべくPowerPointのオブジェクトのまま残し、挿絵が必要なときだけ画像を使うと、後で編集しやすくなります。[PptxGenJSのテキスト要素](https://gitbrent.github.io/PptxGenJS/docs/api-text.html)
+コーディングエージェントで毎週同じ形式の報告資料を作る場合は、「**PptxGenJSで作成し、次回も実行できるようにbuild-deck.jsとslides.jsonを一緒に残してください**」と加えます。翌週はデータを入れ替えるだけで同じレイアウトを再生成できます。表やグラフはなるべくPowerPointのオブジェクトのまま残し、挿絵が必要なときだけ画像を使うと、後で編集しやすくなります。[PptxGenJSのテキスト要素](https://gitbrent.github.io/PptxGenJS/docs/api-text.html)
 
 ## 3. レビューではスライド番号と修正の根拠を求める
 

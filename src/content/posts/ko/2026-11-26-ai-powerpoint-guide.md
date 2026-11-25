@@ -81,7 +81,7 @@ deployment-check-pilot.pptx를 만들어 줘.
 </확정 개요>
 ```
 
-코딩 에이전트로 매주 같은 보고서를 만든다면 여기에 **“PptxGenJS로 만들고, 다음에도 실행할 수 있도록 build-deck.js와 slides.json을 함께 남겨 줘”**를 추가하세요. 다음 주에는 입력 데이터만 바꿔 같은 배치로 다시 생성할 수 있습니다. 데이터가 들어가는 표와 차트는 가능하면 PowerPoint 객체로 유지하고, 삽화가 필요할 때만 별도 이미지를 넣으면 수정하기 편합니다. [PptxGenJS 텍스트 요소 문서](https://gitbrent.github.io/PptxGenJS/docs/api-text.html)
+코딩 에이전트로 매주 같은 보고서를 만든다면 여기에 “**PptxGenJS로 만들고, 다음에도 실행할 수 있도록 build-deck.js와 slides.json을 함께 남겨 줘**”를 추가하세요. 다음 주에는 입력 데이터만 바꿔 같은 배치로 다시 생성할 수 있습니다. 데이터가 들어가는 표와 차트는 가능하면 PowerPoint 객체로 유지하고, 삽화가 필요할 때만 별도 이미지를 넣으면 수정하기 편합니다. [PptxGenJS 텍스트 요소 문서](https://gitbrent.github.io/PptxGenJS/docs/api-text.html)
 
 ## 3. 검수 프롬프트는 슬라이드 번호와 수정 근거를 요구한다
 
