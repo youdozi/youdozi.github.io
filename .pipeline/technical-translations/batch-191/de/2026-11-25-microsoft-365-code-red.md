@@ -3,7 +3,7 @@
   "state": "draft",
   "language": "de",
   "translationKey": "2026-11-25-microsoft-365-code-red",
-  "title": "Was Microsoft 365 „Code Red“ für die Störungsbewältigung lehrt",
+  "title": "Microsoft 365 „Code Red“: Was vor dem Verschieben von Verkehr zu prüfen ist",
   "description": "Aufnahmekapazität beim Failover, Wiederverbindungsflut und gemeinsames Störungsprotokoll am Beispiel des Microsoft-365-Ausfalls.",
   "sourcePath": "src/content/posts/en/2026-11-25-microsoft-365-code-red.md",
   "sourceSha256": "2df9b4039ebb04013f04e21b144e3cb3780236a74b97dd9dcd885df36569a389"
@@ -20,7 +20,7 @@ Verringerte Gateway-Kapazität, Teams-Verkehr und Spitzenlast treffen zusammen; 
 
 Laut Microsofts Nachbericht steckte der Fehler in einem Windows-Update für Microsoft-365-Netzwerk-Gateways. Es wurde ab Juli über mehrere Wochen verteilt; mehr als drei Monate lang wurden keine Kundenauswirkungen beobachtet. Neuere Server mit mehr Kernen konnten jedoch mehr Verbindungsanfragen gleichzeitig verarbeiten, was die Konkurrenz um interne Sperren verstärken konnte. Die damaligen Lasttests verwendeten Server mit weniger Kernen und anderen Datenverkehr als während des Ausfalls. [Kopie des Microsoft-Nachberichts](https://www.365fanatic.com/wp-content/uploads/2026/11/postincidentreport-mo1550821.pdf)
 
-Am 12. November war wegen regulärer Arbeiten ein Teil der Gateway-Kapazität nicht verfügbar, als Teams-Verkehr auf mit Exchange Online geteilte Gateways wechselte. Zunächst funktionierte der Dienst normal. Als die Nutzung in Nordamerika ihren üblichen Höchststand erreichte, antworteten Server nicht mehr; die automatische Umleitung erhöhte die Last pro verbleibendem Server. Auch die Umleitung zwischen Regionen leitete Anfragen an Server mit demselben Fehler. Der Bericht nennt **rund 23 Stunden und 50 Minuten aktiver Kundenauswirkungen**; danach liefen die Verarbeitung verzögerter E-Mails und die Stabilitätsüberwachung weiter. [Kopie des Microsoft-Nachberichts](https://www.365fanatic.com/wp-content/uploads/2026/11/postincidentreport-mo1550821.pdf)
+Am 12. November war wegen regulärer Arbeiten ein Teil der Gateway-Kapazität nicht verfügbar, als Teams-Verkehr auf mit Exchange Online geteilte Gateways wechselte. Zunächst funktionierte der Dienst normal. Als sich die Nutzung in Nordamerika ihrem üblichen Höchststand näherte, antworteten Server nicht mehr; die automatische Umleitung erhöhte die Last pro verbleibendem Server. Auch die Umleitung zwischen Regionen leitete Anfragen an Server mit demselben Fehler. Der Bericht nennt **rund 23 Stunden und 50 Minuten aktiver Kundenauswirkungen**; danach liefen die Verarbeitung verzögerter E-Mails und die Stabilitätsüberwachung weiter. [Kopie des Microsoft-Nachberichts](https://www.365fanatic.com/wp-content/uploads/2026/11/postincidentreport-mo1550821.pdf)
 
 ## Auch Failover braucht eine Aufnahmegrenze
 
