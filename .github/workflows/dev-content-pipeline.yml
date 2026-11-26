@@ -78,6 +78,7 @@ jobs:
       - name: Validate and build candidate before committing
         if: steps.digest.outputs.generated == 'true'
         run: |
+          node scripts/prepare-public.mjs
           npm run check
           npm run build
       - name: Commit candidate to a review branch only

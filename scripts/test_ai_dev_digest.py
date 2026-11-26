@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from datetime import datetime
 from pathlib import Path
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, call, patch
 from urllib.error import HTTPError
 
 import ai_dev_digest as ai
@@ -158,6 +158,32 @@ class APITests(unittest.TestCase):
             sent = request.call_args[0][0]
             self.assertNotIn(secret, sent.full_url)
             self.assertEqual(secret, sent.get_header("X-goog-api-key"))
+
+    def test_service_unavailable_recovers_with_bounded_wait_across_calls(self):
+        response = io.BytesIO(json.dumps({"candidates": [{"finishReason": "STOP", "content":
+            {"parts": [{"text": "{}"}]}}]}).encode())
+        def unavailable():
+            return HTTPError("https://api.test", 503, "private error", {}, None)
+        with patch.dict(os.environ, {"GEMINI_API_KEY": "test"}), patch.object(ai.time, "sleep") as sleep, patch.object(
+                ai, "urlopen", side_effect=[unavailable(), response, unavailable(), unavailable()]) as request:
+            client = ai.Gemini()
+            self.assertEqual({}, client.generate("summarize", {}, ai.CLAIM_SCHEMA))
+            with self.assertRaisesRegex(ai.AIError, "Gemini HTTP 503"):
+                client.generate("review", {}, ai.REVIEW_SCHEMA)
+            self.assertEqual([call(1), call(2)], sleep.call_args_list)
+            self.assertEqual(4, request.call_count)
+            self.assertEqual(4, client.calls)
+
+    def test_last_budgeted_attempt_does_not_sleep_or_retry(self):
+        error = HTTPError("https://api.test", 503, "private error", {}, None)
+        with patch.dict(os.environ, {"GEMINI_API_KEY": "test"}), patch.object(ai.time, "sleep") as sleep, patch.object(ai, "urlopen", side_effect=error) as request:
+            client = ai.Gemini()
+            client.calls = 11
+            with self.assertRaisesRegex(ai.AIError, "Gemini HTTP 503"):
+                client.generate("review", {}, ai.REVIEW_SCHEMA)
+            self.assertEqual(12, client.calls)
+            request.assert_called_once()
+            sleep.assert_not_called()
 
     def test_api_call_budget(self):
         with patch.dict(os.environ, {"GEMINI_API_KEY": "test"}), patch.object(ai, "urlopen") as request:

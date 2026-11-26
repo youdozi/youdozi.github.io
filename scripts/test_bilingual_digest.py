@@ -4,11 +4,13 @@ import copy
 import hashlib
 import io
 import json
+import os
 import tempfile
 import unittest
 from datetime import datetime
 from pathlib import Path
 from unittest.mock import MagicMock, patch
+from urllib.error import HTTPError
 
 import ai_dev_digest as ai
 import bilingual_digest as bilingual
@@ -235,6 +237,23 @@ class PublicationTests(unittest.TestCase):
                 def enrich(_): raise ai.AIError('quota exhausted')
                 code=self.run_pipeline(root,['--check-links'],enrich=enrich if failure=='ai' else None,link_error='HTTP 404' if failure=='link' else None)
                 self.assertEqual(1,code);self.assertFalse((root/'src').exists());self.assertFalse((root/'.pipeline').exists())
+
+    def test_exhausted_503_preserves_digest_state_and_review_output(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            target, _ = self.existing(root)
+            state = root / '.pipeline/content_state.json'
+            state.parent.mkdir()
+            state.write_text('{"seen_links": []}')
+            before = {p: p.read_bytes() for p in root.rglob('*') if p.is_file()}
+            error = HTTPError("https://api.test", 503, "private message", {}, None)
+            with patch.dict(os.environ, {"GEMINI_API_KEY": "test"}), patch.object(ai.time, "sleep"), patch.object(
+                    ai, "fetch_document", return_value=ai.Document("https://spring.io/article", BODY, [])), patch.object(
+                    ai, "urlopen", side_effect=error) as request:
+                self.assertEqual(1, self.run_pipeline(root, ['--append'], enrich=bilingual.enrich_items))
+            self.assertEqual(3, request.call_count)
+            self.assertIn(target, before)
+            self.assertEqual(before, {p: p.read_bytes() for p in root.rglob('*') if p.is_file()})
 
     def test_new_json_history_blocks_republishing_when_state_missing(self):
         with tempfile.TemporaryDirectory() as tmp:

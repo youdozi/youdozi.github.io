@@ -9,7 +9,7 @@ python3 scripts/generate_digest.py --dry-run --check-links --max-items 2
 python3 scripts/generate_digest.py --check-links
 ```
 
-`GEMINI_API_KEY`는 환경 변수로 전달합니다. 키를 명령 인자나 파일에 넣지 않습니다. 기본 모델은 기존 `gemini-3.5-flash-lite`를 유지하며 `GEMINI_MODEL`로 변경할 수 있습니다. 모델 접근 권한과 API 프로젝트의 과금 여부는 별도로 관리해야 합니다. 자동 모델 변경과 재시도는 없습니다.
+`GEMINI_API_KEY`는 환경 변수로 전달합니다. 키를 명령 인자나 파일에 넣지 않습니다. 기본 모델은 기존 `gemini-3.5-flash-lite`를 유지하며 `GEMINI_MODEL`로 변경할 수 있습니다. 모델 접근 권한과 API 프로젝트의 과금 여부는 별도로 관리해야 합니다. 동일 모델에서 HTTP 503이 발생하면 실행 전체에서 최대 두 번 재시도합니다. 첫 재시도 전에는 1초, 두 번째에는 2초를 기다립니다. 다른 오류는 즉시 처리합니다.
 
 ## 수집과 게시 조건
 
@@ -24,7 +24,7 @@ python3 scripts/generate_digest.py --check-links
 9. `--check-links`는 원문 URL의 HTTP 200, HTML, 최종 승인 호스트를 검사합니다. 실패하면 저장·커밋하지 않습니다.
 10. 검증된 `src/content/digests/YYYY-MM-DD.json`과 상태를 저장합니다. JSON에는 요약·짧은 인용문·출처 URL·본문 SHA-256·모델·검증 상태를 포함하고 본문 전체나 API 키를 포함하지 않습니다.
 
-기사당 최대 2회, 실행당 최대 12회 AI 호출입니다. preview 최대 2개는 최대 4회입니다. JSON은 Astro 컴포넌트에서 텍스트로 출력하며 외부 문자열을 Markdown/Liquid/HTML 템플릿으로 실행하지 않습니다. 인용문은 사용자가 원문 근거를 확인할 수 있도록 펼침 영역에 표시합니다.
+기사 한 건의 생성과 검토에는 각각 한 번의 AI 호출이 필요합니다. 실행당 HTTP 요청 한도는 재시도를 포함해 12회입니다. JSON은 Astro 컴포넌트에서 텍스트로 출력하며 외부 문자열을 Markdown/Liquid/HTML 템플릿으로 실행하지 않습니다. 인용문은 사용자가 원문 근거를 확인할 수 있도록 펼침 영역에 표시합니다.
 
 동일 모델의 별도 호출에도 공통 오류가 남을 수 있으므로 검증 상태는 `source_consistency_checked`입니다. “사실 검증 완료”라고 표시하지 않습니다.
 
