@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-21081",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "702db36",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Self-review against the recorded manual cleanup, the checks for PR #202 and Apple’s APFS space-sharing documentation.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-27-mac-disk-cleanup-du-df",
+      "language": "zh-CN",
+      "translationKey": "2026-11-27-mac-disk-cleanup-du-df",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "2114224ef5dde962e3cfc28f12de1aa1dbba58c0343db9c3e8e6277ce204cc19"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21081/zh-CN/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "539d07808cc98062b2073dbe14f935e4a77570eb0d6b1a59544405e4ac3d18fc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21081/zh-CN/2026-11-27-mac-disk-cleanup-du-df.svg",
+        "sha256": "4d1d2bddb42a3bcd4bbc9970f20777072c9e25fee9a1e7e7258b22d64cd7ade8"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-disk-cleanup-du-df-en.svg",
+        "sha256": "8df9c5e572cee50cd7f633b5ab6b206ba04da26ec3338002bdc45f703fd704b8"
+      }
+    },
+    {
+      "key": "ja-2026-11-27-mac-disk-cleanup-du-df",
+      "language": "ja",
+      "translationKey": "2026-11-27-mac-disk-cleanup-du-df",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "2114224ef5dde962e3cfc28f12de1aa1dbba58c0343db9c3e8e6277ce204cc19"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21081/ja/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "1a2f0c9084232728d4c992a9711140d210a9991472187c631d1b9c5ecac0aea5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21081/ja/2026-11-27-mac-disk-cleanup-du-df.svg",
+        "sha256": "e61a7be942d277010fc13503d5825ffdc6a150e4f0baa18807e039287a364464"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-disk-cleanup-du-df-en.svg",
+        "sha256": "8df9c5e572cee50cd7f633b5ab6b206ba04da26ec3338002bdc45f703fd704b8"
+      }
+    },
+    {
+      "key": "de-2026-11-27-mac-disk-cleanup-du-df",
+      "language": "de",
+      "translationKey": "2026-11-27-mac-disk-cleanup-du-df",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "2114224ef5dde962e3cfc28f12de1aa1dbba58c0343db9c3e8e6277ce204cc19"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21081/de/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "975b837a34fe1d1e0af58f01bae8bd054856f79d939bf7188a8d48b77b7e8017"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21081/de/2026-11-27-mac-disk-cleanup-du-df.svg",
+        "sha256": "ce49015d018d69e2eba583ac147e86f4153aa9c6ddd89ea67900de7c8030f865"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-disk-cleanup-du-df-en.svg",
+        "sha256": "8df9c5e572cee50cd7f633b5ab6b206ba04da26ec3338002bdc45f703fd704b8"
+      }
+    },
+    {
+      "key": "fr-2026-11-27-mac-disk-cleanup-du-df",
+      "language": "fr",
+      "translationKey": "2026-11-27-mac-disk-cleanup-du-df",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "2114224ef5dde962e3cfc28f12de1aa1dbba58c0343db9c3e8e6277ce204cc19"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21081/fr/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "016c152438ef6cd9f38f4dd2320d40eb05c59d8ccae4dcda0e6011a3fa025019"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21081/fr/2026-11-27-mac-disk-cleanup-du-df.svg",
+        "sha256": "09beef824ecff28f3318decbf83137e3513fe896eab1872ed6a8368af8f2606a"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-disk-cleanup-du-df-en.svg",
+        "sha256": "8df9c5e572cee50cd7f633b5ab6b206ba04da26ec3338002bdc45f703fd704b8"
+      }
+    },
+    {
+      "key": "ru-2026-11-27-mac-disk-cleanup-du-df",
+      "language": "ru",
+      "translationKey": "2026-11-27-mac-disk-cleanup-du-df",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "2114224ef5dde962e3cfc28f12de1aa1dbba58c0343db9c3e8e6277ce204cc19"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21081/ru/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "2c074967d418eb1fa099df6a826126f58244b87d87fda32e41db7cb99dbef1de"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21081/ru/2026-11-27-mac-disk-cleanup-du-df.svg",
+        "sha256": "ad5736f1ff0a51cb2c532cb313ed4ac34dbeffe82e7e5cef93b4ffed611186e2"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-disk-cleanup-du-df-en.svg",
+        "sha256": "8df9c5e572cee50cd7f633b5ab6b206ba04da26ec3338002bdc45f703fd704b8"
+      }
+    },
+    {
+      "key": "es-2026-11-27-mac-disk-cleanup-du-df",
+      "language": "es",
+      "translationKey": "2026-11-27-mac-disk-cleanup-du-df",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "2114224ef5dde962e3cfc28f12de1aa1dbba58c0343db9c3e8e6277ce204cc19"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21081/es/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "1e9ab2aa0c7ddb66351ed1a9e8f65efe4301dfe54ba5a5e3f8bfec40d6c3ffdf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21081/es/2026-11-27-mac-disk-cleanup-du-df.svg",
+        "sha256": "68e368a25ddf9b4c89148b3ba43d5389353116335c6aa8b44d1ec544663d19c8"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-disk-cleanup-du-df-en.svg",
+        "sha256": "8df9c5e572cee50cd7f633b5ab6b206ba04da26ec3338002bdc45f703fd704b8"
+      }
+    }
+  ]
+}

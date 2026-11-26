@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ko" viewBox="0 0 440 308" role="img" aria-labelledby="title description">
+  <title id="title">후보 폴더 사용량 · 데이터 볼륨의 가용 공간</title>
+  <desc id="description">경로별 사용량과 데이터 볼륨의 가용 공간 변화를 각각 측정한 흐름</desc>
+  <rect x="6" y="8" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">후보 폴더 사용량</text>
+  <text x="220" y="70" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#153c52">du -sh</text>
+  <path d="M220 92v16m-5 -5 5 5 5 -5" fill="none" stroke="#466a80" stroke-width="2"/>
+  <rect x="6" y="112" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="144" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">재생성 가능 · 사용 종료 확인</text>
+  <text x="220" y="174" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#153c52">선택한 20개 폴더 · 1.61 GiB</text>
+  <path d="M220 196v16m-5 -5 5 5 5 -5" fill="none" stroke="#466a80" stroke-width="2"/>
+  <rect x="6" y="216" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="248" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">데이터 볼륨의 가용 공간</text>
+  <text x="220" y="278" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#153c52">df -h   ·   6.41 → 7.46 GiB</text>
+</svg>
