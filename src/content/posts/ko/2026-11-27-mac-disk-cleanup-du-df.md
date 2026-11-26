@@ -8,6 +8,7 @@ title: "맥에서 빌드가 멈췄다 — du와 df로 확인한 디스크 정리
 description: "폴더별 사용량과 데이터 볼륨의 가용 공간을 따로 측정해, 수동 정리 뒤 실제로 얼마나 여유가 생겼는지 확인했습니다."
 categories: ["tips"]
 tags: ["macos", "disk-usage", "git"]
+reviewScope: "당시 수동 정리 기록의 경로별 사용량과 데이터 볼륨 여유 공간, PR #202의 원격 검사와 배포 결과, Apple의 APFS 공간 공유 설명을 대조했습니다."
 reviewSources: ["https://github.com/youdozi/youdozi.github.io/pull/202", "https://support.apple.com/ko-kr/guide/security/seca6147599e/web"]
 ---
 
