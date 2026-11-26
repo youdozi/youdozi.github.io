@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-2088",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "3dbaa54",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Self-review against the Korean and English texts and the linked workflow evidence.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-26-astro-clean-checkout",
+      "language": "zh-CN",
+      "translationKey": "2026-11-26-astro-clean-checkout",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
+        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2088/zh-CN/2026-11-26-astro-clean-checkout.md",
+        "sha256": "faaacf354e97e0f0da585fddc57c2779652d99c491111094335aa4f5f9c7a830"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2088/zh-CN/2026-11-26-astro-clean-checkout.svg",
+        "sha256": "d7d75a1d5019563bd1a26fa0d79967646c0e7a25840fe4a18b34f92f8125ca5f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/astro-clean-checkout-en.svg",
+        "sha256": "934f59ca6a1c5509c1c8fdc80de9cb5f968f920b6b1718adde4e2fa6745dcc2c"
+      }
+    },
+    {
+      "key": "ja-2026-11-26-astro-clean-checkout",
+      "language": "ja",
+      "translationKey": "2026-11-26-astro-clean-checkout",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
+        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2088/ja/2026-11-26-astro-clean-checkout.md",
+        "sha256": "3b692d33bb35a99fb206f1e4ea96fe17d1399acd633f538b7e2efcb675f60f7d"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2088/ja/2026-11-26-astro-clean-checkout.svg",
+        "sha256": "104b586aafbbbf2b4135685a79dab0258d8b23367ce61700da11410233893fc4"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/astro-clean-checkout-en.svg",
+        "sha256": "934f59ca6a1c5509c1c8fdc80de9cb5f968f920b6b1718adde4e2fa6745dcc2c"
+      }
+    },
+    {
+      "key": "de-2026-11-26-astro-clean-checkout",
+      "language": "de",
+      "translationKey": "2026-11-26-astro-clean-checkout",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
+        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2088/de/2026-11-26-astro-clean-checkout.md",
+        "sha256": "7be0f28a5ec75438f4615e65d0a5530bd7850c8bc1db6911ee096db733f45178"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2088/de/2026-11-26-astro-clean-checkout.svg",
+        "sha256": "11bbd4e52a2dcc9267b11e8651b73f81294be9545989cc347a3dfe288a706a8d"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/astro-clean-checkout-en.svg",
+        "sha256": "934f59ca6a1c5509c1c8fdc80de9cb5f968f920b6b1718adde4e2fa6745dcc2c"
+      }
+    },
+    {
+      "key": "fr-2026-11-26-astro-clean-checkout",
+      "language": "fr",
+      "translationKey": "2026-11-26-astro-clean-checkout",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
+        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2088/fr/2026-11-26-astro-clean-checkout.md",
+        "sha256": "b2390d4b6947d64051e4ab4601ef7cdee8d1ebb769a5345c4f38db781eca6ef0"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2088/fr/2026-11-26-astro-clean-checkout.svg",
+        "sha256": "a81a8e82923de01f914e00dfd44029858899faf49830cef328622d8e114b44a6"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/astro-clean-checkout-en.svg",
+        "sha256": "934f59ca6a1c5509c1c8fdc80de9cb5f968f920b6b1718adde4e2fa6745dcc2c"
+      }
+    },
+    {
+      "key": "ru-2026-11-26-astro-clean-checkout",
+      "language": "ru",
+      "translationKey": "2026-11-26-astro-clean-checkout",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
+        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2088/ru/2026-11-26-astro-clean-checkout.md",
+        "sha256": "acbe4134ad03a789584aa3e13e0aeca1eb69248f1aa371729edbb2e3b44ce91a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2088/ru/2026-11-26-astro-clean-checkout.svg",
+        "sha256": "aa8fa0d67ab45b6d5a05d344ac899e31cdc863ee9cde93eaa69893d349231c14"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/astro-clean-checkout-en.svg",
+        "sha256": "934f59ca6a1c5509c1c8fdc80de9cb5f968f920b6b1718adde4e2fa6745dcc2c"
+      }
+    },
+    {
+      "key": "es-2026-11-26-astro-clean-checkout",
+      "language": "es",
+      "translationKey": "2026-11-26-astro-clean-checkout",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
+        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2088/es/2026-11-26-astro-clean-checkout.md",
+        "sha256": "206b3757f13352879eaf984fc7f395dbdf7b0720cc378b19bc28389581aad9eb"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2088/es/2026-11-26-astro-clean-checkout.svg",
+        "sha256": "e5c6a7d640db348e3e69bd8de4c8e357329da40ffee58db206dd9d2f29be7cb9"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/astro-clean-checkout-en.svg",
+        "sha256": "934f59ca6a1c5509c1c8fdc80de9cb5f968f920b6b1718adde4e2fa6745dcc2c"
+      }
+    }
+  ]
+}
