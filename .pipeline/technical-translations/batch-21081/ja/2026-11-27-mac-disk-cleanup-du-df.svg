@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ja" viewBox="0 0 440 308" role="img" aria-labelledby="title description">
+  <title id="title">候補ディレクトリの使用量 · データボリュームの空き容量</title>
+  <desc id="description">候補の使用量を調べて対象を選び、データボリュームの空き容量を整理の前後で比較する流れ</desc>
+  <rect x="6" y="8" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">候補ディレクトリの使用量</text>
+  <text x="220" y="70" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#153c52">du -sh</text>
+  <path d="M220 92v16m-5 -5 5 5 5 -5" fill="none" stroke="#466a80" stroke-width="2"/>
+  <rect x="6" y="112" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="144" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">再生成可能・使用終了を確認</text>
+  <text x="220" y="174" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#153c52">選んだディレクトリ 20 個 · 1.61 GiB</text>
+  <path d="M220 196v16m-5 -5 5 5 5 -5" fill="none" stroke="#466a80" stroke-width="2"/>
+  <rect x="6" y="216" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="248" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">データボリュームの空き容量</text>
+  <text x="220" y="278" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#153c52">df -h   ·   6.41 → 7.46 GiB</text>
+</svg>
