@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-26",
+  "publishedAt": "2026-11-26T12:53:10.877005+09:00",
+  "articles": [
+    {
+      "id": "ba666bacce57d97d",
+      "source": "Spring Blog",
+      "url": "https://spring.io/blog/2026/11/24/spring-ai-tool-call-confirmation-park-resume",
+      "publishedAt": "2026-11-24T00:00:00+00:00",
+      "tags": [
+        "ai",
+        "java"
+      ],
+      "editions": {
+        "en": {
+          "title": "Spring AI 2.1 Tool Call Confirmation and Session Extensions 0.11.0",
+          "summary": "Spring AI 2.1 introduces tool call confirmation to pause execution when the model requests a marked tool. Spring AI Session Extensions version 0.11.0 adds session turn status tracking so another process can resume a parked turn.",
+          "claims": [
+            {
+              "text": "Spring AI 2.1 introduces tool call confirmation to pause execution when the model requests a marked tool.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring AI 2.1 adds tool call confirmation : you mark a tool, and the loop runs the harmless tools as before and pauses only when the model asks for a marked one."
+                }
+              ]
+            },
+            {
+              "text": "Spring AI Session Extensions version 0.11.0 adds session turn status tracking so another process can resume a parked turn.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "0.11.0 is its first release, so its API can still change."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Session Extensions is a Spring AI Community project: it is developed outside the core project and released on its own schedule. 0.11.0 is its first release"
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0,
+              1
+            ],
+            "affectedAudience": [],
+            "conditions": [
+              1
+            ]
+          }
+        },
+        "ko": {
+          "title": "Spring AI 2.1 도구 호출 확인 및 Session Extensions 0.11.0",
+          "summary": "Spring AI 2.1은 모델이 표시된 도구를 요청할 때 실행을 일시 중지하는 도구 호출 확인 기능을 도입합니다. Spring AI Session Extensions 버전 0.11.0은 다른 프로세스가 일시 중지된 턴을 재개할 수 있도록 세션 턴 상태 추적을 추가합니다.",
+          "claims": [
+            {
+              "text": "Spring AI 2.1은 모델이 표시된 도구를 요청할 때 실행을 일시 중지하는 도구 호출 확인 기능을 도입합니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "Spring AI 2.1 adds tool call confirmation : you mark a tool, and the loop runs the harmless tools as before and pauses only when the model asks for a marked one."
+                }
+              ]
+            },
+            {
+              "text": "Spring AI Session Extensions 버전 0.11.0은 다른 프로세스가 일시 중지된 턴을 재개할 수 있도록 세션 턴 상태 추적을 추가합니다.",
+              "evidence": [
+                {
+                  "document_id": 0,
+                  "quote": "0.11.0 is its first release, so its API can still change."
+                },
+                {
+                  "document_id": 0,
+                  "quote": "Session Extensions is a Spring AI Community project: it is developed outside the core project and released on its own schedule. 0.11.0 is its first release"
+                }
+              ]
+            }
+          ],
+          "review": {
+            "keyChange": [
+              0,
+              1
+            ],
+            "affectedAudience": [],
+            "conditions": [
+              1
+            ]
+          }
+        }
+      },
+      "model": "gemini-3.5-flash-lite",
+      "verification": "source_consistency_checked",
+      "documents": [
+        {
+          "url": "https://spring.io/blog/2026/11/24/spring-ai-tool-call-confirmation-park-resume/",
+          "sha256": "ed9b1cc5e2b1c807f35c0ac513e759445fa0bef97f70d90ca64a59c8c36d1265"
+        }
+      ],
+      "selection": {
+        "audience": "java-spring-backend",
+        "method": "keyword-rules-v1",
+        "relevance": "direct",
+        "priority": "normal",
+        "reasons": [
+          "jvm-spring"
+        ]
+      },
+      "editorial": {
+        "opinion": {
+          "en": "",
+          "ko": ""
+        },
+        "experiment": {
+          "status": "not_tested",
+          "reportUrl": null,
+          "environment": {
+            "en": "",
+            "ko": ""
+          },
+          "result": {
+            "en": "",
+            "ko": ""
+          }
+        }
+      }
+    }
+  ]
+}
