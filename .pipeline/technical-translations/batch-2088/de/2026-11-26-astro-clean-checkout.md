@@ -6,7 +6,7 @@
   "title": "Warum die Astro-Prüfung nur in einem frischen Checkout scheiterte",
   "description": "Ein fehlendes SVG stoppte den Workflow für Nachrichtenentwürfe. Dieselbe Astro-Prüfung vor und nach dem Erzeugen der Dateien machte die Ursache sichtbar.",
   "sourcePath": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-  "sourceSha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+  "sourceSha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8"
 }
 ---
 

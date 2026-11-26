@@ -9,8 +9,7 @@
   "title": "Por qué la comprobación de Astro fallaba solo en una copia de trabajo limpia",
   "description": "Un SVG ausente detuvo la preparación de un borrador de noticias. Repetir la comprobación de Astro después de generar los archivos permitió aislar la causa.",
   "categories": [
-    "blog",
-    "automation"
+    "blog"
   ],
   "tags": [
     "astro",
@@ -19,17 +18,17 @@
     "svg"
   ],
   "sourcePath": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-  "sourceSha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f",
-  "draftSha256": "206b3757f13352879eaf984fc7f395dbdf7b0720cc378b19bc28389581aad9eb",
+  "sourceSha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8",
+  "draftSha256": "11923d9ab084ea907e8a0468deabb37f79cc933aeca0a5632e5ecdca21cb23dd",
   "manifestPath": ".pipeline/technical-translations/batch-2088/manifest.json",
-  "manifestSha256": "b7b442fb34494b22edfb8c5f8e0eafaed5565c392112b7fb1119018b9da5f7a9",
-  "publishedAt": "2026-11-26T04:45:51.988Z",
-  "updatedAt": "2026-11-26T04:45:51.988Z",
+  "manifestSha256": "311a7141caf0352bb2e15fd64983c3b0cb9e64b742168c9bdf7b204d20a13c75",
+  "publishedAt": "2026-11-26T04:55:07.155Z",
+  "updatedAt": "2026-11-26T04:55:07.155Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 200,
-    "approvedAt": "2026-11-26T04:45:51.988Z",
+    "approvedAt": "2026-11-26T04:55:07.155Z",
     "basis": "The owner explicitly requested publication of the Astro CI retrospective in all supported blog languages (item 88)."
   }
 }

@@ -28,11 +28,11 @@
       "translationKey": "2026-11-26-astro-clean-checkout",
       "source": {
         "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+        "sha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-2088/zh-CN/2026-11-26-astro-clean-checkout.md",
-        "sha256": "faaacf354e97e0f0da585fddc57c2779652d99c491111094335aa4f5f9c7a830"
+        "sha256": "25fe6bd87825bf21a259e84227738121bd6d45f08490d913ee50ea60acc42d63"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-2088/zh-CN/2026-11-26-astro-clean-checkout.svg",
@@ -49,11 +49,11 @@
       "translationKey": "2026-11-26-astro-clean-checkout",
       "source": {
         "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+        "sha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-2088/ja/2026-11-26-astro-clean-checkout.md",
-        "sha256": "3b692d33bb35a99fb206f1e4ea96fe17d1399acd633f538b7e2efcb675f60f7d"
+        "sha256": "f9bd06feec7a4c458452dc5647d28e565e2bc24b0103023b83d54bf48aad50ba"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-2088/ja/2026-11-26-astro-clean-checkout.svg",
@@ -70,11 +70,11 @@
       "translationKey": "2026-11-26-astro-clean-checkout",
       "source": {
         "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+        "sha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-2088/de/2026-11-26-astro-clean-checkout.md",
-        "sha256": "7be0f28a5ec75438f4615e65d0a5530bd7850c8bc1db6911ee096db733f45178"
+        "sha256": "ad51e6332e5f4881400c395a4951bb61841391f50004e9552a9fb69090b65985"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-2088/de/2026-11-26-astro-clean-checkout.svg",
@@ -91,11 +91,11 @@
       "translationKey": "2026-11-26-astro-clean-checkout",
       "source": {
         "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+        "sha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-2088/fr/2026-11-26-astro-clean-checkout.md",
-        "sha256": "b2390d4b6947d64051e4ab4601ef7cdee8d1ebb769a5345c4f38db781eca6ef0"
+        "sha256": "09a0b197c03c05841f4c39ddeff72b2e66c36a33e5488b4441750c13adbb107d"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-2088/fr/2026-11-26-astro-clean-checkout.svg",
@@ -112,11 +112,11 @@
       "translationKey": "2026-11-26-astro-clean-checkout",
       "source": {
         "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+        "sha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-2088/ru/2026-11-26-astro-clean-checkout.md",
-        "sha256": "acbe4134ad03a789584aa3e13e0aeca1eb69248f1aa371729edbb2e3b44ce91a"
+        "sha256": "749f5f3434677047ef6961abdbfa8228be85e39567bacf5225eea65f54225ea3"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-2088/ru/2026-11-26-astro-clean-checkout.svg",
@@ -133,11 +133,11 @@
       "translationKey": "2026-11-26-astro-clean-checkout",
       "source": {
         "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-        "sha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+        "sha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-2088/es/2026-11-26-astro-clean-checkout.md",
-        "sha256": "206b3757f13352879eaf984fc7f395dbdf7b0720cc378b19bc28389581aad9eb"
+        "sha256": "11923d9ab084ea907e8a0468deabb37f79cc933aeca0a5632e5ecdca21cb23dd"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-2088/es/2026-11-26-astro-clean-checkout.svg",

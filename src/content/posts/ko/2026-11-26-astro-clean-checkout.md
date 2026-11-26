@@ -1,12 +1,12 @@
 ---
 kind: "post"
-publishedAt: "2026-11-26T13:45+09:00"
+publishedAt: "2026-11-26T13:45:00+09:00"
 language: "ko"
 translationKey: "2026-11-26-astro-clean-checkout"
 routeSlug: "2026-11-26-astro-clean-checkout"
 title: "깨끗한 체크아웃에서만 Astro 검사가 실패한 이유"
 description: "Astro가 기존 글의 그림 크기를 읽는 시점과 SVG가 생성되는 시점을 비교해 뉴스 초안 CI의 ENOENT를 재현했습니다."
-categories: ["blog", "automation"]
+categories: ["blog"]
 tags: ["astro", "github-actions", "ci", "svg"]
 reviewScope: "실패 실행, 수정 PR과 빌드 결과를 대조했습니다. Spring 글을 쓴 한영 dry-run은 모델 응답을 모의했으며 실제 Gemini 가용성은 확인하지 않았습니다."
 reviewSources: ["https://github.com/youdozi/youdozi.github.io/actions/runs/45548722494", "https://github.com/youdozi/youdozi.github.io/pull/198", "https://github.com/youdozi/youdozi.github.io/actions/runs/45734945701", "https://github.com/youdozi/youdozi.github.io/actions/runs/45098322259"]

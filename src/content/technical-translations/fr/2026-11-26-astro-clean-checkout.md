@@ -9,8 +9,7 @@
   "title": "Pourquoi la vérification Astro échouait uniquement après un checkout propre",
   "description": "Un SVG manquant bloquait la préparation des brouillons d’actualité. Relancer la même vérification Astro après avoir généré les fichiers a permis d’isoler la cause.",
   "categories": [
-    "blog",
-    "automation"
+    "blog"
   ],
   "tags": [
     "astro",
@@ -19,17 +18,17 @@
     "svg"
   ],
   "sourcePath": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-  "sourceSha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f",
-  "draftSha256": "b2390d4b6947d64051e4ab4601ef7cdee8d1ebb769a5345c4f38db781eca6ef0",
+  "sourceSha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8",
+  "draftSha256": "09a0b197c03c05841f4c39ddeff72b2e66c36a33e5488b4441750c13adbb107d",
   "manifestPath": ".pipeline/technical-translations/batch-2088/manifest.json",
-  "manifestSha256": "b7b442fb34494b22edfb8c5f8e0eafaed5565c392112b7fb1119018b9da5f7a9",
-  "publishedAt": "2026-11-26T04:45:51.988Z",
-  "updatedAt": "2026-11-26T04:45:51.988Z",
+  "manifestSha256": "311a7141caf0352bb2e15fd64983c3b0cb9e64b742168c9bdf7b204d20a13c75",
+  "publishedAt": "2026-11-26T04:55:07.155Z",
+  "updatedAt": "2026-11-26T04:55:07.155Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 200,
-    "approvedAt": "2026-11-26T04:45:51.988Z",
+    "approvedAt": "2026-11-26T04:55:07.155Z",
     "basis": "The owner explicitly requested publication of the Astro CI retrospective in all supported blog languages (item 88)."
   }
 }

@@ -6,7 +6,7 @@
   "title": "Por qué la comprobación de Astro fallaba solo en una copia de trabajo limpia",
   "description": "Un SVG ausente detuvo la preparación de un borrador de noticias. Repetir la comprobación de Astro después de generar los archivos permitió aislar la causa.",
   "sourcePath": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-  "sourceSha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+  "sourceSha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8"
 }
 ---
 

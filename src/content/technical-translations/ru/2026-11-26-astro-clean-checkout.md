@@ -9,8 +9,7 @@
   "title": "Почему проверка Astro падала только на чистой копии репозитория",
   "description": "Подготовка черновика новостей остановилась из-за отсутствующего SVG. Причину удалось выявить, запустив одну и ту же проверку до и после генерации файлов.",
   "categories": [
-    "blog",
-    "automation"
+    "blog"
   ],
   "tags": [
     "astro",
@@ -19,17 +18,17 @@
     "svg"
   ],
   "sourcePath": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-  "sourceSha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f",
-  "draftSha256": "acbe4134ad03a789584aa3e13e0aeca1eb69248f1aa371729edbb2e3b44ce91a",
+  "sourceSha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8",
+  "draftSha256": "749f5f3434677047ef6961abdbfa8228be85e39567bacf5225eea65f54225ea3",
   "manifestPath": ".pipeline/technical-translations/batch-2088/manifest.json",
-  "manifestSha256": "b7b442fb34494b22edfb8c5f8e0eafaed5565c392112b7fb1119018b9da5f7a9",
-  "publishedAt": "2026-11-26T04:45:51.988Z",
-  "updatedAt": "2026-11-26T04:45:51.988Z",
+  "manifestSha256": "311a7141caf0352bb2e15fd64983c3b0cb9e64b742168c9bdf7b204d20a13c75",
+  "publishedAt": "2026-11-26T04:55:07.155Z",
+  "updatedAt": "2026-11-26T04:55:07.155Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 200,
-    "approvedAt": "2026-11-26T04:45:51.988Z",
+    "approvedAt": "2026-11-26T04:55:07.155Z",
     "basis": "The owner explicitly requested publication of the Astro CI retrospective in all supported blog languages (item 88)."
   }
 }

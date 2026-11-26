@@ -6,7 +6,7 @@
   "title": "为什么 Astro 检查只在干净的检出目录中失败",
   "description": "新闻草稿工作流因缺少 SVG 而中断。在准备资源前后运行同一个 Astro 检查，就能定位原因。",
   "sourcePath": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-  "sourceSha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f"
+  "sourceSha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8"
 }
 ---
 

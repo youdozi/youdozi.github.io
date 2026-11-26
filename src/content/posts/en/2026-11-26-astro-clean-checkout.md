@@ -1,12 +1,12 @@
 ---
 kind: "post"
-publishedAt: "2026-11-26T13:45+09:00"
+publishedAt: "2026-11-26T13:45:00+09:00"
 language: "en"
 translationKey: "2026-11-26-astro-clean-checkout"
 routeSlug: "2026-11-26-astro-clean-checkout"
 title: "Why Astro checks failed only on a clean checkout"
 description: "A missing SVG stopped the news draft workflow. Running the same Astro check before and after asset preparation isolated the cause."
-categories: ["blog", "automation"]
+categories: ["blog"]
 tags: ["astro", "github-actions", "ci", "svg"]
 ---
 

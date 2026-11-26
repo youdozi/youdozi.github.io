@@ -9,8 +9,7 @@
   "title": "Warum die Astro-Prüfung nur in einem frischen Checkout scheiterte",
   "description": "Ein fehlendes SVG stoppte den Workflow für Nachrichtenentwürfe. Dieselbe Astro-Prüfung vor und nach dem Erzeugen der Dateien machte die Ursache sichtbar.",
   "categories": [
-    "blog",
-    "automation"
+    "blog"
   ],
   "tags": [
     "astro",
@@ -19,17 +18,17 @@
     "svg"
   ],
   "sourcePath": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
-  "sourceSha256": "7dba5eae5f82355acd4550b2c1c0881e24e8e8c82d7597021db67ee13393285f",
-  "draftSha256": "7be0f28a5ec75438f4615e65d0a5530bd7850c8bc1db6911ee096db733f45178",
+  "sourceSha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8",
+  "draftSha256": "ad51e6332e5f4881400c395a4951bb61841391f50004e9552a9fb69090b65985",
   "manifestPath": ".pipeline/technical-translations/batch-2088/manifest.json",
-  "manifestSha256": "b7b442fb34494b22edfb8c5f8e0eafaed5565c392112b7fb1119018b9da5f7a9",
-  "publishedAt": "2026-11-26T04:45:51.988Z",
-  "updatedAt": "2026-11-26T04:45:51.988Z",
+  "manifestSha256": "311a7141caf0352bb2e15fd64983c3b0cb9e64b742168c9bdf7b204d20a13c75",
+  "publishedAt": "2026-11-26T04:55:07.155Z",
+  "updatedAt": "2026-11-26T04:55:07.155Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 200,
-    "approvedAt": "2026-11-26T04:45:51.988Z",
+    "approvedAt": "2026-11-26T04:55:07.155Z",
     "basis": "The owner explicitly requested publication of the Astro CI retrospective in all supported blog languages (item 88)."
   }
 }
