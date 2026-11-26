@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-2092",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "394d609",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Self-review against the Korean and English texts, the two unit tests and the linked PR and workflow records.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-26-news-dry-run-guide",
+      "language": "zh-CN",
+      "translationKey": "2026-11-26-news-dry-run-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-news-dry-run-guide.md",
+        "sha256": "bbd2b23eadacc9df77585d34bf7ba6243a6a849fbbfcba51c6f2272b35553659"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2092/zh-CN/2026-11-26-news-dry-run-guide.md",
+        "sha256": "93a02be0783e3e0724e9437d06678795d5b4958549643d07e2f60049e1a074e6"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2092/zh-CN/2026-11-26-news-dry-run-guide.svg",
+        "sha256": "e52b99639f77e2ceb5badcc2855081fc5bec380f357ae1ccdef52b2c2442329f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/news-dry-run-guide-en.svg",
+        "sha256": "d0e50789a88c0945bb5a8cf315dcaa17279dd034234dcdcc0d9e5dd35ab9c2fd"
+      }
+    },
+    {
+      "key": "ja-2026-11-26-news-dry-run-guide",
+      "language": "ja",
+      "translationKey": "2026-11-26-news-dry-run-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-news-dry-run-guide.md",
+        "sha256": "bbd2b23eadacc9df77585d34bf7ba6243a6a849fbbfcba51c6f2272b35553659"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2092/ja/2026-11-26-news-dry-run-guide.md",
+        "sha256": "396d657c5e054d2b881bccc6d382138c2b85a513d9ad01406e1ef35703941993"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2092/ja/2026-11-26-news-dry-run-guide.svg",
+        "sha256": "09ab3658a61658572413b78a40e20557510117d0ff51c6bbfd5ec19581b27a8a"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/news-dry-run-guide-en.svg",
+        "sha256": "d0e50789a88c0945bb5a8cf315dcaa17279dd034234dcdcc0d9e5dd35ab9c2fd"
+      }
+    },
+    {
+      "key": "de-2026-11-26-news-dry-run-guide",
+      "language": "de",
+      "translationKey": "2026-11-26-news-dry-run-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-news-dry-run-guide.md",
+        "sha256": "bbd2b23eadacc9df77585d34bf7ba6243a6a849fbbfcba51c6f2272b35553659"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2092/de/2026-11-26-news-dry-run-guide.md",
+        "sha256": "65c374831545734c0caeae707ab9b9de4ac1de063833bb39e94f52c09d0915b1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2092/de/2026-11-26-news-dry-run-guide.svg",
+        "sha256": "70b51ba02903c947642627f0f0128c71bab1e439a773c08412efd71919d7a970"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/news-dry-run-guide-en.svg",
+        "sha256": "d0e50789a88c0945bb5a8cf315dcaa17279dd034234dcdcc0d9e5dd35ab9c2fd"
+      }
+    },
+    {
+      "key": "fr-2026-11-26-news-dry-run-guide",
+      "language": "fr",
+      "translationKey": "2026-11-26-news-dry-run-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-news-dry-run-guide.md",
+        "sha256": "bbd2b23eadacc9df77585d34bf7ba6243a6a849fbbfcba51c6f2272b35553659"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2092/fr/2026-11-26-news-dry-run-guide.md",
+        "sha256": "118dbbcf436a02010f088534bc721b585334c52634c8402780aabae21cd5b64e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2092/fr/2026-11-26-news-dry-run-guide.svg",
+        "sha256": "531d14352608bf835597cb815e7fc64a7f176f1df8f6b0a1d705614e439f08ac"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/news-dry-run-guide-en.svg",
+        "sha256": "d0e50789a88c0945bb5a8cf315dcaa17279dd034234dcdcc0d9e5dd35ab9c2fd"
+      }
+    },
+    {
+      "key": "ru-2026-11-26-news-dry-run-guide",
+      "language": "ru",
+      "translationKey": "2026-11-26-news-dry-run-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-news-dry-run-guide.md",
+        "sha256": "bbd2b23eadacc9df77585d34bf7ba6243a6a849fbbfcba51c6f2272b35553659"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2092/ru/2026-11-26-news-dry-run-guide.md",
+        "sha256": "eaa3380c95e1aeb0b20ed146473450010931186238a96daf94e38c1609374054"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2092/ru/2026-11-26-news-dry-run-guide.svg",
+        "sha256": "03c700c336eb71cb4bfb4bfa338ee5eee9df21310265577c393c76e8b2e29d02"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/news-dry-run-guide-en.svg",
+        "sha256": "d0e50789a88c0945bb5a8cf315dcaa17279dd034234dcdcc0d9e5dd35ab9c2fd"
+      }
+    },
+    {
+      "key": "es-2026-11-26-news-dry-run-guide",
+      "language": "es",
+      "translationKey": "2026-11-26-news-dry-run-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-news-dry-run-guide.md",
+        "sha256": "bbd2b23eadacc9df77585d34bf7ba6243a6a849fbbfcba51c6f2272b35553659"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2092/es/2026-11-26-news-dry-run-guide.md",
+        "sha256": "9c93480cf20f5be56dd70590959ec79bdf7d1b8e5020932398dd12e93c62b2ff"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2092/es/2026-11-26-news-dry-run-guide.svg",
+        "sha256": "5a1c3f2ae56126937c586608d7c4bd5b23070f556b059d62533e43e68e57eb08"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/news-dry-run-guide-en.svg",
+        "sha256": "d0e50789a88c0945bb5a8cf315dcaa17279dd034234dcdcc0d9e5dd35ab9c2fd"
+      }
+    }
+  ]
+}
