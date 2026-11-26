@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ko" viewBox="0 0 440 246" role="img" aria-labelledby="title desc">
+<title id="title">GitHub Actions에서 공개 발행 없이 뉴스 초안을 검증하는 법</title>
+<desc id="desc">테스트 입력에서 두 경로로 나뉜다. 정상 미리보기는 성공하고 AI 또는 링크 오류는 실패한다. 두 경로 모두 원고와 상태 디렉터리가 생기지 않는지 확인한다.</desc>
+<g stroke="#55787b" stroke-width="2" fill="none">
+<path d="M220 52v17H110v17m-5 -5 5 5 5 -5m105 -17h110v17m-5 -5 5 5 5 -5"/>
+<path d="M110 155v23h110v15m-5 -5 5 5 5 -5m105 -33v18H221"/>
+</g>
+<g font-family="system-ui,sans-serif" text-anchor="middle" fill="#173d4a">
+<rect x="15" y="7" width="410" height="45" rx="8" fill="#eaf3f5"/>
+<text x="220" y="36" font-size="18">임시 디렉터리 + 테스트 입력</text>
+<rect x="4" y="89" width="213" height="66" rx="8" fill="#e1f3e7"/>
+<text x="110" y="115" font-size="15">정상 미리보기</text>
+<text x="110" y="140" font-size="16">종료 0</text>
+<rect x="223" y="89" width="213" height="66" rx="8" fill="#fbece2"/>
+<text x="330" y="115" font-size="15">AI 또는 링크 오류</text>
+<text x="330" y="140" font-size="16">종료 1</text>
+<rect x="4" y="197" width="432" height="44" rx="8" fill="#eaf3f5"/>
+<text x="220" y="225" font-size="16">원고와 상태 디렉터리 생성 여부 검사</text>
+</g>
+</svg>

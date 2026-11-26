@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="zh-CN" viewBox="0 0 440 246" role="img" aria-labelledby="title desc">
+<title id="title">如何在 GitHub Actions 中验证新闻草稿而不发布</title>
+<desc id="desc">测试输入分为两条路径。正常预览成功退出，AI 或链接出错时以失败退出。两条路径都会检查是否创建了稿件和状态目录。</desc>
+<g stroke="#55787b" stroke-width="2" fill="none">
+<path d="M220 52v17H110v17m-5 -5 5 5 5 -5m105 -17h110v17m-5 -5 5 5 5 -5"/>
+<path d="M110 155v23h110v15m-5 -5 5 5 5 -5m105 -33v18H221"/>
+</g>
+<g font-family="system-ui,sans-serif" text-anchor="middle" fill="#173d4a">
+<rect x="15" y="7" width="410" height="45" rx="8" fill="#eaf3f5"/>
+<text x="220" y="36" font-size="18">临时目录与预设输入</text>
+<rect x="4" y="89" width="213" height="66" rx="8" fill="#e1f3e7"/>
+<text x="110" y="115" font-size="15">正常预览</text>
+<text x="110" y="140" font-size="16">退出码 0</text>
+<rect x="223" y="89" width="213" height="66" rx="8" fill="#fbece2"/>
+<text x="330" y="115" font-size="15">AI 或链接错误</text>
+<text x="330" y="140" font-size="16">退出码 1</text>
+<rect x="4" y="197" width="432" height="44" rx="8" fill="#eaf3f5"/>
+<text x="220" y="225" font-size="16">检查是否创建了稿件和状态目录</text>
+</g>
+</svg>

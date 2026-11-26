@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="fr" viewBox="0 0 440 246" role="img" aria-labelledby="title desc">
+<title id="title">Valider des brouillons d’actualité dans GitHub Actions sans les publier</title>
+<desc id="desc">Un aperçu valide aboutit, tandis qu’une erreur de l’IA ou de lien provoque un échec. Les deux parcours vérifient si les répertoires des manuscrits et de l’état ont été créés.</desc>
+<g stroke="#55787b" stroke-width="2" fill="none">
+<path d="M220 52v17H110v17m-5 -5 5 5 5 -5m105 -17h110v17m-5 -5 5 5 5 -5"/>
+<path d="M110 155v23h110v15m-5 -5 5 5 5 -5m105 -33v18H221"/>
+</g>
+<g font-family="system-ui,sans-serif" text-anchor="middle" fill="#173d4a">
+<rect x="15" y="7" width="410" height="45" rx="8" fill="#eaf3f5"/>
+<text x="220" y="36" font-size="18">Répertoire temporaire et données de test</text>
+<rect x="4" y="89" width="213" height="66" rx="8" fill="#e1f3e7"/>
+<text x="110" y="115" font-size="15">Aperçu valide</text>
+<text x="110" y="140" font-size="16">Code de sortie 0</text>
+<rect x="223" y="89" width="213" height="66" rx="8" fill="#fbece2"/>
+<text x="330" y="115" font-size="15">Erreur de l’IA ou de lien</text>
+<text x="330" y="140" font-size="16">Code de sortie 1</text>
+<rect x="4" y="197" width="432" height="44" rx="8" fill="#eaf3f5"/>
+<text x="220" y="225" font-size="16">Vérifier les répertoires des manuscrits et de l’état</text>
+</g>
+</svg>
