@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="es" viewBox="0 0 400 320" role="img" aria-labelledby="title desc">
+<title id="title">Por qué la comprobación de Astro fallaba solo en una copia de trabajo limpia</title>
+<desc id="desc">Partir de una copia de trabajo limpia, generar los SVG, leer sus dimensiones con Astro y compilar el sitio.</desc>
+<g font-family="system-ui, sans-serif" text-anchor="middle" fill="#173d4a">
+<rect x="4" y="3" width="392" height="60" rx="8" fill="#eef5f4" stroke="#698e89"/>
+<text x="200" y="28" font-size="19" font-weight="700">Copia de trabajo limpia</text>
+<text x="200" y="50" font-size="15" font-family="monospace">git checkout</text>
+<path d="M200 64v14m-5 -5 5 5 5 -5" fill="none" stroke="#386a65" stroke-width="2"/>
+<rect x="4" y="83" width="392" height="60" rx="8" fill="#eef5f4" stroke="#698e89"/>
+<text x="200" y="108" font-size="19" font-weight="700">Generar los SVG</text>
+<text x="200" y="130" font-size="15" font-family="monospace">node scripts/prepare-public.mjs</text>
+<path d="M200 144v14m-5 -5 5 5 5 -5" fill="none" stroke="#386a65" stroke-width="2"/>
+<rect x="4" y="163" width="392" height="60" rx="8" fill="#eef5f4" stroke="#698e89"/>
+<text x="200" y="188" font-size="19" font-weight="700">Comprobar las dimensiones</text>
+<text x="200" y="210" font-size="15" font-family="monospace">npm run check</text>
+<path d="M200 224v14m-5 -5 5 5 5 -5" fill="none" stroke="#386a65" stroke-width="2"/>
+<rect x="4" y="243" width="392" height="60" rx="8" fill="#eef5f4" stroke="#698e89"/>
+<text x="200" y="268" font-size="19" font-weight="700">Compilar el sitio</text>
+<text x="200" y="290" font-size="15" font-family="monospace">npm run build</text>
+</g>
+</svg>

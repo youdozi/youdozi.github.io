@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ru" viewBox="0 0 400 320" role="img" aria-labelledby="title desc">
+<title id="title">Почему проверка Astro падала только на чистой копии репозитория</title>
+<desc id="desc">В чистой копии репозитория создаются SVG, затем Astro читает размеры изображений, после чего запускается сборка сайта.</desc>
+<g font-family="system-ui, sans-serif" text-anchor="middle" fill="#173d4a">
+<rect x="4" y="3" width="392" height="60" rx="8" fill="#eef5f4" stroke="#698e89"/>
+<text x="200" y="28" font-size="19" font-weight="700">Чистая копия репозитория</text>
+<text x="200" y="50" font-size="15" font-family="monospace">git checkout</text>
+<path d="M200 64v14m-5 -5 5 5 5 -5" fill="none" stroke="#386a65" stroke-width="2"/>
+<rect x="4" y="83" width="392" height="60" rx="8" fill="#eef5f4" stroke="#698e89"/>
+<text x="200" y="108" font-size="19" font-weight="700">Создание SVG</text>
+<text x="200" y="130" font-size="15" font-family="monospace">node scripts/prepare-public.mjs</text>
+<path d="M200 144v14m-5 -5 5 5 5 -5" fill="none" stroke="#386a65" stroke-width="2"/>
+<rect x="4" y="163" width="392" height="60" rx="8" fill="#eef5f4" stroke="#698e89"/>
+<text x="200" y="188" font-size="19" font-weight="700">Проверка размеров изображений</text>
+<text x="200" y="210" font-size="15" font-family="monospace">npm run check</text>
+<path d="M200 224v14m-5 -5 5 5 5 -5" fill="none" stroke="#386a65" stroke-width="2"/>
+<rect x="4" y="243" width="392" height="60" rx="8" fill="#eef5f4" stroke="#698e89"/>
+<text x="200" y="268" font-size="19" font-weight="700">Сборка сайта</text>
+<text x="200" y="290" font-size="15" font-family="monospace">npm run build</text>
+</g>
+</svg>
