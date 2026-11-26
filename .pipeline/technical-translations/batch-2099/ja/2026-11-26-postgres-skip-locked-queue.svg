@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ja" viewBox="0 0 424 290" role="img" aria-labelledby="title desc">
+<title id="title">PostgreSQL の SKIP LOCKED で作るジョブキュー：ワーカーが途中で停止したら？</title>
+<desc id="desc">A がジョブ 1 をロックすると、B はそれを飛ばしてジョブ 2 を取得します。B がコミットし、A がロールバックすると、前者のジョブは待機に戻り、後者は実行中のままです。</desc>
+<g font-family="system-ui, sans-serif" font-size="15" text-anchor="middle" fill="#183d49">
+<rect x="4" y="5" width="416" height="43" rx="7" fill="#eaf3f5"/>
+<text x="212" y="32" font-size="15">待機中のジョブが二件</text>
+<path d="M212 48v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="63" width="416" height="43" rx="7" fill="#f9efdc"/>
+<text x="212" y="90" font-size="15">A がジョブ 1 をロック</text>
+<path d="M212 106v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="121" width="416" height="43" rx="7" fill="#f9efdc"/>
+<text x="212" y="148" font-size="15">B は 1 を飛ばして 2 をロック</text>
+<path d="M212 164v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="179" width="416" height="43" rx="7" fill="#eaf3f5"/>
+<text x="212" y="206" font-size="15">B がコミット → A がロールバック → B が切断</text>
+<path d="M212 222v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="237" width="416" height="43" rx="7" fill="#dfefe6"/>
+<text x="212" y="264" font-size="15">1 · pending     /     2 · running</text>
+</g>
+</svg>

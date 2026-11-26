@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" viewBox="0 0 424 290" role="img" aria-labelledby="title desc">
+<title id="title">A PostgreSQL SKIP LOCKED job queue: what if a worker dies?</title>
+<desc id="desc">A locks job 1. B skips it and claims job 2. Once B commits and A rolls back, the first job is pending again and the second stays running.</desc>
+<g font-family="system-ui, sans-serif" font-size="15" text-anchor="middle" fill="#183d49">
+<rect x="4" y="5" width="416" height="43" rx="7" fill="#eaf3f5"/>
+<text x="212" y="32" font-size="15">Two pending jobs</text>
+<path d="M212 48v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="63" width="416" height="43" rx="7" fill="#f9efdc"/>
+<text x="212" y="90" font-size="15">A locks job 1</text>
+<path d="M212 106v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="121" width="416" height="43" rx="7" fill="#f9efdc"/>
+<text x="212" y="148" font-size="15">B skips job 1 and locks job 2</text>
+<path d="M212 164v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="179" width="416" height="43" rx="7" fill="#eaf3f5"/>
+<text x="212" y="206" font-size="15">B commits → A rolls back → B disconnects</text>
+<path d="M212 222v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="237" width="416" height="43" rx="7" fill="#dfefe6"/>
+<text x="212" y="264" font-size="15">1 · pending     /     2 · running</text>
+</g>
+</svg>

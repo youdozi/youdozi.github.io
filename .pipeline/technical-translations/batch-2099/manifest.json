@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-2099",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "33b9eda",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Self-review against the PostgreSQL locking clause documentation and the two-session PostgreSQL 17.12 experiment, including the observed rows after disconnect.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-26-postgres-skip-locked-queue",
+      "language": "zh-CN",
+      "translationKey": "2026-11-26-postgres-skip-locked-queue",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "47e798b84fdcc29b4f58d8c6e35bed1ea56c2145f4c9767e14b18888eee939d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2099/zh-CN/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "8681c96e8898543d50415ce1ad1cf6fdcb1ac1bac431777fb560f730bda69435"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2099/zh-CN/2026-11-26-postgres-skip-locked-queue.svg",
+        "sha256": "ea590fc43d7c4d288c4e926bff19471cddc5785e1eceaed447a7bdb3213484c6"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-skip-locked-queue-en.svg",
+        "sha256": "8c2ef3fd73dbef0608f5fe36e8bb552bec1c3abe242cae8b60b76630555ac8e9"
+      }
+    },
+    {
+      "key": "ja-2026-11-26-postgres-skip-locked-queue",
+      "language": "ja",
+      "translationKey": "2026-11-26-postgres-skip-locked-queue",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "47e798b84fdcc29b4f58d8c6e35bed1ea56c2145f4c9767e14b18888eee939d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2099/ja/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "929544ccdf90a41e1aaba9a32f26d59995985a4a4b3775a62e577499a2c24714"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2099/ja/2026-11-26-postgres-skip-locked-queue.svg",
+        "sha256": "27ed9fc0c1fa7f5be9b52a17e03352fa7ac92d159b2d775065532c96bc1b23d6"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-skip-locked-queue-en.svg",
+        "sha256": "8c2ef3fd73dbef0608f5fe36e8bb552bec1c3abe242cae8b60b76630555ac8e9"
+      }
+    },
+    {
+      "key": "de-2026-11-26-postgres-skip-locked-queue",
+      "language": "de",
+      "translationKey": "2026-11-26-postgres-skip-locked-queue",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "47e798b84fdcc29b4f58d8c6e35bed1ea56c2145f4c9767e14b18888eee939d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2099/de/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "2aa97201ba1ad689895b32740ee4fcb89e494e972afc478c34d2d4d64c8119c6"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2099/de/2026-11-26-postgres-skip-locked-queue.svg",
+        "sha256": "83be0b18715d8aa05b4b87ccd392584f58c25ab8972adab07b4015f102ea8bb1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-skip-locked-queue-en.svg",
+        "sha256": "8c2ef3fd73dbef0608f5fe36e8bb552bec1c3abe242cae8b60b76630555ac8e9"
+      }
+    },
+    {
+      "key": "fr-2026-11-26-postgres-skip-locked-queue",
+      "language": "fr",
+      "translationKey": "2026-11-26-postgres-skip-locked-queue",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "47e798b84fdcc29b4f58d8c6e35bed1ea56c2145f4c9767e14b18888eee939d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2099/fr/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "fe37151c8a2c907057cf8e711fdb0b287f499edab763629a011c59340d7782df"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2099/fr/2026-11-26-postgres-skip-locked-queue.svg",
+        "sha256": "a2d728ee19921ae2c4749abb1edcf2e50e6dfe8e1023d7938cfb2383aee8ac70"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-skip-locked-queue-en.svg",
+        "sha256": "8c2ef3fd73dbef0608f5fe36e8bb552bec1c3abe242cae8b60b76630555ac8e9"
+      }
+    },
+    {
+      "key": "ru-2026-11-26-postgres-skip-locked-queue",
+      "language": "ru",
+      "translationKey": "2026-11-26-postgres-skip-locked-queue",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "47e798b84fdcc29b4f58d8c6e35bed1ea56c2145f4c9767e14b18888eee939d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2099/ru/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "ca54e41dd7958653669e3ea912565ebb694bd97b910a3933654ada242b9b2e93"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2099/ru/2026-11-26-postgres-skip-locked-queue.svg",
+        "sha256": "670fa5a5e32d4eda2a2eda708271fe9e3064fa442c387282b690248ac81c9171"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-skip-locked-queue-en.svg",
+        "sha256": "8c2ef3fd73dbef0608f5fe36e8bb552bec1c3abe242cae8b60b76630555ac8e9"
+      }
+    },
+    {
+      "key": "es-2026-11-26-postgres-skip-locked-queue",
+      "language": "es",
+      "translationKey": "2026-11-26-postgres-skip-locked-queue",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "47e798b84fdcc29b4f58d8c6e35bed1ea56c2145f4c9767e14b18888eee939d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2099/es/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "98494934f2f3ccf819daf1ece26487bc1ad8a181a19689f7622a971a53190e13"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2099/es/2026-11-26-postgres-skip-locked-queue.svg",
+        "sha256": "f32573ea19d7a109883fc1dc9602e941ee22f539d49de9c388ec3927b82d9b07"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-skip-locked-queue-en.svg",
+        "sha256": "8c2ef3fd73dbef0608f5fe36e8bb552bec1c3abe242cae8b60b76630555ac8e9"
+      }
+    }
+  ]
+}
