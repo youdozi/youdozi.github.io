@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-147",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "2bc61d37f19beed283814d274ed57a9af0b6f815",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Translator self-review against the English source, Korean context and original diagrams; protected code, links, numeric values and diagram branches checked.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2021-07-23-unsuccessful-runner",
+      "language": "hi",
+      "translationKey": "2021-07-23-unsuccessful-runner",
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-unsuccessful-runner.md",
+        "sha256": "a8c9e485842a9d8718e6cec7f5d0bcbda5a716bad751608cc67094ac938487d6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-23-unsuccessful-runner.md",
+        "sha256": "2292f9528dddf6fbebe19322ab497daaba4073c7dede32d1dd4c59030229893a"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-23-unsuccessful-runner.diagram.json",
+        "sha256": "3957af3106ef874bda6ce992d0f024bb0481bf3925f1f1163ac0efece3636419"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-23-unsuccessful-runner.svg",
+        "sha256": "a4adefbf866f3a542519dee36387e8f1d26d131d89cf31360761963b894a481f"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "hi-2021-07-24-fail-percentage",
+      "language": "hi",
+      "translationKey": "2021-07-24-fail-percentage",
+      "source": {
+        "path": "src/content/posts/en/2021-07-24-fail-percentage.md",
+        "sha256": "c684945a1636e85bfe7ce5165815a7785215f97a78fa784c21dd34e8f275d30b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-24-fail-percentage.md",
+        "sha256": "20e9a4639c8d57a9565a1209345cadd95c140b0303c5ae1f2b1739e41de28cb4"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-24-fail-percentage.diagram.json",
+        "sha256": "688d7293a798c7f670840fcd38fbbe817095d812022c561ae74284926e6ca82a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-24-fail-percentage.svg",
+        "sha256": "893fa0a55e684e585c625095a7af3223d32cf68ea7b873a7ff623dde6e28161b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "hi-2021-07-29-interval-num",
+      "language": "hi",
+      "translationKey": "2021-07-29-interval-num",
+      "source": {
+        "path": "src/content/posts/en/2021-07-29-interval-num.md",
+        "sha256": "4674cdefcccdc5107e92b9fe49ee186426b25a096d2687d60d42724c51d29cf4"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-29-interval-num.md",
+        "sha256": "eadb17ed0422839b927f6647c3240cc35acc81da588bdde31cd21300d2f2d2bd"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-29-interval-num.diagram.json",
+        "sha256": "78eec7306ae1000d4818dd58596a6b78fe1584229cfc58cf7ab955727151c0ca"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-29-interval-num.svg",
+        "sha256": "144564c9080bea8d59c0bffbadf623fa2fe8af5a743ae12ce01b64b9683c03eb"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "hi-2021-07-29-ponkemon",
+      "language": "hi",
+      "translationKey": "2021-07-29-ponkemon",
+      "source": {
+        "path": "src/content/posts/en/2021-07-29-ponkemon.md",
+        "sha256": "99cbe2a5028aa94ba76d028c0e9bf48f91f84d6ab43c457f183d0a8a1d9752de"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-29-ponkemon.md",
+        "sha256": "2c61cfe1dc27d81c352e313b2bcc94a688ef8ad23c93ae0e152ea2db71236259"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-29-ponkemon.diagram.json",
+        "sha256": "890e9bad52a2a5ea0af49f8409b24d37484cf7a04fbb8d42c33ae86225ab6316"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2021-07-29-ponkemon.svg",
+        "sha256": "bbb9fdf1ec687428e90b1f27c5d81528d479cd136d00d7859bae77e2bf41607e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "hi-2023-09-05-querydsl-no-release",
+      "language": "hi",
+      "translationKey": "2023-09-05-querydsl-no-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-05-querydsl-no-release.md",
+        "sha256": "23fe3b60bb4735a72a59a7bcc0dfabd76d68df0af84bdd636d79f15699cfc798"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2023-09-05-querydsl-no-release.md",
+        "sha256": "3d0505c2bd026d18900283c8b56c62642d98c389a136da765aa3966149452014"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2023-09-05-querydsl-no-release.diagram.json",
+        "sha256": "40a9a56167147098123e8fe597fdb0c75c6272ce31f3270c68c3b95f46a22c06"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-147/hi/2023-09-05-querydsl-no-release.svg",
+        "sha256": "2c6c92e45690f16d4139db3fbb36e641182df89a328861c0945062c113cd6809"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/query-strategies.json",
+        "sha256": "c4e231fd5d357ca060889f607aeb4291f73eb9ff3b665ea2414a10a9034f3ef6"
+      }
+    }
+  ]
+}
