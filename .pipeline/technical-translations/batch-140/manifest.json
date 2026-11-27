@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-140",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "87461a5",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Compared Hindi prose, diagrams, values and limitations with the Korean and English editions.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-11-15-orca-herdr-comparison",
+      "language": "hi",
+      "translationKey": "2026-11-15-orca-herdr-comparison",
+      "source": {
+        "path": "src/content/posts/en/2026-11-15-orca-herdr-comparison.md",
+        "sha256": "2a0f1ca513f60e49bad64d71689d7e59effe22e995582b05d6e1688572f172e4"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-140/hi/2026-11-15-orca-herdr-comparison.md",
+        "sha256": "0ac3dd8b973676a95275403d64d76742fdabf7138e7c274a823a73f14d02b287"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-140/hi/2026-11-15-orca-herdr-comparison.svg",
+        "sha256": "30552fb12f8144da3f728a5e6601bf65e6a90fc7b154c4d1457a3bdbbc061753"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/orca-herdr-workflow-en.svg",
+        "sha256": "ce9f60937be547cc9be7e92f3296a61d00c86bcc718178920364d685c84bc88b"
+      }
+    },
+    {
+      "key": "hi-2026-11-16-t3code-orca-herdr",
+      "language": "hi",
+      "translationKey": "2026-11-16-t3code-orca-herdr",
+      "source": {
+        "path": "src/content/posts/en/2026-11-16-t3code-orca-herdr.md",
+        "sha256": "94725dbdc4ab213e11a438cbe4dbe69f888ffe3750e5d7c351e92178279c388e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-140/hi/2026-11-16-t3code-orca-herdr.md",
+        "sha256": "9e0d2580ca06aa69af753e2847992109bc18e41b68dfc0bd0fb576901f3bb03d"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-140/hi/2026-11-16-t3code-orca-herdr.svg",
+        "sha256": "30552fb12f8144da3f728a5e6601bf65e6a90fc7b154c4d1457a3bdbbc061753"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/t3code-orca-herdr-en.svg",
+        "sha256": "ce9f60937be547cc9be7e92f3296a61d00c86bcc718178920364d685c84bc88b"
+      }
+    },
+    {
+      "key": "hi-2026-11-17-aside-browser-guide",
+      "language": "hi",
+      "translationKey": "2026-11-17-aside-browser-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-17-aside-browser-guide.md",
+        "sha256": "9d879f337252954a0aa3cd71855d210f95ea7c5da24065f69861d937e56fe64c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-140/hi/2026-11-17-aside-browser-guide.md",
+        "sha256": "b7ca380d6c166148a50880fef46696f62deba7584fc98f1ac9e86e2800e22c29"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-140/hi/2026-11-17-aside-browser-guide.svg",
+        "sha256": "801d22259c8b9aed4b20eba7506aabc0dab8d210a176c99d498dc0213904a0e8"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/aside-browser-guide-en.svg",
+        "sha256": "eaf0f5ab477c41817c8f444a123f733627fd4fe44d805aa3dd3f6ace80f38e8f"
+      }
+    },
+    {
+      "key": "hi-2026-11-20-ui-ux-design-agent-skills",
+      "language": "hi",
+      "translationKey": "2026-11-20-ui-ux-design-agent-skills",
+      "source": {
+        "path": "src/content/posts/en/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "2fa2cdf9d087643f65deb61063a994cdd75549bf0b412379d831fa97c01906e2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-140/hi/2026-11-20-ui-ux-design-agent-skills.md",
+        "sha256": "a19a46a69c35d9229155a0e5b2498f4537ad89e66ef7f903064cbd7b828e287e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-140/hi/2026-11-20-ui-ux-design-agent-skills.svg",
+        "sha256": "e9eb88ce81bd6a7e048b375946a59eb7fa0e64c07314c29caf32d5de431d063e"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-20-ui-ux-design-agent-skills-en.svg",
+        "sha256": "a774eac9244d5643a21d25d123e15dfead25b63c00195b5a1cc9cc083358b91f"
+      }
+    },
+    {
+      "key": "hi-2026-11-24-github-pages-ads-guide",
+      "language": "hi",
+      "translationKey": "2026-11-24-github-pages-ads-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "884b5c639b2345ac6daac6b307db2cd0ec22e80801c8d5d2d5860b4ba12356d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-140/hi/2026-11-24-github-pages-ads-guide.md",
+        "sha256": "f4b336df75de24e61302d3002626e5d04362036a6f8fecf5506683a295781e49"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-140/hi/2026-11-24-github-pages-ads-guide.svg",
+        "sha256": "0f15fc7f7578565d6223bf72b1d6ee20373ee0d945b88319a1715be061550363"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/github-pages-ads-guide-en.svg",
+        "sha256": "dfbfd719b6d48154ecfc8edfc429c7dd84b0c0461033735913709bf4b69e74d8"
+      }
+    }
+  ]
+}
