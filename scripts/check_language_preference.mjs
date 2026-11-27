@@ -55,6 +55,13 @@ async function choose(page,language,keyboard=false){
 }
 try{
   browser=await chromium.launch({executablePath:await chromePath(),headless:true});
+  const [english,korean,hindi]=await Promise.all(['en','ko','hi'].map(async language=>{
+    const response=await fetch(base+'/'+language+'/search-index.json');
+    assert.equal(response.status,200);
+    return new Set((await response.json()).map(entry=>entry.url.slice(language.length+1)));
+  }));
+  const untranslated=[...english].find(path=>path.startsWith('/posts/')&&korean.has(path)&&!hindi.has(path));
+  assert.ok(untranslated,'Missing English/Korean article for the unavailable Hindi edition check');
   for(const width of [320,1360]){
     for(const [locale,expected] of [['en-GB','en'],['ko-KR','ko'],['zh-CN','zh-CN'],['ja-JP','ja'],['de-AT','de'],['fr-CA','fr'],['ru-RU','ru'],['es-419','es'],['hi-IN','hi'],['pt-BR','en'],['zh-TW','en']]){
       await run(`browser-${locale}-${width}`,{locale,viewport:{width,height:950}},async page=>{
@@ -77,7 +84,7 @@ try{
         assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),language);
         await root(page,language);
       }
-      for(const slug of ['2026-11-26-astro-clean-checkout','2026-11-26-postgres-skip-locked-queue','2026-11-27-docker-desktop-mac-disk-space']){
+      for(const slug of ['2026-11-26-astro-clean-checkout','2026-11-26-postgres-skip-locked-queue','2026-11-27-docker-desktop-mac-disk-space','2023-09-19-springboot-test-webclient']){
         const path='/posts/'+slug+'/';
         await page.goto(base+'/en'+path);
         await choose(page,'hi');
@@ -91,7 +98,7 @@ try{
         await choose(page,'en');
         await page.waitForURL(url=>url.pathname==='/en'+path);
       }
-      const article='/en/posts/2023-09-19-springboot-test-webclient/';
+      const article='/en'+untranslated;
       await page.goto(base+article);
       assert.equal(new URL(page.url()).pathname,article);
       assert.equal(await page.locator('a[data-language-choice=hi], link[hreflang=hi]').count(),0);
