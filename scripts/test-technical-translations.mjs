@@ -207,3 +207,27 @@ test('browser guide prompt localization preserves CSV identifiers and executable
  assert.throws(()=>check(localized.replace('report.csv','other.csv')),/Prompt identifier/);
  assert.throws(()=>check(localized.replace('import csv','import csv2')),/Executable code/);
 });
+
+test('Hindi defensive excerpts retain source checks and cannot select executable lines', async t => {
+  const path = '.pipeline/technical-translations/batch-1512/manifest.json';
+  const batch = JSON.parse(await readFile(join(root, path), 'utf8'));
+  const row = batch.editions.find(edition => edition.translationKey.endsWith('mythos-availability'));
+  const folder = await mkdtemp(join(tmpdir(), 'defensive-translations-'));
+  t.after(() => rm(folder, {recursive: true, force: true}));
+  for (const record of [row.source, row.draft, row.mainVisual, row.diagram]) {
+    const file = join(folder, record.path);
+    await mkdir(dirname(file), {recursive: true});
+    await copyFile(join(root, record.path), file);
+  }
+  batch.editions = [row];
+  const inspect = async () => {
+    await writeFile(join(folder, path), JSON.stringify(batch));
+    return inspectTechnicalTranslations(folder, path);
+  };
+  assert.equal((await inspect()).preparedEditions, 1);
+  const originalLines = row.defensiveBodyLines;
+  row.defensiveBodyLines = [[29, 29]];
+  await assert.rejects(inspect, /Expected prose/);
+  row.defensiveBodyLines = originalLines.slice(1);
+  await assert.rejects(inspect, /changed|omitted/i);
+});

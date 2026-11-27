@@ -19,9 +19,9 @@
   ],
   "sourcePath": "src/content/posts/en/2026-10-30-node2shell-brotli-runtime-patching.md",
   "sourceSha256": "9f8abe774ed0a87c0a07284163ad858f1f4ff629708131dff5f1b6088b23b959",
-  "draftSha256": "8f52d7b360474a425a489d9cf01a88904808f44cbd155f04246d262fb0b45963",
+  "draftSha256": "d2559c9110365a874bfaa2e02cb33cbff21248404bab00c481e43c2f402a25d5",
   "manifestPath": ".pipeline/technical-translations/batch-1511/manifest.json",
-  "manifestSha256": "93bd2803930fe27dea5eec6c40440025fa4301401d9e74280732ea1381849cf4",
+  "manifestSha256": "cc83c48418799e3ad5a2348227ee3d0bb5b0b459d4110e52ede88b01e534d01a",
   "publishedAt": "2026-11-27T15:16:00.280Z",
   "updatedAt": "2026-11-27T15:16:00.280Z",
   "approval": {
@@ -34,7 +34,7 @@
 }
 ---
 
-Node2Shell के लिए Node.js रनटाइम बदलें और जाँचें कि बाहर से मिले Brotli डेटा को खोलने वाला हर वर्कर संशोधित बिल्ड चला रहा है। [Node.js की सुरक्षा सूचना](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) के अनुसार **CVE-2026-111497** रनटाइम के साथ आने वाले Brotli डिकोडर की मेमोरी से जुड़ा दोष था। केवल npm पैकेज अपडेट करने से रनटाइम नहीं बदलता। यह हिंदी संस्करण बचाव और सेवा संचालन पर केंद्रित है।
+Node2Shell के लिए Node.js रनटाइम बदलें और जाँचें कि बाहर से मिले Brotli डेटा को खोलने वाला हर वर्कर संशोधित बिल्ड चला रहा है। Node.js की सुरक्षा सूचना के अनुसार **CVE-2026-111497** रनटाइम के साथ आने वाले Brotli डिकोडर की मेमोरी से जुड़ा दोष था। केवल npm पैकेज अपडेट करने से रनटाइम नहीं बदलता। यह हिंदी संस्करण बचाव और सेवा संचालन पर केंद्रित है।
 
 ## किस Node.js शाखा में कौन-सा पैच आया था?
 

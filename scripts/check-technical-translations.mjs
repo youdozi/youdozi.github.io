@@ -233,6 +233,13 @@ function defensiveSource(sourceRaw, row, manifestPath) {
   const lines = body.split('\n');
   let previousEnd = 0;
   if (!Array.isArray(row.defensiveBodyLines) || !row.defensiveBodyLines.length) fail('Missing defensive excerpt');
+  const unlinkedAdvisories = new Set([
+    'https://nodejs.org/en/blog/vulnerability/october-2026-security-releases',
+    'https://www.php.net/archive/2026.php',
+    'https://my.f5.com/s/article/K000164058',
+    'https://cert.europa.eu/publications/security-advisories/2026-022',
+    'https://access.redhat.com/security/vulnerabilities/RHSB-2026-019',
+  ]);
   const excerpts = row.defensiveBodyLines.map(([start, end]) => {
     if (!Number.isInteger(start) || !Number.isInteger(end) || start <= previousEnd || end < start || end > lines.length) {
       fail('Invalid defensive excerpt range');
@@ -242,7 +249,8 @@ function defensiveSource(sourceRaw, row, manifestPath) {
     if (!excerpt.trim() || excerpt.includes('```') || lines.slice(0, start - 1).filter(line => line.startsWith('```')).length % 2) {
       fail('Expected prose in defensive excerpt');
     }
-    return excerpt;
+    return excerpt.replace(/(?<!!)\[([^\]\n]+)\]\(([^)]+)\)/g, (link, label, url) =>
+      unlinkedAdvisories.has(url) ? label : link);
   });
   return sourceRaw.slice(0, sourceRaw.length - body.length) + excerpts.join('\n\n');
 }
