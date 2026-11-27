@@ -1,0 +1,50 @@
+{
+  "key": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+  "language": "hi",
+  "title": "Ruby और C++ की अलग जाँच",
+  "description": "Ruby का स्टार्टअप और बिल्ड सेटिंग देखकर अस्थायी C++ प्रोग्राम कम्पाइल करें, उसका आउटपुट जाँचें और फिर असली gem का बिल्ड लॉग देखें।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Ruby का स्टार्टअप और RbConfig जाँचें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "जाँच के लिए कम्पाइलर चुनें",
+        "सिर्फ़ इस कमांड के फ़्लैग पढ़ें"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "अस्थायी C++17 प्रोग्राम कम्पाइल हुआ?"
+      ],
+      "branch": {
+        "exit": "नहीं",
+        "continue": "हाँ",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "प्रोग्राम चला और आउटपुट 42 मिला?"
+      ],
+      "branch": {
+        "exit": "नहीं",
+        "continue": "हाँ",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "जाँच का परिणाम दिखाएँ",
+        "gem का बिल्ड लॉग देखें"
+      ]
+    }
+  ]
+}

@@ -86,6 +86,9 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
     const localized=key==='2026-11-23-mac-for-ai-agents' && link==='https://youdozi.github.io/en/posts/2026-11-23-macbook-personal-server/'
       ? `https://youdozi.github.io/${language}/posts/2026-11-23-macbook-personal-server/` : link;
     if(language==='hi' && [
+      '/en/posts/2026-04-07-jekyll-github-actions-content-pipeline/',
+      '/en/posts/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit/',
+      '/ko/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/',
       '/ko/posts/2026-11-12-t3-code-workflow/',
       '/ko/posts/2026-11-12-orca-worktree-guide/',
       '/ko/posts/2026-11-15-orca-herdr-comparison/',
