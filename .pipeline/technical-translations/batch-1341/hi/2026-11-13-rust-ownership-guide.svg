@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1040" viewBox="0 0 360 1040" role="img" aria-labelledby="title desc" xml:lang="hi">
+  <title id="title">Rust CLI में रकम जोड़ने का क्रम</title>
+  <desc id="desc">main इनपुट स्ट्रिंग का स्वामी है और उन्हें summarize को उधार देता है। खाली इनपुट अस्वीकार होता है। हर मान u64 में पार्स करके checked_add से जोड़ा जाता है। विफलता पर तुरंत Err मिलता है, सफलता पर संख्या और योग। main दोनों परिणामों के लिए अलग आउटपुट स्ट्रीम और एग्ज़िट कोड इस्तेमाल करता है।</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1040" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" font-size="15" text-anchor="middle" fill="#1e352d">
+    <text x="180" y="31" font-size="19" font-weight="bold">स्वामित्व → उधार → परिणाम</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="20" y="55" width="215" height="68" rx="8" />
+      <rect x="20" y="155" width="215" height="68" rx="8" />
+      <rect x="20" y="270" width="215" height="64" rx="8" />
+      <rect x="20" y="385" width="215" height="64" rx="8" />
+      <rect x="20" y="505" width="215" height="64" rx="8" />
+      <rect x="20" y="625" width="215" height="64" rx="8" />
+      <rect x="20" y="745" width="215" height="64" rx="8" />
+      <rect x="20" y="865" width="215" height="68" rx="8" />
+      <rect x="250" y="736" width="96" height="78" rx="8" fill="#f8e8dd" />
+      <rect x="250" y="865" width="96" height="68" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="127" y="82">main: आर्ग्युमेंट लें</text><text x="127" y="106">Vec&lt;String&gt; का स्वामित्व</text>
+    <text x="127" y="181">summarize(&amp;inputs)</text><text x="127" y="205">स्ट्रिंग स्लाइस उधार लें</text>
+    <text x="127" y="308">इनपुट खाली है?</text>
+    <text x="127" y="411">अगला मान है?</text><text x="127" y="434">रेफ़रेंस से स्ट्रिंग पढ़ें</text>
+    <text x="127" y="531">u64 में पार्स करें</text><text x="127" y="554">प्रारूप और सीमा जाँचें</text>
+    <text x="127" y="651">checked_add से जोड़ें</text><text x="127" y="674">योग की सीमा जाँचें</text>
+    <text x="127" y="772">Ok(Summary) लौटाएँ</text><text x="127" y="795">संख्या और योग</text>
+    <text x="127" y="891">main: मानक आउटपुट</text><text x="127" y="916">एग्ज़िट कोड 0</text>
+    <text x="298" y="763">Err लौटाएँ</text><text x="298" y="788" font-size="12">तुरंत लौटें</text>
+    <text x="298" y="891">मानक त्रुटि</text><text x="298" y="916">एग्ज़िट कोड 1</text>
+    <text x="148" y="362">नहीं</text><text x="148" y="479">हाँ</text>
+    <text x="148" y="598">सफल</text><text x="283" y="296">हाँ</text>
+    <text x="288" y="495">विफल</text><text x="288" y="617">विफल</text>
+    <text x="88" y="704" font-size="13">सफल: दोहराएँ</text>
+    <text x="55" y="740" font-size="13">मान खत्म</text>
+    <text x="116" y="975">अगले मान के लिए दोहराएँ</text>
+    <text x="180" y="1006" font-size="12.6">सभी त्रुटियाँ main की Err शाखा तक पहुँचती हैं।</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M127 123V155" /><path d="M127 223V270" /><path d="M127 334V385" />
+    <path d="M127 449V505" /><path d="M127 569V625" />
+    <path d="M20 417H8V777H20" />
+    <path d="M127 689V710H3V365H127V385" />
+    <path d="M235 302H337V736" />
+    <path d="M235 537H309V736" /><path d="M235 657H280V736" />
+    <path d="M127 809V865" /><path d="M298 814V865" />
+  </g>
+</svg>

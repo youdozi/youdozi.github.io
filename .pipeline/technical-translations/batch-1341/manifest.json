@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-1341",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "874b448",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Compared Hindi prose, diagrams, values and limitations with the Korean and English editions.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-11-13-rust-ownership-guide",
+      "language": "hi",
+      "translationKey": "2026-11-13-rust-ownership-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-ownership-guide.md",
+        "sha256": "b6f336e010d9bfad88b7108ccfb60a6c7f30048a3bb7e54fa94483e719e26d40"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1341/hi/2026-11-13-rust-ownership-guide.md",
+        "sha256": "de438752e1aa690afde26ba5bccd2c2445ffbede5a809aaca918eff7cf456435"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1341/hi/2026-11-13-rust-ownership-guide.svg",
+        "sha256": "8ed630dce53a446426faee4f174f900e4ef09f5d63ac9b857b7738af44799485"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/rust-flow-en.svg",
+        "sha256": "79055a18150586f3e7a79d9adf381be8075bfbdfe91abcea9d8e0692e66ad71e"
+      }
+    },
+    {
+      "key": "hi-2026-11-13-rust-log-cli",
+      "language": "hi",
+      "translationKey": "2026-11-13-rust-log-cli",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-rust-log-cli.md",
+        "sha256": "4d2fd4771a2fa07143e52582adf4beccc6662d6b6cbba32538ca807a509c86f0"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1341/hi/2026-11-13-rust-log-cli.md",
+        "sha256": "5d811ea1672f614dda352960e51121f828921d7939c74bddcaeacc6ee9ff1830"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1341/hi/2026-11-13-rust-log-cli.svg",
+        "sha256": "3b998e08ecad503cf102b9425ab1e924aedf30118f99902ad60659b055db79d4"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/log-cli-flow-en.svg",
+        "sha256": "1fa93e2786e4d59c5bbd4c081077f1a28abb98cd4e60b33c11a0fd674e682c63"
+      }
+    },
+    {
+      "key": "hi-2026-11-03-virtual-threads-db-semaphore",
+      "language": "hi",
+      "translationKey": "2026-11-03-virtual-threads-db-semaphore",
+      "source": {
+        "path": "src/content/posts/en/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "103d90ef1cccefaa0b1dd31120b1813c5ded6536bcd76a9ae5a0f75388d3584a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1341/hi/2026-11-03-virtual-threads-db-semaphore.md",
+        "sha256": "65602d177defd005d42c5e0f20085f0d28cc0f2470b4ff3a201c21d6b8b49914"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1341/hi/2026-11-03-virtual-threads-db-semaphore.svg",
+        "sha256": "4825284ebf8d3cf4bda25a9d3184111003200fbc6693bfff28c77f83ee70768e"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/db-semaphore-en.svg",
+        "sha256": "1c0d35986a629fe65ccc644abdec18dd1bf032ad94d4fba5be96c7db497d55d8"
+      }
+    },
+    {
+      "key": "hi-2026-11-09-spring-mvc-webclient-execution",
+      "language": "hi",
+      "translationKey": "2026-11-09-spring-mvc-webclient-execution",
+      "source": {
+        "path": "src/content/posts/en/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "6f81dd9e98a391f7b05ca1d0fef8c01ca8288550531caf852ae518c60843dba8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1341/hi/2026-11-09-spring-mvc-webclient-execution.md",
+        "sha256": "ad33cb75a455aff0cbf1feb3ccdc2ca3922f864a7ea83a6dc53103d086b99ce7"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1341/hi/2026-11-09-spring-mvc-webclient-execution.svg",
+        "sha256": "7e78a912a6a915353841f3d8c6d101ff6cad4e72b95e65b6cf277f9285035973"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mvc-webclient-flow-en.svg",
+        "sha256": "37859bc50c40722aa272a8281dfb4037b10112ad5595dfd8ee994fe590c3206e"
+      }
+    },
+    {
+      "key": "hi-2026-11-02-grafana-lgtm-log-trace",
+      "language": "hi",
+      "translationKey": "2026-11-02-grafana-lgtm-log-trace",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "ea19472a99523fa3e56c758e753b8333671691c4efd6f1dec67f9e59c3eaf558"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1341/hi/2026-11-02-grafana-lgtm-log-trace.md",
+        "sha256": "124b57b3c637ce79f2049aba78fb40c8a6a2e4329241a60c4880fc64eda25851"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1341/hi/2026-11-02-grafana-lgtm-log-trace.svg",
+        "sha256": "925dd200cd3ad77157c7e3547610a45bd33102de7a0904bd469f3f145ae3bf5b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/lgtm-log-trace-en.svg",
+        "sha256": "717e7d5f9bc86046132cd3d589966a587a42f962da94a0afc5737d8579b03823"
+      }
+    }
+  ]
+}
