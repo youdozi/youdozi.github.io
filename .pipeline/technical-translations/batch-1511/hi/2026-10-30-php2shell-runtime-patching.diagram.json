@@ -1,0 +1,38 @@
+{
+  "key": "2026-10-30-php2shell-runtime-patching",
+  "title": "CLI प्रक्रिया का रिकॉर्ड",
+  "description": "वेब पर कोई विवरण न दिखाएँ। CLI में उसी प्रक्रिया का संस्करण और कॉन्फ़िगरेशन JSON में दर्ज करें।",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "क्या PHP CLI में चल रहा है?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "वेब: 404",
+        "continue": "हाँ"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "PID, संस्करण और फ़ाइल पथ पढ़ें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "ini और सेशन सेटिंग पढ़ें"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "CLI का विवरण JSON में लिखें",
+        "वेब वर्कर की अलग से जाँच करें"
+      ]
+    }
+  ],
+  "language": "hi"
+}

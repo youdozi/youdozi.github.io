@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-1512",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "6b31791ba8ef909f0625804843c4a2a617075aab",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Translator self-review of defensive excerpts, historical version and access conditions, localized diagrams and official release or support references.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "source": {
+        "path": "src/content/posts/en/2026-11-21-nginx4shell-http2.md",
+        "sha256": "51daac7a022b582074f762f0ce0c07d617f4af8535152688b060235117af16c2"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-21-nginx4shell-http2-en.svg",
+        "sha256": "d711ec9a08cf45f1e7fac67e34399f0ae1302e261872143258c5005bab5a362a"
+      },
+      "translationKey": "2026-11-21-nginx4shell-http2",
+      "key": "hi-2026-11-21-nginx4shell-http2",
+      "language": "hi",
+      "defensiveBodyLines": [
+        [
+          2,
+          11
+        ],
+        [
+          15,
+          21
+        ],
+        [
+          27,
+          27
+        ]
+      ],
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1512/hi/2026-11-21-nginx4shell-http2.svg",
+        "sha256": "c497d840380bb9982592c894c7715021e550e1d659a9bf4da5a7fdc2a6835c82"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1512/hi/2026-11-21-nginx4shell-http2.md",
+        "sha256": "a15a128ddedda61bbef75e625b402039b82386d0c1fbb83aa15c885c825bc284"
+      }
+    },
+    {
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-claude-mythos-availability.md",
+        "sha256": "03f809cd5ff47c9929524f940e1ebf683dc5e75760fb062cfdb425ffbf4ff424"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-claude-mythos-availability-en.svg",
+        "sha256": "4c77a67311620116bc3a4dce4b22b163635f301bfb2bf889c9a77f8412adb5e5"
+      },
+      "translationKey": "2026-11-22-claude-mythos-availability",
+      "key": "hi-2026-11-22-claude-mythos-availability",
+      "language": "hi",
+      "defensiveBodyLines": [
+        [
+          2,
+          24
+        ],
+        [
+          41,
+          45
+        ]
+      ],
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1512/hi/2026-11-22-claude-mythos-availability.svg",
+        "sha256": "7c957ea4fceef894102171f6855ddb77802d1fbcd491aed3264094d468ceef8f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1512/hi/2026-11-22-claude-mythos-availability.md",
+        "sha256": "f5a71de09a633c8862b0ceab416df2ee46ea8b3538938ef42d0c9bee065120cc"
+      }
+    },
+    {
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "f2681dfbb0c7b7d09b2e0d0b566305cdaec11b271949b3a7aa2785e56013639e"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/claude-mythos-defensive-review-en.svg",
+        "sha256": "6a700b23d2e29a4251ee4cc935b0806457888ccd01a959eba2f2d3e5b3208a1f"
+      },
+      "translationKey": "2026-11-23-claude-mythos-defensive-review",
+      "key": "hi-2026-11-23-claude-mythos-defensive-review",
+      "language": "hi",
+      "defensiveBodyLines": [
+        [
+          2,
+          17
+        ],
+        [
+          42,
+          44
+        ],
+        [
+          82,
+          84
+        ]
+      ],
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1512/hi/2026-11-23-claude-mythos-defensive-review.svg",
+        "sha256": "3ea14b9dbabdbb643377c419aa2940230c14f721f425d4b43bb0bf4f1832d0b5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1512/hi/2026-11-23-claude-mythos-defensive-review.md",
+        "sha256": "91d9a209c0081f831facd5db97bfd487c6de4e08d5defe94215de0c1b0a3b14a"
+      }
+    }
+  ]
+}

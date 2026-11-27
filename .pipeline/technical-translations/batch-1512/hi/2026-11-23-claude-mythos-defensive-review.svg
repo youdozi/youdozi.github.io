@@ -1,0 +1,30 @@
+<svg xml:lang="hi" xmlns="http://www.w3.org/2000/svg" width="420" height="357" viewBox="0 0 420 357" role="img" aria-labelledby="title desc">
+  <title id="title">रिपोर्ट से सुधार और जाँच तक</title>
+  <desc id="desc">कमिट और प्रमाण देखें। प्रमाण अधूरा हो तो निर्णय रोकें। कमी की पुष्टि होने पर सर्वर का नियम सुधारें और अनुमत व निषिद्ध मामलों के परिणाम दर्ज करें।</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#58718e"/></marker></defs>
+  <rect width="420" height="357" rx="16" fill="#f3f6fb"/>
+  <g fill="none" stroke="#58718e" stroke-width="1.6" marker-end="url(#arrow)">
+    <path d="M210 76V108"/>
+    <path d="M210 171V193H108V215"/>
+    <path d="M210 171V193H312V215"/>
+    <path d="M312 274V302"/>
+  </g>
+  <g stroke-width="1.2">
+    <rect x="28" y="16" width="364" height="60" rx="9" fill="#fff" stroke="#a7bbd2"/>
+    <rect x="28" y="111" width="364" height="60" rx="9" fill="#fff" stroke="#a7bbd2"/>
+    <rect x="14" y="218" width="188" height="56" rx="9" fill="#fff1e1" stroke="#caa574"/>
+    <rect x="218" y="218" width="188" height="56" rx="9" fill="#e9f5ec" stroke="#83a98e"/>
+    <rect x="218" y="305" width="188" height="37" rx="9" fill="#fff" stroke="#83a98e"/>
+  </g>
+  <g fill="#1b344e" text-anchor="middle" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16">
+    <text x="210" y="41" font-weight="700">Claude Security की रिपोर्ट</text>
+    <text x="210" y="63">कमिट और प्रमाण जाँचें</text>
+    <text x="210" y="136" font-weight="700">नीति से सर्वर की जाँच मिलाएँ</text>
+    <text x="210" y="158">भूमिका और दुकान जाँचें</text>
+    <text x="108" y="241" font-weight="700">प्रमाण अधूरा है</text>
+    <text x="108" y="262">ज़रूरी प्रमाण लिखें</text>
+    <text x="312" y="241" font-weight="700">कमी की पुष्टि हुई</text>
+    <text x="312" y="262">सर्वर का नियम सुधारें</text>
+    <text font-size="12" x="312" y="329" font-weight="700">अनुमति और रोक जाँचें</text>
+  </g>
+</svg>
