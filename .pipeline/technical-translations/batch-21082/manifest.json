@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-21082",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "4c21020",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Self-review against the approved measurements, read-only macOS commands and Docker documentation for Mac disk usage and Buildx.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-27-docker-desktop-mac-disk-space",
+      "language": "zh-CN",
+      "translationKey": "2026-11-27-docker-desktop-mac-disk-space",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "22ef396043237437e56056391cb42357c8f9bc5784eef9279e396ccf768d1ecd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21082/zh-CN/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "24cda3968620cce88d2821fa64609adff56374d028d7b5970ab3e44d47ee42f9"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21082/zh-CN/2026-11-27-docker-desktop-mac-disk-space.svg",
+        "sha256": "aa2a8b19a12058b1bee7b5ac4d98e18eb726efb4c1090e4da4c43597f597a7a4"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/docker-desktop-mac-disk-space-en.svg",
+        "sha256": "b3833161e4ee9b78d9486d8f793068b9a30ea0c416ea274b6523800ead90f7ce"
+      }
+    },
+    {
+      "key": "ja-2026-11-27-docker-desktop-mac-disk-space",
+      "language": "ja",
+      "translationKey": "2026-11-27-docker-desktop-mac-disk-space",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "22ef396043237437e56056391cb42357c8f9bc5784eef9279e396ccf768d1ecd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21082/ja/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "18c1f8606bfdc922efbf7c373ecb145700c6a63a83b278b76341982acfa5d123"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21082/ja/2026-11-27-docker-desktop-mac-disk-space.svg",
+        "sha256": "fc59b419d697cd725a4a9200bb2a728746e490f219d594ede155e9984fa8bb5c"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/docker-desktop-mac-disk-space-en.svg",
+        "sha256": "b3833161e4ee9b78d9486d8f793068b9a30ea0c416ea274b6523800ead90f7ce"
+      }
+    },
+    {
+      "key": "de-2026-11-27-docker-desktop-mac-disk-space",
+      "language": "de",
+      "translationKey": "2026-11-27-docker-desktop-mac-disk-space",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "22ef396043237437e56056391cb42357c8f9bc5784eef9279e396ccf768d1ecd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21082/de/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "985c7c9d9e3ede47af2fd30f528cfd65d02e0850a829770dc28f3ddccab4a94e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21082/de/2026-11-27-docker-desktop-mac-disk-space.svg",
+        "sha256": "465da86d4bd0008e4bd4d096188e6a6a8d7cfd28f50ac50cb3d254535c2a7986"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/docker-desktop-mac-disk-space-en.svg",
+        "sha256": "b3833161e4ee9b78d9486d8f793068b9a30ea0c416ea274b6523800ead90f7ce"
+      }
+    },
+    {
+      "key": "fr-2026-11-27-docker-desktop-mac-disk-space",
+      "language": "fr",
+      "translationKey": "2026-11-27-docker-desktop-mac-disk-space",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "22ef396043237437e56056391cb42357c8f9bc5784eef9279e396ccf768d1ecd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21082/fr/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "e557993a588d6dc072ca0244d987fe1b204926362f158176fe0cc7e6d12ffe6e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21082/fr/2026-11-27-docker-desktop-mac-disk-space.svg",
+        "sha256": "acb8a2b580bbb51fd9a29a925aa3940e4490cae18e10fbbe3d60bb8b7a0c7a4a"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/docker-desktop-mac-disk-space-en.svg",
+        "sha256": "b3833161e4ee9b78d9486d8f793068b9a30ea0c416ea274b6523800ead90f7ce"
+      }
+    },
+    {
+      "key": "ru-2026-11-27-docker-desktop-mac-disk-space",
+      "language": "ru",
+      "translationKey": "2026-11-27-docker-desktop-mac-disk-space",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "22ef396043237437e56056391cb42357c8f9bc5784eef9279e396ccf768d1ecd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21082/ru/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "050b751471ee9ec82dde73774f5018424f6a802c1ea0017b074ca1f8b7bb32fc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21082/ru/2026-11-27-docker-desktop-mac-disk-space.svg",
+        "sha256": "75cc6da9adc684899b5864013b6b5664e80f0855e0b82c7739837e4c8000d4bd"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/docker-desktop-mac-disk-space-en.svg",
+        "sha256": "b3833161e4ee9b78d9486d8f793068b9a30ea0c416ea274b6523800ead90f7ce"
+      }
+    },
+    {
+      "key": "es-2026-11-27-docker-desktop-mac-disk-space",
+      "language": "es",
+      "translationKey": "2026-11-27-docker-desktop-mac-disk-space",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "22ef396043237437e56056391cb42357c8f9bc5784eef9279e396ccf768d1ecd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-21082/es/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "7e3cd7e301d524e6520ae270b0d6ef13e7a59b13fd8a248d286fe9051e2f582e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-21082/es/2026-11-27-docker-desktop-mac-disk-space.svg",
+        "sha256": "8f5ff8df793c701361ccfdaa778cafc80278d4374327aea4dfdb1a29d2701c73"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/docker-desktop-mac-disk-space-en.svg",
+        "sha256": "b3833161e4ee9b78d9486d8f793068b9a30ea0c416ea274b6523800ead90f7ce"
+      }
+    }
+  ]
+}
