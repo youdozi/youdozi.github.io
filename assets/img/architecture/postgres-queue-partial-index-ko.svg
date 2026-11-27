@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ko" viewBox="0 0 560 232" role="img" aria-labelledby="title desc">
+  <title id="title">두 실행 계획에서 달라진 점</title>
+  <desc id="desc">인덱스 생성 전: Seq Scan → Sort → Limit. 부분 인덱스 생성 후: Index Only Scan → Limit.</desc>
+  <rect x="2" y="2" width="556" height="108" rx="12" fill="#eff3f7"/>
+  <rect x="2" y="122" width="556" height="108" rx="12" fill="#e1f4ed"/>
+  <g font-family="system-ui, sans-serif" fill="#19354a">
+    <text x="24" y="39" font-size="23">인덱스 생성 전</text>
+    <text x="24" y="83" font-size="29" font-weight="600">Seq Scan → Sort → Limit</text>
+    <text x="24" y="159" font-size="23">부분 인덱스 생성 후</text>
+    <text x="24" y="203" font-size="29" font-weight="600">Index Only Scan → Limit</text>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="hi" viewBox="0 0 560 232" role="img" aria-labelledby="title desc">
+  <title id="title">क्वेरी की योजना में क्या बदला?</title>
+  <desc id="desc">इंडेक्स बनाने से पहले: Seq Scan → Sort → Limit. आंशिक इंडेक्स के साथ: Index Only Scan → Limit.</desc>
+  <rect x="2" y="2" width="556" height="108" rx="12" fill="#eff3f7"/>
+  <rect x="2" y="122" width="556" height="108" rx="12" fill="#e1f4ed"/>
+  <g font-family="system-ui, sans-serif" fill="#19354a">
+    <text x="24" y="39" font-size="23">इंडेक्स बनाने से पहले</text>
+    <text x="24" y="83" font-size="29" font-weight="600">Seq Scan → Sort → Limit</text>
+    <text x="24" y="159" font-size="23">आंशिक इंडेक्स के साथ</text>
+    <text x="24" y="203" font-size="29" font-weight="600">Index Only Scan → Limit</text>
+  </g>
+</svg>
