@@ -1,0 +1,75 @@
+{
+  "key": "2026-10-31-failure-fallback",
+  "language": "hi",
+  "title": "सार्वजनिक डेटा का फ़ॉलबैक",
+  "description": "परमिट न मिले तो तुरंत अस्वीकार करें। मिले तो मुख्य स्रोत से पढ़कर परिणाम दें। केवल तय विफलता पर प्रति की उपलब्धता और उम्र जाँचकर फ़ॉलबैक लौटाएँ",
+  "steps": [
+    {
+      "kind": "condition",
+      "lines": [
+        "tryAcquire(): परमिट मिला?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "अस्वीकृत",
+        "continue": "हाँ"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "primary.get(): स्रोत से पढ़ें"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "स्रोत से परिणाम मिला?"
+      ],
+      "branch": {
+        "outcome": "complete",
+        "exit": "मूल डेटा",
+        "continue": "अपवाद"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "क्या अपवाद Unavailable है?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "आगे भेजें",
+        "continue": "हाँ"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "क्या प्रति उपलब्ध है?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "अस्वीकृत",
+        "continue": "हाँ"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "उम्र 0 से 60 सेकंड तक है?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "अस्वीकृत",
+        "continue": "हाँ"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "प्रति, स्रोत और उम्र लौटाएँ"
+      ]
+    }
+  ]
+}

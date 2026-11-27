@@ -1,0 +1,46 @@
+{
+  "key": "2026-10-30-jdk-emudhra-truststore",
+  "title": "JSSE का डिफ़ॉल्ट भरोसा",
+  "description": "JVM की पहचान पढ़ें, JSSE का डिफ़ॉल्ट TrustManager आरंभ करें और नाम से मिले संभावित प्रमाणपत्रों के SHA-256 फ़िंगरप्रिंट इकट्ठे करें",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "चलती JVM के गुण पढ़ें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "डिफ़ॉल्ट TrustManagerFactory",
+        "आरंभ करें"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "आरंभीकरण सफल हुआ?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "अपवाद",
+        "continue": "हाँ"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "स्वीकृत CA की सूची पढ़ें",
+        "नाम मिलाएँ और फ़िंगरप्रिंट निकालें"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "गिनती और सूची दिखाएँ",
+        "TLS सत्यापन का निर्णय अलग है"
+      ]
+    }
+  ],
+  "language": "hi"
+}

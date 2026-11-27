@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-1371",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "ce44861",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Compared Hindi prose, diagrams, values and limitations with the Korean and English editions.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-10-30-webclient-timeout-retry",
+      "language": "hi",
+      "translationKey": "2026-10-30-webclient-timeout-retry",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "757c2335d2f6b40391fa299791d6c6e6bade0e499c599b451be06be4eee77e3b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-30-webclient-timeout-retry.md",
+        "sha256": "58f67a418c35aaa8192b906ad7276b07ea45b47a237f20377798ce8db2e0c5d7"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-30-webclient-timeout-retry.svg",
+        "sha256": "c95bc95848f4099d23a8cfd31c3f5ecc46c30b80fc23f2ddb3413eaf5ca6e996"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-30-webclient-timeout-retry.diagram.json",
+        "sha256": "25671d951d19a41e68bd69ceb5e6e257178549701146c22e6b83b68a343b3b67"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "hi-2026-10-31-failure-fallback",
+      "language": "hi",
+      "translationKey": "2026-10-31-failure-fallback",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-failure-fallback.md",
+        "sha256": "93196b5c0ce64194996df961642c87053d74ea5be5c63b2b776cdd598dc7effd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-31-failure-fallback.md",
+        "sha256": "a99e16d340c7a709b778480af8454c963b1edbfe4fee6be599c349a06afb05ff"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-31-failure-fallback.svg",
+        "sha256": "d09c45197847a40ae375b7b60c2cc70bad1054f78c9ce80c45dfb237619441a4"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-31-failure-fallback.diagram.json",
+        "sha256": "dce9cd8c7445334698bc71501322ad371e31640e2743a288c23e3be21e51e5b2"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/fallback-en.svg",
+        "sha256": "589d2d6b5c16363c48ad224622cc95e35c70773727166cfa3e8133dd0f00fe59"
+      }
+    },
+    {
+      "key": "hi-2026-10-31-jdk-10k-rps-architecture",
+      "language": "hi",
+      "translationKey": "2026-10-31-jdk-10k-rps-architecture",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "c4bdc1984dacdabdaeabacf9e889b26a76991cbb44d19263a3a2bfb0b8e1e1bf"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-31-jdk-10k-rps-architecture.md",
+        "sha256": "f348b14b07dc7fa8566e3f076de5bfe657900d8fe008555c7494e1cd87dced0a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-31-jdk-10k-rps-architecture.svg",
+        "sha256": "c9747fdcbe9febaa57f1ba1ea1de96edd8df3f8ba25f6c2b86d37147cacab08f"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-31-jdk-10k-rps-architecture.diagram.json",
+        "sha256": "00b3b08da760725acce568c9fe46931cb573ccc33dd867544a5da484d30dfb9f"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/10k-rps-en.svg",
+            "sha256": "b293551d2d9f092ad9e32e4bd58737c8278095f4ac37a2ffb2306fe538199a46"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-31-jdk-10k-rps-architecture-architecture.svg",
+            "sha256": "02bb8df237189f47d1c8f9379b695ecf82e5e922cfe051635cb0362435d26e9d"
+          }
+        }
+      ]
+    },
+    {
+      "key": "hi-2026-10-30-jdk-emudhra-truststore",
+      "language": "hi",
+      "translationKey": "2026-10-30-jdk-emudhra-truststore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "abdc8cf489bcb34919f036e665475c6dd2f939c07f1a4c42ffe10c86e32761e3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-30-jdk-emudhra-truststore.md",
+        "sha256": "ddc4fd8197666b3ee25b212fcb4fe60a5a1aedf892681a5bbceadd65c39b6ecb"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-30-jdk-emudhra-truststore.svg",
+        "sha256": "0214aba349c65f1493bad8a11a2283b5f925ad65dc52f1526475e325139c2b5f"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-10-30-jdk-emudhra-truststore.diagram.json",
+        "sha256": "8a825f9f867b28d729e56a1f3c975d3f3286780cf4cb27b20b001385628b91a4"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "hi-2026-11-02-open-source-game-engines",
+      "language": "hi",
+      "translationKey": "2026-11-02-open-source-game-engines",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-open-source-game-engines.md",
+        "sha256": "a83f90ac45031156dd23d82e78c770e9d3254849fbf67e9594455bc58c54e153"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-11-02-open-source-game-engines.md",
+        "sha256": "405746b3b202d5fd8ea86a4cd2721b3d4453ee04b9ae131b43e097ba25b96521"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-11-02-open-source-game-engines.svg",
+        "sha256": "2016c4d37bde04620835b5fcaebe0dfabaea5863e0b951602b4b3577dcf314b4"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-1371/hi/2026-11-02-open-source-game-engines.diagram.json",
+        "sha256": "86ab88686213bd5c6e070c5b0090683a28b966558a12e61b0f94026d265cd314"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-133.json",
+        "sha256": "6aa87acaf1a5a0822f16b7e42a0aa8ce02e53a37b30e3f8fba4e086c4033bb5b"
+      }
+    }
+  ]
+}

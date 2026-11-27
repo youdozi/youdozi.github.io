@@ -1,0 +1,43 @@
+{
+  "key": "2026-10-30-webclient-timeout-retry",
+  "title": "टाइमआउट और पुनः प्रयास",
+  "description": "हर प्रयास की समय-सीमा लगाएँ, केवल पात्र 503 पर दोबारा प्रयास करें और पूरी प्रक्रिया का समय सीमित रखें",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "GET /value",
+        "retrieve → String डिकोड करें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(attemptLimit)",
+        "हर प्रयास का समय अलग"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "retryWhen: केवल HTTP 503",
+        "प्रतीक्षा, अधिकतम दो पुनः प्रयास"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "timeout(totalLimit)",
+        "सभी प्रयास और प्रतीक्षा शामिल"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "सब्सक्राइबर को मान और समापन",
+        "या अंतिम त्रुटि मिलती है"
+      ]
+    }
+  ],
+  "language": "hi"
+}
