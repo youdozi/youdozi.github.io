@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-1381",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "97c0f95",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Compared Hindi prose, diagrams, values and limitations with the Korean and English editions.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-11-02-ai-assisted-tdd",
+      "language": "hi",
+      "translationKey": "2026-11-02-ai-assisted-tdd",
+      "source": {
+        "path": "src/content/posts/en/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "bfc69c72419b9b2b5ce2693c4111b12dd8f935ed3d1115dd350b837bed13bf80"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1381/hi/2026-11-02-ai-assisted-tdd.md",
+        "sha256": "79bf7be849c5d9e946cccadafc714804fd7bcc8398604f4941dc1c98ed9e8a25"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-1381/hi/2026-11-02-ai-assisted-tdd.diagram.json",
+        "sha256": "ae68387ca2ed657e13c940b894dc859f6980de5d4d7dc4b2c00e954f71f07842"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1381/hi/2026-11-02-ai-assisted-tdd.svg",
+        "sha256": "3458cad9406ecad26fefc6ccb78b0fdfe5918785e8d3c0e5290699d77e3dbd73"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      }
+    }
+  ]
+}

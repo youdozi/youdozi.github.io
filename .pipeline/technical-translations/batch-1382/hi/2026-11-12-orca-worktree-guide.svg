@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1050" viewBox="0 0 360 1050" xml:lang="hi" role="img" aria-labelledby="title desc">
+<title id="title">Orca में प्रोजेक्ट से बदलाव की समीक्षा तक</title>
+<desc id="desc">रिपॉज़िटरी खोलकर worktree बनाएँ और पथ व शाखा जाँचें। एजेंट से एक फ़ाइल बदलवाएँ, उसी worktree में परीक्षण और सर्वर चलाएँ, ब्राउज़र देखें और आधार शाखा से diff मिलाएँ। शर्तें पूरी हों तो कमिट करें, अन्यथा सुधार माँगें। फ़ाइल अलग रखना और निष्पादन की अनुमति अलग बातें हैं।</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1050" rx="16" fill="#f5f7f2"/>
+<g font-family="system-ui,sans-serif" text-anchor="middle" font-size="15" fill="#203a2c">
+<text x="180" y="36" font-size="20" font-weight="700">Orca में काम का क्रम</text>
+<rect x="24" y="62" width="312" height="72" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="90">Add Repo से Git रिपॉज़िटरी खोलें</text><text x="180" y="116">main: शुरुआती कोड और तय परीक्षण</text>
+<path d="M180 134V166" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="171" width="312" height="88" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="199">काम के लिए worktree बनाएँ</text><text x="180" y="224">पहले फ़ोल्डर और शाखा जाँचें</text><text x="180" y="246" font-size="12" textLength="280" lengthAdjust="spacingAndGlyphs">UI और खुले शेल का पथ अलग हो सकता है</text>
+<path d="M180 259V291" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="296" width="312" height="83" rx="9" fill="#faecd6" stroke="#bca274"/>
+<text x="180" y="324" textLength="280" lengthAdjust="spacingAndGlyphs">एजेंट से एक फ़ाइल बदलने को कहें</text><text x="180" y="349" textLength="280" lengthAdjust="spacingAndGlyphs">दायरा, अनुमति और शर्तें बताएँ</text><text x="180" y="370" font-size="12">प्रॉम्प्ट टूल की अनुमति नहीं देता</text>
+<path d="M180 379V412" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="417" width="312" height="108" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="447">उसी worktree में npm test चलाएँ</text><text x="180" y="473">विकास सर्वर चलाएँ → पोर्ट देखें</text><text x="180" y="499">अंतर्निहित ब्राउज़र में पृष्ठ जाँचें</text>
+<path d="M180 525V558" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="563" width="312" height="82" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="592">main से diff और परीक्षण मिलाएँ</text><text x="180" y="620">क्या बदलाव नीति के अनुरूप हैं?</text>
+<path d="M98 645V690" stroke="#496b57" marker-end="url(#arrow)"/><text x="70" y="674">हाँ</text>
+<path d="M268 645V690" stroke="#496b57" marker-end="url(#arrow)"/><text x="297" y="674">नहीं</text>
+<rect x="16" y="695" width="158" height="77" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="95" y="724">बदली फ़ाइल</text><text x="95" y="751">स्वयं कमिट करें</text>
+<rect x="187" y="695" width="157" height="77" rx="9" fill="#f5e1df" stroke="#b88880"/>
+<text x="265" y="724">विफलता पहचानें</text><text x="265" y="751">सुधार माँगें</text>
+<path d="M344 733H352V338H338" fill="none" stroke="#b88880" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="24" y="820" width="312" height="118" rx="9" fill="#fff" stroke="#a8b6a7"/>
+<text x="180" y="850" font-weight="700">अलग कार्यक्षेत्र की सीमाएँ</text><text x="180" y="878">Worktree: फ़ाइलें, शाखा और कार्य दृश्य</text><text x="180" y="906" textLength="280" lengthAdjust="spacingAndGlyphs">पोर्ट, DB, खाते और पहुँच भी जाँचें</text>
+<text x="180" y="992" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">प्रोजेक्ट → कार्य पथ → परिणाम → समीक्षा</text>
+</g></svg>
