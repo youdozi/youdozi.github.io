@@ -87,7 +87,7 @@ class SearchMonitorTests(unittest.TestCase):
         urls = [monitor.SITE + lang + '/' for lang in monitor.LOCALES]
         urls += [monitor.SITE + f'{lang}/posts/2026-11-{day:02}-topic/' for lang in monitor.LOCALES for day in range(1, 10)]
         selected = monitor.index_sample(urls)
-        self.assertEqual(len(selected), 32)
+        self.assertEqual(len(selected), 4 * len(monitor.LOCALES))
         self.assertEqual({r['language'] for r in selected}, set(monitor.LOCALES))
         self.assertTrue(all(r['url'] in urls for r in selected))
 

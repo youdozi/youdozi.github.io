@@ -6,5 +6,10 @@
   "de": { "loading": "Suche läuft…", "count": "Angezeigt: {shown} von {total}.", "retry": "Erneut versuchen" },
   "fr": { "loading": "Recherche en cours…", "count": "Affichage : {shown} sur {total}.", "retry": "Réessayer" },
   "ru": { "loading": "Поиск…", "count": "Показано: {shown} из {total}.", "retry": "Повторить попытку" },
-  "es": { "loading": "Buscando…", "count": "Resultados: {shown} de {total}.", "retry": "Reintentar" }
+  "es": { "loading": "Buscando…", "count": "Resultados: {shown} de {total}.", "retry": "Reintentar" },
+  "hi": {
+    "loading": "खोज जारी है…",
+    "count": "कुल {total} में से {shown} परिणाम दिख रहे हैं।",
+    "retry": "फिर कोशिश करें"
+  }
 }

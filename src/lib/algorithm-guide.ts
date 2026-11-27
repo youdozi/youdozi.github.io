@@ -34,6 +34,7 @@ const copy = {
 };
 
 function localizedCopy(lang:Language) {
+  if(lang==='hi')return undefined;
   return hasLocalizedGuide(lang)?{...guideLocales[lang].common,...guideLocales[lang].algorithm}:copy[lang];
 }
 
@@ -44,7 +45,7 @@ function eligible(all: Entry[], lang: Language): Entry[] {
 }
 
 export function algorithmCategoryLabel(lang: Language): string | undefined {
-  return localizedCopy(lang).label;
+  return localizedCopy(lang)?.label;
 }
 
 export function algorithmCategoryAlternates(all: Entry[]) {
@@ -55,7 +56,7 @@ export function algorithmCategoryAlternates(all: Entry[]) {
 export function algorithmGuide(lang: Language, all: Entry[]) {
   const localized = localizedCopy(lang);
   const items = eligible(all, lang);
-  if (!items.length) return undefined;
+  if (!localized || !items.length) return undefined;
   const byKey = new Map(items.map(entry => [entry.translationKey, entry]));
   let position = 1;
   const sections = groups.map(group => {

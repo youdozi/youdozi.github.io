@@ -3,7 +3,7 @@ import {coreArticles,runtimeArticles} from '../lib/core-articles';
 import type {Entry,Language} from '../lib/content';
 interface Props {lang:Language;all:Entry[];}
 const {lang,all}=Astro.props;
-const headings={en:'Java Runtime and Operations',ko:'Java 런타임과 운영', 'zh-CN':'Java 运行时与运维',ja:'Java ランタイムと運用',de:'Java-Laufzeit und Betrieb',fr:'Exécution Java et exploitation',ru:'Среда выполнения Java и эксплуатация',es:'Entorno de ejecución Java y operaciones'};
+const headings={en:'Java Runtime and Operations',ko:'Java 런타임과 운영', 'zh-CN':'Java 运行时与运维',ja:'Java ランタイムと運用',de:'Java-Laufzeit und Betrieb',fr:'Exécution Java et exploitation',ru:'Среда выполнения Java и эксплуатация',hi:'Java रनटाइम और संचालन',es:'Entorno de ejecución Java y operaciones'};
 const groups=[
   {id:'runtime-articles',heading:headings[lang],items:runtimeArticles(lang,all)},
   {id:'core-articles',heading:lang==='ko'?'코드로 확인하는 기술 가이드':'Practical Guides with Code',items:coreArticles(lang,all)},

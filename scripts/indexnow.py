@@ -17,7 +17,7 @@ import xml.etree.ElementTree as ET
 SITE = 'https://youdozi.github.io'
 ENDPOINT = 'https://api.indexnow.org/indexnow'
 KEY_PATH = 'indexnow-key.txt'
-LANGUAGES = ('en', 'ko', 'zh-CN', 'ja', 'de', 'fr', 'ru', 'es')
+LANGUAGES = tuple(json.loads((Path(__file__).resolve().parents[1] / 'src/lib/locales.json').read_text())['locales'])
 
 
 def public_url(value):
@@ -31,7 +31,7 @@ def public_url(value):
             or any(p in ('.', '..') for p in path.split('/'))):
         raise ValueError('Expected a canonical URL on the production site')
     pattern = r'/(' + '|'.join(LANGUAGES) + r')/(?:|(?:posts|digest|categories|tags|archive|guides)/|(?:posts|digest|categories)/[^/]+/)'
-    if not re.fullmatch(pattern + r'|/(?:en|ko)/about/', path):
+    if not re.fullmatch(pattern + r'|/(?:en|ko|hi)/about/', path):
         raise ValueError('URL is outside published language routes')
     return value
 

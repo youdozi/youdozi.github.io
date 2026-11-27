@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-121",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "98e233c",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Compared Hindi prose, diagrams, values and limitations with the Korean and English editions.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-11-27-docker-desktop-mac-disk-space",
+      "language": "hi",
+      "translationKey": "2026-11-27-docker-desktop-mac-disk-space",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "22ef396043237437e56056391cb42357c8f9bc5784eef9279e396ccf768d1ecd"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-121/hi/2026-11-27-docker-desktop-mac-disk-space.md",
+        "sha256": "06df0a6a8607a2d2968c04cd0413420b4c4f9f001a2f929df2b6faa9cdf23ebc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-121/hi/2026-11-27-docker-desktop-mac-disk-space.svg",
+        "sha256": "fd6e4f517fe0818c2e0ce3357519e29f40d63150580d6fa905f2c6b625c510bb"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/docker-desktop-mac-disk-space-en.svg",
+        "sha256": "b3833161e4ee9b78d9486d8f793068b9a30ea0c416ea274b6523800ead90f7ce"
+      }
+    },
+    {
+      "key": "hi-2026-11-26-postgres-skip-locked-queue",
+      "language": "hi",
+      "translationKey": "2026-11-26-postgres-skip-locked-queue",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "47e798b84fdcc29b4f58d8c6e35bed1ea56c2145f4c9767e14b18888eee939d8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-121/hi/2026-11-26-postgres-skip-locked-queue.md",
+        "sha256": "af332cae156cb31af62889eb863dfe3dd9cc6de808cc0b87a18fb82cbc420bef"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-121/hi/2026-11-26-postgres-skip-locked-queue.svg",
+        "sha256": "73ae30d79ac0c2c86c3c864cdfea5ba3ac4b1bb8fc57f8da14651da977849215"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-skip-locked-queue-en.svg",
+        "sha256": "8c2ef3fd73dbef0608f5fe36e8bb552bec1c3abe242cae8b60b76630555ac8e9"
+      }
+    },
+    {
+      "key": "hi-2026-11-26-astro-clean-checkout",
+      "language": "hi",
+      "translationKey": "2026-11-26-astro-clean-checkout",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-astro-clean-checkout.md",
+        "sha256": "e1cc192ccc59b4557362e39f19838911c05e42d35d855acc766381023844e6e8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-121/hi/2026-11-26-astro-clean-checkout.md",
+        "sha256": "2650235fef2b9018f6e624ea5900c67cfd2a15f2d1b340e628db699d8fc06603"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-121/hi/2026-11-26-astro-clean-checkout.svg",
+        "sha256": "fb1d15fb6ddf14cf7a1ad8d17c1c396821c3a52bcf3e58cb27699a86eeb1ac0d"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/astro-clean-checkout-en.svg",
+        "sha256": "934f59ca6a1c5509c1c8fdc80de9cb5f968f920b6b1718adde4e2fa6745dcc2c"
+      }
+    }
+  ]
+}

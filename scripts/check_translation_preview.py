@@ -16,7 +16,7 @@ def check(base):
     keys = marker.get('fixtureKeys')
     if marker.get('fixtureOnly') is not True or not isinstance(keys, list) or len(set(keys)) != len(keys):
         raise ValueError('Expected isolated fixture marker')
-    if any(not isinstance(key, str) or not re.fullmatch(r'(?:zh-CN|ja|de|fr|ru|es)-[a-f0-9]{16}', key) for key in keys):
+    if any(not isinstance(key, str) or not re.fullmatch(r'(?:zh-CN|ja|de|fr|ru|es|hi)-[a-f0-9]{16}', key) for key in keys):
         raise ValueError('Invalid fixture identity')
     records, languages, by_url = {}, {}, {}
     for path in (base / 'src/content/translations').glob('*.json'):

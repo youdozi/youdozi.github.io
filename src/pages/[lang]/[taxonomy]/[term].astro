@@ -1,4 +1,5 @@
 ---
+import {categoryName} from '../../../lib/category-guide';
 import Listing from '../../../components/Listing.astro';
 import CategoryGuide from '../../../components/CategoryGuide.astro';
 import {categoryGuide,categoryGuideAlternates} from '../../../lib/technical-guides';
@@ -14,4 +15,4 @@ const all = await entries();
 const guide = kind === 'categories' ? categoryGuide(term,lang,all) : undefined;
 const alternates = guide ? categoryGuideAlternates(term,all) : [];
 ---
-{guide ? <CategoryGuide guide={guide} alternates={alternates} /> : <Listing items={all.filter(e => e.language === lang && e[kind].includes(term))} lang={lang} title={term} root={taxonomyUrl(lang,kind,term)} />}
+{guide ? <CategoryGuide guide={guide} alternates={alternates} /> : <Listing items={all.filter(e => e.language === lang && e[kind].includes(term))} lang={lang} title={kind==='categories'?categoryName(term,lang):term} root={taxonomyUrl(lang,kind,term)} />}

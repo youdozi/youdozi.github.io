@@ -155,7 +155,7 @@ test('GC and LGTM cross-category articles join localized guides and return paths
 });
 
 test('Tips category localizes its label and lists only eligible articles in each locale',()=>{
- const labels={ko:'팁',en:'Tips','zh-CN':'技巧',ja:'ヒント',de:'Tipps',fr:'Astuces',ru:'Советы',es:'Consejos'};
+ const labels={ko:'팁',en:'Tips','zh-CN':'技巧',ja:'ヒント',de:'Tipps',fr:'Astuces',ru:'Советы',es:'Consejos',hi:'सुझाव'};
  const items=Object.keys(labels).map(lang=>entry('macbook',lang,'tips'));
  items.push(entry('future','en','tips',{publishedAt:new Date('2999-01-01Z')}),entry('other','en','util'));
  for(const [lang,label] of Object.entries(labels)){
@@ -164,5 +164,5 @@ test('Tips category localizes its label and lists only eligible articles in each
   assert.equal(guide.url,`/${lang}/categories/tips/`);
   assert.deepEqual(guide.ordered.map(item=>item.translationKey),['macbook']);
  }
- assert.equal(categoryGuideAlternates('tips',items).length,8);
+ assert.equal(categoryGuideAlternates('tips',items).length,Object.keys(labels).length);
 });

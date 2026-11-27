@@ -11,6 +11,7 @@ export const guideTerms = ['coding-test', 'jdk', 'springboot', 'linux', 'util', 
 const updatedAt = new Date('2026-10-30T10:10:46.396668+00:00');
 const pathUpdatedAt: Record<string,number> = {jdk:Date.parse('2026-11-06T01:49:27.840067+00:00'),util:Date.parse('2026-11-03T05:43:22.606306+00:00')};
 const nativeGuideIndexCopy = {
+  hi: { label:'मार्गदर्शिकाएँ',title:'तकनीकी मार्गदर्शिकाएँ',description:'व्यावहारिक उदाहरणों के साथ विकास और रखरखाव से जुड़े लेख पढ़ें।',intro:'जिस समस्या को हल करना चाहते हैं, उससे जुड़ी मार्गदर्शिका चुनें। उदाहरण आज़माने से पहले लेख में दिया गया परिवेश और जाँच की सीमा देखें।',home:'मुखपृष्ठ',open:'मार्गदर्शिका पढ़ें' },
   en: { label: 'Guides', title: 'Technical Learning Guides',
     description: 'Choose a reading path through Java exercises, Spring Boot, shell automation, JDK features, development tools, reviewed publishing, Jenkins recovery, legacy Ruby diagnostics and runtime security, with code and scoped checks.',
     intro: 'Choose the problem you want to solve. Each path connects available articles with code and recorded checks. Read each article’s environment and limits before reusing an example.',
@@ -22,6 +23,7 @@ const nativeGuideIndexCopy = {
 };
 export const guideIndexCopy = {...nativeGuideIndexCopy,...Object.fromEntries(Object.entries(guideLocales).map(([lang,copy])=>[lang,copy.index]))} as Record<Language,typeof nativeGuideIndexCopy.en>;
 const common = {
+  hi: { extra:'अन्य लेख',home:'मुखपृष्ठ',categories:'श्रेणियाँ' },
   en: { extra: 'More articles', home: 'Home', categories: 'Categories' },
   ko: { extra: '다른 글', home: '홈', categories: '카테고리' },
 };
@@ -183,16 +185,18 @@ const tipsCopy: Record<Language, {label:string; description:string}> = {
   de:{label:'Tipps',description:'Praktische Methoden für Entwicklung und alltägliche Arbeit.'},
   fr:{label:'Astuces',description:'Des méthodes pratiques pour le développement et le travail quotidien.'},
   ru:{label:'Советы',description:'Практические приёмы для разработки и повседневной работы.'},
+  hi:{label:'सुझाव',description:'विकास और रोज़मर्रा के काम के लिए व्यावहारिक तरीके।'},
   es:{label:'Consejos',description:'Técnicas prácticas para el desarrollo y el trabajo cotidiano.'},
 };
 export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGuide|undefined {
   if(term==='tips') {
     const ordered=all.filter(e=>e.language===lang&&e.kind==='post'&&e.categories.includes(term)&&e.reviewStatus!=='example'&&e.publishedAt.getTime()<=Date.now());
     if(!ordered.length)return undefined;
-    const copy=tipsCopy[lang], localized=hasLocalizedGuide(lang)?guideLocales[lang].common:common[lang as 'en'|'ko'];
+    const copy=tipsCopy[lang], localized=hasLocalizedGuide(lang)?guideLocales[lang].common:common[lang as keyof typeof common];
     return {...copy,...localized,title:copy.label,eyebrow:copy.label,intro:copy.description,lang,url:`/${lang}/categories/tips/`,listAnchor:'articles',sections:[],extras:ordered,ordered,updatedAt:new Date(Math.max(...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
   }
 
+  if(lang==='hi')return undefined;
   if(term==='security'&&lang!=='en'&&lang!=='ko')return undefined;
   if(term==='coding-test')return algorithmGuide(lang,all);
   if(term==='springboot')return springGuide(lang,all);

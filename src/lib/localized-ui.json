@@ -160,5 +160,32 @@
     "overview": "Notas y noticias de desarrollo",
     "old": "Este artículo forma parte del archivo original. Las descripciones de las fuentes pueden estar en inglés.",
     "notTranslated": "Este artículo aún no está disponible en este idioma."
+  },
+  "hi": {
+    "home": "मुखपृष्ठ",
+    "posts": "विकास के लेख",
+    "digest": "विकास समाचार",
+    "categories": "श्रेणियाँ",
+    "tags": "विषय",
+    "search": "खोजें",
+    "all": "सभी लेख",
+    "read": "लेख पढ़ें",
+    "recent": "नए लेख",
+    "empty": "इस भाषा में अभी कोई लेख नहीं है।",
+    "archive": "कोरियाई संग्रह देखें",
+    "language": "भाषा",
+    "about": "Java, Spring, परीक्षण और सॉफ़्टवेयर विकास पर व्यावहारिक लेख, उदाहरणों और मूल स्रोतों के साथ।",
+    "scope": "AI से तैयार सारांशों का मिलान मूल उद्धरणों और उनके संदर्भ से किया गया है। फिर भी उनमें तथ्यात्मक त्रुटियाँ हो सकती हैं।",
+    "source": "मूल स्रोत पढ़ें",
+    "published": "प्रकाशित",
+    "related": "संबंधित लेख",
+    "results": "लेख खोजें",
+    "searchHint": "शीर्षक, विषय या लेख की सामग्री खोजें",
+    "noResults": "कोई मेल खाता लेख नहीं मिला।",
+    "footer": "एक डेवलपर की कार्य डायरी।",
+    "digestDescription": "विकास समाचार और मूल स्रोतों के लिंक।",
+    "overview": "विकास के लेख और समाचार",
+    "old": "यह लेख मूल संग्रह से है। स्रोतों के विवरण अंग्रेज़ी में हो सकते हैं।",
+    "notTranslated": "यह लेख अभी इस भाषा में उपलब्ध नहीं है।"
   }
 }

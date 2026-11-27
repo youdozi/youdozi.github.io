@@ -16,8 +16,8 @@ class ContentMaintenanceTests(unittest.TestCase):
                 path.parent.mkdir(parents=True)
                 path.write_text(f'<html lang="{language}"><head><link rel="canonical" href="https://youdozi.github.io/{language}/posts/{key}/">{extra}</head></html>')
             report = audit(root)
-            self.assertEqual((report['topics'], report['publishedEditions'], report['missingEditions']), (1, 2, 6))
-            self.assertEqual(report['translationGaps'][0]['missing'], ['zh-CN', 'ja', 'de', 'fr', 'ru', 'es'])
+            self.assertEqual((report['topics'], report['publishedEditions'], report['missingEditions']), (1, 2, 7))
+            self.assertEqual(report['translationGaps'][0]['missing'], ['zh-CN', 'ja', 'de', 'fr', 'ru', 'es', 'hi'])
 
     def test_missing_or_empty_build_is_not_a_clean_audit(self):
         with tempfile.TemporaryDirectory() as directory:

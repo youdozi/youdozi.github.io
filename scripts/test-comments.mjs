@@ -18,7 +18,7 @@ test('only the expected frame and origin can acknowledge a valid widget resize',
   for(const change of [{origin:'https://other.example'},{source:{}},{data:null},{data:'resize'},{data:{type:'resize',height:'320'}},{data:{type:'resize',height:NaN}},{data:{type:'resize',height:0}},{data:{type:'resize',height:Infinity}}])assert.equal(isCommentResize({...event,...change},frame),false);
   assert.equal(isCommentResize(event,null),false);
 });
-test('comment action and status copy covers all eight supported editions',()=>{
-  assert.deepEqual(Object.keys(copy).sort(),['en','ko','zh-CN','ja','de','fr','ru','es'].sort());
+test('comment action and status copy covers all supported editions',()=>{
+  assert.deepEqual(Object.keys(copy).sort(),['en','ko','zh-CN','ja','de','fr','ru','es','hi'].sort());
   for(const edition of Object.values(copy))for(const key of ['show','loading','opened','error','github'])assert.ok(edition[key].trim());
 });

@@ -1,4 +1,5 @@
 ---
+import {categoryName} from '../../../lib/category-guide';
 import Base from '../../../layouts/Base.astro';
 import EmptyState from '../../../components/EmptyState.astro';
 import {sectionAlternates} from '../../../lib/discovery';
@@ -16,6 +17,6 @@ const alternates = counts.size ? sectionAlternates(all,kind) : [];
 ---
 <Base title={text[lang][kind]} lang={lang} noindex={counts.size === 0} alternates={alternates}>
   <section class="page-heading"><span class="eyebrow">{text[lang].overview}</span><h1>{text[lang][kind]}</h1></section>
-  <div class="chips">{[...counts].sort((a,b) => b[1]-a[1]).map(([value,count]) => <a href={taxonomyUrl(lang, kind, value)}>{kind==='categories'?categoryGuide(value,lang,all)?.label||value:value} <span class="count">{count}</span></a>)}</div>
+  <div class="chips">{[...counts].sort((a,b) => b[1]-a[1]).map(([value,count]) => <a href={taxonomyUrl(lang, kind, value)}>{kind==='categories'?categoryGuide(value,lang,all)?.label||categoryName(value,lang):value} <span class="count">{count}</span></a>)}</div>
   {!counts.size && <EmptyState lang={lang} />}
 </Base>

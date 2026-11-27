@@ -138,7 +138,7 @@ def validate(url, page):
     except (ValueError, TypeError, AttributeError):
         errors.append('Article dates must be ordered timezone-aware timestamps')
     author = article.get('author')
-    author_url = SITE + ('/ko/about/' if page.language == 'ko' else '/en/about/')
+    author_url = SITE + (f'/{page.language}/about/' if page.language in ('ko', 'hi') else '/en/about/')
     if not isinstance(author, dict) or author.get('url') != author_url or author.get('@id') != SITE + '/#author':
         errors.append('BlogPosting author must match the site profile identity')
     equal('article:author', author_url)

@@ -7,6 +7,7 @@ import {parseArgs} from 'node:util';
 import {pathToFileURL} from 'node:url';
 import {parse} from 'yaml';
 import {inspectTechnicalTranslations,inspectAllTechnicalTranslations,registeredManifests} from './check-technical-translations.mjs';
+import {translationLanguages} from '../src/lib/locales.ts';
 import {technicalPublicationSchema} from '../src/lib/technical-publication-schema.ts';
 // Astro bundles this server-only module into dist; the build working directory remains the project root.
 export const root=resolve(process.cwd());
@@ -80,7 +81,7 @@ export async function publishedTechnicalFiles(base=root){
   if(await realpath(directory)!==directory)throw new Error('Technical publications directory must not be a symlink');
   for(const item of await readdir(directory,{withFileTypes:true})){
     if(item.name==='.gitkeep'&&item.isFile())continue;
-    if(!item.isDirectory()||!['zh-CN','ja','de','fr','ru','es'].includes(item.name))throw new Error('Unknown technical publication directory or file');
+    if(!item.isDirectory()||!translationLanguages.includes(item.name))throw new Error('Unknown technical publication directory or file');
     for(const file of await readdir(resolve(directory,item.name))){
       const path=`src/content/technical-translations/${item.name}/${file}`;
       if(!/^\d{4}-\d{2}-\d{2}-[a-z0-9.-]+\.md$/.test(file)||await realpath(resolve(base,path))!==resolve(base,path))throw new Error('Invalid technical publication filename or symlink');

@@ -206,5 +206,31 @@
     "searchError": "No se pudo cargar la búsqueda. Inténtelo de nuevo.",
     "noScript": "Active JavaScript para buscar o consulte las listas de artículos.",
     "newsDate": "Fecha de la noticia"
+  },
+  "hi": {
+    "archive": "अद्यतन संग्रह · मूल समाचार की तारीख",
+    "notice": "यह पुराना समाचार है। संस्करण और माप उस समय के स्रोत से लिए गए हैं।",
+    "reviewed": "समीक्षा की तारीख",
+    "renewed": "अद्यतन संस्करण",
+    "news": "उस समय की खबर",
+    "followUp": "अद्यतन के समय जाँची गई जानकारी",
+    "noFollowUp": "इस समीक्षा में बाद के किसी बदलाव की पुष्टि नहीं हुई। संभव है कि बदलाव हुए हों।",
+    "reviewFocus": "लागू करने से पहले क्या जाँचें",
+    "editorial": "ये संपादकीय सुझाव हैं। उत्पाद का प्रत्यक्ष परीक्षण नहीं किया गया।",
+    "original": "मूल रिपोर्ट पढ़ें",
+    "evidence": "प्रत्येक दावे का स्रोत",
+    "evidenceSource": "साक्ष्य का स्रोत",
+    "koreanArchive": "उस तारीख का कोरियाई समाचार सारांश",
+    "context": "उद्धरणों और उनके संदर्भ की संपादकीय समीक्षा हुई है। स्वतंत्र प्रयोग से सत्यापन नहीं हुआ है।",
+    "skip": "सीधे सामग्री पर जाएँ",
+    "navigation": "मुख्य मेन्यू",
+    "discussion": "चर्चा",
+    "page": "पृष्ठ",
+    "previous": "पिछला",
+    "next": "अगला",
+    "pagination": "पृष्ठ चुनें",
+    "searchError": "खोज लोड नहीं हो सकी। फिर कोशिश करें।",
+    "noScript": "खोजने के लिए JavaScript चालू करें या लेख सूची देखें।",
+    "newsDate": "समाचार की तारीख"
   }
 }

@@ -60,7 +60,7 @@ test('technical punctuation and HTML-looking queries remain literal strings',()=
 });
 
 test('all supported search editions preserve Unicode and localized count placeholders',()=>{
-  const titles={en:'WebClient tests',ko:'한글 검색', 'zh-CN':'搜索验证',ja:'検索ガイド',de:'Für Entwickler',fr:'Sécurité du dépôt',ru:'Проверка поиска',es:'Validación de código'};
+  const titles={en:'WebClient tests',ko:'한글 검색', 'zh-CN':'搜索验证',ja:'検索ガイド',de:'Für Entwickler',fr:'Sécurité du dépôt',ru:'Проверка поиска',es:'Validación de código',hi:'डिस्क पर खाली जगह'};
   const queries={...titles,en:'ＷＥＢＣＬＩＥＮＴ',ko:'한글',de:'fur',fr:'securite',es:'validacion'};
   assert.deepEqual(Object.keys(copy).sort(),Object.keys(titles).sort());
   for(const [lang,title] of Object.entries(titles)){

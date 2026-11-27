@@ -1,12 +1,17 @@
 import type {Language} from './content';
 
 export const authorId='https://youdozi.github.io/#author';
-export const profileUpdatedAt='2026-11-06T04:20:30.442907+00:00';
-export const profileLanguages=['en','ko'] as const;
-export function authorPath(lang:Language){return `/${lang==='ko'?'ko':'en'}/about/`;}
+export function profileUpdatedAt(lang:typeof profileLanguages[number]){return lang==='hi'?'2026-11-27T02:40:54.030Z':'2026-11-06T04:20:30.442907+00:00';}
+export const profileLanguages=['en','ko','hi'] as const;
+export function profileLanguage(lang:Language){return lang==='ko'||lang==='hi'?lang:'en';}
+export function authorPath(lang:Language){return `/${profileLanguage(lang)}/about/`;}
 export function authorData(lang:Language){return {'@type':'Person','@id':authorId,name:'youdozi',url:'https://youdozi.github.io'+authorPath(lang),sameAs:['https://github.com/youdozi']};}
 export const profileAlternates=profileLanguages.map(language=>({language,url:authorPath(language)}));
 export const profileCopy={
+  hi:{label:'परिचय',title:'youdozi का परिचय',description:'ब्लॉग के संचालक, तकनीकी मार्गदर्शिकाओं, विकास समाचार और अनुवादों के बारे में पढ़ें।',
+    intro:'youdozi इस ब्लॉग और इसकी सार्वजनिक GitHub रिपॉज़िटरी का रखरखाव करते हैं। यहाँ Java, Spring और शेल की मार्गदर्शिकाएँ, विकास समाचार और कई भाषाओं में लेख मिलते हैं।',
+    workTitle:'यहाँ क्या पढ़ सकते हैं',work:'तकनीकी लेख किसी खास समस्या को कोड, आरेख और परीक्षण के परिवेश के साथ समझाते हैं। समाचारों में मूल स्रोत के लिंक होते हैं और बाद के घटनाक्रम अलग बताए जाते हैं। मार्गदर्शिकाएँ संबंधित लेखों को पढ़ने का क्रम सुझाती हैं।',
+    github:'GitHub प्रोफ़ाइल',repository:'ब्लॉग की रिपॉज़िटरी',guides:'मार्गदर्शिकाएँ देखें',home:'मुखपृष्ठ'},
   en:{label:'About',title:'About youdozi',description:'Meet the maintainer of youdozi’s memory and explore Java, Spring and shell guides, development news and multilingual articles.',
     intro:'youdozi maintains this blog and its public GitHub repository. The site brings together Java, Spring and shell guides, development news and multilingual editions.',
     workTitle:'What you can read here',work:'Technical guides focus on a concrete problem, with code, flow diagrams and the environment used for a reproduction. News articles link to their sources and distinguish the original announcement from later developments. The learning guides connect related articles in a reading order.',
@@ -16,10 +21,10 @@ export const profileCopy={
     workTitle:'이곳에서 읽을 수 있는 글',work:'기술 가이드는 구체적인 문제를 중심으로 코드·흐름도·재현 환경을 설명합니다. 뉴스는 출처를 연결하고 최초 발표와 이후 상황을 구분합니다. 학습 안내에서는 관련 글을 읽는 순서로 연결합니다.',
     github:'GitHub 프로필',repository:'블로그 저장소',guides:'학습 안내 읽기',home:'홈'},
 };
-export function profileStructuredData(lang:'en'|'ko'){
+export function profileStructuredData(lang:typeof profileLanguages[number]){
   const url='https://youdozi.github.io'+authorPath(lang);const copy=profileCopy[lang];
   return [
-    {'@context':'https://schema.org','@type':'ProfilePage','@id':url+'#profile',url,name:copy.title,description:copy.description,inLanguage:lang,dateModified:profileUpdatedAt,mainEntity:authorData(lang)},
+    {'@context':'https://schema.org','@type':'ProfilePage','@id':url+'#profile',url,name:copy.title,description:copy.description,inLanguage:lang,dateModified:profileUpdatedAt(lang),mainEntity:authorData(lang)},
     {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:copy.home,item:`https://youdozi.github.io/${lang}/`},{'@type':'ListItem',position:2,name:copy.label,item:url}]},
   ];
 }

@@ -32,11 +32,12 @@ const copy = {
 function eligible(lang:Language, all:Entry[]) {
   return all.filter(e=>e.language===lang && e.kind==='post' && e.categories.includes('springboot') && e.reviewStatus!=='example' && e.publishedAt.getTime()<=Date.now());
 }
-export function springCategoryLabel(lang:Language) {return hasLocalizedGuide(lang)?springGuideLocales[lang].label:copy[lang].label;}
+export function springCategoryLabel(lang:Language) {return lang==='hi'?undefined:hasLocalizedGuide(lang)?springGuideLocales[lang].label:copy[lang].label;}
 export function springCategoryAlternates(all:Entry[]) {
   return ([...nativeLanguages,...translationLanguages]).filter(lang=>eligible(lang,all).length>0).map(language=>({language,url:`/${language}/categories/springboot/`}));
 }
 export function springGuide(lang:Language,all:Entry[]):CategoryGuide|undefined {
+  if(lang==='hi')return undefined;
   const localized=hasLocalizedGuide(lang);
   const definition=localized?{...springGuideLocales[lang],...guideLocales[lang].common,extra:springGuideLocales[lang].extra}:copy[lang];
   const items=eligible(lang,all);if(!items.length)return undefined;

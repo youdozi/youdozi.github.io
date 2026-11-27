@@ -17,7 +17,7 @@ test('translation queue covers all sources and reports their actual prepared sta
   const sources=(await readdir('src/content/renewals')).filter(f=>f.endsWith('.json'));
   assert.equal(queue.sources.length,sources.length);
   assert.equal(queue.tasks.length,sources.length*queue.languages.length);
-  assert.deepEqual(queue.languages,['zh-CN','ja','de','fr','ru','es']);
+  assert.deepEqual(queue.languages,['zh-CN','ja','de','fr','ru','es','hi']);
   const batches=(await readdir('.pipeline/translations/batches')).filter(f=>f.endsWith('.json'));
   const drafts=(await Promise.all(batches.map(async f=>JSON.parse(await readFile(`.pipeline/translations/batches/${f}`,'utf8')).translations))).flat();
   assert.equal(queue.tasks.filter(t=>t.status==='draft').length,drafts.length);
@@ -52,6 +52,11 @@ test('translation queue handles both partial and complete preparation of a sourc
     const spanish=spanishBatch.translations.find(t=>t.renewalId===source.id);
     assert.ok(spanish);
     await writeFile(join(base,'.pipeline/translations/batches/partial.json'),JSON.stringify({...batch,translations:[...batch.translations,spanish]}));
+    const hindi={...draft,language:'hi',edition:{title:'कई क्षेत्रों में सिस्टम डिज़ाइन',claims:[
+      'लेख दो डिज़ाइनों की तुलना करता है। active-active में हर क्षेत्र स्वतंत्र रूप से काम करता है। दूसरे डिज़ाइन में डेटा स्थानीय रूप से पढ़ा जाता है और लिखने का अनुरोध वैश्विक लेखन क्षेत्र में भेजा जाता है। प्रतिकृति, टकराव और दूरस्थ लेखन की देरी पर विचार करें।',
+      'active-passive में मुख्य क्षेत्र अनुरोध सँभालता है और दूसरा प्रतिकृतियाँ प्राप्त करता है। लेखक ने चेताया कि बिना अभ्यास का फ़ेलओवर विफल हो सकता है। योजना बनाते समय मापे गए व्यवहार का उपयोग करें। लागत की बचत और विलंबित रिकवरी के अनुमान यहाँ शामिल नहीं हैं।'
+    ],followUp:[]},reviewFocus:'यह समीक्षा लेखक की डिज़ाइन चर्चा तक सीमित है। क्षेत्र चुनने से पहले कार्यभार का भौगोलिक वितरण, संगति की ज़रूरत, रिकवरी और संचालन में लगने वाला प्रयास मापें।'};
+    await writeFile(join(base,'.pipeline/translations/batches/hindi.json'),JSON.stringify({...batch,translations:[hindi]}));
     const complete=await prepareQueue(base);
     assert.equal(complete.tasks.length,complete.languages.length);
     assert.ok(complete.tasks.every(t=>t.status==='draft'));

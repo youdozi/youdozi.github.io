@@ -4,7 +4,7 @@ import {preferredLanguage,isSupportedLanguage} from '../src/lib/language-prefere
 import {supportedLanguages} from '../src/lib/locales.ts';
 
 test('browser regional language tags select each published edition',()=>{
-  for(const [tag,expected] of [['en-GB','en'],['ko-KR','ko'],['zh-CN','zh-CN'],['ja-JP','ja'],['de-AT','de'],['fr-CA','fr'],['ru-RU','ru'],['es-419','es']]){
+  for(const [tag,expected] of [['en-GB','en'],['ko-KR','ko'],['zh-CN','zh-CN'],['ja-JP','ja'],['de-AT','de'],['fr-CA','fr'],['ru-RU','ru'],['es-419','es'],['hi-IN','hi']]){
     assert.equal(preferredLanguage([tag],null,supportedLanguages),expected,tag);
   }
 });

@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import {profileLanguages,profileCopy,profileAlternates,profileStructuredData} from '../../lib/author';
 export function getStaticPaths(){return profileLanguages.map(lang=>({params:{lang}}));}
-const lang=Astro.params.lang as 'en'|'ko';const copy=profileCopy[lang];
+const lang=Astro.params.lang as typeof profileLanguages[number];const copy=profileCopy[lang];
 ---
 <Base title={copy.title} description={copy.description} lang={lang} alternates={profileAlternates} structuredData={profileStructuredData(lang)}>
   <article class="profile prose">
