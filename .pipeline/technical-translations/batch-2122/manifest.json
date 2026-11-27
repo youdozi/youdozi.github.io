@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-2122",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "e6a7b50",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es",
+    "hi"
+  ],
+  "review": {
+    "method": "Compared the editions with the approved queue experiment, its SQL and observed plan counters, and the PostgreSQL and PGlite documentation.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-27-postgres-queue-partial-index",
+      "language": "zh-CN",
+      "translationKey": "2026-11-27-postgres-queue-partial-index",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "c12611eba6e452bb96b402836ce6045313c18b44afdbb87a83463f72acf52e81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2122/zh-CN/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "7161bfcae77604afc407239140307d9038b488c76c4a85c796f3cdd46d0d7c76"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2122/zh-CN/2026-11-27-postgres-queue-partial-index.svg",
+        "sha256": "0c8d9276990485b077d308db8f8d683a31ef408b53ee60ea9d66203fced30a92"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-queue-partial-index-en.svg",
+        "sha256": "a2ac098b8d165864b9d360c2d2e7fbb9a7e5b5096c3ba828700dc771f4e6fc29"
+      }
+    },
+    {
+      "key": "ja-2026-11-27-postgres-queue-partial-index",
+      "language": "ja",
+      "translationKey": "2026-11-27-postgres-queue-partial-index",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "c12611eba6e452bb96b402836ce6045313c18b44afdbb87a83463f72acf52e81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2122/ja/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "06848500e9b4bddd8e20d94a461438e6a08ce0d42803dff4642627c4c58462b1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2122/ja/2026-11-27-postgres-queue-partial-index.svg",
+        "sha256": "3e324d2513f670c4a3cbfab3af24c455792221af7d510487b9cb70f9a1c4dcc5"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-queue-partial-index-en.svg",
+        "sha256": "a2ac098b8d165864b9d360c2d2e7fbb9a7e5b5096c3ba828700dc771f4e6fc29"
+      }
+    },
+    {
+      "key": "de-2026-11-27-postgres-queue-partial-index",
+      "language": "de",
+      "translationKey": "2026-11-27-postgres-queue-partial-index",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "c12611eba6e452bb96b402836ce6045313c18b44afdbb87a83463f72acf52e81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2122/de/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "4d6f8903eac2e4dba4aaba8e9fd51d50dc6c05f11c85e77de1f8f66e8d09bcab"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2122/de/2026-11-27-postgres-queue-partial-index.svg",
+        "sha256": "ea10b9a549a6e46fce7483b6a06147e49f9d6324cf31c0a1ff9ea5d95a72c0ed"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-queue-partial-index-en.svg",
+        "sha256": "a2ac098b8d165864b9d360c2d2e7fbb9a7e5b5096c3ba828700dc771f4e6fc29"
+      }
+    },
+    {
+      "key": "fr-2026-11-27-postgres-queue-partial-index",
+      "language": "fr",
+      "translationKey": "2026-11-27-postgres-queue-partial-index",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "c12611eba6e452bb96b402836ce6045313c18b44afdbb87a83463f72acf52e81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2122/fr/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "f41c351a2bd048a14eeb048b7f914dcd2ae35cd19bb910e1ce8f7a5c75fcc458"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2122/fr/2026-11-27-postgres-queue-partial-index.svg",
+        "sha256": "70f962a15fced2537768d217564f8fc20d8a6cc07cfd9af9851fc3bc41001155"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-queue-partial-index-en.svg",
+        "sha256": "a2ac098b8d165864b9d360c2d2e7fbb9a7e5b5096c3ba828700dc771f4e6fc29"
+      }
+    },
+    {
+      "key": "ru-2026-11-27-postgres-queue-partial-index",
+      "language": "ru",
+      "translationKey": "2026-11-27-postgres-queue-partial-index",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "c12611eba6e452bb96b402836ce6045313c18b44afdbb87a83463f72acf52e81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2122/ru/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "1717670555a84500e94fe6f860bde4f4d39bf1e70ce1f76ea9cb35a1510c49b5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2122/ru/2026-11-27-postgres-queue-partial-index.svg",
+        "sha256": "123705c02ddbfb3a8ee0ba86886dd61c13b1a733f297baa72dcb365a4103d6e1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-queue-partial-index-en.svg",
+        "sha256": "a2ac098b8d165864b9d360c2d2e7fbb9a7e5b5096c3ba828700dc771f4e6fc29"
+      }
+    },
+    {
+      "key": "es-2026-11-27-postgres-queue-partial-index",
+      "language": "es",
+      "translationKey": "2026-11-27-postgres-queue-partial-index",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "c12611eba6e452bb96b402836ce6045313c18b44afdbb87a83463f72acf52e81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2122/es/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "b547b7a5461a71a5506c8d17eb9da731ab571a75f266f88b732a6a025eee50eb"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2122/es/2026-11-27-postgres-queue-partial-index.svg",
+        "sha256": "95565b6fdf66cc485f6e3d80eaeceed658e050922b5ac4a105fd8ee0cb00193f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-queue-partial-index-en.svg",
+        "sha256": "a2ac098b8d165864b9d360c2d2e7fbb9a7e5b5096c3ba828700dc771f4e6fc29"
+      }
+    },
+    {
+      "key": "hi-2026-11-27-postgres-queue-partial-index",
+      "language": "hi",
+      "translationKey": "2026-11-27-postgres-queue-partial-index",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "c12611eba6e452bb96b402836ce6045313c18b44afdbb87a83463f72acf52e81"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-2122/hi/2026-11-27-postgres-queue-partial-index.md",
+        "sha256": "97f95d0258988978c10306242c46fe55063e4f94b8ba6d5dc7d33581e5179181"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-2122/hi/2026-11-27-postgres-queue-partial-index.svg",
+        "sha256": "bdacd46ebe24aca17fdbd74e09056db5f7fd63ec19e25e455117cf2aadfc2f9c"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/postgres-queue-partial-index-en.svg",
+        "sha256": "a2ac098b8d165864b9d360c2d2e7fbb9a7e5b5096c3ba828700dc771f4e6fc29"
+      }
+    }
+  ]
+}
