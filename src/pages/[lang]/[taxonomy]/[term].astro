@@ -2,11 +2,17 @@
 import {categoryName} from '../../../lib/category-guide';
 import Listing from '../../../components/Listing.astro';
 import CategoryGuide from '../../../components/CategoryGuide.astro';
-import {categoryGuide,categoryGuideAlternates} from '../../../lib/technical-guides';
+import {categoryGuide,categoryGuideAlternates,guideTerms} from '../../../lib/technical-guides';
 import { entries, publishedLanguages, taxonomySlug, taxonomyUrl, type Language } from '../../../lib/content';
 export async function getStaticPaths() {
   const all = await entries();
-  return (await publishedLanguages()).flatMap(lang => (['categories','tags'] as const).flatMap(taxonomy => [...new Set(all.filter(e => e.language === lang).flatMap(e => e[taxonomy]))].map(term => ({ params: { lang, taxonomy, term: taxonomySlug(term) }, props: { term } }))));
+  return (await publishedLanguages()).flatMap(lang => (['categories','tags'] as const).flatMap(taxonomy => {
+    const terms = new Set(all.filter(e => e.language === lang).flatMap(e => e[taxonomy]));
+    if (taxonomy === 'categories') {
+      for (const term of guideTerms) if (!terms.has(term) && categoryGuide(term,lang,all)) terms.add(term);
+    }
+    return [...terms].map(term => ({ params: { lang, taxonomy, term: taxonomySlug(term) }, props: { term } }));
+  }));
 }
 const lang = Astro.params.lang as Language;
 const kind = Astro.params.taxonomy as 'categories' | 'tags';
