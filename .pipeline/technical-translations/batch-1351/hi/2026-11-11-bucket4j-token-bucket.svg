@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1000" viewBox="0 0 360 1000" xml:lang="hi" role="img" aria-labelledby="title desc">
+<title id="title">Bucket4j का स्थानीय टोकन बकेट</title>
+<desc id="desc">शुरुआत में एक साझा Spring बकेट बनता है। क्षमता और शुरुआती टोकन 5 हैं। Greedy से 10 सेकंड में 5 टोकन भरते हैं। हर अनुरोध बीते समय के आधार पर एक टोकन लेने की एक अविभाज्य कोशिश करता है। सफलता पर 200, अस्वीकृति पर 429 और ऊपर पूरे सेकंड तक पूर्णांकित Retry-After मिलता है। स्वतंत्र स्थानीय बकेट सीमा साझा नहीं करते।</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#496b57"/></marker></defs>
+<rect width="360" height="1000" rx="16" fill="#f5f7f2"/>
+<g fill="#203a2c" font-family="system-ui,sans-serif" text-anchor="middle" font-size="15">
+<text x="180" y="35" font-size="20" font-weight="700">Bucket4j टोकन बकेट</text>
+<rect x="24" y="59" width="312" height="83" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="180" y="86">ऐप शुरू होते समय बकेट बनाएँ</text><text x="180" y="109">Spring का साझा सिंगलटन बीन</text><text x="180" y="132" font-size="13">सभी /demo अनुरोधों का एक बकेट</text>
+<path d="M180 142V174" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="179" width="312" height="89" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="205">क्षमता 5 · शुरुआती टोकन 5</text><text x="180" y="230">Greedy: 10 सेकंड में 5 टोकन भरें</text><text x="180" y="254">t=0 पर 5 खर्च → t=2s पर 1 उपलब्ध</text>
+<path d="M180 268V302" stroke="#496b57" marker-end="url(#arrow)"/>
+<rect x="24" y="307" width="312" height="98" rx="9" fill="#e5edf4" stroke="#839bae"/>
+<text x="180" y="335">अनुरोध आए → बीता समय गिनें</text><text x="180" y="361">एक क्रिया में 1 टोकन लेने का प्रयास</text><text x="180" y="388" font-size="12">tryConsumeAndReturnRemaining(1)</text>
+<path d="M100 405V453" stroke="#496b57" marker-end="url(#arrow)"/><text x="74" y="435">सफल</text>
+<path d="M265 405V453" stroke="#496b57" marker-end="url(#arrow)"/><text x="294" y="435">टोकन कम</text>
+<rect x="16" y="458" width="159" height="110" rx="9" fill="#deebdf" stroke="#86a18b"/>
+<text x="95" y="486">1 टोकन खर्च</text><text x="95" y="513">काम शुरू करें</text><text x="95" y="542">डेमो: HTTP 200</text>
+<rect x="187" y="458" width="157" height="110" rx="9" fill="#f9e8d9" stroke="#ba946e"/>
+<text x="265" y="486" textLength="126" lengthAdjust="spacingAndGlyphs">रीफ़िल की प्रतीक्षा नहीं</text><text x="265" y="513">HTTP 429</text><text x="265" y="542" textLength="126" lengthAdjust="spacingAndGlyphs">Retry-After: प्रतीक्षा सेकंड में</text>
+<rect x="24" y="608" width="312" height="113" rx="9" fill="#fff" stroke="#a9b6a8"/>
+<text x="180" y="636" font-weight="700">बीते समय से रीफ़िल की गणना होती है</text><text x="180" y="663">हर अनुरोध के लिए बकेट न बनाएँ</text><text x="180" y="689">अलग शेड्यूलर की ज़रूरत नहीं</text><text x="180" y="710" font-size="12">इस आरेख का दायरा एक स्थानीय JVM है</text>
+<rect x="24" y="759" width="312" height="147" rx="9" fill="#f4e2df" stroke="#b88880"/>
+<text x="180" y="789" font-weight="700">दो स्वतंत्र स्थानीय बकेट</text><text x="180" y="817" textLength="280" lengthAdjust="spacingAndGlyphs">बकेट A: शुरू में 5 / बकेट B: शुरू में 5</text><text x="180" y="846">स्थिति अलग: कुल 10 तक स्वीकृत</text><text x="180" y="875">साझा सीमा के लिए वितरित स्टोर चाहिए</text>
+<text x="180" y="954" font-size="13" textLength="280" lengthAdjust="spacingAndGlyphs">क्षमता और भरने की दर अलग तय करें</text>
+</g></svg>
