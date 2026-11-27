@@ -223,10 +223,10 @@ export function compareLocalizedSVG(originalSVG,translatedSVG,language){
   same(geometry(originalSVG),geometry(translatedSVG),'Localized SVG geometry changed');
 }
 
-// Only the two approved defensive Hindi batches compare excerpts of the pinned source.
+// Only the approved defensive Hindi batches compare excerpts of the pinned source.
 function defensiveSource(sourceRaw, row, manifestPath) {
   if (!row.defensiveBodyLines) return sourceRaw;
-  if (row.language !== 'hi' || !/^\.pipeline\/technical-translations\/batch-151[12]\/manifest\.json$/.test(manifestPath)) {
+  if (row.language !== 'hi' || !/^\.pipeline\/technical-translations\/batch-15[12][12]\/manifest\.json$/.test(manifestPath)) {
     fail('Unexpected defensive excerpt');
   }
   const {body} = article(sourceRaw);
@@ -234,6 +234,8 @@ function defensiveSource(sourceRaw, row, manifestPath) {
   let previousEnd = 0;
   if (!Array.isArray(row.defensiveBodyLines) || !row.defensiveBodyLines.length) fail('Missing defensive excerpt');
   const unlinkedAdvisories = new Set([
+    'https://ubuntu.com/security/CVE-2026-46300',
+    'https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/',
     'https://nodejs.org/en/blog/vulnerability/october-2026-security-releases',
     'https://www.php.net/archive/2026.php',
     'https://my.f5.com/s/article/K000164058',
