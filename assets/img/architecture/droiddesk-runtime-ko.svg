@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ko" viewBox="0 0 520 440" role="img" aria-labelledby="title desc">
+<title id="title">DroidDesk</title><desc id="desc">독립 APK는 내장 Termux:X11로, Termux 스크립트는 별도 Termux:X11 앱 또는 VNC로 화면을 표시합니다.</desc>
+<rect width="520" height="440" rx="16" fill="#edf4f7"/>
+<g text-anchor="middle" font-family="system-ui, sans-serif">
+<rect x="12" y="10" width="496" height="132" rx="10" fill="#fff"/>
+<text x="260" y="39" font-weight="bold" font-size="23" fill="#18354a">비루팅 APK</text>
+<text x="260" y="70" font-size="22" fill="#254e65">Termux (+ Debian / PRoot)</text>
+<path d="M260 78 v18 m-5 -5 l5 5 5 -5" fill="none" stroke="#397386" stroke-width="2.5"/>
+<text x="260" y="126" font-size="23" fill="#164959">내장 Termux:X11</text>
+<rect x="12" y="150" width="496" height="132" rx="10" fill="#fff"/>
+<text x="260" y="179" font-weight="bold" font-size="23" fill="#18354a">루팅 APK</text>
+<text x="260" y="210" font-size="22" fill="#254e65">Ubuntu / chroot</text>
+<path d="M260 218 v18 m-5 -5 l5 5 5 -5" fill="none" stroke="#397386" stroke-width="2.5"/>
+<text x="260" y="266" font-size="23" fill="#164959">내장 Termux:X11</text>
+<rect x="12" y="290" width="496" height="132" rx="10" fill="#fff"/>
+<text x="260" y="319" font-weight="bold" font-size="23" fill="#18354a">Termux 스크립트</text>
+<text x="260" y="350" font-size="22" fill="#254e65">Termux + PRoot</text>
+<path d="M260 358 v18 m-5 -5 l5 5 5 -5" fill="none" stroke="#397386" stroke-width="2.5"/>
+<text x="260" y="406" font-size="23" fill="#164959">별도 Termux:X11 / VNC</text>
+</g>
+</svg>

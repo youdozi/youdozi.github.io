@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-130",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "aaf151d",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es",
+    "hi"
+  ],
+  "review": {
+    "method": "Compared each edition with the approved Korean manuscript, tagged release, runtime sources and PRoot documentation. No device installation or performance measurements.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-27-droiddesk-android-linux-desktop",
+      "language": "zh-CN",
+      "translationKey": "2026-11-27-droiddesk-android-linux-desktop",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "656b9e1b21a758a366d894876650b607e9bd2eadcb535e4a0565a68566807a1f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-130/zh-CN/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "65e0dac8233605654f385a0ea88ecaccc4af72a782d83958ae91372b97bd32fc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-130/zh-CN/2026-11-27-droiddesk-android-linux-desktop.svg",
+        "sha256": "4c409161c143bcba6bb59cdae8a65be66d7c1e2a4aac009f465d3ebb26defc7d"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/droiddesk-runtime-en.svg",
+        "sha256": "f38149a0e935db96b3226655079a8c9a7dd2f01396f1bc5920a582069224a677"
+      }
+    },
+    {
+      "key": "ja-2026-11-27-droiddesk-android-linux-desktop",
+      "language": "ja",
+      "translationKey": "2026-11-27-droiddesk-android-linux-desktop",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "656b9e1b21a758a366d894876650b607e9bd2eadcb535e4a0565a68566807a1f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-130/ja/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "49397c96d8a6f0c142081051ff3f232c181b9feca9180fb87671fbb1902ea429"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-130/ja/2026-11-27-droiddesk-android-linux-desktop.svg",
+        "sha256": "88bc0183451c175746009da661db541f0aefe6192f019ae87e0e6bcb48b8bc0e"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/droiddesk-runtime-en.svg",
+        "sha256": "f38149a0e935db96b3226655079a8c9a7dd2f01396f1bc5920a582069224a677"
+      }
+    },
+    {
+      "key": "de-2026-11-27-droiddesk-android-linux-desktop",
+      "language": "de",
+      "translationKey": "2026-11-27-droiddesk-android-linux-desktop",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "656b9e1b21a758a366d894876650b607e9bd2eadcb535e4a0565a68566807a1f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-130/de/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "e24a5cb0b9f7e9a00b8f5bff55cfe20910a8ff4b23da89d9f33c7b409a4ac2bd"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-130/de/2026-11-27-droiddesk-android-linux-desktop.svg",
+        "sha256": "233ab0c73b62759276160ace62b4496bf6e4e055e0801485a2b7795939b18845"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/droiddesk-runtime-en.svg",
+        "sha256": "f38149a0e935db96b3226655079a8c9a7dd2f01396f1bc5920a582069224a677"
+      }
+    },
+    {
+      "key": "fr-2026-11-27-droiddesk-android-linux-desktop",
+      "language": "fr",
+      "translationKey": "2026-11-27-droiddesk-android-linux-desktop",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "656b9e1b21a758a366d894876650b607e9bd2eadcb535e4a0565a68566807a1f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-130/fr/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "3d76ceddd2f5ab38aa92eaffc42afa6b4a32f347d0708edd77a35181dc33ec8c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-130/fr/2026-11-27-droiddesk-android-linux-desktop.svg",
+        "sha256": "6d61cc2c035c09c3ef01e85c680d36fbbc0976cfcceda1b40a1fe1b2d861eea4"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/droiddesk-runtime-en.svg",
+        "sha256": "f38149a0e935db96b3226655079a8c9a7dd2f01396f1bc5920a582069224a677"
+      }
+    },
+    {
+      "key": "ru-2026-11-27-droiddesk-android-linux-desktop",
+      "language": "ru",
+      "translationKey": "2026-11-27-droiddesk-android-linux-desktop",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "656b9e1b21a758a366d894876650b607e9bd2eadcb535e4a0565a68566807a1f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-130/ru/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "4a05586c9d28a99b211eb0e5ab46d3fb89c66e388740ae79019d304b71ac71ce"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-130/ru/2026-11-27-droiddesk-android-linux-desktop.svg",
+        "sha256": "48675b911235ea0d291873e415d069f645dd15c0ab026b2d7db68496934f0a69"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/droiddesk-runtime-en.svg",
+        "sha256": "f38149a0e935db96b3226655079a8c9a7dd2f01396f1bc5920a582069224a677"
+      }
+    },
+    {
+      "key": "es-2026-11-27-droiddesk-android-linux-desktop",
+      "language": "es",
+      "translationKey": "2026-11-27-droiddesk-android-linux-desktop",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "656b9e1b21a758a366d894876650b607e9bd2eadcb535e4a0565a68566807a1f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-130/es/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "91a30fec8f1a7e9a94427102ca0bb66169f202dfb7f7cb485bd347709304a432"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-130/es/2026-11-27-droiddesk-android-linux-desktop.svg",
+        "sha256": "cd98de4445cd73309a90bab80aa4b44f37df832be178d43fc0f8f2f1b6e62972"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/droiddesk-runtime-en.svg",
+        "sha256": "f38149a0e935db96b3226655079a8c9a7dd2f01396f1bc5920a582069224a677"
+      }
+    },
+    {
+      "key": "hi-2026-11-27-droiddesk-android-linux-desktop",
+      "language": "hi",
+      "translationKey": "2026-11-27-droiddesk-android-linux-desktop",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "656b9e1b21a758a366d894876650b607e9bd2eadcb535e4a0565a68566807a1f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-130/hi/2026-11-27-droiddesk-android-linux-desktop.md",
+        "sha256": "a52104cc3ef2cd9da708542b9d11c169874812319b2b8146a02e5b462e5e4e6b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-130/hi/2026-11-27-droiddesk-android-linux-desktop.svg",
+        "sha256": "af8369569aed31420647e387c17d4aac767c95d4a4dac24cd15d0b6600fd30b7"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/droiddesk-runtime-en.svg",
+        "sha256": "f38149a0e935db96b3226655079a8c9a7dd2f01396f1bc5920a582069224a677"
+      }
+    }
+  ]
+}
