@@ -3,6 +3,7 @@ import {guideLocales} from './guide-locales.ts';
 import {technicalGuides} from './technical-guides.ts';
 
 const nativeLearningPathCopy = {
+  hi:{label:'अध्ययन क्रम',heading:'आगे पढ़ें',previous:'पिछला लेख',next:'अगला लेख'},
   en: {label:'Learning path',heading:'Continue reading',previous:'Previous article',next:'Next article'},
   ko: {label:'학습 경로',heading:'이어서 읽기',previous:'이전 글',next:'다음 글'},
 };

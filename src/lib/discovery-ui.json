@@ -78,5 +78,15 @@
     "recover": "Explorar artículos disponibles",
     "notFound": "Elija un idioma para encontrar artículos.",
     "emptySection": "Todavía no hay artículos en esta sección."
+  },
+  "hi": {
+    "archive": "सभी लेख",
+    "intro": "इस भाषा में उपलब्ध लेख प्रकाशन वर्ष के अनुसार देखें।",
+    "years": "वर्ष चुनें",
+    "count": "लेख",
+    "fallback": "अनुवाद उपलब्ध नहीं · मुखपृष्ठ",
+    "recover": "उपलब्ध लेख देखें",
+    "notFound": "लेख खोजने के लिए भाषा चुनें।",
+    "emptySection": "इस खंड में अभी कोई लेख नहीं है।"
   }
 }

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="hi" viewBox="0 0 424 290" role="img" aria-labelledby="title desc">
+<title id="title">PostgreSQL में SKIP LOCKED वाली कार्य कतार का वर्कर बीच में बंद हो जाए तो क्या होता है?</title>
+<desc id="desc">A काम 1 को लॉक करता है। B उसे छोड़कर काम 2 लेता है। B के कमिट और A के रोलबैक के बाद पहला काम फिर प्रतीक्षा में है और दूसरा चल रहा है।</desc>
+<g font-family="system-ui, sans-serif" font-size="15" text-anchor="middle" fill="#183d49">
+<rect x="4" y="5" width="416" height="43" rx="7" fill="#eaf3f5"/>
+<text x="212" y="32" font-size="15">दो काम प्रतीक्षा में</text>
+<path d="M212 48v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="63" width="416" height="43" rx="7" fill="#f9efdc"/>
+<text x="212" y="90" font-size="15">A ने काम 1 लॉक किया</text>
+<path d="M212 106v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="121" width="416" height="43" rx="7" fill="#f9efdc"/>
+<text x="212" y="148" font-size="15">B ने काम 1 छोड़कर 2 लॉक किया</text>
+<path d="M212 164v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="179" width="416" height="43" rx="7" fill="#eaf3f5"/>
+<text x="212" y="206" font-size="15">B का कमिट → A का रोलबैक → B का कनेक्शन बंद</text>
+<path d="M212 222v12m-4 -4 4 4 4 -4" fill="none" stroke="#50717a" stroke-width="2"/>
+<rect x="4" y="237" width="416" height="43" rx="7" fill="#dfefe6"/>
+<text x="212" y="264" font-size="15">1 · pending     /     2 · running</text>
+</g>
+</svg>

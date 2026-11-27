@@ -6,5 +6,12 @@
   "de": {"show":"Kommentare anzeigen","loading":"Kommentare werden geöffnet…","opened":"Kommentare geöffnet.","error":"Kommentare konnten nicht geladen werden. Auf GitHub ansehen.","github":"Auf GitHub ansehen"},
   "fr": {"show":"Afficher les commentaires","loading":"Ouverture des commentaires…","opened":"Commentaires ouverts.","error":"Impossible de charger les commentaires. Consultez-les sur GitHub.","github":"Voir sur GitHub"},
   "ru": {"show":"Показать комментарии","loading":"Открытие комментариев…","opened":"Комментарии открыты.","error":"Не удалось загрузить комментарии. Посмотрите их на GitHub.","github":"Посмотреть на GitHub"},
-  "es": {"show":"Mostrar comentarios","loading":"Abriendo los comentarios…","opened":"Comentarios abiertos.","error":"No se pudieron cargar los comentarios. Consúltalos en GitHub.","github":"Ver en GitHub"}
+  "es": {"show":"Mostrar comentarios","loading":"Abriendo los comentarios…","opened":"Comentarios abiertos.","error":"No se pudieron cargar los comentarios. Consúltalos en GitHub.","github":"Ver en GitHub"},
+  "hi": {
+    "show": "टिप्पणियाँ देखें",
+    "loading": "टिप्पणियाँ खुल रही हैं…",
+    "opened": "टिप्पणियाँ खुल गईं।",
+    "error": "टिप्पणियाँ लोड नहीं हो सकीं। उन्हें GitHub पर देखें।",
+    "github": "GitHub पर देखें"
+  }
 }

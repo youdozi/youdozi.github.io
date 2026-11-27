@@ -3,6 +3,7 @@ export const articleUi:Record<Language,{toc:string;updated:string}>={
   en:{toc:'On this page',updated:'Updated'},ko:{toc:'이 글의 목차',updated:'수정일'},
   'zh-CN':{toc:'本文目录',updated:'更新日期'},ja:{toc:'この記事の目次',updated:'更新日'},
   de:{toc:'Auf dieser Seite',updated:'Aktualisiert'},fr:{toc:'Sur cette page',updated:'Mis à jour'},
+  hi:{toc:'इस पृष्ठ पर',updated:'अद्यतन'},
   ru:{toc:'На этой странице',updated:'Обновлено'},es:{toc:'En esta página',updated:'Actualizado'},
 };
 export type ArticleHeading={depth:number;slug:string;text:string};

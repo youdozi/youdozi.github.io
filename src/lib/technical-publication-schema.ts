@@ -1,9 +1,10 @@
+import {translationLanguages} from './locales.ts';
 import {z} from 'astro/zod';
 const hash=z.string().regex(/^[a-f0-9]{64}$/);
 const timestamp=z.iso.datetime({offset:true}).refine(t=>new Date(t)<=new Date(),'Future publication timestamp');
 export const technicalPublicationSchema=z.object({
   schemaVersion:z.literal(1),state:z.literal('approved'),
-  language:z.enum(['zh-CN','ja','de','fr','ru','es']),
+  language:z.enum(translationLanguages),
   translationKey:z.string().regex(/^\d{4}-\d{2}-\d{2}-[a-z0-9.-]+$/),
   routeSlug:z.string().regex(/^[a-z0-9][a-z0-9._-]*$/),kind:z.literal('post'),
   title:z.string().trim().min(1).max(240),description:z.string().trim().min(1).max(600),

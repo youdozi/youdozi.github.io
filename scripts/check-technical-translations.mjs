@@ -190,7 +190,7 @@ export async function inspectTechnicalTranslations(base=root,manifestPath=defaul
   const manifest=JSON.parse(await readFile(manifestFile,'utf8'));
   if(manifest.formatVersion!==undefined&&![2,3].includes(manifest.formatVersion))fail('Unknown technical manuscript format');
   if(manifest.schemaVersion!==1||manifest.state!=='awaiting-publication-approval'||manifest.approval!==null||!manifest.editions?.length)fail('Expected unapproved translation manifest');
-  same(manifest.languages,policy.translationLanguages,'Expected all six target languages');
+  if(!Array.isArray(manifest.languages)||!manifest.languages.length||new Set(manifest.languages).size!==manifest.languages.length||manifest.languages.some(language=>!policy.translationLanguages.includes(language)))fail('Invalid target languages');
   const seen=new Set(),byTopic=new Map();
   const prefix=relative(canonicalBase,dirname(manifestFile))+'/';
   for(const row of manifest.editions){

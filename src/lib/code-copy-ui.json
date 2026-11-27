@@ -6,5 +6,11 @@
   "de": {"copy":"Code kopieren","copied":"Code kopiert.","error":"Kopieren fehlgeschlagen. Den Code auswählen und manuell kopieren.","block":"Codebeispiel"},
   "fr": {"copy":"Copier le code","copied":"Code copié.","error":"Impossible de copier. Sélectionnez le code et copiez-le manuellement.","block":"Exemple de code"},
   "ru": {"copy":"Копировать код","copied":"Код скопирован.","error":"Не удалось скопировать. Выделите код и скопируйте его вручную.","block":"Пример кода"},
-  "es": {"copy":"Copiar código","copied":"Código copiado.","error":"No se pudo copiar. Selecciona el código y cópialo manualmente.","block":"Ejemplo de código"}
+  "es": {"copy":"Copiar código","copied":"Código copiado.","error":"No se pudo copiar. Selecciona el código y cópialo manualmente.","block":"Ejemplo de código"},
+  "hi": {
+    "copy": "कोड कॉपी करें",
+    "copied": "कोड कॉपी हो गया।",
+    "error": "कॉपी नहीं हो सका। कोड चुनकर कॉपी करें।",
+    "block": "कोड का उदाहरण"
+  }
 }

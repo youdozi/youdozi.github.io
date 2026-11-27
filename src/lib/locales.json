@@ -9,7 +9,8 @@
     "de",
     "fr",
     "ru",
-    "es"
+    "es",
+    "hi"
   ],
   "locales": {
     "en": {
@@ -51,6 +52,11 @@
       "label": "Español",
       "dateLocale": "es",
       "ogLocale": "es_ES"
+    },
+    "hi": {
+      "label": "हिन्दी",
+      "dateLocale": "hi-IN",
+      "ogLocale": "hi_IN"
     }
   }
 }
