@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-146",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "70e18a6807331666127c94c30b0e35db609fdb9b",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Translator self-review against the English source, Korean context and original diagrams; protected code, links, numeric values and diagram branches checked.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2021-07-19-new-id",
+      "language": "hi",
+      "translationKey": "2021-07-19-new-id",
+      "source": {
+        "path": "src/content/posts/en/2021-07-19-new-id.md",
+        "sha256": "d974b2c5791736b9568a1598a457390b7df0c0450c6dd11323c3c26a895ea8a2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-19-new-id.md",
+        "sha256": "c8b21b43ab4613af04f150b1a662931d25123d681fd2dcd0d249885fa35992ee"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-19-new-id.diagram.json",
+        "sha256": "0894c97502d451e3129c2204ee1232043833e84256b79513c8bac01349b2b770"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-19-new-id.svg",
+        "sha256": "e77b5db887233cdd78da83f97c392a81afb7cad573e0ce7bf04ab25566b940f0"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "hi-2021-07-20-pair-delete",
+      "language": "hi",
+      "translationKey": "2021-07-20-pair-delete",
+      "source": {
+        "path": "src/content/posts/en/2021-07-20-pair-delete.md",
+        "sha256": "a1962a62aeb00132eea16a0b3b607dfb9e256902ddc165613dbe7c044f14966e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-20-pair-delete.md",
+        "sha256": "9587d83a92e19cbf9d70b30aaf9a92e2f4134b554a5c53eb993ae0fd54bca5eb"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-20-pair-delete.diagram.json",
+        "sha256": "8e0ddf5c7b87dc79ace76fffae52eff1e87177770dfcf89d8eff8a058b5ed8b1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-20-pair-delete.svg",
+        "sha256": "875397bcecfb9bc55bfdab585393af590d090e1eab044a55acb0189571cc0713"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "hi-2021-07-22-dot-product",
+      "language": "hi",
+      "translationKey": "2021-07-22-dot-product",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-dot-product.md",
+        "sha256": "aa027f07c568f5c9d25dc08d3ee21ea8c23917f73f1409b25b221ad21be86463"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-22-dot-product.md",
+        "sha256": "fd5272a833ccd8067ceb0227be6e3fec176a3b51f47b56c6bd77f4d4ada9f7e6"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-22-dot-product.diagram.json",
+        "sha256": "414a66c51607a452a6eca74eb37eb32872f19a3fe608c646e275aa09fd8aa75f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-22-dot-product.svg",
+        "sha256": "3f8f297b0b10369abb9d13e122b3be8465d53ac996ce79db45683f569bdbd062"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "hi-2021-07-22-plus-minus",
+      "language": "hi",
+      "translationKey": "2021-07-22-plus-minus",
+      "source": {
+        "path": "src/content/posts/en/2021-07-22-plus-minus.md",
+        "sha256": "63f6b289759a3487a5cb548baedd43054c6fa803aa1dbd58a39dd4d088a413bc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-22-plus-minus.md",
+        "sha256": "1051f883bff9c0083ae020319bb60b7b01028adda5df475d2983d80087128a17"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-22-plus-minus.diagram.json",
+        "sha256": "7f6a40a8a17aee7f7569194fad17c55eeb57284bfaf03aadd80c87cbadf3a571"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-22-plus-minus.svg",
+        "sha256": "238feccc34fe2626d5cd565d618b906dcdb71971ccd471c5d849f5da562ab015"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    },
+    {
+      "key": "hi-2021-07-23-number-word",
+      "language": "hi",
+      "translationKey": "2021-07-23-number-word",
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-number-word.md",
+        "sha256": "28614468f78703f7e406439ee8b23b83e06091ae7f42ed9835cd50c6d1bb2e87"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-23-number-word.md",
+        "sha256": "2e4bf80fe35aeb0bc9becac121f5215ab26cf6502005c8a5455292b727ba82f6"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-23-number-word.diagram.json",
+        "sha256": "8a77e6937387db68e6aee9ed12035c52ce2c8cfccf187e45eab5eab14f6d032a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-146/hi/2021-07-23-number-word.svg",
+        "sha256": "9c4e86bff9029a489a7e5de0e48a696339255271d4716d753881ad15db75356c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/algorithms.json",
+        "sha256": "b1018dc3aaf127d54322d1c6a20d388602023df2ff399455af51f9bba3e83ac2"
+      }
+    }
+  ]
+}
