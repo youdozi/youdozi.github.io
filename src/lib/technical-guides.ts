@@ -156,6 +156,12 @@ const paths = {
       ]},
   },
   util: {
+    hi: {label:'डेवलपमेंट टूल',title:'डेवलपमेंट टूल की मार्गदर्शिका',eyebrow:'डेवलपमेंट टूल',
+      description:'Grafana में लॉग और ट्रेस के बीच जाएँ और संबंधित अनुरोध का पता लगाएँ।',
+      intro:'स्थानीय उदाहरण से जाँचें कि किसी लॉग से सही ट्रेस कैसे खोलें और स्पैन से उसी अनुरोध के लॉग पर कैसे लौटें।',
+      groups:[
+        {id:'observability',title:'लॉग और ट्रेस जोड़ें',description:'Loki और Tempo में एक ही trace_id खोजें और जाँचें कि दोनों स्टोर को डेटा मिला है।',keys:crossCategoryKeys.util!},
+      ]},
     en: {label:'Development tool guides',title:'Development Tool Guides: HTTP Checks, Code Search and Diagrams',eyebrow:'Development tools',
       description:'Probe local HTTP responses, narrow a code search and keep editable draw.io sources with shared diagrams through small practical examples.',
       intro:'Use a small example to check a response, locate an implementation or preserve an editable diagram. Local fixtures and file-structure checks have narrower scope than a live service or a full editor round trip.',
@@ -196,7 +202,7 @@ export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGui
     return {...copy,...localized,title:copy.label,eyebrow:copy.label,intro:copy.description,lang,url:`/${lang}/categories/tips/`,listAnchor:'articles',sections:[],extras:ordered,ordered,updatedAt:new Date(Math.max(...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
   }
 
-  if(lang==='hi')return undefined;
+  if(lang==='hi'&&term!=='util')return undefined;
   if(term==='security'&&lang!=='en'&&lang!=='ko')return undefined;
   if(term==='coding-test')return algorithmGuide(lang,all);
   if(term==='springboot')return springGuide(lang,all);
@@ -205,7 +211,7 @@ export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGui
   const localized=hasLocalizedGuide(lang)?guideLocales[lang]:undefined;
   const translated=hasLocalizedGuide(lang)?(term==='linux'?guideLocales[lang].linux:term==='util'?toolGuideLocales[lang]:remainingGuideLocales[lang][term as keyof typeof remainingGuideLocales[typeof lang]]):undefined;
   const groupCopy=translated?.groups as Record<string,{title:string;description:string}>|undefined;
-  const definition=translated?{...translated,groups:native.en.groups.map(group=>({...group,...groupCopy![group.id]}))}:native[lang as 'en'|'ko'];
+  const definition=translated?{...translated,groups:native.en.groups.map(group=>({...group,...groupCopy![group.id]}))}:lang==='hi'?paths.util.hi:native[lang as 'en'|'ko'];
   const copyUpdatedAt=term==='util'?toolGuidesUpdatedAt:term==='linux'?localizedGuidesUpdatedAt:remainingGuideLocalesUpdatedAt;
   const items=all.filter(e=>e.language===lang&&e.kind==='post'&&(e.categories.includes(term)||crossCategoryKeys[term]?.includes(e.translationKey))&&e.reviewStatus!=='example'&&e.publishedAt.getTime()<=Date.now());
   if(!items.length)return undefined;
