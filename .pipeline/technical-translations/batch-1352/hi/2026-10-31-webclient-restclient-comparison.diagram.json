@@ -1,0 +1,50 @@
+{
+  "key": "2026-10-31-webclient-restclient-comparison",
+  "title": "HTTP कॉल और सब्सक्रिप्शन",
+  "description": "मुख्य प्रोग्राम RestClient की अंतिम क्रिया पूरी करता है, WebClient का Mono बनाता है, दो अलग अनुरोधों के लिए दो बार सब्सक्राइब करता है और दोनों क्लाइंट में 404 और 503 त्रुटियाँ जाँचता है।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "RestClient.retrieve() बनाएँ",
+        "अनुरोध संख्या 0"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "body(String.class) से प्रतीक्षा",
+        "पहला अनुरोध पूरा: 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "WebClient का Mono बनाएँ",
+        "अभी सब्सक्रिप्शन नहीं: 1"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "पहला block सब्सक्राइब करके रुके",
+        "अनुरोध संख्या 2"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "दूसरा block फिर सब्सक्राइब करे",
+        "अनुरोध संख्या 3"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "दोनों क्लाइंट में 404 और 503 जाँचें",
+        "4 और अनुरोध, कुल 7"
+      ]
+    }
+  ],
+  "language": "hi"
+}

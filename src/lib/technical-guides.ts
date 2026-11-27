@@ -126,6 +126,13 @@ const paths = {
       ]},
   },
   jdk: {
+    hi: {label:'Java रनटाइम',title:'Java रनटाइम की मार्गदर्शिका',eyebrow:'JDK',
+      description:'वर्चुअल थ्रेड के साथ अनुरोधों की प्रतीक्षा और डेटाबेस की सीमा समझें। JDK संस्करणों में उपलब्ध गार्बेज कलेक्टरों की तुलना करें।',
+      intro:'पहले अनुरोध का निष्पादन पथ देखें, फिर GC लॉग पढ़ें। तुलना करते समय हर उदाहरण में दर्ज JDK संस्करण और लोड की शर्तें ध्यान में रखें।',
+      groups:[
+        {id:'virtual',title:'अनुरोध और डेटाबेस की प्रतीक्षा',description:'MVC में वर्चुअल थ्रेड का निष्पादन जाँचें और डेटाबेस तक पहुँचने वाले अनुरोधों की संख्या सीमित करें।',keys:['2026-10-31-virtual-threads-jdk21-jdk25','2026-11-01-webflux-coroutines-mvc-virtual-threads','2026-11-03-virtual-threads-db-semaphore']},
+        {id:'gc',title:'गार्बेज कलेक्टर की तुलना',description:'JDK के अनुसार कलेक्टर चुनें और एक ही आवंटन प्रोग्राम से बने GC लॉग पढ़ें।',keys:['2026-11-03-jdk-gc-evolution']},
+      ]},
     en: {label:'JDK feature guides',title:'Java Runtime Guides: Virtual Threads, MVC, Database Limits and Recovery',eyebrow:'JDK',
       description:'Follow virtual threads, MVC migration, DB admission, fallback and LGTM tracing, then inspect request context, GC and runtime compatibility.',
       intro:'Separate language/API status from the runtime you actually install. These articles include historical release events and preview material; use each recorded version and do not infer current support from an old release note.',
@@ -202,7 +209,7 @@ export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGui
     return {...copy,...localized,title:copy.label,eyebrow:copy.label,intro:copy.description,lang,url:`/${lang}/categories/tips/`,listAnchor:'articles',sections:[],extras:ordered,ordered,updatedAt:new Date(Math.max(...ordered.map(e=>(e.updatedAt||e.publishedAt).getTime())))};
   }
 
-  if(lang==='hi'&&term!=='util')return undefined;
+  if(lang==='hi'&&term!=='util'&&term!=='jdk')return undefined;
   if(term==='security'&&lang!=='en'&&lang!=='ko')return undefined;
   if(term==='coding-test')return algorithmGuide(lang,all);
   if(term==='springboot')return springGuide(lang,all);
@@ -211,7 +218,7 @@ export function categoryGuide(term:string,lang:Language,all:Entry[]):CategoryGui
   const localized=hasLocalizedGuide(lang)?guideLocales[lang]:undefined;
   const translated=hasLocalizedGuide(lang)?(term==='linux'?guideLocales[lang].linux:term==='util'?toolGuideLocales[lang]:remainingGuideLocales[lang][term as keyof typeof remainingGuideLocales[typeof lang]]):undefined;
   const groupCopy=translated?.groups as Record<string,{title:string;description:string}>|undefined;
-  const definition=translated?{...translated,groups:native.en.groups.map(group=>({...group,...groupCopy![group.id]}))}:lang==='hi'?paths.util.hi:native[lang as 'en'|'ko'];
+  const definition=translated?{...translated,groups:native.en.groups.map(group=>({...group,...groupCopy![group.id]}))}:lang==='hi'&&'hi' in native?native.hi:native[lang as 'en'|'ko'];
   const copyUpdatedAt=term==='util'?toolGuidesUpdatedAt:term==='linux'?localizedGuidesUpdatedAt:remainingGuideLocalesUpdatedAt;
   const items=all.filter(e=>e.language===lang&&e.kind==='post'&&(e.categories.includes(term)||crossCategoryKeys[term]?.includes(e.translationKey))&&e.reviewStatus!=='example'&&e.publishedAt.getTime()<=Date.now());
   if(!items.length)return undefined;

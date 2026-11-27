@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-1351",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "b51554d",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Compared Hindi prose, diagrams, values and limitations with the Korean and English editions.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-11-11-bucket4j-token-bucket",
+      "language": "hi",
+      "translationKey": "2026-11-11-bucket4j-token-bucket",
+      "source": {
+        "path": "src/content/posts/en/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "3026360c1ee1f4cc06667cd53ebded53b1bfebf3c0c29658e6eb58affffbdf8f"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1351/hi/2026-11-11-bucket4j-token-bucket.md",
+        "sha256": "39c57944654791e706f8addd4144b68ab3f5a00acfad76e2c85ec66b8cfac63e"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1351/hi/2026-11-11-bucket4j-token-bucket.svg",
+        "sha256": "c57d897c63e0fe38e4d2d4f1c35bc8fb1242530090c31ba5bac0e4902c37fcce"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/bucket4j-flow-en.svg",
+        "sha256": "9a26c0d7a42e0e4339d384eb1ef6ac03dac998465946f187b0992015f8b60820"
+      }
+    },
+    {
+      "key": "hi-2026-11-10-redis-lua-rate-limit",
+      "language": "hi",
+      "translationKey": "2026-11-10-redis-lua-rate-limit",
+      "source": {
+        "path": "src/content/posts/en/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "bffe243d3ec0d2693086eb4d708c74490b34a27af7c1735cf6a41c81eea561d5"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1351/hi/2026-11-10-redis-lua-rate-limit.md",
+        "sha256": "12688bded88e5c31edea5e565853d0a198c94c9e7fe37095f054b6c0ba9d8472"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1351/hi/2026-11-10-redis-lua-rate-limit.svg",
+        "sha256": "8ed634d1bd617a77e519d13c106782fa8b204454dcc458926f61fb4fbbd6c826"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/redis-rate-limit-en.svg",
+        "sha256": "67d2d84fecfc726ef204daf9624518da516232b0a5184bd3b90bcab91d77bd6a"
+      }
+    }
+  ]
+}
