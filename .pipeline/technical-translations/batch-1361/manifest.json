@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-1361",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "54c1926",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Compared Hindi prose, diagrams, values and limitations with the Korean and English editions.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-10-31-kafka-event-streaming",
+      "language": "hi",
+      "translationKey": "2026-10-31-kafka-event-streaming",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-kafka-event-streaming.md",
+        "sha256": "b5cac22382f44d1bdada1b264df07a6f746ee31761c0268ef2313e7f86eee118"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1361/hi/2026-10-31-kafka-event-streaming.md",
+        "sha256": "8ed81cc8388f639ff21d1169b87e9cc49d9bdf5a372e49fc926051f44527a9e5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1361/hi/2026-10-31-kafka-event-streaming.svg",
+        "sha256": "760b97ad0c9c5135370ff05dd68d095c75b2d7f7d640ed10142b956b748af71c"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/kafka-event-streaming-en.svg",
+        "sha256": "c85bf2128b81b147b5425644d898bbc77fa90e242ed82c3696d4f6e22e3e2895"
+      }
+    },
+    {
+      "key": "hi-2026-10-31-cache-aside",
+      "language": "hi",
+      "translationKey": "2026-10-31-cache-aside",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-cache-aside.md",
+        "sha256": "2c4422c55f14e7b5452f8b286bf5d6f986617fe624e229b7bd74462afe525ad9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1361/hi/2026-10-31-cache-aside.md",
+        "sha256": "6dffeabbcbcf9e6f16e48d2bb4a63b277cc5f157c8c15d18f5f125aa237caac2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1361/hi/2026-10-31-cache-aside.svg",
+        "sha256": "3bd5f8141bc8d4a88e0373a25927c7790f0a7c26fce6a96209d83ba56391cc8d"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cache-aside-en.svg",
+        "sha256": "694c85215addab56add5ac72a8c8c79330c46854ac1568e887497d3cbc53d856"
+      }
+    }
+  ]
+}

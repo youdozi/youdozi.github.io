@@ -131,6 +131,8 @@ const paths = {
       intro:'पहले अनुरोध का निष्पादन पथ देखें, फिर GC लॉग पढ़ें। तुलना करते समय हर उदाहरण में दर्ज JDK संस्करण और लोड की शर्तें ध्यान में रखें।',
       groups:[
         {id:'virtual',title:'अनुरोध और डेटाबेस की प्रतीक्षा',description:'MVC में वर्चुअल थ्रेड का निष्पादन जाँचें और डेटाबेस तक पहुँचने वाले अनुरोधों की संख्या सीमित करें।',keys:['2026-10-31-virtual-threads-jdk21-jdk25','2026-11-01-webflux-coroutines-mvc-virtual-threads','2026-11-03-virtual-threads-db-semaphore']},
+        {id:'scoped',title:'अनुरोध के संदर्भ का दायरा',description:'JDK 25 में ScopedValue की बाइंडिंग जाँचें और देखें कि अलग थ्रेड में संदर्भ कब पहुँचता है।',keys:['2026-10-31-jdk25-scopedvalue']},
+        {id:'valhalla',title:'वैल्यू ऑब्जेक्ट की पहचान और समानता',description:'JDK 28 EA पर साधारण रिकॉर्ड और वैल्यू रिकॉर्ड की तुलना करें।',keys:['2026-10-31-project-valhalla-value-objects']},
         {id:'gc',title:'गार्बेज कलेक्टर की तुलना',description:'JDK के अनुसार कलेक्टर चुनें और एक ही आवंटन प्रोग्राम से बने GC लॉग पढ़ें।',keys:['2026-11-03-jdk-gc-evolution']},
       ]},
     en: {label:'JDK feature guides',title:'Java Runtime Guides: Virtual Threads, MVC, Database Limits and Recovery',eyebrow:'JDK',
