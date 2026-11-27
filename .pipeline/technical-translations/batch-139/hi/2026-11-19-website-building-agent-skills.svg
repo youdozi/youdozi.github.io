@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="hi" width="400" height="520" viewBox="0 0 400 520" role="img" aria-labelledby="title desc">
+  <title id="title">संपर्क लिंक का ब्राउज़र परीक्षण</title>
+  <desc id="desc">दो चौड़ाइयों पर पेज खोलें। क्षैतिज ओवरफ़्लो जाँचें, Tab से संपर्क लिंक तक पहुँचें और Enter से परामर्श का विवरण खोलें। तीनों जाँच पास हों तो हर चौड़ाई का परिणाम दिखाएँ। विफलता सुधारकर फिर चलाएँ।</desc>
+  <rect width="400" height="520" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="28" y="18" width="344" height="60" rx="9"/>
+    <rect x="28" y="111" width="344" height="60" rx="9"/>
+    <rect x="28" y="204" width="344" height="60" rx="9"/>
+    <rect x="28" y="297" width="344" height="64" rx="9"/>
+    <rect x="28" y="394" width="344" height="60" rx="9"/>
+  </g>
+  <path d="M200 78v29m-6-7 6 7 6-7M200 171v29m-6-7 6 7 6-7M200 264v29m-6-7 6 7 6-7M200 361v29m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="55">360px और 1280px पर खोलें</text>
+    <text x="200" y="148">क्षैतिज ओवरफ़्लो जाँचें</text>
+    <text x="200" y="241">Tab से संपर्क लिंक पर जाएँ</text>
+    <text x="200" y="323">लिंक पर Enter दबाएँ</text>
+    <text x="200" y="346">फ़्रैगमेंट और शीर्षक जाँचें</text>
+    <text x="200" y="430">हर चौड़ाई के लिए PASS दिखाएँ</text>
+    <text x="200" y="489">विफल शर्त सुधारकर फिर चलाएँ</text>
+  </g>
+</svg>

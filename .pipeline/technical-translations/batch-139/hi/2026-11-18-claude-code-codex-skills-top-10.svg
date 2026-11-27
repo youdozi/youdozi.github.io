@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="hi" width="400" height="550" viewBox="0 0 400 550" role="img" aria-labelledby="title desc">
+  <title id="title">दो कोडिंग एजेंटों में एक स्किल</title>
+  <desc id="desc">अभ्यास की निर्देशिका बनाकर मूल स्किल लिखें। उसे Claude Code और Codex के प्रोजेक्ट पथों पर कॉपी करें। cmp से प्रतियाँ मिलाएँ और दोनों टूल को एक ही इनपुट देकर जाँचें।</desc>
+  <rect width="400" height="550" fill="#f8faf8"/>
+  <g fill="#dcefe4">
+    <rect x="34" y="18" width="332" height="62" rx="10"/>
+    <rect x="34" y="116" width="332" height="62" rx="10"/>
+    <rect x="34" y="214" width="332" height="82" rx="10"/>
+    <rect x="34" y="332" width="332" height="62" rx="10"/>
+    <rect x="34" y="430" width="332" height="84" rx="10"/>
+  </g>
+  <path d="M200 80v32m-6-7 6 7 6-7M200 178v32m-6-7 6 7 6-7M200 296v32m-6-7 6 7 6-7M200 394v32m-6-7 6 7 6-7" fill="none" stroke="#397955" stroke-width="3"/>
+  <g fill="#193b2d" font-family="sans-serif" font-size="17" text-anchor="middle">
+    <text x="200" y="56">अभ्यास की निर्देशिका बनाएँ</text>
+    <text x="200" y="154">रिलीज़ नोट की स्किल लिखें</text>
+    <text x="200" y="242">दोनों प्रोजेक्ट पथों पर कॉपी करें</text>
+    <text x="200" y="272">.claude/skills · .agents/skills</text>
+    <text x="200" y="370">cmp से दोनों प्रतियाँ मिलाएँ</text>
+    <text x="200" y="460">दोनों टूल को एक ही रिकॉर्ड दें</text>
+    <text x="200" y="489">पुष्ट और लंबित मदें जाँचें</text>
+  </g>
+</svg>

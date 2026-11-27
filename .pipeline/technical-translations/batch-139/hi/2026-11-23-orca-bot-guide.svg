@@ -1,0 +1,33 @@
+<svg xml:lang="hi" xmlns="http://www.w3.org/2000/svg" width="420" height="384" viewBox="0 0 420 384" role="img" aria-labelledby="title desc">
+  <title id="title">Orca Bot का पहला काम और आवर्ती कार्य</title>
+  <desc id="desc">बॉट बनाएँ और उसे नोट व अपेक्षित प्रारूप दें। परिणाम देखें और ज़रूरत हो तो Needs you में निर्णय लें। आवर्ती काम के लिए समय या घटना तय करें और रन का इतिहास जाँचें।</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607797"/></marker></defs>
+  <rect width="420" height="384" rx="16" fill="#f4f7fb"/>
+  <g fill="none" stroke="#607797" stroke-width="1.6" marker-end="url(#arrow)">
+    <path d="M210 63V83"/>
+    <path d="M210 142V165"/>
+    <path d="M231 196H251"/>
+    <path d="M210 228V257"/>
+    <path d="M210 318V337"/>
+  </g>
+  <g stroke-width="1.2">
+    <rect x="25" y="14" width="370" height="49" rx="9" fill="#fff" stroke="#a8bdd6"/>
+    <rect x="25" y="86" width="370" height="56" rx="9" fill="#fff" stroke="#a8bdd6"/>
+    <rect x="25" y="168" width="206" height="60" rx="9" fill="#e9f4ed" stroke="#84ae94"/>
+    <rect x="254" y="168" width="141" height="60" rx="9" fill="#fff1e0" stroke="#caa574"/>
+    <rect x="25" y="260" width="370" height="58" rx="9" fill="#edf3fc" stroke="#9ab4d2"/>
+    <rect x="25" y="340" width="370" height="32" rx="9" fill="#fff" stroke="#a8bdd6"/>
+  </g>
+  <g text-anchor="middle" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#172f48">
+    <text x="210" y="45" font-weight="700">बॉट बनाएँ · भूमिका और परिवेश चुनें</text>
+    <text x="210" y="110" font-weight="700">पहला काम भेजें</text>
+    <text x="210" y="132">नोट + परिणाम का प्रारूप</text>
+    <text x="128" y="192" font-weight="700">इनपुट से परिणाम मिलाएँ</text>
+    <text x="128" y="214">कार्य मद देखें</text>
+    <text x="324" y="192" font-weight="700">Needs you</text>
+    <text x="324" y="214">ज़रूरत हो तो निर्णय लें</text>
+    <text x="210" y="283" font-weight="700">आवर्ती काम तय करें</text>
+    <text x="210" y="306">समय या घटना · परिणाम की जगह</text>
+    <text x="210" y="361">पहले रन का इतिहास देखें</text>
+  </g>
+</svg>
