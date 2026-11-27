@@ -1,0 +1,52 @@
+{
+  "key": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+  "language": "hi",
+  "title": "Pages पर डिप्लॉय की शर्तें",
+  "description": "कमिट की जाँच सफल होने पर main रेफ़ और इवेंट देखें। अनुमत रन में जाँचा हुआ आर्टिफ़ैक्ट डिप्लॉय करें और सार्वजनिक परिणाम की पुष्टि करें।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "इनपुट कमिट रेफ़ जाँचें",
+        "साझा जाँच चलाएँ"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "आवश्यक बिल्ड सफल हुआ?"
+      ],
+      "branch": {
+        "exit": "नहीं",
+        "continue": "हाँ",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "main रेफ़ और अनुमत इवेंट है?",
+        "push या workflow_dispatch"
+      ],
+      "branch": {
+        "exit": "नहीं",
+        "continue": "हाँ",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "जाँचा हुआ Pages आर्टिफ़ैक्ट डिप्लॉय करें",
+        "होस्टेड चरण मॉडल से बाहर है"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "सार्वजनिक URL और साइटमैप जाँचें",
+        "IndexNow को अलग से जाँचें"
+      ]
+    }
+  ]
+}

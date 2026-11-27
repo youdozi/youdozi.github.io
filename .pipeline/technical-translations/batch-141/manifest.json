@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-141",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "552880c3d3b37f616175c0befd4b06c8bff43faf",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Translator self-review against the English source, Korean context and original diagrams; protected code, links, numeric values and diagram branches checked.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-10-27-jenkins-home-backup-restore",
+      "language": "hi",
+      "translationKey": "2026-10-27-jenkins-home-backup-restore",
+      "source": {
+        "path": "src/content/posts/en/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "f6fcbb37f82b9829ef3535f5fee0b0fdf0b7b0ebe4e8b4f96bb3f2ff104a59b4"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-10-27-jenkins-home-backup-restore.md",
+        "sha256": "3b68d7911d89b5010f3961ffb6d5aaf69ab3c56f82942675a8ebd35f999e44d4"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-10-27-jenkins-home-backup-restore.diagram.json",
+        "sha256": "7f79ff3efef0be07aa080797600f13590e279a77e50449ab971e22a3a6c23d82"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-10-27-jenkins-home-backup-restore.svg",
+        "sha256": "d55f3f71c0dd300de7caa421e37cbee88c245a01bc7ced062eda3d00b0727f31"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "hi-2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "language": "hi",
+      "translationKey": "2026-04-07-ruby-rbenv-jekyll-build-troubleshooting",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "b186e8b9ffc0b623a12d82e49d3428adc274669397a7a207f235d80673b0759a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.md",
+        "sha256": "3d0792358049e8d7678ea0e248ae7a382eabedc722dceecf4bf8d28cdf060305"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.diagram.json",
+        "sha256": "e6970d786c168df0017b7e1422208524d35f6e739bbd98bff37beae794d4272a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting.svg",
+        "sha256": "1fc8157d803a914d1e5d26cdb4c18545ebda6f6c6985a3e90c6cb527899b13c1"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "hi-2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "language": "hi",
+      "translationKey": "2026-04-07-jekyll-quality-gates-proof-html-bundler-audit",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "f5c09678ab191654be64bc9fd457df828066c7f199625a6b32c5d94a02200363"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.md",
+        "sha256": "dcafc2286206d4e043405c17534591b6f88ae7366d051b25a7405989b7e5d508"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.diagram.json",
+        "sha256": "39236d8767fff7d15fda2e85a403941678000bc88b17cc4c44617cb394e167dd"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-04-07-jekyll-quality-gates-proof-html-bundler-audit.svg",
+        "sha256": "bbd9dfaeccc3cc5497f374fa663fa91f59ced915a89c3853c83e9148fdd41bec"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "hi-2026-04-07-jekyll-github-actions-content-pipeline",
+      "language": "hi",
+      "translationKey": "2026-04-07-jekyll-github-actions-content-pipeline",
+      "source": {
+        "path": "src/content/posts/en/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "12226531a63ffece862798351d0562f1f29cc2b14f9731dad4dd5fece0e77637"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-04-07-jekyll-github-actions-content-pipeline.md",
+        "sha256": "d56e66af631ef7b73ec9907c12a3c6f099b9fe14ff72b9a3c035392ae38c56a1"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-04-07-jekyll-github-actions-content-pipeline.diagram.json",
+        "sha256": "95d0158cce07191a7b738c055dc75a40d8c321b90b9b83ef5cd08bce91aa13c5"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2026-04-07-jekyll-github-actions-content-pipeline.svg",
+        "sha256": "1f01761eeb01e4eb80b336a4de61a91c934d613294f8b0355f3d09c9bc988d54"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/publication.json",
+        "sha256": "687afd8c40828eb4e304660e2df3c86100960fc4aa4dcbf217f48f0561d86143"
+      }
+    },
+    {
+      "key": "hi-2023-10-27-springbatch5-migration",
+      "language": "hi",
+      "translationKey": "2023-10-27-springbatch5-migration",
+      "source": {
+        "path": "src/content/posts/en/2023-10-27-springbatch5-migration.md",
+        "sha256": "688dd3a4a3f176f0d94406dbc3c73979ece0d8a4e0f23ca31a65de298e922d77"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2023-10-27-springbatch5-migration.md",
+        "sha256": "8f6c630a15ef576b5668b21bd23aa3cfb5a96bdd7f10ec3434d882ab97827c7a"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2023-10-27-springbatch5-migration.diagram.json",
+        "sha256": "70fc7ee6a2d6246225f4b48ff69cac57bc625b60c7feb4f4301fc9ae106c23b6"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-141/hi/2023-10-27-springbatch5-migration.svg",
+        "sha256": "9a61072e733934d5324ed5e1f9939cf7250a7e8cc7a23af362327939f39a1695"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    }
+  ]
+}
