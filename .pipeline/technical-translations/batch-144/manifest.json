@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-144",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "8f8a950a94be474e56d8370bd1440ec5e7b70a21",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Translator self-review against the English source, Korean context and original diagrams; protected code, links, numeric values and diagram branches checked.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2023-09-04-jekyll-install",
+      "language": "hi",
+      "translationKey": "2023-09-04-jekyll-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-04-jekyll-install.md",
+        "sha256": "0dbe6c1bad26411bc78aabc17773da808b4c74fe9cdc098a9bada2cfb2873e08"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-09-04-jekyll-install.md",
+        "sha256": "a1e7d5bc6db0e039f93e264ca0f4748d0f74d4d3c04d0d485a3aabf3115b386c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-09-04-jekyll-install.diagram.json",
+        "sha256": "39e145c6a8d2aea39dd506f8ca87a23950cc3b7deb05037f5e9b35075086158f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-09-04-jekyll-install.svg",
+        "sha256": "1680806355f2a923f22861be91abd2438ae146ab1cd0af5b123c93ff7cd98d88"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/ruby-environment.json",
+        "sha256": "69bc0f7dba4623feb9ea660c4f9ce4676a6c804de759f8064567a3841024765b"
+      }
+    },
+    {
+      "key": "hi-2023-09-20-linux-shellscript-function-error",
+      "language": "hi",
+      "translationKey": "2023-09-20-linux-shellscript-function-error",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "06ada98f4723e3b70cb188c01cc5efe1f31f9a724392b8e273b665663b5a73f8"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-09-20-linux-shellscript-function-error.md",
+        "sha256": "57e4476e42b69ef02f582d9fc2823666d19b6d690932fc206680421381567fa0"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-09-20-linux-shellscript-function-error.diagram.json",
+        "sha256": "1b478a8636d25ea9e1a97e67dd6471fe2bf472126cebf295adf92e62cce9f76a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-09-20-linux-shellscript-function-error.svg",
+        "sha256": "216bd985de55178f4665e640362c9a3b6adeafb5fce7fabb02cb3ef95c95a43a"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "hi-2023-09-28-jenkins-docker-install",
+      "language": "hi",
+      "translationKey": "2023-09-28-jenkins-docker-install",
+      "source": {
+        "path": "src/content/posts/en/2023-09-28-jenkins-docker-install.md",
+        "sha256": "ed131abbe5537f6f1828891ac35483b44e96395c554a52b53f5c1ab6c4ff895e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-09-28-jenkins-docker-install.md",
+        "sha256": "6b6e490a8232744cc93007f238668e9c8393e52cde1ec828ee3f89fabc70b737"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-09-28-jenkins-docker-install.diagram.json",
+        "sha256": "7870e4f34844701c13fb2cb128e07c6bba510a94b35aa9f324818ebf384e13a6"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-09-28-jenkins-docker-install.svg",
+        "sha256": "1a75d07a22103e2e64f492cb84d3f73fb97ed9f2e2f2acc16037b7210b5a841f"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/jenkins.json",
+        "sha256": "526e271e9647420168bfcc92fc47e83274ae41d3009d22c19adb76e6e8957784"
+      }
+    },
+    {
+      "key": "hi-2023-11-17-linux-shellscript-version-compare",
+      "language": "hi",
+      "translationKey": "2023-11-17-linux-shellscript-version-compare",
+      "source": {
+        "path": "src/content/posts/en/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "f3a895ba23f21ab99f5083879149d5f7f1ab3ed0c7c9a89c1557b9bf7d6b1ddc"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-11-17-linux-shellscript-version-compare.md",
+        "sha256": "df36e1aeedc57ea05144a5bb9e482a7476472c0f16a787b8f409c9f5b346a92a"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-11-17-linux-shellscript-version-compare.diagram.json",
+        "sha256": "b9f9fcae503c4cec51b6b98e932509407db64e2199f7eddd8ea07cd8238c0582"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2023-11-17-linux-shellscript-version-compare.svg",
+        "sha256": "37cc55c6d0e3dd37dd0bc20c87ddc49d716a9185f8f2ce6af6340396212456c2"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "hi-2021-07-23-multiple-gradle-build",
+      "language": "hi",
+      "translationKey": "2021-07-23-multiple-gradle-build",
+      "source": {
+        "path": "src/content/posts/en/2021-07-23-multiple-gradle-build.md",
+        "sha256": "2af4402a72130c6c53faa9d34008be0c7bc63b78b82a680f5675bdd70532ec4d"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2021-07-23-multiple-gradle-build.md",
+        "sha256": "ed27de246c322d9d13a94f6e75dcfb4be28b1070e06266b9b21959e233e97b69"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2021-07-23-multiple-gradle-build.diagram.json",
+        "sha256": "f56bdfa5a4ad2ee21adf5d734af4f731d1dd62f645cc5824e97caff59806fd60"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-144/hi/2021-07-23-multiple-gradle-build.svg",
+        "sha256": "b8ad9e344c32848d089f8eda36b21b94b122ee7fb111e4ead7839c4415578e5b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    }
+  ]
+}

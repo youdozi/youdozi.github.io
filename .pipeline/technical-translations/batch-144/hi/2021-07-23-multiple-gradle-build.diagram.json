@@ -1,0 +1,43 @@
+{
+  "key": "2021-07-23-multiple-gradle-build",
+  "language": "hi",
+  "title": "Vue ऐप से JAR तक",
+  "description": "हर Vue ऐप का अलग बिल्ड होता है। Gradle Sync केवल उनके आउटपुट इकट्ठे करता है और bootJar उन्हें अलग-अलग स्टैटिक पथ पर रखता है।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "हर ऐप की लॉकफ़ाइल कमिट करें",
+        "तय संस्करणों की डिपेंडेंसी लें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "हर ऐप में npm ci चलाएँ",
+        "फिर npm run build"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "दोनों dist निर्देशिकाएँ Sync करें",
+        "static/project1 और project2 रखें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "पहले फ़ाइलें जुटाएँ, फिर bootJar",
+        "BOOT-INF/classes में कॉपी करें"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "JAR चलाकर दोनों ऐप के पथ खोलें",
+        "जाँचें कि नए बंडल मिल रहे हैं"
+      ]
+    }
+  ]
+}
