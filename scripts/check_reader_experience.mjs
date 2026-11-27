@@ -18,7 +18,7 @@ const server=createServer(async(req,res)=>{
 });
 await new Promise(done=>server.listen(0,'127.0.0.1',done));
 const base='http://127.0.0.1:'+server.address().port;
-const samples=['/en/posts/2026-11-02-ai-assisted-attack-defense/','/ko/posts/2026-11-02-ai-assisted-tdd/','/de/posts/2023-09-19-springboot-test-webclient/','/ja/'];
+const samples=['/en/posts/2026-11-02-ai-assisted-attack-defense/','/ko/posts/2026-11-02-ai-assisted-tdd/','/de/posts/2023-09-19-springboot-test-webclient/','/ja/','/hi/posts/2026-11-26-postgres-skip-locked-queue/'];
 let browser;
 const checks=[];
 try{
@@ -53,7 +53,9 @@ try{
       const menu=page.locator('.language-menu');
       await menu.locator('summary').focus();await page.keyboard.press('Space');
       assert.equal(await menu.getAttribute('open'),'');
-      assert.equal(await menu.locator('a[data-language-choice]').count(),8);
+      const languages=(await menu.getAttribute('data-language-options')).split(',');
+      const hasHindi=await page.locator('link[hreflang="hi"]').count()>0;
+      assert.deepEqual(await menu.locator('a[data-language-choice]').evaluateAll(links=>links.map(a=>a.dataset.languageChoice)),languages.filter(lang=>lang!=='hi'||hasHindi));
       const menuFits=await menu.locator('ul').evaluate(e=>{const b=e.getBoundingClientRect();return b.left>=0&&b.right<=innerWidth;});
       assert.ok(menuFits,path+' language menu fits viewport');
       checks.push({path,width,...result,isolation:summary()});
