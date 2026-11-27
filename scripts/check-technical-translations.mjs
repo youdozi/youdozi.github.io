@@ -109,13 +109,18 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
       '/en/posts/2021-07-22-dot-product/',
       '/en/posts/2021-07-23-number-word/',
       '/en/posts/2021-08-17-cache/',
+      '/en/categories/coding-test/',
+      '/en/categories/springboot/',
+      '/en/posts/2021-07-22-plus-minus/',
+      '/en/posts/2021-07-23-unsuccessful-runner/',
+      '/en/posts/2021-07-29-ponkemon/',
       '/ko/posts/2026-11-12-t3-code-workflow/',
       '/ko/posts/2026-11-12-orca-worktree-guide/',
       '/ko/posts/2026-11-15-orca-herdr-comparison/',
       '/ko/posts/2026-11-19-website-building-agent-skills/',
       '/en/posts/2026-11-22-commerce-system-design-last-unit-of-stock/',
       'https://youdozi.github.io/ko/posts/2026-11-26-astro-clean-checkout/',
-    ].includes(link) && draftLinks[index]===link.replace(/\/(en|ko)\/posts\//,'/hi/posts/'))return;
+    ].includes(link) && draftLinks[index]===link.replace(/\/(en|ko)\/(posts|categories)\//,'/hi/$2/'))return;
     const englishTarget=link.startsWith('../')?new URL(link,`https://youdozi.github.io/en/posts/${source.meta.routeSlug}/`).pathname:link;
     if(draftLinks[index]!==link&&draftLinks[index]!==localized&&draftLinks[index]!==englishTarget)fail('Source links changed, reordered or omitted');
   });
