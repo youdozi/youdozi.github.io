@@ -1,0 +1,29 @@
+{
+  "key": "2021-07-23-app-diagrams.net",
+  "language": "hi",
+  "title": "XML में तीन नोड",
+  "description": "दो तीर अनुरोध, जाँच और जवाब को जोड़ते हैं। यह लेख के लिए बनाया गया चित्र है।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Request",
+        "इनपुट नोड"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Validate",
+        "जाँच का नोड"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "Response",
+        "आउटपुट नोड"
+      ]
+    }
+  ]
+}

@@ -104,6 +104,7 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
       '/en/posts/2023-11-17-linux-shellscript-version-compare/',
       '/en/posts/2026-04-07-ruby-rbenv-jekyll-build-troubleshooting/',
       '/en/posts/2026-10-27-jenkins-home-backup-restore/',
+      '/en/posts/2021-08-06-search-github/',
       '/ko/posts/2026-11-12-t3-code-workflow/',
       '/ko/posts/2026-11-12-orca-worktree-guide/',
       '/ko/posts/2026-11-15-orca-herdr-comparison/',
