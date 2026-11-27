@@ -86,6 +86,10 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
     const localized=key==='2026-11-23-mac-for-ai-agents' && link==='https://youdozi.github.io/en/posts/2026-11-23-macbook-personal-server/'
       ? `https://youdozi.github.io/${language}/posts/2026-11-23-macbook-personal-server/` : link;
     if(language==='hi' && [
+      '/ko/posts/2026-11-12-t3-code-workflow/',
+      '/ko/posts/2026-11-12-orca-worktree-guide/',
+      '/ko/posts/2026-11-15-orca-herdr-comparison/',
+      '/ko/posts/2026-11-19-website-building-agent-skills/',
       '/en/posts/2026-11-22-commerce-system-design-last-unit-of-stock/',
       'https://youdozi.github.io/ko/posts/2026-11-26-astro-clean-checkout/',
     ].includes(link) && draftLinks[index]===link.replace(/\/(en|ko)\/posts\//,'/hi/posts/'))return;
