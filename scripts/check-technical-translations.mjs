@@ -118,6 +118,7 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
       '/en/posts/2023-09-23-linux-shellscript-github-latest/',
       '/en/posts/2026-10-30-verify-sha256-download/',
       '/ko/posts/2026-11-17-aside-browser-guide/',
+      '/en/posts/2026-10-30-node2shell-brotli-runtime-patching/',
       '/en/posts/2026-10-31-ai-agent-operations/',
       '/ko/posts/2026-10-31-ai-agent-refactoring/',
       '/ko/posts/2026-10-31-failure-fallback/',
@@ -222,6 +223,38 @@ export function compareLocalizedSVG(originalSVG,translatedSVG,language){
   same(geometry(originalSVG),geometry(translatedSVG),'Localized SVG geometry changed');
 }
 
+// Only the two approved defensive Hindi batches compare excerpts of the pinned source.
+function defensiveSource(sourceRaw, row, manifestPath) {
+  if (!row.defensiveBodyLines) return sourceRaw;
+  if (row.language !== 'hi' || !/^\.pipeline\/technical-translations\/batch-151[12]\/manifest\.json$/.test(manifestPath)) {
+    fail('Unexpected defensive excerpt');
+  }
+  const {body} = article(sourceRaw);
+  const lines = body.split('\n');
+  let previousEnd = 0;
+  if (!Array.isArray(row.defensiveBodyLines) || !row.defensiveBodyLines.length) fail('Missing defensive excerpt');
+  const unlinkedAdvisories = new Set([
+    'https://nodejs.org/en/blog/vulnerability/october-2026-security-releases',
+    'https://www.php.net/archive/2026.php',
+    'https://my.f5.com/s/article/K000164058',
+    'https://cert.europa.eu/publications/security-advisories/2026-022',
+    'https://access.redhat.com/security/vulnerabilities/RHSB-2026-019',
+  ]);
+  const excerpts = row.defensiveBodyLines.map(([start, end]) => {
+    if (!Number.isInteger(start) || !Number.isInteger(end) || start <= previousEnd || end < start || end > lines.length) {
+      fail('Invalid defensive excerpt range');
+    }
+    previousEnd = end;
+    const excerpt = lines.slice(start - 1, end).join('\n');
+    if (!excerpt.trim() || excerpt.includes('```') || lines.slice(0, start - 1).filter(line => line.startsWith('```')).length % 2) {
+      fail('Expected prose in defensive excerpt');
+    }
+    return excerpt.replace(/(?<!!)\[([^\]\n]+)\]\(([^)]+)\)/g, (link, label, url) =>
+      unlinkedAdvisories.has(url) ? label : link);
+  });
+  return sourceRaw.slice(0, sourceRaw.length - body.length) + excerpts.join('\n\n');
+}
+
 export async function inspectTechnicalTranslations(base=root,manifestPath=defaultManifest){
   const canonicalBase=await realpath(base);
   async function pinned(record,prefix){
@@ -243,7 +276,7 @@ export async function inspectTechnicalTranslations(base=root,manifestPath=defaul
     const {language,translationKey:key}=row;
     if(!manifest.languages.includes(language)||!/^\d{4}-\d{2}-\d{2}-[a-z0-9.-]+$/.test(key)||row.key!==`${language}-${key}`||seen.has(row.key))fail('Duplicate or invalid translation key');
     seen.add(row.key);byTopic.set(key,[...(byTopic.get(key)??[]),language]);
-    const sourceRaw=await pinned(row.source,'src/content/posts/en/');
+    const sourceRaw=defensiveSource(await pinned(row.source,'src/content/posts/en/'),row,manifestPath);
     if(row.source.path!==`src/content/posts/en/${key}.md`)fail('Wrong English source');
     const draftRaw=await pinned(row.draft,prefix),svg=await pinned(row.diagram,prefix);
     if(manifest.formatVersion===3){
