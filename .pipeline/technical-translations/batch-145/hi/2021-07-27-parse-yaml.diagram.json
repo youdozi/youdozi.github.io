@@ -1,0 +1,40 @@
+{
+  "key": "2021-07-27-parse-yaml",
+  "language": "hi",
+  "title": "exec से पहले YAML की जाँच",
+  "description": "पोर्ट का प्रकार और सीमा जाँचने के बाद ही SERVER_PORT निर्यात करें। जाँच विफल हो तो कमांड नहीं चलता। exec कमांड का स्टेटस बनाए रखता है।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "safe_load से YAML पढ़ें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "रूट और server दोनों मैपिंग हों"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "पोर्ट 1 से 65535 तक पूर्णांक हो",
+        "अमान्य मान पर त्रुटि देकर रुकें"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "अमान्य",
+        "continue": "मान्य"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "पोर्ट मान्य हो तो",
+        "SERVER_PORT निर्यात करें",
+        "उद्धृत आर्ग्युमेंट के साथ exec चलाएँ"
+      ]
+    }
+  ]
+}
