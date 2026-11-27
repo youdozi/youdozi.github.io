@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="hi" viewBox="0 0 400 426" role="img" aria-labelledby="title desc">
+<title id="title">काम मिलने के रास्ते</title><desc id="desc">काम पाने के चार रास्ते। आय से अनुबंध, प्रस्ताव और निकासी के ख़र्च घटाएँ और बची राशि को प्रस्ताव, डिलीवरी व समीक्षा के कुल घंटों से भाग दें।</desc>
+<rect width="400" height="426" rx="12" fill="#f2f6fa"/>
+<g font-family="system-ui, sans-serif" fill="#183345">
+<text x="16" y="34" font-size="23" font-weight="700">काम मिलने के रास्ते</text>
+<rect x="12" y="49" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="73" font-size="18" font-weight="700">Upwork</text>
+<text x="24" y="97" font-size="17" font-weight="450">प्रकाशित काम पर प्रस्ताव दें</text>
+<rect x="12" y="116" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="140" font-size="18" font-weight="700">Fiverr</text>
+<text x="24" y="164" font-size="17" font-weight="450">तय दायरे वाली सेवा बेचें</text>
+<rect x="12" y="183" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="207" font-size="18" font-weight="700">Contra</text>
+<text x="24" y="231" font-size="17" font-weight="450">पोर्टफ़ोलियो, सिफ़ारिश या Job Feed</text>
+<rect x="12" y="250" width="376" height="60" rx="7" fill="white"/>
+<text x="24" y="274" font-size="18" font-weight="700">Freelancer.com</text>
+<text x="24" y="298" font-size="17" font-weight="450">कीमत और चरण बताकर बोली दें</text>
+<rect x="12" y="327" width="376" height="86" rx="7" fill="#d8eee7"/>
+<text x="22" y="358" font-size="15" font-weight="450">कीमत − शुल्क − प्रस्ताव का ख़र्च − निकासी का ख़र्च</text>
+<text x="22" y="391" font-size="20" font-weight="700">बची राशि ÷ कुल घंटे</text>
+</g>
+</svg>

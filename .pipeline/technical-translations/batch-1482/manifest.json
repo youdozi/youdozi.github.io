@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-1482",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "668a065ec5e5f438ff791ec93abdabdf10a1edc5",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Translator self-review against the English sources and original diagrams. Checked technical terms, code, prompts, dates, fees, links and the scope of the original observations.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-11-16-aside-browser-introduction",
+      "language": "hi",
+      "translationKey": "2026-11-16-aside-browser-introduction",
+      "source": {
+        "path": "src/content/posts/en/2026-11-16-aside-browser-introduction.md",
+        "sha256": "633c19745dfd802e65de403f2bfe9cf8c2ad7bdc234871ced911a6e0a65cc42c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1482/hi/2026-11-16-aside-browser-introduction.md",
+        "sha256": "8f650955ac48c4bb8c312aa9499ef590765dcf94be13da9d149d840d719271d6"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/aside-browser-introduction-en.svg",
+        "sha256": "6cac1f83409ba56e6f089f023c6f2964e95fbedc2c66841cfdfd874d038dcc8f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1482/hi/2026-11-16-aside-browser-introduction.svg",
+        "sha256": "da5911d9c0eda93b661bc94c96eeba0af98ef48a27a5f75efccdcc292c2f6250"
+      }
+    },
+    {
+      "key": "hi-2026-11-25-overseas-freelance-platforms",
+      "language": "hi",
+      "translationKey": "2026-11-25-overseas-freelance-platforms",
+      "source": {
+        "path": "src/content/posts/en/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "459d7a14dff0b6e636f388225c92b5c5b2feacd82c5314c7ee576111648842aa"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1482/hi/2026-11-25-overseas-freelance-platforms.md",
+        "sha256": "6086ce96d579dbf9f2b0a229a2a5f3673f2e13d657fd950f68f6511a8df03054"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/overseas-freelance-platforms-en.svg",
+        "sha256": "bde8f24c6e4ec6cefa7734bf26c5dc9beb8a3d47dc9062c1cecf66979abf4cb1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1482/hi/2026-11-25-overseas-freelance-platforms.svg",
+        "sha256": "e6d49836b9c32f72f7355733ab862a2bcc2a98a4ccef4e0b3d5563c22ee6b843"
+      }
+    }
+  ]
+}

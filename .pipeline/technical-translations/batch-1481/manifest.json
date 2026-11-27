@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-1481",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "668a065ec5e5f438ff791ec93abdabdf10a1edc5",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Translator self-review against the English sources and original diagrams. Checked technical terms, code, prompts, dates, fees, links and the scope of the original observations.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2023-09-23-linux-shellscript-github-latest",
+      "language": "hi",
+      "translationKey": "2023-09-23-linux-shellscript-github-latest",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "921c781aad6d00452ee4730c3ae3ccb6d7af94c4ec4e129e5968b7f1ae596e61"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1481/hi/2023-09-23-linux-shellscript-github-latest.md",
+        "sha256": "4ef0fa238026abf9aa921a21a32a76e453a5370b56703f547b06661298b8cc45"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-1481/hi/2023-09-23-linux-shellscript-github-latest.diagram.json",
+        "sha256": "18bbbeff962b98ca38d7025032105eb17aa97677ef947ecc00b7d4282a00b406"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1481/hi/2023-09-23-linux-shellscript-github-latest.svg",
+        "sha256": "4e2654a89613ed4d60ee13051b1b42f6039bcd5f0cc1c51b74fb9b99160488c6"
+      }
+    },
+    {
+      "key": "hi-2026-10-30-verify-sha256-download",
+      "language": "hi",
+      "translationKey": "2026-10-30-verify-sha256-download",
+      "source": {
+        "path": "src/content/posts/en/2026-10-30-verify-sha256-download.md",
+        "sha256": "9c91eef87fd5390b5be8f867c298bdaaaa20979b4571c13ba7694d62ba172e89"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1481/hi/2026-10-30-verify-sha256-download.md",
+        "sha256": "12c6451c7ab366210f49b03399bb61a6661852b6cfdaf52af1404ec7e0f1ef92"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-1481/hi/2026-10-30-verify-sha256-download.diagram.json",
+        "sha256": "3bad29d37a0c52c191757a50177b5845df97003215ca8ea9f0e84ef3258b751c"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1481/hi/2026-10-30-verify-sha256-download.svg",
+        "sha256": "da91cea6fc91da1ee9abf5b0deb3372a7540329dd1afbd824a6619e91759956f"
+      }
+    },
+    {
+      "key": "hi-2026-10-31-ai-agent-refactoring",
+      "language": "hi",
+      "translationKey": "2026-10-31-ai-agent-refactoring",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "efd733fd275675221deef4ebffa545ba2f54a6819e72fed217917d6708e3e4b9"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1481/hi/2026-10-31-ai-agent-refactoring.md",
+        "sha256": "ad3ae55e870d227f7fe2398a95aa77ce9cab7e357532493fd1ee69f6593e42e7"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-1481/hi/2026-10-31-ai-agent-refactoring.diagram.json",
+        "sha256": "15f3e9b55e9c118a1d96c47a60beb79251ad8ce7c174bbbf4b7f6306599bd806"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-refactoring-en.svg",
+        "sha256": "78ada9d7a7189f00ac22d027288b463bc6c3578c452defd254af482d0a925519"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1481/hi/2026-10-31-ai-agent-refactoring.svg",
+        "sha256": "f5e3c9c57273692b3fada075ad8f78a4889b2ff807fe4d706900c8af51725060"
+      }
+    }
+  ]
+}
