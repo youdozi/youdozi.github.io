@@ -1,0 +1,52 @@
+{
+  "key": "2023-09-23-linux-shellscript-github-latest",
+  "language": "hi",
+  "title": "GitHub रिलीज़ से फ़ाइल चुनें",
+  "description": "पहले HTTP प्रतिक्रिया जाँचें। वैध रिलीज़ में ठीक एक फ़ाइल मेल खाए तो उसका URL लें। डाउनलोड हुई फ़ाइल अलग से जाँचें।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "OWNER/REPO आर्गुमेंट जाँचें"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "curl से HTTP प्रतिक्रिया लें",
+        "विफलता पर त्रुटि कोड लौटाएँ"
+      ],
+      "branch": {
+        "exit": "विफल",
+        "continue": "सफल",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "एक JSON रिलीज़ ऑब्जेक्ट चाहिए",
+        "टैग और फ़ाइलों का ऐरे जाँचें"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "प्लेटफ़ॉर्म से फ़ाइल का नाम मिलाएँ",
+        "शून्य या कई मिलान पर त्रुटि"
+      ],
+      "branch": {
+        "exit": "अमान्य",
+        "continue": "एक मिलान",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "टैग और डाउनलोड URL लौटाएँ",
+        "फ़ाइल की अखंडता अलग जाँचें"
+      ]
+    }
+  ]
+}
