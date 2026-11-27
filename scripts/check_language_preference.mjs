@@ -10,7 +10,7 @@ import {isolatedContext} from './browser/isolated-context.mjs';
 import {chromePath} from './browser/chrome.mjs';
 
 const {values}=parseArgs({options:{url:{type:'string'}}});
-const languages=['en','ko','zh-CN','ja','de','fr','ru','es'];
+const languages=['en','ko','zh-CN','ja','de','fr','ru','es','hi'];
 const key='youdozi.language';
 let server,base;
 if(values.url){
@@ -56,13 +56,13 @@ async function choose(page,language,keyboard=false){
 try{
   browser=await chromium.launch({executablePath:await chromePath(),headless:true});
   for(const width of [320,1360]){
-    for(const [locale,expected] of [['en-GB','en'],['ko-KR','ko'],['zh-CN','zh-CN'],['ja-JP','ja'],['de-AT','de'],['fr-CA','fr'],['ru-RU','ru'],['es-419','es'],['pt-BR','en'],['zh-TW','en']]){
+    for(const [locale,expected] of [['en-GB','en'],['ko-KR','ko'],['zh-CN','zh-CN'],['ja-JP','ja'],['de-AT','de'],['fr-CA','fr'],['ru-RU','ru'],['es-419','es'],['hi-IN','hi'],['pt-BR','en'],['zh-TW','en']]){
       await run(`browser-${locale}-${width}`,{locale,viewport:{width,height:950}},async page=>{
         await root(page,expected,'?from=language-test#main');
         assert.equal(new URL(page.url()).searchParams.get('from'),'language-test');assert.equal(new URL(page.url()).hash,'#main');
         assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),null,'detection must not overwrite manual preferences');
         await page.locator('.language-menu summary').click();
-        assert.equal(await page.locator('.language-menu a[data-language-choice]').count(),8);
+        assert.equal(await page.locator('.language-menu a[data-language-choice]').count(),languages.length);
         assert.equal(await page.locator('.language-menu a[aria-current=page]').getAttribute('data-language-choice'),expected);
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
       });
@@ -77,9 +77,24 @@ try{
         assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),language);
         await root(page,language);
       }
+      for(const slug of ['2026-11-26-astro-clean-checkout','2026-11-26-postgres-skip-locked-queue','2026-11-27-docker-desktop-mac-disk-space']){
+        const path='/posts/'+slug+'/';
+        await page.goto(base+'/en'+path);
+        await choose(page,'hi');
+        await page.waitForURL(url=>url.pathname==='/hi'+path);
+        assert.match(await page.locator('h1').innerText(),/\p{Script=Devanagari}/u);
+        const image=page.locator('.prose img').first();
+        await image.scrollIntoViewIfNeeded();
+        await image.evaluate(img=>img.decode());
+        assert.match(await image.getAttribute('alt'),/\p{Script=Devanagari}/u);
+        assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
+        await choose(page,'en');
+        await page.waitForURL(url=>url.pathname==='/en'+path);
+      }
       const article='/en/posts/2023-09-19-springboot-test-webclient/';
       await page.goto(base+article);
       assert.equal(new URL(page.url()).pathname,article);
+      assert.equal(await page.locator('a[data-language-choice=hi], link[hreflang=hi]').count(),0);
       await choose(page,'ko',true);
       await page.waitForURL(url=>url.pathname===article.replace('/en/','/ko/'));
       await root(page,'ko');
@@ -112,7 +127,7 @@ try{
   await run('entry-script-blocked',{locale:'ko-KR'},async page=>{
     await page.route('**/*',async route=>route.request().resourceType()==='script'?route.abort():route.continue());
     await page.goto(base+'/');assert.equal(new URL(page.url()).pathname,'/');
-    assert.equal(await page.locator('a[data-language-choice]').count(),8);
+    assert.equal(await page.locator('a[data-language-choice]').count(),languages.length);
     assert.equal(await page.locator('meta[name=robots]').getAttribute('content'),'noindex,follow');
     assert.equal(await page.locator('link[rel=canonical]').getAttribute('href'),'https://youdozi.github.io/en/');
     await page.locator('a[data-language-choice=ko]').click();await page.waitForURL(url=>url.pathname==='/ko/');

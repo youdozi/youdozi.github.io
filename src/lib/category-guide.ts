@@ -1,5 +1,8 @@
 import type { Entry, Language } from './content';
 
+const hindiCategories: Record<string,string> = {architecture:'सॉफ़्टवेयर वास्तुकला',blog:'ब्लॉग',tips:'सुझाव'};
+export function categoryName(term:string,lang:Language) {return lang==='hi' ? hindiCategories[term] ?? term : term;}
+
 export interface CategoryGuide {
   label: string; title: string; description: string; intro: string;
   extra: string; home: string; categories: string;

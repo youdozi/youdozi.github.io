@@ -11,11 +11,11 @@ test('JSON-LD round-trips special text without raw HTML opening delimiters or do
 });
 test('article social dates reuse recorded dates and the actual author language fallback',()=>{
   const publishedAt=new Date('2023-09-18T15:00:00Z'),updatedAt=new Date('2026-10-27T05:23:47.316Z');
-  for(const language of ['en','ko','zh-CN','ja','de','fr','ru','es']){
+  for(const language of ['en','ko','zh-CN','ja','de','fr','ru','es','hi']){
     const original=articleMetadata({language,publishedAt});
     assert.equal(original.publishedTime,publishedAt.toISOString());assert.equal(original.modifiedTime,publishedAt.toISOString());
     assert.equal(articleMetadata({language,publishedAt,updatedAt}).modifiedTime,updatedAt.toISOString());
-    assert.equal(original.authorUrl,'https://youdozi.github.io'+(language==='ko'?'/ko/about/':'/en/about/'));
+    assert.equal(original.authorUrl,'https://youdozi.github.io'+(['hi','ko'].includes(language)?`/${language}/about/`:'/en/about/'));
   }
 });
 test('social alternate locales use actual counterparts and exclude self and duplicates',()=>{

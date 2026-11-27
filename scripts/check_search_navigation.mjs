@@ -38,7 +38,7 @@ try{
     const {context,summary}=await isolatedContext(browser,{viewport:{width,height:900}});
     try{
       const page=await context.newPage();
-      for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es']){
+      for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es','hi']){
         const index=await (await context.request.get(`${base}/${lang}/search-index.json`)).json();
         assert.ok(index.length>0);
         const query=index[0].title;
@@ -113,7 +113,7 @@ try{
       assert.equal(await page.locator('#results a').count(),0);
       assert.equal(await page.locator('#status').textContent(),'');
       assert.equal(await page.locator('#results').getAttribute('aria-busy'),'false');
-      console.log(JSON.stringify({width,editions:8,retry:true,compositionEvents:true,popstate:true,literalQuery:true,staleResponse:true,isolation:summary()}));
+      console.log(JSON.stringify({width,editions:checks.filter(check=>check.width===width).length,retry:true,compositionEvents:true,popstate:true,literalQuery:true,staleResponse:true,isolation:summary()}));
     }finally{await context.close();}
   }
 }finally{

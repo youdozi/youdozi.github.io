@@ -52,8 +52,8 @@ test('mounting twice does not duplicate tools or change existing accessible name
   assert.equal(f.root.children.length,1);assert.equal(f.root.children[0],wrapper);assert.equal(f.pre.attributes.get('aria-label'),'Existing name');assert.equal(f.pre.attributes.get('role'),'group');
   const blank=fixture('\n\t ');mountCodeTools(blank.root,copy.en,writer);assert.equal(blank.root.children[0],blank.pre);assert.equal(blank.pre.dataset.codeTools,undefined);
 });
-test('action, completion, failure and code region labels cover all eight languages',()=>{
-  assert.deepEqual(Object.keys(copy).sort(),['en','ko','zh-CN','ja','de','fr','ru','es'].sort());
+test('action, completion, failure and code region labels cover all supported languages',()=>{
+  assert.deepEqual(Object.keys(copy).sort(),['en','ko','zh-CN','ja','de','fr','ru','es','hi'].sort());
   for(const labels of Object.values(copy))assert.deepEqual(Object.keys(labels).sort(),['copy','copied','error','block'].sort());
   for(const labels of Object.values(copy))for(const value of Object.values(labels))assert.ok(value.trim());
 });

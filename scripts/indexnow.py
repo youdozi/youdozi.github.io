@@ -17,7 +17,7 @@ import xml.etree.ElementTree as ET
 SITE = 'https://youdozi.github.io'
 ENDPOINT = 'https://api.indexnow.org/indexnow'
 KEY_PATH = 'indexnow-key.txt'
-LANGUAGES = ('en', 'ko', 'zh-CN', 'ja', 'de', 'fr', 'ru', 'es')
+LANGUAGES = tuple(json.loads((Path(__file__).resolve().parents[1] / 'src/lib/locales.json').read_text())['locales'])
 
 
 def public_url(value):

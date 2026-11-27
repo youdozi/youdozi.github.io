@@ -11,7 +11,7 @@ from datetime import datetime
 from technical_publications import technical_records
 from check_metadata import Metadata
 from check_reader_content import normalize, article_file
-from check_seo import SITE
+from check_seo import SITE, LANGUAGES
 
 
 class TechnicalHTML(HTMLParser):
@@ -89,7 +89,7 @@ def check(base, published=False):
     else:
         marker = json.loads((base / '.translation-preview-fixture.json').read_text())
         keys = marker.get('technicalFixtureKeys')
-        if marker.get('fixtureOnly') is not True or not isinstance(keys, list) or not keys or any(not isinstance(k, str) or not re.fullmatch(r'(?:zh-CN|ja|de|fr|ru|es)-\d{4}-\d{2}-\d{2}-[a-z0-9.-]+', k) for k in keys) or len(set(keys)) != len(keys):
+        if marker.get('fixtureOnly') is not True or not isinstance(keys, list) or not keys or any(not isinstance(k, str) or not re.fullmatch(r'(?:zh-CN|ja|de|fr|ru|es|hi)-\d{4}-\d{2}-\d{2}-[a-z0-9.-]+', k) for k in keys) or len(set(keys)) != len(keys):
             raise ValueError('Expected isolated technical fixture marker')
         if set(keys) - selected.keys(): raise ValueError('Technical fixture missing')
     inventory = dict(records)
@@ -149,7 +149,7 @@ def check(base, published=False):
             raise ValueError('Technical RSS metadata missing or changed')
         if item is not None and datetime.fromisoformat(item.findtext('{http://www.w3.org/2005/Atom}updated').replace('Z','+00:00')) != datetime.fromisoformat(record['updatedAt'].replace('Z','+00:00')):
             raise ValueError('Technical RSS revision date changed')
-        expected = {other: SITE+f'/{other}/posts/{slug}/' for other in ('en','ko','zh-CN','ja','de','fr','ru','es') if other in ('en','ko') or f'/{other}/posts/{slug}/' in records}
+        expected = {other: SITE+f'/{other}/posts/{slug}/' for other in LANGUAGES if other in ('en','ko') or f'/{other}/posts/{slug}/' in records}
         expected['x-default'] = SITE+f'/en/posts/{slug}/'
         for other, target in expected.items():
             if other == 'x-default': continue

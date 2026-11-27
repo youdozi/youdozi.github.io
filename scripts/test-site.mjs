@@ -191,11 +191,11 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
     const sitemap=await readFile('dist/sitemap.xml','utf8');
     const rootEntry=await readFile('dist/index.html','utf8');
     assert.match(rootEntry,/<noscript><meta http-equiv="refresh" content="0;url=\/en\/"[^>]*><\/noscript>/);
-    assert.ok(rootEntry.includes('data-published-languages="en,ko,zh-CN,ja,de,fr,ru,es"'));
+    assert.ok(rootEntry.includes('data-published-languages="en,ko,zh-CN,ja,de,fr,ru,es,hi"'));
     assert.ok(rootEntry.includes('noindex,follow'));
     assert.ok(rootEntry.includes('rel="canonical" href="https://youdozi.github.io/en/"'));
     assert.ok(!sitemap.includes('<loc>https://youdozi.github.io/</loc>'));
-    for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es']) {
+    for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es','hi']) {
       const archive=await readFile('dist/'+lang+'/archive/index.html','utf8');
       const index=JSON.parse(await readFile('dist/'+lang+'/search-index.json','utf8'));
       const graph=JSON.parse(archive.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
@@ -222,7 +222,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       const notFound=await readFile('dist/404.html','utf8');
       assert.ok(notFound.includes('href="/'+lang+'/archive/" lang="'+lang+'"'));
     }
-    for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es']) {
+    for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es','hi']) {
       const search=await readFile(`dist/${lang}/search/index.html`,'utf8');
       assert.ok(search.includes('noindex,follow'));
       assert.ok(search.includes('aria-controls="results"'));
@@ -231,7 +231,7 @@ test('Astro renders paired editions, reciprocal language links, and escapes sour
       assert.ok(search.includes('<noscript>'));
       assert.ok(!sitemap.includes(`<loc>https://youdozi.github.io/${lang}/search/</loc>`));
     }
-    const postLanguages=['en','ko','zh-CN','ja','de','fr','ru','es'];
+    const postLanguages=['en','ko','zh-CN','ja','de','fr','ru','es','hi'];
     const availability=Object.fromEntries(await Promise.all(postLanguages.map(async lang=>{
       const index=JSON.parse(await readFile(`dist/${lang}/search-index.json`,'utf8'));
       return [lang,index.some(entry=>entry.url.startsWith(`/${lang}/posts/`))];

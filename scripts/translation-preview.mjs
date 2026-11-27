@@ -58,7 +58,7 @@ export async function stageFixtures(sandbox,actualRoot,records,validate){
   const directory=await realpath(join(base,'src/content/translations'));
   if(directory!==join(base,'src/content/translations'))throw new Error('Preview translations directory must not be a symlink');
   const prepared=records.map(record=>{
-    if(!/^src\/content\/translations\/(?:zh-CN|ja|de|fr|ru|es)-[a-f0-9]{16}\.json$/.test(record.path))throw new Error('Invalid preview destination');
+    if(!/^src\/content\/translations\/(?:zh-CN|ja|de|fr|ru|es|hi)-[a-f0-9]{16}\.json$/.test(record.path))throw new Error('Invalid preview destination');
     return {path:join(base,record.path),data:validate(record.data)};
   });
   for(const record of prepared)await writeFile(record.path,JSON.stringify(record.data,null,2)+'\n',{flag:'wx'});

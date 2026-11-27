@@ -33,8 +33,8 @@ test('archive schema and recovery routes use real inventory without inventing da
   assert.equal(list.itemListElement[0].url,'https://youdozi.github.io/en/posts/example/');
   assert.equal(recoveryPath(all,'fr'),'/fr/archive/');assert.equal(recoveryPath(all,'ja'),'/en/');
 });
-test('discovery copy covers all eight locales with matching short UI fields',()=>{
-  assert.deepEqual(Object.keys(copy).sort(),['en','ko','zh-CN','ja','de','fr','ru','es'].sort());
+test('discovery copy covers all supported locales with matching short UI fields',()=>{
+  assert.deepEqual(Object.keys(copy).sort(),['en','ko','zh-CN','ja','de','fr','ru','es','hi'].sort());
   const keys=Object.keys(copy.en).sort();
   for(const edition of Object.values(copy)){assert.deepEqual(Object.keys(edition).sort(),keys);for(const text of Object.values(edition))assert.ok(text.trim());}
 });

@@ -27,7 +27,7 @@
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-121/hi/2026-11-27-docker-desktop-mac-disk-space.md",
-        "sha256": "4872207fd3b090ab60ae1f6ff6f7fa525adb3956df9a184d940852fd317e9738"
+        "sha256": "06df0a6a8607a2d2968c04cd0413420b4c4f9f001a2f929df2b6faa9cdf23ebc"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-121/hi/2026-11-27-docker-desktop-mac-disk-space.svg",

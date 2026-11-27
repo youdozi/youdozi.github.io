@@ -13,5 +13,5 @@ test('visible modification dates require a strictly later recorded change and al
   const publishedAt=new Date('2026-01-01Z');
   for(const updatedAt of [undefined,publishedAt,new Date('2025-01-01Z')])assert.equal(visibleModified({publishedAt,updatedAt}),undefined);
   const updatedAt=new Date('2026-01-02Z');assert.equal(visibleModified({publishedAt,updatedAt}),updatedAt);
-  for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es'])assert.ok(articleUi[lang].toc&&articleUi[lang].updated);
+  for(const lang of ['en','ko','zh-CN','ja','de','fr','ru','es','hi'])assert.ok(articleUi[lang].toc&&articleUi[lang].updated);
 });
