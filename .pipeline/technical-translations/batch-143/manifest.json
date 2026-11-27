@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-143",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "a16ea5912dc2266a10bf9aa75f7f8bf2e523eaf6",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Translator self-review against the English source, Korean context and original diagrams; protected code, links, numeric values and diagram branches checked.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2023-09-10-springboot-intellij-import",
+      "language": "hi",
+      "translationKey": "2023-09-10-springboot-intellij-import",
+      "source": {
+        "path": "src/content/posts/en/2023-09-10-springboot-intellij-import.md",
+        "sha256": "5b3c970364e92d3672967197986ea67769f45094ca27f6c9f8bfbd0779645bc2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-10-springboot-intellij-import.md",
+        "sha256": "520660e9cd5623d1a5e3fd92595ce11f4713af20230f80efaa251fb65329b4fa"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-10-springboot-intellij-import.diagram.json",
+        "sha256": "e2df88f0e6c6506450c5bbf364ac7743919e45aa4830177ed41e1e0330c052f8"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-10-springboot-intellij-import.svg",
+        "sha256": "a0aeee579a6caa30344193b7c19b7b5e7ab1732e57285048103e6a6f470b637e"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "hi-2023-09-13-springboot-history",
+      "language": "hi",
+      "translationKey": "2023-09-13-springboot-history",
+      "source": {
+        "path": "src/content/posts/en/2023-09-13-springboot-history.md",
+        "sha256": "8f97cfe96eb4ed1a36dae63a187c6f28960c327ff6cba276c45537a1e7745da2"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-13-springboot-history.md",
+        "sha256": "a32c046f23033280d3b3ae748f66b9dec5f190e4faa9804351f4c97313f99dd8"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-13-springboot-history.diagram.json",
+        "sha256": "1c90b5cec13fd571d52362ed87cb7922352bddad10df31ffb239d790bded68d6"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-13-springboot-history.svg",
+        "sha256": "305c67c4c5e6421047f648304d56e40772c0ee5184d9d9bafb56fbbd70d4013d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "hi-2023-09-20-jdk-21-release",
+      "language": "hi",
+      "translationKey": "2023-09-20-jdk-21-release",
+      "source": {
+        "path": "src/content/posts/en/2023-09-20-jdk-21-release.md",
+        "sha256": "c38821661e446a15de8907378b649d66ad3bb5744a6015a346fce772f8dcc578"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-20-jdk-21-release.md",
+        "sha256": "65286eb435fee9fb71240ec6f934e70bbeaaf4b5321377d1b983939734cb0f66"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-20-jdk-21-release.diagram.json",
+        "sha256": "e0dd4483ec8a8009a7c58e6c7bad006593a06609f32e3595f625f0c136c2e473"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-20-jdk-21-release.svg",
+        "sha256": "9adb9f8bbbb725579efb726cc8a3aaf62acaf69d672e6041d93b01d2bff3e178"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "hi-2023-09-23-jdk-21-string-templates",
+      "language": "hi",
+      "translationKey": "2023-09-23-jdk-21-string-templates",
+      "source": {
+        "path": "src/content/posts/en/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "82b3cfe0b6ea0478f27df7cea88e1b5974a7e661e6be9f9baa20c5d663c7a01b"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-23-jdk-21-string-templates.md",
+        "sha256": "30fecc545ddd97b4ee1bba79f18c0e6bbccd25c66534165a31492ab0acfd208d"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-23-jdk-21-string-templates.diagram.json",
+        "sha256": "12c568e98a39d2c3c304f684eb619f21dd93b7dbbc5cb028b017b8c2f1683c06"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-09-23-jdk-21-string-templates.svg",
+        "sha256": "5123825174d27f89327538ca46e6f5a42e8447d247092ce5575be46319e563dc"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    },
+    {
+      "key": "hi-2023-10-10-temurin-jdk21-delay",
+      "language": "hi",
+      "translationKey": "2023-10-10-temurin-jdk21-delay",
+      "source": {
+        "path": "src/content/posts/en/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "4aca27fcb8d1eb088ae7cc816e9cc82c662724ac7ee8a418618759fe8df67eac"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-10-10-temurin-jdk21-delay.md",
+        "sha256": "4f25040fc475dfcf344ef69e0cdd1867fdf62b42fe3d9343036989f9192aa14c"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-10-10-temurin-jdk21-delay.diagram.json",
+        "sha256": "9481c59bf315420590c4d7d063e01b0a189492c6c24e51d3724dcd8b90fb634c"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-143/hi/2023-10-10-temurin-jdk21-delay.svg",
+        "sha256": "9cb0125e496b7002ec333fd93391e051528279b3fb4ab0f78bf4123f497a1a47"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/workflows.json",
+        "sha256": "94e7aaca28f55cd2abcef46b6b2c685734ce2861b38a068d884e67cf37b4f48d"
+      }
+    }
+  ]
+}

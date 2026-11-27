@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-13-springboot-history",
+  "language": "hi",
+  "title": "चुने हुए संस्करण कैसे पहचानें",
+  "description": "Boot की सेटिंग देखें और हर कॉन्फ़िगरेशन की डिपेंडेंसी का वास्तविक संस्करण पता करें।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "चुना हुआ Boot संस्करण देखें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "डिपेंडेंसी प्रबंधन जाँचें",
+        "Boot और Framework के संस्करण अलग हैं"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight से spring-core जाँचें",
+        "runtimeClasspath देखें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "dependencyInsight से lombok जाँचें",
+        "annotationProcessor देखें"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "चुने हुए संस्करण लिखें",
+        "इस संयोजन की संगतता जाँचें"
+      ]
+    }
+  ]
+}

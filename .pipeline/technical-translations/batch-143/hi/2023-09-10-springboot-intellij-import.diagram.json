@@ -1,0 +1,43 @@
+{
+  "key": "2023-09-10-springboot-intellij-import",
+  "language": "hi",
+  "title": "बिल्ड और IDE की अलग-अलग जाँच",
+  "description": "Wrapper और IDE के नतीजे मिलाएँ। HTTP टेस्ट उपलब्ध पोर्ट पर चलता है और bootRun तय पोर्ट पर।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "Gradle प्रोजेक्ट का मूल फ़ोल्डर खोलें",
+        "JDK और Wrapper जाँचें"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "Wrapper बिल्ड विफल है?",
+        "बिल्ड, डिपेंडेंसी और कोड जाँचें"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "केवल IDE में त्रुटि है?",
+        "Gradle रीलोड करें, रन सेटिंग जाँचें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "HTTP टेस्ट में JSON और 404 जाँचें",
+        "सर्वर के लिए उपलब्ध पोर्ट लें"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "ऐप चलाएँ, /greeting पर अनुरोध भेजें",
+        "पथ और तय पोर्ट जाँचें"
+      ]
+    }
+  ]
+}

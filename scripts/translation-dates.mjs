@@ -1,6 +1,6 @@
 /** Canonicalize explicit calendar dates in prose; never infer numeric slash dates. */
 const months=new Map();
-for(const locale of ['en','de','fr','es','ru'])for(let month=1;month<=12;month++){
+for(const locale of ['en','de','fr','es','ru','hi'])for(let month=1;month<=12;month++){
  const parts=new Intl.DateTimeFormat(locale,{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).formatToParts(new Date(Date.UTC(2020,month-1,15)));
  months.set(parts.find(p=>p.type==='month').value.toLocaleLowerCase('en'),month);
 }
