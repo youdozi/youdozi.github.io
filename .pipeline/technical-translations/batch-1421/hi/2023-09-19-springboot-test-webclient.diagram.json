@@ -1,0 +1,54 @@
+{
+  "key": "2023-09-19-springboot-test-webclient",
+  "language": "hi",
+  "title": "HTTP उत्तर का परीक्षण",
+  "description": "पहले स्टेटस, फिर मीडिया टाइप जाँचें। अस्वीकृत बॉडी छोड़ें, समर्थित JSON डिकोड करें और मान व अंतिम संकेत जाँचें।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "मॉक सर्वर पर उत्तर कतार में रखें",
+        "क्लाइंट अनुरोध को सब्सक्राइब करें"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "क्या HTTP स्टेटस त्रुटि दिखाता है?",
+        "हाँ: अपवाद दें और रुकें"
+      ],
+      "branch": {
+        "exit": "हाँ",
+        "continue": "नहीं",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "application/json या",
+        "application/*+json है?",
+        "अन्य: बॉडी छोड़ें और त्रुटि दें"
+      ],
+      "branch": {
+        "exit": "अन्य",
+        "continue": "JSON",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "समर्थित टाइप का Payload डिकोड करें",
+        "खाली या अमान्य बॉडी का नतीजा देखें"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "मान और अंतिम संकेत जाँचें",
+        "मेथड, पथ और Accept देखें"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-09-springboot3-querydsl",
+  "language": "hi",
+  "title": "Q टाइप से क्वेरी तक",
+  "description": "प्रोसेसर मुख्य सोर्स से QEmployee बनाता है। फिर H2 पर जनरेट हुए टाइप से क्वेरी चलाई जाती है।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "JPA और Querydsl Jakarta सेट करें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "annotationProcessor सेट करें",
+        "उसका BOM और Jakarta API जोड़ें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "एनोटेशन वाला Employee कंपाइल करें",
+        "QEmployee का सोर्स और क्लास बनाएँ"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "H2 के साथ JPA टेस्ट शुरू करें",
+        "टेस्ट कर्मचारियों का डेटा सहेजें"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "टाइप वाली क्वेरी चलाएँ",
+        "नतीजे जाँचें और clean test दोहराएँ"
+      ]
+    }
+  ]
+}
