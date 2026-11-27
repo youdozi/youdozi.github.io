@@ -1,0 +1,80 @@
+{
+  "key": "2026-11-01-ai-agent-permission-boundaries",
+  "language": "hi",
+  "title": "प्रकाशन की अनुमति",
+  "description": "प्रकाशन के लिए नीति, अनुमोदन, दायरा, समाप्ति और दोबारा उपयोग जाँचें। पढ़ने और मसौदा संपादन की तत्काल अनुमति चित्र में नहीं दिखाई गई है।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "प्रकाशन का",
+        "संरचित अनुरोध"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "कार्रवाई और लक्ष्य",
+        "नीति में अनुमत हैं?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "नीति रोक",
+        "continue": "हाँ"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "विश्वसनीय अनुमोदन",
+        "उपलब्ध है?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "अनुमति लें",
+        "continue": "हाँ"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "पहचान और अनुरोध",
+        "मेल खाते हैं?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "बेमेल",
+        "continue": "हाँ"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "अनुमोदन अभी वैध है?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "अवधि पूरी",
+        "continue": "हाँ"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "अनुमोदन अब तक अप्रयुक्त है?"
+      ],
+      "branch": {
+        "outcome": "error",
+        "exit": "प्रयुक्त",
+        "continue": "हाँ"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "अनुमोदन खर्च करें",
+        "ALLOW लौटाएँ"
+      ]
+    }
+  ]
+}

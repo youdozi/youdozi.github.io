@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 2,
+  "batchId": "technical-1501",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "636727d671cac3e3728b2e51fc7d53c9ec57777a",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Translator self-review against the English articles and diagrams, including dates, operational limits, credential boundaries, code, sources and incident chronology.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "translationKey": "2026-10-31-ai-agent-operations",
+      "source": {
+        "path": "src/content/posts/en/2026-10-31-ai-agent-operations.md",
+        "sha256": "671fc15fe228c1e812d5ae95a16d5092a66fbbf55edf53f21c353c91c91e796f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/ai-agent-operations-gate-en.svg",
+        "sha256": "d4a5a34dcf4c6b27e46705cdfe898e1e2ac3a96dd29b4e36386380019b78923d"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-125.json",
+        "sha256": "943bdc96ed25c6e789584e5aa81fe01387b6816cd05dbebb9f281f36d1462a2b"
+      },
+      "key": "hi-2026-10-31-ai-agent-operations",
+      "language": "hi",
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1501/hi/2026-10-31-ai-agent-operations.md",
+        "sha256": "ce78b36f4d318469a67fe15e29627147bd5ea08a3d03f0ea749e9926fb46b1ff"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-1501/hi/2026-10-31-ai-agent-operations.diagram.json",
+        "sha256": "bcd5a525919558680d69080cd56e6561db46181261b4e91d3887ad5c82863c62"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1501/hi/2026-10-31-ai-agent-operations.svg",
+        "sha256": "23d8de64e8485ab83c17142dcd6b8f50533159d94eacc8cf28b5003637abb8f5"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/ai-agent-operations-overview-en.svg",
+            "sha256": "45ae8fd23f363870d0b1b17046e62e447e7655dea94d9c7e39b0113c76734ff4"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-1501/hi/2026-10-31-ai-agent-operations-architecture.svg",
+            "sha256": "47dd4071367065438c63c636ec7b9e585878216f5e3d8819e37b03c011730c53"
+          }
+        }
+      ]
+    },
+    {
+      "translationKey": "2026-11-01-ai-agent-permission-boundaries",
+      "source": {
+        "path": "src/content/posts/en/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "9610960800eb800a78e728fcc84d5cf2a790de1f6b051fe4a8ebb3dfdaec554b"
+      },
+      "sourceDiagram": {
+        "path": "content/diagrams/technical-132.json",
+        "sha256": "26e43954e6789f7e75e2acc2c3ef59220f1c6954cdcc3898c35caae921601210"
+      },
+      "key": "hi-2026-11-01-ai-agent-permission-boundaries",
+      "language": "hi",
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1501/hi/2026-11-01-ai-agent-permission-boundaries.md",
+        "sha256": "5cb570390d3549a574785771e719825ffc8aff42c83b46ffdea69e92763e99dc"
+      },
+      "diagramSource": {
+        "path": ".pipeline/technical-translations/batch-1501/hi/2026-11-01-ai-agent-permission-boundaries.diagram.json",
+        "sha256": "6c75339bb13dae016922b912b6744645914ccaf333cc6bf4d653c2fcf3b04fc4"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1501/hi/2026-11-01-ai-agent-permission-boundaries.svg",
+        "sha256": "738e11bc25cb37c63699928b3e82ae0fec6d3999056b0f0c3fbdc6b929b99f3c"
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-1502",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "636727d671cac3e3728b2e51fc7d53c9ec57777a",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Translator self-review against the English articles and diagrams, including dates, operational limits, credential boundaries, code, sources and incident chronology.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "translationKey": "2026-11-13-pickle-ai-security",
+      "source": {
+        "path": "src/content/posts/en/2026-11-13-pickle-ai-security.md",
+        "sha256": "4973bca9ea9b81ec4e068b4f530a2b82742c427074c36836639b0c2db1a811e2"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/pickle-credentials-en.svg",
+        "sha256": "dbc118d901e8e8cc1c7955adc2e168b376950c09afac52eab8ad59cc93c8e7bc"
+      },
+      "key": "hi-2026-11-13-pickle-ai-security",
+      "language": "hi",
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1502/hi/2026-11-13-pickle-ai-security.md",
+        "sha256": "30ee88ad57f04773f1ff6452d53ebde8fade2ea1d0ed790c13fb34c5404eda60"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1502/hi/2026-11-13-pickle-ai-security.svg",
+        "sha256": "708a1953f55fbc20d481ece07d400920a75838091fb480dde3768126c81540cc"
+      },
+      "additionalVisuals": [
+        {
+          "source": {
+            "path": "assets/img/architecture/pickle-verification-en.svg",
+            "sha256": "5688ec0633ec7c11771ba52d4c46855895e9f427181c01e236cc5c46e011f8f3"
+          },
+          "draft": {
+            "path": ".pipeline/technical-translations/batch-1502/hi/2026-11-13-pickle-ai-security-architecture.svg",
+            "sha256": "e292b47d67a2dca2761ad045a92a722e56cad4fa5e65318d0516ab0f0363b6b5"
+          }
+        }
+      ]
+    },
+    {
+      "translationKey": "2026-11-15-pickle-ai-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-15-pickle-ai-guide.md",
+        "sha256": "14e4d005498c53673a0240cfc0c6b8392223b8b04375e824d04a56b8aa51f6d8"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/pickle-ai-guide-en.svg",
+        "sha256": "4b77460e4073d295ad70924e88536531f2dd49670916da3b5d5687c76193bc81"
+      },
+      "key": "hi-2026-11-15-pickle-ai-guide",
+      "language": "hi",
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1502/hi/2026-11-15-pickle-ai-guide.md",
+        "sha256": "dbe9b104d47dab3df58143af88d517e052cc76fed1964c4d03cfe991c61d8d3f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1502/hi/2026-11-15-pickle-ai-guide.svg",
+        "sha256": "6c480b5176fc95427d2f55dfc0a65c50b3d550058f5d59a551ee74d559c1586c"
+      }
+    },
+    {
+      "translationKey": "2026-11-25-microsoft-365-code-red",
+      "source": {
+        "path": "src/content/posts/en/2026-11-25-microsoft-365-code-red.md",
+        "sha256": "2df9b4039ebb04013f04e21b144e3cb3780236a74b97dd9dcd885df36569a389"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/microsoft-365-code-red-en.svg",
+        "sha256": "cfa3111edbb59dc13c93c0d51b0a862c7c96c178409d13c5ad83b19792cb98b8"
+      },
+      "key": "hi-2026-11-25-microsoft-365-code-red",
+      "language": "hi",
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1502/hi/2026-11-25-microsoft-365-code-red.md",
+        "sha256": "c0ff9bad75f36d3c3fd0f5329f964779ba1c70b8cb1fbe30801a9f5da8f57bb1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1502/hi/2026-11-25-microsoft-365-code-red.svg",
+        "sha256": "ea7275511ecea9674ca243166872c90dd0fe567051b728a96cccf8d2500c5ea7"
+      }
+    }
+  ]
+}
