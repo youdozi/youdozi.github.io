@@ -8,6 +8,8 @@ title: "PostgreSQL 작업 큐에 완료된 행이 쌓이면, 부분 인덱스가
 description: "대기 작업만 담은 인덱스를 만들기 전후로 가장 오래된 작업을 찾는 실행 계획과 버퍼 사용량을 비교합니다."
 categories: ["architecture"]
 tags: ["postgresql", "sql", "job-queue"]
+reviewScope: "PGlite 인메모리 데이터베이스에서 부분 인덱스 생성 전후 각각 한 번 관측한 읽기 계획과 버퍼 통계를 PostgreSQL 19 문서와 대조했습니다."
+reviewSources: ["https://www.postgresql.org/docs/19/indexes-partial.html", "https://www.postgresql.org/docs/19/sql-explain.html", "https://pglite.dev/docs/about"]
 ---
 
 작업 300,000건 중 297,000건은 완료됐고 3,000건만 대기 중입니다. 이 큐에서 가장 오래된 대기 작업 20건을 찾을 때, 대기 행만 생성 시각과 ID 순으로 담은 부분 인덱스를 만들자 실행 계획에서 정렬 단계가 사라졌습니다.
