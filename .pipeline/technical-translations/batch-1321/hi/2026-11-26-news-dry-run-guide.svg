@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="hi" viewBox="0 0 440 246" role="img" aria-labelledby="title desc">
+<title id="title">GitHub Actions में बिना प्रकाशन के ड्राफ़्ट की जाँच</title>
+<desc id="desc">परीक्षण इनपुट के दो रास्ते हैं। सही पूर्वावलोकन सफल होता है और AI या लिंक की त्रुटि पर जाँच विफल होती है। दोनों रास्तों में जाँचा जाता है कि पांडुलिपि और स्थिति की डायरेक्टरी नहीं बनीं।</desc>
+<g stroke="#55787b" stroke-width="2" fill="none">
+<path d="M220 52v17H110v17m-5 -5 5 5 5 -5m105 -17h110v17m-5 -5 5 5 5 -5"/>
+<path d="M110 155v23h110v15m-5 -5 5 5 5 -5m105 -33v18H221"/>
+</g>
+<g font-family="system-ui,sans-serif" text-anchor="middle" fill="#173d4a">
+<rect x="15" y="7" width="410" height="45" rx="8" fill="#eaf3f5"/>
+<text x="220" y="36" font-size="18">अस्थायी डायरेक्टरी और परीक्षण डेटा</text>
+<rect x="4" y="89" width="213" height="66" rx="8" fill="#e1f3e7"/>
+<text x="110" y="115" font-size="15">सही पूर्वावलोकन</text>
+<text x="110" y="140" font-size="16">निकास कोड 0</text>
+<rect x="223" y="89" width="213" height="66" rx="8" fill="#fbece2"/>
+<text x="330" y="115" font-size="15">AI या लिंक की त्रुटि</text>
+<text x="330" y="140" font-size="16">निकास कोड 1</text>
+<rect x="4" y="197" width="432" height="44" rx="8" fill="#eaf3f5"/>
+<text x="220" y="225" font-size="16">जाँचें कि पांडुलिपि और स्थिति की डायरेक्टरी नहीं बनीं</text>
+</g>
+</svg>

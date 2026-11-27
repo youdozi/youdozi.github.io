@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-1321",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "8ba06d6",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Compared Hindi prose, diagrams, values and limitations with the Korean and English editions.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": false,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-11-22-commerce-database-design",
+      "language": "hi",
+      "translationKey": "2026-11-22-commerce-database-design",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-database-design.md",
+        "sha256": "da573ac023d969b02216c24993c872e842a6693607f8e3805fd988ce7d64bcf3"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1321/hi/2026-11-22-commerce-database-design.md",
+        "sha256": "fd9b26de3c62dced7203c437e60f2a5ca28d827a7dc36f0bbf2d4471ddcb2ba1"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1321/hi/2026-11-22-commerce-database-design.svg",
+        "sha256": "a234884de40b470cd6c0073076f7dfc637463f584076fa88449d2d4e87f5f2f9"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-database-design-en.svg",
+        "sha256": "22a85d42ec26bd84adbeee8ad3c8b612f635fd95eac3e99be355aa43de7ab9dc"
+      }
+    },
+    {
+      "key": "hi-2026-11-22-commerce-system-design-last-unit-of-stock",
+      "language": "hi",
+      "translationKey": "2026-11-22-commerce-system-design-last-unit-of-stock",
+      "source": {
+        "path": "src/content/posts/en/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "63b33b1222e2cc6c885b4f2d63fb1a3f2727041b8710e7bf8ed7b335b6f8b9d6"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1321/hi/2026-11-22-commerce-system-design-last-unit-of-stock.md",
+        "sha256": "a9402870a2925fc29303c25153591fbf90267247dbdffba62dbe0c0e3b07c5c7"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1321/hi/2026-11-22-commerce-system-design-last-unit-of-stock.svg",
+        "sha256": "ca22b9bfacd98e100e901af178aecb30a3c0eedf8d1884dadb28bc789245e9d7"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-22-commerce-system-design-last-unit-of-stock-en.svg",
+        "sha256": "ad3172ea620762d59fb675e03f7489c23f2dc970568712c6103b0ca0b9c495f3"
+      }
+    },
+    {
+      "key": "hi-2026-11-23-macbook-personal-server",
+      "language": "hi",
+      "translationKey": "2026-11-23-macbook-personal-server",
+      "source": {
+        "path": "src/content/posts/en/2026-11-23-macbook-personal-server.md",
+        "sha256": "9d4d027b764ef8bf01ccd259c0d9a651cbb6306532afced8de3af23db443416c"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1321/hi/2026-11-23-macbook-personal-server.md",
+        "sha256": "05a4c03e14ddc0569a3b12d0990ae5e38da9cafc7976178336fbac473086bb05"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1321/hi/2026-11-23-macbook-personal-server.svg",
+        "sha256": "2ccefe0cf9c4b4775bc4e29af8c1e7abd9f9a9c410c5b599260db88c7fa94a3d"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/macbook-personal-server-en.svg",
+        "sha256": "4f666a396f1f6c77ec8edf43665df01cf5933e34e871e655cd23ba0ba3efd38b"
+      }
+    },
+    {
+      "key": "hi-2026-11-26-news-dry-run-guide",
+      "language": "hi",
+      "translationKey": "2026-11-26-news-dry-run-guide",
+      "source": {
+        "path": "src/content/posts/en/2026-11-26-news-dry-run-guide.md",
+        "sha256": "bbd2b23eadacc9df77585d34bf7ba6243a6a849fbbfcba51c6f2272b35553659"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1321/hi/2026-11-26-news-dry-run-guide.md",
+        "sha256": "302cec5128002682f1761ffc37aa8d40936007c1145a097553a7a7369f01d97f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1321/hi/2026-11-26-news-dry-run-guide.svg",
+        "sha256": "7ba1deb0118086b6bc8c3aeb5e48bef5454b23cae419fe00a453e4eedf99fda7"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/news-dry-run-guide-en.svg",
+        "sha256": "d0e50789a88c0945bb5a8cf315dcaa17279dd034234dcdcc0d9e5dd35ab9c2fd"
+      }
+    },
+    {
+      "key": "hi-2026-11-27-mac-disk-cleanup-du-df",
+      "language": "hi",
+      "translationKey": "2026-11-27-mac-disk-cleanup-du-df",
+      "source": {
+        "path": "src/content/posts/en/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "2114224ef5dde962e3cfc28f12de1aa1dbba58c0343db9c3e8e6277ce204cc19"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1321/hi/2026-11-27-mac-disk-cleanup-du-df.md",
+        "sha256": "398bcb91386e362a730f5330317a09fb9bc3ca0f8a9cef71576c2298fc32014b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1321/hi/2026-11-27-mac-disk-cleanup-du-df.svg",
+        "sha256": "8adf5924ff56acfe1101113f0081f66002194bb9856ef581b1fd65bd74419816"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/mac-disk-cleanup-du-df-en.svg",
+        "sha256": "8df9c5e572cee50cd7f633b5ab6b206ba04da26ec3338002bdc45f703fd704b8"
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<svg xml:lang="hi" xmlns="http://www.w3.org/2000/svg" width="420" height="462" viewBox="0 0 420 462" role="img" aria-labelledby="title desc">
+  <title id="title">भुगतान के परिणाम से स्टॉक आरक्षण का निर्णय</title>
+  <desc id="desc">सत्यापित भुगतान परिणाम और ऑर्डर की स्थिति पढ़ें। अनिश्चित परिणाम पर आरक्षण बनाए रखें। बिना शुल्क लेनदेन बंद होने की पुष्टि पर उसे छोड़ें। भुगतान सफल हो तो स्टॉक आरक्षित होने पर शिपमेंट और पहले ही छोड़े जाने पर रिफ़ंड माँगें। वही परिणाम फिर लागू करने से काम दोबारा नहीं बनता।</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#546984"/>
+    </marker>
+  </defs>
+  <rect width="420" height="462" rx="16" fill="#f4f7fb"/>
+  <g fill="none" stroke="#546984" stroke-width="1.6" marker-end="url(#arrow)">
+    <path d="M210 64V82H101V101"/>
+    <path d="M210 64V82H303V101"/>
+    <path d="M303 160V183H72V203"/>
+    <path d="M303 160V183H210V203"/>
+    <path d="M303 160V183H348V203"/>
+    <path d="M348 269V298H109V322"/>
+    <path d="M348 269V298H311V322"/>
+  </g>
+  <g stroke-width="1.2">
+    <rect x="29" y="15" width="362" height="49" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="14" y="104" width="174" height="56" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="205" y="104" width="196" height="56" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="12" y="206" width="120" height="63" rx="10" fill="#fff0df" stroke="#cfa671"/>
+    <rect x="150" y="206" width="120" height="63" rx="10" fill="#fff0df" stroke="#cfa671"/>
+    <rect x="288" y="206" width="120" height="63" rx="10" fill="#e9f2ff" stroke="#7a9ec4"/>
+    <rect x="13" y="325" width="192" height="107" rx="10" fill="#e7f5eb" stroke="#7ca98e"/>
+    <rect x="215" y="325" width="192" height="107" rx="10" fill="#e9f2ff" stroke="#7a9ec4"/>
+  </g>
+  <g fill="#172f48" font-family="system-ui, sans-serif" text-anchor="middle" font-size="16">
+    <text x="210" y="45" font-weight="700">सत्यापित भुगतान परिणाम और ऑर्डर की स्थिति पढ़ें</text>
+    <text x="101" y="128" font-size="14" font-weight="700">भुगतान हो चुका या रिफ़ंड लंबित</text>
+    <text x="101" y="149">कोई नया काम नहीं</text>
+    <text x="303" y="139" font-weight="700">सत्यापित भुगतान परिणाम</text>
+    <text x="72" y="230" font-weight="700">परिणाम अनिश्चित</text>
+    <text x="72" y="252">आरक्षण कायम</text>
+    <text x="210" y="230" font-weight="700">बिना शुल्क बंद</text>
+    <text x="210" y="252">आरक्षण छोड़ें</text>
+    <text x="348" y="242" font-weight="700">भुगतान सफल</text>
+    <text x="109" y="355" font-weight="700">स्टॉक आरक्षित</text>
+    <text x="109" y="380">पुष्टि और आवंटन</text>
+    <text x="109" y="405">शिपमेंट कतार में डालें</text>
+    <text x="311" y="355" font-weight="700">आरक्षण छूट चुका</text>
+    <text x="311" y="380">ऑर्डर रद्द रखें</text>
+    <text x="311" y="405">रिफ़ंड कतार में डालें</text>
+  </g>
+</svg>

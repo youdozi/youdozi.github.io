@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="hi" viewBox="0 0 440 308" role="img" aria-labelledby="title description">
+  <title id="title">डायरेक्टरियों की खपत और डेटा वॉल्यूम पर खाली जगह</title>
+  <desc id="description">चुनी गई डायरेक्टरियों की खपत और सफ़ाई के पहले व बाद में डेटा वॉल्यूम पर उपलब्ध जगह को अलग-अलग मापने का क्रम।</desc>
+  <rect x="6" y="8" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">चुनी गई डायरेक्टरियों की खपत</text>
+  <text x="220" y="70" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#153c52">du -sh</text>
+  <path d="M220 92v16m-5 -5 5 5 5 -5" fill="none" stroke="#466a80" stroke-width="2"/>
+  <rect x="6" y="112" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="144" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">फिर बना सकते हैं और अब उपयोग में नहीं हैं</text>
+  <text x="220" y="174" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#153c52">20 चुनी गई डायरेक्टरियाँ · 1.61 GiB</text>
+  <path d="M220 196v16m-5 -5 5 5 5 -5" fill="none" stroke="#466a80" stroke-width="2"/>
+  <rect x="6" y="216" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="248" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">डेटा वॉल्यूम पर उपलब्ध जगह</text>
+  <text x="220" y="278" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#153c52">df -h   ·   6.41 → 7.46 GiB</text>
+</svg>
