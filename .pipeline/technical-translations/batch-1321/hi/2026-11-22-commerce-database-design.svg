@@ -1,0 +1,37 @@
+<svg xml:lang="hi" xmlns="http://www.w3.org/2000/svg" width="420" height="370" viewBox="0 0 420 370" role="img" aria-labelledby="title desc">
+  <title id="title">PostgreSQL में ऑर्डर लाइन का स्टॉक आरक्षित करना</title>
+  <desc id="desc">ऑर्डर लाइन से SKU और मात्रा पढ़ें। शर्त वाला UPDATE स्टॉक की एक पंक्ति बदले तो उसी SQL कथन में आरक्षण दर्ज कर true लौटाएँ। कोई पंक्ति न बदले तो आरक्षण दर्ज किए बिना false लौटाएँ।</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#536983"/>
+    </marker>
+  </defs>
+  <rect width="420" height="370" rx="16" fill="#f4f7fb"/>
+  <g fill="none" stroke="#536983" stroke-width="1.6" marker-end="url(#arrow)">
+    <path d="M210 74V106"/>
+    <path d="M210 178V202H110V220"/>
+    <path d="M210 178V202H310V220"/>
+    <path d="M110 280V304"/>
+    <path d="M310 280V304"/>
+  </g>
+  <g stroke-width="1.2">
+    <rect x="35" y="16" width="350" height="58" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="35" y="109" width="350" height="69" rx="10" fill="#fff" stroke="#a6bdd5"/>
+    <rect x="15" y="223" width="190" height="57" rx="10" fill="#e7f5eb" stroke="#7ca98e"/>
+    <rect x="215" y="223" width="190" height="57" rx="10" fill="#fff0df" stroke="#cfa671"/>
+    <rect x="15" y="307" width="190" height="45" rx="10" fill="#fff" stroke="#7ca98e"/>
+    <rect x="215" y="307" width="190" height="45" rx="10" fill="#fff" stroke="#cfa671"/>
+  </g>
+  <g fill="#172f48" font-family="system-ui, Apple SD Gothic Neo, Malgun Gothic, sans-serif" text-anchor="middle" font-size="16">
+    <text x="210" y="40" font-weight="700">order_item · ऑर्डर लाइन</text>
+    <text x="210" y="62">SKU और मात्रा पढ़ें</text>
+    <text x="210" y="136" font-weight="700">inventory · शर्त वाला UPDATE</text>
+    <text x="210" y="161">पर्याप्त स्टॉक हो तो held बढ़ाएँ</text>
+    <text x="110" y="247" font-weight="700">1 पंक्ति बदली</text>
+    <text x="110" y="269">आरक्षण दर्ज करें</text>
+    <text x="310" y="247" font-weight="700">0 पंक्तियाँ बदलीं</text>
+    <text x="310" y="269">आरक्षण नहीं</text>
+    <text x="110" y="334" font-weight="700">true · स्टॉक आरक्षित</text>
+    <text x="310" y="334" font-weight="700">false · आरक्षण विफल</text>
+  </g>
+</svg>

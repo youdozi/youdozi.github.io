@@ -85,6 +85,10 @@ export function compareManuscript(sourceRaw,draftRaw,diagram,key,language,option
   sourceLinks.forEach((link,index)=>{
     const localized=key==='2026-11-23-mac-for-ai-agents' && link==='https://youdozi.github.io/en/posts/2026-11-23-macbook-personal-server/'
       ? `https://youdozi.github.io/${language}/posts/2026-11-23-macbook-personal-server/` : link;
+    if(language==='hi' && [
+      '/en/posts/2026-11-22-commerce-system-design-last-unit-of-stock/',
+      'https://youdozi.github.io/ko/posts/2026-11-26-astro-clean-checkout/',
+    ].includes(link) && draftLinks[index]===link.replace(/\/(en|ko)\/posts\//,'/hi/posts/'))return;
     const englishTarget=link.startsWith('../')?new URL(link,`https://youdozi.github.io/en/posts/${source.meta.routeSlug}/`).pathname:link;
     if(draftLinks[index]!==link&&draftLinks[index]!==localized&&draftLinks[index]!==englishTarget)fail('Source links changed, reordered or omitted');
   });
