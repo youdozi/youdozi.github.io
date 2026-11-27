@@ -1,0 +1,42 @@
+{
+  "key": "2023-09-07-springboot-initializer",
+  "language": "hi",
+  "title": "प्रोजेक्ट बनाना और जाँचना",
+  "description": "पूरा आर्काइव खोलकर उसका Wrapper चलाएँ। टेस्ट कॉन्टेक्स्ट और HTTP ऐप्लिकेशन का स्टार्टअप अलग जाँचें।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "संगत Boot, JDK और Gradle चुनें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "पूरा आर्काइव बनाएँ और खोलें",
+        "Gradle Wrapper की फ़ाइलें रखें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "build.gradle और टूलचेन जाँचें",
+        "./gradlew --version चलाएँ"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "./gradlew test चलाएँ",
+        "कॉन्टेक्स्ट का स्टार्टअप जाँचें"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "bootRun अलग से चलाएँ",
+        "कंट्रोलर नहीं है: / पर 404 संभव है"
+      ]
+    }
+  ]
+}
