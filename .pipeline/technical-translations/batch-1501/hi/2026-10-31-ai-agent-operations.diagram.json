@@ -1,0 +1,65 @@
+{
+  "key": "2026-10-31-ai-agent-operations",
+  "language": "hi",
+  "title": "रिलीज़ के प्रमाणों की जाँच",
+  "description": "सभी क्षेत्रों के प्रमाण, संरचना, पहचान, समय, विफलता और अज्ञात संकेत जाँचें। इससे कार्रवाई की अनुमति नहीं मिलती।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "प्रमाण, विश्वसनीय लक्ष्य और वर्तमान समय"
+      ]
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "ठीक छह आवश्यक क्षेत्र हैं?"
+      ],
+      "branch": {
+        "exit": "HOLD",
+        "continue": "हाँ",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "संरचना, पहचान और समय सही हैं?"
+      ],
+      "branch": {
+        "exit": "HOLD",
+        "continue": "हाँ",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "कोई वैध संकेत fail है?"
+      ],
+      "branch": {
+        "exit": "STOP",
+        "continue": "नहीं",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "condition",
+      "lines": [
+        "कोई संकेत अज्ञात है?"
+      ],
+      "branch": {
+        "exit": "HOLD",
+        "continue": "नहीं",
+        "outcome": "error"
+      }
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "READY_FOR_REVIEW लौटाएँ",
+        "समीक्षा के लिए तैयार, कार्रवाई के लिए नहीं"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1120" viewBox="0 0 360 1120" role="img" aria-labelledby="title desc" xml:lang="hi">
+  <title id="title">Pickle में कुंजी सौंपना और क्रेडेंशियल उपयोग की दो सीमाएँ</title>
+  <desc id="desc">iPhone की कुंजी सत्यापित Nitro Enclave को एन्क्रिप्ट करके सौंपी जाती है। रिकॉर्ड एन्क्रिप्टेड रहते हैं। वैध अधिकार और लॉग सहेजे जाने पर OAuth टोकन नोड में API अनुरोध के लिए इस्तेमाल होता है। Vault के पासवर्ड और कार्ड मान वर्कर को वेब फ़ॉर्म के लिए साफ़ रूप में मिलते हैं। मॉडल के परिणाम में मान छिपाना अलग नियंत्रण है।</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#325e50" /></marker></defs>
+  <rect width="360" height="1120" rx="16" fill="#f6f7f2" />
+  <g font-family="sans-serif" text-anchor="middle" fill="#1e352d" font-size="15">
+    <text x="180" y="32" font-size="18" font-weight="bold">कुंजी सौंपना और उपयोग</text>
+    <g fill="#e5efe9" stroke="#325e50" stroke-width="1.5">
+      <rect x="25" y="60" width="310" height="85" rx="8" />
+      <rect x="25" y="185" width="310" height="85" rx="8" />
+      <rect x="25" y="310" width="310" height="85" rx="8" />
+      <rect x="25" y="480" width="310" height="110" rx="8" />
+      <rect x="18" y="655" width="151" height="105" rx="8" />
+      <rect x="191" y="655" width="151" height="105" rx="8" fill="#f8e8dd" />
+      <rect x="18" y="805" width="151" height="85" rx="8" />
+      <rect x="191" y="805" width="151" height="85" rx="8" fill="#f8e8dd" />
+    </g>
+    <text x="180" y="86">iPhone पर मास्टर कुंजी बनाएँ</text>
+    <text x="180" y="112">iCloud Keychain में रखें</text>
+    <text x="180" y="135" font-size="13">प्रोटोकॉल में अलग व्युत्पन्न कुंजियाँ हैं</text>
+    <text x="180" y="212" font-size="15.0">सत्यापन प्रमाण, मापन और कुंजी जाँचें</text>
+    <text x="180" y="238">विफल → कुंजी न सौंपें</text>
+    <text x="180" y="260" font-size="13">सत्यापित नोड के लिए ही कुंजी एन्क्रिप्ट करें</text>
+    <text x="180" y="337">सर्वर पर एन्क्रिप्टेड रिकॉर्ड</text>
+    <text x="180" y="365" font-size="15.0">Enclave मेमोरी में सीमित अवधि की कुंजी</text>
+    <text x="180" y="386" font-size="13">मास्टर कुंजी स्वयं नहीं सौंपी जाती</text>
+    <text x="180" y="451" font-size="12.6">आगे के उपयोग के लिए वैध अधिकार चाहिए</text>
+    <text x="180" y="508" font-size="15.0">अनुरोध → अधिकार और रिकॉर्ड जाँचें</text>
+    <text x="180" y="535">Enclave डिक्रिप्ट करके लॉग बनाता है</text>
+    <text x="180" y="562" font-size="15.0">लॉग की पुष्टि के बाद उपयोग या रिलीज़</text>
+    <text x="180" y="582" font-size="13">विफल → उपयोग या रिलीज़ नहीं</text>
+    <text x="93" y="682">OAuth: forward</text>
+    <text x="93" y="710" font-size="14.5">टोकन नोड में रहता है</text>
+    <text x="93" y="738" font-size="13.7">अनुमत API के लिए</text>
+    <text x="266" y="682">Vault: release</text>
+    <text x="266" y="710" font-size="13.1">पासवर्ड या कार्ड मान</text>
+    <text x="266" y="738" font-size="14.5">वर्कर को साफ़ मान</text>
+    <text x="93" y="834" font-size="14.5">API प्रदाता तक TLS</text><text x="93" y="861" font-size="12.5">उत्तर का डेटा लौटता है</text>
+    <text x="266" y="834">वर्कर → वेब फ़ॉर्म</text><text x="266" y="861">नोड के बाहर</text>
+    <text x="180" y="951" font-size="13.2" font-weight="bold">AI परिणाम में मान छिपाने का सेवा का दावा</text>
+    <text x="180" y="983">वर्कर और ऐप में यह लागू है या नहीं,</text>
+    <text x="180" y="1008" font-size="14.2">केवल Enclave के कोड से सिद्ध नहीं होता</text>
+    <text x="180" y="1060" font-size="13">सार्वजनिक कोड का सार</text>
+    <text x="180" y="1086" font-size="13">प्रोडक्शन या ऐप का प्रत्यक्ष सत्यापन नहीं</text>
+  </g>
+  <g fill="none" stroke="#325e50" stroke-width="1.7" marker-end="url(#arrow)">
+    <path d="M180 145V185" /><path d="M180 270V310" />
+    <path d="M180 590V620H93V655" /><path d="M180 620H266V655" />
+    <path d="M93 760V805" /><path d="M266 760V805" />
+  </g>
+  <path d="M20 420H340" stroke="#a7b7ac" stroke-dasharray="5 5" />
+</svg>
