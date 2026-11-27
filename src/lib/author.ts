@@ -1,7 +1,7 @@
 import type {Language} from './content';
 
 export const authorId='https://youdozi.github.io/#author';
-export const profileUpdatedAt='2026-11-06T04:20:30.442907+00:00';
+export function profileUpdatedAt(lang:typeof profileLanguages[number]){return lang==='hi'?'2026-11-27T02:40:54.030Z':'2026-11-06T04:20:30.442907+00:00';}
 export const profileLanguages=['en','ko','hi'] as const;
 export function profileLanguage(lang:Language){return lang==='ko'||lang==='hi'?lang:'en';}
 export function authorPath(lang:Language){return `/${profileLanguage(lang)}/about/`;}
@@ -24,7 +24,7 @@ export const profileCopy={
 export function profileStructuredData(lang:typeof profileLanguages[number]){
   const url='https://youdozi.github.io'+authorPath(lang);const copy=profileCopy[lang];
   return [
-    {'@context':'https://schema.org','@type':'ProfilePage','@id':url+'#profile',url,name:copy.title,description:copy.description,inLanguage:lang,dateModified:profileUpdatedAt,mainEntity:authorData(lang)},
+    {'@context':'https://schema.org','@type':'ProfilePage','@id':url+'#profile',url,name:copy.title,description:copy.description,inLanguage:lang,dateModified:profileUpdatedAt(lang),mainEntity:authorData(lang)},
     {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:copy.home,item:`https://youdozi.github.io/${lang}/`},{'@type':'ListItem',position:2,name:copy.label,item:url}]},
   ];
 }

@@ -66,7 +66,7 @@ class IndexNowTests(unittest.TestCase):
             ix.build_manifest(self.dist)
 
     def test_author_profiles_require_actual_native_canonical_pages(self):
-        urls = [self.page('/en/about/'), self.page('/ko/about/')]
+        urls = [self.page('/en/about/'), self.page('/ko/about/'), self.page('/hi/about/')]
         self.sitemap(urls)
         self.assertEqual(set(ix.build_manifest(self.dist)['pages']), set(urls))
         for path in ['/ja/about/', '/en/about/private/', '/ko/about/../private/']:
