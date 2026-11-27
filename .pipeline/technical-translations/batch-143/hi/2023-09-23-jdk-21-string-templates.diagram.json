@@ -1,0 +1,41 @@
+{
+  "key": "2023-09-23-jdk-21-string-templates",
+  "language": "hi",
+  "title": "मानक API से टेक्स्ट बनाना",
+  "description": "टेक्स्ट जोड़ें, लोकेल के साथ फ़ॉर्मैट करें और MessageFormat में एपॉस्ट्रॉफ़ का आउटपुट जाँचें।",
+  "steps": [
+    {
+      "kind": "process",
+      "lines": [
+        "x = 2 और y = 3 रखें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "(x + y) का योग टेक्स्ट से जोड़ें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Locale.ROOT के साथ String.format",
+        "पूर्णांकों के लिए क्रमांकित स्थान रखें"
+      ]
+    },
+    {
+      "kind": "process",
+      "lines": [
+        "Locale.ROOT के साथ MessageFormat",
+        "आर्ग्युमेंट Object ऐरे में दें"
+      ]
+    },
+    {
+      "kind": "result",
+      "lines": [
+        "पैटर्न में एपॉस्ट्रॉफ़ दो बार लिखें",
+        "चारों आउटपुट लिखें"
+      ]
+    }
+  ]
+}

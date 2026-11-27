@@ -64,9 +64,9 @@ test('edits to a pinned source invalidate the entire batch',async()=>{
 // Localized dates retain calendar identity without relaxing ordered numeric checks.
 import {normalizeCalendarDates} from './translation-dates.mjs';
 test('explicit localized calendar dates share identity, including yearless updates',()=>{
- const dates=['September 19, 2023','19. September 2023','19 septembre 2023','19 de septiembre de 2023','19 сентября 2023','2023年9月19日'];
+ const dates=['September 19, 2023','19. September 2023','19 septembre 2023','19 de septiembre de 2023','19 сентября 2023','2023年9月19日','19 सितंबर 2023'];
  for(const date of dates)assert.equal(normalizeCalendarDates(date),normalizeCalendarDates(dates[0]));
- for(const date of ['9. Oktober','9 octobre','9 de octubre','9 октября','10月9日'])assert.equal(normalizeCalendarDates(date),normalizeCalendarDates('October 9'));
+ for(const date of ['9. Oktober','9 octobre','9 de octubre','9 октября','10月9日','9 अक्टूबर'])assert.equal(normalizeCalendarDates(date),normalizeCalendarDates('October 9'));
  assert.notEqual(normalizeCalendarDates('October 9'),normalizeCalendarDates('October 10'));
  assert.notEqual(normalizeCalendarDates('September 19, 2023'),normalizeCalendarDates('September 19, 2024'));
 });
