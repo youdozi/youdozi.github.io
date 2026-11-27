@@ -60,7 +60,7 @@ try{
     assert.equal(response.status,200);
     return new Set((await response.json()).map(entry=>entry.url.slice(language.length+1)));
   }));
-  const untranslated=[...english].find(path=>path.startsWith('/posts/')&&korean.has(path)&&!hindi.has(path));
+  const untranslated=[...english].find(path=>korean.has(path)&&!hindi.has(path));
   assert.ok(untranslated,'Missing English/Korean article for the unavailable Hindi edition check');
   for(const width of [320,1360]){
     for(const [locale,expected] of [['en-GB','en'],['ko-KR','ko'],['zh-CN','zh-CN'],['ja-JP','ja'],['de-AT','de'],['fr-CA','fr'],['ru-RU','ru'],['es-419','es'],['hi-IN','hi'],['pt-BR','en'],['zh-TW','en']]){

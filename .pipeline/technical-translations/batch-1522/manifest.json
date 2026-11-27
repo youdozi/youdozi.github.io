@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-1522",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "8a30a7ddaaee53cf91e41625bcc59ad30e341f41",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Translator self-review of defensive excerpts, historical version and access conditions, localized diagrams and official release or support references.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "source": {
+        "path": "src/content/posts/en/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "97bd39093c9d08aaab40c9f7f99bc2ea9205d422464aaee2229302eea8b10451"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/2026-11-18-java4shell-cve-2026-114938-en.svg",
+        "sha256": "32340355ba1fa7a923775d6b93a809555d672fd811ab8f77aa5e3bc87acd69ca"
+      },
+      "translationKey": "2026-11-18-java4shell-cve-2026-114938",
+      "key": "hi-2026-11-18-java4shell-cve-2026-114938",
+      "language": "hi",
+      "defensiveBodyLines": [
+        [
+          4,
+          4
+        ],
+        [
+          23,
+          37
+        ],
+        [
+          41,
+          45
+        ],
+        [
+          57,
+          63
+        ],
+        [
+          121,
+          121
+        ],
+        [
+          129,
+          129
+        ]
+      ],
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1522/hi/2026-11-18-java4shell-cve-2026-114938.svg",
+        "sha256": "bdf5909b4b947b0c2fe06b8a25140c470142f05b9c8bd2d4620f72156c296436"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1522/hi/2026-11-18-java4shell-cve-2026-114938.md",
+        "sha256": "342711cba4eb18e9ab68d7926669c51d227da2de382f9e30ba80342c028de30a"
+      }
+    }
+  ]
+}
