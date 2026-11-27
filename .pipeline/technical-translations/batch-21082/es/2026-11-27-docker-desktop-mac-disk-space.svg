@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="es" viewBox="0 0 440 310" role="img" aria-labelledby="title description">
+  <title id="title">¿Dónde se mide cada valor?</title>
+  <desc id="description">Consulta el uso de disco del motor, la caché del constructor seleccionado y, por último, el espacio libre en el sistema de archivos del Mac.</desc>
+  <rect x="6" y="8" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">Uso de disco en Docker Engine</text>
+  <text x="220" y="70" text-anchor="middle" font-family="monospace" font-size="18" fill="#153c52">docker system df -v</text>
+  <path d="M220 92v16m-5 -5 5 5 5 -5" fill="none" stroke="#466a80" stroke-width="2"/>
+  <rect x="6" y="112" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="144" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">Caché del constructor seleccionado</text>
+  <text x="220" y="174" text-anchor="middle" font-family="monospace" font-size="18" fill="#153c52">docker buildx du</text>
+  <path d="M220 196v16m-5 -5 5 5 5 -5" fill="none" stroke="#466a80" stroke-width="2"/>
+  <rect x="6" y="216" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="248" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">Espacio libre en el Mac</text>
+  <text x="220" y="278" text-anchor="middle" font-family="monospace" font-size="18" fill="#153c52">df -k /</text>
+</svg>

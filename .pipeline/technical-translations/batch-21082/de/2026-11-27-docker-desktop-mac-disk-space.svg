@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="de" viewBox="0 0 440 310" role="img" aria-labelledby="title description">
+  <title id="title">Woher stammen die einzelnen Werte?</title>
+  <desc id="description">Zuerst die Belegung der Engine ablesen, dann den Cache des ausgewählten Builders und schließlich den freien Platz im Dateisystem des Mac.</desc>
+  <rect x="6" y="8" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">Speicherbelegung der Docker Engine</text>
+  <text x="220" y="70" text-anchor="middle" font-family="monospace" font-size="18" fill="#153c52">docker system df -v</text>
+  <path d="M220 92v16m-5 -5 5 5 5 -5" fill="none" stroke="#466a80" stroke-width="2"/>
+  <rect x="6" y="112" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="144" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">Cache des ausgewählten Builders</text>
+  <text x="220" y="174" text-anchor="middle" font-family="monospace" font-size="18" fill="#153c52">docker buildx du</text>
+  <path d="M220 196v16m-5 -5 5 5 5 -5" fill="none" stroke="#466a80" stroke-width="2"/>
+  <rect x="6" y="216" width="428" height="82" rx="10" fill="#f2f6fa" stroke="#577186"/>
+  <text x="220" y="248" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#17384e">Freier Platz im Mac-Dateisystem</text>
+  <text x="220" y="278" text-anchor="middle" font-family="monospace" font-size="18" fill="#153c52">df -k /</text>
+</svg>
