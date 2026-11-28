@@ -6,7 +6,7 @@
   "title": "Бесплатный хостинг: где разместить статический сайт, API и PostgreSQL?",
   "description": "При выборе площадки для блога, приложения с заметками или демоверсии сравните лимиты сборки, запуск после простоя и сроки хранения данных.",
   "sourcePath": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-  "sourceSha256": "24880e57aa8ba66175d89a6364b0ddb3fa60d900e7253c9b1415923ba0206254"
+  "sourceSha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740"
 }
 ---
 
@@ -20,7 +20,7 @@
 
 Если страницы создаются при сборке, как в блоге на Astro или HTML-портфолио, достаточно статического хостинга. Учитывайте размер файлов, частоту сборок и назначение сайта.
 
-| Сервис | Подходящие проекты | Условия бесплатного тарифа |
+| <span style="display:inline-block;min-width:13ch">Сервис</span> | <span style="display:inline-block;min-width:18ch">Подходящие проекты</span> | <span style="display:inline-block;min-width:28ch">Условия бесплатного тарифа</span> |
 | --- | --- | --- |
 | GitHub Pages | Блоги, документация и портфолио в публичных репозиториях | Опубликованный сайт может занимать до 1 ГБ. Мягкий лимит трафика — 100 ГБ в месяц. Для сайтов, чья основная цель — электронная торговля или предоставление коммерческого SaaS, действуют ограничения по использованию. [Ограничения GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) |
 | Cloudflare Pages | Статические сайты на Astro или Vite и проекты, где нужен предпросмотр каждой ветки | 500 сборок в месяц, одновременно выполняется 1 сборка, максимальный размер файла — 25 МиБ. Число запросов к статическим файлам без вызова Functions не ограничено. [Ограничения Pages](https://developers.cloudflare.com/pages/platform/limits/) · [Тарификация статики и Functions](https://developers.cloudflare.com/pages/functions/pricing/) |
@@ -30,7 +30,7 @@
 
 ## Сначала выберите способ запуска API
 
-| Сервис | Для каких API подходит | Условия бесплатного тарифа |
+| <span style="display:inline-block;min-width:13ch">Сервис</span> | <span style="display:inline-block;min-width:18ch">Для каких API подходит</span> | <span style="display:inline-block;min-width:28ch">Условия бесплатного тарифа</span> |
 | --- | --- | --- |
 | Cloudflare Workers | Лёгкие HTTP API, которые проверяют входные данные, обращаются к базе и возвращают JSON | 100 000 запросов в день и 10 мс процессорного времени на запрос. Учитывается исполнение кода, а ожидание ответа по сети не входит в процессорное время. Pages Functions расходуют ту же бесплатную квоту запросов Workers. [Ограничения Workers](https://developers.cloudflare.com/workers/platform/limits/) · [Тарификация Pages Functions](https://developers.cloudflare.com/pages/functions/pricing/) |
 | Render Free Web Service | Демонстрации с отдельным процессом HTTP-сервера, например на FastAPI или Express | Через 15 минут без входящего трафика сервис останавливается. Следующий запрос запускает его снова. По данным Render, это занимает около минуты. На рабочее пространство выделяется 750 бесплатных часов работы экземпляров в месяц. Перезапуск, повторное развёртывание и переход в спящий режим приводят к потере локальных изменений файлов. [Бесплатное развёртывание в Render](https://render.com/docs/free) |
@@ -39,7 +39,7 @@
 
 ## Для PostgreSQL важны и объём, и условия простоя
 
-| Сервис | Что входит в бесплатный тариф | Что происходит при простое |
+| <span style="display:inline-block;min-width:13ch">Сервис</span> | <span style="display:inline-block;min-width:18ch">Что входит в бесплатный тариф</span> | <span style="display:inline-block;min-width:28ch">Что происходит при простое</span> |
 | --- | --- | --- |
 | Neon Free | На проект выделяется 1 ГБ хранилища PostgreSQL и 100 CU-часов вычислений в месяц | После 5 минут простоя вычислительный ресурс останавливается и автоматически запускается при следующем запросе. При исчерпании месячной квоты вычисления приостанавливаются до следующего расчётного периода или перехода на платный тариф. [Тарифы Neon](https://neon.com/pricing) |
 | Supabase Free | 500 МБ для базы данных на проект, управляемая PostgreSQL, Auth и Data API | Если активность базы низкая в течение 7 дней, проект может быть приостановлен. Возобновить его работу можно в панели управления. [Тарифы Supabase](https://supabase.com/pricing) · [Приостановка проектов](https://supabase.com/docs/guides/platform/free-project-pausing) |

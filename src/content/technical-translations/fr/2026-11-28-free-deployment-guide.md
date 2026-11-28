@@ -17,10 +17,10 @@
     "postgresql"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-  "sourceSha256": "24880e57aa8ba66175d89a6364b0ddb3fa60d900e7253c9b1415923ba0206254",
-  "draftSha256": "2ccd9b01399f04da0a61dae8a04e20b857d353ac1ac34bcf5c0b1cba1c4c3381",
+  "sourceSha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740",
+  "draftSha256": "6c12da44f1ee4c224b48cf37d641a8299e83c979d6564014a57a292592a7fd9c",
   "manifestPath": ".pipeline/technical-translations/batch-160/manifest.json",
-  "manifestSha256": "f31ac0318dae90ae7cd539c11367d755f11566d715f18635cc80d89f51f2d31c",
+  "manifestSha256": "16c6a6c4c3926f9d0ba97bc36143abd1dc3c54cc5ebeb38641906ae5536beaa6",
   "publishedAt": "2026-11-28T07:59:07.913Z",
   "updatedAt": "2026-11-28T07:59:07.913Z",
   "approval": {
@@ -43,7 +43,7 @@ Les offres gratuites réagissent différemment aux dépassements de quota et à 
 
 Si les pages sont produites à la compilation, comme pour un blog Astro ou un portfolio HTML, un hébergement statique suffit. Tenez compte de la taille des fichiers, de la fréquence des compilations et de l’usage prévu.
 
-| Service | Projets adaptés | Conditions de l’offre gratuite |
+| <span style="display:inline-block;min-width:13ch">Service</span> | <span style="display:inline-block;min-width:18ch">Projets adaptés</span> | <span style="display:inline-block;min-width:28ch">Conditions de l’offre gratuite</span> |
 | --- | --- | --- |
 | GitHub Pages | Blogs, documentation de projet et portfolios dans des dépôts publics | Le site publié est limité à 1 Go, avec un seuil indicatif de bande passante de 100 Go par mois. Des restrictions s’appliquent aux sites dont l’objet principal est le commerce en ligne ou la fourniture d’un SaaS commercial. [Limites de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) |
 | Cloudflare Pages | Sites statiques Astro ou Vite et projets nécessitant un aperçu par branche | 500 compilations par mois, 1 à la fois et 25 Mio par fichier au maximum. Le nombre de requêtes pour des fichiers statiques est illimité si elles ne déclenchent pas de Functions. [Limites de Pages](https://developers.cloudflare.com/pages/platform/limits/) · [Tarification des fichiers statiques et des Functions](https://developers.cloudflare.com/pages/functions/pricing/) |
@@ -53,7 +53,7 @@ GitHub Pages est un point de départ simple pour un blog comme celui-ci, dont le
 
 ## Choisissez le mode d’exécution de l’API
 
-| Service | API adaptées | Conditions de l’offre gratuite |
+| <span style="display:inline-block;min-width:13ch">Service</span> | <span style="display:inline-block;min-width:18ch">API adaptées</span> | <span style="display:inline-block;min-width:28ch">Conditions de l’offre gratuite</span> |
 | --- | --- | --- |
 | Cloudflare Workers | API HTTP légères qui valident une entrée, interrogent une base et renvoient du JSON | 100 000 requêtes par jour et 10 ms de temps CPU par requête. Seule l’exécution du code compte, hors attente des réponses du réseau. Pages Functions partage le quota gratuit de requêtes de Workers. [Limites de Workers](https://developers.cloudflare.com/workers/platform/limits/) · [Tarification de Pages Functions](https://developers.cloudflare.com/pages/functions/pricing/) |
 | Render Free Web Service | Démos qui lancent un processus serveur HTTP avec FastAPI ou Express, par exemple | Après 15 minutes sans trafic entrant, le service se met en veille. La requête suivante le redémarre en une minute environ, selon Render. Chaque espace de travail dispose de 750 heures d’instance gratuites par mois. Les modifications de fichiers locaux sont perdues au redémarrage, au redéploiement ou à la mise en veille. [Déploiement gratuit sur Render](https://render.com/docs/free) |
@@ -62,7 +62,7 @@ Prenons l’application de notes en Python présentée précédemment. Sur Rende
 
 ## Pour PostgreSQL, examinez la capacité et les conditions de mise en veille
 
-| Service | Ressources gratuites | En cas d’inactivité |
+| <span style="display:inline-block;min-width:13ch">Service</span> | <span style="display:inline-block;min-width:18ch">Ressources gratuites</span> | <span style="display:inline-block;min-width:28ch">En cas d’inactivité</span> |
 | --- | --- | --- |
 | Neon Free | 1 Go de stockage PostgreSQL et un quota mensuel de calcul de 100 CU-heures par projet | Après 5 minutes d’inactivité, le calcul s’arrête et reprend automatiquement à la requête suivante. Une fois le quota mensuel de calcul épuisé, il reste suspendu jusqu’à la prochaine période de facturation ou au passage à une offre payante. [Tarifs de Neon](https://neon.com/pricing) |
 | Supabase Free | 500 Mo de base de données par projet, avec PostgreSQL géré, Auth et la Data API | Si l’activité de la base reste faible pendant 7 jours, le projet peut être suspendu. Il se réactive depuis le tableau de bord. [Tarifs de Supabase](https://supabase.com/pricing) · [Suspension des projets](https://supabase.com/docs/guides/platform/free-project-pausing) |

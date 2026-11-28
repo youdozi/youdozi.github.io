@@ -29,11 +29,11 @@
       "translationKey": "2026-11-28-free-deployment-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-        "sha256": "24880e57aa8ba66175d89a6364b0ddb3fa60d900e7253c9b1415923ba0206254"
+        "sha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-160/zh-CN/2026-11-28-free-deployment-guide.md",
-        "sha256": "80447706168977c67702f5000fe138d1517133e0457a8ed8ba3ee3ab69e5e25e"
+        "sha256": "2c10590a3eab126a32a8be98cbf9a412e6ca9caccc687a8aae56b20820dcb772"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-160/zh-CN/2026-11-28-free-deployment-guide.svg",
@@ -50,11 +50,11 @@
       "translationKey": "2026-11-28-free-deployment-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-        "sha256": "24880e57aa8ba66175d89a6364b0ddb3fa60d900e7253c9b1415923ba0206254"
+        "sha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-160/ja/2026-11-28-free-deployment-guide.md",
-        "sha256": "6af5ee66215cab27b4bb34b6b2dbcbb1bdb1b4c5fa04db33d931a5a77004aa6e"
+        "sha256": "88f18d873070d99f8c10139edb5c9d68a665513c091b1ce8e63eeeb9535e767a"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-160/ja/2026-11-28-free-deployment-guide.svg",
@@ -71,11 +71,11 @@
       "translationKey": "2026-11-28-free-deployment-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-        "sha256": "24880e57aa8ba66175d89a6364b0ddb3fa60d900e7253c9b1415923ba0206254"
+        "sha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-160/de/2026-11-28-free-deployment-guide.md",
-        "sha256": "402098cd219be5d31ba6f11a9bda2e37c1692be7e0b5f4e9607f1e95cf7f44f9"
+        "sha256": "587c724eaf5ca1a50ae10e261f63e69e011084b0e6f2daffe9dfcafb5c6b94de"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-160/de/2026-11-28-free-deployment-guide.svg",
@@ -92,11 +92,11 @@
       "translationKey": "2026-11-28-free-deployment-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-        "sha256": "24880e57aa8ba66175d89a6364b0ddb3fa60d900e7253c9b1415923ba0206254"
+        "sha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-160/fr/2026-11-28-free-deployment-guide.md",
-        "sha256": "2ccd9b01399f04da0a61dae8a04e20b857d353ac1ac34bcf5c0b1cba1c4c3381"
+        "sha256": "6c12da44f1ee4c224b48cf37d641a8299e83c979d6564014a57a292592a7fd9c"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-160/fr/2026-11-28-free-deployment-guide.svg",
@@ -113,11 +113,11 @@
       "translationKey": "2026-11-28-free-deployment-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-        "sha256": "24880e57aa8ba66175d89a6364b0ddb3fa60d900e7253c9b1415923ba0206254"
+        "sha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-160/ru/2026-11-28-free-deployment-guide.md",
-        "sha256": "2f5866930cd01b93552bb78b8882691ad0857c0f0dbdce597a6231c66bd928c6"
+        "sha256": "45cd648c5bcaf4a8d957ce1c9f01d8509f9ec58e6b8992dff1cb892d13091400"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-160/ru/2026-11-28-free-deployment-guide.svg",
@@ -134,11 +134,11 @@
       "translationKey": "2026-11-28-free-deployment-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-        "sha256": "24880e57aa8ba66175d89a6364b0ddb3fa60d900e7253c9b1415923ba0206254"
+        "sha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-160/es/2026-11-28-free-deployment-guide.md",
-        "sha256": "dc9f043e9875de5cb9b9300819963a19a3fecfc278322c13f165df689be9db80"
+        "sha256": "7e6345fbf39cb8ba0c3d2e2b2a2076147bab66070025ba45b8664ee190d4ebfc"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-160/es/2026-11-28-free-deployment-guide.svg",
@@ -155,11 +155,11 @@
       "translationKey": "2026-11-28-free-deployment-guide",
       "source": {
         "path": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-        "sha256": "24880e57aa8ba66175d89a6364b0ddb3fa60d900e7253c9b1415923ba0206254"
+        "sha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-160/hi/2026-11-28-free-deployment-guide.md",
-        "sha256": "6cc690a4ed01212a476603c2433939edf8db7c013bcb08d7749db3bc5ec7688a"
+        "sha256": "27ccaad9b67b44a2b1fc2675adc001deec023daf609497b7d3e003aaa7ee1d9a"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-160/hi/2026-11-28-free-deployment-guide.svg",

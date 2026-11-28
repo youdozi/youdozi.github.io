@@ -17,10 +17,10 @@
     "postgresql"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-  "sourceSha256": "24880e57aa8ba66175d89a6364b0ddb3fa60d900e7253c9b1415923ba0206254",
-  "draftSha256": "80447706168977c67702f5000fe138d1517133e0457a8ed8ba3ee3ab69e5e25e",
+  "sourceSha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740",
+  "draftSha256": "2c10590a3eab126a32a8be98cbf9a412e6ca9caccc687a8aae56b20820dcb772",
   "manifestPath": ".pipeline/technical-translations/batch-160/manifest.json",
-  "manifestSha256": "f31ac0318dae90ae7cd539c11367d755f11566d715f18635cc80d89f51f2d31c",
+  "manifestSha256": "16c6a6c4c3926f9d0ba97bc36143abd1dc3c54cc5ebeb38641906ae5536beaa6",
   "publishedAt": "2026-11-28T07:59:07.913Z",
   "updatedAt": "2026-11-28T07:59:07.913Z",
   "approval": {
@@ -43,7 +43,7 @@
 
 如果页面在构建时就已生成，比如 Astro 博客或 HTML 作品集，用静态托管即可发布。选平台时要看文件大小、构建频率和网站用途。
 
-| 服务 | 适合的项目 | 免费套餐条件 |
+| <span style="display:inline-block;min-width:13ch">服务</span> | <span style="display:inline-block;min-width:18ch">适合的项目</span> | <span style="display:inline-block;min-width:28ch">免费套餐条件</span> |
 | --- | --- | --- |
 | GitHub Pages | 公开仓库中的博客、项目文档和作品集 | 发布后的网站最大为 1 GB，每月带宽软上限为 100 GB。以经营电子商务或提供商业 SaaS 为主要目的的网站受到用途限制。[GitHub Pages 限额](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) |
 | Cloudflare Pages | Astro、Vite 静态网站，以及需要按分支预览的项目 | 每月可构建 500 次，同时只能运行 1 次构建，单个文件最大为 25 MiB。未调用 Functions 的静态文件请求不限次数。[Pages 限额](https://developers.cloudflare.com/pages/platform/limits/) · [静态文件和 Functions 计费](https://developers.cloudflare.com/pages/functions/pricing/) |
@@ -53,7 +53,7 @@
 
 ## 先确定后端 API 的运行方式
 
-| 服务 | 适合的 API | 免费套餐条件 |
+| <span style="display:inline-block;min-width:13ch">服务</span> | <span style="display:inline-block;min-width:18ch">适合的 API</span> | <span style="display:inline-block;min-width:28ch">免费套餐条件</span> |
 | --- | --- | --- |
 | Cloudflare Workers | 验证输入、查询数据库并返回 JSON 的轻量 HTTP API | 每天 100,000 次请求，每次请求的 CPU 时间为 10 ms。CPU 时间只计代码执行时间，不含等待网络响应的时间。Pages Functions 共用 Workers 的免费请求额度。[Workers 限额](https://developers.cloudflare.com/workers/platform/limits/) · [Pages Functions 计费](https://developers.cloudflare.com/pages/functions/pricing/) |
 | Render Free Web Service | 用 FastAPI 或 Express 等运行 HTTP 服务进程的演示项目 | 连续 15 分钟没有入站流量，服务便会休眠。下一次请求会启动服务，按 Render 的说明大约需要一分钟。每个工作区每月有 750 个免费实例小时，重启、重新部署或休眠都会丢失本地文件的更改。[Render 免费部署](https://render.com/docs/free) |
@@ -62,7 +62,7 @@
 
 ## 选择 PostgreSQL 时兼顾容量和休眠条件
 
-| 服务 | 免费额度 | 闲置后的情况 |
+| <span style="display:inline-block;min-width:13ch">服务</span> | <span style="display:inline-block;min-width:18ch">免费额度</span> | <span style="display:inline-block;min-width:28ch">闲置后的情况</span> |
 | --- | --- | --- |
 | Neon Free | 每个项目有 1 GB PostgreSQL 存储空间，每月有 100 CU-hours 计算额度 | 空闲 5 分钟后计算实例停止，下次查询时自动唤醒。月度计算额度用尽后，计算服务会暂停，直到下个计费周期或升级套餐。[Neon 价格表](https://neon.com/pricing) |
 | Supabase Free | 每个项目包含 500 MB 数据库空间，并提供托管 PostgreSQL、Auth 和 Data API | 如果数据库连续 7 天活动较少，项目可能会暂停。可在控制台恢复项目。[Supabase 价格表](https://supabase.com/pricing) · [项目暂停策略](https://supabase.com/docs/guides/platform/free-project-pausing) |

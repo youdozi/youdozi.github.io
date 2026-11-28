@@ -6,7 +6,7 @@
   "title": "Alojamiento gratuito: dónde desplegar un sitio estático, una API y PostgreSQL",
   "description": "Compara los límites de compilación, el primer acceso tras un periodo de inactividad y la conservación de datos según el proyecto.",
   "sourcePath": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-  "sourceSha256": "24880e57aa8ba66175d89a6364b0ddb3fa60d900e7253c9b1415923ba0206254"
+  "sourceSha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740"
 }
 ---
 
@@ -20,7 +20,7 @@ Los planes gratuitos se comportan de forma distinta cuando se alcanza un límite
 
 Si las páginas se generan durante la compilación, como en un blog con Astro o un portafolio HTML, basta con un alojamiento estático. Al elegirlo, considera el tamaño de los archivos, la frecuencia de compilación y el uso que le darás al sitio.
 
-| Servicio | Proyectos adecuados | Condiciones del plan gratuito |
+| <span style="display:inline-block;min-width:13ch">Servicio</span> | <span style="display:inline-block;min-width:18ch">Proyectos adecuados</span> | <span style="display:inline-block;min-width:28ch">Condiciones del plan gratuito</span> |
 | --- | --- | --- |
 | GitHub Pages | Blogs, documentación y portafolios en repositorios públicos | El sitio publicado puede ocupar hasta 1 GB y tiene un límite flexible de ancho de banda de 100 GB al mes. Hay restricciones para los sitios cuyo objetivo principal sea gestionar un comercio electrónico u ofrecer un SaaS comercial. [Límites de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) |
 | Cloudflare Pages | Sitios estáticos de Astro o Vite y proyectos que necesitan vistas previas por rama | 500 compilaciones al mes, 1 a la vez y un máximo de 25 MiB por archivo. Las solicitudes de archivos estáticos que no invocan Functions son ilimitadas. [Límites de Pages](https://developers.cloudflare.com/pages/platform/limits/) · [Precios de los archivos estáticos y Functions](https://developers.cloudflare.com/pages/functions/pricing/) |
@@ -30,7 +30,7 @@ GitHub Pages es un buen punto de partida si, como en este blog, generas los art�
 
 ## Elige cómo ejecutar la API de backend
 
-| Servicio | API adecuadas | Condiciones del plan gratuito |
+| <span style="display:inline-block;min-width:13ch">Servicio</span> | <span style="display:inline-block;min-width:18ch">API adecuadas</span> | <span style="display:inline-block;min-width:28ch">Condiciones del plan gratuito</span> |
 | --- | --- | --- |
 | Cloudflare Workers | API HTTP ligeras que validan la entrada, consultan una base de datos y devuelven JSON | 100.000 solicitudes al día y 10 ms de CPU por solicitud. El tiempo de CPU comprende la ejecución del código y excluye la espera de respuestas de red. Pages Functions comparte la cuota gratuita de solicitudes de Workers. [Límites de Workers](https://developers.cloudflare.com/workers/platform/limits/) · [Precios de Pages Functions](https://developers.cloudflare.com/pages/functions/pricing/) |
 | Render Free Web Service | Demos con un proceso servidor HTTP, por ejemplo con FastAPI o Express | El servicio se suspende tras 15 minutos sin tráfico entrante. La siguiente solicitud lo inicia de nuevo, lo que tarda alrededor de un minuto según Render. Cada espacio de trabajo dispone de 750 horas de instancia gratuitas al mes. Los cambios en archivos locales se pierden al reiniciar, volver a desplegar o entrar en reposo. [Despliegue gratuito en Render](https://render.com/docs/free) |
@@ -39,7 +39,7 @@ Imagina que despliegas en Render la aplicación de notas en Python del artículo
 
 ## En PostgreSQL importan tanto la capacidad como la inactividad
 
-| Servicio | Recursos gratuitos | Qué ocurre si dejas de usarlo |
+| <span style="display:inline-block;min-width:13ch">Servicio</span> | <span style="display:inline-block;min-width:18ch">Recursos gratuitos</span> | <span style="display:inline-block;min-width:28ch">Qué ocurre si dejas de usarlo</span> |
 | --- | --- | --- |
 | Neon Free | 1 GB de almacenamiento PostgreSQL y 100 horas de unidad de cómputo (CU) al mes por proyecto | Tras 5 minutos de inactividad, el cómputo se detiene y se reactiva automáticamente con la siguiente consulta. Si agotas la cuota mensual de cómputo, queda suspendido hasta el próximo periodo de facturación o hasta que cambies a un plan de pago. [Precios de Neon](https://neon.com/pricing) |
 | Supabase Free | 500 MB de base de datos por proyecto, con PostgreSQL gestionado, Auth y la Data API | El proyecto puede quedar en pausa tras 7 días de poca actividad en la base. Puedes reactivarlo desde el panel de control. [Precios de Supabase](https://supabase.com/pricing) · [Pausa de proyectos](https://supabase.com/docs/guides/platform/free-project-pausing) |
