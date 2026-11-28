@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-1542",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "b1d7e24712181513e4c9ceb716311783191a6f42",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Self-review against the approved Korean manuscript, English source, executable requests, and localized diagrams.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-11-28-self-hosting-ai-notes",
+      "language": "hi",
+      "translationKey": "2026-11-28-self-hosting-ai-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "005a0679c6742c842941ba2d57b180427e876b2615a48d4c7bb23d42503f8597"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1542/hi/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "60fecc0abe2d4e2507c1445844aa3a90f3289d78276044fb2c16120dab5fbe9f"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1542/hi/2026-11-28-self-hosting-ai-notes.svg",
+        "sha256": "14cd9a45f2a56ccab2092f78c11d165fb01d30f5faaa822935b8ada43240ef80"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/self-hosting-ai-notes-en.svg",
+        "sha256": "a1f9e390b80c1d033478f132a2425ef961f6c7ce56be75e1a2ea81921e55d150"
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-1541",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "b1d7e24712181513e4c9ceb716311783191a6f42",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es"
+  ],
+  "review": {
+    "method": "Self-review against the approved Korean manuscript, English source, executable requests, and localized diagrams.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-28-self-hosting-ai-notes",
+      "language": "zh-CN",
+      "translationKey": "2026-11-28-self-hosting-ai-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "005a0679c6742c842941ba2d57b180427e876b2615a48d4c7bb23d42503f8597"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1541/zh-CN/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "351ae0b4324daf447583979dd4e9d6af81abc91176ae8728073268d893136115"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1541/zh-CN/2026-11-28-self-hosting-ai-notes.svg",
+        "sha256": "bc526efb2f664c89f985889e993a4287fa1ad415a47b11a92b4e68f0c65fef9c"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/self-hosting-ai-notes-en.svg",
+        "sha256": "a1f9e390b80c1d033478f132a2425ef961f6c7ce56be75e1a2ea81921e55d150"
+      }
+    },
+    {
+      "key": "ja-2026-11-28-self-hosting-ai-notes",
+      "language": "ja",
+      "translationKey": "2026-11-28-self-hosting-ai-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "005a0679c6742c842941ba2d57b180427e876b2615a48d4c7bb23d42503f8597"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1541/ja/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "e0ff1282c49d20b8a64374bf487779941c2b964884505646714ae9695d3e77bc"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1541/ja/2026-11-28-self-hosting-ai-notes.svg",
+        "sha256": "deaac47924d04487ce3b2203d74223d0dfe5abd89c872e3494d5e1f81831eb0c"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/self-hosting-ai-notes-en.svg",
+        "sha256": "a1f9e390b80c1d033478f132a2425ef961f6c7ce56be75e1a2ea81921e55d150"
+      }
+    },
+    {
+      "key": "de-2026-11-28-self-hosting-ai-notes",
+      "language": "de",
+      "translationKey": "2026-11-28-self-hosting-ai-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "005a0679c6742c842941ba2d57b180427e876b2615a48d4c7bb23d42503f8597"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1541/de/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "0c799a06ea59840f5d6b5b12bc5b316a8fa054309aafe8a753158d8a0fdcaf21"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1541/de/2026-11-28-self-hosting-ai-notes.svg",
+        "sha256": "b154a5036ade96fe8ebf78b902ceee7c6c8dab3af16fa6d1e180e3622f2396eb"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/self-hosting-ai-notes-en.svg",
+        "sha256": "a1f9e390b80c1d033478f132a2425ef961f6c7ce56be75e1a2ea81921e55d150"
+      }
+    },
+    {
+      "key": "fr-2026-11-28-self-hosting-ai-notes",
+      "language": "fr",
+      "translationKey": "2026-11-28-self-hosting-ai-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "005a0679c6742c842941ba2d57b180427e876b2615a48d4c7bb23d42503f8597"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1541/fr/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "d7c1b4f76df543f72c09f32c5d45e9b0815d3b594c06e5edd5bc367cb53795bf"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1541/fr/2026-11-28-self-hosting-ai-notes.svg",
+        "sha256": "42924565008542462f664edaeb8b0c04004c1172d9291abd5a8070716ff6dc26"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/self-hosting-ai-notes-en.svg",
+        "sha256": "a1f9e390b80c1d033478f132a2425ef961f6c7ce56be75e1a2ea81921e55d150"
+      }
+    },
+    {
+      "key": "ru-2026-11-28-self-hosting-ai-notes",
+      "language": "ru",
+      "translationKey": "2026-11-28-self-hosting-ai-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "005a0679c6742c842941ba2d57b180427e876b2615a48d4c7bb23d42503f8597"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1541/ru/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "b84c86156fd0260a54117523f717a696854ffb8b8117a99f2b12f5dfea3a09aa"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1541/ru/2026-11-28-self-hosting-ai-notes.svg",
+        "sha256": "c788fb090ab25a4d2550a7b509adf81089958c4abdcb4a6f81d08bd9947d422f"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/self-hosting-ai-notes-en.svg",
+        "sha256": "a1f9e390b80c1d033478f132a2425ef961f6c7ce56be75e1a2ea81921e55d150"
+      }
+    },
+    {
+      "key": "es-2026-11-28-self-hosting-ai-notes",
+      "language": "es",
+      "translationKey": "2026-11-28-self-hosting-ai-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "005a0679c6742c842941ba2d57b180427e876b2615a48d4c7bb23d42503f8597"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1541/es/2026-11-28-self-hosting-ai-notes.md",
+        "sha256": "e0be5bf99ddcf5aad80c86ca4442c26504950e582ef35c28a3efb0be700619f4"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1541/es/2026-11-28-self-hosting-ai-notes.svg",
+        "sha256": "5ddc3e3ea1e4e416138754bde465cb162a8964c168808e3b02c74b0ee3baba81"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/self-hosting-ai-notes-en.svg",
+        "sha256": "a1f9e390b80c1d033478f132a2425ef961f6c7ce56be75e1a2ea81921e55d150"
+      }
+    }
+  ]
+}

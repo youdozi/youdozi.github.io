@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ru" viewBox="0 0 480 480" role="img" aria-labelledby="title desc"><title id="title">Прочитать заметку</title><desc id="desc">Проверить состояние и пустой список → отклонить текст из пробелов → сохранить первую заметку → завершить процесс → запустить с той же базой → прочитать сохранённую заметку.</desc>
+<rect width="480" height="480" rx="18" fill="#f4f8fc"/>
+<rect x="20" y="10" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="42" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">Состояние и пустой список</text><text x="240" y="69" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">GET /healthz · GET /notes → 200</text>
+<path d="M240 87v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="105" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="137" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">Только пробелы</text><text x="240" y="164" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">POST /notes → 400</text>
+<path d="M240 182v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="200" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="232" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">Сохранить первую заметку</text><text x="240" y="259" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">POST /notes → 201</text>
+<path d="M240 277v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="295" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="327" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">Остановить и запустить с той же базой</text><text x="240" y="354" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">data/notes.db</text>
+<path d="M240 372v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="390" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="422" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">Прочитать заметку</text><text x="240" y="449" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">GET /notes → 200</text>
+</svg>

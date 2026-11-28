@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="zh-CN" viewBox="0 0 480 480" role="img" aria-labelledby="title desc"><title id="title">读取已存笔记</title><desc id="desc">查看状态和空列表 → 拒绝空白笔记 → 保存第一条笔记 → 停止进程 → 用同一数据库重启 → 读取已存笔记。</desc>
+<rect width="480" height="480" rx="18" fill="#f4f8fc"/>
+<rect x="20" y="10" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="42" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">状态与空列表</text><text x="240" y="69" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">GET /healthz · GET /notes → 200</text>
+<path d="M240 87v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="105" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="137" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">只有空白字符</text><text x="240" y="164" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">POST /notes → 400</text>
+<path d="M240 182v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="200" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="232" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">保存第一条笔记</text><text x="240" y="259" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">POST /notes → 201</text>
+<path d="M240 277v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="295" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="327" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">停止进程，用同一数据库重启</text><text x="240" y="354" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">data/notes.db</text>
+<path d="M240 372v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="390" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="422" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">读取已存笔记</text><text x="240" y="449" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">GET /notes → 200</text>
+</svg>
