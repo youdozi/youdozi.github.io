@@ -42,13 +42,13 @@ You can publish a blog or portfolio on **GitHub Pages or Cloudflare Pages**. To 
 
 Free plans handle limits and inactivity differently. A static host may block new builds. An idle API may take longer to answer the first request. Some databases wake on the next query, while others need someone to resume the project in a dashboard.
 
-*Based on official documentation and pricing as of November 28, 2026. The configurations are examples. We did not sign up for services, deploy them or measure response times.*
+**Based on official documentation and pricing as of November 28, 2026. The configurations are examples. We did not sign up for services, deploy them or measure response times.**
 
 ## Static sites need a home for the build output
 
 If your pages are generated at build time, as with an Astro blog or an HTML portfolio, static hosting is enough. Look at file size, build frequency and what you plan to use the site for.
 
-| <span style="display:inline-block;min-width:13ch">Service</span> | <span style="display:inline-block;min-width:18ch">Project fit</span> | <span style="display:inline-block;min-width:28ch">Free plan conditions</span> |
+| Service | Project fit | Free plan conditions |
 | --- | --- | --- |
 | GitHub Pages | Blogs, project docs and portfolios in public repositories | Published sites can be up to 1 GB, with a soft bandwidth limit of 100 GB per month. Usage restrictions apply to sites primarily intended to run an e-commerce business or deliver commercial SaaS. [GitHub Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) |
 | Cloudflare Pages | Astro or Vite sites and projects that need branch previews | 500 builds per month, 1 build at a time and up to 25 MiB per file. Static asset requests are unlimited when they do not invoke Functions. [Pages limits](https://developers.cloudflare.com/pages/platform/limits/) · [Static assets and Functions pricing](https://developers.cloudflare.com/pages/functions/pricing/) |
@@ -58,7 +58,7 @@ For a blog like this one, where posts are built before publication, GitHub Pages
 
 ## Choose how the backend API runs
 
-| <span style="display:inline-block;min-width:13ch">Service</span> | <span style="display:inline-block;min-width:18ch">API fit</span> | <span style="display:inline-block;min-width:28ch">Free plan conditions</span> |
+| Service | API fit | Free plan conditions |
 | --- | --- | --- |
 | Cloudflare Workers | Lightweight HTTP APIs that validate input, query a database and return JSON | 100,000 requests per day and 10 ms of CPU time per request. CPU time counts code execution and excludes time waiting for network responses. Pages Functions share the Workers free request allowance. [Workers limits](https://developers.cloudflare.com/workers/platform/limits/) · [Pages Functions pricing](https://developers.cloudflare.com/pages/functions/pricing/) |
 | Render Free Web Service | Demos that run an HTTP server process such as FastAPI or Express | After 15 minutes without inbound traffic, the service spins down. The next request starts it again, which Render says takes about a minute. Each workspace gets 750 free instance hours per month. Local file changes are lost on restart, redeploy or spin-down. [Free deployment on Render](https://render.com/docs/free) |
@@ -67,7 +67,7 @@ Consider deploying the Python notes app from the earlier article on Render. Even
 
 ## Compare PostgreSQL storage and inactivity rules
 
-| <span style="display:inline-block;min-width:13ch">Service</span> | <span style="display:inline-block;min-width:18ch">Free allowance</span> | <span style="display:inline-block;min-width:28ch">What happens after inactivity</span> |
+| Service | Free allowance | What happens after inactivity |
 | --- | --- | --- |
 | Neon Free | Per project: 1 GB of PostgreSQL storage and 100 CU-hours of compute per month | After 5 idle minutes, compute stops and wakes automatically on the next query. If the monthly compute allowance runs out, compute is suspended until the next billing period or an upgrade. [Neon pricing](https://neon.com/pricing) |
 | Supabase Free | 500 MB of database storage per project, with managed PostgreSQL, Auth and the Data API | After 7 days of low database activity, the project may pause. Resume it from the dashboard. [Supabase pricing](https://supabase.com/pricing) · [Project pausing](https://supabase.com/docs/guides/platform/free-project-pausing) |

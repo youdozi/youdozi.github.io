@@ -17,10 +17,10 @@
     "postgresql"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-  "sourceSha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740",
-  "draftSha256": "88f18d873070d99f8c10139edb5c9d68a665513c091b1ce8e63eeeb9535e767a",
+  "sourceSha256": "c19ba75706c6500893316b7904e0e4b2369d070fe7aaa154f2f7c7cfd8e5f28b",
+  "draftSha256": "48e7051f270b63077e2bf46288cfe6c9fe340758a6e9ad7f4e6c638ce79d1c50",
   "manifestPath": ".pipeline/technical-translations/batch-160/manifest.json",
-  "manifestSha256": "16c6a6c4c3926f9d0ba97bc36143abd1dc3c54cc5ebeb38641906ae5536beaa6",
+  "manifestSha256": "05a4a0eff6fab5c8cb6c0fe2ec174031ba7678910e0a3dd7391fb048e9a96935",
   "publishedAt": "2026-11-28T07:59:07.913Z",
   "updatedAt": "2026-11-28T07:59:07.913Z",
   "approval": {
@@ -37,13 +37,13 @@
 
 無料プランでも、上限に達した場合やしばらく利用しなかった場合の挙動は異なります。静的サイトでは新しいビルドが止まり、API では休止後の初回応答が遅くなることがあります。データベースには次のクエリで自動復帰するものも、ダッシュボードから再開するものもあります。
 
-*2026年11月28日時点の公式ドキュメントと料金表に基づきます。以下は構成例です。サービスへの登録、実際のデプロイ、応答時間の計測は行っていません。*
+**2026年11月28日時点の公式ドキュメントと料金表に基づきます。以下は構成例です。サービスへの登録、実際のデプロイ、応答時間の計測は行っていません。**
 
 ## 静的サイトはビルド成果物を公開する
 
 Astro のブログや HTML のポートフォリオのように、ビルド時にページができていれば、静的ホスティングで公開できます。配信するファイルのサイズ、ビルド頻度、サイトの用途を基準に選びます。
 
-| <span style="display:inline-block;min-width:13ch">サービス</span> | <span style="display:inline-block;min-width:18ch">向いているプロジェクト</span> | <span style="display:inline-block;min-width:28ch">無料プランの条件</span> |
+| サービス | 向いているプロジェクト | 無料プランの条件 |
 | --- | --- | --- |
 | GitHub Pages | 公開リポジトリのブログ、プロジェクト文書、ポートフォリオ | 公開サイトは最大 1 GB、月間帯域幅のソフトリミットは 100 GB です。電子商取引の運営や商用 SaaS の提供が主目的のサイトには用途制限があります。[GitHub Pages の上限](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) |
 | Cloudflare Pages | Astro や Vite の静的サイト、ブランチ単位のプレビューが必要なプロジェクト | 月 500 ビルド、同時ビルド数は 1、ファイル当たり最大 25 MiB です。Functions を呼ばない静的ファイルへのリクエスト数は無制限です。[Pages の上限](https://developers.cloudflare.com/pages/platform/limits/) · [静的ファイルと Functions の料金](https://developers.cloudflare.com/pages/functions/pricing/) |
@@ -53,7 +53,7 @@ Astro のブログや HTML のポートフォリオのように、ビルド時�
 
 ## バックエンド API は実行方式から選ぶ
 
-| <span style="display:inline-block;min-width:13ch">サービス</span> | <span style="display:inline-block;min-width:18ch">向いている API</span> | <span style="display:inline-block;min-width:28ch">無料プランの条件</span> |
+| サービス | 向いている API | 無料プランの条件 |
 | --- | --- | --- |
 | Cloudflare Workers | 入力を検証し、DB に問い合わせて JSON を返す軽量な HTTP API | リクエストは日次 100,000 件、CPU 時間はリクエスト当たり 10 ms です。CPU 時間はコードの実行時間で、ネットワークの応答待ちは含みません。Pages Functions も Workers の無料リクエスト枠を使います。[Workers の上限](https://developers.cloudflare.com/workers/platform/limits/) · [Pages Functions の料金](https://developers.cloudflare.com/pages/functions/pricing/) |
 | Render Free Web Service | FastAPI や Express などの HTTP サーバープロセスを動かすデモ | 受信トラフィックが 15 分間ないと休止します。次のリクエストで起動し、Render の案内では約一分かかります。無料インスタンス時間はワークスペース当たり月 750 時間です。再起動、再デプロイ、休止の際にローカルファイルの変更は失われます。[Render の無料デプロイ](https://render.com/docs/free) |
@@ -62,7 +62,7 @@ Astro のブログや HTML のポートフォリオのように、ビルド時�
 
 ## PostgreSQL は容量と休止条件を併せて見る
 
-| <span style="display:inline-block;min-width:13ch">サービス</span> | <span style="display:inline-block;min-width:18ch">無料枠</span> | <span style="display:inline-block;min-width:28ch">しばらく利用しない場合</span> |
+| サービス | 無料枠 | しばらく利用しない場合 |
 | --- | --- | --- |
 | Neon Free | プロジェクト当たり PostgreSQL ストレージ 1 GB、コンピュートは月 100 CU-hours | 5 分間アイドル状態が続くとコンピュートが停止し、次のクエリで自動復帰します。月間のコンピュート枠を使い切ると、次の利用期間に入るかアップグレードするまで停止します。[Neon の料金表](https://neon.com/pricing) |
 | Supabase Free | プロジェクト当たり DB 容量 500 MB。マネージド PostgreSQL、Auth、Data API を利用できます | 7 日間 DB の利用が少ないとプロジェクトが一時停止されることがあります。ダッシュボードで再開します。[Supabase の料金表](https://supabase.com/pricing) · [プロジェクトの一時停止](https://supabase.com/docs/guides/platform/free-project-pausing) |

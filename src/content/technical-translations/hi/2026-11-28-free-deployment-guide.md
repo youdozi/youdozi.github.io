@@ -17,10 +17,10 @@
     "postgresql"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-free-deployment-guide.md",
-  "sourceSha256": "0557a16ab0634eaf65f92ae9f1818ab52b9bcad87cf30fa8bfe95490ac381740",
-  "draftSha256": "27ccaad9b67b44a2b1fc2675adc001deec023daf609497b7d3e003aaa7ee1d9a",
+  "sourceSha256": "c19ba75706c6500893316b7904e0e4b2369d070fe7aaa154f2f7c7cfd8e5f28b",
+  "draftSha256": "b4c6ecb90282509972f8b23ae9333d4fb80692421f48ad2f7f32a435a07f5392",
   "manifestPath": ".pipeline/technical-translations/batch-160/manifest.json",
-  "manifestSha256": "16c6a6c4c3926f9d0ba97bc36143abd1dc3c54cc5ebeb38641906ae5536beaa6",
+  "manifestSha256": "05a4a0eff6fab5c8cb6c0fe2ec174031ba7678910e0a3dd7391fb048e9a96935",
   "publishedAt": "2026-11-28T07:59:07.913Z",
   "updatedAt": "2026-11-28T07:59:07.913Z",
   "approval": {
@@ -37,13 +37,13 @@
 
 मुफ़्त प्लान में सीमा पूरी होने या सेवा कुछ समय तक इस्तेमाल न होने पर अलग-अलग असर पड़ता है। स्टैटिक साइट का नया बिल्ड रुक सकता है। निष्क्रिय API को पहली रिक्वेस्ट का जवाब देने में ज़्यादा समय लग सकता है। कुछ डेटाबेस अगली क्वेरी पर अपने आप चालू हो जाते हैं, जबकि कुछ प्रोजेक्ट को डैशबोर्ड से फिर शुरू करना पड़ता है।
 
-*तुलना 28 नवंबर 2026 के आधिकारिक दस्तावेज़ों और मूल्य सूचियों पर आधारित है। नीचे दिए गए संयोजन उदाहरण हैं। हमने सेवाओं पर खाते नहीं बनाए, उदाहरण डिप्लॉय नहीं किए और प्रतिक्रिया का समय नहीं मापा।*
+**तुलना 28 नवंबर 2026 के आधिकारिक दस्तावेज़ों और मूल्य सूचियों पर आधारित है। नीचे दिए गए संयोजन उदाहरण हैं। हमने सेवाओं पर खाते नहीं बनाए, उदाहरण डिप्लॉय नहीं किए और प्रतिक्रिया का समय नहीं मापा।**
 
 ## स्टैटिक साइट के लिए बिल्ड की फ़ाइलें प्रकाशित करें
 
 अगर पेज बिल्ड के समय ही बन जाते हैं, जैसे Astro ब्लॉग या HTML पोर्टफ़ोलियो में, तो स्टैटिक होस्टिंग काफ़ी है। प्लेटफ़ॉर्म चुनते समय फ़ाइलों का आकार, बिल्ड की आवृत्ति और साइट का उद्देश्य देखें।
 
-| <span style="display:inline-block;min-width:13ch">सेवा</span> | <span style="display:inline-block;min-width:18ch">किन प्रोजेक्ट के लिए</span> | <span style="display:inline-block;min-width:28ch">मुफ़्त प्लान की शर्तें</span> |
+| सेवा | किन प्रोजेक्ट के लिए | मुफ़्त प्लान की शर्तें |
 | --- | --- | --- |
 | GitHub Pages | सार्वजनिक रिपॉज़िटरी में ब्लॉग, प्रोजेक्ट दस्तावेज़ और पोर्टफ़ोलियो | प्रकाशित साइट का अधिकतम आकार 1 GB है और बैंडविड्थ की सॉफ़्ट लिमिट प्रति माह 100 GB है। जिन साइटों का मुख्य उद्देश्य ई-कॉमर्स चलाना या व्यावसायिक SaaS देना है, उनके लिए उपयोग पर पाबंदियाँ हैं। [GitHub Pages की सीमाएँ](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) |
 | Cloudflare Pages | Astro या Vite की स्टैटिक साइट और ऐसे प्रोजेक्ट जिन्हें हर ब्रांच का प्रीव्यू चाहिए | हर महीने 500 बिल्ड, एक समय में 1 बिल्ड और हर फ़ाइल का अधिकतम आकार 25 MiB है। Functions को कॉल किए बिना स्टैटिक फ़ाइलें माँगने वाली रिक्वेस्ट की संख्या पर कोई सीमा नहीं है। [Pages की सीमाएँ](https://developers.cloudflare.com/pages/platform/limits/) · [स्टैटिक फ़ाइलों और Functions की बिलिंग](https://developers.cloudflare.com/pages/functions/pricing/) |
@@ -53,7 +53,7 @@
 
 ## पहले तय करें कि बैकएंड API कैसे चलेगी
 
-| <span style="display:inline-block;min-width:13ch">सेवा</span> | <span style="display:inline-block;min-width:18ch">किस तरह की API के लिए</span> | <span style="display:inline-block;min-width:28ch">मुफ़्त प्लान की शर्तें</span> |
+| सेवा | किस तरह की API के लिए | मुफ़्त प्लान की शर्तें |
 | --- | --- | --- |
 | Cloudflare Workers | इनपुट की जाँच करने, डेटाबेस से जानकारी पढ़ने और JSON लौटाने वाली हल्की HTTP API | हर दिन 100,000 रिक्वेस्ट और हर रिक्वेस्ट के लिए 10 ms CPU समय मिलता है। CPU समय में कोड चलने का समय गिना जाता है, नेटवर्क के जवाब का इंतज़ार नहीं। Pages Functions भी Workers के इसी मुफ़्त रिक्वेस्ट कोटे का उपयोग करता है। [Workers की सीमाएँ](https://developers.cloudflare.com/workers/platform/limits/) · [Pages Functions की बिलिंग](https://developers.cloudflare.com/pages/functions/pricing/) |
 | Render Free Web Service | FastAPI या Express जैसी तकनीक से HTTP सर्वर प्रोसेस चलाने वाले डेमो | 15 मिनट तक इनबाउंड ट्रैफ़िक न मिले तो सेवा सो जाती है। अगली रिक्वेस्ट पर वह फिर शुरू होती है। Render के मुताबिक इसमें लगभग एक मिनट लगता है। हर वर्कस्पेस को महीने में 750 मुफ़्त इंस्टेंस घंटे मिलते हैं। रीस्टार्ट, दोबारा डिप्लॉय करने या सेवा के सो जाने पर स्थानीय फ़ाइलों में किए बदलाव मिट जाते हैं। [Render पर मुफ़्त डिप्लॉयमेंट](https://render.com/docs/free) |
@@ -62,7 +62,7 @@
 
 ## PostgreSQL के लिए जगह और निष्क्रियता की शर्तें साथ देखें
 
-| <span style="display:inline-block;min-width:13ch">सेवा</span> | <span style="display:inline-block;min-width:18ch">मुफ़्त संसाधन</span> | <span style="display:inline-block;min-width:28ch">कुछ समय तक उपयोग न करने पर</span> |
+| सेवा | मुफ़्त संसाधन | कुछ समय तक उपयोग न करने पर |
 | --- | --- | --- |
 | Neon Free | हर प्रोजेक्ट के लिए 1 GB PostgreSQL स्टोरेज और महीने में 100 CU-hours कंप्यूट | 5 मिनट तक निष्क्रिय रहने पर कंप्यूट रुक जाता है और अगली क्वेरी पर अपने आप शुरू हो जाता है। महीने का कंप्यूट कोटा ख़त्म होने पर अगले बिलिंग चक्र या प्लान अपग्रेड तक कंप्यूट निलंबित रहता है। [Neon की मूल्य सूची](https://neon.com/pricing) |
 | Supabase Free | हर प्रोजेक्ट को 500 MB डेटाबेस स्पेस के साथ प्रबंधित PostgreSQL, Auth और Data API मिलते हैं | 7 दिनों तक डेटाबेस में गतिविधि कम रहे तो प्रोजेक्ट रोका जा सकता है। उसे डैशबोर्ड से फिर शुरू करें। [Supabase की मूल्य सूची](https://supabase.com/pricing) · [प्रोजेक्ट रोकने की नीति](https://supabase.com/docs/guides/platform/free-project-pausing) |

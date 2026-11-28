@@ -19,3 +19,15 @@ html:lang(zh-CN) .entry-card h2,html:lang(zh-CN) .article-heading h1,html:lang(j
 .site-header nav>a,.language-menu summary,.footer-links>a{display:inline-flex;align-items:center;min-height:44px}.code-tools button{min-height:44px}
 
 .language-menu li a{min-height:44px}
+
+@media (max-width: 640px) {
+  html:has(link[rel="canonical"][href$="/posts/2026-11-28-free-deployment-guide/"]) .prose th {
+    min-width: 18ch;
+  }
+  html:has(link[rel="canonical"][href$="/posts/2026-11-28-free-deployment-guide/"]) .prose th:first-child {
+    min-width: 13ch;
+  }
+  html:has(link[rel="canonical"][href$="/posts/2026-11-28-free-deployment-guide/"]) .prose th:last-child {
+    min-width: 28ch;
+  }
+}

@@ -42,13 +42,13 @@
 
 같은 무료 플랜이라도 한도를 넘겼을 때 생기는 일은 다르다. 정적 사이트는 새 빌드가 막힐 수 있고, API는 유휴 상태에서 첫 응답이 늦어질 수 있다. 데이터베이스는 다음 요청에 자동으로 깨어나기도 하고, 대시보드에서 직접 재개해야 하기도 한다.
 
-*2026년 11월 28일 공식 문서와 요금표 기준. 아래 조합은 구성 예시이며, 서비스 가입, 실제 배포나 응답 시간 측정은 수행하지 않았다.*
+**2026년 11월 28일 공식 문서와 요금표 기준. 아래 조합은 구성 예시이며, 서비스 가입, 실제 배포나 응답 시간 측정은 수행하지 않았다.**
 
 ## 정적 사이트는 빌드 결과물을 올린다
 
 Astro 블로그나 HTML 포트폴리오처럼 빌드 시점에 페이지가 만들어진다면 정적 호스팅만으로 공개할 수 있다. 플랫폼을 고를 때는 배포 파일 크기, 빌드 빈도, 사이트의 용도를 본다.
 
-| <span style="display:inline-block;min-width:13ch">서비스</span> | <span style="display:inline-block;min-width:18ch">어떤 프로젝트에 맞나</span> | <span style="display:inline-block;min-width:28ch">무료 플랜에서 확인할 조건</span> |
+| 서비스 | 어떤 프로젝트에 맞나 | 무료 플랜에서 확인할 조건 |
 | --- | --- | --- |
 | GitHub Pages | 공개 저장소의 블로그, 프로젝트 문서, 포트폴리오 | 게시 사이트 최대 1 GB, 월 대역폭 소프트 한도 100 GB. 전자상거래 운영이나 상용 SaaS 제공이 주목적인 사이트에는 용도 제한이 있다. [GitHub Pages 한도](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) |
 | Cloudflare Pages | Astro·Vite 정적 사이트, 브랜치별 미리보기가 필요한 프로젝트 | 월 500회 빌드, 동시 빌드 1개, 단일 파일 최대 25 MiB. Functions를 호출하지 않는 정적 파일 요청에는 요청량 한도가 없다. [Pages 한도](https://developers.cloudflare.com/pages/platform/limits/) · [정적 파일과 Functions 과금](https://developers.cloudflare.com/pages/functions/pricing/) |
@@ -58,7 +58,7 @@ Astro 블로그나 HTML 포트폴리오처럼 빌드 시점에 페이지가 만�
 
 ## 백엔드 API는 실행 방식부터 고른다
 
-| <span style="display:inline-block;min-width:13ch">서비스</span> | <span style="display:inline-block;min-width:18ch">어떤 API에 맞나</span> | <span style="display:inline-block;min-width:28ch">무료 플랜에서 확인할 조건</span> |
+| 서비스 | 어떤 API에 맞나 | 무료 플랜에서 확인할 조건 |
 | --- | --- | --- |
 | Cloudflare Workers | 입력을 검증하고 DB를 조회한 뒤 JSON을 반환하는 가벼운 HTTP API | 하루 요청 10만 건, 요청당 CPU 시간 10 ms. CPU 시간은 네트워크 응답을 기다리는 시간을 제외한 코드 실행 시간이다. Pages Functions도 같은 Workers 무료 요청량을 사용한다. [Workers 한도](https://developers.cloudflare.com/workers/platform/limits/) · [Pages Functions 과금](https://developers.cloudflare.com/pages/functions/pricing/) |
 | Render Free Web Service | FastAPI나 Express처럼 HTTP 서버 프로세스를 띄우는 데모 | 들어오는 트래픽이 15분 동안 없으면 서버가 내려간다. 다음 요청에 다시 시작하며 Render 안내 기준 약 1분이 걸린다. 무료 인스턴스 시간은 워크스페이스당 월 750시간이고, 재시작·재배포·절전 시 로컬 파일 변경분이 사라진다. [Render 무료 배포](https://render.com/docs/free) |
@@ -67,7 +67,7 @@ Astro 블로그나 HTML 포트폴리오처럼 빌드 시점에 페이지가 만�
 
 ## PostgreSQL은 용량과 휴면 조건을 함께 본다
 
-| <span style="display:inline-block;min-width:13ch">서비스</span> | <span style="display:inline-block;min-width:18ch">무료 범위</span> | <span style="display:inline-block;min-width:28ch">한동안 사용하지 않으면</span> |
+| 서비스 | 무료 범위 | 한동안 사용하지 않으면 |
 | --- | --- | --- |
 | Neon Free | 프로젝트당 PostgreSQL 저장 공간 1 GB, 컴퓨트 월 100 CU-hours | 5분간 유휴 상태면 컴퓨트가 멈추고 다음 쿼리에 자동으로 깨어난다. 월 컴퓨트 한도를 소진하면 다음 사용 기간까지 또는 업그레이드할 때까지 컴퓨트가 중단된다. [Neon 요금표](https://neon.com/pricing) |
 | Supabase Free | 프로젝트당 DB 용량 500 MB 포함. 관리형 PostgreSQL과 Auth, Data API를 함께 제공 | 7일간 DB 활동이 적으면 프로젝트가 일시중지될 수 있다. 중지 상태에서는 대시보드에서 프로젝트를 재개한다. [Supabase 요금표](https://supabase.com/pricing) · [프로젝트 일시중지 정책](https://supabase.com/docs/guides/platform/free-project-pausing) |
