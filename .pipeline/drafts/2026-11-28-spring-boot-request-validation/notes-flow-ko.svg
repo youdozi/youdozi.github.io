@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="352" height="350" viewBox="0 0 352 350" role="img" aria-labelledby="title" lang="ko">
+  <title id="title">메모 생성 요청의 검증과 저장</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#475569"/></marker>
+  </defs>
+  <rect width="352" height="350" rx="12" fill="#f8fafc"/>
+  <g fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M111 59 V85"/><path d="M111 143 V198"/><path d="M111 256 V304"/>
+    <path d="M204 116 H264"/><path d="M204 229 H264"/>
+  </g>
+  <g stroke="#8996a5" fill="white">
+    <rect x="18" y="13" width="186" height="46" rx="6"/>
+    <rect x="18" y="87" width="186" height="56" rx="6"/>
+    <rect x="18" y="200" width="186" height="56" rx="6"/>
+    <rect x="18" y="306" width="186" height="35" rx="6" fill="#dcfce7"/>
+    <rect x="266" y="98" width="68" height="35" rx="6" fill="#ffedd5"/>
+    <rect x="266" y="211" width="68" height="35" rx="6" fill="#fee2e2"/>
+  </g>
+  <g font-family="system-ui, sans-serif" text-anchor="middle" fill="#172534" font-size="16">
+    <text x="111" y="33">POST /notes</text><text x="111" y="51" font-size="14">JSON → CreateNote</text>
+    <text x="111" y="111">제목 검증</text><text x="111" y="132" font-size="14">@Valid · @NotBlank</text>
+    <text x="111" y="224">메모 저장</text><text x="111" y="245" font-size="14">NoteService.save</text>
+    <text x="300" y="121">400</text><text x="300" y="234">500</text><text x="111" y="330">201 Created</text>
+    <g font-size="14" fill="#334155">
+      <text x="235" y="105">거부</text><text x="235" y="218">저장 실패</text>
+      <text x="121" y="174" text-anchor="start">통과</text><text x="121" y="285" text-anchor="start">저장 완료</text>
+    </g>
+  </g>
+</svg>
