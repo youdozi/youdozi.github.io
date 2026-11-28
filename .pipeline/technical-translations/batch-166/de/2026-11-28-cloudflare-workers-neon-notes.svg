@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="de" viewBox="0 0 400 308" role="img" aria-labelledby="title desc"><title id="title">Eine Notiz speichern und nach dem Deployment lesen</title><desc id="desc">Token und Text prüfen → Notiz speichern → Mit derselben DB neu deployen → Neueste Notizen lesen</desc>
+<rect x="5" y="4" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="29" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">Token und Text prüfen</text>
+<text x="200" y="52" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">POST /api/notes · 401 / 400</text>
+<path d="M200 64v16m-5 -5 5 5 5 -5" stroke="#416453" stroke-width="2" fill="none"/>
+<rect x="5" y="84" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="109" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">Notiz speichern</text>
+<text x="200" y="132" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">INSERT … RETURNING · 201</text>
+<path d="M200 144v16m-5 -5 5 5 5 -5" stroke="#416453" stroke-width="2" fill="none"/>
+<rect x="5" y="164" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="189" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">Mit derselben DB neu deployen</text>
+<text x="200" y="212" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">Wrangler → Pages Functions</text>
+<path d="M200 224v16m-5 -5 5 5 5 -5" stroke="#416453" stroke-width="2" fill="none"/>
+<rect x="5" y="244" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="269" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">Neueste Notizen lesen</text>
+<text x="200" y="292" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">GET /api/notes · SELECT → 200</text>
+</svg>
