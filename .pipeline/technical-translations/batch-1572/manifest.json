@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-1572",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "e215c3cab3763a89b98cd55b824f009984128803",
+  "sourceLanguage": "en",
+  "languages": [
+    "hi"
+  ],
+  "review": {
+    "method": "Self-review of the Korean brief, official sources, English article, translated text, commands and localized diagram.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "hi-2026-11-28-nginx-free-subdomains",
+      "language": "hi",
+      "translationKey": "2026-11-28-nginx-free-subdomains",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-nginx-free-subdomains.md",
+        "sha256": "d11db302c4d9595bd30ea32d7d5c2c2ec680a9c318001ba16e333085dbec5f2e"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1572/hi/2026-11-28-nginx-free-subdomains.md",
+        "sha256": "53bd4b6b9983a422b13237a392b1ba8fa74c998c72cec551e7bbdfd1c40756f2"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1572/hi/2026-11-28-nginx-free-subdomains.svg",
+        "sha256": "2bac7bc747fc12f530271ea203047e4cf17605ba099fd926dcbea9a1380a5652"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/nginx-free-subdomains-en.svg",
+        "sha256": "38a043c786cb0684194d61d483d4f43998a5ca9563993a92681ec1c25ac0daec"
+      }
+    },
+    {
+      "key": "hi-2026-11-28-nginx-dns-https",
+      "language": "hi",
+      "translationKey": "2026-11-28-nginx-dns-https",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
+        "sha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-1572/hi/2026-11-28-nginx-dns-https.md",
+        "sha256": "5beb1c82a3dbc63bebfccd931487d79df839c718f5337cc435ca5c1136990dda"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-1572/hi/2026-11-28-nginx-dns-https.svg",
+        "sha256": "7219927e1f019c903253631fc43293a40aa8f37580fb1c940823d662fda3a2ff"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/nginx-dns-https-en.svg",
+        "sha256": "79ee45ad6b79bc86c576a615bb15570d1a24a5be15214cc8172e227d3239eebd"
+      }
+    }
+  ]
+}
