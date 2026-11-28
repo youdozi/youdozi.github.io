@@ -1,0 +1,43 @@
+{
+  "status": "draft",
+  "languages": [
+    "ko",
+    "en"
+  ],
+  "method": "Self-review of a synthetic local example",
+  "runtime": {
+    "java": "Azul 21.0.1",
+    "maven": "3.9.5",
+    "springBoot": "3.5.10",
+    "embeddedTomcat": "10.1.50"
+  },
+  "checks": {
+    "requests": [
+      "missing",
+      "null",
+      "empty",
+      "spaces",
+      "valid",
+      "valid, missing storage directory"
+    ],
+    "before": [
+      500,
+      500,
+      500,
+      500,
+      201,
+      500
+    ],
+    "after": [
+      400,
+      400,
+      400,
+      400,
+      201,
+      500
+    ],
+    "savedTitleInBothRuns": "Plan",
+    "mockMvc": "Four expected failures before the fix with a mocked service. All five tests passed after the fix, including non-invocation for the invalid titles.",
+    "rendering": "Compared all eight code blocks across both manuscripts. Rendered both with Sätteri and decoded each localized SVG in local Chrome at 320 and 768 CSS pixels."
+  }
+}
