@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="hi" viewBox="0 0 400 222" role="img" aria-labelledby="title desc"><title id="title">Cloudflare Pages, Workers और Neon पर नोट्स ऐप का उदाहरण</title><desc id="desc">ब्राउज़र में इंटरफ़ेस · Cloudflare Pages → नोट्स API · Workers → सहेजे गए नोट्स · Neon PostgreSQL</desc>
+<rect x="2" y="2" width="396" height="58" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="25" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">ब्राउज़र में इंटरफ़ेस</text>
+<text x="200" y="49" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">Cloudflare Pages</text>
+<path d="M200 60v18m-5 -5 5 5 5 -5" stroke="#416453" stroke-width="2" fill="none"/>
+<rect x="2" y="82" width="396" height="58" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="105" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">नोट्स API</text>
+<text x="200" y="129" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">Cloudflare Workers</text>
+<path d="M200 140v18m-5 -5 5 5 5 -5" stroke="#416453" stroke-width="2" fill="none"/>
+<rect x="2" y="162" width="396" height="58" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="185" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">सहेजे गए नोट्स</text>
+<text x="200" y="209" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">Neon PostgreSQL</text>
+</svg>
