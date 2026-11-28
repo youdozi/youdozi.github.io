@@ -78,6 +78,8 @@ DB collectors use previously reviewed queries and views, limited roles, and quer
 
 For migrations, verify schema compatibility with both the deployment candidate and the previous version. Consider stages such as adding a column, transitioning through dual reads or writes, removing the old version, and deleting later. Index creation, session termination, DDL, and data updates should go through a change path that reviews impact, locks, and recovery conditions, rather than execute directly from observations. Application rollback, reverse migration, and backup restoration are different operations.
 
+Can the previous version of your Spring Boot application still read and write through its API after a PostgreSQL migration? My rollback kit lets you rehearse that locally with a synthetic example, an editable checklist, and two runnable tests. The kit costs US$15. [View the rollback kit](https://dozi3.gumroad.com/l/cldhfl?utm_source=youdozi-blog&utm_medium=article&utm_campaign=rollback-readiness-kit&utm_content=ai-agent-operations-en)
+
 ## Executable example: check whether evidence from all six areas is ready
 
 The policy below is a compact example checking **whether a canary deployment can proceed to review for the next stage**. It assumes `ok` is a result produced by each collection adapter using defined checks, rather than an agent's impression. Real adapters must implement the previously described check scopes, samples, time windows, permissions, and interpretation of original responses.
