@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ko" viewBox="0 0 480 480" role="img" aria-labelledby="title desc"><title id="title">저장된 메모</title><desc id="desc">상태와 빈 목록 확인 → 공백 메모 거절 → 첫 메모 저장 → 프로세스 종료 → 같은 DB로 재시작 → 저장된 메모 조회.</desc>
+<rect width="480" height="480" rx="18" fill="#f4f8fc"/>
+<rect x="20" y="10" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="42" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">상태와 빈 목록</text><text x="240" y="69" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">GET /healthz · GET /notes → 200</text>
+<path d="M240 87v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="105" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="137" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">공백만 입력</text><text x="240" y="164" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">POST /notes → 400</text>
+<path d="M240 182v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="200" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="232" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">첫 메모 저장</text><text x="240" y="259" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">POST /notes → 201</text>
+<path d="M240 277v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="295" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="327" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">종료 후 같은 DB로 재시작</text><text x="240" y="354" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">data/notes.db</text>
+<path d="M240 372v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="390" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="422" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">저장된 메모</text><text x="240" y="449" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">GET /notes → 200</text>
+</svg>

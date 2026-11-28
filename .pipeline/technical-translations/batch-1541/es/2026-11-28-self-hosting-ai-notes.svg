@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="es" viewBox="0 0 480 480" role="img" aria-labelledby="title desc"><title id="title">Leer la nota guardada</title><desc id="desc">Consultar el estado y la lista vacía → rechazar una nota en blanco → guardar la primera nota → detener el proceso → reiniciar con la misma base → leer la nota guardada.</desc>
+<rect width="480" height="480" rx="18" fill="#f4f8fc"/>
+<rect x="20" y="10" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="42" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">Estado y lista vacía</text><text x="240" y="69" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">GET /healthz · GET /notes → 200</text>
+<path d="M240 87v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="105" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="137" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">Solo espacios en blanco</text><text x="240" y="164" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">POST /notes → 400</text>
+<path d="M240 182v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="200" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="232" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">Guardar la primera nota</text><text x="240" y="259" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">POST /notes → 201</text>
+<path d="M240 277v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="295" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="327" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">Detener y reiniciar con la misma base</text><text x="240" y="354" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">data/notes.db</text>
+<path d="M240 372v15m-5 -6 5 6 5 -6" stroke="#47687c" stroke-width="2" fill="none"/>
+<rect x="20" y="390" width="440" height="76" rx="12" fill="white" stroke="#648399"/><text x="240" y="422" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#193c4c">Leer la nota guardada</text><text x="240" y="449" text-anchor="middle" font-family="monospace" font-size="18" fill="#21604b">GET /notes → 200</text>
+</svg>
