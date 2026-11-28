@@ -23,11 +23,11 @@
       "translationKey": "2026-11-28-self-hosting-ai-notes",
       "source": {
         "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "005a0679c6742c842941ba2d57b180427e876b2615a48d4c7bb23d42503f8597"
+        "sha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1542/hi/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "60fecc0abe2d4e2507c1445844aa3a90f3289d78276044fb2c16120dab5fbe9f"
+        "sha256": "5f2bfc5f111505087d149ae622f972b3677755b404d851436886b9c52c451e3d"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1542/hi/2026-11-28-self-hosting-ai-notes.svg",

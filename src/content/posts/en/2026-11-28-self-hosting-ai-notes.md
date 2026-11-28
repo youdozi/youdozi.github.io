@@ -24,7 +24,7 @@ Your AI-built notes app just saved its first note. Close the app and start it ag
 
 “Build me a notes app” leaves the model to choose how to store notes and who can connect. Specify where the data should live, who should have access, and what you need to see before you consider the app ready.
 
-> Build a personal notes API with the Python standard library and SQLite. Bind only to `127.0.0.1` and save notes in `data/notes.db`. Have `GET /healthz` return the status and `GET /notes` list the notes. Have `POST /notes` accept `{"text":"첫 메모"}` and reject whitespace-only input with `400`. Provide `app.py`, start and stop commands, and curl examples. Check health → save a note → stop the process → restart with the same DB → read the note. State the listening address and the file the app creates.
+**Prompt**　Build a personal notes API with the Python standard library and SQLite. Bind only to `127.0.0.1` and save notes in `data/notes.db`. Have `GET /healthz` return the status and `GET /notes` list the notes. Have `POST /notes` accept `{"text":"첫 메모"}` and reject whitespace-only input with `400`. Provide `app.py`, start and stop commands, and curl examples. Check health → save a note → stop the process → restart with the same DB → read the note. State the listening address and the file the app creates.
 
 ## Check the address and storage path before starting
 

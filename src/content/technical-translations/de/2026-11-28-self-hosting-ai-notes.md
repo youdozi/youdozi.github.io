@@ -17,17 +17,17 @@
     "sqlite"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-  "sourceSha256": "005a0679c6742c842941ba2d57b180427e876b2615a48d4c7bb23d42503f8597",
-  "draftSha256": "0c799a06ea59840f5d6b5b12bc5b316a8fa054309aafe8a753158d8a0fdcaf21",
+  "sourceSha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809",
+  "draftSha256": "bc53d74fdaf37d14cc8450c4feb8f6365d7c39a97aa711f257c8bd59b9d61997",
   "manifestPath": ".pipeline/technical-translations/batch-1541/manifest.json",
-  "manifestSha256": "8f721bd5cb7f5080972863e41fd8b88e4647254d61c5ff9efa0b5978519f6e99",
-  "publishedAt": "2026-11-28T02:42:03.473Z",
-  "updatedAt": "2026-11-28T02:42:03.473Z",
+  "manifestSha256": "3971c1774c424e3b0b6352540dda4d2616bef5ae8e9be66505d93c921c823b31",
+  "publishedAt": "2026-11-28T02:44:07.338Z",
+  "updatedAt": "2026-11-28T02:44:07.338Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 228,
-    "approvedAt": "2026-11-28T02:42:03.473Z",
+    "approvedAt": "2026-11-28T02:44:07.338Z",
     "basis": "Explicit item 154 publication instruction for the revised item 153 self-hosted notes article in all nine site languages."
   }
 }
@@ -39,7 +39,7 @@ Die von der KI erstellte Notiz-App hat die erste Notiz gespeichert. Beenden Sie 
 
 Bei der Bitte „Schreib mir eine Notiz-App“ entscheidet das Modell womöglich selbst über Speicherort und Zugriff. Legen Sie vorab fest, wo die Daten liegen sollen, wer zugreifen darf und woran Sie erkennen, dass die App funktioniert.
 
-> Schreibe eine persönliche Notiz-API mit der Python-Standardbibliothek und SQLite. Binde sie ausschließlich an `127.0.0.1` und speichere Notizen in `data/notes.db`. `GET /healthz` soll den Status zurückgeben, `GET /notes` die Notizen auflisten. `POST /notes` soll `{"text":"첫 메모"}` annehmen und Eingaben, die nur aus Leerraum bestehen, mit `400` zurückweisen. Liefere `app.py`, Befehle zum Starten und Beenden sowie Prüfbeispiele mit curl. Prüfe in dieser Reihenfolge: Status abrufen → Notiz speichern → Prozess beenden → mit derselben DB neu starten → Notiz lesen. Nenne die Adresse, an der die App lauscht, und die Datei, die sie anlegt.
+**Prompt**　Schreibe eine persönliche Notiz-API mit der Python-Standardbibliothek und SQLite. Binde sie ausschließlich an `127.0.0.1` und speichere Notizen in `data/notes.db`. `GET /healthz` soll den Status zurückgeben, `GET /notes` die Notizen auflisten. `POST /notes` soll `{"text":"첫 메모"}` annehmen und Eingaben, die nur aus Leerraum bestehen, mit `400` zurückweisen. Liefere `app.py`, Befehle zum Starten und Beenden sowie Prüfbeispiele mit curl. Prüfe in dieser Reihenfolge: Status abrufen → Notiz speichern → Prozess beenden → mit derselben DB neu starten → Notiz lesen. Nenne die Adresse, an der die App lauscht, und die Datei, die sie anlegt.
 
 ## Vor dem Start Adresse und Speicherpfad prüfen
 

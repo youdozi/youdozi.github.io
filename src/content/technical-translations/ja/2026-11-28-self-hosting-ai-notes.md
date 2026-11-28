@@ -17,17 +17,17 @@
     "sqlite"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-  "sourceSha256": "005a0679c6742c842941ba2d57b180427e876b2615a48d4c7bb23d42503f8597",
-  "draftSha256": "e0ff1282c49d20b8a64374bf487779941c2b964884505646714ae9695d3e77bc",
+  "sourceSha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809",
+  "draftSha256": "e4fb0bc7ce49ca4013f1935e55eb0f817c729cde3719f0b69b9382556a790ca6",
   "manifestPath": ".pipeline/technical-translations/batch-1541/manifest.json",
-  "manifestSha256": "8f721bd5cb7f5080972863e41fd8b88e4647254d61c5ff9efa0b5978519f6e99",
-  "publishedAt": "2026-11-28T02:42:03.473Z",
-  "updatedAt": "2026-11-28T02:42:03.473Z",
+  "manifestSha256": "3971c1774c424e3b0b6352540dda4d2616bef5ae8e9be66505d93c921c823b31",
+  "publishedAt": "2026-11-28T02:44:07.338Z",
+  "updatedAt": "2026-11-28T02:44:07.338Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 228,
-    "approvedAt": "2026-11-28T02:42:03.473Z",
+    "approvedAt": "2026-11-28T02:44:07.338Z",
     "basis": "Explicit item 154 publication instruction for the revised item 153 self-hosted notes article in all nine site languages."
   }
 }
@@ -39,7 +39,7 @@ AI が作ったメモアプリで、最初のメモを保存できました。�
 
 「メモアプリを作って」だけでは、保存方法や接続できる範囲はモデルの判断に委ねられます。データをどこに置くか、誰が接続できるか、何を確認したら完成とするかを先に決めます。
 
-> Python の標準ライブラリと SQLite で個人用のメモ API を作ってください。`127.0.0.1` だけで待ち受け、メモは `data/notes.db` に保存してください。`GET /healthz` は状態を返し、`GET /notes` は一覧を返すようにしてください。`POST /notes` は `{"text":"첫 메모"}` を受け取り、空白だけの入力は `400` で拒否してください。`app.py` と起動・終了コマンド、curl による確認例を示してください。状態確認 → メモを保存 → プロセス終了 → 同じ DB で再起動 → メモを取得、の順で検証します。待ち受けアドレスと作成されるファイルも明記してください。
+**プロンプト**　Python の標準ライブラリと SQLite で個人用のメモ API を作ってください。`127.0.0.1` だけで待ち受け、メモは `data/notes.db` に保存してください。`GET /healthz` は状態を返し、`GET /notes` は一覧を返すようにしてください。`POST /notes` は `{"text":"첫 메모"}` を受け取り、空白だけの入力は `400` で拒否してください。`app.py` と起動・終了コマンド、curl による確認例を示してください。状態確認 → メモを保存 → プロセス終了 → 同じ DB で再起動 → メモを取得、の順で検証します。待ち受けアドレスと作成されるファイルも明記してください。
 
 ## 実行前にアドレスと保存先を確認する
 

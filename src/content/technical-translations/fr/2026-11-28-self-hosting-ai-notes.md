@@ -17,17 +17,17 @@
     "sqlite"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-  "sourceSha256": "005a0679c6742c842941ba2d57b180427e876b2615a48d4c7bb23d42503f8597",
-  "draftSha256": "d7c1b4f76df543f72c09f32c5d45e9b0815d3b594c06e5edd5bc367cb53795bf",
+  "sourceSha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809",
+  "draftSha256": "33cce5459a3dc93d299e99339fb2b1a17855831cdea22555c526779d8419d13f",
   "manifestPath": ".pipeline/technical-translations/batch-1541/manifest.json",
-  "manifestSha256": "8f721bd5cb7f5080972863e41fd8b88e4647254d61c5ff9efa0b5978519f6e99",
-  "publishedAt": "2026-11-28T02:42:03.473Z",
-  "updatedAt": "2026-11-28T02:42:03.473Z",
+  "manifestSha256": "3971c1774c424e3b0b6352540dda4d2616bef5ae8e9be66505d93c921c823b31",
+  "publishedAt": "2026-11-28T02:44:07.338Z",
+  "updatedAt": "2026-11-28T02:44:07.338Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 228,
-    "approvedAt": "2026-11-28T02:42:03.473Z",
+    "approvedAt": "2026-11-28T02:44:07.338Z",
     "basis": "Explicit item 154 publication instruction for the revised item 153 self-hosted notes article in all nine site languages."
   }
 }
@@ -39,7 +39,7 @@ L’application que l’IA vient de créer a enregistré votre première note. F
 
 Avec « Crée-moi une application de notes », le modèle risque de choisir lui-même le stockage et les conditions d’accès. Précisez où conserver les données, qui peut se connecter et comment vous vérifierez que l’application est prête.
 
-> Crée une API de notes personnelles avec la bibliothèque standard de Python et SQLite. Écoute uniquement sur `127.0.0.1` et stocke les notes dans `data/notes.db`. Fais renvoyer l’état par `GET /healthz` et la liste des notes par `GET /notes`. Fais accepter `{"text":"첫 메모"}` par `POST /notes` et renvoie `400` si le texte ne contient que des espaces. Fournis `app.py`, les commandes de démarrage et d’arrêt et des exemples avec curl. Vérifie dans cet ordre : consulter l’état → enregistrer une note → arrêter le processus → redémarrer avec la même base → lire la note. Indique l’adresse d’écoute et le fichier créé.
+**Consigne**　Crée une API de notes personnelles avec la bibliothèque standard de Python et SQLite. Écoute uniquement sur `127.0.0.1` et stocke les notes dans `data/notes.db`. Fais renvoyer l’état par `GET /healthz` et la liste des notes par `GET /notes`. Fais accepter `{"text":"첫 메모"}` par `POST /notes` et renvoie `400` si le texte ne contient que des espaces. Fournis `app.py`, les commandes de démarrage et d’arrêt et des exemples avec curl. Vérifie dans cet ordre : consulter l’état → enregistrer une note → arrêter le processus → redémarrer avec la même base → lire la note. Indique l’adresse d’écoute et le fichier créé.
 
 ## Vérifier l’adresse et le chemin de stockage avant de démarrer
 
