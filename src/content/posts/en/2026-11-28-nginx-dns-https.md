@@ -34,7 +34,7 @@ Assume a Linux server with public IPv4, one Duck DNS name and a public-facing ap
 
 ## Ask for a plan you can check
 
-> Connect my Duck DNS name to Nginx on Linux with public IPv4. My app runs on the same host at `127.0.0.1:8080`. Use `example.com` as a placeholder. Give me the commands and expected results for the DNS A record, inbound access, reverse proxy and HTTPS, in order. If DNS looks right, explain how to distinguish a timeout from a `502`. Show the smallest configuration change and how to undo it. Ask about unknown values. Do not execute anything.
+**Prompt** Connect my Duck DNS name to Nginx on Linux with public IPv4. My app runs on the same host at `127.0.0.1:8080`. Use `example.com` as a placeholder. Give me the commands and expected results for the DNS A record, inbound access, reverse proxy and HTTPS, in order. If DNS looks right, explain how to distinguish a timeout from a `502`. Show the smallest configuration change and how to undo it. Ask about unknown values. Do not execute anything.
 
 Keep tokens and SSH keys out of the prompt. Review the answer one connection at a time.
 

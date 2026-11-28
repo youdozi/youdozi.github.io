@@ -6,7 +6,7 @@
   "title": "Conectar Duck DNS con Nginx con ayuda de la IA: del DNS a HTTPS",
   "description": "Sigue una petición externa hasta la aplicación, distingue una espera agotada de un error de proxy y comprueba el certificado y su renovación.",
   "sourcePath": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-  "sourceSha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e"
+  "sourceSha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a"
 }
 ---
 
@@ -14,7 +14,7 @@ Supongamos que dispones de un servidor Linux con IPv4 pública y un nombre de Du
 
 ## Pide a la IA un plan que puedas comprobar
 
-> Quiero conectar mi nombre de Duck DNS a Nginx en Linux con IPv4 pública. La aplicación se ejecuta en el mismo host en `127.0.0.1:8080`. Usa `example.com` en lugar del dominio real. Dame los comandos y los resultados esperados para comprobar, en orden, el registro DNS A, el acceso externo al puerto, el proxy inverso y HTTPS. Si el DNS es correcto, ¿cómo distingo un tiempo de espera agotado de un `502`? Indica el cambio mínimo de configuración y cómo revertirlo. Pregúntame por los valores desconocidos y no ejecutes nada.
+**Petición** Quiero conectar mi nombre de Duck DNS a Nginx en Linux con IPv4 pública. La aplicación se ejecuta en el mismo host en `127.0.0.1:8080`. Usa `example.com` en lugar del dominio real. Dame los comandos y los resultados esperados para comprobar, en orden, el registro DNS A, el acceso externo al puerto, el proxy inverso y HTTPS. Si el DNS es correcto, ¿cómo distingo un tiempo de espera agotado de un `502`? Indica el cambio mínimo de configuración y cómo revertirlo. Pregúntame por los valores desconocidos y no ejecutes nada.
 
 No envíes tokens ni claves SSH. Revisa la respuesta tramo por tramo.
 

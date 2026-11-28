@@ -49,11 +49,11 @@
       "translationKey": "2026-11-28-nginx-dns-https",
       "source": {
         "path": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-        "sha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e"
+        "sha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1571/zh-CN/2026-11-28-nginx-dns-https.md",
-        "sha256": "f66d3fc463fe6af4df4e40dd8eca034808bff754f360d0a3d12cac794fe0dcc2"
+        "sha256": "fae147e05cdba269e0377e45f6332d1635d123ec68c1fb6d8caa350e34e7a5cc"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1571/zh-CN/2026-11-28-nginx-dns-https.svg",
@@ -91,11 +91,11 @@
       "translationKey": "2026-11-28-nginx-dns-https",
       "source": {
         "path": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-        "sha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e"
+        "sha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1571/ja/2026-11-28-nginx-dns-https.md",
-        "sha256": "bbafc23f3a5ad3e61aa62e02cfaccc9812e12dbb768a795b46bce7b56754658e"
+        "sha256": "2f09c2bfd4b01022647cb859e6b4946a4edccb76da4fc4c8113080ad8b78920d"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1571/ja/2026-11-28-nginx-dns-https.svg",
@@ -133,11 +133,11 @@
       "translationKey": "2026-11-28-nginx-dns-https",
       "source": {
         "path": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-        "sha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e"
+        "sha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1571/de/2026-11-28-nginx-dns-https.md",
-        "sha256": "ec2a772d9676dc2b1b15bdaa64f183069661de24539df53de6eb11e680609cf8"
+        "sha256": "650f7a2bd48ec18bcc758b15a2838d584ffcbc51fa85a39dbe807062c6391c7d"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1571/de/2026-11-28-nginx-dns-https.svg",
@@ -175,11 +175,11 @@
       "translationKey": "2026-11-28-nginx-dns-https",
       "source": {
         "path": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-        "sha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e"
+        "sha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1571/fr/2026-11-28-nginx-dns-https.md",
-        "sha256": "7ae6bf3734e3dbb6887718428b02c317237ebc218f30bee2e92b06c506eefe0f"
+        "sha256": "ab40a52cc47195a68dbfd8e333a4e921fd17d85fecf10948455730cb2c14ea8d"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1571/fr/2026-11-28-nginx-dns-https.svg",
@@ -217,11 +217,11 @@
       "translationKey": "2026-11-28-nginx-dns-https",
       "source": {
         "path": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-        "sha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e"
+        "sha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1571/ru/2026-11-28-nginx-dns-https.md",
-        "sha256": "13fd29d062ba7405472704860af8c3dc8748ba8f4d5c6d2bfbb81ced97cbd7fe"
+        "sha256": "0f4b43c53ee6c2264d43bee6213678d04c2d51da5fcecb98dbcd4b017d52f1dd"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1571/ru/2026-11-28-nginx-dns-https.svg",
@@ -259,11 +259,11 @@
       "translationKey": "2026-11-28-nginx-dns-https",
       "source": {
         "path": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-        "sha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e"
+        "sha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1571/es/2026-11-28-nginx-dns-https.md",
-        "sha256": "4d79bb75905768ae63cb637605ff14b43b011f5191b8fe76eed10074cf31de25"
+        "sha256": "dae80077757770a8e9a94ba139d7726c695fe836691d2f103a01da4077aa5081"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1571/es/2026-11-28-nginx-dns-https.svg",

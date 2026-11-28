@@ -6,7 +6,7 @@
   "title": "Duck DNS mit Nginx verbinden: Mit KI von DNS bis HTTPS prüfen",
   "description": "Verfolge eine externe Anfrage bis zur App, grenze Zeitüberschreitungen von Proxyfehlern ab und prüfe anschließend Zertifikat und Erneuerung.",
   "sourcePath": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-  "sourceSha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e"
+  "sourceSha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a"
 }
 ---
 
@@ -14,7 +14,7 @@ Vorausgesetzt sind ein Linux-Server mit öffentlicher IPv4-Adresse, ein Duck-DNS
 
 ## Die KI um einen überprüfbaren Ablauf bitten
 
-> Ich möchte auf Linux mit öffentlicher IPv4-Adresse meinen Duck-DNS-Namen mit Nginx verbinden. Die App läuft auf demselben Host unter `127.0.0.1:8080`. Verwende `example.com` als Platzhalter. Gib Prüfkommandos und erwartete Ergebnisse für DNS-A-Eintrag, externe Port-Erreichbarkeit, Reverse Proxy und HTTPS in dieser Reihenfolge an. Wie unterscheide ich bei korrektem DNS einen Timeout von `502`? Zeige die kleinste nötige Konfigurationsänderung und den Rückweg. Frage bei unbekannten Werten nach und führe nichts aus.
+**Prompt** Ich möchte auf Linux mit öffentlicher IPv4-Adresse meinen Duck-DNS-Namen mit Nginx verbinden. Die App läuft auf demselben Host unter `127.0.0.1:8080`. Verwende `example.com` als Platzhalter. Gib Prüfkommandos und erwartete Ergebnisse für DNS-A-Eintrag, externe Port-Erreichbarkeit, Reverse Proxy und HTTPS in dieser Reihenfolge an. Wie unterscheide ich bei korrektem DNS einen Timeout von `502`? Zeige die kleinste nötige Konfigurationsänderung und den Rückweg. Frage bei unbekannten Werten nach und führe nichts aus.
 
 Übermittle keine Tokens oder SSH-Schlüssel. Prüfe die Antwort für jeden Verbindungsabschnitt einzeln.
 

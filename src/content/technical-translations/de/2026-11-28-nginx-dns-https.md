@@ -18,10 +18,10 @@
     "https"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-  "sourceSha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e",
-  "draftSha256": "ec2a772d9676dc2b1b15bdaa64f183069661de24539df53de6eb11e680609cf8",
+  "sourceSha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a",
+  "draftSha256": "650f7a2bd48ec18bcc758b15a2838d584ffcbc51fa85a39dbe807062c6391c7d",
   "manifestPath": ".pipeline/technical-translations/batch-1571/manifest.json",
-  "manifestSha256": "ce67844b72beb7d028d68ceb5fab80ea752b9cf1879179e92a69310b0ac23029",
+  "manifestSha256": "bf6a83d6c439631d9c3af30e329fc60c4018ee5580ce2cd06ccd9111caf54227",
   "publishedAt": "2026-11-28T04:45:08.727Z",
   "updatedAt": "2026-11-28T04:45:08.727Z",
   "approval": {
@@ -38,7 +38,7 @@ Vorausgesetzt sind ein Linux-Server mit öffentlicher IPv4-Adresse, ein Duck-DNS
 
 ## Die KI um einen überprüfbaren Ablauf bitten
 
-> Ich möchte auf Linux mit öffentlicher IPv4-Adresse meinen Duck-DNS-Namen mit Nginx verbinden. Die App läuft auf demselben Host unter `127.0.0.1:8080`. Verwende `example.com` als Platzhalter. Gib Prüfkommandos und erwartete Ergebnisse für DNS-A-Eintrag, externe Port-Erreichbarkeit, Reverse Proxy und HTTPS in dieser Reihenfolge an. Wie unterscheide ich bei korrektem DNS einen Timeout von `502`? Zeige die kleinste nötige Konfigurationsänderung und den Rückweg. Frage bei unbekannten Werten nach und führe nichts aus.
+**Prompt** Ich möchte auf Linux mit öffentlicher IPv4-Adresse meinen Duck-DNS-Namen mit Nginx verbinden. Die App läuft auf demselben Host unter `127.0.0.1:8080`. Verwende `example.com` als Platzhalter. Gib Prüfkommandos und erwartete Ergebnisse für DNS-A-Eintrag, externe Port-Erreichbarkeit, Reverse Proxy und HTTPS in dieser Reihenfolge an. Wie unterscheide ich bei korrektem DNS einen Timeout von `502`? Zeige die kleinste nötige Konfigurationsänderung und den Rückweg. Frage bei unbekannten Werten nach und führe nichts aus.
 
 Übermittle keine Tokens oder SSH-Schlüssel. Prüfe die Antwort für jeden Verbindungsabschnitt einzeln.
 

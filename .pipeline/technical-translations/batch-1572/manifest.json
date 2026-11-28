@@ -44,11 +44,11 @@
       "translationKey": "2026-11-28-nginx-dns-https",
       "source": {
         "path": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-        "sha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e"
+        "sha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1572/hi/2026-11-28-nginx-dns-https.md",
-        "sha256": "115da91baea85130f3752b5c40a64e94468ed3e8c787d36d7abc0755e8f686b1"
+        "sha256": "5beb1c82a3dbc63bebfccd931487d79df839c718f5337cc435ca5c1136990dda"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1572/hi/2026-11-28-nginx-dns-https.svg",

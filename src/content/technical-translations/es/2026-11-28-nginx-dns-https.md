@@ -18,10 +18,10 @@
     "https"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-  "sourceSha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e",
-  "draftSha256": "4d79bb75905768ae63cb637605ff14b43b011f5191b8fe76eed10074cf31de25",
+  "sourceSha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a",
+  "draftSha256": "dae80077757770a8e9a94ba139d7726c695fe836691d2f103a01da4077aa5081",
   "manifestPath": ".pipeline/technical-translations/batch-1571/manifest.json",
-  "manifestSha256": "ce67844b72beb7d028d68ceb5fab80ea752b9cf1879179e92a69310b0ac23029",
+  "manifestSha256": "bf6a83d6c439631d9c3af30e329fc60c4018ee5580ce2cd06ccd9111caf54227",
   "publishedAt": "2026-11-28T04:45:08.727Z",
   "updatedAt": "2026-11-28T04:45:08.727Z",
   "approval": {
@@ -38,7 +38,7 @@ Supongamos que dispones de un servidor Linux con IPv4 pública y un nombre de Du
 
 ## Pide a la IA un plan que puedas comprobar
 
-> Quiero conectar mi nombre de Duck DNS a Nginx en Linux con IPv4 pública. La aplicación se ejecuta en el mismo host en `127.0.0.1:8080`. Usa `example.com` en lugar del dominio real. Dame los comandos y los resultados esperados para comprobar, en orden, el registro DNS A, el acceso externo al puerto, el proxy inverso y HTTPS. Si el DNS es correcto, ¿cómo distingo un tiempo de espera agotado de un `502`? Indica el cambio mínimo de configuración y cómo revertirlo. Pregúntame por los valores desconocidos y no ejecutes nada.
+**Petición** Quiero conectar mi nombre de Duck DNS a Nginx en Linux con IPv4 pública. La aplicación se ejecuta en el mismo host en `127.0.0.1:8080`. Usa `example.com` en lugar del dominio real. Dame los comandos y los resultados esperados para comprobar, en orden, el registro DNS A, el acceso externo al puerto, el proxy inverso y HTTPS. Si el DNS es correcto, ¿cómo distingo un tiempo de espera agotado de un `502`? Indica el cambio mínimo de configuración y cómo revertirlo. Pregúntame por los valores desconocidos y no ejecutes nada.
 
 No envíes tokens ni claves SSH. Revisa la respuesta tramo por tramo.
 

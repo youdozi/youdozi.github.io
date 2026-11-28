@@ -18,10 +18,10 @@
     "https"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-  "sourceSha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e",
-  "draftSha256": "7ae6bf3734e3dbb6887718428b02c317237ebc218f30bee2e92b06c506eefe0f",
+  "sourceSha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a",
+  "draftSha256": "ab40a52cc47195a68dbfd8e333a4e921fd17d85fecf10948455730cb2c14ea8d",
   "manifestPath": ".pipeline/technical-translations/batch-1571/manifest.json",
-  "manifestSha256": "ce67844b72beb7d028d68ceb5fab80ea752b9cf1879179e92a69310b0ac23029",
+  "manifestSha256": "bf6a83d6c439631d9c3af30e329fc60c4018ee5580ce2cd06ccd9111caf54227",
   "publishedAt": "2026-11-28T04:45:08.727Z",
   "updatedAt": "2026-11-28T04:45:08.727Z",
   "approval": {
@@ -38,7 +38,7 @@ Prenons un serveur Linux avec une IPv4 publique et un nom Duck DNS. Une applicat
 
 ## Demander à l’IA une procédure vérifiable
 
-> Je veux relier mon nom Duck DNS à Nginx sous Linux avec une IPv4 publique. Mon application écoute sur `127.0.0.1:8080` sur le même hôte. Remplace le vrai domaine par `example.com`. Donne les commandes et les résultats attendus pour vérifier, dans l’ordre, l’enregistrement DNS A, le port depuis l’extérieur, le proxy inverse et HTTPS. Si le DNS est correct, comment distinguer un délai dépassé d’une erreur `502` ? Indique la modification minimale et les étapes pour l’annuler. Demande-moi les valeurs inconnues et n’exécute rien.
+**Consigne** Je veux relier mon nom Duck DNS à Nginx sous Linux avec une IPv4 publique. Mon application écoute sur `127.0.0.1:8080` sur le même hôte. Remplace le vrai domaine par `example.com`. Donne les commandes et les résultats attendus pour vérifier, dans l’ordre, l’enregistrement DNS A, le port depuis l’extérieur, le proxy inverse et HTTPS. Si le DNS est correct, comment distinguer un délai dépassé d’une erreur `502` ? Indique la modification minimale et les étapes pour l’annuler. Demande-moi les valeurs inconnues et n’exécute rien.
 
 Ne transmettez ni jetons ni clés SSH. Vérifiez la réponse pour chaque segment de la connexion.
 

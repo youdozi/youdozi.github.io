@@ -18,10 +18,10 @@
     "https"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-  "sourceSha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e",
-  "draftSha256": "bbafc23f3a5ad3e61aa62e02cfaccc9812e12dbb768a795b46bce7b56754658e",
+  "sourceSha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a",
+  "draftSha256": "2f09c2bfd4b01022647cb859e6b4946a4edccb76da4fc4c8113080ad8b78920d",
   "manifestPath": ".pipeline/technical-translations/batch-1571/manifest.json",
-  "manifestSha256": "ce67844b72beb7d028d68ceb5fab80ea752b9cf1879179e92a69310b0ac23029",
+  "manifestSha256": "bf6a83d6c439631d9c3af30e329fc60c4018ee5580ce2cd06ccd9111caf54227",
   "publishedAt": "2026-11-28T04:45:08.727Z",
   "updatedAt": "2026-11-28T04:45:08.727Z",
   "approval": {
@@ -38,7 +38,7 @@
 
 ## 確認できる手順を AI に依頼する
 
-> グローバル IPv4 の Linux で Duck DNS 名を Nginx に接続したい。同じホストの `127.0.0.1:8080` でアプリが動いている。実際のドメインの代わりに `example.com` を使って。DNS の A レコード、外部からのポート接続、リバースプロキシ、HTTPS の順に確認コマンドと期待する結果を示して。DNS が正常なときにタイムアウトと `502` をどう切り分けるか、最小限の設定変更と元に戻す手順も説明して。不明な値は質問し、操作は実行しないで。
+**プロンプト** グローバル IPv4 の Linux で Duck DNS 名を Nginx に接続したい。同じホストの `127.0.0.1:8080` でアプリが動いている。実際のドメインの代わりに `example.com` を使って。DNS の A レコード、外部からのポート接続、リバースプロキシ、HTTPS の順に確認コマンドと期待する結果を示して。DNS が正常なときにタイムアウトと `502` をどう切り分けるか、最小限の設定変更と元に戻す手順も説明して。不明な値は質問し、操作は実行しないで。
 
 トークンや SSH 鍵は入力しません。返答は接続の区間ごとに確認してください。
 

@@ -18,10 +18,10 @@
     "https"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-  "sourceSha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e",
-  "draftSha256": "f66d3fc463fe6af4df4e40dd8eca034808bff754f360d0a3d12cac794fe0dcc2",
+  "sourceSha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a",
+  "draftSha256": "fae147e05cdba269e0377e45f6332d1635d123ec68c1fb6d8caa350e34e7a5cc",
   "manifestPath": ".pipeline/technical-translations/batch-1571/manifest.json",
-  "manifestSha256": "ce67844b72beb7d028d68ceb5fab80ea752b9cf1879179e92a69310b0ac23029",
+  "manifestSha256": "bf6a83d6c439631d9c3af30e329fc60c4018ee5580ce2cd06ccd9111caf54227",
   "publishedAt": "2026-11-28T04:45:08.727Z",
   "updatedAt": "2026-11-28T04:45:08.727Z",
   "approval": {
@@ -38,7 +38,7 @@
 
 ## 向 AI 索取可以逐项核对的方案
 
-> 我要在具有公网 IPv4 的 Linux 上把 Duck DNS 域名接到 Nginx。同一主机上的应用监听 `127.0.0.1:8080`。用 `example.com` 代替真实域名。请按 DNS A 记录、外部端口访问、反向代理和 HTTPS 的顺序，给出检查命令和预期结果。如果 DNS 正常，怎样区分超时和 `502`？请说明最小配置改动及回退顺序。遇到未知值先提问，不要执行任何操作。
+**提示词** 我要在具有公网 IPv4 的 Linux 上把 Duck DNS 域名接到 Nginx。同一主机上的应用监听 `127.0.0.1:8080`。用 `example.com` 代替真实域名。请按 DNS A 记录、外部端口访问、反向代理和 HTTPS 的顺序，给出检查命令和预期结果。如果 DNS 正常，怎样区分超时和 `502`？请说明最小配置改动及回退顺序。遇到未知值先提问，不要执行任何操作。
 
 不要把令牌或 SSH 密钥发给 AI。按连接经过的各个环节核对回答。
 

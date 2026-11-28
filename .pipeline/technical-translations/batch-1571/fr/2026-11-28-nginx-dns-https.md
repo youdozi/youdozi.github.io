@@ -6,7 +6,7 @@
   "title": "Relier Duck DNS à Nginx avec une IA et vérifier chaque étape jusqu’à HTTPS",
   "description": "Suivez une requête externe jusqu’à l’application, distinguez un délai dépassé d’une erreur de proxy, puis vérifiez le certificat et son renouvellement.",
   "sourcePath": "src/content/posts/en/2026-11-28-nginx-dns-https.md",
-  "sourceSha256": "921090516e1cb08c80387f75bf13f1ef2b554b81ad242843948943262a48f77e"
+  "sourceSha256": "1afd017a347d250d7ed293c1a456355c47fa605f6f677aa12adda112db84165a"
 }
 ---
 
@@ -14,7 +14,7 @@ Prenons un serveur Linux avec une IPv4 publique et un nom Duck DNS. Une applicat
 
 ## Demander à l’IA une procédure vérifiable
 
-> Je veux relier mon nom Duck DNS à Nginx sous Linux avec une IPv4 publique. Mon application écoute sur `127.0.0.1:8080` sur le même hôte. Remplace le vrai domaine par `example.com`. Donne les commandes et les résultats attendus pour vérifier, dans l’ordre, l’enregistrement DNS A, le port depuis l’extérieur, le proxy inverse et HTTPS. Si le DNS est correct, comment distinguer un délai dépassé d’une erreur `502` ? Indique la modification minimale et les étapes pour l’annuler. Demande-moi les valeurs inconnues et n’exécute rien.
+**Consigne** Je veux relier mon nom Duck DNS à Nginx sous Linux avec une IPv4 publique. Mon application écoute sur `127.0.0.1:8080` sur le même hôte. Remplace le vrai domaine par `example.com`. Donne les commandes et les résultats attendus pour vérifier, dans l’ordre, l’enregistrement DNS A, le port depuis l’extérieur, le proxy inverse et HTTPS. Si le DNS est correct, comment distinguer un délai dépassé d’une erreur `502` ? Indique la modification minimale et les étapes pour l’annuler. Demande-moi les valeurs inconnues et n’exécute rien.
 
 Ne transmettez ni jetons ni clés SSH. Vérifiez la réponse pour chaque segment de la connexion.
 
