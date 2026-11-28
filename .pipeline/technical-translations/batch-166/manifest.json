@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "formatVersion": 3,
+  "batchId": "technical-166",
+  "state": "awaiting-publication-approval",
+  "approval": null,
+  "baseCommit": "1beeeb02af04dd09d07b01dbe2153bed2209e7e0",
+  "sourceLanguage": "en",
+  "languages": [
+    "zh-CN",
+    "ja",
+    "de",
+    "fr",
+    "ru",
+    "es",
+    "hi"
+  ],
+  "review": {
+    "method": "Self-review against the Korean manuscript and English edition, provider documentation, API branches, diagrams and relative links.",
+    "independentReviewer": false,
+    "humanOrNativeSpeakerReview": false,
+    "newExternalFactVerification": true,
+    "reports": []
+  },
+  "editions": [
+    {
+      "key": "zh-CN-2026-11-28-cloudflare-workers-neon-notes",
+      "language": "zh-CN",
+      "translationKey": "2026-11-28-cloudflare-workers-neon-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "71e5ccc2d896aa47ab412ccae04a8ee5e45ca38371038625108fb6befd488a52"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-166/zh-CN/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "6eafafb901a2237634d70d77f33e88ab7559068e8df812b5b5da323230f9851a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-166/zh-CN/2026-11-28-cloudflare-workers-neon-notes.svg",
+        "sha256": "8774a0049798c3257a502fe5c741e8481bde272727a992b85ac038de1d712664"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cloudflare-workers-neon-notes-en.svg",
+        "sha256": "18ecaa3fb485b663a0823f1c22dd3f49d856c46b76460e237b42e1cb6e9733f2"
+      }
+    },
+    {
+      "key": "ja-2026-11-28-cloudflare-workers-neon-notes",
+      "language": "ja",
+      "translationKey": "2026-11-28-cloudflare-workers-neon-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "71e5ccc2d896aa47ab412ccae04a8ee5e45ca38371038625108fb6befd488a52"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-166/ja/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "0419cb5b92a795432659c5e9d6064db237072e9f6b9ab6207fd24daf9e7e493b"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-166/ja/2026-11-28-cloudflare-workers-neon-notes.svg",
+        "sha256": "c4fbcc6ccf23c0e540b11fb9dd779912bd3e7a26ca59b85c9d32e691859c548b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cloudflare-workers-neon-notes-en.svg",
+        "sha256": "18ecaa3fb485b663a0823f1c22dd3f49d856c46b76460e237b42e1cb6e9733f2"
+      }
+    },
+    {
+      "key": "de-2026-11-28-cloudflare-workers-neon-notes",
+      "language": "de",
+      "translationKey": "2026-11-28-cloudflare-workers-neon-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "71e5ccc2d896aa47ab412ccae04a8ee5e45ca38371038625108fb6befd488a52"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-166/de/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "60b9b50c8256c47b736fba6a67f9bd2e926414cdcaabcd561c810361e3bef6dd"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-166/de/2026-11-28-cloudflare-workers-neon-notes.svg",
+        "sha256": "b6f4e07630c3431423dd4d5f18270695eba8fe08a195d2ac53d0bf5f79f893a1"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cloudflare-workers-neon-notes-en.svg",
+        "sha256": "18ecaa3fb485b663a0823f1c22dd3f49d856c46b76460e237b42e1cb6e9733f2"
+      }
+    },
+    {
+      "key": "fr-2026-11-28-cloudflare-workers-neon-notes",
+      "language": "fr",
+      "translationKey": "2026-11-28-cloudflare-workers-neon-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "71e5ccc2d896aa47ab412ccae04a8ee5e45ca38371038625108fb6befd488a52"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-166/fr/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "076859ba510a6e3b18d87e906e722fcdb6311aa78eb1310dce74b209bc51f930"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-166/fr/2026-11-28-cloudflare-workers-neon-notes.svg",
+        "sha256": "50fa0ad835dd48b4c110f24763d8a36fb52df162701ddb45d123fe47d3220b9a"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cloudflare-workers-neon-notes-en.svg",
+        "sha256": "18ecaa3fb485b663a0823f1c22dd3f49d856c46b76460e237b42e1cb6e9733f2"
+      }
+    },
+    {
+      "key": "ru-2026-11-28-cloudflare-workers-neon-notes",
+      "language": "ru",
+      "translationKey": "2026-11-28-cloudflare-workers-neon-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "71e5ccc2d896aa47ab412ccae04a8ee5e45ca38371038625108fb6befd488a52"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-166/ru/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "8e9453c9ee852dd1ec94cff494494717450a2bb5f8edb1fcf654cf563c8dec0a"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-166/ru/2026-11-28-cloudflare-workers-neon-notes.svg",
+        "sha256": "ec34430c8fc8f4770c4df6d4945617634c5645af739285e5c0d2381794f33b5b"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cloudflare-workers-neon-notes-en.svg",
+        "sha256": "18ecaa3fb485b663a0823f1c22dd3f49d856c46b76460e237b42e1cb6e9733f2"
+      }
+    },
+    {
+      "key": "es-2026-11-28-cloudflare-workers-neon-notes",
+      "language": "es",
+      "translationKey": "2026-11-28-cloudflare-workers-neon-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "71e5ccc2d896aa47ab412ccae04a8ee5e45ca38371038625108fb6befd488a52"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-166/es/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "35c6ae48f19a1eaf8518dbec6f32cba4c9aec44da919d8fd0838b7bcde00b380"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-166/es/2026-11-28-cloudflare-workers-neon-notes.svg",
+        "sha256": "9d9670eb281b36502a101c5a233f07065a0f132fb5283f99508ec248163d22a2"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cloudflare-workers-neon-notes-en.svg",
+        "sha256": "18ecaa3fb485b663a0823f1c22dd3f49d856c46b76460e237b42e1cb6e9733f2"
+      }
+    },
+    {
+      "key": "hi-2026-11-28-cloudflare-workers-neon-notes",
+      "language": "hi",
+      "translationKey": "2026-11-28-cloudflare-workers-neon-notes",
+      "source": {
+        "path": "src/content/posts/en/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "71e5ccc2d896aa47ab412ccae04a8ee5e45ca38371038625108fb6befd488a52"
+      },
+      "draft": {
+        "path": ".pipeline/technical-translations/batch-166/hi/2026-11-28-cloudflare-workers-neon-notes.md",
+        "sha256": "9ca975fb84b26243fbe1ce581a261437a975f88f28d34aa08b5214d4b6e43045"
+      },
+      "diagram": {
+        "path": ".pipeline/technical-translations/batch-166/hi/2026-11-28-cloudflare-workers-neon-notes.svg",
+        "sha256": "0b3998b472ac8398dae669e90c214336e639de6073f782747ed41afd79459cd4"
+      },
+      "mainVisual": {
+        "path": "assets/img/architecture/cloudflare-workers-neon-notes-en.svg",
+        "sha256": "18ecaa3fb485b663a0823f1c22dd3f49d856c46b76460e237b42e1cb6e9733f2"
+      }
+    }
+  ]
+}

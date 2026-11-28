@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="ru" viewBox="0 0 400 308" role="img" aria-labelledby="title desc"><title id="title">Запись заметки и чтение после развёртывания</title><desc id="desc">Проверка токена и текста → Сохранение заметки → Развёртывание с той же БД → Чтение последних заметок</desc>
+<rect x="5" y="4" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="29" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">Проверка токена и текста</text>
+<text x="200" y="52" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">POST /api/notes · 401 / 400</text>
+<path d="M200 64v16m-5 -5 5 5 5 -5" stroke="#416453" stroke-width="2" fill="none"/>
+<rect x="5" y="84" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="109" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">Сохранение заметки</text>
+<text x="200" y="132" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">INSERT … RETURNING · 201</text>
+<path d="M200 144v16m-5 -5 5 5 5 -5" stroke="#416453" stroke-width="2" fill="none"/>
+<rect x="5" y="164" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="189" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">Развёртывание с той же БД</text>
+<text x="200" y="212" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">Wrangler → Pages Functions</text>
+<path d="M200 224v16m-5 -5 5 5 5 -5" stroke="#416453" stroke-width="2" fill="none"/>
+<rect x="5" y="244" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="269" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">Чтение последних заметок</text>
+<text x="200" y="292" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">GET /api/notes · SELECT → 200</text>
+</svg>

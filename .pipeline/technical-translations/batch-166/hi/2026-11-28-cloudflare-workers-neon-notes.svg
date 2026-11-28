@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="hi" viewBox="0 0 400 308" role="img" aria-labelledby="title desc"><title id="title">नोट सहेजना और दोबारा डिप्लॉय करने के बाद पढ़ना</title><desc id="desc">टोकन और टेक्स्ट जाँचें → नोट सहेजें → उसी डेटाबेस के साथ फिर डिप्लॉय करें → हाल के नोट पढ़ें</desc>
+<rect x="5" y="4" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="29" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">टोकन और टेक्स्ट जाँचें</text>
+<text x="200" y="52" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">POST /api/notes · 401 / 400</text>
+<path d="M200 64v16m-5 -5 5 5 5 -5" stroke="#416453" stroke-width="2" fill="none"/>
+<rect x="5" y="84" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="109" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">नोट सहेजें</text>
+<text x="200" y="132" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">INSERT … RETURNING · 201</text>
+<path d="M200 144v16m-5 -5 5 5 5 -5" stroke="#416453" stroke-width="2" fill="none"/>
+<rect x="5" y="164" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="189" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">उसी डेटाबेस के साथ फिर डिप्लॉय करें</text>
+<text x="200" y="212" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">Wrangler → Pages Functions</text>
+<path d="M200 224v16m-5 -5 5 5 5 -5" stroke="#416453" stroke-width="2" fill="none"/>
+<rect x="5" y="244" width="390" height="60" rx="9" fill="#f0f5f2" stroke="#728e80"/>
+<text x="200" y="269" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#214037">हाल के नोट पढ़ें</text>
+<text x="200" y="292" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#214037">GET /api/notes · SELECT → 200</text>
+</svg>
