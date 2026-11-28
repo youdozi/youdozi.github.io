@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="de" viewBox="0 0 440 328" role="img" aria-labelledby="title desc"><title id="title">WAN-Adresse prüfen</title><desc id="desc">WAN-Adresse prüfen → Update-Verfahren wählen → DNS-Einträge abfragen → Aus einem anderen Netz testen</desc>
+<rect width="440" height="328" rx="14" fill="#ecf4f5"/>
+<rect x="12" y="4" width="416" height="62" rx="10" fill="#fff" stroke="#7d9ca4"/>
+<text x="220" y="29" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#193c4c">WAN-Adresse prüfen</text>
+<text x="220" y="54" text-anchor="middle" font-family="monospace" font-size="16" fill="#205b50">WAN · 100.64.0.0/10</text>
+<path d="M220 67v16m-5 -5 5 5 5 -5" stroke="#456972" stroke-width="2" fill="none"/>
+<rect x="12" y="86" width="416" height="62" rx="10" fill="#fff" stroke="#7d9ca4"/>
+<text x="220" y="111" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#193c4c">Update-Verfahren wählen</text>
+<text x="220" y="136" text-anchor="middle" font-family="monospace" font-size="16" fill="#205b50">DDNS / PR / NS</text>
+<path d="M220 149v16m-5 -5 5 5 5 -5" stroke="#456972" stroke-width="2" fill="none"/>
+<rect x="12" y="168" width="416" height="62" rx="10" fill="#fff" stroke="#7d9ca4"/>
+<text x="220" y="193" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#193c4c">DNS-Einträge abfragen</text>
+<text x="220" y="218" text-anchor="middle" font-family="monospace" font-size="16" fill="#205b50">A · AAAA</text>
+<path d="M220 231v16m-5 -5 5 5 5 -5" stroke="#456972" stroke-width="2" fill="none"/>
+<rect x="12" y="250" width="416" height="62" rx="10" fill="#fff" stroke="#7d9ca4"/>
+<text x="220" y="275" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#193c4c">Aus einem anderen Netz testen</text>
+<text x="220" y="300" text-anchor="middle" font-family="monospace" font-size="16" fill="#205b50">IPv4 / IPv6</text>
+</svg>
