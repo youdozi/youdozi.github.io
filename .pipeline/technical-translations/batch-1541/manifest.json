@@ -28,11 +28,11 @@
       "translationKey": "2026-11-28-self-hosting-ai-notes",
       "source": {
         "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809"
+        "sha256": "d16e16aa59b4f2d18acf7e0fec481da461f90a51d2078a296fed80335f251235"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1541/zh-CN/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "0102f1914994e50258c20c88382e062c80495aa683c09ee9d9ecdd0c4d364532"
+        "sha256": "f4b812b8217fe9968fea6c4f70ab67f1dd89f481f2328f460d6af5b2280434e4"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1541/zh-CN/2026-11-28-self-hosting-ai-notes.svg",
@@ -49,11 +49,11 @@
       "translationKey": "2026-11-28-self-hosting-ai-notes",
       "source": {
         "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809"
+        "sha256": "d16e16aa59b4f2d18acf7e0fec481da461f90a51d2078a296fed80335f251235"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1541/ja/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "e4fb0bc7ce49ca4013f1935e55eb0f817c729cde3719f0b69b9382556a790ca6"
+        "sha256": "8283b8c1885c5e235966a1453332724f9110822183eac896ea69d150275ca35a"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1541/ja/2026-11-28-self-hosting-ai-notes.svg",
@@ -70,11 +70,11 @@
       "translationKey": "2026-11-28-self-hosting-ai-notes",
       "source": {
         "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809"
+        "sha256": "d16e16aa59b4f2d18acf7e0fec481da461f90a51d2078a296fed80335f251235"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1541/de/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "bc53d74fdaf37d14cc8450c4feb8f6365d7c39a97aa711f257c8bd59b9d61997"
+        "sha256": "c4aea3344e2388ffb0d61529aecbd00c24ca6741b6f45b781f1a078b88926484"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1541/de/2026-11-28-self-hosting-ai-notes.svg",
@@ -91,11 +91,11 @@
       "translationKey": "2026-11-28-self-hosting-ai-notes",
       "source": {
         "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809"
+        "sha256": "d16e16aa59b4f2d18acf7e0fec481da461f90a51d2078a296fed80335f251235"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1541/fr/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "33cce5459a3dc93d299e99339fb2b1a17855831cdea22555c526779d8419d13f"
+        "sha256": "c67d04aafbe8803c062158347dd94cb66f74ec518be777fbbb224bf344230bc8"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1541/fr/2026-11-28-self-hosting-ai-notes.svg",
@@ -112,11 +112,11 @@
       "translationKey": "2026-11-28-self-hosting-ai-notes",
       "source": {
         "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809"
+        "sha256": "d16e16aa59b4f2d18acf7e0fec481da461f90a51d2078a296fed80335f251235"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1541/ru/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "b9d68c423e855750750ddc4e6d301816ed3e2a2e52a167ebca4da0395a8ac5bb"
+        "sha256": "9028f641a90ac3236bfec4916501d26c3df878faff459c1d1f93d92a687019df"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1541/ru/2026-11-28-self-hosting-ai-notes.svg",
@@ -133,11 +133,11 @@
       "translationKey": "2026-11-28-self-hosting-ai-notes",
       "source": {
         "path": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809"
+        "sha256": "d16e16aa59b4f2d18acf7e0fec481da461f90a51d2078a296fed80335f251235"
       },
       "draft": {
         "path": ".pipeline/technical-translations/batch-1541/es/2026-11-28-self-hosting-ai-notes.md",
-        "sha256": "77baeca0805cc12bc427103490ee4ccb7bdd252835744c017050e7fe348fb621"
+        "sha256": "256fcb28332730e963a87784a7ee092b03c6c4a8c8cec4ecd694e22328093f57"
       },
       "diagram": {
         "path": ".pipeline/technical-translations/batch-1541/es/2026-11-28-self-hosting-ai-notes.svg",

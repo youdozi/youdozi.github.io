@@ -6,7 +6,7 @@
   "title": "Eine KI-generierte App selbst hosten: die ersten Schritte mit einer Notiz-API",
   "description": "Eine KI schreibt eine Notiz-API. Nach einem Neustart lässt sich prüfen, ob die erste Notiz noch in derselben SQLite-Datei steht.",
   "sourcePath": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-  "sourceSha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809"
+  "sourceSha256": "d16e16aa59b4f2d18acf7e0fec481da461f90a51d2078a296fed80335f251235"
 }
 ---
 
@@ -16,7 +16,7 @@ Die von der KI erstellte Notiz-App hat die erste Notiz gespeichert. Beenden Sie 
 
 Bei der Bitte „Schreib mir eine Notiz-App“ entscheidet das Modell womöglich selbst über Speicherort und Zugriff. Legen Sie vorab fest, wo die Daten liegen sollen, wer zugreifen darf und woran Sie erkennen, dass die App funktioniert.
 
-**Prompt**　Schreibe eine persönliche Notiz-API mit der Python-Standardbibliothek und SQLite. Binde sie ausschließlich an `127.0.0.1` und speichere Notizen in `data/notes.db`. `GET /healthz` soll den Status zurückgeben, `GET /notes` die Notizen auflisten. `POST /notes` soll `{"text":"첫 메모"}` annehmen und Eingaben, die nur aus Leerraum bestehen, mit `400` zurückweisen. Liefere `app.py`, Befehle zum Starten und Beenden sowie Prüfbeispiele mit curl. Prüfe in dieser Reihenfolge: Status abrufen → Notiz speichern → Prozess beenden → mit derselben DB neu starten → Notiz lesen. Nenne die Adresse, an der die App lauscht, und die Datei, die sie anlegt.
+**Prompt** Schreibe eine persönliche Notiz-API mit der Python-Standardbibliothek und SQLite. Binde sie ausschließlich an `127.0.0.1` und speichere Notizen in `data/notes.db`. `GET /healthz` soll den Status zurückgeben, `GET /notes` die Notizen auflisten. `POST /notes` soll `{"text":"첫 메모"}` annehmen und Eingaben, die nur aus Leerraum bestehen, mit `400` zurückweisen. Liefere `app.py`, Befehle zum Starten und Beenden sowie Prüfbeispiele mit curl. Prüfe in dieser Reihenfolge: Status abrufen → Notiz speichern → Prozess beenden → mit derselben DB neu starten → Notiz lesen. Nenne die Adresse, an der die App lauscht, und die Datei, die sie anlegt.
 
 ## Vor dem Start Adresse und Speicherpfad prüfen
 

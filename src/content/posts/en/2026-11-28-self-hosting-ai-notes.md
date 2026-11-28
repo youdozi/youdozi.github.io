@@ -3,6 +3,13 @@
   "kind": "post",
   "publishedAt": "2026-11-28T02:37:00Z",
   "routeSlug": "2026-11-28-self-hosting-ai-notes",
+  "reviewedAt": "2026-11-28",
+  "reviewStatus": "source-audited",
+  "reviewSources": [
+    "https://docs.python.org/3/library/http.server.html",
+    "https://docs.python.org/3/library/sqlite3.html"
+  ],
+  "reviewScope": "Checked loopback HTTP responses and read the saved note from the same SQLite file after restarting the process on Python 3.13.0.",
   "language": "en",
   "translationKey": "2026-11-28-self-hosting-ai-notes",
   "title": "Self-hosting an AI-built app: start with a notes API",
@@ -24,7 +31,7 @@ Your AI-built notes app just saved its first note. Close the app and start it ag
 
 “Build me a notes app” leaves the model to choose how to store notes and who can connect. Specify where the data should live, who should have access, and what you need to see before you consider the app ready.
 
-**Prompt**　Build a personal notes API with the Python standard library and SQLite. Bind only to `127.0.0.1` and save notes in `data/notes.db`. Have `GET /healthz` return the status and `GET /notes` list the notes. Have `POST /notes` accept `{"text":"첫 메모"}` and reject whitespace-only input with `400`. Provide `app.py`, start and stop commands, and curl examples. Check health → save a note → stop the process → restart with the same DB → read the note. State the listening address and the file the app creates.
+**Prompt** Build a personal notes API with the Python standard library and SQLite. Bind only to `127.0.0.1` and save notes in `data/notes.db`. Have `GET /healthz` return the status and `GET /notes` list the notes. Have `POST /notes` accept `{"text":"첫 메모"}` and reject whitespace-only input with `400`. Provide `app.py`, start and stop commands, and curl examples. Check health → save a note → stop the process → restart with the same DB → read the note. State the listening address and the file the app creates.
 
 ## Check the address and storage path before starting
 

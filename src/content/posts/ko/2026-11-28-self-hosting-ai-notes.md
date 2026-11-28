@@ -3,6 +3,13 @@
   "kind": "post",
   "publishedAt": "2026-11-28T02:37:00Z",
   "routeSlug": "2026-11-28-self-hosting-ai-notes",
+  "reviewedAt": "2026-11-28",
+  "reviewStatus": "source-audited",
+  "reviewSources": [
+    "https://docs.python.org/3/library/http.server.html",
+    "https://docs.python.org/3/library/sqlite3.html"
+  ],
+  "reviewScope": "Python 3.13.0에서 루프백 HTTP 응답과 프로세스 재시작 후 같은 SQLite 파일의 메모 조회를 검증했습니다.",
   "language": "ko",
   "translationKey": "2026-11-28-self-hosting-ai-notes",
   "title": "AI로 만든 앱, 내 서버에서 운영하려면 · 메모 앱으로 시작하는 셀프호스팅",
@@ -24,7 +31,7 @@ AI가 만들어 준 메모 앱에서 첫 메모가 저장됐습니다. 이제 �
 
 “메모 앱을 만들어 줘”라고 하면 저장 방식이나 접속 범위는 모델이 결정할 수 있습니다. 처음부터 데이터를 어디에 보관할지, 누가 접속할 수 있어야 하는지, 무엇을 확인하면 완료인지 정합니다.
 
-**프롬프트**　Python 표준 라이브러리와 SQLite로 개인용 메모 API를 만들어줘. 앱은 `127.0.0.1`에서만 실행하고, 메모는 `data/notes.db`에 저장해. `GET /healthz`는 상태를 반환하고, `GET /notes`은 목록을 보여줘. `POST /notes`는 `{"text":"첫 메모"}` 형식을 받고, 공백뿐인 입력은 `400`으로 거절해. `app.py`와 실행·종료 명령, curl 확인 예시를 작성해줘. 검증 순서는 상태 확인 → 메모 저장 → 프로세스 종료 → 같은 DB로 재시작 → 메모 조회야. 열리는 주소와 생성되는 파일을 명시해줘.
+**프롬프트** Python 표준 라이브러리와 SQLite로 개인용 메모 API를 만들어줘. 앱은 `127.0.0.1`에서만 실행하고, 메모는 `data/notes.db`에 저장해. `GET /healthz`는 상태를 반환하고, `GET /notes`은 목록을 보여줘. `POST /notes`는 `{"text":"첫 메모"}` 형식을 받고, 공백뿐인 입력은 `400`으로 거절해. `app.py`와 실행·종료 명령, curl 확인 예시를 작성해줘. 검증 순서는 상태 확인 → 메모 저장 → 프로세스 종료 → 같은 DB로 재시작 → 메모 조회야. 열리는 주소와 생성되는 파일을 명시해줘.
 
 ## 실행 전에 주소와 저장 경로를 검토하기
 

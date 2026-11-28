@@ -17,17 +17,17 @@
     "sqlite"
   ],
   "sourcePath": "src/content/posts/en/2026-11-28-self-hosting-ai-notes.md",
-  "sourceSha256": "f31b0a9a46f32859c6cd630d2d77ff943c1ddc47a7f7a4135e924c37fd826809",
-  "draftSha256": "0102f1914994e50258c20c88382e062c80495aa683c09ee9d9ecdd0c4d364532",
+  "sourceSha256": "d16e16aa59b4f2d18acf7e0fec481da461f90a51d2078a296fed80335f251235",
+  "draftSha256": "f4b812b8217fe9968fea6c4f70ab67f1dd89f481f2328f460d6af5b2280434e4",
   "manifestPath": ".pipeline/technical-translations/batch-1541/manifest.json",
-  "manifestSha256": "3971c1774c424e3b0b6352540dda4d2616bef5ae8e9be66505d93c921c823b31",
-  "publishedAt": "2026-11-28T02:44:07.338Z",
-  "updatedAt": "2026-11-28T02:44:07.338Z",
+  "manifestSha256": "e52bba14ac6926c64b9a606de159d73af1dbc515364a35db918794798e1fb06d",
+  "publishedAt": "2026-11-28T02:54:25.407Z",
+  "updatedAt": "2026-11-28T02:54:25.407Z",
   "approval": {
     "kind": "human",
     "reviewedBy": "youdozi",
     "pullRequest": 228,
-    "approvedAt": "2026-11-28T02:44:07.338Z",
+    "approvedAt": "2026-11-28T02:54:25.407Z",
     "basis": "Explicit item 154 publication instruction for the revised item 153 self-hosted notes article in all nine site languages."
   }
 }
@@ -39,7 +39,7 @@ AI 写的笔记应用刚刚保存了第一条笔记。关掉应用再启动，�
 
 只说“帮我做个笔记应用”，模型可能会自行决定如何存储数据、允许谁连接。先写清楚数据放在哪里、谁可以访问，以及满足哪些条件才算完成。
 
-**提示词**　用 Python 标准库和 SQLite 写一个个人笔记 API。只监听 `127.0.0.1`，把笔记保存在 `data/notes.db`。让 `GET /healthz` 返回状态，`GET /notes` 列出笔记。`POST /notes` 接收 `{"text":"첫 메모"}`，对只有空白字符的输入返回 `400`。请提供 `app.py`、启动和停止命令，以及 curl 验证示例。按这个顺序检查：查看状态 → 保存笔记 → 停止进程 → 用同一个数据库重新启动 → 读取笔记。请注明监听地址和生成的文件。
+**提示词** 用 Python 标准库和 SQLite 写一个个人笔记 API。只监听 `127.0.0.1`，把笔记保存在 `data/notes.db`。让 `GET /healthz` 返回状态，`GET /notes` 列出笔记。`POST /notes` 接收 `{"text":"첫 메모"}`，对只有空白字符的输入返回 `400`。请提供 `app.py`、启动和停止命令，以及 curl 验证示例。按这个顺序检查：查看状态 → 保存笔记 → 停止进程 → 用同一个数据库重新启动 → 读取笔记。请注明监听地址和生成的文件。
 
 ## 运行前检查地址和存储路径
 
